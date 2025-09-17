@@ -159,74 +159,53 @@ body {
 
 .content-info {
     padding: 25px;
-    flex: 1;
-    display: flex;
-    flex-direction: column;
 }
 
-/* 最新記事プレビュー */
-.latest-preview {
-    margin-top: 20px;
-    padding-top: 20px;
-    border-top: 1px solid var(--border-color);
-}
-
-.latest-preview h4 {
-    font-family: var(--secondary-font);
-    font-size: 0.9rem;
-    color: var(--text-lighter);
-    margin-bottom: 15px;
+.content-category {
+    font-size: 0.8rem;
     text-transform: uppercase;
+    color: var(--text-lighter);
     letter-spacing: 0.1em;
-}
-
-.preview-item {
-    margin-bottom: 15px;
-    padding-bottom: 15px;
-    border-bottom: 1px solid #f0f0f0;
-}
-
-.preview-item:last-child {
-    border-bottom: none;
-    margin-bottom: 0;
-    padding-bottom: 0;
-}
-
-.preview-title {
-    font-size: 1rem;
     font-weight: 500;
-    margin-bottom: 8px;
-    line-height: 1.4;
 }
 
-.preview-title a {
+.content-info h2,
+.content-info h3 {
+    font-family: var(--primary-font);
+    margin: 8px 0 12px 0;
+    line-height: 1.3;
+}
+
+.content-info h2 {
+    font-size: 1.6rem;
+}
+
+.content-info h3 {
+    font-size: 1.3rem;
+}
+
+.content-info a {
     color: var(--text-color);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
-.preview-title a:hover {
+.content-info a:hover {
     color: var(--text-light);
 }
 
-.preview-excerpt {
-    font-size: 0.85rem;
+.content-info p {
     color: var(--text-light);
+    font-size: 0.95rem;
+    margin-bottom: 15px;
     line-height: 1.5;
-    margin-bottom: 5px;
 }
 
-.preview-date {
-    font-size: 0.75rem;
-    color: var(--text-lighter);
-}
-
-.preview-loading {
+.content-info time {
     font-size: 0.85rem;
     color: var(--text-lighter);
     font-style: italic;
 }
-
 
 /* 最新記事セクション */
 .latest-writings {
