@@ -24,6 +24,8 @@ async function updateMainContentCard() {
                 timeElement.textContent = `最新：${formattedDate}`;
                 console.log('メインカード更新完了:', formattedDate);
             }
+            updatePreview(data.items);
+            
         } else {
             console.log('次はどこへマガジンのデータが空または無効');
             fallbackMainCard();
