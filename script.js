@@ -1,39 +1,77 @@
-// Craig Mod inspired script for note feed
+// tojimasaya.com のための更新されたスクリプト
 document.addEventListener('DOMContentLoaded', function() {
+    console.log('サイト読み込み開始');
     loadNotePosts();
     updateMainContentCard();
     initializeScrollAnimations();
 });
 
+// メインカードの更新情報を自動取得（次はどこへマガジンから）
+async function updateMainContentCard() {
+    console.log('メインカード更新開始');
+    try {
+        const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent('https://note.com/tojimasaya/m/md99dd54590fa/rss')}`);
+        const data = await response.json();
+        
+        console.log('次はどこへマガジンRSS取得結果:', data);
+        
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+            const latestPost = data.items[0];
+            const timeElement = document.querySelector('.content-card.large time');
+            if (timeElement) {
+                const postDate = new Date(latestPost.pubDate);
+                const formattedDate = formatDate(postDate);
+                timeElement.textContent = `最新：${formattedDate}`;
+                console.log('メインカード更新完了:', formattedDate);
+            }
+        } else {
+            console.log('次はどこへマガジンのデータが空または無効');
+            fallbackMainCard();
+        }
+    } catch (error) {
+        console.error('メインカード更新エラー:', error);
+        fallbackMainCard();
+    }
+}
+
+// フォールバック表示
+function fallbackMainCard() {
+    const timeElement = document.querySelector('.content-card.large time');
+    if (timeElement) {
+        timeElement.textContent = '2025年9月17日更新';
+    }
+}
+
+// note記事一覧の取得（マガジン別）
 async function loadNotePosts() {
+    console.log('記事一覧取得開始');
     const feedContainer = document.getElementById('note-feed');
     
-    // 複数のnoteアカウントのRSSフィード（実際のユーザー名に変更してください）
+    // マガジン別RSSフィード
     const noteFeeds = [
         {
             name: "次はどこへ",
-            url: "https://note.com/tojimasaya/m/md99dd54590fa/rss", // 実際のnoteユーザー名に変更
+            url: "https://note.com/tojimasaya/m/md99dd54590fa/rss",
             icon: "📝"
         },
         {
             name: "香港レンズ", 
-            url: "https://note.com/tojimasaya/m/m22c44596304b/rss", // 実際のnoteユーザー名に変更
+            url: "https://note.com/tojimasaya/m/m22c44596304b/rss",
             icon: "📷"
         }
-        // 必要に応じて他のフィードも追加
     ];
     
     try {
         const allPosts = [];
         
-        // RSS-to-JSONサービスを使用してRSSを取得
+        // 各マガジンから記事を取得
         for (const feed of noteFeeds) {
             try {
+                console.log(`${feed.name} の記事を取得中...`);
                 const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`);
                 const data = await response.json();
                 
                 if (data.status === 'ok' && data.items) {
-                    // 最新3件を取得
                     const posts = data.items.slice(0, 3).map(item => ({
                         title: item.title,
                         link: item.link,
@@ -43,20 +81,20 @@ async function loadNotePosts() {
                         icon: feed.icon
                     }));
                     allPosts.push(...posts);
+                    console.log(`${feed.name}: ${posts.length}件取得`);
                 }
             } catch (error) {
-                console.log(`Error loading feed for ${feed.name}:`, error);
+                console.log(`${feed.name} の取得エラー:`, error);
             }
         }
         
         // 日付順でソート（新しい順）
         allPosts.sort((a, b) => b.pubDate - a.pubDate);
-        
-        // 最新5件を表示
         const postsToShow = allPosts.slice(0, 5);
         
+        
         if (postsToShow.length > 0) {
-            feedContainer.innerHTML = postsToShow.map(post => `
+            const articlesHTML = postsToShow.map(post => `
                 <article class="writing-item">
                     <div class="writing-meta">
                         <span class="writing-source">${post.source}</span>
@@ -66,116 +104,42 @@ async function loadNotePosts() {
                     <div class="writing-excerpt">${post.description}</div>
                 </article>
             `).join('');
+            
+            feedContainer.innerHTML = articlesHTML;
+            console.log('記事一覧表示完了');
+            
         } else {
-            // 手動サンプル記事を表示
-            feedContainer.innerHTML = `
-                <article class="writing-item">
-                    <div class="writing-meta">
-                        <span class="writing-source">次はどこへ</span>
-                        <time>2025年8月24日</time>
-                    </div>
-                    <h3><a href="#" target="_blank">旅について考えること</a></h3>
-                    <div class="writing-excerpt">RSSフィードの自動読み込みが利用できない場合の代替表示です。実際の記事が表示されるように、scriptファイルを更新してください。</div>
-                </article>
-                
-                <article class="writing-item">
-                    <div class="writing-meta">
-                        <span class="writing-source">香港レンズ</span>
-                        <time>2025年8月20日</time>
-                    </div>
-                    <h3><a href="#" target="_blank">香港の街角から</a></h3>
-                    <div class="writing-excerpt">香港で撮影した写真とその時の思いを綴ったエッセイです。</div>
-                </article>
-                
-                <article class="writing-item">
-                    <div class="writing-meta">
-                        <span class="writing-source">俺流トラベルガジェット</span>
-                        <time>2025年8月18日</time>
-                    </div>
-                    <h3><a href="#" target="_blank">旅行に最適なカメラ選び</a></h3>
-                    <div class="writing-excerpt">旅行用カメラとして最適な機種について、実際の使用体験をもとに紹介します。</div>
-                </article>
-            `;// noteのRSSフィードから最新記事を取得
-document.addEventListener('DOMContentLoaded', function() {
-    loadNotePosts();
-});
-
-async function loadNotePosts() {
-    const feedContainer = document.getElementById('note-feed');
-    
-    // 複数のnoteアカウントのRSSフィード（実際のユーザー名に変更してください）
-    const noteFeeds = [
-        {
-            name: "What's Next",
-            url: "https://note.com/tojimasaya/m/md99dd54590fa/rss", // 実際のnoteユーザー名に変更
-            icon: "📝"
-        },
-        {
-            name: "Hong Kong Lens", 
-            url: "https://note.com/tojimasaya/m/m22c44596304b/rss", // 実際のnoteユーザー名に変更
-            icon: "📷"
-        }
-        // 必要に応じて他のフィードも追加
-    ];
-    
-    try {
-        const allPosts = [];
-        
-        // RSS-to-JSONサービスを使用してRSSを取得
-        for (const feed of noteFeeds) {
-            try {
-                const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(feed.url)}`);
-                const data = await response.json();
-                
-                if (data.status === 'ok' && data.items) {
-                    // 最新3件を取得
-                    const posts = data.items.slice(0, 3).map(item => ({
-                        title: item.title,
-                        link: item.link,
-                        pubDate: new Date(item.pubDate),
-                        description: item.description ? item.description.replace(/<[^>]*>/g, '').substring(0, 100) + '...' : '',
-                        source: feed.name,
-                        icon: feed.icon
-                    }));
-                    allPosts.push(...posts);
-                }
-            } catch (error) {
-                console.log(`Error loading feed for ${feed.name}:`, error);
-            }
-        }
-        
-        // 日付順でソート（新しい順）
-        allPosts.sort((a, b) => b.pubDate - a.pubDate);
-        
-        // 最新6件を表示
-        const postsToShow = allPosts.slice(0, 6);
-        
-        if (postsToShow.length > 0) {
-            feedContainer.innerHTML = postsToShow.map(post => `
-                <div class="post-card">
-                    <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                        <span style="margin-right: 8px;">${post.icon}</span>
-                        <small style="color: #666;">${post.source}</small>
-                    </div>
-                    <h3><a href="${post.link}" target="_blank" style="text-decoration: none; color: inherit;">${post.title}</a></h3>
-                    <p>${post.description}</p>
-                    <div class="post-date">${formatDate(post.pubDate)}</div>
-                </div>
-            `).join('');
-        } else {
-            feedContainer.innerHTML = '<div class="loading">記事の読み込みに失敗しました。しばらく後でお試しください。</div>';
+            console.log('記事データが空');
+            showFallbackArticles(feedContainer);
         }
         
     } catch (error) {
-        console.error('Error loading posts:', error);
-        feedContainer.innerHTML = `
-            <div class="post-card">
-                <h3>手動で最新記事を追加</h3>
-                <p>RSSフィードの自動読み込みが利用できない場合は、このスクリプトを編集して手動で最新記事を追加できます。</p>
-                <div class="post-date">2025年8月24日</div>
-            </div>
-        `;
+        console.error('記事一覧取得エラー:', error);
+        showFallbackArticles(feedContainer);
     }
+}
+
+// フォールバック記事表示
+function showFallbackArticles(container) {
+    container.innerHTML = `
+        <article class="writing-item">
+            <div class="writing-meta">
+                <span class="writing-source">note</span>
+                <time>2025年9月17日</time>
+            </div>
+            <h3><a href="https://note.com/tojimasaya" target="_blank">きょう知ってお恥ずかしい香港ニュース</a></h3>
+            <div class="writing-excerpt">香港の最新ニュースと情報をお届けします。</div>
+        </article>
+        
+        <article class="writing-item">
+            <div class="writing-meta">
+                <span class="writing-source">note</span>
+                <time>2025年9月16日</time>
+            </div>
+            <h3><a href="https://note.com/tojimasaya" target="_blank">香港の経済と社会について</a></h3>
+            <div class="writing-excerpt">香港の現状と今後の展望について考察します。</div>
+        </article>
+    `;
 }
 
 // 日付のフォーマット
@@ -189,67 +153,48 @@ function formatDate(date) {
     return date.toLocaleDateString('ja-JP', options);
 }
 
+// スクロールアニメーション
+function initializeScrollAnimations() {
+    const observerOptions = {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
+    };
+
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.animationPlayState = 'running';
+            }
+        });
+    }, observerOptions);
+
+    // アニメーション対象要素を監視
+    document.querySelectorAll('.content-card, .photo-item, .social-link').forEach(el => {
+        observer.observe(el);
+    });
+}
+
 // スムーススクロール
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         e.preventDefault();
-        document.querySelector(this.getAttribute('href')).scrollIntoView({
-            behavior: 'smooth'
-        });
+        const target = document.querySelector(this.getAttribute('href'));
+        if (target) {
+            target.scrollIntoView({
+                behavior: 'smooth',
+                block: 'start'
+            });
+        }
     });
 });
 
-// 手動で記事を追加する場合の関数（RSSが使えない場合）
-function addManualPost(title, link, description, source, date) {
-    const feedContainer = document.getElementById('note-feed');
-    const postHTML = `
-        <div class="post-card">
-            <div style="display: flex; align-items: center; margin-bottom: 10px;">
-                <span style="margin-right: 8px;">📝</span>
-                <small style="color: #666;">${source}</small>
-            </div>
-            <h3><a href="${link}" target="_blank" style="text-decoration: none; color: inherit;">${title}</a></h3>
-            <p>${description}</p>
-            <div class="post-date">${date}</div>
-        </div>
-    `;
+// パララックス効果（ヒーロー画像）
+window.addEventListener('scroll', () => {
+    const scrolled = window.pageYOffset;
+    const parallax = document.querySelector('.hero-image img');
     
-    if (feedContainer.querySelector('.loading')) {
-        feedContainer.innerHTML = postHTML;
-    } else {
-        feedContainer.insertAdjacentHTML('afterbegin', postHTML);
+    if (parallax) {
+        const speed = scrolled * 0.5;
+        parallax.style.transform = `translateY(${speed}px)`;
     }
-}
-
-// 使用例（手動で記事を追加したい場合）:
-// addManualPost(
-//     "記事のタイトル", 
-//     "https://note.com/your-article-url", 
-//     "記事の概要説明...", 
-//     "What's Next", 
-//     "2025年8月24日"
-// );
-
-        // メインカードの更新情報を自動取得
-async function updateMainContentCard() {
-    try {
-        const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://note.com/tojimasaya/rss`);
-        const data = await response.json();
-        
-        if (data.status === 'ok' && data.items && data.items.length > 0) {
-            const latestPost = data.items[0];
-            const timeElement = document.querySelector('.content-card.large time');
-            if (timeElement) {
-                const postDate = new Date(latestPost.pubDate);
-                timeElement.textContent = `最新：${formatDate(postDate)}`;
-            }
-        }
-    } catch (error) {
-        console.log('Failed to update main card:', error);
-        // エラー時は元の表示を維持
-        const timeElement = document.querySelector('.content-card.large time');
-        if (timeElement && timeElement.textContent === '継続更新中') {
-            timeElement.textContent = '定期更新中';
-        }
-    }
-}
+});
