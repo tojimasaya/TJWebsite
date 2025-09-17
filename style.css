@@ -316,6 +316,7 @@ body {
     box-shadow: 0 8px 25px rgba(0,0,0,0.1);
 }
 
+/* デスクトップ用の動画ラッパー */
 .video-wrapper {
     position: relative;
     width: 100%;
@@ -332,6 +333,7 @@ body {
     border: none;
 }
 
+/* デスクトップ用の写真スタイル */
 .photo-item img {
     width: 100%;
     height: 250px;
@@ -553,6 +555,30 @@ body {
     .media-grid {
         grid-template-columns: 1fr;
         gap: 20px;
+    }
+    
+    /* モバイル：アスペクト比ベースのレイアウト */
+    .photo-item img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+    }
+    
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 75%; /* 4:3 aspect ratio */
+        overflow: hidden;
+    }
+    
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
     }
     
     .social-link {
