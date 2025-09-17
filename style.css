@@ -585,3 +585,138 @@ body {
     color: var(--text-lighter);
     font-style: italic;
 }
+/* 動画・写真統合セクション */
+.media-showcase {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.media-showcase h2 {
+    font-family: var(--primary-font);
+    font-size: 2.2rem;
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* 動画グリッド */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    gap: 40px;
+    margin-bottom: 60px;
+}
+
+.video-item {
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.video-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.1);
+}
+
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 0;
+    padding-bottom: 56.25%; /* 16:9 aspect ratio */
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.video-caption {
+    padding: 25px;
+    font-family: var(--primary-font);
+    font-size: 1.1rem;
+    color: var(--text-color);
+    font-weight: 500;
+    text-align: center;
+}
+
+/* 既存の写真グリッド（動画セクションの後） */
+.photo-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.photo-item {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.photo-item:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.1);
+}
+
+.photo-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: grayscale(0.1) contrast(1.05);
+    transition: transform 0.3s ease;
+}
+
+.photo-item:hover img {
+    transform: scale(1.02);
+}
+
+.photo-caption {
+    padding: 20px;
+    font-family: var(--primary-font);
+    font-size: 1rem;
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* レスポンシブ対応 */
+@media (max-width: 768px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .media-showcase {
+        padding: 60px 0;
+    }
+    
+    .media-showcase h2 {
+        font-size: 1.8rem;
+        margin-bottom: 40px;
+    }
+    
+    .video-caption {
+        padding: 20px;
+        font-size: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .video-caption {
+        padding: 15px;
+        font-size: 0.9rem;
+    }
+}
