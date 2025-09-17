@@ -11,12 +11,12 @@ async function loadNotePosts() {
     const noteFeeds = [
         {
             name: "次はどこへ",
-            url: "https://note.com/your-username/rss", // 実際のnoteユーザー名に変更
+            url: "https://note.com/tojimasaya/m/md99dd54590fa/rss", // 実際のnoteユーザー名に変更
             icon: "📝"
         },
         {
             name: "香港レンズ", 
-            url: "https://note.com/your-username2/rss", // 実際のnoteユーザー名に変更
+            url: "https://note.com/tojimasaya/m/m22c44596304b/rss", // 実際のnoteユーザー名に変更
             icon: "📷"
         }
         // 必要に応じて他のフィードも追加
@@ -106,12 +106,12 @@ async function loadNotePosts() {
     const noteFeeds = [
         {
             name: "What's Next",
-            url: "https://note.com/your-username/rss", // 実際のnoteユーザー名に変更
+            url: "https://note.com/tojimasaya/m/md99dd54590fa/rss", // 実際のnoteユーザー名に変更
             icon: "📝"
         },
         {
             name: "Hong Kong Lens", 
-            url: "https://note.com/your-username2/rss", // 実際のnoteユーザー名に変更
+            url: "https://note.com/tojimasaya/m/m22c44596304b/rss", // 実際のnoteユーザー名に変更
             icon: "📷"
         }
         // 必要に応じて他のフィードも追加
