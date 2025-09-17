@@ -1,111 +1,174 @@
 <!DOCTYPE html>
-
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TOJIMASAYA.COM</title>
+    <title>Toji Masaya — Writer + Traveler</title>
     <link rel="stylesheet" href="style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div class="container">
-        <!-- ヘッダー -->
-        <header class="header">
-            <h1 class="main-title">TOJIMASAYA.COM</h1>
-            <p class="subtitle">Welcome to my digital hub</p>
-            <div class="floating-elements">
-                <span class="floating-emoji" style="--delay: 0s; --duration: 8s;">🚀</span>
-                <span class="floating-emoji" style="--delay: 2s; --duration: 10s;">🌈</span>
-                <span class="floating-emoji" style="--delay: 4s; --duration: 12s;">✨</span>
+    <!-- ヒーロー画像セクション -->
+    <section class="hero">
+        <div class="hero-image">
+            <!-- デフォルト画像（後で差し替え可能） -->
+            <img src="https://images.unsplash.com/photo-1506905925346-21bda4d32df4?ixlib=rb-4.0.3&auto=format&fit=crop&w=2000&q=80" alt="Travel landscape" loading="lazy">
+            <div class="hero-overlay">
+                <h1 class="hero-title">Toji Masaya</h1>
+                <p class="hero-subtitle">Writer + Traveler</p>
             </div>
-        </header>
-
-```
-    <!-- プロフィールセクション -->
-    <section class="profile">
-        <div class="profile-content">
-            <h2>Profile</h2>
-            <p>こんにちは、田路昌也（TJ）です。
-ライカを片手に世界を歩き、スマホやドローンで旅の断片を切り取るのが日常。
-1993年に飛び込んだ香港から始まり、今は日本と香港の二拠点で、旅・ガジェット・リタイアライフについてゆるく、時に熱く綴っています。</p>
         </div>
     </section>
 
-    <!-- 発信媒体リンク -->
-    <section class="links">
-        <h2>My Contents</h2>
-        <div class="link-grid">
-            <a href="https://note.com/tojimasaya/m/md99dd54590fa" class="link-card" target="_blank">
-                <div class="link-icon">📝</div>
-                <div class="link-content">
-                    <h3>次はどこへ What's Next</h3>
-                    <p>これまで行った旅の記憶</p>
+    <!-- メインコンテンツ -->
+    <main class="main-content">
+        <div class="container">
+            <!-- 紹介文 -->
+            <section class="intro">
+                <div class="intro-text">
+                    <p class="lead">こんにちは、田路昌也（TJ）です。ライカを片手に世界を歩き、スマホやドローンで旅の軌跡を切り取るのが日常。1993年に飛び込んだ香港から始まり、今は日本と香港の二拠点で、旅・ガジェット・リタイアライフについてゆるく、時に熱く綴っています。</p>
                 </div>
-            </a>
+            </section>
 
-            <a href="https://note.com/tojimasaya/m/m22c44596304b" class="link-card" target="_blank">
-                <div class="link-icon">📷</div>
-                <div class="link-content">
-                    <h3>香港レンズ</h3>
-                    <p>香港で思ったこと</p>
-                </div>
-            </a>
+            <!-- 写真ギャラリー風のコンテンツリンク -->
+            <section class="content-grid">
+                <article class="content-card large">
+                    <div class="content-image">
+                        <img src="https://images.unsplash.com/photo-1536431311719-398b6704d4cc?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80" alt="Next thoughts" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <span class="content-category">思考</span>
+                        <h2><a href="https://note.com/your-username" target="_blank">次はどこへ What's Next</a></h2>
+                        <p>これまで行った旅の記憶</p>
+                        <time>継続更新中</time>
+                    </div>
+                </article>
 
-            <a href="https://note.com/tojimasaya/m/mcae365b520ed" class="link-card" target="_blank">
-                <div class="link-icon">🎒</div>
-                <div class="link-content">
-                    <h3>俺流トラベルガジェット</h3>
-                    <p>スマホ、カメラ、ドローンのガジェット情報</p>
-                </div>
-            </a>
+                <article class="content-card">
+                    <div class="content-image">
+                        <img src="https://images.unsplash.com/photo-1518709268805-4e9042af2176?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Hong Kong" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <span class="content-category">写真</span>
+                        <h3><a href="https://note.com/your-username" target="_blank">香港レンズ</a></h3>
+                        <p>香港で撮ったこと</p>
+                    </div>
+                </article>
 
-            <a href="https://note.com/tojimasaya/m/m0d97b624b502" class="link-card" target="_blank">
-                <div class="link-icon">✈️</div>
-                <div class="link-content">
-                    <h3>SFC修行</h3>
-                    <p>ANAマイル修行の記録</p>
+                <article class="content-card">
+                    <div class="content-image">
+                        <img src="https://images.unsplash.com/photo-1553062407-98eeb64c6a62?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Travel gadgets" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <span class="content-category">ガジェット</span>
+                        <h3><a href="https://note.com/your-username" target="_blank">俺流トラベルガジェット</a></h3>
+                        <p>スマホ、カメラ、ドローンのガジェット情報</p>
+                    </div>
+                </article>
+
+                <article class="content-card">
+                    <div class="content-image">
+                        <img src="https://images.unsplash.com/photo-1436491865332-7a61a109cc05?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="SFC" loading="lazy">
+                    </div>
+                    <div class="content-info">
+                        <span class="content-category">旅行</span>
+                        <h3><a href="https://note.com/your-username" target="_blank">SFC修行</a></h3>
+                        <p>ANAマイル修行の記録</p>
+                    </div>
+                </article>
+            </section>
+
+            <!-- 最新記事セクション -->
+            <section class="latest-writings">
+                <h2>Latest Writings</h2>
+                <div id="note-feed" class="writings-list">
+                    <div class="loading">記事を読み込み中...</div>
                 </div>
-            </a>
+            </section>
+
+            <!-- 写真セクション -->
+            <section class="photo-showcase">
+                <h2>Recent Photography</h2>
+                <div class="photo-grid">
+                    <div class="photo-item">
+                        <img src="https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Travel photo 1" loading="lazy">
+                        <div class="photo-caption">香港の街角にて</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://images.unsplash.com/photo-1547036967-23d11aacaee0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Travel photo 2" loading="lazy">
+                        <div class="photo-caption">旅の途中で</div>
+                    </div>
+                    <div class="photo-item">
+                        <img src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&q=80" alt="Travel photo 3" loading="lazy">
+                        <div class="photo-caption">機内からの眺め</div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ソーシャルリンク -->
+            <section class="social-section">
+                <h2>Connect</h2>
+                <div class="social-links">
+                    <a href="https://twitter.com/your-username" target="_blank" class="social-link">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                            </svg>
+                        </div>
+                        <div class="social-content">
+                            <h3>X (Twitter)</h3>
+                            <p>日々の思考と発見</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://www.facebook.com/your-username" target="_blank" class="social-link">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                            </svg>
+                        </div>
+                        <div class="social-content">
+                            <h3>Facebook</h3>
+                            <p>写真と旅の記録</p>
+                        </div>
+                    </a>
+                    
+                    <a href="https://note.com/your-username" target="_blank" class="social-link">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M8 3v18l8-6V3H8z"/>
+                            </svg>
+                        </div>
+                        <div class="social-content">
+                            <h3>note</h3>
+                            <p>長文エッセイとコラム</p>
+                        </div>
+                    </a>
+                    
+                    <a href="mailto:your-email@example.com" class="social-link">
+                        <div class="social-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+                            </svg>
+                        </div>
+                        <div class="social-content">
+                            <h3>Email</h3>
+                            <p>お気軽にご連絡ください</p>
+                        </div>
+                    </a>
+                </div>
+            </section>
+
+            <!-- フッター -->
+            <footer class="footer">
+                <div class="footer-content">
+                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
+                    <p>Built with care in Japan 🇯🇵</p>
+                </div>
+            </footer>
         </div>
-    </section>
+    </main>
 
-    <!-- 最新投稿 -->
-    <section class="latest-posts">
-        <h2>Latest Posts</h2>
-        <div id="note-feed" class="posts-grid">
-            <!-- JavaScript で note の最新記事を読み込み -->
-            <div class="loading">記事を読み込み中...</div>
-        </div>
-    </section>
-
-    <!-- SNS・コンタクト -->
-    <section class="contact">
-        <h2>Connect</h2>
-        <div class="social-links">
-            <a href="https://twitter.com/mongkok93" target="_blank" class="social-link">
-                <span>🐦</span>
-                <span>Twitter</span>
-            </a>
-            <a href="https://www.instagram.com/tojimasaya" target="_blank" class="social-link">
-                <span>📷</span>
-                <span>Instagram</span>
-            </a>
-            <a href="mailto:tj2@isl.hk" class="social-link">
-                <span>✉️</span>
-                <span>Email</span>
-            </a>
-        </div>
-    </section>
-
-    <!-- フッター -->
-    <footer class="footer">
-        <p>&copy; 2025 TOJIMASAYA.COM All rights reserved.</p>
-    </footer>
-</div>
-
-<script src="script.js"></script>
-```
-
+    <script src="script.js"></script>
 </body>
 </html>
