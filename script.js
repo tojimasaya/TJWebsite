@@ -1,6 +1,7 @@
 // Craig Mod inspired script for note feed
 document.addEventListener('DOMContentLoaded', function() {
     loadNotePosts();
+    updateMainContentCard();
     initializeScrollAnimations();
 });
 
