@@ -229,3 +229,27 @@ function addManualPost(title, link, description, source, date) {
 //     "What's Next", 
 //     "2025年8月24日"
 // );
+
+        // メインカードの更新情報を自動取得
+async function updateMainContentCard() {
+    try {
+        const response = await fetch(`https://api.rss2json.com/v1/api.json?rss_url=https://note.com/tojimasaya/rss`);
+        const data = await response.json();
+        
+        if (data.status === 'ok' && data.items && data.items.length > 0) {
+            const latestPost = data.items[0];
+            const timeElement = document.querySelector('.content-card.large time');
+            if (timeElement) {
+                const postDate = new Date(latestPost.pubDate);
+                timeElement.textContent = `最新：${formatDate(postDate)}`;
+            }
+        }
+    } catch (error) {
+        console.log('Failed to update main card:', error);
+        // エラー時は元の表示を維持
+        const timeElement = document.querySelector('.content-card.large time');
+        if (timeElement && timeElement.textContent === '継続更新中') {
+            timeElement.textContent = '定期更新中';
+        }
+    }
+}
