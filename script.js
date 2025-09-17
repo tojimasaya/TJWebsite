@@ -24,6 +24,8 @@ async function updateMainContentCard() {
                 timeElement.textContent = `最新：${formattedDate}`;
                 console.log('メインカード更新完了:', formattedDate);
             }
+            
+            // プレビュー更新
             updatePreview(data.items);
             
         } else {
@@ -42,6 +44,57 @@ function fallbackMainCard() {
     if (timeElement) {
         timeElement.textContent = '2025年9月17日更新';
     }
+    
+    // 手動プレビュー表示
+    const previewContainer = document.getElementById('whats-next-preview');
+    if (previewContainer) {
+        previewContainer.innerHTML = `
+            <h4>最新記事</h4>
+            <div class="preview-item">
+                <div class="preview-title">
+                    <a href="https://note.com/tojimasaya" target="_blank">記事を確認中</a>
+                </div>
+                <div class="preview-excerpt">最新記事の読み込み中です...</div>
+                <div class="preview-date">更新中</div>
+            </div>
+        `;
+    }
+}
+
+// プレビュー表示機能
+function updatePreview(items) {
+    console.log('プレビュー更新開始:', items);
+    const previewContainer = document.getElementById('whats-next-preview');
+    if (!previewContainer) {
+        console.log('プレビューコンテナが見つかりません');
+        return;
+    }
+    
+    const previewPosts = items.slice(0, 3); // 最新3件
+    
+    const previewHTML = previewPosts.map(post => {
+        const postDate = new Date(post.pubDate);
+        const excerpt = post.description ? 
+            post.description.replace(/<[^>]*>/g, '').substring(0, 80) + '...' : 
+            '記事の詳細はリンクからご確認ください。';
+        
+        return `
+            <div class="preview-item">
+                <div class="preview-title">
+                    <a href="${post.link}" target="_blank">${post.title}</a>
+                </div>
+                <div class="preview-excerpt">${excerpt}</div>
+                <div class="preview-date">${formatDate(postDate)}</div>
+            </div>
+        `;
+    }).join('');
+    
+    previewContainer.innerHTML = `
+        <h4>最新記事</h4>
+        ${previewHTML}
+    `;
+    
+    console.log('プレビュー更新完了');
 }
 
 // note記事一覧の取得（マガジン別）
@@ -93,7 +146,6 @@ async function loadNotePosts() {
         // 日付順でソート（新しい順）
         allPosts.sort((a, b) => b.pubDate - a.pubDate);
         const postsToShow = allPosts.slice(0, 5);
-        
         
         if (postsToShow.length > 0) {
             const articlesHTML = postsToShow.map(post => `
