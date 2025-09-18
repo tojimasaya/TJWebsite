@@ -1,280 +1,1064 @@
-<!DOCTYPE html>
-<html lang="ja">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toji Masaya — Writer + Traveler</title>
+/* Craig Mod inspired design - Enhanced version with fixed layout */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    /* Color system */
+    --primary-font: 'Crimson Text', Georgia, serif;
+    --secondary-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+    --text-color: #333;
+    --text-light: #666;
+    --text-lighter: #999;
+    --bg-color: #fafafa;
+    --white: #ffffff;
+    --border-color: #e5e5e5;
+    --hover-color: #f5f5f5;
+    --accent-color: #2563eb;
+    --focus-color: #2563eb;
+    --success-color: #10b981;
+    --warning-color: #f59e0b;
+    --error-color: #ef4444;
     
-    <!-- SEO & OGP -->
-    <meta name="description" content="田路昌也（TJ）のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
-    <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, カッパドキア, note">
-    <meta name="author" content="Toji Masaya">
+    /* Typography scale */
+    --text-xs: 0.75rem;
+    --text-sm: 0.875rem;
+    --text-base: 1rem;
+    --text-lg: 1.125rem;
+    --text-xl: 1.25rem;
+    --text-2xl: 1.5rem;
+    --text-3xl: 1.875rem;
+    --text-4xl: 2.25rem;
     
-    <!-- OGP -->
-    <meta property="og:title" content="Toji Masaya — Writer + Traveler">
-    <meta property="og:description" content="ライカやドローンを片手に、気の向くままに旅をしています。写真と文章で、旅先の空気や日々の発見をゆるく記録しています。">
-    <meta property="og:image" content="https://tojimasaya.com/cappadocia.jpg">
-    <meta property="og:url" content="https://tojimasaya.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Toji Masaya">
+    /* Spacing */
+    --spacing-xs: 0.25rem;
+    --spacing-sm: 0.5rem;
+    --spacing-md: 1rem;
+    --spacing-lg: 1.5rem;
+    --spacing-xl: 2rem;
+    --spacing-2xl: 3rem;
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Toji Masaya — Writer + Traveler">
-    <meta name="twitter:description" content="ライカやドローンを片手に、気の向くままに旅をしています。">
-    <meta name="twitter:image" content="https://tojimasaya.com/cappadocia.jpg">
+    /* Shadows */
+    --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
     
-    <!-- Preload critical resources -->
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" as="style">
-    <link rel="preload" href="cappadocia.jpg" as="image">
-    
-    <!-- Critical CSS inline -->
-    <style>
-        /* Critical CSS for above-the-fold content */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary-font: 'Crimson Text', Georgia, serif;
-            --secondary-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --text-color: #333;
-            --bg-color: #fafafa;
-            --white: #ffffff;
-        }
-        body { font-family: var(--secondary-font); line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
-        .hero { position: relative; height: 100vh; min-height: 600px; overflow: hidden; }
-        .hero-image { position: relative; width: 100%; height: 100%; }
-        .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) contrast(1.1); }
-        .hero-overlay { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); text-align: center; color: white; z-index: 2; }
-        .hero-title { font-family: var(--primary-font); font-size: 4rem; font-weight: 600; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); letter-spacing: -0.02em; }
-        .hero-subtitle { font-family: var(--secondary-font); font-size: 1.2rem; font-weight: 300; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); letter-spacing: 0.05em; }
-        @media (max-width: 768px) {
-            .hero-title { font-size: 2.5rem; }
-            .hero-subtitle { font-size: 1rem; }
-            .hero-overlay { bottom: 60px; }
-        }
-    </style>
-    
-    <!-- Non-critical CSS -->
-    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <!-- Theme color -->
-    <meta name="theme-color" content="#fafafa">
-    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-</head>
-<body>
-    <!-- Loading indicator -->
-    <div id="loading-indicator" class="loading-indicator" aria-hidden="true">
-        <div class="loading-spinner"></div>
-        <p>読み込み中...</p>
-    </div>
+    /* Transitions */
+    --transition-fast: 0.15s ease;
+    --transition-base: 0.3s ease;
+    --transition-slow: 0.5s ease;
+}
 
-    <!-- Error notification container -->
-    <div id="notification-container" class="notification-container" aria-live="polite"></div>
-
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
-
-    <!-- ヒーロー画像セクション -->
-    <section class="hero" role="banner">
-        <div class="hero-image">
-            <img src="cappadocia.jpg" alt="カッパドキアの風景 - 2024年に妻と訪れた思い出の場所" loading="eager" width="1920" height="1080">
-            <div class="hero-overlay">
-                <h1 class="hero-title">Toji Masaya</h1>
-                <p class="hero-subtitle">Writer + Traveler</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- メインコンテンツ -->
-    <main id="main-content" class="main-content">
-        <div class="container">
-            <!-- 紹介文 -->
-            <section class="intro">
-                <div class="intro-text">
-                    <p class="lead">こんにちは、田路昌也（TJ）です。ライカやドローンを片手に、気の向くままに旅をしています。写真と文章で、旅先の空気や日々の発見をゆるく記録しています。トップの画像は、2024年に妻と訪れたカッパドキアで撮影したものです。旅の記憶や新しい発見は、「次はどこへ What's Next」にも載せています。</p>
-                </div>
-            </section>
-
-            <!-- 写真ギャラリー風のコンテンツリンク -->
-            <section class="content-grid">
-                <article class="content-card large">
-                    <div class="content-image">
-                        <img src="Istanbul.jpg" alt="イスタンブールの風景" loading="lazy" width="600" height="400">
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category">旅行記</span>
-                        <h2><a href="https://note.com/tojimasaya/m/md99dd54590fa" target="_blank" rel="noopener noreferrer">次はどこへ What's Next</a></h2>
-                        <p>これまで行った旅の記憶</p>
-                        <time datetime="2025-01-01">継続更新中</time>
-                        
-                        <!-- 最新記事プレビュー -->
-                        <div class="latest-preview" id="whats-next-preview">
-                            <h4>最新記事</h4>
-                            <div class="preview-loading" role="status" aria-label="記事を読み込み中">記事を読み込み中...</div>
-                        </div>
-                    </div>
-                </article>
-
-                <article class="content-card">
-                    <div class="content-image">
-                        <img src="HongKong.jpg" alt="香港の街並み" loading="lazy" width="400" height="250">
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category">写真</span>
-                        <h3><a href="https://note.com/tojimasaya/m/m22c44596304b" target="_blank" rel="noopener noreferrer">香港レンズ</a></h3>
-                        <p>香港の最新ニュースや、現地で暮らして感じたことをエッセイにして綴っています。リアルな香港の日常や、街の空気を写真とともにお届けします。</p>
-                    </div>
-                </article>
-
-                <article class="content-card">
-                    <div class="content-image">
-                        <img src="Oreryu.jpg" alt="トラベルガジェット" loading="lazy" width="400" height="250">
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category">ガジェットレビュー</span>
-                        <h3><a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">俺流トラベルガジェット</a></h3>
-                        <p>このマガジンではスマートフォン、パソコン、カメラ、ドローンで私が日々使っているモノやそれらを使いやすくする周辺機器を紹介していきます。
-これら持ち物は旅行に最適化することを目指しています。</p>
-                    </div>
-                </article>
-            </section>
-
-            <!-- コンパクトなソーシャルリンク -->
-            <section class="social-section">
-                <h2>Connect</h2>
-                <div class="social-links">
-                    <a href="https://twitter.com/mongkok93" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)でフォロー">
-                        <div class="social-icon" aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                            </svg>
-                        </div>
-                        <span>X (Twitter)</span>
-                    </a>
-                    
-                    <a href="https://www.facebook.com/masaya.toji" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebookでフォロー">
-                        <div class="social-icon" aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </div>
-                        <span>Facebook</span>
-                    </a>
-                    
-                    <a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="noteで記事を読む">
-                        <div class="social-icon" aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8 3v18l8-6V3H8z"/>
-                            </svg>
-                        </div>
-                        <span>note</span>
-                    </a>
-                    
-                    <a href="mailto:your-email@example.com" class="social-link" aria-label="メールでお問い合わせ">
-                        <div class="social-icon" aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <span>Email</span>
-                    </a>
-                </div>
-            </section>
-
-            <!-- 動画・写真セクション -->
-            <section class="media-showcase">
-                <h2>Video & Photography</h2>
-                
-                <!-- 統一メディアグリッド（動画＋写真） -->
-                <div class="media-grid">
-                    <!-- YouTube動画 -->
-                    <div class="video-item" tabindex="0" role="button" aria-label="カッパドキアのホテルからの動画を再生">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/cJ2lFRqmeBA" 
-                                    title="カッパドキアのホテルから" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    allowfullscreen
-                                    loading="lazy"></iframe>
-                        </div>
-                        <div class="video-caption">カッパドキアのホテルから</div>
-                    </div>
-                    
-                    <div class="video-item" tabindex="0" role="button" aria-label="記憶すべき風景、馬草壟の動画を再生">
-                        <div class="video-wrapper">
-                            <iframe src="https://www.youtube.com/embed/0YiQFV-V_Pw" 
-                                    title="記憶すべき風景、馬草壟" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    allowfullscreen
-                                    loading="lazy"></iframe>
-                        </div>
-                        <div class="video-caption">記憶すべき風景、馬草壟（Ma Tso Lung）</div>
-                    </div>
-                    
-                    <!-- 写真 -->
-                    <div class="photo-item" tabindex="0" role="button" aria-label="ヴェネツィアのゴンドラの写真を拡大表示">
-                        <img src="Venice.JPG" alt="ヴェネツィアのゴンドラが静かに踊る風景" loading="lazy" width="400" height="250">
-                        <div class="photo-caption">Silent Waltz of the Gondolas</div>
-                    </div>
-                    <div class="photo-item" tabindex="0" role="button" aria-label="兵馬俑の写真を拡大表示">
-                        <img src="Heibayou.JPG" alt="兵馬俑 - 永遠の守護者たち" loading="lazy" width="400" height="250">
-                        <div class="photo-caption">永遠の守護者たち</div>
-                    </div>
-                    <div class="photo-item" tabindex="0" role="button" aria-label="姫路城の写真を拡大表示">
-                        <img src="HimejiCastle.JPG" alt="桜に抱かれた姫路城（白鷺城）" loading="lazy" width="400" height="250">
-                        <div class="photo-caption">桜に抱かれる白鷺城</div>
-                    </div>
-                </div>
-            </section>
-
-            <!-- 最新記事セクション -->
-            <section class="latest-writings">
-                <h2>Latest Writings</h2>
-                <div id="note-feed" class="writings-list" role="feed" aria-label="最新記事一覧">
-                    <div class="loading" role="status" aria-label="記事を読み込み中">記事を読み込み中...</div>
-                </div>
-            </section>
-
-            <!-- フッター -->
-            <footer class="footer" role="contentinfo">
-                <div class="footer-content">
-                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-                    <p>Built with care in Japan</p>
-                </div>
-            </footer>
-        </div>
-    </main>
-
-    <!-- ライトボックス・モーダル -->
-    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-        <button class="close-modal" onclick="closeModal()" aria-label="モーダルを閉じる">&times;</button>
-        <div class="modal-content" id="modal-content">
-            <!-- 画像または動画がここに表示される -->
-        </div>
-    </div>
-
-    <!-- Scripts -->
-    <script src="script.js" defer></script>
-    
-    <!-- JSON-LD structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "田路昌也",
-        "alternateName": "Toji Masaya",
-        "jobTitle": "Writer and Travel Photographer",
-        "url": "https://tojimasaya.com",
-        "sameAs": [
-            "https://note.com/tojimasaya",
-            "https://x.com/mongkok93"
-        ],
-        "description": "ライカやドローンを片手に、気の向くままに旅をしています。写真と文章で、旅先の空気や日々の発見をゆるく記録しています。"
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+    :root {
+        --text-color: #e5e5e5;
+        --text-light: #a1a1a1;
+        --text-lighter: #737373;
+        --bg-color: #0f0f0f;
+        --white: #1a1a1a;
+        --border-color: #262626;
+        --hover-color: #2a2a2a;
+        --accent-color: #3b82f6;
+        --focus-color: #3b82f6;
     }
-    </script>
-</body>
-</html>
+}
+
+/* High contrast mode support */
+@media (prefers-contrast: high) {
+    :root {
+        --text-color: #000000;
+        --text-light: #333333;
+        --bg-color: #ffffff;
+        --border-color: #000000;
+    }
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: var(--secondary-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--accent-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 6px;
+}
+
+/* Loading indicator */
+.loading-indicator {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(250, 250, 250, 0.9);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 9999;
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity var(--transition-base), visibility var(--transition-base);
+}
+
+.loading-indicator.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.loading-spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid var(--border-color);
+    border-top: 3px solid var(--accent-color);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: var(--spacing-md);
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+/* Notification system */
+.notification-container {
+    position: fixed;
+    top: var(--spacing-lg);
+    right: var(--spacing-lg);
+    z-index: 1000;
+    max-width: 400px;
+}
+
+.notification {
+    padding: var(--spacing-md) var(--spacing-lg);
+    margin-bottom: var(--spacing-sm);
+    border-radius: 8px;
+    color: white;
+    font-size: var(--text-sm);
+    box-shadow: var(--shadow-lg);
+    animation: slideInRight 0.3s ease;
+}
+
+.notification--info { background: var(--accent-color); }
+.notification--success { background: var(--success-color); }
+.notification--warning { background: var(--warning-color); }
+.notification--error { background: var(--error-color); }
+
+@keyframes slideInRight {
+    from { transform: translateX(100%); opacity: 0; }
+    to { transform: translateX(0); opacity: 1; }
+}
+
+/* ヒーローセクション */
+.hero {
+    position: relative;
+    height: 100vh;
+    min-height: 600px;
+    overflow: hidden;
+}
+
+.hero-image {
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+
+.hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.7) contrast(1.1);
+    transition: filter var(--transition-slow);
+}
+
+@media (prefers-color-scheme: dark) {
+    .hero-image img {
+        filter: brightness(0.6) contrast(1.2);
+    }
+}
+
+.hero-overlay {
+    position: absolute;
+    bottom: 80px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 2;
+}
+
+.hero-title {
+    font-family: var(--primary-font);
+    font-size: var(--text-4xl);
+    font-weight: 600;
+    margin-bottom: 0.5rem;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+    letter-spacing: -0.02em;
+}
+
+.hero-subtitle {
+    font-family: var(--secondary-font);
+    font-size: var(--text-xl);
+    font-weight: 300;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+    letter-spacing: 0.05em;
+}
+
+/* メインコンテンツ */
+.main-content {
+    background-color: var(--white);
+}
+
+.container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+}
+
+/* 紹介文 */
+.intro {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.intro-text {
+    max-width: 700px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.lead {
+    font-family: var(--primary-font);
+    font-size: var(--text-lg);
+    line-height: 1.8;
+    color: var(--text-color);
+    margin: 0;
+}
+
+/* コンテンツグリッド - 修正版レイアウト */
+.content-grid {
+    padding: 80px 0;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto auto;
+    gap: 30px;
+    border-bottom: 1px solid var(--border-color);
+}
+
+/* 香港レンズ（2番目の要素）を上段左に配置 */
+.content-card:nth-child(2) {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+/* 俺流ガジェット（3番目の要素）を上段右に配置 */
+.content-card:nth-child(3) {
+    grid-column: 2;
+    grid-row: 1;
+}
+
+/* What's Next（large）を下段フル幅に配置 */
+.content-card.large {
+    grid-column: 1 / -1;
+    grid-row: 2;
+}
+
+.content-card {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    border: 1px solid var(--border-color);
+    position: relative;
+}
+
+.content-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left var(--transition-slow);
+    z-index: 1;
+    pointer-events: none;
+}
+
+.content-card:hover::before {
+    left: 100%;
+}
+
+.content-card:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-xl);
+}
+
+.content-card:focus-within {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+.content-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.content-card.large .content-image {
+    height: 400px;
+}
+
+.content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+    filter: grayscale(0.2) contrast(1.1);
+}
+
+.content-card:hover .content-image img {
+    transform: scale(1.05);
+}
+
+.content-info {
+    padding: 25px;
+    position: relative;
+    z-index: 2;
+}
+
+.content-category {
+    font-size: var(--text-xs);
+    text-transform: uppercase;
+    color: var(--text-lighter);
+    letter-spacing: 0.1em;
+    font-weight: 500;
+}
+
+.content-info h2,
+.content-info h3 {
+    font-family: var(--primary-font);
+    margin: 8px 0 12px 0;
+    line-height: 1.3;
+}
+
+.content-info h2 {
+    font-size: var(--text-2xl);
+}
+
+.content-info h3 {
+    font-size: var(--text-lg);
+}
+
+.content-info a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.content-info a:hover {
+    color: var(--text-light);
+}
+
+.content-info a:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.content-info p {
+    color: var(--text-light);
+    font-size: var(--text-sm);
+    margin-bottom: 15px;
+    line-height: 1.5;
+}
+
+.content-info time {
+    font-size: var(--text-xs);
+    color: var(--text-lighter);
+    font-style: italic;
+}
+
+/* コンパクトなソーシャルセクション */
+.social-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.social-section h2 {
+    font-family: var(--primary-font);
+    font-size: var(--text-2xl);
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all var(--transition-base);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-link::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left var(--transition-slow);
+}
+
+.social-link:hover::before {
+    left: 100%;
+}
+
+.social-link:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.social-link:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background: var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: background-color var(--transition-base);
+}
+
+.social-icon svg {
+    color: white;
+    width: 16px;
+    height: 16px;
+}
+
+.social-link:hover .social-icon {
+    background: var(--text-light);
+}
+
+/* 最新記事セクション */
+.latest-writings {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.latest-writings h2 {
+    font-family: var(--primary-font);
+    font-size: var(--text-3xl);
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+
+.writings-list {
+    display: grid;
+    gap: 30px;
+}
+
+.writing-item {
+    padding: 30px 0;
+    border-bottom: 1px solid var(--border-color);
+    transition: transform var(--transition-base);
+}
+
+.writing-item:last-child {
+    border-bottom: none;
+}
+
+.writing-item:hover {
+    transform: translateX(5px);
+}
+
+.writing-meta {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 10px;
+    font-size: var(--text-xs);
+    color: var(--text-lighter);
+}
+
+.writing-source {
+    background: var(--hover-color);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.writing-item h3 {
+    font-family: var(--primary-font);
+    font-size: var(--text-xl);
+    margin-bottom: 12px;
+    line-height: 1.4;
+}
+
+.writing-item h3 a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.writing-item h3 a:hover {
+    color: var(--text-light);
+}
+
+.writing-item h3 a:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.writing-excerpt {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.loading {
+    text-align: center;
+    color: var(--text-lighter);
+    font-style: italic;
+    padding: 40px;
+}
+
+/* 動画・写真統合セクション */
+.media-showcase {
+    padding: 80px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.media-showcase h2 {
+    font-family: var(--primary-font);
+    font-size: var(--text-3xl);
+    margin-bottom: 50px;
+    text-align: center;
+    font-weight: 600;
+}
+
+/* 統一メディアグリッド */
+.media-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+}
+
+/* 写真と動画の共通スタイル */
+.video-item, .photo-item {
+    background: var(--white);
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: transform var(--transition-base), box-shadow var(--transition-base);
+    cursor: pointer;
+    position: relative;
+}
+
+.video-item::after, .photo-item::after {
+    content: '🔍';
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background: rgba(0,0,0,0.7);
+    color: white;
+    padding: 8px;
+    border-radius: 50%;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+    pointer-events: none;
+}
+
+.video-item:hover::after, .photo-item:hover::after {
+    opacity: 1;
+}
+
+.video-item:hover, .photo-item:hover {
+    transform: translateY(-3px);
+    box-shadow: var(--shadow-lg);
+}
+
+.video-item:focus, .photo-item:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+/* デスクトップ用の動画ラッパー */
+.video-wrapper {
+    position: relative;
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+}
+
+.video-wrapper iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    pointer-events: none;
+}
+
+.video-item:hover .video-wrapper iframe {
+    pointer-events: auto;
+}
+
+/* デスクトップ用の写真スタイル */
+.photo-item img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    filter: grayscale(0.1) contrast(1.05);
+    transition: transform var(--transition-base), filter var(--transition-base);
+}
+
+.photo-item:hover img {
+    transform: scale(1.02);
+    filter: grayscale(0) contrast(1.1);
+}
+
+.video-caption, .photo-caption {
+    padding: 20px;
+    font-family: var(--primary-font);
+    font-size: var(--text-base);
+    color: var(--text-light);
+    font-style: italic;
+}
+
+/* フッター */
+.footer {
+    padding: 60px 0 40px;
+}
+
+.footer-content {
+    text-align: center;
+    color: var(--text-lighter);
+    font-size: var(--text-sm);
+    line-height: 1.8;
+}
+
+.footer-content p:first-child {
+    margin-bottom: 10px;
+}
+
+/* 最新記事プレビュー */
+.latest-preview {
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-color);
+}
+
+.latest-preview h4 {
+    font-family: var(--secondary-font);
+    font-size: var(--text-sm);
+    color: var(--text-lighter);
+    margin-bottom: 15px;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
+}
+
+.preview-item {
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #f0f0f0;
+    transition: transform var(--transition-fast);
+}
+
+.preview-item:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.preview-item:hover {
+    transform: translateX(3px);
+}
+
+.preview-title {
+    font-size: var(--text-base);
+    font-weight: 500;
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.preview-title a {
+    color: var(--text-color);
+    text-decoration: none;
+    transition: color var(--transition-base);
+}
+
+.preview-title a:hover {
+    color: var(--text-light);
+}
+
+.preview-title a:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+.preview-excerpt {
+    font-size: var(--text-xs);
+    color: var(--text-light);
+    line-height: 1.5;
+    margin-bottom: 5px;
+}
+
+.preview-date {
+    font-size: var(--text-xs);
+    color: var(--text-lighter);
+}
+
+.preview-loading {
+    font-size: var(--text-xs);
+    color: var(--text-lighter);
+    font-style: italic;
+}
+
+/* ライトボックス・モーダル */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    animation: fadeIn var(--transition-base) ease;
+    backdrop-filter: blur(5px);
+}
+
+.modal[aria-hidden="false"] {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    position: relative;
+    max-width: 90%;
+    max-height: 90%;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: var(--shadow-xl);
+    animation: scaleIn var(--transition-base) ease;
+}
+
+@keyframes scaleIn {
+    from { transform: scale(0.9); opacity: 0; }
+    to { transform: scale(1); opacity: 1; }
+}
+
+.modal-image {
+    width: 100%;
+    height: auto;
+    display: block;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.modal-video {
+    width: 80vw;
+    height: 45vw;
+    max-width: 1200px;
+    max-height: 675px;
+    border: none;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    font-weight: bold;
+    cursor: pointer;
+    z-index: 1001;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    user-select: none;
+    line-height: 1;
+    background: none;
+    border: none;
+    transition: opacity var(--transition-base);
+}
+
+.close-modal:hover,
+.close-modal:focus {
+    opacity: 0.7;
+    outline: 2px solid white;
+    outline-offset: 2px;
+    border-radius: 4px;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+/* スクロールアニメーション */
+@media (prefers-reduced-motion: no-preference) {
+    .content-card,
+    .video-item,
+    .photo-item,
+    .social-link {
+        opacity: 0;
+        transform: translateY(30px);
+        animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .content-card:nth-child(1) { animation-delay: 0.1s; }
+    .content-card:nth-child(2) { animation-delay: 0.2s; }
+    .content-card:nth-child(3) { animation-delay: 0.3s; }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* レスポンシブデザイン */
+@media (max-width: 768px) {
+    .container {
+        padding: 0 20px;
+    }
+    
+    .hero-title {
+        font-size: var(--text-3xl);
+    }
+    
+    .hero-subtitle {
+        font-size: var(--text-base);
+    }
+    
+    .hero-overlay {
+        bottom: 60px;
+    }
+    
+    /* モバイルでは縦積みに戻す */
+    .content-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto auto auto;
+        padding: 60px 0;
+    }
+    
+    /* モバイルでの順序調整 */
+    .content-card:nth-child(2) {
+        grid-column: 1;
+        grid-row: 1;
+        order: 1;
+    }
+    
+    .content-card:nth-child(3) {
+        grid-column: 1;
+        grid-row: 2;
+        order: 2;
+    }
+    
+    .content-card.large {
+        grid-column: 1;
+        grid-row: 3;
+        order: 3;
+    }
+    
+    .intro,
+    .latest-writings,
+    .media-showcase,
+    .social-section {
+        padding: 60px 0;
+    }
+    
+    .social-section {
+        padding: 30px 0;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
+    .lead {
+        font-size: var(--text-base);
+    }
+    
+    .latest-writings h2,
+    .media-showcase h2 {
+        font-size: var(--text-2xl);
+        margin-bottom: 40px;
+    }
+    
+    .social-section h2 {
+        font-size: var(--text-lg);
+        margin-bottom: 20px;
+    }
+    
+    .media-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    /* モバイル：アスペクト比ベースのレイアウト */
+    .photo-item img {
+        width: 100%;
+        height: auto;
+        aspect-ratio: 4/3;
+        object-fit: cover;
+    }
+    
+    .video-wrapper {
+        position: relative;
+        width: 100%;
+        height: 0;
+        padding-bottom: 75%; /* 4:3 aspect ratio */
+        overflow: hidden;
+    }
+    
+    .video-wrapper iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        pointer-events: auto;
+    }
+    
+    /* モバイルでのモーダル調整 */
+    .modal-content {
+        max-width: 95%;
+        max-height: 85%;
+    }
+    
+    .modal-video {
+        width: 90vw;
+        height: 50.625vw; /* 16:9 aspect ratio */
+        max-width: none;
+        max-height: 70vh;
+    }
+    
+    .close-modal {
+        top: 10px;
+        right: 15px;
+        font-size: 30px;
+    }
+    
+    .notification-container {
+        top: var(--spacing-sm);
+        right: var(--spacing-sm);
+        left: var(--spacing-sm);
+        max-width: none;
+    }
+}
+
+@media (max-width: 480px) {
+    .hero-title {
+        font-size: var(--text-2xl);
+    }
+    
+    .content-info {
+        padding: 20px;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        gap: 8px;
+    }
+    
+    .social-link {
+        padding: 10px 15px;
+        font-size: var(--text-xs);
+    }
+    
+    .social-icon {
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+    }
+    
+    .social-icon svg {
+        width: 14px;
+        height: 14px;
+    }
+    
+    .video-caption, .photo-caption {
+        padding: 15px;
+        font-size: var(--text-sm);
+    }
+    
+    .modal-video {
+        width: 95vw;
+        height: 53.4375vw; /* 16:9 aspect ratio */
+    }
+}
