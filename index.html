@@ -4,14 +4,83 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Toji Masaya — Writer + Traveler</title>
-    <link rel="stylesheet" href="style.css">
+    
+    <!-- SEO & OGP -->
+    <meta name="description" content="田路昌也（TJ）のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
+    <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, カッパドキア, note">
+    <meta name="author" content="Toji Masaya">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="Toji Masaya — Writer + Traveler">
+    <meta property="og:description" content="ライカやドローンを片手に、気の向くままに旅をしています。写真と文章で、旅先の空気や日々の発見をゆるく記録しています。">
+    <meta property="og:image" content="https://tojimasaya.com/cappadocia.jpg">
+    <meta property="og:url" content="https://tojimasaya.com">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Toji Masaya">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Toji Masaya — Writer + Traveler">
+    <meta name="twitter:description" content="ライカやドローンを片手に、気の向くままに旅をしています。">
+    <meta name="twitter:image" content="https://tojimasaya.com/cappadocia.jpg">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" as="style">
+    <link rel="preload" href="cappadocia.jpg" as="image">
+    
+    <!-- Critical CSS inline -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-font: 'Crimson Text', Georgia, serif;
+            --secondary-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-color: #333;
+            --bg-color: #fafafa;
+            --white: #ffffff;
+        }
+        body { font-family: var(--secondary-font); line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
+        .hero { position: relative; height: 100vh; min-height: 600px; overflow: hidden; }
+        .hero-image { position: relative; width: 100%; height: 100%; }
+        .hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) contrast(1.1); }
+        .hero-overlay { position: absolute; bottom: 80px; left: 50%; transform: translateX(-50%); text-align: center; color: white; z-index: 2; }
+        .hero-title { font-family: var(--primary-font); font-size: 4rem; font-weight: 600; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); letter-spacing: -0.02em; }
+        .hero-subtitle { font-family: var(--secondary-font); font-size: 1.2rem; font-weight: 300; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); letter-spacing: 0.05em; }
+        @media (max-width: 768px) {
+            .hero-title { font-size: 2.5rem; }
+            .hero-subtitle { font-size: 1rem; }
+            .hero-overlay { bottom: 60px; }
+        }
+    </style>
+    
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
+    <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 </head>
 <body>
+    <!-- Loading indicator -->
+    <div id="loading-indicator" class="loading-indicator" aria-hidden="true">
+        <div class="loading-spinner"></div>
+        <p>読み込み中...</p>
+    </div>
+
+    <!-- Error notification container -->
+    <div id="notification-container" class="notification-container" aria-live="polite"></div>
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
     <!-- ヒーロー画像セクション -->
-    <section class="hero">
+    <section class="hero" role="banner">
         <div class="hero-image">
-            <img src="cappadocia.jpg" alt="Travel landscape" loading="lazy">
+            <img src="cappadocia.jpg" alt="カッパドキアの風景 - 2024年に妻と訪れた思い出の場所" loading="eager" width="1920" height="1080">
             <div class="hero-overlay">
                 <h1 class="hero-title">Toji Masaya</h1>
                 <p class="hero-subtitle">Writer + Traveler</p>
@@ -20,7 +89,7 @@
     </section>
 
     <!-- メインコンテンツ -->
-    <main class="main-content">
+    <main id="main-content" class="main-content">
         <div class="container">
             <!-- 紹介文 -->
             <section class="intro">
@@ -33,51 +102,51 @@
             <section class="content-grid">
                 <article class="content-card large">
                     <div class="content-image">
-                        <img src="Istanbul.jpg" alt="Next thoughts" loading="lazy">
+                        <img src="Istanbul.jpg" alt="イスタンブールの風景" loading="lazy" width="600" height="400">
                     </div>
                     <div class="content-info">
                         <span class="content-category">旅行記</span>
-                        <h2><a href="https://note.com/tojimasaya/m/md99dd54590fa" target="_blank">次はどこへ What's Next</a></h2>
+                        <h2><a href="https://note.com/tojimasaya/m/md99dd54590fa" target="_blank" rel="noopener noreferrer">次はどこへ What's Next</a></h2>
                         <p>これまで行った旅の記憶</p>
-                        <time>継続更新中</time>
+                        <time datetime="2025-01-01">継続更新中</time>
                         
                         <!-- 最新記事プレビュー -->
                         <div class="latest-preview" id="whats-next-preview">
                             <h4>最新記事</h4>
-                            <div class="preview-loading">記事を読み込み中...</div>
+                            <div class="preview-loading" role="status" aria-label="記事を読み込み中">記事を読み込み中...</div>
                         </div>
                     </div>
                 </article>
 
                 <article class="content-card">
                     <div class="content-image">
-                        <img src="HongKong.jpg" alt="Hong Kong" loading="lazy">
+                        <img src="HongKong.jpg" alt="香港の街並み" loading="lazy" width="400" height="250">
                     </div>
                     <div class="content-info">
                         <span class="content-category">写真</span>
-                        <h3><a href="https://note.com/tojimasaya/m/m22c44596304b" target="_blank">香港レンズ</a></h3>
+                        <h3><a href="https://note.com/tojimasaya/m/m22c44596304b" target="_blank" rel="noopener noreferrer">香港レンズ</a></h3>
                         <p>香港の最新ニュースや、現地で暮らして感じたことをエッセイにして綴っています。リアルな香港の日常や、街の空気を写真とともにお届けします。</p>
                     </div>
                 </article>
 
                 <article class="content-card">
                     <div class="content-image">
-                        <img src="Oreryu.jpg" alt="Travel gadgets" loading="lazy">
+                        <img src="Oreryu.jpg" alt="トラベルガジェット" loading="lazy" width="400" height="250">
                     </div>
                     <div class="content-info">
                         <span class="content-category">ガジェットレビュー</span>
-                        <h3><a href="https://note.com/your-username" target="_blank">俺流トラベルガジェット</a></h3>
+                        <h3><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">俺流トラベルガジェット</a></h3>
                         <p>スマホ、カメラ、ドローンのガジェット情報</p>
                     </div>
                 </article>
             </section>
 
-            <!-- コンパクトなソーシャルリンク（上に移動） -->
+            <!-- コンパクトなソーシャルリンク -->
             <section class="social-section">
                 <h2>Connect</h2>
                 <div class="social-links">
-                    <a href="https://twitter.com/your-username" target="_blank" class="social-link">
-                        <div class="social-icon">
+                    <a href="https://twitter.com/your-username" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)でフォロー">
+                        <div class="social-icon" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
                             </svg>
@@ -85,8 +154,8 @@
                         <span>X (Twitter)</span>
                     </a>
                     
-                    <a href="https://www.facebook.com/your-username" target="_blank" class="social-link">
-                        <div class="social-icon">
+                    <a href="https://www.facebook.com/your-username" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebookでフォロー">
+                        <div class="social-icon" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
                             </svg>
@@ -94,8 +163,8 @@
                         <span>Facebook</span>
                     </a>
                     
-                    <a href="https://note.com/tojimasaya" target="_blank" class="social-link">
-                        <div class="social-icon">
+                    <a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="noteで記事を読む">
+                        <div class="social-icon" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M8 3v18l8-6V3H8z"/>
                             </svg>
@@ -103,8 +172,8 @@
                         <span>note</span>
                     </a>
                     
-                    <a href="mailto:your-email@example.com" class="social-link">
-                        <div class="social-icon">
+                    <a href="mailto:your-email@example.com" class="social-link" aria-label="メールでお問い合わせ">
+                        <div class="social-icon" aria-hidden="true">
                             <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
                                 <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
                             </svg>
@@ -121,39 +190,41 @@
                 <!-- 統一メディアグリッド（動画＋写真） -->
                 <div class="media-grid">
                     <!-- YouTube動画 -->
-                    <div class="video-item">
+                    <div class="video-item" tabindex="0" role="button" aria-label="カッパドキアのホテルからの動画を再生">
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube.com/embed/cJ2lFRqmeBA" 
                                     title="カッパドキアのホテルから" 
                                     frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    allowfullscreen></iframe>
+                                    allowfullscreen
+                                    loading="lazy"></iframe>
                         </div>
                         <div class="video-caption">カッパドキアのホテルから</div>
                     </div>
                     
-                    <div class="video-item">
+                    <div class="video-item" tabindex="0" role="button" aria-label="記憶すべき風景、馬草壟の動画を再生">
                         <div class="video-wrapper">
                             <iframe src="https://www.youtube.com/embed/0YiQFV-V_Pw" 
                                     title="記憶すべき風景、馬草壟" 
                                     frameborder="0" 
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    allowfullscreen></iframe>
+                                    allowfullscreen
+                                    loading="lazy"></iframe>
                         </div>
                         <div class="video-caption">記憶すべき風景、馬草壟（Ma Tso Lung）</div>
                     </div>
                     
                     <!-- 写真 -->
-                    <div class="photo-item">
-                        <img src="Venice.JPG" alt="Travel photo 1" loading="lazy">
+                    <div class="photo-item" tabindex="0" role="button" aria-label="ヴェネツィアのゴンドラの写真を拡大表示">
+                        <img src="Venice.JPG" alt="ヴェネツィアのゴンドラが静かに踊る風景" loading="lazy" width="400" height="250">
                         <div class="photo-caption">Silent Waltz of the Gondolas</div>
                     </div>
-                    <div class="photo-item">
-                        <img src="Heibayou.JPG" alt="Travel photo 2" loading="lazy">
+                    <div class="photo-item" tabindex="0" role="button" aria-label="兵馬俑の写真を拡大表示">
+                        <img src="Heibayou.JPG" alt="兵馬俑 - 永遠の守護者たち" loading="lazy" width="400" height="250">
                         <div class="photo-caption">永遠の守護者たち</div>
                     </div>
-                    <div class="photo-item">
-                        <img src="HimejiCastle.JPG" alt="Travel photo 3" loading="lazy">
+                    <div class="photo-item" tabindex="0" role="button" aria-label="姫路城の写真を拡大表示">
+                        <img src="HimejiCastle.JPG" alt="桜に抱かれた姫路城（白鷺城）" loading="lazy" width="400" height="250">
                         <div class="photo-caption">桜に抱かれる白鷺城</div>
                     </div>
                 </div>
@@ -162,29 +233,47 @@
             <!-- 最新記事セクション -->
             <section class="latest-writings">
                 <h2>Latest Writings</h2>
-                <div id="note-feed" class="writings-list">
-                    <div class="loading">記事を読み込み中...</div>
+                <div id="note-feed" class="writings-list" role="feed" aria-label="最新記事一覧">
+                    <div class="loading" role="status" aria-label="記事を読み込み中">記事を読み込み中...</div>
                 </div>
             </section>
 
             <!-- フッター -->
-            <footer class="footer">
+            <footer class="footer" role="contentinfo">
                 <div class="footer-content">
                     <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-                    <p>Built with care in Japan 🇯🇵</p>
+                    <p>Built with care in Japan</p>
                 </div>
             </footer>
         </div>
     </main>
 
     <!-- ライトボックス・モーダル -->
-    <div id="modal" class="modal">
-        <span class="close-modal" onclick="closeModal()">&times;</span>
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <button class="close-modal" onclick="closeModal()" aria-label="モーダルを閉じる">&times;</button>
         <div class="modal-content" id="modal-content">
             <!-- 画像または動画がここに表示される -->
         </div>
     </div>
 
-    <script src="script.js"></script>
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+    
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "田路昌也",
+        "alternateName": "Toji Masaya",
+        "jobTitle": "Writer and Travel Photographer",
+        "url": "https://tojimasaya.com",
+        "sameAs": [
+            "https://note.com/tojimasaya",
+            "https://twitter.com/your-username"
+        ],
+        "description": "ライカやドローンを片手に、気の向くままに旅をしています。写真と文章で、旅先の空気や日々の発見をゆるく記録しています。"
+    }
+    </script>
 </body>
 </html>
