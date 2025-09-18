@@ -1,9 +1,10 @@
-// tojimasaya.com のための更新されたスクリプト
+// tojimasaya.com のための更新されたスクリプト（ライトボックス機能付き）
 document.addEventListener('DOMContentLoaded', function() {
     console.log('サイト読み込み開始');
     loadNotePosts();
     updateMainContentCard();
     initializeScrollAnimations();
+    initializeLightbox();
 });
 
 // メインカードの更新情報を自動取得（次はどこへマガジンから）
@@ -226,6 +227,99 @@ function initializeScrollAnimations() {
     document.querySelectorAll('.content-card, .photo-item, .social-link').forEach(el => {
         observer.observe(el);
     });
+}
+
+// ライトボックス機能の初期化
+function initializeLightbox() {
+    console.log('ライトボックス機能初期化');
+    
+    // 写真クリックイベント
+    document.addEventListener('click', function(e) {
+        // 写真がクリックされた場合
+        if (e.target.matches('.photo-item img')) {
+            e.preventDefault();
+            openImageModal(e.target);
+        }
+        
+        // 動画がクリックされた場合
+        if (e.target.closest('.video-item')) {
+            const videoItem = e.target.closest('.video-item');
+            const iframe = videoItem.querySelector('iframe');
+            if (iframe) {
+                e.preventDefault();
+                const title = videoItem.querySelector('.video-caption').textContent;
+                openVideoModal(iframe.src, title);
+            }
+        }
+    });
+    
+    // モーダル外クリックで閉じる
+    const modal = document.getElementById('modal');
+    if (modal) {
+        modal.addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+    }
+    
+    // ESCキーで閉じる
+    document.addEventListener('keydown', function(e) {
+        if (e.key === 'Escape') {
+            closeModal();
+        }
+    });
+}
+
+// 画像モーダルを開く
+function openImageModal(img) {
+    console.log('画像モーダルを開く:', img.src);
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    
+    if (modal && modalContent) {
+        modalContent.innerHTML = `<img src="${img.src}" alt="${img.alt}" class="modal-image">`;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// 動画モーダルを開く
+function openVideoModal(videoSrc, title) {
+    console.log('動画モーダルを開く:', videoSrc);
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    
+    if (modal && modalContent) {
+        // 自動再生用のパラメータを追加
+        const autoplaySrc = videoSrc.includes('?') ? 
+            `${videoSrc}&autoplay=1` : 
+            `${videoSrc}?autoplay=1`;
+        
+        modalContent.innerHTML = `
+            <iframe src="${autoplaySrc}" 
+                    title="${title}" 
+                    class="modal-video"
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                    allowfullscreen></iframe>
+        `;
+        modal.style.display = 'block';
+        document.body.style.overflow = 'hidden';
+    }
+}
+
+// モーダルを閉じる
+function closeModal() {
+    console.log('モーダルを閉じる');
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    
+    if (modal && modalContent) {
+        modal.style.display = 'none';
+        modalContent.innerHTML = '';
+        document.body.style.overflow = 'auto';
+    }
 }
 
 // スムーススクロール
