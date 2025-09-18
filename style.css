@@ -207,6 +207,71 @@ body {
     font-style: italic;
 }
 
+/* コンパクトなソーシャルセクション（位置移動） */
+.social-section {
+    padding: 40px 0;
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.social-section h2 {
+    font-family: var(--primary-font);
+    font-size: 1.5rem;
+    margin-bottom: 30px;
+    text-align: center;
+    font-weight: 600;
+    color: var(--text-color);
+}
+
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.social-link {
+    display: flex;
+    align-items: center;
+    padding: 12px 18px;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 50px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: all 0.3s ease;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.social-link:hover {
+    background: var(--hover-color);
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.social-icon {
+    width: 30px;
+    height: 30px;
+    background: var(--text-color);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    transition: background-color 0.3s ease;
+}
+
+.social-icon svg {
+    color: white;
+    width: 16px;
+    height: 16px;
+}
+
+.social-link:hover .social-icon {
+    background: var(--text-light);
+}
+
 /* 最新記事セクション */
 .latest-writings {
     padding: 80px 0;
@@ -352,79 +417,6 @@ body {
     font-size: 1rem;
     color: var(--text-light);
     font-style: italic;
-}
-
-/* ソーシャルセクション */
-.social-section {
-    padding: 80px 0;
-    border-bottom: 1px solid var(--border-color);
-}
-
-.social-section h2 {
-    font-family: var(--primary-font);
-    font-size: 2.2rem;
-    margin-bottom: 50px;
-    text-align: center;
-    font-weight: 600;
-}
-
-.social-links {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 25px;
-}
-
-.social-link {
-    display: flex;
-    align-items: center;
-    padding: 30px;
-    background: var(--white);
-    border: 1px solid var(--border-color);
-    border-radius: 8px;
-    text-decoration: none;
-    color: var(--text-color);
-    transition: all 0.3s ease;
-}
-
-.social-link:hover {
-    background: var(--hover-color);
-    transform: translateY(-2px);
-    box-shadow: 0 5px 15px rgba(0,0,0,0.08);
-}
-
-.social-icon {
-    width: 50px;
-    height: 50px;
-    background: var(--text-color);
-    border-radius: 50%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-right: 20px;
-    transition: background-color 0.3s ease;
-}
-
-.social-icon svg {
-    color: white;
-    width: 24px;
-    height: 24px;
-}
-
-.social-link:hover .social-icon {
-    background: var(--text-light);
-}
-
-.social-content h3 {
-    font-family: var(--secondary-font);
-    font-size: 1.1rem;
-    margin-bottom: 5px;
-    font-weight: 600;
-}
-
-.social-content p {
-    color: var(--text-light);
-    font-size: 0.9rem;
-    margin: 0;
 }
 
 /* フッター */
@@ -619,15 +611,29 @@ body {
         padding: 60px 0;
     }
     
+    .social-section {
+        padding: 30px 0;
+    }
+    
+    .social-links {
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+    }
+    
     .lead {
         font-size: 1.1rem;
     }
     
     .latest-writings h2,
-    .media-showcase h2,
-    .social-section h2 {
+    .media-showcase h2 {
         font-size: 1.8rem;
         margin-bottom: 40px;
+    }
+    
+    .social-section h2 {
+        font-size: 1.3rem;
+        margin-bottom: 20px;
     }
     
     .media-grid {
@@ -659,16 +665,6 @@ body {
         height: 100%;
     }
     
-    .social-link {
-        padding: 25px;
-    }
-    
-    .social-icon {
-        width: 45px;
-        height: 45px;
-        margin-right: 15px;
-    }
-    
     /* モバイルでのモーダル調整 */
     .modal-content {
         max-width: 95%;
@@ -698,15 +694,25 @@ body {
         padding: 20px;
     }
     
-    .social-link {
+    .social-links {
         flex-direction: column;
-        text-align: center;
-        padding: 25px 15px;
+        gap: 8px;
+    }
+    
+    .social-link {
+        padding: 10px 15px;
+        font-size: 0.85rem;
     }
     
     .social-icon {
-        margin-right: 0;
-        margin-bottom: 15px;
+        width: 25px;
+        height: 25px;
+        margin-right: 8px;
+    }
+    
+    .social-icon svg {
+        width: 14px;
+        height: 14px;
     }
     
     .video-caption, .photo-caption {
