@@ -1395,19 +1395,43 @@ body {
 /* Gear section */
 .gear-section {
     padding-bottom: 80px;
+    width: 100%;
 }
 
 .gear-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
     gap: 40px;
     align-items: start;
+    width: 100%;
 }
 
-@media (max-width: 480px) {
+/* タブレット以上では最低2列 */
+@media (min-width: 769px) {
+    .gear-grid {
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 40px;
+    }
+}
+
+/* デスクトップでは最大3列 */
+@media (min-width: 1200px) {
+    .gear-grid {
+        grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        max-width: 1400px;
+        margin: 0 auto;
+    }
+}
+
+/* モバイルでは1列固定 */
+@media (max-width: 768px) {
     .gear-grid {
         grid-template-columns: 1fr;
         gap: 30px;
+    }
+    
+    .gear-section {
+        padding-bottom: 60px;
     }
 }
 
@@ -1421,6 +1445,8 @@ body {
     display: flex;
     flex-direction: column;
     height: auto;
+    width: 100%;
+    min-height: 600px;
 }
 
 .gear-item:hover {
