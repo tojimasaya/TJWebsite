@@ -1,0 +1,1181 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gear — Toji Masaya</title>
+    
+    <!-- SEO & OGP -->
+    <meta name="description" content="田路昌也が実際に使用している旅行用カメラ機材とガジェット。Leica、ドローン、アクセサリーの詳細レビューと購入情報。">
+    <meta name="keywords" content="田路昌也, カメラ機材, ドローン, 旅行ガジェット, Leica, DJI, レビュー">
+    <meta name="author" content="Toji Masaya">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="Gear — Toji Masaya">
+    <meta property="og:description" content="旅行に最適化したカメラ機材とガジェットの詳細レビュー">
+    <meta property="og:image" content="https://tojimasaya.com/Oreryu.jpg">
+    <meta property="og:url" content="https://tojimasaya.com/gear.html">
+    <meta property="og:type" content="website">
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Critical CSS inline -->
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-font: 'Crimson Text', Georgia, serif;
+            --secondary-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-color: #333;
+            --text-light: #666;
+            --text-lighter: #999;
+            --bg-color: #fafafa;
+            --white: #ffffff;
+            --border-color: #e5e5e5;
+            --hover-color: #f5f5f5;
+            --accent-color: #2563eb;
+            --success-color: #10b981;
+            --warning-color: #f59e0b;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition-base: 0.3s ease;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #e5e5e5;
+                --text-light: #a1a1a1;
+                --text-lighter: #737373;
+                --bg-color: #0f0f0f;
+                --white: #1a1a1a;
+                --border-color: #262626;
+                --hover-color: #2a2a2a;
+            }
+        }
+        
+        body { 
+            font-family: var(--secondary-font); 
+            line-height: 1.6; 
+            color: var(--text-color); 
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ナビゲーション */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .main-nav {
+                background: rgba(26, 26, 26, 0.95);
+            }
+        }
+        
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .nav-logo {
+            font-family: var(--primary-font);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color var(--transition-base);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width var(--transition-base);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 3px 0;
+            transition: all var(--transition-base);
+            border-radius: 1px;
+        }
+        
+        /* ギアヒーロー */
+        .gear-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+        
+        .gear-hero-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .gear-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.1);
+        }
+        
+        .gear-hero-overlay {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+        
+        .gear-hero-title {
+            font-family: var(--primary-font);
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .gear-hero-subtitle {
+            font-family: var(--secondary-font);
+            font-size: 1.2rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 50px;
+                gap: 40px;
+                transition: left var(--transition-base);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.125rem;
+                padding: 10px 20px;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            body.nav-open {
+                overflow: hidden;
+            }
+            
+            .gear-hero {
+                height: 50vh;
+                min-height: 300px;
+            }
+            
+            .gear-hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .gear-hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .gear-hero-overlay {
+                bottom: 40px;
+            }
+        }
+    </style>
+    
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
+    <!-- ナビゲーションバー -->
+    <nav class="main-nav" id="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Toji Masaya</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="/gear.html" class="nav-link active">Gear</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ギアヒーロー -->
+    <section class="gear-hero" role="banner">
+        <div class="gear-hero-image">
+            <img src="Oreryu.jpg" alt="俺流トラベルガジェット" loading="eager" width="1920" height="1080">
+            <div class="gear-hero-overlay">
+                <h1 class="gear-hero-title">Gear</h1>
+                <p class="gear-hero-subtitle">俺流トラベルガジェット</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <!-- ギア紹介 -->
+            <section class="gear-intro">
+                <p class="lead">旅行に最適化したカメラ機材とガジェットをご紹介します。実際に世界各地で使用した経験を基に、重量・サイズ・性能のバランスを重視した選択をしています。気になるアイテムや購入を検討されているものがあれば、お気軽にお問い合わせください。</p>
+            </section>
+
+            <!-- カテゴリーフィルター -->
+            <section class="gear-filters">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="camera">Camera</button>
+                    <button class="filter-tab" data-filter="drone">Drone</button>
+                    <button class="filter-tab" data-filter="accessories">Accessories</button>
+                    <button class="filter-tab" data-filter="editing">Editing</button>
+                </div>
+            </section>
+
+            <!-- ギアグリッド -->
+            <section class="gear-section">
+                <div class="gear-grid">
+                    <!-- Leica M10 -->
+                    <article class="gear-item featured" data-category="camera">
+                        <div class="gear-image">
+                            <img src="leica-m10.jpg" alt="Leica M10" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>Leica M10</h3>
+                                <div class="gear-price">¥680,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">24MP CMOS</span>
+                                <span class="spec-item">Mマウント</span>
+                                <span class="spec-item">660g</span>
+                            </div>
+                            <p class="gear-description">伝統的なレンジファインダーカメラの最高峰。マニュアルフォーカスによる集中した撮影体験と、独特の色再現が魅力。ストリートフォトグラフィーに最適。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>静寂な撮影が可能で、被写体に気づかれにくい。レンズの選択肢も豊富で、表現の幅が広がります。ただし、オートフォーカスがないため、動体撮影は困難。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('Leica M10')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Leica SL2-S -->
+                    <article class="gear-item featured" data-category="camera">
+                        <div class="gear-image">
+                            <img src="leica-sl2s.jpg" alt="Leica SL2-S" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>Leica SL2-S</h3>
+                                <div class="gear-price">¥720,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">24MP CMOS</span>
+                                <span class="spec-item">4K/60p</span>
+                                <span class="spec-item">931g</span>
+                            </div>
+                            <p class="gear-description">現代的なミラーレスカメラとライカの哲学が融合。優秀な動画性能と高感度特性を持ち、プロフェッショナルワークにも対応できる万能機。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>オートフォーカスの精度が高く、動画撮影でも優秀。高感度でのノイズ処理も自然で、暗所撮影に強い。ただし、レンズが高価で重いのが難点。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example2" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('Leica SL2-S')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- DJI Mini 4 Pro -->
+                    <article class="gear-item" data-category="drone">
+                        <div class="gear-image">
+                            <img src="dji-mini4pro.jpg" alt="DJI Mini 4 Pro" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>DJI Mini 4 Pro</h3>
+                                <div class="gear-price">¥138,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">4K/60fps</span>
+                                <span class="spec-item">249g</span>
+                                <span class="spec-item">34分飛行</span>
+                            </div>
+                            <p class="gear-description">軽量ながら本格的な4K撮影が可能。全方向障害物センサー搭載で安全性も向上。旅行に最適な249g設計で、多くの国で登録不要。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>画質が大幅に向上し、プロレベルの映像が撮影可能。風に対する安定性も改善されました。携帯性と性能のバランスが最高。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example3" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('DJI Mini 4 Pro')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- DJI Mini 5 Pro -->
+                    <article class="gear-item" data-category="drone">
+                        <div class="gear-image">
+                            <img src="dji-mini5pro.jpg" alt="DJI Mini 5 Pro" loading="lazy" width="400" height="300">
+                            <div class="gear-status not-for-sale">Not for Sale</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>DJI Mini 5 Pro</h3>
+                                <div class="gear-price">¥158,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">4K/120fps</span>
+                                <span class="spec-item">249g</span>
+                                <span class="spec-item">38分飛行</span>
+                            </div>
+                            <p class="gear-description">最新のMiniシリーズ。さらに向上した画質と飛行時間。4K/120fpsでのスローモーション撮影も可能で、表現の幅が格段に広がりました。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>現在のメインドローン。画質、安定性、飛行時間すべてが向上。特にスローモーション機能は映像制作において革命的。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example4" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <span class="btn btn-disabled">非売品</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- DJI FPV -->
+                    <article class="gear-item" data-category="drone">
+                        <div class="gear-image">
+                            <img src="dji-fpv.jpg" alt="DJI FPV" loading="lazy" width="400" height="300">
+                            <div class="gear-status considering">Considering</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>DJI FPV</h3>
+                                <div class="gear-price">¥168,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">4K/60fps</span>
+                                <span class="spec-item">795g</span>
+                                <span class="spec-item">140km/h</span>
+                            </div>
+                            <p class="gear-description">高速飛行とFPV体験が可能なスポーツドローン。独特のダイナミックな映像が撮影でき、臨場感あふれる動画制作に最適。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>スリリングな映像が撮影できますが、操縦に慣れが必要。風景系よりもアクション系の撮影に向いています。安全な練習場所の確保が課題。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example5" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('DJI FPV')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- DJI Avata 2 -->
+                    <article class="gear-item" data-category="drone">
+                        <div class="gear-image">
+                            <img src="dji-avata2.jpg" alt="DJI Avata 2" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>DJI Avata 2</h3>
+                                <div class="gear-price">¥118,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">4K/60fps</span>
+                                <span class="spec-item">377g</span>
+                                <span class="spec-item">FPV対応</span>
+                            </div>
+                            <p class="gear-description">コンパクトなFPVドローン。狭い場所での飛行も可能で、屋内撮影や近接飛行に適しています。安全性も向上し、初心者にも扱いやすい。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>建物内部や森林での撮影など、通常のドローンでは困難な場所での撮影が可能。プロペラガードのおかげで接触事故のリスクも軽減。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('DJI Avata 2')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- DJI Neo -->
+                    <article class="gear-item" data-category="drone">
+                        <div class="gear-image">
+                            <img src="dji-neo.jpg" alt="DJI Neo" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>DJI Neo</h3>
+                                <div class="gear-price">¥65,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">4K/30fps</span>
+                                <span class="spec-item">135g</span>
+                                <span class="spec-item">手のひらサイズ</span>
+                            </div>
+                            <p class="gear-description">超小型のセルフィードローン。手のひらから離陸でき、AI機能により自動で追跡撮影が可能。日常的な撮影やSNS用動画制作に最適。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>気軽に使えるのが最大の魅力。旅行先でのセルフィー動画や、ちょっとした記録撮影に重宝します。画質は限定的ですが、手軽さは抜群。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example7" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('DJI Neo')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 17 Pro -->
+                    <article class="gear-item" data-category="camera">
+                        <div class="gear-image">
+                            <img src="iphone17pro.jpg" alt="iPhone 17 Pro" loading="lazy" width="400" height="300">
+                            <div class="gear-status not-for-sale">Not for Sale</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>iPhone 17 Pro 512GB</h3>
+                                <div class="gear-price">¥189,800</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">Pro RAW</span>
+                                <span class="spec-item">4K/120fps</span>
+                                <span class="spec-item">512GB</span>
+                            </div>
+                            <p class="gear-description">最新のiPhone Pro。カメラ性能がさらに向上し、Pro RAWでの撮影や4K/120fpsでの動画撮影が可能。常に持ち歩ける最高のカメラ。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>メインの記録デバイス。編集アプリも充実しており、撮影から編集まで一台で完結。特に動画の手ブレ補正は驚異的。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example8" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <span class="btn btn-disabled">非売品</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone 15 Pro -->
+                    <article class="gear-item" data-category="camera">
+                        <div class="gear-image">
+                            <img src="iphone15pro.jpg" alt="iPhone 15 Pro" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>iPhone 15 Pro 512GB</h3>
+                                <div class="gear-price">¥128,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">Pro RAW</span>
+                                <span class="spec-item">4K/60fps</span>
+                                <span class="spec-item">512GB</span>
+                            </div>
+                            <p class="gear-description">優秀なカメラ性能を持つ前世代のPro。17 Proへのアップグレードに伴い、売却を検討中。状態良好で、バッテリー劣化も少ない。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>2年間メインで使用。ProRAWでの撮影やAction Modeでの動画撮影など、十分にプロレベルの機能を持っています。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example9" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('iPhone 15 Pro 512GB')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Xiaomi 15 Ultra -->
+                    <article class="gear-item" data-category="camera">
+                        <div class="gear-image">
+                            <img src="xiaomi15ultra.jpg" alt="Xiaomi 15 Ultra" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>Xiaomi 15 Ultra</h3>
+                                <div class="gear-price">¥158,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">1型センサー</span>
+                                <span class="spec-item">Leica協業</span>
+                                <span class="spec-item">512GB</span>
+                            </div>
+                            <p class="gear-description">Leicaとの協業による高品質なカメラシステム。1型センサー搭載で、スマートフォンとは思えない画質を実現。Android側のサブ機として活用。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>Leicaらしい色調が美しく、特にポートレート撮影で威力を発揮。望遠レンズの光学性能も優秀で、幅広い撮影シーンに対応。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example10" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('Xiaomi 15 Ultra')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- OPPO Find N5 -->
+                    <article class="gear-item" data-category="camera">
+                        <div class="gear-image">
+                            <img src="oppo-findn5.jpg" alt="OPPO Find N5" loading="lazy" width="400" height="300">
+                            <div class="gear-status considering">Considering</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>OPPO Find N5</h3>
+                                <div class="gear-price">¥168,000</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">フォルダブル</span>
+                                <span class="spec-item">Hasselblad</span>
+                                <span class="spec-item">512GB</span>
+                            </div>
+                            <p class="gear-description">革新的なフォルダブルスマートフォン。Hasselbladとの協業カメラシステムを搭載。大画面での編集作業や、ユニークな撮影アングルが可能。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>フォルダブル機構により、三脚なしでも安定した撮影が可能。大画面は編集作業に便利ですが、日常使いでは少し大きすぎる場面も。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example11" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('OPPO Find N5')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- MacBook Pro 14inch -->
+                    <article class="gear-item" data-category="editing">
+                        <div class="gear-image">
+                            <img src="macbook-pro14.jpg" alt="MacBook Pro 14inch M3" loading="lazy" width="400" height="300">
+                            <div class="gear-status not-for-sale">Not for Sale</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>MacBook Pro 14" M3</h3>
+                                <div class="gear-price">¥398,800</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">M3 Pro</span>
+                                <span class="spec-item">32GB RAM</span>
+                                <span class="spec-item">1TB SSD</span>
+                            </div>
+                            <p class="gear-description">メインの編集マシン。4K動画編集からRAW現像まで、すべての作業をスムーズにこなします。持ち運びと性能のバランスが絶妙。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>旅行先での編集作業にも対応できる性能と携帯性。M3チップの効率性により、バッテリー持ちも優秀。メインマシンとして手放せません。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example12" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apple Store</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <span class="btn btn-disabled">非売品</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPad Pro 11inch -->
+                    <article class="gear-item" data-category="editing">
+                        <div class="gear-image">
+                            <img src="ipad-pro11.jpg" alt="iPad Pro 11inch M4" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>iPad Pro 11" M4 WiFi</h3>
+                                <div class="gear-price">¥168,800</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">M4チップ</span>
+                                <span class="spec-item">512GB</span>
+                                <span class="spec-item">WiFiモデル</span>
+                            </div>
+                            <p class="gear-description">軽快な編集作業が可能なタブレット。Procreateでのイラスト制作や、LumaFusionでの動画編集など、クリエイティブ作業に最適。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>外出先での軽編集やプレゼンテーション、読書端末として活用。Apple Pencilとの組み合わせで、アイデアスケッチにも重宝しています。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example13" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Apple Store</a>
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('iPad Pro 11 M4 WiFi')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+                        </div>
+                    </article>
+
+                    <!-- ドローン -->
+                    <article class="gear-item" data-category="drone">
+                        <div class="gear-image">
+                            <img src="dji-mini3pro.jpg" alt="DJI Mini 3 Pro" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>DJI Mini 3 Pro</h3>
+                                <div class="gear-price">¥118,800</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">4K/60fps</span>
+                                <span class="spec-item">249g</span>
+                                <span class="spec-item">34分飛行</span>
+                            </div>
+                            <p class="gear-description">軽量でありながら高画質な4K撮影が可能。多くの国で登録不要の249g設計。旅先での上空からの絶景撮影に重宝しています。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>トルコの奇岩群、香港の高層ビル群など、地上では撮影できないアングルを実現。風に弱いのが難点だが、画質と機動性のバランスは最高。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example2" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://store.example.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('DJI Mini 3 Pro')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- iPhone -->
+                    <article class="gear-item" data-category="camera">
+                        <div class="gear-image">
+                            <img src="iphone15pro.jpg" alt="iPhone 15 Pro" loading="lazy" width="400" height="300">
+                            <div class="gear-status sold">Sold</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>iPhone 15 Pro</h3>
+                                <div class="gear-price">¥159,800</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">Pro RAW</span>
+                                <span class="spec-item">4K/60fps</span>
+                                <span class="spec-item">187g</span>
+                            </div>
+                            <p class="gear-description">常に持ち歩けるベストカメラ。ProRAWモードでの撮影と、優秀な動画機能で日常を記録。編集アプリも充実で、現場での即席編集も可能。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>メインカメラの補完として活躍。特に動画撮影での手ブレ補正が優秀。ただし、やはりセンサーサイズの限界はある。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example3" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://store.example.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <span class="btn btn-disabled">売却済み</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- アクセサリー -->
+                    <article class="gear-item" data-category="accessories">
+                        <div class="gear-image">
+                            <img src="peak-design-bag.jpg" alt="Peak Design Travel Bag" loading="lazy" width="400" height="300">
+                            <div class="gear-status available">Available</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>Peak Design Travel Bag</h3>
+                                <div class="gear-price">¥49,800</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">35L-65L</span>
+                                <span class="spec-item">機内持込可</span>
+                                <span class="spec-item">1.8kg</span>
+                            </div>
+                            <p class="gear-description">旅行用機材バッグの決定版。カメラキューブと組み合わせることで、機材を安全に持ち運べます。拡張機能も優秀で、1-2週間の旅行に最適。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>世界各地の空港で使用。頑丈で機能的だが、やや重いのが難点。機材保護性能は抜群で、これまで一度も機材が破損したことはない。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example4" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://store.example.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('Peak Design Travel Bag')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 編集機材 -->
+                    <article class="gear-item" data-category="editing">
+                        <div class="gear-image">
+                            <img src="macbook-pro.jpg" alt="MacBook Pro 16" loading="lazy" width="400" height="300">
+                            <div class="gear-status not-for-sale">Not for Sale</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>MacBook Pro 16" M3 Max</h3>
+                                <div class="gear-price">¥498,800</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">M3 Max</span>
+                                <span class="spec-item">64GB RAM</span>
+                                <span class="spec-item">4K編集</span>
+                            </div>
+                            <p class="gear-description">4K動画編集とRAW現像の最強マシン。M3 Maxチップにより、重い編集作業もサクサク。長時間作業でも疲れにくい大画面が魅力。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>YouTube動画の編集から写真の現像まで、すべてこの1台で完結。発熱も少なく、バッテリー持ちも良好。ただし重量は2.1kgとやや重め。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example5" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://store.example.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <span class="btn btn-disabled">非売品</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- 三脚 -->
+                    <article class="gear-item" data-category="accessories">
+                        <div class="gear-image">
+                            <img src="gitzo-tripod.jpg" alt="Gitzo Carbon Tripod" loading="lazy" width="400" height="300">
+                            <div class="gear-status considering">Considering</div>
+                        </div>
+                        <div class="gear-info">
+                            <div class="gear-header">
+                                <h3>Gitzo Carbon Tripod GT1545T</h3>
+                                <div class="gear-price">¥89,800</div>
+                            </div>
+                            <div class="gear-specs">
+                                <span class="spec-item">Carbon</span>
+                                <span class="spec-item">1.24kg</span>
+                                <span class="spec-item">144cm</span>
+                            </div>
+                            <p class="gear-description">軽量カーボンファイバー製の高級三脚。風景撮影や夜景撮影での安定性は抜群。旅行にも持参できる軽量設計が魅力。</p>
+                            <div class="gear-experience">
+                                <h4>使用体験</h4>
+                                <p>夜景撮影では必須のアイテム。Gitzoの品質は確かで、10年以上使用しても問題なし。価格は高いが、それに見合う価値がある。</p>
+                            </div>
+                            <div class="gear-actions">
+                                <a href="https://amzn.to/example6" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Amazon</a>
+                                <a href="https://store.example.com" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">詳細レビュー</a>
+                                <button class="btn btn-contact" onclick="contactAboutGear('Gitzo Carbon Tripod')">お問い合わせ</button>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- note記事リンク -->
+            <section class="gear-articles">
+                <h2>関連記事</h2>
+                <div class="articles-grid">
+                    <article class="article-card">
+                        <h3><a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">俺流トラベルガジェット</a></h3>
+                        <p>noteマガジンで、より詳細な機材レビューと使用体験を公開しています。購入前の参考にぜひご覧ください。</p>
+                        <div id="gear-articles-feed" class="articles-list">
+                            <div class="loading">記事を読み込み中...</div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 売却について -->
+            <section class="selling-info">
+                <h2>機材の売却について</h2>
+                <div class="selling-content">
+                    <p>新しい機材への更新に伴い、使用しなくなった機材を時々売却しています。状態の良い機材のみを丁寧にメンテナンスした上で出品いたします。</p>
+                    
+                    <div class="selling-features">
+                        <div class="feature-item">
+                            <h4>丁寧な使用</h4>
+                            <p>すべての機材は旅行での使用がメインで、スタジオ等での酷使はしていません。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>正直な状態説明</h4>
+                            <p>小さな傷や使用感についても正直にお伝えします。</p>
+                        </div>
+                        <div class="feature-item">
+                            <h4>安心の取引</h4>
+                            <p>動作確認を十分に行い、必要に応じて元箱や付属品もお付けします。</p>
+                        </div>
+                    </div>
+                    
+                    <div class="contact-section">
+                        <h4>お問い合わせ</h4>
+                        <p>気になる機材や購入をご検討の場合は、お気軽にお問い合わせください。</p>
+                        <a href="mailto:tojimasaya07@gmail.com" class="btn btn-primary btn-large">メールでお問い合わせ</a>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ホームに戻る -->
+            <section class="back-to-home">
+                <a href="/" class="back-link">
+                    <span class="back-arrow">←</span>
+                    <span>Back to Home</span>
+                </a>
+            </section>
+
+            <!-- フッター -->
+            <footer class="footer" role="contentinfo">
+                <div class="footer-content">
+                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
+                    <p>Built with care in Japan</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- お問い合わせモーダル -->
+    <div id="contact-modal" class="modal" role="dialog" aria-modal="true" aria-hidden="true">
+        <div class="modal-content contact-modal-content">
+            <button class="close-modal" onclick="closeContactModal()" aria-label="モーダルを閉じる">&times;</button>
+            <h3 id="contact-gear-title">機材についてお問い合わせ</h3>
+            <form id="contact-form" class="contact-form">
+                <div class="form-group">
+                    <label for="contact-name">お名前</label>
+                    <input type="text" id="contact-name" name="name" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-email">メールアドレス</label>
+                    <input type="email" id="contact-email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="contact-message">メッセージ</label>
+                    <textarea id="contact-message" name="message" rows="5" required></textarea>
+                </div>
+                <button type="submit" class="btn btn-primary btn-large">送信</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ナビゲーション
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                document.body.classList.toggle('nav-open');
+            });
+
+            // メニューリンクをクリックしたらメニューを閉じる（モバイル）
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        document.body.classList.remove('nav-open');
+                    }
+                });
+            });
+        }
+
+        // フィルター機能
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const gearItems = document.querySelectorAll('.gear-item');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // アクティブタブを更新
+                filterTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // アイテムをフィルタリング
+                gearItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+                        item.classList.remove('hidden');
+                        item.classList.add('filtering-in');
+                        item.classList.remove('filtering-out');
+                    } else {
+                        item.classList.add('filtering-out');
+                        setTimeout(() => {
+                            item.classList.add('hidden');
+                            item.classList.remove('filtering-in');
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // スクロール時のナビゲーション背景変更
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // お問い合わせモーダル
+        function contactAboutGear(gearName) {
+            const modal = document.getElementById('contact-modal');
+            const title = document.getElementById('contact-gear-title');
+            const messageField = document.getElementById('contact-message');
+            
+            title.textContent = `${gearName} についてお問い合わせ`;
+            messageField.value = `${gearName} について詳細を教えてください。\n\n・購入時期：\n・使用状況：\n・付属品：\n・希望価格：`;
+            
+            modal.setAttribute('aria-hidden', 'false');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeContactModal() {
+            const modal = document.getElementById('contact-modal');
+            modal.setAttribute('aria-hidden', 'true');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // フォーム送信
+        document.getElementById('contact-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const formData = new FormData(this);
+            const name = formData.get('name');
+            const email = formData.get('email');
+            const message = formData.get('message');
+            
+            // メール送信（mailto）
+            const subject = encodeURIComponent('機材についてお問い合わせ');
+            const body = encodeURIComponent(`お名前: ${name}\nメールアドレス: ${email}\n\nメッセージ:\n${message}`);
+            
+            window.location.href = `mailto:tojimasaya07@gmail.com?subject=${subject}&body=${body}`;
+            
+            closeContactModal();
+        });
+
+        // ESCキーでモーダルを閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeContactModal();
+            }
+        });
+
+        // モーダル背景をクリックして閉じる
+        document.getElementById('contact-modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeContactModal();
+            }
+        });
+
+        // RSS記事読み込み（俺流トラベルガジェット）
+        async function loadGearArticles() {
+            try {
+                const container = document.getElementById('gear-articles-feed');
+                if (container) {
+                    container.innerHTML = '<div class="loading">記事を読み込み中...</div>';
+                    
+                    const articles = await fetchRSSFeed('https://note.com/tojimasaya/m/mcae365b520ed/rss', '俺流トラベルガジェット');
+                    
+                    if (articles.length > 0) {
+                        const latestArticles = articles.slice(0, 4);
+                        container.innerHTML = latestArticles.map(article => `
+                            <div class="article-item">
+                                <h4><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></h4>
+                                <p class="article-excerpt">${article.excerpt}</p>
+                                <div class="article-date">${article.formattedDate}</div>
+                            </div>
+                        `).join('');
+                    } else {
+                        container.innerHTML = `
+                            <div class="article-item">
+                                <h4><a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">noteマガジンで機材レビューを公開中</a></h4>
+                                <p class="article-excerpt">実際の使用体験を基にした詳細なレビューを公開しています。</p>
+                                <div class="article-date">継続更新中</div>
+                            </div>
+                        `;
+                    }
+                }
+            } catch (error) {
+                console.error('記事の読み込みに失敗しました:', error);
+                const container = document.getElementById('gear-articles-feed');
+                if (container) {
+                    container.innerHTML = `
+                        <div class="article-item">
+                            <h4><a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">noteマガジンをご覧ください</a></h4>
+                            <p class="article-excerpt">機材レビューの詳細はnoteマガジンで公開しています。</p>
+                        </div>
+                    `;
+                }
+            }
+        }
+
+        // RSSフィード取得関数（index.htmlと同じ）
+        async function fetchRSSFeed(rssUrl, sourceName) {
+            try {
+                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
+                const response = await fetch(proxyUrl);
+                const xmlText = await response.text();
+                
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                
+                const items = xmlDoc.querySelectorAll('item');
+                const articles = [];
+                
+                items.forEach((item, index) => {
+                    if (index < 5) {
+                        const title = item.querySelector('title')?.textContent || '';
+                        const link = item.querySelector('link')?.textContent || '';
+                        const description = item.querySelector('description')?.textContent || '';
+                        const pubDate = item.querySelector('pubDate')?.textContent || '';
+                        
+                        const excerpt = description.replace(/<[^>]*>/g, '').substring(0, 100) + '...';
+                        
+                        const date = new Date(pubDate);
+                        const formattedDate = date.toLocaleDateString('ja-JP', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        
+                        articles.push({
+                            title,
+                            link,
+                            excerpt,
+                            date: date.toISOString(),
+                            formattedDate,
+                            source: sourceName
+                        });
+                    }
+                });
+                
+                return articles;
+            } catch (error) {
+                console.error(`RSS取得エラー (${sourceName}):`, error);
+                return [];
+            }
+        }
+
+        // 外部リンクのセキュリティ強化
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.rel = 'noopener noreferrer';
+        });
+
+        // ページ読み込み完了時
+        document.addEventListener('DOMContentLoaded', function() {
+            loadGearArticles();
+        });
+    </script>
+    
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Toji Masaya Camera Gear",
+        "description": "田路昌也が実際に使用している旅行用カメラ機材とガジェットのレビュー",
+        "author": {
+            "@type": "Person",
+            "name": "田路昌也",
+            "alternateName": "Toji Masaya"
+        },
+        "url": "https://tojimasaya.com/gear.html"
+    }
+    </script>
+</body>
+</html>
