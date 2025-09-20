@@ -6,61 +6,280 @@
     <title>Gallery — Toji Masaya</title>
     
     <!-- SEO & OGP -->
-    <meta name="description" content="田路昌也の写真と動画ギャラリー。ライカやドローンで撮影した旅の記録、街角スナップ、風景写真をご覧ください。">
-    <meta name="keywords" content="田路昌也, 写真, 動画, ギャラリー, ライカ, ドローン, 旅行写真">
+    <meta name="description" content="田路昌也の写真ギャラリー。世界各地での旅の瞬間を写真と動画で記録しています。">
+    <meta name="keywords" content="田路昌也, 写真, ギャラリー, 旅行, ドローン, ライカ">
     <meta name="author" content="Toji Masaya">
     
     <!-- OGP -->
     <meta property="og:title" content="Gallery — Toji Masaya">
-    <meta property="og:description" content="ライカやドローンで撮影した旅の記録、街角スナップ、風景写真をご覧ください。">
-    <meta property="og:image" content="https://tojimasaya.com/Venice.JPG">
+    <meta property="og:description" content="世界各地での旅の瞬間を写真と動画で記録しています。">
+    <meta property="og:image" content="https://tojimasaya.com/venice.jpg">
     <meta property="og:url" content="https://tojimasaya.com/gallery.html">
     <meta property="og:type" content="website">
-    <meta property="og:site_name" content="Toji Masaya">
     
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="Gallery — Toji Masaya">
-    <meta name="twitter:description" content="ライカやドローンで撮影した旅の記録、街角スナップ、風景写真をご覧ください。">
-    <meta name="twitter:image" content="https://tojimasaya.com/Venice.JPG">
-    
-    <!-- Preload critical resources -->
-   <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" as="style" onload="this.onload=null;this.rel='stylesheet'">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
     
     <!-- Critical CSS inline -->
     <style>
-        /* Critical CSS for above-the-fold content */
         * { margin: 0; padding: 0; box-sizing: border-box; }
         :root {
             --primary-font: 'Crimson Text', Georgia, serif;
             --secondary-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
             --text-color: #333;
+            --text-light: #666;
+            --text-lighter: #999;
             --bg-color: #fafafa;
             --white: #ffffff;
             --border-color: #e5e5e5;
+            --hover-color: #f5f5f5;
             --accent-color: #2563eb;
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+            --transition-base: 0.3s ease;
         }
-        body { font-family: var(--secondary-font); line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
-        .gallery-hero { position: relative; height: 60vh; min-height: 400px; overflow: hidden; margin-top: 70px; }
-        .gallery-hero-image { position: relative; width: 100%; height: 100%; }
-        .gallery-hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) contrast(1.1); }
-        .gallery-hero-overlay { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); text-align: center; color: white; }
-        .gallery-hero-title { font-family: var(--primary-font); font-size: 3rem; font-weight: 600; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
-        .gallery-hero-subtitle { font-family: var(--secondary-font); font-size: 1.1rem; font-weight: 300; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+        
+        @media (prefers-color-scheme: dark) {
+            :root {
+                --text-color: #e5e5e5;
+                --text-light: #a1a1a1;
+                --text-lighter: #737373;
+                --bg-color: #0f0f0f;
+                --white: #1a1a1a;
+                --border-color: #262626;
+                --hover-color: #2a2a2a;
+            }
+        }
+        
+        body { 
+            font-family: var(--secondary-font); 
+            line-height: 1.6; 
+            color: var(--text-color); 
+            background-color: var(--bg-color);
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        /* ナビゲーション */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(250, 250, 250, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            z-index: 100;
+        }
+        
+        @media (prefers-color-scheme: dark) {
+            .main-nav {
+                background: rgba(26, 26, 26, 0.95);
+            }
+        }
+        
+        .nav-container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 0 40px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 70px;
+        }
+        
+        .nav-logo {
+            font-family: var(--primary-font);
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: var(--text-color);
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 30px;
+        }
+        
+        .nav-link {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.875rem;
+            transition: color var(--transition-base);
+            position: relative;
+            padding: 5px 0;
+        }
+        
+        .nav-link:hover,
+        .nav-link.active {
+            color: var(--accent-color);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: width var(--transition-base);
+        }
+        
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+        
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 5px;
+            border-radius: 4px;
+        }
+        
+        .nav-toggle span {
+            width: 25px;
+            height: 3px;
+            background: var(--text-color);
+            margin: 3px 0;
+            transition: all var(--transition-base);
+            border-radius: 1px;
+        }
+        
+        /* ギャラリーヒーロー */
+        .gallery-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 400px;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+        
+        .gallery-hero-image {
+            position: relative;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .gallery-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.7) contrast(1.1);
+        }
+        
+        .gallery-hero-overlay {
+            position: absolute;
+            bottom: 60px;
+            left: 50%;
+            transform: translateX(-50%);
+            text-align: center;
+            color: white;
+            z-index: 2;
+        }
+        
+        .gallery-hero-title {
+            font-family: var(--primary-font);
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 0.5rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+        }
+        
+        .gallery-hero-subtitle {
+            font-family: var(--secondary-font);
+            font-size: 1.2rem;
+            font-weight: 300;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+        
+        /* モバイル対応 */
+        @media (max-width: 768px) {
+            .nav-container {
+                padding: 0 20px;
+            }
+            
+            .nav-menu {
+                position: fixed;
+                top: 70px;
+                left: -100%;
+                width: 100%;
+                height: calc(100vh - 70px);
+                background: var(--white);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding-top: 50px;
+                gap: 40px;
+                transition: left var(--transition-base);
+                box-shadow: var(--shadow-lg);
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .nav-link {
+                font-size: 1.125rem;
+                padding: 10px 20px;
+            }
+            
+            .nav-toggle {
+                display: flex;
+            }
+            
+            .nav-toggle.active span:nth-child(1) {
+                transform: rotate(-45deg) translate(-5px, 6px);
+            }
+            
+            .nav-toggle.active span:nth-child(2) {
+                opacity: 0;
+            }
+            
+            .nav-toggle.active span:nth-child(3) {
+                transform: rotate(45deg) translate(-5px, -6px);
+            }
+            
+            body.nav-open {
+                overflow: hidden;
+            }
+            
+            .gallery-hero {
+                height: 50vh;
+                min-height: 300px;
+            }
+            
+            .gallery-hero-title {
+                font-size: 2.5rem;
+            }
+            
+            .gallery-hero-subtitle {
+                font-size: 1rem;
+            }
+            
+            .gallery-hero-overlay {
+                bottom: 40px;
+            }
+        }
     </style>
     
-    <!-- Non-critical CSS -->
-    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
-    <noscript><link rel="stylesheet" href="style.css"></noscript>
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
     
     <!-- Theme color -->
     <meta name="theme-color" content="#fafafa">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 </head>
 <body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
     <!-- ナビゲーションバー -->
     <nav class="main-nav" id="main-nav">
         <div class="nav-container">
@@ -78,22 +297,10 @@
         </div>
     </nav>
 
-    <!-- Loading indicator -->
-    <div id="loading-indicator" class="loading-indicator" aria-hidden="true">
-        <div class="loading-spinner"></div>
-        <p>読み込み中...</p>
-    </div>
-
-    <!-- Error notification container -->
-    <div id="notification-container" class="notification-container" aria-live="polite"></div>
-
-    <!-- Skip to main content for accessibility -->
-    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
-
-    <!-- ギャラリーヒーローセクション -->
+    <!-- ギャラリーヒーロー -->
     <section class="gallery-hero" role="banner">
         <div class="gallery-hero-image">
-            <img src="Venice.JPG" alt="ヴェネツィアのゴンドラが静かに踊る風景" loading="eager" width="1920" height="1080">
+            <img src="venice.jpg" alt="ヴェネツィアの夜景" loading="eager" width="1920" height="1080">
             <div class="gallery-hero-overlay">
                 <h1 class="gallery-hero-title">Gallery</h1>
                 <p class="gallery-hero-subtitle">旅先で切り取った瞬間たち</p>
@@ -106,141 +313,133 @@
         <div class="container">
             <!-- ギャラリー紹介 -->
             <section class="gallery-intro">
-                <div class="intro-text">
-                    <p class="lead">ライカやドローンを片手に、世界各地で切り取った瞬間たち。街角の何気ない風景から、雄大な自然まで、旅先で出会った光景を写真と動画で記録しています。</p>
-                </div>
+                <p class="lead">ライカやドローンを片手に、世界各地で切り取った瞬間たち。街角の何気ない風景から、雄大な自然まで、旅先で出会った光景を写真と動画で記録しています。</p>
             </section>
 
             <!-- フィルターナビゲーション -->
             <section class="gallery-filters">
                 <div class="filter-tabs">
-                    <button class="filter-tab active" data-filter="all" aria-label="全ての作品を表示">All</button>
-                    <button class="filter-tab" data-filter="video" aria-label="動画のみ表示">Videos</button>
-                    <button class="filter-tab" data-filter="photo" aria-label="写真のみ表示">Photos</button>
-                    <button class="filter-tab" data-filter="travel" aria-label="旅行写真のみ表示">Travel</button>
-                    <button class="filter-tab" data-filter="architecture" aria-label="建築写真のみ表示">Architecture</button>
+                    <button class="filter-tab active" data-filter="all">All</button>
+                    <button class="filter-tab" data-filter="videos">Videos</button>
+                    <button class="filter-tab" data-filter="photos">Photos</button>
+                    <button class="filter-tab" data-filter="travel">Travel</button>
+                    <button class="filter-tab" data-filter="architecture">Architecture</button>
                 </div>
             </section>
 
             <!-- メインギャラリー -->
             <section class="main-gallery">
                 <div class="gallery-grid">
-                    <!-- YouTube動画 -->
-                    <div class="gallery-item video travel" data-category="video travel">
+                    <!-- ギャラリーアイテム例 -->
+                    <article class="gallery-item video" data-category="videos travel">
                         <div class="gallery-media">
-                            <iframe src="https://www.youtube.com/embed/cJ2lFRqmeBA" 
-                                    title="カッパドキアのホテルから" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    allowfullscreen
-                                    loading="lazy"></iframe>
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="カッパドキアで宿泊したホテルから眺めた朝の風景"></iframe>
                         </div>
                         <div class="gallery-info">
                             <h3>カッパドキアのホテルから</h3>
                             <p class="gallery-description">妻と訪れたカッパドキアのホテルから眺めた朝の風景。静寂の中に響く鳥のさえずりと、徐々に明るくなる空が印象的でした。</p>
                             <div class="gallery-meta">
-                                <span class="gallery-location">カッパドキア, トルコ</span>
+                                <span class="gallery-location">カッパドキア、トルコ</span>
                                 <span class="gallery-date">2024年春</span>
                             </div>
                         </div>
-                    </div>
-                    
-                    <div class="gallery-item video travel" data-category="video travel">
+                    </article>
+
+                    <article class="gallery-item video" data-category="videos travel">
                         <div class="gallery-media">
-                            <iframe src="https://www.youtube.com/embed/0YiQFV-V_Pw" 
-                                    title="記憶すべき風景、馬草壟" 
-                                    frameborder="0" 
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
-                                    allowfullscreen
-                                    loading="lazy"></iframe>
+                            <iframe src="https://www.youtube.com/embed/dQw4w9WgXcQ" title="記憶すべき風景、馬草壟"></iframe>
                         </div>
                         <div class="gallery-info">
-                            <h3>記憶すべき風景、馬草壟（Ma Tso Lung）</h3>
+                            <h3>記憶すべき風景、馬草壟 (Ma Tso Lung)</h3>
                             <p class="gallery-description">香港の隠れた絶景スポット、馬草壟。都市の喧騒から離れた静かな湿地帯で、野鳥の声に耳を澄ませながら撮影しました。</p>
                             <div class="gallery-meta">
-                                <span class="gallery-location">馬草壟, 香港</span>
+                                <span class="gallery-location">馬草壟、香港</span>
                                 <span class="gallery-date">2023年秋</span>
                             </div>
                         </div>
-                    </div>
-                    
-                    <!-- 写真 -->
-                    <div class="gallery-item photo travel" data-category="photo travel" tabindex="0" role="button" aria-label="ヴェネツィアのゴンドラの写真を拡大表示">
-                        <div class="gallery-media">
-                            <img src="Venice.JPG" alt="ヴェネツィアのゴンドラが静かに踊る風景" loading="lazy" width="400" height="250">
-                        </div>
-                        <div class="gallery-info">
-                            <h3>Silent Waltz of the Gondolas</h3>
-                            <p class="gallery-description">朝靄に包まれたヴェネツィアの運河。観光客で賑わう前の静寂な時間に、ゴンドラが静かに水面を滑っていく様子を捉えました。</p>
-                            <div class="gallery-meta">
-                                <span class="gallery-location">ヴェネツィア, イタリア</span>
-                                <span class="gallery-date">2016年秋</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item photo travel architecture" data-category="photo travel architecture" tabindex="0" role="button" aria-label="兵馬俑の写真を拡大表示">
-                        <div class="gallery-media">
-                            <img src="Heibayou.JPG" alt="兵馬俑 - 永遠の守護者たち" loading="lazy" width="400" height="250">
-                        </div>
-                        <div class="gallery-info">
-                            <h3>永遠の守護者たち</h3>
-                            <p class="gallery-description">西安の兵馬俑博物館で、2000年以上の時を経ても変わらずに並び続ける兵士たちの姿に圧倒されました。歴史の重みを感じる瞬間でした。</p>
-                            <div class="gallery-meta">
-                                <span class="gallery-location">西安, 中国</span>
-                                <span class="gallery-date">2016年5月</span>
-                            </div>
-                        </div>
-                    </div>
-                    
-                    <div class="gallery-item photo architecture" data-category="photo architecture" tabindex="0" role="button" aria-label="姫路城の写真を拡大表示">
-                        <div class="gallery-media">
-                            <img src="HimejiCastle.JPG" alt="桜に抱かれた姫路城（白鷺城）" loading="lazy" width="400" height="250">
-                        </div>
-                        <div class="gallery-info">
-                            <h3>桜に抱かれる白鷺城</h3>
-                            <p class="gallery-description">満開の桜に包まれた姫路城。日本の美しさを象徴するような光景を、Leicaで丁寧に撮影しました。白い城壁と薄紅色の桜のコントラストが印象的でした。</p>
-                            <div class="gallery-meta">
-                                <span class="gallery-location">姫路, 日本</span>
-                                <span class="gallery-date">2024年春</span>
-                            </div>
-                        </div>
-                    </div>
+                    </article>
 
-                    <!-- 追加の作品例 -->
-                    <div class="gallery-item photo travel" data-category="photo travel" tabindex="0" role="button" aria-label="イスタンブール風景の写真を拡大表示">
+                    <article class="gallery-item photo" data-category="photos architecture" onclick="openModal('<img src=&quot;venice.jpg&quot; alt=&quot;ヴェネツィアの夜景&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="Istanbul.jpg" alt="イスタンブールの風景 - ボスポラス海峡から見た街並み" loading="lazy" width="400" height="250">
+                            <img src="venice.jpg" alt="ヴェネツィアの夜景" loading="lazy" width="400" height="250">
                         </div>
                         <div class="gallery-info">
-                            <h3>ボスポラス海峡の朝</h3>
-                            <p class="gallery-description">ヨーロッパとアジアを結ぶボスポラス海峡から見たイスタンブールの街並み。オスマン帝国の歴史を感じる建物群が朝日に照らされる瞬間です。</p>
+                            <h3>ヴェネツィアの夜景</h3>
+                            <p class="gallery-description">サン・ジョルジョ・マッジョーレ島から見たヴェネツィアの夜景。水面に映る光が幻想的な雰囲気を演出していました。</p>
                             <div class="gallery-meta">
-                                <span class="gallery-location">イスタンブール, トルコ</span>
-                                <span class="gallery-date">2024年春</span>
+                                <span class="gallery-location">ヴェネツィア、イタリア</span>
+                                <span class="gallery-date">2023年夏</span>
                             </div>
                         </div>
-                    </div>
+                    </article>
 
-                    <div class="gallery-item photo travel" data-category="photo travel" tabindex="0" role="button" aria-label="香港夜景の写真を拡大表示">
+                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;HongKong.jpg&quot; alt=&quot;香港の街並み&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="HongKong.jpg" alt="香港の夜景 - ヴィクトリア・ハーバーから見た摩天楼" loading="lazy" width="400" height="250">
+                            <img src="HongKong.jpg" alt="香港の街並み" loading="lazy" width="400" height="250">
                         </div>
                         <div class="gallery-info">
-                            <h3>百万ドルの夜景</h3>
-                            <p class="gallery-description">香港のヴィクトリア・ハーバーから見た摩天楼の夜景。無数の光が水面に反射し、まさに「百万ドルの夜景」と呼ばれる美しさでした。</p>
+                            <h3>香港の街並み</h3>
+                            <p class="gallery-description">香港の高層ビル群。東西が融合した独特の都市景観は、何度見ても飽きることがありません。</p>
                             <div class="gallery-meta">
                                 <span class="gallery-location">香港</span>
-                                <span class="gallery-date">2024年夏</span>
+                                <span class="gallery-date">2023年</span>
                             </div>
                         </div>
+                    </article>
+
+                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;cappadocia.jpg&quot; alt=&quot;カッパドキアの風景&quot; class=&quot;modal-image&quot;>')">
+                        <div class="gallery-media">
+                            <img src="cappadocia.jpg" alt="カッパドキアの風景" loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>カッパドキアの奇岩群</h3>
+                            <p class="gallery-description">妻と一緒に訪れたカッパドキア。自然が作り出した不思議な岩の造形美に圧倒されました。</p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">カッパドキア、トルコ</span>
+                                <span class="gallery-date">2024年春</span>
+                            </div>
+                        </div>
+                    </article>
+
+                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;Istanbul.jpg&quot; alt=&quot;イスタンブールの風景&quot; class=&quot;modal-image&quot;>')">
+                        <div class="gallery-media">
+                            <img src="Istanbul.jpg" alt="イスタンブールの風景" loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>イスタンブールの夕暮れ</h3>
+                            <p class="gallery-description">ヨーロッパとアジアの境界、イスタンブール。ボスポラス海峡に沈む夕日が美しい瞬間でした。</p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">イスタンブール、トルコ</span>
+                                <span class="gallery-date">2024年春</span>
+                            </div>
+                        </div>
+                    </article>
+                </div>
+            </section>
+
+            <!-- 機材紹介 -->
+            <section class="equipment-section">
+                <h2>Equipment</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-item">
+                        <div class="equipment-icon">📷</div>
+                        <h3>Leica Q2</h3>
+                        <p>街角スナップから風景まで、フルフレームセンサーと28mm固定レンズの組み合わせで、決定的瞬間を逃しません。</p>
+                    </div>
+                    <div class="equipment-item">
+                        <div class="equipment-icon">🚁</div>
+                        <h3>DJI Mini 3 Pro</h3>
+                        <p>軽量でありながら高画質な4K撮影が可能。旅先での上空からの絶景撮影に重宝しています。</p>
+                    </div>
+                    <div class="equipment-item">
+                        <div class="equipment-icon">📱</div>
+                        <h3>iPhone 15 Pro</h3>
+                        <p>常に持ち歩けるベストカメラ。ProRAWモードでの撮影と、優秀な動画機能で日常を記録しています。</p>
                     </div>
                 </div>
             </section>
 
-        
-
-            <!-- ホームページへの戻りリンク -->
+            <!-- ホームに戻る -->
             <section class="back-to-home">
                 <a href="/" class="back-link">
                     <span class="back-arrow">←</span>
@@ -258,7 +457,7 @@
         </div>
     </main>
 
-    <!-- ライトボックス・モーダル -->
+    <!-- モーダル -->
     <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
         <button class="close-modal" onclick="closeModal()" aria-label="モーダルを閉じる">&times;</button>
         <div class="modal-content" id="modal-content">
@@ -266,8 +465,107 @@
         </div>
     </div>
 
-    <!-- Scripts -->
-    <script src="script.js" defer></script>
+    <!-- JavaScript -->
+    <script>
+        // ナビゲーション
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                document.body.classList.toggle('nav-open');
+            });
+
+            // メニューリンクをクリックしたらメニューを閉じる（モバイル）
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        document.body.classList.remove('nav-open');
+                    }
+                });
+            });
+        }
+
+        // フィルター機能
+        const filterTabs = document.querySelectorAll('.filter-tab');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterTabs.forEach(tab => {
+            tab.addEventListener('click', function() {
+                const filter = this.getAttribute('data-filter');
+                
+                // アクティブタブを更新
+                filterTabs.forEach(t => t.classList.remove('active'));
+                this.classList.add('active');
+                
+                // アイテムをフィルタリング
+                galleryItems.forEach(item => {
+                    if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
+                        item.classList.remove('hidden');
+                        item.classList.add('filtering-in');
+                        item.classList.remove('filtering-out');
+                    } else {
+                        item.classList.add('filtering-out');
+                        setTimeout(() => {
+                            item.classList.add('hidden');
+                            item.classList.remove('filtering-in');
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // スクロール時のナビゲーション背景変更
+        window.addEventListener('scroll', function() {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+
+        // モーダル機能
+        function openModal(content) {
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = content;
+            modal.setAttribute('aria-hidden', 'false');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.setAttribute('aria-hidden', 'true');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // ESCキーでモーダルを閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // モーダル背景をクリックして閉じる
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // 外部リンクのセキュリティ強化
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.rel = 'noopener noreferrer';
+        });
+    </script>
     
     <!-- JSON-LD structured data -->
     <script type="application/ld+json">
@@ -275,7 +573,7 @@
         "@context": "https://schema.org",
         "@type": "ImageGallery",
         "name": "Toji Masaya Gallery",
-        "description": "田路昌也の写真と動画ギャラリー。ライカやドローンで撮影した旅の記録。",
+        "description": "田路昌也の写真ギャラリー。世界各地での旅の瞬間を写真と動画で記録しています。",
         "author": {
             "@type": "Person",
             "name": "田路昌也",
