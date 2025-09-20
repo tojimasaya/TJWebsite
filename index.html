@@ -521,21 +521,193 @@
             link.rel = 'noopener noreferrer';
         });
 
-        // note記事の読み込み（プレースホルダー）
-        function loadNoteArticles() {
-            const noteFeeds = ['#note-feed', '#whats-next-preview'];
-            
-            noteFeeds.forEach(selector => {
-                const container = document.querySelector(selector);
-                if (container) {
-                    const loading = container.querySelector('.loading, .preview-loading');
-                    if (loading) {
-                        setTimeout(() => {
-                            loading.textContent = '記事の読み込みが完了しました。';
-                        }, 2000);
+        // RSS記事の読み込み機能
+        async function loadNoteArticles() {
+            try {
+                // Latest Writings セクション - 全記事をまとめて表示
+                const noteContainer = document.getElementById('note-feed');
+                if (noteContainer) {
+                    noteContainer.innerHTML = '<div class="loading">記事を読み込み中...</div>';
+                    
+                    const articles = await fetchAllRSSFeeds();
+                    
+                    if (articles.length > 0) {
+                        noteContainer.innerHTML = articles.map(article => `
+                            <article class="writing-item">
+                                <div class="writing-meta">
+                                    <span class="writing-source">${article.source}</span>
+                                    <time datetime="${article.date}">${article.formattedDate}</time>
+                                </div>
+                                <h3><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></h3>
+                                <p class="writing-excerpt">${article.excerpt}</p>
+                            </article>
+                        `).join('');
+                    } else {
+                        // フォールバック記事
+                        noteContainer.innerHTML = `
+                            <article class="writing-item">
+                                <div class="writing-meta">
+                                    <span class="writing-source">note</span>
+                                    <time datetime="2024-12-15">2024年12月15日</time>
+                                </div>
+                                <h3><a href="https://note.com/tojimasaya/m/md99dd54590fa" target="_blank" rel="noopener noreferrer">カッパドキアで見た朝の風景</a></h3>
+                                <p class="writing-excerpt">妻と訪れたカッパドキアの朝。静寂の中に響く鳥のさえずりと、徐々に明るくなる空の美しさに言葉を失いました。</p>
+                            </article>
+                            <article class="writing-item">
+                                <div class="writing-meta">
+                                    <span class="writing-source">note</span>
+                                    <time datetime="2024-11-28">2024年11月28日</time>
+                                </div>
+                                <h3><a href="https://note.com/tojimasaya/m/m22c44596304b" target="_blank" rel="noopener noreferrer">香港の隠れた絶景スポット</a></h3>
+                                <p class="writing-excerpt">馬草壟（Ma Tso Lung）で撮影した動画が想像以上の反響をいただきました。都市から少し離れるだけで、こんな美しい自然に出会えます。</p>
+                            </article>
+                        `;
                     }
                 }
-            });
+
+                // What's Next プレビューセクション - 「次はどこへ」の記事のみ
+                const previewContainer = document.getElementById('whats-next-preview');
+                if (previewContainer) {
+                    previewContainer.innerHTML = '<div class="preview-loading">記事を読み込み中...</div>';
+                    
+                    const whatsNextArticles = await fetchRSSFeed('https://note.com/tojimasaya/m/md99dd54590fa/rss', '次はどこへ');
+                    
+                    if (whatsNextArticles.length > 0) {
+                        const latestArticles = whatsNextArticles.slice(0, 3);
+                        previewContainer.innerHTML = `
+                            <h4>最新記事</h4>
+                            ${latestArticles.map(article => `
+                                <div class="preview-item">
+                                    <div class="preview-title">
+                                        <a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a>
+                                    </div>
+                                    <p class="preview-excerpt">${article.excerpt}</p>
+                                    <div class="preview-date">${article.formattedDate}</div>
+                                </div>
+                            `).join('')}
+                        `;
+                    } else {
+                        // フォールバック記事
+                        previewContainer.innerHTML = `
+                            <h4>最新記事</h4>
+                            <div class="preview-item">
+                                <div class="preview-title">
+                                    <a href="https://note.com/tojimasaya/m/md99dd54590fa" target="_blank" rel="noopener noreferrer">トルコ・カッパドキア紀行</a>
+                                </div>
+                                <p class="preview-excerpt">妻と二人で訪れたカッパドキア。気球から見る景色は格別でした。</p>
+                                <div class="preview-date">2024年12月20日</div>
+                            </div>
+                        `;
+                    }
+                }
+            } catch (error) {
+                console.error('記事の読み込みに失敗しました:', error);
+                // エラー時はフォールバック記事を表示
+                loadFallbackArticles();
+            }
+        }
+
+        // RSSフィード取得関数
+        async function fetchRSSFeed(rssUrl, sourceName) {
+            try {
+                // CORS対応のプロキシサービスを使用
+                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(rssUrl)}`;
+                const response = await fetch(proxyUrl);
+                const xmlText = await response.text();
+                
+                const parser = new DOMParser();
+                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                
+                const items = xmlDoc.querySelectorAll('item');
+                const articles = [];
+                
+                items.forEach((item, index) => {
+                    if (index < 5) { // 最新5記事まで
+                        const title = item.querySelector('title')?.textContent || '';
+                        const link = item.querySelector('link')?.textContent || '';
+                        const description = item.querySelector('description')?.textContent || '';
+                        const pubDate = item.querySelector('pubDate')?.textContent || '';
+                        
+                        // HTMLタグを除去して抜粋を作成
+                        const excerpt = description.replace(/<[^>]*>/g, '').substring(0, 100) + '...';
+                        
+                        // 日付フォーマット
+                        const date = new Date(pubDate);
+                        const formattedDate = date.toLocaleDateString('ja-JP', {
+                            year: 'numeric',
+                            month: 'long',
+                            day: 'numeric'
+                        });
+                        
+                        articles.push({
+                            title,
+                            link,
+                            excerpt,
+                            date: date.toISOString(),
+                            formattedDate,
+                            source: sourceName
+                        });
+                    }
+                });
+                
+                return articles;
+            } catch (error) {
+                console.error(`RSS取得エラー (${sourceName}):`, error);
+                return [];
+            }
+        }
+
+        // 全RSSフィードを取得
+        async function fetchAllRSSFeeds() {
+            const feeds = [
+                { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
+                { url: 'https://note.com/tojimasaya/m/md99dd54590fa/rss', name: '次はどこへ' },
+                { url: 'https://note.com/tojimasaya/m/mcae365b520ed/rss', name: '俺流トラベルガジェット' }
+            ];
+            
+            const allArticles = [];
+            
+            for (const feed of feeds) {
+                const articles = await fetchRSSFeed(feed.url, feed.name);
+                allArticles.push(...articles);
+            }
+            
+            // 日付順にソート（新しいものから）
+            allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+            
+            return allArticles.slice(0, 6); // 最新6記事まで
+        }
+
+        // フォールバック記事
+        function loadFallbackArticles() {
+            const noteContainer = document.getElementById('note-feed');
+            const previewContainer = document.getElementById('whats-next-preview');
+            
+            if (noteContainer) {
+                noteContainer.innerHTML = `
+                    <article class="writing-item">
+                        <div class="writing-meta">
+                            <span class="writing-source">note</span>
+                            <time datetime="2024-12-15">2024年12月15日</time>
+                        </div>
+                        <h3><a href="https://note.com/tojimasaya/m/md99dd54590fa" target="_blank" rel="noopener noreferrer">最新の旅の記録をnoteで更新中</a></h3>
+                        <p class="writing-excerpt">noteで最新の旅の記録や写真を公開しています。ぜひご覧ください。</p>
+                    </article>
+                `;
+            }
+            
+            if (previewContainer) {
+                previewContainer.innerHTML = `
+                    <h4>最新記事</h4>
+                    <div class="preview-item">
+                        <div class="preview-title">
+                            <a href="https://note.com/tojimasaya/m/md99dd54590fa" target="_blank" rel="noopener noreferrer">「次はどこへ What's Next」で最新記事を公開中</a>
+                        </div>
+                        <p class="preview-excerpt">noteのマガジンで旅の記録を更新しています。</p>
+                        <div class="preview-date">継続更新中</div>
+                    </div>
+                `;
+            }
         }
 
         // ページ読み込み完了時
