@@ -2,23 +2,31 @@
   "leica-m10": {
     "name": "Leica M10",
     "status": "available",
-    "price": "¥680,000",
+    "price": "¥500,000",
     "category": "camera",
-    "specs": ["24MP CMOS", "Mマウント", "660g"],
+    "specs": [
+      "24MP CMOS",
+      "Mマウント",
+      "660g"
+    ],
     "description": "伝統的なレンジファインダーカメラの最高峰。マニュアルフォーカスによる集中した撮影体験と、独特の色再現が魅力。ストリートフォトグラフィーに最適。",
     "experience": "静寂な撮影が可能で、被写体に気づかれにくい。レンズの選択肢も豊富で、表現の幅が広がります。ただし、オートフォーカスがないため、動体撮影は困難。",
     "image": "leica-m10.jpg",
     "amazonUrl": "https://amzn.to/example",
     "reviewUrl": "https://note.com/tojimasaya/m/mcae365b520ed",
     "featured": true,
-    "updated": "2025-01-15"
+    "updated": "2025-09-20T15:12:52.666Z"
   },
   "leica-sl2s": {
     "name": "Leica SL2-S",
     "status": "available",
     "price": "¥720,000",
     "category": "camera",
-    "specs": ["24MP CMOS", "4K/60p", "931g"],
+    "specs": [
+      "24MP CMOS",
+      "4K/60p",
+      "931g"
+    ],
     "description": "現代的なミラーレスカメラとライカの哲学が融合。優秀な動画性能と高感度特性を持ち、プロフェッショナルワークにも対応できる万能機。",
     "experience": "オートフォーカスの精度が高く、動画撮影でも優秀。高感度でのノイズ処理も自然で、暗所撮影に強い。ただし、レンズが高価で重いのが難点。",
     "image": "leica-sl2s.jpg",
@@ -32,7 +40,11 @@
     "status": "available",
     "price": "¥138,000",
     "category": "drone",
-    "specs": ["4K/60fps", "249g", "34分飛行"],
+    "specs": [
+      "4K/60fps",
+      "249g",
+      "34分飛行"
+    ],
     "description": "軽量ながら本格的な4K撮影が可能。全方向障害物センサー搭載で安全性も向上。旅行に最適な249g設計で、多くの国で登録不要。",
     "experience": "画質が大幅に向上し、プロレベルの映像が撮影可能。風に対する安定性も改善されました。携帯性と性能のバランスが最高。",
     "image": "dji-mini4pro.jpg",
@@ -46,7 +58,11 @@
     "status": "not-for-sale",
     "price": "¥158,000",
     "category": "drone",
-    "specs": ["4K/120fps", "249g", "38分飛行"],
+    "specs": [
+      "4K/120fps",
+      "249g",
+      "38分飛行"
+    ],
     "description": "最新のMiniシリーズ。さらに向上した画質と飛行時間。4K/120fpsでのスローモーション撮影も可能で、表現の幅が格段に広がりました。",
     "experience": "現在のメインドローン。画質、安定性、飛行時間すべてが向上。特にスローモーション機能は映像制作において革命的。",
     "image": "dji-mini5pro.jpg",
@@ -60,7 +76,11 @@
     "status": "not-for-sale",
     "price": "¥189,800",
     "category": "camera",
-    "specs": ["Pro RAW", "4K/120fps", "512GB"],
+    "specs": [
+      "Pro RAW",
+      "4K/120fps",
+      "512GB"
+    ],
     "description": "最新のiPhone Pro。カメラ性能がさらに向上し、Pro RAWでの撮影や4K/120fpsでの動画撮影が可能。常に持ち歩ける最高のカメラ。",
     "experience": "メインの記録デバイス。編集アプリも充実しており、撮影から編集まで一台で完結。特に動画の手ブレ補正は驚異的。",
     "image": "iphone17pro.jpg",
@@ -74,7 +94,11 @@
     "status": "available",
     "price": "¥128,000",
     "category": "camera",
-    "specs": ["Pro RAW", "4K/60fps", "512GB"],
+    "specs": [
+      "Pro RAW",
+      "4K/60fps",
+      "512GB"
+    ],
     "description": "優秀なカメラ性能を持つ前世代のPro。17 Proへのアップグレードに伴い、売却を検討中。状態良好で、バッテリー劣化も少ない。",
     "experience": "2年間メインで使用。ProRAWでの撮影やAction Modeでの動画撮影など、十分にプロレベルの機能を持っています。",
     "image": "iphone15pro.jpg",
@@ -88,7 +112,11 @@
     "status": "not-for-sale",
     "price": "¥398,800",
     "category": "editing",
-    "specs": ["M3 Pro", "32GB RAM", "1TB SSD"],
+    "specs": [
+      "M3 Pro",
+      "32GB RAM",
+      "1TB SSD"
+    ],
     "description": "メインの編集マシン。4K動画編集からRAW現像まで、すべての作業をスムーズにこなします。持ち運びと性能のバランスが絶妙。",
     "experience": "旅行先での編集作業にも対応できる性能と携帯性。M3チップの効率性により、バッテリー持ちも優秀。メインマシンとして手放せません。",
     "image": "macbook-pro14.jpg",
@@ -102,7 +130,11 @@
     "status": "available",
     "price": "¥168,800",
     "category": "editing",
-    "specs": ["M4チップ", "512GB", "WiFiモデル"],
+    "specs": [
+      "M4チップ",
+      "512GB",
+      "WiFiモデル"
+    ],
     "description": "軽快な編集作業が可能なタブレット。Procreateでのイラスト制作や、LumaFusionでの動画編集など、クリエイティブ作業に最適。",
     "experience": "外出先での軽編集やプレゼンテーション、読書端末として活用。Apple Pencilとの組み合わせで、アイデアスケッチにも重宝しています。",
     "image": "ipad-pro11.jpg",
