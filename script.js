@@ -830,3 +830,93 @@ window.addEventListener('unhandledrejection', (e) => {
     console.error('Unhandled promise rejection:', e.reason);
     NotificationManager.warning('処理中にエラーが発生しました');
 });
+/**
+ * ナビゲーション機能の初期化
+ */
+function initializeNavigation() {
+    console.log('ナビゲーション機能初期化');
+    
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    const navLinks = document.querySelectorAll('.nav-link');
+    const mainNav = document.getElementById('main-nav');
+    
+    if (!navToggle || !navMenu) return;
+    
+    // モバイルメニュートグル
+    navToggle.addEventListener('click', () => {
+        navToggle.classList.toggle('active');
+        navMenu.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+        
+        // ARIA属性の更新
+        const isOpen = navMenu.classList.contains('active');
+        navToggle.setAttribute('aria-expanded', isOpen);
+        navToggle.setAttribute('aria-label', isOpen ? 'メニューを閉じる' : 'メニューを開く');
+    });
+    
+    // ナビゲーションリンククリック時にモバイルメニューを閉じる
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'メニューを開く');
+        });
+    });
+    
+    // スクロール時のナビゲーション効果
+    let lastScrollTop = 0;
+    window.addEventListener('scroll', () => {
+        const scrollTop = window.pageYOffset || document.documentElement.scrollTop;
+        
+        if (scrollTop > 100) {
+            mainNav.classList.add('scrolled');
+        } else {
+            mainNav.classList.remove('scrolled');
+        }
+        
+        lastScrollTop = scrollTop;
+    });
+    
+    // ESCキーでモバイルメニューを閉じる
+    document.addEventListener('keydown', (e) => {
+        if (e.key === 'Escape' && navMenu.classList.contains('active')) {
+            navToggle.classList.remove('active');
+            navMenu.classList.remove('active');
+            document.body.classList.remove('nav-open');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'メニューを開く');
+        }
+    });
+    
+    // 現在のページに応じてactiveクラスを設定
+    setActiveNavLink();
+}
+
+/**
+ * 現在のページに応じてナビゲーションのactiveクラスを設定
+ */
+function setActiveNavLink() {
+    const navLinks = document.querySelectorAll('.nav-link');
+    const currentPath = window.location.pathname;
+    
+    navLinks.forEach(link => {
+        link.classList.remove('active');
+        
+        const linkPath = new URL(link.href).pathname;
+        if (currentPath === linkPath || 
+            (currentPath === '/' && link.textContent.trim() === 'Home')) {
+            link.classList.add('active');
+        }
+    });
+}
+
+// 既存のDOMContentLoadedイベントリスナーに追加
+document.addEventListener('DOMContentLoaded', function() {
+    // 既存の初期化処理...
+    
+    // ナビゲーション初期化を追加
+    initializeNavigation();
+});
