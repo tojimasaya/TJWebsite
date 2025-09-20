@@ -73,7 +73,33 @@ html {
     scroll-behavior: smooth;
 }
 
-/* ナビゲーション基本スタイル - style.cssの既存のbodyスタイルの後に追加 */
+body {
+    font-family: var(--secondary-font);
+    line-height: 1.6;
+    color: var(--text-color);
+    background-color: var(--bg-color);
+    font-size: var(--text-base);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+/* Skip link for accessibility */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 6px;
+    background: var(--accent-color);
+    color: white;
+    padding: 8px;
+    text-decoration: none;
+    border-radius: 4px;
+    z-index: 1000;
+    transition: top var(--transition-fast);
+}
+
+.skip-link:focus {
+    top: 6px;
+}
 
 /* Navigation */
 .main-nav {
@@ -89,6 +115,17 @@ html {
 @media (prefers-color-scheme: dark) {
     .main-nav {
         background: rgba(26, 26, 26, 0.95);
+    }
+}
+
+.main-nav.scrolled {
+    background: rgba(250, 250, 250, 0.98);
+    box-shadow: var(--shadow-sm);
+}
+
+@media (prefers-color-scheme: dark) {
+    .main-nav.scrolled {
+        background: rgba(26, 26, 26, 0.98);
     }
 }
 
@@ -164,98 +201,6 @@ html {
     margin: 3px 0;
     transition: all var(--transition-base);
     border-radius: 1px;
-}
-
-/* モバイルナビゲーション */
-@media (max-width: 768px) {
-    .nav-container {
-        padding: 0 20px;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        top: 70px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 70px);
-        background: var(--white);
-        flex-direction: column;
-        justify-content: flex-start;
-        align-items: center;
-        padding-top: 50px;
-        gap: 40px;
-        transition: left var(--transition-base);
-        box-shadow: var(--shadow-lg);
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-link {
-        font-size: var(--text-lg);
-        padding: 10px 20px;
-    }
-    
-    .nav-toggle {
-        display: flex;
-    }
-    
-    .nav-toggle.active span:nth-child(1) {
-        transform: rotate(-45deg) translate(-5px, 6px);
-    }
-    
-    .nav-toggle.active span:nth-child(2) {
-        opacity: 0;
-    }
-    
-    .nav-toggle.active span:nth-child(3) {
-        transform: rotate(45deg) translate(-5px, -6px);
-    }
-    
-    body.nav-open {
-        overflow: hidden;
-    }
-}
-
-body {
-    font-family: var(--secondary-font);
-    line-height: 1.6;
-    color: var(--text-color);
-    background-color: var(--bg-color);
-    font-size: var(--text-base);
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
-}
-
-/* Skip link for accessibility */
-.skip-link {
-    position: absolute;
-    top: -40px;
-    left: 6px;
-    background: var(--accent-color);
-    color: white;
-    padding: 8px;
-    text-decoration: none;
-    border-radius: 4px;
-    z-index: 1000;
-    transition: top var(--transition-fast);
-}
-
-.skip-link:focus {
-    top: 6px;
-}
-
-/* Navigation enhancements */
-.main-nav.scrolled {
-    background: rgba(250, 250, 250, 0.98);
-    box-shadow: var(--shadow-sm);
-}
-
-@media (prefers-color-scheme: dark) {
-    .main-nav.scrolled {
-        background: rgba(26, 26, 26, 0.98);
-    }
 }
 
 .nav-toggle:hover {
@@ -1569,6 +1514,55 @@ body {
 @media (max-width: 768px) {
     .container {
         padding: 0 20px;
+    }
+    
+    .nav-container {
+        padding: 0 20px;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
+        background: var(--white);
+        flex-direction: column;
+        justify-content: flex-start;
+        align-items: center;
+        padding-top: 50px;
+        gap: 40px;
+        transition: left var(--transition-base);
+        box-shadow: var(--shadow-lg);
+    }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-link {
+        font-size: var(--text-lg);
+        padding: 10px 20px;
+    }
+    
+    .nav-toggle {
+        display: flex;
+    }
+    
+    .nav-toggle.active span:nth-child(1) {
+        transform: rotate(-45deg) translate(-5px, 6px);
+    }
+    
+    .nav-toggle.active span:nth-child(2) {
+        opacity: 0;
+    }
+    
+    .nav-toggle.active span:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -6px);
+    }
+    
+    body.nav-open {
+        overflow: hidden;
     }
     
     .hero-title {
