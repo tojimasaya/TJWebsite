@@ -920,3 +920,374 @@ document.addEventListener('DOMContentLoaded', function() {
     // ナビゲーション初期化を追加
     initializeNavigation();
 });
+// Gallery ページ専用JavaScript（script.jsに追加）
+
+/**
+ * Gallery ページの初期化
+ */
+function initializeGalleryPage() {
+    if (window.location.pathname.includes('gallery.html')) {
+        console.log('Gallery ページ初期化');
+        initializeGalleryFilters();
+        initializeGalleryLightbox();
+        initializeGalleryAnimations();
+    }
+}
+
+/**
+ * ギャラリーフィルター機能
+ */
+function initializeGalleryFilters() {
+    const filterTabs = document.querySelectorAll('.filter-tab');
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    if (filterTabs.length === 0) return;
+    
+    filterTabs.forEach(tab => {
+        tab.addEventListener('click', () => {
+            const filter = tab.dataset.filter;
+            
+            // アクティブタブ更新
+            filterTabs.forEach(t => t.classList.remove('active'));
+            tab.classList.add('active');
+            
+            // フィルタリング実行
+            filterGalleryItems(galleryItems, filter);
+            
+            console.log(`ギャラリーフィルター適用: ${filter}`);
+        });
+    });
+}
+
+/**
+ * ギャラリーアイテムのフィルタリング
+ */
+function filterGalleryItems(items, filter) {
+    items.forEach((item, index) => {
+        const categories = item.dataset.category || '';
+        const shouldShow = filter === 'all' || categories.includes(filter);
+        
+        if (shouldShow) {
+            // フェードイン効果
+            item.classList.remove('filtering-out');
+            item.classList.add('filtering-in');
+            item.style.display = 'block';
+            
+            // 段階的表示
+            setTimeout(() => {
+                item.style.opacity = '1';
+                item.style.transform = 'translateY(0) scale(1)';
+            }, index * 100);
+        } else {
+            // フェードアウト効果
+            item.classList.remove('filtering-in');
+            item.classList.add('filtering-out');
+            item.style.opacity = '0';
+            item.style.transform = 'translateY(20px) scale(0.8)';
+            
+            setTimeout(() => {
+                item.style.display = 'none';
+            }, 300);
+        }
+    });
+    
+    // 表示件数をログ出力
+    const visibleCount = Array.from(items).filter(item => {
+        const categories = item.dataset.category || '';
+        return filter === 'all' || categories.includes(filter);
+    }).length;
+    
+    console.log(`表示件数: ${visibleCount}件`);
+}
+
+/**
+ * ギャラリー専用ライトボックス
+ */
+function initializeGalleryLightbox() {
+    const photoItems = document.querySelectorAll('.gallery-item.photo');
+    
+    photoItems.forEach(item => {
+        const img = item.querySelector('img');
+        if (!img) return;
+        
+        item.addEventListener('click', () => {
+            openGalleryModal(item);
+        });
+        
+        // キーボード対応
+        item.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+                e.preventDefault();
+                openGalleryModal(item);
+            }
+        });
+    });
+}
+
+/**
+ * ギャラリーモーダルを開く（詳細情報付き）
+ */
+function openGalleryModal(galleryItem) {
+    const img = galleryItem.querySelector('img');
+    const title = galleryItem.querySelector('h3')?.textContent || '';
+    const description = galleryItem.querySelector('.gallery-description')?.textContent || '';
+    const location = galleryItem.querySelector('.gallery-location')?.textContent || '';
+    const date = galleryItem.querySelector('.gallery-date')?.textContent || '';
+    
+    if (!img) return;
+    
+    console.log('ギャラリーモーダル開く:', title);
+    
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    
+    if (modal && modalContent) {
+        // 詳細情報付きモーダルコンテンツ
+        modalContent.innerHTML = `
+            <div class="gallery-modal-content">
+                <img src="${img.src}" alt="${img.alt}" class="modal-image">
+                <div class="gallery-modal-info">
+                    <h3 class="gallery-modal-title">${title}</h3>
+                    <p class="gallery-modal-description">${description}</p>
+                    <div class="gallery-modal-meta">
+                        ${location ? `<span class="gallery-modal-location">${location}</span>` : ''}
+                        ${date ? `<span class="gallery-modal-date">${date}</span>` : ''}
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        modal.setAttribute('aria-hidden', 'false');
+        modal.setAttribute('aria-labelledby', 'gallery-modal-title');
+        modal.style.display = 'flex';
+        document.body.style.overflow = 'hidden';
+        
+        // フォーカストラップ
+        const cleanup = FocusManager.trapFocus(modal);
+        modal.dataset.focusCleanup = 'true';
+        
+        appState.setState({ modalOpen: true });
+    }
+}
+
+/**
+ * ギャラリーアニメーション初期化
+ */
+function initializeGalleryAnimations() {
+    const gallerySection = document.querySelector('.main-gallery');
+    if (!gallerySection) return;
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const galleryItems = entry.target.querySelectorAll('.gallery-item');
+                galleryItems.forEach((item, index) => {
+                    setTimeout(() => {
+                        item.style.opacity = '1';
+                        item.style.transform = 'translateY(0)';
+                    }, index * 150);
+                });
+                observer.unobserve(entry.target);
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '-50px'
+    });
+    
+    observer.observe(gallerySection);
+}
+
+/**
+ * ギャラリー画像の遅延読み込み最適化
+ */
+function optimizeGalleryImages() {
+    const images = document.querySelectorAll('.gallery-media img');
+    
+    if ('IntersectionObserver' in window) {
+        const imageObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    const img = entry.target;
+                    
+                    // 高解像度画像の読み込み
+                    if (img.dataset.highres) {
+                        const highResImg = new Image();
+                        highResImg.onload = () => {
+                            img.src = img.dataset.highres;
+                            img.classList.add('high-res-loaded');
+                        };
+                        highResImg.src = img.dataset.highres;
+                    }
+                    
+                    imageObserver.unobserve(img);
+                }
+            });
+        });
+        
+        images.forEach(img => imageObserver.observe(img));
+    }
+}
+
+/**
+ * ギャラリー統計情報の表示
+ */
+function displayGalleryStats() {
+    const photoCount = document.querySelectorAll('.gallery-item.photo').length;
+    const videoCount = document.querySelectorAll('.gallery-item.video').length;
+    const totalCount = photoCount + videoCount;
+    
+    console.log(`ギャラリー統計: 写真 ${photoCount}件, 動画 ${videoCount}件, 合計 ${totalCount}件`);
+    
+    // 統計情報をページに表示（オプション）
+    const statsElement = document.querySelector('.gallery-stats');
+    if (statsElement) {
+        statsElement.innerHTML = `
+            <span class="stat-item">写真 ${photoCount}件</span>
+            <span class="stat-item">動画 ${videoCount}件</span>
+            <span class="stat-item">合計 ${totalCount}件</span>
+        `;
+    }
+}
+
+/**
+ * ギャラリーのキーボードナビゲーション
+ */
+function initializeGalleryKeyboardNav() {
+    let currentIndex = -1;
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    
+    document.addEventListener('keydown', (e) => {
+        if (!window.location.pathname.includes('gallery.html')) return;
+        
+        switch(e.key) {
+            case 'ArrowRight':
+                e.preventDefault();
+                currentIndex = Math.min(currentIndex + 1, galleryItems.length - 1);
+                focusGalleryItem(currentIndex);
+                break;
+            case 'ArrowLeft':
+                e.preventDefault();
+                currentIndex = Math.max(currentIndex - 1, 0);
+                focusGalleryItem(currentIndex);
+                break;
+            case 'Home':
+                e.preventDefault();
+                currentIndex = 0;
+                focusGalleryItem(currentIndex);
+                break;
+            case 'End':
+                e.preventDefault();
+                currentIndex = galleryItems.length - 1;
+                focusGalleryItem(currentIndex);
+                break;
+        }
+    });
+}
+
+/**
+ * ギャラリーアイテムにフォーカス
+ */
+function focusGalleryItem(index) {
+    const galleryItems = document.querySelectorAll('.gallery-item');
+    if (galleryItems[index]) {
+        galleryItems[index].focus();
+        galleryItems[index].scrollIntoView({
+            behavior: 'smooth',
+            block: 'center'
+        });
+    }
+}
+
+// DOMContentLoaded時にギャラリー機能を初期化
+document.addEventListener('DOMContentLoaded', function() {
+    // 既存の初期化処理...
+    
+    // Gallery ページの初期化を追加
+    setTimeout(() => {
+        initializeGalleryPage();
+        optimizeGalleryImages();
+        displayGalleryStats();
+        initializeGalleryKeyboardNav();
+    }, 500);
+});
+
+// ギャラリーモーダル用のCSSを動的に追加
+function addGalleryModalStyles() {
+    const style = document.createElement('style');
+    style.textContent = `
+        .gallery-modal-content {
+            display: flex;
+            flex-direction: column;
+            max-width: 90vw;
+            max-height: 90vh;
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        .gallery-modal-info {
+            padding: 25px;
+            max-width: 500px;
+        }
+        
+        .gallery-modal-title {
+            font-family: var(--primary-font);
+            font-size: var(--text-xl);
+            font-weight: 600;
+            margin-bottom: 12px;
+            color: var(--text-color);
+        }
+        
+        .gallery-modal-description {
+            font-size: var(--text-sm);
+            color: var(--text-light);
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+        
+        .gallery-modal-meta {
+            display: flex;
+            gap: 15px;
+            flex-wrap: wrap;
+        }
+        
+        .gallery-modal-location,
+        .gallery-modal-date {
+            font-size: var(--text-xs);
+            padding: 4px 12px;
+            border-radius: 12px;
+            font-weight: 500;
+        }
+        
+        .gallery-modal-location {
+            background: var(--accent-color);
+            color: white;
+        }
+        
+        .gallery-modal-date {
+            background: var(--hover-color);
+            color: var(--text-lighter);
+        }
+        
+        @media (max-width: 768px) {
+            .gallery-modal-content {
+                max-width: 95vw;
+                max-height: 85vh;
+            }
+            
+            .gallery-modal-info {
+                padding: 20px;
+            }
+            
+            .gallery-modal-meta {
+                flex-direction: column;
+                gap: 8px;
+            }
+        }
+    `;
+    document.head.appendChild(style);
+}
+
+// スタイルを追加
+addGalleryModalStyles();
