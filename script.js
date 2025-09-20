@@ -307,21 +307,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
 async function initializeApp() {
     try {
-        // 並列実行で高速化
+        // Galleryページでは記事取得をスキップ
+        if (!window.location.pathname.includes('gallery.html')) {
+            // 並列実行で高速化
+            await Promise.allSettled([
+                loadNotePosts(),
+                updateMainContentCard(),
+            ]);
+        }
+        
+        // 共通機能は全ページで実行
         await Promise.allSettled([
-            loadNotePosts(),
-            updateMainContentCard(),
             initializeScrollAnimations(),
             initializeLightbox(),
             initializeServiceWorker()
         ]);
         
-        // 初期化完了の通知
-        NotificationManager.success('サイトの読み込みが完了しました');
+        // 初期化完了の通知（ホームページのみ）
+        if (!window.location.pathname.includes('gallery.html')) {
+            NotificationManager.success('サイトの読み込みが完了しました');
+        }
         
     } catch (error) {
         console.error('初期化エラー:', error);
-        NotificationManager.error('サイトの初期化中にエラーが発生しました');
+        // エラー通知もホームページのみ
+        if (!window.location.pathname.includes('gallery.html')) {
+            NotificationManager.error('サイトの初期化中にエラーが発生しました');
+        }
     }
 }
 
