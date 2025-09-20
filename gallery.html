@@ -1,1 +1,308 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery — Toji Masaya</title>
+    
+    <!-- SEO & OGP -->
+    <meta name="description" content="田路昌也の写真と動画ギャラリー。ライカやドローンで撮影した旅の記録、街角スナップ、風景写真をご覧ください。">
+    <meta name="keywords" content="田路昌也, 写真, 動画, ギャラリー, ライカ, ドローン, 旅行写真">
+    <meta name="author" content="Toji Masaya">
+    
+    <!-- OGP -->
+    <meta property="og:title" content="Gallery — Toji Masaya">
+    <meta property="og:description" content="ライカやドローンで撮影した旅の記録、街角スナップ、風景写真をご覧ください。">
+    <meta property="og:image" content="https://tojimasaya.com/Venice.JPG">
+    <meta property="og:url" content="https://tojimasaya.com/gallery.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Toji Masaya">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Gallery — Toji Masaya">
+    <meta name="twitter:description" content="ライカやドローンで撮影した旅の記録、街角スナップ、風景写真をご覧ください。">
+    <meta name="twitter:image" content="https://tojimasaya.com/Venice.JPG">
+    
+    <!-- Preload critical resources -->
+    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" as="style">
+    
+    <!-- Critical CSS inline -->
+    <style>
+        /* Critical CSS for above-the-fold content */
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        :root {
+            --primary-font: 'Crimson Text', Georgia, serif;
+            --secondary-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+            --text-color: #333;
+            --bg-color: #fafafa;
+            --white: #ffffff;
+            --border-color: #e5e5e5;
+            --accent-color: #2563eb;
+        }
+        body { font-family: var(--secondary-font); line-height: 1.6; color: var(--text-color); background-color: var(--bg-color); }
+        .gallery-hero { position: relative; height: 60vh; min-height: 400px; overflow: hidden; margin-top: 70px; }
+        .gallery-hero-image { position: relative; width: 100%; height: 100%; }
+        .gallery-hero-image img { width: 100%; height: 100%; object-fit: cover; filter: brightness(0.7) contrast(1.1); }
+        .gallery-hero-overlay { position: absolute; bottom: 60px; left: 50%; transform: translateX(-50%); text-align: center; color: white; }
+        .gallery-hero-title { font-family: var(--primary-font); font-size: 3rem; font-weight: 600; margin-bottom: 0.5rem; text-shadow: 2px 2px 4px rgba(0,0,0,0.5); }
+        .gallery-hero-subtitle { font-family: var(--secondary-font); font-size: 1.1rem; font-weight: 300; text-shadow: 1px 1px 2px rgba(0,0,0,0.5); }
+    </style>
+    
+    <!-- Non-critical CSS -->
+    <link rel="stylesheet" href="style.css" media="print" onload="this.media='all'">
+    <noscript><link rel="stylesheet" href="style.css"></noscript>
+    
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Theme color -->
+    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+</head>
+<body>
+    <!-- ナビゲーションバー -->
+    <nav class="main-nav" id="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Toji Masaya</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="/gear.html" class="nav-link">Gear</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
+    <!-- Loading indicator -->
+    <div id="loading-indicator" class="loading-indicator" aria-hidden="true">
+        <div class="loading-spinner"></div>
+        <p>読み込み中...</p>
+    </div>
+
+    <!-- Error notification container -->
+    <div id="notification-container" class="notification-container" aria-live="polite"></div>
+
+    <!-- Skip to main content for accessibility -->
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
+    <!-- ギャラリーヒーローセクション -->
+    <section class="gallery-hero" role="banner">
+        <div class="gallery-hero-image">
+            <img src="Venice.JPG" alt="ヴェネツィアのゴンドラが静かに踊る風景" loading="eager" width="1920" height="1080">
+            <div class="gallery-hero-overlay">
+                <h1 class="gallery-hero-title">Gallery</h1>
+                <p class="gallery-hero-subtitle">旅先で切り取った瞬間たち</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <!-- ギャラリー紹介 -->
+            <section class="gallery-intro">
+                <div class="intro-text">
+                    <p class="lead">ライカやドローンを片手に、世界各地で切り取った瞬間たち。街角の何気ない風景から、雄大な自然まで、旅先で出会った光景を写真と動画で記録しています。</p>
+                </div>
+            </section>
+
+            <!-- フィルターナビゲーション -->
+            <section class="gallery-filters">
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all" aria-label="全ての作品を表示">All</button>
+                    <button class="filter-tab" data-filter="video" aria-label="動画のみ表示">Videos</button>
+                    <button class="filter-tab" data-filter="photo" aria-label="写真のみ表示">Photos</button>
+                    <button class="filter-tab" data-filter="travel" aria-label="旅行写真のみ表示">Travel</button>
+                    <button class="filter-tab" data-filter="architecture" aria-label="建築写真のみ表示">Architecture</button>
+                </div>
+            </section>
+
+            <!-- メインギャラリー -->
+            <section class="main-gallery">
+                <div class="gallery-grid">
+                    <!-- YouTube動画 -->
+                    <div class="gallery-item video travel" data-category="video travel">
+                        <div class="gallery-media">
+                            <iframe src="https://www.youtube.com/embed/cJ2lFRqmeBA" 
+                                    title="カッパドキアのホテルから" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen
+                                    loading="lazy"></iframe>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>カッパドキアのホテルから</h3>
+                            <p class="gallery-description">妻と訪れたカッパドキアのホテルから眺めた朝の風景。静寂の中に響く鳥のさえずりと、徐々に明るくなる空が印象的でした。</p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">カッパドキア, トルコ</span>
+                                <span class="gallery-date">2024年春</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item video travel" data-category="video travel">
+                        <div class="gallery-media">
+                            <iframe src="https://www.youtube.com/embed/0YiQFV-V_Pw" 
+                                    title="記憶すべき風景、馬草壟" 
+                                    frameborder="0" 
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                    allowfullscreen
+                                    loading="lazy"></iframe>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>記憶すべき風景、馬草壟（Ma Tso Lung）</h3>
+                            <p class="gallery-description">香港の隠れた絶景スポット、馬草壟。都市の喧騒から離れた静かな湿地帯で、野鳥の声に耳を澄ませながら撮影しました。</p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">馬草壟, 香港</span>
+                                <span class="gallery-date">2024年夏</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- 写真 -->
+                    <div class="gallery-item photo travel" data-category="photo travel" tabindex="0" role="button" aria-label="ヴェネツィアのゴンドラの写真を拡大表示">
+                        <div class="gallery-media">
+                            <img src="Venice.JPG" alt="ヴェネツィアのゴンドラが静かに踊る風景" loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>Silent Waltz of the Gondolas</h3>
+                            <p class="gallery-description">朝靄に包まれたヴェネツィアの運河。観光客で賑わう前の静寂な時間に、ゴンドラが静かに水面を滑っていく様子を捉えました。</p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">ヴェネツィア, イタリア</span>
+                                <span class="gallery-date">2023年秋</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item photo travel architecture" data-category="photo travel architecture" tabindex="0" role="button" aria-label="兵馬俑の写真を拡大表示">
+                        <div class="gallery-media">
+                            <img src="Heibayou.JPG" alt="兵馬俑 - 永遠の守護者たち" loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>永遠の守護者たち</h3>
+                            <p class="gallery-description">西安の兵馬俑博物館で、2000年以上の時を経ても変わらずに並び続ける兵士たちの姿に圧倒されました。歴史の重みを感じる瞬間でした。</p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">西安, 中国</span>
+                                <span class="gallery-date">2023年春</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="gallery-item photo architecture" data-category="photo architecture" tabindex="0" role="button" aria-label="姫路城の写真を拡大表示">
+                        <div class="gallery-media">
+                            <img src="HimejiCastle.JPG" alt="桜に抱かれた姫路城（白鷺城）" loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>桜に抱かれる白鷺城</h3>
+                            <p class="gallery-description">満開の桜に包まれた姫路城。日本の美しさを象徴するような光景を、Leicaで丁寧に撮影しました。白い城壁と薄紅色の桜のコントラストが印象的でした。</p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">姫路, 日本</span>
+                                <span class="gallery-date">2024年春</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 追加の作品例 -->
+                    <div class="gallery-item photo travel" data-category="photo travel" tabindex="0" role="button" aria-label="イスタンブール風景の写真を拡大表示">
+                        <div class="gallery-media">
+                            <img src="Istanbul.jpg" alt="イスタンブールの風景 - ボスポラス海峡から見た街並み" loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>ボスポラス海峡の朝</h3>
+                            <p class="gallery-description">ヨーロッパとアジアを結ぶボスポラス海峡から見たイスタンブールの街並み。オスマン帝国の歴史を感じる建物群が朝日に照らされる瞬間です。</p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">イスタンブール, トルコ</span>
+                                <span class="gallery-date">2024年春</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="gallery-item photo travel" data-category="photo travel" tabindex="0" role="button" aria-label="香港夜景の写真を拡大表示">
+                        <div class="gallery-media">
+                            <img src="HongKong.jpg" alt="香港の夜景 - ヴィクトリア・ハーバーから見た摩天楼" loading="lazy" width="400" height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>百万ドルの夜景</h3>
+                            <p class="gallery-description">香港のヴィクトリア・ハーバーから見た摩天楼の夜景。無数の光が水面に反射し、まさに「百万ドルの夜景」と呼ばれる美しさでした。</p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">香港</span>
+                                <span class="gallery-date">2024年夏</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- 機材紹介セクション -->
+            <section class="equipment-section">
+                <h2>Equipment</h2>
+                <div class="equipment-grid">
+                    <div class="equipment-item">
+                        <div class="equipment-icon">📷</div>
+                        <h3>Leica Q2</h3>
+                        <p>メインカメラ。28mm単焦点の描写力と機動性を活かして、街角スナップから風景まで幅広く使用。</p>
+                    </div>
+                    <div class="equipment-item">
+                        <div class="equipment-icon">🚁</div>
+                        <h3>DJI Mini 3 Pro</h3>
+                        <p>空撮用ドローン。軽量で持ち運びやすく、旅先での俯瞰撮影に重宝しています。</p>
+                    </div>
+                    <div class="equipment-item">
+                        <div class="equipment-icon">📱</div>
+                        <h3>iPhone 15 Pro</h3>
+                        <p>日常のスナップ。ProRAWでの撮影により、後編集での表現力も十分確保。</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- ホームページへの戻りリンク -->
+            <section class="back-to-home">
+                <a href="/" class="back-link">
+                    <span class="back-arrow">←</span>
+                    <span>Back to Home</span>
+                </a>
+            </section>
+
+            <!-- フッター -->
+            <footer class="footer" role="contentinfo">
+                <div class="footer-content">
+                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
+                    <p>Built with care in Japan</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- ライトボックス・モーダル -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <button class="close-modal" onclick="closeModal()" aria-label="モーダルを閉じる">&times;</button>
+        <div class="modal-content" id="modal-content">
+            <!-- 画像または動画がここに表示される -->
+        </div>
+    </div>
+
+    <!-- Scripts -->
+    <script src="script.js" defer></script>
+    
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "Toji Masaya Gallery",
+        "description": "田路昌也の写真と動画ギャラリー。ライカやドローンで撮影した旅の記録。",
+        "author": {
+            "@type": "Person",
+            "name": "田路昌也",
+            "alternateName": "Toji Masaya"
+        },
+        "url": "https://tojimasaya.com/gallery.html"
+    }
+    </script>
+</body>
+</html>
