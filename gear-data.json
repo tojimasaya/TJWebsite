@@ -19,8 +19,8 @@
   },
   "leica-sl2s": {
     "name": "Leica SL2-S",
-    "status": "available",
-    "price": "¥720,000",
+    "status": "not-for-sale",
+    "price": "300000",
     "category": "camera",
     "specs": [
       "24MP CMOS",
@@ -33,7 +33,7 @@
     "amazonUrl": "https://amzn.to/example2",
     "reviewUrl": "https://note.com/tojimasaya/m/mcae365b520ed",
     "featured": true,
-    "updated": "2025-01-15"
+    "updated": "2025-09-20T15:17:49.078Z"
   },
   "dji-mini4pro": {
     "name": "DJI Mini 4 Pro",
