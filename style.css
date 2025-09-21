@@ -1909,3 +1909,245 @@ body {
         scroll-behavior: auto !important;
     }
 }
+/* =====================================
+   Gear Category Landing Page Styles
+   style.cssの末尾に追加
+   ===================================== */
+
+/* Category Grid */
+.gear-categories {
+    padding-bottom: 80px;
+}
+
+.category-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+    gap: 40px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.category-card {
+    background: var(--white);
+    border-radius: 16px;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    transition: all var(--transition-base);
+    position: relative;
+    opacity: 0;
+    transform: translateY(50px);
+}
+
+.category-card.animate-in {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+.category-card:hover {
+    transform: translateY(-8px);
+    box-shadow: var(--shadow-xl);
+}
+
+.category-image {
+    position: relative;
+    width: 100%;
+    height: 280px;
+    overflow: hidden;
+}
+
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform var(--transition-base);
+    filter: brightness(0.9) contrast(1.1);
+}
+
+.category-card:hover .category-image img {
+    transform: scale(1.05);
+    filter: brightness(1) contrast(1.2);
+}
+
+.category-info {
+    padding: 40px;
+}
+
+.category-info h2 {
+    font-family: var(--primary-font);
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    color: var(--text-color);
+    margin-bottom: 16px;
+    line-height: 1.2;
+}
+
+.category-info p {
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 24px;
+    font-size: var(--text-base);
+}
+
+.category-stats {
+    display: flex;
+    gap: 20px;
+    margin-bottom: 30px;
+}
+
+.stat-item {
+    font-size: var(--text-sm);
+    color: var(--text-lighter);
+    background: var(--hover-color);
+    padding: 8px 16px;
+    border-radius: 20px;
+    font-weight: 500;
+}
+
+.category-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    padding: 16px 32px;
+    background: var(--accent-color);
+    color: white;
+    text-decoration: none;
+    border-radius: 50px;
+    font-weight: 600;
+    font-size: var(--text-base);
+    transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.category-btn::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left var(--transition-slow);
+}
+
+.category-btn:hover::before {
+    left: 100%;
+}
+
+.category-btn:hover {
+    background: var(--focus-color);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(37, 99, 235, 0.3);
+}
+
+.btn-arrow {
+    font-size: var(--text-lg);
+    transition: transform var(--transition-base);
+}
+
+.category-btn:hover .btn-arrow {
+    transform: translateX(4px);
+}
+
+/* Category card specific colors */
+.category-card[data-category="camera"] .category-btn {
+    background: #2563eb;
+}
+
+.category-card[data-category="camera"] .category-btn:hover {
+    background: #1d4ed8;
+}
+
+.category-card[data-category="drone"] .category-btn {
+    background: #10b981;
+}
+
+.category-card[data-category="drone"] .category-btn:hover {
+    background: #059669;
+}
+
+.category-card[data-category="editing"] .category-btn {
+    background: #8b5cf6;
+}
+
+.category-card[data-category="editing"] .category-btn:hover {
+    background: #7c3aed;
+}
+
+.category-card[data-category="accessories"] .category-btn {
+    background: #f59e0b;
+}
+
+.category-card[data-category="accessories"] .category-btn:hover {
+    background: #d97706;
+}
+
+/* Category responsive design */
+@media (max-width: 1024px) {
+    .category-grid {
+        grid-template-columns: repeat(auto-fit, minmax(450px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media (max-width: 768px) {
+    .gear-categories {
+        padding-bottom: 60px;
+    }
+    
+    .category-grid {
+        grid-template-columns: 1fr;
+        gap: 30px;
+    }
+    
+    .category-image {
+        height: 220px;
+    }
+    
+    .category-info {
+        padding: 30px 25px;
+    }
+    
+    .category-info h2 {
+        font-size: var(--text-2xl);
+        margin-bottom: 12px;
+    }
+    
+    .category-info p {
+        font-size: var(--text-sm);
+        margin-bottom: 20px;
+    }
+    
+    .category-stats {
+        gap: 15px;
+        margin-bottom: 25px;
+    }
+    
+    .stat-item {
+        font-size: var(--text-xs);
+        padding: 6px 12px;
+    }
+    
+    .category-btn {
+        padding: 14px 28px;
+        font-size: var(--text-sm);
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .category-info {
+        padding: 25px 20px;
+    }
+    
+    .category-stats {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .stat-item {
+        align-self: flex-start;
+    }
+}
