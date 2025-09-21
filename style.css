@@ -1,4 +1,5 @@
 /* Craig Mod inspired design - Clean & Modern */
+/* 修正版：コンテンツ表示問題を解決 */
 
 /* Reset & Base */
 * {
@@ -113,7 +114,221 @@ body {
 }
 
 @media (prefers-color-scheme: dark) {
-    .main-nav {
+    .gallery-media {
+        height: 180px;
+    }
+    
+    .gear-image {
+        height: 200px;
+    }
+    
+    .gear-specs {
+        gap: 6px;
+    }
+    
+    .spec-item {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+    
+    .gear-experience {
+        padding: 15px;
+    }
+    
+    .btn {
+        padding: 8px 12px;
+        font-size: var(--text-xs);
+    }
+    
+    .btn-large {
+        padding: 12px 20px;
+        font-size: var(--text-sm);
+    }
+    
+    .category-info {
+        padding: 25px 20px;
+    }
+    
+    .category-stats {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+    }
+    
+    .stat-item {
+        align-self: flex-start;
+    }
+    
+    .section-header h2 {
+        font-size: var(--text-xl);
+    }
+    
+    .article-item {
+        padding: 20px 15px;
+    }
+    
+    .article-source {
+        padding: 3px 8px;
+        font-size: 10px;
+    }
+    
+    .subscribe-section {
+        padding: 50px 20px;
+    }
+    
+    .subscribe-btn {
+        flex-direction: column;
+        text-align: center;
+        padding: 20px;
+        gap: 12px;
+    }
+    
+    .subscribe-icon {
+        font-size: 1.8rem;
+        width: 45px;
+        height: 45px;
+    }
+}
+
+/* 修正: アニメーション関連の問題を解決 */
+@media (prefers-reduced-motion: no-preference) {
+    /* アニメーション初期状態は削除し、オプションのエフェクトのみ残す */
+    .content-card:hover {
+        animation: none;
+    }
+    
+    .gallery-item:hover {
+        animation: none;
+    }
+    
+    .gear-item:hover {
+        animation: none;
+    }
+    
+    /* 軽微なフェードインエフェクトのみ適用（必要に応じて） */
+    .fade-in {
+        opacity: 0;
+        transform: translateY(20px);
+        animation: fadeInUp 0.6s ease forwards;
+    }
+    
+    .fade-in:nth-child(1) { animation-delay: 0.1s; }
+    .fade-in:nth-child(2) { animation-delay: 0.2s; }
+    .fade-in:nth-child(3) { animation-delay: 0.3s; }
+    .fade-in:nth-child(4) { animation-delay: 0.4s; }
+    .fade-in:nth-child(5) { animation-delay: 0.5s; }
+    .fade-in:nth-child(6) { animation-delay: 0.6s; }
+}
+
+@keyframes fadeInUp {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* 修正: Reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+    
+    /* 全ての要素をデフォルトで表示状態にする */
+    .content-card,
+    .gallery-item,
+    .gear-item,
+    .category-card,
+    .social-link {
+        opacity: 1 !important;
+        transform: translateY(0) !important;
+    }
+}
+
+/* 修正: JavaScriptなしでも表示される基本スタイル */
+.no-js .content-card,
+.no-js .gallery-item,
+.no-js .gear-item,
+.no-js .category-card,
+.no-js .social-link {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* 修正: ギャラリーモーダル用のスタイル */
+.gallery-modal-content {
+    display: flex;
+    flex-direction: column;
+    max-width: 90vw;
+    max-height: 90vh;
+    background: white;
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+.gallery-modal-info {
+    padding: 25px;
+    max-width: 500px;
+}
+
+.gallery-modal-title {
+    font-family: var(--primary-font);
+    font-size: var(--text-xl);
+    font-weight: 600;
+    margin-bottom: 12px;
+    color: var(--text-color);
+}
+
+.gallery-modal-description {
+    font-size: var(--text-sm);
+    color: var(--text-light);
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.gallery-modal-meta {
+    display: flex;
+    gap: 15px;
+    flex-wrap: wrap;
+}
+
+.gallery-modal-location,
+.gallery-modal-date {
+    font-size: var(--text-xs);
+    padding: 4px 12px;
+    border-radius: 12px;
+    font-weight: 500;
+}
+
+.gallery-modal-location {
+    background: var(--accent-color);
+    color: white;
+}
+
+.gallery-modal-date {
+    background: var(--hover-color);
+    color: var(--text-lighter);
+}
+
+@media (max-width: 768px) {
+    .gallery-modal-content {
+        max-width: 95vw;
+        max-height: 85vh;
+    }
+    
+    .gallery-modal-info {
+        padding: 20px;
+    }
+    
+    .gallery-modal-meta {
+        flex-direction: column;
+        gap: 8px;
+    }
+}main-nav {
         background: rgba(26, 26, 26, 0.95);
     }
 }
@@ -373,6 +588,9 @@ body {
     transition: transform var(--transition-base), box-shadow var(--transition-base);
     border: 1px solid var(--border-color);
     position: relative;
+    /* 修正: デフォルトで表示状態にする */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .content-card::before {
@@ -677,6 +895,9 @@ body {
     font-weight: 500;
     position: relative;
     overflow: hidden;
+    /* 修正: デフォルトで表示状態にする */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .social-link::before {
@@ -915,6 +1136,9 @@ body {
     border: 1px solid var(--border-color);
     transition: all var(--transition-base);
     cursor: pointer;
+    /* 修正: デフォルトで表示状態にする */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .gallery-item:hover {
@@ -1035,6 +1259,61 @@ body {
     display: none;
 }
 
+/* フィルタリング用のアニメーション修正 */
+.gallery-item.filtering-out {
+    opacity: 0;
+    transform: translateY(20px) scale(0.8);
+    transition: all var(--transition-base);
+}
+
+.gallery-item.filtering-in {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition: all var(--transition-base);
+}
+
+/* Back to home */
+.back-to-home {
+    padding: 60px 0;
+    text-align: center;
+    border-top: 1px solid var(--border-color);
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-weight: 500;
+    font-size: var(--text-lg);
+    transition: all var(--transition-base);
+    padding: 12px 25px;
+    border: 1px solid var(--border-color);
+    border-radius: 30px;
+    background: var(--white);
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.back-link:focus {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 2px;
+}
+
+.back-arrow {
+    font-size: var(--text-xl);
+    transition: transform var(--transition-base);
+}
+
+.back-link:hover .back-arrow {
+    transform: translateX(-3px);
+}
+
 /* =====================================
    Gear Page Styles
    ===================================== */
@@ -1069,6 +1348,9 @@ body {
     height: auto;
     width: 100%;
     min-height: 600px;
+    /* 修正: デフォルトで表示状態にする */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .gear-item:hover {
@@ -1320,8 +1602,9 @@ body {
     border: 1px solid var(--border-color);
     transition: all var(--transition-base);
     position: relative;
-    opacity: 0;
-    transform: translateY(50px);
+    /* 修正: デフォルトで表示状態にする */
+    opacity: 1;
+    transform: translateY(0);
 }
 
 .category-card.animate-in {
@@ -1433,48 +1716,6 @@ body {
 
 .category-btn:hover .btn-arrow {
     transform: translateX(4px);
-}
-
-/* Back to home */
-.back-to-home {
-    padding: 60px 0;
-    text-align: center;
-    border-top: 1px solid var(--border-color);
-}
-
-.back-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    color: var(--text-color);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: var(--text-lg);
-    transition: all var(--transition-base);
-    padding: 12px 25px;
-    border: 1px solid var(--border-color);
-    border-radius: 30px;
-    background: var(--white);
-}
-
-.back-link:hover {
-    color: var(--accent-color);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-md);
-}
-
-.back-link:focus {
-    outline: 2px solid var(--focus-color);
-    outline-offset: 2px;
-}
-
-.back-arrow {
-    font-size: var(--text-xl);
-    transition: transform var(--transition-base);
-}
-
-.back-link:hover .back-arrow {
-    transform: translateX(-3px);
 }
 
 /* =====================================
@@ -2187,134 +2428,4 @@ body {
         max-width: 200px;
     }
     
-    .gallery-media {
-        height: 180px;
-    }
-    
-    .gear-image {
-        height: 200px;
-    }
-    
-    .gear-specs {
-        gap: 6px;
-    }
-    
-    .spec-item {
-        padding: 3px 8px;
-        font-size: 10px;
-    }
-    
-    .gear-experience {
-        padding: 15px;
-    }
-    
-    .btn {
-        padding: 8px 12px;
-        font-size: var(--text-xs);
-    }
-    
-    .btn-large {
-        padding: 12px 20px;
-        font-size: var(--text-sm);
-    }
-    
-    .category-info {
-        padding: 25px 20px;
-    }
-    
-    .category-stats {
-        flex-direction: column;
-        gap: 10px;
-        align-items: flex-start;
-    }
-    
-    .stat-item {
-        align-self: flex-start;
-    }
-    
-    .section-header h2 {
-        font-size: var(--text-xl);
-    }
-    
-    .article-item {
-        padding: 20px 15px;
-    }
-    
-    .article-source {
-        padding: 3px 8px;
-        font-size: 10px;
-    }
-    
-    .subscribe-section {
-        padding: 50px 20px;
-    }
-    
-    .subscribe-btn {
-        flex-direction: column;
-        text-align: center;
-        padding: 20px;
-        gap: 12px;
-    }
-    
-    .subscribe-icon {
-        font-size: 1.8rem;
-        width: 45px;
-        height: 45px;
-    }
-}
-
-/* Animations */
-@media (prefers-reduced-motion: no-preference) {
-    .content-card,
-    .gallery-item,
-    .gear-item {
-        opacity: 0;
-        transform: translateY(30px);
-    .content-card,
-    .gallery-item,
-    .gear-item {
-        opacity: 0;
-        transform: translateY(30px);
-        animation: fadeInUp 0.6s ease forwards;
-    }
-    
-    .content-card:nth-child(1),
-    .gallery-item:nth-child(1),
-    .gear-item:nth-child(1) { animation-delay: 0.1s; }
-    
-    .content-card:nth-child(2),
-    .gallery-item:nth-child(2),
-    .gear-item:nth-child(2) { animation-delay: 0.2s; }
-    
-    .content-card:nth-child(3),
-    .gallery-item:nth-child(3),
-    .gear-item:nth-child(3) { animation-delay: 0.3s; }
-    
-    .gallery-item:nth-child(4),
-    .gear-item:nth-child(4) { animation-delay: 0.4s; }
-    
-    .gallery-item:nth-child(5),
-    .gear-item:nth-child(5) { animation-delay: 0.5s; }
-    
-    .gallery-item:nth-child(6),
-    .gear-item:nth-child(6) { animation-delay: 0.6s; }
-}
-
-@keyframes fadeInUp {
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-/* Reduced motion preferences */
-@media (prefers-reduced-motion: reduce) {
-    *,
-    *::before,
-    *::after {
-        animation-duration: 0.01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: 0.01ms !important;
-        scroll-behavior: auto !important;
-    }
-}
+    .
