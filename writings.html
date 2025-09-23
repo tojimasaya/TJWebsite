@@ -26,6 +26,57 @@
     <!-- Theme color -->
     <meta name="theme-color" content="#fafafa">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+    
+    <!-- 修正：サムネイル専用CSS -->
+    <style>
+        /* サムネイル用の16:9固定スタイル */
+        .article-thumb {
+            position: relative;
+            width: 100%;
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            border-radius: 12px;
+            background: #f0f0f0;
+            margin-bottom: 16px;
+        }
+        
+        .article-thumb img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            object-position: center;
+            display: block;
+        }
+        
+        /* aspect-ratio未対応ブラウザ用のフォールバック */
+        @supports not (aspect-ratio: 16 / 9) {
+            .article-thumb {
+                height: 0;
+                padding-top: 56.25%; /* 16:9 = 9/16 * 100% = 56.25% */
+            }
+            
+            .article-thumb img {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+            }
+        }
+        
+        /* 記事アイテムのレイアウト調整 */
+        .article-item {
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .article-content {
+            flex: 1;
+        }
+    </style>
 </head>
 
 <body>
@@ -100,47 +151,59 @@
                     <div class="articles-grid" id="drone-articles">
                         <!-- 手動キュレーション記事 -->
                         <article class="article-item featured" data-article-url="https://drone.jp/column/20250912114426119738.html">
-  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
-
-                            <div class="article-meta">
-                                <span class="article-source drone">DRONE.jp</span>
-                                <time datetime="2025-09-12">2025年9月12日</time>
+                            <figure class="article-thumb">
+                                <img alt="サムネイル" loading="lazy">
+                            </figure>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-source drone">DRONE.jp</span>
+                                    <time datetime="2025-09-12">2025年9月12日</time>
+                                </div>
+                                <h3><a href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け Vol.56</a></h3>
+                                <p class="article-excerpt">ここ数カ月、我々ガジェットマニアをワクワクさせる発表が相次いでいます。360度カメラ搭載ドローンの新時代について考察します。</p>
                             </div>
-                            <h3><a href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け Vol.56</a></h3>
-                            <p class="article-excerpt">ここ数カ月、我々ガジェットマニアをワクワクさせる発表が相次いでいます。360度カメラ搭載ドローンの新時代について考察します。</p>
                         </article>
 
                         <article class="article-item" data-article-url="https://drone.jp/column/20250619135305116533.html">
-  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
-
-                            <div class="article-meta">
-                                <span class="article-source drone">DRONE.jp</span>
-                                <time datetime="2025-06-19">2025年6月19日</time>
+                            <figure class="article-thumb">
+                                <img alt="サムネイル" loading="lazy">
+                            </figure>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-source drone">DRONE.jp</span>
+                                    <time datetime="2025-06-19">2025年6月19日</time>
+                                </div>
+                                <h3><a href="https://drone.jp/column/20250619135305116533.html" target="_blank" rel="noopener noreferrer">Mini 4 Proユーザーが深センで見た"新しい誘惑"──Mavic 4 Pro を手にして思ったこと Vol.53</a></h3>
+                                <p class="article-excerpt">足を開いてプロペラを展開すると、「こんなに小さいのに、空を飛ぶんですね」という感動を改めて感じました。</p>
                             </div>
-                            <h3><a href="https://drone.jp/column/20250619135305116533.html" target="_blank" rel="noopener noreferrer">Mini 4 Proユーザーが深センで見た"新しい誘惑"──Mavic 4 Pro を手にして思ったこと Vol.53</a></h3>
-                            <p class="article-excerpt">足を開いてプロペラを展開すると、「こんなに小さいのに、空を飛ぶんですね」という感動を改めて感じました。</p>
                         </article>
 
                         <article class="article-item" data-article-url="https://drone.jp/column/2024092711162398826.html">
-  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
-
-                            <div class="article-meta">
-                                <span class="article-source drone">DRONE.jp</span>
-                                <time datetime="2024-09-27">2024年9月27日</time>
+                            <figure class="article-thumb">
+                                <img alt="サムネイル" loading="lazy">
+                            </figure>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-source drone">DRONE.jp</span>
+                                    <time datetime="2024-09-27">2024年9月27日</time>
+                                </div>
+                                <h3><a href="https://drone.jp/column/2024092711162398826.html" target="_blank" rel="noopener noreferrer">カメラドローンからFPVへ：DJI Avata 2が教えてくれた新たな空の楽しみ方 Vol.44</a></h3>
+                                <p class="article-excerpt">FPVの世界への第一歩。これまでMavicシリーズ、そして最近はDJI Miniシリーズを愛用してきた私がFPVドローンに挑戦しました。</p>
                             </div>
-                            <h3><a href="https://drone.jp/column/2024092711162398826.html" target="_blank" rel="noopener noreferrer">カメラドローンからFPVへ：DJI Avata 2が教えてくれた新たな空の楽しみ方 Vol.44</a></h3>
-                            <p class="article-excerpt">FPVの世界への第一歩。これまでMavicシリーズ、そして最近はDJI Miniシリーズを愛用してきた私がFPVドローンに挑戦しました。</p>
                         </article>
 
                         <article class="article-item" data-article-url="https://drone.jp/column/masaya-toji/2024042609444386915.html">
-  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
-
-                            <div class="article-meta">
-                                <span class="article-source drone">DRONE.jp</span>
-                                <time datetime="2024-04-26">2024年4月26日</time>
+                            <figure class="article-thumb">
+                                <img alt="サムネイル" loading="lazy">
+                            </figure>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-source drone">DRONE.jp</span>
+                                    <time datetime="2024-04-26">2024年4月26日</time>
+                                </div>
+                                <h3><a href="https://drone.jp/column/masaya-toji/2024042609444386915.html" target="_blank" rel="noopener noreferrer">安全なドローン飛行のために。地域の仲間やサービスプロバイダが提供する最適な環境 Vol.39</a></h3>
+                                <p class="article-excerpt">ドローン技術の進化と普及に伴い、趣味としてのドローン飛行が注目を集めています。安全な飛行環境について考察します。</p>
                             </div>
-                            <h3><a href="https://drone.jp/column/masaya-toji/2024042609444386915.html" target="_blank" rel="noopener noreferrer">安全なドローン飛行のために。地域の仲間やサービスプロバイダが提供する最適な環境 Vol.39</a></h3>
-                            <p class="article-excerpt">ドローン技術の進化と普及に伴い、趣味としてのドローン飛行が注目を集めています。安全な飛行環境について考察します。</p>
                         </article>
                     </div>
                 </div>
@@ -154,14 +217,17 @@
                     
                     <div class="articles-grid">
                         <article class="article-item" data-article-url="mailto:tojimasaya07@gmail.com">
-  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
-
-                            <div class="article-meta">
-                                <span class="article-source other">寄稿</span>
-                                <time datetime="2024-12-01">随時更新</time>
+                            <figure class="article-thumb">
+                                <img alt="サムネイル" loading="lazy">
+                            </figure>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-source other">寄稿</span>
+                                    <time datetime="2024-12-01">随時更新</time>
+                                </div>
+                                <h3><a href="mailto:tojimasaya07@gmail.com" class="contact-link">執筆のご依頼について</a></h3>
+                                <p class="article-excerpt">ドローン、カメラ、旅行関連の記事執筆を承っています。お気軽にお問い合わせください。</p>
                             </div>
-                            <h3><a href="mailto:tojimasaya07@gmail.com" class="contact-link">執筆のご依頼について</a></h3>
-                            <p class="article-excerpt">ドローン、カメラ、旅行関連の記事執筆を承っています。お気軽にお問い合わせください。</p>
                         </article>
                     </div>
                 </div>
@@ -252,13 +318,12 @@
             }
         });
 
-        // note記事の読み込み
+        // 修正：note記事の読み込み関数
         async function loadNoteArticles() {
             try {
                 const container = document.getElementById('note-articles');
                 container.innerHTML = '<div class="loading">記事を読み込み中...</div>';
                 
-                // RSSフィード取得（既存のscript.jsの関数を再利用）
                 const feeds = [
                     { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
                     { url: 'https://note.com/tojimasaya/m/md99dd54590fa/rss', name: '次はどこへ' },
@@ -311,29 +376,36 @@
                 allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
                 
                 if (allArticles.length > 0) {
+                    // 修正：正しいHTML構造で記事を生成
                     container.innerHTML = allArticles.slice(0, 6).map(article => `
                         <article class="article-item" data-article-url="${article.link}">
-  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
-
-                            <div class="article-meta">
-                                <span class="article-source note">${article.source}</span>
-                                <time datetime="${article.date}">${article.formattedDate}</time>
+                            <figure class="article-thumb">
+                                <img alt="サムネイル" loading="lazy">
+                            </figure>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-source note">${article.source}</span>
+                                    <time datetime="${article.date}">${article.formattedDate}</time>
+                                </div>
+                                <h3><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></h3>
+                                <p class="article-excerpt">${article.excerpt}</p>
                             </div>
-                            <h3><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></h3>
-                            <p class="article-excerpt">${article.excerpt}</p>
                         </article>
                     `).join('');
                 } else {
                     container.innerHTML = `
                         <article class="article-item" data-article-url="https://note.com/tojimasaya">
-  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
-
-                            <div class="article-meta">
-                                <span class="article-source note">note</span>
-                                <time datetime="2024-12-15">2024年12月15日</time>
+                            <figure class="article-thumb">
+                                <img alt="サムネイル" loading="lazy">
+                            </figure>
+                            <div class="article-content">
+                                <div class="article-meta">
+                                    <span class="article-source note">note</span>
+                                    <time datetime="2024-12-15">2024年12月15日</time>
+                                </div>
+                                <h3><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">noteで最新記事を公開中</a></h3>
+                                <p class="article-excerpt">最新の記事や旅の記録をnoteで更新しています。ぜひご覧ください。</p>
                             </div>
-                            <h3><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">noteで最新記事を公開中</a></h3>
-                            <p class="article-excerpt">最新の記事や旅の記録をnoteで更新しています。ぜひご覧ください。</p>
                         </article>
                     `;
                 }
@@ -342,14 +414,17 @@
                 const container = document.getElementById('note-articles');
                 container.innerHTML = `
                     <article class="article-item" data-article-url="https://note.com/tojimasaya">
-  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
-
-                        <div class="article-meta">
-                            <span class="article-source note">note</span>
-                            <time>継続更新中</time>
+                        <figure class="article-thumb">
+                            <img alt="サムネイル" loading="lazy">
+                        </figure>
+                        <div class="article-content">
+                            <div class="article-meta">
+                                <span class="article-source note">note</span>
+                                <time>継続更新中</time>
+                            </div>
+                            <h3><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">noteで記事を公開中</a></h3>
+                            <p class="article-excerpt">最新の記事はnoteでご覧いただけます。</p>
                         </div>
-                        <h3><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">noteで記事を公開中</a></h3>
-                        <p class="article-excerpt">最新の記事はnoteでご覧いただけます。</p>
                     </article>
                 `;
             }
