@@ -121,3 +121,32 @@ a {
     grid-template-columns: 1fr;
   }
 }
+
+/* ======== FINAL OVERRIDE: 全サムネを16:9で揃える ======== */
+/* 枠（figure/容器）を16:9に固定。高さ固定や別指定を無効化 */
+figure.article-thumb,
+.article-thumb,
+.article-card .article-thumb,
+.article-card figure,
+.article-card .thumb {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;   /* ← 枠を16:9に統一 */
+  height: auto !important;           /* 固定heightが残っていても打ち消す */
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+}
+
+/* 画像は枠いっぱいにフィット（黒帯なし・はみ出しなし） */
+figure.article-thumb img,
+.article-thumb img,
+.article-card .article-thumb img,
+.article-card figure img,
+.article-card .thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;      /* containにすると黒帯、coverで隙間ゼロ */
+  object-position: center center;
+  display: block;
+}
