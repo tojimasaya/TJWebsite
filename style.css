@@ -2430,31 +2430,28 @@ body {
     
     .
 
-/* ======== FINAL OVERRIDE (do not edit above) ======== */
-/* Force all article thumbnails into a 16:9 media box, without breaking existing layout */
-figure.article-thumb,
+/* ===== FINAL OVERRIDE: force thumbnails into 16:9 ===== */
 .article-thumb,
-.article-card .article-thumb,
-.article-card figure,
-.article-card .thumb {
+.article-card .thumb,
+figure.article-thumb {
   width: 100% !important;
   aspect-ratio: 16 / 9 !important;
-  height: auto !important;
-  overflow: hidden;
+  height: auto !important;        /* ← 高さ固定を解除 */
+  max-height: none !important;    /* ← 残ってる高さ制限を消す */
+  overflow: hidden !important;
   border-radius: 12px;
   background: #000;
 }
 
-figure.article-thumb img,
 .article-thumb img,
-.article-card .article-thumb img,
-.article-card figure img,
-.article-card .thumb img {
+.article-card .thumb img,
+figure.article-thumb img {
   width: 100% !important;
   height: 100% !important;
-  max-width: none !important;
-  object-fit: cover !important;
-  object-position: center center;
-  display: block;
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: cover !important;   /* ← 16:9の枠にぴったり収める */
+  object-position: center center !important;
+  display: block !important;
 }
-/* ======== END FINAL OVERRIDE ======== */
+/* ===== END FINAL OVERRIDE ===== */
