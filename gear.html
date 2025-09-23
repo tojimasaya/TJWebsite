@@ -26,6 +26,60 @@
     <!-- Theme color -->
     <meta name="theme-color" content="#fafafa">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+    
+    <!-- カスタムCSS -->
+    <style>
+        /* PC版: 2×2グリッドレイアウト */
+        @media (min-width: 769px) {
+            .category-grid {
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+                gap: 30px;
+                max-width: 1000px;
+                margin: 0 auto;
+            }
+            
+            .category-card {
+                min-height: 450px;
+            }
+            
+            .category-image {
+                height: 220px;
+            }
+            
+            .category-info {
+                padding: 25px 20px;
+            }
+            
+            .category-info h2 {
+                font-size: var(--text-xl);
+                margin-bottom: 12px;
+            }
+            
+            .category-info p {
+                font-size: var(--text-sm);
+                margin-bottom: 20px;
+            }
+            
+            .category-stats {
+                gap: 15px;
+                margin-bottom: 20px;
+            }
+            
+            .category-btn {
+                padding: 12px 24px;
+                font-size: var(--text-sm);
+            }
+        }
+        
+        /* モバイル版: 縦1列表示 */
+        @media (max-width: 768px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+            }
+        }
+    </style>
 </head>
 <body>
     <!-- Skip to main content -->
@@ -38,7 +92,7 @@
         <ul class="nav-menu" id="nav-menu">
             <li><a href="/" class="nav-link">Home</a></li>
             <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-            <li><a href="/gear.html" class="nav-link">Gear</a></li>
+            <li><a href="/gear.html" class="nav-link active">Gear</a></li>
             <li><a href="/writings.html" class="nav-link">Writings</a></li>
         </ul>
         <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
@@ -81,7 +135,6 @@
                             <p>Leica、iPhone Pro シリーズなど。旅行撮影に最適化した軽量・高画質な機材を選んでいます。</p>
                             <div class="category-stats">
                                 <span class="stat-item">5機材</span>
-                                <span class="stat-item">¥128,000〜</span>
                             </div>
                             <a href="/gear-camera.html" class="category-btn">
                                 <span>View Camera Gear</span>
@@ -100,7 +153,6 @@
                             <p>DJI Mini シリーズを中心とした軽量ドローン。4K撮影対応で旅行先での空撮に最適。</p>
                             <div class="category-stats">
                                 <span class="stat-item">2機材</span>
-                                <span class="stat-item">¥138,000〜</span>
                             </div>
                             <a href="/gear-drone.html" class="category-btn">
                                 <span>View Drone Gear</span>
@@ -119,7 +171,6 @@
                             <p>MacBook Pro、iPad Pro など。編集作業から日常使いまで、効率を高める編集機材。</p>
                             <div class="category-stats">
                                 <span class="stat-item">2機材</span>
-                                <span class="stat-item">¥168,800〜</span>
                             </div>
                             <a href="/gear-editing.html" class="category-btn">
                                 <span>View Editing Gear</span>
@@ -138,7 +189,6 @@
                             <p>メモリーカード、充電器、ケースなど。旅行をより快適にするアクセサリー類。</p>
                             <div class="category-stats">
                                 <span class="stat-item">準備中</span>
-                                <span class="stat-item">¥5,000〜</span>
                             </div>
                             <a href="/gear-accessories.html" class="category-btn">
                                 <span>View Accessories</span>
@@ -282,14 +332,14 @@
             {
                 "@type": "ListItem",
                 "position": 3,
-                "name": "Smartphone",
-                "description": "iPhone Pro シリーズとアクセサリー"
+                "name": "Editing",
+                "description": "MacBook Pro、iPad Pro など編集機材"
             },
             {
                 "@type": "ListItem",
                 "position": 4,
-                "name": "Gadget",
-                "description": "MacBook Pro、iPad、アクセサリーなど"
+                "name": "Accessories",
+                "description": "メモリーカード、充電器、ケースなど"
             }
         ]
     }
