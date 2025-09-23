@@ -1,4 +1,3 @@
-/* build: enhanced */
 /* Craig Mod inspired design - Clean & Modern */
 /* 修正版：コンテンツ表示問題を解決 */
 
@@ -2430,3 +2429,9 @@ body {
     }
     
     .
+
+/* === auto-thumbs styles === */
+.articles-grid .article-item{display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:start}
+.article-thumb{border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.12)}
+.article-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#111}
+@media (max-width:720px){.articles-grid .article-item{grid-template-columns:1fr}}

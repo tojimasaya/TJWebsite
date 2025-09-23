@@ -1303,31 +1303,3 @@ function addGalleryModalStyles() {
 
 // スタイルを追加
 addGalleryModalStyles();
-
-// === enhanced: active nav highlight & safer mobile menu ===
-(function enhanceNav() {
-  try {
-    // Highlight active link
-    const path = (location.pathname.split('/').pop() || 'index.html').toLowerCase();
-    document.querySelectorAll('.nav-link, nav a').forEach(a => {
-      const href = (a.getAttribute('href') || '').toLowerCase();
-      const isHome = (path === '' || path === 'index.html') && (href === '/' || href.endsWith('index.html') || href==='#');
-      const isMatch = isHome || (href && path && href.endsWith(path));
-      if (isMatch) a.classList.add('active');
-    });
-
-    // Mobile menu close on ESC if elements present
-    const toggle = document.getElementById('nav-toggle') || document.querySelector('[data-nav-toggle]');
-    const menu = document.getElementById('nav-menu') || document.querySelector('[data-nav-menu]');
-    function closeMenu(){
-      if (!menu) return;
-      menu.classList.remove('active','open');
-      document.body.classList.remove('nav-open');
-      if (toggle) toggle.setAttribute('aria-expanded','false');
-    }
-    if (toggle && menu) {
-      document.addEventListener('keydown', (e)=>{ if (e.key === 'Escape') closeMenu(); });
-      menu.addEventListener('click', (e)=>{ if (e.target.closest('a')) closeMenu(); });
-    }
-  } catch(e) {}
-})();

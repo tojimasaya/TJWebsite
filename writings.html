@@ -1,9 +1,7 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<meta charset="UTF-8">
+    <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writings — Toji Masaya</title>
     
@@ -100,7 +98,9 @@
                     
                     <div class="articles-grid" id="drone-articles">
                         <!-- 手動キュレーション記事 -->
-                        <article class="article-item featured">
+                        <article class="article-item featured" data-article-url="https://drone.jp/column/20250912114426119738.html">
+  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+
                             <div class="article-meta">
                                 <span class="article-source drone">DRONE.jp</span>
                                 <time datetime="2025-09-12">2025年9月12日</time>
@@ -109,7 +109,9 @@
                             <p class="article-excerpt">ここ数カ月、我々ガジェットマニアをワクワクさせる発表が相次いでいます。360度カメラ搭載ドローンの新時代について考察します。</p>
                         </article>
 
-                        <article class="article-item">
+                        <article class="article-item" data-article-url="https://drone.jp/column/20250619135305116533.html">
+  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+
                             <div class="article-meta">
                                 <span class="article-source drone">DRONE.jp</span>
                                 <time datetime="2025-06-19">2025年6月19日</time>
@@ -118,7 +120,9 @@
                             <p class="article-excerpt">足を開いてプロペラを展開すると、「こんなに小さいのに、空を飛ぶんですね」という感動を改めて感じました。</p>
                         </article>
 
-                        <article class="article-item">
+                        <article class="article-item" data-article-url="https://drone.jp/column/2024092711162398826.html">
+  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+
                             <div class="article-meta">
                                 <span class="article-source drone">DRONE.jp</span>
                                 <time datetime="2024-09-27">2024年9月27日</time>
@@ -127,7 +131,9 @@
                             <p class="article-excerpt">FPVの世界への第一歩。これまでMavicシリーズ、そして最近はDJI Miniシリーズを愛用してきた私がFPVドローンに挑戦しました。</p>
                         </article>
 
-                        <article class="article-item">
+                        <article class="article-item" data-article-url="https://drone.jp/column/masaya-toji/2024042609444386915.html">
+  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+
                             <div class="article-meta">
                                 <span class="article-source drone">DRONE.jp</span>
                                 <time datetime="2024-04-26">2024年4月26日</time>
@@ -146,7 +152,9 @@
                     </div>
                     
                     <div class="articles-grid">
-                        <article class="article-item">
+                        <article class="article-item" data-article-url="mailto:tojimasaya07@gmail.com">
+  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+
                             <div class="article-meta">
                                 <span class="article-source other">寄稿</span>
                                 <time datetime="2024-12-01">随時更新</time>
@@ -303,7 +311,9 @@
                 
                 if (allArticles.length > 0) {
                     container.innerHTML = allArticles.slice(0, 6).map(article => `
-                        <article class="article-item">
+                        <article class="article-item" data-article-url="${article.link}">
+  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+
                             <div class="article-meta">
                                 <span class="article-source note">${article.source}</span>
                                 <time datetime="${article.date}">${article.formattedDate}</time>
@@ -314,7 +324,9 @@
                     `).join('');
                 } else {
                     container.innerHTML = `
-                        <article class="article-item">
+                        <article class="article-item" data-article-url="https://note.com/tojimasaya">
+  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+
                             <div class="article-meta">
                                 <span class="article-source note">note</span>
                                 <time datetime="2024-12-15">2024年12月15日</time>
@@ -328,7 +340,9 @@
                 console.error('記事読み込みエラー:', error);
                 const container = document.getElementById('note-articles');
                 container.innerHTML = `
-                    <article class="article-item">
+                    <article class="article-item" data-article-url="https://note.com/tojimasaya">
+  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+
                         <div class="article-meta">
                             <span class="article-source note">note</span>
                             <time>継続更新中</time>
