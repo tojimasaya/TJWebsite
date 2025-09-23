@@ -2430,68 +2430,42 @@ body {
     
     .
 
-/* ===== FINAL KILL-SWITCH OVERRIDE: すべてのサムネを16:9に揃える ===== */
+/* ===== FINAL CLEAN OVERRIDE: すべてのサムネを16:9で揃える（通常フロー版） ===== */
 
-/* 枠そのものを16:9に固定。旧来のpaddingハックや固定高さを潰す */
+/* 枠を16:9に固定。固定heightやpaddingハックを打ち消し */
+figure.article-thumb,
 .article-thumb,
-.article-card .thumb,
-figure.article-thumb {
+.article-card .article-thumb,
+.article-card figure,
+.article-card .thumb {
   width: 100% !important;
-  /* 1) まず旧来指定を完全に無効化 */
-  padding: 0 !important;          /* ← padding-top:100% を無効化 */
-  height: auto !important;        /* ← 固定heightを無効化 */
+  height: auto !important;          /* 固定heightを解除 */
   max-height: none !important;
-
-  /* 2) 現代ブラウザではaspect-ratioで16:9を確定 */
-  aspect-ratio: 16 / 9 !important;
-
-  /* 3) 念のためのレイアウト安定化 */
-  position: relative !important;
+  padding: 0 !important;            /* padding-top:100% などを無効化 */
+  aspect-ratio: 16 / 9 !important;  /* ここで16:9を確定 */
   overflow: hidden !important;
   border-radius: 12px !important;
   background: #000 !important;
   display: block !important;
+  position: relative !important;    /* ただし absolute は使わない */
 }
 
-/* 画像を枠いっぱいにフィット（黒帯なし） */
-.article-thumb > img,
-.article-card .thumb > img,
-figure.article-thumb > img {
-  /* 4) 絶対配置で必ず枠にフィット（古いCSSの影響を受けない） */
-  position: absolute !important;
-  inset: 0 !important;            /* top/right/bottom/left: 0 */
+/* 画像は通常フローのまま枠にフィット（黒帯なし） */
+figure.article-thumb img,
+.article-thumb img,
+.article-card .article-thumb img,
+.article-card figure img,
+.article-card .thumb img {
   width: 100% !important;
-  height: 100% !important;
-
-  /* 5) 余白ゼロで自然な中央トリミング */
-  object-fit: cover !important;   /* すべてを枠に収める。黒帯を出さない */
-  object-position: center center !important;
-  display: block !important;
-
-  /* 6) 画像側の余計な制限を無効化 */
+  height: 100% !important;          /* 枠の aspect-ratio に従って縦が決まる */
   max-width: none !important;
   max-height: none !important;
-}
-
-/* もし「figure内に追加のラッパー」がある構造でも強制適用 */
-.article-thumb > a,
-.article-card .thumb > a,
-figure.article-thumb > a {
-  position: static !important;
-  display: block !important;
-  height: 100% !important;
-}
-.article-thumb > a > img,
-.article-card .thumb > a > img,
-figure.article-thumb > a > img {
-  position: absolute !important;
-  inset: 0 !important;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
+  object-fit: cover !important;     /* 余白ゼロで中央トリミング */
   object-position: center center !important;
   display: block !important;
-  max-width: none !important;
+  position: static !important;      /* ← absolute禁止。通常フローに戻す */
+}
+/* ===== END CLEAN OVERRIDE ===== */
   max-height: none !important;
 }
 /* ===== END OVERRIDE ===== */
