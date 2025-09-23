@@ -1350,3 +1350,54 @@ addGalleryModalStyles();
   })();
 })();
 
+// === auto-thumbs DISPLAY FIX ===
+// /writings, /writings.html, /writings/ の全パターンで発火。
+// まずフォールバックを即描画 → その後 JSON が読めたら差し替え。
+// JSON は相対パス 'data/writings-og.json' を優先（Pagesの配信場所に依存しない）。
+(function fixWritingsThumbs(){
+  const p = location.pathname.toLowerCase();
+  if (!/\/writings(?:\.html|\/)?$/.test(p)) return;
+
+  const cards = Array.from(document.querySelectorAll('.article-item[data-article-url]'));
+  if (!cards.length) return;
+
+  // 1) 即フォールバック（白枠を避ける）
+  cards.forEach(card => {
+    const img = card.querySelector('.article-thumb img');
+    if (!img || img.dataset.ready === '1') return;
+    const txt = card.textContent || '';
+    let fallback = 'Oreryu.jpg';
+    if (/drone\.jp/i.test(txt)) fallback = 'drone.jpg';
+    else if (/note/i.test(txt)) fallback = 'HongKong.jpg';
+    img.src = fallback;
+    img.alt = 'サムネイル';
+    img.loading = 'lazy';
+    img.dataset.ready = '1';
+  });
+
+  // 2) JSON を読んで置き換え
+  (async () => {
+    // まず相対パス（プロジェクトページでもOK）、無ければ絶対パスを試す
+    const tryUrls = ['data/writings-og.json', '/data/writings-og.json'];
+    let map = null;
+    for (const u of tryUrls) {
+      try {
+        const res = await fetch(u, {cache:'no-store'});
+        if (!res.ok) continue;
+        map = await res.json();
+        break;
+      } catch(_) {}
+    }
+    if (!map) return;
+
+    cards.forEach(card => {
+      const url = card.getAttribute('data-article-url');
+      const hit = map[url];
+      const img = card.querySelector('.article-thumb img');
+      if (hit && hit.image && img) {
+        img.src = hit.image;
+        img.alt = hit.title || '記事サムネイル';
+      }
+    });
+  })();
+})();
