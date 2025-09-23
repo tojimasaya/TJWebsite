@@ -2435,3 +2435,19 @@ body {
 .article-thumb{border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.12)}
 .article-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#111}
 @media (max-width:720px){.articles-grid .article-item{grid-template-columns:1fr}}
+
+/* サムネイル画像のリサイズ設定 */
+.article-thumb {
+  width: 100%;
+  height: 200px;          /* カードの高さに合わせる（必要に応じて調整） */
+  overflow: hidden;
+  border-radius: 12px;    /* 角丸を統一する場合 */
+}
+
+.article-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;      /* 中央を切り抜いてフィット */
+  object-position: center;
+  display: block;
+}
