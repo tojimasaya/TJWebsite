@@ -2605,3 +2605,12 @@ figure.article-thumb > picture > img,
   max-width: none !important;
   max-height: none !important;
 }
+
+/* サムネイル画像の横幅をカードに合わせる */
+.article-thumb img {
+    width: 100% !important;     /* コンテナの幅いっぱい */
+    height: auto !important;    /* 高さは自動調整で比率維持 */
+    object-fit: cover;          /* 枠いっぱいに収める（必要に応じてトリミング） */
+    object-position: center;    /* 中央基準で表示 */
+    display: block;             /* インライン要素の余白を消す */
+}
