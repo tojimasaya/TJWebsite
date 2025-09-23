@@ -2469,3 +2469,28 @@ figure.article-thumb img,
   max-height: none !important;
 }
 /* ===== END OVERRIDE ===== */
+
+/* ===== Grid overflow fix: 2カラム時の右切れ防止 ===== */
+
+/* カード一覧のグリッドは “minmax(0, 1fr)” にするのが鉄則 */
+.articles-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* ← ここが重要！ */
+  gap: 28px; /* 任意。今の値に合わせてOK */
+}
+
+/* グリッドの子要素は必ず縮められるようにしておく */
+.articles-grid > * {
+  min-width: 0;  /* ← これで中身が横に張っても親がはみ出さない */
+}
+
+/* 念のためカード自体にも適用（Flexで組んでいるケースにも効く） */
+.article-item {
+  min-width: 0;
+}
+
+/* サムネ周りの余計なはみ出しを抑制（保険） */
+.article-thumb,
+.article-thumb img {
+  max-width: 100%;
+}
