@@ -2428,103 +2428,33 @@ body {
         max-width: 200px;
     }
     
-    .
-
-/* ===== THUMBNAIL: rock-solid 16:9 wrapper ===== */
-
-/* 1) 枠を“高さ0＋padding-top=56.25%”で16:9にする */
-figure.article-thumb,
-.article-thumb,
-.article-card .thumb,
-.article-card figure {
-  position: relative !important;
-  height: 0 !important;
-  padding: 0 !important;
-  padding-top: 56.25% !important;   /* 9/16 = 0.5625 → 56.25% */
-  overflow: hidden !important;
-  border-radius: 12px !important;
-  background: #000 !important;
-  display: block !important;
+    /* === Writings: thumbnail override === */
+.articles-grid .article-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  align-items: start;
 }
 
-/* 2) 画像は absolute で枠にぴったり、比率は object-fit で保持 */
-figure.article-thumb > img,
-.article-thumb > img,
-.article-card .thumb > img,
-.article-card figure > img {
-  position: absolute !important;
-  inset: 0 !important;              /* top/right/bottom/left: 0 */
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;     /* 伸び縮みせず中央トリミング */
-  object-position: center center !important;
-  display: block !important;
-  max-width: none !important;
-  max-height: none !important;
-}
-
-/* 3) もし <a><img></a> のような入れ子なら a にも対応 */
-.article-thumb > a,
-.article-card .thumb > a,
-.article-card figure > a { 
-  position: absolute !important;
-  inset: 0 !important;
-  display: block !important;
-}
-.article-thumb > a > img,
-.article-card .thumb > a > img,
-.article-card figure > a > img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;
-  object-position: center center !important;
-  display: block !important;
-}
-
-/* ==== 強制的に16:9のサムネ比率にする === */
 .article-thumb {
-  width: 100% !important;
-  aspect-ratio: 16 / 9 !important;
-  height: auto !important;
-  overflow: hidden;
-}
-
-.article-thumb img {
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;   /* ← 縦横比を維持して中でトリミング */
-  object-position: center center;
-}
-
-/* === FORCE thumbnails to 16:9 box === */
-.article-thumb {
-  position: relative;
-  width: 100% !important;
-  aspect-ratio: 16 / 9 !important;  /* ← 正方形から強制修正 */
+  width: 100%;
+  aspect-ratio: 16 / 9;   /* 枠を16:9に固定 */
   overflow: hidden;
   border-radius: 12px;
   background: #000;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
 }
 
-/* 画像は枠にフィット（はみ出さず切れず） */
 .article-thumb img {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100% !important;
-  height: 100% !important;
-  object-fit: cover !important;   /* cover = はみ出しOKだが横切れない */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;   /* 切れない・縦横比を維持して枠いっぱい */
   object-position: center;
+  display: block;
 }
 
-.article-item,
-.article-card {
-  display: flex;
-  flex-direction: column;
-  align-items: stretch;
-}
-
-.article-card .thumb,
-.article-card figure {
-  flex: 0 0 auto;   /* ← 画像部分は高さ固定 */
+@media (max-width: 720px) {
+  .articles-grid .article-item {
+    grid-template-columns: 1fr;
+  }
 }
