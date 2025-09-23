@@ -2430,28 +2430,68 @@ body {
     
     .
 
-/* ===== FINAL OVERRIDE: force thumbnails into 16:9 ===== */
+/* ===== FINAL KILL-SWITCH OVERRIDE: すべてのサムネを16:9に揃える ===== */
+
+/* 枠そのものを16:9に固定。旧来のpaddingハックや固定高さを潰す */
 .article-thumb,
 .article-card .thumb,
 figure.article-thumb {
   width: 100% !important;
-  aspect-ratio: 16 / 9 !important;
-  height: auto !important;        /* ← 高さ固定を解除 */
-  max-height: none !important;    /* ← 残ってる高さ制限を消す */
-  overflow: hidden !important;
-  border-radius: 12px;
-  background: #000;
-}
+  /* 1) まず旧来指定を完全に無効化 */
+  padding: 0 !important;          /* ← padding-top:100% を無効化 */
+  height: auto !important;        /* ← 固定heightを無効化 */
+  max-height: none !important;
 
-.article-thumb img,
-.article-card .thumb img,
-figure.article-thumb img {
-  width: 100% !important;
-  height: 100% !important;
-  max-width: 100% !important;
-  max-height: 100% !important;
-  object-fit: cover !important;   /* ← 16:9の枠にぴったり収める */
-  object-position: center center !important;
+  /* 2) 現代ブラウザではaspect-ratioで16:9を確定 */
+  aspect-ratio: 16 / 9 !important;
+
+  /* 3) 念のためのレイアウト安定化 */
+  position: relative !important;
+  overflow: hidden !important;
+  border-radius: 12px !important;
+  background: #000 !important;
   display: block !important;
 }
-/* ===== END FINAL OVERRIDE ===== */
+
+/* 画像を枠いっぱいにフィット（黒帯なし） */
+.article-thumb > img,
+.article-card .thumb > img,
+figure.article-thumb > img {
+  /* 4) 絶対配置で必ず枠にフィット（古いCSSの影響を受けない） */
+  position: absolute !important;
+  inset: 0 !important;            /* top/right/bottom/left: 0 */
+  width: 100% !important;
+  height: 100% !important;
+
+  /* 5) 余白ゼロで自然な中央トリミング */
+  object-fit: cover !important;   /* すべてを枠に収める。黒帯を出さない */
+  object-position: center center !important;
+  display: block !important;
+
+  /* 6) 画像側の余計な制限を無効化 */
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* もし「figure内に追加のラッパー」がある構造でも強制適用 */
+.article-thumb > a,
+.article-card .thumb > a,
+figure.article-thumb > a {
+  position: static !important;
+  display: block !important;
+  height: 100% !important;
+}
+.article-thumb > a > img,
+.article-card .thumb > a > img,
+figure.article-thumb > a > img {
+  position: absolute !important;
+  inset: 0 !important;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+/* ===== END OVERRIDE ===== */
