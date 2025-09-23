@@ -2458,3 +2458,56 @@ body {
     grid-template-columns: 1fr;
   }
 }
+
+/* ===== FINAL OVERRIDE (確実適用) ===== */
+
+/* 1) 2カラム時の右切れ防止（グリッドの最小幅問題を潰す） */
+.articles-grid {
+  display: grid !important;
+  grid-template-columns: repeat(2, minmax(0, 1fr)) !important;
+  gap: 28px !important;
+}
+.articles-grid > *,
+.article-item { min-width: 0 !important; }
+
+/* 2) サムネ枠を 16:9 に固定（古い正方形ハック/固定高さを無効化） */
+figure.article-thumb,
+.article-thumb,
+.article-card .thumb,
+.article-card figure {
+  position: relative !important;
+  width: 100% !important;
+  height: 0 !important;             /* ← 固定heightを消す */
+  padding: 0 !important;
+  padding-top: 56.25% !important;   /* ← 16:9（9/16=0.5625） */
+  overflow: hidden !important;
+  border-radius: 12px !important;
+  background: #000 !important;
+}
+
+/* 3) 画像を枠いっぱいにフィット（入れ子すべてに対応） */
+figure.article-thumb > img,
+.article-thumb > img,
+.article-card .thumb > img,
+.article-card figure > img,
+figure.article-thumb > a > img,
+.article-thumb > a > img,
+.article-card .thumb > a > img,
+.article-card figure > a > img,
+figure.article-thumb > picture > img,
+.article-thumb > picture > img,
+.article-card .thumb > picture > img,
+.article-card figure > picture > img {
+  position: absolute !important;
+  inset: 0 !important;               /* top/right/bottom/left:0 */
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;      /* ← 伸びず、中央で自然にトリミング */
+  object-position: center center !important;
+  display: block !important;
+  max-width: none !important;
+  max-height: none !important;
+}
+
+/* 4) 稀に親カードが画像をクリップするのを防ぐ保険 */
+.article-item { overflow: visible !important; }
