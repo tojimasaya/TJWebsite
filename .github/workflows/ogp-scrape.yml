@@ -1,6 +1,12 @@
 name: Scrape OGP thumbnails
 
 on:
+  workflow_dispatch:   # 👈 手動実行を有効化
+  push:
+    branches:
+      - main
+      
+on:
   push:
     paths:
       - writings.html
