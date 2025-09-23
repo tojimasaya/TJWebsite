@@ -1304,51 +1304,72 @@ function addGalleryModalStyles() {
 // スタイルを追加
 addGalleryModalStyles();
 
-// === Writings thumbnails FINAL FIX ===
-(function fixWritingsThumbs(){
-  const p = location.pathname.toLowerCase();
-  if (!/\/writings(?:\.html|\/)?$/.test(p)) return;
+// === Writings thumbnails: DOM-ready & absolute fallbacks, prefer local cache ===
+(function attachWritingsThumbs(){
+  function run() {
+    const p = location.pathname.toLowerCase();
+    if (!/\/writings(?:\.html|\/)?$/.test(p)) return;
 
-  const cards = Array.from(document.querySelectorAll('.article-item[data-article-url]'));
-  if (!cards.length) return;
+    // data-article-url 必須
+    const cards = Array.from(document.querySelectorAll('.article-item[data-article-url]'));
+    if (!cards.length) return;
 
-  // 1) Instant fallback (avoid empty boxes)
-  cards.forEach(card => {
-    const img = card.querySelector('.article-thumb img');
-    if (!img || img.dataset.ready === '1') return;
-    const txt = card.textContent || '';
-    let fallback = 'Oreryu.jpg';
-    if (/drone\.jp/i.test(txt)) fallback = 'drone.jpg';
-    else if (/note/i.test(txt)) fallback = 'HongKong.jpg';
-    img.src = fallback;
-    img.alt = 'サムネイル';
-    img.loading = 'lazy';
-    img.dataset.ready = '1';
-  });
-
-  // 2) Load JSON then replace fallback with real OGP
-  (async () => {
-    const tryUrls = ['data/writings-og.json', '/data/writings-og.json'];
-    let map = null;
-    for (const u of tryUrls) {
-      try {
-        const res = await fetch(u, {cache:'no-store'});
-        if (!res.ok) continue;
-        map = await res.json();
-        break;
-      } catch(_) {}
-    }
-    if (!map) return;
-
+    // 1) まず必ず絵を出す（絶対パスに統一）
     cards.forEach(card => {
-      const url = card.getAttribute('data-article-url');
-      const hit = map[url];
       const img = card.querySelector('.article-thumb img');
-      if (hit && hit.image && img) {
-        img.src = hit.image;
-        img.alt = hit.title || '記事サムネイル';
-      }
+      if (!img || img.dataset.ready === '1') return;
+
+      const txt = card.textContent || '';
+      let fallback = '/Oreryu.jpg';
+      if (/drone\.jp/i.test(txt)) fallback = '/drone.jpg';
+      else if (/note/i.test(txt)) fallback = '/HongKong.jpg';
+
+      img.src = fallback;               // ← 絶対パス
+      img.alt = 'サムネイル';
+      img.loading = 'lazy';
+      img.decoding = 'async';
+      img.referrerPolicy = 'no-referrer';
+      img.dataset.ready = '1';
+      img.onerror = () => { img.src = '/HongKong.jpg'; }; // 失敗でも白枠にしない
     });
-  })();
+
+    // 2) JSON を読んで OGP に置換（相対→絶対の順で両方試す）
+    (async () => {
+      const tryUrls = ['data/writings-og.json', '/data/writings-og.json'];
+      let map = null;
+      for (const u of tryUrls) {
+        try {
+          const res = await fetch(u, { cache: 'no-store' });
+          if (!res.ok) continue;
+          map = await res.json();
+          break;
+        } catch (_) {}
+      }
+      if (!map) return;
+
+      // local を最優先、無ければ image
+      cards.forEach(card => {
+        const url = card.getAttribute('data-article-url');
+        const hit = map[url];
+        const img = card.querySelector('.article-thumb img');
+        if (!hit || !img) return;
+
+        const src = hit.local || hit.image;
+        if (!src) return;
+
+        img.src = src;
+        img.alt = hit.title || '記事サムネイル';
+        img.referrerPolicy = 'no-referrer';
+        img.onerror = () => { img.src = '/HongKong.jpg'; };
+      });
+    })();
+  }
+
+  // ← DOM 構築後に必ず実行
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', run, { once: true });
+  } else {
+    run();
+  }
 })();
 
