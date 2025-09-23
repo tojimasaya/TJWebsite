@@ -2480,3 +2480,18 @@ figure.article-thumb > img,
   object-position: center center !important;
   display: block !important;
 }
+
+/* ==== 強制的に16:9のサムネ比率にする === */
+.article-thumb {
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  height: auto !important;
+  overflow: hidden;
+}
+
+.article-thumb img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;   /* ← 縦横比を維持して中でトリミング */
+  object-position: center center;
+}
