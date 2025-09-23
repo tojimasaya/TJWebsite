@@ -2631,3 +2631,41 @@ figure.article-thumb img {
   object-fit: cover;
   object-position: center;
 }
+
+/* ===== FINAL OVERRIDE: writings thumbnails to 16:9 ===== */
+.articles-grid .article-item > figure.article-thumb,
+figure.article-thumb {
+  position: relative;
+  display: block;
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;   /* 16:9 の箱を作る */
+  overflow: hidden;
+  margin: 0 0 16px;
+  background: #000;                  /* 読み込み中は黒背景 */
+}
+
+/* 画像は box の中でトリミングして“伸ばさない” */
+.articles-grid .article-item > figure.article-thumb > img,
+figure.article-thumb > img {
+  position: absolute;                /* 箱の中に敷き詰める */
+  inset: 0;
+  width: 100% !important;
+  height: 100% !important;
+  max-width: none !important;
+  object-fit: cover !important;      /* はみ出しを上下左右で均等トリム */
+  object-position: center;
+  display: block;
+}
+
+/* aspect-ratio 非対応ブラウザ用フォールバック（ほぼ不要） */
+@supports not (aspect-ratio: 1) {
+  .articles-grid .article-item > figure.article-thumb,
+  figure.article-thumb {
+    height: 0 !important;
+    padding-top: 56.25% !important;  /* 16:9 = 9/16 */
+  }
+  .articles-grid .article-item > figure.article-thumb > img,
+  figure.article-thumb > img {
+    position: absolute;
+  }
+}
