@@ -2669,3 +2669,29 @@ figure.article-thumb > img {
     position: absolute;
   }
 }
+
+/* === Writings thumbnails 最終版 === */
+
+/* サムネ枠を16:9に固定 */
+.article-item .article-thumb,
+figure.article-thumb {
+  position: relative;
+  display: block;
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+}
+
+/* 画像は比率を保ったまま収める（縦長化しない） */
+.article-item .article-thumb > img,
+figure.article-thumb > img {
+  width: 100% !important;
+  height: auto !important;         /* ← ここがポイント */
+  max-width: 100% !important;
+  max-height: 100% !important;
+  object-fit: contain !important;  /* 切らずに収める */
+  object-position: center center;
+  display: block;
+}
