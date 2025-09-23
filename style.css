@@ -2430,67 +2430,53 @@ body {
     
     .
 
-/* ===== FINAL CLEAN OVERRIDE: すべてのサムネを16:9で揃える（通常フロー版） ===== */
+/* ===== THUMBNAIL: rock-solid 16:9 wrapper ===== */
 
-/* 枠を16:9に固定。固定heightやpaddingハックを打ち消し */
+/* 1) 枠を“高さ0＋padding-top=56.25%”で16:9にする */
 figure.article-thumb,
 .article-thumb,
-.article-card .article-thumb,
-.article-card figure,
-.article-card .thumb {
-  width: 100% !important;
-  height: auto !important;          /* 固定heightを解除 */
-  max-height: none !important;
-  padding: 0 !important;            /* padding-top:100% などを無効化 */
-  aspect-ratio: 16 / 9 !important;  /* ここで16:9を確定 */
+.article-card .thumb,
+.article-card figure {
+  position: relative !important;
+  height: 0 !important;
+  padding: 0 !important;
+  padding-top: 56.25% !important;   /* 9/16 = 0.5625 → 56.25% */
   overflow: hidden !important;
   border-radius: 12px !important;
   background: #000 !important;
   display: block !important;
-  position: relative !important;    /* ただし absolute は使わない */
 }
 
-/* 画像は通常フローのまま枠にフィット（黒帯なし） */
-figure.article-thumb img,
-.article-thumb img,
-.article-card .article-thumb img,
-.article-card figure img,
-.article-card .thumb img {
+/* 2) 画像は absolute で枠にぴったり、比率は object-fit で保持 */
+figure.article-thumb > img,
+.article-thumb > img,
+.article-card .thumb > img,
+.article-card figure > img {
+  position: absolute !important;
+  inset: 0 !important;              /* top/right/bottom/left: 0 */
   width: 100% !important;
-  height: 100% !important;          /* 枠の aspect-ratio に従って縦が決まる */
-  max-width: none !important;
-  max-height: none !important;
-  object-fit: cover !important;     /* 余白ゼロで中央トリミング */
+  height: 100% !important;
+  object-fit: cover !important;     /* 伸び縮みせず中央トリミング */
   object-position: center center !important;
   display: block !important;
-  position: static !important;      /* ← absolute禁止。通常フローに戻す */
-}
-/* ===== END CLEAN OVERRIDE ===== */
+  max-width: none !important;
   max-height: none !important;
 }
-/* ===== END OVERRIDE ===== */
 
-/* ===== Grid overflow fix: 2カラム時の右切れ防止 ===== */
-
-/* カード一覧のグリッドは “minmax(0, 1fr)” にするのが鉄則 */
-.articles-grid {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr)); /* ← ここが重要！ */
-  gap: 28px; /* 任意。今の値に合わせてOK */
+/* 3) もし <a><img></a> のような入れ子なら a にも対応 */
+.article-thumb > a,
+.article-card .thumb > a,
+.article-card figure > a { 
+  position: absolute !important;
+  inset: 0 !important;
+  display: block !important;
 }
-
-/* グリッドの子要素は必ず縮められるようにしておく */
-.articles-grid > * {
-  min-width: 0;  /* ← これで中身が横に張っても親がはみ出さない */
-}
-
-/* 念のためカード自体にも適用（Flexで組んでいるケースにも効く） */
-.article-item {
-  min-width: 0;
-}
-
-/* サムネ周りの余計なはみ出しを抑制（保険） */
-.article-thumb,
-.article-thumb img {
-  max-width: 100%;
+.article-thumb > a > img,
+.article-card .thumb > a > img,
+.article-card figure > a > img {
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;
+  object-position: center center !important;
+  display: block !important;
 }
