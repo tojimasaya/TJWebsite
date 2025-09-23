@@ -2495,3 +2495,36 @@ figure.article-thumb > img,
   object-fit: cover !important;   /* ← 縦横比を維持して中でトリミング */
   object-position: center center;
 }
+
+/* === FORCE thumbnails to 16:9 box === */
+.article-thumb {
+  position: relative;
+  width: 100% !important;
+  aspect-ratio: 16 / 9 !important;  /* ← 正方形から強制修正 */
+  overflow: hidden;
+  border-radius: 12px;
+  background: #000;
+}
+
+/* 画像は枠にフィット（はみ出さず切れず） */
+.article-thumb img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
+  object-fit: cover !important;   /* cover = はみ出しOKだが横切れない */
+  object-position: center;
+}
+
+.article-item,
+.article-card {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.article-card .thumb,
+.article-card figure {
+  flex: 0 0 auto;   /* ← 画像部分は高さ固定 */
+}
