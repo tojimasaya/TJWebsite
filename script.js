@@ -1303,3 +1303,50 @@ function addGalleryModalStyles() {
 
 // スタイルを追加
 addGalleryModalStyles();
+
+// === auto-thumbs HOTFIX ===
+// Show reasonable fallbacks immediately, then try to replace with OGP results.
+// Works on /writings, /writings.html, and /writings/ paths.
+(function hydrateWritingsThumbsHotfix(){
+  const path = location.pathname.toLowerCase();
+  if (!/\/writings(?:\.html|\/)?$/.test(path)) return;
+
+  const cards = Array.from(document.querySelectorAll('.article-item[data-article-url]'));
+  if (!cards.length) return;
+
+  // 1) Set instant fallbacks (so空白が出ない)
+  cards.forEach(card => {
+    const fig = card.querySelector('.article-thumb img');
+    if (!fig) return;
+    if (fig.getAttribute('data-ready') === '1') return;
+    const t = card.textContent || '';
+    let fallback = '/Oreryu.jpg';
+    if (/DRONE\.jp/i.test(t)) fallback = '/drone.jpg';
+    else if (/note/i.test(t)) fallback = '/HongKong.jpg';
+    fig.src = fallback;
+    fig.alt = 'サムネイル';
+    fig.loading = 'lazy';
+    fig.setAttribute('data-ready', '1');
+  });
+
+  // 2) Try fetch JSON (best-effort). If it works, replace fallback with real OGP.
+  (async () => {
+    try {
+      const res = await fetch('/data/writings-og.json', {cache: 'no-store'});
+      if (!res.ok) return; // keep fallbacks
+      const map = await res.json();
+      cards.forEach(card => {
+        const url = card.getAttribute('data-article-url');
+        const hit = map && map[url];
+        const img = card.querySelector('.article-thumb img');
+        if (hit && hit.image && img) {
+          img.src = hit.image;
+          if (hit.title) img.alt = hit.title;
+        }
+      });
+    } catch (e) {
+      // ignore; fallbacks already shown
+    }
+  })();
+})();
+
