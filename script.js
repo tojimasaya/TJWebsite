@@ -1373,3 +1373,66 @@ addGalleryModalStyles();
   }
 })();
 
+// === Writings thumbnails: DOM-ready + dynamic cards (MutationObserver) ===
+(function thumbnailsWithObserver(){
+  const pageOK = /\/writings(?:\.html|\/)?$/i.test(location.pathname);
+  if (!pageOK) return;
+
+  // キャッシュ: JSONを一度だけ取って使い回し
+  let ogMap = null;
+  async function loadMap() {
+    if (ogMap) return ogMap;
+    const urls = ['data/writings-og.json', '/data/writings-og.json'];
+    for (const u of urls) {
+      try {
+        const r = await fetch(u, { cache: 'no-store' });
+        if (r.ok) { ogMap = await r.json(); break; }
+      } catch(_) {}
+    }
+    return ogMap || {};
+  }
+
+  function setFallback(img, text) {
+    let fallback = '/Oreryu.jpg';
+    if (/drone\.jp/i.test(text)) fallback = '/drone.jpg';
+    else if (/note/i.test(text)) fallback = '/HongKong.jpg';
+    img.src = fallback;
+    img.alt = 'サムネイル';
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.referrerPolicy = 'no-referrer';
+    img.onerror = () => { img.src = '/HongKong.jpg'; };
+    img.dataset.ready = '1';
+  }
+
+  async function hydrate(card) {
+    const img = card.querySelector('.article-thumb img');
+    if (!img) return;
+    if (!img.dataset.ready) setFallback(img, card.textContent || '');
+
+    const map = await loadMap();
+    const url = card.getAttribute('data-article-url');
+    const hit = map && map[url];
+    const src = hit?.local || hit?.image;
+    if (src) {
+      img.src = src;
+      img.alt = hit.title || '記事サムネイル';
+      img.onerror = () => { img.src = '/HongKong.jpg'; };
+    }
+  }
+
+  // 既存カードに適用
+  document.querySelectorAll('.article-item[data-article-url]').forEach(hydrate);
+
+  // これ以降に追加されるカードにも適用
+  const obs = new MutationObserver(muts => {
+    muts.forEach(m => {
+      m.addedNodes.forEach(n => {
+        if (!(n instanceof Element)) return;
+        if (n.matches?.('.article-item[data-article-url]')) hydrate(n);
+        n.querySelectorAll?.('.article-item[data-article-url]').forEach(hydrate);
+      });
+    });
+  });
+  obs.observe(document.body, { childList: true, subtree: true });
+})();
