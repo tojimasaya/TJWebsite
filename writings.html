@@ -313,7 +313,7 @@
                 if (allArticles.length > 0) {
                     container.innerHTML = allArticles.slice(0, 6).map(article => `
                         <article class="article-item" data-article-url="${article.link}">
-  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
 
                             <div class="article-meta">
                                 <span class="article-source note">${article.source}</span>
@@ -326,7 +326,7 @@
                 } else {
                     container.innerHTML = `
                         <article class="article-item" data-article-url="https://note.com/tojimasaya">
-  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
 
                             <div class="article-meta">
                                 <span class="article-source note">note</span>
@@ -342,7 +342,7 @@
                 const container = document.getElementById('note-articles');
                 container.innerHTML = `
                     <article class="article-item" data-article-url="https://note.com/tojimasaya">
-  <figure class="article-thumb"><img alt="" loading="lazy" width="600" height="338"></figure>
+  <figure class="article-thumb"><img alt="" loading="lazy"></figure>
 
                         <div class="article-meta">
                             <span class="article-source note">note</span>
