@@ -1436,3 +1436,110 @@ addGalleryModalStyles();
   });
   obs.observe(document.body, { childList: true, subtree: true });
 })();
+
+// === 既存の script.js の冒頭から色々な処理がここに続く ===
+// （省略：元々の処理はそのまま残してください）
+
+// ---------------- Note記事描画処理 ----------------
+
+// displayArticles() を .article-item 構造に修正
+function displayArticles(container, posts) {
+  const fragment = document.createDocumentFragment();
+  posts.forEach(post => {
+    const article = document.createElement('article');
+    article.className = 'article-item';
+    article.setAttribute('data-article-url', post.link);
+    article.innerHTML = `
+      <figure class="article-thumb">
+        <img alt="" loading="lazy" width="600" height="338">
+      </figure>
+      <div class="article-meta">
+        <span class="article-source note">note</span>
+        <time datetime="${post.pubDate.toISOString()}">${formatDate(post.pubDate)}</time>
+      </div>
+      <h3><a href="${post.link}" target="_blank" rel="noopener noreferrer">${post.title}</a></h3>
+      <p class="article-excerpt">${post.description || ''}</p>
+    `;
+    fragment.appendChild(article);
+  });
+  container.innerHTML = '';
+  container.appendChild(fragment);
+}
+
+// loadNotePosts 内のターゲットIDを note-feed → note-articles に修正
+const feedContainer = document.getElementById('note-articles');
+if (feedContainer) {
+  loadNotePosts(feedContainer); // RSS を読んで記事描画
+}
+
+// ---------------- サムネイル初期化・置換処理 ----------------
+
+// === Writings thumbnails: DOM-ready + dynamic cards (MutationObserver), prefer local cache ===
+(function thumbnailsWithObserver(){
+  const pageOK = /\/writings(?:\.html|\/)?$/i.test(location.pathname);
+  if (!pageOK) return;
+
+  let ogMap = null;
+  async function loadMap() {
+    if (ogMap) return ogMap;
+    const urls = ['data/writings-og.json', '/data/writings-og.json'];
+    for (const u of urls) {
+      try {
+        const r = await fetch(u, { cache: 'no-store' });
+        if (r.ok) { ogMap = await r.json(); break; }
+      } catch(_) {}
+    }
+    return ogMap || {};
+  }
+
+  function setFallback(img, text) {
+    let fallback = '/Oreryu.jpg';
+    if (/drone\.jp/i.test(text)) fallback = '/drone.jpg';
+    else if (/note/i.test(text)) fallback = '/HongKong.jpg';
+    img.src = fallback;
+    img.alt = 'サムネイル';
+    img.loading = 'lazy';
+    img.decoding = 'async';
+    img.referrerPolicy = 'no-referrer';
+    img.onerror = () => { img.src = '/HongKong.jpg'; };
+    img.dataset.ready = '1';
+  }
+
+  async function hydrate(card) {
+    const img = card.querySelector('.article-thumb img');
+    if (!img) return;
+    if (!img.dataset.ready) setFallback(img, card.textContent || '');
+
+    const map = await loadMap();
+    const url = card.getAttribute('data-article-url');
+    const hit = map && map[url];
+    const src = (hit && (hit.local || hit.image)) || null;
+    if (src) {
+      img.src = src;
+      img.alt = (hit.title || '記事サムネイル');
+      img.onerror = () => { img.src = '/HongKong.jpg'; };
+    }
+  }
+
+  function runInitial() {
+    document.querySelectorAll('.article-item[data-article-url]').forEach(hydrate);
+  }
+
+  if (document.readyState === 'loading') {
+    document.addEventListener('DOMContentLoaded', runInitial, { once: true });
+  } else {
+    runInitial();
+  }
+
+  // 追加で生成されたカードも監視して処理
+  const obs = new MutationObserver(muts => {
+    muts.forEach(m => {
+      m.addedNodes.forEach(n => {
+        if (!(n instanceof Element)) return;
+        if (n.matches?.('.article-item[data-article-url]')) hydrate(n);
+        n.querySelectorAll?.('.article-item[data-article-url]').forEach(hydrate);
+      });
+    });
+  });
+  obs.observe(document.body, { childList: true, subtree: true });
+})();
