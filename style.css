@@ -2428,26 +2428,39 @@ body {
         max-width: 200px;
     }
     
-    .
 
-/* === auto-thumbs styles === */
-.articles-grid .article-item{display:grid;grid-template-columns:160px 1fr;gap:16px;align-items:start}
-.article-thumb{border-radius:10px;overflow:hidden;box-shadow:0 6px 16px rgba(0,0,0,.12)}
-.article-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#111}
-@media (max-width:720px){.articles-grid .article-item{grid-template-columns:1fr}}
+/* === Writings: thumbnail FINAL === */
 
-/* 16:9の枠を作って、枠いっぱいに表示（縦横比が違う画像は最小限トリミング） */
+/* PC時の2カラムカード（左サムネ 右テキスト） */
+.articles-grid .article-item {
+  display: grid;
+  grid-template-columns: 160px 1fr;
+  gap: 16px;
+  align-items: start;
+}
+
+/* サムネの枠を16:9で固定（高さは自動算出） */
 .article-thumb {
   width: 100%;
   aspect-ratio: 16 / 9;
   overflow: hidden;
   border-radius: 12px;
+  background: #000;
+  box-shadow: 0 6px 16px rgba(0,0,0,.12);
 }
 
+/* 画像は「切らずに収める」＝横が切れない */
 .article-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;         /* 16:9画像はそのまま、違う比率は少しトリミング */
+  object-fit: contain;    /* ← 横を切りたくないなら contain */
   object-position: center;
   display: block;
+}
+
+/* スマホは1カラムでOK */
+@media (max-width: 720px) {
+  .articles-grid .article-item {
+    grid-template-columns: 1fr;
+  }
 }
