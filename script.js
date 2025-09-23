@@ -470,7 +470,7 @@ function updatePreview(items) {
  */
 async function loadNotePosts() {
     console.log('記事一覧取得開始');
-    const feedContainer = document.getElementById('note-feed');
+    const feedContainer = document.getElementById('note-articles');
     
     appState.setState({ loading: true });
     
