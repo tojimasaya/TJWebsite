@@ -2436,18 +2436,18 @@ body {
 .article-thumb img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:cover;background:#111}
 @media (max-width:720px){.articles-grid .article-item{grid-template-columns:1fr}}
 
-/* サムネイル画像のリサイズ設定 */
+/* 16:9の枠を作って、枠いっぱいに表示（縦横比が違う画像は最小限トリミング） */
 .article-thumb {
   width: 100%;
-  height: 200px;          /* カードの高さに合わせる（必要に応じて調整） */
+  aspect-ratio: 16 / 9;
   overflow: hidden;
-  border-radius: 12px;    /* 角丸を統一する場合 */
+  border-radius: 12px;
 }
 
 .article-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: cover;      /* 中央を切り抜いてフィット */
+  object-fit: cover;         /* 16:9画像はそのまま、違う比率は少しトリミング */
   object-position: center;
   display: block;
 }
