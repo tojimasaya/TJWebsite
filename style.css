@@ -2439,21 +2439,19 @@ body {
   align-items: start;
 }
 
-/* サムネの枠を16:9で固定（高さは自動算出） */
 .article-thumb {
   width: 100%;
-  aspect-ratio: 16 / 9;
+  aspect-ratio: 16 / 9;   /* ← 枠を 16:9 に固定 */
   overflow: hidden;
   border-radius: 12px;
   background: #000;
   box-shadow: 0 6px 16px rgba(0,0,0,.12);
 }
 
-/* 画像は「切らずに収める」＝横が切れない */
 .article-thumb img {
   width: 100%;
   height: 100%;
-  object-fit: contain;    /* ← 横を切りたくないなら contain */
+  object-fit: cover;       /* ← 枠にフィットさせる */
   object-position: center;
   display: block;
 }
