@@ -3,9 +3,9 @@
   "categories": {
     "camera": {
       "title": "Camera",
-      "subtitle": "ボディ／レンズ／スマホカメラ",
+      "subtitle": "ボディ／レンズ",
       "hero_image": "/assets/images/gear/m2.jpg",
-      "description": "旅行撮影に最適化した軽量・高画質な機材群。Leicaとスマホを中心に運用。",
+      "description": "撮影旅行に持っていきやすい機材群。LeicaとFujifilmを中心に運用。",
       "items": [
         {
           "id": "leica-m10",
@@ -30,26 +30,15 @@
           "price": null,
           "specs": ["2400万画素BIS", "Lマウント", "動画に強い"],
           "description": "動画・暗所の相棒。重量級だが安心の画作り。",
-          "experience": "三脚運用が多い。香港の夜景で頼れる。",
+          "experience": "手ぶれ補正が素晴らしく、香港の夜景で頼れる。",
           "links": {}
         },
-        {
-          "id": "xiaomi-15-ultra",
-          "name": "Xiaomi 15 Ultra（Photography Kit）",
-          "brand": "Xiaomi",
-          "image": "/assets/images/gear/xiaomi15ultra.jpg",
-          "status": "available",
-          "price": null,
-          "specs": ["1インチ", "4カメ", "9つの画角UI"],
-          "description": "旅のメモはだいたいこれ。フィルター遊びが楽しい。",
-          "experience": "100mm×200MPの比較検証を予定。",
-          "links": { "review": "https://note.com/tojimasaya/" }
-        }
+
       ]
     },
     "drone": {
       "title": "Drone",
-      "subtitle": "軽量ドローン中心",
+      "subtitle": "軽量ドローンとFPV中心",
       "hero_image": "/assets/images/gear/drone.jpg",
       "description": "DJI Miniシリーズで機動力と画質を両立。",
       "items": [
@@ -66,13 +55,13 @@
         },
         {
           "id": "dji-mini-5-pro",
-          "name": "DJI Mini 5 Pro（予定）",
+          "name": "DJI Mini 5 Pro",
           "brand": "DJI",
           "image": "/assets/images/gear/mini5pro.jpg",
           "status": "considering",
-          "specs": ["噂機種", "詳細未定"],
-          "description": "Mini 4 Proからの乗り換え検討中。",
-          "experience": "深圳取材で情報収集中。",
+          "specs": ["１インチセンサー", "電子２倍ズーム"],
+          "description": "Mini 4 Proの売却検討中。",
+          "experience": "深圳DJIで購入、なんと免税処置を受けられた。",
           "links": {}
         }
       ]
@@ -102,7 +91,7 @@
           "status": "sold",
           "specs": ["M4", "Apple Pencil Pro"],
           "description": "出品済み。メモ・プレビューが快適だった。",
-          "experience": "Carousellで売却完了。",
+          "experience": "Carousellで売却相談中",
           "links": {}
         }
       ]
