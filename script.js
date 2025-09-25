@@ -104,14 +104,14 @@
     const url = (card.getAttribute("data-article-url") || "").toLowerCase();
     let fallback = "/Oreryu.jpg";         // デフォルト（執筆依頼など）
     if (url.includes("drone.jp")) fallback = "/drone.jpg";
-    else if (url.includes("note.com")) fallback = "/HongKong.jpg";
+    else if (url.includes("note.com")) fallback = "/assets/images/gallery/hongkong.jpg";
 
     img.src = fallback;
     img.alt = "サムネイル";
     img.loading = "lazy";
     img.decoding = "async";
     img.referrerPolicy = "no-referrer";
-    img.onerror = () => { img.src = "/HongKong.jpg"; };
+    img.onerror = () => { img.src = "/assets/images/gallery/hongkong.jpg"; };
     img.dataset.ready = "1";
   }
 
@@ -126,11 +126,11 @@
         triedRemote = true;
         img.src = remote;                 // ローカル失敗 → リモート試す
       } else {
-        img.src = "/HongKong.jpg";        // 最終フォールバック
+        img.src = "/assets/images/gallery/hongkong.jpg";        // 最終フォールバック
       }
     };
 
-    img.src = local || remote || "/HongKong.jpg";
+    img.src = local || remote || "/assets/images/gallery/hongkong.jpg";
     img.alt = hit?.title || "記事サムネイル";
     img.referrerPolicy = "no-referrer";
   }
