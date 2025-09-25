@@ -150,19 +150,9 @@
         }
         
         .gear-details {
-            display: none !important;
-            padding: 0 !important;
-            margin: 0 !important;
-            height: 0 !important;
-            overflow: hidden !important;
-            border: none !important;
-        }
-        
-        .gear-item.expanded .gear-details {
-            display: block !important;
-            padding: 20px 25px 25px !important;
-            height: auto !important;
-            border-top: 1px solid var(--border-color) !important;
+            /* 初期状態で完全に非表示 */
+            display: none;
+            background: #fafbfc;
         }
         
         .gear-description {
@@ -731,7 +721,19 @@
         // ギア詳細の展開・折りたたみ
         function toggleGearItem(element) {
             const gearItem = element.closest('.gear-item');
-            gearItem.classList.toggle('expanded');
+            const details = gearItem.querySelector('.gear-details');
+            
+            if (details.style.display === 'none' || details.style.display === '') {
+                details.style.display = 'block';
+                details.style.padding = '20px 25px 25px';
+                details.style.borderTop = '1px solid #e5e5e5';
+                gearItem.classList.add('expanded');
+            } else {
+                details.style.display = 'none';
+                details.style.padding = '0';
+                details.style.borderTop = 'none';
+                gearItem.classList.remove('expanded');
+            }
         }
 
         // 外部リンクのセキュリティ強化
