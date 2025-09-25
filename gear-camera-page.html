@@ -158,13 +158,6 @@
             transition: height 0.3s ease, padding 0.3s ease, border-top-width 0.3s ease;
         }
         
-        .gear-item.expanded .gear-details {
-            height: auto;
-            min-height: 300px;
-            padding: 20px 25px 25px;
-            border-top-width: 1px;
-        }
-        
         .gear-description {
             margin: 20px 0;
             line-height: 1.6;
@@ -731,7 +724,32 @@
         // ギア詳細の展開・折りたたみ
         function toggleGearItem(element) {
             const gearItem = element.closest('.gear-item');
-            gearItem.classList.toggle('expanded');
+            const details = gearItem.querySelector('.gear-details');
+            
+            if (gearItem.classList.contains('expanded')) {
+                // 折りたたみ
+                details.style.height = details.scrollHeight + 'px';
+                details.offsetHeight; // reflow
+                details.style.height = '0';
+                details.style.padding = '0 25px';
+                details.style.borderTopWidth = '0px';
+                gearItem.classList.remove('expanded');
+            } else {
+                // 展開
+                details.style.height = '0';
+                details.style.padding = '0 25px';
+                gearItem.classList.add('expanded');
+                details.style.height = details.scrollHeight + 'px';
+                details.style.padding = '20px 25px 25px';
+                details.style.borderTopWidth = '1px';
+                
+                // アニメーション完了後にautoに設定
+                setTimeout(() => {
+                    if (gearItem.classList.contains('expanded')) {
+                        details.style.height = 'auto';
+                    }
+                }, 300);
+            }
         }
 
         // 外部リンクのセキュリティ強化
