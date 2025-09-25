@@ -1,0 +1,141 @@
+{
+  "updated_at": "2025-09-25",
+  "categories": {
+    "camera": {
+      "title": "Camera",
+      "subtitle": "ボディ／レンズ／スマホカメラ",
+      "hero_image": "/assets/images/gear/m2.jpg",
+      "description": "旅行撮影に最適化した軽量・高画質な機材群。Leicaとスマホを中心に運用。",
+      "items": [
+        {
+          "id": "leica-m10",
+          "name": "Leica M10",
+          "brand": "Leica",
+          "image": "/assets/images/gear/m10.jpg",
+          "status": "not-for-sale",
+          "price": null,
+          "specs": ["2400万画素", "レンジファインダー", "BP-SCL5"],
+          "description": "主力のレンジファインダー機。必要十分な画質と軽さ。",
+          "experience": "スナップ中心。香港の路地ではこのサイズ感が効く。",
+          "links": {
+            "review": "https://note.com/tojimasaya/m/mcae365b520ed"
+          }
+        },
+        {
+          "id": "leica-sl2s",
+          "name": "Leica SL2-S",
+          "brand": "Leica",
+          "image": "/assets/images/gear/sl2s.jpg",
+          "status": "not-for-sale",
+          "price": null,
+          "specs": ["2400万画素BIS", "Lマウント", "動画に強い"],
+          "description": "動画・暗所の相棒。重量級だが安心の画作り。",
+          "experience": "三脚運用が多い。香港の夜景で頼れる。",
+          "links": {}
+        },
+        {
+          "id": "xiaomi-15-ultra",
+          "name": "Xiaomi 15 Ultra（Photography Kit）",
+          "brand": "Xiaomi",
+          "image": "/assets/images/gear/xiaomi15ultra.jpg",
+          "status": "available",
+          "price": null,
+          "specs": ["1インチ", "4カメ", "9つの画角UI"],
+          "description": "旅のメモはだいたいこれ。フィルター遊びが楽しい。",
+          "experience": "100mm×200MPの比較検証を予定。",
+          "links": { "review": "https://note.com/tojimasaya/" }
+        }
+      ]
+    },
+    "drone": {
+      "title": "Drone",
+      "subtitle": "軽量ドローン中心",
+      "hero_image": "/assets/images/gear/drone.jpg",
+      "description": "DJI Miniシリーズで機動力と画質を両立。",
+      "items": [
+        {
+          "id": "dji-mini-4-pro",
+          "name": "DJI Mini 4 Pro",
+          "brand": "DJI",
+          "image": "/assets/images/gear/mini4pro.jpg",
+          "status": "available",
+          "specs": ["<249g", "4K60", "D-Log M"],
+          "description": "風に強く、旅の定番空撮機。",
+          "experience": "松島・沖縄・香港で運用実績あり。",
+          "links": { "review": "https://drone.jp/" }
+        },
+        {
+          "id": "dji-mini-5-pro",
+          "name": "DJI Mini 5 Pro（予定）",
+          "brand": "DJI",
+          "image": "/assets/images/gear/mini5pro.jpg",
+          "status": "considering",
+          "specs": ["噂機種", "詳細未定"],
+          "description": "Mini 4 Proからの乗り換え検討中。",
+          "experience": "深圳取材で情報収集中。",
+          "links": {}
+        }
+      ]
+    },
+    "editing": {
+      "title": "Editing",
+      "subtitle": "編集／筆記用",
+      "hero_image": "/assets/images/gear/editing.jpg",
+      "description": "Mac／iPadを中心に、出先でも完結できる環境。",
+      "items": [
+        {
+          "id": "macbook-pro-14-m3",
+          "name": "MacBook Pro 14\" (M3)",
+          "brand": "Apple",
+          "image": "/assets/images/gear/mbp14.jpg",
+          "status": "not-for-sale",
+          "specs": ["M3", "16GB", "1TB"],
+          "description": "Raw現像と動画カットをこれで。",
+          "experience": "バッテリー持ちが現場で安心。",
+          "links": {}
+        },
+        {
+          "id": "ipad-pro-m4-11",
+          "name": "iPad Pro 11\" (M4)",
+          "brand": "Apple",
+          "image": "/assets/images/gear/ipadpro11m4.jpg",
+          "status": "sold",
+          "specs": ["M4", "Apple Pencil Pro"],
+          "description": "出品済み。メモ・プレビューが快適だった。",
+          "experience": "Carousellで売却完了。",
+          "links": {}
+        }
+      ]
+    },
+    "accessories": {
+      "title": "Accessories",
+      "subtitle": "充電・マウント・収納など",
+      "hero_image": "/assets/images/gear/accessories.jpg",
+      "description": "旅のストレスを減らす細かい工夫たち。",
+      "items": [
+        {
+          "id": "pgytech-magcam",
+          "name": "PGYTECH MagCam グリップ",
+          "brand": "PGYTECH",
+          "image": "/assets/images/gear/pgytech_magcam.jpg",
+          "status": "available",
+          "specs": ["MagSafe", "グリップ一体"],
+          "description": "iPhoneを“カメラ化”する革命的小物。",
+          "experience": "iPhone 17 Proとのセット運用が快適。",
+          "links": {}
+        },
+        {
+          "id": "cio-novawave",
+          "name": "CIO NovaWave 3way",
+          "brand": "CIO",
+          "image": "/assets/images/gear/cio_novawave.jpg",
+          "status": "available",
+          "specs": ["Type-C 3in1", "出先充電の相棒"],
+          "description": "SFC修行のケーブル地獄を解消。",
+          "experience": "機内の緩いコンセント対策と相性良し。",
+          "links": {}
+        }
+      ]
+    }
+  }
+}
