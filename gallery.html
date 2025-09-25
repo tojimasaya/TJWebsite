@@ -1,25 +1,25 @@
-<!DOCTYPE html>
+Venice.JPG<!DOCTYPE html>
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gallery — Toji Masaya</title>
-    
+
     <!-- SEO & OGP -->
     <meta name="description" content="田路昌也の写真ギャラリー。世界各地での旅の瞬間を写真と動画で記録しています。">
     <meta name="keywords" content="田路昌也, 写真, ギャラリー, 旅行, ドローン, ライカ">
     <meta name="author" content="Toji Masaya">
-    
+
     <!-- OGP -->
     <meta property="og:title" content="Gallery — Toji Masaya">
     <meta property="og:description" content="世界各地での旅の瞬間を写真と動画で記録しています。">
-    <meta property="og:image" content="https://tojimasaya.com/venice.jpg">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/venice.jpg">
     <meta property="og:url" content="https://tojimasaya.com/gallery.html">
     <meta property="og:type" content="website">
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+
     <!-- Critical CSS inline -->
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
@@ -40,7 +40,7 @@
             --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
             --transition-base: 0.3s ease;
         }
-        
+
         @media (prefers-color-scheme: dark) {
             :root {
                 --text-color: #e5e5e5;
@@ -52,15 +52,15 @@
                 --hover-color: #2a2a2a;
             }
         }
-        
-        body { 
-            font-family: var(--secondary-font); 
-            line-height: 1.6; 
-            color: var(--text-color); 
+
+        body {
+            font-family: var(--secondary-font);
+            line-height: 1.6;
+            color: var(--text-color);
             background-color: var(--bg-color);
             -webkit-font-smoothing: antialiased;
         }
-        
+
         /* ナビゲーション */
         .main-nav {
             position: fixed;
@@ -71,13 +71,13 @@
             border-bottom: 1px solid var(--border-color);
             z-index: 100;
         }
-        
+
         @media (prefers-color-scheme: dark) {
             .main-nav {
                 background: rgba(26, 26, 26, 0.95);
             }
         }
-        
+
         .nav-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -87,7 +87,7 @@
             align-items: center;
             height: 70px;
         }
-        
+
         .nav-logo {
             font-family: var(--primary-font);
             font-size: 1.5rem;
@@ -95,13 +95,13 @@
             color: var(--text-color);
             text-decoration: none;
         }
-        
+
         .nav-menu {
             display: flex;
             list-style: none;
             gap: 30px;
         }
-        
+
         .nav-link {
             color: var(--text-color);
             text-decoration: none;
@@ -111,12 +111,12 @@
             position: relative;
             padding: 5px 0;
         }
-        
+
         .nav-link:hover,
         .nav-link.active {
             color: var(--accent-color);
         }
-        
+
         .nav-link::after {
             content: '';
             position: absolute;
@@ -127,12 +127,12 @@
             background: var(--accent-color);
             transition: width var(--transition-base);
         }
-        
+
         .nav-link:hover::after,
         .nav-link.active::after {
             width: 100%;
         }
-        
+
         .nav-toggle {
             display: none;
             flex-direction: column;
@@ -142,7 +142,7 @@
             padding: 5px;
             border-radius: 4px;
         }
-        
+
         .nav-toggle span {
             width: 25px;
             height: 3px;
@@ -151,7 +151,7 @@
             transition: all var(--transition-base);
             border-radius: 1px;
         }
-        
+
         /* ギャラリーヒーロー */
         .gallery-hero {
             position: relative;
@@ -160,20 +160,20 @@
             overflow: hidden;
             margin-top: 70px;
         }
-        
+
         .gallery-hero-image {
             position: relative;
             width: 100%;
             height: 100%;
         }
-        
+
         .gallery-hero-image img {
             width: 100%;
             height: 100%;
             object-fit: cover;
             filter: brightness(0.7) contrast(1.1);
         }
-        
+
         .gallery-hero-overlay {
             position: absolute;
             bottom: 60px;
@@ -183,7 +183,7 @@
             color: white;
             z-index: 2;
         }
-        
+
         .gallery-hero-title {
             font-family: var(--primary-font);
             font-size: 4rem;
@@ -191,20 +191,20 @@
             margin-bottom: 0.5rem;
             text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
         }
-        
+
         .gallery-hero-subtitle {
             font-family: var(--secondary-font);
             font-size: 1.2rem;
             font-weight: 300;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
         }
-        
+
         /* モバイル対応 */
         @media (max-width: 768px) {
             .nav-container {
                 padding: 0 20px;
             }
-            
+
             .nav-menu {
                 position: fixed;
                 top: 70px;
@@ -220,58 +220,58 @@
                 transition: left var(--transition-base);
                 box-shadow: var(--shadow-lg);
             }
-            
+
             .nav-menu.active {
                 left: 0;
             }
-            
+
             .nav-link {
                 font-size: 1.125rem;
                 padding: 10px 20px;
             }
-            
+
             .nav-toggle {
                 display: flex;
             }
-            
+
             .nav-toggle.active span:nth-child(1) {
                 transform: rotate(-45deg) translate(-5px, 6px);
             }
-            
+
             .nav-toggle.active span:nth-child(2) {
                 opacity: 0;
             }
-            
+
             .nav-toggle.active span:nth-child(3) {
                 transform: rotate(45deg) translate(-5px, -6px);
             }
-            
+
             body.nav-open {
                 overflow: hidden;
             }
-            
+
             .gallery-hero {
                 height: 50vh;
                 min-height: 300px;
             }
-            
+
             .gallery-hero-title {
                 font-size: 2.5rem;
             }
-            
+
             .gallery-hero-subtitle {
                 font-size: 1rem;
             }
-            
+
             .gallery-hero-overlay {
                 bottom: 40px;
             }
         }
     </style>
-    
+
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Theme color -->
     <meta name="theme-color" content="#fafafa">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
@@ -301,7 +301,7 @@
     <!-- ギャラリーヒーロー -->
     <section class="gallery-hero" role="banner">
         <div class="gallery-hero-image">
-            <img src="Venice.JPG" alt="ヴェネツィアの夜景" loading="eager" width="1920" height="1080">
+            <img src="assets/images/gallery/venice.jpg" alt="ヴェネツィアの夜景" loading="eager" width="1920" height="1080">
             <div class="gallery-hero-overlay">
                 <h1 class="gallery-hero-title">Gallery</h1>
                 <p class="gallery-hero-subtitle">旅先で切り取った瞬間たち</p>
@@ -359,9 +359,9 @@
                         </div>
                     </article>
 
-                    <article class="gallery-item photo" data-category="photos architecture" onclick="openModal('<img src=&quot;Venice.JPG&quot; alt=&quot;ヴェネツィアの夜景&quot; class=&quot;modal-image&quot;>')">
+                    <article class="gallery-item photo" data-category="photos architecture" onclick="openModal('<img src=&quot;assets/images/gallery/venice.jpg&quot; alt=&quot;ヴェネツィアの夜景&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="Venice.JPG" alt="ヴェネツィアの夜景" loading="lazy" width="400" height="250">
+                            <img src="assets/images/gallery/venice.jpg" alt="ヴェネツィアの夜景" loading="lazy" width="400" height="250">
                         </div>
                         <div class="gallery-info">
                             <h3>ヴェネツィアの夜景</h3>
@@ -373,9 +373,9 @@
                         </div>
                     </article>
 
-                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;HongKong.jpg&quot; alt=&quot;香港の街並み&quot; class=&quot;modal-image&quot;>')">
+                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;assets/images/gallery/hongkong.jpg&quot; alt=&quot;香港の街並み&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="HongKong.jpg" alt="香港の街並み" loading="lazy" width="400" height="250">
+                            <img src="assets/images/gallery/hongkong.jpg" alt="香港の街並み" loading="lazy" width="400" height="250">
                         </div>
                         <div class="gallery-info">
                             <h3>香港の街並み</h3>
@@ -387,9 +387,9 @@
                         </div>
                     </article>
 
-                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;cappadocia.jpg&quot; alt=&quot;カッパドキアの風景&quot; class=&quot;modal-image&quot;>')">
+                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;assets/images/gallery/cappadocia.jpg&quot; alt=&quot;カッパドキアの風景&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="cappadocia.jpg" alt="カッパドキアの風景" loading="lazy" width="400" height="250">
+                            <img src="assets/images/gallery/cappadocia.jpg" alt="カッパドキアの風景" loading="lazy" width="400" height="250">
                         </div>
                         <div class="gallery-info">
                             <h3>カッパドキアの奇岩群</h3>
@@ -401,9 +401,9 @@
                         </div>
                     </article>
 
-                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;Istanbul.jpg&quot; alt=&quot;イスタンブールの風景&quot; class=&quot;modal-image&quot;>')">
+                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;assets/images/gallery/istanbul.jpg&quot; alt=&quot;イスタンブールの風景&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="Istanbul.jpg" alt="イスタンブールの風景" loading="lazy" width="400" height="250">
+                            <img src="assets/images/gallery/istanbul.jpg" alt="イスタンブールの風景" loading="lazy" width="400" height="250">
                         </div>
                         <div class="gallery-info">
                             <h3>イスタンブールの夕暮れ</h3>
@@ -476,11 +476,11 @@
         filterTabs.forEach(tab => {
             tab.addEventListener('click', function() {
                 const filter = this.getAttribute('data-filter');
-                
+
                 // アクティブタブを更新
                 filterTabs.forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
-                
+
                 // アイテムをフィルタリング
                 galleryItems.forEach(item => {
                     if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
@@ -544,7 +544,7 @@
             link.rel = 'noopener noreferrer';
         });
     </script>
-    
+
     <!-- JSON-LD structured data -->
     <script type="application/ld+json">
     {
