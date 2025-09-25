@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Writings — Toji Masaya</title>
-    
+
     <!-- SEO & OGP -->
     <meta name="description" content="田路昌也の最新の記事とコラム。note、DRONE.jpでの連載記事をまとめています。ドローン、カメラ、旅行に関する最新記事。">
     <meta name="keywords" content="田路昌也, ドローン, コラム, note, 連載記事, DRONE.jp, 中国・香港ドローン便り">
     <meta name="author" content="Toji Masaya">
-    
+
     <!-- OGP -->
     <meta property="og:title" content="Writings — Toji Masaya">
     <meta property="og:description" content="noteとDRONE.jpでの最新記事とコラム">
-    <meta property="og:image" content="https://tojimasaya.com/Oreryu.jpg">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/gear/oreryu.jpg">
     <meta property="og:url" content="https://tojimasaya.com/writings.html">
     <meta property="og:type" content="website">
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css?cb=30009">
-    
+
     <!-- Theme color -->
     <meta name="theme-color" content="#fafafa">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-    
+
     <!-- 修正：サムネイル専用CSS -->
     <style>
         /* サムネイル用の16:9固定スタイル */
@@ -39,7 +39,7 @@
             background: #f0f0f0;
             margin-bottom: 16px;
         }
-        
+
         .article-thumb img {
             position: absolute;
             top: 0;
@@ -50,14 +50,14 @@
             object-position: center;
             display: block;
         }
-        
+
         /* aspect-ratio未対応ブラウザ用のフォールバック */
         @supports not (aspect-ratio: 16 / 9) {
             .article-thumb {
                 height: 0;
                 padding-top: 56.25%; /* 16:9 = 9/16 * 100% = 56.25% */
             }
-            
+
             .article-thumb img {
                 position: absolute;
                 top: 0;
@@ -66,13 +66,13 @@
                 height: 100%;
             }
         }
-        
+
         /* 記事アイテムのレイアウト調整 */
         .article-item {
             display: flex;
             flex-direction: column;
         }
-        
+
         .article-content {
             flex: 1;
         }
@@ -104,7 +104,7 @@
     <!-- ライティングヒーロー -->
     <section class="writings-hero" role="banner">
         <div class="writings-hero-image">
-            <img src="HongKong.jpg" alt="香港の街並み - 執筆活動の舞台" loading="eager" width="1920" height="1080">
+            <img src="assets/images/gallery/hongkong.jpg" alt="香港の街並み - 執筆活動の舞台" loading="eager" width="1920" height="1080">
             <div class="writings-hero-overlay">
                 <h1 class="writings-hero-title">Writings</h1>
                 <p class="writings-hero-subtitle">記事とコラム</p>
@@ -122,7 +122,7 @@
 
             <!-- コンテンツセクション -->
             <section class="writings-sections">
-                
+
                 <!-- note記事セクション -->
                 <div class="writing-section">
                     <div class="section-header">
@@ -132,7 +132,7 @@
                             note全記事を見る →
                         </a>
                     </div>
-                    
+
                     <div id="note-articles" class="articles-grid" role="feed" aria-label="note記事一覧">
                         <div class="loading" role="status" aria-label="記事を読み込み中">記事を読み込み中...</div>
                     </div>
@@ -147,7 +147,7 @@
                             DRONE.jp連載記事を見る →
                         </a>
                     </div>
-                    
+
                     <div class="articles-grid" id="drone-articles">
                         <!-- 手動キュレーション記事 -->
                         <article class="article-item featured" data-article-url="https://drone.jp/column/20250912114426119738.html">
@@ -214,7 +214,7 @@
                         <h2>その他の執筆活動</h2>
                         <p class="section-description">ゲスト寄稿や特別企画での記事</p>
                     </div>
-                    
+
                     <div class="articles-grid">
                         <article class="article-item" data-article-url="mailto:tojimasaya07@gmail.com">
                             <figure class="article-thumb">
@@ -245,7 +245,7 @@
                             <p>旅行記事や機材レビューを投稿しています</p>
                         </div>
                     </a>
-                    
+
                     <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener noreferrer" class="subscribe-btn drone">
                         <div class="subscribe-icon">🚁</div>
                         <div>
@@ -253,7 +253,7 @@
                             <p>月1回のペースで中国・香港ドローン便りを更新</p>
                         </div>
                     </a>
-                    
+
                     <a href="https://twitter.com/mongkok93" target="_blank" rel="noopener noreferrer" class="subscribe-btn twitter">
                         <div class="subscribe-icon">🐦</div>
                         <div>
@@ -323,24 +323,24 @@
             try {
                 const container = document.getElementById('note-articles');
                 container.innerHTML = '<div class="loading">記事を読み込み中...</div>';
-                
+
                 const feeds = [
                     { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
                     { url: 'https://note.com/tojimasaya/m/md99dd54590fa/rss', name: '次はどこへ' },
                     { url: 'https://note.com/tojimasaya/m/mcae365b520ed/rss', name: '俺流トラベルガジェット' }
                 ];
-                
+
                 const allArticles = [];
-                
+
                 for (const feed of feeds) {
                     try {
                         const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
                         const response = await fetch(proxyUrl);
                         const xmlText = await response.text();
-                        
+
                         const parser = new DOMParser();
                         const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-                        
+
                         const items = xmlDoc.querySelectorAll('item');
                         items.forEach((item, index) => {
                             if (index < 3) { // 各フィードから3記事まで
@@ -348,7 +348,7 @@
                                 const link = item.querySelector('link')?.textContent || '';
                                 const description = item.querySelector('description')?.textContent || '';
                                 const pubDate = item.querySelector('pubDate')?.textContent || '';
-                                
+
                                 const excerpt = description.replace(/<[^>]*>/g, '').substring(0, 100) + '...';
                                 const date = new Date(pubDate);
                                 const formattedDate = date.toLocaleDateString('ja-JP', {
@@ -356,7 +356,7 @@
                                     month: 'long',
                                     day: 'numeric'
                                 });
-                                
+
                                 allArticles.push({
                                     title,
                                     link,
@@ -371,10 +371,10 @@
                         console.error(`RSS取得エラー (${feed.name}):`, error);
                     }
                 }
-                
+
                 // 日付順にソート
                 allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
-                
+
                 if (allArticles.length > 0) {
                     // 修正：正しいHTML構造で記事を生成
                     container.innerHTML = allArticles.slice(0, 6).map(article => `
@@ -440,7 +440,7 @@
             link.rel = 'noopener noreferrer';
         });
     </script>
-    
+
     <!-- JSON-LD structured data -->
     <script type="application/ld+json">
     {
