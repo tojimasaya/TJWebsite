@@ -4,29 +4,29 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Gear — Toji Masaya</title>
-    
+
     <!-- SEO & OGP -->
     <meta name="description" content="田路昌也が実際に使用している旅行用カメラ機材とガジェット。Leica、ドローン、アクセサリーと購入情報。">
     <meta name="keywords" content="田路昌也, カメラ機材, ドローン, 旅行ガジェット, Leica, DJI, レビュー">
     <meta name="author" content="Toji Masaya">
-    
+
     <!-- OGP -->
     <meta property="og:title" content="Gear — Toji Masaya">
     <meta property="og:description" content="旅行に最適化したカメラ機材とガジェットの詳細レビュー">
-    <meta property="og:image" content="https://tojimasaya.com/Oreryu.jpg">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/gear/oreryu.jpg">
     <meta property="og:url" content="https://tojimasaya.com/gear.html">
     <meta property="og:type" content="website">
-    
+
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
+
     <!-- External CSS -->
     <link rel="stylesheet" href="style.css">
-    
+
     <!-- Theme color -->
     <meta name="theme-color" content="#fafafa">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-    
+
     <!-- カスタムCSS -->
     <style>
         /* PC版: 2×2グリッドレイアウト */
@@ -38,40 +38,40 @@
                 max-width: 1000px;
                 margin: 0 auto;
             }
-            
+
             .category-card {
                 min-height: 450px;
             }
-            
+
             .category-image {
                 height: 220px;
             }
-            
+
             .category-info {
                 padding: 25px 20px;
             }
-            
+
             .category-info h2 {
                 font-size: var(--text-xl);
                 margin-bottom: 12px;
             }
-            
+
             .category-info p {
                 font-size: var(--text-sm);
                 margin-bottom: 20px;
             }
-            
+
             .category-stats {
                 gap: 15px;
                 margin-bottom: 20px;
             }
-            
+
             .category-btn {
                 padding: 12px 24px;
                 font-size: var(--text-sm);
             }
         }
-        
+
         /* モバイル版: 縦1列表示 */
         @media (max-width: 768px) {
             .category-grid {
@@ -106,7 +106,7 @@
     <!-- ギアヒーロー -->
     <section class="gear-hero" role="banner">
         <div class="gear-hero-image">
-            <img src="Oreryu.jpg" alt="俺流トラベルガジェット" loading="eager" width="1920" height="1080">
+            <img src="assets/images/gear/oreryu.jpg" alt="俺流トラベルガジェット" loading="eager" width="1920" height="1080">
             <div class="gear-hero-overlay">
                 <h1 class="gear-hero-title">Gear</h1>
                 <p class="gear-hero-subtitle">俺流トラベルガジェット</p>
@@ -128,7 +128,7 @@
                     <!-- Camera -->
                     <article class="category-card" data-category="camera">
                         <div class="category-image">
-                            <img src="M2.jpeg" alt="Camera Equipment" loading="lazy" width="600" height="400">
+                            <img src="assets/images/gear/m2.jpg" alt="Camera Equipment" loading="lazy" width="600" height="400">
                         </div>
                         <div class="category-info">
                             <h2>Camera</h2>
@@ -146,7 +146,7 @@
                     <!-- Drone -->
                     <article class="category-card" data-category="drone">
                         <div class="category-image">
-                            <img src="drone.jpg" alt="Drone Equipment" loading="lazy" width="600" height="400">
+                            <img src="assets/images/gear/drone.jpg" alt="Drone Equipment" loading="lazy" width="600" height="400">
                         </div>
                         <div class="category-info">
                             <h2>Drone</h2>
@@ -164,7 +164,7 @@
                     <!-- Editing -->
                     <article class="category-card" data-category="editing">
                         <div class="category-image">
-                            <img src="https://images.unsplash.com/photo-1484807352052-23338990c6c6?w=600&h=400&fit=crop&crop=center" alt="Editing Equipment" loading="lazy" width="600" height="400">
+                            <img src="assets/images/gear/editing.jpg" alt="Editing Equipment" loading="lazy" width="600" height="400">
                         </div>
                         <div class="category-info">
                             <h2>Editing</h2>
@@ -182,7 +182,7 @@
                     <!-- Accessories -->
                     <article class="category-card" data-category="accessories">
                         <div class="category-image">
-                            <img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=600&h=400&fit=crop&crop=center" alt="Travel Accessories" loading="lazy" width="600" height="400">
+                            <img src="assets/images/gear/accessories.jpg" alt="Travel Accessories" loading="lazy" width="600" height="400">
                         </div>
                         <div class="category-info">
                             <h2>Accessories</h2>
@@ -256,7 +256,7 @@
 
         // カテゴリカードのアニメーション
         const categoryCards = document.querySelectorAll('.category-card');
-        
+
         const observerOptions = {
             threshold: 0.1,
             rootMargin: '0px 0px -50px 0px'
@@ -274,7 +274,7 @@
             cardObserver.observe(card);
         });
     </script>
-    
+
     <!-- JSON-LD structured data -->
     <script type="application/ld+json">
     {
