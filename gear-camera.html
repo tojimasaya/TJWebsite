@@ -375,7 +375,7 @@
                     
                     <!-- Leica M2 -->
                     <div class="gear-item">
-                        <div class="gear-header-row" onclick="toggleGearItem(this)">
+                        <div class="gear-header-row">
                             <img src="assets/images/gear/m2.jpg" alt="Leica M2" class="gear-image">
                             <div class="gear-info">
                                 <h3 class="gear-name">Leica M2</h3>
@@ -437,7 +437,7 @@
 
                     <!-- iPhone 15 Pro -->
                     <div class="gear-item">
-                        <div class="gear-header-row" onclick="toggleGearItem(this)">
+                        <div class="gear-header-row">
                             <img src="https://images.unsplash.com/photo-1695048133142-1a20484d2569?w=200&h=200&fit=crop&crop=center" alt="iPhone 15 Pro" class="gear-image">
                             <div class="gear-info">
                                 <h3 class="gear-name">iPhone 15 Pro</h3>
@@ -500,7 +500,7 @@
 
                     <!-- Summicron 50mm -->
                     <div class="gear-item">
-                        <div class="gear-header-row" onclick="toggleGearItem(this)">
+                        <div class="gear-header-row">
                             <img src="https://images.unsplash.com/photo-1606983340126-99ab4feaa64a?w=200&h=200&fit=crop&crop=center" alt="Summicron 50mm" class="gear-image">
                             <div class="gear-info">
                                 <h3 class="gear-name">Summicron 50mm f/2</h3>
@@ -568,7 +568,7 @@
                     
                     <!-- iPhone 13 Pro -->
                     <div class="gear-item">
-                        <div class="gear-header-row" onclick="toggleGearItem(this)">
+                        <div class="gear-header-row">
                             <img src="https://images.unsplash.com/photo-1632633173522-3af9fd137324?w=200&h=200&fit=crop&crop=center" alt="iPhone 13 Pro" class="gear-image">
                             <div class="gear-info">
                                 <h3 class="gear-name">iPhone 13 Pro</h3>
@@ -601,7 +601,7 @@
 
                     <!-- Fujifilm X100V -->
                     <div class="gear-item">
-                        <div class="gear-header-row" onclick="toggleGearItem(this)">
+                        <div class="gear-header-row">
                             <img src="https://images.unsplash.com/photo-1609592071169-e03a9f1b7c5e?w=200&h=200&fit=crop&crop=center" alt="Fujifilm X100V" class="gear-image">
                             <div class="gear-info">
                                 <h3 class="gear-name">Fujifilm X100V</h3>
@@ -719,21 +719,37 @@
         });
 
         // ギア詳細の展開・折りたたみ
-        function toggleGearItem(element) {
-            const gearItem = element.closest('.gear-item');
-            const details = gearItem.querySelector('.gear-details');
+        document.addEventListener('DOMContentLoaded', function() {
+            const gearHeaders = document.querySelectorAll('.gear-header-row');
             
-            if (details.style.display === 'none' || details.style.display === '') {
-                details.style.display = 'block';
-                details.style.padding = '20px 25px 25px';
-                details.style.borderTop = '1px solid #e5e5e5';
-                gearItem.classList.add('expanded');
-            } else {
-                details.style.display = 'none';
-                details.style.padding = '0';
-                details.style.borderTop = 'none';
-                gearItem.classList.remove('expanded');
-            }
+            gearHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    const gearItem = this.closest('.gear-item');
+                    const details = gearItem.querySelector('.gear-details');
+                    const expandIcon = this.querySelector('.expand-icon');
+                    
+                    if (details.style.display === 'none' || details.style.display === '') {
+                        // 展開
+                        details.style.display = 'block';
+                        details.style.padding = '20px 25px 25px';
+                        details.style.borderTop = '1px solid #e5e5e5';
+                        expandIcon.style.transform = 'rotate(180deg)';
+                        gearItem.classList.add('expanded');
+                    } else {
+                        // 折りたたみ
+                        details.style.display = 'none';
+                        details.style.padding = '0';
+                        details.style.borderTop = 'none';
+                        expandIcon.style.transform = 'rotate(0deg)';
+                        gearItem.classList.remove('expanded');
+                    }
+                });
+            });
+        });
+        
+        // 旧関数は削除（互換性のため残しておく）
+        function toggleGearItem(element) {
+            // この関数は使用されなくなりました
         }
 
         // 外部リンクのセキュリティ強化
