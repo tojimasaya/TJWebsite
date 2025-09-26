@@ -83,6 +83,39 @@
           }
         },
         {
+          "id": "dji-neo",
+          "name": "DJI Neo",
+          "brand": "DJI",
+          "image": "/assets/images/gear/djineo.jpg",
+          "status": "available",
+          "specs": [
+            "<249g",
+            "4K60"
+          ],
+          "description": "小さくて可愛い、Goggle運用可能",
+          "experience": "FPVの練習機にも",
+          "links": {
+            "review": "https://drone.jp/"
+          }
+        },
+        {
+          "id": "dji-avata2",
+          "name": "DJI Avata2",
+          "brand": "DJI",
+          "image": "/assets/images/gear/avata2.jpg",
+          "status": "available",
+          "specs": [
+            ">250g",
+            "4K60",
+            "D-Log M"
+          ],
+          "description": "日本でも使えるFPV",
+          "experience": "Goggle運用",
+          "links": {
+            "review": "https://drone.jp/"
+          }
+        },
+        {
           "id": "dji-mini-5-pro",
           "name": "DJI Mini 5 Pro",
           "brand": "DJI",
