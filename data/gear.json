@@ -120,7 +120,7 @@
           "name": "DJI Mini 5 Pro",
           "brand": "DJI",
           "image": "/assets/images/gear/mini5pro.jpg",
-          "status": "considering",
+          "status": "available",
           "specs": [
             "１インチセンサー",
             "電子２倍ズーム"
@@ -133,36 +133,92 @@
     },
     "editing": {
       "title": "Editing",
-      "subtitle": "編集／筆記用",
+      "subtitle": "編集／筆記用/日常使い",
       "hero_image": "/assets/images/gear/editing.jpg",
-      "description": "Mac／iPadを中心に、出先でも完結できる環境。",
+      "description": "Mac／iPad/iPhoneを中心に、出先でも完結できる環境。",
       "items": [
         {
           "id": "macbook-pro-14-m3",
           "name": "MacBook Pro 14\" (M3)",
           "brand": "Apple",
-          "image": "/assets/images/gear/mbp14.jpg",
-          "status": "not-for-sale",
+          "image": "/assets/images/gear/macbookpro14m3.jpg",
+          "status": "available",
+          "specs": [
+            "M3",
+            "18GB",
+            "512GB"
+          ],
+          "description": "日常はすべてこれで。",
+          "experience": "iPad移行はあきらめたｗ",
+          "links": {}
+        },
+        {
+          "id": "iphone-17-pro",
+          "name": "iPhone 17 Pro 512GB Blue ",
+          "brand": "Apple",
+          "image": "/assets/images/gear/iphone17pro.jpg",
+          "status": "available",
+          "specs": [
+            "512GB"
+          ],
+          "description": "カメラが良くなった印象",
+          "experience": "最新はやはり快適",
+          "links": {}
+        },
+        {
+          "id": "xiaomi-15-ultra",
+          "name": "Xiaomi 15 Ultra,
+          "brand": "Xiaomi",
+          "image": "/assets/images/gear/xiaomi15ultra.jpg",
+          "status": "available",
+          "specs": [
+            "16GB",
+            "512GB"
+          ],
+          "description": "このカメラシステムは最高",
+          "experience": "普段カメラはこれでいい",
+          "links": {}
+        },
+        {
+          "id": "oppo-find-n5",
+          "name": "OPPO Find N5",
+          "brand": "oppo",
+          "image": "/assets/images/gear/oppofindn5.jpg",
+          "status": "available",
+          "specs": [
+            "16GB",
+            "512GB"
+          ],
+          "description": "折りたたみでこの薄さ",
+          "experience": "iPhoneやMacとの親和性は神",
+          "links": {}
+        },
+        {
+          "id": "iphone-15-Pro",
+          "name": "iPhone 15 Pro 512GB,
+          "brand": "Apple",
+          "image": "/assets/images/gear/iphone15pro512gb.jpg",
+          "status": "available",
           "specs": [
             "M3",
             "16GB",
             "1TB"
           ],
-          "description": "Raw現像と動画カットをこれで。",
-          "experience": "バッテリー持ちが現場で安心。",
+          "description": "2025年のいまでも現役",
+          "experience": "iPhone17購入したので売却検討中",
           "links": {}
         },
         {
           "id": "ipad-pro-m4-11",
           "name": "iPad Pro 11\" (M4)",
           "brand": "Apple",
-          "image": "/assets/images/gear/ipadpro11m4.jpg",
-          "status": "sold",
+          "image": "/assets/images/gear/ipad11m4.jpg",
+          "status": "available",
           "specs": [
             "M4",
             "Apple Pencil Pro"
           ],
-          "description": "出品済み。メモ・プレビューが快適だった。",
+          "description": "OPPO Find N5と競合してしまう",
           "experience": "Carousellで売却相談中",
           "links": {}
         }
