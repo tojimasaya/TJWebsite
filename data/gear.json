@@ -14,7 +14,11 @@
           "image": "/assets/images/gear/m10.jpg",
           "status": "available",
           "price": null,
-          "specs": ["2400万画素", "レンジファインダー", "BP-SCL5"],
+          "specs": [
+            "2400万画素",
+            "レンジファインダー",
+            "BP-SCL5"
+          ],
           "description": "主力のレンジファインダー機。必要十分な画質と軽さ。",
           "experience": "スナップ中心。香港の路地ではこのサイズ感が効く。",
           "links": {
@@ -28,7 +32,11 @@
           "image": "/assets/images/gear/sl2s.jpg",
           "status": "available",
           "price": null,
-          "specs": ["2400万画素BIS", "Lマウント", "動画に強い"],
+          "specs": [
+            "2400万画素BIS",
+            "Lマウント",
+            "動画に強い"
+          ],
           "description": "動画・暗所の相棒。重量級だが安心の画作り。",
           "experience": "手ぶれ補正が素晴らしく、香港の夜景で頼れる。",
           "links": {}
@@ -40,11 +48,15 @@
           "image": "/assets/images/gear/m2.jpg",
           "status": "available",
           "price": null,
-          "specs": ["フィルムカメラ", "Mマウント", "ブラックペイント（後塗り）"],
+          "specs": [
+            "フィルムカメラ",
+            "Mマウント",
+            "ブラックペイント（後塗り）"
+          ],
           "description": "M2なら35mmが使えます。",
           "experience": "もう一度フィルムを楽しんでいます。",
           "links": {}
-        },
+        }
       ]
     },
     "drone": {
@@ -59,10 +71,16 @@
           "brand": "DJI",
           "image": "/assets/images/gear/mini4pro.jpg",
           "status": "available",
-          "specs": ["<249g", "4K60", "D-Log M"],
+          "specs": [
+            "<249g",
+            "4K60",
+            "D-Log M"
+          ],
           "description": "風に強く、旅の定番空撮機。",
           "experience": "松島・沖縄・香港で運用実績あり。",
-          "links": { "review": "https://drone.jp/" }
+          "links": {
+            "review": "https://drone.jp/"
+          }
         },
         {
           "id": "dji-mini-5-pro",
@@ -70,7 +88,10 @@
           "brand": "DJI",
           "image": "/assets/images/gear/mini5pro.jpg",
           "status": "considering",
-          "specs": ["１インチセンサー", "電子２倍ズーム"],
+          "specs": [
+            "１インチセンサー",
+            "電子２倍ズーム"
+          ],
           "description": "Mini 4 Proの売却検討中。",
           "experience": "深圳DJIで購入、なんと免税処置を受けられた。",
           "links": {}
@@ -89,7 +110,11 @@
           "brand": "Apple",
           "image": "/assets/images/gear/mbp14.jpg",
           "status": "not-for-sale",
-          "specs": ["M3", "16GB", "1TB"],
+          "specs": [
+            "M3",
+            "16GB",
+            "1TB"
+          ],
           "description": "Raw現像と動画カットをこれで。",
           "experience": "バッテリー持ちが現場で安心。",
           "links": {}
@@ -100,7 +125,10 @@
           "brand": "Apple",
           "image": "/assets/images/gear/ipadpro11m4.jpg",
           "status": "sold",
-          "specs": ["M4", "Apple Pencil Pro"],
+          "specs": [
+            "M4",
+            "Apple Pencil Pro"
+          ],
           "description": "出品済み。メモ・プレビューが快適だった。",
           "experience": "Carousellで売却相談中",
           "links": {}
@@ -119,7 +147,10 @@
           "brand": "PGYTECH",
           "image": "/assets/images/gear/pgytech_magcam.jpg",
           "status": "available",
-          "specs": ["MagSafe", "グリップ一体"],
+          "specs": [
+            "MagSafe",
+            "グリップ一体"
+          ],
           "description": "iPhoneを“カメラ化”する革命的小物。",
           "experience": "iPhone 17 Proとのセット運用が快適。",
           "links": {}
@@ -130,7 +161,10 @@
           "brand": "CIO",
           "image": "/assets/images/gear/cio_novawave.jpg",
           "status": "available",
-          "specs": ["Type-C 3in1", "出先充電の相棒"],
+          "specs": [
+            "Type-C 3in1",
+            "出先充電の相棒"
+          ],
           "description": "SFC修行のケーブル地獄を解消。",
           "experience": "機内の緩いコンセント対策と相性良し。",
           "links": {}
