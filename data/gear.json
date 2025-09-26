@@ -12,7 +12,7 @@
           "name": "Leica M10",
           "brand": "Leica",
           "image": "/assets/images/gear/m10.jpg",
-          "status": "not-for-sale",
+          "status": "available",
           "price": null,
           "specs": ["2400万画素", "レンジファインダー", "BP-SCL5"],
           "description": "主力のレンジファインダー機。必要十分な画質と軽さ。",
@@ -26,13 +26,25 @@
           "name": "Leica SL2-S",
           "brand": "Leica",
           "image": "/assets/images/gear/sl2s.jpg",
-          "status": "not-for-sale",
+          "status": "available",
           "price": null,
           "specs": ["2400万画素BIS", "Lマウント", "動画に強い"],
           "description": "動画・暗所の相棒。重量級だが安心の画作り。",
           "experience": "手ぶれ補正が素晴らしく、香港の夜景で頼れる。",
           "links": {}
-        }
+        },
+        {
+          "id": "leica-M2",
+          "name": "Leica M2",
+          "brand": "Leica",
+          "image": "/assets/images/gear/m2.jpg",
+          "status": "available",
+          "price": null,
+          "specs": ["フィルムカメラ", "Mマウント", "ブラックペイント（後塗り）"],
+          "description": "M2なら35mmが使えます。",
+          "experience": "もう一度フィルムを楽しんでいます。",
+          "links": {}
+        },
       ]
     },
     "drone": {
