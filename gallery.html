@@ -571,6 +571,21 @@
             document.body.style.overflow = '';
         }
 
+        function openVideo(youtubeId, title = "") {
+            const html = `
+              <div class="modal-video">
+                <div class="modal-video-inner">
+                  <iframe
+                    src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1"
+                    title="${title}"
+                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                    allowfullscreen
+                  ></iframe>
+                </div>
+              </div>`;
+            openModal(html);
+        }
+
         // ESCキーでモーダルを閉じる
         document.addEventListener('keydown', function(e) {
             if (e.key === 'Escape') {
