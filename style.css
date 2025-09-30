@@ -2485,3 +2485,16 @@ figure.article-thumb > img,
     position: absolute;
   }
 }
+/* =====================================
+   Note Article Link Styles
+   ===================================== */
+.note-link {
+  display: inline-block;
+  margin-top: 8px;
+  color: var(--accent-color);
+  font-weight: 500;
+  text-decoration: none;
+}
+.note-link:hover {
+  text-decoration: underline;
+}
