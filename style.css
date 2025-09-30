@@ -2485,16 +2485,54 @@ figure.article-thumb > img,
     position: absolute;
   }
 }
+  figure.article-thumb > img,
+  .articles-grid .article-item > figure.article-thumb > img {
+    position: absolute;
+  }
+}
+  /* ←この } が480pxメディアクエリの終わり */
+
+  
 /* =====================================
-   Note Article Link Styles
+   Gallery: Note Article Link (order + style)
    ===================================== */
+
+.gallery-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.gallery-info .gallery-note { 
+  order: 5;
+  margin: 6px 0 12px;
+}
+
+.gallery-info .gallery-meta {
+  order: 10;
+}
+
 .note-link {
   display: inline-block;
-  margin-top: 8px;
-  color: var(--accent-color);
-  font-weight: 500;
+  color: #fff;
+  font-weight: 600;
   text-decoration: none;
+  line-height: 1.4;
+  border-bottom: 1px solid rgba(255,255,255,0.35);
+  padding-bottom: 1px;
 }
+
 .note-link:hover {
-  text-decoration: underline;
+  border-bottom-color: rgba(255,255,255,0.8);
+}
+
+.note-link:focus {
+  outline: 2px solid rgba(255,255,255,0.9);
+  outline-offset: 2px;
+  border-radius: 2px;
+}
+
+@media (max-width: 768px) {
+  .gallery-info .gallery-note {
+    margin: 4px 0 10px;
+  }
 }
