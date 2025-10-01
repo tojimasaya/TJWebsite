@@ -2513,11 +2513,12 @@ figure.article-thumb > img,
 
 .note-link {
   display: inline-block;
-  color: #fff;
+  color: #000;
+  font-family: var(--primary-font);
   font-weight: 600;
   text-decoration: none;
   line-height: 1.4;
-  border-bottom: 1px solid rgba(255,255,255,0.35);
+  border-bottom: 1px solid rgba(0,0,0,0.35);
   padding-bottom: 1px;
   font-family: var(--primary-font);
 }
