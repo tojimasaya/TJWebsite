@@ -111,7 +111,7 @@
           "status": "available",
           "specs": ["M3", "18GB", "512GB"],
           "description": "日常はすべてこれで。",
-          "comment": "📖 <a href=\"YOUR_URL_HERE\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">M3 14インチで旅先編集はどこまで行けるか</a>",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n57968ed8d4ae?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">iPadシフトは、いまか？ 第1回 ～移行への第一歩～</a>",
           "links": {}
         },
         {
@@ -121,8 +121,8 @@
           "image": "/assets/images/gear/iphone17pro.jpg",
           "status": "available",
           "specs": ["512GB"],
-          "description": "iPhoneを２年ぶりに更新、二回スキップはできませんでした。",
-          "comment":  "📖 <a href=\"https://note.com/tojimasaya/n/n53df41f14082\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【後編】iPhone 17 Pro vs Xiaomi 15 Ultra：生活と創造のあいだで揺れる2台体制</a>",
+          "description": "【前編】iPhone 17 Pro検証：x2・x8は単なるクロップか？同一被写体でAI補正の効き目を見極める（全文無料）",
+          "comment":  "📖 <a href=\"https://note.com/tojimasaya/n/nd229cd856751" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【前編】iPhone 17 Pro検証：x2・x8は単なるクロップか？同一被写体でAI補正の効き目を見極める（全文無料）</a>",
   "links": {}
         },
         {
@@ -132,8 +132,8 @@
           "image": "/assets/images/gear/xiaomi15ultra.jpg",
           "status": "available",
           "specs": ["16GB", "512GB"],
-          "description": "iPhone 17 Proと比較してもXiaomi 15 Ultraのカメラシステムは素晴らしい",
-          "comment": "📖 <a href=\"YOUR_URL_HERE\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Xiaomi 15 Ultra 作例と旅での使い倒し</a>",
+          "description": "【後編】iPhone 17 Pro vs Xiaomi 15 Ultra：生活と創造のあいだで揺れる2台体制",
+          "comment":  "📖 <a href=\"https://note.com/tojimasaya/n/n53df41f14082\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【後編】iPhone 17 Pro vs Xiaomi 15 Ultra：生活と創造のあいだで揺れる2台体制</a>",
           "links": {}
         },
         {
