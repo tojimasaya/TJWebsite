@@ -198,14 +198,14 @@
           "name": "iPhone 15 Pro 512GB",
           "brand": "Apple",
           "image": "/assets/images/gear/iphone15pro512gb.jpg",
-          "status": "available",
+          "status": "sold",
           "specs": [
             "M3",
             "16GB",
             "1TB"
           ],
           "description": "2025年のいまでも現役",
-          "experience": "iPhone17購入したので売却検討中",
+          "experience": "iPhone17購入したので売却済",
           "links": {}
         },
         {
@@ -213,13 +213,13 @@
           "name": "iPad Pro 11\" (M4)",
           "brand": "Apple",
           "image": "/assets/images/gear/ipad11m4.jpg",
-          "status": "available",
+          "status": "sold",
           "specs": [
             "M4",
             "Apple Pencil Pro"
           ],
           "description": "OPPO Find N5と競合してしまう",
-          "experience": "Carousellで売却相談中",
+          "experience": "結局売却してしまいました。OPPO Find N5でコンテンツは消費します。",
           "links": {}
         }
       ]
