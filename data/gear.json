@@ -1,5 +1,5 @@
 {
-  "updated_at": "2025-09-26",
+  "updated_at": "2025-10-11",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -14,16 +14,10 @@
           "image": "/assets/images/gear/m10.jpg",
           "status": "available",
           "price": null,
-          "specs": [
-            "2400万画素",
-            "レンジファインダー",
-            "BP-SCL5"
-          ],
+          "specs": ["2400万画素", "レンジファインダー", "BP-SCL5"],
           "description": "主力のレンジファインダー機。必要十分な画質と軽さ。",
-          "experience": "スナップ中心。香港の路地ではこのサイズ感が効く。",
-          "links": {
-            "review": "https://note.com/tojimasaya/m/mcae365b520ed"
-          }
+          "comment": "",
+          "links": { "review": "https://note.com/tojimasaya/m/mcae365b520ed" }
         },
         {
           "id": "leica-sl2s",
@@ -32,13 +26,9 @@
           "image": "/assets/images/gear/sl2s.jpg",
           "status": "available",
           "price": null,
-          "specs": [
-            "2400万画素BIS",
-            "Lマウント",
-            "動画に強い"
-          ],
+          "specs": ["2400万画素BIS", "Lマウント", "動画に強い"],
           "description": "動画・暗所の相棒。重量級だが安心の画作り。",
-          "experience": "手ぶれ補正が素晴らしく、香港の夜景で頼れる。",
+          "comment": "",
           "links": {}
         },
         {
@@ -48,13 +38,9 @@
           "image": "/assets/images/gear/m2.jpg",
           "status": "available",
           "price": null,
-          "specs": [
-            "フィルムカメラ",
-            "Mマウント",
-            "ブラックペイント（後塗り）"
-          ],
+          "specs": ["フィルムカメラ", "Mマウント", "ブラックペイント（後塗り）"],
           "description": "M2なら35mmが使えます。",
-          "experience": "もう一度フィルムを楽しんでいます。",
+          "comment": "",
           "links": {}
         }
       ]
@@ -71,16 +57,10 @@
           "brand": "DJI",
           "image": "/assets/images/gear/mini4pro.jpg",
           "status": "available",
-          "specs": [
-            "<249g",
-            "4K60",
-            "D-Log M"
-          ],
+          "specs": ["<249g", "4K60", "D-Log M"],
           "description": "風に強く、旅の定番空撮機。",
-          "experience": "松島・沖縄・香港で運用実績あり。",
-          "links": {
-            "review": "https://drone.jp/"
-          }
+          "comment": "📖 <a href=\"https://drone.jp/\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Mini 4 Proのレビュー</a>",
+          "links": { "review": "https://drone.jp/" }
         },
         {
           "id": "dji-neo",
@@ -88,15 +68,10 @@
           "brand": "DJI",
           "image": "/assets/images/gear/djineo.jpg",
           "status": "available",
-          "specs": [
-            "<249g",
-            "4K60"
-          ],
+          "specs": ["<249g", "4K60"],
           "description": "小さくて可愛い、Goggle運用可能",
-          "experience": "FPVの練習機にも",
-          "links": {
-            "review": "https://drone.jp/"
-          }
+          "comment": "",
+          "links": { "review": "https://drone.jp/" }
         },
         {
           "id": "dji-avata2",
@@ -104,16 +79,10 @@
           "brand": "DJI",
           "image": "/assets/images/gear/avata2.jpg",
           "status": "available",
-          "specs": [
-            ">250g",
-            "4K60",
-            "D-Log M"
-          ],
+          "specs": [">250g", "4K60", "D-Log M"],
           "description": "日本でも使えるFPV",
-          "experience": "Goggle運用",
-          "links": {
-            "review": "https://drone.jp/"
-          }
+          "comment": "",
+          "links": { "review": "https://drone.jp/" }
         },
         {
           "id": "dji-mini-5-pro",
@@ -121,12 +90,9 @@
           "brand": "DJI",
           "image": "/assets/images/gear/mini5pro.jpg",
           "status": "available",
-          "specs": [
-            "１インチセンサー",
-            "電子２倍ズーム"
-          ],
+          "specs": ["１インチセンサー", "電子２倍ズーム"],
           "description": "Mini 4 Proの売却検討中。",
-          "experience": "深圳DJIで購入、なんと免税処置を受けられた。",
+          "comment": "深圳DJIで購入、免税処置の体験記あり。",
           "links": {}
         }
       ]
@@ -143,13 +109,9 @@
           "brand": "Apple",
           "image": "/assets/images/gear/macbookpro14m3.jpg",
           "status": "available",
-          "specs": [
-            "M3",
-            "18GB",
-            "512GB"
-          ],
+          "specs": ["M3", "18GB", "512GB"],
           "description": "日常はすべてこれで。",
-          "experience": "iPad移行はあきらめたｗ",
+          "comment": "📖 <a href=\"YOUR_URL_HERE\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">M3 14インチで旅先編集はどこまで行けるか</a>",
           "links": {}
         },
         {
@@ -158,12 +120,10 @@
           "brand": "Apple",
           "image": "/assets/images/gear/iphone17pro.jpg",
           "status": "available",
-          "specs": [
-            "512GB"
-          ],
-          "description": "カメラが良くなった印象",
-          "experience": "最新はやはり快適",
-          "links": {}
+          "specs": ["512GB"],
+          "description": "iPhoneを２年ぶりに更新、二回スキップはできませんでした。",
+          "comment":  "📖 <a href=\"https://note.com/tojimasaya/n/n53df41f14082\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【後編】iPhone 17 Pro vs Xiaomi 15 Ultra：生活と創造のあいだで揺れる2台体制</a>",
+  "links": {}
         },
         {
           "id": "xiaomi-15-ultra",
@@ -171,12 +131,9 @@
           "brand": "Xiaomi",
           "image": "/assets/images/gear/xiaomi15ultra.jpg",
           "status": "available",
-          "specs": [
-            "16GB",
-            "512GB"
-          ],
-          "description": "このカメラシステムは最高",
-          "experience": "普段カメラはこれでいい",
+          "specs": ["16GB", "512GB"],
+          "description": "iPhone 17 Proと比較してもXiaomi 15 Ultraのカメラシステムは素晴らしい",
+          "comment": "📖 <a href=\"YOUR_URL_HERE\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Xiaomi 15 Ultra 作例と旅での使い倒し</a>",
           "links": {}
         },
         {
@@ -185,12 +142,9 @@
           "brand": "oppo",
           "image": "/assets/images/gear/oppofindn5.jpg",
           "status": "available",
-          "specs": [
-            "16GB",
-            "512GB"
-          ],
+          "specs": ["16GB", "512GB"],
           "description": "折りたたみでこの薄さ",
-          "experience": "iPhoneやMacとの親和性は神",
+          "comment": "Androidなのに iPhoneやMacとの親和性を確保しているのが素晴らしい",
           "links": {}
         },
         {
@@ -199,13 +153,9 @@
           "brand": "Apple",
           "image": "/assets/images/gear/iphone15pro512gb.jpg",
           "status": "sold",
-          "specs": [
-            "M3",
-            "16GB",
-            "512GB"
-          ],
-          "description": "iPhone17購入したので売却済",
-          "experience": "さすがにiPhoneを二年スキップはできなかった",
+          "specs": ["512GB"],
+          "description": "iPhone 17 Proへ移行したため売却。",
+          "comment": "📖 <a href=\"YOUR_URL_HERE\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">iPhone 15 Proを手放して見えたこと</a>",
           "links": {}
         },
         {
@@ -214,12 +164,9 @@
           "brand": "Apple",
           "image": "/assets/images/gear/ipad11m4.jpg",
           "status": "sold",
-          "specs": [
-            "M4",
-            "Apple Pencil Pro"
-          ],
-          "description": "結局売却してしまいました。OPPO Find N5でコンテンツは消費します。",
-          "experience": "SFC修行の動画はすべてこのiPadで作成したので元はとれたかな",
+          "specs": ["M4", "Apple Pencil Pro"],
+          "description": "最終的に売却。コンテンツ消費はOPPO Find N5へ。",
+          "comment": "📖 <a href=\"YOUR_URL_HERE\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行で使い倒したiPad Pro (M4)の記録</a>",
           "links": {}
         }
       ]
@@ -236,12 +183,9 @@
           "brand": "PGYTECH",
           "image": "/assets/images/gear/pgytech_magcam.jpg",
           "status": "available",
-          "specs": [
-            "MagSafe",
-            "グリップ一体"
-          ],
+          "specs": ["MagSafe", "グリップ一体"],
           "description": "iPhoneを“カメラ化”する革命的小物。",
-          "experience": "iPhone 17 Proとのセット運用が快適。",
+          "comment": "",
           "links": {}
         },
         {
@@ -250,12 +194,9 @@
           "brand": "CIO",
           "image": "/assets/images/gear/cio_novawave.jpg",
           "status": "available",
-          "specs": [
-            "Type-C 3in1",
-            "出先充電の相棒"
-          ],
+          "specs": ["Type-C 3in1", "出先充電の相棒"],
           "description": "SFC修行のケーブル地獄を解消。",
-          "experience": "なんと、これひとつでiPhone、AppleWatch、AirPodsが充電可能",
+          "comment": "",
           "links": {}
         }
       ]
