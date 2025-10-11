@@ -1,9 +1,10 @@
-/* gear.js — JSON駆動のギア一覧レンダラー */
+/* gear.js — JSON駆動のギア一覧レンダラー（comment対応版） */
 (() => {
   "use strict";
   const $  = (s, c=document) => c.querySelector(s);
   const $$ = (s, c=document) => Array.from(c.querySelectorAll(s));
 
+  // URL からカテゴリを推測
   const path = location.pathname.toLowerCase();
   const guessCategory = () =>
     /gear-camera/.test(path) ? "camera" :
@@ -14,6 +15,7 @@
   const category = guessCategory();
   if (!category) return;
 
+  // JSON 取得（相対・絶対どちらでも拾う）
   async function fetchJSON(u) {
     const cand = [u, `/` + u.replace(/^\//, "")];
     for (const url of cand) {
@@ -25,6 +27,7 @@
     return null;
   }
 
+  // バッジ
   function statusLabel(s) {
     switch ((s||"").toLowerCase()) {
       case "available":     return { text: "運用中",  cls: "available" };
@@ -35,6 +38,7 @@
     }
   }
 
+  // ヒーロー差し替え
   function renderHero(cat) {
     const hero  = $(".gear-hero-image img");
     const title = $(".gear-hero-title");
@@ -46,14 +50,21 @@
     if (lead && cat.description) lead.textContent = cat.description;
   }
 
+  // カード生成（使用メモは廃止。comment を表示）
   function buildCard(item) {
     const st    = statusLabel(item.status);
     const specs = (item.specs||[]).map(s => `<span class="spec-item">${s}</span>`).join("");
     const price = item.price ? `<div class="gear-price">HK$ ${item.price}</div>` : "";
+
     const reviewBtn = (item.links && item.links.review)
       ? `<a href="${item.links.review}" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">レビュー</a>` : "";
     const buyBtn = (item.links && item.links.buy)
       ? `<a href="${item.links.buy}" target="_blank" rel="noopener noreferrer" class="btn btn-primary">購入先</a>` : "";
+
+    // comment は HTML を許可（JSON 側で <a> を書ける）
+    const comment = item.comment
+      ? `<div class="gear-comment">${item.comment}</div>`
+      : "";
 
     return `
       <article class="gear-item">
@@ -68,11 +79,7 @@
           </div>
           <div class="gear-specs">${specs}</div>
           <p class="gear-description">${item.description || ""}</p>
-          ${item.experience ? `
-          <div class="gear-experience">
-            <h4>使用メモ</h4>
-            <p>${item.experience}</p>
-          </div>` : ""}
+          ${comment}
           <div class="gear-actions">
             ${reviewBtn}
             ${buyBtn}
@@ -82,12 +89,14 @@
     `;
   }
 
+  // グリッド描画
   function renderGrid(cat) {
     const grid = $(".gear-grid");
     if (!grid) return;
     grid.innerHTML = cat.items.map(buildCard).join("");
   }
 
+  // フィルター
   function setupFilters() {
     const tabs = $$(".filter-tab");
     if (!tabs.length) return;
