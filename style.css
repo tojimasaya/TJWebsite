@@ -2600,3 +2600,21 @@ figure.article-thumb > img,
   margin-top: 1.8em;
   margin-bottom: 1.8em;
 }
+/* Hero下 intro部分を明朝体に変更 */
+.intro-text {
+  font-family: 'Crimson Text', '游明朝体', 'Yu Mincho', 'Hiragino Mincho ProN', serif;
+  font-weight: 400;
+  color: var(--text-color);
+}
+
+.intro-text p {
+  margin-bottom: 0.8em;
+  line-height: 1.95;
+  letter-spacing: 0.02em;
+}
+
+/* spacer用 */
+.intro-text p.spacer {
+  margin-top: 1.8em;
+  margin-bottom: 1.8em;
+}
