@@ -2574,3 +2574,18 @@ figure.article-thumb > img,
 .lead p {
   margin: 0 0 1.2em;
 }
+/* Gear コメント表示 */
+.gear-comment{
+  margin-top:10px;
+  font-size:var(--text-base);
+  color:var(--text-light);
+  line-height:1.7;
+}
+.gear-comment a.note-link{
+  color:var(--accent-color);
+  text-decoration:none;
+  border-bottom:1px solid rgba(37,99,235,.3);
+}
+.gear-comment a.note-link:hover{
+  border-bottom-color:rgba(37,99,235,.8);
+}
