@@ -155,7 +155,7 @@
           "status": "sold",
           "specs": ["512GB"],
           "description": "iPhone 17 Proへ移行したため売却。",
-          "comment": "📖 <a href=\"YOUR_URL_HERE\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">iPhone 15 Proを手放して見えたこと</a>",
+          "comment": ,
           "links": {}
         },
         {
@@ -166,7 +166,7 @@
           "status": "sold",
           "specs": ["M4", "Apple Pencil Pro"],
           "description": "最終的に売却。コンテンツ消費はOPPO Find N5へ。",
-          "comment": "📖 <a href=\"YOUR_URL_HERE\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行で使い倒したiPad Pro (M4)の記録</a>",
+          "comment": ,
           "links": {}
         }
       ]
