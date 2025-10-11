@@ -115,16 +115,16 @@
           "links": {}
         },
         {
-          "id": "iphone-17-pro",
-          "name": "iPhone 17 Pro 512GB Blue",
-          "brand": "Apple",
-          "image": "/assets/images/gear/iphone17pro.jpg",
-          "status": "available",
-          "specs": ["512GB"],
-          "description": "【前編】iPhone 17 Pro検証：x2・x8は単なるクロップか？同一被写体でAI補正の効き目を見極める（全文無料）",
-          "comment":  "📖 <a href=\"https://note.com/tojimasaya/n/nd229cd856751" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【前編】iPhone 17 Pro検証：x2・x8は単なるクロップか？同一被写体でAI補正の効き目を見極める（全文無料）</a>",
+  "id": "iphone-17-pro",
+  "name": "iPhone 17 Pro 512GB Blue",
+  "brand": "Apple",
+  "image": "/assets/images/gear/iphone17pro.jpg",
+  "status": "available",
+  "specs": ["512GB"],
+  "description": "【前編】iPhone 17 Pro検証：x2・x8は単なるクロップか？同一被写体でAI補正の効き目を見極める（全文無料）",
+  "comment": "📖 <a href=\"https://note.com/tojimasaya/n/nd229cd856751\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【前編】iPhone 17 Pro検証：x2・x8は単なるクロップか？同一被写体でAI補正の効き目を見極める（全文無料）</a>",
   "links": {}
-        },
+},
         {
           "id": "xiaomi-15-ultra",
           "name": "Xiaomi 15 Ultra",
