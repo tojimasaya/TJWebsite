@@ -2589,3 +2589,13 @@ figure.article-thumb > img,
 .gear-comment a.note-link:hover{
   border-bottom-color:rgba(37,99,235,.8);
 }
+/* intro本文の行間・段落間に余白を追加 */
+.intro-text p {
+  margin-bottom: 1.3em;  /* 段落ごとのスペース */
+  line-height: 2.0;      /* 行間も少し広げる */
+}
+
+/* 特定位置に意図的な空白行を入れたい場合 */
+.intro-text p.spacer {
+  margin-top: 2.5em;   /* 上下に広い余白 */
+}
