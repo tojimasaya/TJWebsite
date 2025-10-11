@@ -2589,3 +2589,14 @@ figure.article-thumb > img,
 .gear-comment a.note-link:hover{
   border-bottom-color:rgba(37,99,235,.8);
 }
+/* 通常の段落間はコンパクトに */
+.intro-text p {
+  margin-bottom: 0.8em;
+  line-height: 1.95;
+}
+
+/* spacer クラスだけは“1行分の空白”を確保 */
+.intro-text p.spacer {
+  margin-top: 1.8em;
+  margin-bottom: 1.8em;
+}
