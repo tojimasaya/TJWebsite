@@ -58,7 +58,7 @@
           "image": "/assets/images/gear/mini4pro.jpg",
           "status": "available",
           "specs": ["<249g", "4K60", "D-Log M"],
-          "description": "風に強く、旅の定番空撮機。",
+          "description": "DJI Mini 5 Proが250gを数グラム超えるため、国によっては登録が必要ということで、２台体制でいくことにしたので当分 売却しません。",
           "comment": "📖 <a href=\"https://drone.jp/\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Mini 4 Proのレビュー</a>",
           "links": { "review": "https://drone.jp/" }
         },
@@ -71,7 +71,7 @@
           "specs": ["<249g", "4K60"],
           "description": "小さくて可愛い、Goggle運用可能",
           "comment": "",
-          "links": { "review": "https://drone.jp/" }
+          "links": { "review": "https://drone.jp/news/2024090522010796961.html" }
         },
         {
           "id": "dji-avata2",
@@ -92,7 +92,7 @@
           "status": "available",
           "specs": ["１インチセンサー", "電子２倍ズーム"],
           "description": "深圳DJIで購入、中国にも日本同様消費税還付があることに驚いた。",
-          "comment": "https://note.com/tojimasaya/n/n9b97314e1023\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">深圳でDJIドローンをお得に！「離境退税」制度を体験してみた</a>",
+          "comment": 📖 <a href=\"https://note.com/tojimasaya/n/n9b97314e1023\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">深圳でDJIドローンをお得に！「離境退税」制度を体験してみた</a>",
           "links": {}
         }
       ]
@@ -110,7 +110,7 @@
           "image": "/assets/images/gear/macbookpro14m3.jpg",
           "status": "available",
           "specs": ["M3", "18GB", "512GB"],
-          "description": "日常はすべてこれで。",
+          "description": "Macbook 14インチにした理由は、何インチにしたところで見えないのは一緒、だって27インチ以上の外部モニターなしでは結局見えないからｗ",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n57968ed8d4ae?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">iPadシフトは、いまか？ 第1回 ～移行への第一歩～</a>",
           "links": {}
         },
@@ -132,7 +132,7 @@
           "image": "/assets/images/gear/xiaomi15ultra.jpg",
           "status": "available",
           "specs": ["16GB", "512GB"],
-          "description": "iPhone 17 Pro はカメラがぐっと良くなっています、しかし望遠カメラではまだXiaomi 15 Ultraには敵わない印象",
+          "description": "iPhone 17 Pro はカメラがぐっと良くなっています、しかしそれでもなお望遠カメラはまだXiaomi 15 Ultraには敵わない、そう気がついて一層 愛情が湧きました。",
           "comment":  "📖 <a href=\"https://note.com/tojimasaya/n/nc12013eb2323?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Xiaomi 15 Ultraの“9つの画角”完全解剖。4つのレンズでここまで撮れる（全文無料）</a>",
           "links": {}
         },
