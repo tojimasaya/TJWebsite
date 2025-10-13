@@ -1,0 +1,678 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>白鷺三十六景 — Toji Masaya</title>
+
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <meta name="theme-color" content="#1A3FB9">
+
+    <!-- SEO & OGP -->
+    <meta name="description" content="葛飾北斎の富嶽三十六景に倣い、故郷・姫路城をさまざまな角度、季節、時間帯で切り取った36の情景。現在制作中。">
+    <meta name="keywords" content="姫路城, 白鷺城, 写真, 田路昌也, 富嶽三十六景">
+    <meta name="author" content="Toji Masaya">
+
+    <!-- OGP -->
+    <meta property="og:title" content="白鷺三十六景 — Toji Masaya">
+    <meta property="og:description" content="北斎の富嶽三十六景に倣い、故郷・姫路城を36の視点で切り取る写真プロジェクト。制作進行中。">
+    <meta property="og:url" content="https://tojimasaya.com/shirasagi36.html">
+    <meta property="og:type" content="website">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
+
+    <!-- External CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* 和紙風背景 */
+        body {
+            background: linear-gradient(to bottom, #fdfcf8 0%, #f5f3ed 100%);
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.02) 2px, rgba(0,0,0,.02) 4px),
+                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.02) 2px, rgba(0,0,0,.02) 4px);
+            pointer-events: none;
+            z-index: 1;
+        }
+
+        .main-content {
+            position: relative;
+            z-index: 2;
+        }
+
+        /* ヒーローセクション */
+        .shirasagi-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 500px;
+            overflow: hidden;
+            margin-top: 70px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .shirasagi-hero-image {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+
+        .shirasagi-hero-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.6) contrast(1.2);
+        }
+
+        .shirasagi-hero-overlay {
+            position: relative;
+            z-index: 2;
+            text-align: center;
+            color: white;
+            padding: 0 20px;
+        }
+
+        .shirasagi-title {
+            font-family: 'Noto Serif JP', 'Crimson Text', serif;
+            font-size: 4rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
+            letter-spacing: 0.1em;
+        }
+
+        .shirasagi-subtitle {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            font-style: italic;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
+            letter-spacing: 0.05em;
+        }
+
+        /* プロジェクト説明 */
+        .shirasagi-intro {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .shirasagi-intro h2 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            letter-spacing: 0.1em;
+        }
+
+        .shirasagi-intro p {
+            font-size: 1.1rem;
+            line-height: 2;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* 進捗表示 */
+        .progress-section {
+            max-width: 600px;
+            margin: 40px auto;
+            padding: 30px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .progress-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .progress-text {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            color: var(--text-color);
+        }
+
+        .progress-count {
+            font-family: 'Crimson Text', serif;
+            font-size: 2rem;
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .progress-bar-container {
+            width: 100%;
+            height: 8px;
+            background: #e5e5e5;
+            border-radius: 4px;
+            overflow: hidden;
+            margin-bottom: 10px;
+        }
+
+        .progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, var(--accent-color), #1e40af);
+            border-radius: 4px;
+            transition: width 0.5s ease;
+        }
+
+        .progress-note {
+            font-size: 0.9rem;
+            color: var(--text-lighter);
+            font-style: italic;
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        /* ギャラリーグリッド */
+        .shirasagi-grid {
+            max-width: 1400px;
+            margin: 60px auto;
+            padding: 0 40px;
+            display: grid;
+            grid-template-columns: repeat(6, 1fr);
+            gap: 20px;
+        }
+
+        .shirasagi-item {
+            position: relative;
+            aspect-ratio: 1;
+            overflow: hidden;
+            border-radius: 4px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: all 0.4s ease;
+            opacity: 0;
+            transform: translateY(30px);
+        }
+
+        /* 写真あり */
+        .shirasagi-item.has-photo {
+            cursor: pointer;
+            background: white;
+        }
+
+        .shirasagi-item.has-photo.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .shirasagi-item.has-photo:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+        }
+
+        /* 写真なし（空のスロット） */
+        .shirasagi-item.empty {
+            background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
+            border: 2px dashed #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: default;
+        }
+
+        .shirasagi-item.empty.visible {
+            opacity: 0.4;
+            transform: translateY(0);
+        }
+
+        .shirasagi-item.empty::after {
+            content: '?';
+            font-family: 'Crimson Text', serif;
+            font-size: 3rem;
+            color: #ccc;
+            font-weight: 300;
+        }
+
+        .shirasagi-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.4s ease;
+        }
+
+        .shirasagi-item.has-photo:hover img {
+            transform: scale(1.1);
+        }
+
+        .shirasagi-item-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
+            padding: 20px 15px 10px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .shirasagi-item.has-photo:hover .shirasagi-item-overlay {
+            opacity: 1;
+        }
+
+        .shirasagi-item-title {
+            font-family: 'Noto Serif JP', serif;
+            color: white;
+            font-size: 0.9rem;
+            writing-mode: vertical-rl;
+            text-orientation: upright;
+            letter-spacing: 0.1em;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        /* 撮影について */
+        .shirasagi-about {
+            max-width: 800px;
+            margin: 80px auto;
+            padding: 0 40px;
+        }
+
+        .shirasagi-about h2 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.8rem;
+            margin-bottom: 1.5rem;
+            color: var(--text-color);
+            letter-spacing: 0.1em;
+            text-align: center;
+        }
+
+        .shirasagi-about p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            margin-bottom: 1rem;
+        }
+
+        /* モーダル */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1000;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.95);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .modal-content {
+            position: relative;
+            max-width: 90%;
+            max-height: 90vh;
+            margin: auto;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            max-height: 90vh;
+            object-fit: contain;
+        }
+
+        .modal-caption {
+            position: absolute;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.2rem;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+            white-space: nowrap;
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 30px;
+            right: 40px;
+            color: white;
+            font-size: 3rem;
+            font-weight: 300;
+            cursor: pointer;
+            z-index: 1001;
+            background: none;
+            border: none;
+            transition: transform 0.2s ease;
+        }
+
+        .close-modal:hover {
+            transform: scale(1.2);
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 1200px) {
+            .shirasagi-grid {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .shirasagi-title {
+                font-size: 2.5rem;
+            }
+
+            .shirasagi-subtitle {
+                font-size: 1.1rem;
+            }
+
+            .shirasagi-grid {
+                grid-template-columns: repeat(3, 1fr);
+                gap: 10px;
+                padding: 0 20px;
+            }
+
+            .shirasagi-intro,
+            .shirasagi-about {
+                padding: 0 20px;
+            }
+
+            .progress-section {
+                margin: 40px 20px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .shirasagi-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Skip to main content -->
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
+    <!-- ナビゲーションバー -->
+    <nav class="main-nav" id="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">TJM</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="/shirasagi36.html" class="nav-link active">Shirasagi 36</a></li>
+                <li><a href="/gear.html" class="nav-link">Gear</a></li>
+                <li><a href="/writings.html" class="nav-link">Writings</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- ヒーローセクション -->
+    <section class="shirasagi-hero" role="banner">
+        <div class="shirasagi-hero-image">
+            <!-- ここに姫路城のヒーロー画像を配置 -->
+            <img src="assets/images/shirasagi/hero.jpg" alt="姫路城" loading="eager" width="1920" height="1080">
+            <div class="shirasagi-hero-overlay">
+                <h1 class="shirasagi-title">白鷺三十六景</h1>
+                <p class="shirasagi-subtitle">Shirasagi Sanjūrokkei</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- メインコンテンツ -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <!-- プロジェクト説明 -->
+            <section class="shirasagi-intro">
+                <h2>このプロジェクトについて</h2>
+                <p>葛飾北斎の『富嶽三十六景』に倣い、生まれ故郷である姫路城を、さまざまな角度、季節、時間帯から切り取る写真プロジェクト。</p>
+                <p>白鷺城の愛称で親しまれる姫路城の、36の表情を記録していきます。</p>
+                <p>このページは制作進行中で、撮影した写真を順次追加していきます。完成までの過程もお楽しみください。</p>
+            </section>
+
+            <!-- 進捗表示 -->
+            <section class="progress-section">
+                <div class="progress-header">
+                    <span class="progress-text">撮影進捗</span>
+                    <span class="progress-count" id="progress-count">3 / 36</span>
+                </div>
+                <div class="progress-bar-container">
+                    <div class="progress-bar" id="progress-bar" style="width: 8.33%"></div>
+                </div>
+                <p class="progress-note">※写真は撮影次第、随時追加していきます</p>
+            </section>
+
+            <!-- ギャラリーグリッド -->
+            <section class="shirasagi-grid" id="shirasagi-grid">
+                
+                <!-- 写真がある例（実際の写真に置き換えてください） -->
+                <article class="shirasagi-item has-photo" data-category="spring morning"
+                    onclick="openModal('assets/images/shirasagi/01.jpg', '春暁の白鷺')">
+                    <img src="assets/images/shirasagi/01.jpg" alt="春暁の白鷺" loading="lazy" width="400" height="400">
+                    <div class="shirasagi-item-overlay">
+                        <h3 class="shirasagi-item-title">春暁の白鷺</h3>
+                    </div>
+                </article>
+
+                <article class="shirasagi-item has-photo" data-category="summer noon"
+                    onclick="openModal('assets/images/shirasagi/02.jpg', '夏日の影')">
+                    <img src="assets/images/shirasagi/02.jpg" alt="夏日の影" loading="lazy" width="400" height="400">
+                    <div class="shirasagi-item-overlay">
+                        <h3 class="shirasagi-item-title">夏日の影</h3>
+                    </div>
+                </article>
+
+                <article class="shirasagi-item has-photo" data-category="autumn evening"
+                    onclick="openModal('assets/images/shirasagi/03.jpg', '秋風の城')">
+                    <img src="assets/images/shirasagi/03.jpg" alt="秋風の城" loading="lazy" width="400" height="400">
+                    <div class="shirasagi-item-overlay">
+                        <h3 class="shirasagi-item-title">秋風の城</h3>
+                    </div>
+                </article>
+
+                <!-- 空のスロット（写真がまだないもの） -->
+                <!-- 残り33枚分 -->
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+                <article class="shirasagi-item empty"></article>
+
+            </section>
+
+            <!-- 撮影について -->
+            <section class="shirasagi-about">
+                <h2>撮影について</h2>
+                <p>使用機材：ライカQ2、DJI Mini 4 Pro</p>
+                <p>撮影期間：2025年〜（進行中）</p>
+                <p>生まれ故郷である姫路に帰省するたびに、少しずつ撮り溜めていきます。季節ごとの表情、時間帯による光の変化、さまざまな角度から見た姿。36という数にこだわりながら、ゆっくりと完成を目指します。</p>
+            </section>
+
+            <!-- ホームに戻る -->
+            <section class="back-to-home">
+                <a href="/" class="back-link">
+                    <span class="back-arrow">←</span>
+                    <span>Back to Home</span>
+                </a>
+            </section>
+
+            <!-- フッター -->
+            <footer class="footer" role="contentinfo">
+                <div class="footer-content">
+                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
+                    <p>Built with care in Japan</p>
+                </div>
+            </footer>
+        </div>
+    </main>
+
+    <!-- モーダル -->
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
+        <button class="close-modal" onclick="closeModal()" aria-label="モーダルを閉じる">&times;</button>
+        <div class="modal-content" id="modal-content">
+            <!-- 画像がここに表示される -->
+        </div>
+    </div>
+
+    <!-- JavaScript -->
+    <script>
+        // ナビゲーション
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', function() {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                document.body.classList.toggle('nav-open');
+            });
+
+            const navLinks = document.querySelectorAll('.nav-link');
+            navLinks.forEach(link => {
+                link.addEventListener('click', function() {
+                    if (window.innerWidth <= 768) {
+                        navMenu.classList.remove('active');
+                        navToggle.classList.remove('active');
+                        document.body.classList.remove('nav-open');
+                    }
+                });
+            });
+        }
+
+        // スクロールアニメーション
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach((entry, index) => {
+                if (entry.isIntersecting) {
+                    setTimeout(() => {
+                        entry.target.classList.add('visible');
+                    }, index * 50);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.shirasagi-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // 進捗バーの更新
+        function updateProgress() {
+            const totalItems = 36;
+            const photoItems = document.querySelectorAll('.shirasagi-item.has-photo').length;
+            const percentage = (photoItems / totalItems) * 100;
+
+            document.getElementById('progress-count').textContent = `${photoItems} / ${totalItems}`;
+            document.getElementById('progress-bar').style.width = `${percentage}%`;
+        }
+
+        // モーダル機能
+        function openModal(imageSrc, title) {
+            const modal = document.getElementById('modal');
+            const modalContent = document.getElementById('modal-content');
+            modalContent.innerHTML = `
+                <img src="${imageSrc}" alt="${title}" class="modal-image">
+                <div class="modal-caption">${title}</div>
+            `;
+            modal.setAttribute('aria-hidden', 'false');
+            modal.style.display = 'flex';
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeModal() {
+            const modal = document.getElementById('modal');
+            modal.setAttribute('aria-hidden', 'true');
+            modal.style.display = 'none';
+            document.body.style.overflow = '';
+        }
+
+        // ESCキーでモーダルを閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeModal();
+            }
+        });
+
+        // モーダル背景をクリックして閉じる
+        document.getElementById('modal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                closeModal();
+            }
+        });
+
+        // ページ読み込み時
+        document.addEventListener('DOMContentLoaded', function() {
+            updateProgress();
+        });
+
+        // 外部リンクのセキュリティ強化
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.rel = 'noopener noreferrer';
+        });
+    </script>
+
+    <!-- JSON-LD structured data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ImageGallery",
+        "name": "白鷺三十六景",
+        "alternateName": "Shirasagi Sanjūrokkei",
+        "description": "葛飾北斎の富嶽三十六景に倣い、姫路城を36の視点で切り取った写真プロジェクト。制作進行中。",
+        "author": {
+            "@type": "Person",
+            "name": "田路昌也",
+            "alternateName": "Toji Masaya"
+        },
+        "url": "https://tojimasaya.com/shirasagi36.html",
+        "inProgress": true
+    }
+    </script>
+</body>
+</html>
