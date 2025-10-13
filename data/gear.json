@@ -198,6 +198,17 @@
           "description": "iPhone、Apple Watch、AirPodsの３つを充電できるスグレモノ。ただ別途USB充電器が必要なことに注意。ぜひ私の使い方をしたのリンクで確認してください。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
           "links": {}
+        },
+        {
+          "id": "mcdodo-67w-charger",
+          "name": "Mcdodo 67W GaN 急速充電器",
+          "brand": "Mcdodo",
+          "image": "/assets/images/gear/mcdodo67wcharger.jpg",
+          "status": "available",
+          "specs": ["67w", "リトラクタブルケーブルが便利"],
+          "description": "上で紹介しているNovaWave 3wayとペアで使うと最強。下の noteで使い勝手を確認してください。",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
+          "links": {}
         }
       ]
     }
