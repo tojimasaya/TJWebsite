@@ -52,15 +52,15 @@
       "description": "DJI Miniシリーズで機動力と画質を両立。",
       "items": [
         {
-          "id": "dji-mini-4-pro",
-          "name": "DJI Mini 4 Pro",
+          "id": "dji-mini-5-pro",
+          "name": "DJI Mini 5 Pro",
           "brand": "DJI",
-          "image": "/assets/images/gear/mini4pro.jpg",
+          "image": "/assets/images/gear/mini5pro.jpg",
           "status": "available",
-          "specs": ["<249g", "4K60", "D-Log M"],
-          "description": "DJI Mini 5 Proが250gを数グラム超えるため、国によっては登録が必要ということで、２台体制でいくことにしたので当分 売却しません。",
-          "comment": "",
-          "links": { "review": "https://drone.jp/column/2023092522000773147.html" }
+          "specs": ["１インチセンサー", "ロスレス２倍ズーム"],
+          "description": "深圳DJIで購入、中国にも日本同様消費税還付があることに驚いた。ただし問題は250gを数グラム超えていること。アメリカやカナダで飛ばすときには気をつける必要あり。",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n9b97314e1023\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">深圳でDJIドローンをお得に！「離境退税」制度を体験してみた</a>",
+          "links": {}
         },
         {
           "id": "dji-neo",
@@ -69,7 +69,7 @@
           "image": "/assets/images/gear/djineo.jpg",
           "status": "available",
           "specs": ["<249g", "4K60"],
-          "description": "小さくて可愛い、Goggle運用可能",
+          "description": "小さくて可愛いドローン。コントローラなしで手のひらから飛ばすこともできるし、ゴーグルを使ってFPV的に飛ばすことも可能",
           "comment": "",
           "links": { "review": "https://drone.jp/news/2024090522010796961.html" }
         },
@@ -80,21 +80,21 @@
           "image": "/assets/images/gear/avata2.jpg",
           "status": "available",
           "specs": [">250g", "4K60", "D-Log M"],
-          "description": "日本でも使えるFPV",
+          "description": "初代Avataは駄目でしたが、二代目になって日本でも飛行可能に！",
           "comment": "",
           "links": { "review": "https://drone.jp/column/2024041122201885883.html" }
         },
         {
-          "id": "dji-mini-5-pro",
-          "name": "DJI Mini 5 Pro",
+          "id": "dji-mini-4-pro",
+          "name": "DJI Mini 4 Pro",
           "brand": "DJI",
-          "image": "/assets/images/gear/mini5pro.jpg",
+          "image": "/assets/images/gear/mini4pro.jpg",
           "status": "available",
-          "specs": ["１インチセンサー", "電子２倍ズーム"],
-          "description": "深圳DJIで購入、中国にも日本同様消費税還付があることに驚いた。",
-          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n9b97314e1023\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">深圳でDJIドローンをお得に！「離境退税」制度を体験してみた</a>",
-          "links": {}
-        }
+          "specs": ["<249g", "4K60", "D-Log M"],
+          "description": "DJI Mini 5 Proが250gを数グラム超え、国によっては登録必要ということで、２台体制でいくことに。",
+          "comment": "",
+          "links": { "review": "https://drone.jp/column/2023092522000773147.html" }
+        },
       ]
     },
     "editing": {
@@ -110,7 +110,7 @@
           "image": "/assets/images/gear/macbookpro14m3.jpg",
           "status": "available",
           "specs": ["M3", "18GB", "512GB"],
-          "description": "Macbook 14インチにした理由は、何インチにしたところで見えないのは一緒、だって27インチ以上の外部モニターなしでは結局見えないからｗ",
+          "description": "Macbook 14インチにした理由は、何インチにしたところで見えないのは一緒、27インチ以上の外部モニターなしではなにも見えないローガンズの宿命",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n57968ed8d4ae?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">iPadシフトは、いまか？ 第1回 ～移行への第一歩～</a>",
           "links": {}
         },
@@ -154,7 +154,7 @@
           "image": "/assets/images/gear/iphone15pro512gb.jpg",
           "status": "sold",
           "specs": ["512GB"],
-          "description": "iPhone 17 Proへ移行したため売却。",
+          "description": "iPhone 17 Proへ移行したため売却。でも２年間メインスマホとして頑張ってくれました。２年使って売却したときのリセール価格が予想以上で驚きました。",
           "comment": "",
           "links": {}
         },
@@ -165,7 +165,7 @@
           "image": "/assets/images/gear/ipad11m4.jpg",
           "status": "sold",
           "specs": ["M4", "Apple Pencil Pro"],
-          "description": "最終的に売却。コンテンツ消費はOPPO Find N5へ。",
+          "description": "iPadOS26でほぼMacbookだったのですが、それでも十分に活用できず結局のところ売却へ。コンテンツ消費はOPPO Find N5へ、iPadでは重くてやれない寝モバもこいつならできるんですよね。",
           "comment": "",
           "links": {}
         }
