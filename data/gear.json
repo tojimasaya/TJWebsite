@@ -178,6 +178,17 @@
       "description": "旅を快適にしてくれるアクセサリー。",
       "items": [
         {
+          "id": "acasis-ssd",
+          "name": "ACASIS SSD ",
+          "brand": "ACASIS",
+          "image": "/assets/images/gear/acasis.jpg",
+          "status": "available",
+          "specs": ["MagSafe", "M2.SSD"],
+          "description": "Macbookでもスマートフォンでも利用可能な高速SSD内蔵 多機能HUB",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/ne60ce62cf179?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">HAGiBiSからACASISへ——MagSafe対応SSDケースを乗り換えた理由</a>",
+          "links": {}
+        },
+        {
           "id": "pgytech-magcam",
           "name": "PGYTECH MagCam グリップ",
           "brand": "PGYTECH",
