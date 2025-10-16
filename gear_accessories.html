@@ -1,138 +1,242 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Accessories — Toji Masaya</title>
   <meta name="description" content="田路昌也が使用しているアクセサリー。充電・マウント・収納など、旅を支える小物たち。">
 
-  <!-- CSS（キャッシュバスター付き） -->
-  <link rel="stylesheet" href="style.css?v=20251016">
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css?v=20251016e" />
   <meta name="theme-color" content="#fafafa">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 
+  <!-- ページ固有スタイル -->
   <style>
-    .gear-filter-tabs{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:0 0 24px;}
-    .gear-filter-tabs button{padding:8px 16px;border:1px solid var(--border-color);background:var(--bg-color);color:var(--text-color);border-radius:999px;cursor:pointer;white-space:nowrap;transition:all .2s ease;}
-    .gear-filter-tabs button.active{background:var(--accent-color);color:#fff;border-color:var(--accent-color);}
-    @media(max-width:768px){.gear-filter-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding:0 12px;margin:0 -12px 24px;}}
-    .gear-detail-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-top:24px;}
-    @media(min-width:768px){.gear-detail-grid{grid-template-columns:repeat(2,1fr);gap:48px;}}
-    .gear-detail-image{height:260px;overflow:hidden;border-radius:12px;}
-    .gear-detail-image img{width:100%;height:100%;object-fit:cover;display:block;}
-    @media(max-width:767px){.gear-detail-image{height:auto;}}
+    /* ===== Hero fallback ===== */
+    .gear-hero { position: relative; }
+    .gear-hero-image { position: relative; overflow: hidden; }
+    .gear-hero-image img { width: 100%; height: auto; display: block; }
+    .gear-hero-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column;
+      align-items: center; justify-content: center;
+      text-align: center; width: 100%; box-sizing: border-box;
+      padding: 24px;
+      background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.35));
+      color: #fff;
+      text-shadow: 0 2px 4px rgba(0,0,0,.6);
+    }
+    .gear-hero-title { font-size: clamp(28px, 4vw, 48px); margin: 0 0 6px; }
+    .gear-hero-subtitle { margin: 0; opacity: .95; }
+
+    /* ===== Filter Tabs ===== */
+    .gear-filter-tabs {
+      display: flex; flex-wrap: wrap; gap: 12px;
+      justify-content: center; margin: 0 0 24px;
+    }
+    .gear-filter-tabs button {
+      display: inline-flex !important;
+      align-items: center; justify-content: center;
+      width: auto !important;
+      white-space: nowrap;
+      padding: 8px 16px;
+      border: 1px solid var(--border-color);
+      background: var(--bg-color);
+      color: var(--text-color);
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all .2s ease;
+    }
+    .gear-filter-tabs button.active {
+      background: var(--accent-color);
+      color: #fff;
+      border-color: var(--accent-color);
+    }
+    @media (max-width: 768px) {
+      .gear-filter-tabs {
+        flex-wrap: nowrap !important;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        justify-content: flex-start;
+        gap: 10px;
+        padding: 0 12px;
+        margin: 0 -12px 24px;
+      }
+      .gear-filter-tabs button { min-width: 84px; }
+    }
+
+    /* ===== Grid ===== */
+    .gear-detail-grid {
+      display: grid; grid-template-columns: 1fr;
+      gap: 40px; margin-top: 24px;
+    }
+    @media (min-width: 768px) {
+      .gear-detail-grid { grid-template-columns: repeat(2, 1fr); gap: 48px; }
+    }
+
+    /* ===== Cards ===== */
+    .gear-detail-image { height: 260px; overflow: hidden; border-radius: 12px; }
+    .gear-detail-image img { width: 100%; height: 100%; object-fit: cover; display: block; }
+    @media (max-width: 767px) { .gear-detail-image { height: auto; } }
+
+    .gear-detail-info .gear-detail-description,
+    .gear-detail-info .gear-detail-comment {
+      color: var(--text-color);
+      line-height: 1.75;
+      opacity: .95;
+      margin-top: 10px;
+    }
+
+    .gear-detail-links { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 12px; }
+    .gear-detail-links a {
+      display: inline-block; padding: 8px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px; text-decoration: none;
+      color: var(--text-color);
+    }
+    .gear-detail-links a:hover {
+      border-color: var(--accent-color);
+      color: var(--accent-color);
+    }
+
+    /* ===== Status Badges ===== */
+    .gear-status-badge { display:inline-block; padding:6px 12px; border-radius:999px; font-size:.85rem; color:#fff; }
+    .gear-status-badge.available { background:#10b981; }
+    .gear-status-badge.considering { background:#f59e0b; }
+    .gear-status-badge.sold { background:#6b7280; }
+    .gear-status-badge.not-for-sale { background:#3b82f6; }
   </style>
 </head>
+
 <body>
-<a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+  <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-<nav class="main-nav" id="main-nav">
-  <div class="nav-container">
-    <a href="/" class="nav-logo">Toji Masaya</a>
-    <ul class="nav-menu" id="nav-menu">
-      <li><a href="/" class="nav-link">Home</a></li>
-      <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-      <li><a href="/gear.html" class="nav-link active">Gear</a></li>
-      <li><a href="/writings.html" class="nav-link">Writings</a></li>
-    </ul>
-    <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-      <span></span><span></span><span></span>
-    </button>
-  </div>
-</nav>
-
-<section class="gear-hero">
-  <div class="gear-hero-image">
-    <img src="assets/images/gear/accessories.jpg" alt="Accessories" width="1920" height="1080">
-    <div class="gear-hero-overlay">
-      <h1 class="gear-hero-title">Accessories</h1>
-      <p class="gear-hero-subtitle">充電・マウント・収納など</p>
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Toji Masaya</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="/gear.html" class="nav-link active">Gear</a></li>
+        <li><a href="/writings.html" class="nav-link">Writings</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
     </div>
-  </div>
-</section>
+  </nav>
 
-<main id="main-content" class="main-content">
-  <div class="container">
-    <section class="gear-intro">
-      <p class="lead">旅を快適にしてくれるアクセサリーたち。充電器、マウント、収納ケースなど日常から旅行までを広くカバー。</p>
-    </section>
-
-    <!-- Filters -->
-    <section>
-      <div class="gear-filter-tabs" id="gear-filters">
-        <button class="active" data-filter="all">All</button>
-        <button data-filter="available">運用中</button>
-        <button data-filter="considering">売却検討中</button>
-        <button data-filter="sold">売却済</button>
+  <!-- Hero -->
+  <section class="gear-hero" role="banner">
+    <div class="gear-hero-image">
+      <img src="assets/images/gear/accessories.jpg" alt="Accessories" width="1920" height="1080" loading="eager">
+      <div class="gear-hero-overlay">
+        <h1 class="gear-hero-title">Accessories</h1>
+        <p class="gear-hero-subtitle">充電・マウント・収納など</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <!-- Grid -->
-    <section class="gear-section">
-      <div class="gear-detail-grid" id="accessories-gear-grid">
-        <div class="loading">機材を読み込み中...</div>
-      </div>
-    </section>
+  <main id="main-content" class="main-content">
+    <div class="container">
 
-    <section class="back-to-home">
-      <a href="/gear.html" class="back-link"><span class="back-arrow">←</span><span>Back to Gear</span></a>
-    </section>
+      <section class="gear-intro">
+        <p class="lead">旅を快適にしてくれるアクセサリーたち。充電器、マウント、収納ケースなど日常から旅行までを広くカバー。</p>
+      </section>
 
-    <footer class="footer" role="contentinfo">
-      <div class="footer-content"><p>&copy; 2025 Toji Masaya.</p></div>
-    </footer>
-  </div>
-</main>
+      <!-- Filter Buttons -->
+      <section>
+        <div class="gear-filter-tabs" id="gear-filters">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="available">運用中</button>
+          <button data-filter="considering">売却検討中</button>
+          <button data-filter="sold">売却済</button>
+          <button data-filter="not-for-sale">非売品</button>
+        </div>
+      </section>
 
-<script>
-/* nav */
-const navToggle=document.getElementById('nav-toggle');const navMenu=document.getElementById('nav-menu');
-navToggle?.addEventListener('click',()=>{navMenu.classList.toggle('active');navToggle.classList.toggle('active');document.body.classList.toggle('nav-open');});
-window.addEventListener('scroll',()=>{const n=document.getElementById('main-nav');window.scrollY>50?n.classList.add('scrolled'):n.classList.remove('scrolled');});
+      <!-- Grid -->
+      <section class="gear-section">
+        <div class="gear-detail-grid" id="accessories-gear-grid">
+          <div class="loading">機材を読み込み中...</div>
+        </div>
+      </section>
 
-/* accessories */
-let ACC_ITEMS=[];
-function getStatusText(s){return{'available':'運用中','considering':'売却検討中','sold':'売却済'}[s]||s;}
-function getLinkText(k){return{'review':'レビュー記事','purchase':'購入リンク','official':'公式サイト'}[k]||k;}
+      <section class="back-to-home">
+        <a href="/gear.html" class="back-link"><span class="back-arrow">←</span><span>Back to Gear</span></a>
+      </section>
 
-function renderAccessories(items){
-  const grid=document.getElementById('accessories-gear-grid');
-  if(!items?.length){grid.innerHTML='<p>該当する機材がありません。</p>';return;}
-  grid.innerHTML=items.map(it=>`
-    <article class="gear-detail-item">
-      <div class="gear-detail-image"><img src="${it.image}" alt="${it.name}"></div>
-      <div class="gear-detail-info">
-        ${it.status?`<span class="gear-status-badge ${it.status}">${getStatusText(it.status)}</span>`:''}
-        <h2 class="gear-detail-name">${it.name}</h2>
-        ${it.description?`<p class="gear-detail-description">${it.description}</p>`:''}
-        ${it.links&&Object.keys(it.links).length?`
-          <div class="gear-detail-links">
-            ${Object.entries(it.links).map(([k,u])=>`<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`).join('')}
-          </div>`:''}
-      </div>
-    </article>
-  `).join('');
-}
+      <footer class="footer" role="contentinfo">
+        <div class="footer-content"><p>&copy; 2025 Toji Masaya. All rights reserved.</p></div>
+      </footer>
 
-function applyFilter(key){renderAccessories(key==='all'?ACC_ITEMS:ACC_ITEMS.filter(i=>i.status===key));}
+    </div>
+  </main>
 
-document.addEventListener('DOMContentLoaded',async()=>{
-  try{
-    const res=await fetch('/data/gear.json');
-    const data=await res.json();
-    ACC_ITEMS=data?.categories?.accessories?.items||[];
-    applyFilter('all');
-    const tabs=document.getElementById('gear-filters');
-    tabs.addEventListener('click',e=>{
-      const btn=e.target.closest('button[data-filter]'); if(!btn) return;
-      tabs.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
-      btn.classList.add('active'); applyFilter(btn.dataset.filter);
+  <script>
+    // ===== Navigation =====
+    const navToggle=document.getElementById('nav-toggle');
+    const navMenu=document.getElementById('nav-menu');
+    navToggle?.addEventListener('click',()=>{navMenu.classList.toggle('active');navToggle.classList.toggle('active');document.body.classList.toggle('nav-open');});
+    window.addEventListener('scroll',()=>{const n=document.getElementById('main-nav');window.scrollY>50?n.classList.add('scrolled'):n.classList.remove('scrolled');});
+
+    // ===== Filter & Render =====
+    let ACC_ITEMS=[];
+    function getStatusText(s){
+      return {
+        'available':'運用中',
+        'considering':'売却検討中',
+        'sold':'売却済',
+        'not-for-sale':'非売品'
+      }[s] || s;
+    }
+    function getLinkText(k){
+      return {'review':'レビュー記事','purchase':'購入リンク','official':'公式サイト'}[k] || k;
+    }
+
+    function renderAccessories(items){
+      const grid=document.getElementById('accessories-gear-grid');
+      if(!items?.length){grid.innerHTML='<p>該当する機材がありません。</p>';return;}
+      grid.innerHTML=items.map(it=>`
+        <article class="gear-detail-item">
+          <div class="gear-detail-image"><img src="${it.image}" alt="${it.name}"></div>
+          <div class="gear-detail-info">
+            ${it.status?`<span class="gear-status-badge ${it.status}">${getStatusText(it.status)}</span>`:''}
+            <h2 class="gear-detail-name">${it.name}</h2>
+            ${it.description?`<p class="gear-detail-description">${it.description}</p>`:''}
+            ${it.comment?`<div class="gear-detail-comment">${it.comment}</div>`:''}
+            ${it.links && Object.keys(it.links).length?`
+              <div class="gear-detail-links">
+                ${Object.entries(it.links).map(([k,u])=>`<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`).join('')}
+              </div>`:''}
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function applyFilter(key){
+      renderAccessories(key==='all'?ACC_ITEMS:ACC_ITEMS.filter(i=>i.status===key));
+    }
+
+    document.addEventListener('DOMContentLoaded',async()=>{
+      try{
+        const res=await fetch('/data/gear.json');
+        const data=await res.json();
+        ACC_ITEMS=data?.categories?.accessories?.items||[];
+        applyFilter('all');
+        const tabs=document.getElementById('gear-filters');
+        tabs.addEventListener('click',e=>{
+          const btn=e.target.closest('button[data-filter]'); if(!btn)return;
+          tabs.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+          btn.classList.add('active');
+          applyFilter(btn.dataset.filter);
+        });
+      }catch(err){
+        console.error(err);
+        document.getElementById('accessories-gear-grid').innerHTML='<p>機材データの読み込みに失敗しました。</p>';
+      }
     });
-  }catch(err){
-    console.error(err);
-    document.getElementById('accessories-gear-grid').innerHTML='<p>機材データの読み込みに失敗しました。</p>';
-  }
-});
-</script>
+  </script>
 </body>
 </html>
