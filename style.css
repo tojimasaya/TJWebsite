@@ -2041,3 +2041,40 @@ body {
   border: 1px solid var(--border-color);
   border-radius: 8px;
 }
+/* === Gear filter tabs: mobile horizontal scroll ===================== */
+@media (max-width: 768px) {
+  .gear-filter-tabs,
+  .gear-tabs {
+    display: flex;
+    flex-wrap: nowrap;           /* 折り返さない */
+    overflow-x: auto;            /* 横スクロール可 */
+    -webkit-overflow-scrolling: touch;
+    gap: 10px;
+    justify-content: flex-start; /* 左寄せ */
+    padding: 0 12px;             /* 画面端から少し余白 */
+    margin: 0 -12px 24px;        /* 端までスワイプしやすく */
+  }
+
+  .gear-filter-tabs button,
+  .gear-tabs button {
+    display: inline-flex;        /* 内包サイズに合わせる */
+    align-items: center;
+    white-space: nowrap;         /* 1行固定（縦落ち防止） */
+    width: auto;                 /* 100%化を防ぐ */
+    min-width: 84px;             /* 触りやすい最低幅 */
+    padding: 10px 16px;
+    line-height: 1;              /* 行間を詰めて楕円に収める */
+    border-radius: 999px;
+    /* 日本語の字間を少し広げて可読性アップ（任意） */
+    letter-spacing: .02em;
+  }
+
+  /* スクロールバー目立たせたくない場合（任意） */
+  .gear-filter-tabs::-webkit-scrollbar,
+  .gear-tabs::-webkit-scrollbar { height: 6px; }
+  .gear-filter-tabs::-webkit-scrollbar-thumb,
+  .gear-tabs::-webkit-scrollbar-thumb {
+    background: rgba(255,255,255,.2);
+    border-radius: 3px;
+  }
+}
