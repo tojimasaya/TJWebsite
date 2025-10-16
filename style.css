@@ -2078,3 +2078,46 @@ body {
     border-radius: 3px;
   }
 }
+
+/* === Gear page responsive grid (2025-10-16) ======================== */
+.gear-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* デフォルトは1カラム（スマホ） */
+  gap: 40px;
+  margin-top: 40px;
+}
+
+/* 画面が広いときは2カラムに */
+@media (min-width: 768px) {
+  .gear-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 48px;
+  }
+}
+
+/* 各カードの体裁調整 */
+.gear-item {
+  background: var(--white);
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  transition: transform .2s ease, box-shadow .2s ease;
+}
+.gear-item:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+}
+
+/* 画像の高さを統一 */
+.gear-item img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (max-width: 767px) {
+  .gear-item img {
+    height: auto; /* スマホは可変でOK */
+  }
+}
