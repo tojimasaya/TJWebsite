@@ -83,15 +83,27 @@ window.addEventListener('scroll',()=>{const n=document.getElementById('main-nav'
 let DRONE_ITEMS=[];
 function getStatusText(s){return{'available':'運用中','considering':'売却検討中','sold':'売却済'}[s]||s;}
 function getLinkText(k){return{'review':'レビュー記事','purchase':'購入リンク','official':'公式サイト'}[k]||k;}
-function renderDrone(i){const g=document.getElementById('drone-gear-grid');if(!i?.length){g.innerHTML='<p>該当する機材がありません。</p>';return;}
-g.innerHTML=i.map(v=>`
-<article class="gear-detail-item">
-<div class="gear-detail-image"><img src="${v.image}" alt="${v.name}"></div>
-<div class="gear-detail-info">
-<span class="gear-status-badge ${v.status}">${getStatusText(v.status)}</span>
-<h2 class="gear-detail-name">${v.name}</h2>
-${v.comment?`<div class="gear-detail-comment">${v.comment}</div>`:''}
-</div></article>`).join('');}
+function renderDrone(i){
+  const g = document.getElementById('drone-gear-grid');
+  if (!i?.length) { g.innerHTML = '<p>該当する機材がありません。</p>'; return; }
+
+  g.innerHTML = i.map(v => `
+    <article class="gear-detail-item">
+      <div class="gear-detail-image"><img src="${v.image}" alt="${v.name}"></div>
+      <div class="gear-detail-info">
+        ${v.status ? `<span class="gear-status-badge ${v.status}">${getStatusText(v.status)}</span>` : ''}
+        <h2 class="gear-detail-name">${v.name}</h2>
+        ${v.description ? `<p class="gear-detail-description">${v.description}</p>` : ''}   <!-- ← 追加 -->
+        ${v.comment ? `<div class="gear-detail-comment">${v.comment}</div>` : ''}
+        ${v.links && Object.keys(v.links).length ? `
+          <div class="gear-detail-links">
+            ${Object.entries(v.links).map(([k,u]) =>
+              `<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`).join('')}
+          </div>` : ''}
+      </div>
+    </article>
+  `).join('');
+}
 function applyFilter(f){renderDrone(f==='all'?DRONE_ITEMS:DRONE_ITEMS.filter(i=>i.status===f));}
 document.addEventListener('DOMContentLoaded',async()=>{try{const r=await fetch('/data/gear.json');const d=await r.json();DRONE_ITEMS=d.categories.drone.items;applyFilter('all');const t=document.getElementById('gear-filters');t.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;t.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');applyFilter(b.dataset.filter);});}catch(e){console.error(e);}});
 </script>
