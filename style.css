@@ -2121,3 +2121,20 @@ body {
     height: auto; /* スマホは可変でOK */
   }
 }
+
+/* === Gear descriptions – dark-mode readable ======================= */
+.gear-detail-description,
+.gear-detail-comment {
+  color: var(--text-color);   /* 薄い色をやめ、本文色で表示 */
+  line-height: 1.75;
+  opacity: .92;               /* 少しだけ柔らげる（完全白/黒は避ける） */
+  margin: 12px 0 0;
+}
+
+/* リンク（noteリンクなど）が暗色背景でも埋もれないように */
+.note-link { 
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+}
+.note-link:hover { border-bottom-color: transparent; }
