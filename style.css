@@ -1991,3 +1991,53 @@ body {
         font-size: var(--text-xl);
     }
 }
+/* === Gear pages hardening (2025-10-16) =============================== */
+/* 画像のはみ出し防止（念のため全域） */
+.main-content img, .container img, .gear-detail-image img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* まれに figure が素で入っても崩れないように */
+.main-content figure {
+  margin: 0;
+}
+
+/* 旧バージョンのフィルタタブが残っても行崩れしない */
+.gear-filters, .gear-tabs, .gear-filter-tabs {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  justify-content: center;
+  margin: 0 0 30px;
+}
+.gear-filter-tabs button,
+.gear-tabs button {
+  padding: 8px 18px;
+  border: 1px solid var(--border-color);
+  background: var(--white);
+  color: var(--text-color);
+  border-radius: 999px;
+  font-size: var(--text-sm);
+}
+.gear-filter-tabs .active,
+.gear-tabs .active { 
+  background: var(--accent-color);
+  color: #fff;
+  border-color: var(--accent-color);
+}
+
+/* Gearカードの画像高さを強制（縦長画像対策） */
+.gear-detail-image { height: 280px; }
+@media (max-width: 768px) {
+  .gear-detail-image { height: 220px; }
+}
+
+/* もし単体の<img>がJSON外で混入しても横幅に収まるよう調整 */
+.gear-section > img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+}
