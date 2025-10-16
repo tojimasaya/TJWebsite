@@ -6,12 +6,11 @@
     <title>Gallery — Toji Masaya</title>
 
     <!-- Favicon -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#1A3FB9">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- SEO & OGP -->
+    <!-- SEO -->
     <meta name="description" content="田路昌也の写真ギャラリー。世界各地での旅の瞬間を写真と動画で記録しています。">
     <meta name="keywords" content="田路昌也, 写真, ギャラリー, 旅行, ドローン, ライカ">
     <meta name="author" content="Toji Masaya">
@@ -26,288 +25,48 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- Critical CSS inline -->
-    <style>
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        :root {
-            --primary-font: 'Crimson Text', Georgia, serif;
-            --secondary-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-            --text-color: #333;
-            --text-light: #666;
-            --text-lighter: #999;
-            --bg-color: #fafafa;
-            --white: #ffffff;
-            --border-color: #e5e5e5;
-            --hover-color: #f5f5f5;
-            --accent-color: #2563eb;
-            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
-            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
-            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
-            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
-            --transition-base: 0.3s ease;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root {
-                --text-color: #e5e5e5;
-                --text-light: #a1a1a1;
-                --text-lighter: #737373;
-                --bg-color: #0f0f0f;
-                --white: #1a1a1a;
-                --border-color: #262626;
-                --hover-color: #2a2a2a;
-            }
-        }
-
-        body {
-            font-family: var(--secondary-font);
-            line-height: 1.6;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            -webkit-font-smoothing: antialiased;
-        }
-
-        /* ナビゲーション */
-        .main-nav {
-            position: fixed;
-            top: 0;
-            width: 100%;
-            background: rgba(250, 250, 250, 0.95);
-            backdrop-filter: blur(10px);
-            border-bottom: 1px solid var(--border-color);
-            z-index: 100;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            .main-nav {
-                background: rgba(26, 26, 26, 0.95);
-            }
-        }
-
-        .nav-container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 0 40px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            height: 70px;
-        }
-
-        .nav-logo {
-            font-family: var(--primary-font);
-            font-size: 1.5rem;
-            font-weight: 600;
-            color: var(--text-color);
-            text-decoration: none;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 30px;
-        }
-
-        .nav-link {
-            color: var(--text-color);
-            text-decoration: none;
-            font-weight: 500;
-            font-size: 0.875rem;
-            transition: color var(--transition-base);
-            position: relative;
-            padding: 5px 0;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: var(--accent-color);
-        }
-
-        .nav-link::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: var(--accent-color);
-            transition: width var(--transition-base);
-        }
-
-        .nav-link:hover::after,
-        .nav-link.active::after {
-            width: 100%;
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 5px;
-            border-radius: 4px;
-        }
-
-        .nav-toggle span {
-            width: 25px;
-            height: 3px;
-            background: var(--text-color);
-            margin: 3px 0;
-            transition: all var(--transition-base);
-            border-radius: 1px;
-        }
-
-        /* ギャラリーヒーロー */
-        .gallery-hero {
-            position: relative;
-            height: 60vh;
-            min-height: 400px;
-            overflow: hidden;
-            margin-top: 70px;
-        }
-
-        .gallery-hero-image {
-            position: relative;
-            width: 100%;
-            height: 100%;
-        }
-
-        .gallery-hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.7) contrast(1.1);
-        }
-
-        .gallery-hero-overlay {
-            position: absolute;
-            bottom: 60px;
-            left: 50%;
-            transform: translateX(-50%);
-            text-align: center;
-            color: white;
-            z-index: 2;
-        }
-
-        .gallery-hero-title {
-            font-family: var(--primary-font);
-            font-size: 4rem;
-            font-weight: 600;
-            margin-bottom: 0.5rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-        }
-
-        .gallery-hero-subtitle {
-            font-family: var(--secondary-font);
-            font-size: 1.2rem;
-            font-weight: 300;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-        }
-
-        /* モバイル対応 */
-        @media (max-width: 768px) {
-            .nav-container {
-                padding: 0 20px;
-            }
-
-            .nav-menu {
-                position: fixed;
-                top: 70px;
-                left: -100%;
-                width: 100%;
-                height: calc(100vh - 70px);
-                background: var(--white);
-                flex-direction: column;
-                justify-content: flex-start;
-                align-items: center;
-                padding-top: 50px;
-                gap: 40px;
-                transition: left var(--transition-base);
-                box-shadow: var(--shadow-lg);
-            }
-
-            .nav-menu.active {
-                left: 0;
-            }
-
-            .nav-link {
-                font-size: 1.125rem;
-                padding: 10px 20px;
-            }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .nav-toggle.active span:nth-child(1) {
-                transform: rotate(-45deg) translate(-5px, 6px);
-            }
-
-            .nav-toggle.active span:nth-child(2) {
-                opacity: 0;
-            }
-
-            .nav-toggle.active span:nth-child(3) {
-                transform: rotate(45deg) translate(-5px, -6px);
-            }
-
-            body.nav-open {
-                overflow: hidden;
-            }
-
-            .gallery-hero {
-                height: 50vh;
-                min-height: 300px;
-            }
-
-            .gallery-hero-title {
-                font-size: 2.5rem;
-            }
-
-            .gallery-hero-subtitle {
-                font-size: 1rem;
-            }
-
-            .gallery-hero-overlay {
-                bottom: 40px;
-            }
-        }
-    </style>
-
-    <!-- External CSS -->
+    <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Theme color -->
+    <!-- Theme -->
     <meta name="theme-color" content="#fafafa">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 </head>
+
 <body>
-    <!-- Skip to main content -->
+    <!-- Skip Link -->
     <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-    <!-- ナビゲーションバー -->
+    <!-- ========================================
+         Navigation
+         ======================================== -->
     <nav class="main-nav" id="main-nav">
-    <div class="nav-container">
-        <a href="/" class="nav-logo">Toji Masaya</a>
-        <ul class="nav-menu" id="nav-menu">
-            <li><a href="/" class="nav-link">Home</a></li>
-            <li><a href="/gallery.html" class="nav-link active">Gallery</a></li>
-            <li><a href="/gear.html" class="nav-link">Gear</a></li>
-            <li><a href="/writings.html" class="nav-link">Writings</a></li>
-        </ul>
-        <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-            <span></span>
-            <span></span>
-            <span></span>
-        </button>
-    </div>
-</nav>
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Toji Masaya</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/gallery.html" class="nav-link active">Gallery</a></li>
+                <li><a href="/gear.html" class="nav-link">Gear</a></li>
+                <li><a href="/writings.html" class="nav-link">Writings</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
 
-    <!-- ギャラリーヒーロー -->
+    <!-- ========================================
+         Hero Section
+         ======================================== -->
     <section class="gallery-hero" role="banner">
         <div class="gallery-hero-image">
-            <img src="assets/images/gallery/venice.jpg" alt="ヴェネツィアの夜景" loading="eager" width="1920" height="1080">
+            <img src="assets/images/gallery/venice.jpg" 
+                 alt="ヴェネツィアの夜景" 
+                 loading="eager" 
+                 width="1920" 
+                 height="1080">
             <div class="gallery-hero-overlay">
                 <h1 class="gallery-hero-title">Gallery</h1>
                 <p class="gallery-hero-subtitle">旅先で切り取った瞬間</p>
@@ -315,15 +74,20 @@
         </div>
     </section>
 
-    <!-- メインコンテンツ -->
+    <!-- ========================================
+         Main Content
+         ======================================== -->
     <main id="main-content" class="main-content">
         <div class="container">
-            <!-- ギャラリー紹介 -->
+
+            <!-- Introduction -->
             <section class="gallery-intro">
                 <p class="lead">ライカやドローンを片手に、世界各地で切り取った瞬間。街角の何気ない風景から、雄大な自然まで、旅先で出会った光景を写真と動画で記録しています。</p>
             </section>
 
-            <!-- フィルターナビゲーション -->
+            <!-- ========================================
+                 Filter Navigation
+                 ======================================== -->
             <section class="gallery-filters">
                 <div class="filter-tabs">
                     <button class="filter-tab active" data-filter="all">All</button>
@@ -332,117 +96,130 @@
                 </div>
             </section>
 
-            <!-- メインギャラリー -->
+            <!-- ========================================
+                 Gallery Grid
+                 ======================================== -->
             <section class="main-gallery">
                 <div class="gallery-grid">
 
-                    
-<!-- ③ ノイシュヴァンシュタイン城（新規・Photo） -->
-<article class="gallery-item photo" data-category="photos travel"
-  onclick="openModal('<img src=&quot;assets/images/gallery/neuschwanstein.jpg&quot; alt=&quot;遠くに見えるノイシュヴァンシュタイン城&quot; class=&quot;modal-image&quot;>')">
-  <div class="gallery-media">
-    <img src="assets/images/gallery/neuschwanstein.jpg"
-         alt="遠くに見えるノイシュヴァンシュタイン城" loading="lazy" width="400" height="250">
-  </div>
-  <div class="gallery-info">
-    <h3>遠くに見えるノイシュヴァンシュタイン城</h3>
-    <p class="gallery-description">
-      先日『世界遺産』を観ていて知った。ノイシュヴァンシュタイン城が、2025年にようやく世界遺産に。
-    </p>
-    <div class="gallery-meta">
-      <span class="gallery-location">フュッセン郊外、ドイツ</span>
-      <span class="gallery-date">2014年秋</span>
-    </div>
-  </div>
-</article>
+                    <!-- ノイシュヴァンシュタイン城 -->
+                    <article class="gallery-item photo" 
+                             data-category="photos travel"
+                             onclick="openModal('<img src=&quot;assets/images/gallery/neuschwanstein.jpg&quot; alt=&quot;遠くに見えるノイシュヴァンシュタイン城&quot; class=&quot;modal-image&quot;>')">
+                        <div class="gallery-media">
+                            <img src="assets/images/gallery/neuschwanstein.jpg"
+                                 alt="遠くに見えるノイシュヴァンシュタイン城" 
+                                 loading="lazy" 
+                                 width="400" 
+                                 height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>遠くに見えるノイシュヴァンシュタイン城</h3>
+                            <p class="gallery-description">
+                                先日『世界遺産』を観ていて知った。ノイシュヴァンシュタイン城が、2025年にようやく世界遺産に。
+                            </p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">フュッセン郊外、ドイツ</span>
+                                <span class="gallery-date">2014年秋</span>
+                            </div>
+                        </div>
+                    </article>
 
-                    <!-- ④ 新規動画（YouTube） -->
-<article class="gallery-item video" data-category="videos travel">
-  <div class="gallery-media">
-    <iframe
-      src="https://www.youtube.com/embed/QQ9UUbk9FUY"
-      title="フランス モン・サン＝ミッシェル"
-      allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-      allowfullscreen></iframe>
-    <button class="play-overlay" aria-label="拡大して再生"
-      onclick="openVideo('QQ9UUbk9FUY','フランス モン・サン＝ミッシェル')"></button>
-  </div>
-  <div class="gallery-info">
-    <h3>フランス モン・サン＝ミッシェル</h3>
-    <p class="gallery-description">
-      ずっと夢見ていたモン・サン＝ミッシェルの空撮
-    </p>
-    <div class="gallery-meta">
-      <span class="gallery-location">フランス・モン・サン＝ミッシェル</span>
-      <span class="gallery-date">2017年夏</span>
-    </div>
-  </div>
-</article>
+                    <!-- モン・サン＝ミッシェル動画 -->
+                    <article class="gallery-item video" data-category="videos travel">
+                        <div class="gallery-media">
+                            <iframe src="https://www.youtube.com/embed/QQ9UUbk9FUY"
+                                    title="フランス モン・サン＝ミッシェル"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowfullscreen></iframe>
+                            <button class="play-overlay" 
+                                    aria-label="拡大して再生"
+                                    onclick="openVideo('QQ9UUbk9FUY','フランス モン・サン＝ミッシェル')"></button>
+                        </div>
+                        <div class="gallery-info">
+                            <h3>フランス モン・サン＝ミッシェル</h3>
+                            <p class="gallery-description">
+                                ずっと夢見ていたモン・サン＝ミッシェルの空撮
+                            </p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">フランス・モン・サン＝ミッシェル</span>
+                                <span class="gallery-date">2017年夏</span>
+                            </div>
+                        </div>
+                    </article>
 
-                    
-                    
+                    <!-- ケルン大聖堂 -->
+                    <article class="gallery-item photo" 
+                             data-category="photos architecture"
+                             onclick="openModal('<img src=&quot;assets/images/gallery/cologne.jpg&quot; alt=&quot;ドイツ・ケルン大聖堂&quot; class=&quot;modal-image&quot;>')">
+                        <div class="gallery-media">
+                            <img src="assets/images/gallery/cologne.jpg"
+                                 alt="ドイツ・ケルン大聖堂" 
+                                 loading="lazy" 
+                                 width="400" 
+                                 height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>ケルン大聖堂</h3>
+                            <p class="gallery-description">
+                                今はもうなくなってしまったドイツ・ケルンのカメラショー Photokina に行って、
+                                みんなでフォトウォークしながら撮った思い出の一枚。
+                            </p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">ドイツ・ケルン大聖堂</span>
+                                <span class="gallery-date">2014年秋</span>
+                            </div>
+                            <div class="gallery-note">
+                                <a href="https://note.com/tojimasaya/n/n24c8d015217a?magazine_key=md99dd54590fa" 
+                                   target="_blank" 
+                                   class="note-link">
+                                    📖 関連記事：「最悪で最高のケルン 2014 Sep 17」
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
-                   <!-- ① ケルン大聖堂 -->
-<article class="gallery-item photo" data-category="photos architecture"
-  onclick="openModal('<img src=&quot;assets/images/gallery/cologne.jpg&quot; alt=&quot;ドイツ・ケルン大聖堂&quot; class=&quot;modal-image&quot;>')">
-  <div class="gallery-media">
-    <img src="assets/images/gallery/cologne.jpg"
-         alt="ドイツ・ケルン大聖堂" loading="lazy" width="400" height="250">
-  </div>
-  <div class="gallery-info">
-    <h3>ケルン大聖堂</h3>
-    <p class="gallery-description">
-      今はもうなくなってしまったドイツ・ケルンのカメラショー Photokina に行って、
-      みんなでフォトウォークしながら撮った思い出の一枚。
-    </p>
-    <div class="gallery-meta">
-      <span class="gallery-location">ドイツ・ケルン大聖堂</span>
-      <span class="gallery-date">2014年秋</span>
-    </div>
-    <!-- noteリンク -->
-    <div class="gallery-note">
-      <a href="https://note.com/tojimasaya/n/n24c8d015217a?magazine_key=md99dd54590fa" target="_blank" class="note-link">
-        📖 関連記事：「最悪で最高のケルン 2014 Sep 17」
-      </a>
-    </div>
-  </div>
-</article>
-
-
-<!-- ② ポタラ宮（ラサ） -->
-<article class="gallery-item photo" data-category="photos travel"
-  onclick="openModal('<img src=&quot;assets/images/gallery/lhasa.jpg&quot; alt=&quot;チベット・ラサ ポタラ宮&quot; class=&quot;modal-image&quot;>')">
-  <div class="gallery-media">
-    <img src="assets/images/gallery/lhasa.jpg"
-         alt="チベット・ラサ ポタラ宮" loading="lazy" width="400" height="250">
-  </div>
-  <div class="gallery-info">
-    <h3>ポタラ宮（ラサ）</h3>
-    <p class="gallery-description">
-      広州から５４時間列車に乗ってラサ駅へ、到着前からほぼ高山病。
-      ポタラ宮についたときには意識が朦朧としていました。
-    </p>
-    <div class="gallery-meta">
-      <span class="gallery-location">チベット・ラサ ポタラ宮</span>
-      <span class="gallery-date">2016年春</span>
-    </div>
-    <!-- noteリンク -->
-    <div class="gallery-note">
-      <a href="https://note.com/tojimasaya/n/n9e58036e3b01?magazine_key=md99dd54590fa" target="_blank" class="note-link">
-        📖 関連記事：「2016 チベット拉薩・西安 兵馬俑の旅 （目次）」
-      </a>
-    </div>
-  </div>
-</article>
-
-                    <!-- ここから既存項目（そのまま） -->
+                    <!-- ポタラ宮（ラサ） -->
+                    <article class="gallery-item photo" 
+                             data-category="photos travel"
+                             onclick="openModal('<img src=&quot;assets/images/gallery/lhasa.jpg&quot; alt=&quot;チベット・ラサ ポタラ宮&quot; class=&quot;modal-image&quot;>')">
+                        <div class="gallery-media">
+                            <img src="assets/images/gallery/lhasa.jpg"
+                                 alt="チベット・ラサ ポタラ宮" 
+                                 loading="lazy" 
+                                 width="400" 
+                                 height="250">
+                        </div>
+                        <div class="gallery-info">
+                            <h3>ポタラ宮（ラサ）</h3>
+                            <p class="gallery-description">
+                                広州から５３時間列車に乗ってラサ駅へ、到着前からほぼ高山病。
+                                ポタラ宮についたときには意識が朦朧としていました。
+                            </p>
+                            <div class="gallery-meta">
+                                <span class="gallery-location">チベット・ラサ ポタラ宮</span>
+                                <span class="gallery-date">2016年春</span>
+                            </div>
+                            <div class="gallery-note">
+                                <a href="https://note.com/tojimasaya/n/n9e58036e3b01?magazine_key=md99dd54590fa" 
+                                   target="_blank" 
+                                   class="note-link">
+                                    📖 関連記事：「2016 チベット拉薩・西安 兵馬俑の旅 （目次）」
+                                </a>
+                            </div>
+                        </div>
+                    </article>
 
                     <!-- カッパドキア動画 -->
                     <article class="gallery-item video" data-category="videos travel">
                         <div class="gallery-media">
-                            <iframe src="https://www.youtube.com/embed/cJ2lFRqmeBA" title="カッパドキアで宿泊したホテルから眺めた朝の風景"></iframe>
-                            <button class="play-overlay" aria-label="拡大して再生"
-  onclick="openVideo('cJ2lFRqmeBA','カッパドキアのホテルから')"></button>
+                            <iframe src="https://www.youtube.com/embed/cJ2lFRqmeBA"
+                                    title="カッパドキアで宿泊したホテルから眺めた朝の風景"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            <button class="play-overlay" 
+                                    aria-label="拡大して再生"
+                                    onclick="openVideo('cJ2lFRqmeBA','カッパドキアのホテルから')"></button>
                         </div>
                         <div class="gallery-info">
                             <h3>カッパドキアのホテルから</h3>
@@ -457,9 +234,13 @@
                     <!-- 馬草壟動画 -->
                     <article class="gallery-item video" data-category="videos travel">
                         <div class="gallery-media">
-                            <iframe src="https://www.youtube.com/embed/0YiQFV-V_Pw" title="記憶すべき風景、馬草壟"></iframe>
-                            <button class="play-overlay" aria-label="拡大して再生"
-  onclick="openVideo('0YiQFV-V_Pw','記憶すべき風景、馬草壟')"></button>
+                            <iframe src="https://www.youtube.com/embed/0YiQFV-V_Pw"
+                                    title="記憶すべき風景、馬草壟"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                                    allowfullscreen></iframe>
+                            <button class="play-overlay" 
+                                    aria-label="拡大して再生"
+                                    onclick="openVideo('0YiQFV-V_Pw','記憶すべき風景、馬草壟')"></button>
                         </div>
                         <div class="gallery-info">
                             <h3>記憶すべき風景、馬草壟 (Ma Tso Lung)</h3>
@@ -471,9 +252,16 @@
                         </div>
                     </article>
 
-                    <article class="gallery-item photo" data-category="photos architecture" onclick="openModal('<img src=&quot;assets/images/gallery/venice.jpg&quot; alt=&quot;ヴェネツィアの夜景&quot; class=&quot;modal-image&quot;>')">
+                    <!-- ヴェネツィア -->
+                    <article class="gallery-item photo" 
+                             data-category="photos architecture"
+                             onclick="openModal('<img src=&quot;assets/images/gallery/venice.jpg&quot; alt=&quot;ヴェネツィアの夜景&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="assets/images/gallery/venice.jpg" alt="ヴェネツィアの夜景" loading="lazy" width="400" height="250">
+                            <img src="assets/images/gallery/venice.jpg" 
+                                 alt="ヴェネツィアの夜景" 
+                                 loading="lazy" 
+                                 width="400" 
+                                 height="250">
                         </div>
                         <div class="gallery-info">
                             <h3>ヴェネツィアの夜景</h3>
@@ -485,9 +273,16 @@
                         </div>
                     </article>
 
-                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;assets/images/gallery/hongkong.jpg&quot; alt=&quot;香港の街並み&quot; class=&quot;modal-image&quot;>')">
+                    <!-- 香港 -->
+                    <article class="gallery-item photo" 
+                             data-category="photos travel"
+                             onclick="openModal('<img src=&quot;assets/images/gallery/hongkong.jpg&quot; alt=&quot;香港の街並み&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="assets/images/gallery/hongkong.jpg" alt="香港の街並み" loading="lazy" width="400" height="250">
+                            <img src="assets/images/gallery/hongkong.jpg" 
+                                 alt="香港の街並み" 
+                                 loading="lazy" 
+                                 width="400" 
+                                 height="250">
                         </div>
                         <div class="gallery-info">
                             <h3>香港の街並み</h3>
@@ -499,9 +294,16 @@
                         </div>
                     </article>
 
-                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;assets/images/gallery/cappadocia.jpg&quot; alt=&quot;カッパドキアの風景&quot; class=&quot;modal-image&quot;>')">
+                    <!-- カッパドキア -->
+                    <article class="gallery-item photo" 
+                             data-category="photos travel"
+                             onclick="openModal('<img src=&quot;assets/images/gallery/cappadocia.jpg&quot; alt=&quot;カッパドキアの風景&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="assets/images/gallery/cappadocia.jpg" alt="カッパドキアの風景" loading="lazy" width="400" height="250">
+                            <img src="assets/images/gallery/cappadocia.jpg" 
+                                 alt="カッパドキアの風景" 
+                                 loading="lazy" 
+                                 width="400" 
+                                 height="250">
                         </div>
                         <div class="gallery-info">
                             <h3>カッパドキアの奇岩群</h3>
@@ -513,9 +315,16 @@
                         </div>
                     </article>
 
-                    <article class="gallery-item photo" data-category="photos travel" onclick="openModal('<img src=&quot;assets/images/gallery/istanbul.jpg&quot; alt=&quot;イスタンブールの風景&quot; class=&quot;modal-image&quot;>')">
+                    <!-- イスタンブール -->
+                    <article class="gallery-item photo" 
+                             data-category="photos travel"
+                             onclick="openModal('<img src=&quot;assets/images/gallery/istanbul.jpg&quot; alt=&quot;イスタンブールの風景&quot; class=&quot;modal-image&quot;>')">
                         <div class="gallery-media">
-                            <img src="assets/images/gallery/istanbul.jpg" alt="イスタンブールの風景" loading="lazy" width="400" height="250">
+                            <img src="assets/images/gallery/istanbul.jpg" 
+                                 alt="イスタンブールの風景" 
+                                 loading="lazy" 
+                                 width="400" 
+                                 height="250">
                         </div>
                         <div class="gallery-info">
                             <h3>ボスポラスからヨーロッパ側を望む</h3>
@@ -530,7 +339,9 @@
                 </div>
             </section>
 
-            <!-- ホームに戻る -->
+            <!-- ========================================
+                 Back to Home
+                 ======================================== -->
             <section class="back-to-home">
                 <a href="/" class="back-link">
                     <span class="back-arrow">←</span>
@@ -538,41 +349,52 @@
                 </a>
             </section>
 
-            <!-- フッター -->
+            <!-- ========================================
+                 Footer
+                 ======================================== -->
             <footer class="footer" role="contentinfo">
                 <div class="footer-content">
                     <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
                     <p>Built with care in Japan</p>
                 </div>
             </footer>
+
         </div>
     </main>
 
-    <!-- モーダル -->
-    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-        <button class="close-modal" onclick="closeModal()" aria-label="モーダルを閉じる">&times;</button>
-        <div class="modal-content" id="modal-content">
-            <!-- 画像または動画がここに表示される -->
-        </div>
+    <!-- ========================================
+         Modal
+         ======================================== -->
+    <div id="modal" 
+         class="modal" 
+         role="dialog" 
+         aria-modal="true" 
+         aria-labelledby="modal-title" 
+         aria-hidden="true">
+        <button class="close-modal" 
+                onclick="closeModal()" 
+                aria-label="モーダルを閉じる">&times;</button>
+        <div class="modal-content" id="modal-content"></div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- ========================================
+         Scripts
+         ======================================== -->
     <script>
-        // ナビゲーション
+        // Navigation
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
 
         if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function() {
+            navToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 navToggle.classList.toggle('active');
                 document.body.classList.toggle('nav-open');
             });
 
-            // メニューリンクをクリックしたらメニューを閉じる（モバイル）
             const navLinks = document.querySelectorAll('.nav-link');
             navLinks.forEach(link => {
-                link.addEventListener('click', function() {
+                link.addEventListener('click', () => {
                     if (window.innerWidth <= 768) {
                         navMenu.classList.remove('active');
                         navToggle.classList.remove('active');
@@ -582,7 +404,7 @@
             });
         }
 
-        // フィルター機能
+        // Filter functionality
         const filterTabs = document.querySelectorAll('.filter-tab');
         const galleryItems = document.querySelectorAll('.gallery-item');
 
@@ -590,11 +412,9 @@
             tab.addEventListener('click', function() {
                 const filter = this.getAttribute('data-filter');
 
-                // アクティブタブを更新
                 filterTabs.forEach(t => t.classList.remove('active'));
                 this.classList.add('active');
 
-                // アイテムをフィルタリング
                 galleryItems.forEach(item => {
                     if (filter === 'all' || item.getAttribute('data-category').includes(filter)) {
                         item.classList.remove('hidden');
@@ -611,8 +431,8 @@
             });
         });
 
-        // スクロール時のナビゲーション背景変更
-        window.addEventListener('scroll', function() {
+        // Scroll effect
+        window.addEventListener('scroll', () => {
             const nav = document.getElementById('main-nav');
             if (window.scrollY > 50) {
                 nav.classList.add('scrolled');
@@ -621,7 +441,7 @@
             }
         });
 
-        // モーダル機能
+        // Modal functions
         function openModal(content) {
             const modal = document.getElementById('modal');
             const modalContent = document.getElementById('modal-content');
@@ -640,40 +460,34 @@
 
         function openVideo(youtubeId, title = "") {
             const html = `
-              <div class="modal-video">
-                <div class="modal-video-inner">
-                  <iframe
-                    src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1"
-                    title="${title}"
-                    allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                    allowfullscreen
-                  ></iframe>
-                </div>
-              </div>`;
+                <div class="modal-video">
+                    <div class="modal-video-inner">
+                        <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1"
+                                title="${title}"
+                                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
+                                allowfullscreen></iframe>
+                    </div>
+                </div>`;
             openModal(html);
         }
 
-        // ESCキーでモーダルを閉じる
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+        // ESC key to close modal
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
 
-        // モーダル背景をクリックして閉じる
+        // Click outside to close modal
         document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
+            if (e.target === this) closeModal();
         });
 
-        // 外部リンクのセキュリティ強化
+        // External links security
         document.querySelectorAll('a[target="_blank"]').forEach(link => {
             link.rel = 'noopener noreferrer';
         });
     </script>
 
-    <!-- JSON-LD structured data -->
+    <!-- JSON-LD Structured Data -->
     <script type="application/ld+json">
     {
         "@context": "https://schema.org",

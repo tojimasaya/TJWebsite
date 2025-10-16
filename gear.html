@@ -1,214 +1,278 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Gear — Toji Masaya</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gear — Toji Masaya</title>
 
-  <!-- Favicon -->
-<link rel="icon" href="/favicon.ico" sizes="any">
-<link rel="icon" type="image/png" href="/favicon.png">
-<link rel="apple-touch-icon" href="/apple-touch-icon.png">
-<meta name="theme-color" content="#1A3FB9">
+    <!-- Favicon -->
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- SEO & OGP -->
-  <meta name="description" content="田路昌也が実際に使用している旅行用カメラ機材とガジェット。Leica、ドローン、アクセサリーと購入情報。">
-  <meta name="keywords" content="田路昌也, カメラ機材, ドローン, 旅行ガジェット, Leica, DJI, レビュー">
-  <meta name="author" content="Toji Masaya">
+    <!-- SEO -->
+    <meta name="description" content="田路昌也が実際に使用している旅行用カメラ機材とガジェット。Leica、ドローン、アクセサリーと購入情報。">
+    <meta name="keywords" content="田路昌也, カメラ機材, ドローン, 旅行ガジェット, Leica, DJI, レビュー">
+    <meta name="author" content="Toji Masaya">
 
-  <!-- OGP -->
-  <meta property="og:title" content="Gear — Toji Masaya">
-  <meta property="og:description" content="旅行に最適化したカメラ機材とガジェットの詳細レビュー">
-  <meta property="og:image" content="https://tojimasaya.com/assets/images/gear/oreryu.jpg">
-  <meta property="og:url" content="https://tojimasaya.com/gear.html">
-  <meta property="og:type" content="website">
+    <!-- OGP -->
+    <meta property="og:title" content="Gear — Toji Masaya">
+    <meta property="og:description" content="旅行に最適化したカメラ機材とガジェットの詳細レビュー">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/gear/oreryu.jpg">
+    <meta property="og:url" content="https://tojimasaya.com/gear.html">
+    <meta property="og:type" content="website">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- External CSS -->
-  <link rel="stylesheet" href="style.css">
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
 
-  <!-- Theme color -->
-  <meta name="theme-color" content="#fafafa">
-  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-
-  <!-- カスタムCSS -->
-  <style>
-    @media (min-width: 769px) {
-      .category-grid {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        max-width: 1000px;
-        margin: 0 auto;
-      }
-      .category-card { min-height: 450px; }
-      .category-image { height: 220px; }
-      .category-info { padding: 25px 20px; }
-      .category-info h2 { font-size: var(--text-xl); margin-bottom: 12px; }
-      .category-info p { font-size: var(--text-sm); margin-bottom: 20px; }
-      .category-stats { gap: 15px; margin-bottom: 20px; }
-      .category-btn { padding: 12px 24px; font-size: var(--text-sm); }
-    }
-    @media (max-width: 768px) {
-      .category-grid { grid-template-columns: 1fr; gap: 30px; }
-    }
-  </style>
+    <!-- Theme -->
+    <meta name="theme-color" content="#fafafa">
+    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 </head>
+
 <body>
-  <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+    <!-- Skip Link -->
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-  <!-- ナビゲーション -->
-  <nav class="main-nav" id="main-nav">
-    <div class="nav-container">
-      <a href="/" class="nav-logo">Toji Masaya</a>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="/gear.html" class="nav-link active">Gear</a></li>
-        <li><a href="/writings.html" class="nav-link">Writings</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- ヒーロー -->
-  <section class="gear-hero" role="banner">
-    <div class="gear-hero-image">
-      <img src="assets/images/gear/oreryu.jpg" alt="私の愛するガジェット" loading="eager" width="1920" height="1080">
-      <div class="gear-hero-overlay">
-        <h1 class="gear-hero-title">Gear</h1>
-        <p class="gear-hero-subtitle">わたしの愛するガジェット</p>
-      </div>
-    </div>
-  </section>
-
-  <main id="main-content" class="main-content">
-    <div class="container">
-      <section class="gear-intro">
-        <p class="lead">私が使っているカメラ機材とガジェットをご紹介します。実際に使用した経験を基に、重量・サイズ・性能のバランスを重視した選択をしています。</p>
-      </section>
-
-      <!-- カテゴリー -->
-      <section class="gear-categories">
-        <div class="category-grid">
-          <!-- Camera -->
-          <article class="category-card" data-category="camera">
-            <div class="category-image">
-              <img src="assets/images/gear/m2.jpg" alt="Camera Equipment" loading="lazy" width="600" height="400">
-            </div>
-            <div class="category-info">
-              <h2>Camera</h2>
-              <p>Leica M、Leica SL2-S に加えて最近はフィルムカメラのM2などを使っています。</p>
-              <div class="category-stats">
-                <span class="gear-count" data-category="camera"></span>
-              </div>
-              <a href="/gear-camera.html" class="category-btn"><span>View Camera Gear</span><span class="btn-arrow">→</span></a>
-            </div>
-          </article>
-
-          <!-- Drone -->
-          <article class="category-card" data-category="drone">
-            <div class="category-image">
-              <img src="assets/images/gear/drone.jpg" alt="Drone Equipment" loading="lazy" width="600" height="400">
-            </div>
-            <div class="category-info">
-              <h2>Drone</h2>
-              <p>DJI Mini シリーズを中心とした軽量ドローン。旅行先での空撮はやはり軽量のMiniシリーズが最適。そして今回は Mini 5 Proを入手</p>
-              <div class="category-stats">
-                <span class="gear-count" data-category="drone"></span>
-              </div>
-              <a href="/gear-drone.html" class="category-btn"><span>View Drone Gear</span><span class="btn-arrow">→</span></a>
-            </div>
-          </article>
-
-          <!-- Editing -->
-          <article class="category-card" data-category="editing">
-            <div class="category-image">
-              <img src="assets/images/gear/editing.jpg" alt="Daily Drivers Equipment" loading="lazy" width="600" height="400">
-            </div>
-            <div class="category-info">
-              <h2>Daily Drivers</h2>
-              <p>MacBook Pro、iPad Pro、iPhone など。日常使いから編集作業まで、毎日を支える定番機材。</p>
-              <div class="category-stats">
-                <span class="gear-count" data-category="editing"></span>
-              </div>
-              <a href="/gear-editing.html" class="category-btn"><span>View Daily Drivers</span><span class="btn-arrow">→</span></a>
-            </div>
-          </article>
-
-          <!-- Accessories -->
-          <article class="category-card" data-category="accessories">
-            <div class="category-image">
-              <img src="assets/images/gear/accessories.jpg" alt="Travel Accessories" loading="lazy" width="600" height="400">
-            </div>
-            <div class="category-info">
-              <h2>Accessories</h2>
-              <p>メモリーカード、充電器、ケースなど。日常から、旅行を快適にするアクセサリー類。</p>
-              <div class="category-stats">
-                <span class="gear-count" data-category="accessories"></span>
-              </div>
-              <a href="/gear-accessories.html" class="category-btn"><span>View Accessories</span><span class="btn-arrow">→</span></a>
-            </div>
-          </article>
+    <!-- ========================================
+         Navigation
+         ======================================== -->
+    <nav class="main-nav" id="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Toji Masaya</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="/gear.html" class="nav-link active">Gear</a></li>
+                <li><a href="/writings.html" class="nav-link">Writings</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
         </div>
-      </section>
+    </nav>
 
-      <section class="back-to-home">
-        <a href="/" class="back-link"><span class="back-arrow">←</span><span>Back to Home</span></a>
-      </section>
-
-      <footer class="footer" role="contentinfo">
-        <div class="footer-content">
-          <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-          <p>Built with care in Japan</p>
+    <!-- ========================================
+         Hero Section
+         ======================================== -->
+    <section class="gear-hero" role="banner">
+        <div class="gear-hero-image">
+            <img src="assets/images/gear/oreryu.jpg" 
+                 alt="私の愛するガジェット" 
+                 loading="eager" 
+                 width="1920" 
+                 height="1080">
+            <div class="gear-hero-overlay">
+                <h1 class="gear-hero-title">Gear</h1>
+                <p class="gear-hero-subtitle">わたしの愛するガジェット</p>
+            </div>
         </div>
-      </footer>
-    </div>
-  </main>
+    </section>
 
-  <!-- JS -->
-  <script src="/gear-count.js" defer></script>
-  <script>
-    // ナビゲーション動作
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    if (navToggle && navMenu) {
-      navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-        document.body.classList.toggle('nav-open');
-      });
+    <!-- ========================================
+         Main Content
+         ======================================== -->
+    <main id="main-content" class="main-content">
+        <div class="container">
+
+            <!-- Introduction -->
+            <section class="gear-intro">
+                <p class="lead">私が使っているカメラ機材とガジェットをご紹介します。実際に使用した経験を基に、重量・サイズ・性能のバランスを重視した選択をしています。</p>
+            </section>
+
+            <!-- ========================================
+                 Gear Categories
+                 ======================================== -->
+            <section class="gear-categories">
+                <div class="category-grid">
+
+                    <!-- Camera Category -->
+                    <article class="category-card" data-category="camera">
+                        <div class="category-image">
+                            <img src="assets/images/gear/m2.jpg" 
+                                 alt="Camera Equipment" 
+                                 loading="lazy" 
+                                 width="600" 
+                                 height="400">
+                        </div>
+                        <div class="category-info">
+                            <h2>Camera</h2>
+                            <p>Leica M、Leica SL2-S に加えて最近はフィルムカメラのM2などを使っています。</p>
+                            <div class="category-stats">
+                                <span class="gear-count" data-category="camera"></span>
+                            </div>
+                            <a href="/gear-camera.html" class="category-btn">
+                                <span>View Camera Gear</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Drone Category -->
+                    <article class="category-card" data-category="drone">
+                        <div class="category-image">
+                            <img src="assets/images/gear/drone.jpg" 
+                                 alt="Drone Equipment" 
+                                 loading="lazy" 
+                                 width="600" 
+                                 height="400">
+                        </div>
+                        <div class="category-info">
+                            <h2>Drone</h2>
+                            <p>DJI Mini シリーズを中心とした軽量ドローン。旅行先での空撮はやはり軽量のMiniシリーズが最適。そして今回は Mini 5 Proを入手</p>
+                            <div class="category-stats">
+                                <span class="gear-count" data-category="drone"></span>
+                            </div>
+                            <a href="/gear-drone.html" class="category-btn">
+                                <span>View Drone Gear</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Daily Drivers Category -->
+                    <article class="category-card" data-category="editing">
+                        <div class="category-image">
+                            <img src="assets/images/gear/editing.jpg" 
+                                 alt="Daily Drivers Equipment" 
+                                 loading="lazy" 
+                                 width="600" 
+                                 height="400">
+                        </div>
+                        <div class="category-info">
+                            <h2>Daily Drivers</h2>
+                            <p>MacBook Pro、iPad Pro、iPhone など。日常使いから編集作業まで、毎日を支える定番機材。</p>
+                            <div class="category-stats">
+                                <span class="gear-count" data-category="editing"></span>
+                            </div>
+                            <a href="/gear-editing.html" class="category-btn">
+                                <span>View Daily Drivers</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                    <!-- Accessories Category -->
+                    <article class="category-card" data-category="accessories">
+                        <div class="category-image">
+                            <img src="assets/images/gear/accessories.jpg" 
+                                 alt="Travel Accessories" 
+                                 loading="lazy" 
+                                 width="600" 
+                                 height="400">
+                        </div>
+                        <div class="category-info">
+                            <h2>Accessories</h2>
+                            <p>メモリーカード、充電器、ケースなど。日常から、旅行を快適にするアクセサリー類。</p>
+                            <div class="category-stats">
+                                <span class="gear-count" data-category="accessories"></span>
+                            </div>
+                            <a href="/gear-accessories.html" class="category-btn">
+                                <span>View Accessories</span>
+                                <span class="btn-arrow">→</span>
+                            </a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+            <!-- ========================================
+                 Back to Home
+                 ======================================== -->
+            <section class="back-to-home">
+                <a href="/" class="back-link">
+                    <span class="back-arrow">←</span>
+                    <span>Back to Home</span>
+                </a>
+            </section>
+
+            <!-- ========================================
+                 Footer
+                 ======================================== -->
+            <footer class="footer" role="contentinfo">
+                <div class="footer-content">
+                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
+                    <p>Built with care in Japan</p>
+                </div>
+            </footer>
+
+        </div>
+    </main>
+
+    <!-- ========================================
+         Scripts
+         ======================================== -->
+    <script src="/gear-count.js" defer></script>
+    <script>
+        // Navigation
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                document.body.classList.toggle('nav-open');
+            });
+        }
+
+        // Scroll effect
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            if (window.scrollY > 50) {
+                nav.classList.add('scrolled');
+            } else {
+                nav.classList.remove('scrolled');
+            }
+        });
+    </script>
+
+    <!-- JSON-LD Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ItemList",
+        "name": "Toji Masaya Camera Gear Categories",
+        "description": "田路昌也が実際に使用している旅行用カメラ機材とガジェットのカテゴリー一覧",
+        "author": {
+            "@type": "Person",
+            "name": "田路昌也",
+            "alternateName": "Toji Masaya"
+        },
+        "url": "https://tojimasaya.com/gear.html",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "Camera",
+                "description": "Leicaなどのカメラボディとレンズ"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "Drone",
+                "description": "DJI Mini シリーズを中心とした軽量ドローン"
+            },
+            {
+                "@type": "ListItem",
+                "position": 3,
+                "name": "Daily Drivers",
+                "description": "毎日使う定番機材（Mac／iPad／iPhone など）"
+            },
+            {
+                "@type": "ListItem",
+                "position": 4,
+                "name": "Accessories",
+                "description": "メモリーカード、充電器、ケースなど"
+            }
+        ]
     }
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('main-nav');
-      if (window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
-    });
-  </script>
-
-  <!-- JSON-LD -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "ItemList",
-    "name": "Toji Masaya Camera Gear Categories",
-    "description": "田路昌也が実際に使用している旅行用カメラ機材とガジェットのカテゴリー一覧",
-    "author": {
-      "@type": "Person",
-      "name": "田路昌也",
-      "alternateName": "Toji Masaya"
-    },
-    "url": "https://tojimasaya.com/gear.html",
-    "itemListElement": [
-      {"@type": "ListItem","position": 1,"name": "Camera","description": "Leicaなどのカメラボディとレンズ"},
-      {"@type": "ListItem","position": 2,"name": "Drone","description": "DJI Mini シリーズを中心とした軽量ドローン"},
-      {"@type": "ListItem","position": 3,"name": "Daily Drivers","description": "毎日使う定番機材（Mac／iPad／iPhone など）"},
-      {"@type": "ListItem","position": 4,"name": "Accessories","description": "メモリーカード、充電器、ケースなど"}
-    ]
-  }
-  </script>
+    </script>
 </body>
 </html>
