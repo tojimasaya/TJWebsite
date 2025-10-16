@@ -1,411 +1,232 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Daily Drivers — Toji Masaya</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Daily Drivers — Toji Masaya</title>
+  <meta name="description" content="田路昌也の日常ガジェット：スマホ、PC、編集ツールなど。">
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- CSS（キャッシュバスターで更新反映） -->
+  <link rel="stylesheet" href="style.css?v=20251016c" />
 
-    <!-- SEO -->
-    <meta name="description" content="田路昌也が毎日使う定番機材。MacBook Pro、iPhone、iPadなど。">
-    <meta name="keywords" content="田路昌也, MacBook Pro, iPhone, iPad, レビュー">
-    <meta name="author" content="Toji Masaya">
+  <!-- ダーク/ライト -->
+  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 
-    <!-- OGP -->
-    <meta property="og:title" content="Daily Drivers — Toji Masaya">
-    <meta property="og:description" content="Mac／iPad／iPhoneを中心に、毎日を支える常用デジタル">
-    <meta property="og:image" content="https://tojimasaya.com/assets/images/gear/editing.jpg">
-    <meta property="og:url" content="https://tojimasaya.com/gear-editing.html">
-    <meta property="og:type" content="website">
+  <!-- このページだけの最小限スタイル（保険用） -->
+  <style>
+    /* ===== Hero fallback (外部CSSが効かない状況でも表示されるように) */
+    .gear-hero { position: relative; }
+    .gear-hero-image { position: relative; overflow: hidden; }
+    .gear-hero-image img { width: 100%; height: auto; display: block; }
+    .gear-hero-overlay {
+      position: absolute; inset: 0;
+      display: flex; flex-direction: column; align-items: center; justify-content: center;
+      text-align: center; padding: 24px;
+      background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.35));
+      color: #fff;
+    }
+    .gear-hero-title { font-size: clamp(28px, 4vw, 48px); margin: 0 0 6px; }
+    .gear-hero-subtitle { margin: 0; opacity: .95; }
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    /* ===== フィルタタブ（スマホは横スクロール、PCは中央揃え） */
+    .gear-filter-tabs{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:0 0 24px;}
+    .gear-filter-tabs button{
+      padding:8px 16px;border:1px solid var(--border-color);
+      background:var(--bg-color);color:var(--text-color);
+      border-radius:999px;cursor:pointer;white-space:nowrap;transition:all .2s ease;
+    }
+    .gear-filter-tabs button.active{background:var(--accent-color);color:#fff;border-color:var(--accent-color);}
+    @media (max-width:768px){
+      .gear-filter-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding:0 12px;margin:0 -12px 24px;}
+    }
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+    /* ===== グリッド（スマホ1／PC2カラム） */
+    .gear-detail-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-top:24px;}
+    @media (min-width:768px){.gear-detail-grid{grid-template-columns:repeat(2,1fr);gap:48px;}}
 
-    <!-- Theme -->
-    <meta name="theme-color" content="#fafafa">
-    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+    /* ===== カードと画像 */
+    .gear-detail-image{height:260px;overflow:hidden;border-radius:12px;}
+    .gear-detail-image img{width:100%;height:100%;object-fit:cover;display:block;}
+    @media (max-width:767px){.gear-detail-image{height:auto;} .gear-detail-image img{height:auto;}}
 
-    <!-- Gear Detail Styles -->
-    <style>
-        .gear-detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            padding-bottom: 80px;
-        }
-
-        .gear-detail-item {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: all var(--transition-base);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gear-detail-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .gear-detail-image {
-            width: 100%;
-            height: 280px;
-            overflow: hidden;
-            background: #f5f5f5;
-        }
-
-        .gear-detail-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 20px;
-            transition: transform var(--transition-base);
-        }
-
-        .gear-detail-item:hover .gear-detail-image img {
-            transform: scale(1.05);
-        }
-
-        .gear-detail-info {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gear-detail-header {
-            margin-bottom: 20px;
-        }
-
-        .gear-detail-brand {
-            font-size: var(--text-xs);
-            text-transform: uppercase;
-            color: var(--text-lighter);
-            letter-spacing: 0.1em;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .gear-detail-name {
-            font-family: var(--primary-font);
-            font-size: var(--text-2xl);
-            font-weight: 600;
-            color: var(--text-color);
-            line-height: 1.3;
-        }
-
-        .gear-detail-specs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .gear-spec-tag {
-            background: var(--hover-color);
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: var(--text-xs);
-            font-weight: 500;
-            color: var(--text-light);
-        }
-
-        .gear-detail-description {
-            color: var(--text-light);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .gear-detail-comment {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-color);
-            font-size: var(--text-sm);
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        .gear-detail-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .gear-detail-links a {
-            padding: 8px 16px;
-            background: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 20px;
-            font-size: var(--text-xs);
-            font-weight: 500;
-            transition: all var(--transition-base);
-        }
-
-        .gear-detail-links a:hover {
-            background: var(--focus-color);
-            transform: translateY(-1px);
-        }
-
-        .gear-status-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: var(--text-xs);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 15px;
-        }
-
-        .gear-status-badge.available {
-            background: var(--success-color);
-            color: white;
-        }
-
-        .gear-status-badge.sold {
-            background: var(--error-color);
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .gear-detail-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .gear-detail-image {
-                height: 220px;
-            }
-
-            .gear-detail-info {
-                padding: 25px 20px;
-            }
-
-            .gear-detail-name {
-                font-size: var(--text-xl);
-            }
-        }
-    </style>
+    /* ===== 説明文の可読性（ダークでも読める濃さ） */
+    .gear-detail-info .gear-detail-description,
+    .gear-detail-info .gear-detail-comment{
+      color: var(--text-color);
+      line-height: 1.75;
+      opacity: .95;
+      margin-top: 10px;
+    }
+    .gear-detail-info a{ color: var(--accent-color) !important; text-decoration: none; border-bottom: 1px dashed currentColor; }
+    .gear-detail-info a:hover{ border-bottom-color: transparent; }
+  </style>
 </head>
 
 <body>
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+  <!-- Skip -->
+  <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-    <!-- ========================================
-         Navigation
-         ======================================== -->
-    <nav class="main-nav" id="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">Toji Masaya</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="/gear.html" class="nav-link active">Gear</a></li>
-                <li><a href="/writings.html" class="nav-link">Writings</a></li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <!-- Nav -->
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">Toji Masaya</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
+        <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="/gear.html" class="nav-link active">Gear</a></li>
+        <li><a href="/writings.html" class="nav-link">Writings</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Hero -->
+  <section class="gear-hero" role="banner">
+    <div class="gear-hero-image">
+      <!-- 画像パスはサイト内相対。必要なら /assets/... に変更可 -->
+      <img src="assets/images/gear/daily.jpg" alt="Daily Drivers" width="1920" height="1080" loading="eager">
+      <div class="gear-hero-overlay">
+        <h1 class="gear-hero-title">Daily Drivers</h1>
+        <p class="gear-hero-subtitle">日常で使うスマホ・PC・編集ツール</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Main -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+      <section class="gear-intro">
+        <p class="lead">毎日の編集や旅の記録に欠かせないデバイスたち。スマホ・PC・アクセサリーを含む“日常の相棒”リスト。</p>
+      </section>
+
+      <!-- Filters -->
+      <section aria-label="フィルタ">
+        <div class="gear-filter-tabs" id="gear-filters">
+          <button class="active" data-filter="all">All</button>
+          <button data-filter="available">運用中</button>
+          <button data-filter="considering">売却検討中</button>
+          <button data-filter="sold">売却済</button>
         </div>
-    </nav>
+      </section>
 
-    <!-- ========================================
-         Hero Section
-         ======================================== -->
-    <section class="gear-hero" role="banner">
-        <div class="gear-hero-image">
-            <img src="assets/images/gear/editing.jpg" 
-                 alt="Daily Drivers Equipment" 
-                 loading="eager" 
-                 width="1920" 
-                 height="1080">
-            <div class="gear-hero-overlay">
-                <h1 class="gear-hero-title">Daily Drivers</h1>
-                <p class="gear-hero-subtitle">毎日使う定番機材</p>
-            </div>
+      <!-- Grid -->
+      <section class="gear-section">
+        <div class="gear-detail-grid" id="editing-gear-grid">
+          <div class="loading">機材を読み込み中...</div>
         </div>
-    </section>
+      </section>
 
-    <!-- ========================================
-         Main Content
-         ======================================== -->
-    <main id="main-content" class="main-content">
-        <div class="container">
+      <section class="back-to-home">
+        <a href="/gear.html" class="back-link"><span class="back-arrow">←</span><span>Back to Gear</span></a>
+      </section>
 
-            <!-- Introduction -->
-            <section class="gear-intro">
-                <p class="lead">Mac／iPad／iPhoneを中心に、毎日を支える常用デジタル。出先でも完結できる環境を整えています。</p>
-            </section>
-
-            <!-- Gear Items -->
-            <section class="gear-section">
-                <div class="gear-detail-grid" id="editing-gear-grid">
-                    <div class="loading">機材を読み込み中...</div>
-                </div>
-            </section>
-
-            <!-- ========================================
-                 Back to Gear
-                 ======================================== -->
-            <section class="back-to-home">
-                <a href="/gear.html" class="back-link">
-                    <span class="back-arrow">←</span>
-                    <span>Back to Gear</span>
-                </a>
-            </section>
-
-            <!-- ========================================
-                 Footer
-                 ======================================== -->
-            <footer class="footer" role="contentinfo">
-                <div class="footer-content">
-                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-                    <p>Built with care in Japan</p>
-                </div>
-            </footer>
-
+      <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+          <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
         </div>
-    </main>
+      </footer>
+    </div>
+  </main>
 
-    <!-- ========================================
-         Scripts
-         ======================================== -->
-    <script>
-        // Navigation
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-                document.body.classList.toggle('nav-open');
-            });
-        }
-
-        // Scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
-
-        // Load editing gear
-        async function loadEditingGear() {
-            try {
-                const response = await fetch('/data/gear.json');
-                const data = await response.json();
-                const editingGear = data.categories.editing;
-                
-                const grid = document.getElementById('editing-gear-grid');
-                
-                if (editingGear && editingGear.items && editingGear.items.length > 0) {
-                    grid.innerHTML = editingGear.items.map(item => `
-                        <article class="gear-detail-item">
-                            <div class="gear-detail-image">
-                                <img src="${item.image}" 
-                                     alt="${item.name}" 
-                                     loading="lazy">
-                            </div>
-                            <div class="gear-detail-info">
-                                <div class="gear-detail-header">
-                                    ${item.status ? `<span class="gear-status-badge ${item.status}">${getStatusText(item.status)}</span>` : ''}
-                                    <div class="gear-detail-brand">${item.brand}</div>
-                                    <h2 class="gear-detail-name">${item.name}</h2>
-                                </div>
-                                
-                                ${item.specs && item.specs.length > 0 ? `
-                                    <div class="gear-detail-specs">
-                                        ${item.specs.map(spec => `
-                                            <span class="gear-spec-tag">${spec}</span>
-                                        `).join('')}
-                                    </div>
-                                ` : ''}
-                                
-                                <p class="gear-detail-description">${item.description}</p>
-                                
-                                ${item.comment ? `
-                                    <div class="gear-detail-comment">${item.comment}</div>
-                                ` : ''}
-                                
-                                ${item.links && Object.keys(item.links).length > 0 ? `
-                                    <div class="gear-detail-links">
-                                        ${Object.entries(item.links).map(([key, url]) => `
-                                            <a href="${url}" target="_blank" rel="noopener noreferrer">
-                                                ${getLinkText(key)}
-                                            </a>
-                                        `).join('')}
-                                    </div>
-                                ` : ''}
-                            </div>
-                        </article>
-                    `).join('');
-                } else {
-                    grid.innerHTML = '<p class="loading">機材のデータが見つかりません。</p>';
-                }
-            } catch (error) {
-                console.error('機材データの読み込みエラー:', error);
-                document.getElementById('editing-gear-grid').innerHTML = 
-                    '<p class="loading">機材データの読み込みに失敗しました。</p>';
-            }
-        }
-
-        function getStatusText(status) {
-            const statusMap = {
-                'available': '使用中',
-                'sold': '売却済み',
-                'considering': '検討中'
-            };
-            return statusMap[status] || status;
-        }
-
-        function getLinkText(key) {
-            const linkMap = {
-                'review': 'レビュー記事',
-                'purchase': '購入リンク',
-                'official': '公式サイト'
-            };
-            return linkMap[key] || key;
-        }
-
-        // Load on page ready
-        document.addEventListener('DOMContentLoaded', () => {
-            loadEditingGear();
-        });
-    </script>
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ItemList",
-        "name": "Daily Drivers — Toji Masaya",
-        "description": "田路昌也が毎日使う定番機材",
-        "author": {
-            "@type": "Person",
-            "name": "田路昌也",
-            "alternateName": "Toji Masaya"
-        },
-        "url": "https://tojimasaya.com/gear-editing.html"
+  <!-- Scripts -->
+  <script>
+    /* Nav */
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu = document.getElementById('nav-menu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+      });
     }
-    </script>
+    window.addEventListener('scroll', () => {
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+    });
+
+    /* ===== Daily Drivers: render + filter ===== */
+    let EDIT_ITEMS = [];
+
+    function getStatusText(s){
+      return ({ 'available':'運用中', 'considering':'売却検討中', 'sold':'売却済' }[s]) || s;
+    }
+    function getLinkText(k){
+      return ({ review:'レビュー記事', purchase:'購入リンク', official:'公式サイト' }[k]) || k;
+    }
+
+    function renderEdit(items){
+      const g = document.getElementById('editing-gear-grid');
+      if (!items || items.length === 0) {
+        g.innerHTML = '<p>該当する機材がありません。</p>';
+        return;
+      }
+      g.innerHTML = items.map(v => `
+        <article class="gear-detail-item">
+          <div class="gear-detail-image">
+            <img src="${v.image}" alt="${v.name}" loading="lazy">
+          </div>
+          <div class="gear-detail-info">
+            ${v.status ? `<span class="gear-status-badge ${v.status}">${getStatusText(v.status)}</span>` : ''}
+            <h2 class="gear-detail-name">${v.name}</h2>
+            ${v.description ? `<p class="gear-detail-description">${v.description}</p>` : ''} <!-- description 追加 -->
+            ${v.comment ? `<div class="gear-detail-comment">${v.comment}</div>` : ''}
+            ${v.links && Object.keys(v.links).length ? `
+              <div class="gear-detail-links">
+                ${Object.entries(v.links).map(([k,u]) =>
+                  `<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`
+                ).join('')}
+              </div>` : ''
+            }
+          </div>
+        </article>
+      `).join('');
+    }
+
+    function applyFilter(key){
+      const shown = (key === 'all') ? EDIT_ITEMS : EDIT_ITEMS.filter(i => (i.status || '') === key);
+      renderEdit(shown);
+    }
+
+    function setupFilters(){
+      const tabs = document.getElementById('gear-filters');
+      tabs.addEventListener('click', (e) => {
+        const btn = e.target.closest('button[data-filter]');
+        if (!btn) return;
+        tabs.querySelectorAll('button').forEach(b => b.classList.remove('active'));
+        btn.classList.add('active');
+        applyFilter(btn.dataset.filter);
+      });
+    }
+
+    document.addEventListener('DOMContentLoaded', async () => {
+      try{
+        const res = await fetch('/data/gear.json');
+        const data = await res.json();
+        EDIT_ITEMS = data?.categories?.editing?.items || [];
+        setupFilters();
+        applyFilter('all');   // 初期表示
+      }catch(err){
+        console.error('機材データの読み込みエラー:', err);
+        document.getElementById('editing-gear-grid').innerHTML =
+          '<p>機材データの読み込みに失敗しました。</p>';
+      }
+    });
+  </script>
+
+  <!-- JSON-LD（任意） -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "ItemList",
+    "name": "Daily Drivers — Toji Masaya",
+    "description": "田路昌也が日常で使うガジェット一覧",
+    "author": { "@type": "Person", "name": "田路昌也", "alternateName": "Toji Masaya" },
+    "url": "https://tojimasaya.com/gear-editing.html"
+  }
+  </script>
 </body>
 </html>
