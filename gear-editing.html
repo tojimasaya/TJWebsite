@@ -1,110 +1,80 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Camera — Toji Masaya</title>
-  <meta name="description" content="ボディ／レンズ／スマホカメラの一覧ページ（自動更新）" />
-  <link rel="stylesheet" href="style.css" />
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Daily Drivers — Toji Masaya</title>
+  <meta name="description" content="田路昌也の日常ガジェット：スマートフォン、PC、編集ツールなど">
+  <link rel="stylesheet" href="style.css?v=20251016">
   <meta name="theme-color" content="#fafafa">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+  <style>
+    .gear-filter-tabs{display:flex;flex-wrap:wrap;gap:12px;justify-content:center;margin:0 0 24px;}
+    .gear-filter-tabs button{padding:8px 16px;border:1px solid var(--border-color);background:var(--bg-color);color:var(--text-color);border-radius:999px;cursor:pointer;white-space:nowrap;transition:all .2s ease;}
+    .gear-filter-tabs button.active{background:var(--accent-color);color:#fff;border-color:var(--accent-color);}
+    @media(max-width:768px){.gear-filter-tabs{flex-wrap:nowrap;overflow-x:auto;-webkit-overflow-scrolling:touch;justify-content:flex-start;padding:0 12px;margin:0 -12px 24px;}}
+    .gear-detail-grid{display:grid;grid-template-columns:1fr;gap:40px;margin-top:24px;}
+    @media(min-width:768px){.gear-detail-grid{grid-template-columns:repeat(2,1fr);gap:48px;}}
+    .gear-detail-image{height:260px;overflow:hidden;border-radius:12px;}
+    .gear-detail-image img{width:100%;height:100%;object-fit:cover;}
+    @media(max-width:767px){.gear-detail-image{height:auto;}}
+  </style>
 </head>
 <body>
-  <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+<a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+<nav class="main-nav" id="main-nav">
+  <div class="nav-container">
+    <a href="/" class="nav-logo">Toji Masaya</a>
+    <ul class="nav-menu" id="nav-menu">
+      <li><a href="/" class="nav-link">Home</a></li>
+      <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+      <li><a href="/gear.html" class="nav-link active">Gear</a></li>
+      <li><a href="/writings.html" class="nav-link">Writings</a></li>
+    </ul>
+    <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+  </div>
+</nav>
 
-  <nav class="main-nav" id="main-nav">
-    <div class="nav-container">
-      <a href="/" class="nav-logo">Toji Masaya</a>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="/" class="nav-link">Home</a></li>
-        <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="/gear.html" class="nav-link active">Gear</a></li>
-        <li><a href="/writings.html" class="nav-link">Writings</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
-      </button>
+<section class="gear-hero">
+  <div class="gear-hero-image">
+    <img src="assets/images/gear/daily.jpg" alt="Daily Drivers" width="1920" height="1080">
+    <div class="gear-hero-overlay">
+      <h1 class="gear-hero-title">Daily Drivers</h1>
+      <p class="gear-hero-subtitle">日常で使うスマホ・PC・編集ツール</p>
     </div>
-  </nav>
-
-  <section class="gear-hero" role="banner">
-    <div class="gear-hero-image">
-      <img src="/assets/images/gear/oreryu.jpg" alt="Camera" loading="eager" width="1920" height="1080">
-      <div class="gear-hero-overlay">
-        <h1 class="gear-hero-title">Camera</h1>
-        <p class="gear-hero-subtitle">ボディ／レンズ／スマホカメラ</p>
-      </div>
-    </div>
-  </section>
-
-  <main id="main-content" class="main-content">
-    <div class="container">
-
-  <section class="gear-intro">
-  <div class="lead">
-    <p>
-      このページは <code>data/gear.json</code> を読んで自動描画されます。<br>
-      JSONを書き換えるだけで一覧を更新できます。
-    </p>
-
-    <p>
-      <strong>お知らせ：</strong><br>
-      <strong>iPhone 15 Pro（512GB）</strong> と <strong>iPad Pro 11&quot;（M4）</strong> は売却しました。<br>
-
-    </p>
-
-    <p>
-      📖 <a href="https://note.com/tojimasaya/n/n53df41f14082"
-        class="note-link" target="_blank" rel="noopener">
-        【後編】iPhone 17 Pro vs Xiaomi 15 Ultra：生活と創造のあいだで揺れる2台体制（無料記事）
-      </a>
-    </p>
   </div>
 </section>
 
-      <section class="gear-filters">
-        <div class="filter-tabs">
-          <button class="filter-tab active" data-filter="all">All</button>
-          <button class="filter-tab" data-filter="available">運用中</button>
-          <button class="filter-tab" data-filter="sold">売却済</button>
-          <button class="filter-tab" data-filter="considering">検討中</button>
-          <button class="filter-tab" data-filter="not-for-sale">非売品</button>
-        </div>
-      </section>
+<main id="main-content" class="main-content">
+  <div class="container">
+    <section class="gear-intro"><p class="lead">毎日の編集や旅の記録に欠かせないデバイスたち。スマホ・PC・アクセサリを含む“日常の相棒”リスト。</p></section>
 
-      <section class="gear-section">
-        <div class="gear-grid"><!-- gear.js がJSONから描画 --></div>
-      </section>
+    <section><div class="gear-filter-tabs" id="gear-filters">
+      <button class="active" data-filter="all">All</button>
+      <button data-filter="available">運用中</button>
+      <button data-filter="considering">売却検討中</button>
+      <button data-filter="sold">売却済</button>
+    </div></section>
 
-      <section class="back-to-home">
-        <a href="/gear.html" class="back-link"><span class="back-arrow">←</span><span>Back to Gear</span></a>
-      </section>
+    <section class="gear-section"><div class="gear-detail-grid" id="editing-gear-grid"><div class="loading">機材を読み込み中...</div></div></section>
 
-      <footer class="footer" role="contentinfo">
-        <div class="footer-content">
-          <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-          <p>Built with care in Japan</p>
-        </div>
-      </footer>
-    </div>
-  </main>
+    <section class="back-to-home"><a href="/gear.html" class="back-link"><span class="back-arrow">←</span><span>Back to Gear</span></a></section>
+    <footer class="footer"><div class="footer-content"><p>&copy;2025 Toji Masaya.</p></div></footer>
+  </div>
+</main>
 
-  <script src="/gear.js?v=20251011" defer></script>
-  <script>
-    // 既存のナビ挙動と同等
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu = document.getElementById('nav-menu');
-    if (navToggle && navMenu) {
-      navToggle.addEventListener('click', () => {
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-        document.body.classList.toggle('nav-open');
-      });
-    }
-    window.addEventListener('scroll', () => {
-      const nav = document.getElementById('main-nav');
-      if (window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
-    });
-  </script>
+<script>
+const navToggle=document.getElementById('nav-toggle');const navMenu=document.getElementById('nav-menu');
+navToggle?.addEventListener('click',()=>{navMenu.classList.toggle('active');navToggle.classList.toggle('active');document.body.classList.toggle('nav-open');});
+window.addEventListener('scroll',()=>{const n=document.getElementById('main-nav');window.scrollY>50?n.classList.add('scrolled'):n.classList.remove('scrolled');});
+
+let EDIT_ITEMS=[];
+function getStatusText(s){return{'available':'運用中','considering':'売却検討中','sold':'売却済'}[s]||s;}
+function getLinkText(k){return{'review':'レビュー記事','purchase':'購入リンク','official':'公式サイト'}[k]||k;}
+function renderEdit(i){const g=document.getElementById('editing-gear-grid');if(!i?.length){g.innerHTML='<p>該当する機材がありません。</p>';return;}
+g.innerHTML=i.map(v=>`<article class="gear-detail-item"><div class="gear-detail-image"><img src="${v.image}" alt="${v.name}"></div><div class="gear-detail-info"><span class="gear-status-badge ${v.status}">${getStatusText(v.status)}</span><h2 class="gear-detail-name">${v.name}</h2>${v.comment?`<div class="gear-detail-comment">${v.comment}</div>`:''}</div></article>`).join('');}
+function applyFilter(f){renderEdit(f==='all'?EDIT_ITEMS:EDIT_ITEMS.filter(i=>i.status===f));}
+document.addEventListener('DOMContentLoaded',async()=>{const r=await fetch('/data/gear.json');const d=await r.json();EDIT_ITEMS=d.categories.editing.items;applyFilter('all');const t=document.getElementById('gear-filters');t.addEventListener('click',e=>{const b=e.target.closest('button');if(!b)return;t.querySelectorAll('button').forEach(x=>x.classList.remove('active'));b.classList.add('active');applyFilter(b.dataset.filter);});});
+</script>
 </body>
 </html>
