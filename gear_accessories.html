@@ -6,12 +6,10 @@
   <title>Accessories — Toji Masaya</title>
   <meta name="description" content="田路昌也が使用しているアクセサリー。充電・マウント・収納など、旅を支える小物たち。">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=20251016e" />
+  <link rel="stylesheet" href="style.css?v=20251016f" />
   <meta name="theme-color" content="#fafafa">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 
-  <!-- ページ固有スタイル -->
   <style>
     /* ===== Hero fallback ===== */
     .gear-hero { position: relative; }
@@ -22,24 +20,32 @@
       display: flex; flex-direction: column;
       align-items: center; justify-content: center;
       text-align: center; width: 100%; box-sizing: border-box;
-      padding: 24px;
+      padding: 24px; color: #fff;
       background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.35));
-      color: #fff;
       text-shadow: 0 2px 4px rgba(0,0,0,.6);
     }
     .gear-hero-title { font-size: clamp(28px, 4vw, 48px); margin: 0 0 6px; }
     .gear-hero-subtitle { margin: 0; opacity: .95; }
 
-    /* ===== Filter Tabs ===== */
-    .gear-filter-tabs {
-      display: flex; flex-wrap: wrap; gap: 12px;
-      justify-content: center; margin: 0 0 24px;
+    /* ===== Filter Tabs (IDで強制) ===== */
+    #gear-filters {
+      display: flex !important;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 12px;
+      margin: 0 0 24px;
     }
-    .gear-filter-tabs button {
+    #gear-filters > button {
+      /* 横組みを明示して縦落ち防止 */
+      writing-mode: horizontal-tb !important;
+      text-orientation: mixed !important;
+      white-space: nowrap !important;
+      word-break: keep-all !important;
+      /* 横並びを強制 */
       display: inline-flex !important;
-      align-items: center; justify-content: center;
+      flex: 0 0 auto !important;
       width: auto !important;
-      white-space: nowrap;
+      align-items: center; justify-content: center;
       padding: 8px 16px;
       border: 1px solid var(--border-color);
       background: var(--bg-color);
@@ -47,14 +53,16 @@
       border-radius: 999px;
       cursor: pointer;
       transition: all .2s ease;
+      letter-spacing: .02em;
     }
-    .gear-filter-tabs button.active {
+    #gear-filters > button.active {
       background: var(--accent-color);
       color: #fff;
       border-color: var(--accent-color);
     }
+    /* スマホは横スクロール1行固定 */
     @media (max-width: 768px) {
-      .gear-filter-tabs {
+      #gear-filters {
         flex-wrap: nowrap !important;
         overflow-x: auto;
         -webkit-overflow-scrolling: touch;
@@ -63,17 +71,12 @@
         padding: 0 12px;
         margin: 0 -12px 24px;
       }
-      .gear-filter-tabs button { min-width: 84px; }
+      #gear-filters > button { min-width: 84px; }
     }
 
-    /* ===== Grid ===== */
-    .gear-detail-grid {
-      display: grid; grid-template-columns: 1fr;
-      gap: 40px; margin-top: 24px;
-    }
-    @media (min-width: 768px) {
-      .gear-detail-grid { grid-template-columns: repeat(2, 1fr); gap: 48px; }
-    }
+    /* ===== Grid（PC2列/スマホ1列） ===== */
+    .gear-detail-grid { display: grid; grid-template-columns: 1fr; gap: 40px; margin-top: 24px; }
+    @media (min-width: 768px) { .gear-detail-grid { grid-template-columns: repeat(2, 1fr); gap: 48px; } }
 
     /* ===== Cards ===== */
     .gear-detail-image { height: 260px; overflow: hidden; border-radius: 12px; }
@@ -95,10 +98,7 @@
       border-radius: 8px; text-decoration: none;
       color: var(--text-color);
     }
-    .gear-detail-links a:hover {
-      border-color: var(--accent-color);
-      color: var(--accent-color);
-    }
+    .gear-detail-links a:hover { border-color: var(--accent-color); color: var(--accent-color); }
 
     /* ===== Status Badges ===== */
     .gear-status-badge { display:inline-block; padding:6px 12px; border-radius:999px; font-size:.85rem; color:#fff; }
@@ -145,7 +145,7 @@
         <p class="lead">旅を快適にしてくれるアクセサリーたち。充電器、マウント、収納ケースなど日常から旅行までを広くカバー。</p>
       </section>
 
-      <!-- Filter Buttons -->
+      <!-- Filters -->
       <section>
         <div class="gear-filter-tabs" id="gear-filters">
           <button class="active" data-filter="all">All</button>
@@ -183,17 +183,8 @@
 
     // ===== Filter & Render =====
     let ACC_ITEMS=[];
-    function getStatusText(s){
-      return {
-        'available':'運用中',
-        'considering':'売却検討中',
-        'sold':'売却済',
-        'not-for-sale':'非売品'
-      }[s] || s;
-    }
-    function getLinkText(k){
-      return {'review':'レビュー記事','purchase':'購入リンク','official':'公式サイト'}[k] || k;
-    }
+    const statusText=s=>({ 'available':'運用中','considering':'売却検討中','sold':'売却済','not-for-sale':'非売品' }[s]||s);
+    const linkText=k=>({ review:'レビュー記事', purchase:'購入リンク', official:'公式サイト' }[k]||k);
 
     function renderAccessories(items){
       const grid=document.getElementById('accessories-gear-grid');
@@ -202,13 +193,13 @@
         <article class="gear-detail-item">
           <div class="gear-detail-image"><img src="${it.image}" alt="${it.name}"></div>
           <div class="gear-detail-info">
-            ${it.status?`<span class="gear-status-badge ${it.status}">${getStatusText(it.status)}</span>`:''}
+            ${it.status?`<span class="gear-status-badge ${it.status}">${statusText(it.status)}</span>`:''}
             <h2 class="gear-detail-name">${it.name}</h2>
             ${it.description?`<p class="gear-detail-description">${it.description}</p>`:''}
             ${it.comment?`<div class="gear-detail-comment">${it.comment}</div>`:''}
-            ${it.links && Object.keys(it.links).length?`
+            ${it.links&&Object.keys(it.links).length?`
               <div class="gear-detail-links">
-                ${Object.entries(it.links).map(([k,u])=>`<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`).join('')}
+                ${Object.entries(it.links).map(([k,u])=>`<a href="${u}" target="_blank" rel="noopener noreferrer">${linkText(k)}</a>`).join('')}
               </div>`:''}
           </div>
         </article>
@@ -225,9 +216,10 @@
         const data=await res.json();
         ACC_ITEMS=data?.categories?.accessories?.items||[];
         applyFilter('all');
+
         const tabs=document.getElementById('gear-filters');
         tabs.addEventListener('click',e=>{
-          const btn=e.target.closest('button[data-filter]'); if(!btn)return;
+          const btn=e.target.closest('button[data-filter]'); if(!btn) return;
           tabs.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
           btn.classList.add('active');
           applyFilter(btn.dataset.filter);
