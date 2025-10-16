@@ -15,10 +15,21 @@
     .gear-hero{position:relative}
     .gear-hero-image{position:relative;overflow:hidden}
     .gear-hero-image img{width:100%;height:auto;display:block}
-    .gear-hero-overlay{
-      position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-      text-align:center;padding:24px;background:linear-gradient(180deg,rgba(0,0,0,.25),rgba(0,0,0,.35));color:#fff
-    }
+.gear-hero-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;       /* 横方向中央 */
+  justify-content: center;   /* 縦方向中央 */
+  text-align: center;        /* テキスト中央 */
+  width: 100%;
+  box-sizing: border-box;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(0,0,0,.25), rgba(0,0,0,.35));
+  color: #fff;
+  text-shadow: 0 2px 4px rgba(0,0,0,.6); /* 読みやすくする影 */
+}
     .gear-hero-title{font-size:clamp(28px,4vw,48px);margin:0 0 6px}
     .gear-hero-subtitle{margin:0;opacity:.95}
 
