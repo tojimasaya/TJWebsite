@@ -2138,3 +2138,22 @@ body {
   border-bottom: 1px dashed currentColor;
 }
 .note-link:hover { border-bottom-color: transparent; }
+
+/* === Gear descriptions: readable in dark mode (2025-10-16 b) ======= */
+/* 本文は常に本文色で表示（薄すぎるグレーを禁止） */
+.gear-detail-info .gear-detail-description,
+.gear-detail-info .gear-detail-comment {
+  color: var(--text-color);
+  line-height: 1.75;
+  opacity: .95;
+}
+
+/* Gear内の本文リンクは常にアクセント色で可視化 */
+.gear-detail-info a,
+.gear-detail-comment a,
+.gear-detail-description a {
+  color: var(--accent-color) !important;
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+}
+.gear-detail-info a:hover { border-bottom-color: transparent; }
