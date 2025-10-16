@@ -31,182 +31,13 @@
     <!-- Theme -->
     <meta name="theme-color" content="#fafafa">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-
-    <!-- Gear Detail Styles -->
-    <style>
-        .gear-detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
-            padding-bottom: 80px;
-        }
-
-        .gear-detail-item {
-            background: var(--white);
-            border-radius: 12px;
-            overflow: hidden;
-            border: 1px solid var(--border-color);
-            transition: all var(--transition-base);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gear-detail-item:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--shadow-xl);
-        }
-
-        .gear-detail-image {
-            width: 100%;
-            height: 280px;
-            overflow: hidden;
-            background: #f5f5f5;
-        }
-
-        .gear-detail-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: contain;
-            padding: 20px;
-            transition: transform var(--transition-base);
-        }
-
-        .gear-detail-item:hover .gear-detail-image img {
-            transform: scale(1.05);
-        }
-
-        .gear-detail-info {
-            padding: 30px;
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-        }
-
-        .gear-detail-header {
-            margin-bottom: 20px;
-        }
-
-        .gear-detail-brand {
-            font-size: var(--text-xs);
-            text-transform: uppercase;
-            color: var(--text-lighter);
-            letter-spacing: 0.1em;
-            font-weight: 600;
-            margin-bottom: 8px;
-        }
-
-        .gear-detail-name {
-            font-family: var(--primary-font);
-            font-size: var(--text-2xl);
-            font-weight: 600;
-            color: var(--text-color);
-            line-height: 1.3;
-        }
-
-        .gear-detail-specs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 20px;
-        }
-
-        .gear-spec-tag {
-            background: var(--hover-color);
-            padding: 6px 12px;
-            border-radius: 12px;
-            font-size: var(--text-xs);
-            font-weight: 500;
-            color: var(--text-light);
-        }
-
-        .gear-detail-description {
-            color: var(--text-light);
-            line-height: 1.7;
-            margin-bottom: 20px;
-            flex-grow: 1;
-        }
-
-        .gear-detail-comment {
-            margin-top: 15px;
-            padding-top: 15px;
-            border-top: 1px solid var(--border-color);
-            font-size: var(--text-sm);
-            color: var(--text-light);
-            line-height: 1.7;
-        }
-
-        .gear-detail-links {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-            margin-top: 20px;
-        }
-
-        .gear-detail-links a {
-            padding: 8px 16px;
-            background: var(--accent-color);
-            color: white;
-            text-decoration: none;
-            border-radius: 20px;
-            font-size: var(--text-xs);
-            font-weight: 500;
-            transition: all var(--transition-base);
-        }
-
-        .gear-detail-links a:hover {
-            background: var(--focus-color);
-            transform: translateY(-1px);
-        }
-
-        .gear-status-badge {
-            display: inline-block;
-            padding: 6px 12px;
-            border-radius: 20px;
-            font-size: var(--text-xs);
-            font-weight: 600;
-            text-transform: uppercase;
-            letter-spacing: 0.05em;
-            margin-bottom: 15px;
-        }
-
-        .gear-status-badge.available {
-            background: var(--success-color);
-            color: white;
-        }
-
-        .gear-status-badge.sold {
-            background: var(--error-color);
-            color: white;
-        }
-
-        @media (max-width: 768px) {
-            .gear-detail-grid {
-                grid-template-columns: 1fr;
-                gap: 30px;
-            }
-
-            .gear-detail-image {
-                height: 220px;
-            }
-
-            .gear-detail-info {
-                padding: 25px 20px;
-            }
-
-            .gear-detail-name {
-                font-size: var(--text-xl);
-            }
-        }
-    </style>
 </head>
 
 <body>
     <!-- Skip Link -->
     <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-    <!-- ========================================
-         Navigation
-         ======================================== -->
+    <!-- Navigation -->
     <nav class="main-nav" id="main-nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">Toji Masaya</a>
@@ -224,9 +55,7 @@
         </div>
     </nav>
 
-    <!-- ========================================
-         Hero Section
-         ======================================== -->
+    <!-- Hero Section -->
     <section class="gear-hero" role="banner">
         <div class="gear-hero-image">
             <img src="assets/images/gear/m2.jpg" 
@@ -241,9 +70,7 @@
         </div>
     </section>
 
-    <!-- ========================================
-         Main Content
-         ======================================== -->
+    <!-- Main Content -->
     <main id="main-content" class="main-content">
         <div class="container">
 
@@ -259,9 +86,7 @@
                 </div>
             </section>
 
-            <!-- ========================================
-                 Back to Gear
-                 ======================================== -->
+            <!-- Back to Gear -->
             <section class="back-to-home">
                 <a href="/gear.html" class="back-link">
                     <span class="back-arrow">←</span>
@@ -269,9 +94,7 @@
                 </a>
             </section>
 
-            <!-- ========================================
-                 Footer
-                 ======================================== -->
+            <!-- Footer -->
             <footer class="footer" role="contentinfo">
                 <div class="footer-content">
                     <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
@@ -282,9 +105,7 @@
         </div>
     </main>
 
-    <!-- ========================================
-         Scripts
-         ======================================== -->
+    <!-- Scripts -->
     <script>
         // Navigation
         const navToggle = document.getElementById('nav-toggle');
