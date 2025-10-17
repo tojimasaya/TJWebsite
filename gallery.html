@@ -493,28 +493,41 @@
             document.body.style.overflow = '';
         }
 
-        function openVideo(youtubeId, title = "") {
-            const html = `
-                <div class="modal-video">
-                    <div class="modal-video-inner">
-                        <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1"
-                                title="${title}"
-                                allow="autoplay; encrypted-media; picture-in-picture; fullscreen"
-                                allowfullscreen></iframe>
-                    </div>
-                </div>`;
-            openModal(html);
-        }
+// === 新しい動画モーダル ===
+function openVideo(youtubeId, title = "") {
+  const html = `
+    <div class="modal-video" id="videoModal">
+      <button class="close-btn" onclick="closeVideo()">×</button>
+      <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1"
+              title="${title}"
+              allow="autoplay; encrypted-media; picture-in-picture"
+              allowfullscreen></iframe>
+    </div>`;
+  document.body.insertAdjacentHTML('beforeend', html);
+  document.body.style.overflow = 'hidden';
+}
 
-        // ESC key to close modal
-        document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape') closeModal();
-        });
+function closeVideo() {
+  const modal = document.getElementById('videoModal');
+  if (modal) modal.remove();
+  document.body.style.overflow = '';
+}
 
-        // Click outside to close modal
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) closeModal();
-        });
+// ESCキーでモーダルを閉じる
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeModal(); // 既存の画像モーダルも閉じる
+    closeVideo();
+  }
+});
+
+// 外クリックで動画モーダルを閉じる
+document.addEventListener('click', (e) => {
+  const videoModal = document.getElementById('videoModal');
+  if (videoModal && e.target === videoModal) {
+    closeVideo();
+  }
+});
 
         // External links security
         document.querySelectorAll('a[target="_blank"]').forEach(link => {
