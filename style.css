@@ -2139,13 +2139,51 @@ body {
 }
 .note-link:hover { border-bottom-color: transparent; }
 
-/* === Gear descriptions: readable in dark mode (2025-10-16 b) ======= */
-/* 本文は常に本文色で表示（薄すぎるグレーを禁止） */
-.gear-detail-info .gear-detail-description,
-.gear-detail-info .gear-detail-comment {
-  color: var(--text-color);
-  line-height: 1.75;
-  opacity: .95;
+/* === Gear Detail Pages - Link Styles Fix === */
+
+/* 説明文とコメント内のテキストリンク（noteリンクなど） */
+.gear-detail-description a,
+.gear-detail-comment a {
+  color: var(--accent-color) !important;
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+}
+
+.gear-detail-description a:hover,
+.gear-detail-comment a:hover {
+  border-bottom-color: transparent;
+}
+
+/* ボタンリンク（レビュー記事、購入リンクなど） */
+.gear-detail-links a {
+  padding: 8px 16px;
+  background: var(--accent-color);
+  color: white !important;  /* ← !important を追加 */
+  text-decoration: none;
+  border-radius: 20px;
+  font-size: var(--text-xs);
+  font-weight: 500;
+  transition: all var(--transition-base);
+  font-family: var(--secondary-font);
+  border: none;  /* 念のため */
+}
+
+.gear-detail-links a:hover {
+  background: var(--focus-color);
+  color: white !important;  /* ← !important を追加 */
+  transform: translateY(-1px);
+}
+
+/* noteリンク専用スタイル */
+.note-link {
+  color: var(--accent-color);
+  text-decoration: none;
+  border-bottom: 1px dashed currentColor;
+  padding-bottom: 1px;
+}
+
+.note-link:hover {
+  border-bottom-color: transparent;
 }
 
 /* Gear内の本文リンクは常にアクセント色で可視化 */
