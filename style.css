@@ -2187,7 +2187,6 @@ body {
 }
 
 /* Gear内の本文リンクは常にアクセント色で可視化 */
-.gear-detail-info a,
 .gear-detail-comment a,
 .gear-detail-description a {
   color: var(--accent-color) !important;
