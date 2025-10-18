@@ -1,659 +1,562 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toji Masaya – drone/camera/travel</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Toji Masaya – drone/camera/travel</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-    <!-- SEO -->
-    <meta name="description" content="田路昌也(TJ)のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
-    <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, カッパドキア, note">
-    <meta name="author" content="Toji Masaya">
+  <!-- SEO -->
+  <meta name="description" content="田路昌也(TJ)のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
+  <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, カッパドキア, note">
+  <meta name="author" content="Toji Masaya">
 
-    <!-- OGP -->
-    <meta property="og:title" content="TJM – drone/camera/travel">
-    <meta property="og:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。トップにあるのは、生まれ故郷・姫路の近くにある砥峰高原。秋の気配をまとったススキの風が、ページの奥へと誘ってくれます。">
-    <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/tonomine-susuki.jpg">
-    <meta property="og:url" content="https://tojimasaya.com">
-    <meta property="og:type" content="website">
-    <meta property="og:site_name" content="TJM">
+  <!-- OGP -->
+  <meta property="og:title" content="TJM – drone/camera/travel">
+  <meta property="og:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。トップにあるのは、生まれ故郷・姫路の近くにある砥峰高原。秋の気配をまとったススキの風が、ページの奥へと誘ってくれます。">
+  <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/tonomine-susuki.jpg">
+  <meta property="og:url" content="https://tojimasaya.com">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TJM">
 
-    <!-- Twitter Card -->
-    <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TJM – drone/camera/travel">
-    <meta name="twitter:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を綴っています。トップは砥峰高原のススキ原。">
-    <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/tonomine-susuki.jpg">
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="TJM – drone/camera/travel">
+  <meta name="twitter:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を綴っています。トップは砥峰高原のススキ原。">
+  <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/tonomine-susuki.jpg">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-    <!-- CSS -->
-    <link rel="stylesheet" href="style.css">
+  <!-- CSS（キャッシュ更新のためバージョン付） -->
+  <link rel="stylesheet" href="style.css?v=20251018">
 
-    <!-- Theme -->
-    <meta name="theme-color" content="#fafafa">
-    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+  <!-- Theme -->
+  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 </head>
 
 <body>
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+  <!-- Skip Link -->
+  <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-    <!-- ========================================
-         Navigation
-         ======================================== -->
-    <nav class="main-nav" id="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link active">Home</a></li>
-                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="/gear.html" class="nav-link">Gear</a></li>
-                <li><a href="/writings.html" class="nav-link">Writings</a></li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+  <!-- ========================================
+       Navigation
+       ======================================== -->
+  <nav class="main-nav" id="main-nav">
+    <div class="nav-container">
+      <a href="/" class="nav-logo">TJM</a>
+      <ul class="nav-menu" id="nav-menu">
+        <li><a href="/" class="nav-link active">Home</a></li>
+        <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+        <li><a href="/gear.html" class="nav-link">Gear</a></li>
+        <li><a href="/writings.html" class="nav-link">Writings</a></li>
+      </ul>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- ========================================
+       Hero Section with Ken Burns Effect
+       ======================================== -->
+  <section class="hero" role="banner">
+    <div class="hero-slides-container">
+      <!-- Slide 1: 砥峰高原 -->
+      <div class="hero-slide active">
+        <img src="assets/images/gallery/tonomine-susuki.jpg"
+             alt="砥峰高原のススキ原"
+             loading="eager"
+             fetchpriority="high"
+             width="1920" height="1080">
+      </div>
+
+      <!-- Slide 2: カッパドキア -->
+      <div class="hero-slide">
+        <img src="assets/images/gallery/cappadocia.jpg"
+             alt="カッパドキアの風景"
+             loading="lazy"
+             width="1920" height="1080">
+      </div>
+
+      <!-- Slide 3: 香港 -->
+      <div class="hero-slide">
+        <img src="assets/images/gallery/hongkong.jpg"
+             alt="香港の街並み"
+             loading="lazy"
+             width="1920" height="1080">
+      </div>
+
+      <!-- Slide 4: イスタンブール -->
+      <div class="hero-slide">
+        <img src="assets/images/gallery/istanbul.jpg"
+             alt="イスタンブールの風景"
+             loading="lazy"
+             width="1920" height="1080">
+      </div>
+    </div>
+
+    <!-- Text Overlay -->
+    <div class="hero-overlay">
+      <h1 class="hero-title">TJM</h1>
+      <p class="hero-subtitle">drone/camera/travel</p>
+    </div>
+
+    <!-- Navigation Dots -->
+    <div class="hero-dots">
+      <div class="dot active" data-slide="0"></div>
+      <div class="dot" data-slide="1"></div>
+      <div class="dot" data-slide="2"></div>
+      <div class="dot" data-slide="3"></div>
+    </div>
+  </section>
+
+  <!-- ========================================
+       Main Content
+       ======================================== -->
+  <main id="main-content" class="main-content">
+    <div class="container">
+
+      <!-- Introduction -->
+      <section class="intro">
+        <div class="intro-text">
+          <p>最近、香港と日本の二拠点生活をしています。</p>
+          <p>生まれ故郷・姫路からほど近い砥峰高原。</p>
+          <p>ここは、「軍師官兵衛」や「ノルウェイの森」などのロケ地として知られています。</p>
+
+          <p class="spacer"></p>
+
+          <p>10月初旬の訪問はススキの最盛期には少し早かったけれど、</p>
+          <p>風は冷たく、空の色にはもう秋の気配。</p>
+          <p>ついこの前まで香港で感じていた夏の熱気が、</p>
+          <p>遠い季節の記憶のように思えました。</p>
+
+          <p class="spacer"></p>
+
+          <p>人は季節を通して、</p>
+          <p>時間の速さを知るのかもしれません。</p>
         </div>
-    </nav>
+      </section>
 
-    <!-- ========================================
-         Hero Section with Ken Burns Effect
-         ======================================== -->
-    <section class="hero" role="banner">
-        <div class="hero-slides-container">
-            <!-- Slide 1: 砥峰高原 -->
-            <div class="hero-slide active">
-                <img src="assets/images/gallery/tonomine-susuki.jpg"
-                     alt="砥峰高原のススキ原"
-                     loading="eager"
-                     width="1920"
-                     height="1080">
+      <!-- ========================================
+           Latest from TJM（DRONE.jp / 俺流note / Gallery）
+           ======================================== -->
+      <section class="latest-section" aria-labelledby="latest-heading">
+        <h2 id="latest-heading" class="latest-title">Latest from TJM</h2>
+        <div class="latest-grid">
+
+          <!-- DRONE.jp（手動差し替え） -->
+          <article class="content-card" id="latest-drone-card">
+            <div class="content-image">
+              <a id="latest-drone-url" href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">
+                <img id="latest-drone-thumb" src="assets/images/gear/oreryu.jpg" alt="DRONE.jp 連載のサムネイル" loading="lazy">
+              </a>
+            </div>
+            <div class="content-info">
+              <span class="content-category">DRONE.jp 連載</span>
+              <h3>
+                <a id="latest-drone-title" href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">
+                  GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け
+                </a>
+              </h3>
+              <p class="preview-excerpt" id="latest-drone-caption">月イチ連載の最新回はこちら。</p>
+              <a class="card-action-btn" id="latest-drone-cta" href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">Read on DRONE.jp →</a>
+            </div>
+          </article>
+
+          <!-- 俺流トラベルガジェット（noteマガジンRSSで自動） -->
+          <article class="content-card" id="latest-oreryu-card" aria-live="polite">
+            <div class="content-image">
+              <img src="assets/images/gear/oreryu.jpg" alt="俺流トラベルガジェットのサムネイル（暫定）" loading="lazy">
+            </div>
+            <div class="content-info">
+              <span class="content-category">note｜俺流トラベルガジェット</span>
+              <h3 id="latest-oreryu-title">
+                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">
+                  最新記事を取得中...
+                </a>
+              </h3>
+              <p id="latest-oreryu-meta" class="preview-excerpt">読み込み中...</p>
+              <a id="latest-oreryu-link" class="card-action-btn" href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">Read on note →</a>
+            </div>
+          </article>
+
+          <!-- Gallery（手動差し替え） -->
+          <article class="content-card" id="latest-gallery-card">
+            <div class="content-image">
+              <a id="latest-gallery-url" href="/gallery.html">
+                <img id="latest-gallery-thumb" src="assets/images/gallery/tonomine-susuki.jpg" alt="最新ギャラリーのサムネイル" loading="lazy">
+              </a>
+            </div>
+            <div class="content-info">
+              <span class="content-category">Gallery</span>
+              <h3><a id="latest-gallery-title" href="/gallery.html">砥峰高原のススキ原</a></h3>
+              <p class="preview-excerpt" id="latest-gallery-caption">秋の気配を連れてくる風。旅の最新スナップはGalleryへ。</p>
+              <a class="card-action-btn" href="/gallery.html">View Gallery →</a>
+            </div>
+          </article>
+
+        </div>
+      </section>
+
+      <!-- ========================================
+           Social Links
+           ======================================== -->
+      <section class="social-section">
+        <h2>Connect</h2>
+        <div class="social-links">
+          <a href="https://twitter.com/mongkok93" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="X (Twitter)でフォロー">
+            <div class="social-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/></svg>
+            </div>
+            <span>X (Twitter)</span>
+          </a>
+
+          <a href="https://www.facebook.com/masaya.toji" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="Facebookでフォロー">
+            <div class="social-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
+            </div>
+            <span>Facebook</span>
+          </a>
+
+          <a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="noteで記事を読む">
+            <div class="social-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M8 3v18l8-6V3H8z"/></svg>
+            </div>
+            <span>note</span>
+          </a>
+
+          <a href="mailto:tojimasaya07@gmail.com" class="social-link" aria-label="メールでお問い合わせ">
+            <div class="social-icon" aria-hidden="true">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            </div>
+            <span>Email</span>
+          </a>
+        </div>
+      </section>
+
+      <!-- ========================================
+           Content Grid
+           ======================================== -->
+      <section class="content-grid">
+
+        <!-- Hong Kong Lens Card -->
+        <article class="content-card">
+          <div class="content-image">
+            <img src="assets/images/gallery/hongkong.jpg" alt="香港の街並み" loading="lazy" width="400" height="250">
+          </div>
+          <div class="content-info">
+            <span class="content-category">写真</span>
+            <h3>
+              <a href="https://note.com/tojimasaya/m/m22c44596304b" target="_blank" rel="noopener noreferrer">香港レンズ</a>
+            </h3>
+            <p>香港の最新ニュースや、現地で暮らして感じたことをエッセイにして綴っています。リアルな香港の日常や、街の空気を写真とともにお届けします。</p>
+          </div>
+        </article>
+
+        <!-- Travel Gadget Card -->
+        <article class="content-card">
+          <div class="content-image">
+            <img src="assets/images/gear/oreryu.jpg" alt="トラベルガジェット" loading="lazy" width="400" height="250">
+          </div>
+          <div class="content-info">
+            <span class="content-category">ガジェットレビュー</span>
+            <h3>
+              <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">俺流トラベルガジェット</a>
+            </h3>
+            <p>このマガジンではスマートフォン、パソコン、カメラ、ドローンで私が日々使っているモノやそれらを使いやすくする周辺機器を紹介していきます。これら持ち物は旅行に最適化することを目指しています。</p>
+          </div>
+        </article>
+
+        <!-- Writings Card (Large) -->
+        <article class="content-card large">
+          <div class="content-image">
+            <img src="assets/images/gallery/istanbul.jpg" alt="イスタンブールの風景" loading="lazy" width="600" height="400">
+          </div>
+          <div class="content-info">
+            <span class="content-category">旅行記・コラム</span>
+            <h2><a href="/writings.html">記事とコラム</a></h2>
+            <p>noteとDRONE.jpで執筆している記事をまとめています。旅の記録、機材レビュー、香港での日常、そして月1回のドローン連載など、幅広いテーマで執筆しています。</p>
+            <time datetime="2025-09-21">継続更新中</time>
+
+            <!-- Latest Articles Preview -->
+            <div class="latest-preview" id="writings-preview">
+              <h4>最新記事</h4>
+              <div class="preview-loading" role="status" aria-label="記事を読み込み中">記事を読み込み中...</div>
             </div>
 
-            <!-- Slide 2: カッパドキア -->
-            <div class="hero-slide">
-                <img src="assets/images/gallery/cappadocia.jpg"
-                     alt="カッパドキアの風景"
-                     loading="lazy"
-                     width="1920"
-                     height="1080">
-            </div>
+            <a href="/writings.html" class="card-action-btn">View All Writings →</a>
+          </div>
+        </article>
 
-            <!-- Slide 3: 香港 -->
-            <div class="hero-slide">
-                <img src="assets/images/gallery/hongkong.jpg"
-                     alt="香港の街並み"
-                     loading="lazy"
-                     width="1920"
-                     height="1080">
-            </div>
+        <!-- Video Card（任意の固定枠。Latestは上段で出すので、ここは据え置き） -->
+        <article class="content-card">
+          <div class="content-image">
+            <a href="https://www.youtube.com/watch?v=QQ9UUbk9FUY" target="_blank" rel="noopener noreferrer">
+              <img src="https://img.youtube.com/vi/QQ9UUbk9FUY/hqdefault.jpg" alt="TJ Video サムネイル" loading="lazy" width="400" height="250">
+            </a>
+          </div>
+          <div class="content-info">
+            <span class="content-category">最新動画</span>
+            <h3><a href="https://www.youtube.com/watch?v=QQ9UUbk9FUY" target="_blank" rel="noopener noreferrer">TJ Video</a></h3>
+            <p>YouTubeに新しい動画を公開しました。まずはこちらから。</p>
+          </div>
+        </article>
 
-            <!-- Slide 4: イスタンブール -->
-            <div class="hero-slide">
-                <img src="assets/images/gallery/istanbul.jpg"
-                     alt="イスタンブールの風景"
-                     loading="lazy"
-                     width="1920"
-                     height="1080">
-            </div>
-        </div>
+      </section>
 
-        <!-- Text Overlay -->
-        <div class="hero-overlay">
-            <h1 class="hero-title">TJM</h1>
-            <p class="hero-subtitle">drone/camera/travel</p>
-        </div>
-
-        <!-- Navigation Dots -->
-        <div class="hero-dots">
-            <div class="dot active" data-slide="0"></div>
-            <div class="dot" data-slide="1"></div>
-            <div class="dot" data-slide="2"></div>
-            <div class="dot" data-slide="3"></div>
-        </div>
-    </section>
-
-    <!-- ========================================
-         Main Content
-         ======================================== -->
-    <main id="main-content" class="main-content">
-        <div class="container">
-            <!-- Introduction -->
-            <section class="intro">
-                <div class="intro-text">
-                    <p>最近、香港と日本の二拠点生活をしています。</p>
-                    <p>生まれ故郷・姫路からほど近い砥峰高原。</p>
-                    <p>ここは、「軍師官兵衛」や「ノルウェイの森」などのロケ地として知られています。</p>
-
-                    <p class="spacer"></p>
-
-                    <p>10月初旬の訪問はススキの最盛期には少し早かったけれど、</p>
-                    <p>風は冷たく、空の色にはもう秋の気配。</p>
-                    <p>ついこの前まで香港で感じていた夏の熱気が、</p>
-                    <p>遠い季節の記憶のように思えました。</p>
-
-                    <p class="spacer"></p>
-
-                    <p>人は季節を通して、</p>
-                    <p>時間の速さを知るのかもしれません。</p>
-                </div>
-            </section>
-
-
-            <!-- ========================================
-                 Latest from TJM
-                 ======================================== -->
-            <section class="latest-section" aria-labelledby="latest-heading">
-                <h2 id="latest-heading" class="latest-title">Latest from TJM</h2>
-                <div class="latest-grid">
-
-                    <!-- DRONE.jp（手動1行で差し替え） -->
-                    <article class="content-card" id="latest-drone-card">
-                        <div class="content-image">
-                            <a id="latest-drone-url" href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">
-                                <img id="latest-drone-thumb" src="assets/images/gear/oreryu.jpg" alt="DRONE.jp 連載のサムネイル" loading="lazy">
-                            </a>
-                        </div>
-                        <div class="content-info">
-                            <span class="content-category">DRONE.jp 連載</span>
-                            <h3>
-                                <a id="latest-drone-title" href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">
-                                    GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け
-                                </a>
-                            </h3>
-                            <p class="preview-excerpt" id="latest-drone-caption">月イチ連載の最新回はこちら。</p>
-                            <a class="card-action-btn" id="latest-drone-cta" href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">Read on DRONE.jp →</a>
-                        </div>
-                    </article>
-
-                    <!-- 俺流トラベルガジェット（note自動） -->
-                    <article class="content-card" id="latest-oreryu-card" aria-live="polite">
-                        <div class="content-image">
-                            <img src="assets/images/gear/oreryu.jpg" alt="俺流トラベルガジェットのサムネイル（暫定）" loading="lazy">
-                        </div>
-                        <div class="content-info">
-                            <span class="content-category">note｜俺流トラベルガジェット</span>
-                            <h3 id="latest-oreryu-title">
-                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">
-                                    最新記事を取得中...
-                                </a>
-                            </h3>
-                            <p id="latest-oreryu-meta" class="preview-excerpt">読み込み中...</p>
-                            <a id="latest-oreryu-link" class="card-action-btn" href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">Read on note →</a>
-                        </div>
-                    </article>
-
-                    <!-- Gallery（手動1〜4行で差し替え） -->
-                    <article class="content-card" id="latest-gallery-card">
-                        <div class="content-image">
-                            <a id="latest-gallery-url" href="/gallery.html">
-                                <img id="latest-gallery-thumb" src="assets/images/gallery/tonomine-susuki.jpg" alt="最新ギャラリーのサムネイル" loading="lazy">
-                            </a>
-                        </div>
-                        <div class="content-info">
-                            <span class="content-category">Gallery</span>
-                            <h3><a id="latest-gallery-title" href="/gallery.html">砥峰高原のススキ原</a></h3>
-                            <p class="preview-excerpt" id="latest-gallery-caption">秋の気配を連れてくる風。旅の最新スナップはGalleryへ。</p>
-                            <a class="card-action-btn" href="/gallery.html">View Gallery →</a>
-                        </div>
-                    </article>
-
-                </div>
-            </section>
-
-
-            <!-- ========================================
-                 Social Links
-                 ======================================== -->
-            <section class="social-section">
-                <h2>Connect</h2>
-                <div class="social-links">
-                    <a href="https://twitter.com/mongkok93"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="social-link"
-                       aria-label="X (Twitter)でフォロー">
-                        <div class="social-icon" aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
-                            </svg>
-                        </div>
-                        <span>X (Twitter)</span>
-                    </a>
-
-                    <a href="https://www.facebook.com/masaya.toji"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="social-link"
-                       aria-label="Facebookでフォロー">
-                        <div class="social-icon" aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
-                            </svg>
-                        </div>
-                        <span>Facebook</span>
-                    </a>
-
-                    <a href="https://note.com/tojimasaya"
-                       target="_blank"
-                       rel="noopener noreferrer"
-                       class="social-link"
-                       aria-label="noteで記事を読む">
-                        <div class="social-icon" aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M8 3v18l8-6V3H8z"/>
-                            </svg>
-                        </div>
-                        <span>note</span>
-                    </a>
-
-                    <a href="mailto:tojimasaya07@gmail.com"
-                       class="social-link"
-                       aria-label="メールでお問い合わせ">
-                        <div class="social-icon" aria-hidden="true">
-                            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-                                <path d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
-                            </svg>
-                        </div>
-                        <span>Email</span>
-                    </a>
-                </div>
-            </section>
-
-            <!-- ========================================
-                 Content Grid
-                 ======================================== -->
-            <section class="content-grid">
-
-                <!-- Hong Kong Lens Card -->
-                <article class="content-card">
-                    <div class="content-image">
-                        <img src="assets/images/gallery/hongkong.jpg"
-                             alt="香港の街並み"
-                             loading="lazy"
-                             width="400"
-                             height="250">
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category">写真</span>
-                        <h3>
-                            <a href="https://note.com/tojimasaya/m/m22c44596304b"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                香港レンズ
-                            </a>
-                        </h3>
-                        <p>香港の最新ニュースや、現地で暮らして感じたことをエッセイにして綴っています。リアルな香港の日常や、街の空気を写真とともにお届けします。</p>
-                    </div>
-                </article>
-
-                <!-- Travel Gadget Card -->
-                <article class="content-card">
-                    <div class="content-image">
-                        <img src="assets/images/gear/oreryu.jpg"
-                             alt="トラベルガジェット"
-                             loading="lazy"
-                             width="400"
-                             height="250">
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category">ガジェットレビュー</span>
-                        <h3>
-                            <a href="https://note.com/tojimasaya/m/mcae365b520ed"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                俺流トラベルガジェット
-                            </a>
-                        </h3>
-                        <p>このマガジンではスマートフォン、パソコン、カメラ、ドローンで私が日々使っているモノやそれらを使いやすくする周辺機器を紹介していきます。これら持ち物は旅行に最適化することを目指しています。</p>
-                    </div>
-                </article>
-
-                <!-- Writings Card (Large) -->
-                <article class="content-card large">
-                    <div class="content-image">
-                        <img src="assets/images/gallery/istanbul.jpg"
-                             alt="イスタンブールの風景"
-                             loading="lazy"
-                             width="600"
-                             height="400">
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category">旅行記・コラム</span>
-                        <h2><a href="/writings.html">記事とコラム</a></h2>
-                        <p>noteとDRONE.jpで執筆している記事をまとめています。旅の記録、機材レビュー、香港での日常、そして月1回のドローン連載など、幅広いテーマで執筆しています。</p>
-                        <time datetime="2025-09-21">継続更新中</time>
-
-                        <!-- Latest Articles Preview -->
-                        <div class="latest-preview" id="writings-preview">
-                            <h4>最新記事</h4>
-                            <div class="preview-loading" role="status" aria-label="記事を読み込み中">
-                                記事を読み込み中...
-                            </div>
-                        </div>
-
-                        <a href="/writings.html" class="card-action-btn">View All Writings →</a>
-                    </div>
-                </article>
-
-                <!-- Video Card -->
-                <article class="content-card">
-                    <div class="content-image">
-                        <a href="https://www.youtube.com/watch?v=QQ9UUbk9FUY"
-                           target="_blank"
-                           rel="noopener noreferrer">
-                            <img src="https://img.youtube.com/vi/QQ9UUbk9FUY/hqdefault.jpg"
-                                 alt="TJ Video サムネイル"
-                                 loading="lazy"
-                                 width="400"
-                                 height="250">
-                        </a>
-                    </div>
-                    <div class="content-info">
-                        <span class="content-category">最新動画</span>
-                        <h3>
-                            <a href="https://www.youtube.com/watch?v=QQ9UUbk9FUY"
-                               target="_blank"
-                               rel="noopener noreferrer">
-                                TJ Video
-                            </a>
-                        </h3>
-                        <p>YouTubeに新しい動画を公開しました。まずはこちらから。</p>
-                    </div>
-                </article>
-
-            </section>
-
-            <!-- ========================================
-     About
-     ======================================== -->
-<section class="about-section" aria-labelledby="about-heading">
-    <h2 id="about-heading">About</h2>
-    <div class="about-content">
-        <p>
+      <!-- ========================================
+           About
+           ======================================== -->
+      <section class="about-section" aria-labelledby="about-heading">
+        <h2 id="about-heading">About</h2>
+        <div class="about-content">
+          <p>
             香港と日本を行き来しながら、ライカとドローンで旅の記憶を記録しています。
             写真と言葉、そして少しのガジェット偏愛。ここはその交差点です。
-        </p>
-        <div class="about-links">
+          </p>
+          <div class="about-links">
             <a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer" class="external-link">note</a>
             <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener noreferrer" class="external-link">DRONE.jp</a>
             <a href="https://twitter.com/mongkok93" target="_blank" rel="noopener noreferrer" class="external-link">X (Twitter)</a>
             <a href="mailto:tojimasaya07@gmail.com" class="external-link">Contact</a>
+          </div>
         </div>
+      </section>
+
+      <!-- ========================================
+           Footer
+           ======================================== -->
+      <footer class="footer" role="contentinfo">
+        <div class="footer-content">
+          <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
+          <p>Built with care in Japan</p>
+        </div>
+      </footer>
+
     </div>
-</section>
+  </main>
 
+  <!-- ========================================
+       Scripts
+       ======================================== -->
+  <script>
+    // ===== Hero Ken Burns slideshow =====
+    const slides = document.querySelectorAll('.hero-slide');
+    const dots   = document.querySelectorAll('.dot');
+    let currentSlide = 0;
+    const slideInterval = 8000;
 
-            <!-- ========================================
-                 Footer
-                 ======================================== -->
-            <footer class="footer" role="contentinfo">
-                <div class="footer-content">
-                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-                    <p>Built with care in Japan</p>
-                </div>
-            </footer>
+    function showSlide(i){
+      slides.forEach(s=>s.classList.remove('active'));
+      dots.forEach(d=>d.classList.remove('active'));
+      slides[i].classList.add('active');
+      dots[i].classList.add('active');
+    }
+    function nextSlide(){ currentSlide = (currentSlide+1)%slides.length; showSlide(currentSlide); }
 
-        </div>
-    </main>
+    let autoSlide = setInterval(nextSlide, slideInterval);
+    dots.forEach(dot=>{
+      dot.addEventListener('click', ()=>{
+        clearInterval(autoSlide);
+        currentSlide = parseInt(dot.getAttribute('data-slide'));
+        showSlide(currentSlide);
+        autoSlide = setInterval(nextSlide, slideInterval);
+      });
+    });
+    document.addEventListener('visibilitychange', ()=>{
+      if(document.hidden){ clearInterval(autoSlide); }
+      else{ autoSlide = setInterval(nextSlide, slideInterval); }
+    });
 
-    <!-- ========================================
-         Scripts
-         ======================================== -->
-    <script>
-        // Ken Burns Hero Slideshow
-        const slides = document.querySelectorAll('.hero-slide');
-        const dots = document.querySelectorAll('.dot');
-        let currentSlide = 0;
-        const slideInterval = 8000; // 8秒ごとに切り替え
-
-        function showSlide(index) {
-            slides.forEach(slide => slide.classList.remove('active'));
-            dots.forEach(dot => dot.classList.remove('active'));
-
-            slides[index].classList.add('active');
-            dots[index].classList.add('active');
-        }
-
-        function nextSlide() {
-            currentSlide = (currentSlide + 1) % slides.length;
-            showSlide(currentSlide);
-        }
-
-        // 自動スライド
-        let autoSlide = setInterval(nextSlide, slideInterval);
-
-        // ドットクリックで手動切り替え
-        dots.forEach(dot => {
-            dot.addEventListener('click', () => {
-                clearInterval(autoSlide);
-                currentSlide = parseInt(dot.getAttribute('data-slide'));
-                showSlide(currentSlide);
-                autoSlide = setInterval(nextSlide, slideInterval);
-            });
+    // ===== Navigation =====
+    const navToggle = document.getElementById('nav-toggle');
+    const navMenu   = document.getElementById('nav-menu');
+    if (navToggle && navMenu) {
+      navToggle.addEventListener('click', ()=>{
+        navMenu.classList.toggle('active');
+        navToggle.classList.toggle('active');
+        document.body.classList.toggle('nav-open');
+      });
+      document.querySelectorAll('.nav-link').forEach(link=>{
+        link.addEventListener('click', ()=>{
+          if (window.innerWidth <= 768) {
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            document.body.classList.remove('nav-open');
+          }
         });
+      });
+    }
+    window.addEventListener('scroll', ()=>{
+      const nav = document.getElementById('main-nav');
+      if (window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+    });
 
-        // ページ離脱時にアニメーション停止
-        document.addEventListener('visibilitychange', () => {
-            if (document.hidden) {
-                clearInterval(autoSlide);
-            } else {
-                autoSlide = setInterval(nextSlide, slideInterval);
-            }
-        });
+    // ===== Writings preview（香港レンズ＋DRONE.jpタイル用）=====
+    async function loadWritingsPreview() {
+      try {
+        const previewContainer = document.getElementById('writings-preview');
+        if (!previewContainer) return;
 
-        // Navigation
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
+        previewContainer.innerHTML = '<h4>最新記事</h4><div class="preview-loading">記事を読み込み中...</div>';
 
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-                document.body.classList.toggle('nav-open');
-            });
+        const noteArticle = await fetchLatestNoteArticle(); // 香港レンズ
+        const droneArticle = {
+          title: "GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け",
+          link: "https://drone.jp/column/20250912114426119738.html",
+          date: "2025年9月12日",
+          source: "DRONE.jp"
+        };
 
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                        document.body.classList.remove('nav-open');
-                    }
-                });
-            });
+        const previewHTML = `
+          <h4>最新記事</h4>
+          <div class="preview-item">
+            <div class="preview-title">
+              <a href="${droneArticle.link}" target="_blank" rel="noopener noreferrer">${droneArticle.title}</a>
+            </div>
+            <p class="preview-excerpt">${droneArticle.source} - ${droneArticle.date}</p>
+          </div>
+          ${noteArticle ? `
+          <div class="preview-item">
+            <div class="preview-title">
+              <a href="${noteArticle.link}" target="_blank" rel="noopener noreferrer">${noteArticle.title}</a>
+            </div>
+            <p class="preview-excerpt">${noteArticle.source} - ${noteArticle.date}</p>
+          </div>` : ''}
+        `;
+        previewContainer.innerHTML = previewHTML;
+
+      } catch (error) {
+        console.error('プレビュー読み込みエラー:', error);
+        const previewContainer = document.getElementById('writings-preview');
+        if (previewContainer) {
+          previewContainer.innerHTML = `
+            <h4>最新記事</h4>
+            <div class="preview-item">
+              <div class="preview-title"><a href="/writings.html">記事一覧を見る</a></div>
+              <p class="preview-excerpt">最新記事を読み込み中です</p>
+            </div>
+          `;
         }
+      }
+    }
 
-        // Scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+    // 香港レンズ（noteマガジンRSS）から1本
+    async function fetchLatestNoteArticle() {
+      try {
+        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent('https://note.com/tojimasaya/m/m22c44596304b/rss')}`;
+        const response = await fetch(proxyUrl);
+        const xmlText  = await response.text();
+        const xmlDoc   = new DOMParser().parseFromString(xmlText, 'text/xml');
+        const first    = xmlDoc.querySelector('item');
+        if (!first) return null;
 
-        // Load writings preview
-        async function loadWritingsPreview() {
-            try {
-                const previewContainer = document.getElementById('writings-preview');
-                if (!previewContainer) return;
+        const title = first.querySelector('title')?.textContent || '';
+        const link  = first.querySelector('link')?.textContent  || '';
+        const pub   = first.querySelector('pubDate')?.textContent || '';
+        const d     = new Date(pub);
+        const date  = isNaN(d.getTime()) ? '' : d.toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'});
+        return { title, link, date, source:'note' };
+      } catch (e) {
+        console.error('note記事取得エラー:', e);
+        return null;
+      }
+    }
 
-                previewContainer.innerHTML = '<h4>最新記事</h4><div class="preview-loading">記事を読み込み中...</div>';
+    // ===== Latest from TJM（DRONE.jp / 俺流note / Gallery）=====
+    const LATEST_DRONEJP = {
+      url: 'https://drone.jp/column/20250912114426119738.html',
+      title: 'GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け',
+      thumb: 'assets/images/gear/oreryu.jpg',
+      caption: '月イチ連載の最新回はこちら。'
+    };
+    const ORERYU_RSS = 'https://note.com/tojimasaya/m/mcae365b520ed/rss';
+    async function fetchLatestFromNote(feedUrl, sourceName='note') {
+      const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feedUrl)}`;
+      const res = await fetch(proxyUrl);
+      const xml = await res.text();
+      const doc = new DOMParser().parseFromString(xml, 'text/xml');
+      const first = doc.querySelector('item');
+      if (!first) return null;
+      const title = first.querySelector('title')?.textContent || '';
+      const link  = first.querySelector('link')?.textContent  || '';
+      const pub   = first.querySelector('pubDate')?.textContent || '';
+      const d = new Date(pub);
+      const date = isNaN(d.getTime()) ? '' : d.toLocaleDateString('ja-JP',{year:'numeric',month:'long',day:'numeric'});
+      return { title, link, date, source: sourceName };
+    }
+    const LATEST_GALLERY = {
+      url: '/gallery.html',
+      thumb: 'assets/images/gallery/tonomine-susuki.jpg',
+      title: '砥峰高原のススキ原',
+      caption: '秋の気配を連れてくる風。旅の最新スナップはGalleryへ。'
+    };
 
-                const noteArticle = await fetchLatestNoteArticle();
-                const droneArticle = {
-                    title: "GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け",
-                    link: "https://drone.jp/column/20250912114426119738.html",
-                    date: "2025年9月12日",
-                    source: "DRONE.jp"
-                };
+    async function renderLatestSectionV2() {
+      // DRONE.jp（手動）
+      try {
+        document.getElementById('latest-drone-url').href = LATEST_DRONEJP.url;
+        document.getElementById('latest-drone-title').textContent = LATEST_DRONEJP.title;
+        document.getElementById('latest-drone-title').href = LATEST_DRONEJP.url;
+        document.getElementById('latest-drone-thumb').src = LATEST_DRONEJP.thumb;
+        document.getElementById('latest-drone-caption').textContent = LATEST_DRONEJP.caption;
+        document.getElementById('latest-drone-cta').href = LATEST_DRONEJP.url;
+      } catch(e) { console.error('DRONE.jp latest error:', e); }
 
-                const previewHTML = `
-                    <h4>最新記事</h4>
-                    <div class="preview-item">
-                        <div class="preview-title">
-                            <a href="${droneArticle.link}" target="_blank" rel="noopener noreferrer">${droneArticle.title}</a>
-                        </div>
-                        <p class="preview-excerpt">${droneArticle.source} - ${droneArticle.date}</p>
-                    </div>
-                    ${noteArticle ? `
-                    <div class="preview-item">
-                        <div class="preview-title">
-                            <a href="${noteArticle.link}" target="_blank" rel="noopener noreferrer">${noteArticle.title}</a>
-                        </div>
-                        <p class="preview-excerpt">${noteArticle.source} - ${noteArticle.date}</p>
-                    </div>
-                    ` : ''}
-                `;
-
-                previewContainer.innerHTML = previewHTML;
-
-            } catch (error) {
-                console.error('プレビュー読み込みエラー:', error);
-                const previewContainer = document.getElementById('writings-preview');
-                if (previewContainer) {
-                    previewContainer.innerHTML = `
-                        <h4>最新記事</h4>
-                        <div class="preview-item">
-                            <div class="preview-title">
-                                <a href="/writings.html">記事一覧を見る</a>
-                            </div>
-                            <p class="preview-excerpt">最新記事を読み込み中です</p>
-                        </div>
-                    `;
-                }
-            }
+      // 俺流（note RSS自動）
+      try {
+        const oreryu = await fetchLatestFromNote(ORERYU_RSS, '俺流トラベルガジェット');
+        if (oreryu) {
+          const t = document.getElementById('latest-oreryu-title');
+          const m = document.getElementById('latest-oreryu-meta');
+          const a = document.getElementById('latest-oreryu-link');
+          t.innerHTML = `<a href="${oreryu.link}" target="_blank" rel="noopener noreferrer">${oreryu.title}</a>`;
+          m.textContent = `${oreryu.source} — ${oreryu.date}`;
+          a.href = oreryu.link;
         }
+      } catch(e) { console.error('note ORERYU latest error:', e); }
 
-        // Fetch latest note article
-        async function fetchLatestNoteArticle() {
-            try {
-                const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent('https://note.com/tojimasaya/m/m22c44596304b/rss')}`;
-                const response = await fetch(proxyUrl);
-                const xmlText = await response.text();
-
-                const parser = new DOMParser();
-                const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-
-                const firstItem = xmlDoc.querySelector('item');
-                if (firstItem) {
-                    const title = firstItem.querySelector('title')?.textContent || '';
-                    const link = firstItem.querySelector('link')?.textContent || '';
-                    const pubDate = firstItem.querySelector('pubDate')?.textContent || '';
-
-                    const date = new Date(pubDate);
-                    const formattedDate = date.toLocaleDateString('ja-JP', {
-                        year: 'numeric',
-                        month: 'long',
-                        day: 'numeric'
-                    });
-
-                    return { title, link, date: formattedDate, source: 'note' };
-                }
-            } catch (error) {
-                console.error('note記事取得エラー:', error);
-            }
-            return null;
-        }
-
-        // Initialize on load
-        document.addEventListener('DOMContentLoaded', () => {
-            loadWritingsPreview();
-        });
-
-
-        // -------------------------------------------------
-// Latest from TJM（noteは自動、Gallery/Videoは定数で管理）
-// -------------------------------------------------
-
-// ここを1行ずつ差し替えるだけでOK
-const LATEST_GALLERY = {
-    url: '/gallery.html',
-    thumb: 'assets/images/gallery/tonomine-susuki.jpg',
-    title: '砥峰高原のススキ原',
-    caption: '秋の気配を連れてくる風。旅の最新スナップはGalleryへ。'
-};
-const LATEST_VIDEO = {
-    youtubeId: 'QQ9UUbk9FUY',
-    title: 'TJ Video',
-    caption: '最新のショートトリップ動画を公開中。'
-};
-
-async function renderLatestSection() {
-    // note（最新）— 既存の fetchLatestNoteArticle() を再利用
-    try {
-        const note = await fetchLatestNoteArticle();
-        if (note) {
-            const noteTitle = document.getElementById('latest-note-title');
-            const noteMeta = document.getElementById('latest-note-meta');
-            const noteLink = document.getElementById('latest-note-link');
-
-            noteTitle.innerHTML = `<a href="${note.link}" target="_blank" rel="noopener noreferrer">${note.title}</a>`;
-            noteMeta.textContent = `note — ${note.date}`;
-            noteLink.href = note.link;
-        }
-    } catch (e) { console.error('Latest note error:', e); }
-
-    // Gallery（手動）
-    try {
+      // Gallery（手動）
+      try {
         document.getElementById('latest-gallery-url').href = LATEST_GALLERY.url;
         document.getElementById('latest-gallery-thumb').src = LATEST_GALLERY.thumb;
         document.getElementById('latest-gallery-title').textContent = LATEST_GALLERY.title;
         document.getElementById('latest-gallery-title').href = LATEST_GALLERY.url;
         document.getElementById('latest-gallery-caption').textContent = LATEST_GALLERY.caption;
-    } catch (e) { console.error('Latest gallery error:', e); }
-
-    // Video（手動）
-    try {
-        const yt = LATEST_VIDEO.youtubeId;
-        const ytUrl = `https://www.youtube.com/watch?v=${yt}`;
-        const ytThumb = `https://img.youtube.com/vi/${yt}/hqdefault.jpg`;
-        document.getElementById('latest-video-link').href = ytUrl;
-        document.getElementById('latest-video-thumb').src = ytThumb;
-        document.getElementById('latest-video-title').textContent = LATEST_VIDEO.title;
-        document.getElementById('latest-video-title').href = ytUrl;
-        document.getElementById('latest-video-caption').textContent = LATEST_VIDEO.caption;
-        document.getElementById('latest-video-cta').href = ytUrl;
-    } catch (e) { console.error('Latest video error:', e); }
-}
-
-// 初期化
-document.addEventListener('DOMContentLoaded', () => {
-    renderLatestSection();
-});
-
-        // External links security
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.rel = 'noopener noreferrer';
-        });
-    </script>
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "田路昌也",
-        "alternateName": "Toji Masaya",
-        "jobTitle": "Writer and Travel Photographer",
-        "url": "https://tojimasaya.com",
-        "sameAs": [
-            "https://note.com/tojimasaya",
-            "https://x.com/mongkok93"
-        ],
-        "description": "ライカやドローンを片手に、気の向くままに旅をしています。写真と文章で、旅先の空気や日々の発見をゆる〜く記録しています。"
+      } catch(e) { console.error('Gallery latest error:', e); }
     }
-    </script>
+
+    // ===== Init on load =====
+    document.addEventListener('DOMContentLoaded', ()=>{
+      loadWritingsPreview();   // 大きい「記事とコラム」カード内のプレビュー
+      renderLatestSectionV2(); // ヒーロー直下の Latest 3本
+    });
+
+    // External links security
+    document.querySelectorAll('a[target="_blank"]').forEach(link => { link.rel = 'noopener noreferrer'; });
+  </script>
+
+  <!-- JSON-LD Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "田路昌也",
+    "alternateName": "Toji Masaya",
+    "jobTitle": "Writer and Travel Photographer",
+    "url": "https://tojimasaya.com",
+    "sameAs": [
+      "https://note.com/tojimasaya",
+      "https://x.com/mongkok93"
+    ],
+    "description": "ライカやドローンを片手に、気の向くままに旅をしています。写真と文章で、旅先の空気や日々の発見をゆる〜く記録しています。"
+  }
+  </script>
 </body>
 </html>
