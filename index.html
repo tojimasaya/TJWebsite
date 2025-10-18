@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Toji Masaya — drone/camera/travel</title>
+    <title>Toji Masaya – drone/camera/travel</title>
 
     <!-- Favicon -->
     <link rel="icon" href="/favicon.ico" sizes="any">
@@ -11,12 +11,12 @@
     <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
     <!-- SEO -->
-    <meta name="description" content="田路昌也（TJ）のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
+    <meta name="description" content="田路昌也(TJ)のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
     <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, カッパドキア, note">
     <meta name="author" content="Toji Masaya">
 
     <!-- OGP -->
-    <meta property="og:title" content="TJM — drone/camera/travel">
+    <meta property="og:title" content="TJM – drone/camera/travel">
     <meta property="og:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。トップにあるのは、生まれ故郷・姫路の近くにある砥峰高原。秋の気配をまとったススキの風が、ページの奥へと誘ってくれます。">
     <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/tonomine-susuki.jpg">
     <meta property="og:url" content="https://tojimasaya.com">
@@ -25,7 +25,7 @@
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
-    <meta name="twitter:title" content="TJM — drone/camera/travel">
+    <meta name="twitter:title" content="TJM – drone/camera/travel">
     <meta name="twitter:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を綴っています。トップは砥峰高原のススキ原。">
     <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/tonomine-susuki.jpg">
 
@@ -65,434 +65,87 @@
     </nav>
 
     <!-- ========================================
-         Hero Section
+         Hero Section with Ken Burns Effect
          ======================================== -->
-         <!DOCTYPE html>
-         <html lang="ja">
-         <head>
-             <meta charset="UTF-8">
-             <meta name="viewport" content="width=device-width, initial-scale=1.0">
-             <title>Toji Masaya — drone/camera/travel</title>
-             <style>
-                 * {
-                     margin: 0;
-                     padding: 0;
-                     box-sizing: border-box;
-                 }
+    <section class="hero" role="banner">
+        <div class="hero-slides-container">
+            <!-- Slide 1: 砥峰高原 -->
+            <div class="hero-slide active">
+                <img src="assets/images/gallery/tonomine-susuki.jpg"
+                     alt="砥峰高原のススキ原"
+                     loading="eager"
+                     width="1920"
+                     height="1080">
+            </div>
 
-                 :root {
-                     --primary-font: 'Crimson Text', Georgia, serif;
-                     --secondary-font: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
-                     --text-color: #333;
-                     --bg-color: #fafafa;
-                     --white: #ffffff;
-                     --border-color: #e5e5e5;
-                     --accent-color: #2563eb;
-                 }
+            <!-- Slide 2: カッパドキア -->
+            <div class="hero-slide">
+                <img src="assets/images/gallery/cappadocia.jpg"
+                     alt="カッパドキアの風景"
+                     loading="lazy"
+                     width="1920"
+                     height="1080">
+            </div>
 
-                 body {
-                     font-family: var(--secondary-font);
-                     line-height: 1.6;
-                     color: var(--text-color);
-                     background-color: var(--bg-color);
-                 }
+            <!-- Slide 3: 香港 -->
+            <div class="hero-slide">
+                <img src="assets/images/gallery/hongkong.jpg"
+                     alt="香港の街並み"
+                     loading="lazy"
+                     width="1920"
+                     height="1080">
+            </div>
 
-                 /* Navigation (簡易版) */
-                 .main-nav {
-                     position: fixed;
-                     top: 0;
-                     width: 100%;
-                     background: rgba(250, 250, 250, 0.95);
-                     backdrop-filter: blur(10px);
-                     border-bottom: 1px solid var(--border-color);
-                     z-index: 100;
-                     transition: background 0.3s ease;
-                 }
+            <!-- Slide 4: イスタンブール -->
+            <div class="hero-slide">
+                <img src="assets/images/gallery/istanbul.jpg"
+                     alt="イスタンブールの風景"
+                     loading="lazy"
+                     width="1920"
+                     height="1080">
+            </div>
+        </div>
 
-                 .nav-container {
-                     max-width: 1000px;
-                     margin: 0 auto;
-                     padding: 0 40px;
-                     display: flex;
-                     justify-content: space-between;
-                     align-items: center;
-                     height: 70px;
-                 }
+        <!-- Text Overlay -->
+        <div class="hero-overlay">
+            <h1 class="hero-title">TJM</h1>
+            <p class="hero-subtitle">drone/camera/travel</p>
+        </div>
 
-                 .nav-logo {
-                     font-family: var(--primary-font);
-                     font-size: 1.5rem;
-                     font-weight: 600;
-                     color: var(--text-color);
-                     text-decoration: none;
-                 }
-
-                 .nav-menu {
-                     display: flex;
-                     list-style: none;
-                     gap: 30px;
-                 }
-
-                 .nav-link {
-                     color: var(--text-color);
-                     text-decoration: none;
-                     font-weight: 500;
-                     font-size: 0.875rem;
-                     transition: color 0.3s ease;
-                 }
-
-                 .nav-link:hover {
-                     color: var(--accent-color);
-                 }
-
-                 /* Hero Section with Ken Burns Effect */
-                 .hero {
-                     position: relative;
-                     height: 100vh;
-                     min-height: 600px;
-                     overflow: hidden;
-                     margin-top: 70px;
-                 }
-
-                 .hero-slides-container {
-                     position: relative;
-                     width: 100%;
-                     height: 100%;
-                 }
-
-                 .hero-slide {
-                     position: absolute;
-                     top: 0;
-                     left: 0;
-                     width: 100%;
-                     height: 100%;
-                     opacity: 0;
-                     transition: opacity 2s ease-in-out;
-                 }
-
-                 .hero-slide.active {
-                     opacity: 1;
-                 }
-
-                 .hero-slide img {
-                     width: 100%;
-                     height: 100%;
-                     object-fit: cover;
-                     filter: brightness(0.7) contrast(1.1);
-                 }
-
-                 /* 各スライドに異なるケン・バーンズエフェクト */
-                 .hero-slide:nth-child(1) img {
-                     animation: kenburns-zoom 20s ease-in-out infinite;
-                 }
-
-                 .hero-slide:nth-child(2) img {
-                     animation: kenburns-pan-right 20s ease-in-out infinite;
-                 }
-
-                 .hero-slide:nth-child(3) img {
-                     animation: kenburns-zoom-pan 20s ease-in-out infinite;
-                 }
-
-                 .hero-slide:nth-child(4) img {
-                     animation: kenburns-pan-left 20s ease-in-out infinite;
-                 }
-
-                 /* Ken Burns Animations */
-                 @keyframes kenburns-zoom {
-                     0% {
-                         transform: scale(1);
-                     }
-                     100% {
-                         transform: scale(1.15);
-                     }
-                 }
-
-                 @keyframes kenburns-pan-right {
-                     0% {
-                         transform: scale(1.1) translateX(-5%);
-                     }
-                     100% {
-                         transform: scale(1.2) translateX(5%);
-                     }
-                 }
-
-                 @keyframes kenburns-zoom-pan {
-                     0% {
-                         transform: scale(1) translateX(0);
-                     }
-                     100% {
-                         transform: scale(1.2) translateX(-5%);
-                     }
-                 }
-
-                 @keyframes kenburns-pan-left {
-                     0% {
-                         transform: scale(1.15) translateX(5%);
-                     }
-                     100% {
-                         transform: scale(1.25) translateX(-5%);
-                     }
-                 }
-
-                 /* Hero Overlay */
-                 .hero-overlay {
-                     position: absolute;
-                     bottom: 80px;
-                     left: 50%;
-                     transform: translateX(-50%);
-                     text-align: center;
-                     color: white;
-                     z-index: 2;
-                 }
-
-                 .hero-title {
-                     font-family: var(--primary-font);
-                     font-size: 2.25rem;
-                     font-weight: 600;
-                     margin-bottom: 0.5rem;
-                     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
-                     letter-spacing: -0.02em;
-                 }
-
-                 .hero-subtitle {
-                     font-family: var(--secondary-font);
-                     font-size: 1.125rem;
-                     font-weight: 300;
-                     text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-                     letter-spacing: 0.05em;
-                 }
-
-                 /* Navigation Dots */
-                 .hero-dots {
-                     position: absolute;
-                     bottom: 30px;
-                     left: 50%;
-                     transform: translateX(-50%);
-                     z-index: 2;
-                     display: flex;
-                     gap: 12px;
-                 }
-
-                 .dot {
-                     width: 10px;
-                     height: 10px;
-                     border-radius: 50%;
-                     background: rgba(255,255,255,0.5);
-                     cursor: pointer;
-                     transition: background 0.3s;
-                 }
-
-                 .dot.active {
-                     background: white;
-                 }
-
-                 /* Content Area */
-                 .main-content {
-                     background-color: var(--white);
-                     padding: 80px 0;
-                 }
-
-                 .container {
-                     max-width: 1000px;
-                     margin: 0 auto;
-                     padding: 0 40px;
-                 }
-
-                 .intro-text {
-                     font-family: 'Crimson Text', serif;
-                     font-size: 1.1rem;
-                     line-height: 1.95;
-                     letter-spacing: 0.02em;
-                 }
-
-                 .intro-text p {
-                     margin-bottom: 0.8em;
-                 }
-
-                 .spacer {
-                     margin-top: 1.8em;
-                     margin-bottom: 1.8em;
-                 }
-
-                 /* Responsive */
-                 @media (max-width: 768px) {
-                     .nav-container {
-                         padding: 0 20px;
-                     }
-
-                     .nav-menu {
-                         display: none;
-                     }
-
-                     .hero {
-                         height: 70vh;
-                         min-height: 500px;
-                     }
-
-                     .hero-title {
-                         font-size: 1.875rem;
-                     }
-
-                     .hero-subtitle {
-                         font-size: 1rem;
-                     }
-
-                     .hero-overlay {
-                         bottom: 40px;
-                     }
-
-                     .container {
-                         padding: 0 20px;
-                     }
-                 }
-             </style>
-         </head>
-         <body>
-             <!-- Navigation -->
-             <nav class="main-nav">
-                 <div class="nav-container">
-                     <a href="/" class="nav-logo">TJM</a>
-                     <ul class="nav-menu">
-                         <li><a href="/" class="nav-link">Home</a></li>
-                         <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-                         <li><a href="/gear.html" class="nav-link">Gear</a></li>
-                         <li><a href="/writings.html" class="nav-link">Writings</a></li>
-                     </ul>
-                 </div>
-             </nav>
-
-             <!-- Hero Section with Ken Burns Effect -->
-         <section class="hero" role="banner">
-             <div class="hero-slides-container">
-                 <!-- Slide 1: 砥峰高原 -->
-                 <div class="hero-slide active">
-                     <img src="assets/images/gallery/tonomine-susuki.jpg"
-                          alt="砥峰高原のススキ原"
-                          loading="eager"
-                          width="1920"
-                          height="1080">
-                 </div>
-
-                 <!-- Slide 2: カッパドキア -->
-                 <div class="hero-slide">
-                     <img src="assets/images/gallery/cappadocia.jpg"
-                          alt="カッパドキアの風景"
-                          loading="lazy"
-                          width="1920"
-                          height="1080">
-                 </div>
-
-                 <!-- Slide 3: 香港 -->
-                 <div class="hero-slide">
-                     <img src="assets/images/gallery/hongkong.jpg"
-                          alt="香港の街並み"
-                          loading="lazy"
-                          width="1920"
-                          height="1080">
-                 </div>
-
-                 <!-- Slide 4: イスタンブール -->
-                 <div class="hero-slide">
-                     <img src="assets/images/gallery/istanbul.jpg"
-                          alt="イスタンブールの風景"
-                          loading="lazy"
-                          width="1920"
-                          height="1080">
-                 </div>
-             </div>
-
-             <!-- Text Overlay -->
-             <div class="hero-overlay">
-                 <h1 class="hero-title">TJM</h1>
-                 <p class="hero-subtitle">drone/camera/travel</p>
-             </div>
-
-             <!-- Navigation Dots -->
-             <div class="hero-dots">
-                 <div class="dot active" data-slide="0"></div>
-                 <div class="dot" data-slide="1"></div>
-                 <div class="dot" data-slide="2"></div>
-                 <div class="dot" data-slide="3"></div>
-             </div>
-         </section>
-
-             <!-- Main Content -->
-             <main class="main-content">
-                 <div class="container">
-                     <section class="intro">
-                         <div class="intro-text">
-                             <p>最近、香港と日本の二拠点生活をしています。</p>
-                             <p>生まれ故郷・姫路からほど近い砥峰高原。</p>
-                             <p>ここは「軍師官兵衛」や「ノルウェイの森」などのロケ地として知られています。</p>
-
-                             <p class="spacer"></p>
-
-                             <p>10月初旬の訪問はススキの最盛期には少し早かったけれど、</p>
-                             <p>風は冷たく、空の色にはもう秋の気配。</p>
-                             <p>ついこの前まで香港で感じていた夏の熱気が、</p>
-                             <p>遠い季節の記憶のように思えました。</p>
-
-                             <p class="spacer"></p>
-
-                             <p>人は季節を通して、</p>
-                             <p>時間の速さを知るのかもしれません。</p>
-                         </div>
-                     </section>
-                 </div>
-             </main>
-
-             <script>
-                 // Ken Burns Hero Slideshow
-                 const slides = document.querySelectorAll('.hero-slide');
-                 const dots = document.querySelectorAll('.dot');
-                 let currentSlide = 0;
-                 const slideInterval = 8000; // 8秒ごとに切り替え
-
-                 function showSlide(index) {
-                     slides.forEach(slide => slide.classList.remove('active'));
-                     dots.forEach(dot => dot.classList.remove('active'));
-
-                     slides[index].classList.add('active');
-                     dots[index].classList.add('active');
-                 }
-
-                 function nextSlide() {
-                     currentSlide = (currentSlide + 1) % slides.length;
-                     showSlide(currentSlide);
-                 }
-
-                 // 自動スライド
-                 let autoSlide = setInterval(nextSlide, slideInterval);
-
-                 // ドットクリックで手動切り替え
-                 dots.forEach(dot => {
-                     dot.addEventListener('click', () => {
-                         clearInterval(autoSlide);
-                         currentSlide = parseInt(dot.getAttribute('data-slide'));
-                         showSlide(currentSlide);
-                         autoSlide = setInterval(nextSlide, slideInterval);
-                     });
-                 });
-
-                 // ページ離脱時にアニメーション停止
-                 document.addEventListener('visibilitychange', () => {
-                     if (document.hidden) {
-                         clearInterval(autoSlide);
-                     } else {
-                         autoSlide = setInterval(nextSlide, slideInterval);
-                     }
-                 });
-             </script>
-         </body>
-         </html>
+        <!-- Navigation Dots -->
+        <div class="hero-dots">
+            <div class="dot active" data-slide="0"></div>
+            <div class="dot" data-slide="1"></div>
+            <div class="dot" data-slide="2"></div>
+            <div class="dot" data-slide="3"></div>
+        </div>
+    </section>
 
     <!-- ========================================
          Main Content
          ======================================== -->
     <main id="main-content" class="main-content">
         <div class="container">
+            <!-- Introduction -->
+            <section class="intro">
+                <div class="intro-text">
+                    <p>最近、香港と日本の二拠点生活をしています。</p>
+                    <p>生まれ故郷・姫路からほど近い砥峰高原。</p>
+                    <p>ここは、「軍師官兵衛」や「ノルウェイの森」などのロケ地として知られています。</p>
 
+                    <p class="spacer"></p>
+
+                    <p>10月初旬の訪問はススキの最盛期には少し早かったけれど、</p>
+                    <p>風は冷たく、空の色にはもう秋の気配。</p>
+                    <p>ついこの前まで香港で感じていた夏の熱気が、</p>
+                    <p>遠い季節の記憶のように思えました。</p>
+
+                    <p class="spacer"></p>
+
+                    <p>人は季節を通して、</p>
+                    <p>時間の速さを知るのかもしれません。</p>
+                </div>
+            </section>
 
             <!-- ========================================
                  Social Links
@@ -673,6 +326,47 @@
          Scripts
          ======================================== -->
     <script>
+        // Ken Burns Hero Slideshow
+        const slides = document.querySelectorAll('.hero-slide');
+        const dots = document.querySelectorAll('.dot');
+        let currentSlide = 0;
+        const slideInterval = 8000; // 8秒ごとに切り替え
+
+        function showSlide(index) {
+            slides.forEach(slide => slide.classList.remove('active'));
+            dots.forEach(dot => dot.classList.remove('active'));
+
+            slides[index].classList.add('active');
+            dots[index].classList.add('active');
+        }
+
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slides.length;
+            showSlide(currentSlide);
+        }
+
+        // 自動スライド
+        let autoSlide = setInterval(nextSlide, slideInterval);
+
+        // ドットクリックで手動切り替え
+        dots.forEach(dot => {
+            dot.addEventListener('click', () => {
+                clearInterval(autoSlide);
+                currentSlide = parseInt(dot.getAttribute('data-slide'));
+                showSlide(currentSlide);
+                autoSlide = setInterval(nextSlide, slideInterval);
+            });
+        });
+
+        // ページ離脱時にアニメーション停止
+        document.addEventListener('visibilitychange', () => {
+            if (document.hidden) {
+                clearInterval(autoSlide);
+            } else {
+                autoSlide = setInterval(nextSlide, slideInterval);
+            }
+        });
+
         // Navigation
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
@@ -814,7 +508,7 @@
             "https://note.com/tojimasaya",
             "https://x.com/mongkok93"
         ],
-        "description": "ライカやドローンを片手に、気の向くままに旅をしています。写真と文章で、旅先の空気や日々の発見をゆるく記録しています。"
+        "description": "ライカやドローンを片手に、気の向くままに旅をしています。写真と文章で、旅先の空気や日々の発見をゆる〜く記録しています。"
     }
     </script>
 </body>
