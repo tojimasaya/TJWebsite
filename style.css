@@ -781,6 +781,61 @@ body {
     color: var(--text-lighter);
 }
 
+/* ======= Home: Latest from TJM ======= */
+.latest-section {
+    padding: 60px 0 20px;
+    border-bottom: 1px solid var(--border-color);
+}
+.latest-title {
+    font-family: var(--primary-font);
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--text-color);
+}
+.latest-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+@media (max-width: 1000px) {
+    .latest-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 680px) {
+    .latest-grid { grid-template-columns: 1fr; }
+}
+
+/* ======= Home: About ======= */
+.about-section {
+    padding: 60px 0;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    margin-top: 40px;
+}
+.about-section h2 {
+    font-family: var(--primary-font);
+    font-size: var(--text-3xl);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 20px;
+    color: var(--text-color);
+}
+.about-content {
+    max-width: 760px;
+    margin: 0 auto;
+    text-align: center;
+    color: var(--text-light);
+    line-height: 1.9;
+}
+.about-links {
+    display: flex;
+    gap: 12px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin-top: 16px;
+}
+
 /* =========================================================================
    11. Gallery
    ========================================================================= */

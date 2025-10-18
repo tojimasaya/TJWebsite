@@ -147,6 +147,69 @@
                 </div>
             </section>
 
+
+            <!-- ========================================
+                 Latest from TJM
+                 ======================================== -->
+            <section class="latest-section" aria-labelledby="latest-heading">
+                <h2 id="latest-heading" class="latest-title">Latest from TJM</h2>
+                <div class="latest-grid">
+
+                    <!-- DRONE.jp（手動1行で差し替え） -->
+                    <article class="content-card" id="latest-drone-card">
+                        <div class="content-image">
+                            <a id="latest-drone-url" href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">
+                                <img id="latest-drone-thumb" src="assets/images/gear/oreryu.jpg" alt="DRONE.jp 連載のサムネイル" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="content-info">
+                            <span class="content-category">DRONE.jp 連載</span>
+                            <h3>
+                                <a id="latest-drone-title" href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">
+                                    GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け
+                                </a>
+                            </h3>
+                            <p class="preview-excerpt" id="latest-drone-caption">月イチ連載の最新回はこちら。</p>
+                            <a class="card-action-btn" id="latest-drone-cta" href="https://drone.jp/column/20250912114426119738.html" target="_blank" rel="noopener noreferrer">Read on DRONE.jp →</a>
+                        </div>
+                    </article>
+
+                    <!-- 俺流トラベルガジェット（note自動） -->
+                    <article class="content-card" id="latest-oreryu-card" aria-live="polite">
+                        <div class="content-image">
+                            <img src="assets/images/gear/oreryu.jpg" alt="俺流トラベルガジェットのサムネイル（暫定）" loading="lazy">
+                        </div>
+                        <div class="content-info">
+                            <span class="content-category">note｜俺流トラベルガジェット</span>
+                            <h3 id="latest-oreryu-title">
+                                <a href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">
+                                    最新記事を取得中...
+                                </a>
+                            </h3>
+                            <p id="latest-oreryu-meta" class="preview-excerpt">読み込み中...</p>
+                            <a id="latest-oreryu-link" class="card-action-btn" href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">Read on note →</a>
+                        </div>
+                    </article>
+
+                    <!-- Gallery（手動1〜4行で差し替え） -->
+                    <article class="content-card" id="latest-gallery-card">
+                        <div class="content-image">
+                            <a id="latest-gallery-url" href="/gallery.html">
+                                <img id="latest-gallery-thumb" src="assets/images/gallery/tonomine-susuki.jpg" alt="最新ギャラリーのサムネイル" loading="lazy">
+                            </a>
+                        </div>
+                        <div class="content-info">
+                            <span class="content-category">Gallery</span>
+                            <h3><a id="latest-gallery-title" href="/gallery.html">砥峰高原のススキ原</a></h3>
+                            <p class="preview-excerpt" id="latest-gallery-caption">秋の気配を連れてくる風。旅の最新スナップはGalleryへ。</p>
+                            <a class="card-action-btn" href="/gallery.html">View Gallery →</a>
+                        </div>
+                    </article>
+
+                </div>
+            </section>
+
+
             <!-- ========================================
                  Social Links
                  ======================================== -->
@@ -308,6 +371,26 @@
                 </article>
 
             </section>
+
+            <!-- ========================================
+     About
+     ======================================== -->
+<section class="about-section" aria-labelledby="about-heading">
+    <h2 id="about-heading">About</h2>
+    <div class="about-content">
+        <p>
+            香港と日本を行き来しながら、ライカとドローンで旅の記憶を記録しています。
+            写真と言葉、そして少しのガジェット偏愛。ここはその交差点です。
+        </p>
+        <div class="about-links">
+            <a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer" class="external-link">note</a>
+            <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener noreferrer" class="external-link">DRONE.jp</a>
+            <a href="https://twitter.com/mongkok93" target="_blank" rel="noopener noreferrer" class="external-link">X (Twitter)</a>
+            <a href="mailto:tojimasaya07@gmail.com" class="external-link">Contact</a>
+        </div>
+    </div>
+</section>
+
 
             <!-- ========================================
                  Footer
@@ -488,6 +571,67 @@
         document.addEventListener('DOMContentLoaded', () => {
             loadWritingsPreview();
         });
+
+
+        // -------------------------------------------------
+// Latest from TJM（noteは自動、Gallery/Videoは定数で管理）
+// -------------------------------------------------
+
+// ここを1行ずつ差し替えるだけでOK
+const LATEST_GALLERY = {
+    url: '/gallery.html',
+    thumb: 'assets/images/gallery/tonomine-susuki.jpg',
+    title: '砥峰高原のススキ原',
+    caption: '秋の気配を連れてくる風。旅の最新スナップはGalleryへ。'
+};
+const LATEST_VIDEO = {
+    youtubeId: 'QQ9UUbk9FUY',
+    title: 'TJ Video',
+    caption: '最新のショートトリップ動画を公開中。'
+};
+
+async function renderLatestSection() {
+    // note（最新）— 既存の fetchLatestNoteArticle() を再利用
+    try {
+        const note = await fetchLatestNoteArticle();
+        if (note) {
+            const noteTitle = document.getElementById('latest-note-title');
+            const noteMeta = document.getElementById('latest-note-meta');
+            const noteLink = document.getElementById('latest-note-link');
+
+            noteTitle.innerHTML = `<a href="${note.link}" target="_blank" rel="noopener noreferrer">${note.title}</a>`;
+            noteMeta.textContent = `note — ${note.date}`;
+            noteLink.href = note.link;
+        }
+    } catch (e) { console.error('Latest note error:', e); }
+
+    // Gallery（手動）
+    try {
+        document.getElementById('latest-gallery-url').href = LATEST_GALLERY.url;
+        document.getElementById('latest-gallery-thumb').src = LATEST_GALLERY.thumb;
+        document.getElementById('latest-gallery-title').textContent = LATEST_GALLERY.title;
+        document.getElementById('latest-gallery-title').href = LATEST_GALLERY.url;
+        document.getElementById('latest-gallery-caption').textContent = LATEST_GALLERY.caption;
+    } catch (e) { console.error('Latest gallery error:', e); }
+
+    // Video（手動）
+    try {
+        const yt = LATEST_VIDEO.youtubeId;
+        const ytUrl = `https://www.youtube.com/watch?v=${yt}`;
+        const ytThumb = `https://img.youtube.com/vi/${yt}/hqdefault.jpg`;
+        document.getElementById('latest-video-link').href = ytUrl;
+        document.getElementById('latest-video-thumb').src = ytThumb;
+        document.getElementById('latest-video-title').textContent = LATEST_VIDEO.title;
+        document.getElementById('latest-video-title').href = ytUrl;
+        document.getElementById('latest-video-caption').textContent = LATEST_VIDEO.caption;
+        document.getElementById('latest-video-cta').href = ytUrl;
+    } catch (e) { console.error('Latest video error:', e); }
+}
+
+// 初期化
+document.addEventListener('DOMContentLoaded', () => {
+    renderLatestSection();
+});
 
         // External links security
         document.querySelectorAll('a[target="_blank"]').forEach(link => {
