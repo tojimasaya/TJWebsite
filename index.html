@@ -306,16 +306,32 @@
         return '0';
     }
 
-    // 日付フォーマット（YYYYMMDD... → YYYY年M月D日）
-    function formatDate(urlOrDateStr) {
-        const dateStr = extractDateFromURL(urlOrDateStr);
+    // 日付フォーマット（複数形式対応）
+    function formatDate(input) {
+        console.log('formatDate input:', input, typeof input);
+        
+        // RSSのpubDate形式の場合（例: "Mon, 14 Oct 2024 12:00:00 +0900"）
+        if (typeof input === 'string' && input.includes(',')) {
+            const date = new Date(input);
+            if (!isNaN(date.getTime())) {
+                const formatted = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+                console.log('formatDate output (RSS):', formatted);
+                return formatted;
+            }
+        }
+        
+        // URL内の日付の場合（YYYYMMDD...）
+        const dateStr = extractDateFromURL(input || '');
+        console.log('formatDate dateStr:', dateStr);
         if (dateStr === '0' || dateStr.length < 8) return '最新';
         
         const year = dateStr.substring(0, 4);
         const month = parseInt(dateStr.substring(4, 6), 10);
         const day = parseInt(dateStr.substring(6, 8), 10);
         
-        return `${year}年${month}月${day}日`;
+        const formatted = `${year}年${month}月${day}日`;
+        console.log('formatDate output (URL):', formatted);
+        return formatted;
     }
 
     // 俺流トラベルガジェットのマガジンURLリスト
@@ -410,6 +426,7 @@
             const [url, data] = latest.note;
             const thumbnail = data.image || DEFAULT_IMAGES.note;
             const title = data.title || 'note 最新記事';
+            const pubDate = data.pubDate || ''; // RSSの日付
             
             document.getElementById('latest-note-url').href = url;
             document.getElementById('latest-note-thumb').src = thumbnail;
@@ -423,7 +440,7 @@
             
             const metaEl = document.getElementById('latest-oreryu-meta');
             if (metaEl) {
-                metaEl.textContent = `note - ${formatDate(url)}`;
+                metaEl.textContent = `note - ${formatDate(pubDate || url)}`;
             }
             
             document.getElementById('latest-oreryu-link').href = url;
