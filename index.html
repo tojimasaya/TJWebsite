@@ -341,35 +341,41 @@
                 });
             
             // 2. 俺流トラベルガジェット 最新記事
-            // まず、俺流マガジンRSSから記事URLリストを取得
-            let oreryuURLs = new Set();
+            // RSSから記事情報を取得（URL、タイトル、日付）
+            let oreryuArticle = null;
             try {
                 const rssResponse = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(ORERYU_MAGAZINE_URLS[0] + '/rss')}`);
                 if (rssResponse.ok) {
                     const xmlText = await rssResponse.text();
                     const parser = new DOMParser();
                     const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-                    xmlDoc.querySelectorAll('item link').forEach(link => {
-                        const url = link.textContent.trim();
-                        if (url) oreryuURLs.add(url);
-                    });
+                    const firstItem = xmlDoc.querySelector('item');
+                    
+                    if (firstItem) {
+                        const url = firstItem.querySelector('link')?.textContent.trim();
+                        const title = firstItem.querySelector('title')?.textContent.trim();
+                        const pubDate = firstItem.querySelector('pubDate')?.textContent.trim();
+                        
+                        // writings-og.jsonから画像情報を取得
+                        const ogData = url ? articlesData[url] : null;
+                        const image = ogData?.image || DEFAULT_IMAGES.note;
+                        
+                        if (url) {
+                            oreryuArticle = [url, {
+                                title: title || ogData?.title || '',
+                                image: image,
+                                pubDate: pubDate // RSSの日付を保持
+                            }];
+                        }
+                    }
                 }
             } catch (e) {
                 console.warn('俺流RSS取得エラー:', e);
             }
-
-            // writings-og.jsonから俺流記事のみをフィルタして最新を取得
-            const oreryuArticles = Object.entries(articlesData)
-                .filter(([url]) => oreryuURLs.has(url))
-                .sort((a, b) => {
-                    const dateA = extractDateFromURL(a[0]);
-                    const dateB = extractDateFromURL(b[0]);
-                    return dateB.localeCompare(dateA);
-                });
             
             return {
                 drone: droneArticles[0] || null,
-                note: oreryuArticles[0] || null
+                note: oreryuArticle
             };
             
         } catch (error) {
