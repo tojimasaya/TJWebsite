@@ -318,6 +318,11 @@
         return `${year}年${month}月${day}日`;
     }
 
+    // 俺流トラベルガジェットのマガジンURLリスト
+    const ORERYU_MAGAZINE_URLS = [
+        'https://note.com/tojimasaya/m/mcae365b520ed'
+    ];
+
     // writings-og.json から最新記事を取得
     async function loadLatestArticles() {
         try {
@@ -335,9 +340,27 @@
                     return dateB.localeCompare(dateA);
                 });
             
-            // 2. note 最新記事
-            const noteArticles = Object.entries(articlesData)
-                .filter(([url]) => url.includes('note.com/tojimasaya/n/'))
+            // 2. 俺流トラベルガジェット 最新記事
+            // まず、俺流マガジンRSSから記事URLリストを取得
+            let oreryuURLs = new Set();
+            try {
+                const rssResponse = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(ORERYU_MAGAZINE_URLS[0] + '/rss')}`);
+                if (rssResponse.ok) {
+                    const xmlText = await rssResponse.text();
+                    const parser = new DOMParser();
+                    const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+                    xmlDoc.querySelectorAll('item link').forEach(link => {
+                        const url = link.textContent.trim();
+                        if (url) oreryuURLs.add(url);
+                    });
+                }
+            } catch (e) {
+                console.warn('俺流RSS取得エラー:', e);
+            }
+
+            // writings-og.jsonから俺流記事のみをフィルタして最新を取得
+            const oreryuArticles = Object.entries(articlesData)
+                .filter(([url]) => oreryuURLs.has(url))
                 .sort((a, b) => {
                     const dateA = extractDateFromURL(a[0]);
                     const dateB = extractDateFromURL(b[0]);
@@ -346,7 +369,7 @@
             
             return {
                 drone: droneArticles[0] || null,
-                note: noteArticles[0] || null
+                note: oreryuArticles[0] || null
             };
             
         } catch (error) {
