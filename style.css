@@ -2406,3 +2406,74 @@ body {
   margin-left: 8px;
 }
 
+/* =========================================================================
+   Home: What's New セクションのサムネイル調整
+   style.css に追加または既存のルールを上書き
+   ========================================================================= */
+
+/* Latest Section のカード */
+.latest-section .content-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+}
+
+/* 画像コンテナ */
+.latest-section .content-image {
+    width: 100%;
+    height: 250px;
+    overflow: hidden;
+    flex-shrink: 0; /* 画像の高さを固定 */
+    margin: 0; /* 余白を削除 */
+    padding: 0;
+}
+
+.latest-section .content-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block; /* inline要素のデフォルト余白を削除 */
+    margin: 0;
+    padding: 0;
+}
+
+/* コンテンツ部分 */
+.latest-section .content-info {
+    padding: 25px;
+    flex-grow: 1; /* 残りのスペースを埋める */
+    display: flex;
+    flex-direction: column;
+    margin: 0; /* 余白を削除 */
+}
+
+/* カテゴリラベル */
+.latest-section .content-category {
+    margin-bottom: 8px;
+}
+
+/* タイトル */
+.latest-section .content-info h3 {
+    margin: 8px 0 12px 0;
+    flex-grow: 1; /* タイトルが残りのスペースを占める */
+}
+
+/* 説明文 */
+.latest-section .preview-excerpt {
+    margin-bottom: 15px;
+}
+
+/* ボタン */
+.latest-section .card-action-btn {
+    margin-top: auto; /* ボタンを下に配置 */
+}
+
+/* レスポンシブ: スマホ対応 */
+@media (max-width: 768px) {
+    .latest-section .content-image {
+        height: 200px;
+    }
+    
+    .latest-section .content-info {
+        padding: 20px;
+    }
+}
