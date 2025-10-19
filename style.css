@@ -2407,52 +2407,46 @@ body {
 }
 
 /* =========================================================================
-   Home: What's New セクションのサムネイル調整
-   style.css に追加または既存のルールを上書き
+   Home: What's New セクションのサムネイル調整（案4: 画像自然表示 + 高さ統一）
+   style.css の最後に追加（既存のLatest Section CSSを置き換え）
    ========================================================================= */
 
 /* Latest Section のカード全体 */
 .latest-section .content-card {
     display: flex;
     flex-direction: column;
-    height: 100%;
+    min-height: 600px; /* カード全体の最小高さを統一 */
 }
 
-/* 画像コンテナ - アスペクト比16:9を維持 */
+/* 画像コンテナ - 自然なサイズで表示 */
 .latest-section .content-image {
-    position: relative;
     width: 100%;
-    padding-top: 56.25%; /* 16:9 aspect ratio (9/16 * 100) */
     overflow: hidden;
     background: #f0f0f0;
     flex-shrink: 0;
+    border-radius: 8px 8px 0 0; /* 上部の角を丸く */
 }
 
 .latest-section .content-image a {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
+    display: block;
+    line-height: 0; /* 下部の隙間を削除 */
 }
 
 .latest-section .content-image img {
-    position: absolute;
-    top: 0;
-    left: 0;
     width: 100%;
-    height: 100%;
-    object-fit: cover; /* トリミングはするが比率は維持 */
-    object-position: center; /* 中央を基準にトリミング */
+    height: auto; /* 自然な高さを維持 */
     display: block;
+    object-fit: cover;
+    max-height: 400px; /* 極端に高くならないよう制限 */
 }
 
-/* コンテンツ部分 */
+/* コンテンツ部分 - 残りのスペースを埋める */
 .latest-section .content-info {
     padding: 25px;
-    flex-grow: 1;
+    flex-grow: 1; /* 残りスペースを全て占める */
     display: flex;
     flex-direction: column;
+    justify-content: space-between; /* 上下に要素を配置 */
 }
 
 /* カテゴリラベル */
@@ -2464,22 +2458,42 @@ body {
 .latest-section .content-info h3 {
     margin: 8px 0 12px 0;
     line-height: 1.4;
+    flex-grow: 0; /* タイトルは自然なサイズ */
 }
 
 /* 説明文 */
 .latest-section .preview-excerpt {
     margin-bottom: 15px;
-    flex-grow: 1; /* 残りスペースを占める */
+    flex-grow: 1; /* 残りのスペースを占めて押し下げる */
 }
 
 /* ボタン */
 .latest-section .card-action-btn {
-    margin-top: auto;
+    margin-top: auto; /* 常に下部に配置 */
+    align-self: flex-start; /* 左揃え */
 }
 
 /* レスポンシブ: スマホ対応 */
 @media (max-width: 768px) {
+    .latest-section .content-card {
+        min-height: 500px; /* スマホでは少し低く */
+    }
+    
+    .latest-section .content-image img {
+        max-height: 300px;
+    }
+    
     .latest-section .content-info {
         padding: 20px;
+    }
+}
+
+@media (max-width: 480px) {
+    .latest-section .content-card {
+        min-height: 450px;
+    }
+    
+    .latest-section .content-image img {
+        max-height: 250px;
     }
 }
