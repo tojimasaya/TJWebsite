@@ -2411,39 +2411,48 @@ body {
    style.css に追加または既存のルールを上書き
    ========================================================================= */
 
-/* Latest Section のカード */
+/* Latest Section のカード全体 */
 .latest-section .content-card {
     display: flex;
     flex-direction: column;
     height: 100%;
 }
 
-/* 画像コンテナ */
+/* 画像コンテナ - アスペクト比16:9を維持 */
 .latest-section .content-image {
+    position: relative;
     width: 100%;
-    height: 250px;
+    padding-top: 56.25%; /* 16:9 aspect ratio (9/16 * 100) */
     overflow: hidden;
-    flex-shrink: 0; /* 画像の高さを固定 */
-    margin: 0; /* 余白を削除 */
-    padding: 0;
+    background: #f0f0f0;
+    flex-shrink: 0;
+}
+
+.latest-section .content-image a {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
 }
 
 .latest-section .content-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    display: block; /* inline要素のデフォルト余白を削除 */
-    margin: 0;
-    padding: 0;
+    object-fit: cover; /* トリミングはするが比率は維持 */
+    object-position: center; /* 中央を基準にトリミング */
+    display: block;
 }
 
 /* コンテンツ部分 */
 .latest-section .content-info {
     padding: 25px;
-    flex-grow: 1; /* 残りのスペースを埋める */
+    flex-grow: 1;
     display: flex;
     flex-direction: column;
-    margin: 0; /* 余白を削除 */
 }
 
 /* カテゴリラベル */
@@ -2454,25 +2463,22 @@ body {
 /* タイトル */
 .latest-section .content-info h3 {
     margin: 8px 0 12px 0;
-    flex-grow: 1; /* タイトルが残りのスペースを占める */
+    line-height: 1.4;
 }
 
 /* 説明文 */
 .latest-section .preview-excerpt {
     margin-bottom: 15px;
+    flex-grow: 1; /* 残りスペースを占める */
 }
 
 /* ボタン */
 .latest-section .card-action-btn {
-    margin-top: auto; /* ボタンを下に配置 */
+    margin-top: auto;
 }
 
 /* レスポンシブ: スマホ対応 */
 @media (max-width: 768px) {
-    .latest-section .content-image {
-        height: 200px;
-    }
-    
     .latest-section .content-info {
         padding: 20px;
     }
