@@ -2383,3 +2383,26 @@ body {
   border-bottom: 1px dashed currentColor;
 }
 .gear-detail-info a:hover { border-bottom-color: transparent; }
+
+/* ======= What's New / 最新記事 ======= */
+.latest-title {
+  text-align: center;
+  margin-bottom: 30px;
+  color: var(--text-color);
+}
+
+.latest-title .en-title {
+  font-family: 'Inter', sans-serif;
+  font-weight: 600;
+  font-size: var(--text-3xl);
+  letter-spacing: 0.5px;
+}
+
+.latest-title .jp-subtitle {
+  font-family: 'Crimson Text', serif;
+  font-weight: 400;
+  font-size: 0.9em;
+  color: var(--text-light);
+  margin-left: 8px;
+}
+
