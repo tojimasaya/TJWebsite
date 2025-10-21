@@ -74,7 +74,7 @@
 
         /* イントロセクション */
         .intro {
-            max-width: 800px;
+            max-width: 900px;
             margin: 0 auto;
             padding: 5rem 2rem 3rem;
             text-align: center;
@@ -84,10 +84,80 @@
             font-size: 1rem;
             line-height: 2.2;
             color: #555;
+        }
+
+        /* マップセクション */
+        .map-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        .map-title {
+            font-size: 0.9rem;
+            letter-spacing: 0.18em;
+            color: #666;
+            margin: 0 0 1rem 0.2rem;
+        }
+
+        .map-controls {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .map-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 0.6rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
             letter-spacing: 0.05em;
         }
 
-        /* 都市セクション - 左右交互レイアウト */
+        .map-btn:hover {
+            background: #f5f5f5;
+        }
+
+        .map-btn.active {
+            background: #c49a6c;
+            color: white;
+            border-color: #c49a6c;
+        }
+
+        #map {
+            width: 100%;
+            height: 520px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            background: #f3f3f3;
+        }
+
+        .marker-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #c49a6c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .marker-badge:hover {
+            transform: scale(1.1);
+        }
+
+        /* 都市セクション */
         .cities-section {
             max-width: 1100px;
             margin: 0 auto;
@@ -255,7 +325,7 @@
 
     <!-- マップセクション -->
     <section class="map-section">
-        <h2 class="map-title">旅のルート</h2>
+        <div class="map-title">VISITED PLACES MAP</div>
         <div class="map-controls">
             <button class="map-btn active" id="btn-light">Light</button>
             <button class="map-btn" id="btn-sat">Satellite</button>
@@ -270,7 +340,7 @@
         <!-- サフランボル -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23b88d5f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s1)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3Eサフランボルの街並み%3C/text%3E%3C/svg%3E" alt="サフランボル" class="city-image">
+                <img src="./assets/images/turkey/safranbolu/01.jpg" alt="サフランボル" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">01</p>
@@ -285,7 +355,7 @@
         <!-- カッパドキア -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e6b899;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c9956d;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s2)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3E熱気球と奇岩群%3C/text%3E%3C/svg%3E" alt="カッパドキア" class="city-image">
+                <img src="./assets/images/turkey/cappadocia/01.jpg" alt="カッパドキア" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">02</p>
@@ -300,7 +370,7 @@
         <!-- コンヤ -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2391c4a4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236b9b7f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s3)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3Eメヴラーナ博物館%3C/text%3E%3C/svg%3E" alt="コンヤ" class="city-image">
+                <img src="./assets/images/turkey/konya/01.jpg" alt="コンヤ" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">03</p>
@@ -315,7 +385,7 @@
         <!-- パムッカレ -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8dfd5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d8ea;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s4)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3E白い石灰棚%3C/text%3E%3C/svg%3E" alt="パムッカレ" class="city-image">
+                <img src="./assets/images/turkey/pamukkale/01.jpg" alt="パムッカレ" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">04</p>
@@ -330,7 +400,7 @@
         <!-- エフェソス -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c9a876;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a88c65;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s5)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3Eケルスス図書館%3C/text%3E%3C/svg%3E" alt="エフェソス" class="city-image">
+                <img src="./assets/images/turkey/ephesus/01.jpg" alt="エフェソス" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">05</p>
@@ -345,7 +415,7 @@
         <!-- イスタンブール -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a6fa5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232b4a6f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s6)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3Eボスポラス海峡%3C/text%3E%3C/svg%3E" alt="イスタンブール" class="city-image">
+                <img src="./assets/images/turkey/istanbul/01.jpg" alt="イスタンブール" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">06</p>
@@ -368,143 +438,136 @@
     </footer>
 
     <script>
-        // Mapboxが完全に読み込まれるまで待つ
-        window.addEventListener('load', function() {
-            console.log('Window loaded');
-            console.log('Map element:', document.getElementById('map'));
-            console.log('Mapbox GL:', typeof mapboxgl);
-
-            if (typeof mapboxgl === 'undefined') {
-                console.error('Mapbox GL JS not loaded');
-                return;
-            }
-
+        window.addEventListener('load', function () {
             mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
-        
-            try {
-                // 地図の初期化
-                const map = new mapboxgl.Map({
-                    container: 'map',
-                    style: 'mapbox://styles/mapbox/light-v11',
-                    center: [34.5, 39.0],
-                    zoom: 5.5
+
+            let currentStyle = 'light';
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/light-v11',
+                center: [32.5, 39.0],
+                zoom: 4.4,
+                pitch: 45,
+                bearing: -10
+            });
+            map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }), 'top-right');
+
+            // 地形（DEM）＆空
+            map.on('style.load', () => {
+                if (!map.getSource('mapbox-dem')) {
+                    map.addSource('mapbox-dem', {
+                        type: 'raster-dem',
+                        url: 'mapbox://mapbox.terrain-rgb',
+                        tileSize: 512,
+                        maxzoom: 14
+                    });
+                }
+                map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.2 });
+                if (!map.getLayer('sky')) {
+                    map.addLayer({
+                        id: 'sky',
+                        type: 'sky',
+                        paint: {
+                            'sky-type': 'atmosphere',
+                            'sky-atmosphere-sun-intensity': 10
+                        }
+                    });
+                }
+            });
+
+            // 訪問地点
+            const places = [
+                { id:'safranbolu', idx:1, name:'サフランボル', nameEn:'Safranbolu', coord:[32.6945, 41.2561] },
+                { id:'cappadocia', idx:2, name:'カッパドキア', nameEn:'Cappadocia', coord:[34.8419, 38.6431] },
+                { id:'konya', idx:3, name:'コンヤ', nameEn:'Konya', coord:[32.4846, 37.8667] },
+                { id:'pamukkale', idx:4, name:'パムッカレ', nameEn:'Pamukkale', coord:[29.1208, 37.9200] },
+                { id:'ephesus', idx:5, name:'エフェソス', nameEn:'Ephesus', coord:[27.3409, 37.9392] },
+                { id:'istanbul', idx:6, name:'イスタンブール', nameEn:'Istanbul', coord:[28.9784, 41.0082] }
+            ];
+
+            // 画面フィット
+            const bounds = new mapboxgl.LngLatBounds(places[0].coord, places[0].coord);
+            for (const p of places) bounds.extend(p.coord);
+
+            map.on('load', () => {
+                // アーク（測地線）作成
+                const arcs = [];
+                for (let i=0;i<places.length-1;i++){
+                    const gc = turf.greatCircle(
+                        turf.point(places[i].coord),
+                        turf.point(places[i+1].coord),
+                        { npoints: 64 }
+                    );
+                    arcs.push(gc);
+                }
+                const routeFC = turf.featureCollection(arcs);
+
+                map.addSource('arcs', { type:'geojson', data: routeFC });
+                map.addLayer({
+                    id:'arcs-line',
+                    type:'line',
+                    source:'arcs',
+                    paint:{
+                        'line-color':'#c49a6c',
+                        'line-width': 2.8,
+                        'line-opacity': 0.65,
+                        'line-dasharray': [0, 2, 3]
+                    }
                 });
 
-                console.log('Map initialized');
-                console.log('Map object:', map);
+                // ダッシュアニメ
+                let dash = 0;
+                function animateDash(){
+                    dash = (dash + 0.02) % 3;
+                    map.setPaintProperty('arcs-line','line-dasharray',[dash,2,3]);
+                    requestAnimationFrame(animateDash);
+                }
+                animateDash();
 
-            // 各都市の座標とデータ
-        const cities = [
-            {
-                name: 'サフランボル',
-                nameEn: 'Safranbolu',
-                coordinates: [32.6945, 41.2561],
-                number: '01'
-            },
-            {
-                name: 'カッパドキア',
-                nameEn: 'Cappadocia',
-                coordinates: [34.8419, 38.6431],
-                number: '02'
-            },
-            {
-                name: 'コンヤ',
-                nameEn: 'Konya',
-                coordinates: [32.4846, 37.8667],
-                number: '03'
-            },
-            {
-                name: 'パムッカレ',
-                nameEn: 'Pamukkale',
-                coordinates: [29.1208, 37.9200],
-                number: '04'
-            },
-            {
-                name: 'エフェソス',
-                nameEn: 'Ephesus',
-                coordinates: [27.3409, 37.9392],
-                number: '05'
-            },
-            {
-                name: 'イスタンブール',
-                nameEn: 'Istanbul',
-                coordinates: [28.9784, 41.0082],
-                number: '06'
+                // マーカー（番号バッジ）＋ポップアップ
+                places.forEach(p=>{
+                    const el = document.createElement('div');
+                    el.className = 'marker-badge';
+                    el.textContent = p.idx;
+                    const popup = new mapboxgl.Popup({ offset: 10 }).setHTML(
+                        `<div style="padding:0.5rem;">
+                           <div style="font-weight:600; margin-bottom:0.25rem;">${p.name}</div>
+                           <div style="font-size:0.85rem; color:#999; margin-bottom:0.5rem;">${p.nameEn}</div>
+                           <a href="#" style="color:#c49a6c; text-decoration:none; font-size:0.9rem;" onclick="alert('${p.name}の詳細ページ'); return false;">詳細を見る →</a>
+                         </div>`
+                    );
+                    new mapboxgl.Marker({ element: el, anchor: 'center' })
+                        .setLngLat(p.coord)
+                        .setPopup(popup)
+                        .addTo(map);
+                });
+
+                map.fitBounds(bounds, { padding: 70, duration: 900, pitch: map.getPitch(), bearing: map.getBearing() });
+            });
+
+            // ベースマップ切替
+            const btnLight = document.getElementById('btn-light');
+            const btnSat = document.getElementById('btn-sat');
+            function setStyle(name){
+                currentStyle = name;
+                btnLight.classList.toggle('active', name==='light');
+                btnSat.classList.toggle('active', name==='sat');
+                map.setStyle(name==='light' ? 'mapbox://styles/mapbox/light-v11'
+                                            : 'mapbox://styles/mapbox/satellite-streets-v12');
             }
-        ];
+            btnLight.addEventListener('click', ()=>setStyle('light'));
+            btnSat.addEventListener('click', ()=>setStyle('sat'));
 
-        map.on('load', () => {
-            // ルートラインの追加
-            map.addSource('route', {
-                'type': 'geojson',
-                'data': {
-                    'type': 'Feature',
-                    'properties': {},
-                    'geometry': {
-                        'type': 'LineString',
-                        'coordinates': cities.map(city => city.coordinates)
-                    }
+            // ツアーボタン：各地点を順に flyTo
+            document.getElementById('btn-tour').addEventListener('click', async ()=>{
+                for (const p of places){
+                    map.flyTo({ center: p.coord, zoom: 7.2, pitch: 55, bearing: -20, speed: 0.6, curve: 1.4, essential: true });
+                    await new Promise(r=>setTimeout(r, 1400));
                 }
-            });
-
-            map.addLayer({
-                'id': 'route',
-                'type': 'line',
-                'source': 'route',
-                'layout': {
-                    'line-join': 'round',
-                    'line-cap': 'round'
-                },
-                'paint': {
-                    'line-color': '#c49a6c',
-                    'line-width': 3,
-                    'line-opacity': 0.8
-                }
-            });
-
-            // 各都市にマーカーとポップアップを追加
-            cities.forEach((city, index) => {
-                // カスタムマーカー要素を作成
-                const el = document.createElement('div');
-                el.className = 'marker';
-                el.style.width = '40px';
-                el.style.height = '40px';
-                el.style.borderRadius = '50%';
-                el.style.backgroundColor = '#c49a6c';
-                el.style.border = '3px solid white';
-                el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
-                el.style.cursor = 'pointer';
-                el.style.display = 'flex';
-                el.style.alignItems = 'center';
-                el.style.justifyContent = 'center';
-                el.style.color = 'white';
-                el.style.fontWeight = 'bold';
-                el.style.fontSize = '14px';
-                el.textContent = city.number;
-
-                // ポップアップの作成
-                const popup = new mapboxgl.Popup({ offset: 25 })
-                    .setHTML(`
-                        <div class="popup-title">${city.name}</div>
-                        <div style="font-size: 0.85rem; color: #999; margin-bottom: 0.5rem;">${city.nameEn}</div>
-                        <a href="#" class="popup-link" onclick="alert('${city.name}の詳細ページ'); return false;">詳細を見る →</a>
-                    `);
-
-                // マーカーを地図に追加
-                new mapboxgl.Marker(el)
-                    .setLngLat(city.coordinates)
-                    .setPopup(popup)
-                    .addTo(map);
+                // 最後に全体
+                map.fitBounds(new mapboxgl.LngLatBounds(places[0].coord, places[0].coord).extend(places.at(-1).coord), { padding: 70, duration: 900 });
             });
         });
-
-        // ナビゲーションコントロール（ズーム）を追加
-        map.addControl(new mapboxgl.NavigationControl());
-        
-        } catch (error) {
-            console.error('Map initialization error:', error);
-        }
     </script>
-
 </body>
 </html>
