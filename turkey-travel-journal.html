@@ -362,23 +362,30 @@
     </footer>
 
     <script>
-        // デバッグ用
-        console.log('Script loaded');
-        console.log('Map element:', document.getElementById('map'));
-        console.log('Mapbox GL:', typeof mapboxgl);
+        // Mapboxが完全に読み込まれるまで待つ
+        window.addEventListener('load', function() {
+            console.log('Window loaded');
+            console.log('Map element:', document.getElementById('map'));
+            console.log('Mapbox GL:', typeof mapboxgl);
 
-        mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
+            if (typeof mapboxgl === 'undefined') {
+                console.error('Mapbox GL JS not loaded');
+                return;
+            }
+
+            mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
         
-        try {
-            // 地図の初期化
-            const map = new mapboxgl.Map({
-                container: 'map',
-                style: 'mapbox://styles/mapbox/light-v11',
-                center: [34.5, 39.0],
-                zoom: 5.5
-            });
+            try {
+                // 地図の初期化
+                const map = new mapboxgl.Map({
+                    container: 'map',
+                    style: 'mapbox://styles/mapbox/light-v11',
+                    center: [34.5, 39.0],
+                    zoom: 5.5
+                });
 
-            console.log('Map initialized');
+                console.log('Map initialized');
+                console.log('Map object:', map);
 
             // 各都市の座標とデータ
         const cities = [
