@@ -3,9 +3,9 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Turkey Travel Journal — Cappadocia → Istanbul</title>
+  <title>Turkey — Visited Places</title>
 
-  <!-- Base fonts & CSS（既存サイト準拠） -->
+  <!-- フォント & 既存サイトCSS -->
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css?v=20251021">
 
@@ -13,65 +13,43 @@
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
 
-  <meta name="description" content="トルコ横断の旅。カッパドキアからイスタンブールへ。地図と写真で旅を再構成。">
+  <meta name="description" content="トルコ周遊で訪れた6都市を地図と写真で整理。サフランボル／カッパドキア／コンヤ／パムッカレ／エフェソス／イスタンブール。">
   <meta name="theme-color" content="#fafafa">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 
   <style>
-    /* ---- このページ専用の軽量スタイル ---- */
-    .hero {
-      position: relative;
-      height: 48vh; min-height: 360px;
-      margin-top: 70px;
-      display:flex; align-items:center; justify-content:center;
-      overflow:hidden;
-    }
-    .hero img { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; filter:brightness(.75) contrast(1.05); }
-    .hero .copy { position:relative; color:#fff; text-align:center; padding:0 1rem; }
-    .hero h1 { font-family: var(--primary-font); font-size: clamp(1.8rem, 2.4vw + 1rem, 3rem); text-shadow: 0 2px 8px rgba(0,0,0,.4); }
-    .hero p { font-family: var(--secondary-font); font-weight:300; margin-top:.4rem; }
+    .hero{position:relative;height:40vh;min-height:320px;margin-top:70px;display:flex;align-items:center;justify-content:center;overflow:hidden}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.75) contrast(1.05)}
+    .hero .copy{position:relative;color:#fff;text-align:center;padding:0 1rem}
+    .hero h1{font-family:var(--primary-font);font-size:clamp(1.8rem,2.4vw+1rem,3rem);text-shadow:0 2px 8px rgba(0,0,0,.4)}
 
-    .map-section { max-width:1100px; margin:0 auto; padding: 2rem 1.25rem 2.5rem; }
-    .map-title { font-size:.9rem; letter-spacing:.18em; color:#666; margin: 0 0 .75rem .2rem; }
-    #map {
-      width:100%; height:520px; /* ←重要（高さゼロを防止） */
-      border-radius:12px; border:1px solid var(--border-color);
-      box-shadow: var(--shadow-md); background:#f3f3f3;
-    }
-    .legend {
-      display:flex; gap:.75rem; flex-wrap:wrap; margin-top: .75rem; color: var(--text-light); font-size: var(--text-sm);
-    }
-    .legend .chip { display:inline-flex; align-items:center; gap:.4rem; }
-    .chip .dot { width:10px; height:10px; border-radius:50%; background: var(--accent-color); border:1px solid rgba(0,0,0,.08); }
-    .chip .line { width:18px; height:2px; background: var(--text-color); opacity:.5; }
+    .map-section{max-width:1100px;margin:0 auto;padding:2rem 1.25rem 2.5rem}
+    .map-title{font-size:.9rem;letter-spacing:.18em;color:#666;margin:0 0 .75rem .2rem}
+    #map{width:100%;height:520px;border-radius:12px;border:1px solid var(--border-color);box-shadow:var(--shadow-md);background:#f3f3f3}
+    .legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;color:var(--text-light);font-size:var(--text-sm)}
+    .legend .chip{display:inline-flex;align-items:center;gap:.4rem}
+    .chip .dot{width:10px;height:10px;border-radius:50%;background:var(--accent-color);border:1px solid rgba(0,0,0,.08)}
 
-    .container-narrow { max-width:900px; margin:0 auto; padding: 1rem 1.25rem 3rem; }
-    .trip-meta { display:flex; gap:.5rem; flex-wrap:wrap; margin-bottom: .75rem; }
-    .pill { font-size: var(--text-xs); background: var(--hover-color); color: var(--text-color); padding: 6px 12px; border-radius:999px; font-weight:600; }
+    .container-narrow{max-width:900px;margin:0 auto;padding: 0 1.25rem 3rem}
+    .city{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border-color);scroll-margin-top:90px}
+    .city:last-of-type{border-bottom:none}
+    .city figure{margin:0;border-radius:12px;overflow:hidden;border:1px solid var(--border-color)}
+    .city img{width:100%;height:100%;object-fit:cover;display:block}
+    .city h2{margin:.25rem 0 .25rem;font-family:var(--primary-font)}
+    .city .lead{color:var(--text-light)}
+    .pill{font-size:var(--text-xs);background:var(--hover-color);color:var(--text-color);padding:6px 12px;border-radius:999px;font-weight:600;display:inline-block;margin-bottom:.35rem}
 
-    .poi { display:grid; grid-template-columns: 1fr 1.2fr; gap: 18px; align-items:start; padding: 24px 0; border-bottom:1px solid var(--border-color); scroll-margin-top: 80px; }
-    .poi:last-of-type { border-bottom: none; }
-    .poi figure { margin:0; border-radius:12px; overflow:hidden; border:1px solid var(--border-color); }
-    .poi img { width:100%; height:100%; object-fit:cover; display:block; }
-    .poi h2 { margin:.25rem 0 .25rem; font-family: var(--primary-font); }
-    .poi .lead { color: var(--text-light); }
-    .poi small { color: var(--text-light); }
-
-    @media (max-width: 860px) {
-      .poi { grid-template-columns: 1fr; }
-    }
-
-    /* マーカーポップアップの軽微調整 */
-    .mapboxgl-popup { max-width: 260px; font: 12px/1.5 Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans JP", sans-serif; }
-    .mapboxgl-popup-content { padding: 10px 10px 8px; border-radius: 10px; }
-    .popup-title { font-weight: 600; margin-bottom: 2px; }
-    .popup-link { display:inline-block; margin-top:6px; text-decoration:none; font-size:12px; }
+    @media (max-width:860px){.city{grid-template-columns:1fr}}
+    /* popup 微調整 */
+    .mapboxgl-popup{max-width:260px;font:12px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans JP",sans-serif}
+    .mapboxgl-popup-content{padding:10px 10px 8px;border-radius:10px}
+    .popup-title{font-weight:600;margin-bottom:2px}
+    .popup-sub{opacity:.7}
+    .popup-link{display:inline-block;margin-top:6px;text-decoration:none;font-weight:600}
   </style>
 </head>
 <body>
-  <a href="#main" class="skip-link">メインコンテンツにスキップ</a>
-
-  <!-- 既存ナビと同構造でOK -->
+  <!-- ナビ（既存サイト踏襲） -->
   <nav class="main-nav" id="main-nav">
     <div class="nav-container">
       <a href="/" class="nav-logo">Toji Masaya</a>
@@ -82,86 +60,86 @@
         <li><a href="/writings.html" class="nav-link">Writings</a></li>
         <li><a href="/trips.html" class="nav-link">Trips</a></li>
       </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く"><span></span><span></span><span></span></button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+        <span></span><span></span><span></span>
+      </button>
     </div>
   </nav>
 
-  <!-- Hero -->
   <header class="hero" role="banner">
-    <img src="/assets/images/trips/turkey/hero.jpg" alt="Cappadocia to Istanbul">
+    <img src="/assets/images/trips/turkey/hero.jpg" alt="Turkey trip">
     <div class="copy">
-      <h1>Turkey Travel Journal</h1>
-      <p>カッパドキアからイスタンブールへ——空に浮かぶ朝と、海に沈む夕。</p>
+      <h1>Turkey — Visited Places</h1>
+      <p>サフランボル／カッパドキア／コンヤ／パムッカレ／エフェソス／イスタンブール</p>
     </div>
   </header>
 
-  <!-- Map -->
   <section class="map-section">
-    <div class="map-title">ROUTE MAP</div>
-    <div id="map" aria-label="Turkey route map"></div>
-    <div class="legend">
-      <span class="chip"><span class="dot"></span>訪問ポイント</span>
-      <span class="chip"><span class="line"></span>移動ルート</span>
-    </div>
+    <div class="map-title">VISITED PLACES MAP</div>
+    <div id="map" aria-label="Visited places in Turkey"></div>
+    <div class="legend"><span class="chip"><span class="dot"></span>訪問ポイント（クリックで下の該当セクションへ）</span></div>
   </section>
 
-  <main id="main" class="container-narrow">
-    <div class="trip-meta">
-      <span class="pill">Days: 8</span>
-      <span class="pill">Season: Autumn</span>
-      <span class="pill">Drone: DJI Mini</span>
-      <span class="pill">Route: Cappadocia → Istanbul</span>
-    </div>
-
-    <!-- POIs（id はマップのリンク先になる） -->
-    <article id="poi-goreme" class="poi">
-      <figure><img src="/assets/images/trips/turkey/p1.jpg" alt="Goreme balloons"></figure>
+  <main class="container-narrow">
+    <!-- ここから各都市セクション（IDはマップと連動） -->
+    <section id="safranbolu" class="city">
+      <figure><img src="/assets/images/trips/turkey/safranbolu.jpg" alt="Safranbolu"></figure>
       <div>
-        <h2>Göreme — 気球が占領する朝</h2>
-        <p class="lead">地平線から陽が上がると、低空をすべるように気球の群れ。望遠が忙しい。</p>
-        <small>座標: 38.6430, 34.8310</small>
+        <span class="pill">Safranbolu</span>
+        <h2>サフランボル — オスマン家屋が並ぶ保存地区</h2>
+        <p class="lead">格子窓と白い壁、赤茶の屋根。路地の陰影でモノクロが映える街並み。</p>
+        <small>座標: 41.2561, 32.6945</small>
       </div>
-    </article>
+    </section>
 
-    <article id="poi-uchisar" class="poi">
-      <figure><img src="/assets/images/trips/turkey/p2.jpg" alt="Uchisar Castle"></figure>
+    <section id="cappadocia" class="city">
+      <figure><img src="/assets/images/trips/turkey/cappadocia.jpg" alt="Cappadocia"></figure>
       <div>
-        <h2>Uçhisar — 風を集める城</h2>
-        <p class="lead">岩の稜線が風の向きを教える。日中は順光で、夕方は逆光の美味しい時間。</p>
-        <small>座標: 38.6247, 34.8060</small>
+        <span class="pill">Cappadocia</span>
+        <h2>カッパドキア — 風景を埋め尽くす気球の朝</h2>
+        <p class="lead">遠近圧縮の効く100mm域が楽しい。岩稜のテクスチャは夕方が本番。</p>
+        <small>座標: 38.6431, 34.8419</small>
       </div>
-    </article>
+    </section>
 
-    <article id="poi-ortahisar" class="poi">
-      <figure><img src="/assets/images/trips/turkey/p3.jpg" alt="Ortahisar"></figure>
+    <section id="konya" class="city">
+      <figure><img src="/assets/images/trips/turkey/konya.jpg" alt="Konya"></figure>
       <div>
-        <h2>Ortahisar — 石の街の陰影</h2>
-        <p class="lead">路地のコントラストが深い。モノクロで遊ぶと整理が早い。</p>
-        <small>座標: 38.6205, 34.9116</small>
+        <span class="pill">Konya</span>
+        <h2>コンヤ — セマー儀式の回転と静謐</h2>
+        <p class="lead">回転の軌跡はシャッター1/10〜1/20秒で。手ブレ補正が効くと楽。</p>
+        <small>座標: 37.8667, 32.4846</small>
       </div>
-    </article>
+    </section>
 
-    <article id="poi-galata" class="poi">
-      <figure><img src="/assets/images/trips/turkey/p4.jpg" alt="Galata Bridge"></figure>
+    <section id="pamukkale" class="city">
+      <figure><img src="/assets/images/trips/turkey/pamukkale.jpg" alt="Pamukkale"></figure>
       <div>
-        <h2>Galata Bridge — 魚影と電車のリズム</h2>
-        <p class="lead">釣り糸の垂直線と、トラムの水平線。交差点に都市の癖が出る。</p>
-        <small>座標: 41.0190, 28.9730</small>
+        <span class="pill">Pamukkale</span>
+        <h2>パムッカレ — 石灰棚の白と空の青</h2>
+        <p class="lead">露出は+1〜+1.7EVで白飛び手前。偏光で水面の反射を制御。</p>
+        <small>座標: 37.9200, 29.1208</small>
       </div>
-    </article>
+    </section>
 
-    <article id="poi-sultanahmet" class="poi">
-      <figure><img src="/assets/images/trips/turkey/p5.jpg" alt="Sultanahmet"></figure>
+    <section id="ephesus" class="city">
+      <figure><img src="/assets/images/trips/turkey/ephesus.jpg" alt="Ephesus"></figure>
       <div>
-        <h2>Sultanahmet — 青と金の夕刻</h2>
-        <p class="lead">ミナレットが光を刻む。広角で歪ませるか、100mmで切り取るか。</p>
-        <small>座標: 41.0053, 28.9768</small>
+        <span class="pill">Ephesus</span>
+        <h2>エフェソス — 古代都市の幾何学</h2>
+        <p class="lead">列柱のリズムは望遠で圧縮、装飾はマクロで寄ると楽しい。</p        >
+        <small>座標: 37.9392, 27.3409</small>
       </div>
-    </article>
+    </section>
 
-    <section style="padding-top:24px">
-      <a href="https://note.com/tojimasaya" class="pill" target="_blank" rel="noopener">noteで長編を読む</a>
-      <a href="/gallery.html#Turkey" class="pill">関連ギャラリー</a>
+    <section id="istanbul" class="city">
+      <figure><img src="/assets/images/trips/turkey/istanbul.jpg" alt="Istanbul"></figure>
+      <div>
+        <span class="pill">Istanbul</span>
+        <h2>イスタンブール — 海峡の風、夕刻の金色</h2>
+        <p class="lead">ガラタ橋のトラムとミナレットのシルエット。スローシャッターで都市の呼吸を描く。</p>
+        <small>座標: 41.0082, 28.9784</small>
+      </div>
     </section>
 
     <footer class="footer" role="contentinfo" style="margin-top: 32px;">
@@ -173,106 +151,87 @@
   </main>
 
   <script>
-    // ナビ挙動（既存サイト踏襲）
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu   = document.getElementById('nav-menu');
-    navToggle?.addEventListener('click', () => {
-      navMenu.classList.toggle('active');
-      navToggle.classList.toggle('active');
-      document.body.classList.toggle('nav-open');
-    });
-    window.addEventListener('scroll', () => {
-      const n = document.getElementById('main-nav');
-      window.scrollY > 50 ? n.classList.add('scrolled') : n.classList.remove('scrolled');
-    });
+    // ナビの挙動（既存踏襲）
+    const navToggle=document.getElementById('nav-toggle');
+    const navMenu=document.getElementById('nav-menu');
+    navToggle?.addEventListener('click',()=>{navMenu.classList.toggle('active');navToggle.classList.toggle('active');document.body.classList.toggle('nav-open');});
+    window.addEventListener('scroll',()=>{const n=document.getElementById('main-nav');window.scrollY>50?n.classList.add('scrolled'):n.classList.remove('scrolled');});
 
-    // ===== Mapbox =====
+    // ===== Mapbox: markers -> smooth scroll =====
     window.addEventListener('load', function () {
-      // ← ご自身の公開トークン（pkで始まる）を入れてください
-      mapboxgl.accessToken = 'YOUR_MAPBOX_PUBLIC_TOKEN';
+      // あなたの Public token（pk…）
+      mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
 
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v11',
-        center: [34.85, 38.63], // 初期値（後でfitBoundsで調整）
-        zoom: 4.5,
-        pitch: 0,
-        bearing: 0
+        center: [32.5, 39.0],
+        zoom: 4.5
       });
-
       map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }), 'top-right');
 
-      // 訪問ポイント（順番がルートになる）
-      const points = [
-        { id:'poi-goreme',      name:'Göreme',        coord:[34.8310, 38.6430] },
-        { id:'poi-uchisar',     name:'Uçhisar',       coord:[34.8060, 38.6247] },
-        { id:'poi-ortahisar',   name:'Ortahisar',     coord:[34.9116, 38.6205] },
-        { id:'poi-galata',      name:'Galata Bridge', coord:[28.9730, 41.0190] },
-        { id:'poi-sultanahmet', name:'Sultanahmet',   coord:[28.9768, 41.0053] }
+      // マーカーとページ内セクションを対応づけ（idがアンカー）
+      const places = [
+        { id:'safranbolu', name:'サフランボル (Safranbolu)', coord:[32.6945, 41.2561] },
+        { id:'cappadocia', name:'カッパドキア (Cappadocia)', coord:[34.8419, 38.6431] },
+        { id:'konya',      name:'コンヤ (Konya)',           coord:[32.4846, 37.8667] },
+        { id:'pamukkale',  name:'パムッカレ (Pamukkale)',   coord:[29.1208, 37.9200] },
+        { id:'ephesus',    name:'エフェソス (Ephesus)',     coord:[27.3409, 37.9392] },
+        { id:'istanbul',   name:'イスタンブール (Istanbul)',coord:[28.9784, 41.0082] }
       ];
 
-      const lineCoords = points.map(p => p.coord);
+      const bounds = new mapboxgl.LngLatBounds(places[0].coord, places[0].coord);
+      for (const p of places) bounds.extend(p.coord);
 
       map.on('load', () => {
-        // ルートライン
-        map.addSource('route', {
-          type: 'geojson',
-          data: {
-            type: 'Feature',
-            geometry: { type: 'LineString', coordinates: lineCoords }
-          }
-        });
-        map.addLayer({
-          id: 'route-line',
-          type: 'line',
-          source: 'route',
-          paint: {
-            'line-color': '#333',
-            'line-opacity': 0.5,
-            'line-width': 4
-          }
-        });
-
-        // マーカー＆ポップアップ
-        for (const p of points) {
+        for (const p of places) {
+          // 見た目
           const el = document.createElement('div');
-          el.style.width = '12px';
-          el.style.height = '12px';
-          el.style.borderRadius = '50%';
-          el.style.background = getComputedStyle(document.documentElement)
-              .getPropertyValue('--accent-color') || '#3b82f6';
-          el.style.border = '2px solid #fff';
-          el.style.boxShadow = '0 0 0 1px rgba(0,0,0,.1)';
-          el.style.cursor = 'pointer';
+          el.style.width='12px'; el.style.height='12px';
+          el.style.borderRadius='50%';
+          el.style.background=getComputedStyle(document.documentElement).getPropertyValue('--accent-color') || '#3b82f6';
+          el.style.border='2px solid #fff';
+          el.style.boxShadow='0 0 0 1px rgba(0,0,0,.1)';
+          el.style.cursor='pointer';
 
-          const popupHtml = `
-            <div class="popup">
-              <div class="popup-title">${p.name}</div>
-              <a class="popup-link" href="#${p.id}">この場所の記録へ</a>
-            </div>`;
+          // ポップアップ（リンク付き）
+          const popup = new mapboxgl.Popup({ offset:12 }).setHTML(
+            `<div class="popup">
+               <div class="popup-title">${p.name}</div>
+               <div class="popup-sub">(${p.coord[1].toFixed(4)}, ${p.coord[0].toFixed(4)})</div>
+               <a class="popup-link" href="#${p.id}">この場所の記録へ</a>
+             </div>`
+          );
 
-          const popup = new mapboxgl.Popup({ offset: 12 }).setHTML(popupHtml);
-
-          const marker = new mapboxgl.Marker({ element: el, anchor: 'center' })
+          // マーカー
+          new mapboxgl.Marker({ element: el, anchor: 'center' })
             .setLngLat(p.coord)
             .setPopup(popup)
             .addTo(map);
 
-          // マーカークリックでスクロール
+          // マーカー自体のクリックでもスクロール
           el.addEventListener('click', () => {
             const target = document.getElementById(p.id);
-            if (target) {
-              target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
           });
         }
 
-        // 全体を自動フィット
-        const bounds = new mapboxgl.LngLatBounds(lineCoords[0], lineCoords[0]);
-        for (const c of lineCoords) bounds.extend(c);
+        // 全体フィット
         map.fitBounds(bounds, { padding: 60, duration: 800 });
       });
-    }); // ← load リスナーの閉じ括弧（重要）
+
+      // ポップアップ内リンクのスムーススクロール（デリゲーション）
+      document.addEventListener('click', (e) => {
+        const a = e.target.closest('a[href^="#"]');
+        if (!a) return;
+        const id = a.getAttribute('href').slice(1);
+        const target = document.getElementById(id);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior:'smooth', block:'start' });
+        }
+      });
+    });
   </script>
 </body>
 </html>
