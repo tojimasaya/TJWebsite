@@ -252,6 +252,12 @@
         </p>
     </section>
 
+    <!-- マップセクション -->
+    <section class="map-section">
+        <h2 class="map-title">旅のルート</h2>
+        <div id="map"></div>
+    </section>
+
     <!-- 都市セクション -->
     <section class="cities-section">
         
@@ -354,6 +360,140 @@
             <p class="footer-date">2024.10.25 - 11.02</p>
         </div>
     </footer>
+
+    <script>
+        // デバッグ用
+        console.log('Script loaded');
+        console.log('Map element:', document.getElementById('map'));
+        console.log('Mapbox GL:', typeof mapboxgl);
+
+        mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbTlyczZ4NGYwNWh5MmtvaTdqeXEyNW1lIn0.5oeym5By4d_z4euc1WwYWA';
+        
+        try {
+            // 地図の初期化
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/light-v11',
+                center: [34.5, 39.0],
+                zoom: 5.5
+            });
+
+            console.log('Map initialized');
+
+            // 各都市の座標とデータ
+        const cities = [
+            {
+                name: 'サフランボル',
+                nameEn: 'Safranbolu',
+                coordinates: [32.6945, 41.2561],
+                number: '01'
+            },
+            {
+                name: 'カッパドキア',
+                nameEn: 'Cappadocia',
+                coordinates: [34.8419, 38.6431],
+                number: '02'
+            },
+            {
+                name: 'コンヤ',
+                nameEn: 'Konya',
+                coordinates: [32.4846, 37.8667],
+                number: '03'
+            },
+            {
+                name: 'パムッカレ',
+                nameEn: 'Pamukkale',
+                coordinates: [29.1208, 37.9200],
+                number: '04'
+            },
+            {
+                name: 'エフェソス',
+                nameEn: 'Ephesus',
+                coordinates: [27.3409, 37.9392],
+                number: '05'
+            },
+            {
+                name: 'イスタンブール',
+                nameEn: 'Istanbul',
+                coordinates: [28.9784, 41.0082],
+                number: '06'
+            }
+        ];
+
+        map.on('load', () => {
+            console.log('Map loaded successfully');
+            
+            // ルートラインの追加
+            map.addSource('route', {
+                'type': 'geojson',
+                'data': {
+                    'type': 'Feature',
+                    'properties': {},
+                    'geometry': {
+                        'type': 'LineString',
+                        'coordinates': cities.map(city => city.coordinates)
+                    }
+                }
+            });
+
+            map.addLayer({
+                'id': 'route',
+                'type': 'line',
+                'source': 'route',
+                'layout': {
+                    'line-join': 'round',
+                    'line-cap': 'round'
+                },
+                'paint': {
+                    'line-color': '#c49a6c',
+                    'line-width': 3,
+                    'line-opacity': 0.8
+                }
+            });
+
+            // 各都市にマーカーとポップアップを追加
+            cities.forEach((city, index) => {
+                // カスタムマーカー要素を作成
+                const el = document.createElement('div');
+                el.className = 'marker';
+                el.style.width = '40px';
+                el.style.height = '40px';
+                el.style.borderRadius = '50%';
+                el.style.backgroundColor = '#c49a6c';
+                el.style.border = '3px solid white';
+                el.style.boxShadow = '0 2px 8px rgba(0,0,0,0.3)';
+                el.style.cursor = 'pointer';
+                el.style.display = 'flex';
+                el.style.alignItems = 'center';
+                el.style.justifyContent = 'center';
+                el.style.color = 'white';
+                el.style.fontWeight = 'bold';
+                el.style.fontSize = '14px';
+                el.textContent = city.number;
+
+                // ポップアップの作成
+                const popup = new mapboxgl.Popup({ offset: 25 })
+                    .setHTML(`
+                        <div class="popup-title">${city.name}</div>
+                        <div style="font-size: 0.85rem; color: #999; margin-bottom: 0.5rem;">${city.nameEn}</div>
+                        <a href="#" class="popup-link" onclick="alert('${city.name}の詳細ページ'); return false;">詳細を見る →</a>
+                    `);
+
+                // マーカーを地図に追加
+                new mapboxgl.Marker(el)
+                    .setLngLat(city.coordinates)
+                    .setPopup(popup)
+                    .addTo(map);
+            });
+        });
+
+        // ナビゲーションコントロール（ズーム）を追加
+        map.addControl(new mapboxgl.NavigationControl());
+        
+        } catch (error) {
+            console.error('Map initialization error:', error);
+        }
+    </script>
 
 </body>
 </html>
