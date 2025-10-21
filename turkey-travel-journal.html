@@ -3,32 +3,32 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Turkey — Visited Places</title>
+  <title>Turkey — Visited Places (3D & Animated)</title>
 
-  <!-- フォント & 既存サイトCSS -->
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="/style.css?v=20251021">
 
-  <!-- Mapbox GL JS -->
+  <!-- Mapbox GL + Turf -->
   <link href="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css" rel="stylesheet">
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
-
-  <meta name="description" content="トルコ周遊で訪れた6都市を地図と写真で整理。サフランボル／カッパドキア／コンヤ／パムッカレ／エフェソス／イスタンブール。">
-  <meta name="theme-color" content="#fafafa">
-  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+  <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
 
   <style>
     .hero{position:relative;height:40vh;min-height:320px;margin-top:70px;display:flex;align-items:center;justify-content:center;overflow:hidden}
-    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.75) contrast(1.05)}
+    .hero img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:brightness(.72) contrast(1.06)}
     .hero .copy{position:relative;color:#fff;text-align:center;padding:0 1rem}
-    .hero h1{font-family:var(--primary-font);font-size:clamp(1.8rem,2.4vw+1rem,3rem);text-shadow:0 2px 8px rgba(0,0,0,.4)}
+    .hero h1{font-family:var(--primary-font);font-size:clamp(1.8rem,2.4vw+1rem,3rem);text-shadow:0 2px 8px rgba(0,0,0,.45)}
 
-    .map-section{max-width:1100px;margin:0 auto;padding:2rem 1.25rem 2.5rem}
+    .map-wrap{max-width:1100px;margin:0 auto;padding:2rem 1.25rem 0;position:relative}
     .map-title{font-size:.9rem;letter-spacing:.18em;color:#666;margin:0 0 .75rem .2rem}
-    #map{width:100%;height:520px;border-radius:12px;border:1px solid var(--border-color);box-shadow:var(--shadow-md);background:#f3f3f3}
-    .legend{display:flex;gap:.75rem;flex-wrap:wrap;margin-top:.75rem;color:var(--text-light);font-size:var(--text-sm)}
-    .legend .chip{display:inline-flex;align-items:center;gap:.4rem}
-    .chip .dot{width:10px;height:10px;border-radius:50%;background:var(--accent-color);border:1px solid rgba(0,0,0,.08)}
+    #map{width:100%;height:560px;border-radius:12px;border:1px solid var(--border-color);box-shadow:var(--shadow-md);background:#eaeaea}
+    .map-ui{position:absolute;top:2.4rem;right:1.6rem;display:flex;gap:.5rem;z-index:3}
+    .btn{background:#fff;border:1px solid var(--border-color);border-radius:999px;padding:.4rem .8rem;font-size:.85rem;cursor:pointer}
+    .btn.active{background:var(--accent-color);color:#fff;border-color:var(--accent-color)}
+    .legend{display:flex;gap:1rem;flex-wrap:wrap;margin:.7rem 0 1.6rem;color:var(--text-light);font-size:var(--text-sm)}
+    .chip{display:inline-flex;align-items:center;gap:.4rem}
+    .dot{width:10px;height:10px;border-radius:50%;background:var(--accent-color);border:1px solid rgba(0,0,0,.08)}
+    .dash{width:28px;height:0;border-top:2px dashed #555;opacity:.6}
 
     .container-narrow{max-width:900px;margin:0 auto;padding: 0 1.25rem 3rem}
     .city{display:grid;grid-template-columns:1fr 1.2fr;gap:18px;align-items:start;padding:24px 0;border-bottom:1px solid var(--border-color);scroll-margin-top:90px}
@@ -39,17 +39,20 @@
     .city .lead{color:var(--text-light)}
     .pill{font-size:var(--text-xs);background:var(--hover-color);color:var(--text-color);padding:6px 12px;border-radius:999px;font-weight:600;display:inline-block;margin-bottom:.35rem}
 
-    @media (max-width:860px){.city{grid-template-columns:1fr}}
-    /* popup 微調整 */
+    /* マーカーバッジ */
+    .marker-badge{width:26px;height:26px;border-radius:50%;background:var(--accent-color);color:#fff;display:flex;align-items:center;justify-content:center;font:600 12px/1 Inter;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.12);cursor:pointer}
+    .marker-badge:hover{transform:scale(1.06)}
+
+    /* Popup微調整 */
     .mapboxgl-popup{max-width:260px;font:12px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans JP",sans-serif}
-    .mapboxgl-popup-content{padding:10px 10px 8px;border-radius:10px}
+    .mapboxgl-popup-content{padding:10px;border-radius:10px}
     .popup-title{font-weight:600;margin-bottom:2px}
     .popup-sub{opacity:.7}
     .popup-link{display:inline-block;margin-top:6px;text-decoration:none;font-weight:600}
   </style>
 </head>
 <body>
-  <!-- ナビ（既存サイト踏襲） -->
+  <!-- ナビ -->
   <nav class="main-nav" id="main-nav">
     <div class="nav-container">
       <a href="/" class="nav-logo">Toji Masaya</a>
@@ -60,9 +63,7 @@
         <li><a href="/writings.html" class="nav-link">Writings</a></li>
         <li><a href="/trips.html" class="nav-link">Trips</a></li>
       </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
-      </button>
+      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く"><span></span><span></span><span></span></button>
     </div>
   </nav>
 
@@ -70,24 +71,32 @@
     <img src="/assets/images/trips/turkey/hero.jpg" alt="Turkey trip">
     <div class="copy">
       <h1>Turkey — Visited Places</h1>
-      <p>サフランボル／カッパドキア／コンヤ／パムッカレ／エフェソス／イスタンブール</p>
+      <p>6都市を3D地形＆測地線アークで“旅の線”に。</p>
     </div>
   </header>
 
-  <section class="map-section">
+  <section class="map-wrap">
     <div class="map-title">VISITED PLACES MAP</div>
+    <div class="map-ui">
+      <button class="btn active" id="btn-light">Light</button>
+      <button class="btn" id="btn-sat">Satellite</button>
+      <button class="btn" id="btn-tour">Play tour</button>
+    </div>
     <div id="map" aria-label="Visited places in Turkey"></div>
-    <div class="legend"><span class="chip"><span class="dot"></span>訪問ポイント（クリックで下の該当セクションへ）</span></div>
+    <div class="legend">
+      <span class="chip"><span class="dot"></span>訪問ポイント（クリックで該当セクションへ）</span>
+      <span class="chip"><span class="dash"></span>測地線アーク（移動の雰囲気）</span>
+    </div>
   </section>
 
   <main class="container-narrow">
-    <!-- ここから各都市セクション（IDはマップと連動） -->
+    <!-- セクション（IDはマーカーと連動） -->
     <section id="safranbolu" class="city">
       <figure><img src="/assets/images/trips/turkey/safranbolu.jpg" alt="Safranbolu"></figure>
       <div>
         <span class="pill">Safranbolu</span>
         <h2>サフランボル — オスマン家屋が並ぶ保存地区</h2>
-        <p class="lead">格子窓と白い壁、赤茶の屋根。路地の陰影でモノクロが映える街並み。</p>
+        <p class="lead">格子窓と白壁、赤茶の屋根。路地の陰影でモノクロが映える。</p>
         <small>座標: 41.2561, 32.6945</small>
       </div>
     </section>
@@ -107,7 +116,7 @@
       <div>
         <span class="pill">Konya</span>
         <h2>コンヤ — セマー儀式の回転と静謐</h2>
-        <p class="lead">回転の軌跡はシャッター1/10〜1/20秒で。手ブレ補正が効くと楽。</p>
+        <p class="lead">回転の軌跡は1/10〜1/20秒で。手ブレ補正が効くと楽。</p>
         <small>座標: 37.8667, 32.4846</small>
       </div>
     </section>
@@ -117,7 +126,7 @@
       <div>
         <span class="pill">Pamukkale</span>
         <h2>パムッカレ — 石灰棚の白と空の青</h2>
-        <p class="lead">露出は+1〜+1.7EVで白飛び手前。偏光で水面の反射を制御。</p>
+        <p class="lead">露出は+1〜+1.7EVで白飛び手前。偏光で反射を制御。</p>
         <small>座標: 37.9200, 29.1208</small>
       </div>
     </section>
@@ -127,7 +136,7 @@
       <div>
         <span class="pill">Ephesus</span>
         <h2>エフェソス — 古代都市の幾何学</h2>
-        <p class="lead">列柱のリズムは望遠で圧縮、装飾はマクロで寄ると楽しい。</p        >
+        <p class="lead">列柱のリズムは望遠で圧縮、装飾はマクロで寄ると楽しい。</p>
         <small>座標: 37.9392, 27.3409</small>
       </div>
     </section>
@@ -137,7 +146,7 @@
       <div>
         <span class="pill">Istanbul</span>
         <h2>イスタンブール — 海峡の風、夕刻の金色</h2>
-        <p class="lead">ガラタ橋のトラムとミナレットのシルエット。スローシャッターで都市の呼吸を描く。</p>
+        <p class="lead">ガラタ橋のトラムとミナレットのシルエット。スローで都市の呼吸。</p>
         <small>座標: 41.0082, 28.9784</small>
       </div>
     </section>
@@ -151,73 +160,163 @@
   </main>
 
   <script>
-    // ナビの挙動（既存踏襲）
+    // ナビ
     const navToggle=document.getElementById('nav-toggle');
     const navMenu=document.getElementById('nav-menu');
     navToggle?.addEventListener('click',()=>{navMenu.classList.toggle('active');navToggle.classList.toggle('active');document.body.classList.toggle('nav-open');});
     window.addEventListener('scroll',()=>{const n=document.getElementById('main-nav');window.scrollY>50?n.classList.add('scrolled'):n.classList.remove('scrolled');});
 
-    // ===== Mapbox: markers -> smooth scroll =====
+    // ===== Mapbox =====
     window.addEventListener('load', function () {
-      // あなたの Public token（pk…）
       mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
 
+      let currentStyle = 'light';
       const map = new mapboxgl.Map({
         container: 'map',
         style: 'mapbox://styles/mapbox/light-v11',
         center: [32.5, 39.0],
-        zoom: 4.5
+        zoom: 4.4,
+        pitch: 45,  // 斜め視点で立体感
+        bearing: -10
       });
       map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }), 'top-right');
 
-      // マーカーとページ内セクションを対応づけ（idがアンカー）
+      // 地形（DEM）＆空
+      map.on('style.load', () => {
+        if (!map.getSource('mapbox-dem')) {
+          map.addSource('mapbox-dem', {
+            type: 'raster-dem',
+            url: 'mapbox://mapbox.terrain-rgb',
+            tileSize: 512,
+            maxzoom: 14
+          });
+        }
+        map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.2 });
+        if (!map.getLayer('sky')) {
+          map.addLayer({
+            id: 'sky',
+            type: 'sky',
+            paint: {
+              'sky-type': 'atmosphere',
+              'sky-atmosphere-sun-intensity': 10
+            }
+          });
+        }
+        // 3Dビル（ズームイン時）
+        if (!map.getLayer('3d-buildings')) {
+          map.addLayer({
+            id: '3d-buildings',
+            source: 'composite',
+            'source-layer': 'building',
+            filter: ['==', 'extrude', 'true'],
+            type: 'fill-extrusion',
+            minzoom: 14,
+            paint: {
+              'fill-extrusion-color': '#d9d9d9',
+              'fill-extrusion-height': ['get','height'],
+              'fill-extrusion-base': ['get','min_height'],
+              'fill-extrusion-opacity': 0.6
+            }
+          });
+        }
+      });
+
+      // 訪問地点
       const places = [
-        { id:'safranbolu', name:'サフランボル (Safranbolu)', coord:[32.6945, 41.2561] },
-        { id:'cappadocia', name:'カッパドキア (Cappadocia)', coord:[34.8419, 38.6431] },
-        { id:'konya',      name:'コンヤ (Konya)',           coord:[32.4846, 37.8667] },
-        { id:'pamukkale',  name:'パムッカレ (Pamukkale)',   coord:[29.1208, 37.9200] },
-        { id:'ephesus',    name:'エフェソス (Ephesus)',     coord:[27.3409, 37.9392] },
-        { id:'istanbul',   name:'イスタンブール (Istanbul)',coord:[28.9784, 41.0082] }
+        { id:'safranbolu', idx:1, name:'サフランボル (Safranbolu)', coord:[32.6945, 41.2561] },
+        { id:'cappadocia', idx:2, name:'カッパドキア (Cappadocia)', coord:[34.8419, 38.6431] },
+        { id:'konya',      idx:3, name:'コンヤ (Konya)',           coord:[32.4846, 37.8667] },
+        { id:'pamukkale',  idx:4, name:'パムッカレ (Pamukkale)',   coord:[29.1208, 37.9200] },
+        { id:'ephesus',    idx:5, name:'エフェソス (Ephesus)',     coord:[27.3409, 37.9392] },
+        { id:'istanbul',   idx:6, name:'イスタンブール (Istanbul)',coord:[28.9784, 41.0082] }
       ];
 
+      // 画面フィット
       const bounds = new mapboxgl.LngLatBounds(places[0].coord, places[0].coord);
       for (const p of places) bounds.extend(p.coord);
 
       map.on('load', () => {
-        for (const p of places) {
-          // 見た目
-          const el = document.createElement('div');
-          el.style.width='12px'; el.style.height='12px';
-          el.style.borderRadius='50%';
-          el.style.background=getComputedStyle(document.documentElement).getPropertyValue('--accent-color') || '#3b82f6';
-          el.style.border='2px solid #fff';
-          el.style.boxShadow='0 0 0 1px rgba(0,0,0,.1)';
-          el.style.cursor='pointer';
+        // アーク（測地線）作成
+        const arcs = [];
+        for (let i=0;i<places.length-1;i++){
+          const gc = turf.greatCircle(
+            turf.point(places[i].coord),
+            turf.point(places[i+1].coord),
+            { npoints: 64 }   // 点数増で滑らかに
+          );
+          arcs.push(gc);
+        }
+        const routeFC = turf.featureCollection(arcs);
 
-          // ポップアップ（リンク付き）
-          const popup = new mapboxgl.Popup({ offset:12 }).setHTML(
+        map.addSource('arcs', { type:'geojson', data: routeFC });
+        map.addLayer({
+          id:'arcs-line',
+          type:'line',
+          source:'arcs',
+          paint:{
+            'line-color':'#555',
+            'line-width': 2.8,
+            'line-opacity': 0.65,
+            'line-dasharray': [0, 2, 3]   // アニメ前の初期値
+          }
+        });
+
+        // ダッシュアニメ
+        let dash = 0;
+        function animateDash(){
+          dash = (dash + 0.02) % 3;
+          map.setPaintProperty('arcs-line','line-dasharray',[dash,2,3]);
+          requestAnimationFrame(animateDash);
+        }
+        animateDash();
+
+        // マーカー（番号バッジ）＋ポップアップ＋スクロール
+        places.forEach(p=>{
+          const el = document.createElement('div');
+          el.className = 'marker-badge';
+          el.textContent = p.idx;
+          const popup = new mapboxgl.Popup({ offset: 10 }).setHTML(
             `<div class="popup">
                <div class="popup-title">${p.name}</div>
                <div class="popup-sub">(${p.coord[1].toFixed(4)}, ${p.coord[0].toFixed(4)})</div>
                <a class="popup-link" href="#${p.id}">この場所の記録へ</a>
              </div>`
           );
-
-          // マーカー
           new mapboxgl.Marker({ element: el, anchor: 'center' })
             .setLngLat(p.coord)
             .setPopup(popup)
             .addTo(map);
 
-          // マーカー自体のクリックでもスクロール
           el.addEventListener('click', () => {
-            const target = document.getElementById(p.id);
-            if (target) target.scrollIntoView({ behavior:'smooth', block:'start' });
+            document.getElementById(p.id)?.scrollIntoView({ behavior:'smooth', block:'start' });
           });
-        }
+          el.title = p.name;
+        });
 
-        // 全体フィット
-        map.fitBounds(bounds, { padding: 60, duration: 800 });
+        map.fitBounds(bounds, { padding: 70, duration: 900, pitch: map.getPitch(), bearing: map.getBearing() });
+      });
+
+      // ベースマップ切替
+      const btnLight = document.getElementById('btn-light');
+      const btnSat = document.getElementById('btn-sat');
+      function setStyle(name){
+        currentStyle = name;
+        btnLight.classList.toggle('active', name==='light');
+        btnSat.classList.toggle('active', name==='sat');
+        map.setStyle(name==='light' ? 'mapbox://styles/mapbox/light-v11'
+                                    : 'mapbox://styles/mapbox/satellite-streets-v12');
+      }
+      btnLight.addEventListener('click', ()=>setStyle('light'));
+      btnSat.addEventListener('click', ()=>setStyle('sat'));
+
+      // ツアーボタン：各地点を順に flyTo
+      document.getElementById('btn-tour').addEventListener('click', async ()=>{
+        for (const p of places){
+          map.flyTo({ center: p.coord, zoom: 7.2, pitch: 55, bearing: -20, speed: 0.6, curve: 1.4, essential: true });
+          await new Promise(r=>setTimeout(r, 1400));
+        }
+        // 〆に全体
+        map.fitBounds(new mapboxgl.LngLatBounds(places[0].coord, places[0].coord).extend(places.at(-1).coord), { padding: 70, duration: 900 });
       });
 
       // ポップアップ内リンクのスムーススクロール（デリゲーション）
