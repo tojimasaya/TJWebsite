@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapbox テスト</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.0.1/mapbox-gl.js'></script>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            bottom: 0;
+            width: 100%;
+        }
+        .info {
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            background: white;
+            padding: 10px;
+            border-radius: 5px;
+            z-index: 1;
+            font-family: sans-serif;
+        }
+    </style>
+</head>
+<body>
+    <div class="info">
+        <div id="status">読み込み中...</div>
+    </div>
+    <div id='map'></div>
+
+    <script>
+        const statusEl = document.getElementById('status');
+        
+        try {
+            statusEl.textContent = 'Mapbox初期化中...';
+            
+            mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
+            
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/streets-v12',
+                center: [34.5, 39.0],
+                zoom: 5
+            });
+
+            map.on('load', function() {
+                statusEl.textContent = '✅ 地図の読み込み成功!';
+                statusEl.style.color = 'green';
+            });
+
+            map.on('error', function(e) {
+                statusEl.textContent = '❌ エラー: ' + e.error.message;
+                statusEl.style.color = 'red';
+            });
+
+        } catch (error) {
+            statusEl.textContent = '❌ エラー: ' + error.message;
+            statusEl.style.color = 'red';
+            console.error(error);
+        }
+    </script>
+</body>
+</html>
