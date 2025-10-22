@@ -448,7 +448,11 @@
                 center: [32.5, 39.0],
                 zoom: 4.4,
                 pitch: 45,
-                bearing: -10
+                bearing: -10,
+                // アニメーションを滑らかに
+                pitchWithRotate: true,
+                dragRotate: true,
+                touchZoomRotate: true
             });
             map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }), 'top-right');
 
@@ -515,10 +519,10 @@
                     }
                 });
 
-                // ダッシュアニメ
+                // ダッシュアニメ（速度を遅く）
                 let dash = 0;
                 function animateDash(){
-                    dash = (dash + 0.02) % 3;
+                    dash = (dash + 0.01) % 3;  // 0.02 → 0.01（半分の速度）
                     map.setPaintProperty('arcs-line','line-dasharray',[dash,2,3]);
                     requestAnimationFrame(animateDash);
                 }
@@ -542,7 +546,13 @@
                         .addTo(map);
                 });
 
-                map.fitBounds(bounds, { padding: 70, duration: 900, pitch: map.getPitch(), bearing: map.getBearing() });
+                map.fitBounds(bounds, { 
+                    padding: 70, 
+                    duration: 2000,  // 900ms → 2000ms（よりゆっくり）
+                    pitch: map.getPitch(), 
+                    bearing: map.getBearing(),
+                    essential: true  // アニメーションを中断させない
+                });
             });
 
             // ベースマップ切替
@@ -561,11 +571,23 @@
             // ツアーボタン：各地点を順に flyTo
             document.getElementById('btn-tour').addEventListener('click', async ()=>{
                 for (const p of places){
-                    map.flyTo({ center: p.coord, zoom: 7.2, pitch: 55, bearing: -20, speed: 0.6, curve: 1.4, essential: true });
-                    await new Promise(r=>setTimeout(r, 1400));
+                    map.flyTo({ 
+                        center: p.coord, 
+                        zoom: 7.2, 
+                        pitch: 55, 
+                        bearing: -20, 
+                        speed: 0.4,      // 0.6 → 0.4（より遅く）
+                        curve: 1.2,      // 1.4 → 1.2（より緩やかなカーブ）
+                        essential: true 
+                    });
+                    await new Promise(r=>setTimeout(r, 2500));  // 1400ms → 2500ms（各地点での滞在時間を延長）
                 }
                 // 最後に全体
-                map.fitBounds(new mapboxgl.LngLatBounds(places[0].coord, places[0].coord).extend(places.at(-1).coord), { padding: 70, duration: 900 });
+                map.fitBounds(new mapboxgl.LngLatBounds(places[0].coord, places[0].coord).extend(places.at(-1).coord), { 
+                    padding: 70, 
+                    duration: 2000,  // 900ms → 2000ms
+                    essential: true 
+                });
             });
         });
     </script>
