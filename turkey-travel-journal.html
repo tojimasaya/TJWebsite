@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Turkey — Visited Places (3D + Effects, refined markers)</title>
+  <title>Turkey — Visited Places (3D + Effects, marker aligned)</title>
 
   <!-- 既存フォント & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
 
-  <meta name="description" content="トルコ周遊の訪問地を3D地形・発光ルート・双方向同期で“読ませる地図”に。マーカー位置を光学的に最適化。">
+  <meta name="description" content="トルコ周遊の訪問地を3D地形・発光ルート・双方向同期で“読ませる地図”に。ピッチ時のマーカーずれを補正。">
   <meta name="theme-color" content="#fafafa">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 
@@ -51,17 +51,15 @@
     /* ---- マーカーバッジ + 鼓動（偶数サイズ & 底アンカー前提） ---- */
     .marker-badge{
       position:relative;
-      width:28px; height:28px;          /* 偶数で芯が立つ */
+      width:28px; height:28px;
       border-radius:50%;
       background:var(--accent-color);
-      color:#fff;
-      display:flex; align-items:center; justify-content:center;
-      font:700 13px/1 Inter, system-ui; /* 視覚中心に来やすい太さ */
-      border:2px solid #fff;
-      box-shadow:0 0 0 1px rgba(0,0,0,.12);
+      color:#fff; display:flex; align-items:center; justify-content:center;
+      font:700 13px/1 Inter, system-ui;
+      border:2px solid #fff; box-shadow:0 0 0 1px rgba(0,0,0,.12);
       cursor:pointer; transition:transform .12s ease;
       -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;
-      transform-origin: bottom center;   /* スケール時のズレを最小化 */
+      transform-origin: bottom center;
     }
     .marker-badge:hover{transform:scale(1.06)}
     .marker-badge::after{
@@ -76,7 +74,7 @@
       100%{ transform: scale(1.25); opacity: 0; }
     }
 
-    /* ---- Popup 微調整 ---- */
+    /* ---- Popup ---- */
     .mapboxgl-popup{max-width:260px;font:12px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans JP",sans-serif}
     .mapboxgl-popup-content{padding:10px;border-radius:10px}
     .popup-title{font-weight:600;margin-bottom:2px}
@@ -235,7 +233,7 @@
       }
       const routeFC = turf.featureCollection(arcs);
 
-      // カスタムレイヤーを追加（style変更時にも復元）
+      // カスタムレイヤー（style変更時にも復元）
       function addCustomLayers(){
         // DEM & Terrain
         if (!map.getSource('mapbox-dem')) {
@@ -350,10 +348,17 @@
              </div>`
           );
 
-          new mapboxgl.Marker({ element: el, anchor: 'bottom', offset: [0, -2] }) // 座標=底、微調整-2px
-            .setLngLat(p.coord)
-            .setPopup(popup)
-            .addTo(map);
+          // ★ ズレ対策：pitch/rotation を map に固定（地形ピッチの影響を受けない）
+          new mapboxgl.Marker({
+            element: el,
+            anchor: 'bottom',
+            offset: [0, -2],
+            pitchAlignment: 'map',
+            rotationAlignment: 'map'
+          })
+          .setLngLat(p.coord)
+          .setPopup(popup)
+          .addTo(map);
 
           el.addEventListener('click', () => {
             document.getElementById(p.id)?.scrollIntoView({ behavior:'smooth', block:'start' });
