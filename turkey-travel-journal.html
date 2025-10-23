@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Turkey — Visited Places (3D + Effects)</title>
+  <title>Turkey — Visited Places (3D + Effects, refined markers)</title>
 
   <!-- 既存フォント & CSS -->
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
@@ -14,7 +14,7 @@
   <script src="https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
 
-  <meta name="description" content="トルコ周遊の訪問地を3D地形・発光ルート・双方向同期で“読ませる地図”に。">
+  <meta name="description" content="トルコ周遊の訪問地を3D地形・発光ルート・双方向同期で“読ませる地図”に。マーカー位置を光学的に最適化。">
   <meta name="theme-color" content="#fafafa">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 
@@ -48,13 +48,27 @@
     .pill{font-size:var(--text-xs);background:var(--hover-color);color:var(--text-color);padding:6px 12px;border-radius:999px;font-weight:600;display:inline-block;margin-bottom:.35rem}
     @media (max-width:860px){.city{grid-template-columns:1fr}}
 
-    /* ---- マーカーバッジ + 鼓動 ---- */
-    .marker-badge{position:relative;width:26px;height:26px;border-radius:50%;background:var(--accent-color);color:#fff;display:flex;align-items:center;justify-content:center;font:600 12px/1 Inter;border:2px solid #fff;box-shadow:0 0 0 1px rgba(0,0,0,.12);cursor:pointer;transition:transform .12s ease}
+    /* ---- マーカーバッジ + 鼓動（偶数サイズ & 底アンカー前提） ---- */
+    .marker-badge{
+      position:relative;
+      width:28px; height:28px;          /* 偶数で芯が立つ */
+      border-radius:50%;
+      background:var(--accent-color);
+      color:#fff;
+      display:flex; align-items:center; justify-content:center;
+      font:700 13px/1 Inter, system-ui; /* 視覚中心に来やすい太さ */
+      border:2px solid #fff;
+      box-shadow:0 0 0 1px rgba(0,0,0,.12);
+      cursor:pointer; transition:transform .12s ease;
+      -webkit-font-smoothing: antialiased; text-rendering: geometricPrecision;
+      transform-origin: bottom center;   /* スケール時のズレを最小化 */
+    }
     .marker-badge:hover{transform:scale(1.06)}
     .marker-badge::after{
       content:""; position:absolute; inset:-6px; border-radius:50%;
-      border:2px solid rgba(196,154,108,.55);
+      border:2px solid rgba(196,154,108,.5);
       transform: scale(0.8); opacity: 0; animation: pulse 2.4s ease-out infinite;
+      pointer-events: none;
     }
     @keyframes pulse{
       0%{ transform: scale(0.7); opacity: .6; }
@@ -62,7 +76,7 @@
       100%{ transform: scale(1.25); opacity: 0; }
     }
 
-    /* ---- Popup微調整 ---- */
+    /* ---- Popup 微調整 ---- */
     .mapboxgl-popup{max-width:260px;font:12px/1.5 Inter,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,"Noto Sans JP",sans-serif}
     .mapboxgl-popup-content{padding:10px;border-radius:10px}
     .popup-title{font-weight:600;margin-bottom:2px}
@@ -199,7 +213,6 @@
         { id:'ephesus',    idx:5, name:'エフェソス (Ephesus)',     coord:[27.3409, 37.9392] },
         { id:'istanbul',   idx:6, name:'イスタンブール (Istanbul)',coord:[28.9784, 41.0082] }
       ];
-      const placeById = Object.fromEntries(places.map(p=>[p.id,p]));
       const bounds = new mapboxgl.LngLatBounds(places[0].coord, places[0].coord);
       for (const p of places) bounds.extend(p.coord);
 
@@ -214,7 +227,7 @@
       });
       map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }), 'top-right');
 
-      // ルート（測地線アーク集合）を先に計算して保持
+      // ルート（測地線アーク集合）を計算
       const arcs = [];
       for (let i=0; i<places.length-1; i++){
         const gc = turf.greatCircle(turf.point(places[i].coord), turf.point(places[i+1].coord), { npoints: 64 });
@@ -222,20 +235,20 @@
       }
       const routeFC = turf.featureCollection(arcs);
 
-      // カスタムレイヤーを追加（style変更時に再実行）
+      // カスタムレイヤーを追加（style変更時にも復元）
       function addCustomLayers(){
-        // 地形 DEM
+        // DEM & Terrain
         if (!map.getSource('mapbox-dem')) {
           map.addSource('mapbox-dem', { type: 'raster-dem', url: 'mapbox://mapbox.terrain-rgb', tileSize: 512, maxzoom: 14 });
         }
         map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.2 });
 
-        // 空（Sky）
+        // Sky
         if (!map.getLayer('sky')) {
           map.addLayer({ id: 'sky', type: 'sky', paint: { 'sky-type': 'atmosphere', 'sky-atmosphere-sun-intensity': 10 } });
         }
 
-        // Hillshade（陰影）
+        // Hillshade
         if (!map.getLayer('hillshade')) {
           map.addLayer({
             id: 'hillshade',
@@ -249,7 +262,7 @@
           }, 'waterway-label');
         }
 
-        // 3Dビル
+        // 3D Buildings
         if (!map.getLayer('3d-buildings')) {
           map.addLayer({
             id: '3d-buildings',
@@ -267,11 +280,10 @@
           });
         }
 
-        // アーク：ソース + 発光芯 + グロー + 流れるグラデ
+        // アーク：Source + 発光芯 + グロー + 流れるグラデ
         if (!map.getSource('arcs')) {
           map.addSource('arcs', { type:'geojson', data: routeFC, lineMetrics: true });
         }
-
         if (!map.getLayer('arcs-line')) {
           map.addLayer({
             id:'arcs-line',
@@ -284,7 +296,6 @@
             }
           });
         }
-
         if (!map.getLayer('arcs-glow')) {
           map.addLayer({
             id:'arcs-glow',
@@ -298,7 +309,6 @@
             }
           }, 'arcs-line');
         }
-
         if (!map.getLayer('arcs-gradient')) {
           map.addLayer({
             id:'arcs-gradient',
@@ -332,7 +342,7 @@
           el.textContent = p.idx;
           el.title = p.name;
 
-          const popup = new mapboxgl.Popup({ offset: 10 }).setHTML(
+          const popup = new mapboxgl.Popup({ offset: [0,10], anchor: 'top' }).setHTML(
             `<div class="popup">
                <div class="popup-title">${p.name}</div>
                <div class="popup-sub">(${p.coord[1].toFixed(4)}, ${p.coord[0].toFixed(4)})</div>
@@ -340,7 +350,7 @@
              </div>`
           );
 
-          new mapboxgl.Marker({ element: el, anchor: 'center' })
+          new mapboxgl.Marker({ element: el, anchor: 'bottom', offset: [0, -2] }) // 座標=底、微調整-2px
             .setLngLat(p.coord)
             .setPopup(popup)
             .addTo(map);
@@ -354,7 +364,7 @@
         // 全体フィット
         map.fitBounds(bounds, { padding: 70, duration: 900, pitch: map.getPitch(), bearing: map.getBearing() });
 
-        // 発光グラデの流れアニメ（存在確認しながら）
+        // 発光グラデの流れアニメ
         (function animateGradient(){
           const layer = map.getLayer('arcs-gradient');
           if (layer) {
@@ -453,6 +463,13 @@
 
       // 新スタイル読込完了でカスタム復元
       map.on('style.load', addCustomLayers);
+
+      // ズーム時のにじみ抑制（微最適化）
+      map.on('zoom', ()=>{
+        document.querySelectorAll('.marker-badge').forEach(el=>{
+          el.style.willChange = (map.getZoom()%1 !== 0) ? 'transform' : 'auto';
+        });
+      });
     });
   </script>
 </body>
