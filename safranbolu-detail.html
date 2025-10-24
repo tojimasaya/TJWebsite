@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>サフランボルの街 | トルコ旅行記</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            line-height: 2;
+            color: #333;
+            background: #fff;
+        }
+
+        /* ヘッダー */
+        header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            background: #fff;
+        }
+
+        .header-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .header-link:hover {
+            color: #c49a6c;
+        }
+
+        /* Hero画像 */
+        .hero {
+            width: 100%;
+            height: 65vh;
+            min-height: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .hero-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* リード文 */
+        .lead {
+            font-size: 1.1rem;
+            line-height: 2.2;
+            color: #444;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* セクション */
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+            border-left: 3px solid #c49a6c;
+            padding-left: 1rem;
+        }
+
+        .section-text {
+            font-size: 1rem;
+            line-height: 2.2;
+            color: #555;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 画像 */
+        .content-image {
+            width: 100%;
+            max-width: 700px;
+            margin: 3rem auto;
+            display: block;
+            border-radius: 2px;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 2カラム画像 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 3rem 0;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* 引用・ハイライト */
+        .highlight {
+            background: #f9f7f4;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-left: 3px solid #c49a6c;
+            font-size: 1.05rem;
+            line-height: 2.2;
+            color: #555;
+        }
+
+        /* 関連記事 */
+        .related {
+            background: #fafafa;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .related-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .related-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            letter-spacing: 0.15em;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-item {
+            background: white;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .related-content {
+            padding: 1.5rem;
+        }
+
+        .related-name {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .related-desc {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* フッター */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section {
+                margin-bottom: 3rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <a href="turkey-travel-journal.html" class="header-link">← 一覧に戻る</a>
+    </header>
+
+    <!-- Hero画像 -->
+    <div class="hero">
+        <img src="./assets/images/turkey/safranbolu/hero.jpg" alt="サフランボル" class="hero-image">
+        <div class="hero-caption">
+            <p class="hero-number">01</p>
+            <h1 class="hero-title">サフランボルの街</h1>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <article class="main-content">
+        
+        <p class="lead">
+            オスマン帝国時代の面影を色濃く残す世界遺産の街。かつてサフランの集積地として栄えたこの街は、赤い屋根と白壁の伝統的な木造家屋が1,000軒以上も現存する歴史的な宝庫です。
+        </p>
+
+        <!-- セクション1: 街並み -->
+        <section class="section">
+            <h2 class="section-title">オスマン建築の宝庫</h2>
+            <p class="section-text">
+                石畳の坂道を歩くと、17世紀から続くアラスタバザールでは地元の手工芸品や名物のサフラン製品が並び、昔ながらの商店街の雰囲気を味わえました。赤茶色の屋根と白い壁のコントラストが美しく、まるで時が止まったかのような光景が広がります。
+            </p>
+            <p class="section-text">
+                サフランボルの建築様式は、オスマン帝国時代の伝統を色濃く残しています。木造の家屋は、1階が石造り、2階以上が木造という構造が特徴的で、2階部分が張り出した独特のデザインは「チャルシュ」と呼ばれています。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/safranbolu/02.jpg" alt="サフランボルの街並み" class="content-image">
+        <p class="image-caption">赤い屋根と白壁が続く伝統的な街並み</p>
+
+        <!-- セクション2: バザール -->
+        <section class="section">
+            <h2 class="section-title">アラスタバザールの賑わい</h2>
+            <p class="section-text">
+                17世紀から続くアラスタバザールは、サフランボルの中心地。狭い路地に並ぶ小さな店には、伝統的な手工芸品、サフラン製品、トルコ伝統のお菓子などが所狭しと並んでいます。
+            </p>
+            <p class="section-text">
+                特に印象的だったのは、サフラン入りのトルコデライト（ロクム）。黄金色の美しい色合いと、ほのかな香りが特徴的で、お土産に最適です。店主たちは気さくで、試食を勧めながら製品の説明をしてくれました。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/safranbolu/03.jpg" alt="バザール1">
+            <img src="./assets/images/turkey/safranbolu/04.jpg" alt="バザール2">
+        </div>
+
+        <!-- セクション3: フドゥルルックの丘 -->
+        <section class="section">
+            <h2 class="section-title">フドゥルルックの丘からの眺望</h2>
+            <p class="section-text">
+                特に印象的だったのは、フドゥルルックの丘からの眺め。街全体を見渡せる絶景ポイントで、モスクやトルコ式浴場など、オスマン建築の美しい街並みを一望することができます。
+            </p>
+            <p class="section-text">
+                夕暮れ時に訪れると、夕陽に照らされた赤い屋根が一層美しく輝き、まるで絵画のような光景が広がります。丘の上には展望台とカフェがあり、ゆっくりとトルコティーを飲みながら景色を楽しむことができました。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/safranbolu/05.jpg" alt="フドゥルルックの丘" class="content-image">
+
+        <div class="highlight">
+            サフランボルは、オスマン帝国時代の生活様式が今なお息づく貴重な街。1,000軒以上もの伝統的家屋が現存し、1994年にユネスコ世界遺産に登録されました。この街を歩くことは、まさに生きた歴史博物館を体験することです。
+        </div>
+
+        <!-- セクション4: 宿泊 -->
+        <section class="section">
+            <h2 class="section-title">ヒルトンガーデンイン・サフランボル</h2>
+            <p class="section-text">
+                宿泊はヒルトンガーデンイン・サフランボル、サフランボルの街の中心から車で10分ほどにある四つ星ホテルです。広くはありませんが、清潔で設備も新しく快適でした。
+            </p>
+            <p class="section-text">
+                バスタブがあるのは日本人には嬉しいですね、ただシャワーの水流は若干弱めでした。今回のテーマがスマホのみ、パソコン無しの旅なのですがテレビが最新で、予定していたHONOR Magic V3を大型テレビに投影できたので比較的簡単に写真整理ができました。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/safranbolu/06.jpg" alt="ホテル" class="content-image">
+
+    </article>
+
+    <!-- 関連記事 -->
+    <section class="related">
+        <div class="related-container">
+            <h2 class="related-title">他の都市を見る</h2>
+            <div class="related-grid">
+                
+                <div class="related-item" onclick="window.location.href='cappadocia-detail.html'">
+                    <img src="./assets/images/turkey/cappadocia/01.jpg" alt="カッパドキア" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">カッパドキアの大地</h3>
+                        <p class="related-desc">熱気球と奇岩群が織りなす幻想的な光景</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('コンヤのページ')">
+                    <img src="./assets/images/turkey/konya/01.jpg" alt="コンヤ" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">コンヤの神秘</h3>
+                        <p class="related-desc">旋回舞踊と薔薇の香りに包まれて</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="window.location.href='istanbul-detail.html'">
+                    <img src="./assets/images/turkey/istanbul/01.jpg" alt="イスタンブール" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">イスタンブールの朝</h3>
+                        <p class="related-desc">東西の文明が出会う永遠の都</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>TURKEY JOURNEY 2024</p>
+        <p style="margin-top: 0.5rem;">カッパドキアからイスタンブールへ</p>
+    </footer>
+
+</body>
+</html>
