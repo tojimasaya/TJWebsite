@@ -1,0 +1,563 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>カッパドキアの大地 | トルコ旅行記</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            line-height: 2;
+            color: #333;
+            background: #fff;
+        }
+
+        /* ヘッダー */
+        header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            background: #fff;
+        }
+
+        .header-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .header-link:hover {
+            color: #c49a6c;
+        }
+
+        /* Hero画像 */
+        .hero {
+            width: 100%;
+            height: 65vh;
+            min-height: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .hero-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* リード文 */
+        .lead {
+            font-size: 1.1rem;
+            line-height: 2.2;
+            color: #444;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* セクション */
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+            border-left: 3px solid #c49a6c;
+            padding-left: 1rem;
+        }
+
+        .section-text {
+            font-size: 1rem;
+            line-height: 2.2;
+            color: #555;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 画像 */
+        .content-image {
+            width: 100%;
+            max-width: 700px;
+            margin: 3rem auto;
+            display: block;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .content-image:hover {
+            opacity: 0.9;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 2カラム画像 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            align-items: start;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid img:hover {
+            opacity: 0.9;
+        }
+
+        /* 3枚横並び */
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .image-grid-3 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid-3 img:hover {
+            opacity: 0.9;
+        }
+
+        /* ライトボックス */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        /* 引用・ハイライト */
+        .highlight {
+            background: #f9f7f4;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-left: 3px solid #c49a6c;
+            font-size: 1.05rem;
+            line-height: 2.2;
+            color: #555;
+        }
+
+        /* 関連記事 */
+        .related {
+            background: #fafafa;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .related-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .related-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            letter-spacing: 0.15em;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-item {
+            background: white;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .related-content {
+            padding: 1.5rem;
+        }
+
+        .related-name {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .related-desc {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* フッター */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .image-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section {
+                margin-bottom: 3rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <a href="turkey-travel-journal.html" class="header-link">← 一覧に戻る</a>
+    </header>
+
+    <!-- Hero画像 -->
+    <div class="hero">
+        <img src="./assets/images/turkey/cappadocia/hero.jpg" alt="カッパドキア" class="hero-image">
+        <div class="hero-caption">
+            <p class="hero-number">02</p>
+            <h1 class="hero-title">カッパドキアの大地</h1>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <article class="main-content">
+        
+        <p class="lead">
+            長年憧れていたカッパドキア。まだ暗い空に浮かぶ無数の熱気球、妖精の煙突と呼ばれる奇岩群、そして地下深くに広がる古代都市。この大地は、想像をはるかに超えた風景を見せてくれた。
+        </p>
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='c1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e6b899;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c9956d;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c1)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' opacity='0.25'%3Eカッパドキアの日の出%3C/text%3E%3C/svg%3E" alt="カッパドキアの日の出" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">朝日に染まる奇岩群と気球の絶景</p>
+
+        <!-- セクション1: 熱気球体験 -->
+        <section class="section">
+            <h2 class="section-title">念願の熱気球体験</h2>
+            <p class="section-text">
+                早朝5:40、気温2℃。真っ暗な中、ホテル前に送迎バンが到着する。これから始まる熱気球体験への期待感で、寒さなど気にならない。
+            </p>
+            <p class="section-text">
+                現地に着くと、まだ暗い広い野原に横たわった気球が何機も並んでいた。バーナーの炎が夜空を照らし、地面に寝かされていた気球が徐々に膨らんでいく。その様子は圧巻だった。
+            </p>
+            <p class="section-text">
+                ゴンドラに乗り込むと、気球はゆっくりと上昇を開始。日の出の頃には想像以上の高さまで上がっていた。そしてついに、念願だったカッパドキアの気球からの日の出。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='c2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a5568;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232d3748;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c2)' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' opacity='0.25'%3E気球の準備%3C/text%3E%3C/svg%3E" alt="気球の準備" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='c3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ed8936;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23dd6b20;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c3)' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' font-size='20' fill='white' text-anchor='middle' opacity='0.25'%3Eバーナーの炎%3C/text%3E%3C/svg%3E" alt="バーナーの炎" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                気球は上下左右に移動しながら、常に360度回転している。このため、全ての景色が自然と目の前を通り過ぎていく。太陽が後ろにあっても、数分後には正面に来る。写真撮影も慌てる必要がない。
+            </p>
+            <p class="section-text">
+                カッパドキアの奇岩群と朝日、そして周囲を飛ぶ数十機の気球。まさに絶景だった。長年のバケットリストの一つが、これほど素晴らしい形で達成できた。最後はノンアルコールのシャンパンで乾杯。最高の朝だった。
+            </p>
+        </section>
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='c4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23fbbf24;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23f59e0b;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c4)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' opacity='0.25'%3E気球からの眺望%3C/text%3E%3C/svg%3E" alt="気球からの眺望" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">空から見下ろすカッパドキアの奇岩群</p>
+
+        <!-- セクション2: ドローン撮影 -->
+        <section class="section">
+            <h2 class="section-title">ドローンが映した絶景</h2>
+            <p class="section-text">
+                翌朝、時差ボケで午前3時には目が冴えていた。ホテルのベランダでドローンを飛ばす。まだ薄暗い空に、次々と浮かび上がる色とりどりの熱気球たち。
+            </p>
+            <p class="section-text">
+                撮影に没頭していると、心配した妻が様子を見に来た。ドローニーで二人の記念動画を撮っているとき、驚くべき事実に気づく。なんと我々が泊まっているホテルは、カッパドキアの象徴とも言える奇岩群の絶景ポイントに位置していたのだ。
+            </p>
+            <p class="section-text">
+                ドローンがホテルから離れれば離れるほど、その光景は圧巻のものとなっていく。朝日に照らされた奇岩群の中に佇むホテル。信じられないほどの美しさだった。
+            </p>
+        </section>
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='c5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23b88d5f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c5)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' opacity='0.25'%3Eドローンからの俯瞰%3C/text%3E%3C/svg%3E" alt="ドローンからの俯瞰" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">ドローンが捉えた奇岩群とホテル</p>
+
+        <!-- セクション3: 奇岩群めぐり -->
+        <section class="section">
+            <h2 class="section-title">地上から巡る奇岩群</h2>
+            <p class="section-text">
+                空から一望した絶景を、今度は地上から詳しく見学していく。最初の目的地はウチヒサル。トルコ語で「尖った砦」を意味する名前の通り、巨大な岩山を要塞として活用してきた。
+            </p>
+            <p class="section-text">
+                城塞の壁面には、多くの小さな穴が開いている。これらは「鳩の家」と呼ばれ、鳩の糞をブドウ畑の肥料として活用していた。鳩が赤色を好む習性を利用して、巣の入口を赤く塗って鳩を呼び寄せていたという。当時の人々の知恵だ。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='c6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23b88d5f;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%239b7653;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c6)' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='white' text-anchor='middle' opacity='0.25'%3Eウチヒサル城塞%3C/text%3E%3C/svg%3E" alt="ウチヒサル城塞" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='c7' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23a88c65;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%238b7355;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c7)' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='white' text-anchor='middle' opacity='0.25'%3E鳩の家%3C/text%3E%3C/svg%3E" alt="鳩の家" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                ユルギュップ近郊には、「三姉妹」と呼ばれる3本のキノコ状の岩がある。軟らかい凝灰岩が円錐形に削られ、上層の硬質な地層が残ったため、まるで帽子を被ったような形になっている。「妖精の煙突」という愛称でも親しまれている。
+            </p>
+            <p class="section-text">
+                次に訪れたのは、デヴレントの谷にあるラクダ岩。「イマジネーションの谷」「ピンクの谷」とも呼ばれるこの場所で、ラクダの形が驚くほど明確な岩に出会う。それぞれの岩の形状に物語を見出す楽しさ。カッパドキアならではの魅力だ。
+            </p>
+        </section>
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='c8' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c9956d;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c8)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' opacity='0.25'%3E三姉妹の岩%3C/text%3E%3C/svg%3E" alt="三姉妹の岩" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">妖精の煙突と呼ばれる三姉妹の岩</p>
+
+        <!-- セクション4: 地下都市カルダック -->
+        <section class="section">
+            <h2 class="section-title">地下都市カルダックの叡智</h2>
+            <p class="section-text">
+                地下深くに張り巡らされた空間。カッパドキアの地下都市は、古代の人々の知恵と工夫の結晶だ。
+            </p>
+            <p class="section-text">
+                紀元前8-7世紀頃、フリギア人によって建設が始まったとされる。その後、様々な文明によって拡張され、ビザンチン帝国時代には、迫害を逃れるキリスト教徒たちの避難所として発展した。地下都市によっては8フロアにも及ぶ。
+            </p>
+            <p class="section-text">
+                換気システム、生活空間、貯蔵施設、防衛設備。驚くべき精巧さで配置されている。掘り出された膨大な土や岩をどう処理したのか。現代でも解明されていない技術的な謎が残されている。
+            </p>
+        </section>
+
+        <div class="image-grid-3">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='c9' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a5568;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232d3748;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c9)' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='white' text-anchor='middle' opacity='0.25'%3E地下都市通路%3C/text%3E%3C/svg%3E" alt="地下都市通路" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='c10' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23718096;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%234a5568;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c10)' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='white' text-anchor='middle' opacity='0.25'%3E石の扉%3C/text%3E%3C/svg%3E" alt="石の扉" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='c11' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23a0aec0;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23718096;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c11)' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='white' text-anchor='middle' opacity='0.25'%3E換気口%3C/text%3E%3C/svg%3E" alt="換気口" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                特に印象的だったのは、円盤状の石板による防衛システム。直径約1.5メートルの石板が、各階層の入り口に配置されている。内側からのみ動かすことができ、中央部の小さな穴から敵の様子を窺ったり、槍で攻撃したりすることが可能だった。
+            </p>
+            <p class="section-text">
+                また、鳩を引き入れ糞をブドウ育成の肥料として活用する工夫。限られた空間を最大限に活用する知恵が随所に見られる。古代の人々の驚くべき叡智を今に伝える、貴重な遺産だ。
+            </p>
+        </section>
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='c12' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a5568;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%231a202c;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c12)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' opacity='0.25'%3E地下都市内部%3C/text%3E%3C/svg%3E" alt="地下都市内部" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">何層にも重なる地下都市の空間</p>
+
+        <!-- セクション5: ホテル -->
+        <section class="section">
+            <h2 class="section-title">Cappadocia Cave Resort & Spa</h2>
+            <p class="section-text">
+                宿泊はCappadocia Cave Resort & Spa。カッパドキアでは規模の大きなホテルで、洞窟をイメージした造りながらも、バスタブまで完備された快適な空間だった。
+            </p>
+            <p class="section-text">
+                ホテルの真骨頂は、その立地にあった。ドローン撮影で初めて気づいたのだが、奇岩群の絶景ポイントに位置していたのだ。ベランダから眺める朝の熱気球。夢のような時間だった。
+            </p>
+        </section>
+
+        <div class="image-grid-3">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='c13' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23b88d5f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c13)' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='white' text-anchor='middle' opacity='0.25'%3Eホテル外観%3C/text%3E%3C/svg%3E" alt="ホテル外観" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='c14' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c9a876;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a88c65;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c14)' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='white' text-anchor='middle' opacity='0.25'%3E客室%3C/text%3E%3C/svg%3E" alt="客室" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='c15' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23b88d5f;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%239b7653;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23c15)' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='white' text-anchor='middle' opacity='0.25'%3Eベランダからの眺め%3C/text%3E%3C/svg%3E" alt="ベランダからの眺め" onclick="openLightbox(this.src)">
+        </div>
+
+        <div class="highlight">
+            幻想的な大地カッパドキアに別れを告げる。次の目的地はコンヤ。イスラム神秘主義の中心地で、旋回舞踊セマーが待っている。
+        </div>
+
+    </article>
+
+    <!-- ライトボックス -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- 関連記事 -->
+    <section class="related">
+        <div class="related-container">
+            <h2 class="related-title">他の都市を見る</h2>
+            <div class="related-grid">
+                
+                <div class="related-item" onclick="window.location.href='safranbolu-detail.html'">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23b88d5f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r1)' width='300' height='200'/%3E%3C/svg%3E" alt="サフランボル" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">サフランボルの街</h3>
+                        <p class="related-desc">オスマン帝国時代の面影を残す赤い屋根の街</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('コンヤのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2391c4a4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236b9b7f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r2)' width='300' height='200'/%3E%3C/svg%3E" alt="コンヤ" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">コンヤの神秘</h3>
+                        <p class="related-desc">旋回舞踊と薔薇の香りに包まれて</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('イスタンブールのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a6fa5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232b4a6f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r3)' width='300' height='200'/%3E%3C/svg%3E" alt="イスタンブール" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">イスタンブールの朝</h3>
+                        <p class="related-desc">東西の文明が出会う永遠の都</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>TURKEY JOURNEY 2024</p>
+        <p style="margin-top: 0.5rem;">カッパドキアからイスタンブールへ</p>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ESCキーでも閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
