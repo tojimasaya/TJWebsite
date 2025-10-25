@@ -150,7 +150,8 @@
 
         .image-grid img {
             width: 100%;
-            height: auto;
+            height: 400px;
+            object-fit: cover;
             display: block;
             cursor: pointer;
             transition: opacity 0.3s;
@@ -170,7 +171,8 @@
 
         .image-grid-3 img {
             width: 100%;
-            height: auto;
+            height: 350px;
+            object-fit: cover;
             display: block;
             cursor: pointer;
             transition: opacity 0.3s;
@@ -322,9 +324,17 @@
                 gap: 1rem;
             }
 
+            .image-grid img {
+                height: 300px;
+            }
+
             .image-grid-3 {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+            }
+
+            .image-grid-3 img {
+                height: 280px;
             }
 
             .section {
