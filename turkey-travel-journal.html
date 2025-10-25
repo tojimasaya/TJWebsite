@@ -3,7 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>サフランボルの街 | トルコ旅行記</title>
+    <title>トルコ旅行記 - カッパドキアからイスタンブールへ</title>
+    <link href='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css' rel='stylesheet' />
+    <script src='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js'></script>
+    <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
     <style>
         * {
             margin: 0;
@@ -13,35 +16,15 @@
 
         body {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-            line-height: 2;
+            line-height: 1.9;
             color: #333;
-            background: #fff;
+            background: #fafafa;
         }
 
-        /* ヘッダー */
-        header {
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid #e0e0e0;
-            background: #fff;
-        }
-
-        .header-link {
-            color: #666;
-            text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-            transition: color 0.3s;
-        }
-
-        .header-link:hover {
-            color: #c49a6c;
-        }
-
-        /* Hero画像 */
+        /* ヒーローセクション */
         .hero {
-            width: 100%;
-            height: 65vh;
-            min-height: 450px;
+            height: 70vh;
+            min-height: 500px;
             position: relative;
             overflow: hidden;
         }
@@ -52,447 +35,561 @@
             object-fit: cover;
         }
 
-        .hero-caption {
+        .hero-overlay {
             position: absolute;
-            bottom: 2rem;
+            top: 50%;
             left: 50%;
-            transform: translateX(-50%);
+            transform: translate(-50%, -50%);
             color: white;
             text-align: center;
-            width: 90%;
-            max-width: 600px;
+            padding: 2rem;
+            width: 100%;
         }
 
-        .hero-number {
-            font-size: 0.75rem;
-            letter-spacing: 0.2em;
-            margin-bottom: 0.5rem;
-            opacity: 0.9;
+        .hero-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            opacity: 0.95;
         }
 
         .hero-title {
-            font-size: clamp(2rem, 4vw, 3rem);
+            font-size: clamp(2rem, 5vw, 3.5rem);
             font-weight: 400;
             letter-spacing: 0.15em;
-            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
-        }
-
-        /* メインコンテンツ */
-        .main-content {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        /* リード文 */
-        .lead {
-            font-size: 1.1rem;
-            line-height: 2.2;
-            color: #444;
-            margin-bottom: 3rem;
-            letter-spacing: 0.05em;
-        }
-
-        /* セクション */
-        .section {
-            margin-bottom: 5rem;
-        }
-
-        .section-title {
-            font-size: 1.5rem;
-            font-weight: 500;
+            line-height: 1.6;
             margin-bottom: 2rem;
-            letter-spacing: 0.1em;
-            color: #2c2c2c;
-            border-left: 3px solid #c49a6c;
-            padding-left: 1rem;
         }
 
-        .section-text {
+        .hero-subtitle {
+            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            line-height: 1.9;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* イントロセクション */
+        .intro {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .intro-text {
             font-size: 1rem;
             line-height: 2.2;
             color: #555;
+        }
+
+        /* マップセクション */
+        .map-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 2rem 1.5rem 3rem;
+        }
+
+        .map-title {
+            font-size: 0.9rem;
+            letter-spacing: 0.18em;
+            color: #666;
+            margin: 0 0 1rem 0.2rem;
+        }
+
+        .map-controls {
+            text-align: center;
+            margin-bottom: 1.5rem;
+        }
+
+        .map-btn {
+            background: white;
+            border: 1px solid #ddd;
+            padding: 0.6rem 1.5rem;
+            margin: 0 0.5rem;
+            border-radius: 4px;
+            font-size: 0.85rem;
+            cursor: pointer;
+            transition: all 0.3s;
+            letter-spacing: 0.05em;
+        }
+
+        .map-btn:hover {
+            background: #f5f5f5;
+        }
+
+        .map-btn.active {
+            background: #c49a6c;
+            color: white;
+            border-color: #c49a6c;
+        }
+
+        #map {
+            width: 100%;
+            height: 520px;
+            border-radius: 12px;
+            border: 1px solid #e0e0e0;
+            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            background: #f3f3f3;
+        }
+
+        .marker-badge {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            background: #c49a6c;
+            color: white;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 600;
+            font-size: 14px;
+            border: 3px solid white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        .marker-badge:hover {
+            transform: scale(1.1);
+        }
+
+        /* 都市セクション */
+        .cities-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        .city-item {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 6rem;
+            background: white;
+            padding: 0;
+        }
+
+        .city-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .city-image-container {
+            flex: 0 0 45%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .city-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .city-item:hover .city-image {
+            transform: scale(1.05);
+        }
+
+        .city-content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .city-number {
+            font-size: 0.75rem;
+            color: #999;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+        }
+
+        .city-name {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+        }
+
+        .city-description {
+            font-size: 0.95rem;
+            line-height: 2;
+            color: #666;
             margin-bottom: 2rem;
             letter-spacing: 0.03em;
         }
 
-        /* 画像 */
-        .content-image {
-            width: 100%;
-            max-width: 700px;
-            margin: 3rem auto;
-            display: block;
-            border-radius: 2px;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .content-image:hover {
-            opacity: 0.9;
-        }
-
-        .image-caption {
-            text-align: center;
-            font-size: 0.85rem;
-            color: #999;
-            margin-top: 1rem;
-            letter-spacing: 0.05em;
-        }
-
-        /* 2カラム画像（縦＋横の組み合わせ） */
-        .image-grid {
-            display: grid;
-            grid-template-columns: 1fr 1.5fr;
-            gap: 1.5rem;
-            margin: 3rem 0;
-            align-items: start;
-        }
-
-        .image-grid img {
-            width: 100%;
-            height: auto;
-            display: block;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .image-grid img:hover {
-            opacity: 0.9;
-        }
-
-        /* 3枚横並び（ホテル用） */
-        .image-grid-3 {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1rem;
-            margin: 3rem 0;
-        }
-
-        .image-grid-3 img {
-            width: 100%;
-            height: auto;
-            display: block;
-            cursor: pointer;
-            transition: opacity 0.3s;
-        }
-
-        .image-grid-3 img:hover {
-            opacity: 0.9;
-        }
-
-        /* ライトボックス */
-        .lightbox {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.9);
-            align-items: center;
-            justify-content: center;
-        }
-
-        .lightbox.active {
-            display: flex;
-        }
-
-        .lightbox img {
-            max-width: 90%;
-            max-height: 90%;
-            object-fit: contain;
-        }
-
-        .lightbox-close {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
+        .read-button {
+            display: inline-block;
+            padding: 0.9rem 3rem;
+            background: #2c2c2c;
             color: white;
-            font-size: 2rem;
-            cursor: pointer;
-            background: rgba(0,0,0,0.5);
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            line-height: 1;
-        }
-
-        /* 引用・ハイライト */
-        .highlight {
-            background: #f9f7f4;
-            padding: 2rem;
-            margin: 3rem 0;
-            border-left: 3px solid #c49a6c;
-            font-size: 1.05rem;
-            line-height: 2.2;
-            color: #555;
-        }
-
-        /* 関連記事 */
-        .related {
-            background: #fafafa;
-            padding: 4rem 2rem;
-            margin-top: 5rem;
-        }
-
-        .related-container {
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-
-        .related-title {
-            text-align: center;
-            font-size: 1.3rem;
-            font-weight: 400;
-            margin-bottom: 3rem;
-            letter-spacing: 0.15em;
-        }
-
-        .related-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 2rem;
-        }
-
-        .related-item {
-            background: white;
-            overflow: hidden;
-            transition: transform 0.3s;
-            cursor: pointer;
-        }
-
-        .related-item:hover {
-            transform: translateY(-5px);
-        }
-
-        .related-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-        }
-
-        .related-content {
-            padding: 1.5rem;
-        }
-
-        .related-name {
-            font-size: 1rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.05em;
-        }
-
-        .related-desc {
+            text-decoration: none;
             font-size: 0.85rem;
-            line-height: 1.8;
-            color: #666;
+            letter-spacing: 0.2em;
+            transition: all 0.3s ease;
+            border: 1px solid #2c2c2c;
+            cursor: pointer;
+        }
+
+        .read-button:hover {
+            background: white;
+            color: #2c2c2c;
         }
 
         /* フッター */
         footer {
-            background: #2c2c2c;
-            color: white;
-            padding: 3rem 2rem;
+            background: #f5f5f5;
+            padding: 4rem 2rem;
             text-align: center;
+            border-top: 1px solid #e0e0e0;
         }
 
-        footer p {
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-date {
             font-size: 0.85rem;
+            color: #999;
             letter-spacing: 0.1em;
-            opacity: 0.8;
         }
 
         /* レスポンシブ */
         @media (max-width: 768px) {
-            .main-content {
-                padding: 3rem 1.5rem;
-            }
-
             .hero {
-                height: 50vh;
-                min-height: 350px;
+                height: 60vh;
+                min-height: 400px;
             }
 
-            .image-grid {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+            .city-item,
+            .city-item:nth-child(even) {
+                flex-direction: column;
+                gap: 0;
+                margin-bottom: 4rem;
             }
 
-            .image-grid-3 {
-                grid-template-columns: 1fr;
-                gap: 1rem;
+            .city-image-container {
+                flex: 0 0 auto;
+                width: 100%;
             }
 
-            .section {
-                margin-bottom: 3rem;
+            .city-content {
+                padding: 2rem 1.5rem;
             }
 
-            .related-grid {
-                grid-template-columns: 1fr;
+            .intro {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .cities-section {
+                padding: 2rem 1rem 3rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- ヘッダー -->
-    <header>
-        <a href="turkey-travel-journal.html" class="header-link">← 一覧に戻る</a>
-    </header>
-
-    <!-- Hero画像 -->
+    <!-- ヒーローセクション -->
     <div class="hero">
-        <img src="./assets/images/turkey/safranbolu/hero.jpg" alt="サフランボル" class="hero-image">
-        <div class="hero-caption">
-            <p class="hero-number">01</p>
-            <h1 class="hero-title">サフランボルの街</h1>
+        <img src="./assets/images/turkey-hero.jpg" alt="トルコの風景" class="hero-image">
+        <div class="hero-overlay">
+            <p class="hero-label">特集｜</p>
+            <h1 class="hero-title">
+                二度目のトルコは、<br>
+                自分らしく。
+            </h1>
+            <p class="hero-subtitle">
+                オスマン帝国の面影から幻想的な奇岩群、<br class="pc-only">
+                そして東西の文明が交差する永遠の都へ。
+            </p>
         </div>
     </div>
 
-    <!-- メインコンテンツ -->
-    <article class="main-content">
-        
-        <p class="lead">
-            オスマン帝国時代の面影を色濃く残す世界遺産の街。かつてサフランの集積地として栄えたこの街は、赤い屋根と白壁の伝統的な木造家屋が1,000軒以上も現存する歴史的な宝庫です。
+    <!-- イントロセクション -->
+    <section class="intro">
+        <p class="intro-text">
+            カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代ローマ遺跡、そしてボスポラス海峡の夜明け。トルコという国の多様な表情を巡った9日間の旅をご紹介します。
         </p>
+    </section>
 
-        <!-- セクション1: 街並み -->
-        <section class="section">
-            <h2 class="section-title">オスマン建築の宝庫</h2>
-            <p class="section-text">
-                石畳の坂道を歩くと、17世紀から続くアラスタバザールでは地元の手工芸品や名物のサフラン製品が並び、昔ながらの商店街の雰囲気を味わえました。赤茶色の屋根と白い壁のコントラストが美しく、まるで時が止まったかのような光景が広がります。
-            </p>
-            <p class="section-text">
-                サフランボルの建築様式は、オスマン帝国時代の伝統を色濃く残しています。木造の家屋は、1階が石造り、2階以上が木造という構造が特徴的で、2階部分が張り出した独特のデザインは「チャルシュ」と呼ばれています。
-            </p>
-        </section>
-
-        <img src="./assets/images/turkey/safranbolu/02.jpg" alt="サフランボルの街並み" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">赤い屋根と白壁が続く伝統的な街並み</p>
-
-        <!-- セクション2: バザール -->
-        <section class="section">
-            <h2 class="section-title">アラスタバザールの賑わい</h2>
-            <p class="section-text">
-                17世紀から続くアラスタバザールは、サフランボルの中心地。狭い路地に並ぶ小さな店には、伝統的な手工芸品、サフラン製品、トルコ伝統のお菓子などが所狭しと並んでいます。
-            </p>
-            <p class="section-text">
-                特に印象的だったのは、サフラン入りのトルコデライト（ロクム）。黄金色の美しい色合いと、ほのかな香りが特徴的で、お土産に最適です。店主たちは気さくで、試食を勧めながら製品の説明をしてくれました。
-            </p>
-        </section>
-
-        <div class="image-grid">
-            <img src="./assets/images/turkey/safranbolu/03.jpg" alt="バザール1" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/safranbolu/04.jpg" alt="バザール2" onclick="openLightbox(this.src)">
+    <!-- マップセクション -->
+    <section class="map-section">
+        <div class="map-title">VISITED PLACES MAP</div>
+        <div class="map-controls">
+            <button class="map-btn active" id="btn-light">Light</button>
+            <button class="map-btn" id="btn-sat">Satellite</button>
+            <button class="map-btn" id="btn-tour">ツアー再生</button>
         </div>
+        <div id="map"></div>
+    </section>
 
-        <img src="./assets/images/turkey/safranbolu/05.jpg" alt="バザール3" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">サフラン製品が並ぶバザールの店先</p>
-
-        <!-- セクション3: フドゥルルックの丘 -->
-        <section class="section">
-            <h2 class="section-title">フドゥルルックの丘からの眺望</h2>
-            <p class="section-text">
-                特に印象的だったのは、フドゥルルックの丘からの眺め。街全体を見渡せる絶景ポイントで、モスクやトルコ式浴場など、オスマン建築の美しい街並みを一望することができます。
-            </p>
-            <p class="section-text">
-                夕暮れ時に訪れると、夕陽に照らされた赤い屋根が一層美しく輝き、まるで絵画のような光景が広がります。丘の上には展望台とカフェがあり、ゆっくりとトルコティーを飲みながら景色を楽しむことができました。
-            </p>
-        </section>
-
-        <img src="./assets/images/turkey/safranbolu/06.jpg" alt="フドゥルルックの丘" class="content-image" onclick="openLightbox(this.src)">
-
-        <div class="highlight">
-            サフランボルは、オスマン帝国時代の生活様式が今なお息づく貴重な街。1,000軒以上もの伝統的家屋が現存し、1994年にユネスコ世界遺産に登録されました。この街を歩くことは、まさに生きた歴史博物館を体験することです。
-        </div>
-
-        <!-- セクション4: 宿泊 -->
-        <section class="section">
-            <h2 class="section-title">ヒルトンガーデンイン・サフランボル</h2>
-            <p class="section-text">
-                宿泊はヒルトンガーデンイン・サフランボル、サフランボルの街の中心から車で10分ほどにある四つ星ホテルです。広くはありませんが、清潔で設備も新しく快適でした。
-            </p>
-            <p class="section-text">
-                バスタブがあるのは日本人には嬉しいですね、ただシャワーの水流は若干弱めでした。今回のテーマがスマホのみ、パソコン無しの旅なのですがテレビが最新で、予定していたHONOR Magic V3を大型テレビに投影できたので比較的簡単に写真整理ができました。
-            </p>
-        </section>
-
-        <div class="image-grid-3">
-            <img src="./assets/images/turkey/safranbolu/07.jpg" alt="ホテル1" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/safranbolu/08.jpg" alt="ホテル2" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/safranbolu/09.jpg" alt="ホテル3" onclick="openLightbox(this.src)">
-        </div>
-
-    </article>
-
-    <!-- ライトボックス -->
-    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
-        <span class="lightbox-close">&times;</span>
-        <img id="lightbox-img" src="" alt="">
-    </div>
-
-    <!-- 関連記事 -->
-    <section class="related">
-        <div class="related-container">
-            <h2 class="related-title">他の都市を見る</h2>
-            <div class="related-grid">
-                
-                <div class="related-item" onclick="window.location.href='cappadocia-detail.html'">
-                    <img src="./assets/images/turkey/cappadocia/01.jpg" alt="カッパドキア" class="related-image">
-                    <div class="related-content">
-                        <h3 class="related-name">カッパドキアの大地</h3>
-                        <p class="related-desc">熱気球と奇岩群が織りなす幻想的な光景</p>
-                    </div>
-                </div>
-
-                <div class="related-item" onclick="alert('コンヤのページ')">
-                    <img src="./assets/images/turkey/konya/01.jpg" alt="コンヤ" class="related-image">
-                    <div class="related-content">
-                        <h3 class="related-name">コンヤの神秘</h3>
-                        <p class="related-desc">旋回舞踊と薔薇の香りに包まれて</p>
-                    </div>
-                </div>
-
-                <div class="related-item" onclick="window.location.href='istanbul-detail.html'">
-                    <img src="./assets/images/turkey/istanbul/01.jpg" alt="イスタンブール" class="related-image">
-                    <div class="related-content">
-                        <h3 class="related-name">イスタンブールの朝</h3>
-                        <p class="related-desc">東西の文明が出会う永遠の都</p>
-                    </div>
-                </div>
-
+    <!-- 都市セクション -->
+    <section class="cities-section">
+        
+        <!-- サフランボル -->
+        <article class="city-item">
+            <div class="city-image-container">
+                <img src="./assets/images/turkey/safranbolu/01.jpg" alt="サフランボル" class="city-image">
             </div>
-        </div>
+            <div class="city-content">
+                <p class="city-number">01</p>
+                <h2 class="city-name">サフランボルの街</h2>
+                <p class="city-description">
+                    オスマン帝国時代の面影を色濃く残す世界遺産の街。赤い屋根と白壁の伝統的な木造家屋が1,000軒以上も現存し、石畳の坂道を歩けば17世紀から続くアラスタバザールの賑わいに出会えます。
+                </p>
+                <a href="#" class="read-button" onclick="alert('サフランボルの詳細ページ'); return false;">読む</a>
+            </div>
+        </article>
+
+        <!-- カッパドキア -->
+        <article class="city-item">
+            <div class="city-image-container">
+                <img src="./assets/images/turkey/cappadocia/01.jpg" alt="カッパドキア" class="city-image">
+            </div>
+            <div class="city-content">
+                <p class="city-number">02</p>
+                <h2 class="city-name">カッパドキアの大地</h2>
+                <p class="city-description">
+                    早朝の空に浮かぶ色とりどりの熱気球。ウチヒサル城塞、三姉妹の岩、ラクダ岩など個性豊かな奇岩群と、紀元前から続く地下都市カルダック。古代の人々の叡智が詰まった幻想的な大地です。
+                </p>
+                <a href="#" class="read-button" onclick="alert('カッパドキアの詳細ページ'); return false;">読む</a>
+            </div>
+        </article>
+
+        <!-- コンヤ -->
+        <article class="city-item">
+            <div class="city-image-container">
+                <img src="./assets/images/turkey/konya/01.jpg" alt="コンヤ" class="city-image">
+            </div>
+            <div class="city-content">
+                <p class="city-number">03</p>
+                <h2 class="city-name">コンヤの神秘</h2>
+                <p class="city-description">
+                    エメラルドグリーンの塔が印象的なメヴラーナ博物館で、イスラム神秘主義の世界へ。右手を天に、左手を地に向けながら回転する旋回舞踊セマー。預言者ムハンマドの聖遺物からは、薔薇の香りが漂います。
+                </p>
+                <a href="#" class="read-button" onclick="alert('コンヤの詳細ページ'); return false;">読む</a>
+            </div>
+        </article>
+
+        <!-- パムッカレ -->
+        <article class="city-item">
+            <div class="city-image-container">
+                <img src="./assets/images/turkey/pamukkale/01.jpg" alt="パムッカレ" class="city-image">
+            </div>
+            <div class="city-content">
+                <p class="city-number">04</p>
+                <h2 class="city-name">パムッカレの温泉</h2>
+                <p class="city-description">
+                    「コットンキャッスル」と呼ばれる白い石灰棚と、紀元前2世紀から続く温泉地ヒエラポリス。クレオパトラプールでは、水中に沈む古代の柱の間を泳ぎながら、ローマ帝国のテルマエ文化を体感できます。
+                </p>
+                <a href="#" class="read-button" onclick="alert('パムッカレの詳細ページ'); return false;">読む</a>
+            </div>
+        </article>
+
+        <!-- エフェソス -->
+        <article class="city-item">
+            <div class="city-image-container">
+                <img src="./assets/images/turkey/ephesus/01.jpg" alt="エフェソス" class="city-image">
+            </div>
+            <div class="city-content">
+                <p class="city-number">05</p>
+                <h2 class="city-name">エフェソスの遺跡</h2>
+                <p class="city-description">
+                    12万冊の蔵書を誇ったケルスス図書館、25,000人を収容した大劇場、そして猫たちがゆったりと暮らす古代ローマ遺跡。ナイキのロゴの原型となったニケのレリーフも必見です。
+                </p>
+                <a href="#" class="read-button" onclick="alert('エフェソスの詳細ページ'); return false;">読む</a>
+            </div>
+        </article>
+
+        <!-- イスタンブール -->
+        <article class="city-item">
+            <div class="city-image-container">
+                <img src="./assets/images/turkey/istanbul/01.jpg" alt="イスタンブール" class="city-image">
+            </div>
+            <div class="city-content">
+                <p class="city-number">06</p>
+                <h2 class="city-name">イスタンブールの朝</h2>
+                <p class="city-description">
+                    ボスポラス海峡の夜明け、オスマン帝国の宮殿群、2万枚のイズニックタイルが美しいブルーモスク、そして教会からモスクへと姿を変えたアヤ・ソフィア。東西の文明が出会う永遠の都です。
+                </p>
+                <a href="#" class="read-button" onclick="alert('イスタンブールの詳細ページ'); return false;">読む</a>
+            </div>
+        </article>
+
     </section>
 
     <!-- フッター -->
     <footer>
-        <p>TURKEY JOURNEY 2024</p>
-        <p style="margin-top: 0.5rem;">カッパドキアからイスタンブールへ</p>
+        <div class="footer-content">
+            <p class="footer-title">TURKEY JOURNEY</p>
+            <p class="footer-date">2024.10.25 - 11.02</p>
+        </div>
     </footer>
 
     <script>
-        function openLightbox(src) {
-            document.getElementById('lightbox').classList.add('active');
-            document.getElementById('lightbox-img').src = src;
-            document.body.style.overflow = 'hidden';
-        }
+        window.addEventListener('load', function () {
+            mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
 
-        function closeLightbox() {
-            document.getElementById('lightbox').classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+            let currentStyle = 'light';
+            const map = new mapboxgl.Map({
+                container: 'map',
+                style: 'mapbox://styles/mapbox/light-v11',
+                center: [32.5, 39.0],
+                zoom: 4.4,
+                pitch: 0,        // 45 → 0（真上から）
+                bearing: 0,      // -10 → 0（回転なし）
+                // アニメーションを滑らかに
+                pitchWithRotate: true,
+                dragRotate: true,
+                touchZoomRotate: true
+            });
+            map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }), 'top-right');
 
-        // ESCキーでも閉じる
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeLightbox();
+            // 地形（DEM）＆空
+            map.on('style.load', () => {
+                if (!map.getSource('mapbox-dem')) {
+                    map.addSource('mapbox-dem', {
+                        type: 'raster-dem',
+                        url: 'mapbox://mapbox.terrain-rgb',
+                        tileSize: 512,
+                        maxzoom: 14
+                    });
+                }
+                map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.2 });
+                if (!map.getLayer('sky')) {
+                    map.addLayer({
+                        id: 'sky',
+                        type: 'sky',
+                        paint: {
+                            'sky-type': 'atmosphere',
+                            'sky-atmosphere-sun-intensity': 10
+                        }
+                    });
+                }
+            });
+
+            // 訪問地点
+            const places = [
+                { id:'safranbolu', idx:1, name:'サフランボル', nameEn:'Safranbolu', coord:[32.6945, 41.2561] },
+                { id:'cappadocia', idx:2, name:'カッパドキア', nameEn:'Cappadocia', coord:[34.8419, 38.6431] },
+                { id:'konya', idx:3, name:'コンヤ', nameEn:'Konya', coord:[32.4846, 37.8667] },
+                { id:'pamukkale', idx:4, name:'パムッカレ', nameEn:'Pamukkale', coord:[29.1208, 37.9200] },
+                { id:'ephesus', idx:5, name:'エフェソス', nameEn:'Ephesus', coord:[27.3409, 37.9392] },
+                { id:'istanbul', idx:6, name:'イスタンブール', nameEn:'Istanbul', coord:[28.9784, 41.0082] }
+            ];
+
+            // 画面フィット
+            const bounds = new mapboxgl.LngLatBounds(places[0].coord, places[0].coord);
+            for (const p of places) bounds.extend(p.coord);
+
+            map.on('load', () => {
+                // アーク（測地線）作成
+                const arcs = [];
+                for (let i=0;i<places.length-1;i++){
+                    const gc = turf.greatCircle(
+                        turf.point(places[i].coord),
+                        turf.point(places[i+1].coord),
+                        { npoints: 64 }
+                    );
+                    arcs.push(gc);
+                }
+                const routeFC = turf.featureCollection(arcs);
+
+                map.addSource('arcs', { type:'geojson', data: routeFC });
+                map.addLayer({
+                    id:'arcs-line',
+                    type:'line',
+                    source:'arcs',
+                    paint:{
+                        'line-color':'#c49a6c',
+                        'line-width': 2.8,
+                        'line-opacity': 0.65,
+                        'line-dasharray': [0, 2, 3]
+                    }
+                });
+
+                // ダッシュアニメ（速度を遅く）
+                let dash = 0;
+                function animateDash(){
+                    dash = (dash + 0.01) % 3;  // 0.02 → 0.01（半分の速度）
+                    map.setPaintProperty('arcs-line','line-dasharray',[dash,2,3]);
+                    requestAnimationFrame(animateDash);
+                }
+                animateDash();
+
+                // マーカー（番号バッジ）＋ポップアップ
+                places.forEach(p=>{
+                    const el = document.createElement('div');
+                    el.className = 'marker-badge';
+                    el.textContent = p.idx;
+                    const popup = new mapboxgl.Popup({ offset: 10 }).setHTML(
+                        `<div style="padding:0.5rem;">
+                           <div style="font-weight:600; margin-bottom:0.25rem;">${p.name}</div>
+                           <div style="font-size:0.85rem; color:#999; margin-bottom:0.5rem;">${p.nameEn}</div>
+                           <a href="#" style="color:#c49a6c; text-decoration:none; font-size:0.9rem;" onclick="alert('${p.name}の詳細ページ'); return false;">詳細を見る →</a>
+                         </div>`
+                    );
+                    new mapboxgl.Marker({ element: el, anchor: 'center' })
+                        .setLngLat(p.coord)
+                        .setPopup(popup)
+                        .addTo(map);
+                });
+
+                map.fitBounds(bounds, { 
+                    padding: 70, 
+                    duration: 2000,  // 900ms → 2000ms（よりゆっくり）
+                    pitch: map.getPitch(), 
+                    bearing: map.getBearing(),
+                    essential: true  // アニメーションを中断させない
+                });
+            });
+
+            // ベースマップ切替
+            const btnLight = document.getElementById('btn-light');
+            const btnSat = document.getElementById('btn-sat');
+            function setStyle(name){
+                currentStyle = name;
+                btnLight.classList.toggle('active', name==='light');
+                btnSat.classList.toggle('active', name==='sat');
+                map.setStyle(name==='light' ? 'mapbox://styles/mapbox/light-v11'
+                                            : 'mapbox://styles/mapbox/satellite-streets-v12');
             }
+            btnLight.addEventListener('click', ()=>setStyle('light'));
+            btnSat.addEventListener('click', ()=>setStyle('sat'));
+
+            // ツアーボタン：各地点を順に flyTo
+            document.getElementById('btn-tour').addEventListener('click', async ()=>{
+                for (const p of places){
+                    map.flyTo({ 
+                        center: p.coord, 
+                        zoom: 7.2, 
+                        pitch: 55, 
+                        bearing: -20, 
+                        speed: 0.4,      // 0.6 → 0.4（より遅く）
+                        curve: 1.2,      // 1.4 → 1.2（より緩やかなカーブ）
+                        essential: true 
+                    });
+                    await new Promise(r=>setTimeout(r, 2500));  // 1400ms → 2500ms（各地点での滞在時間を延長）
+                }
+                // 最後に全体
+                map.fitBounds(new mapboxgl.LngLatBounds(places[0].coord, places[0].coord).extend(places.at(-1).coord), { 
+                    padding: 70, 
+                    duration: 2000,  // 900ms → 2000ms
+                    essential: true 
+                });
+            });
         });
     </script>
-
 </body>
 </html>
