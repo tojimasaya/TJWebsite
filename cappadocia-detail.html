@@ -139,6 +139,26 @@
             letter-spacing: 0.05em;
         }
 
+        /* 動画埋め込み */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 3rem auto;
+            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+
         /* 2カラム画像 */
         .image-grid {
             display: grid;
@@ -412,6 +432,14 @@
             <p class="section-text">
                 撮影に没頭していると、心配した妻が様子を見に来た。ドローニーで二人の記念動画を撮っているとき、驚くべき事実に気づく。なんと我々が泊まっているホテルは、カッパドキアの象徴とも言える奇岩群の絶景ポイントに位置していたのだ。
             </p>
+        </section>
+
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/cJ2lFRqmeBA?start=3" title="カッパドキア ドローン撮影" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="image-caption">ドローンで撮影した朝のカッパドキア</p>
+
+        <section class="section">
             <p class="section-text">
                 ドローンがホテルから離れれば離れるほど、その光景は圧巻のものとなっていく。朝日に照らされた奇岩群の中に佇むホテル。信じられないほどの美しさだった。
             </p>
