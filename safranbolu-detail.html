@@ -123,6 +123,12 @@
             margin: 3rem auto;
             display: block;
             border-radius: 2px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .content-image:hover {
+            opacity: 0.9;
         }
 
         .image-caption {
@@ -133,18 +139,86 @@
             letter-spacing: 0.05em;
         }
 
-        /* 2カラム画像 */
+        /* 2カラム画像（縦＋横の組み合わせ） */
         .image-grid {
             display: grid;
-            grid-template-columns: 1fr 1fr;
+            grid-template-columns: 1fr 1.5fr;
             gap: 1.5rem;
             margin: 3rem 0;
+            align-items: start;
         }
 
         .image-grid img {
             width: 100%;
             height: auto;
             display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid img:hover {
+            opacity: 0.9;
+        }
+
+        /* 3枚横並び（ホテル用） */
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .image-grid-3 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid-3 img:hover {
+            opacity: 0.9;
+        }
+
+        /* ライトボックス */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
         }
 
         /* 引用・ハイライト */
@@ -248,6 +322,11 @@
                 gap: 1rem;
             }
 
+            .image-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
             .section {
                 margin-bottom: 3rem;
             }
@@ -277,70 +356,73 @@
     <article class="main-content">
         
         <p class="lead">
-            オスマン帝国時代の面影を色濃く残す世界遺産の街。かつてサフランの集積地として栄えたこの街は、赤い屋根と白壁の伝統的な木造家屋が1,000軒以上も現存する歴史的な宝庫です。
+            サフランボルの名は、香辛料サフランに由来する。かつて交易の中心として栄えたこの街は、いまもどこか金色の香りをまとっている。赤い屋根と白壁の木造家屋が並び、オスマン帝国の時代そのままの姿で坂道に寄り添っている。
         </p>
 
-        <!-- セクション1: 街並み -->
-        <section class="section">
-            <h2 class="section-title">オスマン建築の宝庫</h2>
-            <p class="section-text">
-                石畳の坂道を歩くと、17世紀から続くアラスタバザールでは地元の手工芸品や名物のサフラン製品が並び、昔ながらの商店街の雰囲気を味わえました。赤茶色の屋根と白い壁のコントラストが美しく、まるで時が止まったかのような光景が広がります。
-            </p>
-            <p class="section-text">
-                サフランボルの建築様式は、オスマン帝国時代の伝統を色濃く残しています。木造の家屋は、1階が石造り、2階以上が木造という構造が特徴的で、2階部分が張り出した独特のデザインは「チャルシュ」と呼ばれています。
-            </p>
-        </section>
+        <img src="./assets/images/turkey/safranbolu/02.jpg" alt="サフランボルの街並み" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">赤い屋根と白壁が続くオスマン帝国時代の街並み</p>
 
-        <img src="./assets/images/turkey/safranbolu/02.jpg" alt="サフランボルの街並み" class="content-image">
-        <p class="image-caption">赤い屋根と白壁が続く伝統的な街並み</p>
-
-        <!-- セクション2: バザール -->
+        <!-- セクション1: アラスタ・バザール -->
         <section class="section">
-            <h2 class="section-title">アラスタバザールの賑わい</h2>
+            <h2 class="section-title">アラスタ・バザールの魅力</h2>
             <p class="section-text">
-                17世紀から続くアラスタバザールは、サフランボルの中心地。狭い路地に並ぶ小さな店には、伝統的な手工芸品、サフラン製品、トルコ伝統のお菓子などが所狭しと並んでいます。
+                最初に訪れたアラスタ・バザールでは、妻がすっかりその魅力に取り憑かれてしまった。お土産を選ぶ彼女の表情は、まるで子どものように楽しそうだった。
             </p>
             <p class="section-text">
-                特に印象的だったのは、サフラン入りのトルコデライト（ロクム）。黄金色の美しい色合いと、ほのかな香りが特徴的で、お土産に最適です。店主たちは気さくで、試食を勧めながら製品の説明をしてくれました。
+                我々が暮らすアジア圏とはまるで異なる色使いとパッケージ。異国のデザインが放つ独特の手ざわりに、こちらの気分まで高揚する。
             </p>
         </section>
 
         <div class="image-grid">
-            <img src="./assets/images/turkey/safranbolu/03.jpg" alt="バザール1">
-            <img src="./assets/images/turkey/safranbolu/04.jpg" alt="バザール2">
+            <img src="./assets/images/turkey/safranbolu/03.jpg" alt="バザール1" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/safranbolu/04.jpg" alt="バザール2" onclick="openLightbox(this.src)">
         </div>
 
-        <!-- セクション3: フドゥルルックの丘 -->
+        <img src="./assets/images/turkey/safranbolu/05.jpg" alt="バザール3" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">色鮮やかなサフラン製品と伝統工芸品</p>
+
+        <!-- セクション2: フドゥルルックの丘 -->
         <section class="section">
-            <h2 class="section-title">フドゥルルックの丘からの眺望</h2>
+            <h2 class="section-title">フドゥルルックの丘からの夕景</h2>
             <p class="section-text">
-                特に印象的だったのは、フドゥルルックの丘からの眺め。街全体を見渡せる絶景ポイントで、モスクやトルコ式浴場など、オスマン建築の美しい街並みを一望することができます。
+                夕暮れ、フドゥルルックの丘に登る。西日に照らされた赤い屋根と、家々の影が織りなすコントラストが見事だった。
             </p>
             <p class="section-text">
-                夕暮れ時に訪れると、夕陽に照らされた赤い屋根が一層美しく輝き、まるで絵画のような光景が広がります。丘の上には展望台とカフェがあり、ゆっくりとトルコティーを飲みながら景色を楽しむことができました。
+                ドローンを飛ばして街を俯瞰すると、まるで夕陽そのものが街を抱きしめているよう。展望台のカフェでトルコティーを飲みながら、沈みゆく光をいつまでも眺めていた。
             </p>
         </section>
 
-        <img src="./assets/images/turkey/safranbolu/05.jpg" alt="フドゥルルックの丘" class="content-image">
+        <img src="./assets/images/turkey/safranbolu/06.jpg" alt="フドゥルルックの丘" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">夕陽に染まるサフランボルの街</p>
 
-        <div class="highlight">
-            サフランボルは、オスマン帝国時代の生活様式が今なお息づく貴重な街。1,000軒以上もの伝統的家屋が現存し、1994年にユネスコ世界遺産に登録されました。この街を歩くことは、まさに生きた歴史博物館を体験することです。
-        </div>
-
-        <!-- セクション4: 宿泊 -->
+        <!-- セクション3: ホテル -->
         <section class="section">
             <h2 class="section-title">ヒルトンガーデンイン・サフランボル</h2>
             <p class="section-text">
-                宿泊はヒルトンガーデンイン・サフランボル、サフランボルの街の中心から車で10分ほどにある四つ星ホテルです。広くはありませんが、清潔で設備も新しく快適でした。
+                宿泊はヒルトンガーデンイン・サフランボル。街の中心から車で10分ほどの場所にある落ち着いたホテルだ。
             </p>
             <p class="section-text">
-                バスタブがあるのは日本人には嬉しいですね、ただシャワーの水流は若干弱めでした。今回のテーマがスマホのみ、パソコン無しの旅なのですがテレビが最新で、予定していたHONOR Magic V3を大型テレビに投影できたので比較的簡単に写真整理ができました。
+                朝食のあと、庭先に集まる猫たちとしばし戯れる。旅の疲れがふっと抜けていく、そんな穏やかな時間だった。
             </p>
         </section>
 
-        <img src="./assets/images/turkey/safranbolu/06.jpg" alt="ホテル" class="content-image">
+        <div class="image-grid-3">
+            <img src="./assets/images/turkey/safranbolu/07.jpg" alt="ホテル1" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/safranbolu/08.jpg" alt="ホテル2" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/safranbolu/09.jpg" alt="ホテル3" onclick="openLightbox(this.src)">
+        </div>
+
+        <div class="highlight">
+            さて、次の目的地はカッパドキア。奇岩と熱気球の空を目指して、再び車輪が動き出す。
+        </div>
 
     </article>
+
+    <!-- ライトボックス -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
 
     <!-- 関連記事 -->
     <section class="related">
@@ -381,6 +463,26 @@
         <p>TURKEY JOURNEY 2024</p>
         <p style="margin-top: 0.5rem;">カッパドキアからイスタンブールへ</p>
     </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ESCキーでも閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
 
 </body>
 </html>
