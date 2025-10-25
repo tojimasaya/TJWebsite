@@ -348,7 +348,7 @@
                 <p class="city-description">
                     オスマン帝国時代の面影を色濃く残す世界遺産の街。赤い屋根と白壁の伝統的な木造家屋が1,000軒以上も現存し、石畳の坂道を歩けば17世紀から続くアラスタバザールの賑わいに出会えます。
                 </p>
-                <a href="#" class="read-button" onclick="alert('サフランボルの詳細ページ'); return false;">読む</a>
+                <a href="safranbolu-detail.html" class="read-button">読む</a>
             </div>
         </article>
 
@@ -548,10 +548,10 @@
 
                 map.fitBounds(bounds, { 
                     padding: 70, 
-                    duration: 2000,  // 900ms → 2000ms（よりゆっくり）
-                    pitch: map.getPitch(), 
-                    bearing: map.getBearing(),
-                    essential: true  // アニメーションを中断させない
+                    duration: 2000,
+                    pitch: 0,            // 真上から
+                    bearing: 0,          // 回転なし
+                    essential: true
                 });
             });
 
