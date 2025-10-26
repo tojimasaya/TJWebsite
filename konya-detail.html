@@ -1,0 +1,549 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>コンヤの神秘 | トルコ旅行記</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            line-height: 2;
+            color: #333;
+            background: #fff;
+        }
+
+        /* ヘッダー */
+        header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            background: #fff;
+        }
+
+        .header-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .header-link:hover {
+            color: #91c4a4;
+        }
+
+        /* Hero画像 */
+        .hero {
+            width: 100%;
+            height: 65vh;
+            min-height: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .hero-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* リード文 */
+        .lead {
+            font-size: 1.1rem;
+            line-height: 2.2;
+            color: #444;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* セクション */
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+            border-left: 3px solid #91c4a4;
+            padding-left: 1rem;
+        }
+
+        .section-text {
+            font-size: 1rem;
+            line-height: 2.2;
+            color: #555;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 画像 */
+        .content-image {
+            width: 100%;
+            max-width: 700px;
+            margin: 3rem auto;
+            display: block;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .content-image:hover {
+            opacity: 0.9;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 2カラム画像 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            align-items: start;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid img:hover {
+            opacity: 0.9;
+        }
+
+        /* 3枚横並び */
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .image-grid-3 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid-3 img:hover {
+            opacity: 0.9;
+        }
+
+        /* ライトボックス */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        /* 引用・ハイライト */
+        .highlight {
+            background: #f9f7f4;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-left: 3px solid #91c4a4;
+            font-size: 1.05rem;
+            line-height: 2.2;
+            color: #555;
+        }
+
+        /* 関連記事 */
+        .related {
+            background: #fafafa;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .related-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .related-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            letter-spacing: 0.15em;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-item {
+            background: white;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .related-content {
+            padding: 1.5rem;
+        }
+
+        .related-name {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .related-desc {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* フッター */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .image-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section {
+                margin-bottom: 3rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <a href="turkey-travel-journal.html" class="header-link">← 一覧に戻る</a>
+    </header>
+
+    <!-- Hero画像 -->
+    <div class="hero">
+        <img src="./assets/images/turkey/konya/hero.jpg" alt="コンヤ" class="hero-image">
+        <div class="hero-caption">
+            <p class="hero-number">03</p>
+            <h1 class="hero-title">コンヤの神秘</h1>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <article class="main-content">
+        
+        <p class="lead">
+            かつてセルジューク朝の首都として栄えたコンヤ。シルクロードを往来する隊商たちが休息を求めた石造りの宿、エメラルドグリーンの塔がそびえる聖廟、そして右手を天に左手を地に向けながら回転し続ける白装束の修行僧たち。イスラム神秘主義の中心地で、時空を超えた精神世界に触れた。
+        </p>
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='k1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2391c4a4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236b9b7f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k1)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' opacity='0.25'%3Eコンヤの街並み%3C/text%3E%3C/svg%3E" alt="コンヤの街並み" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">静寂に包まれたコンヤの古都</p>
+
+        <!-- セクション1: スルタンハンキャラバンサライ -->
+        <section class="section">
+            <h2 class="section-title">シルクロードの隊商宿</h2>
+            <p class="section-text">
+                カッパドキアからコンヤへ向かう道中、荒野に突如として現れた巨大な石造建築。13世紀、セルジューク朝時代に建てられたスルタンハンキャラバンサライだ。
+            </p>
+            <p class="section-text">
+                「キャラバン」とは砂漠を隊列を組んで進む商人たちの一団を指し、「サライ」はトルコ語で「宮殿」や「大邸宅」を意味する。ヨーロッパとアジアを結ぶシルクロードの要所として、ここは多くの隊商たちの安息の地だった。
+            </p>
+            <p class="section-text">
+                高さ13メートルの正門には、層を成した「ムカルナス」という装飾が施されている。城塞のような堅牢な外観は、盗賊から商人たちを守るための工夫だ。トルコ最大の隊商宿として、その威容は今も健在だった。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='k2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c9a876;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a88c65;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k2)' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='white' text-anchor='middle' opacity='0.25'%3E正門の装飾%3C/text%3E%3C/svg%3E" alt="スルタンハン正門" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='k3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23b88d5f;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%239b7653;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k3)' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='white' text-anchor='middle' opacity='0.25'%3E石造りの外壁%3C/text%3E%3C/svg%3E" alt="キャラバンサライ外壁" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                内部に足を踏み入れると、まるで時間が止まったかのような空間が広がっていた。中庭の中央には四角い石造りのキオスクモスクが配置され、四方がアーチで支えられている。この2階部分には小さな礼拝所があり、商人たちはここで旅の安全を祈った。
+            </p>
+            <p class="section-text">
+                石畳が敷き詰められた内部には、商人の宿泊スペース、ラクダの厩舎、喫茶所の跡が今も残る。面積4,900平方メートル、縦44メートル、横58メートルの広大な空間。かつてここで、東西の文化が交差し、様々な物語が生まれたのだろう。
+            </p>
+        </section>
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='k4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c9956d;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k4)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' opacity='0.25'%3E中庭とモスク%3C/text%3E%3C/svg%3E" alt="キャラバンサライ中庭" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">中央に佇むキオスクモスク</p>
+
+        <!-- セクション2: メヴラーナ博物館 -->
+        <section class="section">
+            <h2 class="section-title">エメラルドグリーンの聖廟</h2>
+            <p class="section-text">
+                コンヤに到着すると、すぐにホテルで不思議な像に出会った。白い衣装をまとい、両手を広げて回転している人の像。その謎は、メヴラーナ博物館で解けることになる。
+            </p>
+            <p class="section-text">
+                13世紀末に建設されたこの建物で最も目を引くのは、高さ約25メートルのエメラルドグリーンの円錐形の塔「クッベトゥル・ハドラー」だ。「緑の円天井」とも呼ばれるこの特徴的な塔は、コンヤの街のシンボルとなっている。
+            </p>
+            <p class="section-text">
+                ここに祀られているのは、13世紀に活躍したイスラム神秘家メヴラーナ・ジャラールッディーン・ルーミー。イスラム神秘主義（スーフィズム）の一派、メヴレヴィー教団の創始者だ。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='k5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2391c4a4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236b9b7f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k5)' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='white' text-anchor='middle' opacity='0.25'%3E緑の塔%3C/text%3E%3C/svg%3E" alt="メヴラーナ博物館の塔" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 400 500'%3E%3Cdefs%3E%3ClinearGradient id='k6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23a8d8ea;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%238ac4d0;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k6)' width='400' height='500'/%3E%3Ctext x='50%25' y='50%25' font-size='18' fill='white' text-anchor='middle' opacity='0.25'%3E博物館入口%3C/text%3E%3C/svg%3E" alt="博物館入口" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                霊廟内には、メヴラーナと家族、教団の指導者たちの棺がずらりと並ぶ。最奥、緑のタイルで覆われたドームの真下にあるのがメヴラーナの石棺だ。金色の装飾が施され、金色の布で覆われた豪華な棺。
+            </p>
+            <p class="section-text">
+                霊廟を仕切る扉には、こう刻まれている。「ここから入る不完全な者は、完全となってこの場所を出る」。その言葉の重みを感じながら、館内を巡る。
+            </p>
+            <p class="section-text">
+                展示されているのは、セルジューク朝時代のコーラン写本、メヴラーナの著書『メスネヴィー』の最古のコピー、巨大なものから極小のものまで様々なサイズのコーランなど。そして、特に印象的だったのは、預言者ムハンマドのあごひげを入れた箱。開けると薔薇の香りがするという。
+            </p>
+        </section>
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='k7' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c9a876;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a88c65;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k7)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' opacity='0.25'%3E霊廟内部%3C/text%3E%3C/svg%3E" alt="メヴラーナの霊廟" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">金色に輝くメヴラーナの石棺</p>
+
+        <!-- セクション3: 旋回舞踊セマー -->
+        <section class="section">
+            <h2 class="section-title">旋回する祈り</h2>
+            <p class="section-text">
+                メヴレヴィー教団は、ユネスコ無形文化遺産に登録されている「セマー」という独特の宗教行為で知られている。右手を天に、左手を地に向けながら、ゆっくりと回転し続ける白装束の修行僧たち。
+            </p>
+            <p class="section-text">
+                これは単なるダンスではない。神への愛を表現し、宇宙と一体になるための祈りの儀式だ。白い衣装は死装束を、高い帽子は墓石を象徴している。右手で天から受け取った神の恵みを、左手で地上に分け与える。その姿は、神と人間を結ぶ媒介者を表現している。
+            </p>
+            <p class="section-text">
+                トルコ共和国成立後、政府は宗教団体を禁じ、メヴレヴィー教団も解散、旋回舞踊も禁止された。しかしその後、貴重な伝統文化として復活。現在では、毎週土曜日にメヴラーナ文化センターで鑑賞することができる。
+            </p>
+        </section>
+
+        <div class="image-grid-3">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='k8' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8e8e8;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d0d0d0;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k8)' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='%23666' text-anchor='middle' opacity='0.25'%3Eセマーの衣装%3C/text%3E%3C/svg%3E" alt="セマーの衣装" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='k9' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23f5f5f5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23e0e0e0;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k9)' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='%23666' text-anchor='middle' opacity='0.25'%3E修行僧の蝋人形%3C/text%3E%3C/svg%3E" alt="修行僧の蝋人形" onclick="openLightbox(this.src)">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 400'%3E%3Cdefs%3E%3ClinearGradient id='k10' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23ebebeb;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23d5d5d5;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k10)' width='300' height='400'/%3E%3Ctext x='50%25' y='50%25' font-size='16' fill='%23666' text-anchor='middle' opacity='0.25'%3E楽器の展示%3C/text%3E%3C/svg%3E" alt="楽器の展示" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                博物館には、蝋人形で当時の修行僧の生活を再現した展示もある。瞑想する姿、書を読む姿、そして旋回する姿。13世紀から続く精神性が、今もこの場所に息づいている。
+            </p>
+            <p class="section-text">
+                メヴラーナが遺した言葉がある。「あなたが無神論者でも偶像崇拝者でも、拝火教信者でも、私のところに来なさい」。宗教や民族を超えた普遍的な愛と寛容。それが、この博物館を訪れる多くの人々を惹きつける理由なのだろう。
+            </p>
+        </section>
+
+        <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='k11' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2391c4a4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236b9b7f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23k11)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='28' fill='white' text-anchor='middle' opacity='0.25'%3E博物館の庭園%3C/text%3E%3C/svg%3E" alt="博物館の庭園" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">静寂に包まれた博物館の庭園</p>
+
+        <!-- セクション4: コンヤの街 -->
+        <section class="section">
+            <h2 class="section-title">祈りの古都</h2>
+            <p class="section-text">
+                コンヤは「トルコで最も信仰心が深い」と言われる街だ。かつてセルジューク朝の首都として栄えた歴史が、今も街のあちこちに刻まれている。
+            </p>
+            <p class="section-text">
+                アラエッディン・ジャーミィ、インジェミナーレ博物館、カラタイ神学校。セルジューク朝時代の建築物が点在し、それぞれが独特の装飾と歴史を持つ。イズニックタイルの美しさ、精緻な石彫り、高い天井のある広い空間。
+            </p>
+            <p class="section-text">
+                事前の下調べもなく訪れたコンヤだったが、この街は予想をはるかに超える感動を与えてくれた。神秘的な雰囲気、13世紀からの宝物の驚くべき保存状態、そして随所に見られる豪華な装飾の数々。イスラム神秘主義の精神性を今に伝える、重要な文化遺産の街だった。
+            </p>
+        </section>
+
+        <div class="highlight">
+            旋回舞踊と薔薇の香りに包まれたコンヤに別れを告げる。次の目的地はパムッカレ。「コットンキャッスル」と呼ばれる白い石灰棚と、古代ローマの温泉地ヒエラポリスが待っている。
+        </div>
+
+    </article>
+
+    <!-- ライトボックス -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- 関連記事 -->
+    <section class="related">
+        <div class="related-container">
+            <h2 class="related-title">他の都市を見る</h2>
+            <div class="related-grid">
+                
+                <div class="related-item" onclick="window.location.href='cappadocia-detail.html'">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e6b899;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c9956d;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r1)' width='300' height='200'/%3E%3C/svg%3E" alt="カッパドキア" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">カッパドキアの大地</h3>
+                        <p class="related-desc">熱気球から眺める奇岩群と地下都市</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('パムッカレのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8dfd5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d8ea;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r2)' width='300' height='200'/%3E%3C/svg%3E" alt="パムッカレ" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">パムッカレの温泉</h3>
+                        <p class="related-desc">コットンキャッスルと古代の温泉地</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('イスタンブールのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a6fa5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232b4a6f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r3)' width='300' height='200'/%3E%3C/svg%3E" alt="イスタンブール" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">イスタンブールの朝</h3>
+                        <p class="related-desc">東西の文明が出会う永遠の都</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>TURKEY JOURNEY 2024</p>
+        <p style="margin-top: 0.5rem;">カッパドキアからイスタンブールへ</p>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ESCキーでも閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
