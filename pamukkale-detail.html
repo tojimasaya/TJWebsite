@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>パムッカレの温泉 | トルコ旅行記</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            line-height: 2;
+            color: #333;
+            background: #fff;
+        }
+
+        /* ヘッダー */
+        header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            background: #fff;
+        }
+
+        .header-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .header-link:hover {
+            color: #a8d8ea;
+        }
+
+        /* Hero画像 */
+        .hero {
+            width: 100%;
+            height: 65vh;
+            min-height: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .hero-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* リード文 */
+        .lead {
+            font-size: 1.1rem;
+            line-height: 2.2;
+            color: #444;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* セクション */
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+            border-left: 3px solid #a8d8ea;
+            padding-left: 1rem;
+        }
+
+        .section-text {
+            font-size: 1rem;
+            line-height: 2.2;
+            color: #555;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 画像 */
+        .content-image {
+            width: 100%;
+            max-width: 700px;
+            margin: 3rem auto;
+            display: block;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .content-image:hover {
+            opacity: 0.9;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 2カラム画像 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            align-items: start;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid img:hover {
+            opacity: 0.9;
+        }
+
+        /* 3枚横並び */
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .image-grid-3 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid-3 img:hover {
+            opacity: 0.9;
+        }
+
+        /* ライトボックス */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        /* 引用・ハイライト */
+        .highlight {
+            background: #f9f7f4;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-left: 3px solid #a8d8ea;
+            font-size: 1.05rem;
+            line-height: 2.2;
+            color: #555;
+        }
+
+        /* 関連記事 */
+        .related {
+            background: #fafafa;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .related-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .related-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            letter-spacing: 0.15em;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-item {
+            background: white;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .related-content {
+            padding: 1.5rem;
+        }
+
+        .related-name {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .related-desc {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* フッター */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .image-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section {
+                margin-bottom: 3rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <a href="turkey-travel-journal.html" class="header-link">← 一覧に戻る</a>
+    </header>
+
+    <!-- Hero画像 -->
+    <div class="hero">
+        <img src="./assets/images/turkey/pamukkale/hero.jpg" alt="パムッカレ" class="hero-image">
+        <div class="hero-caption">
+            <p class="hero-number">04</p>
+            <h1 class="hero-title">パムッカレの温泉</h1>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <article class="main-content">
+        
+        <p class="lead">
+            真っ白な石灰棚と鮮やかな青い水のコントラストで知られる世界遺産パムッカレ。「コットンキャッスル」の愛称で親しまれるこの地を、メヴラーナ博物館を後にして訪れた。期待と現実の狭間で揺れながらも、古代ローマの息吹を感じる貴重な体験となった。
+        </p>
+
+        <img src="./assets/images/turkey/pamukkale/01.jpg" alt="パムッカレの全景" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">石灰棚が連なる広大なパムッカレの全景</p>
+
+        <!-- セクション1: 2000年の歴史 -->
+        <section class="section">
+            <h2 class="section-title">2000年の歴史を持つ温泉地</h2>
+            <p class="section-text">
+                紀元前2世紀から続くこの温泉地には、17もの源泉があり、その水温は35度から100度まで様々だ。古代ローマ時代から、この地の温泉は療養や保養の場として重宝されてきた。
+            </p>
+            <p class="section-text">
+                温泉に含まれる石灰成分が長い時間をかけて結晶化し、何段にも積み重なって石灰棚が形成された。トルコ語で「綿の城」を意味するパムッカレという名は、この真っ白な景観と、かつてこの地域が綿花の生産地だったことに由来している。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/pamukkale/02.jpg" alt="石灰棚の白さ" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/pamukkale/03.jpg" alt="温泉の流れ" onclick="openLightbox(this.src)">
+        </div>
+
+        <!-- セクション2: 期待と現実 -->
+        <section class="section">
+            <h2 class="section-title">期待と現実の狭間で</h2>
+            <p class="section-text">
+                心待ちにしていた訪問で目にしたのは、期待とは異なる光景だった。かつての写真や観光案内で見た豊かな水量は影を潜め、白い石灰棚の大部分が乾いた状態となっている。
+            </p>
+            <p class="section-text">
+                水資源の過剰使用やインフラ政策の失敗など、様々な要因が指摘されているが、この貴重な観光資源の将来が懸念される状況だ。過度な開発ラッシュにより、温泉は枯渇しつつある。現在では石灰棚に流れ込む湯量が管理・調整され、一部にしか温泉水が入っていない。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/pamukkale/11.jpg" alt="乾いた石灰棚" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">乾燥が進む石灰棚の現状</p>
+
+        <section class="section">
+            <p class="section-text">
+                ドローンによる空撮映像からは、この水量の減少がより顕著に確認できる。上空から見渡すと、水のある場所と乾いた場所の対比が鮮明になる。それでもなお、この地が持つ独特の美しさは色褪せない。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/pamukkale/12.jpg" alt="ドローンからの空撮" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">空撮で確認できる水量の減少</p>
+
+        <!-- セクション3: ローマのテルマエ文化 -->
+        <section class="section">
+            <h2 class="section-title">今に生きるローマのテルマエ文化</h2>
+            <p class="section-text">
+                しかし、パムッカレの魅力は決して失われてはいない。特に印象的なのは「クレオパトラプール」と呼ばれる温水プール。水中には古代の柱や建造物が沈んでおり、現代の私たちも古代ローマの遺構の間を泳ぎながら温泉を楽しむことができる。
+            </p>
+            <p class="section-text">
+                石灰棚の丘の上に広がるヒエラポリス遺跡。円形劇場や浴場跡など、保存状態の良い遺構が数多く残されている。私の大好きな漫画「テルマエ・ロマエ」さながらの光景だ。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/pamukkale/21.jpg" alt="クレオパトラプール" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/pamukkale/22.jpg" alt="円形劇場" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                ローマ帝国のテルマエ文化がこの地で独自の進化を遂げ、石灰棚という特殊な自然環境と見事に調和した温泉保養地として発展してきた。2000年以上もの間、人々の憩いの場であり続けた歴史が、ここにはある。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/pamukkale/23.jpg" alt="ヒエラポリス遺跡" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">壮大な規模を誇る古代ローマの遺構</p>
+
+        <!-- セクション4: パムッカレの今 -->
+        <section class="section">
+            <h2 class="section-title">パムッカレの今</h2>
+            <p class="section-text">
+                水量は減少しているものの、残された水域では今なお美しい景観を見ることができる。人の少ない場所を探して撮影すれば、パンフレットのような写真も可能だ。
+            </p>
+            <p class="section-text">
+                観光地として賑わう中でも、静かな場所を見つければ、パムッカレ本来の神秘的な美しさを切り取れる。苦労して見つけた水のある場所で撮った写真は、その分思い出深いものになった。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/pamukkale/31.jpg" alt="妻を撮影" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">妻をモデルに撮影した石灰棚の風景</p>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/pamukkale/32.jpg" alt="水のある石灰棚" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/pamukkale/33.jpg" alt="青い水のコントラスト" onclick="openLightbox(this.src)">
+        </div>
+
+        <div class="highlight">
+            この世界遺産が直面している環境問題は、自然資源の保護と観光振興の難しいバランスを問いかけている。この景色が、いつか昔の姿を取り戻し、未来の旅行者たちも「パムッカレに行ってよかった！」と心から思えるような場所であり続けてほしい。そんな願いを込めて、シャッターを切った。次の目的地はエフェソス。古代ローマの息吹をさらに感じる旅が続く。
+        </div>
+
+    </article>
+
+    <!-- ライトボックス -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- 関連記事 -->
+    <section class="related">
+        <div class="related-container">
+            <h2 class="related-title">他の都市を見る</h2>
+            <div class="related-grid">
+                
+                <div class="related-item" onclick="alert('コンヤのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2391c4a4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236b9b7f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r1)' width='300' height='200'/%3E%3C/svg%3E" alt="コンヤ" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">コンヤの神秘</h3>
+                        <p class="related-desc">旋回舞踊と薔薇の香りに包まれて</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('エフェソスのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c9a876;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a88c65;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r2)' width='300' height='200'/%3E%3C/svg%3E" alt="エフェソス" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">エフェソスの遺跡</h3>
+                        <p class="related-desc">猫たちと古代ローマの図書館</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('イスタンブールのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a6fa5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232b4a6f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r3)' width='300' height='200'/%3E%3C/svg%3E" alt="イスタンブール" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">イスタンブールの朝</h3>
+                        <p class="related-desc">東西の文明が出会う永遠の都</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>TURKEY JOURNEY 2024</p>
+        <p style="margin-top: 0.5rem;">カッパドキアからイスタンブールへ</p>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ESCキーでも閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
