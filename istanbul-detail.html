@@ -1,0 +1,586 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>イスタンブールの朝 | トルコ旅行記</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            line-height: 2;
+            color: #333;
+            background: #fff;
+        }
+
+        /* ヘッダー */
+        header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            background: #fff;
+        }
+
+        .header-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .header-link:hover {
+            color: #4a6fa5;
+        }
+
+        /* Hero画像 */
+        .hero {
+            width: 100%;
+            height: 65vh;
+            min-height: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .hero-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* リード文 */
+        .lead {
+            font-size: 1.1rem;
+            line-height: 2.2;
+            color: #444;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* セクション */
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+            border-left: 3px solid #4a6fa5;
+            padding-left: 1rem;
+        }
+
+        .section-text {
+            font-size: 1rem;
+            line-height: 2.2;
+            color: #555;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 画像 */
+        .content-image {
+            width: 100%;
+            max-width: 700px;
+            margin: 3rem auto;
+            display: block;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .content-image:hover {
+            opacity: 0.9;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 2カラム画像 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            align-items: start;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid img:hover {
+            opacity: 0.9;
+        }
+
+        /* 3枚横並び */
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .image-grid-3 img {
+            width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid-3 img:hover {
+            opacity: 0.9;
+        }
+
+        /* ライトボックス */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        /* 引用・ハイライト */
+        .highlight {
+            background: #f4f6f9;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-left: 3px solid #4a6fa5;
+            font-size: 1.05rem;
+            line-height: 2.2;
+            color: #555;
+        }
+
+        /* 関連記事 */
+        .related {
+            background: #fafafa;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .related-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .related-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            letter-spacing: 0.15em;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-item {
+            background: white;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .related-content {
+            padding: 1.5rem;
+        }
+
+        .related-name {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .related-desc {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* フッター */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .image-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section {
+                margin-bottom: 3rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <a href="turkey-travel-journal.html" class="header-link">← 一覧に戻る</a>
+    </header>
+
+    <!-- Hero画像 -->
+    <div class="hero">
+        <img src="./assets/images/turkey/istanbul/hero.jpg" alt="イスタンブール" class="hero-image">
+        <div class="hero-caption">
+            <p class="hero-number">06</p>
+            <h1 class="hero-title">イスタンブールの朝</h1>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <article class="main-content">
+        
+        <p class="lead">
+            ボスポラス海峡の夜明け。三方を海に囲まれたこの永遠の都は、オスマン帝国の栄華、ビザンツの祈り、そして現代の息吹が層をなして重なり合う。約70万平方メートルの宮殿、2万枚のイズニックタイル、1500年の歴史を刻む聖堂。東西の文明が出会う場所で、私たちは記憶に刻むべき風景と出会った。
+        </p>
+
+        <img src="./assets/images/turkey/istanbul/01.jpg" alt="ボスポラス海峡の朝" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">三方を海に囲まれた永遠の都</p>
+
+        <!-- セクション1: トプカプ宮殿 -->
+        <section class="section">
+            <h2 class="section-title">オスマン帝国の栄華を今に伝える</h2>
+            <p class="section-text">
+                イスタンブールの丘の上に建つトプカプ宮殿。マルマラ海、金角湾、ボスポラス海峡の三方を海に囲まれた絶好のロケーションに位置し、東京ドーム約15個分という広大な敷地を誇る。最盛期には4000人もの人々が暮らしていた。
+            </p>
+            <p class="section-text">
+                早朝の正門前は、観光客の撮影大会で賑わっている。"One Two Three!" "OK! Perfect!"と、各国の言葉が飛び交う中、ライカをぶら下げていた私は、次々と写真撮影を頼まれることに。実際に使うのは皆さんのスマートフォンなのだが、"Nice smile!" "Perfect shot!"と、すっかりノリノリになってしまった。
+            </p>
+            <p class="section-text">
+                宮殿内の宝物館で出会ったのは、世界第4位の大きさを誇る86カラットの「スプーン屋のダイヤモンド」。49個の古いマインカットのダイヤモンドが二重に取り囲む洋梨型の逸品だ。海岸で光る石を拾った貧しい漁師が、「ただのガラスだよ」と言われて3本のスプーンと交換したという物語が、このダイヤモンドの輝きをより一層魅力的なものにしている。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/istanbul/02.jpg" alt="トプカプ宮殿" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/istanbul/03.jpg" alt="スプーン屋のダイヤモンド" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                グランドバザールでは、思わぬ出会いがあった。蝋人形で有名な「塩振りおじさん」ことヌスレット・ギョクチェ氏の姿を発見。SNSで世界的に有名になった彼が、実はトルコ出身だとは知らなかった。その独特な塩振りパフォーマンスは、トルコの陽気さとショーマンシップが生んだエンターテインメントだったのだ。
+            </p>
+            <p class="section-text">
+                バザール前の広場では、妻がトルコアイスに挑戦。「はい、どうぞ～」と差し出されたアイスを取ろうとすると、クルクルッと棒が回って手から逃げていく。何度も何度も空振りする妻の困惑した表情と、売り手のおじさんの茶目っ気たっぷりな笑顔のコントラストが絶妙だった。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/istanbul/04.jpg" alt="グランドバザール" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">賑わうグランドバザール</p>
+
+        <!-- セクション2: ドルマバフチェ宮殿 -->
+        <section class="section">
+            <h2 class="section-title">記憶に刻む美しさ</h2>
+            <p class="section-text">
+                19世紀半ばに建てられたドルマバフチェ宮殿は、オスマン帝国が西洋文化を取り入れた象徴的な建造物だ。ヨーロッパの様々な建築様式を取り入れた外観と、豪華な内装は、まさに東西の美の競演。
+            </p>
+            <p class="section-text">
+                重さ4.5トンという世界最大級のクリスタルシャンデリアの下に立った時は、思わず足が止まった。見上げると、無数のクリスタルが星空のように煌めき、まるで光のシャワーを浴びているような感覚に。金箔で彩られた天井、手織りのシルクのカーペット。どれもが息を飲むほどの美しさだ。
+            </p>
+            <p class="section-text">
+                館内は撮影禁止のため、この豪華絢爛な世界は目に焼き付けることしかできない。スマートフォンのない時代に思いを馳せ、じっくりと観察する。シャンデリアの一つ一つのクリスタルの輝き方や、天井の金箔の細かな模様、カーペットに織り込まれた精緻な文様。この「記憶に刻む」という古い作法は、意外にも新鮮な発見をもたらしてくれた。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/istanbul/11.jpg" alt="ドルマバフチェ宮殿" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/istanbul/12.jpg" alt="ボスポラス海峡への門" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                撮影禁止の宮殿で、皆が行列する撮影スポットが「ボスポラス海峡への門」。かつて外国の使節たちが船で訪れた正面玄関が、今は観光客お気に入りの撮影場所に。門のフレームから覗くボスポラス海峡の景色は、まさに額縁に収められた一枚の絵のよう。オスマン帝国の皇帝たちも、きっとこの景色に魅了されていたに違いない。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/istanbul/13.jpg" alt="ガラタ橋の夕暮れ" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">ボスポラス海峡に映る夕陽</p>
+
+        <!-- セクション3: ブルーモスク -->
+        <section class="section">
+            <h2 class="section-title">聖なる青の世界へ</h2>
+            <p class="section-text">
+                トルコ旅行最終日。早朝からイスタンブールを代表する建造物、スルタンアフメト・モスク——通称ブルーモスクを訪れた。バスの窓越しに捉えたその姿は、手前のボスポラス海峡で釣りをする人々と共に、信仰の場所でありながら確かに人々の日常の一部として街に溶け込んでいた。
+            </p>
+            <p class="section-text">
+                建物に近づくにつれ、その荘厳さに圧倒される。美しい曲線を描くドームと空に向かってそびえ立つミナレットの姿に、イスラム建築の粋を感じる。入り口では、妻が事前に香港で購入していた薄手のスカーフを取り出し、頭を覆った。
+            </p>
+            <p class="section-text">
+                内部に一歩足を踏み入れると、約2万枚もの手描きイズニックタイルで彩られた美しい天井が広がっていた。巨大なシャンデリアが空間を優雅に照らし、床一面に敷き詰められた赤い絨毯が、この神聖な空間にさらなる深みを与えている。天井を見上げると、無数の窓から差し込む光がタイルの色彩を優しく照らし、まるで天空の一部を切り取ったかのような神秘的な空間を作り出していた。
+            </p>
+        </section>
+
+        <div class="image-grid-3">
+            <img src="./assets/images/turkey/istanbul/21.jpg" alt="ブルーモスク外観" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/istanbul/22.jpg" alt="イズニックタイル" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/istanbul/23.jpg" alt="中庭の回廊" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                礼拝空間を出ると、モスク本体と同じくらいの広さを持つ中庭が現れた。四方をドームのある回廊で囲まれた空間の中央には、「シャドゥルワン」と呼ばれる泉亭がある。古来より礼拝前の清めの場として使われているそうだ。中庭を囲む回廊の天井を見上げると、連なる尖頭アーチの美しさに目を奪われた。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/istanbul/24.jpg" alt="ブルーモスク内部" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">2万枚のイズニックタイルが織りなす青の世界</p>
+
+        <!-- セクション4: アヤ・ソフィア -->
+        <section class="section">
+            <h2 class="section-title">時を超えて</h2>
+            <p class="section-text">
+                ブルーモスクから程近い場所に建つアヤ・ソフィア。537年に建設されたこの建造物は、教会からモスク、博物館、そして再びモスクへと、イスタンブールの歴史とともに姿を変えてきた。巨大な中央ドームと優雅な半ドームが織りなす建築美は、ビザンツ建築の最高傑作と称されている。
+            </p>
+            <p class="section-text">
+                内部は現在、1階が礼拝場所、2階が観光スペースとして区分けされている。頭上高くそびえる巨大なドームの下では、キリスト教とイスラム教の文化が見事に融合。優美な大理石の柱、アラビア語の装飾文字、そして古代のモザイク画が、それぞれの時代の記憶を静かに伝えている。
+            </p>
+            <p class="section-text">
+                狭い回廊を通った先に、最も有名な「デイシス」のモザイクが姿を現す。1260年頃に制作されたこのビザンツ美術の最高傑作を一目見ようと、多くの観光客が順番を待っていた。中央にキリスト、左に聖母マリア、右に洗礼者ヨハネという配置で描かれた壁画。南側の窓からの光が聖母マリアの姿を神秘的な輝きで包み込んでいる。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/istanbul/31.jpg" alt="アヤ・ソフィア外観" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/istanbul/32.jpg" alt="デイシス・モザイク" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                キリストの表情には驚くほどの生命感が宿り、見つめられているような錯覚すら覚える。一つ一つのガラス片が織りなす精緻な表現は、800年の時を超えて今なお見る者の心を捉えて離さない。美しい内部空間を後にすると、外観は大規模な修復工事のための足場に覆われていた。これもまた、歴史ある建造物を未来へと継承していくための大切な営みなのだろう。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/istanbul/33.jpg" alt="アヤ・ソフィア内部" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">1500年の歴史を刻む聖なる空間</p>
+
+        <!-- セクション5: ガラタ地区 -->
+        <section class="section">
+            <h2 class="section-title">夜のガラタ散歩</h2>
+            <p class="section-text">
+                一日の締めくくりは、ガラタ橋の下でのディナー。ボスポラス海峡に映る夕陽と、次々と灯りをともすモスクのシルエットを眺めながらの食事は格別だった。ツアーの皆さんがホテルへと戻った後、私たち夫婦は夜のイスタンブールを散策することにした。
+            </p>
+            <p class="section-text">
+                オレンジ色の街灯に照らされた石畳の路地を、ガラタ塔を目指して歩く。両側に並ぶおしゃれなお店の数々に目移りしながら歩いていると、ふと気づいたことがあった。香港や中国、東南アジアではどこに行っても日本のキャラクターグッズを目にするのだが、トルコではそういった日本文化の影響がまったく見られない。その「日本色のなさ」が逆に新鮮で心地よく感じられた。
+            </p>
+            <p class="section-text">
+                石畳の坂道を上っていくと、ステキなカフェで思わず足が止まった。狭いけれど洗練された店内では、大きな犬が寛いでいて、オーナーらしき素敵な紳士がにこやかに迎えてくれる。テラス席のレイアウトも絶妙で、店内からこぼれる温かな灯りと、イスタンブールの夜の街灯が織りなす風景は、まるで絵画のよう。一息ついてコーヒーを楽しんだ。
+            </p>
+        </section>
+
+        <div class="image-grid-3">
+            <img src="./assets/images/turkey/istanbul/41.jpg" alt="ガラタ地区の夜" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/istanbul/42.jpg" alt="カフェの灯り" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/istanbul/43.jpg" alt="ガラタ塔" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                ようやく塔に着いてみると、なんと長蛇の列。しかも入場料もなかなかのお値段で、結局展望は断念することに。でも、そこでふとモーパッサンの言葉が脳裏に浮かんだ。かの文豪が「エッフェル塔のレストランで毎日食事をしていたのは、パリで唯一エッフェル塔が見えない場所だったから」と語っていたことを。
+            </p>
+            <p class="section-text">
+                ふと気づけば、私たちも同じような贅沢な立場にいるのかもしれない。塔に登らなかったからこそ、夜空に浮かぶようなガラタ塔の優美な姿を、存分に楽しめるわけだから。撮影とショッピングを満喫した後は、タクシーでホテルへ。塔には登れなかったけれど、かえってそのおかげで夜のガラタの街をゆっくり楽しめた気がする。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/istanbul/44.jpg" alt="夜空に浮かぶガラタ塔" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">夜空に優雅に浮かぶガラタ塔</p>
+
+        <div class="highlight">
+            9日間のトルコ旅行は、ここ永遠の都イスタンブールで幕を閉じた。カッパドキアの気球から見た朝日、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代遺跡、そしてボスポラス海峡の夜明け。この国の多様な表情を巡った旅は、想像をはるかに超える風景を見せてくれた。学生時代に読んだ五木寛之の「四季・奈津子」で出会った「きみはボスフォルの海を見たか」という一節が、ようやく現実となった瞬間だった。
+        </div>
+
+    </article>
+
+    <!-- ライトボックス -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- 関連記事 -->
+    <section class="related">
+        <div class="related-container">
+            <h2 class="related-title">他の都市を見る</h2>
+            <div class="related-grid">
+                
+                <div class="related-item" onclick="window.location.href='cappadocia-detail.html'">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e6b899;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c9956d;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r1)' width='300' height='200'/%3E%3C/svg%3E" alt="カッパドキア" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">カッパドキアの大地</h3>
+                        <p class="related-desc">熱気球と奇岩群が織りなす幻想的な風景</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('パムッカレのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8dfd5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d8ea;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r2)' width='300' height='200'/%3E%3C/svg%3E" alt="パムッカレ" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">パムッカレの温泉</h3>
+                        <p class="related-desc">白い石灰棚と古代の温泉プール</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="window.location.href='ephesus-detail.html'">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c9a876;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a88c65;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r3)' width='300' height='200'/%3E%3C/svg%3E" alt="エフェソス" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">エフェソスの遺跡</h3>
+                        <p class="related-desc">古代ローマの栄華と猫たちの楽園</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>TURKEY JOURNEY 2024</p>
+        <p style="margin-top: 0.5rem;">カッパドキアからイスタンブールへ</p>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ESCキーでも閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
