@@ -1,0 +1,562 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>エフェソスの遺跡 | トルコ旅行記</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            line-height: 2;
+            color: #333;
+            background: #fff;
+        }
+
+        /* ヘッダー */
+        header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            background: #fff;
+        }
+
+        .header-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .header-link:hover {
+            color: #c9a876;
+        }
+
+        /* Hero画像 */
+        .hero {
+            width: 100%;
+            height: 65vh;
+            min-height: 450px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-caption {
+            position: absolute;
+            bottom: 2rem;
+            left: 50%;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            width: 90%;
+            max-width: 600px;
+        }
+
+        .hero-number {
+            font-size: 0.75rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 0.5rem;
+            opacity: 0.9;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            text-shadow: 0 2px 10px rgba(0,0,0,0.5);
+        }
+
+        /* メインコンテンツ */
+        .main-content {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* リード文 */
+        .lead {
+            font-size: 1.1rem;
+            line-height: 2.2;
+            color: #444;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* セクション */
+        .section {
+            margin-bottom: 5rem;
+        }
+
+        .section-title {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 2rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+            border-left: 3px solid #c9a876;
+            padding-left: 1rem;
+        }
+
+        .section-text {
+            font-size: 1rem;
+            line-height: 2.2;
+            color: #555;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        /* 画像 */
+        .content-image {
+            width: 100%;
+            max-width: 700px;
+            margin: 3rem auto 0.5rem;
+            display: block;
+            border-radius: 2px;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .content-image:hover {
+            opacity: 0.9;
+        }
+
+        .image-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 0.5rem;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 2カラム画像 */
+        .image-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+            margin: 3rem 0;
+            align-items: start;
+        }
+
+        .image-grid img {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid img:hover {
+            opacity: 0.9;
+        }
+
+        /* 3枚横並び */
+        .image-grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1rem;
+            margin: 3rem 0;
+        }
+
+        .image-grid-3 img {
+            width: 100%;
+            height: 350px;
+            object-fit: cover;
+            display: block;
+            cursor: pointer;
+            transition: opacity 0.3s;
+        }
+
+        .image-grid-3 img:hover {
+            opacity: 0.9;
+        }
+
+        /* ライトボックス */
+        .lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            align-items: center;
+            justify-content: center;
+        }
+
+        .lightbox.active {
+            display: flex;
+        }
+
+        .lightbox img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+
+        .lightbox-close {
+            position: absolute;
+            top: 2rem;
+            right: 2rem;
+            color: white;
+            font-size: 2rem;
+            cursor: pointer;
+            background: rgba(0,0,0,0.5);
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            line-height: 1;
+        }
+
+        /* 引用・ハイライト */
+        .highlight {
+            background: #f9f7f4;
+            padding: 2rem;
+            margin: 3rem 0;
+            border-left: 3px solid #c9a876;
+            font-size: 1.05rem;
+            line-height: 2.2;
+            color: #555;
+        }
+
+        /* 関連記事 */
+        .related {
+            background: #fafafa;
+            padding: 4rem 2rem;
+            margin-top: 5rem;
+        }
+
+        .related-container {
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+
+        .related-title {
+            text-align: center;
+            font-size: 1.3rem;
+            font-weight: 400;
+            margin-bottom: 3rem;
+            letter-spacing: 0.15em;
+        }
+
+        .related-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 2rem;
+        }
+
+        .related-item {
+            background: white;
+            overflow: hidden;
+            transition: transform 0.3s;
+            cursor: pointer;
+        }
+
+        .related-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .related-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+        }
+
+        .related-content {
+            padding: 1.5rem;
+        }
+
+        .related-name {
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.05em;
+        }
+
+        .related-desc {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #666;
+        }
+
+        /* フッター */
+        footer {
+            background: #2c2c2c;
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        footer p {
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            opacity: 0.8;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .main-content {
+                padding: 3rem 1.5rem;
+            }
+
+            .hero {
+                height: 50vh;
+                min-height: 350px;
+            }
+
+            .image-grid {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .image-grid-3 {
+                grid-template-columns: 1fr;
+                gap: 1rem;
+            }
+
+            .section {
+                margin-bottom: 3rem;
+            }
+
+            .related-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <a href="turkey-travel-journal.html" class="header-link">← 一覧に戻る</a>
+    </header>
+
+    <!-- Hero画像 -->
+    <div class="hero">
+        <img src="./assets/images/turkey/ephesus/hero.jpg" alt="エフェソス遺跡" class="hero-image">
+        <div class="hero-caption">
+            <p class="hero-number">05</p>
+            <h1 class="hero-title">エフェソスの遺跡</h1>
+        </div>
+    </div>
+
+    <!-- メインコンテンツ -->
+    <article class="main-content">
+        
+        <p class="lead">
+            クシャダスをあとにしてエフェソス遺跡に向かった。ここはとにかく猫が多くて癒やされる場所だ。12万冊の蔵書を誇った図書館、25,000人を収容した大劇場、そしてナイキのロゴの原型となったニケのレリーフ。古代ローマの息吹を感じる遺跡群が、私たちを待っていた。
+        </p>
+
+        <img src="./assets/images/turkey/ephesus/01.jpg" alt="エフェソス遺跡の全景" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">古代都市の面影を残すエフェソス遺跡</p>
+
+        <!-- セクション1: ケルスス図書館 -->
+        <section class="section">
+            <h2 class="section-title">ケルスス図書館</h2>
+            <p class="section-text">
+                エフェソス遺跡で最も人気のスポットであるケルスス図書館。現存する部品を慎重に復元し、当時の姿に近い状態を保っている。
+            </p>
+            <p class="section-text">
+                建物は2階建ての壁面を持ち、古代ギリシャ様式の柱頭を持つ支柱と9段の足場が印象的だ。内部は10.92メートル×16.7メートルという壮大なスケールで、その大きさに圧倒される。美しい装飾の大理石で覆われた図書館内には、当時12万冊にも及ぶ蔵書が保管されていたという。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/ephesus/02.jpg" alt="ケルスス図書館の正面" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/ephesus/03.jpg" alt="図書館の柱と彫像" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                館内には知識、学識、聡明さ、高潔さを象徴する彫像が立ち、壁面にはエロスや花冠、ばらの花飾りの優美なレリーフ装飾が施されている。さらに建物の下には、この図書館を建設したアクイラの父・セルシウスの棺が保管されており、かつての偉人の歴史に思いを馳せることができる。
+            </p>
+            <p class="section-text">
+                とはいえ、修復作業のために我々はこの図書館を周りから見るだけだった。それでもなお、その威容は圧倒的だ。
+            </p>
+        </section>
+
+        <!-- セクション2: 公衆トイレと古代の暮らし -->
+        <section class="section">
+            <h2 class="section-title">公衆トイレ遺構 ― 古代ローマの驚くべき設備</h2>
+            <p class="section-text">
+                エフェソス遺跡の水洗トイレは、古代ローマの高度な衛生設備と社交文化を今に伝える興味深い遺構だ。
+            </p>
+            <p class="section-text">
+                横一列に並んだ大理石の便座の下には、常時水が流れる水路があり、効率的な下水道システムを形成していた。集められた排泄物は肥料として再利用されるなど、当時から資源の循環利用が行われていたという。
+            </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/ephesus/11.jpg" alt="公衆トイレの便座" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/ephesus/12.jpg" alt="下水道システム" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                しかし、最も興味深いのは、この場所が単なる衛生設備ではなく、社交の場としても機能していた点だ。仕切りのない設計により、利用者同士の会話が自然と生まれる空間となっていたという。中国のニーハオトイレを彷彿とさせる光景だ。
+            </p>
+        </section>
+
+        <!-- セクション3: ニケのレリーフ -->
+        <section class="section">
+            <h2 class="section-title">ニケのレリーフ ― ナイキのロゴの原型</h2>
+            <p class="section-text">
+                ニケの翼が、ナイキのロゴの元になったと言われる勝利の女神ニケ。ニケといえば、ルーブル美術館の「サモトラケのニケ」が有名だが、このエフェソス遺跡にもニケのレリーフが残されている。
+            </p>
+            <p class="section-text">
+                古代都市の重要なモニュメントとして元々あったヘラクレスの門から少し離れたところに設置されている。サモトラケのニケは彫刻としての完成度や芸術性で知られるが、このエフェソス遺跡のニケのレリーフは、月桂樹の冠とヤシの枝という勝利の象徴を持っていることで、よりダイレクトに勝利の女神としての意味を伝えている。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/ephesus/13.jpg" alt="ニケのレリーフ" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">ナイキのロゴの原型となったニケの翼</p>
+
+        <!-- セクション4: 大劇場 -->
+        <section class="section">
+            <h2 class="section-title">大劇場 ― 25,000人を収容した音響の奇跡</h2>
+            <p class="section-text">
+                エフェソス遺跡の大劇場は、古代ローマ時代を代表する壮大な建造物として、今なお多くの観光客を魅了し続けている。
+            </p>
+            <p class="section-text">
+                約25,000人を収容できるというその規模は圧巻だ。丘を背にしたすり鉢状の構造で、広大な空間を持つ。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/ephesus/21.jpg" alt="大劇場" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">25,000人を収容できる圧巻の規模</p>
+
+        <section class="section">
+            <p class="section-text">
+                特筆すべきは、その優れた音響効果だ。建築技術の粋を集めた巧みな設計により、2000年以上の時を経た今でもその音響特性は健在で、現在でもオペラやコンサートなどの文化施設として活用されているという。古代ローマの建築技術の高さを今に伝える、まさに生きた歴史遺産だ。
+            </p>
+        </section>
+
+        <!-- セクション5: アルテミス神殿 -->
+        <section class="section">
+            <h2 class="section-title">アルテミス神殿 ― 世界の七不思議</h2>
+            <p class="section-text">
+                世界の七不思議の一つとして知られる神殿だが、現在は柱が一本だけ残っているという状態で、残念ながら今回のツアールートには含まれていなかった。
+            </p>
+            <p class="section-text">
+                わずか30分ほどで行けるとのことで、時間があれば訪れてみたかったのだが、叶わなかった。アルテミス神殿は不思議というよりは、この時代にここまで大きな神殿が存在したという驚きだ。ちなみに「世界の七不思議」は英語では「Seven Wonders of the World」で、「不思議」よりは「驚きの」という意味の方が本来の意味に沿っている。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/ephesus/22.jpg" alt="アルテミス神殿" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">現在は柱1本のみが残るアルテミス神殿</p>
+
+        <!-- セクション6: 猫たち -->
+        <section class="section">
+            <h2 class="section-title">世界遺産に暮らす猫たち</h2>
+            <p class="section-text">
+                トルコはどこに行っても猫を見かけるが、このエフェソス遺跡の猫たちには、世界遺産にゆったりと暮らす猫という独特の風格が感じられた。
+            </p>
+            <p class="section-text">
+                遺跡のあらゆる場所で猫たちを見かけることができ、彼らは人を全く恐れない。多くの観光客に撫でられ、餌をもらい、時には写真撮影にも応じてくれる。私たちは香港から猫用の餌を持参していたのだが、妻が餌を見せると、さっきまで優雅だった猫が突然飛びかかってきた姿が印象的だった。世界遺産に暮らす猫といえども、食べ物の魅力には抗えないようだ。
+            </p>
+        </section>
+
+        <div class="image-grid-3">
+            <img src="./assets/images/turkey/ephesus/31.jpg" alt="遺跡の猫1" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/ephesus/32.jpg" alt="遺跡の猫2" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/ephesus/33.jpg" alt="オッドアイの猫" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
+            <p class="section-text">
+                クシャダスでは、左右の目の色が異なる美しい猫に出会った。これはトルコ猫の特徴の一つで、特にトルコアンゴラやトルコバンと呼ばれる品種でよく見られる特徴だという。白を基調とした毛並みに、片方が青、もう片方が緑という神秘的な瞳を持つ猫は、とても人懐っこく、餌がなくなるまでずっとついてきてくれた。
+            </p>
+            <p class="section-text">
+                トルコでは猫に餌を与えることを制限するようなルールは設けられていない。そのため、街のいたるところで猫を見かけることができ、人と猫の自然な共生が実現している。イスラム教の教えでも猫は大切にされており、この文化的背景が現代のトルコの街と猫との関係を形作っているのだろう。
+            </p>
+        </section>
+
+        <div class="highlight">
+            古代ローマの高度な文明と、そこに今も暮らす猫たち。エフェソス遺跡は過去と現在が交差する不思議な場所だった。次はいよいよ最終目的地、イスタンブールへ。東西の文明が出会う永遠の都が待っている。
+        </div>
+
+    </article>
+
+    <!-- ライトボックス -->
+    <div class="lightbox" id="lightbox" onclick="closeLightbox()">
+        <span class="lightbox-close">&times;</span>
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <!-- 関連記事 -->
+    <section class="related">
+        <div class="related-container">
+            <h2 class="related-title">他の都市を見る</h2>
+            <div class="related-grid">
+                
+                <div class="related-item" onclick="alert('パムッカレのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8dfd5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d8ea;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r1)' width='300' height='200'/%3E%3C/svg%3E" alt="パムッカレ" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">パムッカレの温泉</h3>
+                        <p class="related-desc">コットンキャッスルとローマの温泉文化</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('カッパドキアのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e6b899;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c9956d;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r2)' width='300' height='200'/%3E%3C/svg%3E" alt="カッパドキア" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">カッパドキアの大地</h3>
+                        <p class="related-desc">熱気球と奇岩群の幻想的な風景</p>
+                    </div>
+                </div>
+
+                <div class="related-item" onclick="alert('イスタンブールのページ')">
+                    <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 300 200'%3E%3Cdefs%3E%3ClinearGradient id='r3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a6fa5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232b4a6f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23r3)' width='300' height='200'/%3E%3C/svg%3E" alt="イスタンブール" class="related-image">
+                    <div class="related-content">
+                        <h3 class="related-name">イスタンブールの朝</h3>
+                        <p class="related-desc">東西の文明が出会う永遠の都</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <p>TURKEY JOURNEY 2024</p>
+        <p style="margin-top: 0.5rem;">カッパドキアからイスタンブールへ</p>
+    </footer>
+
+    <script>
+        function openLightbox(src) {
+            document.getElementById('lightbox').classList.add('active');
+            document.getElementById('lightbox-img').src = src;
+            document.body.style.overflow = 'hidden';
+        }
+
+        function closeLightbox() {
+            document.getElementById('lightbox').classList.remove('active');
+            document.body.style.overflow = 'auto';
+        }
+
+        // ESCキーでも閉じる
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape') {
+                closeLightbox();
+            }
+        });
+    </script>
+
+</body>
+</html>
