@@ -149,6 +149,11 @@
             align-items: start;
         }
 
+        .image-grid > div {
+            display: flex;
+            flex-direction: column;
+        }
+
         .image-grid img {
             width: 100%;
             height: 400px;
@@ -160,6 +165,11 @@
 
         .image-grid img:hover {
             opacity: 0.9;
+        }
+
+        .image-grid .image-caption {
+            margin-top: 0.5rem;
+            margin-bottom: 0;
         }
 
         /* 3枚横並び */
@@ -344,7 +354,11 @@
 
             .image-grid {
                 grid-template-columns: 1fr;
-                gap: 1rem;
+                gap: 2rem;
+            }
+
+            .image-grid img {
+                height: 300px;
             }
 
             .image-grid-3 {
@@ -402,8 +416,14 @@
         </section>
 
         <div class="image-grid">
-            <img src="./assets/images/turkey/istanbul/02.jpg" alt="トプカプ宮殿" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/istanbul/03.jpg" alt="スプーン屋のダイヤモンド" onclick="openLightbox(this.src)">
+            <div>
+                <img src="./assets/images/turkey/istanbul/02.jpg" alt="トプカプ宮殿" onclick="openLightbox(this.src)">
+                <p class="image-caption">三方を海に囲まれた宮殿</p>
+            </div>
+            <div>
+                <img src="./assets/images/turkey/istanbul/03.jpg" alt="スプーン屋のダイヤモンド" onclick="openLightbox(this.src)">
+                <p class="image-caption">86カラットのダイヤモンド</p>
+            </div>
         </div>
 
         <section class="section">
@@ -438,8 +458,14 @@
         </section>
 
         <div class="image-grid">
-            <img src="./assets/images/turkey/istanbul/11.jpg" alt="ドルマバフチェ宮殿" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/istanbul/12.jpg" alt="ボスポラス海峡への門" onclick="openLightbox(this.src)">
+            <div>
+                <img src="./assets/images/turkey/istanbul/11.jpg" alt="ドルマバフチェ宮殿外部" onclick="openLightbox(this.src)">
+                <p class="image-caption">西洋建築の粋を集めた宮殿</p>
+            </div>
+            <div>
+                <img src="./assets/images/turkey/istanbul/12.jpg" alt="ボスポラス海峡への門" onclick="openLightbox(this.src)">
+                <p class="image-caption">額縁のように海峡を切り取る門</p>
+            </div>
         </div>
 
         <section class="section">
@@ -469,8 +495,14 @@
         <p class="image-caption">ボスポラス海峡に映る夕陽とブルーモスク</p>
 
         <div class="image-grid">
-            <img src="./assets/images/turkey/istanbul/22.jpg" alt="ブルーモスク外観" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/istanbul/23.jpg" alt="中庭の回廊" onclick="openLightbox(this.src)">
+            <div>
+                <img src="./assets/images/turkey/istanbul/22.jpg" alt="ブルーモスク外観" onclick="openLightbox(this.src)">
+                <p class="image-caption">ドームとミナレットの美しい調和</p>
+            </div>
+            <div>
+                <img src="./assets/images/turkey/istanbul/23.jpg" alt="中庭の回廊" onclick="openLightbox(this.src)">
+                <p class="image-caption">光が差し込む回廊の天井</p>
+            </div>
         </div>
 
         <section class="section">
@@ -494,8 +526,14 @@
         </section>
 
         <div class="image-grid">
-            <img src="./assets/images/turkey/istanbul/31.jpg" alt="アヤ・ソフィア外観" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/istanbul/32.jpg" alt="アヤ・ソフィア内部" onclick="openLightbox(this.src)">
+            <div>
+                <img src="./assets/images/turkey/istanbul/31.jpg" alt="アヤ・ソフィア外観" onclick="openLightbox(this.src)">
+                <p class="image-caption">ビザンツ建築の最高傑作</p>
+            </div>
+            <div>
+                <img src="./assets/images/turkey/istanbul/32.jpg" alt="アヤ・ソフィア内部" onclick="openLightbox(this.src)">
+                <p class="image-caption">東西の文化が融合する空間</p>
+            </div>
         </div>
 
         <section class="section">
@@ -531,8 +569,14 @@
         </section>
 
         <div class="image-grid">
-            <img src="./assets/images/turkey/istanbul/41.jpg" alt="ガラタ地区の夜" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/istanbul/42.jpg" alt="カフェの灯り" onclick="openLightbox(this.src)">
+            <div>
+                <img src="./assets/images/turkey/istanbul/41.jpg" alt="ガラタ地区の夜" onclick="openLightbox(this.src)">
+                <p class="image-caption">石畳の路地とオレンジ色の街灯</p>
+            </div>
+            <div>
+                <img src="./assets/images/turkey/istanbul/42.jpg" alt="カフェの灯り" onclick="openLightbox(this.src)">
+                <p class="image-caption">温かな灯りに包まれたカフェ</p>
+            </div>
         </div>
 
         <section class="section">
