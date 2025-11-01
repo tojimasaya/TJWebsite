@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>コンヤの神秘 | トルコ旅行記</title>
+    <title>カッパドキアの大地 | トルコ旅行記</title>
     <style>
         * {
             margin: 0;
@@ -34,7 +34,7 @@
         }
 
         .header-link:hover {
-            color: #91c4a4;
+            color: #c49a6c;
         }
 
         /* Hero画像 */
@@ -104,7 +104,7 @@
             margin-bottom: 2rem;
             letter-spacing: 0.1em;
             color: #2c2c2c;
-            border-left: 3px solid #91c4a4;
+            border-left: 3px solid #c49a6c;
             padding-left: 1rem;
         }
 
@@ -120,7 +120,7 @@
         .content-image {
             width: 100%;
             max-width: 700px;
-            margin: 3rem auto;
+            margin: 3rem auto 0.5rem;
             display: block;
             border-radius: 2px;
             cursor: pointer;
@@ -138,6 +138,26 @@
             margin-top: 0.5rem;
             margin-bottom: 3rem;
             letter-spacing: 0.05em;
+        }
+
+        /* 動画埋め込み */
+        .video-container {
+            position: relative;
+            width: 100%;
+            max-width: 700px;
+            margin: 3rem auto 0.5rem;
+            padding-bottom: 56.25%; /* 16:9 アスペクト比 */
+            height: 0;
+            overflow: hidden;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
         }
 
         /* 2カラム画像 */
@@ -172,7 +192,8 @@
 
         .image-grid-3 img {
             width: 100%;
-            height: auto;
+            height: 350px;
+            object-fit: cover;
             display: block;
             cursor: pointer;
             transition: opacity 0.3s;
@@ -228,7 +249,7 @@
             background: #f9f7f4;
             padding: 2rem;
             margin: 3rem 0;
-            border-left: 3px solid #91c4a4;
+            border-left: 3px solid #c49a6c;
             font-size: 1.05rem;
             line-height: 2.2;
             color: #555;
@@ -324,9 +345,17 @@
                 gap: 1rem;
             }
 
+            .image-grid img {
+                height: 300px;
+            }
+
             .image-grid-3 {
                 grid-template-columns: 1fr;
                 gap: 1rem;
+            }
+
+            .image-grid-3 img {
+                height: 280px;
             }
 
             .section {
@@ -347,10 +376,10 @@
 
     <!-- Hero画像 -->
     <div class="hero">
-        <img src="./assets/images/turkey/konya/hero.jpg" alt="コンヤ" class="hero-image">
+        <img src="./assets/images/turkey/cappadocia/hero.jpg" alt="カッパドキア" class="hero-image">
         <div class="hero-caption">
-            <p class="hero-number">03</p>
-            <h1 class="hero-title">コンヤの神秘</h1>
+            <p class="hero-number">02</p>
+            <h1 class="hero-title">カッパドキアの大地</h1>
         </div>
     </div>
 
@@ -358,162 +387,159 @@
     <article class="main-content">
         
         <p class="lead">
-            かつてセルジューク朝の首都として栄えたコンヤ。シルクロードを往来する隊商たちが休息を求めた石造りの宿、エメラルドグリーンの塔がそびえる聖廟、そして右手を天に左手を地に向けながら回転し続ける白装束の修行僧たち。イスラム神秘主義の中心地で、時空を超えた精神世界に触れた。
+            長年憧れていたカッパドキア。まだ暗い空に浮かぶ無数の熱気球、妖精の煙突と呼ばれる奇岩群、そして地下深くに広がる古代都市。この大地は、想像をはるかに超えた風景を見せてくれた。
         </p>
 
-        <img src="./assets/images/turkey/konya/01.jpg" alt="コンヤの街並み" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">静寂に包まれたコンヤの古都</p>
+        <img src="./assets/images/turkey/cappadocia/01.jpg" alt="カッパドキアの日の出" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">朝日に染まる奇岩群と気球の絶景</p>
 
-        <!-- セクション1: スルタンハンキャラバンサライ -->
+        <!-- セクション1: 熱気球体験 -->
         <section class="section">
-            <h2 class="section-title">シルクロードの隊商宿</h2>
+            <h2 class="section-title">念願の熱気球体験</h2>
             <p class="section-text">
-                カッパドキアから次の目的地コンヤへ向かう道中、荒野に突如として現れた巨大な石造建築。13世紀に建てられたスルタンハンキャラバンサライだ。かつてシルクロードを往来する隊商たちの安息の地として栄えた、歴史的建造物である。
+                早朝5:40、気温2℃。真っ暗な中、ホテル前に送迎バンが到着する。これから始まる熱気球体験への期待感で、寒さなど気にならない。
             </p>
             <p class="section-text">
-                「キャラバン」とは砂漠を隊列を組んで進む商人たちの一団を指し、「サライ」はトルコ語で「宮殿」や「大邸宅」を意味する。この建物は単なる宿泊施設以上の存在だった。ヨーロッパとアジアを結ぶ交易路の要所として、多くの商人たちが行き交い、文化が交差する場所だったのだ。
+                現地に着くと、まだ暗い広い野原に横たわった気球が何機も並んでいた。バーナーの炎が夜空を照らし、地面に寝かされていた気球が徐々に膨らんでいく。その様子は圧巻だった。
             </p>
             <p class="section-text">
-                城塞のような堅牢な外観からは、セルジューク朝時代の卓越した建築技術を今に伝えている。高さ13メートルの正門には、層を成した「ムカルナス」という装飾が施され、その威容は今も健在だ。
+                ゴンドラに乗り込むと、気球はゆっくりと上昇を開始。日の出の頃には想像以上の高さまで上がっていた。そしてついに、念願だったカッパドキアの気球からの日の出。
             </p>
         </section>
 
         <div class="image-grid">
-            <img src="./assets/images/turkey/konya/02.jpg" alt="スルタンハン正門" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/konya/03.jpg" alt="キャラバンサライ外壁" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/cappadocia/02.jpg" alt="気球の準備" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/cappadocia/03.jpg" alt="バーナーの炎" onclick="openLightbox(this.src)">
         </div>
 
         <section class="section">
             <p class="section-text">
-                建物内に一歩足を踏み入れると、まるで時間が止まったかのような空間が広がっていた。現在は博物館として整備され、館内ではトルコの伝統工芸であるカーペットが展示され、建物をそのまま活かしたコーヒーショップも営業している。歴史的建造物の中でまったりできるのは贅沢だ。
+                気球は上下左右に移動しながら、常に360度回転している。このため、全ての景色が自然と目の前を通り過ぎていく。太陽が後ろにあっても、数分後には正面に来る。写真撮影も慌てる必要がない。
+            </p>
+            <p class="section-text">
+                カッパドキアの奇岩群と朝日、そして周囲を飛ぶ数十機の気球。まさに絶景だった。長年のバケットリストの一つが、これほど素晴らしい形で達成できた。最後はノンアルコールのシャンパンで乾杯。最高の朝だった。
             </p>
         </section>
 
-        <img src="./assets/images/turkey/konya/04.jpg" alt="キャラバンサライ内部" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">館内のカーペット展示</p>
+        <img src="./assets/images/turkey/cappadocia/04.jpg" alt="気球からの眺望" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">空から見下ろすカッパドキアの奇岩群</p>
 
+        <!-- セクション2: ドローン撮影 -->
         <section class="section">
+            <h2 class="section-title">ドローンが映した絶景</h2>
             <p class="section-text">
-                中庭の中央には四角い石造りのキオスクモスクが配置され、四方がアーチで支えられている。石畳が敷き詰められた内部には、商人の宿泊スペース、ラクダの厩舎、喫茶所の跡が今も残る。面積4,900平方メートル、縦44メートル、横58メートルの広大な空間。かつてここで、東西の文化が交差し、様々な物語が生まれたのだろう。
+                翌朝、時差ボケで午前3時には目が冴えていた。ホテルのベランダでドローンを飛ばす。まだ薄暗い空に、次々と浮かび上がる色とりどりの熱気球たち。
+            </p>
+            <p class="section-text">
+                撮影に没頭していると、心配した妻が様子を見に来た。ドローニーで二人の記念動画を撮っているとき、驚くべき事実に気づく。なんと我々が泊まっているホテルは、カッパドキアの象徴とも言える奇岩群の絶景ポイントに位置していたのだ。
             </p>
         </section>
 
-        <img src="./assets/images/turkey/konya/05.jpg" alt="キャラバンサライ中庭" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">中央に佇むキオスクモスク</p>
-
-        <section class="section">
-            <h2 class="section-title">思いがけない出会い</h2>
-        </section>
-
-        <img src="./assets/images/turkey/konya/06.jpg" alt="エルドアン大統領とアタテュルクの写真" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">建物正面に掲げられた二人の指導者</p>
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/cJ2lFRqmeBA?start=3" title="カッパドキア ドローン撮影" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="image-caption">ドローンで撮影した朝のカッパドキア</p>
 
         <section class="section">
             <p class="section-text">
-                建物の正面入口で、掲げられたエルドアン大統領と建国の父ムスタファ・ケマル・アタテュルクの写真を撮影していたときのことだ。二十歳にも満たないであろう現地の女性が、好奇心いっぱいの表情で近づいてきた。
-            </p>
-            <p class="section-text">
-                「何を撮っているの？」私が「ムスタファ」と言ったその時、彼女は目を輝かせ「ケマール！」と声を弾ませながら、茶目っ気のある笑顔でハイタッチを求めてきた。その表情には「へぇ、このおじさん分かってるじゃん」という愉快な驚きと、自国の歴史を知る旅行者との出会いを楽しむような若々しい屈託のなさが混ざっていた。
-            </p>
-            <p class="section-text">
-                思い切って「エルドアン大統領とムスタファ・ケマル、どちらが好きなの？」と尋ねてみると、彼女は迷うことなく「ムスタファ・ケマル！」と答えた。その瞬間の彼女の表情には、若さゆえの率直さと、母国の歴史への確かな誇りが垣間見えた。
-            </p>
-            <p class="section-text">
-                振り返ってみれば、街のあちこちのレストランや商店で、ムスタファ・ケマルの肖像画を目にした。しかし、この偶然の出会いは、その光景の意味を深く理解させてくれた。建国の父への敬愛の念は、世代を超えて、こんなにも自然な形でトルコの人々の心に息づいているのだと。
+                ドローンがホテルから離れれば離れるほど、その光景は圧巻のものとなっていく。朝日に照らされた奇岩群の中に佇むホテル。信じられないほどの美しさだった。
             </p>
         </section>
 
-        <img src="./assets/images/turkey/konya/07.jpg" alt="街中のムスタファ・ケマルの肖像画" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">トルコの人々に愛される建国の父</p>
+        <img src="./assets/images/turkey/cappadocia/11.jpg" alt="ドローンからの俯瞰" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">ドローンが捉えた奇岩群とホテル</p>
 
+        <!-- セクション3: 奇岩群めぐり -->
         <section class="section">
+            <h2 class="section-title">地上から巡る奇岩群</h2>
             <p class="section-text">
-                シルクロードの面影が残るこの場所で、建物の歴史に加えて、現代に生きるトルコの若者の熱い心にも触れることができた。古代からの交易路に建つ歴史的建造物の前で、世代も国籍も超えた心の交流が自然に生まれる。時を超えて、人と人との出会いが紡ぎ出す物語は、これからもここで続いていくのだろう。
-            </p>
-        </section>
-
-        <!-- セクション2: メヴラーナ博物館 -->
-        <section class="section">
-            <h2 class="section-title">エメラルドグリーンの聖廟</h2>
-            <p class="section-text">
-                コンヤに到着すると、すぐにホテルで不思議な像に出会った。白い衣装をまとい、両手を広げて回転している人の像。その謎は、メヴラーナ博物館で解けることになる。
+                空から一望した絶景を、今度は地上から詳しく見学していく。最初の目的地はウチヒサル。トルコ語で「尖った砦」を意味する名前の通り、巨大な岩山を要塞として活用してきた。
             </p>
             <p class="section-text">
-                13世紀末に建設されたこの建物で最も目を引くのは、高さ約25メートルのエメラルドグリーンの円錐形の塔「クッベトゥル・ハドラー」だ。「緑の円天井」とも呼ばれるこの特徴的な塔は、コンヤの街のシンボルとなっている。
-            </p>
-            <p class="section-text">
-                ここに祀られているのは、13世紀に活躍したイスラム神秘家メヴラーナ・ジャラールッディーン・ルーミー。イスラム神秘主義（スーフィズム）の一派、メヴレヴィー教団の創始者だ。
+                城塞の壁面には、多くの小さな穴が開いている。これらは「鳩の家」と呼ばれ、鳩の糞をブドウ畑の肥料として活用していた。鳩が赤色を好む習性を利用して、巣の入口を赤く塗って鳩を呼び寄せていたという。当時の人々の知恵だ。
             </p>
         </section>
 
         <div class="image-grid">
-            <img src="./assets/images/turkey/konya/11.jpg" alt="メヴラーナ博物館の塔" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/konya/12.jpg" alt="博物館入口" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/cappadocia/12.jpg" alt="ウチヒサル城塞" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/cappadocia/13.jpg" alt="鳩の家" onclick="openLightbox(this.src)">
         </div>
 
         <section class="section">
             <p class="section-text">
-                霊廟内には、メヴラーナと家族、教団の指導者たちの棺がずらりと並ぶ。最奥、緑のタイルで覆われたドームの真下にあるのがメヴラーナの石棺だ。金色の装飾が施され、金色の布で覆われた豪華な棺。
-            </p>
-            <p class="section-text">
-                霊廟を仕切る扉には、こう刻まれている。「ここから入る不完全な者は、完全となってこの場所を出る」。その言葉の重みを感じながら、館内を巡る。
-            </p>
-            <p class="section-text">
-                展示されているのは、セルジューク朝時代のコーラン写本、メヴラーナの著書『メスネヴィー』の最古のコピー、巨大なものから極小のものまで様々なサイズのコーランなど。そして、特に印象的だったのは、預言者ムハンマドのあごひげを入れた箱。開けると薔薇の香りがするという。
+                ユルギュップ近郊には、「三姉妹」と呼ばれる3本のキノコ状の岩がある。軟らかい凝灰岩が円錐形に削られ、上層の硬質な地層が残ったため、まるで帽子を被ったような形になっている。「妖精の煙突」という愛称でも親しまれている。
             </p>
         </section>
 
-        <img src="./assets/images/turkey/konya/13.jpg" alt="メヴラーナの霊廟" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">金色に輝くメヴラーナの石棺</p>
+        <img src="./assets/images/turkey/cappadocia/14.jpg" alt="三姉妹の岩" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">妖精の煙突と呼ばれる三姉妹の岩</p>
 
-        <!-- セクション3: 旋回舞踊セマー -->
         <section class="section">
-            <h2 class="section-title">旋回する祈り</h2>
             <p class="section-text">
-                メヴレヴィー教団は、ユネスコ無形文化遺産に登録されている「セマー」という独特の宗教行為で知られている。右手を天に、左手を地に向けながら、ゆっくりと回転し続ける白装束の修行僧たち。
+                次に訪れたのは、デヴレントの谷にあるラクダ岩。「イマジネーションの谷」「ピンクの谷」とも呼ばれるこの場所で、ラクダの形が驚くほど明確な岩に出会う。それぞれの岩の形状に物語を見出す楽しさ。カッパドキアならではの魅力だ。
+            </p>
+        </section>
+
+        <img src="./assets/images/turkey/cappadocia/15.jpg" alt="ラクダ岩" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">デヴレントの谷のラクダ岩</p>
+
+        <!-- セクション4: 地下都市カルダック -->
+        <section class="section">
+            <h2 class="section-title">地下都市カルダックの叡智</h2>
+            <p class="section-text">
+                地下深くに張り巡らされた空間。カッパドキアの地下都市は、古代の人々の知恵と工夫の結晶だ。
             </p>
             <p class="section-text">
-                これは単なるダンスではない。神への愛を表現し、宇宙と一体になるための祈りの儀式だ。白い衣装は死装束を、高い帽子は墓石を象徴している。右手で天から受け取った神の恵みを、左手で地上に分け与える。その姿は、神と人間を結ぶ媒介者を表現している。
+                紀元前8-7世紀頃、フリギア人によって建設が始まったとされる。その後、様々な文明によって拡張され、ビザンチン帝国時代には、迫害を逃れるキリスト教徒たちの避難所として発展した。地下都市によっては8フロアにも及ぶ。
             </p>
+        </section>
+
+        <img src="./assets/images/turkey/cappadocia/20.jpg" alt="地下都市の入口" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">カルダック地下都市の外観</p>
+
+        <section class="section">
             <p class="section-text">
-                トルコ共和国成立後、政府は宗教団体を禁じ、メヴレヴィー教団も解散、旋回舞踊も禁止された。しかしその後、貴重な伝統文化として復活。現在では、毎週土曜日にメヴラーナ文化センターで鑑賞することができる。
+                換気システム、生活空間、貯蔵施設、防衛設備。驚くべき精巧さで配置されている。掘り出された膨大な土や岩をどう処理したのか。現代でも解明されていない技術的な謎が残されている。
             </p>
         </section>
 
         <div class="image-grid-3">
-            <img src="./assets/images/turkey/konya/21.jpg" alt="セマーの衣装" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/konya/22.jpg" alt="修行僧の蝋人形" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/konya/23.jpg" alt="楽器の展示" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/cappadocia/21.jpg" alt="地下都市通路" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/cappadocia/22.jpg" alt="石の扉" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/cappadocia/23.jpg" alt="換気口" onclick="openLightbox(this.src)">
         </div>
 
         <section class="section">
             <p class="section-text">
-                博物館には、蝋人形で当時の修行僧の生活を再現した展示もある。瞑想する姿、書を読む姿、そして旋回する姿。13世紀から続く精神性が、今もこの場所に息づいている。
+                特に印象的だったのは、円盤状の石板による防衛システム。直径約1.5メートルの石板が、各階層の入り口に配置されている。内側からのみ動かすことができ、中央部の小さな穴から敵の様子を窺ったり、槍で攻撃したりすることが可能だった。
             </p>
             <p class="section-text">
-                メヴラーナが遺した言葉がある。「あなたが無神論者でも偶像崇拝者でも、拝火教信者でも、私のところに来なさい」。宗教や民族を超えた普遍的な愛と寛容。それが、この博物館を訪れる多くの人々を惹きつける理由なのだろう。
+                また、鳩を引き入れ糞をブドウ育成の肥料として活用する工夫。限られた空間を最大限に活用する知恵が随所に見られる。古代の人々の驚くべき叡智を今に伝える、貴重な遺産だ。
             </p>
         </section>
 
-        <img src="./assets/images/turkey/konya/14.jpg" alt="博物館の庭園" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">静寂に包まれた博物館の庭園</p>
+        <img src="./assets/images/turkey/cappadocia/24.jpg" alt="地下都市内部" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">何層にも重なる地下都市の空間</p>
 
-        <!-- セクション4: コンヤの街 -->
+        <!-- セクション5: ホテル -->
         <section class="section">
-            <h2 class="section-title">祈りの古都</h2>
+            <h2 class="section-title">Cappadocia Cave Resort & Spa</h2>
             <p class="section-text">
-                コンヤは「トルコで最も信仰心が深い」と言われる街だ。かつてセルジューク朝の首都として栄えた歴史が、今も街のあちこちに刻まれている。
+                宿泊はCappadocia Cave Resort & Spa。カッパドキアでは規模の大きなホテルで、洞窟をイメージした造りながらも、バスタブまで完備された快適な空間だった。
             </p>
             <p class="section-text">
-                アラエッディン・ジャーミィ、インジェミナーレ博物館、カラタイ神学校。セルジューク朝時代の建築物が点在し、それぞれが独特の装飾と歴史を持つ。イズニックタイルの美しさ、精緻な石彫り、高い天井のある広い空間。
-            </p>
-            <p class="section-text">
-                事前の下調べもなく訪れたコンヤだったが、この街は予想をはるかに超える感動を与えてくれた。神秘的な雰囲気、13世紀からの宝物の驚くべき保存状態、そして随所に見られる豪華な装飾の数々。イスラム神秘主義の精神性を今に伝える、重要な文化遺産の街だった。
+                ホテルの真骨頂は、その立地にあった。ドローン撮影で初めて気づいたのだが、奇岩群の絶景ポイントに位置していたのだ。ベランダから眺める朝の熱気球。夢のような時間だった。
             </p>
         </section>
+
+        <div class="image-grid-3">
+            <img src="./assets/images/turkey/cappadocia/31.jpg" alt="ホテル外観" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/cappadocia/32.jpg" alt="客室" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/cappadocia/33.jpg" alt="ベランダからの眺め" onclick="openLightbox(this.src)">
+        </div>
 
         <div class="highlight">
-            旋回舞踊と薔薇の香りに包まれたコンヤに別れを告げる。次の目的地はパムッカレ。「コットンキャッスル」と呼ばれる白い石灰棚と、古代ローマの温泉地ヒエラポリスが待っている。
+            幻想的な大地カッパドキアに別れを告げる。次の目的地はコンヤ。イスラム神秘主義の中心地で、旋回舞踊セマーが待っている。
         </div>
 
     </article>
@@ -534,19 +560,19 @@
                     <img src="./assets/images/turkey/safranbolu/01.jpg" alt="サフランボル" class="related-image">
                     <div class="related-content">
                         <h3 class="related-name">サフランボルの街</h3>
-                        <p class="related-desc">オスマン帝国の面影を残す赤い屋根の街</p>
+                        <p class="related-desc">オスマン帝国時代の面影を残す赤い屋根の街</p>
                     </div>
                 </div>
 
-                <div class="related-item" onclick="window.location.href='pamukkale-detail.html'">
-                    <img src="./assets/images/turkey/pamukkale/01.jpg" alt="パムッカレ" class="related-image">
+                <div class="related-item" onclick="alert('コンヤのページ')">
+                    <img src="./assets/images/turkey/konya/01.jpg" alt="コンヤ" class="related-image">
                     <div class="related-content">
-                        <h3 class="related-name">パムッカレの温泉</h3>
-                        <p class="related-desc">コットンキャッスルと古代の温泉地</p>
+                        <h3 class="related-name">コンヤの神秘</h3>
+                        <p class="related-desc">旋回舞踊と薔薇の香りに包まれて</p>
                     </div>
                 </div>
 
-                <div class="related-item" onclick="window.location.href='istanbul-detail.html'">
+                <div class="related-item" onclick="alert('イスタンブールのページ')">
                     <img src="./assets/images/turkey/istanbul/01.jpg" alt="イスタンブール" class="related-image">
                     <div class="related-content">
                         <h3 class="related-name">イスタンブールの朝</h3>
