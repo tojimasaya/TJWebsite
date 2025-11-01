@@ -135,7 +135,8 @@
             text-align: center;
             font-size: 0.85rem;
             color: #999;
-            margin-top: 1rem;
+            margin-top: 0.5rem;
+            margin-bottom: 3rem;
             letter-spacing: 0.05em;
         }
 
@@ -150,7 +151,8 @@
 
         .image-grid img {
             width: 100%;
-            height: auto;
+            height: 400px;
+            object-fit: cover;
             display: block;
             cursor: pointer;
             transition: opacity 0.3s;
@@ -178,6 +180,29 @@
 
         .image-grid-3 img:hover {
             opacity: 0.9;
+        }
+
+        /* YouTube動画埋め込み */
+        .video-container {
+            width: 100%;
+            max-width: 400px;
+            margin: 3rem auto;
+            display: block;
+        }
+
+        .video-container iframe {
+            width: 100%;
+            aspect-ratio: 9 / 16;
+            border-radius: 2px;
+        }
+
+        .video-caption {
+            text-align: center;
+            font-size: 0.85rem;
+            color: #999;
+            margin-top: 0.5rem;
+            margin-bottom: 3rem;
+            letter-spacing: 0.05em;
         }
 
         /* ライトボックス */
@@ -393,6 +418,11 @@
         <img src="./assets/images/turkey/istanbul/04.jpg" alt="グランドバザール" class="content-image" onclick="openLightbox(this.src)">
         <p class="image-caption">賑わうグランドバザール</p>
 
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/W3Smy9WlFzk" title="トルコアイスのパフォーマンス" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+        </div>
+        <p class="video-caption">何度も空振りするトルコアイスのパフォーマンス</p>
+
         <!-- セクション2: ドルマバフチェ宮殿 -->
         <section class="section">
             <h2 class="section-title">記憶に刻む美しさ</h2>
@@ -435,9 +465,11 @@
             </p>
         </section>
 
-        <div class="image-grid-3">
-            <img src="./assets/images/turkey/istanbul/21.jpg" alt="ブルーモスク外観" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/istanbul/22.jpg" alt="イズニックタイル" onclick="openLightbox(this.src)">
+        <img src="./assets/images/turkey/istanbul/21.jpg" alt="ブルーモスク" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">ボスポラス海峡に映る夕陽とブルーモスク</p>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/istanbul/22.jpg" alt="ブルーモスク外観" onclick="openLightbox(this.src)">
             <img src="./assets/images/turkey/istanbul/23.jpg" alt="中庭の回廊" onclick="openLightbox(this.src)">
         </div>
 
@@ -459,24 +491,30 @@
             <p class="section-text">
                 内部は現在、1階が礼拝場所、2階が観光スペースとして区分けされている。頭上高くそびえる巨大なドームの下では、キリスト教とイスラム教の文化が見事に融合。優美な大理石の柱、アラビア語の装飾文字、そして古代のモザイク画が、それぞれの時代の記憶を静かに伝えている。
             </p>
+        </section>
+
+        <div class="image-grid">
+            <img src="./assets/images/turkey/istanbul/31.jpg" alt="アヤ・ソフィア外観" onclick="openLightbox(this.src)">
+            <img src="./assets/images/turkey/istanbul/32.jpg" alt="アヤ・ソフィア内部" onclick="openLightbox(this.src)">
+        </div>
+
+        <section class="section">
             <p class="section-text">
                 狭い回廊を通った先に、最も有名な「デイシス」のモザイクが姿を現す。1260年頃に制作されたこのビザンツ美術の最高傑作を一目見ようと、多くの観光客が順番を待っていた。中央にキリスト、左に聖母マリア、右に洗礼者ヨハネという配置で描かれた壁画。南側の窓からの光が聖母マリアの姿を神秘的な輝きで包み込んでいる。
             </p>
         </section>
 
-        <div class="image-grid">
-            <img src="./assets/images/turkey/istanbul/31.jpg" alt="アヤ・ソフィア外観" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/istanbul/32.jpg" alt="デイシス・モザイク" onclick="openLightbox(this.src)">
-        </div>
+        <img src="./assets/images/turkey/istanbul/33.jpg" alt="デイシス・モザイク" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">800年の時を超えて輝くデイシス・モザイク</p>
 
         <section class="section">
             <p class="section-text">
-                キリストの表情には驚くほどの生命感が宿り、見つめられているような錯覚すら覚える。一つ一つのガラス片が織りなす精緻な表現は、800年の時を超えて今なお見る者の心を捉えて離さない。美しい内部空間を後にすると、外観は大規模な修復工事のための足場に覆われていた。これもまた、歴史ある建造物を未来へと継承していくための大切な営みなのだろう。
+                キリストの表情には驚くほどの生命感が宿り、見つめられているような錯覚すら覚える。一つ一つのガラス片が織りなす精緻な表現は、800年の時を超えて今なお見る者の心を捉えて離さない。
             </p>
         </section>
 
-        <img src="./assets/images/turkey/istanbul/33.jpg" alt="アヤ・ソフィア内部" class="content-image" onclick="openLightbox(this.src)">
-        <p class="image-caption">1500年の歴史を刻む聖なる空間</p>
+        <img src="./assets/images/turkey/istanbul/34.jpg" alt="修復中のアヤ・ソフィア" class="content-image" onclick="openLightbox(this.src)">
+        <p class="image-caption">歴史ある建造物を未来へと継承するための営み</p>
 
         <!-- セクション5: ガラタ地区 -->
         <section class="section">
@@ -492,10 +530,9 @@
             </p>
         </section>
 
-        <div class="image-grid-3">
+        <div class="image-grid">
             <img src="./assets/images/turkey/istanbul/41.jpg" alt="ガラタ地区の夜" onclick="openLightbox(this.src)">
             <img src="./assets/images/turkey/istanbul/42.jpg" alt="カフェの灯り" onclick="openLightbox(this.src)">
-            <img src="./assets/images/turkey/istanbul/43.jpg" alt="ガラタ塔" onclick="openLightbox(this.src)">
         </div>
 
         <section class="section">
@@ -507,7 +544,7 @@
             </p>
         </section>
 
-        <img src="./assets/images/turkey/istanbul/44.jpg" alt="夜空に浮かぶガラタ塔" class="content-image" onclick="openLightbox(this.src)">
+        <img src="./assets/images/turkey/istanbul/43.jpg" alt="ガラタ塔" class="content-image" onclick="openLightbox(this.src)">
         <p class="image-caption">夜空に優雅に浮かぶガラタ塔</p>
 
         <div class="highlight">
