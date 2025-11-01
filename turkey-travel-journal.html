@@ -326,8 +326,8 @@
     <section class="map-section">
         <div class="map-title">VISITED PLACES MAP</div>
         <div class="map-controls">
-            <button class="map-btn active" id="btn-light">Light</button>
-            <button class="map-btn" id="btn-sat">Satellite</button>
+            <button class="map-btn" id="btn-light">Light</button>
+            <button class="map-btn active" id="btn-sat">Satellite</button>
             <button class="map-btn" id="btn-tour">ツアー再生</button>
         </div>
         <div id="map"></div>
@@ -339,7 +339,7 @@
         <!-- サフランボル -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="./assets/images/turkey/safranbolu/01.jpg" alt="サフランボル" class="city-image">
+                <img src="./assets/images/turkey/safranbolu/02.jpg" alt="サフランボル" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">01</p>
@@ -362,7 +362,7 @@
                 <p class="city-description">
                     早朝の空に浮かぶ色とりどりの熱気球。ウチヒサル城塞、三姉妹の岩、ラクダ岩など個性豊かな奇岩群と、紀元前から続く地下都市カルダック。古代の人々の叡智が詰まった幻想的な大地です。
                 </p>
-                <a href="#" class="read-button" onclick="alert('カッパドキアの詳細ページ'); return false;">読む</a>
+                <a href="cappadocia-detail.html" class="read-button">読む</a>
             </div>
         </article>
 
@@ -377,7 +377,7 @@
                 <p class="city-description">
                     エメラルドグリーンの塔が印象的なメヴラーナ博物館で、イスラム神秘主義の世界へ。右手を天に、左手を地に向けながら回転する旋回舞踊セマー。預言者ムハンマドの聖遺物からは、薔薇の香りが漂います。
                 </p>
-                <a href="#" class="read-button" onclick="alert('コンヤの詳細ページ'); return false;">読む</a>
+                <a href="konya-detail.html" class="read-button">読む</a>
             </div>
         </article>
 
@@ -392,7 +392,7 @@
                 <p class="city-description">
                     「コットンキャッスル」と呼ばれる白い石灰棚と、紀元前2世紀から続く温泉地ヒエラポリス。クレオパトラプールでは、水中に沈む古代の柱の間を泳ぎながら、ローマ帝国のテルマエ文化を体感できます。
                 </p>
-                <a href="#" class="read-button" onclick="alert('パムッカレの詳細ページ'); return false;">読む</a>
+                <a href="pamukkale-detail.html" class="read-button">読む</a>
             </div>
         </article>
 
@@ -407,7 +407,7 @@
                 <p class="city-description">
                     12万冊の蔵書を誇ったケルスス図書館、25,000人を収容した大劇場、そして猫たちがゆったりと暮らす古代ローマ遺跡。ナイキのロゴの原型となったニケのレリーフも必見です。
                 </p>
-                <a href="#" class="read-button" onclick="alert('エフェソスの詳細ページ'); return false;">読む</a>
+                <a href="ephesus-detail.html" class="read-button">読む</a>
             </div>
         </article>
 
@@ -422,7 +422,7 @@
                 <p class="city-description">
                     ボスポラス海峡の夜明け、オスマン帝国の宮殿群、2万枚のイズニックタイルが美しいブルーモスク、そして教会からモスクへと姿を変えたアヤ・ソフィア。東西の文明が出会う永遠の都です。
                 </p>
-                <a href="#" class="read-button" onclick="alert('イスタンブールの詳細ページ'); return false;">読む</a>
+                <a href="istanbul-detail.html" class="read-button">読む</a>
             </div>
         </article>
 
@@ -440,10 +440,10 @@
         window.addEventListener('load', function () {
             mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
 
-            let currentStyle = 'light';
+            let currentStyle = 'sat';
             const map = new mapboxgl.Map({
                 container: 'map',
-                style: 'mapbox://styles/mapbox/light-v11',
+                style: 'mapbox://styles/mapbox/satellite-streets-v12',
                 center: [32.5, 39.0],
                 zoom: 4.4,
                 pitch: 0,        // 45 → 0（真上から）
