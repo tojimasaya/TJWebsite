@@ -150,11 +150,105 @@
             border: 3px solid white;
             box-shadow: 0 2px 8px rgba(0,0,0,0.3);
             cursor: pointer;
-            transition: transform 0.2s;
+            transition: transform 0.3s ease;
         }
 
         .marker-badge:hover {
-            transform: scale(1.1);
+            transform: scale(1.2);
+            box-shadow: 0 4px 16px rgba(196, 154, 108, 0.6);
+        }
+
+        /* 強化版ポップアップスタイル */
+        .mapboxgl-popup-content {
+            padding: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            min-width: 280px;
+            max-width: 320px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
+        }
+
+        .mapboxgl-popup-close-button {
+            font-size: 22px;
+            padding: 8px;
+            color: white;
+            background: rgba(0,0,0,0.3);
+            border-radius: 50%;
+            width: 28px;
+            height: 28px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            top: 8px;
+            right: 8px;
+            transition: all 0.3s;
+        }
+
+        .mapboxgl-popup-close-button:hover {
+            background: rgba(0,0,0,0.5);
+        }
+
+        .popup-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+
+        .popup-info {
+            padding: 1.2rem;
+            background: white;
+        }
+
+        .popup-title {
+            font-size: 1.2rem;
+            font-weight: 500;
+            margin-bottom: 0.3rem;
+            letter-spacing: 0.05em;
+            color: #2c2c2c;
+        }
+
+        .popup-subtitle {
+            font-size: 0.85rem;
+            color: #999;
+            margin-bottom: 0.8rem;
+        }
+
+        .popup-date {
+            font-size: 0.75rem;
+            color: #666;
+            margin-bottom: 1rem;
+            padding: 0.4rem 0.7rem;
+            background: #f9f7f4;
+            border-radius: 4px;
+            display: inline-block;
+            border-left: 3px solid #c49a6c;
+        }
+
+        .popup-description {
+            font-size: 0.85rem;
+            line-height: 1.8;
+            color: #555;
+            margin-bottom: 1.2rem;
+        }
+
+        .popup-link {
+            display: block;
+            padding: 0.7rem 1.5rem;
+            background: #2c2c2c;
+            color: white;
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 0.1em;
+            border-radius: 4px;
+            transition: all 0.3s ease;
+            text-align: center;
+        }
+
+        .popup-link:hover {
+            background: #c49a6c;
+            transform: translateY(-1px);
+            box-shadow: 0 2px 8px rgba(196, 154, 108, 0.4);
         }
 
         /* 都市セクション */
@@ -296,6 +390,23 @@
             .cities-section {
                 padding: 2rem 1rem 3rem;
             }
+
+            #map {
+                height: 400px;
+            }
+
+            .map-controls {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 0.5rem;
+                justify-content: center;
+            }
+
+            .map-btn {
+                margin: 0;
+                font-size: 0.8rem;
+                padding: 0.5rem 1rem;
+            }
         }
     </style>
 </head>
@@ -304,13 +415,14 @@
     <div class="hero">
         <img src="./assets/images/turkey-hero.jpg" alt="トルコの風景" class="hero-image">
         <div class="hero-overlay">
+            <p class="hero-label">特集│</p>
             <h1 class="hero-title">
-                写真で見ていた景色は、<br>
-                本物には遠く及ばなかった。
+                二度目のトルコは、<br>
+                自分らしく。
             </h1>
             <p class="hero-subtitle">
-                カッパドキアの空、ボスポラスの朝。<br class="pc-only">
-                行く価値がある、と心から言える。
+                オスマン帝国の面影から幻想的な奇岩群、<br class="pc-only">
+                そして東西の文明が交差する永遠の都へ。
             </p>
         </div>
     </div>
@@ -318,17 +430,17 @@
     <!-- イントロセクション -->
     <section class="intro">
         <p class="intro-text">
-            カッパドキアの奇岩群、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代遺跡、そしてイスタンブールの壮麗なモスク。東西文明が交わるトルコで出会った、言葉にならない美しさの記録。
+            カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代ローマ遺跡、そしてボスポラス海峡の夜明け。トルコという国の多様な表情を巡った9日間の旅をご紹介します。
         </p>
     </section>
 
     <!-- マップセクション -->
     <section class="map-section">
-        <div class="map-title">VISITED PLACES MAP</div>
+        <h2 class="map-title">旅のルート</h2>
         <div class="map-controls">
-            <button class="map-btn" id="btn-light">Light</button>
-            <button class="map-btn active" id="btn-sat">Satellite</button>
-            <button class="map-btn" id="btn-tour">ツアー再生</button>
+            <button id="btn-light" class="map-btn active">地図</button>
+            <button id="btn-sat" class="map-btn">衛星写真</button>
+            <button id="btn-tour" class="map-btn">ツアーで巡る</button>
         </div>
         <div id="map"></div>
     </section>
@@ -339,7 +451,7 @@
         <!-- サフランボル -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="./assets/images/turkey/safranbolu/02.jpg" alt="サフランボル" class="city-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s1' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23d4a574;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23b88d5f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s1)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3Eサフランボルの街並み%3C/text%3E%3C/svg%3E" alt="サフランボル" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">01</p>
@@ -347,20 +459,20 @@
                 <p class="city-description">
                     オスマン帝国時代の面影を色濃く残す世界遺産の街。赤い屋根と白壁の伝統的な木造家屋が1,000軒以上も現存し、石畳の坂道を歩けば17世紀から続くアラスタバザールの賑わいに出会えます。
                 </p>
-                <a href="safranbolu-detail.html" class="read-button">読む</a>
+                <a href="#" class="read-button" onclick="alert('サフランボルの詳細ページ'); return false;">読む</a>
             </div>
         </article>
 
         <!-- カッパドキア -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="./assets/images/turkey/cappadocia/01.jpg" alt="カッパドキア" class="city-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s2' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e6b899;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23c9956d;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s2)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3E熱気球と奇岩群%3C/text%3E%3C/svg%3E" alt="カッパドキア" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">02</p>
                 <h2 class="city-name">カッパドキアの大地</h2>
                 <p class="city-description">
-                    早朝の空に浮かぶ色とりどりの熱気球。ウチヒサル城塞、三姉妹の岩、ラクダ岩など個性豊かな奇岩群と、紀元前から続く地下都市カルダック。古代の人々の叡智が詰まった幻想的な大地です。
+                    早朝の空に浮かぶ色とりどりの熱気球。ウチヒサル城塞、三姉妹の岩、ラクダ岩など個性豊かな奇岩群と、紀元前から続く地下都市カイマクル。古代の人々の叡智が詰まった幻想的な大地です。
                 </p>
                 <a href="cappadocia-detail.html" class="read-button">読む</a>
             </div>
@@ -369,7 +481,7 @@
         <!-- コンヤ -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="./assets/images/turkey/konya/01.jpg" alt="コンヤ" class="city-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s3' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%2391c4a4;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%236b9b7f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s3)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3Eメヴラーナ博物館%3C/text%3E%3C/svg%3E" alt="コンヤ" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">03</p>
@@ -377,14 +489,14 @@
                 <p class="city-description">
                     エメラルドグリーンの塔が印象的なメヴラーナ博物館で、イスラム神秘主義の世界へ。右手を天に、左手を地に向けながら回転する旋回舞踊セマー。預言者ムハンマドの聖遺物からは、薔薇の香りが漂います。
                 </p>
-                <a href="konya-detail.html" class="read-button">読む</a>
+                <a href="#" class="read-button" onclick="alert('コンヤの詳細ページ'); return false;">読む</a>
             </div>
         </article>
 
         <!-- パムッカレ -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="./assets/images/turkey/pamukkale/01.jpg" alt="パムッカレ" class="city-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s4' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8dfd5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a8d8ea;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s4)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3E白い石灰棚%3C/text%3E%3C/svg%3E" alt="パムッカレ" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">04</p>
@@ -392,14 +504,14 @@
                 <p class="city-description">
                     「コットンキャッスル」と呼ばれる白い石灰棚と、紀元前2世紀から続く温泉地ヒエラポリス。クレオパトラプールでは、水中に沈む古代の柱の間を泳ぎながら、ローマ帝国のテルマエ文化を体感できます。
                 </p>
-                <a href="pamukkale-detail.html" class="read-button">読む</a>
+                <a href="#" class="read-button" onclick="alert('パムッカレの詳細ページ'); return false;">読む</a>
             </div>
         </article>
 
         <!-- エフェソス -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="./assets/images/turkey/ephesus/01.jpg" alt="エフェソス" class="city-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s5' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23c9a876;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23a88c65;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s5)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3Eケルスス図書館%3C/text%3E%3C/svg%3E" alt="エフェソス" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">05</p>
@@ -407,22 +519,22 @@
                 <p class="city-description">
                     12万冊の蔵書を誇ったケルスス図書館、25,000人を収容した大劇場、そして猫たちがゆったりと暮らす古代ローマ遺跡。ナイキのロゴの原型となったニケのレリーフも必見です。
                 </p>
-                <a href="ephesus-detail.html" class="read-button">読む</a>
+                <a href="#" class="read-button" onclick="alert('エフェソスの詳細ページ'); return false;">読む</a>
             </div>
         </article>
 
         <!-- イスタンブール -->
         <article class="city-item">
             <div class="city-image-container">
-                <img src="./assets/images/turkey/istanbul/01.jpg" alt="イスタンブール" class="city-image">
+                <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='s6' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%234a6fa5;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%232b4a6f;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23s6)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.25'%3Eボスポラス海峡%3C/text%3E%3C/svg%3E" alt="イスタンブール" class="city-image">
             </div>
             <div class="city-content">
                 <p class="city-number">06</p>
-                <h2 class="city-name">永遠の都イスタンブール</h2>
+                <h2 class="city-name">イスタンブールの朝</h2>
                 <p class="city-description">
                     ボスポラス海峡の夜明け、オスマン帝国の宮殿群、2万枚のイズニックタイルが美しいブルーモスク、そして教会からモスクへと姿を変えたアヤ・ソフィア。東西の文明が出会う永遠の都です。
                 </p>
-                <a href="istanbul-detail.html" class="read-button">読む</a>
+                <a href="#" class="read-button" onclick="alert('イスタンブールの詳細ページ'); return false;">読む</a>
             </div>
         </article>
 
@@ -437,18 +549,16 @@
     </footer>
 
     <script>
-        window.addEventListener('load', function () {
-            mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
-
-            let currentStyle = 'sat';
+        mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbTlyczZ4NGYwNWh5MmtvaTdqeXEyNW1lIn0.5oeym5By4d_z4euc1WwYWA';
+        document.addEventListener('DOMContentLoaded', () => {
+            let currentStyle = 'light';
             const map = new mapboxgl.Map({
                 container: 'map',
-                style: 'mapbox://styles/mapbox/satellite-streets-v12',
-                center: [32.5, 39.0],
-                zoom: 4.4,
-                pitch: 0,        // 45 → 0（真上から）
-                bearing: 0,      // -10 → 0（回転なし）
-                // アニメーションを滑らかに
+                style: 'mapbox://styles/mapbox/light-v11',
+                center: [31.5, 38.8],
+                zoom: 5.2,
+                pitch: 35,
+                bearing: 0,
                 pitchWithRotate: true,
                 dragRotate: true,
                 touchZoomRotate: true
@@ -478,14 +588,74 @@
                 }
             });
 
-            // 訪問地点
+            // 訪問地点（拡張版データ）
             const places = [
-                { id:'safranbolu', idx:1, name:'サフランボル', nameEn:'Safranbolu', coord:[32.6945, 41.2561] },
-                { id:'cappadocia', idx:2, name:'カッパドキア', nameEn:'Cappadocia', coord:[34.8419, 38.6431] },
-                { id:'konya', idx:3, name:'コンヤ', nameEn:'Konya', coord:[32.4846, 37.8667] },
-                { id:'pamukkale', idx:4, name:'パムッカレ', nameEn:'Pamukkale', coord:[29.1208, 37.9200] },
-                { id:'ephesus', idx:5, name:'エフェソス', nameEn:'Ephesus', coord:[27.3409, 37.9392] },
-                { id:'istanbul', idx:6, name:'イスタンブール', nameEn:'Istanbul', coord:[28.9784, 41.0082] }
+                { 
+                    id: 'safranbolu', 
+                    idx: 1, 
+                    name: 'サフランボル', 
+                    nameEn: 'Safranbolu', 
+                    coord: [32.6945, 41.2561],
+                    date: '2024.10.26',
+                    image: './assets/images/turkey/safranbolu/01.jpg',
+                    description: 'オスマン帝国時代の面影を色濃く残す世界遺産の街。赤い屋根と白壁の伝統的な木造家屋が1,000軒以上も現存。',
+                    pageUrl: '#safranbolu'
+                },
+                { 
+                    id: 'cappadocia', 
+                    idx: 2, 
+                    name: 'カッパドキア', 
+                    nameEn: 'Cappadocia', 
+                    coord: [34.8419, 38.6431],
+                    date: '2024.10.27-28',
+                    image: './assets/images/turkey/cappadocia/01.jpg',
+                    description: '早朝の空に浮かぶ色とりどりの熱気球。奇岩群と紀元前から続く地下都市が織りなす幻想的な大地。',
+                    pageUrl: 'cappadocia-detail.html'
+                },
+                { 
+                    id: 'konya', 
+                    idx: 3, 
+                    name: 'コンヤ', 
+                    nameEn: 'Konya', 
+                    coord: [32.4846, 37.8667],
+                    date: '2024.10.28',
+                    image: './assets/images/turkey/konya/01.jpg',
+                    description: 'イスラム神秘主義の中心地。右手を天に、左手を地に向けながら回転する旋回舞踊セマーの聖地。',
+                    pageUrl: '#konya'
+                },
+                { 
+                    id: 'pamukkale', 
+                    idx: 4, 
+                    name: 'パムッカレ', 
+                    nameEn: 'Pamukkale', 
+                    coord: [29.1208, 37.9200],
+                    date: '2024.10.29',
+                    image: './assets/images/turkey/pamukkale/01.jpg',
+                    description: '「コットンキャッスル」と呼ばれる白い石灰棚。クレオパトラプールで古代ローマの温泉文化を体感。',
+                    pageUrl: '#pamukkale'
+                },
+                { 
+                    id: 'ephesus', 
+                    idx: 5, 
+                    name: 'エフェソス', 
+                    nameEn: 'Ephesus', 
+                    coord: [27.3409, 37.9392],
+                    date: '2024.10.30',
+                    image: './assets/images/turkey/ephesus/01.jpg',
+                    description: 'ケルスス図書館、大劇場など古代ローマ遺跡が残る。猫たちがゆったりと暮らす遺跡の風景。',
+                    pageUrl: '#ephesus'
+                },
+                { 
+                    id: 'istanbul', 
+                    idx: 6, 
+                    name: 'イスタンブール', 
+                    nameEn: 'Istanbul', 
+                    coord: [28.9784, 41.0082],
+                    date: '2024.10.31-11.02',
+                    image: './assets/images/turkey/istanbul/01.jpg',
+                    description: 'ボスポラス海峡の夜明け、オスマン帝国の宮殿群。東西の文明が交差する永遠の都。',
+                    pageUrl: '#istanbul'
+                }
             ];
 
             // 画面フィット
@@ -495,7 +665,7 @@
             map.on('load', () => {
                 // アーク（測地線）作成
                 const arcs = [];
-                for (let i=0;i<places.length-1;i++){
+                for (let i = 0; i < places.length - 1; i++) {
                     const gc = turf.greatCircle(
                         turf.point(places[i].coord),
                         turf.point(places[i+1].coord),
@@ -505,40 +675,55 @@
                 }
                 const routeFC = turf.featureCollection(arcs);
 
-                map.addSource('arcs', { type:'geojson', data: routeFC });
+                map.addSource('arcs', { type: 'geojson', data: routeFC });
                 map.addLayer({
-                    id:'arcs-line',
-                    type:'line',
-                    source:'arcs',
-                    paint:{
-                        'line-color':'#c49a6c',
+                    id: 'arcs-line',
+                    type: 'line',
+                    source: 'arcs',
+                    paint: {
+                        'line-color': '#c49a6c',
                         'line-width': 2.8,
                         'line-opacity': 0.65,
                         'line-dasharray': [0, 2, 3]
                     }
                 });
 
-                // ダッシュアニメ（速度を遅く）
+                // ダッシュアニメ
                 let dash = 0;
-                function animateDash(){
-                    dash = (dash + 0.01) % 3;  // 0.02 → 0.01（半分の速度）
-                    map.setPaintProperty('arcs-line','line-dasharray',[dash,2,3]);
+                function animateDash() {
+                    dash = (dash + 0.01) % 3;
+                    map.setPaintProperty('arcs-line', 'line-dasharray', [dash, 2, 3]);
                     requestAnimationFrame(animateDash);
                 }
                 animateDash();
 
-                // マーカー（番号バッジ）＋ポップアップ
-                places.forEach(p=>{
+                // マーカー（強化版ポップアップ付き）
+                places.forEach(p => {
                     const el = document.createElement('div');
                     el.className = 'marker-badge';
                     el.textContent = p.idx;
-                    const popup = new mapboxgl.Popup({ offset: 10 }).setHTML(
-                        `<div style="padding:0.5rem;">
-                           <div style="font-weight:600; margin-bottom:0.25rem;">${p.name}</div>
-                           <div style="font-size:0.85rem; color:#999; margin-bottom:0.5rem;">${p.nameEn}</div>
-                           <a href="#" style="color:#c49a6c; text-decoration:none; font-size:0.9rem;" onclick="alert('${p.name}の詳細ページ'); return false;">詳細を見る →</a>
-                         </div>`
-                    );
+                    
+                    // 強化版ポップアップ
+                    const popup = new mapboxgl.Popup({ 
+                        offset: 15,
+                        closeButton: true,
+                        maxWidth: '320px'
+                    }).setHTML(`
+                        <div>
+                            <img src="${p.image}" 
+                                 alt="${p.name}" 
+                                 class="popup-image"
+                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 300%27%3E%3Crect fill=%27%23c49a6c%27 width=%27400%27 height=%27300%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 font-size=%2724%27 fill=%27white%27 text-anchor=%27middle%27 opacity=%270.5%27%3E${p.name}%3C/text%3E%3C/svg%3E'">
+                            <div class="popup-info">
+                                <div class="popup-title">${p.name}</div>
+                                <div class="popup-subtitle">${p.nameEn}</div>
+                                <div class="popup-date">📅 ${p.date}</div>
+                                <div class="popup-description">${p.description}</div>
+                                <a href="${p.pageUrl}" class="popup-link" onclick="if(this.href.includes('#')){alert('${p.name}の詳細ページ'); return false;}">詳細を見る →</a>
+                            </div>
+                        </div>
+                    `);
+                    
                     new mapboxgl.Marker({ element: el, anchor: 'center' })
                         .setLngLat(p.coord)
                         .setPopup(popup)
@@ -548,8 +733,8 @@
                 map.fitBounds(bounds, { 
                     padding: 70, 
                     duration: 2000,
-                    pitch: 0,            // 真上から
-                    bearing: 0,          // 回転なし
+                    pitch: 0,
+                    bearing: 0,
                     essential: true
                 });
             });
@@ -557,34 +742,34 @@
             // ベースマップ切替
             const btnLight = document.getElementById('btn-light');
             const btnSat = document.getElementById('btn-sat');
-            function setStyle(name){
+            function setStyle(name) {
                 currentStyle = name;
-                btnLight.classList.toggle('active', name==='light');
-                btnSat.classList.toggle('active', name==='sat');
-                map.setStyle(name==='light' ? 'mapbox://styles/mapbox/light-v11'
-                                            : 'mapbox://styles/mapbox/satellite-streets-v12');
+                btnLight.classList.toggle('active', name === 'light');
+                btnSat.classList.toggle('active', name === 'sat');
+                map.setStyle(name === 'light' ? 'mapbox://styles/mapbox/light-v11'
+                                               : 'mapbox://styles/mapbox/satellite-streets-v12');
             }
-            btnLight.addEventListener('click', ()=>setStyle('light'));
-            btnSat.addEventListener('click', ()=>setStyle('sat'));
+            btnLight.addEventListener('click', () => setStyle('light'));
+            btnSat.addEventListener('click', () => setStyle('sat'));
 
             // ツアーボタン：各地点を順に flyTo
-            document.getElementById('btn-tour').addEventListener('click', async ()=>{
-                for (const p of places){
+            document.getElementById('btn-tour').addEventListener('click', async () => {
+                for (const p of places) {
                     map.flyTo({ 
                         center: p.coord, 
                         zoom: 7.2, 
                         pitch: 55, 
                         bearing: -20, 
-                        speed: 0.4,      // 0.6 → 0.4（より遅く）
-                        curve: 1.2,      // 1.4 → 1.2（より緩やかなカーブ）
+                        speed: 0.4,
+                        curve: 1.2,
                         essential: true 
                     });
-                    await new Promise(r=>setTimeout(r, 2500));  // 1400ms → 2500ms（各地点での滞在時間を延長）
+                    await new Promise(r => setTimeout(r, 2500));
                 }
                 // 最後に全体
                 map.fitBounds(new mapboxgl.LngLatBounds(places[0].coord, places[0].coord).extend(places.at(-1).coord), { 
                     padding: 70, 
-                    duration: 2000,  // 900ms → 2000ms
+                    duration: 2000,
                     essential: true 
                 });
             });
