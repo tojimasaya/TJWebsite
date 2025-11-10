@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome from Instagram | tojimasaya.com</title>
+    <meta name="description" content="旅の写真と物語。香港・日本を拠点に、ライカとドローンで世界を記録する。">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            line-height: 1.9;
+            color: #333;
+            background: #fafafa;
+        }
+
+        /* ヘッダー */
+        header {
+            padding: 3rem 2rem 2rem;
+            text-align: center;
+            background: white;
+        }
+
+        .site-name {
+            font-size: 1.2rem;
+            letter-spacing: 0.2em;
+            color: #2c2c2c;
+            margin-bottom: 0.8rem;
+        }
+
+        .welcome-text {
+            font-size: 0.9rem;
+            color: #666;
+            letter-spacing: 0.1em;
+            line-height: 1.8;
+        }
+
+        /* メインコンテンツ */
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* プロジェクトカード */
+        .project-card {
+            background: white;
+            margin-bottom: 3rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .project-card:hover {
+            transform: translateY(-3px);
+        }
+
+        .project-image {
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .project-content {
+            padding: 2rem;
+        }
+
+        .project-label {
+            font-size: 0.75rem;
+            color: #999;
+            letter-spacing: 0.15em;
+            margin-bottom: 0.8rem;
+            text-transform: uppercase;
+        }
+
+        .project-title {
+            font-size: 1.8rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            letter-spacing: 0.08em;
+            color: #2c2c2c;
+        }
+
+        .project-description {
+            font-size: 0.95rem;
+            line-height: 2;
+            color: #666;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        .project-link {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            background: #2c2c2c;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            transition: all 0.3s ease;
+            border: 1px solid #2c2c2c;
+        }
+
+        .project-link:hover {
+            background: white;
+            color: #2c2c2c;
+        }
+
+        /* Featured（最新プロジェクト）*/
+        .featured {
+            border-left: 3px solid #c49a6c;
+        }
+
+        /* その他のリンクセクション */
+        .more-section {
+            background: white;
+            padding: 2.5rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+        }
+
+        .more-title {
+            font-size: 1.1rem;
+            letter-spacing: 0.15em;
+            margin-bottom: 2rem;
+            color: #2c2c2c;
+        }
+
+        .link-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1.5rem;
+            max-width: 700px;
+            margin: 0 auto;
+        }
+
+        .link-item {
+            padding: 1.5rem;
+            border: 1px solid #e0e0e0;
+            text-decoration: none;
+            color: #666;
+            transition: all 0.3s ease;
+        }
+
+        .link-item:hover {
+            border-color: #c49a6c;
+            background: #fafafa;
+        }
+
+        .link-title {
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+            margin-bottom: 0.5rem;
+        }
+
+        .link-description {
+            font-size: 0.8rem;
+            line-height: 1.6;
+            color: #999;
+        }
+
+        /* フッター */
+        footer {
+            background: #f5f5f5;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            color: #999;
+            letter-spacing: 0.1em;
+            line-height: 1.8;
+        }
+
+        .instagram-link {
+            display: inline-block;
+            margin-top: 1rem;
+            color: #c49a6c;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+        }
+
+        .instagram-link:hover {
+            opacity: 0.7;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            header {
+                padding: 2rem 1.5rem 1.5rem;
+            }
+
+            .site-name {
+                font-size: 1rem;
+            }
+
+            main {
+                padding: 2rem 1rem;
+            }
+
+            .project-image {
+                height: 200px;
+            }
+
+            .project-content {
+                padding: 1.5rem;
+            }
+
+            .project-title {
+                font-size: 1.5rem;
+            }
+
+            .project-card {
+                margin-bottom: 2rem;
+            }
+
+            .more-section {
+                padding: 2rem 1.5rem;
+            }
+
+            .link-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <h1 class="site-name">TOJIMASAYA.COM</h1>
+        <p class="welcome-text">
+            ようこそ。<br>
+            旅の写真と物語を綴っています。
+        </p>
+    </header>
+
+    <!-- メインコンテンツ -->
+    <main>
+        
+        <!-- Featured: トルコ旅行記 -->
+        <article class="project-card featured">
+            <img src="./assets/images/turkey-hero.jpg" alt="トルコ旅行記" class="project-image">
+            <div class="project-content">
+                <p class="project-label">Latest Journey</p>
+                <h2 class="project-title">トルコ旅行記</h2>
+                <p class="project-description">
+                    カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代ローマ遺跡、そしてボスポラス海峡の夜明け。オスマン帝国の面影から幻想的な奇岩群まで、9日間の旅の記録。
+                </p>
+                <a href="turkey-travel-journal.html" class="project-link">旅を見る</a>
+            </div>
+        </article>
+
+        <!-- 白鷺三十六景 -->
+        <article class="project-card">
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 800 600'%3E%3Cdefs%3E%3ClinearGradient id='shirasagi' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' style='stop-color:%23e8f4f8;stop-opacity:1' /%3E%3Cstop offset='100%25' style='stop-color:%23b8d4e0;stop-opacity:1' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill='url(%23shirasagi)' width='800' height='600'/%3E%3Ctext x='50%25' y='50%25' font-size='32' fill='white' text-anchor='middle' opacity='0.3'%3E白鷺三十六景%3C/text%3E%3C/svg%3E" alt="白鷺三十六景" class="project-image">
+            <div class="project-content">
+                <p class="project-label">Work in Progress</p>
+                <h2 class="project-title">白鷺三十六景</h2>
+                <p class="project-description">
+                    姫路城を36の視点から捉える写真プロジェクト。北斎の「富嶽三十六景」に着想を得て、白鷺城の多様な表情を記録していく。週に一枚ずつ、ゆっくりと。
+                </p>
+                <a href="#" class="project-link" onclick="alert('近日公開'); return false;">Coming Soon</a>
+            </div>
+        </article>
+
+        <!-- その他のコンテンツ -->
+        <section class="more-section">
+            <h3 class="more-title">More Contents</h3>
+            <div class="link-grid">
+                
+                <a href="gallery.html" class="link-item">
+                    <div class="link-title">Gallery</div>
+                    <p class="link-description">写真ギャラリー</p>
+                </a>
+
+                <a href="gear.html" class="link-item">
+                    <div class="link-title">Gear</div>
+                    <p class="link-description">使用機材</p>
+                </a>
+
+                <a href="https://note.com/tojimasaya" class="link-item" target="_blank" rel="noopener">
+                    <div class="link-title">note</div>
+                    <p class="link-description">連載・コラム</p>
+                </a>
+
+                <a href="writings.html" class="link-item">
+                    <div class="link-title">Writings</div>
+                    <p class="link-description">執筆記事</p>
+                </a>
+
+            </div>
+        </section>
+
+    </main>
+
+    <!-- フッター -->
+    <footer>
+        <p class="footer-text">
+            香港・日本を拠点に旅の写真を撮っています。<br>
+            Leica、ドローン、そして好奇心。
+        </p>
+        <a href="https://instagram.com/tojimasaya" class="instagram-link" target="_blank" rel="noopener">
+            @tojimasaya on Instagram
+        </a>
+    </footer>
+
+</body>
+</html>
