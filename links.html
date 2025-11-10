@@ -1,0 +1,309 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Links — Toji Masaya</title>
+
+  <!-- Favicon -->
+  <link rel="icon" href="/favicon.ico" sizes="any">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+
+  <!-- SEO -->
+  <meta name="description" content="田路昌也（TJM）のリンク集。最新記事、連載、ギャラリー、Instagram連動シリーズへの入口。">
+  <meta name="keywords" content="田路昌也, Toji Masaya, TJM, 俺流トラベルガジェット, 香港レンズ, ドローン, ギャラリー">
+
+  <!-- OGP -->
+  <meta property="og:title" content="Links — Toji Masaya">
+  <meta property="og:description" content="最新の記事と写真、連載、Instagram連動シリーズはこちらから。">
+  <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/tonomine-susuki.jpg">
+  <meta property="og:url" content="https://tojimasaya.com/links">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Base CSS -->
+  <link rel="stylesheet" href="/style.css">
+
+  <!-- Page Scoped Styles -->
+  <style>
+    :root {
+      --links-maxw: 720px;
+    }
+    body.links-page {
+      background: var(--bg-color);
+      color: var(--text-color);
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .links-hero {
+      position: relative;
+      width: 100%;
+      overflow: hidden;
+      border-bottom: 1px solid var(--border-color);
+    }
+    .links-hero .hero-photo {
+      position: relative;
+      width: 100%;
+      height: 36vh;
+      min-height: 200px;
+      max-height: 420px;
+      overflow: hidden;
+    }
+    .links-hero .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center;
+      display: block;
+      filter: brightness(0.82);
+    }
+    .links-hero .hero-overlay {
+      position: absolute;
+      inset: 0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 16px;
+      color: #fff;
+      text-shadow: 0 2px 16px rgba(0,0,0,.35);
+    }
+    .links-hero .title {
+      font-family: "Crimson Text", serif;
+      font-size: clamp(28px, 5vw, 44px);
+      margin: 0 0 6px;
+      letter-spacing: .02em;
+    }
+    .links-hero .subtitle {
+      font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+      font-weight: 500;
+      font-size: clamp(14px, 2.6vw, 16px);
+      opacity: .95;
+      margin: 0 0 8px;
+    }
+    .links-hero .meta {
+      font-size: 13px;
+      opacity: .9;
+    }
+
+    /* Container */
+    .links-container {
+      width: 100%;
+      max-width: var(--links-maxw);
+      margin: -28px auto 40px;
+      padding: 0 16px 40px;
+    }
+    @media (min-width: 768px) {
+      .links-container { padding: 0 20px 48px; }
+    }
+
+    /* Card */
+    .links-card {
+      background: var(--card-bg, #fff);
+      color: inherit;
+      border: 1px solid var(--border-color);
+      border-radius: 16px;
+      box-shadow: 0 6px 24px rgba(0,0,0,.06);
+      padding: 22px 18px;
+      backdrop-filter: blur(3px);
+    }
+    @media (min-width: 560px) {
+      .links-card { padding: 26px 24px; }
+    }
+
+    /* Intro */
+    .links-intro {
+      text-align: center;
+      margin-bottom: 14px;
+    }
+    .links-intro p {
+      margin: 6px 0;
+      line-height: 1.6;
+    }
+
+    /* Buttons */
+    .links-buttons {
+      margin-top: 8px;
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 12px;
+    }
+    .link-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      text-decoration: none;
+      background: var(--bg-elev, #fff);
+      color: var(--text-color);
+      border: 1px solid var(--border-color);
+      border-radius: 14px;
+      padding: 14px 16px;
+      font-weight: 600;
+      text-align: center;
+      transition: transform .06s ease, background .18s ease, color .18s ease, border-color .18s ease;
+      will-change: transform;
+    }
+    .link-button:hover {
+      background: var(--text-color);
+      color: var(--bg-color);
+      border-color: var(--text-color);
+      transform: translateY(-1px);
+    }
+    .link-emoji { font-size: 18px; line-height: 1; }
+
+    /* IG series */
+    .ig-series {
+      margin-top: 18px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--border-color);
+    }
+    .ig-series h3 {
+      font-size: 15px;
+      font-weight: 700;
+      margin: 0 0 10px;
+      opacity: .9;
+    }
+    .tag-list {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 8px;
+    }
+    .tag-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 10px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border-color);
+      color: var(--text-color);
+      text-decoration: none;
+      background: transparent;
+      transition: background .2s ease, color .2s ease, border-color .2s ease;
+      justify-content: center;
+      font-weight: 600;
+    }
+    .tag-pill:hover {
+      background: var(--accent-color);
+      color: #fff;
+      border-color: var(--accent-color);
+    }
+
+    /* Social footer */
+    .social-footer {
+      margin-top: 20px;
+      display: flex;
+      gap: 12px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+    .social-footer a {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      text-decoration: none;
+      padding: 10px 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      color: var(--text-color);
+    }
+    .social-footer a:hover {
+      background: var(--text-color);
+      color: var(--bg-color);
+      border-color: var(--text-color);
+    }
+
+    /* Back to Home */
+    .back-home {
+      text-align: center;
+      margin-top: 22px;
+    }
+    .back-home a {
+      color: var(--text-color);
+      opacity: .8;
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2px;
+    }
+    .back-home a:hover { opacity: 1; }
+
+    /* Dark mode adjustments */
+    @media (prefers-color-scheme: dark) {
+      .links-card { --card-bg: #121212; box-shadow: none; }
+      .link-button { --bg-elev: #121212; }
+    }
+  </style>
+
+  <!-- Theme Colors -->
+  <meta name="theme-color" content="#fafafa">
+  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+</head>
+
+<body class="links-page">
+  <!-- Hero -->
+  <section class="links-hero" role="banner">
+    <div class="hero-photo" aria-hidden="true">
+      <img src="/assets/images/gallery/tonomine-susuki.jpg" alt="砥峰高原の風景写真">
+    </div>
+    <div class="hero-overlay">
+      <h1 class="title">TJM / Masaya Toji</h1>
+      <p class="subtitle">Himeji · Hong Kong — drone / camera / travel</p>
+      <p class="meta">ライカとドローンで旅を記録しています。最新の入り口はこちら。</p>
+    </div>
+  </section>
+
+  <!-- Links -->
+  <main class="links-container" id="main-content">
+    <div class="links-card" role="navigation" aria-label="Main quick links">
+      <div class="links-intro">
+        <p class="lead">必要なリンクだけ、指1本で。</p>
+      </div>
+
+      <nav class="links-buttons">
+        <a class="link-button" href="https://note.com/tojimasaya/m/mcae365b520ed" target="_blank" rel="noopener noreferrer">
+          <span class="link-emoji">📝</span><span>最新記事「俺流トラベルガジェット」</span>
+        </a>
+        <a class="link-button" href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener noreferrer">
+          <span class="link-emoji">🚁</span><span>DRONE.jp 連載を見る</span>
+        </a>
+        <a class="link-button" href="/gallery.html">
+          <span class="link-emoji">📷</span><span>写真ギャラリーを見る</span>
+        </a>
+        <a class="link-button" href="https://note.com/tojimasaya/m/m22c44596304b" target="_blank" rel="noopener noreferrer">
+          <span class="link-emoji">💬</span><span>香港レンズ Daily News</span>
+        </a>
+      </nav>
+
+      <section class="ig-series" aria-label="Instagram series">
+        <h3>📸 Instagram 連動シリーズ</h3>
+        <div class="tag-list">
+          <a class="tag-pill" href="https://www.instagram.com/explore/tags/%E4%BF%BA%E6%B5%81%E3%83%88%E3%83%A9%E3%83%99%E3%83%AB%E3%82%AC%E3%82%B8%E3%82%A7%E3%83%83%E3%83%88/" target="_blank" rel="noopener noreferrer">#俺流トラベルガジェット</a>
+          <a class="tag-pill" href="https://www.instagram.com/explore/tags/%E9%A6%99%E6%B8%AF%E3%83%AC%E3%83%B3%E3%82%BA/" target="_blank" rel="noopener noreferrer">#香港レンズ</a>
+          <a class="tag-pill" href="https://www.instagram.com/explore/tags/%E7%A9%BA%E3%81%8B%E3%82%89%E4%B8%80%E6%9E%9A/" target="_blank" rel="noopener noreferrer">#空から一枚</a>
+          <a class="tag-pill" href="https://www.instagram.com/tojimasaya" target="_blank" rel="noopener noreferrer">@tojimasaya</a>
+        </div>
+      </section>
+
+      <div class="social-footer" aria-label="Other social links">
+        <a href="https://twitter.com/mongkok93" target="_blank" rel="noopener noreferrer">X (Twitter)</a>
+        <a href="https://www.facebook.com/masaya.toji" target="_blank" rel="noopener noreferrer">Facebook</a>
+        <a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">note</a>
+        <a href="mailto:tojimasaya07@gmail.com">Email</a>
+      </div>
+
+      <div class="back-home">
+        <a href="/">← Back to Home</a>
+      </div>
+    </div>
+  </main>
+
+  <noscript>
+    このページは最新のリンク集です。JavaScriptが無効でも全てのリンクは機能します。
+  </noscript>
+</body>
+</html>
