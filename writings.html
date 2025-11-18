@@ -301,17 +301,6 @@
                 const container = document.getElementById('note-articles');
                 container.innerHTML = '<div class="loading">記事を読み込み中...</div>';
 
-                // OGPデータを取得
-                let ogpData = {};
-                try {
-                    const ogpResponse = await fetch('/data/writings-og.json');
-                    if (ogpResponse.ok) {
-                        ogpData = await ogpResponse.json();
-                    }
-                } catch (e) {
-                    console.warn('OGPデータ取得エラー:', e);
-                }
-
                 const feeds = [
                     { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
                     { url: 'https://note.com/tojimasaya/m/md99dd54590fa/rss', name: '次はどこへ' },
@@ -345,18 +334,13 @@
                                     day: 'numeric'
                                 });
 
-                                // OGPデータから画像を取得
-                                const articleOgp = ogpData[link];
-                                const thumbnail = articleOgp?.image || '/assets/images/gear/oreryu.jpg';
-
                                 allArticles.push({
                                     title,
                                     link,
                                     excerpt,
                                     date: date.toISOString(),
                                     formattedDate,
-                                    source: feed.name,
-                                    thumbnail
+                                    source: feed.name
                                 });
                             }
                         });
@@ -371,7 +355,7 @@
                     container.innerHTML = allArticles.slice(0, 6).map(article => `
                         <article class="article-item" data-article-url="${article.link}">
                             <figure class="article-thumb">
-                                <img src="${article.thumbnail}" alt="${article.title}" loading="lazy">
+                                <img alt="サムネイル" loading="lazy">
                             </figure>
                             <div class="article-meta">
                                 <span class="article-source note">${article.source}</span>
@@ -385,7 +369,7 @@
                     container.innerHTML = `
                         <article class="article-item" data-article-url="https://note.com/tojimasaya">
                             <figure class="article-thumb">
-                                <img src="/assets/images/gear/oreryu.jpg" alt="サムネイル" loading="lazy">
+                                <img alt="サムネイル" loading="lazy">
                             </figure>
                             <div class="article-meta">
                                 <span class="article-source note">note</span>
@@ -402,7 +386,7 @@
                 container.innerHTML = `
                     <article class="article-item" data-article-url="https://note.com/tojimasaya">
                         <figure class="article-thumb">
-                            <img src="/assets/images/gear/oreryu.jpg" alt="サムネイル" loading="lazy">
+                            <img alt="サムネイル" loading="lazy">
                         </figure>
                         <div class="article-meta">
                             <span class="article-source note">note</span>
@@ -414,6 +398,12 @@
                 `;
             }
         }
+
+        // ページ読み込み時に実行
+        document.addEventListener('DOMContentLoaded', () => {
+            loadNoteArticles();
+            loadDroneArticles();
+        });
 
         // DRONE.jp記事読み込み
         async function loadDroneArticles() {
@@ -440,12 +430,11 @@
                     container.innerHTML = droneArticles.map(([url, data], index) => {
                         const formattedDate = formatDroneDate(url);
                         const isFeatured = index === 0 ? ' featured' : '';
-                        const thumbnail = data.image || '/assets/images/gear/oreryu.jpg';
                         
                         return `
                         <article class="article-item${isFeatured}" data-article-url="${url}">
                             <figure class="article-thumb">
-                                <img src="${thumbnail}" alt="${data.title}" loading="lazy">
+                                <img alt="${data.title}" loading="lazy">
                             </figure>
                             <div class="article-meta">
                                 <span class="article-source drone">DRONE.jp</span>
@@ -472,7 +461,6 @@
                                 <time>継続更新中</time>
                             </div>
                             <h3><a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener noreferrer">DRONE.jp連載記事</a></h3>
-                            <p class="article-excerpt">最新の連載記事はDRONE.jpでご覧いただけます。</p>
                         </article>
                     `;
                 }
@@ -489,7 +477,6 @@
                             <time>継続更新中</time>
                         </div>
                         <h3><a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener noreferrer">DRONE.jp連載記事</a></h3>
-                        <p class="article-excerpt">最新の連載記事はDRONE.jpでご覧いただけます。</p>
                     </article>
                 `;
             }
@@ -497,7 +484,6 @@
 
         // DRONE.jp URL から日付を抽出
         function extractDateFromDroneURL(url) {
-            // DRONE.jp形式: /20250912114426119738.html または /masaya-toji/2024042609444386915.html
             const match = url.match(/(\d{14})\d*\.html/);
             if (match) return match[1];
             return '0';
@@ -514,12 +500,6 @@
             
             return `${year}年${month}月${day}日`;
         }
-
-        // ページ読み込み時に実行
-        document.addEventListener('DOMContentLoaded', () => {
-            loadNoteArticles();
-            loadDroneArticles();
-        });
 
         // External links security
         document.querySelectorAll('a[target="_blank"]').forEach(link => {
