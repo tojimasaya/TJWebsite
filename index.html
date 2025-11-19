@@ -476,12 +476,12 @@
       },
       {
         label: '白鷺三十六景',
-        title: '色付き始めた天守を、イーグレひめじから',
+        title: '男山貯水池から天守閣を望む',
         subtitle: ''
       },
       {
         label: '白鷺三十六景',
-        title: '男山貯水池から天守閣を望む',
+        title: '色付き始めた天守を、イーグレひめじから',
         subtitle: ''
       },
       {
@@ -495,24 +495,13 @@
     const heroLabel = document.querySelector('.hero-label');
     const heroTitle = document.querySelector('.hero-title');
     const heroSubtitle = document.querySelector('.hero-subtitle');
-    const heroOverlay = document.querySelector('.hero-overlay');
 
     function updateText(i) {
       const text = slideTexts[i];
-      
-      // フェードアウト
-      heroOverlay.style.opacity = '0';
-      
-      setTimeout(() => {
-        // テキスト更新
-        heroLabel.textContent = text.label;
-        heroTitle.textContent = text.title;
-        heroSubtitle.textContent = text.subtitle;
-        heroSubtitle.style.display = text.subtitle ? 'block' : 'none';
-        
-        // フェードイン
-        heroOverlay.style.opacity = '1';
-      }, 300);
+      heroLabel.textContent = text.label;
+      heroTitle.textContent = text.title;
+      heroSubtitle.textContent = text.subtitle;
+      heroSubtitle.style.display = text.subtitle ? 'block' : 'none';
     }
 
     function showSlide(i){
