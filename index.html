@@ -170,23 +170,34 @@
       color: white;
       pointer-events: none;
       width: 90%;
-      max-width: 800px;
+      max-width: 900px;
+      transition: opacity 0.3s ease-in-out;
+    }
+
+    .hero-label {
+      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+      font-weight: 400;
+      letter-spacing: 0.2em;
+      margin-bottom: 0.8rem;
+      opacity: 0.9;
     }
 
     .hero-title {
-      font-size: clamp(2.5rem, 6vw, 4.5rem);
+      font-size: clamp(1.8rem, 4vw, 3rem);
       font-weight: 400;
-      letter-spacing: 0.15em;
+      letter-spacing: 0.1em;
       margin: 0;
+      line-height: 1.4;
       text-shadow: 0 2px 20px rgba(0,0,0,0.3);
     }
 
     .hero-subtitle {
-      font-size: clamp(0.9rem, 1.8vw, 1.3rem);
+      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
       font-weight: 300;
-      letter-spacing: 0.25em;
-      margin-top: 0.8rem;
-      opacity: 0.95;
+      letter-spacing: 0.08em;
+      margin-top: 1rem;
+      opacity: 0.9;
+      line-height: 1.8;
       text-shadow: 0 1px 10px rgba(0,0,0,0.3);
     }
 
@@ -235,18 +246,25 @@
         bottom: 2rem;
       }
 
+      .hero-label {
+        font-size: 0.7rem;
+        letter-spacing: 0.15em;
+        margin-bottom: 0.5rem;
+      }
+
       .hero-title {
-        font-size: clamp(2rem, 5vw, 3rem);
-        letter-spacing: 0.12em;
+        font-size: clamp(1.4rem, 4vw, 2rem);
+        letter-spacing: 0.08em;
       }
 
       .hero-subtitle {
-        font-size: clamp(0.8rem, 1.5vw, 1rem);
-        letter-spacing: 0.2em;
+        font-size: clamp(0.75rem, 1.2vw, 0.9rem);
+        letter-spacing: 0.05em;
+        margin-top: 0.8rem;
       }
 
       .hero-dots {
-        bottom: 7rem;
+        bottom: 8rem;
       }
 
       .hero-dots .dot {
@@ -339,39 +357,15 @@
 
     <!-- Text Overlay -->
     <div class="hero-overlay">
-      <h1 class="hero-title">TJM</h1>
-      <p class="hero-subtitle">drone / camera / travel</p>
+      <p class="hero-label">特集｜トルコ旅行記</p>
+      <h1 class="hero-title">カッパドキアからイスタンブールへ</h1>
+      <p class="hero-subtitle">熱気球、旋回舞踊、白い石灰棚、古代遺跡。9日間の旅を動く地図とともに。</p>
     </div>
   </section>
 
   <!-- Main Content -->
   <main id="main-content" class="main-content">
     <div class="container">
-
-      <!-- Introduction -->
-      <section class="intro">
-        <div class="intro-text">
-          <p>ちょうど一年前のトルコ旅行。</p>
-          <p>noteに綴っていたけれど、</p>
-          <p>どこか旅の記憶とフォーマットが馴染まない。</p>
-
-        
-
-          <p>そんな思いから、このところ始めたAIホームページ作成で、</p>
-          <p>あらためてまとめ直してみました。</p>
-
-          
-
-          <p>今回の肝は、なんといっても旅行記冒頭の動く地図のギミック。</p>
-          <p>カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚。</p>
-          <p>エフェソスの古代ローマ遺跡、そしてボスポラス海峡の夜明け。</p>
-
-          
-
-          <p>トルコという国の多様な表情を巡った9日間の旅を、</p>
-          <p>どうぞお楽しみください。</p>
-        </div>
-      </section>
 
       <!-- Latest from TJM -->
       <section class="latest-section" aria-labelledby="latest-heading">
@@ -467,17 +461,66 @@
 
   <!-- Scripts -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ===== Hero Ken Burns slideshow =====
+    // ===== Hero Ken Burns slideshow with dynamic text =====
     const slides = document.querySelectorAll('.hero-slide');
     const dots   = document.querySelectorAll('.dot');
     let currentSlide = 0;
     const slideInterval = 8000;
+
+    // 各スライドのテキストデータ
+    const slideTexts = [
+      {
+        label: '特集｜トルコ旅行記',
+        title: 'カッパドキアからイスタンブールへ',
+        subtitle: '熱気球、旋回舞踊、白い石灰棚、古代遺跡。9日間の旅を動く地図とともに。'
+      },
+      {
+        label: '白鷺三十六景',
+        title: '色付き始めた天守を、イーグレひめじから',
+        subtitle: ''
+      },
+      {
+        label: '白鷺三十六景',
+        title: '男山貯水池から天守閣を望む',
+        subtitle: ''
+      },
+      {
+        label: 'Hong Kong',
+        title: 'ビクトリアハーバーの夜明け',
+        subtitle: ''
+      }
+    ];
+
+    // テキスト要素の参照
+    const heroLabel = document.querySelector('.hero-label');
+    const heroTitle = document.querySelector('.hero-title');
+    const heroSubtitle = document.querySelector('.hero-subtitle');
+    const heroOverlay = document.querySelector('.hero-overlay');
+
+    function updateText(i) {
+      const text = slideTexts[i];
+      
+      // フェードアウト
+      heroOverlay.style.opacity = '0';
+      
+      setTimeout(() => {
+        // テキスト更新
+        heroLabel.textContent = text.label;
+        heroTitle.textContent = text.title;
+        heroSubtitle.textContent = text.subtitle;
+        heroSubtitle.style.display = text.subtitle ? 'block' : 'none';
+        
+        // フェードイン
+        heroOverlay.style.opacity = '1';
+      }, 300);
+    }
 
     function showSlide(i){
       slides.forEach(s=>s.classList.remove('active'));
       dots.forEach(d=>d.classList.remove('active'));
       slides[i].classList.add('active');
       dots[i].classList.add('active');
+      updateText(i);
     }
     function nextSlide(){ currentSlide = (currentSlide+1)%slides.length; showSlide(currentSlide); }
 
