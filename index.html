@@ -461,12 +461,7 @@
 
   <!-- Scripts -->
   <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ===== Hero Ken Burns slideshow with dynamic text =====
-    const slides = document.querySelectorAll('.hero-slide');
-    const dots   = document.querySelectorAll('.dot');
-    let currentSlide = 0;
-    const slideInterval = 8000;
-
+    // ===== Hero slideshow text data =====
     // 各スライドのテキストデータ
     const slideTexts = [
       {
@@ -486,7 +481,7 @@
       },
       {
         label: 'Hong Kong',
-        title: 'ビクトリアハーバーの夜明け',
+        title: 'ビクトリアハーバーの夜',
         subtitle: ''
       }
     ];
@@ -496,36 +491,13 @@
     const heroTitle = document.querySelector('.hero-title');
     const heroSubtitle = document.querySelector('.hero-subtitle');
 
-    function updateText(i) {
+    function updateHeroText(i) {
       const text = slideTexts[i];
       heroLabel.textContent = text.label;
       heroTitle.textContent = text.title;
       heroSubtitle.textContent = text.subtitle;
       heroSubtitle.style.display = text.subtitle ? 'block' : 'none';
     }
-
-    function showSlide(i){
-      slides.forEach(s=>s.classList.remove('active'));
-      dots.forEach(d=>d.classList.remove('active'));
-      slides[i].classList.add('active');
-      dots[i].classList.add('active');
-      updateText(i);
-    }
-    function nextSlide(){ currentSlide = (currentSlide+1)%slides.length; showSlide(currentSlide); }
-
-    let autoSlide = setInterval(nextSlide, slideInterval);
-    dots.forEach(dot=>{
-      dot.addEventListener('click', ()=>{
-        clearInterval(autoSlide);
-        currentSlide = parseInt(dot.getAttribute('data-slide'));
-        showSlide(currentSlide);
-        autoSlide = setInterval(nextSlide, slideInterval);
-      });
-    });
-    document.addEventListener('visibilitychange', ()=>{
-      if(document.hidden){ clearInterval(autoSlide); }
-      else{ autoSlide = setInterval(nextSlide, slideInterval); }
-    });
 
     // ===== Navigation =====
     const navToggle = document.getElementById('nav-toggle');
@@ -730,7 +702,7 @@
     document.querySelectorAll('a[target="_blank"]').forEach(link => { link.rel = 'noopener noreferrer'; });
 
     // ========================================
-    // Hero Slider with Ken Burns Effect - 修正版
+    // Hero Slider with Ken Burns Effect - 統合版
     // ========================================
     (function() {
       const slides = document.querySelectorAll('.hero-slide');
@@ -739,19 +711,21 @@
       const slideInterval = 7000; // 7秒
       let intervalId;
 
-      // スライド切り替え関数（改善版）
+      // スライド切り替え関数（テキスト同期版）
       function changeSlide(nextIndex) {
         if (nextIndex === currentSlide) return;
 
         const current = slides[currentSlide];
         const next = slides[nextIndex];
         
+        // テキストを即座に更新
+        updateHeroText(nextIndex);
+        
         // 1. 次のスライドを準備（まだ見えない状態で）
         next.style.opacity = '0';
         next.classList.add('active');
         
         // 2. 少し待ってから次のスライドをフェードイン
-        //    これによりケン・バーンズエフェクトが最初から適用される
         setTimeout(() => {
           next.style.transition = 'opacity 1s ease-in-out';
           next.style.opacity = '1';
