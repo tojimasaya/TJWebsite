@@ -260,25 +260,61 @@
       const container = document.getElementById('whats-new-grid');
       
       try {
-        // writings-og.jsonから記事データを取得
-        const response = await fetch('/data/writings-og.json');
-        if (!response.ok) throw new Error(`HTTP ${response.status}`);
+        // note記事をRSSから取得（最新2件）
+        const noteFeeds = [
+          { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
+          { url: 'https://note.com/tojimasaya/m/md99dd54590fa/rss', name: '次はどこへ' },
+          { url: 'https://note.com/tojimasaya/m/mcae365b520ed/rss', name: '俺流トラベルガジェット' }
+        ];
         
-        const articlesData = await response.json();
+        const noteArticles = [];
         
-        // note記事を抽出（最新2件）
-        const noteArticles = Object.entries(articlesData)
-          .filter(([url]) => url.includes('note.com/tojimasaya'))
-          .map(([url, data]) => ({
-            title: data.title || 'note記事',
-            link: url,
-            excerpt: data.description?.substring(0, 60) + '...' || '',
-            imageUrl: data.image || 'assets/images/gallery/weekly.jpg',
-            source: 'note'
-          }))
-          .slice(0, 2);
+        // 各フィードから記事を取得
+        for (const feed of noteFeeds) {
+          try {
+            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
+            const response = await fetch(proxyUrl);
+            const xmlText = await response.text();
+            
+            const parser = new DOMParser();
+            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
+            
+            const items = xmlDoc.querySelectorAll('item');
+            items.forEach((item, index) => {
+              if (index < 2) {
+                const title = item.querySelector('title')?.textContent || '';
+                const link = item.querySelector('link')?.textContent || '';
+                const description = item.querySelector('description')?.textContent || '';
+                const pubDate = item.querySelector('pubDate')?.textContent || '';
+                
+                const excerpt = description.replace(/<[^>]*>/g, '').substring(0, 60) + '...';
+                const date = new Date(pubDate);
+                
+                noteArticles.push({
+                  title,
+                  link,
+                  excerpt,
+                  date: date.toISOString(),
+                  imageUrl: 'assets/images/gallery/weekly.jpg',
+                  source: 'note'
+                });
+              }
+            });
+          } catch (error) {
+            console.error(`RSS取得エラー (${feed.name}):`, error);
+          }
+        }
         
-        // DRONE.jp記事を抽出（最新1件）
+        // 日付でソートして最新2件を取得
+        noteArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
+        const latestNoteArticles = noteArticles.slice(0, 2);
+        
+        // DRONE.jp記事をwritings-og.jsonから取得（最新1件）
+        const ogResponse = await fetch('/data/writings-og.json');
+        if (!ogResponse.ok) throw new Error(`HTTP ${ogResponse.status}`);
+        
+        const articlesData = await ogResponse.json();
+        
         const droneArticles = Object.entries(articlesData)
           .filter(([url]) => url.includes('drone.jp/column'))
           .sort((a, b) => {
@@ -308,7 +344,7 @@
           .slice(0, 1);
         
         // 記事を結合（note2 + drone1）
-        const allArticles = [...noteArticles, ...droneArticles];
+        const allArticles = [...latestNoteArticles, ...droneArticles];
         
         if (allArticles.length > 0) {
           container.innerHTML = allArticles.map(article => `
