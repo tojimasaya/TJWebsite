@@ -13,58 +13,26 @@
     <meta name="keywords" content="田路昌也, 写真, ギャラリー, 旅行, ドローン, ライカ">
     <meta name="author" content="Toji Masaya">
 
-    <meta property="og:title" content="Gallery — Toji Masaya">
-    <meta property="og:description" content="世界各地での旅の瞬間を写真と動画で記録しています。">
-    <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/venice.jpg">
-    <meta property="og:url" content="https://tojimasaya.com/gallery.html">
-    <meta property="og:type" content="website">
-
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
     <link rel="stylesheet" href="style.css">
 
-    <meta name="theme-color" content="#fafafa">
-    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
-
     <style>
-        /* 動画モーダル用のスタイル */
-        .modal-video {
-            position: fixed;
-            top: 0; left: 0;
-            width: 100vw;
-            height: 100vh;
-            background: rgba(0,0,0,0.9);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            z-index: 9999;
-            animation: fadeIn 0.3s ease;
-        }
-        .modal-video iframe {
-            width: 90vw;
-            height: 50.6vw; /* 16:9 */
-            max-width: 1280px;
-            max-height: 720px;
-            border: none;
-            border-radius: 8px;
-            box-shadow: 0 0 30px rgba(0,0,0,0.6);
-        }
-        .modal-video .close-btn {
+        /* 動画再生ボタンのオーバーレイ（クリックしやすくする） */
+        .play-overlay {
             position: absolute;
-            top: 20px;
-            right: 30px;
-            font-size: 2rem;
-            color: #fff;
-            background: none;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: transparent;
             border: none;
             cursor: pointer;
-            z-index: 10000;
-            text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+            z-index: 10;
         }
-        .modal-video .close-btn:hover {
-            opacity: 0.7;
+        /* ホバー時に少し白く光らせる */
+        .play-overlay:hover {
+            background: rgba(255,255,255,0.1);
         }
-        
+
         /* 読み込み中の表示 */
         .loading {
             text-align: center;
@@ -90,20 +58,14 @@
                 <li><a href="/writings.html" class="nav-link">Writings</a></li>
             </ul>
             <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
+                <span></span><span></span><span></span>
             </button>
         </div>
     </nav>
 
     <section class="gallery-hero" role="banner">
         <div class="gallery-hero-image">
-            <img src="assets/images/gallery/venice.jpg" 
-                 alt="ヴェネツィアの夜景" 
-                 loading="eager" 
-                 width="1920" 
-                 height="1080">
+            <img src="assets/images/gallery/venice.jpg" alt="ヴェネツィアの夜景" loading="eager">
             <div class="gallery-hero-overlay">
                 <h1 class="gallery-hero-title">Gallery</h1>
                 <p class="gallery-hero-subtitle">旅先で切り取った瞬間</p>
@@ -113,7 +75,6 @@
 
     <main id="main-content" class="main-content">
         <div class="container">
-
             <section class="gallery-intro">
                 <p class="lead">ライカやドローンを片手に、世界各地で切り取った瞬間。街角の何気ない風景から、雄大な自然まで、旅先で出会った光景を写真と動画で記録しています。</p>
             </section>
@@ -139,70 +100,47 @@
                 </a>
             </section>
 
-            <footer class="footer" role="contentinfo">
+            <footer class="footer">
                 <div class="footer-content">
                     <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-                    <p>Built with care in Japan</p>
                 </div>
             </footer>
-
         </div>
     </main>
 
-    <div id="modal" 
-         class="modal" 
-         role="dialog" 
-         aria-modal="true" 
-         aria-labelledby="modal-title" 
-         aria-hidden="true">
-        <button class="close-modal" 
-                onclick="closeModal()" 
-                aria-label="モーダルを閉じる">&times;</button>
-        <div class="modal-content" id="modal-content"></div>
+    <div id="modal" class="modal" role="dialog" aria-hidden="true" onclick="closeModal()">
+        <button class="close-modal">&times;</button>
+        <div class="modal-content" id="modal-content" onclick="event.stopPropagation()"></div>
     </div>
 
     <script src="gallery.js"></script>
-
     <script>
-        // Navigation
+        // Navigation Toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
-
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 navToggle.classList.toggle('active');
                 document.body.classList.toggle('nav-open');
             });
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                        document.body.classList.remove('nav-open');
-                    }
-                });
-            });
         }
-
-        // Scroll effect
         window.addEventListener('scroll', () => {
             const nav = document.getElementById('main-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
         });
 
-        // === Modal Logic (Photo) ===
-        // gallery.js が生成する onclick="openModal(...)" から呼ばれます
-        function openModal(content) {
+        // === Modal Functions (Simplified) ===
+
+        // 写真を開く (URLとタイトルを受け取る形に変更)
+        function openModal(imageSrc, title) {
             const modal = document.getElementById('modal');
             const modalContent = document.getElementById('modal-content');
-            modalContent.innerHTML = content;
+            
+            // HTMLをここで生成して注入
+            modalContent.innerHTML = `<img src="${imageSrc}" alt="${title}" class="modal-image">`;
+            
             modal.setAttribute('aria-hidden', 'false');
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
@@ -215,16 +153,17 @@
             document.body.style.overflow = '';
         }
 
-        // === Modal Logic (Video) ===
-        // gallery.js が生成する onclick="openVideo(...)" から呼ばれます
-        function openVideo(youtubeId, title = "") {
+        // 動画を開く
+        function openVideo(youtubeId, title) {
             const html = `
-                <div class="modal-video" id="videoModal">
-                <button class="close-btn" onclick="closeVideo()">×</button>
-                <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0&modestbranding=1"
-                        title="${title}"
-                        allow="autoplay; encrypted-media; picture-in-picture"
-                        allowfullscreen></iframe>
+                <div class="modal" id="videoModal" style="display:flex;" onclick="closeVideo()">
+                    <button class="close-modal" onclick="closeVideo()">×</button>
+                    <div class="modal-video" onclick="event.stopPropagation()">
+                        <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0"
+                                title="${title}"
+                                allow="autoplay; encrypted-media; picture-in-picture"
+                                allowfullscreen></iframe>
+                    </div>
                 </div>`;
             document.body.insertAdjacentHTML('beforeend', html);
             document.body.style.overflow = 'hidden';
@@ -236,48 +175,13 @@
             document.body.style.overflow = '';
         }
 
-        // キーボード・クリックイベントによる閉じる動作
+        // ESCキー対応
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                closeModal(); // 画像モーダル
-                closeVideo(); // 動画モーダル
-            }
-        });
-
-        document.addEventListener('click', (e) => {
-            // 動画モーダルの背景クリック
-            const videoModal = document.getElementById('videoModal');
-            if (videoModal && e.target === videoModal) {
+                closeModal();
                 closeVideo();
             }
-            // 画像モーダルの背景クリック
-            const photoModal = document.getElementById('modal');
-            if (photoModal && e.target === photoModal && photoModal.getAttribute('aria-hidden') === 'false') {
-                closeModal();
-            }
         });
-
-        // External links security
-        document.addEventListener('DOMContentLoaded', () => {
-            document.querySelectorAll('a[target="_blank"]').forEach(link => {
-                link.rel = 'noopener noreferrer';
-            });
-        });
-    </script>
-
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ImageGallery",
-        "name": "Toji Masaya Gallery",
-        "description": "田路昌也の写真ギャラリー。世界各地での旅の瞬間を写真と動画で記録しています。",
-        "author": {
-            "@type": "Person",
-            "name": "田路昌也",
-            "alternateName": "Toji Masaya"
-        },
-        "url": "https://tojimasaya.com/gallery.html"
-    }
     </script>
 </body>
 </html>
