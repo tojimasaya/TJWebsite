@@ -1,803 +1,287 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Toji Masaya – drone/camera/travel</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Toji Masaya – drone/camera/travel</title>
 
-  <!-- Favicon -->
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
+    <link rel="icon" href="/favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <!-- SEO -->
-  <meta name="description" content="田路昌也(TJ)のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
-  <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, カッパドキア, note">
-  <meta name="author" content="Toji Masaya">
+    <meta name="description" content="田路昌也(TJ)のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
+    <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, カッパドキア, note">
+    <meta name="author" content="Toji Masaya">
 
-  <!-- OGP -->
-  <meta property="og:title" content="TJM – drone/camera/travel">
-  <meta property="og:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。イスタンブールから香港まで、ライカとドローンで切り取った世界。">
-  <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
-  <meta property="og:url" content="https://tojimasaya.com">
-  <meta property="og:type" content="website">
-  <meta property="og:site_name" content="TJM">
+    <meta property="og:title" content="TJM – drone/camera/travel">
+    <meta property="og:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。イスタンブールから香港まで、ライカとドローンで切り取った世界。">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
+    <meta property="og:url" content="https://tojimasaya.com">
+    <meta property="og:type" content="website">
 
-  <!-- Twitter Card -->
-  <meta name="twitter:card" content="summary_large_image">
-  <meta name="twitter:title" content="TJM – drone/camera/travel">
-  <meta name="twitter:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を綴っています。">
-  <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
 
-  <!-- CSS -->
-  <link rel="stylesheet" href="style.css?v=20251119">
-
-  <!-- Ken Burns Effect CSS Override - agora plus風 -->
-  <style>
-    /* ========================================
-       Hero Section with Ken Burns Effect - agora plus風
-       ======================================== */
-
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 70vh;
-      min-height: 500px;
-      overflow: hidden;
-    }
-
-    .hero-slides-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* 下部グラデーションオーバーレイ */
-    .hero-slides-container::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      height: 60%;
-      background: linear-gradient(
-        to top,
-        rgba(0, 0, 0, 0.7) 0%,
-        rgba(0, 0, 0, 0.4) 40%,
-        rgba(0, 0, 0, 0) 100%
-      );
-      z-index: 2;
-      pointer-events: none;
-    }
-
-    /* スライドの基本設定 */
-    .hero-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      pointer-events: none;
-      will-change: opacity, transform;
-    }
-
-    /* アクティブなスライドのみ表示 */
-    .hero-slide.active {
-      opacity: 1;
-      pointer-events: auto;
-      z-index: 1;
-    }
-
-    /* 画像の基本設定 */
-    .hero-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      display: block;
-      will-change: transform;
-    }
-
-    /* ケン・バーンズエフェクト - アクティブなスライドのみに適用 */
-    .hero-slide.active img {
-      animation: kenBurns 7s ease-in-out forwards;
-    }
-
-    /* スライドごとに異なるケン・バーンズ効果 */
-    .hero-slide:nth-child(1).active img {
-      animation: kenBurns1 7s ease-in-out forwards;
-    }
-
-    .hero-slide:nth-child(2).active img {
-      animation: kenBurns2 7s ease-in-out forwards;
-    }
-
-    .hero-slide:nth-child(3).active img {
-      animation: kenBurns3 7s ease-in-out forwards;
-    }
-
-    .hero-slide:nth-child(4).active img {
-      animation: kenBurns4 7s ease-in-out forwards;
-    }
-
-    @keyframes kenBurns1 {
-      0% {
-        transform: scale(1) translate(0, 0);
-      }
-      100% {
-        transform: scale(1.15) translate(-2%, -2%);
-      }
-    }
-
-    @keyframes kenBurns2 {
-      0% {
-        transform: scale(1) translate(0, 0);
-      }
-      100% {
-        transform: scale(1.15) translate(2%, -1%);
-      }
-    }
-
-    @keyframes kenBurns3 {
-      0% {
-        transform: scale(1) translate(0, 0);
-      }
-      100% {
-        transform: scale(1.15) translate(-1%, 2%);
-      }
-    }
-
-    @keyframes kenBurns4 {
-      0% {
-        transform: scale(1) translate(0, 0);
-      }
-      100% {
-        transform: scale(1.15) translate(1%, 1%);
-      }
-    }
-
-    /* オーバーレイテキスト - 下部配置（agora plus風） */
-    .hero-overlay {
-      position: absolute;
-      bottom: 3rem;
-      left: 50%;
-      transform: translateX(-50%);
-      text-align: center;
-      z-index: 10;
-      color: white;
-      pointer-events: none;
-      width: 90%;
-      max-width: 900px;
-      transition: opacity 0.3s ease-in-out;
-    }
-
-    .hero-label {
-      font-size: clamp(0.75rem, 1.2vw, 0.9rem);
-      font-weight: 400;
-      letter-spacing: 0.2em;
-      margin-bottom: 0.8rem;
-      opacity: 0.9;
-    }
-
-    .hero-title {
-      font-size: clamp(1.8rem, 4vw, 3rem);
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      margin: 0;
-      line-height: 1.4;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
-    }
-
-    .hero-subtitle {
-      font-size: clamp(0.85rem, 1.5vw, 1.1rem);
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      margin-top: 1rem;
-      opacity: 0.9;
-      line-height: 1.8;
-      text-shadow: 0 1px 10px rgba(0,0,0,0.3);
-    }
-
-    /* ナビゲーションドット - テキストの上に配置 */
-    .hero-dots {
-      position: absolute;
-      bottom: 10rem;
-      left: 50%;
-      transform: translateX(-50%);
-      display: flex;
-      gap: 0.8rem;
-      z-index: 10;
-    }
-
-    .hero-dots .dot {
-      width: 8px;
-      height: 8px;
-      border-radius: 50%;
-      background: rgba(255, 255, 255, 0.5);
-      cursor: pointer;
-      transition: all 0.3s ease;
-    }
-
-    .hero-dots .dot:hover {
-      background: rgba(255, 255, 255, 0.8);
-      transform: scale(1.3);
-    }
-
-    .hero-dots .dot.active {
-      background: white;
-      transform: scale(1.2);
-    }
-
-    /* レスポンシブ対応 */
-    @media (max-width: 768px) {
-      .hero {
-        height: 60vh;
-        min-height: 400px;
-      }
-
-      .hero-slides-container::after {
-        height: 70%;
-      }
-
-      .hero-overlay {
-        bottom: 2rem;
-      }
-
-      .hero-label {
-        font-size: 0.7rem;
-        letter-spacing: 0.15em;
-        margin-bottom: 0.5rem;
-      }
-
-      .hero-title {
-        font-size: clamp(1.4rem, 4vw, 2rem);
-        letter-spacing: 0.08em;
-      }
-
-      .hero-subtitle {
-        font-size: clamp(0.75rem, 1.2vw, 0.9rem);
-        letter-spacing: 0.05em;
-        margin-top: 0.8rem;
-      }
-
-      .hero-dots {
-        bottom: 8rem;
-      }
-
-      .hero-dots .dot {
-        width: 6px;
-        height: 6px;
-      }
-    }
-
-    /* パフォーマンス最適化のための追加設定 */
-    @media (prefers-reduced-motion: reduce) {
-      .hero-slide img {
-        animation: none !important;
-      }
-      
-      .hero-slide {
-        transition: opacity 0.5s ease-in-out;
-      }
-    }
-  </style>
-
-  <!-- Theme -->
-  <meta name="theme-color" content="#fafafa">
-  <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 </head>
-
 <body>
-  <!-- Skip Link -->
-  <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-  <!-- Navigation -->
-  <nav class="main-nav" id="main-nav">
-    <div class="nav-container">
-      <a href="/" class="nav-logo">TJM</a>
-      <ul class="nav-menu" id="nav-menu">
-        <li><a href="/" class="nav-link active">Home</a></li>
-        <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-        <li><a href="/gear.html" class="nav-link">Gear</a></li>
-        <li><a href="/writings.html" class="nav-link">Writings</a></li>
-      </ul>
-      <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-        <span></span><span></span><span></span>
-      </button>
-    </div>
-  </nav>
-
-  <!-- Hero Section with Ken Burns Effect -->
-  <section class="hero" role="banner">
-    <div class="hero-slides-container">
-      <!-- Slide 1: イスタンブール -->
-      <div class="hero-slide active">
-        <img src="assets/images/gallery/istanbul.jpg"
-             alt="イスタンブールの風景"
-             loading="eager"
-             fetchpriority="high"
-             width="1920" height="1080">
-      </div>
-
-      <!-- Slide 2: 週次画像 -->
-      <div class="hero-slide">
-        <img src="assets/images/gallery/weekly.jpg"
-             alt="今週の一枚"
-             loading="lazy"
-             width="1920" height="1080">
-      </div>
-
-      <!-- Slide 3: 月次画像 -->
-      <div class="hero-slide">
-        <img src="assets/images/gallery/monthly.jpg"
-             alt="今月の一枚"
-             loading="lazy"
-             width="1920" height="1080">
-      </div>
-
-      <!-- Slide 4: 香港 -->
-      <div class="hero-slide">
-        <img src="assets/images/gallery/hongkong.jpg"
-             alt="香港の街並み"
-             loading="lazy"
-             width="1920" height="1080">
-      </div>
-    </div>
-
-    <!-- Navigation Dots -->
-    <div class="hero-dots">
-      <div class="dot active" data-slide="0"></div>
-      <div class="dot" data-slide="1"></div>
-      <div class="dot" data-slide="2"></div>
-      <div class="dot" data-slide="3"></div>
-    </div>
-
-    <!-- Text Overlay -->
-    <div class="hero-overlay">
-      <p class="hero-label">特集｜トルコ旅行記</p>
-      <h1 class="hero-title">カッパドキアからイスタンブールへ</h1>
-      <p class="hero-subtitle">熱気球、旋回舞踊、白い石灰棚、古代遺跡。9日間の旅を動く地図とともに。</p>
-    </div>
-  </section>
-
-  <!-- Main Content -->
-  <main id="main-content" class="main-content">
-    <div class="container">
-
-      <!-- Latest from TJM -->
-      <section class="latest-section" aria-labelledby="latest-heading">
-        <h2 id="latest-heading" class="latest-title">
-          <span class="en-title">What's New</span>
-          <span class="jp-subtitle">最新記事</span>
-        </h2>
-        <div class="latest-grid">
-
-          <!-- DRONE.jp（自動更新） -->
-          <article class="content-card" id="latest-drone-card">
-            <div class="content-image">
-              <a id="latest-drone-url" href="#" target="_blank" rel="noopener noreferrer">
-                <img id="latest-drone-thumb" src="assets/images/gear/dronejplatest.jpg" alt="DRONE.jp 連載のサムネイル" loading="lazy">
-              </a>
-            </div>
-            <div class="content-info">
-              <span class="content-category">DRONE.jp 連載</span>
-              <h3>
-                <a id="latest-drone-title" href="#" target="_blank" rel="noopener noreferrer">
-                  読み込み中...
-                </a>
-              </h3>
-              <p class="preview-excerpt" id="latest-drone-caption">最新記事を取得中...</p>
-              <a class="card-action-btn" id="latest-drone-cta" href="#" target="_blank" rel="noopener noreferrer">Read on DRONE.jp →</a>
-            </div>
-          </article>
-
-          <!-- note（自動更新） -->
-          <article class="content-card" id="latest-oreryu-card" aria-live="polite">
-            <div class="content-image">
-              <a id="latest-note-url" href="#" target="_blank" rel="noopener noreferrer">
-                <img id="latest-note-thumb" src="assets/images/gear/oreryulatest.jpg" alt="note 最新記事のサムネイル" loading="lazy">
-              </a>
-            </div>
-            <div class="content-info">
-              <span class="content-category">note 最新記事</span>
-              <h3 id="latest-oreryu-title">
-                <a href="#" target="_blank" rel="noopener noreferrer">
-                  読み込み中...
-                </a>
-              </h3>
-              <p id="latest-oreryu-meta" class="preview-excerpt">最新記事を取得中...</p>
-              <a id="latest-oreryu-link" class="card-action-btn" href="#" target="_blank" rel="noopener noreferrer">Read on note →</a>
-            </div>
-          </article>
-
-          <!-- トルコ旅行記（特集） -->
-          <article class="content-card" id="turkey-feature-card">
-            <div class="content-image">
-              <a href="/turkey-travel-journal.html">
-                <img src="assets/images/turkey/cappadocia/01.jpg" alt="トルコ旅行記 カッパドキア" loading="lazy">
-              </a>
-            </div>
-            <div class="content-info">
-              <span class="content-category">特集</span>
-              <h3><a href="/turkey-travel-journal.html">トルコ旅行記</a></h3>
-              <p class="preview-excerpt">カッパドキアの空、ボスポラスの朝。写真で見ていた景色は、本物には遠く及ばなかった。</p>
-              <a class="card-action-btn" href="/turkey-travel-journal.html">Read Feature →</a>
-            </div>
-          </article>
-
+    <nav class="main-nav" id="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Toji Masaya</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link active">Home</a></li>
+                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="/gear.html" class="nav-link">Gear</a></li>
+                <li><a href="/writings.html" class="nav-link">Writings</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+                <span></span><span></span><span></span>
+            </button>
         </div>
-      </section>
+    </nav>
 
-      <!-- About -->
-      <section class="about-section" aria-labelledby="about-heading">
-        <h2 id="about-heading">About</h2>
-        <div class="about-content">
-          <p>
-            香港と日本を行き来しながら、ライカとドローンで旅の記憶を記録しています。
-            写真と言葉、そして少しのガジェット偏愛。ここはその交差点です。
-          </p>
-          <div class="about-links">
-            <a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer" class="external-link">note</a>
-            <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener noreferrer" class="external-link">DRONE.jp</a>
-            <a href="https://twitter.com/mongkok93" target="_blank" rel="noopener noreferrer" class="external-link">X (Twitter)</a>
-            <a href="/cdn-cgi/l/email-protection#5723383d3e3a3624362e36676017303a363e3b7934383a" class="external-link">Contact</a>
-          </div>
+    <section class="hero" role="banner">
+        <div class="hero-fixed-wrapper">
+            <div class="slider-container">
+                <div class="hero-slide active">
+                    <img src="assets/images/hero/slide01.jpg" alt="スライド1の代替テキスト" loading="eager">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/images/hero/slide02.jpg" alt="スライド2の代替テキスト" loading="lazy">
+                </div>
+                <div class="hero-slide">
+                    <img src="assets/images/hero/slide03.jpg" alt="スライド3の代替テキスト" loading="lazy">
+                </div>
+            </div>
+
+            <div class="hero-overlay">
+                <h1 class="hero-title">Toji Masaya</h1>
+                <p class="hero-subtitle">drone / camera / travel</p>
+            </div>
+
+            <div class="hero-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
         </div>
-      </section>
-
-      <!-- Footer -->
-      <footer class="footer" role="contentinfo">
-        <div class="footer-content">
-          <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-          <p>Built with care in Japan</p>
-        </div>
-      </footer>
-
-    </div>
-  </main>
-
-  <!-- Scripts -->
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // ===== Hero slideshow text data =====
-    // 各スライドのテキストデータ
-    const slideTexts = [
-      {
-        label: '特集｜トルコ旅行記',
-        title: 'カッパドキアからイスタンブールへ',
-        subtitle: '熱気球、旋回舞踊、白い石灰棚、古代遺跡。9日間の旅を動く地図とともに。'
-      },
-      {
-        label: '白鷺三十六景',
-        title: '男山貯水池から天守閣を望む',
-        subtitle: ''
-      },
-      {
-        label: '白鷺三十六景',
-        title: '色付き始めた天守を、イーグレひめじから',
-        subtitle: ''
-      },
-      {
-        label: 'Hong Kong',
-        title: 'ビクトリアハーバーの夜',
-        subtitle: ''
-      }
-    ];
-
-    // テキスト要素の参照
-    const heroLabel = document.querySelector('.hero-label');
-    const heroTitle = document.querySelector('.hero-title');
-    const heroSubtitle = document.querySelector('.hero-subtitle');
-
-    function updateHeroText(i) {
-      const text = slideTexts[i];
-      heroLabel.textContent = text.label;
-      heroTitle.textContent = text.title;
-      heroSubtitle.textContent = text.subtitle;
-      heroSubtitle.style.display = text.subtitle ? 'block' : 'none';
-    }
-
-    // ===== Navigation =====
-    const navToggle = document.getElementById('nav-toggle');
-    const navMenu   = document.getElementById('nav-menu');
-    if (navToggle && navMenu) {
-      navToggle.addEventListener('click', ()=>{
-        navMenu.classList.toggle('active');
-        navToggle.classList.toggle('active');
-        document.body.classList.toggle('nav-open');
-      });
-      document.querySelectorAll('.nav-link').forEach(link=>{
-        link.addEventListener('click', ()=>{
-          if (window.innerWidth <= 768) {
-            navMenu.classList.remove('active');
-            navToggle.classList.remove('active');
-            document.body.classList.remove('nav-open');
-          }
-        });
-      });
-    }
-    window.addEventListener('scroll', ()=>{
-      const nav = document.getElementById('main-nav');
-      if (window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
-    });
-
-    // ========================================
-    // writings-og.json から最新記事を自動取得
-    // ========================================
-
-    // デフォルト画像（フォールバック用）
-    const DEFAULT_IMAGES = {
-        drone: 'assets/images/gear/dronejplatest.jpg',
-        note: 'assets/images/gear/oreryulatest.jpg'
-    };
-
-    // 日付抽出ヘルパー
-    function extractDateFromURL(url) {
-        // DRONE.jp形式: /20250912114426119738.html
-        const droneMatch = url.match(/\/(\d{14})\d+\.html/);
-        if (droneMatch) return droneMatch[1];
         
-        // note形式: /n/nXXXXXXXXXXXX
-        const noteMatch = url.match(/\/n\/n([a-f0-9]+)/);
-        if (noteMatch) return noteMatch[1];
-        
-        return '0';
-    }
+        <div class="hero-spacer"></div>
+    </section>
 
-    // 日付フォーマット（複数形式対応）
-    function formatDate(input) {
-        if (!input) return '最新';
-        
-        // 文字列をクリーンアップ（余分な文字を除去）
-        const cleanInput = String(input).trim();
-        
-        // RSSのpubDate形式の場合（例: "Mon, 14 Oct 2024 12:00:00 +0900"）
-        // カンマが含まれていて、日付としてパース可能かチェック
-        if (cleanInput.includes(',')) {
-            const date = new Date(cleanInput);
-            if (!isNaN(date.getTime())) {
-                return `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
-            }
-        }
-        
-        // URL内の日付の場合（YYYYMMDD...）
-        const dateStr = extractDateFromURL(cleanInput);
-        if (dateStr === '0' || dateStr.length < 8) return '最新';
-        
-        const year = dateStr.substring(0, 4);
-        const month = parseInt(dateStr.substring(4, 6), 10);
-        const day = parseInt(dateStr.substring(6, 8), 10);
-        
-        return `${year}年${month}月${day}日`;
-    }
+    <main id="main-content" class="main-content">
+        <div class="container">
+            <section class="intro">
+                <p class="lead">香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。イスタンブールから香港まで、ライカとドローンで切り取った世界。</p>
+            </section>
 
-    // 俺流トラベルガジェットのマガジンURLリスト
-    const ORERYU_MAGAZINE_URLS = [
-        'https://note.com/tojimasaya/m/mcae365b520ed'
-    ];
+            <section class="latest-section highlights-section">
+                <div class="container">
+                    <h2 class="latest-title">
+                        ピックアップ
+                        <span class="jp-subtitle">編集部おすすめ記事</span>
+                    </h2>
 
-    // writings-og.json から最新記事を取得
-    async function loadLatestArticles() {
-        try {
-            const response = await fetch('/data/writings-og.json');
-            if (!response.ok) throw new Error(`HTTP ${response.status}`);
-            
-            const articlesData = await response.json();
-            
-            // 1. DRONE.jp 最新記事
-            const droneArticles = Object.entries(articlesData)
-                .filter(([url]) => url.includes('drone.jp/column'))
-                .sort((a, b) => {
-                    const dateA = extractDateFromURL(a[0]);
-                    const dateB = extractDateFromURL(b[0]);
-                    return dateB.localeCompare(dateA);
-                });
-            
-            // 2. 俺流トラベルガジェット 最新記事
-            // RSSから記事情報を取得（URL、タイトル、日付）
-            let oreryuArticle = null;
-            try {
-                const rssResponse = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(ORERYU_MAGAZINE_URLS[0] + '/rss')}`);
-                if (rssResponse.ok) {
-                    const xmlText = await rssResponse.text();
-                    const parser = new DOMParser();
-                    const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-                    const firstItem = xmlDoc.querySelector('item');
+                    <div class="highlights-grid">
+                        
+                        <article class="content-card fixed-item" data-source="note">
+                            <div class="content-image">
+                                <a href="https://note.com/tojimasaya/n/n188241da2ab6" target="_blank" rel="noopener noreferrer">
+                                    <img src="assets/images/writings/ai-homepage.jpg" alt="AIと一緒に作ったホームページ" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="content-info">
+                                <span class="card-date">2024.1.18</span>
+                                <h3>AIと一緒に作った初めてのホームページ——還暦からの新しい挑戦</h3>
+                                <p class="card-excerpt">noteで公開した、このサイト制作の裏側と、新しい挑戦について語った記事。</p>
+                                <a href="https://note.com/tojimasaya/n/n188241da2ab6" target="_blank" rel="noopener noreferrer" class="card-action-btn">Noteで読む</a>
+                            </div>
+                        </article>
+
+                        <article class="content-card fixed-item" data-source="drone">
+                            <div class="content-image">
+                                <a href="https://drone.jp/column/2024052410211888779.html" target="_blank" rel="noopener noreferrer">
+                                    <img src="assets/images/writings/drone-uom.jpg" alt="中国でドローンを飛ばすために" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="content-info">
+                                <span class="card-date">2024.5.24</span>
+                                <h3>Vol.40 中国でドローンを飛ばすために：UOM登録の手順と注意点</h3>
+                                <p class="card-excerpt">規制の厳しい中国でのドローン運用について、UOM登録の手順と実体験を詳細に解説。</p>
+                                <a href="https://drone.jp/column/2024052410211888779.html" target="_blank" rel="noopener noreferrer" class="card-action-btn">DRONE.jpで読む</a>
+                            </div>
+                        </article>
+
+                        <article class="content-card fixed-item" data-source="featured">
+                            <div class="content-image">
+                                <a href="turkey-travel-journal.html">
+                                    <img src="assets/images/writings/turkey-featured.jpg" alt="トルコ旅行記" loading="lazy">
+                                </a>
+                            </div>
+                            <div class="content-info">
+                                <span class="card-date featured-tag">特集記事</span>
+                                <h3>トルコ旅行記 (全3回)</h3>
+                                <p class="card-excerpt">イスタンブールとカッパドキアを巡った旅の記録。写真とドローンの機材レビューも含む。</p>
+                                <a href="turkey-travel-journal.html" class="card-action-btn">特集を読む</a>
+                            </div>
+                        </article>
+
+                        <article class="content-card fixed-item call-to-action" data-source="cta">
+                            <div class="content-info">
+                                <h3 class="cta-title">What's New</h3>
+                                <p class="cta-description">最新の旅の物語や機材レビューは下のセクション、またはWritingsページへ。</p>
+                                <a href="/writings.html" class="card-action-btn cta-btn">すべての記事を見る</a>
+                            </div>
+                        </article>
+
+                    </div>
+                </div>
+            </section>
+
+
+            <section class="latest-section latest-new">
+                <div class="container">
+                    <h2 class="latest-title">
+                        What's New
+                        <span class="jp-subtitle">noteとDRONE.jpの最新記事</span>
+                    </h2>
                     
-                    if (firstItem) {
-                        const url = firstItem.querySelector('link')?.textContent.trim();
-                        const title = firstItem.querySelector('title')?.textContent.trim();
-                        const pubDate = firstItem.querySelector('pubDate')?.textContent.trim();
-                        
-                        // writings-og.jsonから画像情報を取得
-                        const ogData = url ? articlesData[url] : null;
-                        const image = ogData?.image || DEFAULT_IMAGES.note;
-                        
-                        if (url) {
-                            oreryuArticle = [url, {
-                                title: title || ogData?.title || '',
-                                image: image,
-                                pubDate: pubDate // RSSの日付を保持
-                            }];
-                        }
-                    }
-                }
-            } catch (e) {
-                console.warn('俺流RSS取得エラー:', e);
-            }
-            
-            return {
-                drone: droneArticles[0] || null,
-                note: oreryuArticle
-            };
-            
-        } catch (error) {
-            console.error('writings-og.json 読み込みエラー:', error);
-            return { drone: null, note: null };
+                    <div class="articles-grid-2col" id="latest-articles-container">
+                        <div class="loading-articles">
+                            <p>最新記事を読み込み中...</p>
+                        </div>
+                    </div>
+                    <div class="text-center" style="padding-top: 30px;">
+                        <a href="/writings.html" class="card-action-btn cta-btn" style="background: var(--text-color); padding: 10px 20px;">すべての記事を見る</a>
+                    </div>
+                </div>
+            </section>
+        </div>
+
+        <section class="back-to-home">
+            <a href="/" class="back-link">
+                <span class="back-arrow">↑</span>
+                <span>Back to Top</span>
+            </a>
+        </section>
+
+        <footer class="footer">
+            <div class="footer-content">
+                <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
+            </div>
+        </footer>
+    </main>
+
+    <script src="script.js" defer></script>
+    <script>
+        // Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+                document.body.classList.toggle('nav-open');
+            });
         }
-    }
-
-    // Home の "What's New" セクションを更新
-    async function updateHomeLatest() {
-        const latest = await loadLatestArticles();
-        
-        // DRONE.jp カード更新
-        if (latest.drone) {
-            const [url, data] = latest.drone;
-            const thumbnail = data.image || DEFAULT_IMAGES.drone;
-            const title = data.title || 'DRONE.jp 連載最新記事';
-            
-            document.getElementById('latest-drone-url').href = url;
-            document.getElementById('latest-drone-title').textContent = title;
-            document.getElementById('latest-drone-title').href = url;
-            document.getElementById('latest-drone-thumb').src = thumbnail;
-            document.getElementById('latest-drone-thumb').alt = title;
-            document.getElementById('latest-drone-caption').textContent = `DRONE.jp - ${formatDate(url)}`;
-            document.getElementById('latest-drone-cta').href = url;
-            
-            console.log('✓ DRONE.jp 最新記事を更新:', title);
-        }
-        
-        // note カード更新
-        if (latest.note) {
-            const [url, data] = latest.note;
-            const thumbnail = data.image || DEFAULT_IMAGES.note;
-            const title = data.title || 'note 最新記事';
-            const pubDate = data.pubDate; // RSSの日付
-            
-            console.log('Note記事情報:', { url, title, pubDate, thumbnail });
-            
-            document.getElementById('latest-note-url').href = url;
-            document.getElementById('latest-note-thumb').src = thumbnail;
-            document.getElementById('latest-note-thumb').alt = title;
-            
-            const titleEl = document.querySelector('#latest-oreryu-title a');
-            if (titleEl) {
-                titleEl.textContent = title;
-                titleEl.href = url;
-            }
-            
-            const metaEl = document.getElementById('latest-oreryu-meta');
-            if (metaEl) {
-                // pubDateが存在すればそれを使い、なければ'最新'と表示
-                const formattedDate = pubDate ? formatDate(pubDate) : '最新';
-                metaEl.textContent = `note - ${formattedDate}`;
-                console.log('Note日付表示:', formattedDate);
-            }
-            
-            document.getElementById('latest-oreryu-link').href = url;
-            
-            console.log('✓ note 最新記事を更新:', title);
-        }
-    }
-
-    // ページ読み込み時に実行
-    document.addEventListener('DOMContentLoaded', () => {
-        updateHomeLatest();
-    });
-
-    // External links security
-    document.querySelectorAll('a[target="_blank"]').forEach(link => { link.rel = 'noopener noreferrer'; });
-
-    // ========================================
-    // Hero Slider with Ken Burns Effect - 統合版
-    // ========================================
-    (function() {
-      const slides = document.querySelectorAll('.hero-slide');
-      const dots = document.querySelectorAll('.hero-dots .dot');
-      let currentSlide = 0;
-      const slideInterval = 7000; // 7秒
-      let intervalId;
-
-      // スライド切り替え関数（テキスト同期版）
-      function changeSlide(nextIndex) {
-        if (nextIndex === currentSlide) return;
-
-        const current = slides[currentSlide];
-        const next = slides[nextIndex];
-        
-        // テキストを即座に更新
-        updateHeroText(nextIndex);
-        
-        // 1. 次のスライドを準備（まだ見えない状態で）
-        next.style.opacity = '0';
-        next.classList.add('active');
-        
-        // 2. 少し待ってから次のスライドをフェードイン
-        setTimeout(() => {
-          next.style.transition = 'opacity 1s ease-in-out';
-          next.style.opacity = '1';
-        }, 50);
-        
-        // 3. 現在のスライドをフェードアウト
-        current.style.transition = 'opacity 1s ease-in-out';
-        current.style.opacity = '0';
-        
-        // 4. フェードアウト完了後に現在のスライドを完全に非表示
-        setTimeout(() => {
-          current.classList.remove('active');
-          current.style.opacity = '';
-          current.style.transition = '';
-          next.style.opacity = '';
-          next.style.transition = '';
-        }, 1000);
-
-        // ドットの更新
-        dots[currentSlide].classList.remove('active');
-        dots[nextIndex].classList.add('active');
-
-        currentSlide = nextIndex;
-      }
-
-      // 自動スライド
-      function startAutoSlide() {
-        intervalId = setInterval(() => {
-          const nextIndex = (currentSlide + 1) % slides.length;
-          changeSlide(nextIndex);
-        }, slideInterval);
-      }
-
-      // ドットクリックイベント
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          clearInterval(intervalId);
-          changeSlide(index);
-          startAutoSlide();
+        window.addEventListener('scroll', () => {
+            const nav = document.getElementById('main-nav');
+            // Fixed Heroの場合、ナビゲーションのスタイルは通常通りスクロールで変化させる
+            if (window.scrollY > 50) nav.classList.add('scrolled');
+            else nav.classList.remove('scrolled');
         });
-      });
 
-      // 初期化
-      startAutoSlide();
+        // ヒーロースライドショー (Ken Burns Effect)
+        (function () {
+            const slides = document.querySelectorAll('.hero-slide');
+            const dots = document.querySelectorAll('.dot');
+            if (slides.length === 0) return;
 
-      // ページが非表示になったら自動スライドを停止
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          clearInterval(intervalId);
-        } else {
-          startAutoSlide();
-        }
-      });
-    })();
-  </script>
+            let currentSlide = 0;
+            const slideInterval = 7000; // 7秒
 
-  <!-- JSON-LD Structured Data -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "name": "田路昌也",
-    "alternateName": "Toji Masaya",
-    "jobTitle": "Writer and Travel Photographer",
-    "url": "https://tojimasaya.com",
-    "sameAs": [
-      "https://note.com/tojimasaya",
-      "https://x.com/mongkok93"
-    ],
-    "description": "香港と日本を行き来しながら、ライカとドローンで風景を記録する写真家・ライター"
-  }
-  </script>
+            function changeSlide(nextIndex) {
+                if (nextIndex === currentSlide) return;
 
+                const current = slides[currentSlide];
+                const next = slides[nextIndex];
+
+                // 次のスライドを準備
+                next.classList.add('active');
+                next.style.opacity = '0';
+                next.style.transition = 'opacity 1s ease'; 
+                
+                // 現在のスライドをフェードアウト
+                current.style.opacity = '0';
+                current.style.transition = 'opacity 1s ease';
+                
+                // フェード完了後
+                setTimeout(() => {
+                    current.classList.remove('active');
+                    current.style.opacity = '';
+                    current.style.transition = '';
+                    next.style.opacity = '';
+                    next.style.transition = '';
+                }, 1000);
+
+                // ドットの更新
+                dots[currentSlide].classList.remove('active');
+                dots[nextIndex].classList.add('active');
+
+                currentSlide = nextIndex;
+            }
+
+            // 自動スライド
+            function startAutoSlide() {
+                intervalId = setInterval(() => {
+                    const nextIndex = (currentSlide + 1) % slides.length;
+                    changeSlide(nextIndex);
+                }, slideInterval);
+            }
+
+            // ドットクリックイベント
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', () => {
+                    clearInterval(intervalId);
+                    changeSlide(index);
+                    startAutoSlide();
+                });
+            });
+
+            // 初期化
+            startAutoSlide();
+
+            // ページが非表示になったら自動スライドを停止
+            document.addEventListener('visibilitychange', () => {
+                if (document.hidden) {
+                    clearInterval(intervalId);
+                } else {
+                    startAutoSlide();
+                }
+            });
+        })();
+
+        // External links security
+        document.querySelectorAll('a[target="_blank"]').forEach(link => {
+            link.rel = 'noopener noreferrer';
+        });
+    </script>
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "田路昌也",
+      "alternateName": "Toji Masaya",
+      "jobTitle": "Writer and Travel Photographer",
+      "url": "https://tojimasaya.com",
+      "sameAs": [
+        "https://note.com/tojimasaya",
+        "https://drone.jp/column/author/toji/"
+      ]
+    }
+    </script>
 </body>
 </html>
