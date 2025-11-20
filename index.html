@@ -87,7 +87,7 @@
         Highlights
         <span class="jp-subtitle">ピックアップ</span>
       </h2>
-      <div class="articles-grid-2col">
+      <div class="articles-grid-3col">
         
         <article class="content-card">
           <a href="https://note.com/tojimasaya/n/n188241da2ab6" target="_blank" rel="noopener" class="content-image">
@@ -96,7 +96,7 @@
           <div class="content-info">
             <span class="card-date">note.com</span>
             <h3>AIと一緒に作った初めてのホームページ——還暦からの新しい挑戦</h3>
-            <p class="card-excerpt">60歳を迎え、AIの力を借りながら初めてのホームページ制作に挑戦。技術の進化と新しい可能性について綴っています。</p>
+            <p class="card-excerpt">60歳を迎え、AIの力を借りながら初めてのホームページ制作に挑戦。</p>
             <a href="https://note.com/tojimasaya/n/n188241da2ab6" target="_blank" rel="noopener" class="card-action-btn">Read on note</a>
           </div>
         </article>
@@ -108,29 +108,19 @@
           <div class="content-info">
             <span class="card-date">DRONE.jp</span>
             <h3>Vol.40 中国でドローンを飛ばすために：UOM登録の手順と注意点</h3>
-            <p class="card-excerpt">中国でドローンを飛ばすために必要なUOM登録の具体的な手順と注意点を詳しく解説しています。</p>
+            <p class="card-excerpt">中国でドローンを飛ばすために必要なUOM登録の具体的な手順と注意点。</p>
             <a href="https://drone.jp/column/2024052410211888779.html" target="_blank" rel="noopener" class="card-action-btn">Read on DRONE.jp</a>
           </div>
         </article>
 
-      </div>
-    </section>
-
-    <section class="latest-section container">
-      <h2 class="latest-title">
-        Featured Story
-        <span class="jp-subtitle">特集記事</span>
-      </h2>
-      <div class="featured-story-grid">
-        
-        <article class="content-card featured-card">
+        <article class="content-card">
           <a href="turkey-travel-journal.html" class="content-image">
             <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記">
           </a>
           <div class="content-info">
-            <span class="featured-tag">FEATURED</span>
+            <span class="card-date">Travel Journal</span>
             <h3>トルコ旅行記：カッパドキアからイスタンブールへ</h3>
-            <p class="card-excerpt">カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代ローマ遺跡、そしてボスポラス海峡の夜明け。トルコという国の多様な表情を巡った9日間の旅の記録。</p>
+            <p class="card-excerpt">熱気球、旋回舞踊、古代遺跡。トルコの多様な表情を巡った9日間。</p>
             <a href="turkey-travel-journal.html" class="card-action-btn">記事を読む</a>
           </div>
         </article>
@@ -143,32 +133,10 @@
         What's New
         <span class="jp-subtitle">最新記事</span>
       </h2>
-      <div class="articles-grid-2col">
-        
-        <article class="content-card">
-          <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image">
-            <img src="assets/images/gallery/weekly.jpg" alt="noteマガジン">
-          </a>
-          <div class="content-info">
-            <span class="card-date">note マガジン</span>
-            <h3>次はどこへ What's Next</h3>
-            <p class="card-excerpt">旅の記録、機材レビュー、香港での日常を綴っています。週に数回更新中。</p>
-            <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="card-action-btn">noteを見る</a>
-          </div>
-        </article>
-
-        <article class="content-card">
-          <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="content-image">
-            <img src="assets/images/gallery/hongkong.jpg" alt="DRONE.jp連載">
-          </a>
-          <div class="content-info">
-            <span class="card-date">DRONE.jp 連載</span>
-            <h3>中国・香港ドローン便り</h3>
-            <p class="card-excerpt">月1回連載中。DJI Miniシリーズを使った空撮ノウハウやドローン旅のレポート。</p>
-            <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="card-action-btn">連載を見る</a>
-          </div>
-        </article>
-
+      <div class="articles-grid-3col" id="whats-new-grid">
+        <p class="text-center" style="grid-column: 1 / -1; color: var(--text-light);">
+            最新の記事を読み込み中です...
+        </p>
       </div>
       <div class="text-center" style="margin-top: 40px;">
         <a href="writings.html" class="card-action-btn" style="background: var(--text-light);">すべての記事を見る</a>
@@ -286,6 +254,205 @@
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
         link.rel = 'noopener noreferrer';
     });
+
+    // What's New セクションの記事読み込み
+    async function loadWhatsNew() {
+      const container = document.getElementById('whats-new-grid');
+      
+      try {
+        // noteの記事を取得（RSSプロキシ経由）
+        const noteArticles = [];
+        const droneArticles = [];
+        
+        // note RSSフィード
+        const feeds = [
+          { url: 'https://note.com/tojimasaya/rss', name: 'note' }
+        ];
+        
+        for (const feed of feeds) {
+          try {
+            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`;
+            const response = await fetch(proxyUrl);
+            const data = await response.json();
+            
+            if (data.contents) {
+              const parser = new DOMParser();
+              const xml = parser.parseFromString(data.contents, 'text/xml');
+              const items = xml.querySelectorAll('item');
+              
+              items.forEach((item, index) => {
+                if (index < 2) { // noteから2記事
+                  const title = item.querySelector('title')?.textContent || '';
+                  const link = item.querySelector('link')?.textContent || '';
+                  const description = item.querySelector('description')?.textContent || '';
+                  const pubDate = item.querySelector('pubDate')?.textContent || '';
+                  
+                  // 説明文からHTMLタグを除去
+                  const tempDiv = document.createElement('div');
+                  tempDiv.innerHTML = description;
+                  const excerpt = tempDiv.textContent?.substring(0, 80) + '...' || '';
+                  
+                  // 画像URLを抽出（descriptionから）
+                  const imgMatch = description.match(/<img[^>]+src="([^"]+)"/);
+                  const imageUrl = imgMatch ? imgMatch[1] : 'assets/images/gallery/weekly.jpg';
+                  
+                  // 日付フォーマット
+                  const date = new Date(pubDate);
+                  const formattedDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
+                  
+                  noteArticles.push({
+                    title,
+                    link,
+                    excerpt,
+                    imageUrl,
+                    formattedDate,
+                    source: 'note'
+                  });
+                }
+              });
+            }
+          } catch (error) {
+            console.error('Note RSS error:', error);
+          }
+        }
+        
+        // DRONE.jp記事を取得（JSONから）
+        try {
+          const response = await fetch('/data/writings-og.json');
+          if (response.ok) {
+            const articlesData = await response.json();
+            
+            const droneItems = Object.entries(articlesData)
+              .filter(([url]) => url.includes('drone.jp/column'))
+              .sort((a, b) => {
+                const dateA = a[0].match(/(\d{14})/)?.[1] || '0';
+                const dateB = b[0].match(/(\d{14})/)?.[1] || '0';
+                return dateB.localeCompare(dateA);
+              })
+              .slice(0, 1); // 1記事のみ
+            
+            droneItems.forEach(([url, data]) => {
+              const dateStr = url.match(/(\d{14})/)?.[1] || '';
+              let formattedDate = '最新';
+              if (dateStr.length >= 8) {
+                const year = dateStr.substring(0, 4);
+                const month = parseInt(dateStr.substring(4, 6), 10);
+                const day = parseInt(dateStr.substring(6, 8), 10);
+                formattedDate = `${year}年${month}月${day}日`;
+              }
+              
+              droneArticles.push({
+                title: data.title || 'DRONE.jp連載記事',
+                link: url,
+                excerpt: data.description?.substring(0, 80) + '...' || '',
+                imageUrl: data.image || 'assets/images/gallery/hongkong.jpg',
+                formattedDate,
+                source: 'DRONE.jp'
+              });
+            });
+          }
+        } catch (error) {
+          console.error('DRONE.jp JSON error:', error);
+        }
+        
+        // 記事を結合（note2 + drone1）
+        const allArticles = [...noteArticles.slice(0, 2), ...droneArticles.slice(0, 1)];
+        
+        if (allArticles.length > 0) {
+          container.innerHTML = allArticles.map(article => `
+            <article class="content-card">
+              <a href="${article.link}" target="_blank" rel="noopener" class="content-image">
+                <img src="${article.imageUrl}" alt="${article.title}">
+              </a>
+              <div class="content-info">
+                <span class="card-date">${article.source} · ${article.formattedDate}</span>
+                <h3>${article.title}</h3>
+                <p class="card-excerpt">${article.excerpt}</p>
+                <a href="${article.link}" target="_blank" rel="noopener" class="card-action-btn">読む</a>
+              </div>
+            </article>
+          `).join('');
+        } else {
+          // フォールバック：静的コンテンツ
+          container.innerHTML = `
+            <article class="content-card">
+              <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image">
+                <img src="assets/images/gallery/weekly.jpg" alt="note">
+              </a>
+              <div class="content-info">
+                <span class="card-date">note</span>
+                <h3>noteで最新記事を公開中</h3>
+                <p class="card-excerpt">旅の記録、機材レビュー、香港での日常を綴っています。</p>
+                <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="card-action-btn">noteを見る</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image">
+                <img src="assets/images/gallery/istanbul.jpg" alt="note">
+              </a>
+              <div class="content-info">
+                <span class="card-date">note</span>
+                <h3>香港から世界へ</h3>
+                <p class="card-excerpt">香港を拠点に、旅やカメラについて自由に綴っています。</p>
+                <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="card-action-btn">noteを見る</a>
+              </div>
+            </article>
+            <article class="content-card">
+              <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="content-image">
+                <img src="assets/images/gallery/hongkong.jpg" alt="DRONE.jp">
+              </a>
+              <div class="content-info">
+                <span class="card-date">DRONE.jp</span>
+                <h3>中国・香港ドローン便り</h3>
+                <p class="card-excerpt">月1回連載中。空撮ノウハウやドローン旅のレポート。</p>
+                <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="card-action-btn">連載を見る</a>
+              </div>
+            </article>
+          `;
+        }
+      } catch (error) {
+        console.error('What\'s New loading error:', error);
+        // エラー時は静的コンテンツを表示
+        container.innerHTML = `
+          <article class="content-card">
+            <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image">
+              <img src="assets/images/gallery/weekly.jpg" alt="note">
+            </a>
+            <div class="content-info">
+              <span class="card-date">note</span>
+              <h3>noteで最新記事を公開中</h3>
+              <p class="card-excerpt">旅の記録、機材レビュー、香港での日常を綴っています。</p>
+              <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="card-action-btn">noteを見る</a>
+            </div>
+          </article>
+          <article class="content-card">
+            <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image">
+              <img src="assets/images/gallery/istanbul.jpg" alt="note">
+            </a>
+            <div class="content-info">
+              <span class="card-date">note</span>
+              <h3>香港から世界へ</h3>
+              <p class="card-excerpt">香港を拠点に、旅やカメラについて自由に綴っています。</p>
+              <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="card-action-btn">noteを見る</a>
+            </div>
+          </article>
+          <article class="content-card">
+            <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="content-image">
+              <img src="assets/images/gallery/hongkong.jpg" alt="DRONE.jp">
+            </a>
+            <div class="content-info">
+              <span class="card-date">DRONE.jp</span>
+              <h3>中国・香港ドローン便り</h3>
+              <p class="card-excerpt">月1回連載中。空撮ノウハウやドローン旅のレポート。</p>
+              <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="card-action-btn">連載を見る</a>
+            </div>
+          </article>
+        `;
+      }
+    }
+    
+    // ページ読み込み時に実行
+    document.addEventListener('DOMContentLoaded', loadWhatsNew);
   </script>
 
   <script type="application/ld+json">
