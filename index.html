@@ -91,7 +91,7 @@
         
         <article class="content-card">
           <a href="https://note.com/tojimasaya/n/n188241da2ab6" target="_blank" rel="noopener" class="content-image">
-            <img src="assets/images/article/note-cover.jpg" alt="AIと一緒に作った初めてのホームページ">
+            <img src="https://assets.st-note.com/production/uploads/images/218091337/rectangle_large_type_2_c56e1758639549e09ea40005c7dbfe8f.png" alt="AIと一緒に作った初めてのホームページ">
           </a>
           <div class="content-info">
             <span class="card-date">note.com</span>
@@ -103,7 +103,7 @@
 
         <article class="content-card">
           <a href="https://drone.jp/column/2024052410211888779.html" target="_blank" rel="noopener" class="content-image">
-            <img src="assets/images/article/drone-cover.jpg" alt="中国でドローンを飛ばすために">
+            <img src="https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/05/tohzi_40_01.jpg" alt="中国でドローンを飛ばすために">
           </a>
           <div class="content-info">
             <span class="card-date">DRONE.jp</span>
@@ -125,7 +125,7 @@
         
         <article class="content-card featured-card">
           <a href="turkey-travel-journal.html" class="content-image">
-            <img src="assets/images/article/turkey-feature.jpg" alt="トルコ旅行記">
+            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記">
           </a>
           <div class="content-info">
             <span class="featured-tag">FEATURED</span>
@@ -143,10 +143,32 @@
         What's New
         <span class="jp-subtitle">最新記事</span>
       </h2>
-      <div class="articles-grid-2col loading-articles">
-        <p class="text-center" style="grid-column: 1 / -1; color: var(--text-light);">
-            最新の記事を読み込み中です...
-        </p>
+      <div class="articles-grid-2col">
+        
+        <article class="content-card">
+          <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image">
+            <img src="assets/images/gallery/weekly.jpg" alt="noteマガジン">
+          </a>
+          <div class="content-info">
+            <span class="card-date">note マガジン</span>
+            <h3>次はどこへ What's Next</h3>
+            <p class="card-excerpt">旅の記録、機材レビュー、香港での日常を綴っています。週に数回更新中。</p>
+            <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="card-action-btn">noteを見る</a>
+          </div>
+        </article>
+
+        <article class="content-card">
+          <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="content-image">
+            <img src="assets/images/gallery/hongkong.jpg" alt="DRONE.jp連載">
+          </a>
+          <div class="content-info">
+            <span class="card-date">DRONE.jp 連載</span>
+            <h3>中国・香港ドローン便り</h3>
+            <p class="card-excerpt">月1回連載中。DJI Miniシリーズを使った空撮ノウハウやドローン旅のレポート。</p>
+            <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="card-action-btn">連載を見る</a>
+          </div>
+        </article>
+
       </div>
       <div class="text-center" style="margin-top: 40px;">
         <a href="writings.html" class="card-action-btn" style="background: var(--text-light);">すべての記事を見る</a>
@@ -192,32 +214,19 @@
       const dots = Array.from(document.querySelectorAll('.hero-dots .dot'));
       let currentSlide = 0;
       let intervalId;
-      const slideInterval = 5000; // 5秒
+      const slideInterval = 6000; // 6秒（少し長めに）
 
       function changeSlide(nextIndex) {
+        if (nextIndex === currentSlide) return;
+        
         const current = slides[currentSlide];
         const next = slides[nextIndex];
 
-        // Ken Burns Effectをリセット
-        current.querySelector('img').style.animation = 'none';
-        void current.offsetWidth; // 強制リフロー
+        // 現在のスライドをフェードアウト
+        current.classList.remove('active');
         
-        current.style.opacity = '0';
-        current.style.transition = 'opacity 1s ease';
-        current.style.zIndex = '0';
-        
-        next.style.opacity = '1';
-        next.style.transition = 'opacity 1s ease';
-        next.style.zIndex = '1';
-        next.querySelector('img').style.animation = 'kenburns-zoom 7s ease-in-out forwards';
-
-        // transition後にリセットして次回の transitionを確保
-        setTimeout(() => {
-          current.style.opacity = '';
-          current.style.transition = '';
-          next.style.opacity = '';
-          next.style.transition = '';
-        }, 1000);
+        // 次のスライドをフェードイン
+        next.classList.add('active');
 
         // ドットの更新
         dots[currentSlide].classList.remove('active');
@@ -251,6 +260,7 @@
         if (document.hidden) {
           clearInterval(intervalId);
         } else {
+          clearInterval(intervalId);
           startAutoSlide();
         }
       });
