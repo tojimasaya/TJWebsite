@@ -1,5 +1,6 @@
 /**
  * gallery.js - JSON Driven Masonry Gallery
+ * Fixed: Modal Click Events
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -25,7 +26,7 @@ async function loadGallery() {
         // HTML生成
         const html = items.map(item => createGalleryItemHTML(item)).join('');
         
-        // 挿入 (Masonry用のスタイル適用のため、画像ロードを待つ必要は基本ないが、フェードインさせる)
+        // 挿入
         container.innerHTML = html;
 
     } catch (error) {
@@ -38,6 +39,10 @@ async function loadGallery() {
 function createGalleryItemHTML(item) {
     const categories = item.category.join(' ');
     
+    // タイトルに「'」が含まれているとエラーになるのでエスケープ処理
+    const safeTitle = item.title.replace(/'/g, "\\'");
+    const safeDesc = item.description ? item.description.replace(/'/g, "\\'") : "";
+    
     // noteリンクがある場合
     const noteLinkHtml = item.noteUrl ? `
         <div class="gallery-note">
@@ -46,7 +51,7 @@ function createGalleryItemHTML(item) {
             </a>
         </div>` : '';
 
-    // 動画の場合
+    // 動画 (Video) の場合
     if (item.type === 'video') {
         return `
         <article class="gallery-item video" data-category="${categories}">
@@ -55,7 +60,7 @@ function createGalleryItemHTML(item) {
                         title="${item.title}" loading="lazy" allowfullscreen></iframe>
                 <button class="play-overlay" 
                         aria-label="拡大して再生"
-                        onclick="openVideo('${item.youtubeId}','${item.title}')"></button>
+                        onclick="openVideo('${item.youtubeId}', '${safeTitle}')"></button>
             </div>
             <div class="gallery-info">
                 <h3>${item.title}</h3>
@@ -69,15 +74,13 @@ function createGalleryItemHTML(item) {
         </article>`;
     } 
     
-    // 写真の場合
+    // 写真 (Photo) の場合
     else {
-        // モーダル表示用のエスケープ処理
-        const modalContent = `<img src='${item.image}' alt='${item.title}' class='modal-image'>`;
-        
+        // 修正点: HTMLタグではなく、URLだけを渡すシンプルな形に変更
         return `
         <article class="gallery-item photo" 
                  data-category="${categories}"
-                 onclick="openModal(\`${modalContent}\`)">
+                 onclick="openModal('${item.image}', '${safeTitle}')">
             <div class="gallery-media">
                 <img src="${item.image}" alt="${item.title}" loading="lazy">
             </div>
@@ -94,7 +97,7 @@ function createGalleryItemHTML(item) {
     }
 }
 
-// フィルター機能のセットアップ
+// フィルター機能
 function setupFilters() {
     const filterTabs = document.querySelectorAll('.filter-tab');
     
@@ -102,15 +105,12 @@ function setupFilters() {
         tab.addEventListener('click', function() {
             const filter = this.getAttribute('data-filter');
             
-            // タブのアクティブ切り替え
             filterTabs.forEach(t => t.classList.remove('active'));
             this.classList.add('active');
 
-            // アイテムの表示・非表示
             const galleryItems = document.querySelectorAll('.gallery-item');
             
             galleryItems.forEach(item => {
-                // Masonryレイアウトが崩れないよう、アニメーションクラスを付与
                 const categories = item.getAttribute('data-category');
                 
                 if (filter === 'all' || categories.includes(filter)) {
