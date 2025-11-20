@@ -260,112 +260,64 @@
       const container = document.getElementById('whats-new-grid');
       
       try {
-        // noteの記事を取得（RSSプロキシ経由）
-        const noteArticles = [];
-        const droneArticles = [];
+        // writings-og.jsonから記事データを取得
+        const response = await fetch('/data/writings-og.json');
+        if (!response.ok) throw new Error(`HTTP ${response.status}`);
         
-        // note RSSフィード
-        const feeds = [
-          { url: 'https://note.com/tojimasaya/rss', name: 'note' }
-        ];
+        const articlesData = await response.json();
         
-        for (const feed of feeds) {
-          try {
-            const proxyUrl = `https://api.allorigins.win/get?url=${encodeURIComponent(feed.url)}`;
-            const response = await fetch(proxyUrl);
-            const data = await response.json();
-            
-            if (data.contents) {
-              const parser = new DOMParser();
-              const xml = parser.parseFromString(data.contents, 'text/xml');
-              const items = xml.querySelectorAll('item');
-              
-              items.forEach((item, index) => {
-                if (index < 2) { // noteから2記事
-                  const title = item.querySelector('title')?.textContent || '';
-                  const link = item.querySelector('link')?.textContent || '';
-                  const description = item.querySelector('description')?.textContent || '';
-                  const pubDate = item.querySelector('pubDate')?.textContent || '';
-                  
-                  // 説明文からHTMLタグを除去
-                  const tempDiv = document.createElement('div');
-                  tempDiv.innerHTML = description;
-                  const excerpt = tempDiv.textContent?.substring(0, 80) + '...' || '';
-                  
-                  // 画像URLを抽出（descriptionから）
-                  const imgMatch = description.match(/<img[^>]+src="([^"]+)"/);
-                  const imageUrl = imgMatch ? imgMatch[1] : 'assets/images/gallery/weekly.jpg';
-                  
-                  // 日付フォーマット
-                  const date = new Date(pubDate);
-                  const formattedDate = `${date.getFullYear()}年${date.getMonth() + 1}月${date.getDate()}日`;
-                  
-                  noteArticles.push({
-                    title,
-                    link,
-                    excerpt,
-                    imageUrl,
-                    formattedDate,
-                    source: 'note'
-                  });
-                }
-              });
+        // note記事を抽出（最新2件）
+        const noteArticles = Object.entries(articlesData)
+          .filter(([url]) => url.includes('note.com/tojimasaya'))
+          .map(([url, data]) => ({
+            title: data.title || 'note記事',
+            link: url,
+            excerpt: data.description?.substring(0, 60) + '...' || '',
+            imageUrl: data.image || 'assets/images/gallery/weekly.jpg',
+            source: 'note'
+          }))
+          .slice(0, 2);
+        
+        // DRONE.jp記事を抽出（最新1件）
+        const droneArticles = Object.entries(articlesData)
+          .filter(([url]) => url.includes('drone.jp/column'))
+          .sort((a, b) => {
+            const dateA = a[0].match(/(\d{14})/)?.[1] || '0';
+            const dateB = b[0].match(/(\d{14})/)?.[1] || '0';
+            return dateB.localeCompare(dateA);
+          })
+          .map(([url, data]) => {
+            const dateStr = url.match(/(\d{14})/)?.[1] || '';
+            let formattedDate = '';
+            if (dateStr.length >= 8) {
+              const year = dateStr.substring(0, 4);
+              const month = parseInt(dateStr.substring(4, 6), 10);
+              const day = parseInt(dateStr.substring(6, 8), 10);
+              formattedDate = `${year}年${month}月${day}日`;
             }
-          } catch (error) {
-            console.error('Note RSS error:', error);
-          }
-        }
-        
-        // DRONE.jp記事を取得（JSONから）
-        try {
-          const response = await fetch('/data/writings-og.json');
-          if (response.ok) {
-            const articlesData = await response.json();
             
-            const droneItems = Object.entries(articlesData)
-              .filter(([url]) => url.includes('drone.jp/column'))
-              .sort((a, b) => {
-                const dateA = a[0].match(/(\d{14})/)?.[1] || '0';
-                const dateB = b[0].match(/(\d{14})/)?.[1] || '0';
-                return dateB.localeCompare(dateA);
-              })
-              .slice(0, 1); // 1記事のみ
-            
-            droneItems.forEach(([url, data]) => {
-              const dateStr = url.match(/(\d{14})/)?.[1] || '';
-              let formattedDate = '最新';
-              if (dateStr.length >= 8) {
-                const year = dateStr.substring(0, 4);
-                const month = parseInt(dateStr.substring(4, 6), 10);
-                const day = parseInt(dateStr.substring(6, 8), 10);
-                formattedDate = `${year}年${month}月${day}日`;
-              }
-              
-              droneArticles.push({
-                title: data.title || 'DRONE.jp連載記事',
-                link: url,
-                excerpt: data.description?.substring(0, 80) + '...' || '',
-                imageUrl: data.image || 'assets/images/gallery/hongkong.jpg',
-                formattedDate,
-                source: 'DRONE.jp'
-              });
-            });
-          }
-        } catch (error) {
-          console.error('DRONE.jp JSON error:', error);
-        }
+            return {
+              title: data.title || 'DRONE.jp連載記事',
+              link: url,
+              excerpt: data.description?.substring(0, 60) + '...' || '',
+              imageUrl: data.image || 'assets/images/gallery/hongkong.jpg',
+              formattedDate,
+              source: 'DRONE.jp'
+            };
+          })
+          .slice(0, 1);
         
         // 記事を結合（note2 + drone1）
-        const allArticles = [...noteArticles.slice(0, 2), ...droneArticles.slice(0, 1)];
+        const allArticles = [...noteArticles, ...droneArticles];
         
         if (allArticles.length > 0) {
           container.innerHTML = allArticles.map(article => `
             <article class="content-card">
               <a href="${article.link}" target="_blank" rel="noopener" class="content-image">
-                <img src="${article.imageUrl}" alt="${article.title}">
+                <img src="${article.imageUrl}" alt="${article.title}" onerror="this.src='assets/images/gallery/weekly.jpg'">
               </a>
               <div class="content-info">
-                <span class="card-date">${article.source} · ${article.formattedDate}</span>
+                <span class="card-date">${article.source}</span>
                 <h3>${article.title}</h3>
                 <p class="card-excerpt">${article.excerpt}</p>
                 <a href="${article.link}" target="_blank" rel="noopener" class="card-action-btn">読む</a>
@@ -373,42 +325,7 @@
             </article>
           `).join('');
         } else {
-          // フォールバック：静的コンテンツ
-          container.innerHTML = `
-            <article class="content-card">
-              <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image">
-                <img src="assets/images/gallery/weekly.jpg" alt="note">
-              </a>
-              <div class="content-info">
-                <span class="card-date">note</span>
-                <h3>noteで最新記事を公開中</h3>
-                <p class="card-excerpt">旅の記録、機材レビュー、香港での日常を綴っています。</p>
-                <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="card-action-btn">noteを見る</a>
-              </div>
-            </article>
-            <article class="content-card">
-              <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image">
-                <img src="assets/images/gallery/istanbul.jpg" alt="note">
-              </a>
-              <div class="content-info">
-                <span class="card-date">note</span>
-                <h3>香港から世界へ</h3>
-                <p class="card-excerpt">香港を拠点に、旅やカメラについて自由に綴っています。</p>
-                <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="card-action-btn">noteを見る</a>
-              </div>
-            </article>
-            <article class="content-card">
-              <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="content-image">
-                <img src="assets/images/gallery/hongkong.jpg" alt="DRONE.jp">
-              </a>
-              <div class="content-info">
-                <span class="card-date">DRONE.jp</span>
-                <h3>中国・香港ドローン便り</h3>
-                <p class="card-excerpt">月1回連載中。空撮ノウハウやドローン旅のレポート。</p>
-                <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener" class="card-action-btn">連載を見る</a>
-              </div>
-            </article>
-          `;
+          throw new Error('No articles found');
         }
       } catch (error) {
         console.error('What\'s New loading error:', error);
