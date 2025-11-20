@@ -113,6 +113,12 @@ body {
     transition: background var(--transition-base);
 }
 
+@media (prefers-color-scheme: dark) {
+    .main-nav {
+        background: rgba(15, 15, 15, 0.95);
+    }
+}
+
 .nav-container {
     max-width: 1000px;
     margin: 0 auto;
@@ -166,10 +172,10 @@ body {
 }
 
 /* =========================================================================
-   5. Hero Sections (Shared) - Fixed Hero & Image Fixes
+   5. Hero Sections - Parallax Fixed Hero
    ========================================================================= */
 
-/* サブページヒーローは変更なし */
+/* サブページヒーロー */
 .gallery-hero, .gear-hero, .writings-hero {
     position: relative;
     height: 60vh;
@@ -178,54 +184,62 @@ body {
     margin-top: 70px;
 }
 
+.gallery-hero-image, .gear-hero-image, .writings-hero-image {
+    width: 100%;
+    height: 100%;
+    position: relative;
+}
+
 /* トップページヒーロー (.hero) はスペーサーと固定ラッパーのコンテナになる */
 .hero {
     position: relative;
     margin-top: 70px; 
 }
 
-/* ▼▼▼ Parallax効果の心臓部: ヒーロー画像を固定するラッパー ▼▼▼ */
+/* ▼▼▼ Parallax効果: ヒーロー画像を固定するラッパー ▼▼▼ */
 .hero-fixed-wrapper {
-    position: fixed; /* 画面に固定 */
-    top: 0;
+    position: fixed;
+    top: 70px; /* ナビゲーションの下から開始 */
     left: 0;
     width: 100%;
-    /* ナビゲーションの下から画面いっぱいに広げる */
     height: calc(100vh - 70px); 
-    z-index: 10; /* メインコンテンツより下 */
-    overflow: hidden; /* Ken Burns効果用 */
+    z-index: 10;
+    overflow: hidden;
 }
 
 /* メインコンテンツを押し下げるためのスペーサー */
 .hero-spacer {
-    /* 固定されたラッパーと同じ高さを確保 */
     height: calc(100vh - 70px); 
 }
 
-/* メインコンテンツの調整: 固定されたヒーローの上に重なるようにする */
+/* メインコンテンツ: 固定されたヒーローの上に重なる */
 .main-content {
-    position: relative; /* z-indexを機能させるため */
-    z-index: 20; /* ヒーロー画像 (z-index: 10) の上に重なる */
-    background: var(--bg-color); /* 背景色を設定して下を隠す */
+    position: relative;
+    z-index: 20;
+    background: var(--bg-color);
 }
 
-/* 既存のスライドコンテナを固定ラッパーのサイズに合わせる */
+/* スライドコンテナ */
 .slider-container {
     width: 100%;
     height: 100%;
     position: relative;
 }
 
-/* 【FIX】ヒーロー画像がコンテナ全体を覆うように修正 */
-.hero-slide img, .gallery-hero-image img, .gear-hero-image img, .writings-hero-image img {
+/* ヒーロー画像 */
+.hero-slide img, 
+.gallery-hero-image img, 
+.gear-hero-image img, 
+.writings-hero-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* 画像が表示されない問題に対処 */
+    object-fit: cover;
     filter: brightness(0.7) contrast(1.1);
 }
 
-/* ヒーローテキストとドットの位置調整 */
+/* ヒーローオーバーレイ（テキストとドット） */
 .hero-overlay {
+    position: absolute;
     bottom: 60px;
     left: 50%;
     transform: translateX(-50%);
@@ -233,15 +247,31 @@ body {
     color: white;
     z-index: 15; 
     width: 90%;
-    position: absolute; 
 }
 
-.hero-title, .gallery-hero-title {
+.writings-hero-overlay {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 15;
+    width: 90%;
+}
+
+.hero-title, .gallery-hero-title, .writings-hero-title {
     font-family: var(--primary-font);
     font-size: var(--text-4xl);
     font-weight: 600;
     margin-bottom: 0.5rem;
     text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+}
+
+.writings-hero-subtitle {
+    font-family: var(--primary-font);
+    font-size: var(--text-lg);
+    opacity: 0.9;
 }
 
 /* =========================================================================
@@ -272,20 +302,23 @@ body {
 
 /* Dots */
 .hero-dots {
+    position: absolute;
     bottom: 30px; 
     left: 50%;
     transform: translateX(-50%);
     z-index: 16;
     display: flex;
     gap: 12px;
-    position: absolute;
 }
+
 .dot {
     width: 10px; height: 10px;
     background: rgba(255,255,255,0.5);
     border-radius: 50%;
     cursor: pointer;
+    transition: background var(--transition-base);
 }
+
 .dot.active {
     background: white;
 }
@@ -307,26 +340,22 @@ body {
 }
 
 /* =========================================================================
-   8. Gallery (Masonry Layout) - 省略
-   ========================================================================= */
-
-/* ... Gallery Section CSS ... (変更なし、省略) */
-
-/* =========================================================================
-   9. Writings & Latest Articles (Home & Writings Page)
+   8. Writings & Latest Articles
    ========================================================================= */
 
 .latest-section {
     padding: 80px 0;
     border-bottom: 1px solid var(--border-color);
 }
+
 .latest-new {
-    /* What's Newはトップからの区切りを短く */
     padding-top: 50px; 
 }
+
 .latest-section:last-of-type {
     border-bottom: none;
 }
+
 .latest-title {
     font-family: var(--secondary-font);
     font-weight: 600;
@@ -343,42 +372,79 @@ body {
     margin-left: 8px;
 }
 
+/* Writing Section */
+.writing-section {
+    padding: 60px 0;
+    border-bottom: 1px solid var(--border-color);
+}
+
+.writing-section:last-of-type {
+    border-bottom: none;
+}
+
+.section-header {
+    margin-bottom: 30px;
+}
+
+.section-header h2 {
+    font-family: var(--primary-font);
+    font-size: var(--text-2xl);
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.section-description {
+    font-size: var(--text-sm);
+    color: var(--text-light);
+    margin-bottom: 15px;
+}
+
+.external-link {
+    font-size: var(--text-sm);
+    color: var(--accent-color);
+    text-decoration: none;
+}
+
+.external-link:hover {
+    text-decoration: underline;
+}
+
 /* Writings Page Grid (横3列) */
 .articles-grid {
+    display: grid;
     grid-template-columns: repeat(3, 1fr); 
     gap: 30px;
     width: 100%;
 }
 
-/* ▼▼▼ Highlights & What's New (横2列グリッド) ▼▼▼ */
+/* Highlights & What's New (横2列グリッド) */
 .articles-grid-2col {
     display: grid;
-    /* ピックアップとWhat's Newはデフォルトで2列 */
     grid-template-columns: repeat(2, 1fr); 
     gap: 30px;
     width: 100%;
 }
 
-/* ▼▼▼ Featured Story (特集記事 - 横1列グリッド) ▼▼▼ */
+/* Featured Story (特集記事 - 横1列グリッド) */
 .featured-story-grid {
     display: grid;
-    grid-template-columns: 1fr; /* 1列に固定 */
+    grid-template-columns: 1fr;
     gap: 30px;
     width: 100%;
 }
 
-/* 特集記事のカード全体のスタイル */
+/* 特集記事のカード */
 .featured-card {
     display: grid;
-    /* 特集カードは画像と内容で2カラムにする */
     grid-template-columns: 350px 1fr; 
 }
-/* 特集カード内の画像コンテナ */
+
 .featured-card .content-image {
-    height: 100%; /* カード全体に合わせる */
+    height: 100%;
     border-radius: 12px 0 0 12px;
+    aspect-ratio: auto;
 }
-/* 特集カード内のコンテンツ情報 */
+
 .featured-card .content-info {
     padding: 30px;
 }
@@ -399,19 +465,63 @@ body {
     box-shadow: var(--shadow-lg);
 }
 
-/* 画像コンテナ - 【FIX】高さ固定を削除 */
+/* ▼▼▼ 画像コンテナ - 16:9比率で統一 ▼▼▼ */
 .content-image {
+    position: relative;
     width: 100%;
-    /* height: 200px; <--- 削除 */
+    aspect-ratio: 16 / 9;
     overflow: hidden;
-    border-radius: 8px 8px 0 0;
-    line-height: 0; /* 画像下の隙間を削除 */
-}
-.content-image img {
-    width: 100%;
-    height: auto; /* 【FIX】高さを自動調整に戻す */
-    object-fit: cover;
+    border-radius: 12px 12px 0 0;
+    background: #f0f0f0;
     display: block;
+}
+
+.content-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+/* aspect-ratio未対応ブラウザ用 */
+@supports not (aspect-ratio: 16 / 9) {
+    .content-image {
+        height: 0;
+        padding-top: 56.25%;
+    }
+}
+
+/* Writings Page - サムネイル */
+.article-thumb {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+    border-radius: 12px;
+    background: #f0f0f0;
+    margin-bottom: 16px;
+}
+
+.article-thumb img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+
+@supports not (aspect-ratio: 16 / 9) {
+    .article-thumb {
+        height: 0;
+        padding-top: 56.25%;
+    }
 }
 
 /* コンテンツ部分 */
@@ -419,7 +529,7 @@ body {
     padding: 25px;
     display: flex;
     flex-direction: column;
-    flex-grow: 1; /* コンテンツ部分の高さを揃えるために重要 */
+    flex-grow: 1;
 }
 
 .card-date, .featured-tag {
@@ -429,6 +539,7 @@ body {
     margin-bottom: 8px;
     display: inline-block;
 }
+
 .featured-tag {
     background: var(--error-color);
     color: var(--white);
@@ -449,7 +560,7 @@ body {
     color: var(--text-light);
     line-height: 1.6;
     margin-bottom: 15px;
-    flex-grow: 1; /* 記事の高さが揃うように */
+    flex-grow: 1;
 }
 
 .card-action-btn {
@@ -461,10 +572,75 @@ body {
     text-decoration: none;
     border-radius: 20px;
     font-size: var(--text-xs);
-    align-self: flex-start; /* 左寄せ */
+    align-self: flex-start;
+    transition: background var(--transition-base);
 }
+
+.card-action-btn:hover {
+    background: var(--focus-color);
+    opacity: 0.9;
+}
+
 .text-center {
     text-align: center;
+}
+
+/* Article Item (Writings Page) */
+.article-item {
+    padding: 20px;
+}
+
+.article-meta {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.article-source {
+    font-size: var(--text-xs);
+    font-weight: 600;
+    padding: 2px 8px;
+    border-radius: 4px;
+}
+
+.article-source.note {
+    background: #4caf50;
+    color: white;
+}
+
+.article-source.drone {
+    background: #2196f3;
+    color: white;
+}
+
+.article-item h3 {
+    font-family: var(--primary-font);
+    font-size: var(--text-lg);
+    font-weight: 600;
+    line-height: 1.4;
+    margin-bottom: 10px;
+}
+
+.article-item h3 a {
+    color: var(--text-color);
+    text-decoration: none;
+}
+
+.article-item h3 a:hover {
+    color: var(--accent-color);
+}
+
+.article-excerpt {
+    font-size: var(--text-sm);
+    color: var(--text-light);
+    line-height: 1.6;
+}
+
+.loading {
+    text-align: center;
+    padding: 40px;
+    color: var(--text-light);
 }
 
 /* More Contents リンクグリッド */
@@ -502,25 +678,44 @@ body {
 }
 
 /* =========================================================================
-   10. Footer & Utilities
+   9. Footer
    ========================================================================= */
 
-/* ... Footer Section CSS ... (変更なし、省略) */
+.footer {
+    background: var(--white);
+    border-top: 1px solid var(--border-color);
+    padding: 40px 0;
+    text-align: center;
+}
+
+.footer p {
+    font-size: var(--text-sm);
+    color: var(--text-light);
+}
 
 /* =========================================================================
-   11. Modals & Lightbox (Photo/Video) - 省略
+   10. Utilities
    ========================================================================= */
 
-/* ... Modals Section CSS ... (変更なし、省略) */
+.skip-link {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--accent-color);
+    color: white;
+    padding: 8px;
+    z-index: 1000;
+}
+
+.skip-link:focus {
+    top: 0;
+}
 
 /* =========================================================================
-   12. Responsive Media Queries
+   11. Responsive Media Queries
    ========================================================================= */
 
 @media (max-width: 1000px) {
-    /* Gallery */
-    .gallery-grid { column-count: 2; }
-    
     /* Writingsページ（デフォルトの3列）を2列にする */
     .articles-grid {
         grid-template-columns: repeat(2, 1fr);
@@ -528,11 +723,12 @@ body {
 
     /* Featured Card レイアウトの調整 */
     .featured-card {
-        grid-template-columns: 1fr; /* 1列に戻す */
+        grid-template-columns: 1fr;
     }
+    
     .featured-card .content-image {
-        /* 画像を上部に配置 */
-        height: 300px;
+        height: auto;
+        aspect-ratio: 16 / 9;
         border-radius: 12px 12px 0 0;
     }
 }
@@ -540,18 +736,30 @@ body {
 @media (max-width: 768px) {
     /* Navigation */
     .nav-menu {
-        position: fixed; top: 70px; left: -100%;
-        width: 100%; height: calc(100vh - 70px);
+        position: fixed;
+        top: 70px;
+        left: -100%;
+        width: 100%;
+        height: calc(100vh - 70px);
         background: var(--white);
         flex-direction: column;
         padding-top: 50px;
         transition: left 0.3s ease;
+        align-items: center;
     }
-    .nav-menu.active { left: 0; }
-    .nav-toggle { display: block; }
+    
+    .nav-menu.active {
+        left: 0;
+    }
+    
+    .nav-toggle {
+        display: block;
+    }
 
     /* Hero */
-    .hero-title { font-size: 2rem; }
+    .hero-title, .writings-hero-title {
+        font-size: 2rem;
+    }
 
     /* Grids (全て1列に) */
     .articles-grid-2col,
@@ -560,11 +768,23 @@ body {
         grid-template-columns: 1fr;
     }
     
-    /* Gallery */
-    .gallery-grid { column-count: 1; }
+    /* Intro padding */
+    .intro, .writings-intro {
+        padding: 60px 0;
+    }
+    
+    .latest-section {
+        padding: 60px 0;
+    }
 }
 
 @media (max-width: 600px) {
     /* Container Padding */
-    .container { padding: 0 20px; }
+    .container {
+        padding: 0 20px;
+    }
+    
+    .nav-container {
+        padding: 0 20px;
+    }
 }
