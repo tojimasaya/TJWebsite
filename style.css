@@ -598,3 +598,89 @@ body {
     .gallery-grid { column-count: 1; }
     .subscribe-options { grid-template-columns: 1fr; }
 }
+
+/* =========================================================================
+   13. Modals & Lightbox (Photo/Video)
+   ========================================================================= */
+
+/* モーダル全体のオーバーレイ */
+.modal {
+    display: none; /* 初期状態では非表示 */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.9); /* 黒い半透明の背景 */
+    z-index: 9999; /* 最前面に表示する */
+    align-items: center; /* 縦方向中央寄せ */
+    justify-content: center; /* 横方向中央寄せ */
+    overflow: auto; /* 画面からはみ出た場合のためのスクロール */
+    padding: 20px;
+    /* アニメーション */
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* JSで display:flex; がセットされたときにアニメーション開始 */
+.modal[aria-hidden="false"] {
+    opacity: 1;
+}
+
+/* モーダルコンテンツのコンテナ（画像/動画） */
+.modal-content {
+    max-width: 90vw;
+    max-height: 90vh;
+    position: relative;
+    box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
+    animation: zoomIn 0.3s ease;
+}
+
+/* モーダル内の画像 */
+.modal-image {
+    display: block;
+    width: auto;
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* 閉じるボタン */
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 2.5rem;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 10000; /* ボタンはコンテンツよりさらに前面 */
+    line-height: 1;
+    text-shadow: 0 0 5px rgba(0,0,0,0.5);
+}
+.close-modal:hover {
+    color: var(--accent-color);
+}
+
+/* 動画モーダル内のコンテナ */
+.modal-video {
+    width: 90vw;
+    max-width: 1280px; /* 最大動画サイズを規定 */
+    height: auto;
+    aspect-ratio: 16 / 9; /* 16:9比率を維持 */
+}
+
+.modal-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 4px;
+}
+
+/* アニメーション */
+@keyframes zoomIn {
+    from { transform: scale(0.95); }
+    to { transform: scale(1); }
+}
