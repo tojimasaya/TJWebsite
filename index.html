@@ -32,7 +32,7 @@
       <ul class="nav-menu">
         <li><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li><a href="gear.html" class="nav-link">Gear</a></li>
-        <li><a href="writings.html" class="nav-link active">Writings</a></li>
+        <li><a href="writings.html" class="nav-link">Writings</a></li>
         <li><a href="#" class="nav-link">About</a></li>
       </ul>
     </div>
@@ -85,7 +85,7 @@
       <div class="articles-grid-2col">
         
         <article class="content-card">
-          <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image" style="background-color: #555;">
+          <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="content-image">
             <img src="assets/images/article/note-cover.jpg" alt="note連載カバー">
           </a>
           <div class="content-info">
@@ -97,7 +97,7 @@
         </article>
 
         <article class="content-card">
-          <a href="https://www.drone.jp/" target="_blank" rel="noopener" class="content-image" style="background-color: #333;">
+          <a href="https://www.drone.jp/" target="_blank" rel="noopener" class="content-image">
             <img src="assets/images/article/drone-cover.jpg" alt="DRONE.jp連載カバー">
           </a>
           <div class="content-info">
@@ -178,7 +178,7 @@
   </footer>
   
   <script>
-    // ヒーロースライダーのJavaScript（変更なし）
+    // ヒーロースライダーのJavaScript
     (function() {
       const sliderContainer = document.querySelector('.slider-container');
       if (!sliderContainer) return;
@@ -186,6 +186,7 @@
       const slides = Array.from(document.querySelectorAll('.hero-slide'));
       const dots = Array.from(document.querySelectorAll('.hero-dots .dot'));
       let currentSlide = 0;
+      let intervalId;
       const slideInterval = 5000; // 5秒
 
       function changeSlide(nextIndex) {
