@@ -341,7 +341,184 @@ body {
 }
 
 /* =========================================================================
-   8. Writings & Latest Articles
+   8. Gallery Section
+   ========================================================================= */
+
+/* Gallery Hero Overlay */
+.gallery-hero-overlay {
+    position: absolute;
+    bottom: 60px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    color: white;
+    z-index: 15;
+    width: 90%;
+}
+
+.gallery-hero-subtitle {
+    font-family: var(--primary-font);
+    font-size: var(--text-lg);
+    opacity: 0.9;
+}
+
+/* Gallery Filters */
+.gallery-filters {
+    padding: 40px 0;
+    text-align: center;
+}
+
+.filter-tabs {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+.filter-tab {
+    padding: 10px 24px;
+    border: 1px solid var(--border-color);
+    border-radius: 25px;
+    background: var(--white);
+    color: var(--text-color);
+    font-size: var(--text-sm);
+    font-weight: 500;
+    cursor: pointer;
+    transition: all var(--transition-base);
+}
+
+.filter-tab:hover {
+    border-color: var(--accent-color);
+    color: var(--accent-color);
+}
+
+.filter-tab.active {
+    background: var(--accent-color);
+    border-color: var(--accent-color);
+    color: white;
+}
+
+/* Gallery Grid (Masonry) */
+.gallery-grid {
+    column-count: 3;
+    column-gap: 20px;
+    padding: 20px 0 60px;
+}
+
+.gallery-item {
+    break-inside: avoid;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    transition: transform var(--transition-base);
+}
+
+.gallery-item:hover {
+    transform: translateY(-5px);
+}
+
+.gallery-item img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.gallery-item-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    background: linear-gradient(transparent, rgba(0,0,0,0.7));
+    color: white;
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.gallery-item:hover .gallery-item-overlay {
+    opacity: 1;
+}
+
+.gallery-item-title {
+    font-family: var(--primary-font);
+    font-size: var(--text-base);
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.gallery-item-location {
+    font-size: var(--text-xs);
+    opacity: 0.8;
+}
+
+/* Video Item */
+.video-item {
+    position: relative;
+}
+
+.video-thumbnail {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.play-button {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(255,255,255,0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-base);
+}
+
+.gallery-item:hover .play-button {
+    transform: translate(-50%, -50%) scale(1.1);
+}
+
+.play-button::after {
+    content: '';
+    width: 0;
+    height: 0;
+    border-left: 18px solid var(--text-color);
+    border-top: 12px solid transparent;
+    border-bottom: 12px solid transparent;
+    margin-left: 4px;
+}
+
+/* Back to Home */
+.back-to-home {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    color: var(--text-light);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    transition: color var(--transition-base);
+}
+
+.back-link:hover {
+    color: var(--accent-color);
+}
+
+.back-arrow {
+    font-size: var(--text-lg);
+}
+
+/* =========================================================================
+   9. Writings & Latest Articles
    ========================================================================= */
 
 .latest-section {
@@ -679,7 +856,64 @@ body {
 }
 
 /* =========================================================================
-   9. Footer
+   10. Modal & Lightbox
+   ========================================================================= */
+
+.modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.9);
+    z-index: 1000;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+.modal-image {
+    max-width: 100%;
+    max-height: 90vh;
+    object-fit: contain;
+}
+
+.modal-video {
+    width: 90vw;
+    max-width: 1200px;
+    aspect-ratio: 16 / 9;
+}
+
+.modal-video iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+}
+
+.close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    font-size: 40px;
+    color: white;
+    background: none;
+    border: none;
+    cursor: pointer;
+    z-index: 1001;
+    line-height: 1;
+}
+
+.close-modal:hover {
+    opacity: 0.7;
+}
+
+/* =========================================================================
+   11. Footer
    ========================================================================= */
 
 .footer {
@@ -694,8 +928,13 @@ body {
     color: var(--text-light);
 }
 
+.footer-content {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
 /* =========================================================================
-   10. Utilities
+   12. Utilities
    ========================================================================= */
 
 .skip-link {
@@ -713,7 +952,7 @@ body {
 }
 
 /* =========================================================================
-   11. Responsive Media Queries
+   13. Responsive Media Queries
    ========================================================================= */
 
 @media (max-width: 1000px) {
@@ -731,6 +970,11 @@ body {
         height: auto;
         aspect-ratio: 16 / 9;
         border-radius: 12px 12px 0 0;
+    }
+    
+    /* Gallery Grid */
+    .gallery-grid {
+        column-count: 2;
     }
 }
 
@@ -758,7 +1002,7 @@ body {
     }
 
     /* Hero */
-    .hero-title, .writings-hero-title {
+    .hero-title, .writings-hero-title, .gallery-hero-title {
         font-size: 2rem;
     }
 
@@ -769,8 +1013,13 @@ body {
         grid-template-columns: 1fr;
     }
     
+    /* Gallery Grid */
+    .gallery-grid {
+        column-count: 1;
+    }
+    
     /* Intro padding */
-    .intro, .writings-intro {
+    .intro, .writings-intro, .gallery-intro {
         padding: 60px 0;
     }
     
