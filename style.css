@@ -600,49 +600,76 @@ body {
 }
 
 /* =========================================================================
-   13. Modals & Lightbox (Photo/Video)
+   13. Modals & Lightbox (Photo/Video - 最終FIX版)
    ========================================================================= */
 
 /* モーダル全体のオーバーレイ */
 .modal {
-    display: none; /* 初期状態では非表示 */
+    display: none; 
     position: fixed;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
-    background: rgba(0, 0, 0, 0.9); /* 黒い半透明の背景 */
-    z-index: 9999; /* 最前面に表示する */
-    align-items: center; /* 縦方向中央寄せ */
-    justify-content: center; /* 横方向中央寄せ */
-    overflow: auto; /* 画面からはみ出た場合のためのスクロール */
+    background: rgba(0, 0, 0, 0.95); /* 黒い半透明の背景 */
+    z-index: 9999; 
+    align-items: center; 
+    justify-content: center; 
+    overflow: auto; 
     padding: 20px;
-    /* アニメーション */
     opacity: 0;
     transition: opacity 0.3s ease;
 }
 
-/* JSで display:flex; がセットされたときにアニメーション開始 */
-.modal[aria-hidden="false"] {
+/* 表示時のアニメーション */
+.modal[aria-hidden="false"], 
+#videoModal {
     opacity: 1;
 }
 
-/* モーダルコンテンツのコンテナ（画像/動画） */
-.modal-content {
-    max-width: 90vw;
-    max-height: 90vh;
+/* モーダルコンテンツのコンテナ（画像/動画の枠。画面サイズを基準に90%に制限） */
+.modal-content, .modal-video {
     position: relative;
     box-shadow: 0 0 30px rgba(0, 0, 0, 0.7);
     animation: zoomIn 0.3s ease;
+    
+    max-width: 90vw;
+    max-height: 90vh;
+    width: auto; 
+    height: auto;
 }
 
-/* モーダル内の画像 */
+/* 1. 写真（Photo）のサイズを画面に合わせる修正 */
 .modal-image {
     display: block;
-    width: auto;
+    /* CRUCIAL FIX: 親コンテナのサイズを継承し、object-fit:containでアスペクト比を維持 */
+    width: 100%; 
+    height: 100%;
+    object-fit: contain; 
     max-width: 100%;
     max-height: 100%;
-    object-fit: contain;
+    border-radius: 4px;
+}
+
+/* 2. 動画（Video）を正しく表示させる修正 */
+.modal-video {
+    /* 動画の親コンテナとしてサイズと比率を定義 */
+    width: 90vw; 
+    max-width: 1280px; 
+    aspect-ratio: 16 / 9; /* 16:9比率を維持 */
+    /* MaxHeightで画面の高さを超えないようにする */
+    max-height: calc(90vh - 40px); 
+    overflow: hidden; /* 安全のため */
+}
+
+.modal-video iframe {
+    /* CRUCIAL FIX: position:absoluteで親コンテナ（modal-video）の100%を埋める */
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
     border-radius: 4px;
 }
 
@@ -656,27 +683,12 @@ body {
     background: none;
     border: none;
     cursor: pointer;
-    z-index: 10000; /* ボタンはコンテンツよりさらに前面 */
+    z-index: 10000;
     line-height: 1;
     text-shadow: 0 0 5px rgba(0,0,0,0.5);
 }
 .close-modal:hover {
-    color: var(--accent-color);
-}
-
-/* 動画モーダル内のコンテナ */
-.modal-video {
-    width: 90vw;
-    max-width: 1280px; /* 最大動画サイズを規定 */
-    height: auto;
-    aspect-ratio: 16 / 9; /* 16:9比率を維持 */
-}
-
-.modal-video iframe {
-    width: 100%;
-    height: 100%;
-    border: none;
-    border-radius: 4px;
+    color: #f0f0f0;
 }
 
 /* アニメーション */
