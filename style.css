@@ -603,6 +603,14 @@ body {
     width: 100%;
 }
 
+/* Highlights & What's New (横3列グリッド) */
+.articles-grid-3col {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 25px;
+    width: 100%;
+}
+
 /* Featured Story (特集記事 - 横1列グリッド) */
 .featured-story-grid {
     display: grid;
@@ -960,6 +968,11 @@ body {
     .articles-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    
+    /* 3カラムグリッドを2カラムに */
+    .articles-grid-3col {
+        grid-template-columns: repeat(2, 1fr);
+    }
 
     /* Featured Card レイアウトの調整 */
     .featured-card {
@@ -1008,6 +1021,7 @@ body {
 
     /* Grids (全て1列に) */
     .articles-grid-2col,
+    .articles-grid-3col,
     .articles-grid,
     .link-grid {
         grid-template-columns: 1fr;
