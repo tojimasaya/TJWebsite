@@ -28,6 +28,139 @@
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
+    <style>
+        /* 2×2グリッドレイアウト */
+        .category-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2.5rem;
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        /* カードのスタイル調整 */
+        .category-card {
+            display: flex;
+            flex-direction: column;
+            background: white;
+            overflow: hidden;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .category-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.12);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 280px;
+            overflow: hidden;
+        }
+
+        .category-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+
+        .category-card:hover .category-image img {
+            transform: scale(1.05);
+        }
+
+        .category-info {
+            padding: 2rem;
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+        }
+
+        .category-info h2 {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.8rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            color: #2c2c2c;
+        }
+
+        .category-info > p {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            font-size: 0.95rem;
+            line-height: 1.8;
+            color: #666;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.03em;
+        }
+
+        .category-stats {
+            margin-bottom: 1.5rem;
+            font-size: 0.85rem;
+            color: #999;
+        }
+
+        .category-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            padding: 0.9rem 2rem;
+            background: #2c2c2c;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            border: 1px solid #2c2c2c;
+            margin-top: auto;
+            align-self: flex-start;
+        }
+
+        .category-btn:hover {
+            background: white;
+            color: #2c2c2c;
+        }
+
+        .btn-arrow {
+            transition: transform 0.3s ease;
+        }
+
+        .category-btn:hover .btn-arrow {
+            transform: translateX(5px);
+        }
+
+        /* タブレット対応 (768px以下) */
+        @media (max-width: 768px) {
+            .category-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+
+            .category-image {
+                height: 240px;
+            }
+
+            .category-info {
+                padding: 1.5rem;
+            }
+
+            .category-info h2 {
+                font-size: 1.5rem;
+            }
+        }
+
+        /* 大画面対応 (1200px以上) */
+        @media (min-width: 1200px) {
+            .category-grid {
+                gap: 3rem;
+            }
+
+            .category-image {
+                height: 320px;
+            }
+        }
+    </style>
+
     <!-- Theme -->
     <meta name="theme-color" content="#fafafa">
     <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
