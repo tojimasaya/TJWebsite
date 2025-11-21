@@ -260,6 +260,11 @@
       const container = document.getElementById('whats-new-grid');
       
       try {
+        // まずwritings-og.jsonを読み込む（画像取得用）
+        const ogResponse = await fetch('/data/writings-og.json');
+        if (!ogResponse.ok) throw new Error(`HTTP ${ogResponse.status}`);
+        const articlesData = await ogResponse.json();
+        
         // note記事をRSSから取得（最新2件）
         const noteFeeds = [
           { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
@@ -290,12 +295,16 @@
                 const excerpt = description.replace(/<[^>]*>/g, '').substring(0, 60) + '...';
                 const date = new Date(pubDate);
                 
+                // writings-og.jsonから画像を取得
+                const ogData = articlesData[link];
+                const imageUrl = ogData?.image || 'assets/images/gallery/weekly.jpg';
+                
                 noteArticles.push({
                   title,
                   link,
                   excerpt,
                   date: date.toISOString(),
-                  imageUrl: 'assets/images/gallery/weekly.jpg',
+                  imageUrl,
                   source: 'note'
                 });
               }
@@ -310,10 +319,6 @@
         const latestNoteArticles = noteArticles.slice(0, 2);
         
         // DRONE.jp記事をwritings-og.jsonから取得（最新1件）
-        const ogResponse = await fetch('/data/writings-og.json');
-        if (!ogResponse.ok) throw new Error(`HTTP ${ogResponse.status}`);
-        
-        const articlesData = await ogResponse.json();
         
         const droneArticles = Object.entries(articlesData)
           .filter(([url]) => url.includes('drone.jp/column'))
