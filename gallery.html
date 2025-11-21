@@ -89,28 +89,30 @@
             transform: translateY(-3px);
         }
 
-        /* ギャラリー情報部分 */
+        /* ギャラリー情報部分 - Writingページと同じゆったりしたスタイル */
         .gallery-info {
-            padding: 1.5rem 1.5rem 1.8rem;
+            padding: 1.5rem 1.5rem 2rem;
         }
 
+        /* タイトル - Writingページに合わせて大きく */
         .gallery-info h3 {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-            font-size: 1.05rem;
+            font-size: 1.2rem;  /* 1.05rem → 1.2rem に増やす */
             font-weight: 600;
-            line-height: 1.6;
+            line-height: 1.7;   /* 1.6 → 1.7 に増やす */
             color: #2c2c2c;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;  /* 0.6rem → 0.8rem に増やす */
             letter-spacing: 0.05em;
         }
 
+        /* 説明文 - Writingページに合わせて大きく */
         .gallery-description {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-            font-size: 0.9rem;
-            line-height: 1.8;
+            font-size: 1rem;    /* 0.9rem → 1rem に増やす */
+            line-height: 1.9;   /* 1.8 → 1.9 に増やす */
             color: #666;
             letter-spacing: 0.03em;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;  /* 0.8rem → 1rem に増やす */
             
             overflow: hidden;
             text-overflow: ellipsis;
@@ -119,13 +121,15 @@
             -webkit-box-orient: vertical;
         }
 
+        /* メタ情報 - サイズはそのまま、余白を調整 */
         .gallery-meta {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-            font-size: 0.75rem;
+            font-size: 0.85rem;  /* 0.75rem → 0.85rem に少し増やす */
             color: #aaa;
             letter-spacing: 0.08em;
             display: flex;
             gap: 1rem;
+            margin-top: 0.5rem;
         }
 
         .gallery-location,
@@ -133,18 +137,20 @@
             display: inline-block;
         }
 
+        /* note記事リンク - Writingページのラベルスタイルに近づける */
         .gallery-note {
-            margin-top: 1rem;
-            padding-top: 1rem;
+            margin-top: 1.2rem;
+            padding-top: 1.2rem;
             border-top: 1px solid #f0f0f0;
         }
 
         .note-link {
-            font-size: 0.85rem;
+            font-size: 0.9rem;  /* 0.85rem → 0.9rem に増やす */
             color: #8b7355;
             text-decoration: none;
             transition: opacity 0.3s;
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            line-height: 1.7;
         }
 
         .note-link:hover {
@@ -181,21 +187,21 @@
         .gallery-grid h3,
         .gallery-grid h4 {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-            font-size: 1.05rem;
+            font-size: 1.2rem;
             font-weight: 600;
-            line-height: 1.6;
+            line-height: 1.7;
             color: #2c2c2c;
             letter-spacing: 0.05em;
-            margin-bottom: 0.6rem;
+            margin-bottom: 0.8rem;
         }
 
         .gallery-grid p {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-            font-size: 0.9rem;
-            line-height: 1.8;
+            font-size: 1rem;
+            line-height: 1.9;
             color: #666;
             letter-spacing: 0.03em;
-            margin-bottom: 0.8rem;
+            margin-bottom: 1rem;
             
             overflow: hidden;
             text-overflow: ellipsis;
@@ -205,7 +211,7 @@
         }
 
         .gallery-grid p a {
-            font-size: 0.8rem;
+            font-size: 0.9rem;
             color: #8b7355;
             text-decoration: none;
             border-bottom: 1px solid transparent;
@@ -220,11 +226,26 @@
         .gallery-grid .meta,
         .gallery-grid .caption {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-            font-size: 0.75rem;
+            font-size: 0.85rem;
             color: #aaa;
             letter-spacing: 0.08em;
             display: block;
             margin-top: 0.8rem;
+        }
+
+        /* レスポンシブ調整 */
+        @media (max-width: 768px) {
+            .gallery-info h3 {
+                font-size: 1.1rem;
+            }
+            
+            .gallery-description {
+                font-size: 0.95rem;
+            }
+            
+            .gallery-meta {
+                font-size: 0.8rem;
+            }
         }
     </style>
 </head>
