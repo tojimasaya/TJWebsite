@@ -35,25 +35,74 @@
       text-align: center;
     }
 
-    .jp-subtitle {
-      display: block;
-      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-      font-size: 0.9rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      color: #999;
-      margin-top: 0.5rem;
-    }
-
     /* レスポンシブ対応 */
     @media (max-width: 768px) {
       .latest-title {
         font-size: 1.6rem;
         margin-bottom: 2rem;
       }
+    }
+
+    /* 動画カード用のスタイル */
+    .video-card {
+      cursor: pointer;
+      transition: transform 0.3s ease;
+    }
+
+    .video-card:hover {
+      transform: translateY(-5px);
+    }
+
+    .video-thumbnail {
+      position: relative;
+    }
+
+    .play-button {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 70px;
+      height: 70px;
+      background: rgba(255, 0, 0, 0.9);
+      border-radius: 50%;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      font-size: 28px;
+      padding-left: 5px;
+      transition: all 0.3s ease;
+    }
+
+    .video-card:hover .play-button {
+      transform: translate(-50%, -50%) scale(1.1);
+      background: rgba(255, 0, 0, 1);
+    }
+
+    /* 動画モーダル用のスタイル（gallery.htmlと統一） */
+    .modal-video {
+      position: relative;
+      width: 90%;
+      max-width: 900px;
+      aspect-ratio: 16 / 9;
+    }
+
+    .modal-video iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 768px) {
+      .modal-video {
+        width: 95%;
+      }
       
-      .jp-subtitle {
-        font-size: 0.8rem;
+      .play-button {
+        width: 60px;
+        height: 60px;
+        font-size: 24px;
       }
     }
   </style>
@@ -118,10 +167,7 @@
     </section>
 
     <section class="latest-section container">
-      <h2 class="latest-title">
-        Highlights
-        <span class="jp-subtitle">ピックアップ</span>
-      </h2>
+      <h2 class="latest-title">Highlights</h2>
       <div class="articles-grid-3col">
         
         <article class="content-card">
@@ -136,15 +182,16 @@
           </div>
         </article>
 
-        <article class="content-card">
-          <a href="https://drone.jp/column/2024052410211888779.html" target="_blank" rel="noopener" class="content-image">
-            <img src="https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/05/tohzi_40_01.jpg" alt="中国でドローンを飛ばすために">
-          </a>
+        <article class="content-card video-card" onclick="openVideo('cJ2lFRqmeBA', 'カッパドキアのホテルから')">
+          <div class="content-image video-thumbnail">
+            <img src="assets/images/gallery/cappadocia-hotel.jpg" alt="カッパドキアのホテルから">
+            <div class="play-button">▶</div>
+          </div>
           <div class="content-info">
-            <span class="card-date">DRONE.jp</span>
-            <h3>Vol.40 中国でドローンを飛ばすために：UOM登録の手順と注意点</h3>
-            <p class="card-excerpt">中国でドローンを飛ばすために必要なUOM登録の具体的な手順と注意点。</p>
-            <a href="https://drone.jp/column/2024052410211888779.html" target="_blank" rel="noopener" class="card-action-btn">Read on DRONE.jp</a>
+            <span class="card-date">YouTube</span>
+            <h3>カッパドキアのホテルから</h3>
+            <p class="card-excerpt">妻と訪れたカッパドキアのホテルから眺めた朝の風景。宿泊した洞窟ホテルのベランダからドローニー撮影。</p>
+            <span class="card-action-btn">Watch on YouTube</span>
           </div>
         </article>
 
@@ -164,10 +211,7 @@
     </section>
 
     <section class="latest-section latest-new container">
-      <h2 class="latest-title">
-        What's New
-        <span class="jp-subtitle">最新記事</span>
-      </h2>
+      <h2 class="latest-title">What's New</h2>
       <div class="articles-grid-3col" id="whats-new-grid">
         <p class="text-center" style="grid-column: 1 / -1; color: var(--text-light);">
             最新の記事を読み込み中です...
@@ -179,10 +223,7 @@
     </section>
 
     <section class="latest-section container" style="border-bottom: none;">
-      <h2 class="latest-title">
-        More Contents
-        <span class="jp-subtitle">その他のコンテンツ</span>
-      </h2>
+      <h2 class="latest-title">More Contents</h2>
       <div class="link-grid">
         <a href="gallery.html" class="link-item">
           <div class="link-title">Gallery</div>
@@ -446,6 +487,35 @@
     
     // ページ読み込み時に実行
     document.addEventListener('DOMContentLoaded', loadWhatsNew);
+
+    // 動画モーダル関連の関数（gallery.htmlと同じ実装）
+    function openVideo(youtubeId, title) {
+      const html = `
+        <div class="modal" id="videoModal" style="display:flex;" onclick="closeVideo()">
+          <button class="close-modal" onclick="closeVideo()">×</button>
+          <div class="modal-video" onclick="event.stopPropagation()">
+            <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0"
+                    title="${title}"
+                    allow="autoplay; encrypted-media; picture-in-picture"
+                    allowfullscreen></iframe>
+          </div>
+        </div>`;
+      document.body.insertAdjacentHTML('beforeend', html);
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeVideo() {
+      const modal = document.getElementById('videoModal');
+      if (modal) modal.remove();
+      document.body.style.overflow = '';
+    }
+
+    // ESCキーで動画を閉じる
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape') {
+        closeVideo();
+      }
+    });
   </script>
 
   <script type="application/ld+json">
