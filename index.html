@@ -22,6 +22,41 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
+  
+  <style>
+    /* 見出しのスタイル調整 */
+    .latest-title {
+      font-family: 'Crimson Text', serif;
+      font-size: 2rem;
+      font-weight: 400;
+      letter-spacing: 0.05em;
+      color: #2c2c2c;
+      margin-bottom: 2.5rem;
+      text-align: center;
+    }
+
+    .jp-subtitle {
+      display: block;
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+      font-size: 0.9rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: #999;
+      margin-top: 0.5rem;
+    }
+
+    /* レスポンシブ対応 */
+    @media (max-width: 768px) {
+      .latest-title {
+        font-size: 1.6rem;
+        margin-bottom: 2rem;
+      }
+      
+      .jp-subtitle {
+        font-size: 0.8rem;
+      }
+    }
+  </style>
 </head>
 <body>
 
@@ -30,10 +65,10 @@
       <a href="/" class="nav-logo">TJM</a>
       <div class="nav-toggle"><span></span><span></span><span></span></div>
       <ul class="nav-menu">
+        <li><a href="/" class="nav-link">Home</a></li>
         <li><a href="gallery.html" class="nav-link">Gallery</a></li>
         <li><a href="gear.html" class="nav-link">Gear</a></li>
         <li><a href="writings.html" class="nav-link">Writings</a></li>
-        <li><a href="#" class="nav-link">About</a></li>
       </ul>
     </div>
   </nav>
