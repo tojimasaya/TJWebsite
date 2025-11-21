@@ -12,6 +12,48 @@
   <link rel="stylesheet" href="style.css?v=20251016">
   <meta name="theme-color" content="#fafafa">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+  <style>
+    /* フィルタータブ */
+    .gear-filter-tabs{
+      display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:0 0 24px;
+    }
+    .gear-filter-tabs button{
+      padding:8px 16px; border:1px solid var(--border-color); background:var(--bg-color);
+      color:var(--text-color); border-radius:999px; cursor:pointer; white-space:nowrap;
+      transition:all .2s ease;
+    }
+    .gear-filter-tabs button.active{
+      background:var(--accent-color); color:#fff; border-color:var(--accent-color);
+    }
+    @media (max-width:768px){
+      .gear-filter-tabs{
+        flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch;
+        justify-content:flex-start; padding:0 12px; margin:0 -12px 24px;
+      }
+    }
+    
+    /* 2カラムグリッド */
+    .gear-detail-grid{
+      display:grid; grid-template-columns:1fr; gap:40px; margin-top:24px;
+    }
+    @media (min-width:768px){
+      .gear-detail-grid{
+        grid-template-columns:repeat(2,1fr); gap:48px;
+      }
+    }
+    
+    /* 画像高さを揃える */
+    .gear-detail-image{
+      height:260px; overflow:hidden; border-radius:12px;
+    }
+    .gear-detail-image img{
+      width:100%; height:100%; object-fit:cover; display:block;
+    }
+    @media (max-width:767px){
+      .gear-detail-image{ height:auto; }
+      .gear-detail-image img{ height:auto; }
+    }
+  </style>
 </head>
 
 <body>
