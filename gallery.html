@@ -42,6 +42,116 @@
             font-family: 'Crimson Text', serif;
             font-size: 1.1rem;
         }
+
+        /* ギャラリーアイテムのスタイル調整 */
+        .gallery-item {
+            background: white;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .gallery-item:hover {
+            transform: translateY(-3px);
+        }
+
+        /* アイテムコンテンツ部分のゆったりレイアウト */
+        .gallery-item .item-content {
+            padding: 1.5rem 1.5rem 1.8rem;
+        }
+
+        /* タイトル：明朝体、適度なサイズ */
+        .gallery-item .item-title {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: #2c2c2c;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 説明文：明朝体、2行で切り詰め */
+        .gallery-item .item-description,
+        .gallery-item .item-location {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #666;
+            letter-spacing: 0.03em;
+            
+            /* テキストを2行で切り詰め */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        /* リンク付きの説明文も同様に */
+        .gallery-item .item-description a {
+            color: #c49a6c;
+            text-decoration: none;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .gallery-item .item-description a:hover {
+            border-bottom-color: #c49a6c;
+        }
+
+        /* メタ情報（日付など） */
+        .gallery-item .item-meta {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            font-size: 0.8rem;
+            color: #999;
+            margin-top: 1rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 動画バッジ */
+        .gallery-item .video-badge {
+            font-family: 'Inter', sans-serif;
+            font-size: 0.75rem;
+            letter-spacing: 0.05em;
+        }
+
+        /* 汎用的なギャラリーアイテムのスタイル（構造が異なる場合の対応） */
+        .gallery-grid > div,
+        .gallery-grid > article {
+            background: white;
+            overflow: hidden;
+        }
+
+        .gallery-grid h3,
+        .gallery-grid h4 {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            font-size: 1rem;
+            font-weight: 500;
+            line-height: 1.7;
+            color: #2c2c2c;
+            letter-spacing: 0.05em;
+        }
+
+        .gallery-grid p {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            font-size: 0.9rem;
+            line-height: 1.8;
+            color: #666;
+            letter-spacing: 0.03em;
+            
+            /* テキストを2行で切り詰め */
+            overflow: hidden;
+            text-overflow: ellipsis;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+        }
+
+        /* ギャラリーグリッド内のコンテンツエリアのパディング調整 */
+        .gallery-grid > div > div:not([class*="image"]):not([class*="thumb"]),
+        .gallery-grid > article > div:not([class*="image"]):not([class*="thumb"]) {
+            padding: 1.5rem 1.5rem 1.8rem;
+        }
     </style>
 </head>
 
