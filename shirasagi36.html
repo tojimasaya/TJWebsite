@@ -692,55 +692,7 @@
 
             <!-- ギャラリーグリッド -->
             <section class="shirasagi-grid" id="shirasagi-grid">
-                
-                <!-- 写真1 -->
-                <article class="shirasagi-item has-photo" data-category="spring morning"
-                    onclick="openModal('assets/images/shirasagi/01.jpg', '桜の白鷺', '2024.04.05', 'Leica SL2-S')">
-                    <img src="assets/images/shirasagi/01.jpg" alt="桜の白鷺" loading="lazy" width="400" height="400">
-                    <div class="shirasagi-item-overlay">
-                        <h3 class="shirasagi-item-title">桜の白鷺</h3>
-                        <div class="shirasagi-item-info">2024.04.05 | Leica SL2-S</div>
-                    </div>
-                </article>
-
-                <!-- 写真2 -->
-                <article class="shirasagi-item has-photo" data-category="summer noon"
-                    onclick="openModal('assets/images/shirasagi/02.jpg', '夏日の影', '2024.07.15', 'Xiaomi 15 Ultra')">
-                    <img src="assets/images/shirasagi/02.jpg" alt="夏日の影" loading="lazy" width="400" height="400">
-                    <div class="shirasagi-item-overlay">
-                        <h3 class="shirasagi-item-title">夏日の影</h3>
-                        <div class="shirasagi-item-info">2024.07.15 | Xiaomi 15 Ultra</div>
-                    </div>
-                </article>
-
-                <!-- 写真3 -->
-                <article class="shirasagi-item has-photo" data-category="autumn evening"
-                    onclick="openModal('assets/images/shirasagi/03.jpg', '秋風の城', '2024.10.20', 'Leica M')">
-                    <img src="assets/images/shirasagi/03.jpg" alt="秋風の城" loading="lazy" width="400" height="400">
-                    <div class="shirasagi-item-overlay">
-                        <h3 class="shirasagi-item-title">秋風の城</h3>
-                        <div class="shirasagi-item-info">2024.10.20 | Leica M</div>
-                    </div>
-                </article>
-
-                <!-- 空のスロット 4-36 -->
-                <script>
-                    // 4から36までの空スロットを生成
-                    for (let i = 4; i <= 36; i++) {
-                        document.write(`
-                            <article class="shirasagi-item empty">
-                                <div class="empty-number">${String(i).padStart(2, '0')}</div>
-                                <div class="empty-icon">
-                                    <svg viewBox="0 0 24 24">
-                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                                        <circle cx="12" cy="13" r="4"></circle>
-                                    </svg>
-                                </div>
-                            </article>
-                        `);
-                    }
-                </script>
-
+                <!-- JavaScriptで動的に生成されます -->
             </section>
 
             <!-- 撮影について -->
@@ -779,6 +731,78 @@
 
     <!-- JavaScript -->
     <script>
+        // 写真データをグローバル変数として保持
+        let photosData = {};
+
+        // JSONファイルから写真データを読み込む
+        async function loadPhotos() {
+            try {
+                const response = await fetch('assets/images/shirasagi/photos.json');
+                photosData = await response.json();
+                generateGallery();
+                updateProgress();
+            } catch (error) {
+                console.error('写真データの読み込みに失敗しました:', error);
+                // エラー時は空のギャラリーを生成
+                generateGallery();
+                updateProgress();
+            }
+        }
+
+        // ギャラリーグリッドを生成
+        function generateGallery() {
+            const grid = document.getElementById('shirasagi-grid');
+            grid.innerHTML = '';
+
+            for (let i = 1; i <= 36; i++) {
+                const photo = photosData[i];
+                const article = document.createElement('article');
+                
+                if (photo) {
+                    // 写真がある場合
+                    article.className = 'shirasagi-item has-photo';
+                    article.dataset.category = photo.category || '';
+                    article.onclick = () => openModal(
+                        `assets/images/shirasagi/${String(i).padStart(2, '0')}.jpg`,
+                        photo.title,
+                        photo.date,
+                        photo.gear
+                    );
+                    
+                    article.innerHTML = `
+                        <img src="assets/images/shirasagi/${String(i).padStart(2, '0')}.jpg" 
+                             alt="${photo.title}" 
+                             loading="lazy" 
+                             width="400" 
+                             height="400">
+                        <div class="shirasagi-item-overlay">
+                            <h3 class="shirasagi-item-title">${photo.title}</h3>
+                            <div class="shirasagi-item-info">${photo.date} | ${photo.gear}</div>
+                        </div>
+                    `;
+                } else {
+                    // 空のスロット
+                    article.className = 'shirasagi-item empty';
+                    article.innerHTML = `
+                        <div class="empty-number">${String(i).padStart(2, '0')}</div>
+                        <div class="empty-icon">
+                            <svg viewBox="0 0 24 24">
+                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                <circle cx="12" cy="13" r="4"></circle>
+                            </svg>
+                        </div>
+                    `;
+                }
+                
+                grid.appendChild(article);
+            }
+
+            // アニメーション用のObserverを再設定
+            document.querySelectorAll('.shirasagi-item').forEach(item => {
+                observer.observe(item);
+            });
+        }
+
         // ナビゲーション
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
@@ -818,14 +842,10 @@
             });
         }, observerOptions);
 
-        document.querySelectorAll('.shirasagi-item').forEach(item => {
-            observer.observe(item);
-        });
-
         // 進捗バーの更新
         function updateProgress() {
             const totalItems = 36;
-            const photoItems = document.querySelectorAll('.shirasagi-item.has-photo').length;
+            const photoItems = Object.keys(photosData).length;
             const percentage = (photoItems / totalItems) * 100;
 
             document.getElementById('progress-count').textContent = `${photoItems} / ${totalItems}`;
@@ -882,7 +902,7 @@
 
         // ページ読み込み時
         document.addEventListener('DOMContentLoaded', function() {
-            updateProgress();
+            loadPhotos();
         });
 
         // 外部リンクのセキュリティ強化
