@@ -6,51 +6,112 @@
     "category": "spring morning"
   },
   "2": {
-    "title": "男山貯水池から",
-    "date": "2024.04.15",
+    "title": "姫路城全景",
+    "date": "2024.04.05",
     "gear": "Leica M10 w/ Summilux 50mm",
     "category": "spring evening"
   },
   "3": {
-    "title": "秋風の城",
-    "date": "2024.10.20",
+    "title": "夜桜の城",
+    "date": "2025.04.09",
+    "gear": "Leica M10 w/ Summilux 50mm",
+    "category": "spring night"
+  },
+  "4": {
+    "title": "桜と城",
+    "date": "2024.04.01",
+    "gear": "Leica M10 w/ Summilux 50mm",
+    "category": "spring afternoon"
+  },
+  "5": {
+    "title": "三の丸広場から",
+    "date": "2024.04.05",
     "gear": "Leica M",
-    "category": "autumn evening"
+    "category": "spring afternoon"
   },
   "6": {
-    "title": "新緑の城",
-    "date": "2025.5.20",
-    "gear": "Leica M10",
-    "category": "summer afternoon"
+    "title": "白露中グラウンドから",
+    "date": "2025.04.05",
+    "gear": "Leica M10 w/ Summilux 50mm",
+    "category": "spring afternoon"
   },
   "7": {
-    "title": "春の城",
-    "date": "2025.5.4",
-    "gear": "Leica M",
-    "category": "autumn evening"
+    "title": "新緑の城を男山貯水池から",
+    "date": "2025.5.20",
+    "gear": "Leica M10 w/ Summilux 50mm",
+    "category": "summer afternoon"
+  },
+  "8": {
+    "title": "墓地からの白鷺城",
+    "date": "2024.05.04",
+    "gear": "Xiaomi 15 Ultra",
+    "category": "summer evening"
+  },
+  "9": {
+    "title": "夕日に照らされる白鷺城",
+    "date": "2024.7.29",
+    "gear": "Leica M10/WideTriElmar",
+    "category": "summer evening"
+  },
+  "10": {
+    "title": "桜門橋からの白鷺城",
+    "date": "2024.7.29",
+    "gear": "Leica M10/WideTriElmar",
+    "category": "summer evening"
   },
   "11": {
-    "title": "秋風の城",
-    "date": "2024.10.20",
-    "gear": "Leica M",
-    "category": "autumn evening"
-  },
-  "12": {
-    "title": "春の城",
-    "date": "2025.5.4",
-    "gear": "Leica M",
-    "category": "autumn evening"
+    "title": "青空の白鷺城",
+    "date": "2024.7.30",
+    "gear": "Leica M10/WideTriElmar",
+    "category": "summer evening"
   },
   "13": {
-    "title": "春の城",
-    "date": "2025.5.4",
-    "gear": "Leica M",
+    "title": "色付き始めた白鷺城",
+    "date": "2025.11.13",
+    "gear": "Leica M10",
     "category": "autumn evening"
   },
   "14": {
-    "title": "秋風の城",
-    "date": "2024.10.20",
-    "gear": "Leica M",
-    "category": "autumn evening"
-  }
+    "title": "北勢隠門跡からの逆さ城",
+    "date": "2025.11.13",
+    "gear": "Leica M10/Summilux 50mm",
+    "category": "autumn afternoon"
+  },
+  "15": {
+    "title": "美術館の紅葉と城",
+    "date": "2025.11.13",
+    "gear": "Leica M10/Summilux 50mm",
+    "category": "autumn afternoon"
+  },
+  "16": {
+    "title": "お掘りと紅葉",
+    "date": "2025.11.13",
+    "gear": "Leica M10/Summilux 50mm",
+    "category": "autumn afternoon"
+  },
+  "17": {
+    "title": "西日を受ける追手門",
+    "date": "2024.10.1",
+    "gear": "Leica M10/Summilux 50mm",
+    "category": "autumn afternoon"
+  },
+  "19": {
+    "title": "冬の桜門橋から",
+    "date": "2024.10.1",
+    "gear": "Leica M10/Summilux 50mm",
+    "category": "autumn afternoon"
+  },
+  "20": {
+    "title": "冬のさみしいサクラの木から",
+    "date": "2025.03.18",
+    "gear": "Leica M10/Summilux 50mm",
+    "category": "autumn afternoon"
+  },
+  "21": {
+    "title": "男山貯水池から",
+    "date": "2025.03.31",
+    "gear": "Leica M10/Summilux 50mm",
+    "category": "autumn afternoon"
+  },
+
 }
