@@ -222,36 +222,51 @@
 
         /* 写真なし（空のスロット） */
         .shirasagi-item.empty {
-            background: linear-gradient(135deg, #f5f5f5 0%, #e5e5e5 100%);
-            border: 2px dashed #ccc;
+            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
+            border: 2px dashed #d0d0d0;
             display: flex;
+            flex-direction: column;
             align-items: center;
             justify-content: center;
-            cursor: default;
+            gap: 12px;
+            opacity: 0.6;
         }
 
         .shirasagi-item.empty.visible {
-            opacity: 0.4;
+            opacity: 0.6;
             transform: translateY(0);
         }
 
-        .shirasagi-item.empty::after {
-            content: '?';
+        /* 空スロットの番号 */
+        .empty-number {
             font-family: 'Crimson Text', serif;
-            font-size: 3rem;
-            color: #ccc;
-            font-weight: 300;
+            font-size: 2rem;
+            font-weight: 600;
+            color: #b0b0b0;
+        }
+
+        /* 空スロットのカメラアイコン */
+        .empty-icon {
+            width: 40px;
+            height: 40px;
+            position: relative;
+        }
+
+        .empty-icon svg {
+            width: 100%;
+            height: 100%;
+            fill: none;
+            stroke: #c0c0c0;
+            stroke-width: 2;
+            stroke-linecap: round;
+            stroke-linejoin: round;
         }
 
         .shirasagi-item img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            transition: transform 0.4s ease;
-        }
-
-        .shirasagi-item.has-photo:hover img {
-            transform: scale(1.1);
+            display: block;
         }
 
         .shirasagi-item-overlay {
@@ -259,36 +274,80 @@
             bottom: 0;
             left: 0;
             right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8), transparent);
-            padding: 20px 15px 10px;
-            opacity: 0;
-            transition: opacity 0.3s ease;
+            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
+            padding: 20px 15px 15px;
+            transform: translateY(100%);
+            transition: transform 0.4s ease;
         }
 
         .shirasagi-item.has-photo:hover .shirasagi-item-overlay {
-            opacity: 1;
+            transform: translateY(0);
         }
 
         .shirasagi-item-title {
             font-family: 'Noto Serif JP', serif;
             color: white;
-            font-size: 0.9rem;
-            writing-mode: vertical-rl;
-            text-orientation: upright;
-            letter-spacing: 0.1em;
+            font-size: 0.95rem;
+            font-weight: 500;
+            letter-spacing: 0.05em;
             text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+            margin-bottom: 0.5rem;
         }
 
-        /* 撮影について */
+        .shirasagi-item-info {
+            font-family: 'Inter', sans-serif;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.75rem;
+            line-height: 1.6;
+        }
+
+        /* フィルター */
+        .filter-section {
+            max-width: 1400px;
+            margin: 40px auto 20px;
+            padding: 0 40px;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            font-family: 'Inter', sans-serif;
+            padding: 8px 20px;
+            background: rgba(255, 255, 255, 0.7);
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover,
+        .filter-btn.active {
+            background: var(--accent-color);
+            color: white;
+            border-color: var(--accent-color);
+        }
+
+        /* 撮影についてセクション */
         .shirasagi-about {
             max-width: 800px;
             margin: 80px auto;
-            padding: 0 40px;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.7);
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
         }
 
         .shirasagi-about h2 {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.8rem;
+            font-size: 1.6rem;
             margin-bottom: 1.5rem;
             color: var(--text-color);
             letter-spacing: 0.1em;
@@ -296,68 +355,114 @@
         }
 
         .shirasagi-about p {
-            font-size: 1rem;
-            line-height: 1.8;
+            font-size: 1.05rem;
+            line-height: 2;
             color: var(--text-light);
             margin-bottom: 1rem;
+        }
+
+        /* ホームに戻る */
+        .back-to-home {
+            max-width: 800px;
+            margin: 60px auto;
+            text-align: center;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
+        }
+
+        .back-link:hover {
+            gap: 15px;
+            color: #1e40af;
+        }
+
+        .back-arrow {
+            font-size: 1.3rem;
         }
 
         /* モーダル */
         .modal {
             display: none;
             position: fixed;
-            z-index: 1000;
-            left: 0;
+            z-index: 9999;
             top: 0;
+            left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.95);
+            background: rgba(0, 0, 0, 0.95);
             align-items: center;
             justify-content: center;
-        }
-
-        .modal-content {
-            position: relative;
-            max-width: 90%;
-            max-height: 90vh;
-            margin: auto;
-        }
-
-        .modal-image {
-            width: 100%;
-            height: auto;
-            max-height: 90vh;
-            object-fit: contain;
-        }
-
-        .modal-caption {
-            position: absolute;
-            bottom: 20px;
-            left: 50%;
-            transform: translateX(-50%);
-            color: white;
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.2rem;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
-            white-space: nowrap;
+            animation: fadeIn 0.3s ease;
         }
 
         .close-modal {
             position: absolute;
             top: 30px;
             right: 40px;
+            background: transparent;
+            border: none;
             color: white;
             font-size: 3rem;
-            font-weight: 300;
             cursor: pointer;
-            z-index: 1001;
-            background: none;
-            border: none;
+            z-index: 10000;
             transition: transform 0.2s ease;
+            line-height: 1;
+            padding: 0;
         }
 
         .close-modal:hover {
             transform: scale(1.2);
+        }
+
+        .modal-content {
+            max-width: 90vw;
+            max-height: 90vh;
+            text-align: center;
+        }
+
+        .modal-image {
+            max-width: 100%;
+            max-height: 80vh;
+            object-fit: contain;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
+        }
+
+        .modal-caption {
+            font-family: 'Noto Serif JP', serif;
+            color: white;
+            font-size: 1.3rem;
+            margin-top: 20px;
+            letter-spacing: 0.1em;
+        }
+
+        .modal-info {
+            font-family: 'Inter', sans-serif;
+            color: #ccc;
+            font-size: 0.9rem;
+            margin-top: 10px;
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .modal-info-item {
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .modal-info-label {
+            color: #999;
+            font-size: 0.85rem;
         }
 
         /* レスポンシブ */
@@ -378,65 +483,101 @@
 
             .shirasagi-grid {
                 grid-template-columns: repeat(3, 1fr);
-                gap: 10px;
+                gap: 15px;
                 padding: 0 20px;
             }
 
             .shirasagi-intro,
             .shirasagi-about {
-                padding: 0 20px;
+                padding: 30px 20px;
+            }
+
+            .empty-number {
+                font-size: 1.5rem;
+            }
+
+            .empty-icon {
+                width: 30px;
+                height: 30px;
             }
 
             .progress-section {
                 margin: 40px 20px;
+                padding: 20px;
+            }
+
+            .filter-section {
+                padding: 0 20px;
+            }
+
+            .close-modal {
+                top: 20px;
+                right: 20px;
+                font-size: 2.5rem;
+            }
+
+            .modal-caption {
+                font-size: 1.1rem;
+            }
+
+            .modal-info {
+                font-size: 0.8rem;
+                gap: 15px;
+            }
+
+            .shirasagi-item-info {
+                font-size: 0.7rem;
             }
         }
 
         @media (max-width: 480px) {
             .shirasagi-grid {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 10px;
             }
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
         }
     </style>
 </head>
 <body>
-    <!-- Skip to main content -->
-    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
-
-    <!-- ナビゲーションバー -->
-    <nav class="main-nav" id="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="/shirasagi36.html" class="nav-link active">Shirasagi 36</a></li>
-                <li><a href="/gear.html" class="nav-link">Gear</a></li>
-                <li><a href="/writings.html" class="nav-link">Writings</a></li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+    <!-- ナビゲーション -->
+    <nav class="navbar" role="navigation" aria-label="Main navigation">
+        <div class="nav-wrapper">
+            <a href="/" class="nav-brand">TOJI MASAYA</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
             </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="/gear.html" class="nav-link">Gear</a></li>
+                <li><a href="/writings.html" class="nav-link">Writings</a></li>
+                <li><a href="https://note.com/tojimasaya" class="nav-link" target="_blank" rel="noopener">note</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- ヒーローセクション -->
-    <section class="shirasagi-hero" role="banner">
-        <div class="shirasagi-hero-image">
-            <!-- ここに姫路城のヒーロー画像を配置 -->
-            <img src="assets/images/shirasagi/hero.jpg" alt="姫路城" loading="eager" width="1920" height="1080">
-            <div class="shirasagi-hero-overlay">
-                <h1 class="shirasagi-title">白鷺三十六景</h1>
-                <p class="shirasagi-subtitle">Shirasagi Sanjūrokkei</p>
-            </div>
-        </div>
-    </section>
-
     <!-- メインコンテンツ -->
-    <main id="main-content" class="main-content">
-        <div class="container">
+    <main role="main">
+        <div class="main-content">
+            
+            <!-- ヒーローセクション -->
+            <section class="shirasagi-hero">
+                <div class="shirasagi-hero-image">
+                    <img src="assets/images/shirasagi/01.jpg" alt="白鷺三十六景" width="1920" height="1080">
+                </div>
+                <div class="shirasagi-hero-overlay">
+                    <h1 class="shirasagi-title">白鷺三十六景</h1>
+                    <p class="shirasagi-subtitle">Shirasagi Sanjūrokkei</p>
+                </div>
+            </section>
+
             <!-- プロジェクト説明 -->
             <section class="shirasagi-intro">
                 <h2>このプロジェクトについて</h2>
@@ -448,7 +589,7 @@
             <!-- 進捗表示 -->
             <section class="progress-section">
                 <div class="progress-header">
-                    <span class="progress-text">撮影進捗</span>
+                    <span class="progress-text">撮影済み</span>
                     <span class="progress-count" id="progress-count">3 / 36</span>
                 </div>
                 <div class="progress-bar-container">
@@ -460,74 +601,61 @@
             <!-- ギャラリーグリッド -->
             <section class="shirasagi-grid" id="shirasagi-grid">
                 
-                <!-- 写真がある例（実際の写真に置き換えてください） -->
+                <!-- 写真1 -->
                 <article class="shirasagi-item has-photo" data-category="spring morning"
-                    onclick="openModal('assets/images/shirasagi/sakura.jpg', '桜の白鷺')">
-                    <img src="assets/images/shirasagi/sakura.jpg" alt="桜の白鷺" loading="lazy" width="400" height="400">
+                    onclick="openModal('assets/images/shirasagi/01.jpg', '桜の白鷺', '2024.04.05', 'Leica SL2-S')">
+                    <img src="assets/images/shirasagi/01.jpg" alt="桜の白鷺" loading="lazy" width="400" height="400">
                     <div class="shirasagi-item-overlay">
                         <h3 class="shirasagi-item-title">桜の白鷺</h3>
+                        <div class="shirasagi-item-info">2024.04.05 | Leica SL2-S</div>
                     </div>
                 </article>
 
+                <!-- 写真2 -->
                 <article class="shirasagi-item has-photo" data-category="summer noon"
-                    onclick="openModal('assets/images/shirasagi/02.jpg', '夏日の影')">
+                    onclick="openModal('assets/images/shirasagi/02.jpg', '夏日の影', '2024.07.15', 'Xiaomi 15 Ultra')">
                     <img src="assets/images/shirasagi/02.jpg" alt="夏日の影" loading="lazy" width="400" height="400">
                     <div class="shirasagi-item-overlay">
                         <h3 class="shirasagi-item-title">夏日の影</h3>
+                        <div class="shirasagi-item-info">2024.07.15 | Xiaomi 15 Ultra</div>
                     </div>
                 </article>
 
+                <!-- 写真3 -->
                 <article class="shirasagi-item has-photo" data-category="autumn evening"
-                    onclick="openModal('assets/images/shirasagi/03.jpg', '秋風の城')">
+                    onclick="openModal('assets/images/shirasagi/03.jpg', '秋風の城', '2024.10.20', 'Leica M')">
                     <img src="assets/images/shirasagi/03.jpg" alt="秋風の城" loading="lazy" width="400" height="400">
                     <div class="shirasagi-item-overlay">
                         <h3 class="shirasagi-item-title">秋風の城</h3>
+                        <div class="shirasagi-item-info">2024.10.20 | Leica M</div>
                     </div>
                 </article>
 
-                <!-- 空のスロット（写真がまだないもの） -->
-                <!-- 残り33枚分 -->
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
-                <article class="shirasagi-item empty"></article>
+                <!-- 空のスロット 4-36 -->
+                <script>
+                    // 4から36までの空スロットを生成
+                    for (let i = 4; i <= 36; i++) {
+                        document.write(`
+                            <article class="shirasagi-item empty">
+                                <div class="empty-number">${String(i).padStart(2, '0')}</div>
+                                <div class="empty-icon">
+                                    <svg viewBox="0 0 24 24">
+                                        <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
+                                        <circle cx="12" cy="13" r="4"></circle>
+                                    </svg>
+                                </div>
+                            </article>
+                        `);
+                    }
+                </script>
 
             </section>
 
             <!-- 撮影について -->
             <section class="shirasagi-about">
                 <h2>撮影について</h2>
-                <p>使用機材：ライカQ2、DJI Mini 4 Pro</p>
-                <p>撮影期間：2025年〜（進行中）</p>
+                <p>使用機材：Leica M、Leica SL2-S、Xiaomi 15 Ultra　<a href="gear.html" style="color: var(--accent-color); text-decoration: none;">→ 機材詳細</a></p>
+                <p>撮影期間：2024年〜（進行中）</p>
                 <p>生まれ故郷である姫路に帰省するたびに、少しずつ撮り溜めていきます。季節ごとの表情、時間帯による光の変化、さまざまな角度から見た姿。36という数にこだわりながら、ゆっくりと完成を目指します。</p>
             </section>
 
@@ -613,12 +741,26 @@
         }
 
         // モーダル機能
-        function openModal(imageSrc, title) {
+        function openModal(imageSrc, title, date, gear) {
             const modal = document.getElementById('modal');
             const modalContent = document.getElementById('modal-content');
+            
+            let infoHTML = '';
+            if (date || gear) {
+                infoHTML = '<div class="modal-info">';
+                if (date) {
+                    infoHTML += `<div class="modal-info-item"><span class="modal-info-label">撮影日:</span> ${date}</div>`;
+                }
+                if (gear) {
+                    infoHTML += `<div class="modal-info-item"><span class="modal-info-label">機材:</span> ${gear}</div>`;
+                }
+                infoHTML += '</div>';
+            }
+            
             modalContent.innerHTML = `
                 <img src="${imageSrc}" alt="${title}" class="modal-image">
                 <div class="modal-caption">${title}</div>
+                ${infoHTML}
             `;
             modal.setAttribute('aria-hidden', 'false');
             modal.style.display = 'flex';
