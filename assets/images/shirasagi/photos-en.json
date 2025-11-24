@@ -1,6 +1,6 @@
 {
   "1": {
-    "title": "White Heron with Cherry Blossoms and Red Bridge",
+    "title": "Flower Boat at Red Bridge",
     "date": "2024.04.05",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring morning"
@@ -13,7 +13,7 @@
   },
   "3": {
     "title": "Night Cherry Blossoms",
-    "date": "2025.04.09",
+    "date": "2024.04.09",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring night"
   },
@@ -26,18 +26,18 @@
   "5": {
     "title": "From Sannomaru Plaza",
     "date": "2024.04.05",
-    "gear": "Leica M",
+    "gear": "Leica M10",
     "category": "spring afternoon"
   },
   "6": {
     "title": "From Hakuro Junior High School Ground",
-    "date": "2025.04.05",
+    "date": "2024.04.05",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon"
   },
   "7": {
     "title": "Castle in Fresh Green from Otokoyama Reservoir",
-    "date": "2025.05.20",
+    "date": "2024.05.20",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "summer afternoon"
   },
@@ -63,29 +63,29 @@
     "title": "Castle Under Blue Sky",
     "date": "2024.07.30",
     "gear": "Leica M10 + Wide Tri-Elmar",
-    "category": "summer evening"
+    "category": "summer afternoon"
   },
   "13": {
     "title": "White Heron Castle Beginning to Change Color",
-    "date": "2025.11.13",
+    "date": "2024.11.13",
     "gear": "Leica M10",
-    "category": "autumn evening"
+    "category": "autumn afternoon"
   },
   "14": {
     "title": "Inverted Castle from Hokusei-Kakushimon Ruins",
-    "date": "2025.11.13",
+    "date": "2024.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon"
   },
   "15": {
     "title": "Autumn Leaves at Art Museum and Castle",
-    "date": "2025.11.13",
+    "date": "2024.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon"
   },
   "16": {
     "title": "Moat and Autumn Leaves",
-    "date": "2025.11.13",
+    "date": "2024.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon"
   },
@@ -95,22 +95,22 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon"
   },
-  "19": {
-    "title": "Winter View from Sakuramon Bridge",
+  "18": {
+    "title": "Autumn View from Sakuramon Bridge",
     "date": "2024.10.01",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon"
   },
-  "20": {
-    "title": "Winter View from Lonely Cherry Tree",
-    "date": "2025.03.18",
+  "19": {
+    "title": "Cherry Tree Awaiting Spring",
+    "date": "2024.03.18",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "autumn afternoon"
+    "category": "winter afternoon"
   },
-  "21": {
+  "20": {
     "title": "From Otokoyama Reservoir",
-    "date": "2025.03.31",
+    "date": "2024.03.31",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "autumn afternoon"
+    "category": "winter afternoon"
   }
 }
