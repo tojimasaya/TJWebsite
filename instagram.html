@@ -98,6 +98,14 @@
             color: #2c2c2c;
         }
 
+        .project-subtitle {
+            font-size: 1.1rem;
+            color: #999;
+            margin-top: -0.5rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+
         .project-description {
             font-size: 1rem;
             line-height: 2;
@@ -206,6 +214,12 @@
                 color: #d0d0d0;
             }
 
+            .project-subtitle,
+            .project-description span,
+            .link-description span {
+                color: #999 !important;
+            }
+
             .project-card,
             .link-item {
                 background: #1a1a1a;
@@ -293,34 +307,42 @@
             旅の写真と物語を綴っています。<br>
             香港・日本を拠点に、ライカとドローンで世界を記録する。
         </p>
+        <p style="margin-top: 1rem; font-size: 0.95rem; color: #999;">
+            Photography and stories from travels.<br>
+            Based between Hong Kong and Japan, documenting the world with Leica and drones.
+        </p>
     </section>
 
     <!-- プロジェクト -->
     <section class="projects-section">
         
-        <!-- Featured: トルコ旅行記 -->
+        <!-- Featured: 白鷺三十六景 -->
         <article class="project-card featured">
-            <img src="./assets/images/turkey-hero.jpg" alt="トルコ旅行記" class="project-image">
-            <div class="project-content">
-                <p class="project-label">Latest Journey</p>
-                <h2 class="project-title">トルコ旅行記</h2>
-                <p class="project-description">
-                    カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代ローマ遺跡、そしてボスポラス海峡の夜明け。オスマン帝国の面影から幻想的な奇岩群まで、9日間の旅の記録。
-                </p>
-                <a href="turkey-travel-journal.html" class="project-link">旅を見る</a>
-            </div>
-        </article>
-
-        <!-- 白鷺三十六景 -->
-        <article class="project-card">
-            <img src="./assets/images/shirasagi/01.jpg" alt="白鷺三十六景" class="project-image">
+            <img src="./assets/images/shirasagi/01.jpg" alt="白鷺三十六景 | 36 Views of White Heron Castle" class="project-image">
             <div class="project-content">
                 <p class="project-label">Work in Progress</p>
                 <h2 class="project-title">白鷺三十六景</h2>
+                <p class="project-subtitle" style="font-size: 1.1rem; color: #999; margin-top: -0.5rem; margin-bottom: 1.5rem; font-style: italic;">36 Views of White Heron Castle</p>
                 <p class="project-description">
-                    姫路城を36の視点から捉える写真プロジェクト。北斎の「富嶽三十六景」に着想を得て、白鷺城の多様な表情を記録していく。帰省するたびに、少しずつ。
+                    姫路城を36の視点から捉える写真プロジェクト。北斎の「富嶽三十六景」に着想を得て、白鷺城の多様な表情を記録していく。<br>
+                    <span style="color: #999; font-size: 0.95rem;">A photography project capturing 36 perspectives of Himeji Castle, inspired by Hokusai's "Thirty-Six Views of Mount Fuji."</span>
                 </p>
-                <a href="shirasagi36.html" class="project-link">制作過程を見る</a>
+                <a href="shirasagi36.html" class="project-link">制作過程を見る / View Progress</a>
+            </div>
+        </article>
+
+        <!-- トルコ旅行記 -->
+        <article class="project-card">
+            <img src="./assets/images/turkey-hero.jpg" alt="トルコ旅行記 | Turkey Journey" class="project-image">
+            <div class="project-content">
+                <p class="project-label">Latest Journey</p>
+                <h2 class="project-title">トルコ旅行記</h2>
+                <p class="project-subtitle" style="font-size: 1.1rem; color: #999; margin-top: -0.5rem; margin-bottom: 1.5rem; font-style: italic;">Journey Through Turkey</p>
+                <p class="project-description">
+                    カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代ローマ遺跡、そしてボスポラス海峡の夜明け。<br>
+                    <span style="color: #999; font-size: 0.95rem;">From Cappadocia's hot air balloons to the Bosphorus dawn. A 9-day journey through Turkey's diverse landscapes.</span>
+                </p>
+                <a href="turkey-travel-journal.html" class="project-link">旅を見る / Explore Journey</a>
             </div>
         </article>
 
@@ -334,22 +356,22 @@
                 
                 <a href="gallery.html" class="link-item">
                     <div class="link-title">Gallery</div>
-                    <p class="link-description">写真ギャラリー</p>
+                    <p class="link-description">写真ギャラリー<br><span style="font-size: 0.75rem; color: #bbb;">Photo Gallery</span></p>
                 </a>
 
                 <a href="gear.html" class="link-item">
                     <div class="link-title">Gear</div>
-                    <p class="link-description">使用機材</p>
+                    <p class="link-description">使用機材<br><span style="font-size: 0.75rem; color: #bbb;">Equipment</span></p>
                 </a>
 
                 <a href="https://note.com/tojimasaya" class="link-item" target="_blank" rel="noopener">
                     <div class="link-title">note</div>
-                    <p class="link-description">連載・コラム</p>
+                    <p class="link-description">連載・コラム<br><span style="font-size: 0.75rem; color: #bbb;">Articles & Columns</span></p>
                 </a>
 
                 <a href="writings.html" class="link-item">
                     <div class="link-title">Writings</div>
-                    <p class="link-description">執筆記事</p>
+                    <p class="link-description">執筆記事<br><span style="font-size: 0.75rem; color: #bbb;">Published Articles</span></p>
                 </a>
 
             </div>
