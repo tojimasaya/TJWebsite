@@ -465,6 +465,33 @@
             font-size: 0.85rem;
         }
 
+        /* 言語切り替えボタン */
+        .lang-switch {
+            position: fixed;
+            top: 90px;
+            right: 20px;
+            padding: 0.6rem 1.2rem;
+            background: rgba(255, 255, 255, 0.95);
+            border: 1px solid #e0e0e0;
+            border-radius: 20px;
+            text-decoration: none;
+            color: #2c2c2c;
+            font-family: 'Inter', sans-serif;
+            font-size: 0.85rem;
+            font-weight: 500;
+            z-index: 999;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .lang-switch:hover {
+            background: #2c2c2c;
+            color: white;
+            border-color: #2c2c2c;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+        }
+
         /* レスポンシブ */
         @media (prefers-color-scheme: dark) {
             /* 和紙風背景をダークモードに調整 */
@@ -556,6 +583,19 @@
             .back-link:hover {
                 color: #88b8ff;
             }
+
+            /* 言語切り替えボタン */
+            .lang-switch {
+                background: rgba(40, 40, 40, 0.95);
+                border-color: #555;
+                color: #f5f5f5;
+            }
+
+            .lang-switch:hover {
+                background: #f5f5f5;
+                color: #1a1a1a;
+                border-color: #f5f5f5;
+            }
         }
 
         @media (max-width: 1200px) {
@@ -571,6 +611,13 @@
 
             .shirasagi-subtitle {
                 font-size: 1.1rem;
+            }
+
+            .lang-switch {
+                top: 70px;
+                right: 15px;
+                padding: 0.5rem 1rem;
+                font-size: 0.8rem;
             }
 
             .shirasagi-grid {
@@ -664,6 +711,9 @@
                     <p class="shirasagi-subtitle">Shirasagi Sanjūrokkei</p>
                 </div>
             </section>
+
+            <!-- 言語切り替え -->
+            <a href="shirasagi36-en.html" class="lang-switch">English</a>
 
             <!-- プロジェクト説明 -->
             <section class="shirasagi-intro">
