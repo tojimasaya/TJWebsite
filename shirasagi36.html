@@ -637,20 +637,15 @@
 </head>
 <body>
     <!-- ナビゲーション -->
-    <nav class="navbar" role="navigation" aria-label="Main navigation">
-        <div class="nav-wrapper">
-            <a href="/" class="nav-brand">TOJI MASAYA</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Toggle navigation" aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-            <ul class="nav-menu" id="nav-menu">
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">TJM</a>
+            <div class="nav-toggle"><span></span><span></span><span></span></div>
+            <ul class="nav-menu">
                 <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="/gear.html" class="nav-link">Gear</a></li>
-                <li><a href="/writings.html" class="nav-link">Writings</a></li>
-                <li><a href="https://note.com/tojimasaya" class="nav-link" target="_blank" rel="noopener">note</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="gear.html" class="nav-link">Gear</a></li>
+                <li><a href="writings.html" class="nav-link">Writings</a></li>
             </ul>
         </div>
     </nav>
@@ -675,6 +670,9 @@
                 <h2>このプロジェクトについて</h2>
                 <p>葛飾北斎の『富嶽三十六景』に倣い、生まれ故郷である姫路城を、さまざまな角度、季節、時間帯から切り取る写真プロジェクト。</p>
                 <p>白鷺城の愛称で親しまれる姫路城の、36の表情を記録していきます。</p>
+                <p>6×6のグリッドで、1行ごとに季節を揃えて配置しています。<br>
+                1行目（01-06）春、2行目（07-12）夏、3行目（13-18）秋、4行目（19-24）冬、<br>
+                5-6行目（25-36）は城の内部や一部の特別なアングルです。</p>
                 <p>このページは制作進行中で、撮影した写真を順次追加していきます。完成までの過程もお楽しみください。</p>
             </section>
 
@@ -804,14 +802,13 @@
         }
 
         // ナビゲーション
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
+        const navToggle = document.querySelector('.nav-toggle');
+        const navMenu = document.querySelector('.nav-menu');
 
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', function() {
                 navMenu.classList.toggle('active');
                 navToggle.classList.toggle('active');
-                document.body.classList.toggle('nav-open');
             });
 
             const navLinks = document.querySelectorAll('.nav-link');
@@ -820,7 +817,6 @@
                     if (window.innerWidth <= 768) {
                         navMenu.classList.remove('active');
                         navToggle.classList.remove('active');
-                        document.body.classList.remove('nav-open');
                     }
                 });
             });
