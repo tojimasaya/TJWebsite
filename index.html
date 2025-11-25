@@ -50,6 +50,205 @@
       }
     }
 
+    /* Featured Projects セクション */
+    .featured-projects {
+      margin: 5rem auto 6rem;
+    }
+
+    .projects-grid-2col {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 3rem;
+      max-width: 1200px;
+      margin: 0 auto;
+    }
+
+    .project-card {
+      background: white;
+      overflow: hidden;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+
+    .project-image {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      height: 350px;
+    }
+
+    .project-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.5s ease;
+    }
+
+    .project-card:hover .project-image img {
+      transform: scale(1.05);
+    }
+
+    /* Progress Badge - 白鷺三十六景用 */
+    .progress-badge {
+      position: absolute;
+      top: 1.5rem;
+      right: 1.5rem;
+      background: rgba(139, 115, 85, 0.95);
+      color: white;
+      padding: 0.5rem 1rem;
+      font-size: 0.75rem;
+      letter-spacing: 0.1em;
+      font-weight: 500;
+      border-radius: 2px;
+      z-index: 10;
+    }
+
+    .project-info {
+      padding: 2rem;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .project-label {
+      font-size: 0.75rem;
+      color: #999;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .project-info h3 {
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+      font-size: 1.5rem;
+      font-weight: 500;
+      line-height: 1.6;
+      color: #2c2c2c;
+      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+    }
+
+    .project-description {
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+      font-size: 1rem;
+      line-height: 1.9;
+      color: #666;
+      margin-bottom: 2rem;
+      letter-spacing: 0.03em;
+      flex: 1;
+    }
+
+    .project-btn {
+      display: inline-block;
+      padding: 0.9rem 2rem;
+      background: #2c2c2c;
+      color: white;
+      text-decoration: none;
+      font-size: 0.85rem;
+      letter-spacing: 0.15em;
+      font-family: 'Inter', sans-serif;
+      transition: all 0.3s ease;
+      border: 1px solid #2c2c2c;
+      text-align: center;
+      align-self: flex-start;
+    }
+
+    .project-btn:hover {
+      background: white;
+      color: #2c2c2c;
+    }
+
+    /* ダークモード対応 */
+    @media (prefers-color-scheme: dark) {
+      .project-card {
+        background: #1a1a1a;
+      }
+
+      .project-info h3 {
+        color: #f5f5f5;
+      }
+
+      .project-description {
+        color: #aaa;
+      }
+
+      .project-btn {
+        background: #f5f5f5;
+        color: #1a1a1a;
+        border-color: #f5f5f5;
+      }
+
+      .project-btn:hover {
+        background: transparent;
+        color: #f5f5f5;
+      }
+
+      .progress-badge {
+        background: rgba(139, 115, 85, 0.9);
+      }
+    }
+
+    /* レスポンシブ */
+    @media (max-width: 992px) {
+      .projects-grid-2col {
+        gap: 2rem;
+      }
+
+      .project-image {
+        height: 300px;
+      }
+
+      .project-info h3 {
+        font-size: 1.3rem;
+      }
+    }
+
+    @media (max-width: 768px) {
+      .featured-projects {
+        margin: 3rem auto 4rem;
+      }
+
+      .projects-grid-2col {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+      }
+
+      .project-image {
+        height: 250px;
+      }
+
+      .project-info {
+        padding: 1.5rem;
+      }
+
+      .project-info h3 {
+        font-size: 1.2rem;
+      }
+
+      .project-description {
+        font-size: 0.95rem;
+        margin-bottom: 1.5rem;
+      }
+
+      .project-btn {
+        width: 100%;
+      }
+
+      .progress-badge {
+        top: 1rem;
+        right: 1rem;
+        font-size: 0.7rem;
+        padding: 0.4rem 0.8rem;
+      }
+    }
+
     /* 動画カード用のスタイル */
     .video-card {
       cursor: pointer;
@@ -177,6 +376,41 @@
       </p>
     </section>
 
+    <!-- Featured Projects セクション -->
+    <section class="featured-projects container">
+      <h2 class="latest-title">Featured Projects</h2>
+      <div class="projects-grid-2col">
+        
+        <!-- トルコ旅行記 -->
+        <article class="project-card">
+          <a href="turkey-travel-journal.html" class="project-image">
+            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記">
+          </a>
+          <div class="project-info">
+            <span class="project-label">Travel Journal</span>
+            <h3>トルコ旅行記</h3>
+            <p class="project-description">カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代ローマ遺跡、そしてボスポラス海峡の夜明け。オスマン帝国の面影から幻想的な奇岩群まで、9日間の旅の記録。</p>
+            <a href="turkey-travel-journal.html" class="project-btn">旅を見る</a>
+          </div>
+        </article>
+
+        <!-- 白鷺三十六景 -->
+        <article class="project-card">
+          <a href="shirasagi36.html" class="project-image">
+            <img src="assets/images/shirasagi/hero.jpg" alt="白鷺三十六景">
+            <span class="progress-badge">Work in Progress</span>
+          </a>
+          <div class="project-info">
+            <span class="project-label">Photography Project</span>
+            <h3>白鷺三十六景</h3>
+            <p class="project-description">姫路城を36の視点から捉える写真プロジェクト。北斎の「富嶽三十六景」に着想を得て、白鷺城の多様な表情を四季折々に記録していく。週に一枚ずつ、ゆっくりと。</p>
+            <a href="shirasagi36.html" class="project-btn">プロジェクトを見る</a>
+          </div>
+        </article>
+
+      </div>
+    </section>
+
     <section class="latest-section container">
       <h2 class="latest-title">Highlights</h2>
       <div class="articles-grid-3col">
@@ -207,14 +441,14 @@
         </article>
 
         <article class="content-card">
-          <a href="turkey-travel-journal.html" class="content-image">
-            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記">
+          <a href="writings.html" class="content-image">
+            <img src="assets/images/gallery/writings-thumb.jpg" alt="執筆記事" onerror="this.src='assets/images/gallery/weekly.jpg'">
           </a>
           <div class="content-info">
-            <span class="card-date">Travel Journal</span>
-            <h3>トルコ旅行記：カッパドキアからイスタンブールへ</h3>
-            <p class="card-excerpt">熱気球、旋回舞踊、古代遺跡。トルコの多様な表情を巡った9日間。</p>
-            <a href="turkey-travel-journal.html" class="card-action-btn">記事を読む</a>
+            <span class="card-date">Writings</span>
+            <h3>執筆記事一覧</h3>
+            <p class="card-excerpt">note、DRONE.jpでの連載記事をまとめています。旅の記録から機材レビューまで。</p>
+            <a href="writings.html" class="card-action-btn">記事を見る</a>
           </div>
         </article>
 
