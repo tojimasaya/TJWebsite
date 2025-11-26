@@ -57,14 +57,6 @@
                 padding-top: 56.25%;
             }
         }
-        /* 連絡フォームの見栄え調整（任意） */
-        .contact-item iframe {
-            border-radius: 12px;
-            background: #fafafa;
-        }
-        .contact-item .article-excerpt {
-            margin-bottom: 0.75rem;
-        }
     </style>
 
     <!-- Theme -->
@@ -171,28 +163,182 @@
             </section>
 
             <!-- ========================================
-                 Other Writing Section (with Contact Form)
+                 Contact Section
                  ======================================== -->
 <section class="writing-section">
-  <h2>お問い合わせ</h2>
-  <p class="section-description">
-    ドローン、カメラ、旅行関連の記事執筆や取材依頼のほか、<br>
-    サイト運営や機材に関するご質問もこちらからどうぞ。
-  </p>
+  <header class="section-header">
+    <h2>お問い合わせ</h2>
+    <p class="section-description">
+      ドローン、カメラ、旅行関連の記事執筆や取材依頼のほか、<br>
+      サイト運営や機材に関するご質問もこちらからどうぞ。
+    </p>
+  </header>
 
-  <div class="contact-form-wrapper" style="margin-top:1.5rem;">
-    <iframe 
-      src="https://docs.google.com/forms/d/e/1FAIpQLSeW89IHt3QpX_T4oQUF1ONr3g1n0AVsZFzI9bt5ePos0cGGZw/viewform?embedded=true"
-      width="100%"
-      height="900"
-      frameborder="0"
-      marginheight="0"
-      marginwidth="0"
-      style="border-radius:12px; background:#fafafa;">
-      読み込んでいます…
-    </iframe>
+  <div class="contact-wrapper">
+    <div class="contact-card">
+      <div class="contact-methods">
+        
+        <div class="contact-method">
+          <h3 class="contact-method-title">メールでのお問い合わせ</h3>
+          <p class="contact-method-description">
+            直接メールでご連絡いただけます。通常1-2営業日以内に返信いたします。
+          </p>
+          <a href="mailto:tojimasaya07@gmail.com" class="contact-button">
+            メールを送る
+          </a>
+        </div>
+
+        <div class="contact-method">
+          <h3 class="contact-method-title">フォームでのお問い合わせ</h3>
+          <p class="contact-method-description">
+            お問い合わせフォームからもご連絡いただけます。
+          </p>
+          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeW89IHt3QpX_T4oQUF1ONr3g1n0AVsZFzI9bt5ePos0cGGZw/viewform" 
+             target="_blank" 
+             rel="noopener noreferrer" 
+             class="contact-button secondary">
+            フォームを開く
+          </a>
+        </div>
+
+      </div>
+
+      <div class="contact-info">
+        <p class="contact-note">
+          ご連絡いただく際は、以下の内容を記載いただけるとスムーズです：
+        </p>
+        <ul class="contact-list">
+          <li>お名前・ご所属</li>
+          <li>ご用件の概要</li>
+          <li>希望される納期（執筆依頼の場合）</li>
+        </ul>
+      </div>
+    </div>
   </div>
 </section>
+
+<style>
+  .contact-wrapper {
+    max-width: 800px;
+    margin: 2rem auto 0;
+  }
+
+  .contact-card {
+    background: white;
+    border: 1px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 3rem 2.5rem;
+  }
+
+  .contact-methods {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-bottom: 3rem;
+    padding-bottom: 3rem;
+    border-bottom: 1px solid #f0f0f0;
+  }
+
+  .contact-method {
+    text-align: center;
+  }
+
+  .contact-method-title {
+    font-size: 1.1rem;
+    font-weight: 500;
+    margin-bottom: 0.8rem;
+    letter-spacing: 0.05em;
+    color: #2c2c2c;
+  }
+
+  .contact-method-description {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 1.5rem;
+    letter-spacing: 0.03em;
+  }
+
+  .contact-button {
+    display: inline-block;
+    padding: 0.9rem 2.5rem;
+    background: #2c2c2c;
+    color: white;
+    text-decoration: none;
+    font-size: 0.85rem;
+    letter-spacing: 0.15em;
+    border-radius: 4px;
+    transition: all 0.3s ease;
+    border: 1px solid #2c2c2c;
+  }
+
+  .contact-button:hover {
+    background: white;
+    color: #2c2c2c;
+  }
+
+  .contact-button.secondary {
+    background: white;
+    color: #2c2c2c;
+  }
+
+  .contact-button.secondary:hover {
+    background: #2c2c2c;
+    color: white;
+  }
+
+  .contact-info {
+    text-align: left;
+  }
+
+  .contact-note {
+    font-size: 0.9rem;
+    line-height: 1.8;
+    color: #666;
+    margin-bottom: 1rem;
+    letter-spacing: 0.03em;
+  }
+
+  .contact-list {
+    list-style: none;
+    padding: 0;
+  }
+
+  .contact-list li {
+    font-size: 0.85rem;
+    line-height: 1.8;
+    color: #666;
+    padding-left: 1.2rem;
+    position: relative;
+    letter-spacing: 0.03em;
+  }
+
+  .contact-list li:before {
+    content: "・";
+    position: absolute;
+    left: 0;
+    color: #c49a6c;
+  }
+
+  /* レスポンシブ */
+  @media (max-width: 768px) {
+    .contact-card {
+      padding: 2rem 1.5rem;
+    }
+
+    .contact-methods {
+      grid-template-columns: 1fr;
+      gap: 2.5rem;
+      margin-bottom: 2rem;
+      padding-bottom: 2rem;
+    }
+
+    .contact-button {
+      width: 100%;
+      display: block;
+    }
+  }
+</style>
 
             <!-- ========================================
                  Subscribe Section
