@@ -68,14 +68,14 @@
           "mount": "M",
           "image": "/assets/images/gear/lenses/summilux-35-fle.jpg",
           "status": "available",
-          "price": "¥23,900",
+          "price": "HK$23,900",
           "specs": [
             "35mm",
             "F1.4",
             "ASPH",
             "FLE"
           ],
-          "description": "Ver.2 FLE（フローティングエレメント）搭載モデル。近距離から無限遠まで安定した描写。",
+          "description": "2011年製造 Ver.2 FLE（フローティングエレメント）搭載モデル。近距離から無限遠まで安定した描写。",
           "comment": "2024年3月購入。",
           "links": {
             "official": "https://classic.leica-camera.com/uk/en/lcuk/Leica-Summilux-M-35mm-f-1.4-FLE-11663/11663SH-4179016"
@@ -89,7 +89,7 @@
           "mount": "M",
           "image": "/assets/images/gear/lenses/summilux-50.jpg",
           "status": "available",
-          "price": "¥22,000",
+          "price": "HK$22,000",
           "specs": [
             "50mm",
             "F1.4",
@@ -107,7 +107,7 @@
           "mount": "M",
           "image": "/assets/images/gear/lenses/elmarit-28.jpg",
           "status": "available",
-          "price": "¥10,000",
+          "price": "HK$10,000",
           "specs": [
             "28mm",
             "F2.8",
@@ -125,7 +125,7 @@
           "mount": "M",
           "image": "/assets/images/gear/lenses/tri-elmar.jpg",
           "status": "available",
-          "price": "¥25,300",
+          "price": "HK$25,300",
           "specs": [
             "16/18/21mm",
             "F4.0",
@@ -133,82 +133,6 @@
           ],
           "description": "3つの焦点距離を1本で。ドイツ製。超広角での風景撮影に。",
           "comment": "2024年3月購入。",
-          "links": {}
-        },
-        {
-          "id": "apo-summicron-35",
-          "type": "lens",
-          "name": "Leica APO-Summicron-M 35mm f/2 ASPH",
-          "brand": "Leica",
-          "mount": "M",
-          "image": "/assets/images/gear/lenses/apo-summicron-35.jpg",
-          "status": "considering",
-          "price": null,
-          "specs": [
-            "35mm",
-            "F2",
-            "APO",
-            "ASPH"
-          ],
-          "description": "APO設計による色収差の極限までの補正。購入を検討中。",
-          "comment": "",
-          "links": {
-            "review": "https://youtu.be/R3gh6gR--to?si=5AkSjp7ddpy3vqiV"
-          }
-        },
-        {
-          "id": "super-elmar-21",
-          "type": "lens",
-          "name": "Leica Super-Elmar-M 21mm f/3.4 ASPH",
-          "brand": "Leica",
-          "mount": "M",
-          "image": "/assets/images/gear/lenses/super-elmar-21.jpg",
-          "status": "considering",
-          "price": null,
-          "specs": [
-            "21mm",
-            "F3.4",
-            "ASPH",
-            "Compact"
-          ],
-          "description": "Tri-Elmarの16mmは使用頻度が低いため、21mm単焦点への乗り換えを検討中。",
-          "comment": "",
-          "links": {}
-        },
-        {
-          "id": "apo-telyt-135",
-          "type": "lens",
-          "name": "Leica APO-Telyt-M 135mm f/3.4",
-          "brand": "Leica",
-          "mount": "M",
-          "image": "/assets/images/gear/lenses/apo-telyt-135.jpg",
-          "status": "considering",
-          "price": null,
-          "specs": [
-            "135mm",
-            "F3.4",
-            "APO"
-          ],
-          "description": "無限遠での風景撮影用として検討中。APOレンズの望遠域での実力を試したい。",
-          "comment": "",
-          "links": {}
-        },
-        {
-          "id": "macro-elmar-90",
-          "type": "lens",
-          "name": "Leica Macro-Elmar-M 90mm f/4",
-          "brand": "Leica",
-          "mount": "M",
-          "image": "/assets/images/gear/lenses/macro-elmar-90.jpg",
-          "status": "considering",
-          "price": null,
-          "specs": [
-            "90mm",
-            "F4",
-            "Macro"
-          ],
-          "description": "マクロ撮影の可能性を広げるために検討中。中望遠としても使用可能。",
-          "comment": "",
           "links": {}
         }
       ]
