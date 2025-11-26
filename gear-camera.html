@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Camera Gear — Toji Masaya</title>
+  <title>Camera & Lenses — Toji Masaya</title>
 
   <!-- Favicon -->
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -11,8 +11,8 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <!-- SEO -->
-  <meta name="description" content="田路昌也が使用しているカメラ機材。Leica M10、SL2-S、M2などのボディとレンズ。">
-  <meta name="keywords" content="田路昌也, カメラ, Leica, M10, SL2-S, レビュー">
+  <meta name="description" content="田路昌也が使用しているカメラ機材。Leica M10、SL2-S、M2のボディと、Summiluxなどのレンズコレクション。">
+  <meta name="keywords" content="田路昌也, カメラ, Leica, M10, SL2-S, M2, Summilux, レンズ, レビュー">
   <meta name="author" content="Toji Masaya">
 
   <!-- OGP -->
@@ -33,6 +33,11 @@
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
   <style>
     /* このページ固有の最小スタイル（全体CSSに既にあれば不要） */
+    .gear-section-title{
+      font-size:1.8rem; font-weight:500; margin:60px 0 24px; text-align:center; 
+      letter-spacing:0.1em; color:var(--text-color);
+    }
+    .gear-section-title:first-of-type{ margin-top:40px; }
     .gear-filter-tabs{
       display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:0 0 24px;
     }
@@ -92,23 +97,33 @@
 
       <!-- Introduction -->
       <section class="gear-intro">
-        <p class="lead">撮影旅行に持っていきやすい機材群。LeicaとFujifilmを中心に運用しています。</p>
+        <p class="lead">撮影旅行に持っていきやすい機材群。Leicaを中心に運用しています。</p>
       </section>
 
-      <!-- Filters -->
-      <section aria-label="フィルタ">
-        <div class="gear-filter-tabs" id="gear-filters">
-          <button class="active" data-filter="all">All</button>
-          <button data-filter="available">運用中</button>
-          <button data-filter="considering">売却検討中</button>
-          <button data-filter="sold">売却済</button>
+      <!-- Camera Bodies Section -->
+      <section class="gear-section">
+        <h2 class="gear-section-title">Camera Bodies</h2>
+        <div class="gear-detail-grid" id="camera-bodies-grid">
+          <div class="loading">カメラボディを読み込み中...</div>
         </div>
       </section>
 
-      <!-- Gear Items -->
+      <!-- Lenses Section -->
       <section class="gear-section">
-        <div class="gear-detail-grid" id="camera-gear-grid">
-          <div class="loading">機材を読み込み中...</div>
+        <h2 class="gear-section-title">Lenses</h2>
+        
+        <!-- Lens Filters -->
+        <div aria-label="レンズフィルタ">
+          <div class="gear-filter-tabs" id="lens-filters">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="available">運用中</button>
+            <button data-filter="considering">検討中</button>
+            <button data-filter="sold">売却済</button>
+          </div>
+        </div>
+
+        <div class="gear-detail-grid" id="lenses-grid">
+          <div class="loading">レンズを読み込み中...</div>
         </div>
       </section>
 
@@ -145,27 +160,28 @@
       if (window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
     });
 
-    // ===== Gear rendering + filtering =====
-    let CAMERA_ITEMS = [];
+    // ===== Cameras & Lenses rendering + filtering =====
+    let CAMERA_BODIES = [];
+    let LENSES = [];
 
     function getStatusText(status){
-      // 表示ラベル：依頼どおりに更新
       const m = {
         'available': '運用中',
-        'considering': '売却検討中',
+        'considering': '検討中',
         'sold': '売却済'
       };
       return m[status] || status;
     }
+    
     function getLinkText(key){
-      const m = { review:'レビュー記事', purchase:'購入リンク', official:'公式サイト' };
+      const m = { review:'レビュー', purchase:'購入リンク', official:'公式サイト' };
       return m[key] || key;
     }
 
-    function renderCamera(items){
-      const grid = document.getElementById('camera-gear-grid');
+    function renderCameraBodies(items){
+      const grid = document.getElementById('camera-bodies-grid');
       if(!items || items.length === 0){
-        grid.innerHTML = '<p class="loading">該当する機材がありません。</p>';
+        grid.innerHTML = '<p class="loading">カメラボディがありません。</p>';
         return;
       }
       grid.innerHTML = items.map(item => `
@@ -193,41 +209,81 @@
       `).join('');
     }
 
-    function applyFilter(key){
-      let shown = CAMERA_ITEMS;
-      if(key && key !== 'all'){
-        shown = CAMERA_ITEMS.filter(it => (it.status || '') === key);
+    function renderLenses(items){
+      const grid = document.getElementById('lenses-grid');
+      if(!items || items.length === 0){
+        grid.innerHTML = '<p class="loading">該当するレンズがありません。</p>';
+        return;
       }
-      renderCamera(shown);
+      grid.innerHTML = items.map(item => `
+        <article class="gear-detail-item">
+          <div class="gear-detail-image">
+            <img src="${item.image}" alt="${item.name}" loading="lazy">
+          </div>
+          <div class="gear-detail-info">
+            <div class="gear-detail-header">
+              ${item.status ? `<span class="gear-status-badge ${item.status}">${getStatusText(item.status)}</span>` : ''}
+              <div class="gear-detail-brand">${item.brand ?? ''} ${item.mount ? item.mount + 'マウント' : ''}</div>
+              <h2 class="gear-detail-name">${item.name}</h2>
+            </div>
+            ${item.specs?.length ? `<div class="gear-detail-specs">${
+              item.specs.map(s=>`<span class="gear-spec-tag">${s}</span>`).join('')
+            }</div>`:''}
+            ${item.description ? `<p class="gear-detail-description">${item.description}</p>`:''}
+            ${item.comment ? `<div class="gear-detail-comment">${item.comment}</div>`:''}
+            ${item.links && Object.keys(item.links).length ? `
+              <div class="gear-detail-links">
+                ${Object.entries(item.links).map(([k,u]) => `<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`).join('')}
+              </div>` : '' }
+          </div>
+        </article>
+      `).join('');
     }
 
-    function setupFilters(){
-      const tabs = document.getElementById('gear-filters');
+    function applyLensFilter(key){
+      let shown = LENSES;
+      if(key && key !== 'all'){
+        shown = LENSES.filter(it => (it.status || '') === key);
+      }
+      renderLenses(shown);
+    }
+
+    function setupLensFilters(){
+      const tabs = document.getElementById('lens-filters');
       if(!tabs) return;
       tabs.addEventListener('click', (e)=>{
         const btn = e.target.closest('button[data-filter]');
         if(!btn) return;
         tabs.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
-        applyFilter(btn.dataset.filter);
+        applyLensFilter(btn.dataset.filter);
       });
     }
 
-    async function loadCameraGear(){
+    async function loadGear(){
       try{
         const res = await fetch('/data/gear.json');
         const data = await res.json();
-        CAMERA_ITEMS = data?.categories?.camera?.items || [];
-        setupFilters();
-        applyFilter('all'); // 初期表示はAll
+        
+        // カメラボディを読み込み
+        CAMERA_BODIES = data?.categories?.cameras?.items || [];
+        renderCameraBodies(CAMERA_BODIES);
+        
+        // レンズを読み込み
+        LENSES = data?.categories?.lenses?.items || [];
+        setupLensFilters();
+        applyLensFilter('all'); // 初期表示はAll
+        
       }catch(err){
         console.error('機材データの読み込みエラー:', err);
-        document.getElementById('camera-gear-grid').innerHTML =
-          '<p class="loading">機材データの読み込みに失敗しました。</p>';
+        document.getElementById('camera-bodies-grid').innerHTML =
+          '<p class="loading">カメラボディの読み込みに失敗しました。</p>';
+        document.getElementById('lenses-grid').innerHTML =
+          '<p class="loading">レンズの読み込みに失敗しました。</p>';
       }
     }
 
-    document.addEventListener('DOMContentLoaded', loadCameraGear);
+    document.addEventListener('DOMContentLoaded', loadGear);
   </script>
 
   <!-- JSON-LD -->
@@ -235,8 +291,8 @@
   {
     "@context": "https://schema.org",
     "@type": "ItemList",
-    "name": "Camera Gear — Toji Masaya",
-    "description": "田路昌也が使用しているカメラ機材",
+    "name": "Camera & Lenses — Toji Masaya",
+    "description": "田路昌也が使用しているカメラボディとLeica Mマウントレンズ",
     "author": { "@type": "Person", "name": "田路昌也", "alternateName": "Toji Masaya" },
     "url": "https://tojimasaya.com/gear-camera.html"
   }
