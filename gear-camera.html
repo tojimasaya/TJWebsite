@@ -161,6 +161,7 @@
     });
 
     // ===== Cameras & Lenses rendering + filtering =====
+    let ALL_CAMERA_ITEMS = [];
     let CAMERA_BODIES = [];
     let LENSES = [];
 
@@ -229,6 +230,7 @@
             ${item.specs?.length ? `<div class="gear-detail-specs">${
               item.specs.map(s=>`<span class="gear-spec-tag">${s}</span>`).join('')
             }</div>`:''}
+            ${item.price ? `<p class="gear-detail-description">${item.price}</p>`:''} 
             ${item.description ? `<p class="gear-detail-description">${item.description}</p>`:''}
             ${item.comment ? `<div class="gear-detail-comment">${item.comment}</div>`:''}
             ${item.links && Object.keys(item.links).length ? `
@@ -265,14 +267,19 @@
         const res = await fetch('/data/gear.json');
         const data = await res.json();
         
-        // カメラボディを読み込み
-        CAMERA_BODIES = data?.categories?.cameras?.items || [];
+        // 全カメラアイテムを取得
+        ALL_CAMERA_ITEMS = data?.categories?.camera?.items || [];
+        
+        // typeで分類
+        CAMERA_BODIES = ALL_CAMERA_ITEMS.filter(item => item.type === 'body');
+        LENSES = ALL_CAMERA_ITEMS.filter(item => item.type === 'lens');
+        
+        // カメラボディを描画
         renderCameraBodies(CAMERA_BODIES);
         
-        // レンズを読み込み
-        LENSES = data?.categories?.lenses?.items || [];
+        // レンズを描画（フィルター付き）
         setupLensFilters();
-        applyLensFilter('all'); // 初期表示はAll
+        applyLensFilter('all');
         
       }catch(err){
         console.error('機材データの読み込みエラー:', err);
