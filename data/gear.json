@@ -63,7 +63,7 @@
         {
           "id": "summilux-35-fle",
           "type": "lens",
-          "name": "Leica Summilux-M 35mm f/1.4 ASPH Black (11663)",
+          "name": "Summilux-M 35mm f/1.4 ASPH (11663)",
           "brand": "Leica",
           "mount": "M",
           "image": "/assets/images/gear/lenses/summilux-35-fle.jpg",
@@ -75,7 +75,7 @@
             "ASPH",
             "FLE"
           ],
-          "description": "2011年製造 Ver.2 FLE（フローティングエレメント）搭載モデル。近距離から無限遠まで安定した描写。",
+          "description": "2011年製 Ver.2。FLE（フローティングエレメント）搭載の現代ルクス。近接から無限遠まで安定したシャープネスを保ちながら、開放では柔らかな空気感を残す。FLEにより最短距離付近の描写が大きく改善され、絞ればキレ味が立ち、開放では淡くとろけるボケが生まれる。そのバランスの良さから、M10との相性も抜群。旅先で一本だけ選ぶなら、最も信頼を置くレンズ。",
           "comment": "2024年3月購入。",
           "links": {
             "official": "https://classic.leica-camera.com/uk/en/lcuk/Leica-Summilux-M-35mm-f-1.4-FLE-11663/11663SH-4179016"
@@ -84,7 +84,7 @@
         {
           "id": "summilux-50-v2",
           "type": "lens",
-          "name": "Leica Summilux-M 50mm f/1.4 第2世代 後期型",
+          "name": "Summilux-M 50mm f/1.4 第2世代 後期型",
           "brand": "Leica",
           "mount": "M",
           "image": "/assets/images/gear/lenses/summilux-50.jpg",
@@ -95,14 +95,14 @@
             "F1.4",
             "Vintage"
           ],
-          "description": "1973年製造。クラシカルなボケ味と柔らかい描写が魅力。",
+          "description": "1973年製造。柔らかな輪郭、滲むハイライト、クラシカルなボケ味。球面レンズ構成による、現行ASPHにはない優しい描写。逆光ではフレアが乗ることもあるが、その不完全さこそが雰囲気を作る。人物でも風景でも、画面にノスタルジックな湿度を加えてくれる一本。オールドルクス特有の甘さと空気感が魅力。",
           "comment": "2024年3月購入。",
           "links": {}
         },
         {
           "id": "elmarit-28",
           "type": "lens",
-          "name": "Leica Elmarit-M 28mm f/2.8",
+          "name": "Elmarit-M 28mm f/2.8 第4世代",
           "brand": "Leica",
           "mount": "M",
           "image": "/assets/images/gear/lenses/elmarit-28.jpg",
@@ -113,14 +113,14 @@
             "F2.8",
             "Compact"
           ],
-          "description": "コンパクトで軽量な広角レンズ。スナップ撮影に最適。",
-          "comment": "",
+          "description": "コンパクトで軽量。M型の28mmといえばこれ、と言われるほど完成度の高い常用広角。小さな鏡胴に均質な描写性能が収まり、開放から周辺まで安定してシャープ。スナップでは軽快そのもので、M10につけたまま街を歩くと視界そのままを写し取るような感覚になる。旅の荷物を少なくしたいとき、必ず選ぶレンズ。",
+          "comment": "2025年2月購入。",
           "links": {}
         },
         {
           "id": "tri-elmar",
           "type": "lens",
-          "name": "Leica Tri-Elmar-M 16-18-21mm f/4.0 ASPH (11626)",
+          "name": "Tri-Elmar-M 16–18–21mm f/4 ASPH (11626)",
           "brand": "Leica",
           "mount": "M",
           "image": "/assets/images/gear/lenses/tri-elmar.jpg",
@@ -131,8 +131,8 @@
             "F4.0",
             "ASPH"
           ],
-          "description": "3つの焦点距離を1本で。ドイツ製。超広角での風景撮影に。",
-          "comment": "2024年3月購入。",
+          "description": "超広角で三つの焦点距離を切り替えられるWATE（Wide-Angle Tri-Elmar）。単焦点並みの描写を保ちながら、超広角の運用を驚くほどシンプルにしてくれる。光学性能は非常に高く、歪曲の少ない端正な広角描写。16mmで迫力を出し、18mmでバランスを取り、21mmで街を記録する。視点の切り替えがダイヤル一つで済むため、旅先の建築撮影や風景撮影で重宝している。",
+          "comment": "2024年9月購入。",
           "links": {}
         }
       ]
