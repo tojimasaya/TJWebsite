@@ -1,5 +1,5 @@
 {
-  "updated_at": "2025-01-16",
+  "updated_at": "2025-01-17",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -133,6 +133,25 @@
           ],
           "description": "超広角で三つの焦点距離を切り替えられるWATE（Wide-Angle Tri-Elmar）。単焦点並みの描写を保ちながら、超広角の運用を驚くほどシンプルにしてくれる。光学性能は非常に高く、歪曲の少ない端正な広角描写。16mmで迫力を出し、18mmでバランスを取り、21mmで街を記録する。視点の切り替えがダイヤル一つで済むため、旅先の建築撮影や風景撮影で重宝している。",
           "comment": "2024年9月購入。",
+          "links": {}
+        },
+        {
+          "id": "sigma-24-70-f28-dgdn",
+          "type": "lens",
+          "name": "Sigma 24-70mm F2.8 DG DN",
+          "brand": "Sigma",
+          "mount": "L",
+          "image": "/assets/images/gear/lenses/sigma.jpg",
+          "status": "available",
+          "price": null,
+          "specs": [
+            "24-70mm",
+            "F2.8",
+            "Artライン",
+            "防塵防滴"
+          ],
+          "description": "Lマウント唯一の大口径標準ズーム。Artラインの高い光学性能を持ち、24mmから70mmまでズーム全域で安定した解像力を発揮する。動画でも静止画でも頼れる万能性があり、旅先ではこれ一本で完結することも多い。防塵防滴構造と高速・静音AFで実用性も申し分ない。瞳AFにも対応し、人物撮影でも安心。ただ、同等性能とされるライカ版へ乗り換えたい気持ちも捨てきれない。",
+          "comment": "",
           "links": {}
         }
       ]
