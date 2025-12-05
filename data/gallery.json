@@ -1,5 +1,15 @@
 [
   {
+    "id": "kowloon_neon",
+    "type": "photo",
+    "title": "九龍城のネオン",
+    "description": "消えつつある香港のネオン文化。九龍城の夜、自転車で帰路につく人とともに、街の記憶を写し留めた一枚。",
+    "image": "assets/images/gallery/bicycle.jpg",
+    "location": "九龍城、香港",
+    "date": "2025年",
+    "category": ["photos", "travel"]
+  },
+  {
     "id": "neuschwanstein",
     "type": "photo",
     "title": "遠くに見えるノイシュヴァンシュタイン城",
@@ -101,16 +111,6 @@
     "image": "assets/images/gallery/istanbul.jpg",
     "location": "イスタンブール、トルコ",
     "date": "2024年秋",
-    "category": ["photos", "travel"]
-  },
-  {
-    "id": "kowloon_neon",
-    "type": "photo",
-    "title": "九龍城のネオン",
-    "description": "消えつつある香港のネオン文化。九龍城の夜、自転車で帰路につく人とともに、街の記憶を写し留めた一枚。",
-    "image": "assets/images/gallery/bicycle.jpg",
-    "location": "九龍城、香港",
-    "date": "2025年",
     "category": ["photos", "travel"]
   }
 ]
