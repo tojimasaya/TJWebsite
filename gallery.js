@@ -1,6 +1,6 @@
 /**
  * gallery.js - JSON Driven Masonry Gallery
- * Fixed: Modal Click Events
+ * Enhanced: Modal shows full information
  */
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -24,7 +24,7 @@ async function loadGallery() {
         const items = await response.json();
         
         // HTML生成
-        const html = items.map(item => createGalleryItemHTML(item)).join('');
+        const html = items.map((item, index) => createGalleryItemHTML(item, index)).join('');
         
         // 挿入
         container.innerHTML = html;
@@ -36,12 +36,14 @@ async function loadGallery() {
 }
 
 // 個別のアイテムHTMLを生成
-function createGalleryItemHTML(item) {
+function createGalleryItemHTML(item, index) {
     const categories = item.category.join(' ');
     
     // タイトルに「'」が含まれているとエラーになるのでエスケープ処理
     const safeTitle = item.title.replace(/'/g, "\\'");
     const safeDesc = item.description ? item.description.replace(/'/g, "\\'") : "";
+    const safeLocation = item.location ? item.location.replace(/'/g, "\\'") : "";
+    const safeDate = item.date ? item.date.replace(/'/g, "\\'") : "";
     
     // noteリンクがある場合
     const noteLinkHtml = item.noteUrl ? `
@@ -76,11 +78,22 @@ function createGalleryItemHTML(item) {
     
     // 写真 (Photo) の場合
     else {
-        // 修正点: HTMLタグではなく、URLだけを渡すシンプルな形に変更
+        // データをJSON形式でdata属性に埋め込む（モーダル用）
+        const itemData = JSON.stringify({
+            image: item.image,
+            title: item.title,
+            description: item.description,
+            location: item.location,
+            date: item.date,
+            noteUrl: item.noteUrl || '',
+            noteTitle: item.noteTitle || ''
+        });
+        
         return `
         <article class="gallery-item photo" 
                  data-category="${categories}"
-                 onclick="openModal('${item.image}', '${safeTitle}')">
+                 data-item='${itemData.replace(/'/g, "&#39;")}'
+                 onclick="openModalWithInfo(this)">
             <div class="gallery-media">
                 <img src="${item.image}" alt="${item.title}" loading="lazy">
             </div>
@@ -123,4 +136,37 @@ function setupFilters() {
             });
         });
     });
+}
+
+// 写真モーダルを開く（全情報付き）
+function openModalWithInfo(element) {
+    const itemData = JSON.parse(element.getAttribute('data-item'));
+    
+    const modal = document.getElementById('modal');
+    const modalContent = document.getElementById('modal-content');
+    
+    // noteリンクがあれば表示
+    const noteLinkHtml = itemData.noteUrl ? `
+        <div class="modal-note">
+            <a href="${itemData.noteUrl}" target="_blank" class="note-link">
+                📖 関連記事：「${itemData.noteTitle}」
+            </a>
+        </div>` : '';
+    
+    modalContent.innerHTML = `
+        <img src="${itemData.image}" alt="${itemData.title}" class="modal-image">
+        <div class="modal-info">
+            <h2 class="modal-title">${itemData.title}</h2>
+            <p class="modal-description">${itemData.description}</p>
+            <div class="modal-meta">
+                <span class="modal-location">${itemData.location}</span>
+                <span class="modal-date">${itemData.date}</span>
+            </div>
+            ${noteLinkHtml}
+        </div>
+    `;
+    
+    modal.setAttribute('aria-hidden', 'false');
+    modal.style.display = 'flex';
+    document.body.style.overflow = 'hidden';
 }
