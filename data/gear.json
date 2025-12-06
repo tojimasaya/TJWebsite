@@ -70,10 +70,7 @@
           "status": "available",
           "price": "HK$23,900",
           "specs": [
-            "35mm",
-            "F1.4",
-            "ASPH",
-            "FLE"
+            "35mm F1.4 ASPH FLE"
           ],
           "description": "2011年製 Ver.2。FLE（フローティングエレメント）搭載の現代ルクス。近接から無限遠まで安定したシャープネスを保ちながら、開放では柔らかな空気感を残す。FLEにより最短距離付近の描写が大きく改善され、絞ればキレ味が立ち、開放では淡くとろけるボケが生まれる。そのバランスの良さから、M10との相性も抜群。旅先で一本だけ選ぶなら、最も信頼を置くレンズ。",
           "comment": "2024年3月購入。",
@@ -91,9 +88,7 @@
           "status": "available",
           "price": "HK$22,000",
           "specs": [
-            "50mm",
-            "F1.4",
-            "Vintage"
+            "50mm F1.4 Vintage"
           ],
           "description": "1973年製造。柔らかな輪郭、滲むハイライト、クラシカルなボケ味。球面レンズ構成による、現行ASPHにはない優しい描写。逆光ではフレアが乗ることもあるが、その不完全さこそが雰囲気を作る。人物でも風景でも、画面にノスタルジックな湿度を加えてくれる一本。オールドルクス特有の甘さと空気感が魅力。",
           "comment": "2024年3月購入。",
@@ -109,9 +104,7 @@
           "status": "available",
           "price": "HK$10,000",
           "specs": [
-            "28mm",
-            "F2.8",
-            "Compact"
+            "28mm F2.8 Compact"
           ],
           "description": "コンパクトで軽量。M型の28mmといえばこれ、と言われるほど完成度の高い常用広角。小さな鏡胴に均質な描写性能が収まり、開放から周辺まで安定してシャープ。スナップでは軽快そのもので、M10につけたまま街を歩くと視界そのままを写し取るような感覚になる。旅の荷物を少なくしたいとき、必ず選ぶレンズ。",
           "comment": "2025年2月購入。",
@@ -127,9 +120,7 @@
           "status": "available",
           "price": "HK$25,300",
           "specs": [
-            "16/18/21mm",
-            "F4.0",
-            "ASPH"
+            "16/18/21mm F4.0 ASPH"
           ],
           "description": "超広角で三つの焦点距離を切り替えられるWATE（Wide-Angle Tri-Elmar）。単焦点並みの描写を保ちながら、超広角の運用を驚くほどシンプルにしてくれる。光学性能は非常に高く、歪曲の少ない端正な広角描写。16mmで迫力を出し、18mmでバランスを取り、21mmで街を記録する。視点の切り替えがダイヤル一つで済むため、旅先の建築撮影や風景撮影で重宝している。",
           "comment": "2024年9月購入。",
@@ -145,8 +136,7 @@
           "status": "available",
           "price": null,
           "specs": [
-            "24-70mm",
-            "F2.8",
+            "24-70mm F2.8",
             "Artライン",
             "防塵防滴"
           ],
@@ -183,8 +173,7 @@
           "image": "/assets/images/gear/djineo.jpg",
           "status": "available",
           "specs": [
-            "<249g",
-            "4K60"
+            "<249g / 4K60"
           ],
           "description": "小さくて可愛いドローン。コントローラなしで手のひらから飛ばすこともできるし、ゴーグルを使ってFPV的に飛ばすことも可能",
           "comment": "",
@@ -199,8 +188,7 @@
           "image": "/assets/images/gear/neo2.jpg",
           "status": "available",
           "specs": [
-            "<249g",
-            "4K60",
+            "<249g / 4K60",
             "ジェスチャー操作"
           ],
           "description": "Neoの後継ドローンを深圳DJIにて購入。ジェスチャーでの操作が楽しい。最初はコントローラで飛ばそうかと思っていましたが、ジェスチャーで数枚と少しの動画で十分な気がします。",
@@ -214,8 +202,7 @@
           "image": "/assets/images/gear/avata2.jpg",
           "status": "available",
           "specs": [
-            ">250g",
-            "4K60",
+            ">250g / 4K60",
             "D-Log M"
           ],
           "description": "初代Avataは駄目でしたが、二代目になって日本でも飛行可能に！",
@@ -231,8 +218,7 @@
           "image": "/assets/images/gear/mini4pro.jpg",
           "status": "available",
           "specs": [
-            "<249g",
-            "4K60",
+            "<249g / 4K60",
             "D-Log M"
           ],
           "description": "DJI Mini 5 Proが250gを数グラム超え、国によっては登録必要ということで、２台体制でいくことに。",
@@ -348,7 +334,7 @@
           "status": "available",
           "specs": [
             "MagSafe",
-            "M2.SSD"
+            "M.2 SSD"
           ],
           "description": "Macbookでもスマートフォンでも利用可能な高速SSD内蔵 多機能HUB",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/ne60ce62cf179?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">HAGiBiSからACASISへ——MagSafe対応SSDケースを乗り換えた理由</a>",
@@ -389,7 +375,7 @@
           "image": "/assets/images/gear/mcdodo67wcharger.jpg",
           "status": "available",
           "specs": [
-            "67w",
+            "67W",
             "リトラクタブルケーブルが便利"
           ],
           "description": "上で紹介しているNovaWave 3wayとペアで使うと最強。下の noteで使い勝手を確認してください。",
