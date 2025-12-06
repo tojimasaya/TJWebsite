@@ -26,20 +26,90 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
+    <!-- External CSS - コメントアウト（このページ専用スタイルを使用） -->
+    <!-- <link rel="stylesheet" href="style.css"> -->
 
     <style>
-        /* ダークモードを強制 */
+        /* ダークモードを強制 - 最優先 */
+        * {
+            color: inherit;
+        }
+        
         :root {
             color-scheme: dark only;
+        }
+        
+        html {
+            background: #000000 !important;
+            color: #f0f0f0 !important;
         }
         
         /* ネオン風背景 */
         body {
             background: #000000 !important;
             position: relative;
-            color: #f0f0f0;
+            color: #f0f0f0 !important;
+        }
+        
+        /* すべてのテキスト要素に明示的に色を指定 */
+        h1, h2, h3, h4, h5, h6, p, span, div, a, button {
+            color: inherit;
+        }
+        
+        /* ヘッダーナビゲーション */
+        .main-nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 70px;
+            background: rgba(0, 0, 0, 0.95);
+            backdrop-filter: blur(10px);
+            z-index: 1000;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .nav-container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 0 40px;
+            height: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .nav-logo {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            letter-spacing: 0.05em;
+            color: #fff !important;
+            text-decoration: none;
+        }
+        
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-link {
+            color: #d0d0d0 !important;
+            text-decoration: none;
+            font-size: 0.95rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+        
+        .nav-link:hover {
+            color: #ff006e !important;
+        }
+        
+        .nav-toggle {
+            display: none;
         }
 
         body::before {
@@ -60,6 +130,7 @@
         .main-content {
             position: relative;
             z-index: 2;
+            background: #000000;
         }
 
         /* ヒーローセクション */
@@ -72,6 +143,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
+            background: #000000;
         }
 
         .neon-hero-image {
@@ -92,7 +164,7 @@
             position: relative;
             z-index: 2;
             text-align: center;
-            color: white;
+            color: white !important;
             padding: 0 20px;
         }
 
@@ -107,7 +179,7 @@
                 0 0 30px rgba(255, 0, 110, 0.4),
                 3px 3px 6px rgba(0,0,0,0.9);
             letter-spacing: 0.15em;
-            color: #fff;
+            color: #fff !important;
         }
 
         .neon-subtitle {
@@ -119,7 +191,7 @@
                 0 0 8px rgba(131, 56, 236, 0.6),
                 2px 2px 4px rgba(0,0,0,0.8);
             letter-spacing: 0.05em;
-            color: #e0e0e0;
+            color: #e0e0e0 !important;
         }
 
         /* プロジェクト説明 */
@@ -128,21 +200,22 @@
             margin: 80px auto;
             padding: 0 40px;
             text-align: center;
-            color: #e0e0e0;
+            color: #e0e0e0 !important;
+            background: transparent;
         }
 
         .neon-intro h2 {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: #f5f5f5;
+            color: #f5f5f5 !important;
             letter-spacing: 0.1em;
         }
 
         .neon-intro p {
             font-size: 1.1rem;
             line-height: 2;
-            color: #f0f0f0;
+            color: #f0f0f0 !important;
             margin-bottom: 1rem;
         }
 
@@ -462,6 +535,26 @@
         }
 
         @media (max-width: 768px) {
+            .main-nav {
+                height: 60px;
+            }
+            
+            .nav-container {
+                padding: 0 20px;
+            }
+            
+            .nav-logo {
+                font-size: 1.2rem;
+            }
+            
+            .nav-menu {
+                gap: 1.2rem;
+            }
+            
+            .nav-link {
+                font-size: 0.85rem;
+            }
+        
             .neon-hero {
                 height: 60vh;
                 min-height: 400px;
