@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="color-scheme" content="dark">
     <title>香港霓虹残照 — Toji Masaya</title>
 
     <!-- Favicon -->
@@ -29,10 +30,16 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
+        /* ダークモードを強制 */
+        :root {
+            color-scheme: dark only;
+        }
+        
         /* ネオン風背景 */
         body {
-            background: #000000;
+            background: #000000 !important;
             position: relative;
+            color: #f0f0f0;
         }
 
         body::before {
@@ -137,67 +144,6 @@
             line-height: 2;
             color: #f0f0f0;
             margin-bottom: 1rem;
-        }
-
-        /* 進捗表示 */
-        .progress-section {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(26, 26, 26, 0.8);
-            border-radius: 8px;
-            box-shadow: 
-                0 2px 8px rgba(0,0,0,0.3),
-                0 0 20px rgba(255, 0, 110, 0.1);
-            border: 1px solid rgba(255, 0, 110, 0.2);
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .progress-text {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.1rem;
-            color: #f5f5f5;
-        }
-
-        .progress-count {
-            font-family: 'Crimson Text', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            background: linear-gradient(135deg, #ff006e 0%, #8338ec 50%, #3a86ff 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-
-        .progress-bar-container {
-            width: 100%;
-            height: 8px;
-            background: #2a2a2a;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, #ff006e, #8338ec, #3a86ff);
-            border-radius: 4px;
-            transition: width 0.5s ease;
-            box-shadow: 0 0 10px rgba(255, 0, 110, 0.5);
-        }
-
-        .progress-note {
-            font-size: 0.9rem;
-            color: #c0c0c0;
-            font-style: italic;
-            text-align: center;
-            margin-top: 10px;
         }
 
         /* カテゴリフィルター */
@@ -612,18 +558,6 @@
                 記録として。記憶として。<br>
                 二度と戻らない香港の光を、一枚ずつ残していく。
             </p>
-
-            <!-- 進捗 -->
-            <section class="progress-section">
-                <div class="progress-header">
-                    <span class="progress-text">記録数</span>
-                    <span class="progress-count" id="progress-count">0 枚</span>
-                </div>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" id="progress-bar" style="width: 0%"></div>
-                </div>
-                <p class="progress-note">※写真は撮影次第、随時追加していきます</p>
-            </section>
         </section>
 
         <!-- 地域フィルター -->
@@ -697,12 +631,10 @@
                 const response = await fetch('assets/images/hongkong-neon/photos.json');
                 photosData = await response.json();
                 generateGallery();
-                updateProgress();
             } catch (error) {
                 console.error('写真データの読み込みに失敗しました:', error);
                 // エラー時は空のギャラリーを生成（30枚分のスロット）
                 generateEmptyGallery();
-                updateProgress();
             }
         }
 
@@ -852,7 +784,6 @@
                 
                 // ギャラリーを再生成
                 generateGallery();
-                updateProgress();
             });
         });
 
@@ -871,19 +802,6 @@
                 }
             });
         }, observerOptions);
-
-        // 進捗バーの更新
-        function updateProgress() {
-            const photoCount = currentCategory === 'all' 
-                ? Object.keys(photosData).length 
-                : Object.values(photosData).filter(p => p.category === currentCategory).length;
-            
-            document.getElementById('progress-count').textContent = `${photoCount}`;
-            
-            // プログレスバーは常に実際の枚数に応じて表示（最大100%）
-            const percentage = Math.min((photoCount / 30) * 100, 100);
-            document.getElementById('progress-bar').style.width = `${percentage}%`;
-        }
 
         // モーダル機能
         function openModal(imageSrc, title, date, location, category) {
