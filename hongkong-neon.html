@@ -31,7 +31,7 @@
     <style>
         /* ネオン風背景 */
         body {
-            background: linear-gradient(to bottom, #0a0a0a 0%, #1a1a1a 100%);
+            background: #000000;
             position: relative;
         }
 
@@ -43,9 +43,9 @@
             width: 100%;
             height: 100%;
             background-image: 
-                radial-gradient(circle at 20% 50%, rgba(255, 0, 110, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(131, 56, 236, 0.03) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(58, 134, 255, 0.03) 0%, transparent 50%);
+                radial-gradient(circle at 20% 50%, rgba(255, 0, 110, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(131, 56, 236, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 40% 20%, rgba(58, 134, 255, 0.05) 0%, transparent 50%);
             pointer-events: none;
             z-index: 1;
         }
@@ -135,7 +135,7 @@
         .neon-intro p {
             font-size: 1.1rem;
             line-height: 2;
-            color: #d0d0d0;
+            color: #f0f0f0;
             margin-bottom: 1rem;
         }
 
@@ -194,7 +194,7 @@
 
         .progress-note {
             font-size: 0.9rem;
-            color: #999;
+            color: #c0c0c0;
             font-style: italic;
             text-align: center;
             margin-top: 10px;
@@ -214,8 +214,8 @@
         .filter-btn {
             padding: 0.8rem 1.2rem;
             background: rgba(26, 26, 26, 0.8);
-            color: #d0d0d0;
-            border: 1px solid #444;
+            color: #e5e5e5;
+            border: 1px solid #555;
             font-size: 0.85rem;
             letter-spacing: 0.1em;
             cursor: pointer;
@@ -334,17 +334,17 @@
         /* 空のスロット */
         .neon-item.empty {
             background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-            border: 2px dashed #333;
+            border: 2px dashed #444;
             display: flex;
             flex-direction: column;
             align-items: center;
             justify-content: center;
             gap: 12px;
-            opacity: 0.4;
+            opacity: 0.5;
         }
 
         .neon-item.empty.visible {
-            opacity: 0.4;
+            opacity: 0.5;
             transform: translateY(0);
         }
 
@@ -357,7 +357,7 @@
         .empty-icon svg {
             width: 100%;
             height: 100%;
-            fill: #666;
+            fill: #888;
         }
 
         /* モーダル */
@@ -878,7 +878,7 @@
                 ? Object.keys(photosData).length 
                 : Object.values(photosData).filter(p => p.category === currentCategory).length;
             
-            document.getElementById('progress-count').textContent = `${photoCount} 枚`;
+            document.getElementById('progress-count').textContent = `${photoCount}`;
             
             // プログレスバーは常に実際の枚数に応じて表示（最大100%）
             const percentage = Math.min((photoCount / 30) * 100, 100);
