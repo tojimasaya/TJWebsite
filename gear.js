@@ -121,7 +121,14 @@
     const data = await fetchJSON("data/gear.json");
     if (!data?.categories?.[category]) return;
     const cat = data.categories[category];
+    // ヒーロー画像とタイトルだけは全カテゴリ共通で差し替え
     renderHero(cat);
+
+    // Camera ページは専用の描画ロジック（gear-camera.html 内のスクリプト）を使うため、
+    // ここではグリッド描画とフィルタ処理を行わない
+    if (category === "camera") return;
+
+    // それ以外のカテゴリ（drone / editing / accessories）は従来通り
     renderGrid(cat);
     setupFilters();
   }
