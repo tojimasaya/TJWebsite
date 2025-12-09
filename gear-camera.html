@@ -17,74 +17,123 @@
 
   <!-- OGP -->
   <meta property="og:title" content="Camera Gear — Toji Masaya">
-  <meta property="og:description" content="LeicaとFujifilmを中心としたカメラ機材">
+  <meta property="og:description" content="Leicaを中心としたカメラボディとレンズのギアリスト。">
   <meta property="og:image" content="https://tojimasaya.com/assets/images/gear/m2.jpg">
   <meta property="og:url" content="https://tojimasaya.com/gear-camera.html">
   <meta property="og:type" content="website">
 
   <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
 
-  <!-- CSS（キャッシュバスター付き） -->
+  <!-- Global CSS（キャッシュバスター付き） -->
   <link rel="stylesheet" href="style.css?v=20251016">
 
-  <!-- Theme -->
+  <!-- Theme Color -->
   <meta name="theme-color" content="#fafafa">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
+
+  <!-- Page specific styles -->
   <style>
-    /* このページ固有の最小スタイル（全体CSSに既にあれば不要） */
     .gear-section-title{
-      font-size:1.8rem; font-weight:500; margin:60px 0 24px; text-align:center; 
-      letter-spacing:0.1em; color:var(--text-color);
+      font-size:1.8rem;
+      font-weight:500;
+      margin:60px 0 24px;
+      text-align:center;
+      letter-spacing:0.1em;
+      color:var(--text-color);
     }
-    .gear-section-title:first-of-type{ margin-top:40px; }
+    .gear-section-title:first-of-type{
+      margin-top:40px;
+    }
+
     .gear-filter-tabs{
-      display:flex; flex-wrap:wrap; gap:12px; justify-content:center; margin:0 0 24px;
+      display:flex;
+      flex-wrap:wrap;
+      gap:12px;
+      justify-content:center;
+      margin:0 0 24px;
     }
     .gear-filter-tabs button{
-      padding:8px 16px; border:1px solid var(--border-color); background:var(--bg-color);
-      color:var(--text-color); border-radius:999px; cursor:pointer; white-space:nowrap;
+      padding:8px 16px;
+      border:1px solid var(--border-color);
+      background:var(--bg-color);
+      color:var(--text-color);
+      border-radius:999px;
+      cursor:pointer;
+      white-space:nowrap;
       transition:all .2s ease;
     }
-    .gear-filter-tabs button.active{ background:var(--accent-color); color:#fff; border-color:var(--accent-color); }
-    @media (max-width:768px){
-      .gear-filter-tabs{ flex-wrap:nowrap; overflow-x:auto; -webkit-overflow-scrolling:touch; justify-content:flex-start; padding:0 12px; margin:0 -12px 24px; }
+    .gear-filter-tabs button.active{
+      background:var(--accent-color);
+      color:#fff;
+      border-color:var(--accent-color);
     }
-    /* PCは2カラム */
-    .gear-detail-grid{ display:grid; grid-template-columns:1fr; gap:40px; margin-top:24px; }
-    @media (min-width:768px){ .gear-detail-grid{ grid-template-columns:repeat(2,1fr); gap:48px; } }
-    /* 画像高さを揃える */
-    .gear-detail-image{ height:260px; overflow:hidden; border-radius:12px; }
-    .gear-detail-image img{ width:100%; height:100%; object-fit:cover; display:block; }
-    @media (max-width:767px){ .gear-detail-image{ height:auto; } .gear-detail-image img{ height:auto; } }
-  
+    @media (max-width:768px){
+      .gear-filter-tabs{
+        flex-wrap:nowrap;
+        overflow-x:auto;
+        -webkit-overflow-scrolling:touch;
+        justify-content:flex-start;
+        padding:0 12px;
+        margin:0 -12px 24px;
+      }
+    }
+
+    /* Camera bodies grid */
+    .gear-detail-grid{
+      display:grid;
+      grid-template-columns:1fr;
+      gap:40px;
+      margin-top:24px;
+    }
+    @media (min-width:768px){
+      .gear-detail-grid{
+        grid-template-columns:repeat(2,1fr);
+        gap:48px;
+      }
+    }
+    .gear-detail-image{
+      height:260px;
+      overflow:hidden;
+      border-radius:12px;
+    }
+    .gear-detail-image img{
+      width:100%;
+      height:100%;
+      object-fit:cover;
+      display:block;
+    }
+    @media (max-width:767px){
+      .gear-detail-image{
+        height:auto;
+      }
+      .gear-detail-image img{
+        height:auto;
+      }
+    }
+
     /* Lenses grid & cards */
     .gear-grid{
       display:grid;
-      gap:1rem;
+      gap:1.2rem;
+      grid-template-columns:repeat(auto-fill,minmax(320px,1fr));
+      align-items:start;
     }
-    @media (min-width:768px){
-      .gear-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
-    }
+
     .lens-card{
       display:flex;
-      gap:1rem;
+      flex-direction:column;
       border:1px solid var(--border-color);
       border-radius:12px;
       padding:0.75rem;
       background:var(--bg-color);
+      height:100%;
     }
-    @media (max-width:640px){
-      .lens-card{
-        flex-direction:column;
-      }
-    }
+
     .lens-card-image{
       position:relative;
-      flex:0 0 40%;
-      max-width:180px;
+      width:100%;
+      max-height:280px;
       overflow:hidden;
       border-radius:8px;
     }
@@ -105,11 +154,13 @@
       background:rgba(0,0,0,0.6);
       color:#fff;
     }
+
     .lens-card-body{
       flex:1 1 auto;
       display:flex;
       flex-direction:column;
       gap:0.25rem;
+      margin-top:0.6rem;
     }
     .lens-card-title{
       font-size:1rem;
@@ -117,7 +168,7 @@
     }
     .lens-card-brand{
       font-size:0.85rem;
-      color:var(--muted-text-color, #666);
+      color:var(--muted-text-color,#666);
       margin:0;
     }
     .lens-headline-spec{
@@ -129,6 +180,7 @@
       font-size:0.9rem;
       line-height:1.6;
       margin:0.1rem 0;
+      flex-grow:1;
     }
     .lens-spec-tags{
       display:flex;
@@ -158,11 +210,11 @@
       text-decoration:underline;
       margin-right:0.5rem;
     }
-</style>
+  </style>
 </head>
 
 <body>
-  <!-- Skip Link -->
+  <!-- Skip link -->
   <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
   <!-- Navigation -->
@@ -181,10 +233,14 @@
     </div>
   </nav>
 
-  <!-- Hero Section -->
+  <!-- Hero -->
   <section class="gear-hero" role="banner">
     <div class="gear-hero-image">
-      <img src="assets/images/gear/m2.jpg" alt="Camera Equipment" loading="eager" width="1920" height="1080">
+      <img src="assets/images/gear/m2.jpg"
+           alt="Camera Equipment"
+           loading="eager"
+           width="1920"
+           height="1080">
       <div class="gear-hero-overlay">
         <h1 class="gear-hero-title">Camera</h1>
         <p class="gear-hero-subtitle">ボディ／レンズ</p>
@@ -192,16 +248,16 @@
     </div>
   </section>
 
-  <!-- Main Content -->
+  <!-- Main -->
   <main id="main-content" class="main-content">
     <div class="container">
 
-      <!-- Introduction -->
+      <!-- Intro -->
       <section class="gear-intro">
         <p class="lead">撮影旅行に持っていきやすい機材群。Leicaを中心に運用しています。</p>
       </section>
 
-      <!-- Camera Bodies Section -->
+      <!-- Camera bodies -->
       <section class="gear-section">
         <h2 class="gear-section-title">Camera Bodies</h2>
         <div class="gear-detail-grid" id="camera-bodies-grid">
@@ -209,11 +265,11 @@
         </div>
       </section>
 
-      <!-- Lenses Section -->
+      <!-- Lenses -->
       <section class="gear-section">
         <h2 class="gear-section-title">Lenses</h2>
 
-        <!-- Lens Filters -->
+        <!-- Filters -->
         <div aria-label="レンズフィルタ">
           <div class="gear-filter-tabs" id="lens-filters">
             <button class="active" data-filter="all">All</button>
@@ -228,27 +284,26 @@
         </div>
       </section>
 
-      <!-- Back to Gear -->
-      <section class=back-to-home">
-        <a href="/gear.html" class="back-link"><span class="back-arrow">←</span><span>Back to Gear</span></a>
+      <!-- Back link -->
+      <section class="gear-section">
+        <p><a href="/gear.html">← Back to Gear</a></p>
       </section>
-
-      <!-- Footer -->
-      <footer class="footer" role="contentinfo">
-        <div class="footer-content">
-          <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-          <p>Built with care in Japan</p>
-        </div>
-      </footer>
-
     </div>
+
+    <!-- Footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <p class="footer-copy">&copy; 2025 Toji Masaya. All rights reserved.</p>
+      </div>
+    </footer>
   </main>
 
   <!-- Scripts -->
   <script>
-    // Navigation
+    // ----- Navigation -----
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
+
     if (navToggle && navMenu) {
       navToggle.addEventListener('click', () => {
         navMenu.classList.toggle('active');
@@ -256,41 +311,51 @@
         document.body.classList.toggle('nav-open');
       });
     }
+
     window.addEventListener('scroll', () => {
       const nav = document.getElementById('main-nav');
-      if (window.scrollY > 50) nav.classList.add('scrolled'); else nav.classList.remove('scrolled');
+      if (!nav) return;
+      if (window.scrollY > 50) {
+        nav.classList.add('scrolled');
+      } else {
+        nav.classList.remove('scrolled');
+      }
     });
 
-    
-    // ===== Cameras & Lenses rendering + filtering =====
+
+    // ===== Camera & Lenses rendering =====
     let ALL_CAMERA_ITEMS = [];
     let CAMERA_BODIES = [];
     let LENSES = [];
 
     function getStatusText(status){
-      const m = {
-        'available': '運用中',
-        'considering': '検討中',
-        'sold': '売却済'
+      const map = {
+        available: '運用中',
+        considering: '検討中',
+        sold: '売却済'
       };
-      return m[status] || status;
+      return map[status] || '';
     }
 
     function getLinkText(key){
-      const m = { review:'レビュー', purchase:'購入リンク', official:'公式サイト' };
-      return m[key] || key;
+      const map = {
+        review: '関連記事',
+        note: 'Note',
+        official: '公式サイト'
+      };
+      return map[key] || 'Link';
     }
 
-    // --- Camera bodies (従来レイアウトのまま) ---
+    // Camera bodies
     function renderCameraBodies(items){
       const grid = document.getElementById('camera-bodies-grid');
-      if(!grid){
-        return;
-      }
-      if(!items || items.length === 0){
+      if (!grid) return;
+
+      if (!items || items.length === 0){
         grid.innerHTML = '<p class="loading">カメラボディがありません。</p>';
         return;
       }
+
       grid.innerHTML = items.map(item => `
         <article class="gear-detail-item">
           <div class="gear-detail-image">
@@ -302,21 +367,27 @@
               <div class="gear-detail-brand">${item.brand ?? ''}</div>
               <h2 class="gear-detail-name">${item.name}</h2>
             </div>
-            ${item.specs?.length ? `<div class="gear-detail-specs">${
-              item.specs.map(s=>`<span class="gear-spec-tag">${s}</span>`).join('')
-            }</div>`:''}
-            ${item.description ? `<p class="gear-detail-description">${item.description}</p>`:''}
-            ${item.comment ? `<div class="gear-detail-comment">${item.comment}</div>`:''}
-            ${item.links && Object.keys(item.links).length ? `
-              <div class="gear-detail-links">
-                ${Object.entries(item.links).map(([k,u]) => `<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`).join('')}
-              </div>` : '' }
+            ${Array.isArray(item.specs) && item.specs.length
+              ? `<div class="gear-detail-specs">${item.specs.map(s => `<span class="gear-spec-tag">${s}</span>`).join('')}</div>`
+              : ''
+            }
+            ${item.description ? `<p class="gear-detail-description">${item.description}</p>` : ''}
+            ${item.comment ? `<div class="gear-detail-comment">${item.comment}</div>` : ''}
+            ${
+              item.links && Object.keys(item.links).length
+                ? `<div class="gear-detail-links">${
+                    Object.entries(item.links)
+                      .map(([k,u]) => `<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`)
+                      .join('')
+                  }</div>`
+                : ''
+            }
           </div>
         </article>
       `).join('');
     }
 
-    // --- Lenses: カードレイアウト＋フィルタ ---
+    // Lenses: cards + filters
     function createLensCard(item){
       const statusText  = item.status ? getStatusText(item.status) : '';
       const statusClass = item.status ? `lens-status-${item.status}` : '';
@@ -340,18 +411,13 @@
           ${statusText ? `<span class="lens-status-badge">${statusText}</span>` : ''}
         </div>
         <div class="lens-card-body">
-          <header class="lens-card-header">
-            <h3 class="lens-card-title">${item.name}</h3>
-          </header>
-
+          <h3 class="lens-card-title">${item.name}</h3>
           ${brandMount ? `<p class="lens-card-brand">${brandMount}</p>` : ''}
 
           ${headlineSpec ? `<p class="lens-headline-spec">${headlineSpec}</p>` : ''}
 
           ${item.description ? `
-            <p class="lens-description">
-              ${item.description}
-            </p>
+            <p class="lens-description">${item.description}</p>
           ` : ''}
 
           ${extraSpecs.length ? `
@@ -362,18 +428,19 @@
 
           ${item.comment ? `
             <p class="lens-comment">
-              <span class="lens-comment-label">Note</span>
-              ${item.comment}
+              <span class="lens-comment-label">Note</span>${item.comment}
             </p>
           ` : ''}
 
-          ${item.links && Object.keys(item.links).length ? `
-            <p class="lens-links">
-              ${Object.entries(item.links).map(([k,u]) =>
-                `<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`
-              ).join('')}
-            </p>
-          ` : ''}
+          ${
+            item.links && Object.keys(item.links).length
+              ? `<p class="lens-links">${
+                  Object.entries(item.links)
+                    .map(([k,u]) => `<a href="${u}" target="_blank" rel="noopener noreferrer">${getLinkText(k)}</a>`)
+                    .join('')
+                }</p>`
+              : ''
+          }
         </div>
       `;
       return wrapper;
@@ -381,9 +448,9 @@
 
     function renderLensesList(items){
       const list = document.getElementById('lens-list');
-      if(!list) return;
+      if (!list) return;
 
-      if(!items || items.length === 0){
+      if (!items || items.length === 0){
         list.innerHTML = '<p class="loading">該当するレンズがありません。</p>';
         return;
       }
@@ -396,7 +463,7 @@
 
     function applyLensFilter(key){
       let shown = LENSES;
-      if(key && key !== 'all'){
+      if (key && key !== 'all'){
         shown = LENSES.filter(it => (it.status || '') === key);
       }
       renderLensesList(shown);
@@ -404,51 +471,45 @@
 
     function setupLensFilters(){
       const container = document.getElementById('lens-filters');
-      if(!container) return;
+      if (!container) return;
 
-      container.addEventListener('click', (e)=>{
+      container.addEventListener('click', (e) => {
         const btn = e.target.closest('button[data-filter]');
-        if(!btn) return;
-        container.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+        if (!btn) return;
+
+        container.querySelectorAll('button').forEach(b => b.classList.remove('active'));
         btn.classList.add('active');
-        applyLensFilter(btn.dataset.filter || 'all');
+
+        const key = btn.dataset.filter || 'all';
+        applyLensFilter(key);
       });
     }
 
     async function loadGear(){
-      try{
+      try {
         const res = await fetch('/data/gear.json');
+        if (!res.ok) throw new Error('Failed to load gear.json');
         const data = await res.json();
 
-        // 全カメラアイテムを取得
-        ALL_CAMERA_ITEMS = data?.categories?.camera?.items || [];
+        const cameraCat = data && data.categories && data.categories.camera;
+        if (!cameraCat || !Array.isArray(cameraCat.items)) return;
 
-        // typeで分類
+        ALL_CAMERA_ITEMS = cameraCat.items;
         CAMERA_BODIES = ALL_CAMERA_ITEMS.filter(item => item.type === 'body');
         LENSES        = ALL_CAMERA_ITEMS.filter(item => item.type === 'lens');
 
-        // カメラボディを描画
         renderCameraBodies(CAMERA_BODIES);
-
-        // レンズを描画（フィルター付き）
         setupLensFilters();
         applyLensFilter('all');
-
-      }catch(err){
-        console.error('機材データの読み込みエラー:', err);
-        const bodyGrid = document.getElementById('camera-bodies-grid');
-        const lensList = document.getElementById('lens-list');
-        if(bodyGrid){
-          bodyGrid.innerHTML = '<p class="loading">カメラボディの読み込みに失敗しました。</p>';
-        }
-        if(lensList){
-          lensList.innerHTML = '<p class="loading">レンズの読み込みに失敗しました。</p>';
-        }
+      } catch (err) {
+        console.error(err);
+        const grid = document.getElementById('camera-bodies-grid');
+        if (grid) grid.innerHTML = '<p class="loading">機材情報の読み込みに失敗しました。</p>';
       }
     }
 
     document.addEventListener('DOMContentLoaded', loadGear);
-</script>
+  </script>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
