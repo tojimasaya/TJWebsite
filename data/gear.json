@@ -17,13 +17,14 @@
           "specs": [
             "24MP フルサイズCMOS",
             "ISO 100–50,000",
-            "RF（MF）"
+            "レンジファインダー (MF)",
+            "6bitコード対応"
           ],
-          "description": "フルサイズ約24MPのデジタルM。薄型ボディとレンジファインダーで、“光を読む→ピントを合わせる→撮る”が気持ちいい。ISO100–50,000で夜も意外と粘り、6bitコード対応でレンズ情報も素直に記録。",
+          "description": "デジタルMの中でもフィルム機にもっとも近いサイズ感を持つ世代のM10。24MPフルサイズCMOSとISO 100–50,000のレンジで、レンジファインダーらしい“光を読んで合わせる”撮影感覚を保ちながら、現代的なダイナミックレンジと色の素直さを両立している。旅ではこの一台と35mmをつけて歩くことが多い。",
           "comment": "",
           "links": {
-            "review": "https://note.com/tojimasaya/m/mcae365b520ed",
-            "official": "https://leica-camera.com/en-int/photography/cameras/m/m10-black/details"
+            "official": "https://leica-camera.com/en-int/photography/cameras/m/m10-black",
+            "review": "https://note.com/tojimasaya/m/mcae365b520ed"
           },
           "type": "body",
           "mount": "M"
@@ -38,34 +39,36 @@
           "specs": [
             "24.6MP フルサイズBSI",
             "5軸IBIS 最大5.5段",
-            "4K/10-bit・L-Log"
+            "EVF 576万ドット",
+            "4K 10-bit / L‑Log"
           ],
-          "description": "24.6MPフルサイズBSI＋5軸IBIS（最大5.5段）で暗所に強いハイブリッド。高精細EVFと堅牢ボディ（IP54）で、写真も動画も“現場に連れていける”安心感。L-Log/HLGなど動画プロファイルも充実。",
+          "description": "24.6MPのBSIセンサーと5軸IBISを備えたフルサイズミラーレス。解像力よりも階調と高感度耐性を重視したチューニングで、暗所や動画撮影の“保険”として頼りになるボディ。576万ドットEVFとシンプルな操作系のおかげで、Lマウントのズームや単焦点を付け替えながらも、静止画とムービーを同じリズムで扱える。",
           "comment": "",
           "links": {
-            "official": "https://leica-camera.com/en-int/photography/cameras/sl/sl2-s-black",
-            "technical": "https://leica-camera.com/de-DE/fotografie/kameras/sl/sl2-s-schwarz/technische-daten"
+            "official": "https://leica-camera.com/en-int/photography/cameras/sl/sl2-s-black/technical-specification",
+            "shop": "https://leica-camera.com/en-int/photography/cameras/sl/sl2-s-black"
           },
           "type": "body",
           "mount": "L"
         },
         {
-          "id": "leica-m2",
+          "id": "leica-M2",
           "name": "Leica M2",
           "brand": "Leica",
           "image": "/assets/images/gear/m2.jpg",
           "status": "available",
           "price": null,
           "specs": [
-            "35mmフィルム・機械式",
-            "0.72倍 35/50/90枠",
+            "35mmフィルム",
+            "機械式シャッター",
+            "0.72倍ファインダー",
+            "35/50/90枠",
             "露出計なし"
           ],
-          "description": "1957年登場の機械式M。0.72倍ファインダーに35/50/90の枠、露出計なし。電池に頼らず、絞り・シャッター・距離を全部自分で決める“写真の原型”。35mmの使いやすさは今でもMの基準になっている。",
+          "description": "1958年登場の機械式Mボディ。露出計を持たず、絞り・シャッター・距離を自分で決めて撮る“レンジファインダーの基本形”のような一台。0.72倍ファインダーには35/50/90mm枠が入り、35mmを基準にしたスナップにちょうどいい視野。整備さえしておけば、現代のレンズと組み合わせても気持ちよく撮れる。",
           "comment": "",
           "links": {
-            "reference": "https://www.photoethnography.com/ClassicCameras/LeicaM2.html",
-            "de": "https://leica-m.de/leica-m2/"
+            "shop": "https://classic.leica-camera.com/en/Leica-Systems/M-System/Cameras/M2/"
           },
           "type": "body",
           "mount": "M"
@@ -80,12 +83,15 @@
           "status": "available",
           "price": "HK$23,900",
           "specs": [
-            "35mm F1.4 ASPH FLE"
+            "35mm F1.4 ASPH (FLE)",
+            "最短0.7m",
+            "フローティングエレメント"
           ],
           "description": "2011年製 Ver.2。FLE（フローティングエレメント）搭載の現代ルクス。近接から無限遠まで安定したシャープネスを保ちながら、開放では柔らかな空気感を残す。FLEにより最短距離付近の描写が大きく改善され、絞ればキレ味が立ち、開放では淡くとろけるボケが生まれる。そのバランスの良さから、M10との相性も抜群。旅先で一本だけ選ぶなら、最も信頼を置くレンズ。",
           "comment": "2024年3月購入。",
           "links": {
-            "official": "https://classic.leica-camera.com/uk/en/lcuk/Leica-Summilux-M-35mm-f-1.4-FLE-11663/11663SH-4179016"
+            "official": "https://leica-camera.com/sites/default/files/pm-56063-Summilux-M35-TechnicalData.pdf",
+            "shop": "https://leica-camera.com/ja-JP/product/summilux-m-35-f14-asph-black-anodized"
           }
         },
         {
@@ -98,11 +104,16 @@
           "status": "available",
           "price": "HK$22,000",
           "specs": [
-            "50mm F1.4 Vintage"
+            "50mm F1.4 Pre-ASPH",
+            "7枚5群",
+            "最短1.0m"
           ],
-          "description": "1973年製造。柔らかな輪郭、滲むハイライト、クラシカルなボケ味。球面レンズ構成による、現行ASPHにはない優しい描写。逆光ではフレアが乗ることもあるが、その不完全さこそが雰囲気を作る。人物でも風景でも、画面にノスタルジックな湿度を加えてくれる一本。オールドルクス特有の甘さと空気感が魅力。",
+          "description": "クラシックな描写の“オールド・ルクス”。輪郭はやや柔らかく、ハイライトがふわっと滲む独特の空気感が出る。逆光でフレアが乗ることもあるが、その不完全さが雰囲気になる。人物でも街でも、画面にノスタルジックな湿度を足してくれる一本。",
           "comment": "2024年3月購入。",
-          "links": {}
+          "links": {
+            "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php/50mm_f/1.4_Summilux-M_II",
+            "shop": "https://classic.leica-camera.com/en/Leica-Systems/M-System/Lenses/Standard-Lenses/Summilux-M-1-4-50mm/"
+          }
         },
         {
           "id": "elmarit-28",
@@ -114,11 +125,16 @@
           "status": "available",
           "price": "HK$10,000",
           "specs": [
-            "28mm F2.8 Compact"
+            "28mm F2.8 (第4世代)",
+            "最短0.7m",
+            "コンパクト"
           ],
           "description": "コンパクトで軽量。M型の28mmといえばこれ、と言われるほど完成度の高い常用広角。小さな鏡胴に均質な描写性能が収まり、開放から周辺まで安定してシャープ。スナップでは軽快そのもので、M10につけたまま街を歩くと視界そのままを写し取るような感覚になる。旅の荷物を少なくしたいとき、必ず選ぶレンズ。",
           "comment": "2025年2月購入。",
-          "links": {}
+          "links": {
+            "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php/28mm_f/2.8_Elmarit-M_IV",
+            "shop": "https://classic.leica-camera.com/en/Leica-Elmarit-M-2.8-28mm-IV/11809SH-3847611"
+          }
         },
         {
           "id": "tri-elmar",
@@ -130,11 +146,16 @@
           "status": "available",
           "price": "HK$25,300",
           "specs": [
-            "16/18/21mm F4.0 ASPH"
+            "16/18/21mm F4 (WATE)",
+            "10枚7群（非球面2）",
+            "最短0.33m"
           ],
           "description": "超広角で三つの焦点距離を切り替えられるWATE（Wide-Angle Tri-Elmar）。単焦点並みの描写を保ちながら、超広角の運用を驚くほどシンプルにしてくれる。光学性能は非常に高く、歪曲の少ない端正な広角描写。16mmで迫力を出し、18mmでバランスを取り、21mmで街を記録する。視点の切り替えがダイヤル一つで済むため、旅先の建築撮影や風景撮影で重宝している。",
           "comment": "2024年9月購入。",
-          "links": {}
+          "links": {
+            "official": "https://leica-camera.com/en-int/photography/lenses/m/tri-elmar-m-16-18-21mm-f4-asph-black",
+            "shop": "https://leicacamerausa.com/leica-tri-elmar-m-16-18-21mm-f-4-asph-black-anodized.html"
+          }
         },
         {
           "id": "sigma-24-70-f28-dgdn",
@@ -146,13 +167,16 @@
           "status": "available",
           "price": null,
           "specs": [
-            "24-70mm F2.8",
+            "24–70mm F2.8",
             "Artライン",
-            "防塵防滴"
+            "82mmフィルター"
           ],
-          "description": "Lマウント唯一の大口径標準ズーム。Artラインの高い光学性能を持ち、24mmから70mmまでズーム全域で安定した解像力を発揮する。動画でも静止画でも頼れる万能性があり、旅先ではこれ一本で完結することも多い。防塵防滴構造と高速・静音AFで実用性も申し分ない。瞳AFにも対応し、人物撮影でも安心。ただ、同等性能とされるライカ版へ乗り換えたい気持ちも捨てきれない。",
+          "description": "Lマウント用の大口径標準ズーム。Artラインらしい高い光学性能を持ち、24mmから70mmまでズーム全域で安定した解像力を発揮する。動画でも静止画でも頼れる万能性があり、旅先ではこれ一本で完結することも多い。防塵防滴構造と高速・静音AFで実用面も心強い。",
           "comment": "",
-          "links": {}
+          "links": {
+            "official": "https://www.sigma-global.com/en/lenses/a019_24_70_28/",
+            "shop": "https://www.bhphotovideo.com/c/product/1516476-REG/sigma_24_70mm_f_2_8_dg_dn.html"
+          }
         }
       ]
     },
