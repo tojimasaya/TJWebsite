@@ -1,5 +1,5 @@
 {
-  "updated_at": "2025-01-17",
+  "updated_at": "2025-12-10T00:00:00Z",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -15,14 +15,15 @@
           "status": "available",
           "price": null,
           "specs": [
-            "2400万画素",
-            "レンジファインダー",
-            "BP-SCL5"
+            "24MP フルサイズCMOS",
+            "ISO 100–50,000",
+            "レンジファインダー"
           ],
-          "description": "主力のレンジファインダー機。必要十分な画質と軽さ。",
+          "description": "デジタルMの中でもフィルム機にもっとも近いサイズ感を持つ世代のM10。24MPセンサーと素直な色再現で、レンジファインダーらしい“光を読んで合わせる”撮影感覚を保ちながら、現代的なダイナミックレンジと高感度耐性を備えている。旅ではこの一台に35mmを付けて歩くことが多い。",
           "comment": "",
           "links": {
-            "review": "https://note.com/tojimasaya/m/mcae365b520ed"
+            "note": "https://note.com/tojimasaya/m/m7f56444c7b97",
+            "official": "https://leica-camera.com/ja-JP/photography/cameras/m/m10-black/details"
           },
           "type": "body"
         },
@@ -34,13 +35,15 @@
           "status": "available",
           "price": null,
           "specs": [
-            "2400万画素BIS",
-            "Lマウント",
-            "動画に強い"
+            "24.6MP BSI CMOS",
+            "5軸ボディ内手ブレ補正",
+            "Lマウント"
           ],
-          "description": "動画・暗所の相棒。重量級だが安心の画作り。",
+          "description": "24.6MPのBSIセンサーと5軸IBISを備えたフルサイズミラーレス。解像力よりも階調と高感度耐性を重視したチューニングで、暗所や動画撮影の“保険”として頼りになるボディ。高精細EVFとシンプルな操作系のおかげで、Lマウントのズームや単焦点を付け替えながらも、静止画とムービーを同じリズムで扱える。",
           "comment": "",
-          "links": {},
+          "links": {
+            "official": "https://leica-camera.com/ja-JP/photography/cameras/sl/sl2-s-reporter/technical-specification"
+          },
           "type": "body"
         },
         {
@@ -51,13 +54,15 @@
           "status": "available",
           "price": null,
           "specs": [
-            "フィルムカメラ",
-            "Mマウント",
-            "ブラックペイント（後塗り）"
+            "35/50/90mm枠 0.72倍",
+            "露出計なし機械式",
+            "Mマウント"
           ],
-          "description": "M2なら35mmが使えます。",
+          "description": "1958年登場の完全機械式Mボディ。露出計を持たず、絞り・シャッター・距離を自分で決めて撮る“レンジファインダーの基本形”のような一台。0.72倍ファインダーには35/50/90mm枠が入り、35mmを基準にしたスナップにちょうどいい視野。整備さえしておけば、現代のレンズと組み合わせても気持ちよく撮れる。",
           "comment": "",
-          "links": {},
+          "links": {
+            "manual": "https://www.cameramanuals.org/leica_pdf/leica_m2.pdf"
+          },
           "type": "body"
         },
         {
@@ -93,7 +98,7 @@
           "status": "available",
           "price": "HK$22,000",
           "specs": [
-            "50mm F1.4 Pre-ASPH",
+            "50mm F1.4 Vintage",
             "#11114",
             "7枚5群",
             "最短1.0m",
@@ -116,8 +121,8 @@
           "status": "available",
           "price": "HK$10,000",
           "specs": [
-            "28mm F2.8",
-            "#11804",
+            "28mm F2.8 Compact",
+            "#11606",
             "8枚6群",
             "最短0.7m",
             "180g",
