@@ -66,6 +66,40 @@
           "type": "body"
         },
         {
+          "id": "leica-c-typ112",
+          "name": "Leica C (Typ 112)",
+          "brand": "Leica",
+          "image": "/assets/images/gear/leica_c.jpg",
+          "status": "available",
+          "price": null,
+          "specs": [
+            "1/1.7型センサー",
+            "12.1MP",
+            "F2.0-5.9"
+          ],
+          "description": "コンパクトなボディに詰まった、ライカの哲学。",
+          "comment": "",
+          "links": {},
+          "type": "body"
+        },
+        {
+          "id": "leica-d-lux-typ109",
+          "name": "Leica D-LUX (Typ 109)",
+          "brand": "Leica",
+          "image": "/assets/images/gear/leica_d-lux.jpg",
+          "status": "available",
+          "price": null,
+          "specs": [
+            "4/3型センサー",
+            "12.8MP",
+            "F1.7-2.8"
+          ],
+          "description": "大型センサーと明るいレンズを持つ、本格的なコンパクトカメラ。",
+          "comment": "",
+          "links": {},
+          "type": "body"
+        },
+        {
           "id": "summilux-35-fle",
           "type": "lens",
           "name": "Summilux-M 35mm f/1.4 ASPH (11663)",
@@ -156,6 +190,42 @@
           "links": {
             "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=16mm-18mm-21mm_f/4_ASPH_Tri-Elmar-M"
           }
+        },
+        {
+          "id": "summarit-75",
+          "type": "lens",
+          "name": "Summarit-M 75mm f/2.5",
+          "brand": "Leica",
+          "mount": "M",
+          "image": "/assets/images/gear/lenses/summarit-75.jpg",
+          "status": "available",
+          "price": null,
+          "specs": [
+            "75mm",
+            "F2.5",
+            "6枚4群"
+          ],
+          "description": "中望遠の距離感。ポートレートや切り取りに。2007年製造 S/N 4053810。",
+          "comment": "",
+          "links": {}
+        },
+        {
+          "id": "carlzeiss-planar-50",
+          "type": "lens",
+          "name": "Carl Zeiss Planar T* 2/50 ZM",
+          "brand": "Carl Zeiss",
+          "mount": "M",
+          "image": "/assets/images/gear/lenses/carlzeiss-50.jpg",
+          "status": "available",
+          "price": null,
+          "specs": [
+            "50mm",
+            "F2",
+            "6枚4群"
+          ],
+          "description": "対称配置の美しい光学設計。高解像度と均等な光量分布。",
+          "comment": "",
+          "links": {}
         },
         {
           "id": "sigma-24-70-f28-dgdn",
