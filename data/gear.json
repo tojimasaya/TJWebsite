@@ -70,7 +70,7 @@
           "name": "Leica C (Typ 112)",
           "brand": "Leica",
           "image": "/assets/images/gear/leica_c.jpg",
-          "status": "available",
+          "status": "unused",
           "price": null,
           "specs": [
             "1/1.7型センサー",
@@ -87,7 +87,7 @@
           "name": "Leica D-LUX (Typ 109)",
           "brand": "Leica",
           "image": "/assets/images/gear/leica_d-lux.jpg",
-          "status": "available",
+          "status": "unused",
           "price": null,
           "specs": [
             "4/3型センサー",
