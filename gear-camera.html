@@ -132,6 +132,16 @@
       <!-- Camera Bodies Section -->
       <section class="gear-section">
         <h2 class="gear-section-title">Camera Bodies</h2>
+        
+        <!-- Camera Filters -->
+        <div aria-label="カメラフィルタ">
+          <div class="gear-filter-tabs" id="camera-filters">
+            <button class="active" data-filter="all">All</button>
+            <button data-filter="available">運用中</button>
+            <button data-filter="unused">タンスの肥やし</button>
+          </div>
+        </div>
+        
         <div class="gear-detail-grid" id="camera-bodies-grid">
           <div class="loading">カメラボディを読み込み中...</div>
         </div>
@@ -147,6 +157,7 @@
             <button class="active" data-filter="all">All</button>
             <button data-filter="available">運用中</button>
             <button data-filter="considering">検討中</button>
+            <button data-filter="unused">タンスの肥やし</button>
             <button data-filter="sold">売却済</button>
           </div>
         </div>
@@ -198,7 +209,8 @@
       const m = {
         'available': '運用中',
         'considering': '検討中',
-        'sold': '売却済'
+        'sold': '売却済',
+        'unused': 'タンスの肥やし'
       };
       return m[status] || status;
     }
@@ -279,6 +291,14 @@
       renderLenses(shown);
     }
 
+    function applyCameraFilter(key){
+      let shown = CAMERA_BODIES;
+      if(key && key !== 'all'){
+        shown = CAMERA_BODIES.filter(it => (it.status || '') === key);
+      }
+      renderCameraBodies(shown);
+    }
+
     function setupLensFilters(){
       const tabs = document.getElementById('lens-filters');
       if(!tabs) return;
@@ -288,6 +308,18 @@
         tabs.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
         btn.classList.add('active');
         applyLensFilter(btn.dataset.filter);
+      });
+    }
+
+    function setupCameraFilters(){
+      const tabs = document.getElementById('camera-filters');
+      if(!tabs) return;
+      tabs.addEventListener('click', (e)=>{
+        const btn = e.target.closest('button[data-filter]');
+        if(!btn) return;
+        tabs.querySelectorAll('button').forEach(b=>b.classList.remove('active'));
+        btn.classList.add('active');
+        applyCameraFilter(btn.dataset.filter);
       });
     }
 
@@ -305,6 +337,9 @@
         
         // カメラボディを描画
         renderCameraBodies(CAMERA_BODIES);
+        
+        // カメラフィルターを設定
+        setupCameraFilters();
         
         // レンズを描画（フィルター付き）
         setupLensFilters();
