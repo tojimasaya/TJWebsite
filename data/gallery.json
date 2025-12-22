@@ -1,5 +1,15 @@
 [
   {
+    "id": "kamtin_dokyo",
+    "type": "photo",
+    "title": "錦田の酬恩建醮",
+    "description": "元朗・錦田で10年に一度行われる道教の祭礼「酬恩建醮」。色とりどりの旗が風に揺れ、村全体が祈りに包まれる。DJI Mini 5 Proで上空から捉えた、祭りの賑わいと伝統の重み。",
+    "image": "assets/images/gallery/dokyo.jpg",
+    "location": "錦田（カムティン）、元朗、香港",
+    "date": "2025年",
+    "category": ["photos", "travel", "hongkong"]
+  },
+  {
     "id": "kowloon_neon",
     "type": "photo",
     "title": "九龍城のネオン",
