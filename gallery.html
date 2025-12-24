@@ -22,7 +22,7 @@
         .loading {
             text-align: center;
             padding: 60px;
-            color: #999;
+            color: #666;  /* #999 → #666 より濃く */
             font-style: italic;
             font-family: 'Crimson Text', serif;
             font-size: 1.1rem;
@@ -94,23 +94,23 @@
             padding: 1.5rem 1.5rem 2rem;
         }
 
-        /* タイトル - より濃い色で読みやすく */
+        /* タイトル - 完全な黒で最大限読みやすく */
         .gallery-info h3 {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
             font-size: 1.2rem;
             font-weight: 600;
             line-height: 1.7;
-            color: #1a1a1a;  /* #2c2c2c → #1a1a1a により濃く */
+            color: #000000;  /* 完全な黒 */
             margin-bottom: 0.8rem;
             letter-spacing: 0.05em;
         }
 
-        /* 説明文 - より濃い色で読みやすく */
+        /* 説明文 - さらに濃い色で読みやすく */
         .gallery-description {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
             font-size: 1rem;
             line-height: 1.9;
-            color: #444;  /* #666 → #444 により濃く */
+            color: #333;  /* #444 → #333 さらに濃く */
             letter-spacing: 0.03em;
             margin-bottom: 1rem;
             
@@ -121,11 +121,11 @@
             -webkit-box-orient: vertical;
         }
 
-        /* メタ情報 - より濃い色で読みやすく */
+        /* メタ情報 - さらに濃い色で読みやすく */
         .gallery-meta {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
             font-size: 0.85rem;
-            color: #888;  /* #aaa → #888 により濃く */
+            color: #666;  /* #888 → #666 さらに濃く */
             letter-spacing: 0.08em;
             display: flex;
             gap: 1rem;
@@ -190,7 +190,7 @@
             font-size: 1.2rem;
             font-weight: 600;
             line-height: 1.7;
-            color: #1a1a1a;  /* #2c2c2c → #1a1a1a により濃く */
+            color: #000000;  /* 完全な黒 */
             letter-spacing: 0.05em;
             margin-bottom: 0.8rem;
         }
@@ -199,7 +199,7 @@
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
             font-size: 1rem;
             line-height: 1.9;
-            color: #444;  /* #666 → #444 より濃く */
+            color: #333;  /* #444 → #333 さらに濃く */
             letter-spacing: 0.03em;
             margin-bottom: 1rem;
             
@@ -227,7 +227,7 @@
         .gallery-grid .caption {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
             font-size: 0.85rem;
-            color: #888;  /* #aaa → #888 より濃く */
+            color: #666;  /* #888 → #666 さらに濃く */
             letter-spacing: 0.08em;
             display: block;
             margin-top: 0.8rem;
@@ -258,7 +258,7 @@
             font-size: 1.8rem;
             font-weight: 600;
             line-height: 1.6;
-            color: #2c2c2c;
+            color: #000000;  /* 完全な黒 */
             margin-bottom: 1rem;
             letter-spacing: 0.05em;
         }
@@ -267,7 +267,7 @@
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
             font-size: 1.05rem;
             line-height: 2;
-            color: #555;
+            color: #333;  /* #555 → #333 さらに濃く */
             margin-bottom: 1.5rem;
             letter-spacing: 0.03em;
         }
@@ -275,7 +275,7 @@
         .modal-meta {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
             font-size: 0.9rem;
-            color: #999;
+            color: #666;  /* #999 → #666 さらに濃く */
             letter-spacing: 0.08em;
             display: flex;
             gap: 1.5rem;
@@ -347,52 +347,6 @@
             .modal-meta {
                 flex-direction: column;
                 gap: 0.5rem;
-            }
-        }
-
-        /* ダークモード対応 - Index.htmlと同様に */
-        @media (prefers-color-scheme: dark) {
-            .gallery-item {
-                background: #1a1a1a;
-            }
-
-            .gallery-info h3,
-            .gallery-grid h3,
-            .gallery-grid h4 {
-                color: #f5f5f5;
-            }
-
-            .gallery-description,
-            .gallery-grid p {
-                color: #bbb;
-            }
-
-            .gallery-meta {
-                color: #888;
-            }
-
-            .modal-content {
-                background: #1a1a1a;
-            }
-
-            .modal-info {
-                background: #1a1a1a;
-            }
-
-            .modal-title {
-                color: #f5f5f5;
-            }
-
-            .modal-description {
-                color: #bbb;
-            }
-
-            .modal-meta {
-                color: #888;
-            }
-
-            .note-link {
-                color: #c9a876;
             }
         }
     </style>
