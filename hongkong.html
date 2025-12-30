@@ -18,6 +18,67 @@
             background: #fafafa;
         }
 
+        /* ナビゲーション */
+        .main-nav {
+            background: #fff;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .nav-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 1rem 2rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .nav-logo {
+            font-size: 1.1rem;
+            font-weight: 500;
+            color: #2c2c2c;
+            text-decoration: none;
+            letter-spacing: 0.1em;
+        }
+
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2rem;
+        }
+
+        .nav-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover,
+        .nav-link.active {
+            color: #2c2c2c;
+        }
+
+        .nav-toggle {
+            display: none;
+            flex-direction: column;
+            gap: 4px;
+            background: none;
+            border: none;
+            cursor: pointer;
+        }
+
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: #2c2c2c;
+            transition: 0.3s;
+        }
+
         /* ヘッダー */
         header {
             padding: 1.5rem 2rem;
@@ -312,6 +373,32 @@
 
         /* レスポンシブ */
         @media (max-width: 768px) {
+            .nav-toggle {
+                display: flex;
+            }
+
+            .nav-menu {
+                display: none;
+                position: absolute;
+                top: 100%;
+                left: 0;
+                right: 0;
+                background: #fff;
+                flex-direction: column;
+                gap: 0;
+                padding: 1rem 0;
+                border-bottom: 1px solid #e0e0e0;
+            }
+
+            .nav-menu.active {
+                display: flex;
+            }
+
+            .nav-menu li {
+                padding: 0.8rem 2rem;
+                border-bottom: 1px solid #f5f5f5;
+            }
+
             .hero {
                 height: 60vh;
                 min-height: 400px;
@@ -368,10 +455,22 @@
     </style>
 </head>
 <body>
-    <!-- ヘッダー -->
-    <header>
-        <a href="/" class="header-link">← Back to Home</a>
-    </header>
+    <!-- ナビゲーション -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">Toji Masaya</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="/gear.html" class="nav-link">Gear</a></li>
+                <li><a href="/writings.html" class="nav-link">Writings</a></li>
+                <li><a href="/hongkong.html" class="nav-link active">Hong Kong</a></li>
+            </ul>
+            <button class="nav-toggle" id="nav-toggle" onclick="toggleNav()">
+                <span></span><span></span><span></span>
+            </button>
+        </div>
+    </nav>
 
     <!-- ヒーローセクション -->
     <div class="hero">
@@ -562,6 +661,21 @@
             <p class="footer-text">香港を撮る、香港で撮る</p>
         </div>
     </footer>
+
+    <script>
+        function toggleNav() {
+            const navMenu = document.getElementById('nav-menu');
+            navMenu.classList.toggle('active');
+        }
+
+        // ナビゲーションリンクをクリックしたらメニューを閉じる
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                const navMenu = document.getElementById('nav-menu');
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
 
 </body>
 </html>
