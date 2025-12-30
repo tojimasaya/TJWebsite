@@ -1,0 +1,567 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hong Kong — 香港を撮る、香港で撮る</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
+            line-height: 1.9;
+            color: #333;
+            background: #fafafa;
+        }
+
+        /* ヘッダー */
+        header {
+            padding: 1.5rem 2rem;
+            border-bottom: 1px solid #e0e0e0;
+            background: #fff;
+        }
+
+        .header-link {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.1em;
+            transition: color 0.3s;
+        }
+
+        .header-link:hover {
+            color: #c49a6c;
+        }
+
+        /* ヒーローセクション */
+        .hero {
+            height: 70vh;
+            min-height: 500px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        .hero-overlay {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            color: white;
+            text-align: center;
+            padding: 2rem;
+            width: 100%;
+        }
+
+        .hero-label {
+            font-size: 0.85rem;
+            letter-spacing: 0.3em;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            opacity: 0.95;
+        }
+
+        .hero-title {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            line-height: 1.6;
+            margin-bottom: 2rem;
+        }
+
+        .hero-subtitle {
+            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
+            font-weight: 300;
+            letter-spacing: 0.15em;
+            line-height: 1.9;
+            max-width: 600px;
+            margin: 0 auto;
+            opacity: 0.9;
+        }
+
+        /* イントロセクション */
+        .intro {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 5rem 2rem 3rem;
+            text-align: center;
+        }
+
+        .intro-text {
+            font-size: 1rem;
+            line-height: 2.2;
+            color: #555;
+            letter-spacing: 0.05em;
+        }
+
+        /* コンテンツセクション */
+        .content-section {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 3rem 2rem 5rem;
+        }
+
+        /* セクションタイトル */
+        .section-header {
+            text-align: center;
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            font-weight: 400;
+            letter-spacing: 0.15em;
+            margin-bottom: 1rem;
+            color: #2c2c2c;
+        }
+
+        .section-subtitle {
+            font-size: 0.95rem;
+            color: #666;
+            letter-spacing: 0.1em;
+        }
+
+        /* 香港ネオン残照 - 大きなフィーチャードカード */
+        .featured-card {
+            background: white;
+            margin-bottom: 6rem;
+            overflow: hidden;
+            transition: transform 0.3s ease;
+        }
+
+        .featured-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .featured-image {
+            width: 100%;
+            height: 400px;
+            object-fit: cover;
+        }
+
+        .featured-content {
+            padding: 3rem;
+            text-align: center;
+        }
+
+        .featured-label {
+            font-size: 0.75rem;
+            color: #999;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .featured-title {
+            font-size: 2rem;
+            font-weight: 500;
+            margin-bottom: 1.5rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+        }
+
+        .featured-description {
+            font-size: 1rem;
+            line-height: 2.2;
+            color: #666;
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            letter-spacing: 0.03em;
+        }
+
+        .featured-button {
+            display: inline-block;
+            padding: 1rem 3.5rem;
+            background: #2c2c2c;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            transition: all 0.3s ease;
+            border: 1px solid #2c2c2c;
+        }
+
+        .featured-button:hover {
+            background: white;
+            color: #2c2c2c;
+        }
+
+        /* カード - 左右交互レイアウト */
+        .card-item {
+            display: flex;
+            align-items: center;
+            gap: 4rem;
+            margin-bottom: 5rem;
+            background: white;
+            padding: 0;
+            transition: transform 0.3s ease;
+        }
+
+        .card-item:hover {
+            transform: translateY(-3px);
+        }
+
+        .card-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .card-image-container {
+            flex: 0 0 45%;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .card-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            transition: transform 0.6s ease;
+        }
+
+        .card-item:hover .card-image {
+            transform: scale(1.05);
+        }
+
+        .card-content {
+            flex: 1;
+            padding: 2rem;
+        }
+
+        .card-number {
+            font-size: 0.75rem;
+            color: #999;
+            letter-spacing: 0.2em;
+            margin-bottom: 1rem;
+        }
+
+        .card-name {
+            font-size: 1.5rem;
+            font-weight: 500;
+            margin-bottom: 0.8rem;
+            letter-spacing: 0.1em;
+            color: #2c2c2c;
+        }
+
+        .card-name-en {
+            font-size: 0.9rem;
+            color: #999;
+            margin-bottom: 1rem;
+            letter-spacing: 0.05em;
+            font-style: italic;
+        }
+
+        .card-description {
+            font-size: 0.95rem;
+            line-height: 2;
+            color: #666;
+            margin-bottom: 2rem;
+            letter-spacing: 0.03em;
+        }
+
+        .card-button {
+            display: inline-block;
+            padding: 0.9rem 2.5rem;
+            background: #2c2c2c;
+            color: white;
+            text-decoration: none;
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            transition: all 0.3s ease;
+            border: 1px solid #2c2c2c;
+        }
+
+        .card-button:hover {
+            background: white;
+            color: #2c2c2c;
+        }
+
+        /* フッター */
+        footer {
+            background: #f5f5f5;
+            padding: 4rem 2rem;
+            text-align: center;
+            border-top: 1px solid #e0e0e0;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        .footer-title {
+            font-size: 0.9rem;
+            letter-spacing: 0.15em;
+            color: #666;
+            margin-bottom: 0.5rem;
+        }
+
+        .footer-text {
+            font-size: 0.85rem;
+            color: #999;
+            letter-spacing: 0.1em;
+        }
+
+        /* レスポンシブ */
+        @media (max-width: 768px) {
+            .hero {
+                height: 60vh;
+                min-height: 400px;
+            }
+
+            .intro {
+                padding: 3rem 1.5rem 2rem;
+            }
+
+            .content-section {
+                padding: 2rem 1rem 3rem;
+            }
+
+            .section-header {
+                margin-bottom: 3rem;
+            }
+
+            .section-title {
+                font-size: 1.6rem;
+            }
+
+            .featured-image {
+                height: 250px;
+            }
+
+            .featured-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .featured-title {
+                font-size: 1.6rem;
+            }
+
+            .card-item,
+            .card-item:nth-child(even) {
+                flex-direction: column;
+                gap: 0;
+                margin-bottom: 3rem;
+            }
+
+            .card-image-container {
+                flex: 0 0 auto;
+                width: 100%;
+            }
+
+            .card-content {
+                padding: 2rem 1.5rem;
+            }
+
+            .card-name {
+                font-size: 1.3rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- ヘッダー -->
+    <header>
+        <a href="/" class="header-link">← Back to Home</a>
+    </header>
+
+    <!-- ヒーローセクション -->
+    <div class="hero">
+        <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1920" alt="香港の夜景とネオン" class="hero-image">
+        <div class="hero-overlay">
+            <p class="hero-label">HONG KONG</p>
+            <h1 class="hero-title">
+                香港を撮る、<br>
+                香港で撮る。
+            </h1>
+            <p class="hero-subtitle">
+                消えゆくネオンの光、街角のカメラショップ、<br class="pc-only">
+                フォトジェニックな風景。香港での撮影を記録する。
+            </p>
+        </div>
+    </div>
+
+    <!-- イントロセクション -->
+    <section class="intro">
+        <p class="intro-text">
+            1997年の返還以降、急速に変化を続ける香港。かつて街を彩った突き出し看板やネオンサインは規制により次々と撤去され、古い街並みは再開発の波に飲み込まれている。一方で、この街には今も多くのカメラショップが軒を連ね、写真家たちを魅了する独特の風景が残る。消えゆくものと、残り続けるもの。変わりゆく香港を、カメラで記録していく。
+        </p>
+    </section>
+
+    <!-- 香港ネオン残照 -->
+    <section class="content-section">
+        <article class="featured-card">
+            <img src="assets/images/hongkong-neon/hero.jpg" alt="香港ネオン残照" class="featured-image">
+            <div class="featured-content">
+                <p class="featured-label">Featured Project</p>
+                <h2 class="featured-title">香港ネオン残照</h2>
+                <p class="featured-description">
+                    消えゆく光の風景を記録するプロジェクト。規制強化と再開発の波の中で、香港の街を彩ってきた突き出し看板とネオンサインは静かに姿を消している。記録として。記憶として。二度と戻らない香港の光を、一枚ずつ残していく。
+                </p>
+                <a href="hongkong-neon.html" class="featured-button">プロジェクトを見る</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- カメラショップガイド -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">カメラショップガイド</h2>
+            <p class="section-subtitle">Camera Shops in Hong Kong</p>
+        </div>
+
+        <!-- Fotopia -->
+        <article class="card-item">
+            <div class="card-image-container">
+                <img src="https://assets.st-note.com/production/uploads/images/150970991/rectangle_large_type_2_97a2407f61d10f18710ec0f0bade3b17.jpeg?width=1280" alt="Fotopia" class="card-image">
+            </div>
+            <div class="card-content">
+                <p class="card-number">01</p>
+                <h3 class="card-name">Fotopia</h3>
+                <p class="card-name-en">旺角</p>
+                <p class="card-description">
+                    旺角の中心部に位置する老舗カメラ店。ライカをはじめとするフィルムカメラの品揃えが豊富で、状態の良い中古品を数多く取り扱う。店主は日本語も話せるため、外国人にも安心して利用できる。
+                </p>
+                <a href="https://note.com/tojimasaya/n/nd6ae22a8e810" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
+            </div>
+        </article>
+
+        <!-- All Good Friend Camera -->
+        <article class="card-item">
+            <div class="card-image-container">
+                <img src="https://assets.st-note.com/production/uploads/images/165365687/rectangle_large_type_2_4e8c4b4dd444212104250a92ffa4a479.jpeg?width=1280" alt="All Good Friend Camera" class="card-image">
+            </div>
+            <div class="card-content">
+                <p class="card-number">02</p>
+                <h3 class="card-name">All Good Friend Camera</h3>
+                <p class="card-name-en">深水埗</p>
+                <p class="card-description">
+                    深水埗の路地裏に佇む隠れ家的なカメラショップ。店内には珍しいヴィンテージカメラが所狭しと並び、宝探しのような楽しさがある。オーナーの深い知識と情熱が感じられる店。
+                </p>
+                <a href="https://note.com/tojimasaya/n/n469d4c70e547" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
+            </div>
+        </article>
+
+        <!-- Meteor -->
+        <article class="card-item">
+            <div class="card-image-container">
+                <img src="https://assets.st-note.com/production/uploads/images/171311238/rectangle_large_type_2_601238f29492b1807425a9e63c11b2ce.jpeg?width=1280" alt="Meteor" class="card-image">
+            </div>
+            <div class="card-content">
+                <p class="card-number">03</p>
+                <h3 class="card-name">Meteor</h3>
+                <p class="card-name-en">旺角</p>
+                <p class="card-description">
+                    旺角エリアで長年営業を続けるカメラ店。デジタルカメラからフィルムカメラまで幅広く取り扱い、修理やメンテナンスのサービスも充実。地元の写真家からも信頼される専門店。
+                </p>
+                <a href="https://note.com/tojimasaya/n/n4d0858ab3194" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
+            </div>
+        </article>
+
+        <!-- iMg -->
+        <article class="card-item">
+            <div class="card-image-container">
+                <img src="https://assets.st-note.com/production/uploads/images/188185490/rectangle_large_type_2_3a24718f6cd1faeb1090633271e5073e.jpeg?width=1280" alt="iMg" class="card-image">
+            </div>
+            <div class="card-content">
+                <p class="card-number">04</p>
+                <h3 class="card-name">iMg</h3>
+                <p class="card-name-en">旺角</p>
+                <p class="card-description">
+                    最新のデジタルカメラから往年のフィルムカメラまで、豊富な品揃えを誇る総合カメラショップ。特にライカやハッセルブラッドなどの高級機の取り扱いに強く、コレクターからも人気が高い。
+                </p>
+                <a href="https://note.com/tojimasaya/n/nd1b52bb6dd82" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- フォトジェニックスポット -->
+    <section class="content-section">
+        <div class="section-header">
+            <h2 class="section-title">フォトジェニックスポット</h2>
+            <p class="section-subtitle">Photogenic Locations in Hong Kong</p>
+        </div>
+
+        <!-- モンスターマンション -->
+        <article class="card-item">
+            <div class="card-image-container">
+                <img src="https://assets.st-note.com/production/uploads/images/153152209/rectangle_large_type_2_fecefe73f61ba00c65e154934cb9a90a.jpeg?width=1280" alt="モンスターマンション" class="card-image">
+            </div>
+            <div class="card-content">
+                <p class="card-number">01</p>
+                <h3 class="card-name">モンスターマンション</h3>
+                <p class="card-name-en">Monster Mansion</p>
+                <p class="card-description">
+                    鰂魚涌に位置する、香港を代表するフォトジェニックスポット。5つの老朽化した集合住宅が作り出す圧倒的な景観は、映画『トランスフォーマー』にも登場。中庭から見上げる景色は息を呑む迫力。
+                </p>
+                <a href="https://note.com/tojimasaya/n/ne1aae84f0f32" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
+            </div>
+        </article>
+
+        <!-- 旺角道 誠興 -->
+        <article class="card-item">
+            <div class="card-image-container">
+                <img src="https://assets.st-note.com/production/uploads/images/162018369/rectangle_large_type_2_0e0e53f6125c76b71e413b09dca2f9ee.jpeg?width=1280" alt="旺角道 誠興" class="card-image">
+            </div>
+            <div class="card-content">
+                <p class="card-number">02</p>
+                <h3 class="card-name">旺角道 誠興看板</h3>
+                <p class="card-name-en">Shing Hing Sign, Mong Kok</p>
+                <p class="card-description">
+                    旺角道の歩道から見上げる「誠興」の看板。ビルの谷間から覗く独特の構図が魅力。規制により次々と撤去されていく香港の突き出し看板の中でも、特に印象的な一枚。歩道からの撮影が可能で、アクセスも良い。
+                </p>
+                <a href="https://note.com/tojimasaya/n/n97cdf8788f17" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
+            </div>
+        </article>
+
+        <!-- 九龍城 最後のネオン -->
+        <article class="card-item">
+            <div class="card-image-container">
+                <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280" alt="九龍城" class="card-image">
+            </div>
+            <div class="card-content">
+                <p class="card-number">03</p>
+                <h3 class="card-name">九龍城 最後のネオン</h3>
+                <p class="card-name-en">Last Neon in Kowloon City</p>
+                <p class="card-description">
+                    かつて「九龍城砦」があったことで知られる九龍城エリア。再開発が進む中、今も残る数少ないネオンサインを追う。古い飲食店や商店が軒を連ねる路地裏に、香港の原風景が残されている。
+                </p>
+                <a href="https://note.com/tojimasaya/n/nc955069936fc" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
+            </div>
+        </article>
+
+        <!-- 旺角 しぶとく残るネオン -->
+        <article class="card-item">
+            <div class="card-image-container">
+                <img src="https://assets.st-note.com/production/uploads/images/237153492/rectangle_large_type_2_7451e112bc07ee0075e223bfc6ceabde.jpeg?width=1280" alt="旺角" class="card-image">
+            </div>
+            <div class="card-content">
+                <p class="card-number">04</p>
+                <h3 class="card-name">旺角 しぶとく残るネオン</h3>
+                <p class="card-name-en">Surviving Neon in Mong Kok</p>
+                <p class="card-description">
+                    香港で最も活気あふれる街、旺角。規制の波にも関わらず、今なお光を放ち続けるネオンサインたち。老舗の飲食店や雑貨店の看板が作り出す、香港らしい夜の風景を捉える。夜撮影がおすすめ。
+                </p>
+                <a href="https://note.com/tojimasaya/n/n4e5b10923a0a" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
+            </div>
+        </article>
+    </section>
+
+    <!-- フッター -->
+    <footer>
+        <div class="footer-content">
+            <p class="footer-title">HONG KONG</p>
+            <p class="footer-text">香港を撮る、香港で撮る</p>
+        </div>
+    </footer>
+
+</body>
+</html>
