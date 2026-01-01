@@ -465,6 +465,34 @@
             font-size: 0.85rem;
         }
 
+        /* 地図リンクボタン */
+        .modal-map-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            margin-top: 20px;
+            padding: 12px 24px;
+            background: linear-gradient(135deg, #1A3FB9, #1e40af);
+            color: white;
+            text-decoration: none;
+            border-radius: 6px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(26, 63, 185, 0.2);
+        }
+
+        .modal-map-link:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(26, 63, 185, 0.3);
+        }
+
+        .modal-map-link svg {
+            width: 18px;
+            height: 18px;
+            fill: currentColor;
+        }
+
         /* 言語切り替えボタン */
         .lang-switch {
             position: fixed;
@@ -815,7 +843,8 @@
                         `assets/images/shirasagi/${String(i).padStart(2, '0')}.jpg`,
                         photo.title,
                         photo.date,
-                        photo.gear
+                        photo.gear,
+                        photo.location
                     );
                     
                     article.innerHTML = `
@@ -900,7 +929,7 @@
         }
 
         // モーダル機能
-        function openModal(imageSrc, title, date, gear) {
+        function openModal(imageSrc, title, date, gear, location) {
             const modal = document.getElementById('modal');
             const modalContent = document.getElementById('modal-content');
             
@@ -916,10 +945,26 @@
                 infoHTML += '</div>';
             }
             
+            // 地図リンクの追加
+            let mapLinkHTML = '';
+            if (location && location.lat && location.lng) {
+                const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`;
+                mapLinkHTML = `
+                    <a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="modal-map-link">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        ${location.name || '撮影場所'}をGoogle Mapで見る
+                    </a>
+                `;
+            }
+            
             modalContent.innerHTML = `
                 <img src="${imageSrc}" alt="${title}" class="modal-image">
                 <div class="modal-caption">${title}</div>
                 ${infoHTML}
+                ${mapLinkHTML}
             `;
             modal.setAttribute('aria-hidden', 'false');
             modal.style.display = 'flex';
