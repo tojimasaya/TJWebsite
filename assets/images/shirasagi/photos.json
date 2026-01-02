@@ -3,120 +3,220 @@
     "title": "紅橋花舟",
     "date": "2024.04.05",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "spring morning"
+    "category": "spring morning",
+    "location": {
+      "name": "紅橋",
+      "lat": 34.8420,
+      "lng": 134.6928
+    }
   },
   "2": {
     "title": "桜雲の城",
     "date": "2024.04.05",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "spring evening"
+    "category": "spring evening",
+    "location": {
+      "name": "三の丸広場",
+      "lat": 34.8390,
+      "lng": 134.6935
+    }
   },
   "3": {
     "title": "夜桜の白鷺",
     "date": "2024.04.09",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "spring night"
+    "category": "spring night",
+    "location": {
+      "name": "桜門橋",
+      "lat": 34.8385,
+      "lng": 134.6931
+    }
   },
   "4": {
     "title": "花霞の城",
     "date": "2024.04.01",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "spring afternoon"
+    "category": "spring afternoon",
+    "location": {
+      "name": "三の丸広場",
+      "lat": 34.8390,
+      "lng": 134.6935
+    }
   },
   "5": {
     "title": "三の丸春光",
     "date": "2024.04.05",
     "gear": "Leica M10",
-    "category": "spring afternoon"
+    "category": "spring afternoon",
+    "location": {
+      "name": "三の丸広場",
+      "lat": 34.8390,
+      "lng": 134.6935
+    }
   },
   "6": {
     "title": "白露の眺望",
     "date": "2024.04.05",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "spring afternoon"
+    "category": "spring afternoon",
+    "location": {
+      "name": "白鷺中学校グラウンド",
+      "lat": 34.8407,
+      "lng": 134.6918
+    }
   },
   "7": {
     "title": "男山の新緑",
     "date": "2024.05.20",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "summer afternoon"
+    "category": "summer afternoon",
+    "location": {
+      "name": "男山配水池公園",
+      "lat": 34.8445,
+      "lng": 134.6950
+    }
   },
   "8": {
     "title": "墓苑の静寂",
     "date": "2024.05.04",
     "gear": "Xiaomi 15 Ultra",
-    "category": "summer evening"
+    "category": "summer evening",
+    "location": {
+      "name": "城北墓地",
+      "lat": 34.8440,
+      "lng": 134.6910
+    }
   },
   "9": {
     "title": "夕照の白鷺",
     "date": "2024.07.29",
     "gear": "Leica M10 + Wide Tri-Elmar",
-    "category": "summer evening"
+    "category": "summer evening",
+    "location": {
+      "name": "姫山駐車場",
+      "lat": 34.8365,
+      "lng": 134.6945
+    }
   },
   "10": {
     "title": "桜門橋夕景",
     "date": "2024.07.29",
     "gear": "Leica M10 + Wide Tri-Elmar",
-    "category": "summer evening"
+    "category": "summer evening",
+    "location": {
+      "name": "桜門橋",
+      "lat": 34.8385,
+      "lng": 134.6931
+    }
   },
   "11": {
     "title": "快晴の城",
     "date": "2024.07.30",
     "gear": "Leica M10 + Wide Tri-Elmar",
-    "category": "summer afternoon"
+    "category": "summer afternoon",
+    "location": {
+      "name": "三の丸広場",
+      "lat": 34.8390,
+      "lng": 134.6935
+    }
   },
   "13": {
     "title": "色づく城下",
     "date": "2024.11.13",
     "gear": "Leica M10",
-    "category": "autumn afternoon"
+    "category": "autumn afternoon",
+    "location": {
+      "name": "シロトピア記念公園",
+      "lat": 34.8355,
+      "lng": 134.6905
+    }
   },
   "14": {
     "title": "水鏡の城",
     "date": "2024.11.13",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "autumn afternoon"
+    "category": "autumn afternoon",
+    "location": {
+      "name": "北勢隠門跡",
+      "lat": 34.8395,
+      "lng": 134.6920
+    }
   },
   "15": {
     "title": "美術館の秋",
     "date": "2024.11.13",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "autumn afternoon"
+    "category": "autumn afternoon",
+    "location": {
+      "name": "姫路市立美術館",
+      "lat": 34.8353,
+      "lng": 134.6892
+    }
   },
   "16": {
     "title": "堀端の紅葉",
     "date": "2024.11.13",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "autumn afternoon"
+    "category": "autumn afternoon",
+    "location": {
+      "name": "内堀沿い",
+      "lat": 34.8380,
+      "lng": 134.6915
+    }
   },
   "17": {
     "title": "追手門夕照",
     "date": "2024.10.01",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "autumn afternoon"
+    "category": "autumn afternoon",
+    "location": {
+      "name": "追手門",
+      "lat": 34.8380,
+      "lng": 134.6925
+    }
   },
   "18": {
     "title": "橋上の秋景",
     "date": "2024.10.01",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "autumn afternoon"
+    "category": "autumn afternoon",
+    "location": {
+      "name": "桜門橋",
+      "lat": 34.8385,
+      "lng": 134.6931
+    }
   },
   "19": {
     "title": "春待つ枝",
     "date": "2024.03.18",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "winter afternoon"
+    "category": "winter afternoon",
+    "location": {
+      "name": "三の丸広場",
+      "lat": 34.8390,
+      "lng": 134.6935
+    }
   },
   "20": {
     "title": "男山の冬景",
     "date": "2024.03.31",
     "gear": "Leica M10 + Summilux 50mm",
-    "category": "winter afternoon"
+    "category": "winter afternoon",
+    "location": {
+      "name": "男山配水池公園",
+      "lat": 34.8445,
+      "lng": 134.6950
+    }
   },
   "21": {
     "title": "大晦日の城",
     "date": "2024.12.31",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "winter night"
+    "category": "winter night",
+    "location": {
+      "name": "姫路城ビューポイント",
+      "lat": 34.8360,
+      "lng": 134.6955
+    }
   }
 }
