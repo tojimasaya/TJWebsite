@@ -12,6 +12,10 @@
             box-sizing: border-box;
         }
 
+        html {
+            scroll-behavior: smooth;
+        }
+
         body {
             font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
             line-height: 1.9;
@@ -168,6 +172,46 @@
             letter-spacing: 0.05em;
         }
 
+        /* ページ内ナビゲーション */
+        .page-nav {
+            background: white;
+            border-bottom: 1px solid #e0e0e0;
+            position: sticky;
+            top: 72px; /* メインナビの高さ分下に配置 */
+            z-index: 999;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+        }
+
+        .page-nav-container {
+            max-width: 800px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            gap: 4rem;
+            padding: 1.5rem 2rem;
+        }
+
+        .page-nav-item {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+            letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+            padding-bottom: 0.3rem;
+            border-bottom: 2px solid transparent;
+            position: relative;
+        }
+
+        .page-nav-item:hover {
+            color: #2c2c2c;
+            border-bottom-color: #8b7355;
+        }
+
+        .page-nav-item.active {
+            color: #2c2c2c;
+            border-bottom-color: #8b7355;
+        }
+
         /* コンテンツセクション */
         .content-section {
             max-width: 1100px;
@@ -180,6 +224,7 @@
             text-align: center;
             margin-bottom: 3rem;
             position: relative;
+            padding-top: 2rem;
         }
 
         .section-label {
@@ -215,20 +260,18 @@
         .section-subtitle {
             font-size: 0.95rem;
             color: #666;
-            letter-spacing: 0.1em;
+            letter-spacing: 0.08em;
+            font-family: 'Inter', sans-serif;
+            font-style: italic;
             margin-top: 1.5rem;
         }
 
-        /* 香港ネオン残照 - 大きなフィーチャードカード */
+        /* Featured カード（香港ネオン残照） */
         .featured-card {
             background: white;
             margin-bottom: 4rem;
             overflow: hidden;
-            transition: transform 0.3s ease;
-        }
-
-        .featured-card:hover {
-            transform: translateY(-5px);
+            border-left: 3px solid #8b7355;
         }
 
         .featured-image {
@@ -238,8 +281,7 @@
         }
 
         .featured-content {
-            padding: 2.5rem 3rem;
-            text-align: center;
+            padding: 3rem;
         }
 
         .featured-label {
@@ -252,38 +294,24 @@
         }
 
         .featured-title {
-            font-size: 2rem;
+            font-size: 2.5rem;
             font-weight: 500;
             margin-bottom: 1.5rem;
             letter-spacing: 0.1em;
             color: #2c2c2c;
-            position: relative;
-            display: inline-block;
-        }
-
-        .featured-title::after {
-            content: '';
-            position: absolute;
-            bottom: -8px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 80px;
-            height: 2px;
-            background: #8b7355;
         }
 
         .featured-description {
-            font-size: 1rem;
+            font-size: 1.05rem;
             line-height: 2.2;
-            color: #666;
-            max-width: 700px;
-            margin: 0 auto 2.5rem;
+            color: #555;
+            margin-bottom: 2.5rem;
             letter-spacing: 0.03em;
         }
 
         .featured-button {
             display: inline-block;
-            padding: 1rem 3.5rem;
+            padding: 1rem 3rem;
             background: #2c2c2c;
             color: white;
             text-decoration: none;
@@ -298,14 +326,13 @@
             color: #2c2c2c;
         }
 
-        /* カード - 左右交互レイアウト */
+        /* カード（カメラショップ・フォトジェニック） */
         .card-item {
             display: flex;
             align-items: center;
-            gap: 4rem;
-            margin-bottom: 3.5rem;
+            gap: 3rem;
+            margin-bottom: 3rem;
             background: white;
-            padding: 0;
             transition: transform 0.3s ease;
         }
 
@@ -325,8 +352,8 @@
 
         .card-image {
             width: 100%;
-            height: auto;
-            display: block;
+            height: 300px;
+            object-fit: cover;
             transition: transform 0.6s ease;
         }
 
@@ -343,22 +370,23 @@
             font-size: 0.75rem;
             color: #999;
             letter-spacing: 0.2em;
-            margin-bottom: 1rem;
+            margin-bottom: 0.8rem;
         }
 
         .card-name {
-            font-size: 1.5rem;
+            font-size: 1.6rem;
             font-weight: 500;
-            margin-bottom: 0.8rem;
-            letter-spacing: 0.1em;
+            margin-bottom: 0.5rem;
+            letter-spacing: 0.08em;
             color: #2c2c2c;
         }
 
         .card-name-en {
-            font-size: 0.9rem;
+            font-size: 0.85rem;
             color: #999;
-            margin-bottom: 1rem;
+            margin-bottom: 1.2rem;
             letter-spacing: 0.05em;
+            font-family: 'Inter', sans-serif;
             font-style: italic;
         }
 
@@ -393,6 +421,7 @@
             padding: 4rem 2rem;
             text-align: center;
             border-top: 1px solid #e0e0e0;
+            margin-top: 4rem;
         }
 
         .footer-content {
@@ -401,63 +430,40 @@
         }
 
         .footer-title {
-            font-size: 0.9rem;
-            letter-spacing: 0.15em;
-            color: #666;
+            font-size: 1rem;
+            letter-spacing: 0.2em;
+            color: #2c2c2c;
             margin-bottom: 0.5rem;
+            font-weight: 500;
         }
 
         .footer-text {
             font-size: 0.85rem;
-            color: #999;
+            color: #666;
             letter-spacing: 0.1em;
-        }
-
-        /* PC表示での最適化 */
-        @media (min-width: 769px) {
-            .content-section {
-                padding: 2.5rem 2rem 2.5rem;
-            }
-
-            .intro {
-                padding: 4rem 2rem 2rem;
-            }
-
-            .featured-card {
-                margin-bottom: 3rem;
-            }
-
-            .section-header {
-                margin-bottom: 2.5rem;
-            }
         }
 
         /* レスポンシブ */
         @media (max-width: 768px) {
-            .nav-toggle {
-                display: flex;
-            }
-
             .nav-menu {
-                display: none;
-                position: absolute;
-                top: 100%;
-                left: 0;
-                right: 0;
-                background: #fff;
+                position: fixed;
+                top: 72px;
+                left: -100%;
+                width: 100%;
+                background: white;
                 flex-direction: column;
-                gap: 0;
-                padding: 1rem 0;
+                padding: 2rem;
+                gap: 1.5rem;
                 border-bottom: 1px solid #e0e0e0;
+                transition: left 0.3s;
             }
 
             .nav-menu.active {
-                display: flex;
+                left: 0;
             }
 
-            .nav-menu li {
-                padding: 0.8rem 2rem;
-                border-bottom: 1px solid #f5f5f5;
+            .nav-toggle {
+                display: flex;
             }
 
             .hero {
@@ -465,20 +471,21 @@
                 min-height: 400px;
             }
 
+            .page-nav {
+                top: 56px;
+            }
+
+            .page-nav-container {
+                gap: 2rem;
+                padding: 1rem 1rem;
+            }
+
+            .page-nav-item {
+                font-size: 0.8rem;
+            }
+
             .intro {
-                padding: 3rem 1.5rem 2rem;
-            }
-
-            .content-section {
-                padding: 2rem 1rem 3rem;
-            }
-
-            .section-header {
-                margin-bottom: 3rem;
-            }
-
-            .section-title {
-                font-size: 1.6rem;
+                padding: 3rem 1.5rem 1.5rem;
             }
 
             .featured-image {
@@ -490,14 +497,14 @@
             }
 
             .featured-title {
-                font-size: 1.6rem;
+                font-size: 1.8rem;
             }
 
             .card-item,
             .card-item:nth-child(even) {
                 flex-direction: column;
                 gap: 0;
-                margin-bottom: 3rem;
+                margin-bottom: 2rem;
             }
 
             .card-image-container {
@@ -505,12 +512,24 @@
                 width: 100%;
             }
 
+            .card-image {
+                height: 200px;
+            }
+
             .card-content {
-                padding: 2rem 1.5rem;
+                padding: 1.5rem;
             }
 
             .card-name {
                 font-size: 1.3rem;
+            }
+
+            .section-header {
+                padding-top: 1rem;
+            }
+
+            .section-title {
+                font-size: 1.5rem;
             }
         }
     </style>
@@ -519,13 +538,13 @@
     <!-- ナビゲーション -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="/" class="nav-logo">Toji Masaya</a>
+            <a href="index.html" class="nav-logo">TOJIMASAYA</a>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="/gear.html" class="nav-link">Gear</a></li>
-                <li><a href="/writings.html" class="nav-link">Writings</a></li>
-                <li><a href="/hongkong.html" class="nav-link active">Hong Kong</a></li>
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="writings.html" class="nav-link">Writings</a></li>
+                <li><a href="gear.html" class="nav-link">Gear</a></li>
+                <li><a href="hongkong.html" class="nav-link active">Hong Kong</a></li>
             </ul>
             <button class="nav-toggle" id="nav-toggle" onclick="toggleNav()">
                 <span></span><span></span><span></span>
@@ -556,8 +575,17 @@
         </p>
     </section>
 
+    <!-- ページ内ナビゲーション -->
+    <nav class="page-nav">
+        <div class="page-nav-container">
+            <a href="#neon" class="page-nav-item">ネオン残照</a>
+            <a href="#camera-shops" class="page-nav-item">カメラショップ</a>
+            <a href="#photogenic" class="page-nav-item">フォトジェニック</a>
+        </div>
+    </nav>
+
     <!-- 香港ネオン残照 -->
-    <section class="content-section">
+    <section id="neon" class="content-section">
         <article class="featured-card">
             <img src="assets/images/hongkong-neon/hero.jpg" alt="香港ネオン残照" class="featured-image">
             <div class="featured-content">
@@ -572,7 +600,7 @@
     </section>
 
     <!-- カメラショップガイド -->
-    <section class="content-section">
+    <section id="camera-shops" class="content-section">
         <div class="section-header">
             <p class="section-label">01</p>
             <h2 class="section-title">カメラショップガイド</h2>
@@ -645,7 +673,7 @@
     </section>
 
     <!-- フォトジェニックスポット -->
-    <section class="content-section">
+    <section id="photogenic" class="content-section">
         <div class="section-header">
             <p class="section-label">02</p>
             <h2 class="section-title">フォトジェニックスポット</h2>
@@ -736,6 +764,31 @@
             link.addEventListener('click', () => {
                 const navMenu = document.getElementById('nav-menu');
                 navMenu.classList.remove('active');
+            });
+        });
+
+        // ページ内ナビゲーションのアクティブ状態を管理
+        const sections = document.querySelectorAll('.content-section');
+        const pageNavItems = document.querySelectorAll('.page-nav-item');
+
+        // スクロールに応じてアクティブ状態を更新
+        window.addEventListener('scroll', () => {
+            let current = '';
+            
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                const sectionHeight = section.clientHeight;
+                // ページ内ナビゲーションの高さ分を考慮
+                if (pageYOffset >= sectionTop - 250) {
+                    current = section.getAttribute('id');
+                }
+            });
+            
+            pageNavItems.forEach(item => {
+                item.classList.remove('active');
+                if (item.getAttribute('href').substring(1) === current) {
+                    item.classList.add('active');
+                }
             });
         });
     </script>
