@@ -218,5 +218,16 @@
       "lat": 34.8360,
       "lng": 134.6955
     }
+  },
+  "22": {
+    "title": "初日の城",
+    "date": "2026.01.01",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "winter morning",
+    "location": {
+      "name": "名古山",
+      "lat": 34.8423,
+      "lng": 134.6776
+    }
   }
 }
