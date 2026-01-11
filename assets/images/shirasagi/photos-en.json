@@ -198,14 +198,14 @@
     }
   },
   "20": {
-    "title": "From Otokoyama Reservoir",
-    "date": "2025.03.31",
-    "gear": "Leica M10 + Summilux 50mm",
-    "category": "winter afternoon",
+    "title": "Winter Lights on Otemae",
+    "date": "2025.12.31",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "winter night",
     "location": {
-      "name": "Otokoyama Reservoir Park",
-      "lat": 34.8445,
-      "lng": 134.6950
+      "name": "Otemae Street",
+      "lat": 34.8342,
+      "lng": 134.6925
     }
   },
   "21": {
@@ -231,17 +231,6 @@
     }
   },
   "23": {
-    "title": "Winter Lights on Otemae",
-    "date": "2025.12.31",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "winter night",
-    "location": {
-      "name": "Otemae Street",
-      "lat": 34.8342,
-      "lng": 134.6925
-    }
-  },
-  "24": {
     "title": "New Year Water Salute",
     "date": "2026.01.11",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
@@ -252,7 +241,7 @@
       "lng": 134.6933
     }
   },
-  "25": {
+  "24": {
     "title": "Rescue Team Demonstration",
     "date": "2026.01.11",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
