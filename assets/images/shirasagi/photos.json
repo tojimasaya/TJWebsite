@@ -229,5 +229,38 @@
       "lat": 34.8423,
       "lng": 134.6776
     }
+  },
+  "23": {
+    "title": "大手前イルミネーション",
+    "date": "2025.12.31",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "winter night",
+    "location": {
+      "name": "大手前通り",
+      "lat": 34.8342,
+      "lng": 134.6925
+    }
+  },
+  "24": {
+    "title": "新春一斉放水",
+    "date": "2026.01.11",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "winter afternoon",
+    "location": {
+      "name": "姫路城三の丸広場",
+      "lat": 34.8374,
+      "lng": 134.6933
+    }
+  },
+  "25": {
+    "title": "救助隊演技",
+    "date": "2026.01.11",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "winter afternoon",
+    "location": {
+      "name": "姫路城三の丸広場",
+      "lat": 34.8374,
+      "lng": 134.6933
+    }
   }
 }
