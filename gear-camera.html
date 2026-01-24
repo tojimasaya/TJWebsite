@@ -129,26 +129,44 @@
 
         async function loadData() {
             try {
-                // パスを data/gear.json に修正
                 const res = await fetch('data/gear.json'); 
                 if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
                 const data = await res.json();
                 
                 const items = data.categories.camera.items;
                 
-                // カメラボディとして扱うIDリスト
-                const bodyIds = ['leica-m10', 'leica-sl2s', 'leica-m2', 'fujifilm-x100vi']; 
-                
-                // IDリストに含まれる、または名前に 'Leica M10' 等が含まれる場合をボディとする
-                const bodyItems = items.filter(i => bodyIds.includes(i.id) || i.name.includes('Leica M') || i.name.includes('Leica SL'));
-                // それ以外をレンズとする
+                // カメラボディ判定ロジック強化
+                const bodyItems = items.filter(i => {
+                    const name = i.name.toLowerCase();
+                    const id = i.id.toLowerCase();
+                    // スペック配列を文字列化して検索
+                    const specs = i.specs ? i.specs.join(' ').toLowerCase() : '';
+
+                    // 判定条件:
+                    // 1. 特定のIDリストに含まれる
+                    // 2. 名前に 'camera', 'body' が含まれる (稀)
+                    // 3. 名前に 'leica m', 'leica sl', 'fujifilm', 'x100', 'gr' 等が含まれる (ボディのシリーズ名)
+                    // 4. スペックに 'cmos', 'sensor', 'mp' (画素数), 'film' (フィルム機) が含まれる
+                    
+                    const knownIds = ['leica-m10', 'leica-sl2s', 'leica-m2', 'fujifilm-x100vi', 'ricoh-gr', 'sony-alpha'];
+                    const bodyKeywords = ['leica m', 'leica sl', 'fujifilm', 'x100', 'lumix', 'sony', 'nikon', 'canon', 'body'];
+                    const specKeywords = ['cmos', 'sensor', 'mp', 'film', 'trans'];
+
+                    if (knownIds.includes(id)) return true;
+                    if (bodyKeywords.some(k => name.includes(k)) && !name.includes('mount')) return true; // マウントアダプターを除外
+                    if (specKeywords.some(k => specs.includes(k))) return true;
+
+                    return false;
+                });
+
+                // 上記以外をレンズとする
                 const lensItems = items.filter(i => !bodyItems.includes(i));
 
                 renderGrid('body-grid', bodyItems);
                 renderGrid('lens-grid', lensItems);
             } catch (e) {
                 console.error(e);
-                document.getElementById('body-grid').innerHTML = '<p>データの読み込みに失敗しました (data/gear.jsonが見つかりません)</p>';
+                document.getElementById('body-grid').innerHTML = '<p>データの読み込みに失敗しました。</p>';
                 document.getElementById('lens-grid').innerHTML = '';
             }
         }
@@ -156,7 +174,7 @@
         function renderGrid(id, items) {
             const container = document.getElementById(id);
             if (items.length === 0) {
-                container.innerHTML = '<p>アイテムがありません</p>';
+                container.innerHTML = '<p style="padding:20px; color:#999;">アイテムがありません</p>';
                 return;
             }
             container.innerHTML = items.map(item => `
