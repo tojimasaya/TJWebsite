@@ -48,7 +48,7 @@
     /* ダークモード対応 - 見出しの色を明るく */
     @media (prefers-color-scheme: dark) {
       .latest-title {
-        color: #f5f5f5;  /* より明るい色に変更 */
+        color: #f5f5f5;
       }
     }
 
@@ -60,37 +60,41 @@
       }
     }
 
-    /* Featured Projects セクション */
+    /* Featured Projects セクション (強化版) */
     .featured-projects {
       margin: 5rem auto 6rem;
     }
 
-    .projects-grid-2col {
+    /* プロジェクトカードのレイアウト変更：3つ並べるためグリッドを調整 */
+    .projects-grid-3col {
       display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 3rem;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
       max-width: 1200px;
       margin: 0 auto;
     }
 
     .project-card {
       background: white;
+      border: 1px solid #eee; /* 境界線を薄く追加 */
+      border-radius: 8px; /* 角丸を追加 */
       overflow: hidden;
       transition: transform 0.3s ease, box-shadow 0.3s ease;
       display: flex;
       flex-direction: column;
+      height: 100%; /* 高さを揃える */
     }
 
     .project-card:hover {
       transform: translateY(-5px);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
     }
 
     .project-image {
       position: relative;
       display: block;
       overflow: hidden;
-      height: 350px;
+      aspect-ratio: 16 / 10; /* 画像のアスペクト比を統一 */
     }
 
     .project-image img {
@@ -107,78 +111,90 @@
     /* Progress Badge - 白鷺三十六景用 */
     .progress-badge {
       position: absolute;
-      top: 1.5rem;
-      right: 1.5rem;
-      background: rgba(139, 115, 85, 0.95);
+      top: 1rem;
+      right: 1rem;
+      background: rgba(139, 115, 85, 0.9);
       color: white;
-      padding: 0.5rem 1rem;
-      font-size: 0.75rem;
+      padding: 0.4rem 0.8rem;
+      font-size: 0.7rem;
       letter-spacing: 0.1em;
       font-weight: 500;
-      border-radius: 2px;
+      border-radius: 4px;
       z-index: 10;
+      backdrop-filter: blur(4px);
     }
 
     .project-info {
-      padding: 2rem;
+      padding: 1.5rem; /* パディングを少し調整 */
       flex: 1;
       display: flex;
       flex-direction: column;
     }
 
     .project-label {
-      font-size: 0.75rem;
+      font-size: 0.7rem;
       color: #999;
       letter-spacing: 0.15em;
       text-transform: uppercase;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       font-family: 'Inter', sans-serif;
+      font-weight: 600;
     }
 
     .project-info h3 {
-      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-      font-size: 1.5rem;
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      font-size: 1.3rem; /* サイズ調整 */
       font-weight: 500;
-      line-height: 1.6;
+      line-height: 1.4;
       color: #2c2c2c;
-      margin-bottom: 1rem;
+      margin-bottom: 0.8rem;
       letter-spacing: 0.05em;
     }
 
     .project-description {
-      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-      font-size: 1rem;
-      line-height: 1.9;
+      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif;
+      font-size: 0.9rem; /* サイズ調整 */
+      line-height: 1.8;
       color: #666;
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
       letter-spacing: 0.03em;
       flex: 1;
     }
 
     .project-btn {
       display: inline-block;
-      padding: 0.9rem 2rem;
-      background: #2c2c2c;
-      color: white;
+      padding: 0.8rem 0;
+      color: #2c2c2c;
       text-decoration: none;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       letter-spacing: 0.15em;
       font-family: 'Inter', sans-serif;
+      font-weight: 600;
+      border-bottom: 1px solid #2c2c2c; /* 下線のみのデザインに変更 */
       transition: all 0.3s ease;
-      border: 1px solid #2c2c2c;
-      text-align: center;
       align-self: flex-start;
     }
 
     .project-btn:hover {
-      background: white;
-      color: #2c2c2c;
+      opacity: 0.6;
+      padding-right: 10px; /* ホバー時に少し右へ動く演出 */
+    }
+    
+    .project-btn::after {
+      content: ' →';
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .project-btn:hover::after {
+      opacity: 1;
     }
 
     /* ダークモード対応 */
     @media (prefers-color-scheme: dark) {
       .project-card {
         background: #1a1a1a;
+        border-color: #333;
       }
 
       .project-info h3 {
@@ -190,33 +206,15 @@
       }
 
       .project-btn {
-        background: #f5f5f5;
-        color: #1a1a1a;
-        border-color: #f5f5f5;
-      }
-
-      .project-btn:hover {
-        background: transparent;
         color: #f5f5f5;
-      }
-
-      .progress-badge {
-        background: rgba(139, 115, 85, 0.9);
+        border-bottom-color: #f5f5f5;
       }
     }
 
     /* レスポンシブ */
     @media (max-width: 992px) {
-      .projects-grid-2col {
-        gap: 2rem;
-      }
-
-      .project-image {
-        height: 300px;
-      }
-
-      .project-info h3 {
-        font-size: 1.3rem;
+      .projects-grid-3col {
+        grid-template-columns: repeat(2, 1fr); /* タブレットは2列 */
       }
     }
 
@@ -225,37 +223,13 @@
         margin: 3rem auto 4rem;
       }
 
-      .projects-grid-2col {
-        grid-template-columns: 1fr;
+      .projects-grid-3col {
+        grid-template-columns: 1fr; /* スマホは1列 */
         gap: 2.5rem;
       }
 
-      .project-image {
-        height: 250px;
-      }
-
-      .project-info {
-        padding: 1.5rem;
-      }
-
       .project-info h3 {
-        font-size: 1.2rem;
-      }
-
-      .project-description {
-        font-size: 0.95rem;
-        margin-bottom: 1.5rem;
-      }
-
-      .project-btn {
-        width: 100%;
-      }
-
-      .progress-badge {
-        top: 1rem;
-        right: 1rem;
-        font-size: 0.7rem;
-        padding: 0.4rem 0.8rem;
+        font-size: 1.4rem;
       }
     }
 
@@ -273,34 +247,33 @@
       position: relative;
     }
 
-    /* カスタム再生ボタン - より目立つスタイル */
+    /* カスタム再生ボタン */
     .play-button {
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
-      width: 80px;
-      height: 80px;
-      background: rgba(255, 0, 0, 0.95);
+      width: 60px;
+      height: 60px;
+      background: rgba(255, 255, 255, 0.9);
       border-radius: 50%;
       display: flex;
       align-items: center;
       justify-content: center;
-      color: white;
-      font-size: 32px;
-      padding-left: 6px;
+      color: #333;
+      font-size: 24px;
+      padding-left: 4px;
       transition: all 0.3s ease;
       box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
       z-index: 10;
     }
 
     .video-card:hover .play-button {
-      transform: translate(-50%, -50%) scale(1.15);
-      background: rgba(255, 0, 0, 1);
-      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.4);
+      transform: translate(-50%, -50%) scale(1.1);
+      background: #fff;
     }
 
-    /* 動画モーダル用のスタイル（gallery.htmlと統一） */
+    /* 動画モーダル用のスタイル */
     .modal-video {
       position: relative;
       width: 90%;
@@ -317,12 +290,6 @@
     @media (max-width: 768px) {
       .modal-video {
         width: 95%;
-      }
-      
-      .play-button {
-        width: 64px;
-        height: 64px;
-        font-size: 26px;
       }
     }
   </style>
@@ -388,42 +355,42 @@
       </p>
     </section>
 
-    <!-- Featured Projects セクション -->
+    <!-- Featured Projects セクション (強化版) -->
     <section class="featured-projects container">
       <h2 class="latest-title">Featured Projects</h2>
-      <div class="articles-grid-3col">
+      <div class="projects-grid-3col">
         
-        <!-- トルコ旅行記 -->
+        <!-- Project 1: トルコ旅行記 -->
         <article class="project-card">
           <a href="turkey-travel-journal.html" class="project-image">
-            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記">
+            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Turkey'">
           </a>
           <div class="project-info">
             <span class="project-label">Travel Journal</span>
             <h3>トルコ旅行記</h3>
-            <p class="project-description">カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚。オスマン帝国の面影から幻想的な奇岩群まで、9日間の旅の記録。</p>
-            <a href="turkey-travel-journal.html" class="project-btn">旅を見る</a>
+            <p class="project-description">カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚。オスマン帝国の面影から幻想的な奇岩群まで、9日間の旅の全記録。</p>
+            <a href="turkey-travel-journal.html" class="project-btn">旅の記録を読む</a>
           </div>
         </article>
 
-        <!-- 香港探訪 -->
+        <!-- Project 2: 香港探訪 -->
         <article class="project-card">
           <a href="hongkong.html" class="project-image">
-            <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280" alt="香港探訪">
+            <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280" alt="香港探訪" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Hong+Kong'">
           </a>
           <div class="project-info">
-            <span class="project-label">Hong Kong</span>
+            <span class="project-label">City Guide & Photo</span>
             <h3>香港探訪</h3>
-            <p class="project-description">消えゆくネオンの光、街角のカメラショップ、フォトジェニックな風景。香港を撮る、香港で撮る。変わりゆく街の記録。</p>
+            <p class="project-description">消えゆくネオンの光、街角のカメラショップ、フォトジェニックな風景。住んでいたからこそ知る、変わりゆく香港の「今」と「昔」を記録する。</p>
             <a href="hongkong.html" class="project-btn">香港を見る</a>
           </div>
         </article>
 
-        <!-- 白鷺三十六景 -->
+        <!-- Project 3: 白鷺三十六景 -->
         <article class="project-card">
           <a href="shirasagi36.html" class="project-image">
-            <img src="assets/images/shirasagi/21.jpg" alt="白鷺三十六景">
-            <span class="progress-badge">Work in Progress</span>
+            <img src="assets/images/shirasagi/21.jpg" alt="白鷺三十六景" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Himeji+Castle'">
+            <span class="progress-badge">Ongoing</span>
           </a>
           <div class="project-info">
             <span class="project-label">Photography Project</span>
