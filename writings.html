@@ -92,7 +92,6 @@
             flex-direction: column;
             text-decoration: none;
             color: inherit;
-            group: ;
             transition: transform 0.3s ease, opacity 0.3s ease;
         }
 
@@ -270,12 +269,23 @@
                         .then(data => {
                             const items = data.querySelectorAll("item");
                             return Array.from(items).map(item => {
-                                // Extract image from description or use default
-                                const description = item.querySelector("description")?.textContent || "";
-                                const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
-                                const imgUrl = imgMatch ? imgMatch[1] : 'assets/images/gallery/weekly.jpg'; // Default fallback
+                                // Extract image: Priority on <media:thumbnail>
+                                let imgUrl = 'assets/images/gallery/weekly.jpg'; // Default
+                                const mediaThumbnail = item.getElementsByTagName('media:thumbnail')[0];
+                                
+                                if (mediaThumbnail) {
+                                    imgUrl = mediaThumbnail.textContent;
+                                } else {
+                                    // Fallback to extract from description
+                                    const description = item.querySelector("description")?.textContent || "";
+                                    const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
+                                    if (imgMatch) {
+                                        imgUrl = imgMatch[1];
+                                    }
+                                }
                                 
                                 // Strip HTML tags for clean excerpt
+                                const description = item.querySelector("description")?.textContent || "";
                                 const tempDiv = document.createElement("div");
                                 tempDiv.innerHTML = description;
                                 const plainText = tempDiv.textContent || tempDiv.innerText || "";
@@ -307,7 +317,6 @@
                         return Object.entries(data)
                             .filter(([url]) => url.includes('drone.jp/column'))
                             .map(([url, meta]) => {
-                                // Date extraction from URL (e.g. ...20240101...)
                                 const dateMatch = url.match(/(\d{8})/);
                                 let dateObj = new Date();
                                 if (dateMatch) {
@@ -365,7 +374,7 @@
                         <img src="${article.image}" alt="${article.title}" class="article-image" onerror="this.src='https://placehold.co/600x400/e0e0e0/333333?text=No+Image'">
                     </div>
                     <div class="article-meta">
-                        <span class="article-source">${article.sourceLabel}</span>
+                        <span class="article-source" style="color: ${article.source === 'note' ? '#41C9B4' : '#2563eb'}">${article.sourceLabel}</span>
                         <span>|</span>
                         <time>${dateStr}</time>
                     </div>
