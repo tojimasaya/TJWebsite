@@ -36,44 +36,48 @@
     <!-- Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
 
-    <!-- External CSS - コメントアウト（このページ専用スタイルを使用） -->
-    <!-- <link rel="stylesheet" href="style.css"> -->
-
     <style>
-        /* ダークモードを強制 - 最優先 */
-        * {
-            color: inherit;
-        }
-        
+        /* --- Dark Mode Base --- */
         :root {
             color-scheme: dark only;
+            --neon-pink: #ff006e;
+            --neon-purple: #8338ec;
+            --neon-blue: #3a86ff;
+            --bg-dark: #050505;
+            --text-main: #f0f0f0;
+            --text-sub: #b0b0b0;
         }
         
-        html {
-            background: #000000 !important;
-            color: #f0f0f0 !important;
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
         }
         
-        /* ネオン風背景 */
-        body {
-            background: #000000 !important;
-            position: relative;
-            color: #f0f0f0 !important;
+        html, body {
+            background-color: var(--bg-dark);
+            color: var(--text-main);
+            font-family: 'Inter', sans-serif;
+            line-height: 1.6;
         }
-        
-        /* すべてのテキスト要素に明示的に色を指定 */
-        h1, h2, h3, h4, h5, h6, p, span, div, a, button {
-            color: inherit;
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background-image: 
+                radial-gradient(circle at 20% 50%, rgba(255, 0, 110, 0.08) 0%, transparent 50%),
+                radial-gradient(circle at 80% 80%, rgba(131, 56, 236, 0.08) 0%, transparent 50%);
+            pointer-events: none;
+            z-index: -1;
         }
-        
-        /* ヘッダーナビゲーション */
+
+        /* --- Navigation (Dark Version) --- */
         .main-nav {
             position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
+            top: 0; left: 0; right: 0;
             height: 70px;
-            background: rgba(0, 0, 0, 0.95);
+            background: rgba(5, 5, 5, 0.9);
             backdrop-filter: blur(10px);
             z-index: 1000;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
@@ -94,7 +98,7 @@
             font-size: 1.5rem;
             font-weight: 600;
             letter-spacing: 0.05em;
-            color: #fff !important;
+            color: #fff;
             text-decoration: none;
         }
         
@@ -102,209 +106,167 @@
             display: flex;
             gap: 2rem;
             list-style: none;
-            margin: 0;
-            padding: 0;
         }
         
         .nav-link {
-            color: #d0d0d0 !important;
+            color: var(--text-sub);
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.9rem;
             letter-spacing: 0.05em;
             transition: color 0.3s;
         }
         
-        .nav-link:hover {
-            color: #ff006e !important;
+        .nav-link:hover, .nav-link.active {
+            color: var(--neon-pink);
+            text-shadow: 0 0 8px rgba(255, 0, 110, 0.5);
         }
         
         .nav-toggle {
             display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            flex-direction: column;
+            gap: 5px;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle at 20% 50%, rgba(255, 0, 110, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(131, 56, 236, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 40% 20%, rgba(58, 134, 255, 0.05) 0%, transparent 50%);
-            pointer-events: none;
-            z-index: 1;
+        .nav-toggle span {
+            width: 24px;
+            height: 2px;
+            background: white;
+            transition: 0.3s;
         }
 
-        .main-content {
-            position: relative;
-            z-index: 2;
-            background: #000000;
-        }
-
-        /* ヒーローセクション */
+        /* --- Hero Section --- */
         .neon-hero {
             position: relative;
             height: 70vh;
             min-height: 500px;
-            overflow: hidden;
-            margin-top: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
-            background: #000000;
+            overflow: hidden;
+            margin-top: 70px;
         }
 
         .neon-hero-image {
             position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .neon-hero-image img {
-            width: 100%;
-            height: 100%;
+            top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
-            filter: brightness(0.5) contrast(1.3) saturate(1.2);
+            filter: brightness(0.6) contrast(1.2);
+            z-index: 0;
         }
 
         .neon-hero-overlay {
             position: relative;
-            z-index: 2;
+            z-index: 1;
             text-align: center;
-            color: white !important;
             padding: 0 20px;
         }
 
         .neon-title {
             font-family: 'Noto Serif JP', 'Crimson Text', serif;
-            font-size: 4rem;
+            font-size: clamp(3rem, 8vw, 5rem);
             font-weight: 600;
             margin-bottom: 1rem;
+            color: #fff;
             text-shadow: 
                 0 0 10px rgba(255, 0, 110, 0.8),
-                0 0 20px rgba(255, 0, 110, 0.6),
-                0 0 30px rgba(255, 0, 110, 0.4),
-                3px 3px 6px rgba(0,0,0,0.9);
-            letter-spacing: 0.15em;
-            color: #fff !important;
+                0 0 20px rgba(255, 0, 110, 0.4),
+                2px 2px 4px rgba(0,0,0,0.8);
+            letter-spacing: 0.1em;
         }
 
         .neon-subtitle {
             font-family: 'Crimson Text', serif;
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             font-weight: 400;
             font-style: italic;
-            text-shadow: 
-                0 0 8px rgba(131, 56, 236, 0.6),
-                2px 2px 4px rgba(0,0,0,0.8);
-            letter-spacing: 0.05em;
-            color: #e0e0e0 !important;
+            color: var(--text-sub);
+            letter-spacing: 0.1em;
+            text-shadow: 0 0 10px rgba(131, 56, 236, 0.6);
         }
 
-        /* プロジェクト説明 */
+        /* --- Content & Filter --- */
         .neon-intro {
             max-width: 800px;
             margin: 80px auto;
-            padding: 0 40px;
+            padding: 0 30px;
             text-align: center;
-            color: #e0e0e0 !important;
-            background: transparent;
         }
 
         .neon-intro h2 {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.8rem;
             margin-bottom: 1.5rem;
-            color: #f5f5f5 !important;
             letter-spacing: 0.1em;
         }
 
         .neon-intro p {
-            font-size: 1.1rem;
+            color: var(--text-sub);
             line-height: 2;
-            color: #f0f0f0 !important;
             margin-bottom: 1rem;
         }
 
-        /* カテゴリフィルター */
         .category-filter {
-            max-width: 1400px;
-            margin: 40px auto 30px;
-            padding: 0 40px;
             display: flex;
             justify-content: center;
-            gap: 0.8rem;
             flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 40px;
+            padding: 0 20px;
         }
 
         .filter-btn {
-            padding: 0.8rem 1.2rem;
-            background: rgba(26, 26, 26, 0.8);
-            color: #e5e5e5;
-            border: 1px solid #555;
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            color: var(--text-sub);
+            padding: 8px 16px;
             font-size: 0.85rem;
-            letter-spacing: 0.1em;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-family: 'Inter', sans-serif;
-            line-height: 1.4;
+            transition: all 0.3s;
             text-align: center;
-            min-width: 140px;
+            min-width: 100px;
         }
 
-        .filter-btn:hover {
-            border-color: #ff006e;
+        .filter-btn span {
+            display: block;
+            font-size: 0.7rem;
+            opacity: 0.6;
+            margin-top: 2px;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--neon-pink);
             color: #fff;
-            box-shadow: 0 0 10px rgba(255, 0, 110, 0.3);
+            box-shadow: 0 0 15px rgba(255, 0, 110, 0.3);
+            background: rgba(255, 0, 110, 0.1);
         }
 
-        .filter-btn.active {
-            background: linear-gradient(135deg, #ff006e 0%, #8338ec 100%);
-            border-color: #ff006e;
-            color: white;
-            box-shadow: 0 0 15px rgba(255, 0, 110, 0.5);
-        }
-
-        /* ギャラリーグリッド */
+        /* --- Grid --- */
         .neon-grid {
-            max-width: 1400px;
-            margin: 60px auto;
-            padding: 0 40px;
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 25px;
+            gap: 20px;
+            max-width: 1400px;
+            margin: 0 auto 100px;
+            padding: 0 40px;
         }
 
         .neon-item {
             position: relative;
-            aspect-ratio: 3/4;
+            aspect-ratio: 3/4; /* Vertical for signs */
+            background: #111;
             overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-            transition: all 0.4s ease;
-            opacity: 0;
-            transform: translateY(30px);
-            background: #1a1a1a;
-        }
-
-        /* 写真あり */
-        .neon-item.has-photo {
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
             cursor: pointer;
         }
 
-        .neon-item.has-photo.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
-        .neon-item.has-photo:hover {
-            transform: translateY(-8px);
-            box-shadow: 
-                0 8px 20px rgba(0,0,0,0.6),
-                0 0 20px rgba(255, 0, 110, 0.3);
+        .neon-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5), 0 0 20px rgba(255,0,110,0.2);
+            z-index: 10;
         }
 
         .neon-item img {
@@ -314,311 +276,161 @@
             transition: transform 0.5s ease;
         }
 
-        .neon-item.has-photo:hover img {
+        .neon-item:hover img {
             transform: scale(1.05);
         }
 
-        /* 写真のオーバーレイ */
         .neon-item-overlay {
             position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
-            padding: 1.5rem 1rem 1rem;
+            bottom: 0; left: 0; right: 0;
+            padding: 20px;
+            background: linear-gradient(to top, rgba(0,0,0,0.9), transparent);
+            transform: translateY(10px);
             opacity: 0;
-            transition: opacity 0.3s ease;
+            transition: all 0.3s ease;
         }
 
         .neon-item:hover .neon-item-overlay {
+            transform: translateY(0);
             opacity: 1;
         }
 
         .neon-item-title {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1rem;
-            font-weight: 600;
-            color: white;
-            margin-bottom: 0.3rem;
-            text-shadow: 0 0 5px rgba(255, 0, 110, 0.8);
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            text-shadow: 0 0 5px rgba(255,0,110,0.8);
         }
 
         .neon-item-info {
-            font-size: 0.75rem;
-            color: #ccc;
-            font-family: 'Inter', sans-serif;
+            font-size: 0.8rem;
+            color: var(--text-sub);
         }
 
-        .neon-item-category {
-            display: inline-block;
-            padding: 0.2rem 0.6rem;
-            background: rgba(255, 0, 110, 0.8);
-            color: white;
-            font-size: 0.65rem;
-            letter-spacing: 0.05em;
-            margin-top: 0.5rem;
-            border-radius: 2px;
-        }
-
-        /* 空のスロット */
+        /* Empty State */
         .neon-item.empty {
-            background: linear-gradient(135deg, #1a1a1a 0%, #0f0f0f 100%);
-            border: 2px dashed #444;
+            border: 1px dashed #333;
+            background: transparent;
             display: flex;
-            flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 12px;
-            opacity: 0.5;
+            cursor: default;
         }
-
-        .neon-item.empty.visible {
-            opacity: 0.5;
-            transform: translateY(0);
-        }
-
+        
         .empty-icon {
-            width: 50px;
-            height: 50px;
-            opacity: 0.3;
+            width: 40px; height: 40px;
+            opacity: 0.2;
         }
-
+        
         .empty-icon svg {
-            width: 100%;
-            height: 100%;
-            fill: #888;
+            fill: #fff;
         }
 
-        /* モーダル */
+        /* --- Footer / Back Links --- */
+        .nav-footer {
+            max-width: 800px;
+            margin: 0 auto 80px;
+            text-align: center;
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            padding: 12px 24px;
+            border: 1px solid rgba(255,255,255,0.2);
+            color: var(--text-sub);
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: all 0.3s;
+        }
+
+        .back-link:hover {
+            color: #fff;
+            border-color: #fff;
+            background: rgba(255,255,255,0.05);
+        }
+
+        footer {
+            border-top: 1px solid rgba(255,255,255,0.1);
+            padding: 40px 0;
+            text-align: center;
+            font-size: 0.8rem;
+            color: var(--text-sub);
+        }
+
+        /* --- Modal --- */
         .modal {
             display: none;
             position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: rgba(0,0,0,0.95);
+            z-index: 2000;
             align-items: center;
             justify-content: center;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 2rem;
-            right: 2rem;
-            color: white;
-            font-size: 3rem;
-            cursor: pointer;
-            background: none;
-            border: none;
-            line-height: 1;
-            z-index: 10000;
-            opacity: 0.8;
-            transition: opacity 0.3s;
-        }
-
-        .close-modal:hover {
-            opacity: 1;
-            text-shadow: 0 0 10px rgba(255, 0, 110, 0.8);
+            padding: 20px;
         }
 
         .modal-content {
-            max-width: 90%;
-            max-height: 90%;
+            max-width: 1000px;
+            width: 100%;
             display: flex;
             flex-direction: column;
             align-items: center;
         }
 
         .modal-image {
-            max-width: 100%;
             max-height: 80vh;
+            max-width: 100%;
             object-fit: contain;
-            box-shadow: 0 0 50px rgba(255, 0, 110, 0.3);
-        }
-
-        .modal-caption {
-            font-family: 'Noto Serif JP', serif;
-            color: white;
-            font-size: 1.3rem;
-            margin-top: 1.5rem;
-            text-align: center;
-            text-shadow: 0 0 10px rgba(255, 0, 110, 0.8);
+            box-shadow: 0 0 30px rgba(0,0,0,0.5);
         }
 
         .modal-info {
-            color: #ccc;
-            font-size: 0.95rem;
-            margin-top: 0.8rem;
+            margin-top: 20px;
             text-align: center;
-            font-family: 'Inter', sans-serif;
         }
 
-        .modal-info-item {
-            margin: 0.3rem 0;
-        }
-
-        .modal-info-label {
-            color: #999;
-            margin-right: 0.5rem;
-        }
-
-        /* 撮影について */
-        .neon-about {
-            max-width: 800px;
-            margin: 80px auto;
-            padding: 40px;
-            background: rgba(26, 26, 26, 0.6);
-            border-radius: 8px;
-            border: 1px solid #333;
-            color: #d0d0d0;
-        }
-
-        .neon-about h2 {
+        .modal-title {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.5rem;
-            margin-bottom: 1.5rem;
-            color: #f5f5f5;
-            letter-spacing: 0.1em;
+            margin-bottom: 5px;
         }
 
-        .neon-about p {
-            font-size: 1rem;
-            line-height: 2;
-            margin-bottom: 1rem;
-            color: #d0d0d0;
-        }
-
-        .neon-about a {
-            color: #ff006e;
-            text-decoration: none;
-            transition: all 0.3s;
-        }
-
-        .neon-about a:hover {
-            text-shadow: 0 0 8px rgba(255, 0, 110, 0.8);
-        }
-
-        /* ホームに戻る */
-        .back-to-home {
-            max-width: 800px;
-            margin: 60px auto 80px;
-            padding: 0 40px;
-            text-align: center;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            padding: 1rem 2rem;
-            background: rgba(26, 26, 26, 0.8);
-            color: #f5f5f5;
-            text-decoration: none;
-            font-family: 'Inter', sans-serif;
+        .modal-meta {
             font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            border: 1px solid #444;
-            transition: all 0.3s ease;
+            color: var(--text-sub);
         }
 
-        .back-link:hover {
-            border-color: #ff006e;
-            box-shadow: 0 0 15px rgba(255, 0, 110, 0.3);
+        .close-modal {
+            position: absolute;
+            top: 20px; right: 30px;
+            background: none;
+            border: none;
+            color: #fff;
+            font-size: 3rem;
+            cursor: pointer;
+            line-height: 1;
         }
 
-        .back-arrow {
-            font-size: 1.2rem;
-        }
-
-        /* レスポンシブ */
-        @media (max-width: 992px) {
-            .neon-grid {
-                grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-                gap: 20px;
-            }
-        }
-
+        /* Mobile */
         @media (max-width: 768px) {
-            .main-nav {
-                height: 60px;
-            }
-            
-            .nav-container {
-                padding: 0 20px;
-            }
-            
-            .nav-logo {
-                font-size: 1.2rem;
-            }
-            
+            .neon-title { font-size: 3rem; }
             .nav-menu {
-                gap: 1.2rem;
+                position: fixed;
+                top: 70px; left: -100%; width: 100%; height: calc(100vh - 70px);
+                background: rgba(5,5,5,0.98);
+                flex-direction: column;
+                padding: 40px;
+                transition: left 0.3s;
             }
-            
-            .nav-link {
-                font-size: 0.85rem;
-            }
-        
-            .neon-hero {
-                height: 60vh;
-                min-height: 400px;
-                margin-top: 60px;
-            }
-
-            .neon-title {
-                font-size: 2.5rem;
-            }
-
-            .neon-subtitle {
-                font-size: 1.1rem;
-            }
-
-            .neon-intro {
-                padding: 0 20px;
-                margin: 60px auto;
-            }
-
-            .neon-intro h2 {
-                font-size: 1.5rem;
-            }
-
-            .neon-grid {
-                grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-                gap: 15px;
-                padding: 0 20px;
-            }
-
-            .category-filter {
-                padding: 0 20px;
-            }
-
-            .filter-btn {
-                font-size: 0.7rem;
-                padding: 0.6rem 0.8rem;
-                line-height: 1.3;
-                min-width: 100px;
-            }
-
-            .neon-about {
-                padding: 30px 20px;
-                margin: 60px auto;
-            }
-
-            .modal-caption {
-                font-size: 1.1rem;
-            }
-
-            .close-modal {
-                font-size: 2.5rem;
-                top: 1rem;
-                right: 1rem;
-            }
+            .nav-menu.active { left: 0; }
+            .nav-toggle { display: flex; }
+            .neon-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px; gap: 10px; }
+            .nav-container { padding: 0 20px; }
         }
     </style>
 </head>
@@ -627,366 +439,198 @@
     <!-- ナビゲーション -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <div class="nav-toggle"><span></span><span></span><span></span></div>
-            <ul class="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
+            <a href="index.html" class="nav-logo">TOJIMASAYA</a>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="gear.html" class="nav-link">Gear</a></li>
                 <li><a href="writings.html" class="nav-link">Writings</a></li>
+                <li><a href="gear.html" class="nav-link">Gear</a></li>
                 <li><a href="hongkong.html" class="nav-link">Hong Kong</a></li>
             </ul>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
+                <span></span><span></span><span></span>
+            </button>
         </div>
     </nav>
 
-    <main class="main-content">
-        <!-- ヒーロー -->
-        <section class="neon-hero">
-            <div class="neon-hero-image">
-                <img src="assets/images/hongkong-neon/hero.jpg" alt="香港霓虹残照" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1600 900\'%3E%3Cdefs%3E%3ClinearGradient id=\'neonbg\' x1=\'0%25\' y1=\'0%25\' x2=\'100%25\' y2=\'100%25\'%3E%3Cstop offset=\'0%25\' style=\'stop-color:%23ff006e;stop-opacity:0.4\' /%3E%3Cstop offset=\'50%25\' style=\'stop-color:%238338ec;stop-opacity:0.4\' /%3E%3Cstop offset=\'100%25\' style=\'stop-color:%233a86ff;stop-opacity:0.4\' /%3E%3C/linearGradient%3E%3C/defs%3E%3Crect fill=\'%23000\' width=\'1600\' height=\'900\'/%3E%3Crect fill=\'url(%23neonbg)\' width=\'1600\' height=\'900\'/%3E%3C/svg%3E'">
-            </div>
-            <div class="neon-hero-overlay">
-                <h1 class="neon-title">香港ネオン残照</h1>
-                <p class="neon-subtitle">Neon Requiem: Hong Kong</p>
-            </div>
-        </section>
+    <!-- ヒーロー -->
+    <section class="neon-hero">
+        <div class="neon-hero-image">
+            <img src="assets/images/hongkong-neon/hero.jpg" alt="香港霓虹残照" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=\'http://www.w3.org/2000/svg\' viewBox=\'0 0 1600 900\'%3E%3Crect fill=\'%23111\' width=\'1600\' height=\'900\'/%3E%3Ctext x=\'50%25\' y=\'50%25\' font-family=\'serif\' font-size=\'40\' fill=\'%23333\' text-anchor=\'middle\'%3ENeon Image Placeholder%3C/text%3E%3C/svg%3E'">
+        </div>
+        <div class="neon-hero-overlay">
+            <h1 class="neon-title">香港ネオン残照</h1>
+            <p class="neon-subtitle">Neon Requiem: Hong Kong</p>
+        </div>
+    </section>
 
-        <!-- イントロ -->
-        <section class="neon-intro">
-            <h2>消えゆく光の風景</h2>
-            <p>
-                香港の街を彩ってきた突き出し看板とネオンサイン。<br>
-                規制強化と再開発の波の中で、あの光の風景は静かに姿を消している。
-            </p>
-            <p>
-                記録として。記憶として。<br>
-                二度と戻らない香港の光を、一枚ずつ残していく。
-            </p>
-        </section>
+    <!-- イントロ -->
+    <section class="neon-intro">
+        <h2>消えゆく光の風景</h2>
+        <p>
+            香港の街を彩ってきた突き出し看板とネオンサイン。<br>
+            規制強化と再開発の波の中で、あの光の風景は静かに姿を消している。
+        </p>
+        <p>
+            記録として。記憶として。<br>
+            二度と戻らない香港の光を、一枚ずつ残していく。
+        </p>
+    </section>
 
-        <!-- 地域フィルター -->
-        <section class="category-filter" id="category-filter">
-            <button class="filter-btn active" data-category="all">すべて</button>
-            <button class="filter-btn" data-category="mongkok">旺角・油麻地<br><span style="font-size: 0.7rem; opacity: 0.7;">Mong Kok / Yau Ma Tei</span></button>
-            <button class="filter-btn" data-category="shamshuipo">深水埗<br><span style="font-size: 0.7rem; opacity: 0.7;">Sham Shui Po</span></button>
-            <button class="filter-btn" data-category="tsimshatsui">尖沙咀<br><span style="font-size: 0.7rem; opacity: 0.7;">Tsim Sha Tsui</span></button>
-            <button class="filter-btn" data-category="kowlooncity">九龍城<br><span style="font-size: 0.7rem; opacity: 0.7;">Kowloon City</span></button>
-            <button class="filter-btn" data-category="central">中環<br><span style="font-size: 0.7rem; opacity: 0.7;">Central</span></button>
-        </section>
+    <!-- フィルター -->
+    <section class="category-filter">
+        <button class="filter-btn active" data-category="all">すべて</button>
+        <button class="filter-btn" data-category="mongkok">旺角・油麻地<span>Mong Kok</span></button>
+        <button class="filter-btn" data-category="shamshuipo">深水埗<span>Sham Shui Po</span></button>
+        <button class="filter-btn" data-category="kowlooncity">九龍城<span>Kowloon City</span></button>
+        <button class="filter-btn" data-category="central">中環・湾仔<span>Central / Wan Chai</span></button>
+    </section>
 
-        <!-- ギャラリーグリッド -->
-        <section class="neon-grid" id="neon-grid">
-            <!-- JavaScriptで動的に生成されます -->
-        </section>
+    <!-- グリッド -->
+    <section class="neon-grid" id="neon-grid">
+        <!-- JSで生成 -->
+    </section>
 
-        <!-- 撮影について -->
-        <section class="neon-about">
-            <h2>このプロジェクトについて</h2>
-            <p>使用機材：Leica M10、Xiaomi 15 Ultra　<a href="gear.html">→ 機材詳細</a></p>
-            <p>撮影期間：2024年〜（進行中）</p>
-            <p>
-                1997年の香港返還以降、規制強化と再開発により、街を彩ってきた突き出し看板やネオンサインが次々と撤去されています。
-                かつて香港を訪れた人々の記憶に残る、あの光の風景。それは今、急速に失われつつあります。
-            </p>
-            <p>
-                このプロジェクトは、消えゆく香港の光を記録し、後世に残すためのものです。
-                歴史的価値のある看板、印象的なデザインのネオン、街角を照らし続けてきた小さな灯り。
-                それぞれに物語があり、街の記憶が刻まれています。
-            </p>
-            <p>
-                香港に帰るたびに、少しずつ撮り溜めていきます。
-            </p>
-        </section>
+    <!-- ナビゲーションフッター -->
+    <div class="nav-footer">
+        <a href="hongkong.html" class="back-link">← Back to Hong Kong</a>
+        <a href="index.html" class="back-link">Back to Home</a>
+    </div>
 
-        <!-- ホームに戻る -->
-        <section class="back-to-home">
-            <a href="/" class="back-link">
-                <span class="back-arrow">←</span>
-                <span>Back to Home</span>
-            </a>
-        </section>
-
-        <!-- フッター -->
-        <footer class="footer" role="contentinfo">
-            <div class="footer-content">
-                <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-                <p>Built with care in Japan</p>
-            </div>
-        </footer>
-    </main>
+    <!-- フッター -->
+    <footer>
+        <p>&copy; 2026 Toji Masaya. All rights reserved.</p>
+    </footer>
 
     <!-- モーダル -->
-    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-        <button class="close-modal" onclick="closeModal()" aria-label="モーダルを閉じる">&times;</button>
-        <div class="modal-content" id="modal-content">
-            <!-- 画像がここに表示される -->
+    <div id="modal" class="modal" onclick="closeModal()">
+        <button class="close-modal">&times;</button>
+        <div class="modal-content" onclick="event.stopPropagation()">
+            <!-- JSで注入 -->
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- スクリプト -->
     <script>
-        // 写真データをグローバル変数として保持
+        // --- Navigation Logic (Unified) ---
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+
+        // --- Gallery Logic ---
         let photosData = {};
         let currentCategory = 'all';
 
-        // JSONファイルから写真データを読み込む
+        // Load JSON
         async function loadPhotos() {
             try {
                 const response = await fetch('assets/images/hongkong-neon/photos.json');
+                if (!response.ok) throw new Error('JSON not found');
                 photosData = await response.json();
                 generateGallery();
             } catch (error) {
-                console.error('写真データの読み込みに失敗しました:', error);
-                // エラー時は空のギャラリーを生成（30枚分のスロット）
-                generateEmptyGallery();
+                console.log('Using placeholder data due to loading error:', error);
+                // フォールバック用のダミーデータ生成（確認用）
+                generatePlaceholderGallery();
             }
         }
 
-        // 空のギャラリーを生成
-        function generateEmptyGallery() {
+        function generatePlaceholderGallery() {
             const grid = document.getElementById('neon-grid');
             grid.innerHTML = '';
-
-            for (let i = 1; i <= 30; i++) {
+            for (let i = 1; i <= 12; i++) {
                 const article = document.createElement('article');
                 article.className = 'neon-item empty';
                 article.innerHTML = `
                     <div class="empty-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                            <circle cx="12" cy="13" r="4"></circle>
-                        </svg>
-                    </div>
-                `;
+                        <svg viewBox="0 0 24 24" fill="#333"><path d="M21 19V5c0-1.1-.9-2-2-2H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2zM8.5 13.5l2.5 3.01L14.5 12l4.5 6H5l3.5-4.5z"/></svg>
+                    </div>`;
                 grid.appendChild(article);
             }
-
-            // アニメーション用のObserverを再設定
-            document.querySelectorAll('.neon-item').forEach(item => {
-                observer.observe(item);
-            });
         }
 
-        // ギャラリーグリッドを生成
         function generateGallery() {
             const grid = document.getElementById('neon-grid');
             grid.innerHTML = '';
 
             const photoEntries = Object.entries(photosData);
-            const hasPhotos = photoEntries.length > 0;
+            
+            // フィルタリング
+            const filtered = photoEntries.filter(([id, photo]) => {
+                return currentCategory === 'all' || photo.category === currentCategory;
+            });
 
-            if (hasPhotos) {
-                // 写真データをソート（番号順）
-                photoEntries.sort((a, b) => parseInt(a[0]) - parseInt(b[0]));
-
-                photoEntries.forEach(([id, photo]) => {
-                    // カテゴリフィルター
-                    if (currentCategory !== 'all' && photo.category !== currentCategory) {
-                        return;
-                    }
-
+            if (filtered.length > 0) {
+                filtered.forEach(([id, photo]) => {
                     const article = document.createElement('article');
                     article.className = 'neon-item has-photo';
-                    article.dataset.category = photo.category || '';
                     article.onclick = () => openModal(
                         `assets/images/hongkong-neon/${String(id).padStart(2, '0')}.jpg`,
                         photo.title,
-                        photo.date,
                         photo.location,
-                        photo.category
+                        photo.date
                     );
-                    
-                    const categoryLabel = getCategoryLabel(photo.category);
-                    
+
                     article.innerHTML = `
                         <img src="assets/images/hongkong-neon/${String(id).padStart(2, '0')}.jpg" 
-                             alt="${photo.title}" 
-                             loading="lazy">
+                             alt="${photo.title}" loading="lazy">
                         <div class="neon-item-overlay">
                             <h3 class="neon-item-title">${photo.title}</h3>
-                            <div class="neon-item-info">${photo.location || ''} ${photo.date ? '| ' + photo.date : ''}</div>
-                            ${categoryLabel ? `<span class="neon-item-category">${categoryLabel}</span>` : ''}
+                            <div class="neon-item-info">${photo.location}</div>
                         </div>
                     `;
-                    
                     grid.appendChild(article);
                 });
+            } else {
+                // データがない場合のメッセージ
+                grid.innerHTML = '<p style="grid-column:1/-1; text-align:center; color:#666;">No photos found in this category.</p>';
             }
-
-            // 空のスロットを追加（写真がない場合、または30枚未満の場合）
-            const currentCount = hasPhotos ? photoEntries.filter(([id, photo]) => 
-                currentCategory === 'all' || photo.category === currentCategory
-            ).length : 0;
-            
-            const slotsToAdd = Math.max(0, 30 - currentCount);
-            
-            for (let i = 0; i < slotsToAdd; i++) {
-                const article = document.createElement('article');
-                article.className = 'neon-item empty';
-                article.innerHTML = `
-                    <div class="empty-icon">
-                        <svg viewBox="0 0 24 24">
-                            <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                            <circle cx="12" cy="13" r="4"></circle>
-                        </svg>
-                    </div>
-                `;
-                grid.appendChild(article);
-            }
-
-            // アニメーション用のObserverを再設定
-            document.querySelectorAll('.neon-item').forEach(item => {
-                observer.observe(item);
-            });
         }
 
-        // 地域ラベルを取得
-        function getCategoryLabel(category) {
-            const labels = {
-                'mongkok': '旺角・油麻地 Mong Kok / Yau Ma Tei',
-                'shamshuipo': '深水埗 Sham Shui Po',
-                'tsimshatsui': '尖沙咀 Tsim Sha Tsui',
-                'kowlooncity': '九龍城 Kowloon City',
-                'central': '中環 Central',
-                'caususewaybay': '銅鑼湾 Causeway Bay',
-                'wanchai': '灣仔 Wan Chai'
-            };
-            return labels[category] || '';
-        }
-
-        // ナビゲーション
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                    }
-                });
-            });
-        }
-
-        // カテゴリフィルター
-        const filterButtons = document.querySelectorAll('.filter-btn');
-        filterButtons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                // ボタンのアクティブ状態を更新
-                filterButtons.forEach(b => b.classList.remove('active'));
-                this.classList.add('active');
-                
-                // カテゴリを更新
-                currentCategory = this.dataset.category;
-                
-                // ギャラリーを再生成
+        // Filter Logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+                currentCategory = e.target.dataset.category;
                 generateGallery();
             });
         });
 
-        // スクロールアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 30);
-                }
-            });
-        }, observerOptions);
-
-        // モーダル機能
-        function openModal(imageSrc, title, date, location, category) {
+        // Modal Logic
+        function openModal(src, title, location, date) {
             const modal = document.getElementById('modal');
-            const modalContent = document.getElementById('modal-content');
+            const content = modal.querySelector('.modal-content');
             
-            const categoryLabel = getCategoryLabel(category);
-            
-            let infoHTML = '';
-            if (date || location || categoryLabel) {
-                infoHTML = '<div class="modal-info">';
-                if (categoryLabel) {
-                    infoHTML += `<div class="modal-info-item"><span class="modal-info-label">分類:</span> ${categoryLabel}</div>`;
-                }
-                if (location) {
-                    infoHTML += `<div class="modal-info-item"><span class="modal-info-label">場所:</span> ${location}</div>`;
-                }
-                if (date) {
-                    infoHTML += `<div class="modal-info-item"><span class="modal-info-label">撮影日:</span> ${date}</div>`;
-                }
-                infoHTML += '</div>';
-            }
-            
-            modalContent.innerHTML = `
-                <img src="${imageSrc}" alt="${title}" class="modal-image">
-                <div class="modal-caption">${title}</div>
-                ${infoHTML}
+            content.innerHTML = `
+                <img src="${src}" class="modal-image" alt="${title}">
+                <div class="modal-info">
+                    <h3 class="modal-title">${title}</h3>
+                    <div class="modal-meta">${location} | ${date || 'Unknown'}</div>
+                </div>
             `;
-            modal.setAttribute('aria-hidden', 'false');
+            
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
-            const modal = document.getElementById('modal');
-            modal.setAttribute('aria-hidden', 'true');
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
+            document.getElementById('modal').style.display = 'none';
+            document.body.style.overflow = 'auto';
         }
 
-        // ESCキーでモーダルを閉じる
-        document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
-                closeModal();
-            }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
         });
 
-        // モーダル背景をクリックして閉じる
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
-        });
-
-        // ページ読み込み時
-        document.addEventListener('DOMContentLoaded', function() {
-            loadPhotos();
-        });
-
-        // 外部リンクのセキュリティ強化
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.rel = 'noopener noreferrer';
-        });
-    </script>
-
-    <!-- JSON-LD structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ImageGallery",
-        "name": "香港霓虹残照",
-        "alternateName": "Neon Requiem: Hong Kong",
-        "description": "消えゆく香港の突き出し看板とネオンサインを記録する写真プロジェクト。制作進行中。",
-        "author": {
-            "@type": "Person",
-            "name": "田路昌也",
-            "alternateName": "Toji Masaya"
-        },
-        "url": "https://tojimasaya.com/hongkong-neon.html",
-        "inProgress": true
-    }
+        // Init
+        document.addEventListener('DOMContentLoaded', loadPhotos);
     </script>
 </body>
 </html>
