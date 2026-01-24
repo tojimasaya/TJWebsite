@@ -24,8 +24,41 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* --- Dark Mode Fixes applied via CSS Variables --- */
+        /* --- Dark Mode Variables Override --- */
+        :root {
+            /* Light Mode Defaults */
+            --page-text-color: #333333;
+            --page-text-light: #666666;
+            --page-bg-color: #fafafa;
+            --page-border-color: #e5e5e5;
+            --page-accent-color: #2563eb;
+            --page-card-bg: #ffffff;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            :root {
+                /* Dark Mode Overrides */
+                --page-text-color: #f0f0f0;
+                --page-text-light: #bbbbbb;
+                --page-bg-color: #111111;
+                --page-border-color: #333333;
+                --page-accent-color: #60a5fa;
+                --page-card-bg: #1a1a1a;
+            }
+            body {
+                background-color: var(--page-bg-color) !important;
+                color: var(--page-text-color) !important;
+            }
+        }
+
+        /* --- Page Styles --- */
         
+        body {
+            background-color: var(--page-bg-color);
+            color: var(--page-text-color);
+            transition: background-color 0.3s, color 0.3s;
+        }
+
         /* ヒーローセクション */
         .hk-hero {
             position: relative;
@@ -76,7 +109,7 @@
             line-height: 1.4;
             margin-bottom: 1.5rem;
             text-shadow: 0 4px 20px rgba(0,0,0,0.5);
-            color: white; /* Hero text is always white */
+            color: white;
         }
 
         .hk-subtitle {
@@ -99,19 +132,20 @@
             text-align: center;
             font-family: 'Noto Serif JP', serif;
             line-height: 2.2;
-            color: var(--text-color); /* 自動で切り替わる */
+            color: var(--page-text-color);
             font-size: 1.05rem;
         }
 
         /* ページ内ナビゲーション */
         .page-nav {
-            background: var(--bg-color); /* 自動で切り替わる */
-            border-bottom: 1px solid var(--border-color);
-            border-top: 1px solid var(--border-color);
+            background: var(--page-bg-color);
+            border-bottom: 1px solid var(--page-border-color);
+            border-top: 1px solid var(--page-border-color);
             position: sticky;
             top: 70px;
             z-index: 90;
             padding: 15px 0;
+            transition: background-color 0.3s;
         }
 
         .page-nav ul {
@@ -125,7 +159,7 @@
 
         .page-nav a {
             text-decoration: none;
-            color: var(--text-light); /* 自動で切り替わる */
+            color: var(--page-text-light);
             font-family: var(--secondary-font);
             font-size: 0.9rem;
             letter-spacing: 0.05em;
@@ -135,13 +169,23 @@
         }
 
         .page-nav a:hover, .page-nav a.active {
-            color: var(--accent-color);
+            color: var(--page-accent-color);
+        }
+
+        .page-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--page-accent-color);
         }
 
         /* セクション共通 */
         .content-section {
             padding: 100px 30px;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--page-border-color);
         }
 
         .section-header {
@@ -152,7 +196,7 @@
         .section-number {
             font-family: var(--primary-font);
             font-size: 4rem;
-            color: var(--border-color); /* 薄い色に */
+            color: var(--page-border-color);
             line-height: 1;
             margin-bottom: -20px;
             position: relative;
@@ -163,7 +207,7 @@
         .section-title {
             font-family: 'Noto Serif JP', serif;
             font-size: 2rem;
-            color: var(--text-color); /* 自動で切り替わる */
+            color: var(--page-text-color);
             margin-bottom: 10px;
             letter-spacing: 0.1em;
         }
@@ -171,16 +215,16 @@
         .section-subtitle-en {
             font-family: var(--primary-font);
             font-style: italic;
-            color: var(--text-light);
+            color: var(--page-text-light);
             font-size: 1.1rem;
         }
 
-        /* 特集カード (ネオン) */
+        /* 特集カード (ネオン) - 常に黒背景 */
         .featured-card {
             max-width: 1100px;
             margin: 0 auto;
-            background: #111; /* ネオンは常に黒背景 */
-            color: white; /* ネオンは常に白文字 */
+            background: #111;
+            color: white;
             border-radius: 4px;
             overflow: hidden;
             display: grid;
@@ -218,13 +262,13 @@
             font-size: 2.2rem;
             margin-bottom: 20px;
             line-height: 1.4;
-            color: white; /* 強制的に白 */
+            color: white !important;
         }
 
         .featured-desc {
             font-size: 1rem;
             line-height: 2;
-            color: #ccc; /* 強制的に薄いグレー */
+            color: #ccc !important;
             margin-bottom: 30px;
         }
 
@@ -259,7 +303,7 @@
             grid-template-columns: 300px 1fr;
             gap: 40px;
             align-items: start;
-            border-bottom: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--page-border-color);
             padding-bottom: 60px;
         }
 
@@ -287,8 +331,8 @@
 
         .shop-area {
             display: inline-block;
-            background: var(--text-color); /* 自動切り替え */
-            color: var(--bg-color); /* 背景色と反転 */
+            background: var(--page-text-color);
+            color: var(--page-bg-color);
             padding: 4px 10px;
             font-size: 0.75rem;
             border-radius: 2px;
@@ -300,14 +344,14 @@
             font-family: var(--primary-font);
             font-size: 1.8rem;
             font-weight: 600;
-            color: var(--text-color); /* 自動切り替え */
+            color: var(--page-text-color);
             margin-bottom: 5px;
         }
 
         .shop-name-jp {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.1rem;
-            color: var(--text-light); /* 自動切り替え */
+            color: var(--page-text-light);
             margin-bottom: 20px;
             display: block;
         }
@@ -315,37 +359,66 @@
         .shop-desc {
             font-size: 0.95rem;
             line-height: 1.9;
-            color: var(--text-light); /* 自動切り替え */
+            color: var(--page-text-light);
             margin-bottom: 20px;
         }
 
         .shop-link {
             font-family: var(--secondary-font);
             font-size: 0.9rem;
-            color: var(--accent-color);
+            color: var(--page-accent-color);
             text-decoration: none;
             border-bottom: 1px solid transparent;
             transition: border-color 0.3s;
         }
 
         .shop-link:hover {
-            border-bottom-color: var(--accent-color);
+            border-bottom-color: var(--page-accent-color);
         }
 
-        /* フッター */
-        footer {
-            background: var(--bg-color);
-            border-top: 1px solid var(--border-color);
-            padding: 4rem 2rem;
+        /* Back to Home */
+        .back-to-home {
+            max-width: 800px;
+            margin: 60px auto;
             text-align: center;
         }
 
-        .footer-title {
-            color: var(--text-color);
+        .back-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            font-family: 'Crimson Text', serif;
+            font-size: 1.1rem;
+            color: var(--page-accent-color);
+            text-decoration: none;
+            transition: all 0.3s ease;
         }
 
-        .footer-text {
-            color: var(--text-light);
+        .back-link:hover {
+            gap: 15px;
+            opacity: 0.8;
+        }
+
+        /* Footer */
+        .footer {
+            border-top: 1px solid var(--page-border-color);
+            padding: 40px 0;
+            margin-top: 60px;
+            background-color: var(--page-bg-color);
+        }
+
+        .footer-content {
+            text-align: center;
+            font-family: var(--secondary-font);
+            font-size: 0.85rem;
+            color: var(--page-text-light);
+        }
+
+        .footer-title {
+            font-weight: 600;
+            margin-bottom: 5px;
+            letter-spacing: 0.1em;
+            color: var(--page-text-color);
         }
 
         /* レスポンシブ */
@@ -400,7 +473,7 @@
 </head>
 <body>
 
-    <!-- ナビゲーション -->
+    <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">TJM</a>
