@@ -3,823 +3,653 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-806426BQX2');
+    </script>
+    
     <title>Hong Kong — 香港を撮る、香港で撮る</title>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <meta name="description" content="消えゆくネオンの光、街角のカメラショップ、フォトジェニックな風景。変わりゆく香港の「今」と「昔」を記録する。">
+    <meta name="author" content="Toji Masaya">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        html {
-            scroll-behavior: smooth;
-        }
-
-        body {
-            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-            line-height: 1.9;
-            color: #333;
-            background: #fafafa;
-        }
-
-        /* ナビゲーション */
-        .main-nav {
-            background: #fff;
-            border-bottom: 1px solid #e0e0e0;
-            position: sticky;
-            top: 0;
-            z-index: 1000;
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-        }
-
-        .nav-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 1rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .nav-logo {
-            font-size: 1.1rem;
-            font-weight: 500;
-            color: #2c2c2c;
-            text-decoration: none;
-            letter-spacing: 0.1em;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .nav-menu {
-            display: flex;
-            list-style: none;
-            gap: 2rem;
-        }
-
-        .nav-link {
-            color: #666;
-            text-decoration: none;
-            font-size: 0.9rem;
-            letter-spacing: 0.05em;
-            transition: color 0.3s;
-            font-family: 'Inter', sans-serif;
-        }
-
-        .nav-link:hover,
-        .nav-link.active {
-            color: #2c2c2c;
-        }
-
-        .nav-toggle {
-            display: none;
-            flex-direction: column;
-            gap: 4px;
-            background: none;
-            border: none;
-            cursor: pointer;
-        }
-
-        .nav-toggle span {
-            width: 24px;
-            height: 2px;
-            background: #2c2c2c;
-            transition: 0.3s;
-        }
-
-        /* ヘッダー */
-        header {
-            padding: 1.5rem 2rem;
-            border-bottom: 1px solid #e0e0e0;
-            background: #fff;
-        }
-
-        .header-link {
-            color: #666;
-            text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.1em;
-            transition: color 0.3s;
-        }
-
-        .header-link:hover {
-            color: #c49a6c;
-        }
-
-        /* ヒーローセクション */
-        .hero {
+        /* 香港ページ専用スタイル */
+        
+        /* ヒーローセクション調整 */
+        .hk-hero {
+            position: relative;
             height: 70vh;
             min-height: 500px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             text-align: center;
-            padding: 2rem;
-            width: 100%;
+            overflow: hidden;
+            margin-top: 70px;
         }
 
-        .hero-label {
-            font-size: 0.85rem;
+        .hk-hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.6) contrast(1.1);
+        }
+
+        .hk-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            animation: fadeIn 1.5s ease 0.2s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .hk-label {
+            font-family: var(--secondary-font);
+            font-size: 0.9rem;
             letter-spacing: 0.3em;
             margin-bottom: 1.5rem;
-            font-weight: 400;
-            opacity: 0.95;
+            text-transform: uppercase;
+            display: block;
+            color: rgba(255, 255, 255, 0.9);
         }
 
-        .hero-title {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            line-height: 1.6;
-            margin-bottom: 2rem;
+        .hk-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(2.5rem, 6vw, 4rem);
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.5);
         }
 
-        .hero-subtitle {
-            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-            font-weight: 300;
-            letter-spacing: 0.15em;
-            line-height: 1.9;
-            max-width: 600px;
-            margin: 0 auto;
+        .hk-subtitle {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(1rem, 2vw, 1.1rem);
+            line-height: 2;
             opacity: 0.9;
         }
 
-        /* イントロセクション */
-        .intro {
+        @keyframes fadeIn {
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* イントロ */
+        .hk-intro {
             max-width: 800px;
-            margin: 0 auto;
-            padding: 4rem 2rem 2rem;
+            margin: 80px auto 60px;
+            padding: 0 30px;
             text-align: center;
-        }
-
-        .intro-text {
-            font-size: 1rem;
+            font-family: 'Noto Serif JP', serif;
             line-height: 2.2;
-            color: #555;
-            letter-spacing: 0.05em;
+            color: var(--text-color);
+            font-size: 1.05rem;
         }
 
-        /* ページ内ナビゲーション */
+        /* ページ内ナビゲーション（スティッキー） */
         .page-nav {
-            background: #f9f7f4;
-            border-bottom: 1px solid #e0e0e0;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid var(--border-color);
+            border-top: 1px solid var(--border-color);
             position: sticky;
-            top: 72px; /* メインナビの高さ分下に配置 */
-            z-index: 999;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.03);
+            top: 70px; /* メインナビの下 */
+            z-index: 90;
+            padding: 15px 0;
         }
 
-        .page-nav-container {
-            max-width: 900px;
-            margin: 0 auto;
+        .page-nav ul {
             display: flex;
             justify-content: center;
-            gap: 2rem;
-            padding: 2rem 2rem;
+            gap: 40px;
+            list-style: none;
+            padding: 0;
+            margin: 0;
         }
 
-        .page-nav-item {
-            color: #666;
+        .page-nav a {
             text-decoration: none;
+            color: var(--text-light);
+            font-family: var(--secondary-font);
             font-size: 0.9rem;
-            letter-spacing: 0.1em;
-            transition: all 0.3s ease;
-            padding: 1rem 2rem;
-            border: 1px solid #d4c4b0;
-            background: white;
-            border-radius: 2px;
-            flex: 1;
-            text-align: center;
-            max-width: 200px;
+            letter-spacing: 0.05em;
+            transition: color 0.3s;
+            position: relative;
+            padding-bottom: 5px;
         }
 
-        .page-nav-item:hover {
-            color: #2c2c2c;
-            background: #faf8f5;
-            border-color: #8b7355;
-            box-shadow: 0 2px 8px rgba(139, 115, 85, 0.1);
-            transform: translateY(-2px);
+        .page-nav a:hover, .page-nav a.active {
+            color: var(--accent-color);
         }
 
-        .page-nav-item.active {
-            color: #2c2c2c;
-            background: #f5f1eb;
-            border-color: #8b7355;
-            font-weight: 500;
+        .page-nav a.active::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 2px;
+            background: var(--accent-color);
         }
 
-        /* コンテンツセクション */
+        /* セクション共通 */
         .content-section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 2rem 3rem;
+            padding: 100px 30px;
+            border-bottom: 1px solid var(--border-color);
         }
 
-        /* セクションタイトル */
         .section-header {
             text-align: center;
-            margin-bottom: 3rem;
-            position: relative;
-            padding-top: 2rem;
+            margin-bottom: 60px;
         }
 
-        .section-label {
-            font-size: 0.75rem;
-            color: #8b7355;
-            letter-spacing: 0.3em;
-            margin-bottom: 0.8rem;
-            text-transform: uppercase;
-            font-weight: 500;
+        .section-number {
+            font-family: var(--primary-font);
+            font-size: 4rem;
+            color: #f0f0f0;
+            line-height: 1;
+            margin-bottom: -20px;
+            position: relative;
+            z-index: -1;
+            font-weight: 600;
         }
 
         .section-title {
+            font-family: 'Noto Serif JP', serif;
             font-size: 2rem;
-            font-weight: 500;
-            letter-spacing: 0.15em;
-            margin-bottom: 1rem;
-            color: #2c2c2c;
-            position: relative;
-            display: inline-block;
+            color: var(--text-color);
+            margin-bottom: 10px;
+            letter-spacing: 0.1em;
         }
 
-        .section-title::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            left: 50%;
-            transform: translateX(-50%);
-            width: 60px;
-            height: 2px;
-            background: #8b7355;
-        }
-
-        .section-subtitle {
-            font-size: 0.95rem;
-            color: #666;
-            letter-spacing: 0.08em;
-            font-family: 'Inter', sans-serif;
+        .section-subtitle-en {
+            font-family: var(--primary-font);
             font-style: italic;
-            margin-top: 1.5rem;
+            color: var(--text-light);
+            font-size: 1.1rem;
         }
 
-        /* Featured カード（香港ネオン残照） */
+        /* 特集カード (ネオン) */
         .featured-card {
-            background: white;
-            margin-bottom: 4rem;
+            max-width: 1100px;
+            margin: 0 auto;
+            background: #111; /* ネオンの雰囲気に合わせて黒背景 */
+            color: white;
+            border-radius: 4px;
             overflow: hidden;
-            border-left: 3px solid #8b7355;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.2);
         }
 
         .featured-image {
             width: 100%;
-            height: 400px;
+            height: 100%;
             object-fit: cover;
+            min-height: 400px;
         }
 
-        .featured-content {
-            padding: 3rem;
+        .featured-text {
+            padding: 60px 40px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         .featured-label {
-            font-size: 0.75rem;
-            color: #8b7355;
-            letter-spacing: 0.3em;
-            margin-bottom: 1rem;
+            color: #ff00de; /* ネオンピンク */
+            font-family: var(--secondary-font);
+            font-size: 0.8rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            font-weight: 500;
+            font-weight: 600;
+            text-shadow: 0 0 10px rgba(255, 0, 222, 0.5);
         }
 
-        .featured-title {
-            font-size: 2.5rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            letter-spacing: 0.1em;
-            color: #2c2c2c;
+        .featured-heading {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            line-height: 1.4;
         }
 
-        .featured-description {
-            font-size: 1.05rem;
-            line-height: 2.2;
-            color: #555;
-            margin-bottom: 2.5rem;
-            letter-spacing: 0.03em;
+        .featured-desc {
+            font-size: 1rem;
+            line-height: 2;
+            color: #ccc;
+            margin-bottom: 30px;
         }
 
-        .featured-button {
+        .featured-btn {
             display: inline-block;
-            padding: 1rem 3rem;
-            background: #2c2c2c;
+            padding: 12px 30px;
+            border: 1px solid white;
             color: white;
             text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
+            font-family: var(--secondary-font);
+            font-size: 0.9rem;
             transition: all 0.3s ease;
-            border: 1px solid #2c2c2c;
+            align-self: flex-start;
         }
 
-        .featured-button:hover {
+        .featured-btn:hover {
             background: white;
-            color: #2c2c2c;
+            color: #111;
+            box-shadow: 0 0 20px rgba(255,255,255,0.3);
         }
 
-        /* カード（カメラショップ・フォトジェニック） */
-        .card-item {
+        /* カメラ屋 & フォトスポット リスト */
+        .shop-list {
+            max-width: 1000px;
+            margin: 0 auto;
             display: flex;
-            align-items: center;
-            gap: 3rem;
-            margin-bottom: 3rem;
-            background: white;
+            flex-direction: column;
+            gap: 60px;
+        }
+
+        .shop-item {
+            display: grid;
+            grid-template-columns: 300px 1fr;
+            gap: 40px;
+            align-items: start;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 60px;
+        }
+
+        .shop-item:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+
+        .shop-image {
+            width: 100%;
+            aspect-ratio: 4/3;
+            object-fit: cover;
+            border-radius: 2px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
             transition: transform 0.3s ease;
         }
 
-        .card-item:hover {
-            transform: translateY(-3px);
+        .shop-item:hover .shop-image {
+            transform: scale(1.02);
         }
 
-        .card-item:nth-child(even) {
-            flex-direction: row-reverse;
+        .shop-info {
+            padding-top: 10px;
         }
 
-        .card-image-container {
-            flex: 0 0 45%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .card-image {
-            width: 100%;
-            height: 300px;
-            object-fit: cover;
-            transition: transform 0.6s ease;
-        }
-
-        .card-item:hover .card-image {
-            transform: scale(1.05);
-        }
-
-        .card-content {
-            flex: 1;
-            padding: 2rem;
-        }
-
-        .card-number {
-            font-size: 0.75rem;
-            color: #999;
-            letter-spacing: 0.2em;
-            margin-bottom: 0.8rem;
-        }
-
-        .card-name {
-            font-size: 1.6rem;
-            font-weight: 500;
-            margin-bottom: 0.5rem;
-            letter-spacing: 0.08em;
-            color: #2c2c2c;
-        }
-
-        .card-name-en {
-            font-size: 0.85rem;
-            color: #999;
-            margin-bottom: 1.2rem;
-            letter-spacing: 0.05em;
-            font-family: 'Inter', sans-serif;
-            font-style: italic;
-        }
-
-        .card-description {
-            font-size: 0.95rem;
-            line-height: 2;
-            color: #666;
-            margin-bottom: 2rem;
-            letter-spacing: 0.03em;
-        }
-
-        .card-button {
+        .shop-area {
             display: inline-block;
-            padding: 0.9rem 2.5rem;
-            background: #2c2c2c;
+            background: var(--text-color);
             color: white;
+            padding: 4px 10px;
+            font-size: 0.75rem;
+            border-radius: 2px;
+            margin-bottom: 15px;
+            font-family: var(--secondary-font);
+        }
+
+        .shop-name {
+            font-family: var(--primary-font);
+            font-size: 1.8rem;
+            font-weight: 600;
+            color: var(--text-color);
+            margin-bottom: 5px;
+        }
+
+        .shop-name-jp {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .shop-desc {
+            font-size: 0.95rem;
+            line-height: 1.9;
+            color: var(--text-light);
+            margin-bottom: 20px;
+        }
+
+        .shop-link {
+            font-family: var(--secondary-font);
+            font-size: 0.9rem;
+            color: var(--accent-color);
             text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
-            transition: all 0.3s ease;
-            border: 1px solid #2c2c2c;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
         }
 
-        .card-button:hover {
-            background: white;
-            color: #2c2c2c;
-        }
-
-        /* フッター */
-        footer {
-            background: #f5f5f5;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-top: 1px solid #e0e0e0;
-            margin-top: 4rem;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .footer-title {
-            font-size: 1rem;
-            letter-spacing: 0.2em;
-            color: #2c2c2c;
-            margin-bottom: 0.5rem;
-            font-weight: 500;
-        }
-
-        .footer-text {
-            font-size: 0.85rem;
-            color: #666;
-            letter-spacing: 0.1em;
+        .shop-link:hover {
+            border-bottom-color: var(--accent-color);
         }
 
         /* レスポンシブ */
         @media (max-width: 768px) {
-            .nav-menu {
-                position: fixed;
-                top: 72px;
-                left: -100%;
-                width: 100%;
-                background: white;
-                flex-direction: column;
-                padding: 2rem;
-                gap: 1.5rem;
-                border-bottom: 1px solid #e0e0e0;
-                transition: left 0.3s;
+            .hk-title { font-size: 2rem; }
+            .hk-hero { height: 60vh; }
+            
+            .page-nav { 
+                top: 70px;
+                overflow-x: auto;
+                white-space: nowrap;
+                justify-content: flex-start;
+                padding: 15px 20px;
+            }
+            
+            .page-nav ul {
+                gap: 25px;
             }
 
-            .nav-menu.active {
-                left: 0;
+            .featured-card {
+                grid-template-columns: 1fr;
             }
-
-            .nav-toggle {
-                display: flex;
-            }
-
-            .hero {
-                height: 60vh;
-                min-height: 400px;
-            }
-
-            .page-nav {
-                top: 56px;
-            }
-
-            .page-nav-container {
-                flex-direction: column;
-                gap: 1rem;
-                padding: 1.5rem 1rem;
-            }
-
-            .page-nav-item {
-                font-size: 0.85rem;
-                max-width: 100%;
-                padding: 0.9rem 1.5rem;
-            }
-
-            .intro {
-                padding: 3rem 1.5rem 1.5rem;
-            }
-
+            
             .featured-image {
                 height: 250px;
+                min-height: auto;
+            }
+            
+            .featured-text {
+                padding: 30px 20px;
             }
 
-            .featured-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .featured-title {
+            .featured-heading {
                 font-size: 1.8rem;
             }
 
-            .card-item,
-            .card-item:nth-child(even) {
-                flex-direction: column;
-                gap: 0;
-                margin-bottom: 2rem;
+            .shop-item {
+                grid-template-columns: 1fr;
+                gap: 20px;
+                padding-bottom: 40px;
             }
 
-            .card-image-container {
-                flex: 0 0 auto;
-                width: 100%;
+            .shop-image {
+                aspect-ratio: 16/9;
             }
 
-            .card-image {
-                height: 200px;
-            }
-
-            .card-content {
-                padding: 1.5rem;
-            }
-
-            .card-name {
-                font-size: 1.3rem;
-            }
-
-            .section-header {
-                padding-top: 1rem;
-            }
-
-            .section-title {
-                font-size: 1.5rem;
+            .section-number {
+                font-size: 3rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- ナビゲーション -->
+
+    <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo">TOJIMASAYA</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="writings.html" class="nav-link">Writings</a></li>
-                <li><a href="gear.html" class="nav-link">Gear</a></li>
-                <li><a href="hongkong.html" class="nav-link active">Hong Kong</a></li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" onclick="toggleNav()">
+            <a href="/" class="nav-logo">TJM</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
                 <span></span><span></span><span></span>
             </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="gear.html" class="nav-link">Gear</a></li>
+                <li><a href="writings.html" class="nav-link">Writings</a></li>
+                <li><a href="hongkong.html" class="nav-link active">Hong Kong</a></li>
+            </ul>
         </div>
     </nav>
 
-    <!-- ヒーローセクション -->
-    <div class="hero">
-        <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1920" alt="香港の夜景とネオン" class="hero-image">
-        <div class="hero-overlay">
-            <p class="hero-label">HONG KONG</p>
-            <h1 class="hero-title">
-                香港を撮る、<br>
-                香港で撮る。
-            </h1>
-            <p class="hero-subtitle">
-                消えゆくネオンの光、街角のカメラショップ、<br class="pc-only">
-                フォトジェニックな風景。香港での撮影を記録する。
-            </p>
+    <!-- Hero -->
+    <header class="hk-hero">
+        <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1920" alt="Hong Kong Night" class="hk-hero-bg">
+        <div class="hk-hero-content">
+            <span class="hk-label">CITY GUIDE</span>
+            <h1 class="hk-title">香港を撮る、<br>香港で撮る。</h1>
+            <p class="hk-subtitle">消えゆくネオン、街角のカメラショップ、<br>フォトジェニックな風景を求めて。</p>
         </div>
-    </div>
+    </header>
 
-    <!-- イントロセクション -->
-    <section class="intro">
-        <p class="intro-text">
-            1997年の返還以降、急速に変化を続ける香港。かつて街を彩った突き出し看板やネオンサインは規制により次々と撤去され、古い街並みは再開発の波に飲み込まれている。一方で、この街には今も多くのカメラショップが軒を連ね、写真家たちを魅了する独特の風景が残る。消えゆくものと、残り続けるもの。変わりゆく香港を、カメラで記録していく。
+    <!-- Intro -->
+    <section class="hk-intro">
+        <p>
+            1993年から私が暮らした街、香港。
+            かつて街を彩った突き出し看板やネオンサインは規制により次々と撤去され、古い街並みは再開発の波に飲み込まれている。
+        </p>
+        <p>
+            一方で、この街には今も多くのカメラショップが軒を連ね、写真家たちを魅了する独特の風景が残る。
+            消えゆくものと、残り続けるもの。変わりゆく香港を、カメラで記録していく。
         </p>
     </section>
 
-    <!-- ページ内ナビゲーション -->
+    <!-- Page Nav -->
     <nav class="page-nav">
-        <div class="page-nav-container">
-            <a href="#neon" class="page-nav-item">ネオン残照</a>
-            <a href="#camera-shops" class="page-nav-item">カメラショップ</a>
-            <a href="#photogenic" class="page-nav-item">フォトジェニック</a>
-        </div>
+        <ul>
+            <li><a href="#neon" class="active">ネオン残照</a></li>
+            <li><a href="#camera-shops">カメラショップ</a></li>
+            <li><a href="#spots">フォトスポット</a></li>
+        </ul>
     </nav>
 
-    <!-- 香港ネオン残照 -->
+    <!-- Neon Section -->
     <section id="neon" class="content-section">
-        <article class="featured-card">
-            <img src="assets/images/hongkong-neon/hero.jpg" alt="香港ネオン残照" class="featured-image">
-            <div class="featured-content">
-                <p class="featured-label">Featured Project</p>
-                <h2 class="featured-title">香港ネオン残照</h2>
-                <p class="featured-description">
+        <div class="featured-card">
+            <img src="assets/images/hongkong-neon/hero.jpg" alt="Hong Kong Neon" class="featured-image" onerror="this.src='https://placehold.co/800x600/111111/444444?text=Neon+Image'">
+            <div class="featured-text">
+                <span class="featured-label">Featured Project</span>
+                <h2 class="featured-heading">香港ネオン残照</h2>
+                <p class="featured-desc">
                     消えゆく光の風景を記録するプロジェクト。規制強化と再開発の波の中で、香港の街を彩ってきた突き出し看板とネオンサインは静かに姿を消している。記録として。記憶として。二度と戻らない香港の光を、一枚ずつ残していく。
                 </p>
-                <a href="hongkong-neon.html" class="featured-button">プロジェクトを見る</a>
+                <!-- 将来的に専用ページができたらリンクを変更 -->
+                <a href="#" class="featured-btn">Coming Soon</a>
             </div>
-        </article>
+        </div>
     </section>
 
-    <!-- カメラショップガイド -->
+    <!-- Camera Shops Section -->
     <section id="camera-shops" class="content-section">
         <div class="section-header">
-            <p class="section-label">01</p>
+            <div class="section-number">01</div>
             <h2 class="section-title">カメラショップガイド</h2>
-            <p class="section-subtitle">Camera Shops in Hong Kong</p>
+            <p class="section-subtitle-en">Camera Shops in Hong Kong</p>
         </div>
 
-        <!-- Fotopia -->
-        <article class="card-item">
-            <div class="card-image-container">
-                <img src="https://assets.st-note.com/production/uploads/images/150970991/rectangle_large_type_2_97a2407f61d10f18710ec0f0bade3b17.jpeg?width=1280" alt="Fotopia" class="card-image">
-            </div>
-            <div class="card-content">
-                <p class="card-number">01</p>
-                <h3 class="card-name">Fotopia</h3>
-                <p class="card-name-en">尖沙咀</p>
-                <p class="card-description">
-                    尖沙咀～佐敦エリアの商業ビル内にある、ライカ中心の中古・新品を扱う専門店。親切で押し売りしないオーナー・Gilbertの丁寧な接客が評判で、厳選された豊富な品揃えが魅力。ヴィンテージから最新デジタルまで幅広く、撮影散歩にも便利なロケーション。
-                </p>
-                <a href="https://note.com/tojimasaya/n/nd6ae22a8e810" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
-            </div>
-        </article>
+        <div class="shop-list">
+            <!-- Shop 1 -->
+            <article class="shop-item">
+                <img src="https://assets.st-note.com/production/uploads/images/150970991/rectangle_large_type_2_97a2407f61d10f18710ec0f0bade3b17.jpeg?width=1280" alt="Fotopia" class="shop-image">
+                <div class="shop-info">
+                    <span class="shop-area">Tsim Sha Tsui</span>
+                    <h3 class="shop-name">Fotopia</h3>
+                    <span class="shop-name-jp">尖沙咀</span>
+                    <p class="shop-desc">
+                        尖沙咀～佐敦エリアの商業ビル内にある、ライカ中心の中古・新品を扱う専門店。親切で押し売りしないオーナー・Gilbertの丁寧な接客が評判。ヴィンテージから最新デジタルまで幅広く、状態の良い個体が多い。
+                    </p>
+                    <a href="https://note.com/tojimasaya/n/nd6ae22a8e810" target="_blank" class="shop-link">noteで詳細を読む →</a>
+                </div>
+            </article>
 
-        <!-- All Good Friend Camera -->
-        <article class="card-item">
-            <div class="card-image-container">
-                <img src="https://assets.st-note.com/production/uploads/images/165365687/rectangle_large_type_2_4e8c4b4dd444212104250a92ffa4a479.jpeg?width=1280" alt="All Good Friend Camera" class="card-image">
-            </div>
-            <div class="card-content">
-                <p class="card-number">02</p>
-                <h3 class="card-name">All Good Friend Camera</h3>
-                <p class="card-name-en">尖沙咀</p>
-                <p class="card-description">
-                    尖沙咀の路地奥に佇む「All Good Friend Camera」。MTR尖沙咀駅B1/B2出口から徒歩5～10分、改装中の正面を迂回し小さな通路の突き当たりに店舗があります。オーナーBilly Ho氏は英語で丁寧に対応。ライカやハッセルの中古に加え、M11‑D／M11‑Pなど新品も在庫。憧れのNoctilux 50mm F0.95の良品も発見。かつて一階はほぼ全てカメラ店でしたが改装で現在は同店ともう一店のみ。傾斜地ゆえCarnarvon Road側からは一段上のフロアにアクセスという立地も特徴。尖沙咀で良質なライカと出会える隠れた名店です。
-                </p>
-                <a href="https://note.com/tojimasaya/n/n469d4c70e547" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
-            </div>
-        </article>
+            <!-- Shop 2 -->
+            <article class="shop-item">
+                <img src="https://assets.st-note.com/production/uploads/images/165365687/rectangle_large_type_2_4e8c4b4dd444212104250a92ffa4a479.jpeg?width=1280" alt="All Good Friend Camera" class="shop-image">
+                <div class="shop-info">
+                    <span class="shop-area">Tsim Sha Tsui</span>
+                    <h3 class="shop-name">All Good Friend Camera</h3>
+                    <span class="shop-name-jp">尖沙咀</span>
+                    <p class="shop-desc">
+                        尖沙咀の路地奥に佇む隠れ家的な名店。オーナーBilly Ho氏は英語で丁寧に対応してくれる。ライカやハッセルの中古に加え、新品も在庫。Noctilux 50mm F0.95などのレアレンズに出会えることも。
+                    </p>
+                    <a href="https://note.com/tojimasaya/n/n469d4c70e547" target="_blank" class="shop-link">noteで詳細を読む →</a>
+                </div>
+            </article>
 
-        <!-- Meteor -->
-        <article class="card-item">
-            <div class="card-image-container">
-                <img src="https://assets.st-note.com/production/uploads/images/171311238/rectangle_large_type_2_601238f29492b1807425a9e63c11b2ce.jpeg?width=1280" alt="Meteor" class="card-image">
-            </div>
-            <div class="card-content">
-                <p class="card-number">03</p>
-                <h3 class="card-name">Meteor</h3>
-                <p class="card-name-en">銅鑼湾</p>
-                <p class="card-description">
-                    銅鑼湾MTR駅すぐの商業ビル9階にある、ライカ中心の中古・新品を扱うカメラ専門店。親切で押し売りしないオーナー・Josephの丁寧な接客が評判で、厳選された豊富な品揃えが魅力。ギャラリーのように洗練された店内で写真集も扱い、ヴィンテージから最新デジタルまで幅広く、撮影散歩にも便利なロケーション。
-                </p>
-                <a href="https://note.com/tojimasaya/n/n4d0858ab3194" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
-            </div>
-        </article>
+            <!-- Shop 3 -->
+            <article class="shop-item">
+                <img src="https://assets.st-note.com/production/uploads/images/171311238/rectangle_large_type_2_601238f29492b1807425a9e63c11b2ce.jpeg?width=1280" alt="Meteor" class="shop-image">
+                <div class="shop-info">
+                    <span class="shop-area">Causeway Bay</span>
+                    <h3 class="shop-name">Meteor</h3>
+                    <span class="shop-name-jp">銅鑼湾</span>
+                    <p class="shop-desc">
+                        銅鑼湾駅すぐの商業ビル9階。ギャラリーのように洗練された店内は、カメラ屋とは思えないほどお洒落。写真集も扱っており、オーナーのJoseph氏のセンスが光る。ライカ中心の品揃え。
+                    </p>
+                    <a href="https://note.com/tojimasaya/n/n4d0858ab3194" target="_blank" class="shop-link">noteで詳細を読む →</a>
+                </div>
+            </article>
 
-        <!-- iMg -->
-        <article class="card-item">
-            <div class="card-image-container">
-                <img src="https://assets.st-note.com/img/1746426160-sLnVPMY7xU4yRtNBEJil2Izg.jpg?width=1200" alt="iMg" class="card-image">
-            </div>
-            <div class="card-content">
-                <p class="card-number">04</p>
-                <h3 class="card-name">iMg</h3>
-                <p class="card-name-en">銅鑼湾</p>
-                <p class="card-description">
-                    香港・銅鑼湾のフィルム＆カメラのセレクトショップ「iMg（image playground）」を訪ねました。銅鑼湾駅F1出口からすぐ、温かみのある店内にフィルム、アクセサリー、中古カメラが充実。C-41現像とスキャンにも対応し、通常は約1週間で仕上がります。今回、Leica M2用に店員さんおすすめのILFORD XP2 Super 400（モノクロながらカラー現像対応）を購入。粒状性が細かくスキャン適性も高く、旅先のデジタル化ワークフローに相性抜群です。猫のいる"写真好きの遊び場"で、香港旅の最後に現像を受け取る楽しみも。街角のネオンやトラムの情景を、フィルムでぜひ。
-                </p>
-                <a href="https://note.com/tojimasaya/n/nd1b52bb6dd82" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
-            </div>
-        </article>
+            <!-- Shop 4 -->
+            <article class="shop-item">
+                <img src="https://assets.st-note.com/img/1746426160-sLnVPMY7xU4yRtNBEJil2Izg.jpg?width=1200" alt="iMg" class="shop-image">
+                <div class="shop-info">
+                    <span class="shop-area">Causeway Bay</span>
+                    <h3 class="shop-name">iMg</h3>
+                    <span class="shop-name-jp">銅鑼湾</span>
+                    <p class="shop-desc">
+                        フィルム＆カメラのセレクトショップ。C-41現像とスキャンにも対応しており、旅先でのフィルム現像に便利。猫がいる店内は温かみがあり、"写真好きの遊び場"のような空間。
+                    </p>
+                    <a href="https://note.com/tojimasaya/n/nd1b52bb6dd82" target="_blank" class="shop-link">noteで詳細を読む →</a>
+                </div>
+            </article>
+        </div>
     </section>
 
-    <!-- フォトジェニックスポット -->
-    <section id="photogenic" class="content-section">
+    <!-- Photogenic Spots Section -->
+    <section id="spots" class="content-section">
         <div class="section-header">
-            <p class="section-label">02</p>
+            <div class="section-number">02</div>
             <h2 class="section-title">フォトジェニックスポット</h2>
-            <p class="section-subtitle">Photogenic Locations in Hong Kong</p>
+            <p class="section-subtitle-en">Photogenic Locations</p>
         </div>
 
-        <!-- モンスターマンション -->
-        <article class="card-item">
-            <div class="card-image-container">
-                <img src="https://assets.st-note.com/production/uploads/images/153152209/rectangle_large_type_2_fecefe73f61ba00c65e154934cb9a90a.jpeg?width=1280" alt="モンスターマンション" class="card-image">
-            </div>
-            <div class="card-content">
-                <p class="card-number">01</p>
-                <h3 class="card-name">モンスターマンション</h3>
-                <p class="card-name-en">Monster Mansion</p>
-                <p class="card-description">
-                    鰂魚涌に位置する、香港を代表するフォトジェニックスポット。5つの老朽化した集合住宅が作り出す圧倒的な景観は、映画『トランスフォーマー』にも登場。中庭から見上げる景色は息を呑む迫力。
-                </p>
-                <a href="https://note.com/tojimasaya/n/ne1aae84f0f32" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
-            </div>
-        </article>
+        <div class="shop-list">
+            <!-- Spot 1 -->
+            <article class="shop-item">
+                <img src="https://assets.st-note.com/production/uploads/images/153152209/rectangle_large_type_2_fecefe73f61ba00c65e154934cb9a90a.jpeg?width=1280" alt="Monster Mansion" class="shop-image">
+                <div class="shop-info">
+                    <span class="shop-area">Quarry Bay</span>
+                    <h3 class="shop-name">Monster Mansion</h3>
+                    <span class="shop-name-jp">益昌大廈（モンスターマンション）</span>
+                    <p class="shop-desc">
+                        鰂魚涌（クオーリーベイ）にある、香港を代表する高密度住宅群。映画『トランスフォーマー』のロケ地としても有名。中庭から見上げる「空の狭さ」と圧倒的な室外機の数は、香港の居住環境を象徴している。
+                    </p>
+                    <a href="https://note.com/tojimasaya/n/ne1aae84f0f32" target="_blank" class="shop-link">noteで詳細を読む →</a>
+                </div>
+            </article>
 
-        <!-- 旺角道 誠興 -->
-        <article class="card-item">
-            <div class="card-image-container">
-                <img src="https://assets.st-note.com/production/uploads/images/162018369/rectangle_large_type_2_0e0e53f6125c76b71e413b09dca2f9ee.jpeg?width=1280" alt="旺角道 誠興" class="card-image">
-            </div>
-            <div class="card-content">
-                <p class="card-number">02</p>
-                <h3 class="card-name">旺角道 誠興看板</h3>
-                <p class="card-name-en">Shing Hing Sign, Mong Kok</p>
-                <p class="card-description">
-                    旺角道の歩道から見上げる「誠興」の看板。ビルの谷間から覗く独特の構図が魅力。規制により次々と撤去されていく香港の突き出し看板の中でも、特に印象的な一枚。歩道からの撮影が可能で、アクセスも良い。
-                </p>
-                <a href="https://note.com/tojimasaya/n/n97cdf8788f17" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
-            </div>
-        </article>
+            <!-- Spot 2 -->
+            <article class="shop-item">
+                <img src="https://assets.st-note.com/production/uploads/images/162018369/rectangle_large_type_2_0e0e53f6125c76b71e413b09dca2f9ee.jpeg?width=1280" alt="Shing Hing Sign" class="shop-image">
+                <div class="shop-info">
+                    <span class="shop-area">Mong Kok</span>
+                    <h3 class="shop-name">Shing Hing Sign</h3>
+                    <span class="shop-name-jp">旺角道 誠興看板</span>
+                    <p class="shop-desc">
+                        旺角道の歩道橋から見上げる「誠興」の看板。ビルの谷間から突き出す構図が、かつての香港らしさを色濃く残している。規制により多くの看板が撤去された今、貴重な被写体の一つ。
+                    </p>
+                    <a href="https://note.com/tojimasaya/n/n97cdf8788f17" target="_blank" class="shop-link">noteで詳細を読む →</a>
+                </div>
+            </article>
 
-        <!-- 九龍城 最後のネオン -->
-        <article class="card-item">
-            <div class="card-image-container">
-                <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280" alt="九龍城" class="card-image">
-            </div>
-            <div class="card-content">
-                <p class="card-number">03</p>
-                <h3 class="card-name">九龍城 最後のネオン</h3>
-                <p class="card-name-en">Last Neon in Kowloon City</p>
-                <p class="card-description">
-                    かつて「九龍城砦」があったことで知られる九龍城エリア。再開発が進む中、今も残る数少ないネオンサインを追う。古い飲食店や商店が軒を連ねる路地裏に、香港の原風景が残されている。
-                </p>
-                <a href="https://note.com/tojimasaya/n/nc955069936fc" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
-            </div>
-        </article>
+            <!-- Spot 3 -->
+            <article class="shop-item">
+                <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280" alt="Kowloon City" class="shop-image">
+                <div class="shop-info">
+                    <span class="shop-area">Kowloon City</span>
+                    <h3 class="shop-name">Kowloon City Neon</h3>
+                    <span class="shop-name-jp">九龍城 最後のネオン</span>
+                    <p class="shop-desc">
+                        かつて九龍城砦があったエリア。現在はタイ料理店などが多く並ぶが、路地裏には古い香港の風情を残すネオンサインがまだいくつか残っている。再開発が進む前に記録しておきたい場所。
+                    </p>
+                    <a href="https://note.com/tojimasaya/n/nc955069936fc" target="_blank" class="shop-link">noteで詳細を読む →</a>
+                </div>
+            </article>
 
-        <!-- 旺角 しぶとく残るネオン -->
-        <article class="card-item">
-            <div class="card-image-container">
-                <img src="https://assets.st-note.com/production/uploads/images/237153492/rectangle_large_type_2_7451e112bc07ee0075e223bfc6ceabde.jpeg?width=1280" alt="旺角" class="card-image">
-            </div>
-            <div class="card-content">
-                <p class="card-number">04</p>
-                <h3 class="card-name">旺角 しぶとく残るネオン</h3>
-                <p class="card-name-en">Surviving Neon in Mong Kok</p>
-                <p class="card-description">
-                    香港で最も活気あふれる街、旺角。規制の波にも関わらず、今なお光を放ち続けるネオンサインたち。老舗の飲食店や雑貨店の看板が作り出す、香港らしい夜の風景を捉える。夜撮影がおすすめ。
-                </p>
-                <a href="https://note.com/tojimasaya/n/n4e5b10923a0a" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
-            </div>
-        </article>
-
-        <!-- 馬草壟 逆転の国境線 -->
-        <article class="card-item">
-            <div class="card-image-container">
-                <img src="https://assets.st-note.com/production/uploads/images/242614364/rectangle_large_type_2_35150bf78006c50980c0fa4fa45a1ced.jpeg?width=1280" alt="馬草壟" class="card-image">
-            </div>
-            <div class="card-content">
-                <p class="card-number">05</p>
-                <h3 class="card-name">馬草壟・消えゆく「逆転の国境線」</h3>
-                <p class="card-name-en">Ma Tso Lung Border</p>
-                <p class="card-description">
-                    香港の最北端、馬草壟。中国本土との境界に立つフェンス越しに見える、もう一つの世界。開発が進む深圳と、時が止まったような香港側の田園風景。「逆転」した境界線の風景は、今この瞬間にしか撮れない記録となる。
-                </p>
-                <a href="https://note.com/tojimasaya/n/n37e6f1590cbc" target="_blank" rel="noopener noreferrer" class="card-button">記事を読む</a>
-            </div>
-        </article>
+            <!-- Spot 4 -->
+            <article class="shop-item">
+                <img src="https://assets.st-note.com/production/uploads/images/242614364/rectangle_large_type_2_35150bf78006c50980c0fa4fa45a1ced.jpeg?width=1280" alt="Ma Tso Lung" class="shop-image">
+                <div class="shop-info">
+                    <span class="shop-area">New Territories</span>
+                    <h3 class="shop-name">Ma Tso Lung</h3>
+                    <span class="shop-name-jp">馬草壟（マ・ツォ・ルン）</span>
+                    <p class="shop-desc">
+                        香港の最北端、中国本土との境界エリア。フェンス越しに見えるのは、深圳の高層ビル群と、手前の香港側の静かな田園風景。「逆転」した発展の様子が見て取れる、象徴的なボーダーライン。
+                    </p>
+                    <a href="https://note.com/tojimasaya/n/n37e6f1590cbc" target="_blank" class="shop-link">noteで詳細を読む →</a>
+                </div>
+            </article>
+        </div>
     </section>
 
-    <!-- フッター -->
-    <footer>
+    <!-- Back to Home -->
+    <section class="back-to-home">
+        <a href="/" class="back-link">
+            <span class="back-arrow">←</span>
+            <span>Back to Home</span>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="footer-content">
-            <p class="footer-title">HONG KONG</p>
-            <p class="footer-text">香港を撮る、香港で撮る</p>
+            <p>&copy; 2026 Toji Masaya. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
-        function toggleNav() {
-            const navMenu = document.getElementById('nav-menu');
-            navMenu.classList.toggle('active');
+        // Navigation Toggle
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
         }
 
-        // ナビゲーションリンクをクリックしたらメニューを閉じる
-        document.querySelectorAll('.nav-link').forEach(link => {
-            link.addEventListener('click', () => {
-                const navMenu = document.getElementById('nav-menu');
-                navMenu.classList.remove('active');
+        // ページ内リンクのスムーズスクロールとアクティブ状態の切り替え
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
             });
         });
 
-        // ページ内ナビゲーションのアクティブ状態を管理
-        const sections = document.querySelectorAll('.content-section');
-        const pageNavItems = document.querySelectorAll('.page-nav-item');
-
-        // スクロールに応じてアクティブ状態を更新
+        // スクロールに合わせてナビゲーションのアクティブ状態を変更
         window.addEventListener('scroll', () => {
             let current = '';
-            
+            const sections = document.querySelectorAll('.content-section');
+            const navLinks = document.querySelectorAll('.page-nav a');
+
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                const sectionHeight = section.clientHeight;
-                // ページ内ナビゲーションの高さ分を考慮
-                if (pageYOffset >= sectionTop - 250) {
+                if (pageYOffset >= sectionTop - 150) {
                     current = section.getAttribute('id');
                 }
             });
-            
-            pageNavItems.forEach(item => {
-                item.classList.remove('active');
-                if (item.getAttribute('href').substring(1) === current) {
-                    item.classList.add('active');
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
                 }
             });
         });
     </script>
-
 </body>
 </html>
