@@ -134,36 +134,53 @@
                 const data = await res.json();
                 
                 const items = data.categories.camera.items;
+                const bodyItems = [];
+                const lensItems = [];
+
+                // 分類ロジックの改善:
+                // 1. まず「明らかにレンズ」なものを除外する方式を採用
+                // 2. 残ったものを「ボディ」とする（これでX100VIなどもボディに残る）
                 
-                // カメラボディの判定ロジック (大幅強化)
-                const bodyItems = items.filter(i => {
-                    const name = i.name.toLowerCase();
-                    const id = i.id.toLowerCase();
-                    
-                    // 1. IDによる判定 (最優先)
-                    const knownBodyIds = [
-                        'leica-m10', 'leica-sl2s', 'leica-m2', 'leica-m6',
-                        'fujifilm-x100vi', 'fujifilm-x100v', 'x100vi',
-                        'ricoh-gr', 'ricoh-gr3', 'ricoh-griiix', 'gr-iii',
-                        'sony-alpha'
-                    ];
-                    if (knownBodyIds.some(k => id.includes(k))) return true;
+                const lensKeywords = [
+                    'summilux', 'summicron', 'elmarit', 'noctilux', 'summaron', 
+                    'apo-lanthar', 'nokton', 'ultron', 'color-skopar', 'biogon', 'planar', 
+                    'elmar', 'hektor', 'summarit', 'thambar', 'telyt', 'super-elmar',
+                    'adapter', 'mount', 'visoflex' // アクセサリー類もレンズ側(または除外)へ
+                ];
 
-                    // 2. カメラ名に含まれるキーワードで判定 (X100やGRなどのコンデジもここで救う)
-                    const bodyKeywords = [
-                        'camera', 'body', 
-                        'x100', 'x100v', 'x100vi', // 富士フイルム
-                        'gr iii', 'gr 3', 'gr iiix', // リコー
-                        'leica m', 'leica sl', 'leica q'
-                    ];
-                    if (bodyKeywords.some(k => name.includes(k)) && !name.includes('adapter') && !name.includes('case')) return true;
+                const bodyKeywords = [
+                    'leica m', 'leica sl', 'leica q', 'leica d-lux', 
+                    'fujifilm', 'x100', 'gfx', 'x-pro', 'x-t', 'x-e',
+                    'ricoh', 'gr', 'pentax', 
+                    'sony', 'alpha', 'a7', 'a9', 'a1', 'zv',
+                    'panasonic', 'lumix', 'nikon', 'canon', 'hasselblad',
+                    'body', 'camera'
+                ];
 
-                    // 3. 上記に当てはまらないものはレンズとする
-                    return false;
+                items.forEach(item => {
+                    const name = item.name.toLowerCase();
+                    const id = item.id.toLowerCase();
+                    const specs = item.specs ? item.specs.join(' ').toLowerCase() : '';
+
+                    // 判定1: 強制的にボディとみなすキーワード (X100, GR等)
+                    if (bodyKeywords.some(k => name.includes(k) || id.includes(k))) {
+                        // ただし、名前に "adapter" や "case" が含まれていたらボディではない
+                        if (!name.includes('adapter') && !name.includes('case')) {
+                            bodyItems.push(item);
+                            return;
+                        }
+                    }
+
+                    // 判定2: レンズキーワードが含まれていればレンズ
+                    if (lensKeywords.some(k => name.includes(k))) {
+                        lensItems.push(item);
+                        return;
+                    }
+
+                    // 判定3: どちらにも引っかからない場合
+                    // 基本的に名前が短い、または固有のカメラ名はボディとして扱う
+                    bodyItems.push(item);
                 });
-
-                // 上記以外をレンズとする
-                const lensItems = items.filter(i => !bodyItems.includes(i));
 
                 renderGrid('body-grid', bodyItems);
                 renderGrid('lens-grid', lensItems);
