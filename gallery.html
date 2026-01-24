@@ -66,7 +66,7 @@
             font-family: var(--secondary-font);
             font-size: 0.9rem;
             transition: all 0.3s ease;
-            min-width: 80px;
+            min-width: 100px;
         }
 
         .filter-btn:hover, .filter-btn.active {
@@ -309,7 +309,7 @@
         <p class="gallery-subtitle">Portfolio / Moments / Scenery</p>
     </header>
 
-    <!-- シンプルになったフィルター -->
+    <!-- シンプルな3つのフィルター -->
     <div class="gallery-filter">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="photo">Photos</button>
@@ -368,7 +368,7 @@
             grid.innerHTML = '';
 
             // フィルタリングロジックの簡素化
-            // 'all'なら全件、それ以外なら item.type と完全一致するかチェック
+            // 'all'なら全件、それ以外なら item.type (photo/video) と一致するかチェック
             const filtered = filter === 'all' 
                 ? allItems 
                 : allItems.filter(item => item.type === filter);
@@ -383,7 +383,7 @@
                 el.className = `gallery-item ${item.type}`;
                 el.style.transitionDelay = `${Math.min(index * 50, 1000)}ms`; // Cap delay
                 
-                // Image handling
+                // Image handling (Video thumbnail or Photo)
                 const imgSrc = item.image || (item.youtubeId ? `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg` : 'https://placehold.co/600x400?text=No+Image');
                 
                 // Note Link HTML if exists
