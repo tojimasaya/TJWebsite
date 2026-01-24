@@ -107,7 +107,7 @@
     <header class="detail-hero">
         <a href="gear.html" class="detail-back-link">← Back to Categories</a>
         <h1>Camera & Lenses</h1>
-        <p>Leica M System, SL System, and my favorite glasses.</p>
+        <p>Leica M System, SL System, Compacts, and Lenses.</p>
     </header>
 
     <h2 class="section-label">Bodies</h2>
@@ -135,24 +135,30 @@
                 
                 const items = data.categories.camera.items;
                 
-                // カメラボディの判定ロジックを修正
+                // カメラボディの判定ロジック (大幅強化)
                 const bodyItems = items.filter(i => {
                     const name = i.name.toLowerCase();
                     const id = i.id.toLowerCase();
                     
-                    // レンズの特徴（mm, f/）が含まれていたら除外
-                    if (name.includes('mm') || name.includes('f/') || name.includes('summicron') || name.includes('summilux') || name.includes('elmarit') || name.includes('adapter')) {
-                        return false;
-                    }
+                    // 1. IDによる判定 (最優先)
+                    const knownBodyIds = [
+                        'leica-m10', 'leica-sl2s', 'leica-m2', 'leica-m6',
+                        'fujifilm-x100vi', 'fujifilm-x100v', 'x100vi',
+                        'ricoh-gr', 'ricoh-gr3', 'ricoh-griiix', 'gr-iii',
+                        'sony-alpha'
+                    ];
+                    if (knownBodyIds.some(k => id.includes(k))) return true;
 
-                    // ボディとして認識するIDリスト
-                    const knownBodyIds = ['leica-m10', 'leica-sl2s', 'leica-m2', 'fujifilm-x100vi', 'ricoh-gr', 'sony-alpha'];
-                    if (knownBodyIds.includes(id)) return true;
+                    // 2. カメラ名に含まれるキーワードで判定 (X100やGRなどのコンデジもここで救う)
+                    const bodyKeywords = [
+                        'camera', 'body', 
+                        'x100', 'x100v', 'x100vi', // 富士フイルム
+                        'gr iii', 'gr 3', 'gr iiix', // リコー
+                        'leica m', 'leica sl', 'leica q'
+                    ];
+                    if (bodyKeywords.some(k => name.includes(k)) && !name.includes('adapter') && !name.includes('case')) return true;
 
-                    // それ以外で 'camera' や 'body' が含まれていればボディとする
-                    if (name.includes('body') || name.includes('camera')) return true;
-
-                    // デフォルトはfalse（レンズ扱い）
+                    // 3. 上記に当てはまらないものはレンズとする
                     return false;
                 });
 
