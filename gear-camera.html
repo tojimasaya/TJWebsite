@@ -135,27 +135,24 @@
                 
                 const items = data.categories.camera.items;
                 
-                // カメラボディ判定ロジック強化
+                // カメラボディの判定ロジックを修正
                 const bodyItems = items.filter(i => {
                     const name = i.name.toLowerCase();
                     const id = i.id.toLowerCase();
-                    // スペック配列を文字列化して検索
-                    const specs = i.specs ? i.specs.join(' ').toLowerCase() : '';
-
-                    // 判定条件:
-                    // 1. 特定のIDリストに含まれる
-                    // 2. 名前に 'camera', 'body' が含まれる (稀)
-                    // 3. 名前に 'leica m', 'leica sl', 'fujifilm', 'x100', 'gr' 等が含まれる (ボディのシリーズ名)
-                    // 4. スペックに 'cmos', 'sensor', 'mp' (画素数), 'film' (フィルム機) が含まれる
                     
-                    const knownIds = ['leica-m10', 'leica-sl2s', 'leica-m2', 'fujifilm-x100vi', 'ricoh-gr', 'sony-alpha'];
-                    const bodyKeywords = ['leica m', 'leica sl', 'fujifilm', 'x100', 'lumix', 'sony', 'nikon', 'canon', 'body'];
-                    const specKeywords = ['cmos', 'sensor', 'mp', 'film', 'trans'];
+                    // レンズの特徴（mm, f/）が含まれていたら除外
+                    if (name.includes('mm') || name.includes('f/') || name.includes('summicron') || name.includes('summilux') || name.includes('elmarit') || name.includes('adapter')) {
+                        return false;
+                    }
 
-                    if (knownIds.includes(id)) return true;
-                    if (bodyKeywords.some(k => name.includes(k)) && !name.includes('mount')) return true; // マウントアダプターを除外
-                    if (specKeywords.some(k => specs.includes(k))) return true;
+                    // ボディとして認識するIDリスト
+                    const knownBodyIds = ['leica-m10', 'leica-sl2s', 'leica-m2', 'fujifilm-x100vi', 'ricoh-gr', 'sony-alpha'];
+                    if (knownBodyIds.includes(id)) return true;
 
+                    // それ以外で 'camera' や 'body' が含まれていればボディとする
+                    if (name.includes('body') || name.includes('camera')) return true;
+
+                    // デフォルトはfalse（レンズ扱い）
                     return false;
                 });
 
