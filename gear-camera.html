@@ -137,48 +137,50 @@
                 const bodyItems = [];
                 const lensItems = [];
 
-                // 分類ロジックの改善:
-                // 1. まず「明らかにレンズ」なものを除外する方式を採用
-                // 2. 残ったものを「ボディ」とする（これでX100VIなどもボディに残る）
-                
-                const lensKeywords = [
-                    'summilux', 'summicron', 'elmarit', 'noctilux', 'summaron', 
-                    'apo-lanthar', 'nokton', 'ultron', 'color-skopar', 'biogon', 'planar', 
-                    'elmar', 'hektor', 'summarit', 'thambar', 'telyt', 'super-elmar',
-                    'adapter', 'mount', 'visoflex' // アクセサリー類もレンズ側(または除外)へ
-                ];
-
+                // ボディ判定用の強力なキーワード（ここに含まれれば問答無用でボディ）
                 const bodyKeywords = [
-                    'leica m', 'leica sl', 'leica q', 'leica d-lux', 
+                    'leica m10', 'leica sl', 'leica q', 'leica d-lux', 
                     'fujifilm', 'x100', 'gfx', 'x-pro', 'x-t', 'x-e',
                     'ricoh', 'gr', 'pentax', 
-                    'sony', 'alpha', 'a7', 'a9', 'a1', 'zv',
+                    'sony alpha', 'sony a7', 'sony a9', 'sony a1', 'sony zv',
                     'panasonic', 'lumix', 'nikon', 'canon', 'hasselblad',
+                    'sigma fp', // Sigma fp対策
                     'body', 'camera'
+                ];
+
+                // レンズ判定用のキーワード（ボディキーワードに該当しなかった場合、これを含めばレンズ）
+                const lensKeywords = [
+                    'mm', // 焦点距離 (28-70mmなど)
+                    'f/', 'f1.', 'f2.', 'f3.', 'f4.', 'f5.', 'f6.', // F値
+                    'summilux', 'summicron', 'elmarit', 'noctilux', 'summaron', 
+                    'apo', 'nokton', 'ultron', 'skopar', 'biogon', 'planar', 
+                    'elmar', 'hektor', 'summarit', 'thambar', 'telyt', 
+                    'macro', 'zoom', 'vario',
+                    'dg', 'dn', 'art', 'contemporary', 'sports', // Sigmaレンズの特徴
+                    'adapter', 'mount', 'visoflex' // アクセサリー類もレンズ側へ
                 ];
 
                 items.forEach(item => {
                     const name = item.name.toLowerCase();
                     const id = item.id.toLowerCase();
-                    const specs = item.specs ? item.specs.join(' ').toLowerCase() : '';
 
-                    // 判定1: 強制的にボディとみなすキーワード (X100, GR等)
+                    // 1. ボディ判定（最優先）
+                    // マウントアダプターやケース等の誤判定を防ぐため、除外ワードもチェック
                     if (bodyKeywords.some(k => name.includes(k) || id.includes(k))) {
-                        // ただし、名前に "adapter" や "case" が含まれていたらボディではない
-                        if (!name.includes('adapter') && !name.includes('case')) {
+                        if (!name.includes('adapter') && !name.includes('case') && !name.includes('mount')) {
                             bodyItems.push(item);
                             return;
                         }
                     }
 
-                    // 判定2: レンズキーワードが含まれていればレンズ
+                    // 2. レンズ判定
                     if (lensKeywords.some(k => name.includes(k))) {
                         lensItems.push(item);
                         return;
                     }
 
-                    // 判定3: どちらにも引っかからない場合
-                    // 基本的に名前が短い、または固有のカメラ名はボディとして扱う
+                    // 3. どちらにも引っかからない場合（不明なアイテム）
+                    // 基本的にはボディ扱いにして目立たせる（またはレンズに入れても良いが、今回はボディへ）
                     bodyItems.push(item);
                 });
 
