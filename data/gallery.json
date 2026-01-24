@@ -1,130 +1,66 @@
 [
   {
-    "id": "kamtin_dokyo",
-    "type": "photo",
-    "title": "錦田の酬恩建醮",
-    "description": "元朗・錦田で10年に一度行われる道教の祭礼「酬恩建醮」。色とりどりの旗が風に揺れ、村全体が祈りに包まれる。DJI Mini 5 Proで上空から捉えた、祭りの賑わいと伝統の重み。",
-    "image": "assets/images/gallery/dokyo.jpg",
-    "location": "錦田（カムティン）、元朗、香港",
-    "date": "2025年",
-    "category": ["photos", "travel", "hongkong"],
-    "noteUrl": "https://note.com/tojimasaya/n/n8a2968419232",
-    "noteTitle": "10年に一度の道教祭礼「酬恩建醮」をゆく。 2025 Dec 22"
+    "id": 1,
+    "src": "assets/images/gallery/castle31.jpg",
+    "title": "大晦日の静寂",
+    "location": "Himeji Castle",
+    "category": "himeji",
+    "tags": ["castle", "winter"]
   },
   {
-    "id": "kowloon_neon",
-    "type": "photo",
-    "title": "九龍城のネオン",
-    "description": "消えつつある香港のネオン文化。九龍城の夜、自転車で帰路につく人とともに、街の記憶を写し留めた一枚。",
-    "image": "assets/images/gallery/bicycle.jpg",
-    "location": "九龍城、香港",
-    "date": "2025年",
-    "category": ["photos", "travel"],
-    "noteUrl": "https://note.com/tojimasaya/n/n4e5b10923a0a",
-    "noteTitle": "香港フォトジェニックスポット攻略ガイド #4 ──旺角・しぶとく残るネオンを撮る 2025 Dec 18"
+    "id": 2,
+    "src": "assets/images/gallery/cappadocia.jpg",
+    "title": "バルーンの舞う朝",
+    "location": "Cappadocia, Turkey",
+    "category": "turkey",
+    "tags": ["drone", "landscape"]
   },
   {
-    "id": "neuschwanstein",
-    "type": "photo",
-    "title": "遠くに見えるノイシュヴァンシュタイン城",
-    "description": "先日『世界遺産』を観ていて知った。ノイシュヴァンシュタイン城が、2025年にようやく世界遺産に。",
-    "image": "assets/images/gallery/neuschwanstein.jpg",
-    "location": "フュッセン郊外、ドイツ",
-    "date": "2014年秋",
-    "category": ["photos", "travel"]
+    "id": 3,
+    "src": "https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280",
+    "title": "Neon Streets",
+    "location": "Mong Kok, Hong Kong",
+    "category": "hongkong",
+    "tags": ["night", "street"]
   },
   {
-    "id": "mont_saint_michel_video",
-    "type": "video",
-    "title": "フランス モン・サン＝ミッシェル",
-    "description": "ずっと夢見ていたモン・サン＝ミッシェルの空撮",
-    "youtubeId": "QQ9UUbk9FUY",
-    "location": "フランス・モン・サン＝ミッシェル",
-    "date": "2017年夏",
-    "category": ["videos", "travel"]
+    "id": 4,
+    "src": "assets/images/gallery/weekly.jpg",
+    "title": "Weekly Snapshot",
+    "location": "Tokyo, Japan",
+    "category": "snapshot",
+    "tags": ["daily"]
   },
   {
-    "id": "cologne",
-    "type": "photo",
-    "title": "ケルン大聖堂",
-    "description": "今はもうなくなってしまったドイツ・ケルンのカメラショー Photokina に行って、みんなでフォトウォークしながら撮った思い出の一枚。",
-    "image": "assets/images/gallery/cologne.jpg",
-    "location": "ドイツ・ケルン大聖堂",
-    "date": "2014年秋",
-    "category": ["photos", "architecture"],
-    "noteUrl": "https://note.com/tojimasaya/n/n24c8d015217a?magazine_key=md99dd54590fa",
-    "noteTitle": "最悪で最高のケルン 2014 Sep 17"
+    "id": 5,
+    "src": "assets/images/shirasagi/21.jpg",
+    "title": "白鷺の季節",
+    "location": "Himeji Castle",
+    "category": "himeji",
+    "tags": ["spring"]
   },
   {
-    "id": "lhasa",
-    "type": "photo",
-    "title": "ポタラ宮（ラサ）",
-    "description": "広州から５３時間列車に乗ってラサ駅へ、到着前からほぼ高山病。ポタラ宮についたときには意識が朦朧としていました。",
-    "image": "assets/images/gallery/lhasa.jpg",
-    "location": "チベット・ラサ ポタラ宮",
-    "date": "2016年春",
-    "category": ["photos", "travel"],
-    "noteUrl": "https://note.com/tojimasaya/n/n9e58036e3b01?magazine_key=md99dd54590fa",
-    "noteTitle": "2016 チベット拉薩・西安 兵馬俑の旅 （目次）"
+    "id": 6,
+    "src": "assets/images/turkey/pamukkale/01.jpg",
+    "title": "白い棚田",
+    "location": "Pamukkale, Turkey",
+    "category": "turkey",
+    "tags": ["landscape"]
   },
   {
-    "id": "cappadocia_video",
-    "type": "video",
-    "title": "カッパドキアのホテルから",
-    "description": "妻と訪れたカッパドキアのホテルから眺めた朝の風景。宿泊した洞窟ホテルのベランダからドローンを飛ばして撮影しました。",
-    "youtubeId": "cJ2lFRqmeBA",
-    "location": "カッパドキア、トルコ",
-    "date": "2024年秋",
-    "category": ["videos", "travel"]
+    "id": 7,
+    "src": "assets/images/hongkong-neon/hero.jpg",
+    "title": "Signs of Time",
+    "location": "Hong Kong",
+    "category": "hongkong",
+    "tags": ["neon"]
   },
   {
-    "id": "matsolung_video",
-    "type": "video",
-    "title": "記憶すべき風景、馬草壟 (Ma Tso Lung)",
-    "description": "香港の隠れた絶景スポット、馬草壟。驚くことにビル群が中国深セン、養殖池が並ぶのが香港。この風景もあと数年で開発されてみられなくなりそう。",
-    "youtubeId": "0YiQFV-V_Pw",
-    "location": "馬草壟、香港",
-    "date": "2023年秋",
-    "category": ["videos", "travel"]
-  },
-  {
-    "id": "venice",
-    "type": "photo",
-    "title": "ヴェネツィアの夜景",
-    "description": "サンマルコ広場から見たヴェネツィアの夜景。水面に映る光が幻想的な雰囲気を演出していました。",
-    "image": "assets/images/gallery/venice.jpg",
-    "location": "ヴェネツィア、イタリア",
-    "date": "2016年秋",
-    "category": ["photos", "architecture"]
-  },
-  {
-    "id": "hongkong",
-    "type": "photo",
-    "title": "香港の街並み",
-    "description": "香港の高層ビル群。東西が融合した独特の都市景観は、何度見ても飽きることがありません。",
-    "image": "assets/images/gallery/hongkong.jpg",
-    "location": "香港",
-    "date": "2023年",
-    "category": ["photos", "travel"]
-  },
-  {
-    "id": "cappadocia_photo",
-    "type": "photo",
-    "title": "カッパドキアの奇岩群",
-    "description": "妻と一緒に訪れたカッパドキア。自然が作り出した不思議な岩の造形美に圧倒されました。",
-    "image": "assets/images/gallery/cappadocia.jpg",
-    "location": "カッパドキア、トルコ",
-    "date": "2024年秋",
-    "category": ["photos", "travel"]
-  },
-  {
-    "id": "istanbul",
-    "type": "photo",
-    "title": "ボスポラスからヨーロッパ側を望む",
-    "description": "ヨーロッパとアジアの境界、イスタンブール。ボスポラス海峡をクルーズしながら撮った一枚、ガラタ塔に登れなかったことが悔やまれる",
-    "image": "assets/images/gallery/istanbul.jpg",
-    "location": "イスタンブール、トルコ",
-    "date": "2024年秋",
-    "category": ["photos", "travel"]
+    "id": 8,
+    "src": "assets/images/gear/drone-mini4.jpg",
+    "title": "Aerial Perspective",
+    "location": "Unknown",
+    "category": "drone",
+    "tags": ["gear"]
   }
 ]
