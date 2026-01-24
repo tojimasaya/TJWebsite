@@ -39,9 +39,10 @@
             font-size: 1.8rem;
             border-bottom: 1px solid var(--border-color);
             padding-bottom: 10px;
+            color: var(--text-color);
         }
         
-        /* Item Card (Consistent with other pages) */
+        /* Item Card */
         .gear-item {
             background: var(--page-card-bg, #fff);
             border: 1px solid var(--border-color);
@@ -71,14 +72,23 @@
             display: flex;
             flex-direction: column;
         }
-        .gear-name { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; }
-        .gear-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 15px; }
-        .gear-specs { font-size: 0.8rem; color: var(--text-lighter); margin-bottom: 15px; }
+        .gear-name { 
+            font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; color: var(--text-color);
+        }
+        .gear-desc { 
+            font-size: 0.9rem; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 15px; 
+        }
+        .gear-specs { 
+            font-size: 0.8rem; color: var(--text-lighter); margin-bottom: 15px; 
+            display: flex; gap: 8px; flex-wrap: wrap;
+        }
+        .spec-tag {
+            background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px;
+        }
         .gear-links a { color: var(--accent-color); text-decoration: none; font-size: 0.85rem; margin-right: 15px; }
     </style>
 </head>
 <body>
-    <!-- Nav (Common) -->
     <nav class="main-nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">TJM</a>
@@ -89,6 +99,7 @@
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
                 <li><a href="gear.html" class="nav-link active">Gear</a></li>
                 <li><a href="writings.html" class="nav-link">Writings</a></li>
+                <li><a href="hongkong.html" class="nav-link">Hong Kong</a></li>
             </ul>
         </div>
     </nav>
@@ -100,45 +111,54 @@
     </header>
 
     <h2 class="section-label">Bodies</h2>
-    <div class="detail-grid" id="body-grid"></div>
+    <div class="detail-grid" id="body-grid">
+        <p style="padding: 20px;">Loading...</p>
+    </div>
 
     <h2 class="section-label">Lenses</h2>
-    <div class="detail-grid" id="lens-grid"></div>
+    <div class="detail-grid" id="lens-grid">
+        <p style="padding: 20px;">Loading...</p>
+    </div>
 
     <footer class="footer"><div class="footer-content"><p>&copy; 2026 Toji Masaya.</p></div></footer>
 
     <script>
-        // Nav Toggle
         document.getElementById('nav-toggle').addEventListener('click', () => {
             document.getElementById('nav-menu').classList.toggle('active');
         });
 
-        // Load JSON
         async function loadData() {
             try {
-                const res = await fetch('gear.json'); // Use the user's uploaded JSON path if different
+                // パスを data/gear.json に修正
+                const res = await fetch('data/gear.json'); 
+                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
                 const data = await res.json();
+                
                 const items = data.categories.camera.items;
                 
-                const bodies = items.filter(i => i.specs && i.specs.some(s => s.includes('ボディ') || s.includes('Sensor') || !s.includes('mm'))); // Simple heuristic or manual filter
-                // Or better, rely on ID or manual separation if type field isn't in JSON. 
-                // Based on uploaded JSON snippet, there isn't a explicit 'type'. 
-                // Let's assume 'Leica M10', 'SL2-S' are bodies.
+                // カメラボディとして扱うIDリスト
+                const bodyIds = ['leica-m10', 'leica-sl2s', 'leica-m2', 'fujifilm-x100vi']; 
                 
-                const bodyIds = ['leica-m10', 'leica-sl2s', 'leica-m2']; 
-                
-                const bodyItems = items.filter(i => bodyIds.includes(i.id));
-                const lensItems = items.filter(i => !bodyIds.includes(i.id));
+                // IDリストに含まれる、または名前に 'Leica M10' 等が含まれる場合をボディとする
+                const bodyItems = items.filter(i => bodyIds.includes(i.id) || i.name.includes('Leica M') || i.name.includes('Leica SL'));
+                // それ以外をレンズとする
+                const lensItems = items.filter(i => !bodyItems.includes(i));
 
                 renderGrid('body-grid', bodyItems);
                 renderGrid('lens-grid', lensItems);
             } catch (e) {
                 console.error(e);
+                document.getElementById('body-grid').innerHTML = '<p>データの読み込みに失敗しました (data/gear.jsonが見つかりません)</p>';
+                document.getElementById('lens-grid').innerHTML = '';
             }
         }
 
         function renderGrid(id, items) {
             const container = document.getElementById(id);
+            if (items.length === 0) {
+                container.innerHTML = '<p>アイテムがありません</p>';
+                return;
+            }
             container.innerHTML = items.map(item => `
                 <article class="gear-item">
                     <div class="gear-img-box">
@@ -146,7 +166,9 @@
                     </div>
                     <div class="gear-content">
                         <h3 class="gear-name">${item.name}</h3>
-                        <div class="gear-specs">${item.specs ? item.specs.join(' / ') : ''}</div>
+                        <div class="gear-specs">
+                            ${item.specs ? item.specs.map(s => `<span class="spec-tag">${s}</span>`).join('') : ''}
+                        </div>
                         <p class="gear-desc">${item.description}</p>
                         <div class="gear-links">
                             ${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank">${key === 'note' ? 'Read Review' : 'Official'} →</a>`).join('')}
