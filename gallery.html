@@ -50,28 +50,30 @@
         .gallery-filter {
             display: flex;
             justify-content: center;
-            gap: 10px;
+            gap: 15px;
             margin-bottom: 60px;
             padding: 0 20px;
             flex-wrap: wrap;
         }
 
         .filter-btn {
-            padding: 8px 20px;
+            padding: 8px 24px;
             border: 1px solid var(--border-color);
             background: transparent;
             color: var(--text-light);
             border-radius: 30px;
             cursor: pointer;
             font-family: var(--secondary-font);
-            font-size: 0.85rem;
+            font-size: 0.9rem;
             transition: all 0.3s ease;
+            min-width: 80px;
         }
 
         .filter-btn:hover, .filter-btn.active {
             border-color: var(--text-color);
             color: var(--text-color);
             background: rgba(0,0,0,0.05);
+            font-weight: 500;
         }
 
         /* Dark Mode for Filter Buttons */
@@ -307,13 +309,11 @@
         <p class="gallery-subtitle">Portfolio / Moments / Scenery</p>
     </header>
 
+    <!-- シンプルになったフィルター -->
     <div class="gallery-filter">
         <button class="filter-btn active" data-filter="all">All</button>
-        <button class="filter-btn" data-filter="hongkong">Hong Kong</button>
-        <button class="filter-btn" data-filter="turkey">Turkey</button>
-        <button class="filter-btn" data-filter="himeji">Himeji</button>
-        <button class="filter-btn" data-filter="drone">Drone</button>
-        <button class="filter-btn" data-filter="videos">Video</button>
+        <button class="filter-btn" data-filter="photo">Photos</button>
+        <button class="filter-btn" data-filter="video">Videos</button>
     </div>
 
     <main class="gallery-grid" id="gallery-grid">
@@ -367,18 +367,11 @@
             const grid = document.getElementById('gallery-grid');
             grid.innerHTML = '';
 
-            // Filter Logic
+            // フィルタリングロジックの簡素化
+            // 'all'なら全件、それ以外なら item.type と完全一致するかチェック
             const filtered = filter === 'all' 
                 ? allItems 
-                : allItems.filter(item => {
-                    // Check if 'category' array contains filter
-                    if (item.category && Array.isArray(item.category)) {
-                        return item.category.includes(filter);
-                    }
-                    // For Video filter, also check type
-                    if (filter === 'videos' && item.type === 'video') return true;
-                    return false;
-                });
+                : allItems.filter(item => item.type === filter);
 
             if (filtered.length === 0) {
                 grid.innerHTML = '<p style="text-align:center; width:100%; padding:40px; color:#999;">No items found.</p>';
