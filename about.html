@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me — Toji Masaya</title>
+    
+    <!-- SEO Meta Tags -->
+    <meta name="description" content="田路昌也（Toji Masaya）のプロフィールと経歴。香港での起業、iPhoneアクセサリー開発、そして姫路城写真家としての現在地。">
+    <meta name="author" content="Toji Masaya">
+
+    <!-- Fonts: Matching tojimasaya.com style -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Chart.js -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+    <!-- Tailwind Config to match existing site theme -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        serif: ['"Crimson Text"', '"Noto Serif JP"', 'serif'],
+                        sans: ['"Inter"', 'sans-serif'],
+                    },
+                    colors: {
+                        'tm-bg': '#fafafa',
+                        'tm-text': '#333333',
+                        'tm-text-light': '#666666',
+                        'tm-accent': '#2563eb',
+                        'tm-warm': '#fdfbf7',
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 350px;
+            max-height: 400px;
+        }
+        @media (max-width: 640px) {
+            .chart-container {
+                height: 300px;
+            }
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+
+        /* Mobile Menu Transitions */
+        #mobile-menu {
+            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
+            max-height: 0;
+            opacity: 0;
+            overflow: hidden;
+        }
+        #mobile-menu.open {
+            max-height: 400px;
+            opacity: 1;
+        }
+    </style>
+</head>
+<body class="bg-tm-bg text-tm-text font-serif antialiased leading-relaxed selection:bg-gray-200">
+
+    <!-- Navigation -->
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+        <div class="max-w-6xl mx-auto px-6">
+            <div class="h-16 flex items-center justify-between">
+                <!-- Logo -->
+                <a href="index.html" class="text-xl tracking-tight font-semibold hover:text-gray-600 transition-colors font-serif">
+                    Toji Masaya
+                </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 text-sm font-sans font-medium text-tm-text-light">
+                    <a href="index.html" class="hover:text-tm-text transition-colors">Home</a>
+                    <a href="about.html" class="text-tm-text border-b-2 border-tm-accent pb-0.5">About</a>
+                    <a href="gallery.html" class="hover:text-tm-text transition-colors">Gallery</a>
+                    <a href="writings.html" class="hover:text-tm-text transition-colors">Writings</a>
+                    <a href="gear.html" class="hover:text-tm-text transition-colors">Gear</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-2xl focus:outline-none" aria-label="Menu">
+                    &#8801;
+                </button>
+            </div>
+
+            <!-- Mobile Menu Dropdown -->
+            <div id="mobile-menu" class="md:hidden border-t border-gray-100 bg-white">
+                <div class="flex flex-col py-4 space-y-4 px-2 font-sans text-tm-text-light">
+                    <a href="index.html" class="block px-4 py-2 hover:bg-gray-50 rounded">Home</a>
+                    <a href="about.html" class="block px-4 py-2 bg-gray-50 text-tm-accent font-medium rounded">About</a>
+                    <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-50 rounded">Gallery</a>
+                    <a href="writings.html" class="block px-4 py-2 hover:bg-gray-50 rounded">Writings</a>
+                    <a href="gear.html" class="block px-4 py-2 hover:bg-gray-50 rounded">Gear</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="relative pt-24 pb-20 px-6 max-w-4xl mx-auto text-center animate-fade-in">
+        <span class="font-sans text-sm tracking-widest text-tm-text-light uppercase mb-4 block">Profile</span>
+        <h1 class="text-4xl md:text-6xl font-normal mb-6 leading-tight">
+            Technologist in Hong Kong,<br>
+            Storyteller in Himeji.
+        </h1>
+        <p class="text-lg md:text-xl text-tm-text-light max-w-2xl mx-auto font-sans font-light">
+            香港の熱気と、姫路の静寂。<br>
+            2つの都市、2つの視点を行き来する。<br>
+            <span class="text-sm mt-4 block text-gray-400">Born in Himeji, 1964. Based in HK since 1993.</span>
+        </p>
+    </header>
+
+    <!-- Core Philosophy Section -->
+    <section class="py-16 px-6 bg-white border-y border-gray-100">
+        <div class="max-w-3xl mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-2xl md:text-3xl mb-4">"I am not a Photographer."</h2>
+                <div class="w-12 h-0.5 bg-gray-300 mx-auto"></div>
+            </div>
+            
+            <div class="prose prose-lg mx-auto text-tm-text-light font-sans font-light space-y-6">
+                <p>
+                    一貫して申し上げたいのは、私は「写真家」ではないということです。
+                    私の原点は、1993年に渡った香港、そして深水埗（シャムスイポー）の電脳街にあります。
+                </p>
+                <p>
+                    ITビジネス、スマートフォンの黎明期、そしてiPhoneの改造。
+                    常にテクノロジーとガジェットの最先端に身を置いてきました。
+                    カメラもまた、私にとっては魅力的な「ガジェット」の一つでした。
+                    しかし、そのファインダー（あるいはiPhoneの画面）を通して見る世界が、
+                    いつしか私を、生まれ故郷である姫路の再発見へと導いてくれました。
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Interactive Data Visualization Section -->
+    <section class="py-20 px-6 bg-tm-bg">
+        <div class="max-w-5xl mx-auto">
+            <div class="mb-10 text-center md:text-left">
+                <h3 class="text-xl font-sans font-semibold text-gray-800">My Creative Trajectory</h3>
+                <p class="text-sm text-gray-500 font-sans mt-1">興味の変遷と創造性の焦点</p>
+            </div>
+            
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+                <div class="chart-container">
+                    <canvas id="trajectoryChart"></canvas>
+                </div>
+            </div>
+            <p class="text-center text-xs text-gray-400 mt-4 font-sans">
+                Data reflects relative focus of activity over time.
+            </p>
+        </div>
+    </section>
+
+    <!-- Timeline & History Section -->
+    <section class="py-20 px-6 bg-white">
+        <div class="max-w-6xl mx-auto">
+            <h2 class="text-3xl text-center mb-16">Chronicle</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
+                <!-- Sticky Navigation -->
+                <div class="md:col-span-4 md:sticky md:top-24 self-start">
+                    <div class="space-y-2 font-sans" id="timeline-nav">
+                        <!-- JS Generated -->
+                    </div>
+                </div>
+
+                <!-- Timeline Content -->
+                <div class="md:col-span-8 space-y-20" id="timeline-content">
+                    <!-- JS Generated -->
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- The Turtleback Story (Feature) -->
+    <section class="py-24 px-6 bg-gray-900 text-white relative overflow-hidden">
+        <div class="absolute top-0 right-0 w-64 h-64 bg-gray-800 rounded-full mix-blend-overlay filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
+        
+        <div class="max-w-5xl mx-auto relative z-10">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-center">
+                <div>
+                    <span class="text-tm-accent font-sans font-bold tracking-widest text-sm uppercase">The Highlight</span>
+                    <h2 class="text-4xl md:text-5xl font-serif mt-4 mb-6">The DOF Adapter Phenomenon</h2>
+                    <p class="text-gray-300 font-sans font-light leading-loose mb-8">
+                        2011年、iPhoneに一眼レフのレンズを装着する「Turtle Jacket」を開発。
+                        EngadgetやLA Timesに取り上げられ、世界中でバズを巻き起こしました。
+                        スティーブ・ジョブズ存命の時代、彼も見てくれたかもしれない。そんな夢のある時代でした。
+                    </p>
+                    
+                    <div class="space-y-4">
+                        <div class="bg-gray-800 p-4 rounded border-l-4 border-tm-accent">
+                            <p class="text-sm text-gray-400 font-sans mb-1">Coverage</p>
+                            <p class="font-serif italic text-lg">"iPhone's matures into a professional-grade camera."</p>
+                            <p class="text-right text-xs text-gray-500 mt-2">— Los Angeles Times</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="relative">
+                    <a href="https://www.pinterest.com/tojimasaya/turtleback/" target="_blank" rel="noopener noreferrer" class="block aspect-square bg-gray-800 rounded-xl p-8 border border-gray-700 flex flex-col justify-center items-center text-center hover:bg-gray-750 hover:border-gray-500 transition-all cursor-pointer group">
+                        <div class="w-24 h-24 rounded-full border-4 border-gray-600 group-hover:border-white transition-all flex items-center justify-center mb-6">
+                            <div class="w-20 h-20 rounded-full border-2 border-gray-500 bg-gray-900"></div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Turtleback</h3>
+                        <p class="text-sm text-gray-400 mb-6">Designed by Toji Masaya</p>
+                        <span class="inline-block px-6 py-2 border border-white/30 rounded-full text-sm group-hover:bg-white group-hover:text-black transition-all">
+                            View on Pinterest &rarr;
+                        </span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Himeji / Future Section -->
+    <section class="py-24 px-6 bg-tm-warm border-t border-gray-200">
+        <div class="max-w-4xl mx-auto text-center">
+            <span class="font-sans text-xs tracking-widest text-tm-text-light uppercase mb-4 block">Current Mission</span>
+            <h2 class="text-3xl md:text-5xl font-serif mb-8">Rediscovering Himeji</h2>
+            
+            <div class="prose prose-lg mx-auto text-tm-text-light font-sans font-light mb-12">
+                <p>
+                    長く海外に住み、たまに帰国して姫路城を散策すると、そこには多くの外国人がいます。
+                    彼らの眼差しを通して初めて、私は「近すぎて見えていなかった」姫路城の真の偉大さに気づきました。
+                </p>
+                <p class="font-medium text-tm-text">
+                    「白鷺三十六景」
+                </p>
+                <p>
+                    このプロジェクトは、単なる観光写真ではありません。
+                    外からの視点を持った私が、世界に向けて姫路城の美しさと物語を再定義し、発信する試みです。
+                </p>
+            </div>
+
+            <div class="flex flex-col md:flex-row justify-center gap-4">
+                <a href="gallery.html" class="inline-flex items-center justify-center px-8 py-4 bg-tm-text text-white rounded hover:bg-gray-800 transition-colors font-sans">
+                    View Gallery (三十六景)
+                </a>
+                <a href="writings.html" class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-tm-text rounded hover:bg-gray-50 transition-colors font-sans">
+                    Read Stories
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 px-6">
+        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+            <div class="md:col-span-2">
+                <h4 class="text-lg font-serif mb-4">Toji Masaya</h4>
+                <p class="text-sm text-tm-text-light leading-relaxed max-w-xs font-sans">
+                    Technologist, Writer, and Observer.<br>
+                    Bridging cultures through lenses and code.
+                </p>
+            </div>
+            <div>
+                <h5 class="font-sans font-bold text-xs uppercase text-gray-400 mb-4 tracking-wider">Explore</h5>
+                <ul class="space-y-2 text-sm font-sans text-tm-text-light">
+                    <li><a href="gallery.html" class="hover:text-tm-accent">Gallery</a></li>
+                    <li><a href="writings.html" class="hover:text-tm-accent">Writings</a></li>
+                    <li><a href="gear.html" class="hover:text-tm-accent">Gear</a></li>
+                </ul>
+            </div>
+            <div>
+                <h5 class="font-sans font-bold text-xs uppercase text-gray-400 mb-4 tracking-wider">Connect</h5>
+                <ul class="space-y-2 text-sm font-sans text-tm-text-light">
+                    <li><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer" class="hover:text-tm-accent">note</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="text-center text-xs text-gray-400 font-sans pt-8 border-t border-gray-100">
+            &copy; 2026 Toji Masaya. All rights reserved.
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // --- 1. Mobile Menu Logic ---
+        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
+        const mobileMenu = document.getElementById('mobile-menu');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mobileMenu.classList.toggle('open');
+        });
+
+        // --- 2. Chart Logic ---
+        const initChart = () => {
+            const ctx = document.getElementById('trajectoryChart').getContext('2d');
+            const years = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024];
+            
+            new Chart(ctx, {
+                type: 'line',
+                data: {
+                    labels: years,
+                    datasets: [
+                        {
+                            label: 'IT & Business',
+                            data: [20, 90, 85, 80, 70, 60, 50, 45],
+                            borderColor: '#cbd5e1',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.4,
+                            pointRadius: 0
+                        },
+                        {
+                            label: 'Gadget Modding',
+                            data: [10, 20, 40, 70, 100, 60, 40, 30],
+                            borderColor: '#2563eb',
+                            backgroundColor: 'transparent',
+                            borderWidth: 2,
+                            tension: 0.4
+                        },
+                        {
+                            label: 'Photography & Himeji',
+                            data: [5, 10, 15, 30, 50, 70, 90, 100],
+                            borderColor: '#f59e0b',
+                            backgroundColor: 'transparent',
+                            borderWidth: 3,
+                            tension: 0.4
+                        }
+                    ]
+                },
+                options: {
+                    responsive: true,
+                    maintainAspectRatio: false,
+                    plugins: {
+                        legend: { position: 'bottom' },
+                        tooltip: {
+                            mode: 'index',
+                            intersect: false,
+                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
+                            titleColor: '#333',
+                            bodyColor: '#666',
+                            borderColor: '#e5e5e5',
+                            borderWidth: 1
+                        }
+                    },
+                    scales: {
+                        y: { display: false, min: 0 },
+                        x: { grid: { display: false } }
+                    },
+                    interaction: { mode: 'nearest', axis: 'x', intersect: false }
+                }
+            });
+        };
+
+        // --- 3. Timeline Logic ---
+        const timelineData = [
+            { year: "1964", title: "Origin", desc: "兵庫県姫路市に生まれる。", icon: "★" },
+            { year: "1993", title: "Move to Hong Kong", desc: "香港・深水埗（シャムスイポー）の「黄金電腦商場」に魅せられ、移住を決意。ここから私の電脳生活が始まる。", icon: "HK" },
+            { year: "1995", title: "Internet Solutions Ltd.", desc: "仲間と共にインターネット関連事業を創業。香港のIT黎明期を駆け抜ける。", icon: "IT" },
+            { year: "2004", title: "Blogging Era", desc: "ブログ「亜洲モバイル人柱隊」を開始。本業の傍ら、スマートフォンやガジェット情報を発信し始める。", icon: "✎" },
+            { year: "2007", title: "iPhone & Jailbreak", desc: "初代iPhone (2G) のJailbreakに成功（日本人初？）。「電脳中心買物隊 in 香港」を立ち上げ、スマホ関連製品の販売を開始。", icon: "" },
+            { year: "2010", title: "Turtleback Ltd.", desc: "iPhoneカメラジャケットを企画・製造する会社を創業。ハードウェア開発への挑戦。", icon: "⚙" },
+            { year: "2011", title: "The Breakthrough", desc: "iPhoneに一眼レンズを装着する「SLR Mount」を発表。Engadget、LA Times、Vogue等に掲載され世界的ヒットとなる。", icon: "★" },
+            { year: "Present", title: "Back to Himeji", desc: "香港と日本を行き来する中で、故郷・姫路城の魅力を再発見。「白鷺三十六景」プロジェクトを通じて、その美しさを世界に発信中。", icon: "🏯" }
+        ];
+
+        const renderTimeline = () => {
+            const navContainer = document.getElementById('timeline-nav');
+            const contentContainer = document.getElementById('timeline-content');
+
+            timelineData.forEach((item, index) => {
+                // Nav
+                const navBtn = document.createElement('button');
+                navBtn.className = `w-full text-left py-3 px-4 rounded border-l-2 transition-all duration-300 font-sans text-sm ${index === 0 ? 'border-tm-accent bg-gray-50 text-tm-accent font-bold' : 'border-transparent text-gray-500 hover:text-gray-800'}`;
+                navBtn.innerHTML = `<span class="inline-block w-12">${item.year}</span> ${item.title}`;
+                navBtn.onclick = () => scrollToTimelineItem(index);
+                navBtn.id = `nav-btn-${index}`;
+                navContainer.appendChild(navBtn);
+
+                // Content
+                const contentDiv = document.createElement('div');
+                contentDiv.id = `timeline-item-${index}`;
+                contentDiv.className = "group relative pl-0 md:pl-0";
+                contentDiv.innerHTML = `
+                    <div class="md:flex items-start gap-6">
+                        <div class="hidden md:flex flex-col items-center pt-1">
+                            <div class="w-12 h-12 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-serif text-lg group-hover:bg-tm-accent group-hover:text-white transition-colors">
+                                ${item.icon}
+                            </div>
+                            ${index !== timelineData.length - 1 ? '<div class="w-px h-24 bg-gray-200 my-2"></div>' : ''}
+                        </div>
+                        <div class="flex-1 pb-8 border-b border-gray-100 last:border-0">
+                            <span class="text-sm font-sans font-bold text-tm-accent mb-1 block">${item.year}</span>
+                            <h3 class="text-2xl font-serif mb-3">${item.title}</h3>
+                            <p class="text-tm-text-light leading-relaxed font-sans font-light">
+                                ${item.desc}
+                            </p>
+                        </div>
+                    </div>
+                `;
+                contentContainer.appendChild(contentDiv);
+            });
+        };
+
+        const scrollToTimelineItem = (index) => {
+            const el = document.getElementById(`timeline-item-${index}`);
+            const offset = 100;
+            const bodyRect = document.body.getBoundingClientRect().top;
+            const elementRect = el.getBoundingClientRect().top;
+            const elementPosition = elementRect - bodyRect;
+            const offsetPosition = elementPosition - offset;
+
+            window.scrollTo({ top: offsetPosition, behavior: "smooth" });
+            updateNavState(index);
+        };
+
+        const updateNavState = (activeIndex) => {
+            const navContainer = document.getElementById('timeline-nav');
+            Array.from(navContainer.children).forEach((btn, idx) => {
+                if (idx === activeIndex) {
+                    btn.className = 'w-full text-left py-3 px-4 rounded border-l-2 transition-all duration-300 font-sans text-sm border-tm-accent bg-gray-50 text-tm-accent font-bold';
+                } else {
+                    btn.className = 'w-full text-left py-3 px-4 rounded border-l-2 transition-all duration-300 font-sans text-sm border-transparent text-gray-500 hover:text-gray-800';
+                }
+            });
+        };
+
+        const setupObserver = () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        const index = parseInt(id.split('-')[2]);
+                        updateNavState(index);
+                    }
+                });
+            }, { rootMargin: "-20% 0px -60% 0px" });
+
+            timelineData.forEach((_, index) => {
+                const el = document.getElementById(`timeline-item-${index}`);
+                if (el) observer.observe(el);
+            });
+        };
+
+        // Init
+        document.addEventListener('DOMContentLoaded', () => {
+            initChart();
+            renderTimeline();
+            setupObserver();
+        });
+    </script>
+</body>
+</html>
