@@ -24,9 +24,9 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* 香港ページ専用スタイル */
+        /* --- Dark Mode Fixes applied via CSS Variables --- */
         
-        /* ヒーローセクション調整 */
+        /* ヒーローセクション */
         .hk-hero {
             position: relative;
             height: 70vh;
@@ -76,6 +76,7 @@
             line-height: 1.4;
             margin-bottom: 1.5rem;
             text-shadow: 0 4px 20px rgba(0,0,0,0.5);
+            color: white; /* Hero text is always white */
         }
 
         .hk-subtitle {
@@ -83,6 +84,7 @@
             font-size: clamp(1rem, 2vw, 1.1rem);
             line-height: 2;
             opacity: 0.9;
+            color: white;
         }
 
         @keyframes fadeIn {
@@ -97,18 +99,17 @@
             text-align: center;
             font-family: 'Noto Serif JP', serif;
             line-height: 2.2;
-            color: var(--text-color);
+            color: var(--text-color); /* 自動で切り替わる */
             font-size: 1.05rem;
         }
 
-        /* ページ内ナビゲーション（スティッキー） */
+        /* ページ内ナビゲーション */
         .page-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(10px);
+            background: var(--bg-color); /* 自動で切り替わる */
             border-bottom: 1px solid var(--border-color);
             border-top: 1px solid var(--border-color);
             position: sticky;
-            top: 70px; /* メインナビの下 */
+            top: 70px;
             z-index: 90;
             padding: 15px 0;
         }
@@ -124,7 +125,7 @@
 
         .page-nav a {
             text-decoration: none;
-            color: var(--text-light);
+            color: var(--text-light); /* 自動で切り替わる */
             font-family: var(--secondary-font);
             font-size: 0.9rem;
             letter-spacing: 0.05em;
@@ -135,16 +136,6 @@
 
         .page-nav a:hover, .page-nav a.active {
             color: var(--accent-color);
-        }
-
-        .page-nav a.active::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 2px;
-            background: var(--accent-color);
         }
 
         /* セクション共通 */
@@ -161,7 +152,7 @@
         .section-number {
             font-family: var(--primary-font);
             font-size: 4rem;
-            color: #f0f0f0;
+            color: var(--border-color); /* 薄い色に */
             line-height: 1;
             margin-bottom: -20px;
             position: relative;
@@ -172,7 +163,7 @@
         .section-title {
             font-family: 'Noto Serif JP', serif;
             font-size: 2rem;
-            color: var(--text-color);
+            color: var(--text-color); /* 自動で切り替わる */
             margin-bottom: 10px;
             letter-spacing: 0.1em;
         }
@@ -188,8 +179,8 @@
         .featured-card {
             max-width: 1100px;
             margin: 0 auto;
-            background: #111; /* ネオンの雰囲気に合わせて黒背景 */
-            color: white;
+            background: #111; /* ネオンは常に黒背景 */
+            color: white; /* ネオンは常に白文字 */
             border-radius: 4px;
             overflow: hidden;
             display: grid;
@@ -212,7 +203,7 @@
         }
 
         .featured-label {
-            color: #ff00de; /* ネオンピンク */
+            color: #ff00de;
             font-family: var(--secondary-font);
             font-size: 0.8rem;
             letter-spacing: 0.2em;
@@ -227,12 +218,13 @@
             font-size: 2.2rem;
             margin-bottom: 20px;
             line-height: 1.4;
+            color: white; /* 強制的に白 */
         }
 
         .featured-desc {
             font-size: 1rem;
             line-height: 2;
-            color: #ccc;
+            color: #ccc; /* 強制的に薄いグレー */
             margin-bottom: 30px;
         }
 
@@ -251,7 +243,6 @@
         .featured-btn:hover {
             background: white;
             color: #111;
-            box-shadow: 0 0 20px rgba(255,255,255,0.3);
         }
 
         /* カメラ屋 & フォトスポット リスト */
@@ -268,7 +259,7 @@
             grid-template-columns: 300px 1fr;
             gap: 40px;
             align-items: start;
-            border-bottom: 1px solid #eee;
+            border-bottom: 1px solid var(--border-color);
             padding-bottom: 60px;
         }
 
@@ -296,8 +287,8 @@
 
         .shop-area {
             display: inline-block;
-            background: var(--text-color);
-            color: white;
+            background: var(--text-color); /* 自動切り替え */
+            color: var(--bg-color); /* 背景色と反転 */
             padding: 4px 10px;
             font-size: 0.75rem;
             border-radius: 2px;
@@ -309,14 +300,14 @@
             font-family: var(--primary-font);
             font-size: 1.8rem;
             font-weight: 600;
-            color: var(--text-color);
+            color: var(--text-color); /* 自動切り替え */
             margin-bottom: 5px;
         }
 
         .shop-name-jp {
             font-family: 'Noto Serif JP', serif;
             font-size: 1.1rem;
-            color: var(--text-light);
+            color: var(--text-light); /* 自動切り替え */
             margin-bottom: 20px;
             display: block;
         }
@@ -324,7 +315,7 @@
         .shop-desc {
             font-size: 0.95rem;
             line-height: 1.9;
-            color: var(--text-light);
+            color: var(--text-light); /* 自動切り替え */
             margin-bottom: 20px;
         }
 
@@ -339,6 +330,22 @@
 
         .shop-link:hover {
             border-bottom-color: var(--accent-color);
+        }
+
+        /* フッター */
+        footer {
+            background: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+            padding: 4rem 2rem;
+            text-align: center;
+        }
+
+        .footer-title {
+            color: var(--text-color);
+        }
+
+        .footer-text {
+            color: var(--text-light);
         }
 
         /* レスポンシブ */
@@ -393,7 +400,7 @@
 </head>
 <body>
 
-    <!-- Navigation -->
+    <!-- ナビゲーション -->
     <nav class="main-nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">TJM</a>
@@ -602,7 +609,8 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2026 Toji Masaya. All rights reserved.</p>
+            <p class="footer-title">HONG KONG</p>
+            <p class="footer-text">香港を撮る、香港で撮る</p>
         </div>
     </footer>
 
