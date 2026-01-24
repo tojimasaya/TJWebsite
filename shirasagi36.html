@@ -109,7 +109,7 @@
         /* プロジェクト説明 */
         .shirasagi-intro {
             max-width: 800px;
-            margin: 80px auto;
+            margin: 80px auto 40px;
             padding: 0 40px;
             text-align: center;
         }
@@ -127,6 +127,55 @@
             line-height: 2;
             color: var(--text-light);
             margin-bottom: 1rem;
+        }
+
+        /* 季節フィルター */
+        .filter-section {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            font-family: 'Noto Serif JP', serif;
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #d4c4b0;
+            border-radius: 30px;
+            color: #5d5d5d;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            background: white;
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .filter-btn.active {
+            background: var(--text-color);
+            color: white;
+            border-color: var(--text-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .filter-icon {
+            font-size: 1.1em;
         }
 
         /* 進捗表示 */
@@ -186,11 +235,12 @@
         /* ギャラリーグリッド */
         .shirasagi-grid {
             max-width: 1400px;
-            margin: 60px auto;
+            margin: 40px auto 60px;
             padding: 0 40px;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 20px;
+            min-height: 400px; /* フィルタリング時の高さ確保 */
         }
 
         .shirasagi-item {
@@ -199,9 +249,19 @@
             overflow: hidden;
             border-radius: 4px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0;
-            transform: translateY(30px);
+            transform: scale(0.9);
+        }
+
+        /* アニメーション用クラス */
+        .shirasagi-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .shirasagi-item.hidden {
+            display: none;
         }
 
         /* 写真あり */
@@ -210,14 +270,10 @@
             background: white;
         }
 
-        .shirasagi-item.has-photo.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .shirasagi-item.has-photo:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            z-index: 10;
         }
 
         /* 写真なし（空のスロット） */
@@ -234,7 +290,7 @@
 
         .shirasagi-item.empty.visible {
             opacity: 0.6;
-            transform: translateY(0);
+            transform: scale(1);
         }
 
         /* 空スロットの番号 */
@@ -299,40 +355,6 @@
             color: rgba(255, 255, 255, 0.8);
             font-size: 0.75rem;
             line-height: 1.6;
-        }
-
-        /* フィルター */
-        .filter-section {
-            max-width: 1400px;
-            margin: 40px auto 20px;
-            padding: 0 40px;
-            text-align: center;
-        }
-
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            font-family: 'Inter', sans-serif;
-            padding: 8px 20px;
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid #e0e0e0;
-            border-radius: 20px;
-            color: var(--text-color);
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--accent-color);
-            color: white;
-            border-color: var(--accent-color);
         }
 
         /* 撮影についてセクション */
@@ -798,10 +820,31 @@
                 <h2>このプロジェクトについて</h2>
                 <p>葛飾北斎の『富嶽三十六景』に倣い、生まれ故郷である姫路城を、さまざまな角度、季節、時間帯から切り取る写真プロジェクト。</p>
                 <p>白鷺城の愛称で親しまれる姫路城の、36の表情を記録していきます。</p>
-                <p>6×6のグリッドで、1行ごとに季節を揃えて配置しています。<br>
-                1行目（01-06）春、2行目（07-12）夏、3行目（13-18）秋、4行目（19-24）冬、<br>
-                5-6行目（25-36）は城の内部や一部の特別なアングルです。</p>
-                <p>このページは制作進行中で、撮影した写真を順次追加していきます。完成までの過程もお楽しみください。</p>
+                <p>このページは制作進行中で、撮影した写真を順次追加していきます。</p>
+            </section>
+
+            <!-- 季節フィルター (New!) -->
+            <section class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="filter-icon">📂</span> すべて
+                    </button>
+                    <button class="filter-btn" data-filter="spring">
+                        <span class="filter-icon">🌸</span> 春 (01-06)
+                    </button>
+                    <button class="filter-btn" data-filter="summer">
+                        <span class="filter-icon">🌻</span> 夏 (07-12)
+                    </button>
+                    <button class="filter-btn" data-filter="autumn">
+                        <span class="filter-icon">🍁</span> 秋 (13-18)
+                    </button>
+                    <button class="filter-btn" data-filter="winter">
+                        <span class="filter-icon">❄️</span> 冬 (19-24)
+                    </button>
+                    <button class="filter-btn" data-filter="special">
+                        <span class="filter-icon">📷</span> 特別景 (25-36)
+                    </button>
+                </div>
             </section>
 
             <!-- 進捗表示 -->
@@ -859,6 +902,17 @@
     <script>
         // 写真データをグローバル変数として保持
         let photosData = {};
+        // 現在のフィルター
+        let currentFilter = 'all';
+
+        // 季節とIDの範囲定義
+        const seasonRanges = {
+            'spring': [1, 6],
+            'summer': [7, 12],
+            'autumn': [13, 18],
+            'winter': [19, 24],
+            'special': [25, 36]
+        };
 
         // JSONファイルから写真データを読み込む
         async function loadPhotos() {
@@ -875,12 +929,44 @@
             }
         }
 
+        // フィルタリング機能
+        function filterItems(category) {
+            currentFilter = category;
+            
+            // ボタンのアクティブ状態更新
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if(btn.dataset.filter === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            // グリッド再生成
+            generateGallery();
+        }
+
+        // フィルターボタンのイベントリスナー
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                filterItems(e.currentTarget.dataset.filter);
+            });
+        });
+
         // ギャラリーグリッドを生成
         function generateGallery() {
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
 
-            for (let i = 1; i <= 36; i++) {
+            let start = 1;
+            let end = 36;
+
+            // フィルターに応じて範囲を設定
+            if (currentFilter !== 'all' && seasonRanges[currentFilter]) {
+                [start, end] = seasonRanges[currentFilter];
+            }
+
+            for (let i = start; i <= end; i++) {
                 const photo = photosData[i];
                 const article = document.createElement('article');
                 
@@ -925,8 +1011,12 @@
             }
 
             // アニメーション用のObserverを再設定
-            document.querySelectorAll('.shirasagi-item').forEach(item => {
-                observer.observe(item);
+            const items = document.querySelectorAll('.shirasagi-item');
+            items.forEach((item, index) => {
+                // 少し遅延させて表示（アニメーション）
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, index * 30);
             });
         }
 
@@ -950,22 +1040,6 @@
                 });
             });
         }
-
-        // スクロールアニメーション
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 50);
-                }
-            });
-        }, observerOptions);
 
         // 進捗バーの更新
         function updateProgress() {
