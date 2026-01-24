@@ -44,7 +44,7 @@
             border-radius: 4px;
             overflow: hidden;
             aspect-ratio: 16/9;
-            group: ;
+            background-color: #f0f0f0; /* Loading placeholder color */
         }
 
         .category-bg {
@@ -148,52 +148,9 @@
     </header>
 
     <!-- Categories Grid -->
-    <main class="category-grid">
-        
-        <!-- Camera -->
-        <a href="gear-camera.html" class="category-card">
-            <img src="assets/images/gear/m2.jpg" alt="Camera" class="category-bg" onerror="this.src='https://placehold.co/800x600/333/fff?text=Camera'">
-            <div class="category-content">
-                <div class="category-icon">📷</div>
-                <h2 class="category-title">Camera</h2>
-                <p class="category-desc">Leica M10, SL2-S, and Lenses.<br>光を捉えるためのメイン機材。</p>
-                <span class="category-arrow">View Collection →</span>
-            </div>
-        </a>
-
-        <!-- Drone -->
-        <a href="gear-drone.html" class="category-card">
-            <img src="assets/images/gear/drone-mini4.jpg" alt="Drone" class="category-bg" onerror="this.src='https://placehold.co/800x600/333/fff?text=Drone'">
-            <div class="category-content">
-                <div class="category-icon">🚁</div>
-                <h2 class="category-title">Drone</h2>
-                <p class="category-desc">DJI Mini & Air Series.<br>鳥の視点で世界を記録する。</p>
-                <span class="category-arrow">View Collection →</span>
-            </div>
-        </a>
-
-        <!-- Editing / Daily -->
-        <a href="gear-editing.html" class="category-card">
-            <img src="assets/images/gear/ipad.jpg" alt="Editing" class="category-bg" onerror="this.src='https://placehold.co/800x600/333/fff?text=Editing'">
-            <div class="category-content">
-                <div class="category-icon">💻</div>
-                <h2 class="category-title">Daily Drivers</h2>
-                <p class="category-desc">Smartphone, PC, Tablet.<br>旅先での編集と発信の拠点。</p>
-                <span class="category-arrow">View Collection →</span>
-            </div>
-        </a>
-
-        <!-- Accessories -->
-        <a href="gear-accessories.html" class="category-card">
-            <img src="assets/images/gear/bag.jpg" alt="Accessories" class="category-bg" onerror="this.src='https://placehold.co/800x600/333/fff?text=Accessories'">
-            <div class="category-content">
-                <div class="category-icon">🎒</div>
-                <h2 class="category-title">Accessories</h2>
-                <p class="category-desc">Bags, Tripods, Power.<br>快適な撮影を支える名脇役たち。</p>
-                <span class="category-arrow">View Collection →</span>
-            </div>
-        </a>
-
+    <main class="category-grid" id="category-grid">
+        <!-- JS will populate this -->
+        <p style="grid-column: 1/-1; text-align: center;">Loading categories...</p>
     </main>
 
     <!-- Footer -->
@@ -213,6 +170,74 @@
                 navToggle.classList.toggle('active');
             });
         }
+
+        // Configuration for Categories
+        const CATEGORY_CONFIG = {
+            'camera': {
+                link: 'gear-camera.html',
+                icon: '📷',
+                fallbackImage: 'assets/images/gear/m2.jpg'
+            },
+            'drone': {
+                link: 'gear-drone.html',
+                icon: '🚁',
+                fallbackImage: 'assets/images/gear/drone-mini4.jpg'
+            },
+            'editing': {
+                link: 'gear-editing.html',
+                icon: '💻',
+                fallbackImage: 'assets/images/gear/ipad.jpg'
+            },
+            'accessories': {
+                link: 'gear-accessories.html',
+                icon: '🎒',
+                fallbackImage: 'assets/images/gear/bag.jpg'
+            }
+        };
+
+        // Load JSON and Render
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                // Fetch JSON
+                const res = await fetch('data/gear.json');
+                if (!res.ok) throw new Error('Failed to load JSON');
+                const data = await res.json();
+                
+                const grid = document.getElementById('category-grid');
+                grid.innerHTML = ''; // Clear loading message
+
+                // Iterate over defined config to maintain order
+                Object.keys(CATEGORY_CONFIG).forEach(key => {
+                    const config = CATEGORY_CONFIG[key];
+                    const categoryData = data.categories[key];
+
+                    if (categoryData) {
+                        // Use image from JSON, remove leading slash if present to make relative
+                        let imgSrc = categoryData.hero_image;
+                        if (imgSrc.startsWith('/')) imgSrc = imgSrc.substring(1);
+
+                        // If JSON image fails, fallback is handled by onerror in HTML
+                        
+                        const html = `
+                            <a href="${config.link}" class="category-card">
+                                <img src="${imgSrc}" alt="${categoryData.title}" class="category-bg" onerror="this.src='${config.fallbackImage}'">
+                                <div class="category-content">
+                                    <div class="category-icon">${config.icon}</div>
+                                    <h2 class="category-title">${categoryData.title}</h2>
+                                    <p class="category-desc">${categoryData.description}</p>
+                                    <span class="category-arrow">View Collection →</span>
+                                </div>
+                            </a>
+                        `;
+                        grid.insertAdjacentHTML('beforeend', html);
+                    }
+                });
+
+            } catch (error) {
+                console.error('Error loading gear data:', error);
+                document.getElementById('category-grid').innerHTML = '<p style="text-align:center;">データの読み込みに失敗しました。</p>';
+            }
+        });
     </script>
 </body>
 </html>
