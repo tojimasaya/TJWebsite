@@ -15,411 +15,229 @@
     
     <title>Writings — Toji Masaya</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-    <!-- SEO -->
-    <meta name="description" content="田路昌也の最新の記事とコラム。note、DRONE.jpでの連載記事をまとめています。">
-    <meta name="keywords" content="田路昌也, ドローン, コラム, note, DRONE.jp">
+    <meta name="description" content="田路昌也の執筆記事一覧。noteでのエッセイ、DRONE.jpでの連載コラム、旅の記録や機材レビューなど。">
     <meta name="author" content="Toji Masaya">
 
-    <!-- OGP -->
-    <meta property="og:title" content="Writings — Toji Masaya">
-    <meta property="og:description" content="noteとDRONE.jpでの最新記事とコラム">
-    <meta property="og:image" content="https://tojimasaya.com/assets/images/gear/oreryu.jpg">
-    <meta property="og:url" content="https://tojimasaya.com/writings.html">
-    <meta property="og:type" content="website">
-
     <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
-    <!-- Thumbnail Styles -->
     <style>
-        /* サムネイル用の16:9固定スタイル */
-        .article-thumb {
-            position: relative;
-            width: 100%;
-            aspect-ratio: 16 / 9;
-            overflow: hidden;
-            border-radius: 12px;
-            background: #f0f0f0;
-            margin-bottom: 16px;
+        /* Writings Page Specific Styles */
+        
+        /* Hero Section */
+        .writings-hero {
+            padding: 140px 20px 80px;
+            text-align: center;
+            background-color: var(--bg-color);
         }
-        .article-thumb img {
-            position: absolute;
-            top: 0;
-            left: 0;
+
+        .writings-title {
+            font-family: 'Crimson Text', serif;
+            font-size: 3.5rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
+            font-weight: 400;
+        }
+
+        .writings-subtitle {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            letter-spacing: 0.05em;
+        }
+
+        /* Filter Tabs */
+        .filter-container {
+            display: flex;
+            justify-content: center;
+            gap: 15px;
+            margin-bottom: 60px;
+            padding: 0 20px;
+            flex-wrap: wrap;
+        }
+
+        .filter-btn {
+            padding: 8px 24px;
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-light);
+            border-radius: 30px;
+            cursor: pointer;
+            font-family: var(--secondary-font);
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            border-color: var(--text-color);
+            color: var(--text-color);
+            background: rgba(0,0,0,0.05);
+        }
+
+        /* Grid Layout */
+        .articles-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 40px;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 30px;
+        }
+
+        .article-card {
+            display: flex;
+            flex-direction: column;
+            text-decoration: none;
+            color: inherit;
+            group: ;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .article-image-wrapper {
+            position: relative;
+            aspect-ratio: 16/9;
+            overflow: hidden;
+            border-radius: 4px;
+            margin-bottom: 1.2rem;
+            background-color: #f0f0f0;
+        }
+
+        .article-image {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center;
-            display: block;
+            transition: transform 0.5s ease;
         }
-        /* aspect-ratio未対応ブラウザ用 */
-        @supports not (aspect-ratio: 16 / 9) {
-            .article-thumb {
-                height: 0;
-                padding-top: 56.25%;
+
+        .article-card:hover .article-image {
+            transform: scale(1.05);
+        }
+
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-bottom: 0.5rem;
+            font-family: var(--secondary-font);
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        .article-source {
+            font-weight: 600;
+            color: var(--accent-color);
+        }
+
+        .article-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.25rem;
+            font-weight: 600;
+            line-height: 1.5;
+            margin-bottom: 0.8rem;
+            color: var(--text-color);
+            transition: color 0.3s ease;
+        }
+
+        .article-card:hover .article-title {
+            color: var(--accent-color);
+        }
+
+        .article-excerpt {
+            font-size: 0.9rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            display: -webkit-box;
+            -webkit-line-clamp: 3;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+
+        /* Loading State */
+        .loading-state {
+            grid-column: 1 / -1;
+            text-align: center;
+            padding: 40px;
+            color: var(--text-light);
+            font-family: var(--secondary-font);
+        }
+
+        /* Dark Mode Adjustments */
+        @media (prefers-color-scheme: dark) {
+            .filter-btn:hover, .filter-btn.active {
+                background: rgba(255,255,255,0.1);
+                border-color: #fff;
+                color: #fff;
+            }
+            
+            .article-image-wrapper {
+                background-color: #333;
             }
         }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .writings-title { font-size: 2.5rem; }
+            .articles-grid { grid-template-columns: 1fr; gap: 40px; }
+        }
     </style>
-
-    <!-- Theme -->
-    <meta name="theme-color" content="#fafafa">
-    <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 </head>
-
 <body>
-    <!-- Skip Link -->
-    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-    <!-- ========================================
-         Navigation
-         ======================================== -->
-    <nav class="main-nav" id="main-nav">
+    <!-- Navigation -->
+    <nav class="main-nav">
         <div class="nav-container">
-            <a href="/" class="nav-logo">Toji Masaya</a>
+            <a href="/" class="nav-logo">TJM</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="/gear.html" class="nav-link">Gear</a></li>
-                <li><a href="/writings.html" class="nav-link active">Writings</a></li>
-                <li><a href="/hongkong.html" class="nav-link">Hong Kong</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="gear.html" class="nav-link">Gear</a></li>
+                <li><a href="writings.html" class="nav-link active">Writings</a></li>
+                <li><a href="hongkong.html" class="nav-link">Hong Kong</a></li>
             </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
         </div>
     </nav>
 
-    <!-- ========================================
-         Hero Section
-         ======================================== -->
-    <section class="writings-hero" role="banner">
-        <div class="writings-hero-image">
-            <img src="assets/images/gallery/hongkong.jpg" 
-                 alt="香港の街並み - 執筆活動の舞台" 
-                 loading="eager" 
-                 width="1920" 
-                 height="1080">
-            <div class="writings-hero-overlay">
-                <h1 class="writings-hero-title">Writings</h1>
-                <p class="writings-hero-subtitle">記事とコラム</p>
-            </div>
-        </div>
-    </section>
+    <!-- Hero -->
+    <header class="writings-hero">
+        <h1 class="writings-title">Writings</h1>
+        <p class="writings-subtitle">旅の記録、機材の考察、日々の思考。</p>
+    </header>
 
-    <!-- ========================================
-         Main Content
-         ======================================== -->
-    <main id="main-content" class="main-content">
-        <div class="container">
-
-            <!-- Introduction -->
-            <section class="writings-intro">
-                <p class="lead">noteとDRONE.jpで執筆している最新記事をご覧いただけます。ドローン、カメラ、旅行に関するレビューや考察、そして香港での日常について綴っています。</p>
-            </section>
-
-            <!-- ========================================
-                 Note Articles Section
-                 ======================================== -->
-            <section class="writing-section">
-                <header class="section-header">
-                    <h2>note</h2>
-                    <p class="section-description">旅の記録、機材レビュー、香港での日常を綴っています</p>
-                    <a href="https://note.com/tojimasaya" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="external-link">
-                        note全記事を見る →
-                    </a>
-                </header>
-
-                <div id="note-articles" 
-                     class="articles-grid" 
-                     role="feed" 
-                     aria-label="note記事一覧">
-                    <div class="loading" role="status">記事を読み込み中...</div>
-                </div>
-            </section>
-
-            <!-- ========================================
-                 DRONE.jp Articles Section
-                 ======================================== -->
-            <section class="writing-section">
-                <header class="section-header">
-                    <h2>DRONE.jp 連載</h2>
-                    <p class="section-description">「中国・香港ドローン便り」として月1回連載しています</p>
-                    <a href="https://drone.jp/column/masaya-toji" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="external-link">
-                        DRONE.jp連載記事を見る →
-                    </a>
-                </header>
-
-                <div id="drone-articles" 
-                     class="articles-grid" 
-                     role="feed" 
-                     aria-label="DRONE.jp記事一覧">
-                    <div class="loading" role="status">記事を読み込み中...</div>
-                </div>
-            </section>
-
-            <!-- ========================================
-                 Contact Section
-                 ======================================== -->
-<section class="writing-section">
-  <header class="section-header">
-    <h2>お問い合わせ</h2>
-    <p class="section-description">
-      ドローン、カメラ、旅行関連の記事執筆や取材依頼のほか、<br>
-      サイト運営や機材に関するご質問もこちらからどうぞ。
-    </p>
-  </header>
-
-  <div class="contact-wrapper">
-    <div class="contact-card">
-      <div class="contact-methods">
-        
-        <div class="contact-method">
-          <h3 class="contact-method-title">メールでのお問い合わせ</h3>
-          <p class="contact-method-description">
-            直接メールでご連絡いただけます。通常1-2営業日以内に返信いたします。
-          </p>
-          <a href="/cdn-cgi/l/email-protection#90e4fffaf9fdf1e3f1e9f1a0a7d0f7fdf1f9fcbef3fffd" class="contact-button">
-            メールを送る
-          </a>
-        </div>
-
-        <div class="contact-method">
-          <h3 class="contact-method-title">フォームでのお問い合わせ</h3>
-          <p class="contact-method-description">
-            お問い合わせフォームからもご連絡いただけます。
-          </p>
-          <a href="https://docs.google.com/forms/d/e/1FAIpQLSeW89IHt3QpX_T4oQUF1ONr3g1n0AVsZFzI9bt5ePos0cGGZw/viewform" 
-             target="_blank" 
-             rel="noopener noreferrer" 
-             class="contact-button secondary">
-            フォームを開く
-          </a>
-        </div>
-
-      </div>
-
-      <div class="contact-info">
-        <p class="contact-note">
-          ご連絡いただく際は、以下の内容を記載いただけるとスムーズです：
-        </p>
-        <ul class="contact-list">
-          <li>お名前・ご所属</li>
-          <li>ご用件の概要</li>
-          <li>希望される納期（執筆依頼の場合）</li>
-        </ul>
-      </div>
+    <!-- Filters -->
+    <div class="filter-container">
+        <button class="filter-btn active" data-filter="all">All</button>
+        <button class="filter-btn" data-filter="note">note</button>
+        <button class="filter-btn" data-filter="drone">DRONE.jp</button>
     </div>
-  </div>
-</section>
 
-<style>
-  .contact-wrapper {
-    max-width: 800px;
-    margin: 2rem auto 0;
-  }
-
-  .contact-card {
-    background: white;
-    border: 1px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 3rem 2.5rem;
-  }
-
-  .contact-methods {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-    margin-bottom: 3rem;
-    padding-bottom: 3rem;
-    border-bottom: 1px solid #f0f0f0;
-  }
-
-  .contact-method {
-    text-align: center;
-  }
-
-  .contact-method-title {
-    font-size: 1.1rem;
-    font-weight: 500;
-    margin-bottom: 0.8rem;
-    letter-spacing: 0.05em;
-    color: #2c2c2c;
-  }
-
-  .contact-method-description {
-    font-size: 0.9rem;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 1.5rem;
-    letter-spacing: 0.03em;
-  }
-
-  .contact-button {
-    display: inline-block;
-    padding: 0.9rem 2.5rem;
-    background: #2c2c2c;
-    color: white;
-    text-decoration: none;
-    font-size: 0.85rem;
-    letter-spacing: 0.15em;
-    border-radius: 4px;
-    transition: all 0.3s ease;
-    border: 1px solid #2c2c2c;
-  }
-
-  .contact-button:hover {
-    background: white;
-    color: #2c2c2c;
-  }
-
-  .contact-button.secondary {
-    background: white;
-    color: #2c2c2c;
-  }
-
-  .contact-button.secondary:hover {
-    background: #2c2c2c;
-    color: white;
-  }
-
-  .contact-info {
-    text-align: left;
-  }
-
-  .contact-note {
-    font-size: 0.9rem;
-    line-height: 1.8;
-    color: #666;
-    margin-bottom: 1rem;
-    letter-spacing: 0.03em;
-  }
-
-  .contact-list {
-    list-style: none;
-    padding: 0;
-  }
-
-  .contact-list li {
-    font-size: 0.85rem;
-    line-height: 1.8;
-    color: #666;
-    padding-left: 1.2rem;
-    position: relative;
-    letter-spacing: 0.03em;
-  }
-
-  .contact-list li:before {
-    content: "・";
-    position: absolute;
-    left: 0;
-    color: #c49a6c;
-  }
-
-  /* レスポンシブ */
-  @media (max-width: 768px) {
-    .contact-card {
-      padding: 2rem 1.5rem;
-    }
-
-    .contact-methods {
-      grid-template-columns: 1fr;
-      gap: 2.5rem;
-      margin-bottom: 2rem;
-      padding-bottom: 2rem;
-    }
-
-    .contact-button {
-      width: 100%;
-      display: block;
-    }
-  }
-</style>
-
-            <!-- ========================================
-                 Subscribe Section
-                 ======================================== -->
-            <section class="subscribe-section">
-                <h2>最新記事を受け取る</h2>
-                <div class="subscribe-options">
-                    <a href="https://note.com/tojimasaya" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="subscribe-btn note">
-                        <div class="subscribe-icon">📝</div>
-                        <div>
-                            <h4>noteでフォロー</h4>
-                            <p>旅行記事や機材レビューを投稿しています</p>
-                        </div>
-                    </a>
-
-                    <a href="https://drone.jp/column/masaya-toji" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="subscribe-btn drone">
-                        <div class="subscribe-icon">🚁</div>
-                        <div>
-                            <h4>DRONE.jp連載</h4>
-                            <p>月1回のペースで中国・香港ドローン便りを更新</p>
-                        </div>
-                    </a>
-
-                    <a href="https://twitter.com/mongkok93" 
-                       target="_blank" 
-                       rel="noopener noreferrer" 
-                       class="subscribe-btn twitter">
-                        <div class="subscribe-icon">🐦</div>
-                        <div>
-                            <h4>X (Twitter)</h4>
-                            <p>最新記事の告知や日常のつぶやき</p>
-                        </div>
-                    </a>
-                </div>
-            </section>
-
-            <!-- ========================================
-                 Back to Home
-                 ======================================== -->
-            <section class="back-to-home">
-                <a href="/" class="back-link">
-                    <span class="back-arrow">←</span>
-                    <span>Back to Home</span>
-                </a>
-            </section>
-
-            <!-- ========================================
-                 Footer
-                 ======================================== -->
-            <footer class="footer" role="contentinfo">
-                <div class="footer-content">
-                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-                    <p>Built with care in Japan</p>
-                </div>
-            </footer>
-
-        </div>
+    <!-- Articles Grid -->
+    <main class="articles-grid" id="articles-container">
+        <div class="loading-state">Loading articles...</div>
     </main>
 
-    <!-- ========================================
-         Scripts
-         ======================================== -->
-    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-        // Navigation
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <p>&copy; 2026 Toji Masaya. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <!-- Scripts -->
+    <script>
+        // Navigation Toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
 
@@ -427,252 +245,167 @@
             navToggle.addEventListener('click', () => {
                 navMenu.classList.toggle('active');
                 navToggle.classList.toggle('active');
-                document.body.classList.toggle('nav-open');
-            });
-
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                        document.body.classList.remove('nav-open');
-                    }
-                });
             });
         }
 
-        // Scroll effect
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('main-nav');
-            if (window.scrollY > 50) {
-                nav.classList.add('scrolled');
-            } else {
-                nav.classList.remove('scrolled');
-            }
-        });
+        // --- Article Fetching Logic ---
+        const FEED_URLS = [
+            'https://note.com/tojimasaya/m/m22c44596304b/rss', // 香港レンズ
+            'https://note.com/tojimasaya/m/md99dd54590fa/rss', // 次はどこへ
+            'https://note.com/tojimasaya/m/mcae365b520ed/rss'  // 俺流トラベルガジェット
+        ];
+        
+        let allArticles = [];
 
-        // Note記事読み込み
-        async function loadNoteArticles() {
-            try {
-                const container = document.getElementById('note-articles');
-                container.innerHTML = '<div class="loading">記事を読み込み中...</div>';
+        async function fetchArticles() {
+            const container = document.getElementById('articles-container');
+            const promises = [];
 
-                const feeds = [
-                    { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
-                    { url: 'https://note.com/tojimasaya/m/md99dd54590fa/rss', name: '次はどこへ' },
-                    { url: 'https://note.com/tojimasaya/m/mcae365b520ed/rss', name: '俺流トラベルガジェット' }
-                ];
+            // 1. Fetch from note.com (RSS via Proxy)
+            FEED_URLS.forEach(url => {
+                promises.push(
+                    fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`)
+                        .then(res => res.text())
+                        .then(str => new window.DOMParser().parseFromString(str, "text/xml"))
+                        .then(data => {
+                            const items = data.querySelectorAll("item");
+                            return Array.from(items).map(item => {
+                                // Extract image from description or use default
+                                const description = item.querySelector("description")?.textContent || "";
+                                const imgMatch = description.match(/<img[^>]+src="([^">]+)"/);
+                                const imgUrl = imgMatch ? imgMatch[1] : 'assets/images/gallery/weekly.jpg'; // Default fallback
+                                
+                                // Strip HTML tags for clean excerpt
+                                const tempDiv = document.createElement("div");
+                                tempDiv.innerHTML = description;
+                                const plainText = tempDiv.textContent || tempDiv.innerText || "";
+                                const excerpt = plainText.substring(0, 100) + "...";
 
-                const allArticles = [];
+                                return {
+                                    title: item.querySelector("title")?.textContent,
+                                    link: item.querySelector("link")?.textContent,
+                                    date: new Date(item.querySelector("pubDate")?.textContent),
+                                    image: imgUrl,
+                                    excerpt: excerpt,
+                                    source: 'note',
+                                    sourceLabel: 'note'
+                                };
+                            });
+                        })
+                        .catch(err => {
+                            console.error('RSS Fetch Error:', err);
+                            return [];
+                        })
+                );
+            });
 
-                for (const feed of feeds) {
-                    try {
-                        const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
-                        const response = await fetch(proxyUrl);
-                        const xmlText = await response.text();
+            // 2. Fetch from DRONE.jp (via local JSON for stability)
+            promises.push(
+                fetch('data/writings-og.json')
+                    .then(res => res.json())
+                    .then(data => {
+                        return Object.entries(data)
+                            .filter(([url]) => url.includes('drone.jp/column'))
+                            .map(([url, meta]) => {
+                                // Date extraction from URL (e.g. ...20240101...)
+                                const dateMatch = url.match(/(\d{8})/);
+                                let dateObj = new Date();
+                                if (dateMatch) {
+                                    const d = dateMatch[1];
+                                    dateObj = new Date(`${d.substring(0,4)}-${d.substring(4,6)}-${d.substring(6,8)}`);
+                                }
 
-                        const parser = new DOMParser();
-                        const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-
-                        const items = xmlDoc.querySelectorAll('item');
-                        items.forEach((item, index) => {
-                            if (index < 3) {
-                                const title = item.querySelector('title')?.textContent || '';
-                                const link = item.querySelector('link')?.textContent || '';
-                                const description = item.querySelector('description')?.textContent || '';
-                                const pubDate = item.querySelector('pubDate')?.textContent || '';
-
-                                const excerpt = description.replace(/<[^>]*>/g, '').substring(0, 100) + '...';
-                                const date = new Date(pubDate);
-                                const formattedDate = date.toLocaleDateString('ja-JP', {
-                                    year: 'numeric',
-                                    month: 'long',
-                                    day: 'numeric'
-                                });
-
-                                allArticles.push({
-                                    title,
-                                    link,
-                                    excerpt,
-                                    date: date.toISOString(),
-                                    formattedDate,
-                                    source: feed.name
-                                });
-                            }
-                        });
-                    } catch (error) {
-                        console.error(`RSS取得エラー (${feed.name}):`, error);
-                    }
-                }
-
-                allArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
-
-                if (allArticles.length > 0) {
-                    container.innerHTML = allArticles.slice(0, 6).map(article => `
-                        <article class="article-item" data-article-url="${article.link}">
-                            <figure class="article-thumb">
-                                <img alt="サムネイル" loading="lazy">
-                            </figure>
-                            <div class="article-meta">
-                                <span class="article-source note">${article.source}</span>
-                                <time datetime="${article.date}">${article.formattedDate}</time>
-                            </div>
-                            <h3><a href="${article.link}" target="_blank" rel="noopener noreferrer">${article.title}</a></h3>
-                            <p class="article-excerpt">${article.excerpt}</p>
-                        </article>
-                    `).join('');
-                } else {
-                    container.innerHTML = `
-                        <article class="article-item" data-article-url="https://note.com/tojimasaya">
-                            <figure class="article-thumb">
-                                <img alt="サムネイル" loading="lazy">
-                            </figure>
-                            <div class="article-meta">
-                                <span class="article-source note">note</span>
-                                <time datetime="2024-12-15">2024年12月15日</time>
-                            </div>
-                            <h3><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">noteで最新記事を公開中</a></h3>
-                            <p class="article-excerpt">最新の記事や旅の記録をnoteで更新しています。ぜひご覧ください。</p>
-                        </article>
-                    `;
-                }
-            } catch (error) {
-                console.error('記事読み込みエラー:', error);
-                const container = document.getElementById('note-articles');
-                container.innerHTML = `
-                    <article class="article-item" data-article-url="https://note.com/tojimasaya">
-                        <figure class="article-thumb">
-                            <img alt="サムネイル" loading="lazy">
-                        </figure>
-                        <div class="article-meta">
-                            <span class="article-source note">note</span>
-                            <time>継続更新中</time>
-                        </div>
-                        <h3><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">noteで記事を公開中</a></h3>
-                        <p class="article-excerpt">最新の記事はnoteでご覧いただけます。</p>
-                    </article>
-                `;
-            }
-        }
-
-        // ページ読み込み時に実行
-        document.addEventListener('DOMContentLoaded', () => {
-            loadNoteArticles();
-            loadDroneArticles();
-        });
-
-        // DRONE.jp記事読み込み
-        async function loadDroneArticles() {
-            try {
-                const container = document.getElementById('drone-articles');
-                container.innerHTML = '<div class="loading">記事を読み込み中...</div>';
-
-                const response = await fetch('/data/writings-og.json');
-                if (!response.ok) throw new Error(`HTTP ${response.status}`);
-                
-                const articlesData = await response.json();
-                
-                // DRONE.jp記事をフィルタリングして日付順にソート
-                const droneArticles = Object.entries(articlesData)
-                    .filter(([url]) => url.includes('drone.jp/column'))
-                    .sort((a, b) => {
-                        const dateA = extractDateFromDroneURL(a[0]);
-                        const dateB = extractDateFromDroneURL(b[0]);
-                        return dateB.localeCompare(dateA);
+                                return {
+                                    title: meta.title,
+                                    link: url,
+                                    date: dateObj,
+                                    image: meta.image || 'assets/images/gallery/hongkong.jpg',
+                                    excerpt: meta.description || 'ドローン空撮のスペシャリストによる連載コラム。',
+                                    source: 'drone',
+                                    sourceLabel: 'DRONE.jp'
+                                };
+                            });
                     })
-                    .slice(0, 4); // 最新4件を表示
+                    .catch(err => {
+                        console.error('JSON Fetch Error:', err);
+                        return [];
+                    })
+            );
 
-                if (droneArticles.length > 0) {
-                    container.innerHTML = droneArticles.map(([url, data], index) => {
-                        const formattedDate = formatDroneDate(url);
-                        const isFeatured = index === 0 ? ' featured' : '';
-                        
-                        return `
-                        <article class="article-item${isFeatured}" data-article-url="${url}">
-                            <figure class="article-thumb">
-                                <img alt="${data.title}" loading="lazy">
-                            </figure>
-                            <div class="article-meta">
-                                <span class="article-source drone">DRONE.jp</span>
-                                <time>${formattedDate}</time>
-                            </div>
-                            <h3>
-                                <a href="${url}" target="_blank" rel="noopener noreferrer">
-                                    ${data.title}
-                                </a>
-                            </h3>
-                        </article>
-                    `;
-                    }).join('');
-                    
-                    console.log('✓ DRONE.jp記事を読み込みました:', droneArticles.length + '件');
-                } else {
-                    container.innerHTML = `
-                        <article class="article-item" data-article-url="https://drone.jp/column/masaya-toji">
-                            <figure class="article-thumb">
-                                <img alt="サムネイル" loading="lazy">
-                            </figure>
-                            <div class="article-meta">
-                                <span class="article-source drone">DRONE.jp</span>
-                                <time>継続更新中</time>
-                            </div>
-                            <h3><a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener noreferrer">DRONE.jp連載記事</a></h3>
-                        </article>
-                    `;
-                }
-            } catch (error) {
-                console.error('DRONE.jp記事読み込みエラー:', error);
-                const container = document.getElementById('drone-articles');
-                container.innerHTML = `
-                    <article class="article-item" data-article-url="https://drone.jp/column/masaya-toji">
-                        <figure class="article-thumb">
-                            <img alt="サムネイル" loading="lazy">
-                        </figure>
-                        <div class="article-meta">
-                            <span class="article-source drone">DRONE.jp</span>
-                            <time>継続更新中</time>
-                        </div>
-                        <h3><a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener noreferrer">DRONE.jp連載記事</a></h3>
-                    </article>
-                `;
+            try {
+                const results = await Promise.all(promises);
+                allArticles = results.flat().sort((a, b) => b.date - a.date);
+                renderArticles(allArticles);
+            } catch (err) {
+                container.innerHTML = '<p class="loading-state">記事の読み込みに失敗しました。</p>';
             }
         }
 
-        // DRONE.jp URL から日付を抽出
-        function extractDateFromDroneURL(url) {
-            const match = url.match(/(\d{14})\d*\.html/);
-            if (match) return match[1];
-            return '0';
+        function renderArticles(articles) {
+            const container = document.getElementById('articles-container');
+            container.innerHTML = '';
+
+            if (articles.length === 0) {
+                container.innerHTML = '<p class="loading-state">記事が見つかりませんでした。</p>';
+                return;
+            }
+
+            articles.forEach((article, index) => {
+                const dateStr = article.date.toLocaleDateString('ja-JP', { year: 'numeric', month: 'long', day: 'numeric' });
+                
+                const card = document.createElement('a');
+                card.href = article.link;
+                card.target = '_blank';
+                card.rel = 'noopener noreferrer';
+                card.className = 'article-card';
+                card.style.animation = `fadeInUp 0.5s ease ${index * 0.05}s forwards`;
+                card.style.opacity = '0'; // For animation
+                card.innerHTML = `
+                    <div class="article-image-wrapper">
+                        <img src="${article.image}" alt="${article.title}" class="article-image" onerror="this.src='https://placehold.co/600x400/e0e0e0/333333?text=No+Image'">
+                    </div>
+                    <div class="article-meta">
+                        <span class="article-source">${article.sourceLabel}</span>
+                        <span>|</span>
+                        <time>${dateStr}</time>
+                    </div>
+                    <h2 class="article-title">${article.title}</h2>
+                    <p class="article-excerpt">${article.excerpt}</p>
+                `;
+                container.appendChild(card);
+            });
         }
 
-        // DRONE.jp 日付フォーマット
-        function formatDroneDate(url) {
-            const dateStr = extractDateFromDroneURL(url);
-            if (dateStr === '0' || dateStr.length < 8) return '最新';
-            
-            const year = dateStr.substring(0, 4);
-            const month = parseInt(dateStr.substring(4, 6), 10);
-            const day = parseInt(dateStr.substring(6, 8), 10);
-            
-            return `${year}年${month}月${day}日`;
-        }
+        // Add Keyframe animation for cards
+        const styleSheet = document.createElement("style");
+        styleSheet.innerText = `
+            @keyframes fadeInUp {
+                from { opacity: 0; transform: translateY(20px); }
+                to { opacity: 1; transform: translateY(0); }
+            }
+        `;
+        document.head.appendChild(styleSheet);
 
-        // External links security
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.rel = 'noopener noreferrer';
+        // Filter Logic
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                // Update buttons
+                document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+                e.target.classList.add('active');
+
+                // Filter logic
+                const filter = e.target.dataset.filter;
+                if (filter === 'all') {
+                    renderArticles(allArticles);
+                } else {
+                    const filtered = allArticles.filter(a => a.source === filter);
+                    renderArticles(filtered);
+                }
+            });
         });
+
+        // Init
+        document.addEventListener('DOMContentLoaded', fetchArticles);
     </script>
-
-    <script src="/script.js" defer></script>
-
-    <!-- JSON-LD Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "CollectionPage",
-        "name": "Writings — Toji Masaya",
-        "description": "田路昌也の最新記事とコラム。note、DRONE.jpでの連載記事",
-        "author": {
-            "@type": "Person",
-            "name": "田路
+</body>
+</html>
