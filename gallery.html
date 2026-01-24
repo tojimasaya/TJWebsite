@@ -76,7 +76,6 @@
             font-weight: 500;
         }
 
-        /* Dark Mode for Filter Buttons */
         @media (prefers-color-scheme: dark) {
             .filter-btn:hover, .filter-btn.active {
                 background: rgba(255,255,255,0.1);
@@ -107,7 +106,6 @@
             background-color: #f0f0f0;
         }
 
-        /* Video Item Styling */
         .gallery-item.video .item-img-wrapper::after {
             content: '▶';
             position: absolute;
@@ -183,7 +181,7 @@
             display: inline-flex;
             align-items: center;
             font-size: 0.75rem;
-            color: #60a5fa; /* Light Blue */
+            color: #60a5fa;
             text-decoration: none;
             font-family: var(--secondary-font);
             margin-top: 5px;
@@ -193,7 +191,7 @@
             text-decoration: underline;
         }
 
-        /* Lightbox & Modal */
+        /* Modal Styles */
         .lightbox, .video-modal {
             display: none;
             position: fixed;
@@ -237,8 +235,7 @@
         .lightbox-caption {
             position: absolute;
             bottom: 30px;
-            left: 0;
-            right: 0;
+            left: 0; right: 0;
             text-align: center;
             color: white;
             font-family: 'Noto Serif JP', serif;
@@ -258,8 +255,7 @@
 
         .close-btn {
             position: absolute;
-            top: 30px;
-            right: 30px;
+            top: 30px; right: 30px;
             color: white;
             font-size: 3rem;
             cursor: pointer;
@@ -274,7 +270,6 @@
             transform: scale(1.1);
         }
 
-        /* Responsive */
         @media (max-width: 1024px) {
             .gallery-grid { column-count: 2; }
         }
@@ -309,7 +304,6 @@
         <p class="gallery-subtitle">Portfolio / Moments / Scenery</p>
     </header>
 
-    <!-- シンプルな3つのフィルター -->
     <div class="gallery-filter">
         <button class="filter-btn active" data-filter="all">All</button>
         <button class="filter-btn" data-filter="photo">Photos</button>
@@ -326,14 +320,13 @@
         </div>
     </footer>
 
-    <!-- Photo Lightbox -->
+    <!-- Lightbox & Modal -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <button class="close-btn" onclick="closeLightbox()">&times;</button>
         <img id="lightbox-img" class="lightbox-content" src="" alt="" onclick="event.stopPropagation()">
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
-    <!-- Video Modal -->
     <div id="videoModal" class="video-modal" onclick="closeVideo()">
         <button class="close-btn" onclick="closeVideo()">&times;</button>
         <div class="video-container" onclick="event.stopPropagation()">
@@ -342,17 +335,15 @@
     </div>
 
     <script>
-        // Nav Toggle
         document.getElementById('nav-toggle').addEventListener('click', () => {
             document.getElementById('nav-menu').classList.toggle('active');
         });
 
-        // Gallery Logic
         let allItems = [];
 
         async function loadGallery() {
             try {
-                // Correct Path: data/gallery.json
+                // 正しいJSONパス
                 const res = await fetch('data/gallery.json');
                 if (!res.ok) throw new Error('Failed to load JSON');
                 allItems = await res.json();
@@ -367,8 +358,6 @@
             const grid = document.getElementById('gallery-grid');
             grid.innerHTML = '';
 
-            // フィルタリングロジックの簡素化
-            // 'all'なら全件、それ以外なら item.type (photo/video) と一致するかチェック
             const filtered = filter === 'all' 
                 ? allItems 
                 : allItems.filter(item => item.type === filter);
@@ -381,14 +370,26 @@
             filtered.forEach((item, index) => {
                 const el = document.createElement('div');
                 el.className = `gallery-item ${item.type}`;
-                el.style.transitionDelay = `${Math.min(index * 50, 1000)}ms`; // Cap delay
+                el.style.transitionDelay = `${Math.min(index * 50, 1000)}ms`;
                 
-                // Image handling (Video thumbnail or Photo)
-                const imgSrc = item.image || (item.youtubeId ? `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg` : 'https://placehold.co/600x400?text=No+Image');
+                // 画像パス処理: 先頭のスラッシュを削除して相対パスに
+                let imgSrc = item.image;
+                if (imgSrc && imgSrc.startsWith('/')) {
+                    imgSrc = imgSrc.substring(1); 
+                }
                 
-                // Note Link HTML if exists
+                // 動画で画像がない場合はYouTubeサムネイルを使用
+                if (!imgSrc && item.type === 'video' && item.youtubeId) {
+                    imgSrc = `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`;
+                }
+
+                // プレースホルダーフォールバック
+                if (!imgSrc) {
+                    imgSrc = 'https://placehold.co/600x400?text=No+Image';
+                }
+                
                 const noteLinkHtml = item.noteUrl 
-                    ? `<a href="${item.noteUrl}" target="_blank" class="item-note-link" onclick="event.stopPropagation()">📖 記事を読む: ${item.noteTitle || 'Note'}</a>`
+                    ? `<a href="${item.noteUrl}" target="_blank" class="item-note-link" onclick="event.stopPropagation()">📖 記事を読む</a>`
                     : '';
 
                 el.innerHTML = `
@@ -397,26 +398,22 @@
                     </div>
                     <div class="item-overlay">
                         <div class="item-title">${item.title}</div>
-                        <div class="item-meta">${item.location || ''} | ${item.date || ''}</div>
+                        <div class="item-meta">${item.location || ''}</div>
                         ${noteLinkHtml}
                     </div>
                 `;
                 
-                // Click Event
                 if (item.type === 'video' && item.youtubeId) {
                     el.onclick = () => openVideo(item.youtubeId, item.title);
                 } else {
-                    el.onclick = () => openLightbox(item.image, item.title, item.location, item.description);
+                    el.onclick = () => openLightbox(imgSrc, item.title, item.location, item.description);
                 }
                 
                 grid.appendChild(el);
-
-                // Animation
                 requestAnimationFrame(() => el.classList.add('visible'));
             });
         }
 
-        // Filter Buttons
         document.querySelectorAll('.filter-btn').forEach(btn => {
             btn.addEventListener('click', (e) => {
                 document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
@@ -425,14 +422,10 @@
             });
         });
 
-        // --- Photo Lightbox ---
         function openLightbox(src, title, location, desc) {
             const lb = document.getElementById('lightbox');
             document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox-caption').innerHTML = `
-                <h3>${title}</h3>
-                <p>${location ? location : ''} ${desc ? ' — ' + desc : ''}</p>
-            `;
+            document.getElementById('lightbox-caption').innerHTML = `<h3>${title}</h3><p>${location ? location : ''} ${desc ? ' — ' + desc : ''}</p>`;
             lb.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -442,23 +435,20 @@
             document.body.style.overflow = 'auto';
         }
 
-        // --- Video Modal ---
         function openVideo(youtubeId, title) {
             const modal = document.getElementById('videoModal');
-            const container = document.getElementById('video-placeholder');
-            container.innerHTML = `<iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="${title}">`;
+            document.getElementById('video-placeholder').innerHTML = `<iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="${title}">`;
             modal.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
 
         function closeVideo() {
             const modal = document.getElementById('videoModal');
-            document.getElementById('video-placeholder').innerHTML = ''; // Stop video
+            document.getElementById('video-placeholder').innerHTML = ''; 
             modal.classList.remove('active');
             document.body.style.overflow = 'auto';
         }
 
-        // ESC Key
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
                 closeLightbox();
