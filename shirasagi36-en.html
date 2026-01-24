@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="ja">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -29,7 +29,7 @@
     <link rel="stylesheet" href="style.css">
 
     <style>
-        /* 和紙風背景 */
+        /* Shared Styles from Japanese Version + adjustments */
         body {
             background: linear-gradient(to bottom, #fdfcf8 0%, #f5f3ed 100%);
             position: relative;
@@ -54,7 +54,6 @@
             z-index: 2;
         }
 
-        /* ヒーローセクション */
         .shirasagi-hero {
             position: relative;
             height: 70vh;
@@ -106,10 +105,9 @@
             letter-spacing: 0.05em;
         }
 
-        /* プロジェクト説明 */
         .shirasagi-intro {
             max-width: 800px;
-            margin: 80px auto;
+            margin: 80px auto 40px;
             padding: 0 40px;
             text-align: center;
         }
@@ -129,7 +127,55 @@
             margin-bottom: 1rem;
         }
 
-        /* 進捗表示 */
+        /* Filter Styles */
+        .filter-section {
+            max-width: 1000px;
+            margin: 0 auto 40px;
+            padding: 0 20px;
+            text-align: center;
+        }
+
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            justify-content: center;
+        }
+
+        .filter-btn {
+            font-family: 'Inter', sans-serif;
+            padding: 10px 24px;
+            background: rgba(255, 255, 255, 0.8);
+            border: 1px solid #d4c4b0;
+            border-radius: 30px;
+            color: #5d5d5d;
+            font-size: 0.9rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .filter-btn:hover {
+            transform: translateY(-2px);
+            background: white;
+            color: var(--accent-color);
+            border-color: var(--accent-color);
+        }
+
+        .filter-btn.active {
+            background: var(--text-color);
+            color: white;
+            border-color: var(--text-color);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+        }
+
+        .filter-icon {
+            font-size: 1.1em;
+        }
+
         .progress-section {
             max-width: 600px;
             margin: 40px auto;
@@ -183,14 +229,14 @@
             margin-top: 10px;
         }
 
-        /* ギャラリーグリッド */
         .shirasagi-grid {
             max-width: 1400px;
-            margin: 60px auto;
+            margin: 40px auto 60px;
             padding: 0 40px;
             display: grid;
             grid-template-columns: repeat(6, 1fr);
             gap: 20px;
+            min-height: 400px;
         }
 
         .shirasagi-item {
@@ -199,28 +245,31 @@
             overflow: hidden;
             border-radius: 4px;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: all 0.4s ease;
+            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
             opacity: 0;
-            transform: translateY(30px);
+            transform: scale(0.9);
         }
 
-        /* 写真あり */
+        .shirasagi-item.visible {
+            opacity: 1;
+            transform: scale(1);
+        }
+
+        .shirasagi-item.hidden {
+            display: none;
+        }
+
         .shirasagi-item.has-photo {
             cursor: pointer;
             background: white;
         }
 
-        .shirasagi-item.has-photo.visible {
-            opacity: 1;
-            transform: translateY(0);
-        }
-
         .shirasagi-item.has-photo:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
+            z-index: 10;
         }
 
-        /* 写真なし（空のスロット） */
         .shirasagi-item.empty {
             background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
             border: 2px dashed #d0d0d0;
@@ -234,10 +283,9 @@
 
         .shirasagi-item.empty.visible {
             opacity: 0.6;
-            transform: translateY(0);
+            transform: scale(1);
         }
 
-        /* 空スロットの番号 */
         .empty-number {
             font-family: 'Crimson Text', serif;
             font-size: 2rem;
@@ -245,7 +293,6 @@
             color: #b0b0b0;
         }
 
-        /* 空スロットのカメラアイコン */
         .empty-icon {
             width: 40px;
             height: 40px;
@@ -301,41 +348,6 @@
             line-height: 1.6;
         }
 
-        /* フィルター */
-        .filter-section {
-            max-width: 1400px;
-            margin: 40px auto 20px;
-            padding: 0 40px;
-            text-align: center;
-        }
-
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            font-family: 'Inter', sans-serif;
-            padding: 8px 20px;
-            background: rgba(255, 255, 255, 0.7);
-            border: 1px solid #e0e0e0;
-            border-radius: 20px;
-            color: var(--text-color);
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-        }
-
-        .filter-btn:hover,
-        .filter-btn.active {
-            background: var(--accent-color);
-            color: white;
-            border-color: var(--accent-color);
-        }
-
-        /* 撮影についてセクション */
         .shirasagi-about {
             max-width: 800px;
             margin: 80px auto;
@@ -361,7 +373,6 @@
             margin-bottom: 1rem;
         }
 
-        /* ホームに戻る */
         .back-to-home {
             max-width: 800px;
             margin: 60px auto;
@@ -388,7 +399,6 @@
             font-size: 1.3rem;
         }
 
-        /* モーダル */
         .modal {
             display: none;
             position: fixed;
@@ -445,12 +455,10 @@
             letter-spacing: 0.1em;
         }
 
-        /* Desktop-specific adjustments */
         @media (min-width: 769px) {
             .modal-image {
                 max-height: 50vh;
             }
-            
             .modal-content {
                 display: flex;
                 flex-direction: column;
@@ -481,7 +489,6 @@
             font-size: 0.85rem;
         }
 
-        /* Map link button */
         .modal-map-link {
             display: inline-flex;
             align-items: center;
@@ -510,7 +517,6 @@
             fill: currentColor;
         }
 
-        /* Modal content scrollbar style */
         .modal-content::-webkit-scrollbar {
             width: 8px;
         }
@@ -529,7 +535,6 @@
             background: rgba(255, 255, 255, 0.5);
         }
 
-        /* 言語切り替えボタン */
         .lang-switch {
             position: fixed;
             top: 90px;
@@ -556,105 +561,77 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
-        /* レスポンシブ */
         @media (prefers-color-scheme: dark) {
-            /* 和紙風背景をダークモードに調整 */
             body {
                 background: linear-gradient(to bottom, #1a1a1a 0%, #0f0f0f 100%);
             }
-
             body::before {
                 background-image: 
                     repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px),
                     repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px);
             }
-
-            /* タイトル・見出しを明るく */
             .shirasagi-title,
             .shirasagi-intro h2,
             .shirasagi-about h2 {
                 color: #f5f5f5;
             }
-
-            /* テキストを読みやすく */
             .shirasagi-intro p,
             .shirasagi-about p {
                 color: #d0d0d0;
             }
-
-            /* 進捗セクション */
             .progress-section {
                 background: rgba(40, 40, 40, 0.8);
                 border: 1px solid rgba(255, 255, 255, 0.1);
             }
-
             .progress-text,
             .progress-count {
                 color: #f5f5f5;
             }
-
             .progress-note {
                 color: #a0a0a0;
             }
-
             .progress-bar-container {
                 background: #2a2a2a;
             }
-
-            /* 撮影についてセクション */
             .shirasagi-about {
                 background: rgba(40, 40, 40, 0.8);
                 border: 1px solid rgba(255, 255, 255, 0.1);
             }
-
             .shirasagi-about a {
                 color: #6ba4ff;
             }
-
-            /* 空のスロット */
             .shirasagi-item.empty {
                 background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
                 border-color: #444;
             }
-
             .empty-number {
                 color: #666;
             }
-
             .empty-icon svg {
                 stroke: #555;
             }
-
-            /* フィルターボタン */
             .filter-btn {
                 background: rgba(40, 40, 40, 0.8);
                 border-color: #444;
                 color: #d0d0d0;
             }
-
             .filter-btn:hover,
             .filter-btn.active {
                 background: var(--accent-color);
                 color: white;
                 border-color: var(--accent-color);
             }
-
-            /* Back to Homeリンク */
             .back-link {
                 color: #6ba4ff;
             }
-
             .back-link:hover {
                 color: #88b8ff;
             }
-
-            /* 言語切り替えボタン */
             .lang-switch {
                 background: rgba(40, 40, 40, 0.95);
                 border-color: #555;
                 color: #f5f5f5;
             }
-
             .lang-switch:hover {
                 background: #f5f5f5;
                 color: #1a1a1a;
@@ -672,75 +649,60 @@
             .shirasagi-title {
                 font-size: 2.5rem;
             }
-
             .shirasagi-subtitle {
                 font-size: 1.1rem;
             }
-
             .lang-switch {
                 top: 70px;
                 right: 15px;
                 padding: 0.5rem 1rem;
                 font-size: 0.8rem;
             }
-
             .shirasagi-grid {
                 grid-template-columns: repeat(3, 1fr);
                 gap: 15px;
                 padding: 0 20px;
             }
-
             .shirasagi-intro,
             .shirasagi-about {
                 padding: 30px 20px;
             }
-
             .empty-number {
                 font-size: 1.5rem;
             }
-
             .empty-icon {
                 width: 30px;
                 height: 30px;
             }
-
             .progress-section {
                 margin: 40px 20px;
                 padding: 20px;
             }
-
             .filter-section {
                 padding: 0 20px;
             }
-
             .close-modal {
                 top: 20px;
                 right: 20px;
                 font-size: 2.5rem;
             }
-
             .modal-content {
                 padding: 10px;
             }
-
             .modal-image {
                 max-height: 50vh;
             }
-
             .modal-caption {
                 font-size: 1.1rem;
             }
-
             .modal-info {
                 font-size: 0.8rem;
                 gap: 15px;
             }
-
             .modal-map-link {
                 font-size: 0.85rem;
                 padding: 10px 20px;
             }
-
             .shirasagi-item-info {
                 font-size: 0.7rem;
             }
@@ -760,7 +722,7 @@
     </style>
 </head>
 <body>
-    <!-- ナビゲーション -->
+    <!-- Navigation -->
     <nav class="main-nav">
         <div class="nav-container">
             <a href="/" class="nav-logo">TJM</a>
@@ -775,7 +737,7 @@
         </div>
     </nav>
 
-    <!-- メインコンテンツ -->
+    <!-- Main Content -->
     <main role="main">
         <div class="main-content">
             
@@ -798,10 +760,31 @@
                 <h2>About This Project</h2>
                 <p>Inspired by Katsushika Hokusai's "Thirty-Six Views of Mount Fuji," this ongoing photography project captures my hometown, Himeji Castle, from various angles, seasons, and times of day.</p>
                 <p>Recording 36 different expressions of the castle, affectionately known as "White Heron Castle" (Shirasagi-jō).</p>
-                <p>The 6×6 grid layout organizes photos by season, one row at a time.<br>
-                Row 1 (01-06) Spring, Row 2 (07-12) Summer, Row 3 (13-18) Autumn, Row 4 (19-24) Winter,<br>
-                Rows 5-6 (25-36) feature interior views and special angles of the castle.</p>
                 <p>This page is a work in progress. New photos will be added as they are taken. Please enjoy the process toward completion.</p>
+            </section>
+
+            <!-- Season Filters -->
+            <section class="filter-section">
+                <div class="filter-buttons">
+                    <button class="filter-btn active" data-filter="all">
+                        <span class="filter-icon">📂</span> All
+                    </button>
+                    <button class="filter-btn" data-filter="spring">
+                        <span class="filter-icon">🌸</span> Spring (01-06)
+                    </button>
+                    <button class="filter-btn" data-filter="summer">
+                        <span class="filter-icon">🌻</span> Summer (07-12)
+                    </button>
+                    <button class="filter-btn" data-filter="autumn">
+                        <span class="filter-icon">🍁</span> Autumn (13-18)
+                    </button>
+                    <button class="filter-btn" data-filter="winter">
+                        <span class="filter-icon">❄️</span> Winter (19-24)
+                    </button>
+                    <button class="filter-btn" data-filter="special">
+                        <span class="filter-icon">📷</span> Special (25-36)
+                    </button>
+                </div>
             </section>
 
             <!-- Progress Display -->
@@ -816,9 +799,9 @@
                 <p class="progress-note">※ Photos will be added progressively as they are taken</p>
             </section>
 
-            <!-- ギャラリーグリッド -->
+            <!-- Gallery Grid -->
             <section class="shirasagi-grid" id="shirasagi-grid">
-                <!-- JavaScriptで動的に生成されます -->
+                <!-- Dynamically generated by JavaScript -->
             </section>
 
             <!-- About the Photography -->
@@ -837,7 +820,7 @@
                 </a>
             </section>
 
-            <!-- フッター -->
+            <!-- Footer -->
             <footer class="footer" role="contentinfo">
                 <div class="footer-content">
                     <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
@@ -859,6 +842,15 @@
     <script>
         // Store photo data as a global variable
         let photosData = {};
+        let currentFilter = 'all';
+
+        const seasonRanges = {
+            'spring': [1, 6],
+            'summer': [7, 12],
+            'autumn': [13, 18],
+            'winter': [19, 24],
+            'special': [25, 36]
+        };
 
         // Load photo data from JSON file
         async function loadPhotos() {
@@ -875,12 +867,39 @@
             }
         }
 
+        function filterItems(category) {
+            currentFilter = category;
+            
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                if(btn.dataset.filter === category) {
+                    btn.classList.add('active');
+                } else {
+                    btn.classList.remove('active');
+                }
+            });
+
+            generateGallery();
+        }
+
+        document.querySelectorAll('.filter-btn').forEach(btn => {
+            btn.addEventListener('click', (e) => {
+                filterItems(e.currentTarget.dataset.filter);
+            });
+        });
+
         // Generate gallery grid
         function generateGallery() {
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
 
-            for (let i = 1; i <= 36; i++) {
+            let start = 1;
+            let end = 36;
+
+            if (currentFilter !== 'all' && seasonRanges[currentFilter]) {
+                [start, end] = seasonRanges[currentFilter];
+            }
+
+            for (let i = start; i <= end; i++) {
                 const photo = photosData[i];
                 const article = document.createElement('article');
                 
@@ -924,9 +943,12 @@
                 grid.appendChild(article);
             }
 
-            // Reset observer for animations
-            document.querySelectorAll('.shirasagi-item').forEach(item => {
-                observer.observe(item);
+            // Animate items
+            const items = document.querySelectorAll('.shirasagi-item');
+            items.forEach((item, index) => {
+                setTimeout(() => {
+                    item.classList.add('visible');
+                }, index * 30);
             });
         }
 
@@ -950,22 +972,6 @@
                 });
             });
         }
-
-        // Scroll animation
-        const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
-        };
-
-        const observer = new IntersectionObserver((entries) => {
-            entries.forEach((entry, index) => {
-                if (entry.isIntersecting) {
-                    setTimeout(() => {
-                        entry.target.classList.add('visible');
-                    }, index * 50);
-                }
-            });
-        }, observerOptions);
 
         // Update progress bar
         function updateProgress() {
@@ -1046,7 +1052,7 @@
             loadPhotos();
         });
 
-        // 外部リンクのセキュリティ強化
+        // External links security
         document.querySelectorAll('a[target="_blank"]').forEach(link => {
             link.rel = 'noopener noreferrer';
         });
@@ -1057,15 +1063,15 @@
     {
         "@context": "https://schema.org",
         "@type": "ImageGallery",
-        "name": "白鷺三十六景",
+        "name": "Thirty-Six Views of White Heron Castle",
         "alternateName": "Shirasagi Sanjūrokkei",
-        "description": "葛飾北斎の富嶽三十六景に倣い、姫路城を36の視点で切り取った写真プロジェクト。制作進行中。",
+        "description": "Inspired by Katsushika Hokusai's Thirty-Six Views of Mount Fuji, this project captures Himeji Castle from 36 different perspectives.",
         "author": {
             "@type": "Person",
-            "name": "田路昌也",
+            "name": "Toji Masaya",
             "alternateName": "Toji Masaya"
         },
-        "url": "https://tojimasaya.com/shirasagi36.html",
+        "url": "https://tojimasaya.com/shirasagi36-en.html",
         "inProgress": true
     }
     </script>
