@@ -76,6 +76,7 @@
             font-weight: 500;
         }
 
+        /* Dark Mode for Filter Buttons */
         @media (prefers-color-scheme: dark) {
             .filter-btn:hover, .filter-btn.active {
                 background: rgba(255,255,255,0.1);
@@ -106,6 +107,7 @@
             background-color: #f0f0f0;
         }
 
+        /* Video Item Styling */
         .gallery-item.video .item-img-wrapper::after {
             content: '▶';
             position: absolute;
@@ -181,7 +183,7 @@
             display: inline-flex;
             align-items: center;
             font-size: 0.75rem;
-            color: #60a5fa;
+            color: #60a5fa; /* Light Blue */
             text-decoration: none;
             font-family: var(--secondary-font);
             margin-top: 5px;
@@ -191,7 +193,7 @@
             text-decoration: underline;
         }
 
-        /* Modal Styles */
+        /* Lightbox & Modal */
         .lightbox, .video-modal {
             display: none;
             position: fixed;
@@ -235,7 +237,8 @@
         .lightbox-caption {
             position: absolute;
             bottom: 30px;
-            left: 0; right: 0;
+            left: 0;
+            right: 0;
             text-align: center;
             color: white;
             font-family: 'Noto Serif JP', serif;
@@ -255,7 +258,8 @@
 
         .close-btn {
             position: absolute;
-            top: 30px; right: 30px;
+            top: 30px;
+            right: 30px;
             color: white;
             font-size: 3rem;
             cursor: pointer;
@@ -270,6 +274,7 @@
             transform: scale(1.1);
         }
 
+        /* Responsive */
         @media (max-width: 1024px) {
             .gallery-grid { column-count: 2; }
         }
@@ -320,13 +325,14 @@
         </div>
     </footer>
 
-    <!-- Lightbox & Modal -->
+    <!-- Photo Lightbox -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()">
         <button class="close-btn" onclick="closeLightbox()">&times;</button>
         <img id="lightbox-img" class="lightbox-content" src="" alt="" onclick="event.stopPropagation()">
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
+    <!-- Video Modal -->
     <div id="videoModal" class="video-modal" onclick="closeVideo()">
         <button class="close-btn" onclick="closeVideo()">&times;</button>
         <div class="video-container" onclick="event.stopPropagation()">
@@ -343,14 +349,33 @@
 
         async function loadGallery() {
             try {
-                // 正しいJSONパス
+                // Fetch JSON from data/gallery.json
                 const res = await fetch('data/gallery.json');
                 if (!res.ok) throw new Error('Failed to load JSON');
-                allItems = await res.json();
+                const rawData = await res.json();
+                
+                // データの正規化（srcをimageに読み替え、typeを自動判定）
+                allItems = rawData.map(item => {
+                    // キーの読み替え
+                    const imagePath = item.image || item.src || '';
+                    
+                    // タイプの自動判定
+                    let itemType = item.type;
+                    if (!itemType) {
+                        itemType = item.youtubeId ? 'video' : 'photo';
+                    }
+
+                    return {
+                        ...item,
+                        image: imagePath, // 統一されたキー
+                        type: itemType    // 統一されたタイプ
+                    };
+                });
+
                 renderGallery('all');
             } catch (e) {
                 console.error(e);
-                document.getElementById('gallery-grid').innerHTML = '<p style="text-align:center; width:100%; padding:40px;">Failed to load gallery data.</p>';
+                document.getElementById('gallery-grid').innerHTML = '<p style="text-align:center; width:100%; padding:40px;">Failed to load gallery data (data/gallery.json).</p>';
             }
         }
 
@@ -358,6 +383,7 @@
             const grid = document.getElementById('gallery-grid');
             grid.innerHTML = '';
 
+            // Filter Logic
             const filtered = filter === 'all' 
                 ? allItems 
                 : allItems.filter(item => item.type === filter);
@@ -372,18 +398,19 @@
                 el.className = `gallery-item ${item.type}`;
                 el.style.transitionDelay = `${Math.min(index * 50, 1000)}ms`;
                 
-                // 画像パス処理: 先頭のスラッシュを削除して相対パスに
+                // 画像パス処理
                 let imgSrc = item.image;
                 if (imgSrc && imgSrc.startsWith('/')) {
+                    // 先頭のスラッシュを削除して相対パスに（GitHub Pages等でルートパス問題を回避）
                     imgSrc = imgSrc.substring(1); 
                 }
                 
-                // 動画で画像がない場合はYouTubeサムネイルを使用
+                // 動画で画像がない場合はYouTubeサムネイル
                 if (!imgSrc && item.type === 'video' && item.youtubeId) {
                     imgSrc = `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`;
                 }
 
-                // プレースホルダーフォールバック
+                // プレースホルダー
                 if (!imgSrc) {
                     imgSrc = 'https://placehold.co/600x400?text=No+Image';
                 }
@@ -422,10 +449,11 @@
             });
         });
 
+        // Lightbox
         function openLightbox(src, title, location, desc) {
             const lb = document.getElementById('lightbox');
             document.getElementById('lightbox-img').src = src;
-            document.getElementById('lightbox-caption').innerHTML = `<h3>${title}</h3><p>${location ? location : ''} ${desc ? ' — ' + desc : ''}</p>`;
+            document.getElementById('lightbox-caption').innerHTML = `<h3>${title}</h3><p>${location ? location : ''}</p>`;
             lb.classList.add('active');
             document.body.style.overflow = 'hidden';
         }
@@ -435,6 +463,7 @@
             document.body.style.overflow = 'auto';
         }
 
+        // Video
         function openVideo(youtubeId, title) {
             const modal = document.getElementById('videoModal');
             document.getElementById('video-placeholder').innerHTML = `<iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen title="${title}">`;
