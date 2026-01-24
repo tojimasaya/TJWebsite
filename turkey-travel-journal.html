@@ -13,285 +13,237 @@
       gtag('config', 'G-806426BQX2');
     </script>
     
-    <title>トルコ旅行記 - カッパドキアからイスタンブールへ</title>
+    <title>トルコ旅行記 — カッパドキアからイスタンブールへ</title>
+    <meta name="description" content="イスタンブールからカッパドキア、パムッカレへ。東西の文化が交錯するトルコ9日間の旅の記録。Mapboxによる3Dルートマップ付き。">
+    <meta name="author" content="Toji Masaya">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    
+    <!-- Mapbox -->
     <link href='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.css' rel='stylesheet' />
     <script src='https://api.mapbox.com/mapbox-gl-js/v3.3.0/mapbox-gl.js'></script>
     <script src="https://cdn.jsdelivr.net/npm/@turf/turf@6/turf.min.js"></script>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
     <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
-
-        body {
-            font-family: 'Hiragino Mincho ProN', 'Yu Mincho', 'YuMincho', 'HG明朝E', 'MS P明朝', 'MS 明朝', serif;
-            line-height: 1.9;
-            color: #333;
-            background: #fafafa;
-        }
-
+        /* トルコページ専用の追加スタイル */
         /* ヒーローセクション */
-        .hero {
+        .journal-hero {
+            position: relative;
             height: 70vh;
             min-height: 500px;
-            position: relative;
-            overflow: hidden;
-        }
-
-        .hero-image {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .hero-overlay {
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
             color: white;
             text-align: center;
-            padding: 2rem;
-            width: 100%;
+            overflow: hidden;
+            margin-top: 70px;
         }
 
-        .hero-label {
+        .journal-hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.6) contrast(1.1);
+            transition: transform 10s ease;
+        }
+        
+        .journal-hero:hover .journal-hero-bg {
+            transform: scale(1.05);
+        }
+
+        .journal-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            max-width: 900px;
+            animation: fadeInUp 1.5s ease 0.2s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .journal-label {
+            font-family: var(--secondary-font);
             font-size: 0.85rem;
-            letter-spacing: 0.3em;
+            letter-spacing: 0.2em;
             margin-bottom: 1.5rem;
-            font-weight: 400;
-            opacity: 0.95;
+            text-transform: uppercase;
+            opacity: 0.9;
+            display: block;
         }
 
-        .hero-title {
+        .journal-title {
+            font-family: 'Noto Serif JP', serif;
             font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 400;
-            letter-spacing: 0.15em;
-            line-height: 1.6;
-            margin-bottom: 2rem;
+            font-weight: 500;
+            letter-spacing: 0.1em;
+            line-height: 1.4;
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.3);
         }
 
-        .hero-subtitle {
-            font-size: clamp(0.95rem, 1.5vw, 1.1rem);
-            font-weight: 300;
-            letter-spacing: 0.15em;
-            line-height: 1.9;
-            max-width: 600px;
-            margin: 0 auto;
+        .journal-subtitle {
+            font-family: var(--primary-font);
+            font-size: clamp(1rem, 2vw, 1.2rem);
+            font-style: italic;
             opacity: 0.9;
         }
 
-        /* イントロセクション */
-        .intro {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 5rem 2rem 3rem;
-            text-align: center;
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .intro-text {
-            font-size: 1rem;
+        /* イントロダクション */
+        .journal-intro {
+            max-width: 800px;
+            margin: 80px auto 60px;
+            padding: 0 30px;
+            text-align: center;
+            font-family: 'Noto Serif JP', serif;
             line-height: 2.2;
-            color: #555;
+            color: var(--text-color);
+            font-size: 1.05rem;
         }
 
         /* マップセクション */
         .map-section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 2rem 1.5rem 3rem;
+            max-width: 1200px;
+            margin: 0 auto 100px;
+            padding: 0 30px;
+        }
+
+        .map-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-end;
+            margin-bottom: 20px;
+            flex-wrap: wrap;
+            gap: 15px;
         }
 
         .map-title {
+            font-family: var(--secondary-font);
             font-size: 0.9rem;
-            letter-spacing: 0.18em;
-            color: #666;
-            margin: 0 0 1rem 0.2rem;
+            letter-spacing: 0.2em;
+            color: var(--text-light);
+            text-transform: uppercase;
+            font-weight: 600;
         }
 
         .map-controls {
-            text-align: center;
-            margin-bottom: 1.5rem;
+            display: flex;
+            gap: 10px;
         }
 
         .map-btn {
             background: white;
-            border: 1px solid #ddd;
-            padding: 0.6rem 1.5rem;
-            margin: 0 0.5rem;
+            border: 1px solid var(--border-color);
+            padding: 8px 16px;
             border-radius: 4px;
-            font-size: 0.85rem;
+            font-family: var(--secondary-font);
+            font-size: 0.8rem;
             cursor: pointer;
-            transition: all 0.3s;
-            letter-spacing: 0.05em;
+            transition: all 0.3s ease;
+            color: var(--text-color);
         }
 
         .map-btn:hover {
-            background: #f5f5f5;
+            border-color: var(--accent-color);
+            color: var(--accent-color);
         }
 
         .map-btn.active {
-            background: #c49a6c;
+            background: var(--accent-color);
             color: white;
-            border-color: #c49a6c;
+            border-color: var(--accent-color);
+        }
+
+        /* ツアーボタンを目立たせる */
+        #btn-tour {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+            font-weight: 600;
+        }
+        
+        #btn-tour:hover {
+            background: var(--accent-color);
+            color: white;
         }
 
         #map {
             width: 100%;
-            height: 520px;
-            border-radius: 12px;
-            border: 1px solid #e0e0e0;
-            box-shadow: 0 4px 16px rgba(0,0,0,0.06);
+            height: 600px;
+            border-radius: 4px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
             background: #f3f3f3;
         }
 
-        .marker-badge {
-            width: 32px;
-            height: 32px;
-            border-radius: 50%;
-            background: #c49a6c;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 600;
-            font-size: 14px;
-            border: 3px solid white;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.3);
-            cursor: pointer;
-            transition: transform 0.3s ease;
-        }
-
-        .marker-badge:hover {
-            transform: scale(1.2);
-            box-shadow: 0 4px 16px rgba(196, 154, 108, 0.6);
-        }
-
-        /* 強化版ポップアップスタイル */
-        .mapboxgl-popup-content {
-            padding: 0;
-            border-radius: 8px;
-            overflow: hidden;
-            min-width: 280px;
-            max-width: 320px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.2);
-        }
-
-        .mapboxgl-popup-close-button {
-            font-size: 22px;
-            padding: 8px;
-            color: white;
-            background: rgba(0,0,0,0.3);
-            border-radius: 50%;
-            width: 28px;
-            height: 28px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            top: 8px;
-            right: 8px;
-            transition: all 0.3s;
-        }
-
-        .mapboxgl-popup-close-button:hover {
-            background: rgba(0,0,0,0.5);
-        }
-
-        .popup-image {
-            width: 100%;
-            height: 180px;
-            object-fit: cover;
-            display: block;
-        }
-
-        .popup-info {
-            padding: 1.2rem;
-            background: white;
-        }
-
-        .popup-title {
-            font-size: 1.2rem;
-            font-weight: 500;
-            margin-bottom: 0.3rem;
-            letter-spacing: 0.05em;
-            color: #2c2c2c;
-        }
-
-        .popup-subtitle {
-            font-size: 0.85rem;
-            color: #999;
-            margin-bottom: 0.8rem;
-        }
-
-        .popup-date {
-            font-size: 0.75rem;
-            color: #666;
-            margin-bottom: 1rem;
-            padding: 0.4rem 0.7rem;
-            background: #f9f7f4;
-            border-radius: 4px;
-            display: inline-block;
-            border-left: 3px solid #c49a6c;
-        }
-
-        .popup-description {
-            font-size: 0.85rem;
-            line-height: 1.8;
-            color: #555;
-            margin-bottom: 1.2rem;
-        }
-
-        .popup-link {
-            display: block;
-            padding: 0.7rem 1.5rem;
-            background: #2c2c2c;
-            color: white;
-            text-decoration: none;
-            font-size: 0.8rem;
-            letter-spacing: 0.1em;
-            border-radius: 4px;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .popup-link:hover {
-            background: #c49a6c;
-            transform: translateY(-1px);
-            box-shadow: 0 2px 8px rgba(196, 154, 108, 0.4);
-        }
-
-        /* 都市セクション */
+        /* タイムライン・グリッド */
         .cities-section {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding: 3rem 2rem 5rem;
+            max-width: 1000px;
+            margin: 0 auto 120px;
+            padding: 0 30px;
+            position: relative;
+        }
+
+        /* 中央の線（PCのみ） */
+        @media (min-width: 769px) {
+            .cities-section::before {
+                content: '';
+                position: absolute;
+                top: 0; bottom: 0; left: 50%;
+                width: 1px;
+                background: linear-gradient(to bottom, transparent, var(--border-color) 10%, var(--border-color) 90%, transparent);
+                transform: translateX(-50%);
+                z-index: -1;
+            }
         }
 
         .city-item {
-            display: flex;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 60px;
             align-items: center;
-            gap: 4rem;
-            margin-bottom: 6rem;
-            background: white;
-            padding: 0;
+            margin-bottom: 80px;
+            opacity: 0; /* スクロールアニメーション用 */
+            transform: translateY(30px);
+            transition: all 0.8s ease;
         }
 
+        .city-item.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        /* 偶数番目のレイアウト反転 */
         .city-item:nth-child(even) {
-            flex-direction: row-reverse;
+            direction: rtl;
+        }
+        
+        .city-item:nth-child(even) .city-content {
+            direction: ltr;
+            text-align: right;
         }
 
-        .city-image-container {
-            flex: 0 0 45%;
+        .city-image-wrapper {
             position: relative;
             overflow: hidden;
+            border-radius: 2px;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.08);
+            aspect-ratio: 4/3;
         }
 
         .city-image {
             width: 100%;
-            height: auto;
-            display: block;
-            transition: transform 0.6s ease;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.8s cubic-bezier(0.2, 1, 0.3, 1);
         }
 
         .city-item:hover .city-image {
@@ -299,265 +251,353 @@
         }
 
         .city-content {
-            flex: 1;
-            padding: 2rem;
+            padding: 20px;
+            background: var(--bg-color); /* 線の上に文字が乗らないように背景色を設定 */
         }
 
         .city-number {
-            font-size: 0.75rem;
-            color: #999;
-            letter-spacing: 0.2em;
-            margin-bottom: 1rem;
+            font-family: var(--primary-font);
+            font-size: 3rem;
+            color: var(--border-color);
+            line-height: 1;
+            margin-bottom: 10px;
+            font-weight: 600;
         }
 
         .city-name {
-            font-size: 1.8rem;
-            font-weight: 500;
-            margin-bottom: 0.8rem;
-            letter-spacing: 0.1em;
-            color: #2c2c2c;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 2rem;
+            margin-bottom: 15px;
+            color: var(--text-color);
+            letter-spacing: 0.05em;
         }
 
         .city-description {
+            font-family: 'Noto Serif JP', serif;
             font-size: 0.95rem;
             line-height: 2;
-            color: #666;
-            margin-bottom: 2rem;
-            letter-spacing: 0.03em;
+            color: var(--text-light);
+            margin-bottom: 30px;
         }
 
         .read-button {
             display: inline-block;
-            padding: 0.9rem 3rem;
-            background: #2c2c2c;
-            color: white;
+            padding: 12px 30px;
+            background: transparent;
+            border: 1px solid var(--text-color);
+            color: var(--text-color);
             text-decoration: none;
+            font-family: var(--secondary-font);
             font-size: 0.85rem;
-            letter-spacing: 0.2em;
-            transition: all 0.3s ease;
-            border: 1px solid #2c2c2c;
-            cursor: pointer;
-        }
-
-        .read-button:hover {
-            background: white;
-            color: #2c2c2c;
-        }
-
-        /* フッター */
-        footer {
-            background: #f5f5f5;
-            padding: 4rem 2rem;
-            text-align: center;
-            border-top: 1px solid #e0e0e0;
-        }
-
-        .footer-content {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-
-        .footer-title {
-            font-size: 0.9rem;
-            letter-spacing: 0.15em;
-            color: #666;
-            margin-bottom: 0.5rem;
-        }
-
-        .footer-date {
-            font-size: 0.85rem;
-            color: #999;
             letter-spacing: 0.1em;
+            transition: all 0.3s ease;
+        }
+
+        .read-button:not(.disabled):hover {
+            background: var(--text-color);
+            color: white;
+        }
+
+        .read-button.disabled {
+            border-color: #e0e0e0;
+            color: #aaa;
+            cursor: default;
+            pointer-events: none;
+        }
+
+        /* Mapbox Popup Customization */
+        .mapboxgl-popup-content {
+            padding: 0;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            font-family: var(--secondary-font);
+        }
+
+        .popup-image {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+        }
+
+        .popup-info {
+            padding: 15px;
+        }
+
+        .popup-title {
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 5px;
+            color: var(--text-color);
+        }
+
+        .popup-date {
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-bottom: 10px;
+            display: block;
+        }
+
+        .popup-desc {
+            font-size: 0.85rem;
+            line-height: 1.6;
+            color: var(--text-light);
+            margin-bottom: 15px;
+        }
+
+        .popup-link {
+            font-size: 0.8rem;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-weight: 500;
         }
 
         /* レスポンシブ */
         @media (max-width: 768px) {
-            .hero {
+            .journal-hero {
                 height: 60vh;
-                min-height: 400px;
             }
 
-            .city-item,
-            .city-item:nth-child(even) {
-                flex-direction: column;
-                gap: 0;
-                margin-bottom: 4rem;
-            }
-
-            .city-image-container {
-                flex: 0 0 auto;
-                width: 100%;
-            }
-
-            .city-content {
-                padding: 2rem 1.5rem;
-            }
-
-            .intro {
-                padding: 3rem 1.5rem 2rem;
-            }
-
-            .cities-section {
-                padding: 2rem 1rem 3rem;
+            .journal-title {
+                font-size: 2rem;
             }
 
             #map {
                 height: 400px;
             }
 
-            .map-controls {
-                display: flex;
-                flex-wrap: wrap;
-                gap: 0.5rem;
-                justify-content: center;
+            .cities-section {
+                padding: 0 20px;
             }
 
-            .map-btn {
-                margin: 0;
-                font-size: 0.8rem;
-                padding: 0.5rem 1rem;
+            .city-item,
+            .city-item:nth-child(even) {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                direction: ltr;
+                margin-bottom: 60px;
+            }
+
+            .city-item:nth-child(even) .city-content {
+                text-align: left;
+            }
+
+            .city-content {
+                padding: 0;
+            }
+
+            .city-number {
+                font-size: 2rem;
+            }
+
+            .city-name {
+                font-size: 1.6rem;
             }
         }
     </style>
 </head>
 <body>
-    <!-- ヒーローセクション -->
-    <div class="hero">
-        <img src="./assets/images/turkey-hero.jpg" alt="トルコの風景" class="hero-image">
-        <div class="hero-overlay">
-            <h1 class="hero-title">
+
+    <!-- Navigation -->
+    <nav class="main-nav">
+        <div class="nav-container">
+            <a href="/" class="nav-logo">TJM</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+                <span></span><span></span><span></span>
+            </button>
+            <ul class="nav-menu" id="nav-menu">
+                <li><a href="/" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <li><a href="gear.html" class="nav-link">Gear</a></li>
+                <li><a href="writings.html" class="nav-link">Writings</a></li>
+                <li><a href="hongkong.html" class="nav-link">Hong Kong</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="journal-hero">
+        <img src="./assets/images/turkey-hero.jpg" alt="Turkey Landscape" class="journal-hero-bg" onerror="this.src='https://placehold.co/1920x1080/e0e0e0/333333?text=Turkey+Hero'">
+        <div class="journal-hero-content">
+            <span class="journal-label">TRAVEL JOURNAL</span>
+            <h1 class="journal-title">
                 写真で見ていた景色は、<br>
                 本物には遠く及ばなかった。
             </h1>
-            <p class="hero-subtitle">
-                カッパドキアの空、ボスポラスの朝。<br class="pc-only">
-                行く価値がある、と心から言える。
+            <p class="journal-subtitle">
+                The grand journey from Istanbul to Cappadocia
             </p>
         </div>
-    </div>
+    </header>
 
-    <!-- イントロセクション -->
-    <section class="intro">
-        <p class="intro-text">
-            カッパドキアの奇岩群、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代遺跡、そしてイスタンブールの壮麗なモスク。東西文明が交わるトルコで出会った、言葉にならない美しさの記録。
+    <!-- Intro -->
+    <section class="journal-intro">
+        <p>
+            カッパドキアの奇岩群、コンヤの旋回舞踊、パムッカレの白い石灰棚、エフェソスの古代遺跡、そしてイスタンブールの壮麗なモスク。
+        </p>
+        <p>
+            アジアとヨーロッパの架け橋、トルコ。東西文明が交わるこの地で出会った、言葉にならない美しさの記録。
+            Leica Mとドローンを片手に巡った、色彩と光に満ちた9日間の旅。
         </p>
     </section>
 
-    <!-- マップセクション -->
+    <!-- Map Section -->
     <section class="map-section">
-        <div class="map-title">VISITED PLACES MAP</div>
-        <div class="map-controls">
-            <button class="map-btn" id="btn-light">Light</button>
-            <button class="map-btn active" id="btn-sat">Satellite</button>
-            <button class="map-btn" id="btn-tour">ツアー再生</button>
+        <div class="map-header">
+            <div class="map-title">VISITED LOCATIONS & ROUTE</div>
+            <div class="map-controls">
+                <button class="map-btn" id="btn-light">Map</button>
+                <button class="map-btn active" id="btn-sat">Satellite</button>
+                <button class="map-btn" id="btn-tour">▶ Start Tour</button>
+            </div>
         </div>
         <div id="map"></div>
     </section>
 
-    <!-- 都市セクション -->
+    <!-- Journey Timeline -->
     <section class="cities-section">
-        
-        <!-- サフランボル -->
+
+        <!-- 01: Safranbolu -->
         <article class="city-item">
-            <div class="city-image-container">
-                <img src="./assets/images/turkey/safranbolu/02.jpg" alt="サフランボル" class="city-image">
+            <div class="city-image-wrapper">
+                <img src="./assets/images/turkey/safranbolu/02.jpg" alt="サフランボル" class="city-image" onerror="this.src='https://placehold.co/800x600/e0e0e0/333333?text=Safranbolu'">
             </div>
             <div class="city-content">
-                <p class="city-number">01</p>
+                <div class="city-number">01</div>
                 <h2 class="city-name">サフランボルの街</h2>
                 <p class="city-description">
                     オスマン帝国時代の面影を色濃く残す世界遺産の街。赤い屋根と白壁の伝統的な木造家屋が1,000軒以上も現存し、石畳の坂道を歩けば17世紀から続くアラスタバザールの賑わいに出会えます。
                 </p>
-                <a href="safranbolu-detail.html" class="read-button">読む</a>
+                <a href="safranbolu-detail.html" class="read-button">Read Story</a>
             </div>
         </article>
 
-        <!-- カッパドキア -->
+        <!-- 02: Cappadocia -->
         <article class="city-item">
-            <div class="city-image-container">
-                <img src="./assets/images/turkey/cappadocia/01.jpg" alt="カッパドキア" class="city-image">
+            <div class="city-image-wrapper">
+                <img src="./assets/images/turkey/cappadocia/01.jpg" alt="カッパドキア" class="city-image" onerror="this.src='https://placehold.co/800x600/e0e0e0/333333?text=Cappadocia'">
             </div>
             <div class="city-content">
-                <p class="city-number">02</p>
+                <div class="city-number">02</div>
                 <h2 class="city-name">カッパドキアの大地</h2>
                 <p class="city-description">
                     早朝の空に浮かぶ色とりどりの熱気球。ウチヒサル城塞、三姉妹の岩、ラクダ岩など個性豊かな奇岩群と、紀元前から続く地下都市カルダック。古代の人々の叡智が詰まった幻想的な大地です。
                 </p>
-                <a href="cappadocia-detail.html" class="read-button">読む</a>
+                <a href="cappadocia-detail.html" class="read-button">Read Story</a>
             </div>
         </article>
 
-        <!-- コンヤ -->
+        <!-- 03: Konya -->
         <article class="city-item">
-            <div class="city-image-container">
-                <img src="./assets/images/turkey/konya/01.jpg" alt="コンヤ" class="city-image">
+            <div class="city-image-wrapper">
+                <img src="./assets/images/turkey/konya/01.jpg" alt="コンヤ" class="city-image" onerror="this.src='https://placehold.co/800x600/e0e0e0/333333?text=Konya'">
             </div>
             <div class="city-content">
-                <p class="city-number">03</p>
+                <div class="city-number">03</div>
                 <h2 class="city-name">コンヤの神秘</h2>
                 <p class="city-description">
                     エメラルドグリーンの塔が印象的なメヴラーナ博物館で、イスラム神秘主義の世界へ。右手を天に、左手を地に向けながら回転する旋回舞踊セマー。預言者ムハンマドの聖遺物からは、薔薇の香りが漂います。
                 </p>
-                <a href="konya-detail.html" class="read-button">読む</a>
+                <a href="konya-detail.html" class="read-button">Read Story</a>
             </div>
         </article>
 
-        <!-- パムッカレ -->
+        <!-- 04: Pamukkale -->
         <article class="city-item">
-            <div class="city-image-container">
-                <img src="./assets/images/turkey/pamukkale/01.jpg" alt="パムッカレ" class="city-image">
+            <div class="city-image-wrapper">
+                <img src="./assets/images/turkey/pamukkale/01.jpg" alt="パムッカレ" class="city-image" onerror="this.src='https://placehold.co/800x600/e0e0e0/333333?text=Pamukkale'">
             </div>
             <div class="city-content">
-                <p class="city-number">04</p>
+                <div class="city-number">04</div>
                 <h2 class="city-name">パムッカレの温泉</h2>
                 <p class="city-description">
                     「コットンキャッスル」と呼ばれる白い石灰棚と、紀元前2世紀から続く温泉地ヒエラポリス。クレオパトラプールでは、水中に沈む古代の柱の間を泳ぎながら、ローマ帝国のテルマエ文化を体感できます。
                 </p>
-                <a href="pamukkale-detail.html" class="read-button">読む</a>
+                <a href="pamukkale-detail.html" class="read-button">Read Story</a>
             </div>
         </article>
 
-        <!-- エフェソス -->
+        <!-- 05: Ephesus -->
         <article class="city-item">
-            <div class="city-image-container">
-                <img src="./assets/images/turkey/ephesus/01.jpg" alt="エフェソス" class="city-image">
+            <div class="city-image-wrapper">
+                <img src="./assets/images/turkey/ephesus/01.jpg" alt="エフェソス" class="city-image" onerror="this.src='https://placehold.co/800x600/e0e0e0/333333?text=Ephesus'">
             </div>
             <div class="city-content">
-                <p class="city-number">05</p>
+                <div class="city-number">05</div>
                 <h2 class="city-name">エフェソスの遺跡</h2>
                 <p class="city-description">
                     12万冊の蔵書を誇ったケルスス図書館、25,000人を収容した大劇場、そして猫たちがゆったりと暮らす古代ローマ遺跡。ナイキのロゴの原型となったニケのレリーフも必見です。
                 </p>
-                <a href="ephesus-detail.html" class="read-button">読む</a>
+                <a href="ephesus-detail.html" class="read-button">Read Story</a>
             </div>
         </article>
 
-        <!-- イスタンブール -->
+        <!-- 06: Istanbul -->
         <article class="city-item">
-            <div class="city-image-container">
-                <img src="./assets/images/turkey/istanbul/01.jpg" alt="イスタンブール" class="city-image">
+            <div class="city-image-wrapper">
+                <img src="./assets/images/turkey/istanbul/01.jpg" alt="イスタンブール" class="city-image" onerror="this.src='https://placehold.co/800x600/e0e0e0/333333?text=Istanbul'">
             </div>
             <div class="city-content">
-                <p class="city-number">06</p>
+                <div class="city-number">06</div>
                 <h2 class="city-name">永遠の都イスタンブール</h2>
                 <p class="city-description">
                     ボスポラス海峡の夜明け、オスマン帝国の宮殿群、2万枚のイズニックタイルが美しいブルーモスク、そして教会からモスクへと姿を変えたアヤ・ソフィア。東西の文明が出会う永遠の都です。
                 </p>
-                <a href="istanbul-detail.html" class="read-button">読む</a>
+                <a href="istanbul-detail.html" class="read-button">Read Story</a>
             </div>
         </article>
 
     </section>
 
-    <!-- フッター -->
-    <footer>
+    <!-- Back to Home -->
+    <section class="back-to-home">
+        <a href="/" class="back-link">
+            <span class="back-arrow">←</span>
+            <span>Back to Home</span>
+        </a>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="footer-content">
-            <p class="footer-title">TURKEY JOURNEY</p>
-            <p class="footer-date">2024.10.25 - 11.02</p>
+            <p>&copy; 2026 Toji Masaya. All rights reserved.</p>
         </div>
     </footer>
 
+    <!-- Scripts -->
     <script>
+        // Navigation Toggle Logic
+        const navToggle = document.getElementById('nav-toggle');
+        const navMenu = document.getElementById('nav-menu');
+
+        if (navToggle && navMenu) {
+            navToggle.addEventListener('click', () => {
+                navMenu.classList.toggle('active');
+                navToggle.classList.toggle('active');
+            });
+        }
+
+        // Scroll Animation Observer
+        const observerOptions = {
+            threshold: 0.15,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('visible');
+                    observer.unobserve(entry.target);
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.city-item').forEach(item => {
+            observer.observe(item);
+        });
+
+        // Mapbox Integration
         window.addEventListener('load', function () {
             mapboxgl.accessToken = 'pk.eyJ1IjoidG9qaW1hc2F5YSIsImEiOiJjbWgwN283dzExeW1pMndzMjZxaWUybzUyIn0.BDVLLueewnDmuhrYtKcUhA';
 
@@ -575,30 +615,7 @@
             });
             map.addControl(new mapboxgl.NavigationControl({ visualizePitch: true }), 'top-right');
 
-            // 地形（DEM）＆空
-            map.on('style.load', () => {
-                if (!map.getSource('mapbox-dem')) {
-                    map.addSource('mapbox-dem', {
-                        type: 'raster-dem',
-                        url: 'mapbox://mapbox.terrain-rgb',
-                        tileSize: 512,
-                        maxzoom: 14
-                    });
-                }
-                map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.2 });
-                if (!map.getLayer('sky')) {
-                    map.addLayer({
-                        id: 'sky',
-                        type: 'sky',
-                        paint: {
-                            'sky-type': 'atmosphere',
-                            'sky-atmosphere-sun-intensity': 10
-                        }
-                    });
-                }
-            });
-
-            // 訪問地点（拡張版データ）
+            // 訪問地点データ
             const places = [
                 { 
                     id: 'safranbolu', 
@@ -608,7 +625,7 @@
                     coord: [32.6945, 41.2561],
                     date: '2024.10.26',
                     image: './assets/images/turkey/safranbolu/02.jpg',
-                    description: 'オスマン帝国時代の面影を色濃く残す世界遺産の街。赤い屋根と白壁の伝統的な木造家屋が1,000軒以上も現存。',
+                    description: 'オスマン帝国時代の面影を色濃く残す世界遺産の街。',
                     pageUrl: 'safranbolu-detail.html'
                 },
                 { 
@@ -619,7 +636,7 @@
                     coord: [34.8419, 38.6431],
                     date: '2024.10.27-28',
                     image: './assets/images/turkey/cappadocia/01.jpg',
-                    description: '早朝の空に浮かぶ色とりどりの熱気球。奇岩群と紀元前から続く地下都市カルダックが織りなす幻想的な大地。',
+                    description: '早朝の空に浮かぶ色とりどりの熱気球と奇岩群。',
                     pageUrl: 'cappadocia-detail.html'
                 },
                 { 
@@ -630,7 +647,7 @@
                     coord: [32.4846, 37.8667],
                     date: '2024.10.28',
                     image: './assets/images/turkey/konya/01.jpg',
-                    description: 'イスラム神秘主義の中心地。右手を天に、左手を地に向けながら回転する旋回舞踊セマーの聖地。',
+                    description: 'イスラム神秘主義の中心地。旋回舞踊セマーの聖地。',
                     pageUrl: 'konya-detail.html'
                 },
                 { 
@@ -641,7 +658,7 @@
                     coord: [29.1208, 37.9200],
                     date: '2024.10.29',
                     image: './assets/images/turkey/pamukkale/01.jpg',
-                    description: '「コットンキャッスル」と呼ばれる白い石灰棚。クレオパトラプールで古代ローマの温泉文化を体感。',
+                    description: '「綿の城」と呼ばれる白い石灰棚と古代遺跡。',
                     pageUrl: 'pamukkale-detail.html'
                 },
                 { 
@@ -652,7 +669,7 @@
                     coord: [27.3409, 37.9392],
                     date: '2024.10.30',
                     image: './assets/images/turkey/ephesus/01.jpg',
-                    description: 'ケルスス図書館、大劇場など古代ローマ遺跡が残る。猫たちがゆったりと暮らす遺跡の風景。',
+                    description: 'ケルスス図書館、大劇場など古代ローマ遺跡が残る。',
                     pageUrl: 'ephesus-detail.html'
                 },
                 { 
@@ -663,17 +680,38 @@
                     coord: [28.9784, 41.0082],
                     date: '2024.10.31-11.02',
                     image: './assets/images/turkey/istanbul/01.jpg',
-                    description: 'ボスポラス海峡の夜明け、オスマン帝国の宮殿群。東西の文明が交差する永遠の都。',
+                    description: 'ボスポラス海峡の夜明け。東西の文明が交差する永遠の都。',
                     pageUrl: 'istanbul-detail.html'
                 }
             ];
 
-            // 画面フィット
-            const bounds = new mapboxgl.LngLatBounds(places[0].coord, places[0].coord);
-            for (const p of places) bounds.extend(p.coord);
+            map.on('style.load', () => {
+                // 地形と空
+                if (!map.getSource('mapbox-dem')) {
+                    map.addSource('mapbox-dem', {
+                        type: 'raster-dem',
+                        url: 'mapbox://mapbox.terrain-rgb',
+                        tileSize: 512,
+                        maxzoom: 14
+                    });
+                }
+                map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.5 });
+                
+                if (!map.getLayer('sky')) {
+                    map.addLayer({
+                        id: 'sky',
+                        type: 'sky',
+                        paint: {
+                            'sky-type': 'atmosphere',
+                            'sky-atmosphere-sun-intensity': 5
+                        }
+                    });
+                }
+            });
 
+            // マーカーとルート
             map.on('load', () => {
-                // アーク（測地線）作成
+                // アーク（ルートライン）
                 const arcs = [];
                 for (let i = 0; i < places.length - 1; i++) {
                     const gc = turf.greatCircle(
@@ -691,62 +729,69 @@
                     type: 'line',
                     source: 'arcs',
                     paint: {
-                        'line-color': '#c49a6c',
-                        'line-width': 2.8,
-                        'line-opacity': 0.65,
-                        'line-dasharray': [0, 2, 3]
+                        'line-color': '#2563eb', // Theme Accent Blue
+                        'line-width': 3,
+                        'line-opacity': 0.8,
+                        'line-dasharray': [0, 2]
                     }
                 });
 
-                // ダッシュアニメ
+                // アニメーション用
                 let dash = 0;
                 function animateDash() {
-                    dash = (dash + 0.01) % 3;
-                    map.setPaintProperty('arcs-line', 'line-dasharray', [dash, 2, 3]);
+                    dash = (dash + 0.02) % 2; // Speed up slightly
+                    if(map.getLayer('arcs-line')) {
+                        map.setPaintProperty('arcs-line', 'line-dasharray', [dash, 2]);
+                    }
                     requestAnimationFrame(animateDash);
                 }
                 animateDash();
 
-                // マーカー（強化版ポップアップ付き）
+                // マーカー設置
                 places.forEach(p => {
                     const el = document.createElement('div');
-                    el.className = 'marker-badge';
+                    el.className = 'marker';
+                    el.style.backgroundColor = '#2563eb';
+                    el.style.width = '24px';
+                    el.style.height = '24px';
+                    el.style.borderRadius = '50%';
+                    el.style.border = '3px solid white';
+                    el.style.boxShadow = '0 2px 10px rgba(0,0,0,0.3)';
+                    el.style.cursor = 'pointer';
+                    el.style.display = 'flex';
+                    el.style.alignItems = 'center';
+                    el.style.justifyContent = 'center';
+                    el.style.color = 'white';
+                    el.style.fontWeight = 'bold';
+                    el.style.fontSize = '12px';
                     el.textContent = p.idx;
                     
-                    // 強化版ポップアップ
                     const popup = new mapboxgl.Popup({ 
-                        offset: 15,
-                        closeButton: true,
-                        maxWidth: '320px'
+                        offset: 25,
+                        closeButton: false,
+                        maxWidth: '300px'
                     }).setHTML(`
                         <div>
-                            <img src="${p.image}" 
-                                 alt="${p.name}" 
-                                 class="popup-image"
-                                 onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 400 300%27%3E%3Crect fill=%27%23c49a6c%27 width=%27400%27 height=%27300%27/%3E%3Ctext x=%2750%25%27 y=%2750%25%27 font-size=%2724%27 fill=%27white%27 text-anchor=%27middle%27 opacity=%270.5%27%3E${p.name}%3C/text%3E%3C/svg%3E'">
+                            <img src="${p.image}" alt="${p.name}" class="popup-image" onerror="this.src='https://placehold.co/300x160/e0e0e0/333333?text=${p.name}'">
                             <div class="popup-info">
                                 <div class="popup-title">${p.name}</div>
-                                <div class="popup-subtitle">${p.nameEn}</div>
                                 <div class="popup-date">📅 ${p.date}</div>
-                                <div class="popup-description">${p.description}</div>
+                                <div class="popup-desc">${p.description}</div>
                                 <a href="${p.pageUrl}" class="popup-link">詳細を見る →</a>
                             </div>
                         </div>
                     `);
                     
-                    new mapboxgl.Marker({ element: el, anchor: 'center' })
+                    new mapboxgl.Marker({ element: el })
                         .setLngLat(p.coord)
                         .setPopup(popup)
                         .addTo(map);
                 });
 
-                map.fitBounds(bounds, { 
-                    padding: 70, 
-                    duration: 2000,
-                    pitch: 0,
-                    bearing: 0,
-                    essential: true
-                });
+                // 全体表示
+                const bounds = new mapboxgl.LngLatBounds();
+                places.forEach(p => bounds.extend(p.coord));
+                map.fitBounds(bounds, { padding: 80 });
             });
 
             // ベースマップ切替
@@ -762,26 +807,29 @@
             btnLight.addEventListener('click', () => setStyle('light'));
             btnSat.addEventListener('click', () => setStyle('sat'));
 
-            // ツアーボタン：各地点を順に flyTo
+            // ツアー再生
             document.getElementById('btn-tour').addEventListener('click', async () => {
                 for (const p of places) {
                     map.flyTo({ 
                         center: p.coord, 
-                        zoom: 7.2, 
-                        pitch: 55, 
+                        zoom: 8, 
+                        pitch: 60, 
                         bearing: -20, 
-                        speed: 0.4,
+                        speed: 0.6,
                         curve: 1.2,
                         essential: true 
                     });
-                    await new Promise(r => setTimeout(r, 2500));
+                    
+                    // 該当する都市へスクロール（オプション）
+                    // const targetEl = document.querySelectorAll('.city-item')[p.idx - 1];
+                    // targetEl.scrollIntoView({ behavior: 'smooth', block: 'center' });
+
+                    await new Promise(r => setTimeout(r, 4000));
                 }
-                // 最後に全体
-                map.fitBounds(new mapboxgl.LngLatBounds(places[0].coord, places[0].coord).extend(places.at(-1).coord), { 
-                    padding: 70, 
-                    duration: 2000,
-                    essential: true 
-                });
+                // 最後に全体に戻る
+                const bounds = new mapboxgl.LngLatBounds();
+                places.forEach(p => bounds.extend(p.coord));
+                map.fitBounds(bounds, { padding: 80, pitch: 0, bearing: 0, duration: 2000 });
             });
         });
     </script>
