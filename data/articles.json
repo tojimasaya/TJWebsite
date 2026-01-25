@@ -1,5 +1,23 @@
 [
   {
+    "title": "DRONE.jp 連載記事",
+    "link": "https://www.drone.jp/column/2025011714072380182.html",
+    "date": "2026-01-25",
+    "image": "assets/images/gallery/hongkong.jpg",
+    "excerpt": "中国・香港ドローン便り",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "DRONE.jp 連載記事",
+    "link": "https://www.drone.jp/column/2024122515255479233.html",
+    "date": "2026-01-25",
+    "image": "assets/images/gallery/hongkong.jpg",
+    "excerpt": "中国・香港ドローン便り",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
     "title": "「メガネ、メガネ……」の醜態よ、さらば。AR/VR時代に備えた「脱・メガネ」宣言。",
     "link": "https://note.com/tojimasaya/n/n807dc4be8deb",
     "date": "2026-01-19",
@@ -85,7 +103,7 @@
     "link": "https://drone.jp/column/20250912114426119738.html",
     "date": "2025-09-12",
     "image": "https://drone.jp/wp-content/uploads/20250911_tohzi_top.jpg",
-    "excerpt": "DRONE.jp 連載コラム",
+    "excerpt": "中国・香港ドローン便り",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   },
@@ -94,7 +112,7 @@
     "link": "https://drone.jp/column/20250827103506118604.html",
     "date": "2025-08-27",
     "image": "https://drone.jp/wp-content/uploads/20250819_touji_top2.jpg",
-    "excerpt": "DRONE.jp 連載コラム",
+    "excerpt": "中国・香港ドローン便り",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   },
@@ -103,7 +121,7 @@
     "link": "https://drone.jp/column/20250718091041117398.html",
     "date": "2025-07-18",
     "image": "https://drone.jp/wp-content/uploads/tohzi_54_top.jpg",
-    "excerpt": "DRONE.jp 連載コラム",
+    "excerpt": "中国・香港ドローン便り",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   },
@@ -112,7 +130,7 @@
     "link": "https://drone.jp/column/20250619135305116533.html",
     "date": "2025-06-19",
     "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/06/250617_drone_touji_top.jpg",
-    "excerpt": "DRONE.jp 連載コラム",
+    "excerpt": "中国・香港ドローン便り",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   },
@@ -121,7 +139,7 @@
     "link": "https://drone.jp/column/20250521101003115777.html",
     "date": "2025-05-21",
     "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/05/250520_SFC_touji_top.jpg",
-    "excerpt": "DRONE.jp 連載コラム",
+    "excerpt": "中国・香港ドローン便り",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   },
@@ -130,7 +148,7 @@
     "link": "https://drone.jp/column/20250422180507115300.html",
     "date": "2025-04-22",
     "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/04/250422_SFC_touji_top-1.jpg",
-    "excerpt": "DRONE.jp 連載コラム",
+    "excerpt": "中国・香港ドローン便り",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   },
@@ -139,25 +157,7 @@
     "link": "https://drone.jp/column/20250325095347114383.html",
     "date": "2025-03-25",
     "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/03/tohzi_50_top.jpg",
-    "excerpt": "DRONE.jp 連載コラム",
-    "source": "drone",
-    "sourceLabel": "DRONE.jp"
-  },
-  {
-    "title": "ホーチミンでのドローン撮影断念―厳しくなる規制とその現実[田路昌也の中国・香港ドローン便り]Vol.49",
-    "link": "https://drone.jp/column/20250225110506111975.html",
-    "date": "2025-02-25",
-    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/02/tohzi_49_top.jpg",
-    "excerpt": "DRONE.jp 連載コラム",
-    "source": "drone",
-    "sourceLabel": "DRONE.jp"
-  },
-  {
-    "title": "記憶を紡ぐ空撮の旅 ～2025年、日月潭からの出発～[田路昌也の中国・香港ドローン便り]Vol.48",
-    "link": "https://drone.jp/column/20250124101951109069.html",
-    "date": "2025-01-24",
-    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/01/tohzi_48_top.jpg",
-    "excerpt": "DRONE.jp 連載コラム",
+    "excerpt": "中国・香港ドローン便り",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   }
