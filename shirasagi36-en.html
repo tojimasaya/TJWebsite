@@ -5,1075 +5,747 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>36 Views of White Heron Castle — Toji Masaya</title>
 
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    <meta name="theme-color" content="#1A3FB9">
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+JP:wght@300;500&display=swap" rel="stylesheet">
 
-    <!-- SEO & OGP -->
-    <meta name="description" content="Inspired by Hokusai's Thirty-Six Views of Mount Fuji, this ongoing photography project captures 36 perspectives of Himeji Castle, my hometown, through different angles, seasons, and times of day.">
-    <meta name="keywords" content="Himeji Castle, White Heron Castle, Photography, Toji Masaya, Thirty-Six Views">
-    <meta name="author" content="Toji Masaya">
-
-    <!-- OGP -->
-    <meta property="og:title" content="36 Views of White Heron Castle — Toji Masaya">
-    <meta property="og:description" content="Inspired by Hokusai's Thirty-Six Views of Mount Fuji, capturing 36 perspectives of Himeji Castle through different seasons and times.">
-    <meta property="og:url" content="https://tojimasaya.com/shirasagi36-en.html">
-    <meta property="og:type" content="website">
-
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
-
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'shirasagi-blue': '#1A3FB9',
+                        'shirasagi-dark': '#0f172a',
+                        'washi-bg': '#fcfaf2',
+                    },
+                    fontFamily: {
+                        'serif-display': ['"Cinzel"', 'serif'],
+                        'serif-body': ['"Crimson Text"', 'serif'],
+                        'sans': ['"Inter"', 'sans-serif'],
+                    },
+                    backgroundImage: {
+                        'washi-texture': "url('data:image/svg+xml,%3Csvg width=\\'100\\' height=\\'100\\' viewBox=\\'0 0 100 100\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\\' fill=\\'%239C92AC\\' fill-opacity=\\'0.05\\' fill-rule=\\'evenodd\\'/%3E%3C/svg%3E')",
+                    }
+                }
+            }
+        }
+    </script>
     <style>
-        /* Shared Styles from Japanese Version + adjustments */
         body {
-            background: linear-gradient(to bottom, #fdfcf8 0%, #f5f3ed 100%);
-            position: relative;
+            background-color: #fcfaf2;
+        }
+        
+        .hero-gradient {
+            background: linear-gradient(to bottom, rgba(0,0,0,0.3), rgba(0,0,0,0.7));
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(0,0,0,.02) 2px, rgba(0,0,0,.02) 4px),
-                repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(0,0,0,.02) 2px, rgba(0,0,0,.02) 4px);
-            pointer-events: none;
-            z-index: 1;
-        }
-
-        .main-content {
-            position: relative;
-            z-index: 2;
-        }
-
-        .shirasagi-hero {
-            position: relative;
-            height: 70vh;
-            min-height: 500px;
-            overflow: hidden;
-            margin-top: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        .shirasagi-hero-image {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            z-index: 1;
-        }
-
-        .shirasagi-hero-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.6) contrast(1.2);
-        }
-
-        .shirasagi-hero-overlay {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            color: white;
-            padding: 0 20px;
-        }
-
-        .shirasagi-title {
-            font-family: 'Noto Serif JP', 'Crimson Text', serif;
-            font-size: 4rem;
-            font-weight: 600;
-            margin-bottom: 1rem;
-            text-shadow: 3px 3px 6px rgba(0,0,0,0.7);
-            letter-spacing: 0.1em;
-        }
-
-        .shirasagi-subtitle {
-            font-family: 'Crimson Text', serif;
-            font-size: 1.5rem;
-            font-weight: 400;
-            font-style: italic;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.6);
-            letter-spacing: 0.05em;
-        }
-
-        .shirasagi-intro {
-            max-width: 800px;
-            margin: 80px auto 40px;
-            padding: 0 40px;
-            text-align: center;
-        }
-
-        .shirasagi-intro h2 {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.8rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-color);
-            letter-spacing: 0.1em;
-        }
-
-        .shirasagi-intro p {
-            font-size: 1.1rem;
-            line-height: 2;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        /* Filter Styles */
-        .filter-section {
-            max-width: 1000px;
-            margin: 0 auto 40px;
-            padding: 0 20px;
-            text-align: center;
-        }
-
-        .filter-buttons {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            justify-content: center;
-        }
-
-        .filter-btn {
-            font-family: 'Inter', sans-serif;
-            padding: 10px 24px;
-            background: rgba(255, 255, 255, 0.8);
-            border: 1px solid #d4c4b0;
-            border-radius: 30px;
-            color: #5d5d5d;
-            font-size: 0.9rem;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 5px rgba(0,0,0,0.05);
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .filter-btn:hover {
-            transform: translateY(-2px);
-            background: white;
-            color: var(--accent-color);
-            border-color: var(--accent-color);
-        }
-
-        .filter-btn.active {
-            background: var(--text-color);
-            color: white;
-            border-color: var(--text-color);
-            box-shadow: 0 4px 10px rgba(0,0,0,0.15);
-        }
-
-        .filter-icon {
-            font-size: 1.1em;
-        }
-
-        .progress-section {
-            max-width: 600px;
-            margin: 40px auto;
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .progress-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 15px;
-        }
-
-        .progress-text {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.1rem;
-            color: var(--text-color);
-        }
-
-        .progress-count {
-            font-family: 'Crimson Text', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: var(--accent-color);
-        }
-
-        .progress-bar-container {
-            width: 100%;
-            height: 8px;
-            background: #e5e5e5;
-            border-radius: 4px;
-            overflow: hidden;
-            margin-bottom: 10px;
-        }
-
-        .progress-bar {
-            height: 100%;
-            background: linear-gradient(90deg, var(--accent-color), #1e40af);
-            border-radius: 4px;
-            transition: width 0.5s ease;
-        }
-
-        .progress-note {
-            font-size: 0.9rem;
-            color: var(--text-lighter);
-            font-style: italic;
-            text-align: center;
-            margin-top: 10px;
-        }
-
-        .shirasagi-grid {
-            max-width: 1400px;
-            margin: 40px auto 60px;
-            padding: 0 40px;
-            display: grid;
-            grid-template-columns: repeat(6, 1fr);
-            gap: 20px;
-            min-height: 400px;
-        }
-
-        .shirasagi-item {
-            position: relative;
-            aspect-ratio: 1;
-            overflow: hidden;
-            border-radius: 4px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+        .fade-in-up {
+            animation: fadeInUp 0.8s ease-out forwards;
             opacity: 0;
-            transform: scale(0.9);
+            transform: translateY(20px);
         }
 
-        .shirasagi-item.visible {
-            opacity: 1;
-            transform: scale(1);
+        @keyframes fadeInUp {
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .shirasagi-item.hidden {
-            display: none;
+        /* Seigaiha Pattern */
+        .bg-pattern-seigaiha {
+            background-color: #f8f8f8;
+            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1d5db' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
         }
 
-        .shirasagi-item.has-photo {
-            cursor: pointer;
-            background: white;
-        }
-
-        .shirasagi-item.has-photo:hover {
-            transform: translateY(-5px) scale(1.02);
-            box-shadow: 0 12px 24px rgba(0,0,0,0.2);
-            z-index: 10;
-        }
-
-        .shirasagi-item.empty {
-            background: linear-gradient(135deg, #fafafa 0%, #f0f0f0 100%);
-            border: 2px dashed #d0d0d0;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            gap: 12px;
-            opacity: 0.6;
-        }
-
-        .shirasagi-item.empty.visible {
-            opacity: 0.6;
-            transform: scale(1);
-        }
-
-        .empty-number {
-            font-family: 'Crimson Text', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            color: #b0b0b0;
-        }
-
-        .empty-icon {
-            width: 40px;
-            height: 40px;
-            position: relative;
-        }
-
-        .empty-icon svg {
-            width: 100%;
-            height: 100%;
-            fill: none;
-            stroke: #c0c0c0;
-            stroke-width: 2;
-            stroke-linecap: round;
-            stroke-linejoin: round;
-        }
-
-        .shirasagi-item img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: block;
-        }
-
-        .shirasagi-item-overlay {
-            position: absolute;
-            bottom: 0;
-            left: 0;
-            right: 0;
-            background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0.4) 50%, transparent 100%);
-            padding: 20px 15px 15px;
-            transform: translateY(100%);
-            transition: transform 0.4s ease;
-        }
-
-        .shirasagi-item.has-photo:hover .shirasagi-item-overlay {
-            transform: translateY(0);
-        }
-
-        .shirasagi-item-title {
-            font-family: 'Noto Serif JP', serif;
-            color: white;
-            font-size: 0.95rem;
-            font-weight: 500;
-            letter-spacing: 0.05em;
-            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
-            margin-bottom: 0.5rem;
-        }
-
-        .shirasagi-item-info {
-            font-family: 'Inter', sans-serif;
-            color: rgba(255, 255, 255, 0.8);
-            font-size: 0.75rem;
-            line-height: 1.6;
-        }
-
-        .shirasagi-about {
-            max-width: 800px;
-            margin: 80px auto;
-            padding: 40px;
-            background: rgba(255, 255, 255, 0.7);
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .shirasagi-about h2 {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.6rem;
-            margin-bottom: 1.5rem;
-            color: var(--text-color);
-            letter-spacing: 0.1em;
-            text-align: center;
-        }
-
-        .shirasagi-about p {
-            font-size: 1.05rem;
-            line-height: 2;
-            color: var(--text-light);
-            margin-bottom: 1rem;
-        }
-
-        .back-to-home {
-            max-width: 800px;
-            margin: 60px auto;
-            text-align: center;
-        }
-
-        .back-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            font-family: 'Crimson Text', serif;
-            font-size: 1.1rem;
-            color: var(--accent-color);
-            text-decoration: none;
-            transition: all 0.3s ease;
-        }
-
-        .back-link:hover {
-            gap: 15px;
-            color: #1e40af;
-        }
-
-        .back-arrow {
-            font-size: 1.3rem;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            z-index: 9999;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.95);
-            align-items: center;
-            justify-content: center;
-            animation: fadeIn 0.3s ease;
-        }
-
-        .close-modal {
-            position: absolute;
-            top: 30px;
-            right: 40px;
-            background: transparent;
-            border: none;
-            color: white;
-            font-size: 3rem;
-            cursor: pointer;
-            z-index: 10000;
-            transition: transform 0.2s ease;
-            line-height: 1;
-            padding: 0;
-        }
-
-        .close-modal:hover {
-            transform: scale(1.2);
-        }
-
-        .modal-content {
-            max-width: 90vw;
-            max-height: 90vh;
-            overflow-y: auto;
-            text-align: center;
-            padding: 20px;
-        }
-
-        .modal-image {
-            max-width: 100%;
-            max-height: 55vh;
-            object-fit: contain;
-            box-shadow: 0 4px 20px rgba(0,0,0,0.5);
-        }
-
-        .modal-caption {
-            font-family: 'Noto Serif JP', serif;
-            color: white;
-            font-size: 1.3rem;
-            margin-top: 20px;
-            letter-spacing: 0.1em;
-        }
-
-        @media (min-width: 769px) {
-            .modal-image {
-                max-height: 50vh;
-            }
-            .modal-content {
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                justify-content: flex-start;
-            }
-        }
-
-        .modal-info {
-            font-family: 'Inter', sans-serif;
-            color: #ccc;
-            font-size: 0.9rem;
-            margin-top: 10px;
-            display: flex;
-            gap: 20px;
-            justify-content: center;
-            flex-wrap: wrap;
-        }
-
-        .modal-info-item {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-
-        .modal-info-label {
-            color: #999;
-            font-size: 0.85rem;
-        }
-
-        .modal-map-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            margin-top: 20px;
-            margin-bottom: 20px;
-            padding: 12px 24px;
-            background: linear-gradient(135deg, #1A3FB9, #1e40af);
-            color: white;
-            text-decoration: none;
-            border-radius: 6px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(26, 63, 185, 0.2);
-        }
-
-        .modal-map-link:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(26, 63, 185, 0.3);
-        }
-
-        .modal-map-link svg {
-            width: 18px;
-            height: 18px;
-            fill: currentColor;
-        }
-
-        .modal-content::-webkit-scrollbar {
-            width: 8px;
-        }
-
-        .modal-content::-webkit-scrollbar-track {
-            background: rgba(255, 255, 255, 0.1);
-            border-radius: 4px;
-        }
-
-        .modal-content::-webkit-scrollbar-thumb {
-            background: rgba(255, 255, 255, 0.3);
-            border-radius: 4px;
-        }
-
-        .modal-content::-webkit-scrollbar-thumb:hover {
-            background: rgba(255, 255, 255, 0.5);
-        }
-
-        .lang-switch {
-            position: fixed;
-            top: 90px;
-            right: 20px;
-            padding: 0.6rem 1.2rem;
-            background: rgba(255, 255, 255, 0.95);
-            border: 1px solid #e0e0e0;
-            border-radius: 20px;
-            text-decoration: none;
-            color: #2c2c2c;
-            font-family: 'Inter', sans-serif;
-            font-size: 0.85rem;
-            font-weight: 500;
-            z-index: 999;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .lang-switch:hover {
-            background: #2c2c2c;
-            color: white;
-            border-color: #2c2c2c;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
-        }
-
-        @media (prefers-color-scheme: dark) {
-            body {
-                background: linear-gradient(to bottom, #1a1a1a 0%, #0f0f0f 100%);
-            }
-            body::before {
-                background-image: 
-                    repeating-linear-gradient(0deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px),
-                    repeating-linear-gradient(90deg, transparent, transparent 2px, rgba(255,255,255,.02) 2px, rgba(255,255,255,.02) 4px);
-            }
-            .shirasagi-title,
-            .shirasagi-intro h2,
-            .shirasagi-about h2 {
-                color: #f5f5f5;
-            }
-            .shirasagi-intro p,
-            .shirasagi-about p {
-                color: #d0d0d0;
-            }
-            .progress-section {
-                background: rgba(40, 40, 40, 0.8);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            .progress-text,
-            .progress-count {
-                color: #f5f5f5;
-            }
-            .progress-note {
-                color: #a0a0a0;
-            }
-            .progress-bar-container {
-                background: #2a2a2a;
-            }
-            .shirasagi-about {
-                background: rgba(40, 40, 40, 0.8);
-                border: 1px solid rgba(255, 255, 255, 0.1);
-            }
-            .shirasagi-about a {
-                color: #6ba4ff;
-            }
-            .shirasagi-item.empty {
-                background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-                border-color: #444;
-            }
-            .empty-number {
-                color: #666;
-            }
-            .empty-icon svg {
-                stroke: #555;
-            }
-            .filter-btn {
-                background: rgba(40, 40, 40, 0.8);
-                border-color: #444;
-                color: #d0d0d0;
-            }
-            .filter-btn:hover,
-            .filter-btn.active {
-                background: var(--accent-color);
-                color: white;
-                border-color: var(--accent-color);
-            }
-            .back-link {
-                color: #6ba4ff;
-            }
-            .back-link:hover {
-                color: #88b8ff;
-            }
-            .lang-switch {
-                background: rgba(40, 40, 40, 0.95);
-                border-color: #555;
-                color: #f5f5f5;
-            }
-            .lang-switch:hover {
-                background: #f5f5f5;
-                color: #1a1a1a;
-                border-color: #f5f5f5;
-            }
-        }
-
-        @media (max-width: 1200px) {
-            .shirasagi-grid {
-                grid-template-columns: repeat(4, 1fr);
-            }
-        }
-
-        @media (max-width: 768px) {
-            .shirasagi-title {
-                font-size: 2.5rem;
-            }
-            .shirasagi-subtitle {
-                font-size: 1.1rem;
-            }
-            .lang-switch {
-                top: 70px;
-                right: 15px;
-                padding: 0.5rem 1rem;
-                font-size: 0.8rem;
-            }
-            .shirasagi-grid {
-                grid-template-columns: repeat(3, 1fr);
-                gap: 15px;
-                padding: 0 20px;
-            }
-            .shirasagi-intro,
-            .shirasagi-about {
-                padding: 30px 20px;
-            }
-            .empty-number {
-                font-size: 1.5rem;
-            }
-            .empty-icon {
-                width: 30px;
-                height: 30px;
-            }
-            .progress-section {
-                margin: 40px 20px;
-                padding: 20px;
-            }
-            .filter-section {
-                padding: 0 20px;
-            }
-            .close-modal {
-                top: 20px;
-                right: 20px;
-                font-size: 2.5rem;
-            }
-            .modal-content {
-                padding: 10px;
-            }
-            .modal-image {
-                max-height: 50vh;
-            }
-            .modal-caption {
-                font-size: 1.1rem;
-            }
-            .modal-info {
-                font-size: 0.8rem;
-                gap: 15px;
-            }
-            .modal-map-link {
-                font-size: 0.85rem;
-                padding: 10px 20px;
-            }
-            .shirasagi-item-info {
-                font-size: 0.7rem;
-            }
-        }
-
-        @media (max-width: 480px) {
-            .shirasagi-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 10px;
-            }
-        }
-
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+        /* Scrollbar */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #9ca3af; }
     </style>
 </head>
-<body>
+<body class="bg-washi-bg bg-washi-texture text-gray-800 font-serif-body antialiased">
+
     <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <div class="nav-toggle"><span></span><span></span><span></span></div>
-            <ul class="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="gear.html" class="nav-link">Gear</a></li>
-                <li><a href="writings.html" class="nav-link">Writings</a></li>
-                <li><a href="hongkong.html" class="nav-link">Hong Kong</a></li>
-            </ul>
+    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-16">
+                <a href="/" class="font-serif-display text-xl font-bold tracking-widest text-gray-900">TOJI MASAYA</a>
+                <div class="hidden md:flex space-x-8 font-serif-body text-lg text-gray-600">
+                    <a href="#" class="hover:text-shirasagi-blue transition-colors">Home</a>
+                    <a href="#" class="hover:text-shirasagi-blue transition-colors">Gallery</a>
+                    <a href="#" class="text-shirasagi-blue font-semibold">Shirasagi 36</a>
+                    <a href="#" class="hover:text-shirasagi-blue transition-colors">About</a>
+                </div>
+                <!-- Language Switch -->
+                <a href="shirasagi36.html" class="text-xs font-sans font-medium border border-gray-300 rounded-full px-3 py-1 hover:bg-gray-800 hover:text-white transition-all">
+                    日本語
+                </a>
+            </div>
         </div>
     </nav>
 
-    <!-- Main Content -->
-    <main role="main">
-        <div class="main-content">
-            
-            <!-- Hero Section -->
-            <section class="shirasagi-hero">
-                <div class="shirasagi-hero-image">
-                    <img src="assets/images/shirasagi/21.jpg" alt="36 Views of White Heron Castle" width="1920" height="1080">
-                </div>
-                <div class="shirasagi-hero-overlay">
-                    <h1 class="shirasagi-title">36 Views of White Heron Castle</h1>
-                    <p class="shirasagi-subtitle">Shirasagi Sanjūrokkei</p>
-                </div>
-            </section>
-
-            <!-- Language Switch -->
-            <a href="shirasagi36.html" class="lang-switch">日本語</a>
-
-            <!-- Project Description -->
-            <section class="shirasagi-intro">
-                <h2>About This Project</h2>
-                <p>Inspired by Katsushika Hokusai's "Thirty-Six Views of Mount Fuji," this ongoing photography project captures my hometown, Himeji Castle, from various angles, seasons, and times of day.</p>
-                <p>Recording 36 different expressions of the castle, affectionately known as "White Heron Castle" (Shirasagi-jō).</p>
-                <p>This page is a work in progress. New photos will be added as they are taken. Please enjoy the process toward completion.</p>
-            </section>
-
-            <!-- Season Filters -->
-            <section class="filter-section">
-                <div class="filter-buttons">
-                    <button class="filter-btn active" data-filter="all">
-                        <span class="filter-icon">📂</span> All
-                    </button>
-                    <button class="filter-btn" data-filter="spring">
-                        <span class="filter-icon">🌸</span> Spring (01-06)
-                    </button>
-                    <button class="filter-btn" data-filter="summer">
-                        <span class="filter-icon">🌻</span> Summer (07-12)
-                    </button>
-                    <button class="filter-btn" data-filter="autumn">
-                        <span class="filter-icon">🍁</span> Autumn (13-18)
-                    </button>
-                    <button class="filter-btn" data-filter="winter">
-                        <span class="filter-icon">❄️</span> Winter (19-24)
-                    </button>
-                    <button class="filter-btn" data-filter="special">
-                        <span class="filter-icon">📷</span> Special (25-36)
-                    </button>
-                </div>
-            </section>
-
-            <!-- Progress Display -->
-            <section class="progress-section">
-                <div class="progress-header">
-                    <span class="progress-text">Completed</span>
-                    <span class="progress-count" id="progress-count">3 / 36</span>
-                </div>
-                <div class="progress-bar-container">
-                    <div class="progress-bar" id="progress-bar" style="width: 8.33%"></div>
-                </div>
-                <p class="progress-note">※ Photos will be added progressively as they are taken</p>
-            </section>
-
-            <!-- Gallery Grid -->
-            <section class="shirasagi-grid" id="shirasagi-grid">
-                <!-- Dynamically generated by JavaScript -->
-            </section>
-
-            <!-- About the Photography -->
-            <section class="shirasagi-about">
-                <h2>About the Photography</h2>
-                <p>Equipment: Leica M, Leica SL2-S, Xiaomi 15 Ultra　<a href="gear.html" style="color: var(--accent-color); text-decoration: none;">→ Equipment Details</a></p>
-                <p>Period: 2024 – (Ongoing)</p>
-                <p>Whenever I return to my hometown of Himeji, I gradually build this collection. Different seasonal expressions, changing light throughout the day, views from various angles. While committed to the number 36, I aim for completion at a leisurely pace.</p>
-            </section>
-
-            <!-- Back to Home -->
-            <section class="back-to-home">
-                <a href="/" class="back-link">
-                    <span class="back-arrow">←</span>
-                    <span>Back to Home</span>
-                </a>
-            </section>
-
-            <!-- Footer -->
-            <footer class="footer" role="contentinfo">
-                <div class="footer-content">
-                    <p>&copy; 2025 Toji Masaya. All rights reserved.</p>
-                    <p>Built with care in Japan</p>
-                </div>
-            </footer>
+    <!-- Hero Section (English Design) -->
+    <header class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img src="assets/images/shirasagi/21.jpg" 
+                 onerror="this.src='https://images.unsplash.com/photo-1605009575497-8c437145e69e?q=80&w=2070&auto=format&fit=crop'"
+                 alt="Himeji Castle Hero" 
+                 class="w-full h-full object-cover filter brightness-75 scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]">
         </div>
+        <div class="absolute inset-0 z-10 hero-gradient"></div>
+
+        <div class="relative z-20 text-white text-center p-8 w-full max-w-5xl">
+            <div class="animate-fade-in-up">
+                <p class="text-lg md:text-xl font-serif-display tracking-[0.2em] text-shirasagi-blue mix-blend-screen mb-4 uppercase">
+                    Shirasagi Sanjūrokkei
+                </p>
+                <h1 class="text-5xl md:text-7xl font-serif-display font-medium leading-tight mb-8 drop-shadow-lg">
+                    36 Views of<br>
+                    <span class="italic font-serif-body">White Heron Castle</span>
+                </h1>
+                <div class="h-px w-24 bg-white/50 mx-auto mb-8"></div>
+                <p class="text-lg md:text-xl font-light leading-relaxed text-gray-100 max-w-2xl mx-auto font-serif-body">
+                    Himeji Castle, captured through 36 perspectives.<br>
+                    Changing seasons, shifting light, and timeless angles.<br>
+                    An homage to Hokusai, through the modern lens.
+                </p>
+            </div>
+        </div>
+
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
+            <svg class="w-6 h-6 text-white opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+            </svg>
+        </div>
+    </header>
+
+    <!-- Main Content -->
+    <main class="relative z-10 -mt-20">
+        
+        <!-- Latest/Featured Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-32">
+            <div class="bg-white rounded-lg shadow-xl overflow-hidden md:flex flex-row-reverse transform transition hover:shadow-2xl duration-500">
+                <div class="md:w-3/5 h-64 md:h-[500px] relative overflow-hidden group cursor-pointer" onclick="openModalWithLatest()">
+                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
+                    <img id="latest-image" src="" alt="Latest Shot" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
+                    <div class="absolute bottom-4 right-4 z-20 bg-white/90 backdrop-blur px-4 py-2 rounded-sm shadow-sm">
+                        <span class="text-xs font-serif-display uppercase tracking-widest text-gray-500">Latest View</span>
+                    </div>
+                </div>
+                <div class="md:w-2/5 p-8 md:p-12 flex flex-col justify-center bg-white relative">
+                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-shirasagi-blue to-transparent"></div>
+                    <span class="text-shirasagi-blue font-serif-display font-bold tracking-widest text-sm mb-2">No. <span id="latest-number">--</span></span>
+                    <h2 class="text-3xl md:text-4xl font-serif-display mb-6 leading-tight text-gray-900" id="latest-title">Loading...</h2>
+                    <p class="text-gray-600 leading-relaxed mb-8 font-light text-lg" id="latest-desc">
+                        Fetching the latest view...
+                    </p>
+                    <div class="mt-auto">
+                        <div class="flex items-center text-sm text-gray-400 font-sans space-x-4">
+                            <span id="latest-date">--</span>
+                            <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
+                            <span id="latest-gear">--</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Gallery Controls -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12">
+            <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-200 pb-4 mb-8">
+                <div>
+                    <h3 class="text-2xl font-serif-display text-gray-800 flex items-center gap-3">
+                        The Collection
+                        <span class="text-sm font-sans font-normal text-gray-500 bg-gray-100 px-3 py-1 rounded-full">
+                            Progress: <span id="progress-text" class="font-bold text-shirasagi-blue">0</span>%
+                        </span>
+                    </h3>
+                </div>
+                
+                <!-- Filters -->
+                <div class="flex flex-wrap gap-2 mt-4 md:mt-0 font-sans text-sm">
+                    <button class="filter-btn active px-4 py-2 rounded-full border border-gray-300 bg-gray-800 text-white transition-all hover:shadow-md" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="spring">🌸 Spring</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="summer">🌻 Summer</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="autumn">🍁 Autumn</button>
+                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="winter">❄️ Winter</button>
+                </div>
+            </div>
+
+            <!-- Grid -->
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6" id="shirasagi-grid">
+                <!-- Javascript will populate this -->
+            </div>
+        </section>
+
+        <!-- About Context -->
+        <section class="bg-white/80 backdrop-blur-sm border-t border-gray-100 py-20 mt-20">
+            <div class="max-w-3xl mx-auto px-6 text-center">
+                <span class="text-shirasagi-blue font-serif-display italic mb-4 block text-lg">About the Project</span>
+                <h2 class="text-3xl font-bold font-serif-display mb-8 text-gray-900">A Homecoming Through the Lens</h2>
+                <p class="text-gray-600 leading-loose mb-6 font-light text-lg">
+                    Himeji Castle, affectionately known as "White Heron Castle," is a World Heritage site located in my hometown. 
+                    Depending on the angle, season, and time of day, it reveals completely different expressions.
+                </p>
+                <p class="text-gray-600 leading-loose mb-10 font-light text-lg">
+                    Just as Katsushika Hokusai depicted the multifaceted nature of Mt. Fuji in his "Thirty-Six Views," 
+                    I have decided to record 36 "present moments" of this castle using photography as my modern brush. 
+                    This is not merely a record, but a journey of dialogue with my hometown.
+                </p>
+                <div class="flex justify-center gap-4">
+                    <a href="gear.html" class="inline-flex items-center text-sm font-bold tracking-wider uppercase text-gray-400 hover:text-shirasagi-blue transition-colors border-b border-transparent hover:border-shirasagi-blue pb-1 font-sans">
+                        View Equipment →
+                    </a>
+                </div>
+            </div>
+        </section>
     </main>
 
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <div class="mb-8 font-serif-display text-2xl tracking-widest">TOJI MASAYA</div>
+            <div class="flex justify-center gap-6 mb-8 text-gray-400 font-sans text-sm">
+                <a href="#" class="hover:text-white transition-colors">Instagram</a>
+                <a href="#" class="hover:text-white transition-colors">X (Twitter)</a>
+                <a href="#" class="hover:text-white transition-colors">Contact</a>
+            </div>
+            <p class="text-gray-600 text-xs font-sans tracking-wide">
+                &copy; 2025 Toji Masaya. All rights reserved.<br>
+                Photography by Toji Masaya.
+            </p>
+        </div>
+    </footer>
+
     <!-- Modal -->
-    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modal-title" aria-hidden="true">
-        <button class="close-modal" onclick="closeModal()" aria-label="Close modal">&times;</button>
-        <div class="modal-content" id="modal-content">
-            <!-- Image will be displayed here -->
+    <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
+        <div class="absolute inset-0 bg-black/95 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop"></div>
+        
+        <div class="relative w-full max-w-6xl max-h-[90vh] bg-transparent flex flex-col md:flex-row shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
+            <button class="absolute top-4 right-4 z-50 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all" onclick="closeModal()">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
+
+            <div class="w-full md:w-3/4 h-[50vh] md:h-auto bg-black flex items-center justify-center relative group">
+                <img id="modal-img" src="" class="max-w-full max-h-full object-contain" alt="">
+                
+                <!-- Nav -->
+                <button class="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="prevPhoto()">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path></svg>
+                </button>
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="nextPhoto()">
+                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg>
+                </button>
+            </div>
+
+            <div class="w-full md:w-1/4 bg-white p-8 flex flex-col overflow-y-auto">
+                <div class="mb-auto">
+                    <span class="text-shirasagi-blue font-serif-display text-sm font-bold tracking-widest block mb-2">No. <span id="modal-num">01</span></span>
+                    <h3 class="text-2xl font-bold font-serif-display mb-4 leading-normal text-gray-900" id="modal-title">Title</h3>
+                    <p class="text-gray-600 text-base leading-relaxed mb-6 font-light" id="modal-desc">
+                        <!-- Description -->
+                    </p>
+                </div>
+                
+                <div class="border-t border-gray-100 pt-6 space-y-4 text-xs font-sans text-gray-500">
+                    <div class="flex items-center gap-3">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
+                        <span id="modal-date">Jan 1, 2024</span>
+                    </div>
+                    <div class="flex items-center gap-3">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <span id="modal-gear">Leica M11</span>
+                    </div>
+                    <div class="flex items-center gap-3" id="modal-map-container">
+                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+                        <a href="#" id="modal-map-link" target="_blank" class="hover:text-shirasagi-blue underline decoration-dotted transition-colors">View on Map</a>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
 
-    <!-- JavaScript -->
+    <!-- Scripts -->
     <script>
-        // Store photo data as a global variable
-        let photosData = {};
-        let currentFilter = 'all';
-
-        const seasonRanges = {
-            'spring': [1, 6],
-            'summer': [7, 12],
-            'autumn': [13, 18],
-            'winter': [19, 24],
-            'special': [25, 36]
+        // --- Actual Data Loaded from photos-en.json ---
+        const photosData = {
+          "1": {
+            "title": "Flower Boat at Red Bridge",
+            "date": "2025.04.05",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "spring morning",
+            "location": {
+              "name": "Beni-bashi Bridge",
+              "lat": 34.8420,
+              "lng": 134.6928
+            }
+          },
+          "2": {
+            "title": "Full View of Himeji Castle",
+            "date": "2025.04.05",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "spring evening",
+            "location": {
+              "name": "Sannomaru Plaza",
+              "lat": 34.8390,
+              "lng": 134.6935
+            }
+          },
+          "3": {
+            "title": "Night Cherry Blossoms",
+            "date": "2025.04.09",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "spring night",
+            "location": {
+              "name": "Sakuramon Bridge",
+              "lat": 34.8385,
+              "lng": 134.6931
+            }
+          },
+          "4": {
+            "title": "Cherry Blossoms and Castle",
+            "date": "2025.04.01",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "spring afternoon",
+            "location": {
+              "name": "Sannomaru Plaza",
+              "lat": 34.8390,
+              "lng": 134.6935
+            }
+          },
+          "5": {
+            "title": "From Sannomaru Plaza",
+            "date": "2025.04.05",
+            "gear": "Leica M10",
+            "category": "spring afternoon",
+            "location": {
+              "name": "Sannomaru Plaza",
+              "lat": 34.8390,
+              "lng": 134.6935
+            }
+          },
+          "6": {
+            "title": "From Hakuro Junior High School Ground",
+            "date": "2025.04.05",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "spring afternoon",
+            "location": {
+              "name": "Hakuro Junior High School Ground",
+              "lat": 34.8407,
+              "lng": 134.6918
+            }
+          },
+          "7": {
+            "title": "Castle in Fresh Green from Otokoyama Reservoir",
+            "date": "2025.05.20",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "summer afternoon",
+            "location": {
+              "name": "Otokoyama Reservoir Park",
+              "lat": 34.8445,
+              "lng": 134.6950
+            }
+          },
+          "8": {
+            "title": "White Heron Castle from Cemetery",
+            "date": "2025.05.04",
+            "gear": "Xiaomi 15 Ultra",
+            "category": "summer evening",
+            "location": {
+              "name": "Johoku Cemetery",
+              "lat": 34.8440,
+              "lng": 134.6910
+            }
+          },
+          "9": {
+            "title": "Castle Illuminated by Evening Sun",
+            "date": "2025.07.29",
+            "gear": "Leica M10 + Wide Tri-Elmar",
+            "category": "summer evening",
+            "location": {
+              "name": "Himeyama Parking Area",
+              "lat": 34.8365,
+              "lng": 134.6945
+            }
+          },
+          "10": {
+            "title": "White Heron Castle from Sakuramon Bridge",
+            "date": "2025.07.29",
+            "gear": "Leica M10 + Wide Tri-Elmar",
+            "category": "summer evening",
+            "location": {
+              "name": "Sakuramon Bridge",
+              "lat": 34.8385,
+              "lng": 134.6931
+            }
+          },
+          "11": {
+            "title": "Castle Under Blue Sky",
+            "date": "2025.07.30",
+            "gear": "Leica M10 + Wide Tri-Elmar",
+            "category": "summer afternoon",
+            "location": {
+              "name": "Sannomaru Plaza",
+              "lat": 34.8390,
+              "lng": 134.6935
+            }
+          },
+          "13": {
+            "title": "White Heron Castle Beginning to Change Color",
+            "date": "2025.11.13",
+            "gear": "Leica M10",
+            "category": "autumn afternoon",
+            "location": {
+              "name": "Shirotopia Memorial Park",
+              "lat": 34.8355,
+              "lng": 134.6905
+            }
+          },
+          "14": {
+            "title": "Inverted Castle from Hokusei-Kakushimon Ruins",
+            "date": "2025.11.13",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "autumn afternoon",
+            "location": {
+              "name": "Hokusei-Kakushimon Ruins",
+              "lat": 34.8395,
+              "lng": 134.6920
+            }
+          },
+          "15": {
+            "title": "Autumn Leaves at Art Museum and Castle",
+            "date": "2025.11.13",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "autumn afternoon",
+            "location": {
+              "name": "Himeji City Museum of Art",
+              "lat": 34.8353,
+              "lng": 134.6892
+            }
+          },
+          "16": {
+            "title": "Moat and Autumn Leaves",
+            "date": "2025.11.13",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "autumn afternoon",
+            "location": {
+              "name": "Inner Moat Area",
+              "lat": 34.8380,
+              "lng": 134.6915
+            }
+          },
+          "17": {
+            "title": "Otemon Gate in Evening Sun",
+            "date": "2025.10.01",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "autumn afternoon",
+            "location": {
+              "name": "Otemon Gate",
+              "lat": 34.8380,
+              "lng": 134.6925
+            }
+          },
+          "18": {
+            "title": "Autumn View from Sakuramon Bridge",
+            "date": "2025.10.01",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "autumn afternoon",
+            "location": {
+              "name": "Sakuramon Bridge",
+              "lat": 34.8385,
+              "lng": 134.6931
+            }
+          },
+          "19": {
+            "title": "Cherry Tree Awaiting Spring",
+            "date": "2025.03.18",
+            "gear": "Leica M10 + Summilux 50mm",
+            "category": "winter afternoon",
+            "location": {
+              "name": "Sannomaru Plaza",
+              "lat": 34.8390,
+              "lng": 134.6935
+            }
+          },
+          "20": {
+            "title": "Winter Lights on Otemae",
+            "date": "2025.12.31",
+            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+            "category": "winter night",
+            "location": {
+              "name": "Otemae Street",
+              "lat": 34.8342,
+              "lng": 134.6925
+            }
+          },
+          "21": {
+            "title": "White Heron from Castle View",
+            "date": "2025.12.31",
+            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+            "category": "winter night",
+            "location": {
+              "name": "Himeji Castle Viewpoint",
+              "lat": 34.8360,
+              "lng": 134.6955
+            }
+          },
+          "22": {
+            "title": "Castle at First Light",
+            "date": "2026.01.01",
+            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+            "category": "winter morning",
+            "location": {
+              "name": "Nagoyama",
+              "lat": 34.8423,
+              "lng": 134.6776
+            }
+          },
+          "23": {
+            "title": "New Year Water Salute",
+            "date": "2026.01.11",
+            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+            "category": "winter afternoon",
+            "location": {
+              "name": "Sannomaru Plaza, Himeji Castle",
+              "lat": 34.8374,
+              "lng": 134.6933
+            }
+          },
+          "24": {
+            "title": "Rescue Team Demonstration",
+            "date": "2026.01.11",
+            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+            "category": "winter afternoon",
+            "location": {
+              "name": "Sannomaru Plaza, Himeji Castle",
+              "lat": 34.8374,
+              "lng": 134.6933
+            }
+          }
         };
 
-        // Load photo data from JSON file
-        async function loadPhotos() {
-            try {
-                const response = await fetch('assets/images/shirasagi/photos-en.json');
-                photosData = await response.json();
-                generateGallery();
-                updateProgress();
-            } catch (error) {
-                console.error('Failed to load photo data:', error);
-                // Generate empty gallery on error
-                generateGallery();
-                updateProgress();
-            }
+        const seasonRanges = {
+            'spring': [1, 6], 'summer': [7, 12], 'autumn': [13, 18], 'winter': [19, 24], 'special': [25, 36]
+        };
+
+        let currentFilter = 'all';
+        let currentModalId = null; 
+
+        function init() {
+            renderGrid();
+            updateProgress();
+            loadLatest();
+            setupFilters();
         }
 
-        function filterItems(category) {
-            currentFilter = category;
-            
-            document.querySelectorAll('.filter-btn').forEach(btn => {
-                if(btn.dataset.filter === category) {
-                    btn.classList.add('active');
-                } else {
-                    btn.classList.remove('active');
-                }
-            });
-
-            generateGallery();
+        function getImagePath(id) {
+            return `assets/images/shirasagi/${String(id).padStart(2, '0')}.jpg`;
         }
 
-        document.querySelectorAll('.filter-btn').forEach(btn => {
-            btn.addEventListener('click', (e) => {
-                filterItems(e.currentTarget.dataset.filter);
-            });
-        });
-
-        // Generate gallery grid
-        function generateGallery() {
+        function renderGrid() {
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
-
-            let start = 1;
-            let end = 36;
-
+            
+            let start = 1, end = 36;
             if (currentFilter !== 'all' && seasonRanges[currentFilter]) {
                 [start, end] = seasonRanges[currentFilter];
             }
 
             for (let i = start; i <= end; i++) {
                 const photo = photosData[i];
-                const article = document.createElement('article');
+                const card = document.createElement('div');
                 
                 if (photo) {
-                    // If photo exists
-                    article.className = 'shirasagi-item has-photo';
-                    article.dataset.category = photo.category || '';
-                    article.onclick = () => openModal(
-                        `assets/images/shirasagi/${String(i).padStart(2, '0')}.jpg`,
-                        photo.title,
-                        photo.date,
-                        photo.gear,
-                        photo.location
-                    );
+                    const imgSrc = getImagePath(i);
+                    let season = currentFilter;
+                    if(season === 'all') {
+                        if(i<=6) season='spring';
+                        else if(i<=12) season='summer';
+                        else if(i<=18) season='autumn';
+                        else if(i<=24) season='winter';
+                        else season='special';
+                    }
+
+                    card.className = "group relative aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300";
+                    card.onclick = () => openModal(i);
                     
-                    article.innerHTML = `
-                        <img src="assets/images/shirasagi/${String(i).padStart(2, '0')}.jpg" 
+                    card.innerHTML = `
+                        <img src="${imgSrc}" 
+                             onerror="this.src='https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=800&q=80'"
                              alt="${photo.title}" 
-                             loading="lazy" 
-                             width="400" 
-                             height="400">
-                        <div class="shirasagi-item-overlay">
-                            <h3 class="shirasagi-item-title">${photo.title}</h3>
-                            <div class="shirasagi-item-info">${photo.date} | ${photo.gear}</div>
+                             loading="lazy"
+                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
+                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
+                            <span class="text-white font-serif-display text-xs tracking-widest mb-1 opacity-80">No.${String(i).padStart(2, '0')}</span>
+                            <h4 class="text-white font-serif-display font-semibold text-sm tracking-wide line-clamp-1">${photo.title}</h4>
                         </div>
                     `;
                 } else {
-                    // Empty slot
-                    article.className = 'shirasagi-item empty';
-                    article.innerHTML = `
-                        <div class="empty-number">${String(i).padStart(2, '0')}</div>
-                        <div class="empty-icon">
-                            <svg viewBox="0 0 24 24">
-                                <path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path>
-                                <circle cx="12" cy="13" r="4"></circle>
-                            </svg>
-                        </div>
+                    card.className = "aspect-square bg-pattern-seigaiha rounded-lg border border-gray-100 flex flex-col items-center justify-center text-gray-300 transition-all hover:bg-white hover:border-gray-300 group";
+                    card.innerHTML = `
+                        <span class="font-serif-display text-2xl font-bold opacity-30 group-hover:opacity-50 transition-opacity">${String(i).padStart(2, '0')}</span>
+                        <span class="text-[10px] tracking-widest mt-2 opacity-0 group-hover:opacity-40 transition-opacity font-serif-display uppercase">Coming Soon</span>
                     `;
                 }
-                
-                grid.appendChild(article);
+                grid.appendChild(card);
             }
-
-            // Animate items
-            const items = document.querySelectorAll('.shirasagi-item');
-            items.forEach((item, index) => {
-                setTimeout(() => {
-                    item.classList.add('visible');
-                }, index * 30);
-            });
         }
 
-        // Navigation
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
+        function updateProgress() {
+            const total = 36;
+            const count = Object.keys(photosData).length;
+            const percent = Math.round((count / total) * 100);
+            
+            const el = document.getElementById('progress-text');
+            let start = 0;
+            if(count > 0) {
+                const timer = setInterval(() => {
+                    start++;
+                    el.innerText = start;
+                    if (start >= percent) clearInterval(timer);
+                }, 20);
+            } else {
+                el.innerText = 0;
+            }
+        }
 
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
+        function loadLatest() {
+            const ids = Object.keys(photosData).map(Number);
+            if (ids.length === 0) return;
+            const latestId = Math.max(...ids);
+            const p = photosData[latestId];
+            
+            const imgSrc = getImagePath(latestId);
 
-            const navLinks = document.querySelectorAll('.nav-link');
-            navLinks.forEach(link => {
-                link.addEventListener('click', function() {
-                    if (window.innerWidth <= 768) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                    }
+            const imgEl = document.getElementById('latest-image');
+            imgEl.src = imgSrc;
+            imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1600&q=80'; };
+
+            document.getElementById('latest-title').innerText = p.title;
+            document.getElementById('latest-desc').innerText = p.desc || (p.location ? `Taken at ${p.location.name}` : "Description coming soon.");
+            document.getElementById('latest-number').innerText = String(latestId).padStart(2, '0');
+            document.getElementById('latest-date').innerText = p.date;
+            document.getElementById('latest-gear').innerText = p.gear;
+            
+            document.querySelector('.group.cursor-pointer').onclick = () => openModal(latestId);
+        }
+
+        function setupFilters() {
+            const buttons = document.querySelectorAll('.filter-btn');
+            buttons.forEach(btn => {
+                btn.addEventListener('click', (e) => {
+                    buttons.forEach(b => {
+                        b.classList.remove('bg-gray-800', 'text-white');
+                        b.classList.add('bg-white', 'text-gray-600');
+                    });
+                    e.target.classList.remove('bg-white', 'text-gray-600');
+                    e.target.classList.add('bg-gray-800', 'text-white');
+                    
+                    currentFilter = e.target.dataset.filter;
+                    renderGrid();
                 });
             });
         }
+        
+        function openModal(id) {
+            currentModalId = parseInt(id);
+            const p = photosData[id];
+            if (!p) return;
 
-        // Update progress bar
-        function updateProgress() {
-            const totalItems = 36;
-            const photoItems = Object.keys(photosData).length;
-            const percentage = (photoItems / totalItems) * 100;
+            const imgSrc = getImagePath(id);
+            const imgEl = document.getElementById('modal-img');
+            imgEl.src = imgSrc;
+            imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=80'; };
 
-            document.getElementById('progress-count').textContent = `${photoItems} / ${totalItems}`;
-            document.getElementById('progress-bar').style.width = `${percentage}%`;
-        }
+            document.getElementById('modal-title').innerText = p.title;
+            document.getElementById('modal-num').innerText = String(id).padStart(2, '0');
+            document.getElementById('modal-desc').innerText = p.desc || (p.location ? `View from ${p.location.name}.` : "Description pending.");
+            document.getElementById('modal-date').innerText = p.date;
+            document.getElementById('modal-gear').innerText = p.gear;
 
-        // Modal functionality
-        function openModal(imageSrc, title, date, gear, location) {
+            const mapLink = document.getElementById('modal-map-link');
+            if (p.location && p.location.lat) {
+                mapLink.href = `https://www.google.com/maps/search/?api=1&query=${p.location.lat},${p.location.lng}`;
+                mapLink.innerText = `View ${p.location.name} on Map`;
+                document.getElementById('modal-map-container').style.display = 'flex';
+            } else {
+                document.getElementById('modal-map-container').style.display = 'none';
+            }
+
             const modal = document.getElementById('modal');
-            const modalContent = document.getElementById('modal-content');
+            const backdrop = document.getElementById('modal-backdrop');
+            const content = document.getElementById('modal-content');
+
+            modal.classList.remove('hidden');
+            modal.classList.add('flex');
             
-            let infoHTML = '';
-            if (date || gear) {
-                infoHTML = '<div class="modal-info">';
-                if (date) {
-                    infoHTML += `<div class="modal-info-item"><span class="modal-info-label">Date:</span> ${date}</div>`;
-                }
-                if (gear) {
-                    infoHTML += `<div class="modal-info-item"><span class="modal-info-label">Equipment:</span> ${gear}</div>`;
-                }
-                infoHTML += '</div>';
-            }
+            setTimeout(() => {
+                backdrop.classList.remove('opacity-0');
+                content.classList.remove('opacity-0', 'scale-95');
+                content.classList.add('opacity-100', 'scale-100');
+            }, 10);
             
-            // Add map link
-            let mapLinkHTML = '';
-            if (location && location.lat && location.lng) {
-                const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${location.lat},${location.lng}`;
-                mapLinkHTML = `
-                    <a href="${googleMapsUrl}" target="_blank" rel="noopener noreferrer" class="modal-map-link">
-                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        View ${location.name || 'location'} on Google Maps
-                    </a>
-                `;
-            }
-            
-            modalContent.innerHTML = `
-                <img src="${imageSrc}" alt="${title}" class="modal-image">
-                <div class="modal-caption">${title}</div>
-                ${infoHTML}
-                ${mapLinkHTML}
-            `;
-            modal.setAttribute('aria-hidden', 'false');
-            modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
 
         function closeModal() {
             const modal = document.getElementById('modal');
-            modal.setAttribute('aria-hidden', 'true');
-            modal.style.display = 'none';
-            document.body.style.overflow = '';
+            const backdrop = document.getElementById('modal-backdrop');
+            const content = document.getElementById('modal-content');
+
+            backdrop.classList.add('opacity-0');
+            content.classList.remove('opacity-100', 'scale-100');
+            content.classList.add('opacity-0', 'scale-95');
+
+            setTimeout(() => {
+                modal.classList.add('hidden');
+                modal.classList.remove('flex');
+                document.body.style.overflow = 'auto';
+            }, 300);
+            currentModalId = null;
         }
 
-        // Close modal with ESC key
+        function nextPhoto() {
+            if (currentModalId === null) return;
+            let nextId = currentModalId + 1;
+            while(nextId <= 36 && !photosData[nextId]) {
+                nextId++;
+            }
+            if(photosData[nextId]) {
+                openModal(nextId);
+            }
+        }
+
+        function prevPhoto() {
+            if (currentModalId === null) return;
+            let prevId = currentModalId - 1;
+            while(prevId >= 1 && !photosData[prevId]) {
+                prevId--;
+            }
+            if(photosData[prevId]) {
+                openModal(prevId);
+            }
+        }
+
         document.addEventListener('keydown', function(e) {
-            if (e.key === 'Escape') {
+            if (document.getElementById('modal').classList.contains('hidden')) return;
+            
+            if (e.key === 'ArrowRight') {
+                nextPhoto();
+            } else if (e.key === 'ArrowLeft') {
+                prevPhoto();
+            } else if (e.key === 'Escape') {
                 closeModal();
             }
         });
 
-        // Close modal by clicking background
-        document.getElementById('modal').addEventListener('click', function(e) {
-            if (e.target === this) {
-                closeModal();
-            }
+        document.getElementById('modal').addEventListener('click', (e) => {
+            if(e.target.id === 'modal-backdrop' || e.target.id === 'modal') closeModal();
         });
 
-        // On page load
-        document.addEventListener('DOMContentLoaded', function() {
-            loadPhotos();
-        });
-
-        // External links security
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.rel = 'noopener noreferrer';
-        });
-    </script>
-
-    <!-- JSON-LD structured data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "ImageGallery",
-        "name": "Thirty-Six Views of White Heron Castle",
-        "alternateName": "Shirasagi Sanjūrokkei",
-        "description": "Inspired by Katsushika Hokusai's Thirty-Six Views of Mount Fuji, this project captures Himeji Castle from 36 different perspectives.",
-        "author": {
-            "@type": "Person",
-            "name": "Toji Masaya",
-            "alternateName": "Toji Masaya"
-        },
-        "url": "https://tojimasaya.com/shirasagi36-en.html",
-        "inProgress": true
-    }
+        document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
 </html>
