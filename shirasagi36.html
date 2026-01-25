@@ -8,18 +8,19 @@
     <!-- Google Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+JP:wght@300;500;700&family=Shippori+Mincho:wght@400;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+JP:wght@300;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap" rel="stylesheet">
 
-    <!-- Tailwind CSS (Design Utility) -->
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             theme: {
                 extend: {
                     colors: {
-                        'shirasagi-blue': '#1A3FB9',
-                        'shirasagi-dark': '#0f172a',
-                        'washi-bg': '#fcfaf2',
+                        'shirasagi-blue': '#1A3FB9', // 鮮やかな藍
+                        'shirasagi-ink': '#2b2b2b',  // 墨色
+                        'shirasagi-red': '#b91c1c',  // 落款の赤
+                        'washi-bg': '#fcfaf2',       // 和紙の白
                     },
                     fontFamily: {
                         'serif-jp': ['"Shippori Mincho"', '"Noto Serif JP"', 'serif'],
@@ -27,558 +28,436 @@
                         'sans': ['"Inter"', 'sans-serif'],
                     },
                     backgroundImage: {
-                        'washi-texture': "url('data:image/svg+xml,%3Csvg width=\\'100\\' height=\\'100\\' viewBox=\\'0 0 100 100\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cpath d=\\'M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 2.24 5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 2.24 5 5 2.24 5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z\\' fill=\\'%239C92AC\\' fill-opacity=\\'0.05\\' fill-rule=\\'evenodd\\'/%3E%3C/svg%3E')",
+                        // 繊維感のある和紙テクスチャ（SVGパターン）
+                        'washi-texture': "url('data:image/svg+xml,%3Csvg width=\\'200\\' height=\\'200\\' viewBox=\\'0 0 200 200\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cfilter id=\\'noise\\' x=\\'0\\' y=\\'0\\'%3E%3CfeTurbulence type=\\'fractalNoise\\' baseFrequency=\\'0.65\\' numOctaves=\\'3\\' stitchTiles=\\'stitch\\'/%3E%3C/filter%3E%3Crect width=\\'100%25\\' height=\\'100%25\\' filter=\\'url(%23noise)\\' opacity=\\'0.08\\'/%3E%3C/svg%3E')",
+                        'seigaiha': "url('data:image/svg+xml,%3Csvg width=\\'20\\' height=\\'20\\' viewBox=\\'0 0 20 20\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'%23d1d5db\\' fill-opacity=\\'0.4\\' fill-rule=\\'evenodd\\'%3E%3Ccircle cx=\\'3\\' cy=\\'3\\' r=\\'3\\'/%3E%3Ccircle cx=\\'13\\' cy=\\'13\\' r=\\'3\\'/%3E%3C/g%3E%3C/svg%3E')",
                     }
                 }
             }
         }
     </script>
     <style>
-        /* Custom Styles for Vertical Rhythm & Effects */
         body {
             background-color: #fcfaf2;
         }
         
-        /* 縦書きクラス */
+        /* 縦書き設定 */
         .writing-vertical {
             writing-mode: vertical-rl;
             text-orientation: upright;
-            letter-spacing: 0.2em;
+            letter-spacing: 0.15em;
         }
 
-        .hero-gradient {
-            background: linear-gradient(to bottom, rgba(0,0,0,0.2), rgba(0,0,0,0.6));
-        }
-
-        /* 画像のフェードイン */
-        .fade-in-up {
-            animation: fadeInUp 0.8s ease-out forwards;
+        .fade-in {
+            animation: fadeIn 1.5s ease-out forwards;
             opacity: 0;
-            transform: translateY(20px);
         }
 
-        @keyframes fadeInUp {
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+        @keyframes fadeIn {
+            to { opacity: 1; }
         }
 
-        /* スクロールバーのカスタマイズ */
-        ::-webkit-scrollbar {
-            width: 8px;
-        }
-        ::-webkit-scrollbar-track {
-            background: #f1f1f1; 
-        }
-        ::-webkit-scrollbar-thumb {
-            background: #d1d5db; 
+        /* 落款（ハンコ）風スタイル */
+        .hanko-border {
+            border: 2px solid #b91c1c;
             border-radius: 4px;
+            color: #b91c1c;
         }
-        ::-webkit-scrollbar-thumb:hover {
-            background: #9ca3af; 
-        }
-
-        /* パターン背景（青海波 - Seigaiha） */
-        .bg-pattern-seigaiha {
-            background-color: #f8f8f8;
-            background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%23d1d5db' fill-opacity='0.4' fill-rule='evenodd'%3E%3Ccircle cx='3' cy='3' r='3'/%3E%3Ccircle cx='13' cy='13' r='3'/%3E%3C/g%3E%3C/svg%3E");
-        }
+        
+        /* カスタムスクロールバー */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #f1f1f1; }
+        ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
     </style>
 </head>
-<body class="bg-washi-bg bg-washi-texture text-gray-800 font-serif-jp antialiased">
+<body class="bg-washi-bg bg-washi-texture text-shirasagi-ink font-serif-jp antialiased selection:bg-shirasagi-blue selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 transition-all duration-300 bg-white/90 backdrop-blur-sm border-b border-gray-100">
+    <nav class="fixed w-full z-50 top-0 bg-washi-bg/90 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-16">
-                <a href="/" class="font-serif-en text-xl font-semibold tracking-widest text-gray-900">TOJI MASAYA</a>
-                <div class="hidden md:flex space-x-8 font-serif-en text-sm tracking-wide text-gray-600">
-                    <a href="#" class="hover:text-shirasagi-blue transition-colors">Home</a>
-                    <a href="#" class="hover:text-shirasagi-blue transition-colors">Gallery</a>
-                    <a href="#" class="text-shirasagi-blue">Shirasagi 36</a>
-                    <a href="#" class="hover:text-shirasagi-blue transition-colors">About</a>
-                </div>
-                <!-- Language Switcher -->
-                <a href="shirasagi36-en.html" class="text-xs font-sans font-medium border border-gray-300 rounded-full px-3 py-1 hover:bg-gray-800 hover:text-white transition-all">
-                    English
+            <div class="flex justify-between items-center h-20">
+                <!-- Logo -->
+                <a href="/" class="font-serif-en text-xl tracking-widest text-shirasagi-ink hover:opacity-70 transition-opacity z-50 relative">
+                    TOJI MASAYA
                 </a>
+
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex items-center space-x-8 font-serif-en text-sm tracking-widest text-gray-500">
+                    <a href="/" class="hover:text-shirasagi-blue transition-colors">Home</a>
+                    <a href="gallery.html" class="hover:text-shirasagi-blue transition-colors">Gallery</a>
+                    <a href="gear.html" class="hover:text-shirasagi-blue transition-colors">Gear</a>
+                    <a href="writings.html" class="hover:text-shirasagi-blue transition-colors">Writings</a>
+                    <!-- Active Page -->
+                    <a href="shirasagi36.html" class="text-shirasagi-ink border-b border-shirasagi-ink pb-1 font-semibold">Shirasagi 36</a>
+                    
+                    <!-- Language Switcher -->
+                    <a href="shirasagi36-en.html" class="ml-4 text-xs font-sans font-medium border border-gray-400 rounded-full px-4 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">
+                        English
+                    </a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <div class="md:hidden flex items-center z-50 relative">
+                    <button onclick="toggleMobileMenu()" class="text-shirasagi-ink p-2 focus:outline-none" aria-label="Menu">
+                        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
+                    </button>
+                </div>
             </div>
+        </div>
+
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/95 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-8 transition-opacity duration-300 opacity-0 pointer-events-none">
+            <a href="/" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Home</a>
+            <a href="gallery.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gallery</a>
+            <a href="gear.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gear</a>
+            <a href="writings.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Writings</a>
+            <a href="shirasagi36.html" class="text-xl font-serif-en tracking-widest text-shirasagi-blue font-bold border-b border-shirasagi-blue pb-1">Shirasagi 36</a>
+            <a href="shirasagi36-en.html" class="text-sm font-sans border border-gray-400 rounded-full px-6 py-2 mt-4">English</a>
+            
+            <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-gray-500 p-2">
+                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+            </button>
         </div>
     </nav>
 
-    <!-- Hero Section with Vertical Typography -->
-    <header class="relative h-screen min-h-[600px] flex items-center justify-center overflow-hidden">
-        <!-- Background Image with Parallax-like fix -->
-        <div class="absolute inset-0 z-0">
-            <!-- ヒーロー画像: プロジェクト内の代表的な1枚 (例: ID 21) を使用 -->
-            <img src="assets/images/shirasagi/21.jpg" 
-                 onerror="this.src='https://images.unsplash.com/photo-1605009575497-8c437145e69e?q=80&w=2070&auto=format&fit=crop'"
-                 alt="Himeji Castle Hero" 
-                 class="w-full h-full object-cover filter brightness-75 scale-105 animate-[pulse_10s_ease-in-out_infinite_alternate]">
-        </div>
+    <!-- Hero Section (Washi Style) -->
+    <header class="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden pt-20">
         
-        <!-- Overlay Gradient -->
-        <div class="absolute inset-0 z-10 hero-gradient"></div>
-
-        <!-- Hero Content -->
-        <div class="relative z-20 text-white flex flex-col md:flex-row-reverse items-center justify-center gap-12 p-8 w-full max-w-6xl">
+        <div class="max-w-4xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-16 md:gap-32 p-8 fade-in">
             
-            <!-- Vertical Title (Japanese Style) -->
-            <div class="writing-vertical h-64 md:h-96 flex items-center">
-                <h1 class="text-5xl md:text-7xl font-bold leading-relaxed tracking-widest drop-shadow-lg border-l-2 border-white/30 pl-6 ml-6">
-                    白鷺三十六景
-                </h1>
-                <p class="text-xl md:text-2xl font-serif-en tracking-widest opacity-90 mt-4 md:mt-0 pt-4 text-shirasagi-blue mix-blend-screen">
-                    Shirasagi Sanjūrokkei
-                </p>
+            <!-- メインタイトル (縦書き) -->
+            <div class="writing-vertical h-[50vh] flex items-center select-none">
+                <div class="flex items-center gap-6">
+                    <h1 class="text-6xl md:text-8xl font-bold text-shirasagi-ink leading-relaxed drop-shadow-sm">
+                        白鷺三十六景
+                    </h1>
+                    <!-- サブタイトル -->
+                    <div class="flex flex-col gap-4 mt-8 pt-8 border-t border-gray-300">
+                        <p class="text-lg md:text-xl text-gray-600 font-serif-en tracking-widest">Shirasagi Sanjūrokkei</p>
+                    </div>
+                </div>
             </div>
 
-            <!-- Intro Text -->
-            <div class="max-w-md text-center md:text-right space-y-6 animate-fade-in-up" style="animation-delay: 0.5s;">
-                <p class="text-lg md:text-xl font-light leading-loose text-gray-100">
-                    それは、白鷺が羽を休めるが如く。<br>
-                    季節、時間、角度。<br>
-                    36の視点が織りなす、姫路城の肖像。
-                </p>
-                <div class="h-px w-24 bg-white/50 mx-auto md:ml-auto md:mr-0"></div>
-                <p class="font-serif-en text-sm tracking-wider opacity-80">
-                    Inspired by Hokusai.<br>
-                    Captured by Toji Masaya.
-                </p>
+            <!-- ステートメント & 落款 -->
+            <div class="md:h-[50vh] flex flex-col justify-between py-4 text-center md:text-left">
+                <div class="space-y-8 max-w-sm">
+                    <div class="w-12 h-1 bg-shirasagi-blue mb-8 mx-auto md:mx-0"></div>
+                    <p class="text-base leading-loose text-gray-700 font-medium">
+                        白鷺が羽を休めるが如く。<br>
+                        季節、時間、角度。<br>
+                        36の視点が織りなす、<br>
+                        姫路城の肖像。
+                    </p>
+                    <p class="text-sm text-gray-500 font-serif-en mt-4">
+                        Captured by Toji Masaya<br>
+                        Himeji, Japan
+                    </p>
+                </div>
+
+                <!-- 落款風デザイン -->
+                <div class="mt-12 flex justify-center md:justify-start items-end gap-4">
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-12 h-12 hanko-border flex items-center justify-center bg-white/50">
+                            <span class="text-shirasagi-red font-bold text-sm writing-vertical leading-none" style="letter-spacing: 0;">田路<br>写</span>
+                        </div>
+                        <span class="text-[10px] text-gray-400 font-sans tracking-tight">ARTIST</span>
+                    </div>
+                    <div class="flex flex-col items-center gap-2">
+                        <div class="w-12 h-12 hanko-border flex items-center justify-center bg-white/50">
+                            <span class="text-shirasagi-red font-bold text-sm writing-vertical leading-none" style="letter-spacing: 0;">未<br>完</span>
+                        </div>
+                        <span class="text-[10px] text-gray-400 font-sans tracking-tight">STATUS</span>
+                    </div>
+                </div>
             </div>
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 z-20 animate-bounce">
-            <svg class="w-6 h-6 text-white opacity-70" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-            </svg>
+        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
+            <span class="text-xs font-serif-en tracking-[0.2em] text-gray-400 mb-2 block text-center">SCROLL</span>
+            <div class="w-[1px] h-12 bg-gray-300 mx-auto"></div>
         </div>
     </header>
 
     <!-- Main Content -->
-    <main class="relative z-10 -mt-20">
+    <main class="relative z-10 pb-32">
         
-        <!-- Latest/Featured Section (New!) -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pb-20 pt-32">
-            <div class="bg-white rounded-lg shadow-xl overflow-hidden md:flex flex-row-reverse transform transition hover:shadow-2xl duration-500">
-                <div class="md:w-3/5 h-64 md:h-[500px] relative overflow-hidden group cursor-pointer" onclick="openModalWithLatest()">
-                    <div class="absolute inset-0 bg-black/20 group-hover:bg-transparent transition-all z-10"></div>
-                    <img id="latest-image" src="" alt="Latest Shot" class="w-full h-full object-cover transition duration-700 group-hover:scale-105">
-                    <div class="absolute bottom-4 right-4 z-20 bg-white/90 backdrop-blur px-4 py-2 rounded-sm shadow-sm">
-                        <span class="text-xs font-serif-en uppercase tracking-widest text-gray-500">Latest View</span>
-                    </div>
-                </div>
-                <div class="md:w-2/5 p-8 md:p-12 flex flex-col justify-center bg-white relative">
-                    <div class="absolute top-0 left-0 w-full h-1 bg-gradient-to-r from-shirasagi-blue to-transparent"></div>
-                    <span class="text-shirasagi-blue font-serif-en font-bold tracking-widest text-sm mb-2">No. <span id="latest-number">--</span></span>
-                    <h2 class="text-3xl md:text-4xl font-bold mb-6 leading-tight" id="latest-title">読み込み中...</h2>
-                    <p class="text-gray-600 leading-relaxed mb-8 font-light" id="latest-desc">
-                        最新の撮影データを取得しています...
-                    </p>
-                    <div class="mt-auto">
-                        <div class="flex items-center text-sm text-gray-400 font-serif-en space-x-4">
-                            <span id="latest-date">--</span>
-                            <span class="w-1 h-1 bg-gray-300 rounded-full"></span>
-                            <span id="latest-gear">--</span>
+        <!-- Latest/Featured Section -->
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+            <div class="bg-white p-2 md:p-4 rounded-sm shadow-sm border border-gray-100">
+                <div class="bg-washi-bg relative overflow-hidden group cursor-pointer aspect-video md:aspect-[21/9]" onclick="openModalWithLatest()">
+                    <img id="latest-image" src="" alt="Latest Shot" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 ease-in-out">
+                    
+                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-6 md:p-10 flex justify-between items-end">
+                        <div class="text-white">
+                            <span class="text-xs font-serif-en tracking-widest opacity-80 mb-2 block">LATEST VIEW — No.<span id="latest-number">--</span></span>
+                            <h2 class="text-2xl md:text-3xl font-bold font-serif-jp tracking-wide" id="latest-title">読み込み中...</h2>
+                        </div>
+                        <div class="hidden md:block">
+                            <span class="inline-block px-4 py-2 border border-white/30 text-white text-xs tracking-widest hover:bg-white hover:text-black transition-colors">VIEW DETAIL</span>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Gallery Controls & Filters -->
-        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 mb-12" id="gallery-anchor">
-            <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-200 pb-4 mb-8">
-                <div>
-                    <h3 class="text-2xl font-bold font-serif-jp text-gray-800 flex items-center gap-3">
-                        全三十六景
-                        <span class="text-sm font-normal text-gray-500 bg-gray-100 px-3 py-1 rounded-full font-sans">
-                            達成率: <span id="progress-text" class="font-bold text-shirasagi-blue">0</span>%
-                        </span>
+        <!-- Gallery Section -->
+        <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="gallery-anchor">
+            
+            <!-- Controls -->
+            <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-300 pb-4 mb-12">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold font-serif-jp text-shirasagi-ink flex items-center gap-4">
+                        全三十六景一覧
                     </h3>
+                    <p class="text-sm text-gray-500 mt-2 font-serif-jp">現在 <span id="progress-text" class="text-lg font-bold text-shirasagi-blue">0</span> 景まで完成</p>
                 </div>
                 
-                <!-- Filters -->
-                <div class="flex flex-wrap gap-2 mt-4 md:mt-0 font-sans text-sm">
-                    <button class="filter-btn active px-4 py-2 rounded-full border border-gray-300 bg-gray-800 text-white transition-all hover:shadow-md" data-filter="all">すべて</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="spring">🌸 春</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="summer">🌻 夏</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="autumn">🍁 秋</button>
-                    <button class="filter-btn px-4 py-2 rounded-full border border-gray-300 bg-white text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="winter">❄️ 冬</button>
+                <div class="flex flex-wrap gap-3 font-serif-jp text-sm">
+                    <button class="filter-btn active px-5 py-2 rounded-sm border border-gray-400 bg-shirasagi-ink text-white transition-all hover:opacity-80" data-filter="all">すべて</button>
+                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="spring">春</button>
+                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="summer">夏</button>
+                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="autumn">秋</button>
+                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="winter">冬</button>
                 </div>
             </div>
 
             <!-- Grid System -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-4 md:gap-6" id="shirasagi-grid">
-                <!-- Javascript will populate this -->
-            </div>
-        </section>
-
-        <!-- About / Context -->
-        <section class="bg-white/80 backdrop-blur-sm border-t border-gray-100 py-20 mt-20">
-            <div class="max-w-3xl mx-auto px-6 text-center">
-                <span class="text-shirasagi-blue font-serif-en italic mb-4 block text-lg">About the Project</span>
-                <h2 class="text-3xl font-bold font-serif-jp mb-8">レンズ越しの帰郷</h2>
-                <p class="text-gray-600 leading-loose mb-6 font-light">
-                    「白鷺城」の愛称で親しまれる世界遺産・姫路城。<br>
-                    私の故郷にあるこの城は、見る角度、季節、時間帯によって<br>
-                    全く異なる表情を見せてくれます。
-                </p>
-                <p class="text-gray-600 leading-loose mb-10 font-light">
-                    葛飾北斎が「富嶽三十六景」で富士山の多面性を描いたように、<br>
-                    私もまた、写真という現代の筆を用いて<br>
-                    この城の36の「今」を記録することにしました。<br>
-                    これは、単なる記録ではなく、故郷との対話の旅です。
-                </p>
-                <div class="flex justify-center gap-4">
-                    <a href="gear.html" class="inline-flex items-center text-sm font-bold tracking-wider uppercase text-gray-400 hover:text-shirasagi-blue transition-colors border-b border-transparent hover:border-shirasagi-blue pb-1">
-                        View Equipment →
-                    </a>
-                </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8" id="shirasagi-grid">
+                <!-- Javascript populates this -->
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12 border-t border-gray-800">
+    <footer class="bg-shirasagi-ink text-white/80 py-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="mb-8 font-serif-en text-2xl tracking-widest">TOJI MASAYA</div>
-            <div class="flex justify-center gap-6 mb-8 text-gray-400">
-                <a href="#" class="hover:text-white transition-colors">Instagram</a>
-                <a href="#" class="hover:text-white transition-colors">X (Twitter)</a>
-                <a href="#" class="hover:text-white transition-colors">Contact</a>
-            </div>
-            <p class="text-gray-600 text-xs font-sans tracking-wide">
+            <div class="mb-8 font-serif-en text-3xl tracking-[0.2em] font-light">TOJI MASAYA</div>
+            <div class="w-8 h-[1px] bg-gray-600 mx-auto mb-8"></div>
+            <p class="text-xs font-sans tracking-wide opacity-60">
                 &copy; 2025 Toji Masaya. All rights reserved.<br>
-                Photography by Toji Masaya.
+                Himeji, Japan.
             </p>
         </div>
     </footer>
 
-    <!-- Modal (Enhanced) -->
+    <!-- Modal (Same Logic) -->
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
-        <!-- Backdrop -->
-        <div class="absolute inset-0 bg-black/95 backdrop-blur-sm transition-opacity opacity-0" id="modal-backdrop"></div>
-        
-        <!-- Content -->
-        <div class="relative w-full max-w-6xl max-h-[90vh] bg-transparent flex flex-col md:flex-row shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-300" id="modal-content">
-            
-            <!-- Close Button -->
-            <button class="absolute top-4 right-4 z-50 text-white/70 hover:text-white bg-black/20 hover:bg-black/40 rounded-full p-2 transition-all" onclick="closeModal()">
+        <div class="absolute inset-0 bg-washi-bg/95 backdrop-blur-md transition-opacity opacity-0" id="modal-backdrop"></div>
+        <div class="relative w-full max-w-6xl max-h-[90vh] bg-white flex flex-col md:flex-row shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-500 border border-gray-100" id="modal-content">
+            <button class="absolute top-4 right-4 z-50 text-gray-500 hover:text-shirasagi-ink bg-white/80 rounded-full p-2 transition-all" onclick="closeModal()">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-
-            <!-- Image Container -->
-            <div class="w-full md:w-3/4 h-[50vh] md:h-auto bg-black flex items-center justify-center relative group">
-                <img id="modal-img" src="" class="max-w-full max-h-full object-contain" alt="">
-                
-                <!-- Nav Buttons -->
-                <button class="absolute left-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="prevPhoto()">
+            <div class="w-full md:w-3/4 h-[50vh] md:h-auto bg-gray-50 flex items-center justify-center relative group p-4 md:p-8">
+                <img id="modal-img" src="" class="max-w-full max-h-full object-contain shadow-lg" alt="">
+                <button class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="prevPhoto()">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
-                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-white/50 hover:text-white transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="nextPhoto()">
+                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="nextPhoto()">
                     <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
-
-            <!-- Info Sidebar -->
-            <div class="w-full md:w-1/4 bg-white p-8 flex flex-col overflow-y-auto">
+            <div class="w-full md:w-1/4 bg-white p-8 flex flex-col overflow-y-auto border-l border-gray-100">
                 <div class="mb-auto">
-                    <span class="text-shirasagi-blue font-serif-en text-sm font-bold tracking-widest block mb-2">No. <span id="modal-num">01</span></span>
-                    <h3 class="text-2xl font-bold font-serif-jp mb-4 leading-normal" id="modal-title">タイトル</h3>
-                    <p class="text-gray-600 text-sm leading-relaxed mb-6 font-light" id="modal-desc">
+                    <span class="text-shirasagi-blue font-serif-en text-xs font-bold tracking-widest block mb-3">No. <span id="modal-num">01</span></span>
+                    <h3 class="text-2xl font-bold font-serif-jp mb-6 leading-normal text-shirasagi-ink" id="modal-title">タイトル</h3>
+                    <p class="text-gray-600 text-sm leading-8 font-light font-serif-jp text-justify" id="modal-desc">
                         <!-- 解説 -->
                     </p>
                 </div>
-                
-                <div class="border-t border-gray-100 pt-6 space-y-4 text-xs font-sans text-gray-500">
-                    <div class="flex items-center gap-3">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path></svg>
-                        <span id="modal-date">2024.01.01</span>
-                    </div>
-                    <div class="flex items-center gap-3">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M3 9a2 2 0 012-2h.93a2 2 0 001.664-.89l.812-1.22A2 2 0 0110.07 4h3.86a2 2 0 011.664.89l.812 1.22A2 2 0 0018.07 7H19a2 2 0 012 2v9a2 2 0 01-2 2H5a2 2 0 01-2-2V9z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 13a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <span id="modal-gear">Leica M11</span>
-                    </div>
+                <div class="border-t border-gray-100 pt-6 space-y-4 text-xs font-sans text-gray-500 mt-8">
+                    <div class="flex items-center gap-3"><span class="w-16 opacity-50">DATE</span> <span id="modal-date" class="font-medium text-gray-800">--</span></div>
+                    <div class="flex items-center gap-3"><span class="w-16 opacity-50">GEAR</span> <span id="modal-gear" class="font-medium text-gray-800">--</span></div>
                     <div class="flex items-center gap-3" id="modal-map-container">
-                        <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
-                        <a href="#" id="modal-map-link" target="_blank" class="hover:text-shirasagi-blue underline decoration-dotted transition-colors">撮影地を地図で見る</a>
+                        <span class="w-16 opacity-50">LOC</span> 
+                        <a href="#" id="modal-map-link" target="_blank" class="hover:text-shirasagi-blue underline decoration-dotted transition-colors">Map</a>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 
-    <!-- Scripts -->
+    <!-- Logic -->
     <script>
-        // --- Actual Data Loaded from photos.json ---
-        // 画像パスは "assets/images/shirasagi/{id}.jpg" と仮定して自動生成します
+        // Toggle Mobile Menu
+        function toggleMobileMenu() {
+            const menu = document.getElementById('mobile-menu');
+            if (menu.classList.contains('hidden')) {
+                menu.classList.remove('hidden', 'pointer-events-none', 'opacity-0');
+                menu.classList.add('flex', 'opacity-100', 'pointer-events-auto');
+            } else {
+                menu.classList.remove('flex', 'opacity-100', 'pointer-events-auto');
+                menu.classList.add('hidden', 'pointer-events-none', 'opacity-0');
+            }
+        }
+
         const photosData = {
           "1": {
             "title": "紅橋花舟",
             "date": "2025.04.05",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "spring morning",
-            "location": {
-              "name": "紅橋",
-              "lat": 34.8420,
-              "lng": 134.6928
-            }
+            "location": { "name": "紅橋", "lat": 34.8420, "lng": 134.6928 }
           },
           "2": {
             "title": "桜雲の城",
             "date": "2025.04.05",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "spring evening",
-            "location": {
-              "name": "三の丸広場",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
+            "location": { "name": "三の丸広場", "lat": 34.8390, "lng": 134.6935 }
           },
           "3": {
             "title": "夜桜の白鷺",
             "date": "2025.04.09",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "spring night",
-            "location": {
-              "name": "桜門橋",
-              "lat": 34.8385,
-              "lng": 134.6931
-            }
+            "location": { "name": "桜門橋", "lat": 34.8385, "lng": 134.6931 }
           },
           "4": {
             "title": "花霞の城",
             "date": "2025.04.01",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "spring afternoon",
-            "location": {
-              "name": "三の丸広場",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
+            "location": { "name": "三の丸広場", "lat": 34.8390, "lng": 134.6935 }
           },
           "5": {
             "title": "三の丸春光",
             "date": "2025.04.05",
             "gear": "Leica M10",
             "category": "spring afternoon",
-            "location": {
-              "name": "三の丸広場",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
+            "location": { "name": "三の丸広場", "lat": 34.8390, "lng": 134.6935 }
           },
           "6": {
             "title": "白露の眺望",
             "date": "2025.04.05",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "spring afternoon",
-            "location": {
-              "name": "白鷺中学校グラウンド",
-              "lat": 34.8407,
-              "lng": 134.6918
-            }
+            "location": { "name": "白鷺中学校グラウンド", "lat": 34.8407, "lng": 134.6918 }
           },
           "7": {
             "title": "男山の新緑",
             "date": "2025.05.20",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "summer afternoon",
-            "location": {
-              "name": "男山配水池公園",
-              "lat": 34.8445,
-              "lng": 134.6950
-            }
+            "location": { "name": "男山配水池公園", "lat": 34.8445, "lng": 134.6950 }
           },
           "8": {
             "title": "墓苑の静寂",
             "date": "2025.05.04",
             "gear": "Xiaomi 15 Ultra",
             "category": "summer evening",
-            "location": {
-              "name": "城北墓地",
-              "lat": 34.8440,
-              "lng": 134.6910
-            }
+            "location": { "name": "城北墓地", "lat": 34.8440, "lng": 134.6910 }
           },
           "9": {
             "title": "夕照の白鷺",
             "date": "2025.07.29",
             "gear": "Leica M10 + Wide Tri-Elmar",
             "category": "summer evening",
-            "location": {
-              "name": "姫山駐車場",
-              "lat": 34.8365,
-              "lng": 134.6945
-            }
+            "location": { "name": "姫山駐車場", "lat": 34.8365, "lng": 134.6945 }
           },
           "10": {
             "title": "桜門橋夕景",
             "date": "2025.07.29",
             "gear": "Leica M10 + Wide Tri-Elmar",
             "category": "summer evening",
-            "location": {
-              "name": "桜門橋",
-              "lat": 34.8385,
-              "lng": 134.6931
-            }
+            "location": { "name": "桜門橋", "lat": 34.8385, "lng": 134.6931 }
           },
           "11": {
             "title": "快晴の城",
             "date": "2025.07.30",
             "gear": "Leica M10 + Wide Tri-Elmar",
             "category": "summer afternoon",
-            "location": {
-              "name": "三の丸広場",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
+            "location": { "name": "三の丸広場", "lat": 34.8390, "lng": 134.6935 }
           },
           "13": {
             "title": "色づく城下",
             "date": "2025.11.13",
             "gear": "Leica M10",
             "category": "autumn afternoon",
-            "location": {
-              "name": "シロトピア記念公園",
-              "lat": 34.8355,
-              "lng": 134.6905
-            }
+            "location": { "name": "シロトピア記念公園", "lat": 34.8355, "lng": 134.6905 }
           },
           "14": {
             "title": "水鏡の城",
             "date": "2025.11.13",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "autumn afternoon",
-            "location": {
-              "name": "北勢隠門跡",
-              "lat": 34.8395,
-              "lng": 134.6920
-            }
+            "location": { "name": "北勢隠門跡", "lat": 34.8395, "lng": 134.6920 }
           },
           "15": {
             "title": "美術館の秋",
             "date": "2025.11.13",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "autumn afternoon",
-            "location": {
-              "name": "姫路市立美術館",
-              "lat": 34.8353,
-              "lng": 134.6892
-            }
+            "location": { "name": "姫路市立美術館", "lat": 34.8353, "lng": 134.6892 }
           },
           "16": {
             "title": "堀端の紅葉",
             "date": "2025.11.13",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "autumn afternoon",
-            "location": {
-              "name": "内堀沿い",
-              "lat": 34.8380,
-              "lng": 134.6915
-            }
+            "location": { "name": "内堀沿い", "lat": 34.8380, "lng": 134.6915 }
           },
           "17": {
             "title": "追手門夕照",
             "date": "2025.10.01",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "autumn afternoon",
-            "location": {
-              "name": "追手門",
-              "lat": 34.8380,
-              "lng": 134.6925
-            }
+            "location": { "name": "追手門", "lat": 34.8380, "lng": 134.6925 }
           },
           "18": {
             "title": "橋上の秋景",
             "date": "2025.10.01",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "autumn afternoon",
-            "location": {
-              "name": "桜門橋",
-              "lat": 34.8385,
-              "lng": 134.6931
-            }
+            "location": { "name": "桜門橋", "lat": 34.8385, "lng": 134.6931 }
           },
           "19": {
             "title": "春待つ枝",
             "date": "2025.03.18",
             "gear": "Leica M10 + Summilux 50mm",
             "category": "winter afternoon",
-            "location": {
-              "name": "三の丸広場",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
+            "location": { "name": "三の丸広場", "lat": 34.8390, "lng": 134.6935 }
           },
           "20": {
             "title": "大手前イルミネーション",
             "date": "2025.12.31",
             "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
             "category": "winter night",
-            "location": {
-              "name": "大手前通り",
-              "lat": 34.8342,
-              "lng": 134.6925
-            }
+            "location": { "name": "大手前通り", "lat": 34.8342, "lng": 134.6925 }
           },
           "21": {
             "title": "大晦日の城",
             "date": "2025.12.31",
             "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
             "category": "winter night",
-            "location": {
-              "name": "姫路城ビューポイント",
-              "lat": 34.8360,
-              "lng": 134.6955
-            }
+            "location": { "name": "姫路城ビューポイント", "lat": 34.8360, "lng": 134.6955 }
           },
           "22": {
             "title": "初日の城",
             "date": "2026.01.01",
             "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
             "category": "winter morning",
-            "location": {
-              "name": "名古山",
-              "lat": 34.8423,
-              "lng": 134.6776
-            }
+            "location": { "name": "名古山", "lat": 34.8423, "lng": 134.6776 }
           },
           "23": {
             "title": "新春一斉放水",
             "date": "2026.01.11",
             "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
             "category": "winter afternoon",
-            "location": {
-              "name": "姫路城三の丸広場",
-              "lat": 34.8374,
-              "lng": 134.6933
-            }
+            "location": { "name": "姫路城三の丸広場", "lat": 34.8374, "lng": 134.6933 }
           },
           "24": {
             "title": "救助隊演技",
             "date": "2026.01.11",
             "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
             "category": "winter afternoon",
-            "location": {
-              "name": "姫路城三の丸広場",
-              "lat": 34.8374,
-              "lng": 134.6933
-            }
+            "location": { "name": "姫路城三の丸広場", "lat": 34.8374, "lng": 134.6933 }
           }
         };
 
-        const seasonRanges = {
-            'spring': [1, 6], 'summer': [7, 12], 'autumn': [13, 18], 'winter': [19, 24], 'special': [25, 36]
-        };
-
+        const seasonRanges = { 'spring': [1, 6], 'summer': [7, 12], 'autumn': [13, 18], 'winter': [19, 24], 'special': [25, 36] };
         let currentFilter = 'all';
-        let currentModalId = null; // モーダルのナビゲーション用
-
-        // --- Core Functions ---
+        let currentModalId = null;
 
         function init() {
             renderGrid();
@@ -587,18 +466,13 @@
             setupFilters();
         }
 
-        // Helper to get image path (Asset or Placeholder)
         function getImagePath(id) {
-            // ローカル環境では assets/images/shirasagi/01.jpg を参照
-            // デモ用にエラー時はプレースホルダーを表示するロジックをimgタグ側に入れています
             return `assets/images/shirasagi/${String(id).padStart(2, '0')}.jpg`;
         }
 
-        // Render the Grid
         function renderGrid() {
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
-            
             let start = 1, end = 36;
             if (currentFilter !== 'all' && seasonRanges[currentFilter]) {
                 [start, end] = seasonRanges[currentFilter];
@@ -610,73 +484,49 @@
                 
                 if (photo) {
                     const imgSrc = getImagePath(i);
-                    // フィルターが 'all' のときは季節判定、それ以外は現在のフィルター
-                    let season = currentFilter;
-                    if(season === 'all') {
-                        // IDから簡易判定
-                        if(i<=6) season='spring';
-                        else if(i<=12) season='summer';
-                        else if(i<=18) season='autumn';
-                        else if(i<=24) season='winter';
-                        else season='special';
-                    }
-
-                    // 季節ごとの色枠などをつけたい場合はここでクラス追加可能
-                    
-                    card.className = "group relative aspect-square bg-gray-100 rounded-lg overflow-hidden cursor-pointer shadow-sm hover:shadow-xl hover:-translate-y-1 transition-all duration-300";
+                    card.className = "group relative aspect-square bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 ease-out";
                     card.onclick = () => openModal(i);
-                    
-                    // onerrorでUnsplashのダミー画像を表示（デモ用）
                     card.innerHTML = `
                         <img src="${imgSrc}" 
                              onerror="this.src='https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=800&q=80'"
                              alt="${photo.title}" 
                              loading="lazy"
-                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110">
-                        <div class="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col justify-end p-4">
-                            <span class="text-white font-serif-en text-xs tracking-widest mb-1 opacity-80">No.${String(i).padStart(2, '0')}</span>
-                            <h4 class="text-white font-serif-jp font-bold text-sm tracking-wide line-clamp-1">${photo.title}</h4>
+                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110 filter sepia-[0.1] group-hover:sepia-0">
+                        <div class="absolute inset-0 bg-shirasagi-ink/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
+                            <span class="text-white font-serif-en text-lg tracking-widest mb-2 border-b border-white/50 pb-1">No.${String(i).padStart(2, '0')}</span>
+                            <h4 class="text-white font-serif-jp text-sm tracking-widest text-center">${photo.title}</h4>
                         </div>
                     `;
                 } else {
-                    // Empty State (Japanese Pattern)
-                    card.className = "aspect-square bg-pattern-seigaiha rounded-lg border border-gray-100 flex flex-col items-center justify-center text-gray-300 transition-all hover:bg-white hover:border-gray-300 group";
+                    card.className = "aspect-square bg-white rounded-sm border border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-300 group";
                     card.innerHTML = `
-                        <span class="font-serif-en text-2xl font-bold opacity-30 group-hover:opacity-50 transition-opacity">${String(i).padStart(2, '0')}</span>
-                        <span class="text-[10px] tracking-widest mt-2 opacity-0 group-hover:opacity-40 transition-opacity font-serif-jp">未公開</span>
+                        <span class="font-serif-en text-2xl font-light opacity-30">${String(i).padStart(2, '0')}</span>
                     `;
                 }
                 grid.appendChild(card);
             }
         }
 
-        // Update Progress
         function updateProgress() {
             const total = 36;
             const count = Object.keys(photosData).length;
             const percent = Math.round((count / total) * 100);
-            
             const el = document.getElementById('progress-text');
             let start = 0;
-            // アニメーション
             if(count > 0) {
                 const timer = setInterval(() => {
                     start++;
                     el.innerText = start;
                     if (start >= percent) clearInterval(timer);
                 }, 20);
-            } else {
-                el.innerText = 0;
-            }
+            } else { el.innerText = 0; }
         }
 
-        // Load Latest Photo to Spotlight
         function loadLatest() {
             const ids = Object.keys(photosData).map(Number);
             if (ids.length === 0) return;
             const latestId = Math.max(...ids);
             const p = photosData[latestId];
-            
             const imgSrc = getImagePath(latestId);
 
             const imgEl = document.getElementById('latest-image');
@@ -684,60 +534,44 @@
             imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1600&q=80'; };
 
             document.getElementById('latest-title').innerText = p.title;
-            // 説明文がない場合のフォールバック
-            document.getElementById('latest-desc').innerText = p.desc || (p.location ? `${p.location.name}にて撮影` : "解説は準備中です");
             document.getElementById('latest-number').innerText = String(latestId).padStart(2, '0');
-            document.getElementById('latest-date').innerText = p.date;
-            document.getElementById('latest-gear').innerText = p.gear;
-            
-            // Bind click to open modal
             document.querySelector('.group.cursor-pointer').onclick = () => openModal(latestId);
         }
 
-        // Filters
         function setupFilters() {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
-                    // UI toggle
                     buttons.forEach(b => {
-                        b.classList.remove('bg-gray-800', 'text-white');
-                        b.classList.add('bg-white', 'text-gray-600');
+                        b.classList.remove('bg-shirasagi-ink', 'text-white');
+                        b.classList.add('bg-transparent', 'text-gray-600');
                     });
-                    e.target.classList.remove('bg-white', 'text-gray-600');
-                    e.target.classList.add('bg-gray-800', 'text-white');
-                    
-                    // Logic
+                    e.target.classList.remove('bg-transparent', 'text-gray-600');
+                    e.target.classList.add('bg-shirasagi-ink', 'text-white');
                     currentFilter = e.target.dataset.filter;
                     renderGrid();
                 });
             });
         }
-
-        // --- Modal Logic ---
         
         function openModal(id) {
             currentModalId = parseInt(id);
             const p = photosData[id];
             if (!p) return;
-
             const imgSrc = getImagePath(id);
             const imgEl = document.getElementById('modal-img');
             imgEl.src = imgSrc;
-            // Modal内の画像エラーハンドリング
             imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=80'; };
 
             document.getElementById('modal-title').innerText = p.title;
             document.getElementById('modal-num').innerText = String(id).padStart(2, '0');
-            document.getElementById('modal-desc').innerText = p.desc || (p.location ? `${p.location.name}より望む。` : "解説は準備中です。");
+            document.getElementById('modal-desc').innerText = p.desc || (p.location ? `${p.location.name}にて。` : "解説は準備中です。");
             document.getElementById('modal-date').innerText = p.date;
             document.getElementById('modal-gear').innerText = p.gear;
 
-            // Google Maps Link
             const mapLink = document.getElementById('modal-map-link');
             if (p.location && p.location.lat) {
                 mapLink.href = `https://www.google.com/maps/search/?api=1&query=${p.location.lat},${p.location.lng}`;
-                mapLink.innerText = `${p.location.name}を地図で見る`;
                 document.getElementById('modal-map-container').style.display = 'flex';
             } else {
                 document.getElementById('modal-map-container').style.display = 'none';
@@ -749,14 +583,11 @@
 
             modal.classList.remove('hidden');
             modal.classList.add('flex');
-            
-            // Animation
             setTimeout(() => {
                 backdrop.classList.remove('opacity-0');
                 content.classList.remove('opacity-0', 'scale-95');
                 content.classList.add('opacity-100', 'scale-100');
             }, 10);
-            
             document.body.style.overflow = 'hidden';
         }
 
@@ -764,11 +595,9 @@
             const modal = document.getElementById('modal');
             const backdrop = document.getElementById('modal-backdrop');
             const content = document.getElementById('modal-content');
-
             backdrop.classList.add('opacity-0');
             content.classList.remove('opacity-100', 'scale-100');
             content.classList.add('opacity-0', 'scale-95');
-
             setTimeout(() => {
                 modal.classList.add('hidden');
                 modal.classList.remove('flex');
@@ -777,55 +606,32 @@
             currentModalId = null;
         }
 
-        // 次の写真へ
         function nextPhoto() {
             if (currentModalId === null) return;
             let nextId = currentModalId + 1;
-            // 次のIDが存在するまでループ、36を超えたら終了（またはループさせる）
-            while(nextId <= 36 && !photosData[nextId]) {
-                nextId++;
-            }
-            if(photosData[nextId]) {
-                openModal(nextId);
-            } else {
-                // ループさせるなら1から探す
-                // nextId = 1; ...
-            }
+            while(nextId <= 36 && !photosData[nextId]) nextId++;
+            if(photosData[nextId]) openModal(nextId);
         }
 
-        // 前の写真へ
         function prevPhoto() {
             if (currentModalId === null) return;
             let prevId = currentModalId - 1;
-            while(prevId >= 1 && !photosData[prevId]) {
-                prevId--;
-            }
-            if(photosData[prevId]) {
-                openModal(prevId);
-            }
+            while(prevId >= 1 && !photosData[prevId]) prevId--;
+            if(photosData[prevId]) openModal(prevId);
         }
 
-        // キーボード操作対応 (左右矢印)
         document.addEventListener('keydown', function(e) {
             if (document.getElementById('modal').classList.contains('hidden')) return;
-            
-            if (e.key === 'ArrowRight') {
-                nextPhoto();
-            } else if (e.key === 'ArrowLeft') {
-                prevPhoto();
-            } else if (e.key === 'Escape') {
-                closeModal();
-            }
+            if (e.key === 'ArrowRight') nextPhoto();
+            else if (e.key === 'ArrowLeft') prevPhoto();
+            else if (e.key === 'Escape') closeModal();
         });
 
-        // Close on backdrop click
         document.getElementById('modal').addEventListener('click', (e) => {
             if(e.target.id === 'modal-backdrop' || e.target.id === 'modal') closeModal();
         });
 
-        // Init
         document.addEventListener('DOMContentLoaded', init);
-
     </script>
 </body>
 </html>
