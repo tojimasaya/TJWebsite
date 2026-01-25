@@ -1,14 +1,5 @@
 [
   {
-    "title": "DRONE.jp 連載コラム一覧",
-    "link": "https://drone.jp/column/masaya-toji",
-    "date": "2026-01-25",
-    "image": "assets/images/gallery/hongkong.jpg",
-    "excerpt": "中国・香港ドローン便り。空撮の規制事情から、最新ドローン事情まで。",
-    "source": "drone",
-    "sourceLabel": "DRONE.jp"
-  },
-  {
     "title": "「メガネ、メガネ……」の醜態よ、さらば。AR/VR時代に備えた「脱・メガネ」宣言。",
     "link": "https://note.com/tojimasaya/n/n807dc4be8deb",
     "date": "2026-01-19",
@@ -88,5 +79,248 @@
     "excerpt": "香港で暮らしていると、お金まわりの判断が生活の一部になっていきます。とはいえ、ここで書く数字は「すごい」「得した」という話ではありません。どちらかといえば、「香...",
     "source": "note",
     "sourceLabel": "note"
+  },
+  {
+    "title": "GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け[田路昌也の中国・香港ドローン便り]Vol.56",
+    "link": "https://drone.jp/column/20250912114426119738.html",
+    "date": "2025-09-12",
+    "image": "https://drone.jp/wp-content/uploads/20250911_tohzi_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "3C認証は必要？中国国内でのDJIドローンバッテリー持ち込み事情[田路昌也の中国・香港ドローン便り]Vol.55",
+    "link": "https://drone.jp/column/20250827103506118604.html",
+    "date": "2025-08-27",
+    "image": "https://drone.jp/wp-content/uploads/20250819_touji_top2.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "ガチじゃない旅、ガチじゃないドローン。でも、見えたもの。[田路昌也の中国・香港ドローン便り]Vol.54",
+    "link": "https://drone.jp/column/20250718091041117398.html",
+    "date": "2025-07-18",
+    "image": "https://drone.jp/wp-content/uploads/tohzi_54_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Mini 4 Proユーザーが深センで見 た“新しい誘惑”──Mavic 4 Pro を手にして思ったこと[田路昌也の中国・香港ドローン便り]Vol.53",
+    "link": "https://drone.jp/column/20250619135305116533.html",
+    "date": "2025-06-19",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/06/250617_drone_touji_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "幻に終わった張家界ドローン旅。だ からこそ見えた“撮る視点”の磨き方[田路昌也の中国・香港ドローン便り]Vol.52",
+    "link": "https://drone.jp/column/20250521101003115777.html",
+    "date": "2025-05-21",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/05/250520_SFC_touji_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "2025年のドローン飛行計画: Mini 4 Proと巡るSFC修行旅 [田路昌也の中国・香港ドローン便り]Vol.51",
+    "link": "https://drone.jp/column/20250422180507115300.html",
+    "date": "2025-04-22",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/04/250422_SFC_touji_top-1.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "2025年のドローン飛行計画：SFC修行を活かした全国空撮の旅[田路昌也の中国・香港ドローン便り]Vol.50",
+    "link": "https://drone.jp/column/20250325095347114383.html",
+    "date": "2025-03-25",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/03/tohzi_50_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "ホーチミンでのドローン撮影断念―厳しくなる規制とその現実[田路昌也の中国・香港ドローン便り]Vol.49",
+    "link": "https://drone.jp/column/20250225110506111975.html",
+    "date": "2025-02-25",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/02/tohzi_49_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "記憶を紡ぐ空撮の旅 ～2025年、日月潭からの出発～[田路昌也の中国・香港ドローン便り]Vol.48",
+    "link": "https://drone.jp/column/20250124101951109069.html",
+    "date": "2025-01-24",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/01/tohzi_48_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "2024年を振り返って ～ドローン撮影の旅と深センでの修理体験～[田路昌也の中国・香港ドローン便り]Vol.47",
+    "link": "https://drone.jp/column/20241225095022106975.html",
+    "date": "2024-12-25",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/12/tohzi_47_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "空からトルコの絶景を追って：ドローン撮影の成果報告[田路昌也の中国・香港ドローン便り]Vol.46",
+    "link": "https://drone.jp/column/20241123091035104193.html",
+    "date": "2024-11-23",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/11/tohzi_46_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "231129_Lynx_top",
+    "link": "https://www.drone.jp/column/2024112017305677103.html",
+    "date": "2024-11-20",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2023/11/231129_Lynx_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "空からトルコを楽しむ：ドローン撮影で旅の思い出づくり[田路昌也の中国・香港ドローン便り]Vol.45",
+    "link": "https://drone.jp/column/20241025105720101525.html",
+    "date": "2024-10-25",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/10/tohzi_45_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.44 カメラドローンからFPVへ：DJI Avata 2が教えてくれた新たな空の楽しみ方[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2024092711162398826.html",
+    "date": "2024-09-27",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/09/tohzi_44_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.43 番外編：突然の中国FPV旅で見つけた国境を越えるドローンの絆[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2024082310020495888.html",
+    "date": "2024-08-23",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/08/tohzi_43_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.42 中国深センDJIで最新産業用ドローンを見学[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2024072616355193507.html",
+    "date": "2024-07-26",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/07/tohzi_42_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.41 二重の安心：DJI Mini 4 Proで体験する4G LTE接続の威力[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2024062509572291456.html",
+    "date": "2024-06-25",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/06/tohzi_41_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.40 中国でドローンを飛ばすために：UOM登録の手順と注意点[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2024052410211888779.html",
+    "date": "2024-05-24",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/05/tohzi_40_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.39 安全なドローン飛行のために。地域の仲間やサービスプロバイダが提供する最適な環境[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/masaya-toji/2024042609444386915.html",
+    "date": "2024-04-26",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/04/tohzi_39_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.38 夢のセルラー4Gでドローンフライト！しかしその道は険しかった[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2024032909412484741.html",
+    "date": "2024-03-29",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/03/240326_toji_38_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.37 災害地でのドローン飛行について：規制と現場の声[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2024012210121780117.html",
+    "date": "2024-01-22",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2024/01/tohzi_37_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.36 新しい空の楽しみ方：小型FPVドローンの魅力を探る[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2023121217562777821.html",
+    "date": "2023-12-12",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2023/12/tohzi36_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.35 Osmo Pocket 3とドローン技術の革新的融合[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2023111515114076228.html",
+    "date": "2023-11-15",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2023/11/tohzi35_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.34 空から探る 三都市の魅力： 四国高松、石川能登、兵庫姫路の冒険[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2023101712214074424.html",
+    "date": "2023-10-17",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2023/10/tohzi34_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.33 ありふれた日常も実は貴重な記録[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2023090819325572228.html",
+    "date": "2023-09-08",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2023/09/tohzi33_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.32 白川郷合掌造り空撮ツアーに参加しました[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2023081010131970830.html",
+    "date": "2023-08-10",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2023/08/tohzi32_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Vol.31 台湾ドローン旅行の事前調査にChatGPTを活用してみた[田路昌也の中国・香港ドローン便り]",
+    "link": "https://drone.jp/column/2023072109460169736.html",
+    "date": "2023-07-21",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2023/07/tohzi31_top.jpg",
+    "excerpt": "DRONE.jp 連載コラム",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
   }
 ]
