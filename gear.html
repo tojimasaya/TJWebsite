@@ -111,6 +111,33 @@
             transform: translateY(0);
         }
 
+        /* 特調リンク（白鷺三十六景用） */
+        .featured-link {
+            color: #1A3FB9 !important; /* 白鷺ブルー */
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .featured-link:hover {
+            background-color: rgba(26, 63, 185, 0.05);
+            border-radius: 4px;
+        }
+
+        .featured-link .icon {
+            font-size: 1.1em;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .featured-link {
+                color: #60a5fa !important;
+            }
+            .featured-link:hover {
+                background-color: rgba(96, 165, 250, 0.1);
+            }
+        }
+
         /* Responsive */
         @media (max-width: 768px) {
             .category-grid {
@@ -134,6 +161,12 @@
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
                 <li><a href="gallery.html" class="nav-link">Gallery</a></li>
+                <!-- 白鷺三十六景リンクを追加 -->
+                <li>
+                    <a href="shirasagi36.html" class="nav-link featured-link">
+                        <span class="icon">🏯</span> 白鷺三十六景
+                    </a>
+                </li>
                 <li><a href="gear.html" class="nav-link active">Gear</a></li>
                 <li><a href="writings.html" class="nav-link">Writings</a></li>
                 <li><a href="hongkong.html" class="nav-link">Hong Kong</a></li>
