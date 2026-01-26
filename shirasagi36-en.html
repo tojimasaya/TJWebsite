@@ -26,12 +26,10 @@
                         'serif-display': ['"Cinzel"', 'serif'],
                         'serif-body': ['"Crimson Text"', 'serif'],
                         'sans': ['"Inter"', 'sans-serif'],
-                        'serif-jp': ['"Noto Serif JP"', 'serif'], // For stamps
+                        'serif-jp': ['"Noto Serif JP"', 'serif'],
                     },
                     backgroundImage: {
-                        // Washi Texture
                         'washi-texture': "url('data:image/svg+xml,%3Csvg width=\\'200\\' height=\\'200\\' viewBox=\\'0 0 200 200\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cfilter id=\\'noise\\' x=\\'0\\' y=\\'0\\'%3E%3CfeTurbulence type=\\'fractalNoise\\' baseFrequency=\\'0.65\\' numOctaves=\\'3\\' stitchTiles=\\'stitch\\'/%3E%3C/filter%3E%3Crect width=\\'100%25\\' height=\\'100%25\\' filter=\\'url(%23noise)\\' opacity=\\'0.08\\'/%3E%3C/svg%3E')",
-                        'seigaiha': "url('data:image/svg+xml,%3Csvg width=\\'20\\' height=\\'20\\' viewBox=\\'0 0 20 20\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'%23d1d5db\\' fill-opacity=\\'0.4\\' fill-rule=\\'evenodd\\'%3E%3Ccircle cx=\\'3\\' cy=\\'3\\' r=\\'3\\'/%3E%3Ccircle cx=\\'13\\' cy=\\'13\\' r=\\'3\\'/%3E%3C/g%3E%3C/svg%3E')",
                     }
                 }
             }
@@ -51,21 +49,18 @@
             to { opacity: 1; }
         }
 
-        /* Stamp Style */
         .hanko-border {
             border: 2px solid #b91c1c;
             border-radius: 4px;
             color: #b91c1c;
         }
         
-        /* Vertical writing for stamps */
         .writing-vertical {
             writing-mode: vertical-rl;
             text-orientation: upright;
             letter-spacing: 0.1em;
         }
 
-        /* Custom Scrollbar */
         ::-webkit-scrollbar { width: 8px; }
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
@@ -74,30 +69,22 @@
 <body class="bg-washi-bg bg-washi-texture text-shirasagi-ink font-serif-body antialiased selection:bg-shirasagi-blue selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-washi-bg/90 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300">
+    <nav class="fixed w-full z-50 top-0 bg-washi-bg/95 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
                 <a href="/" class="font-serif-display text-xl font-bold tracking-widest text-shirasagi-ink hover:opacity-70 transition-opacity z-50 relative">
                     TOJI MASAYA
                 </a>
 
-                <!-- Desktop Menu -->
                 <div class="hidden md:flex items-center space-x-8 font-serif-display text-sm font-semibold tracking-widest text-gray-500">
                     <a href="/" class="hover:text-shirasagi-blue transition-colors">Home</a>
                     <a href="gallery.html" class="hover:text-shirasagi-blue transition-colors">Gallery</a>
                     <a href="gear.html" class="hover:text-shirasagi-blue transition-colors">Gear</a>
                     <a href="writings.html" class="hover:text-shirasagi-blue transition-colors">Writings</a>
-                    <!-- Active Page -->
                     <a href="shirasagi36-en.html" class="text-shirasagi-ink border-b border-shirasagi-ink pb-1">Shirasagi 36</a>
-                    
-                    <!-- Language Switcher -->
-                    <a href="shirasagi36.html" class="ml-4 text-xs font-sans font-medium border border-gray-400 rounded-full px-4 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">
-                        日本語
-                    </a>
+                    <a href="shirasagi36.html" class="ml-4 text-xs font-sans font-medium border border-gray-400 rounded-full px-4 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">日本語</a>
                 </div>
 
-                <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center z-50 relative">
                     <button onclick="toggleMobileMenu()" class="text-shirasagi-ink p-2 focus:outline-none" aria-label="Menu">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
@@ -106,63 +93,64 @@
             </div>
         </div>
 
-        <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/95 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-8 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-8 transition-opacity duration-300 opacity-0 pointer-events-none">
             <a href="/" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Home</a>
             <a href="gallery.html" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gallery</a>
             <a href="gear.html" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gear</a>
             <a href="writings.html" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Writings</a>
             <a href="shirasagi36-en.html" class="text-xl font-serif-display tracking-widest text-shirasagi-blue font-bold border-b border-shirasagi-blue pb-1">Shirasagi 36</a>
             <a href="shirasagi36.html" class="text-sm font-sans border border-gray-400 rounded-full px-6 py-2 mt-4">日本語</a>
-            
             <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-gray-500 p-2">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
         </div>
     </nav>
 
-    <!-- Hero Section (Washi Style - English Typography) -->
-    <header class="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden pt-20">
+    <!-- Hero Section (V3.3 Compact Layout with Title Update) -->
+    <header class="relative min-h-[85vh] flex items-center justify-center overflow-hidden pt-28 pb-12">
         
-        <div class="max-w-5xl mx-auto w-full flex flex-col items-center text-center p-8 fade-in">
+        <!-- コンテナ: Flex Row で左右に配置 -->
+        <div class="max-w-5xl mx-auto w-full flex flex-row items-center justify-center gap-6 md:gap-16 px-4 md:px-8 fade-in">
             
-            <!-- Subtitle -->
-            <p class="text-sm md:text-base font-serif-display tracking-[0.3em] text-shirasagi-blue mb-6 uppercase">
-                Shirasagi Sanjūrokkei
-            </p>
+            <!-- 左側: 縦書きタイトル (日本語版V3.5と同様のレイアウトに更新) -->
+            <div class="writing-vertical flex-shrink-0 h-[50vh] md:h-[60vh] flex items-center select-none border-r border-gray-200 pr-6 md:pr-10">
+                <h1 class="text-5xl md:text-8xl font-bold text-shirasagi-ink leading-tight drop-shadow-sm font-serif-jp" style="line-height: 1.4;">
+                    白鷺<br>
+                    <span class="whitespace-nowrap">三十六景</span>
+                </h1>
+            </div>
 
-            <!-- Main Title -->
-            <h1 class="text-5xl md:text-7xl lg:text-8xl font-serif-display font-medium text-shirasagi-ink leading-none mb-12 drop-shadow-sm">
-                36 Views of<br>
-                <span class="italic font-serif-body text-4xl md:text-6xl lg:text-7xl block mt-4">White Heron Castle</span>
-            </h1>
-
-            <!-- Decorative Line -->
-            <div class="w-16 h-[2px] bg-gray-300 mb-12"></div>
-
-            <!-- Statement & Stamps -->
-            <div class="flex flex-col md:flex-row items-center md:items-start gap-12">
-                
-                <!-- Statement -->
-                <p class="text-lg leading-loose text-gray-700 font-light max-w-lg md:text-left">
-                    Himeji Castle, captured through 36 perspectives.<br>
-                    Changing seasons, shifting light, and timeless angles.<br>
-                    An homage to Hokusai, through the modern lens.
+            <!-- 右側: 英語コンテンツ (左揃え) -->
+            <div class="flex flex-col justify-center text-left py-2 max-w-xs md:max-w-lg">
+                <p class="text-xs md:text-sm font-serif-display tracking-[0.2em] text-shirasagi-blue mb-4 uppercase">
+                    Shirasagi Sanjūrokkei
                 </p>
 
-                <!-- Stamps (Authentic Japanese Touch) -->
-                <div class="flex gap-4 pt-2">
-                    <div class="flex flex-col items-center gap-2">
-                        <div class="w-12 h-12 hanko-border flex items-center justify-center bg-white/50">
-                            <span class="text-shirasagi-red font-bold text-sm writing-vertical font-serif-jp leading-none" style="letter-spacing: 0;">田路<br>写</span>
+                <h2 class="text-3xl md:text-6xl font-serif-display font-medium text-shirasagi-ink leading-tight mb-6">
+                    36 Views of<br>
+                    <span class="italic font-serif-body text-gray-600">White Heron Castle</span>
+                </h2>
+
+                <p class="text-sm md:text-lg leading-relaxed text-gray-600 font-light mb-8 font-serif-body">
+                    Himeji Castle, captured through<br>
+                    36 perspectives.<br>
+                    Changing seasons, shifting light,<br>
+                    and timeless angles.
+                </p>
+
+                <!-- 落款 -->
+                <div class="flex gap-4">
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="w-10 h-10 hanko-border flex items-center justify-center bg-white/50">
+                            <span class="text-shirasagi-red font-bold text-xs writing-vertical font-serif-jp leading-none" style="letter-spacing: 0;">田路<br>写</span>
                         </div>
-                        <span class="text-[10px] text-gray-400 font-sans tracking-tight uppercase">Artist</span>
+                        <span class="text-[9px] text-gray-400 font-sans tracking-tight uppercase">Artist</span>
                     </div>
-                    <div class="flex flex-col items-center gap-2">
-                        <div class="w-12 h-12 hanko-border flex items-center justify-center bg-white/50">
-                            <span class="text-shirasagi-red font-bold text-sm writing-vertical font-serif-jp leading-none" style="letter-spacing: 0;">未<br>完</span>
+                    <div class="flex flex-col items-center gap-1">
+                        <div class="w-10 h-10 hanko-border flex items-center justify-center bg-white/50">
+                            <span class="text-shirasagi-red font-bold text-xs writing-vertical font-serif-jp leading-none" style="letter-spacing: 0;">未<br>完</span>
                         </div>
-                        <span class="text-[10px] text-gray-400 font-sans tracking-tight uppercase">Status</span>
+                        <span class="text-[9px] text-gray-400 font-sans tracking-tight uppercase">Status</span>
                     </div>
                 </div>
             </div>
@@ -170,9 +158,9 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <span class="text-xs font-serif-display tracking-[0.2em] text-gray-400 mb-2 block text-center">SCROLL</span>
-            <div class="w-[1px] h-12 bg-gray-300 mx-auto"></div>
+        <div class="absolute bottom-6 left-1/2 transform -translate-x-1/2 animate-bounce opacity-40">
+            <span class="text-[10px] font-serif-display tracking-[0.2em] text-gray-400 mb-1 block text-center">SCROLL</span>
+            <div class="w-[1px] h-8 bg-gray-300 mx-auto"></div>
         </div>
     </header>
 
@@ -180,15 +168,15 @@
     <main class="relative z-10 pb-32">
         
         <!-- Latest/Featured Section -->
-        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 md:mb-24">
             <div class="bg-white p-2 md:p-4 rounded-sm shadow-sm border border-gray-100">
-                <div class="bg-washi-bg relative overflow-hidden group cursor-pointer aspect-video md:aspect-[21/9]" onclick="openModalWithLatest()">
+                <div class="bg-washi-bg relative overflow-hidden group cursor-pointer aspect-[4/3] md:aspect-[21/9]" onclick="openModalWithLatest()">
                     <img id="latest-image" src="" alt="Latest Shot" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 ease-in-out">
                     
-                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-6 md:p-10 flex justify-between items-end">
-                        <div class="text-white">
-                            <span class="text-xs font-serif-display tracking-widest opacity-80 mb-2 block uppercase">Latest View — No.<span id="latest-number">--</span></span>
-                            <h2 class="text-2xl md:text-3xl font-serif-display tracking-wide" id="latest-title">Loading...</h2>
+                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-end">
+                        <div class="text-white mb-2 md:mb-0">
+                            <span class="text-[10px] md:text-xs font-serif-display tracking-widest opacity-80 mb-1 md:mb-2 block uppercase">Latest View — No.<span id="latest-number">--</span></span>
+                            <h2 class="text-xl md:text-3xl font-serif-display tracking-wide" id="latest-title">Loading...</h2>
                         </div>
                         <div class="hidden md:block">
                             <span class="inline-block px-4 py-2 border border-white/30 text-white text-xs tracking-widest hover:bg-white hover:text-black transition-colors uppercase font-serif-display">View Detail</span>
@@ -201,68 +189,65 @@
         <!-- Gallery Section -->
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="gallery-anchor">
             
-            <!-- Controls -->
-            <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-300 pb-4 mb-12">
-                <div class="mb-6 md:mb-0">
+            <!-- Controls (Progress Updated) -->
+            <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-300 pb-4 mb-8 md:mb-12">
+                <div class="mb-6 md:mb-0 w-full md:w-auto">
                     <h3 class="text-xl font-serif-display text-shirasagi-ink flex items-center gap-4">
                         The Collection
                     </h3>
+                    <!-- Modified progress display to show count/total instead of percentage -->
                     <p class="text-sm text-gray-500 mt-2 font-serif-body italic">Progress: <span id="progress-text" class="text-lg font-bold text-shirasagi-blue not-italic font-sans">0</span> / 36 Views</p>
                 </div>
                 
-                <div class="flex flex-wrap gap-3 font-serif-display text-sm tracking-widest">
-                    <button class="filter-btn active px-5 py-2 rounded-sm border border-gray-400 bg-shirasagi-ink text-white transition-all hover:opacity-80" data-filter="all">ALL</button>
-                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="spring">SPRING</button>
-                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="summer">SUMMER</button>
-                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="autumn">AUTUMN</button>
-                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="winter">WINTER</button>
+                <div class="flex flex-wrap gap-2 md:gap-3 font-serif-display text-[10px] md:text-sm tracking-widest w-full md:w-auto">
+                    <button class="filter-btn active px-3 md:px-5 py-2 rounded-sm border border-gray-400 bg-shirasagi-ink text-white transition-all hover:opacity-80 flex-grow md:flex-grow-0 text-center" data-filter="all">ALL</button>
+                    <button class="filter-btn px-3 md:px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all flex-grow md:flex-grow-0 text-center" data-filter="spring">SPRING</button>
+                    <button class="filter-btn px-3 md:px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all flex-grow md:flex-grow-0 text-center" data-filter="summer">SUMMER</button>
+                    <button class="filter-btn px-3 md:px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all flex-grow md:flex-grow-0 text-center" data-filter="autumn">AUTUMN</button>
+                    <button class="filter-btn px-3 md:px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all flex-grow md:flex-grow-0 text-center" data-filter="winter">WINTER</button>
                 </div>
             </div>
 
             <!-- Grid System -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8" id="shirasagi-grid">
-                <!-- Javascript populates this -->
-            </div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-6 lg:gap-8" id="shirasagi-grid"></div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-shirasagi-ink text-white/80 py-16 border-t border-gray-800">
+    <footer class="bg-shirasagi-ink text-white/80 py-12 md:py-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="mb-8 font-serif-display text-3xl tracking-[0.2em] font-light">TOJI MASAYA</div>
+            <div class="mb-8 font-serif-display text-2xl md:text-3xl tracking-[0.2em] font-light">TOJI MASAYA</div>
             <div class="w-8 h-[1px] bg-gray-600 mx-auto mb-8"></div>
-            <p class="text-xs font-sans tracking-wide opacity-60">
+            <p class="text-[10px] md:text-xs font-sans tracking-wide opacity-60">
                 &copy; 2025 Toji Masaya. All rights reserved.<br>
                 Himeji, Japan.
             </p>
         </div>
     </footer>
 
-    <!-- Modal -->
+    <!-- Modal (Same as v3.2) -->
     <div id="modal" class="fixed inset-0 z-[100] hidden items-center justify-center p-4">
         <div class="absolute inset-0 bg-washi-bg/95 backdrop-blur-md transition-opacity opacity-0" id="modal-backdrop"></div>
         <div class="relative w-full max-w-6xl max-h-[90vh] bg-white flex flex-col md:flex-row shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-500 border border-gray-100" id="modal-content">
             <button class="absolute top-4 right-4 z-50 text-gray-500 hover:text-shirasagi-ink bg-white/80 rounded-full p-2 transition-all" onclick="closeModal()">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            <div class="w-full md:w-3/4 h-[50vh] md:h-auto bg-gray-50 flex items-center justify-center relative group p-4 md:p-8">
+            <div class="w-full md:w-3/4 h-[40vh] md:h-auto bg-gray-50 flex items-center justify-center relative group p-4 md:p-8">
                 <img id="modal-img" src="" class="max-w-full max-h-full object-contain shadow-lg" alt="">
-                <button class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="prevPhoto()">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path></svg>
+                <button class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition md:opacity-0 group-hover:opacity-100 p-2" onclick="prevPhoto()">
+                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
-                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="nextPhoto()">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg>
+                <button class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition md:opacity-0 group-hover:opacity-100 p-2" onclick="nextPhoto()">
+                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
-            <div class="w-full md:w-1/4 bg-white p-8 flex flex-col overflow-y-auto border-l border-gray-100">
+            <div class="w-full md:w-1/4 bg-white p-6 md:p-8 flex flex-col overflow-y-auto border-l border-gray-100">
                 <div class="mb-auto">
-                    <span class="text-shirasagi-blue font-serif-display text-xs font-bold tracking-widest block mb-3 uppercase">No. <span id="modal-num">01</span></span>
-                    <h3 class="text-2xl font-serif-display mb-6 leading-normal text-shirasagi-ink" id="modal-title">Title</h3>
-                    <p class="text-gray-600 text-base leading-relaxed font-light font-serif-body text-justify" id="modal-desc">
-                        <!-- Description -->
-                    </p>
+                    <span class="text-shirasagi-blue font-serif-display text-xs font-bold tracking-widest block mb-2 md:mb-3 uppercase">No. <span id="modal-num">01</span></span>
+                    <h3 class="text-xl md:text-2xl font-serif-display mb-4 md:mb-6 leading-normal text-shirasagi-ink" id="modal-title">Title</h3>
+                    <p class="text-gray-600 text-sm md:text-base leading-relaxed font-light font-serif-body text-justify" id="modal-desc"></p>
                 </div>
-                <div class="border-t border-gray-100 pt-6 space-y-4 text-xs font-sans text-gray-500 mt-8">
+                <div class="border-t border-gray-100 pt-4 md:pt-6 space-y-3 md:space-y-4 text-xs font-sans text-gray-500 mt-6 md:mt-8">
                     <div class="flex items-center gap-3"><span class="w-16 opacity-50 tracking-widest">DATE</span> <span id="modal-date" class="font-medium text-gray-800">--</span></div>
                     <div class="flex items-center gap-3"><span class="w-16 opacity-50 tracking-widest">GEAR</span> <span id="modal-gear" class="font-medium text-gray-800">--</span></div>
                     <div class="flex items-center gap-3" id="modal-map-container">
@@ -276,7 +261,6 @@
 
     <!-- Logic -->
     <script>
-        // Toggle Mobile Menu
         function toggleMobileMenu() {
             const menu = document.getElementById('mobile-menu');
             if (menu.classList.contains('hidden')) {
@@ -288,267 +272,33 @@
             }
         }
 
-        // --- English Photo Data ---
         const photosData = {
-          "1": {
-            "title": "Flower Boat at Red Bridge",
-            "date": "2025.04.05",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "spring morning",
-            "location": {
-              "name": "Beni-bashi Bridge",
-              "lat": 34.8420,
-              "lng": 134.6928
-            }
-          },
-          "2": {
-            "title": "Full View of Himeji Castle",
-            "date": "2025.04.05",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "spring evening",
-            "location": {
-              "name": "Sannomaru Plaza",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
-          },
-          "3": {
-            "title": "Night Cherry Blossoms",
-            "date": "2025.04.09",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "spring night",
-            "location": {
-              "name": "Sakuramon Bridge",
-              "lat": 34.8385,
-              "lng": 134.6931
-            }
-          },
-          "4": {
-            "title": "Cherry Blossoms and Castle",
-            "date": "2025.04.01",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "spring afternoon",
-            "location": {
-              "name": "Sannomaru Plaza",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
-          },
-          "5": {
-            "title": "From Sannomaru Plaza",
-            "date": "2025.04.05",
-            "gear": "Leica M10",
-            "category": "spring afternoon",
-            "location": {
-              "name": "Sannomaru Plaza",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
-          },
-          "6": {
-            "title": "From Hakuro Junior High School Ground",
-            "date": "2025.04.05",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "spring afternoon",
-            "location": {
-              "name": "Hakuro Junior High School Ground",
-              "lat": 34.8407,
-              "lng": 134.6918
-            }
-          },
-          "7": {
-            "title": "Castle in Fresh Green from Otokoyama Reservoir",
-            "date": "2025.05.20",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "summer afternoon",
-            "location": {
-              "name": "Otokoyama Reservoir Park",
-              "lat": 34.8445,
-              "lng": 134.6950
-            }
-          },
-          "8": {
-            "title": "White Heron Castle from Cemetery",
-            "date": "2025.05.04",
-            "gear": "Xiaomi 15 Ultra",
-            "category": "summer evening",
-            "location": {
-              "name": "Johoku Cemetery",
-              "lat": 34.8440,
-              "lng": 134.6910
-            }
-          },
-          "9": {
-            "title": "Castle Illuminated by Evening Sun",
-            "date": "2025.07.29",
-            "gear": "Leica M10 + Wide Tri-Elmar",
-            "category": "summer evening",
-            "location": {
-              "name": "Himeyama Parking Area",
-              "lat": 34.8365,
-              "lng": 134.6945
-            }
-          },
-          "10": {
-            "title": "White Heron Castle from Sakuramon Bridge",
-            "date": "2025.07.29",
-            "gear": "Leica M10 + Wide Tri-Elmar",
-            "category": "summer evening",
-            "location": {
-              "name": "Sakuramon Bridge",
-              "lat": 34.8385,
-              "lng": 134.6931
-            }
-          },
-          "11": {
-            "title": "Castle Under Blue Sky",
-            "date": "2025.07.30",
-            "gear": "Leica M10 + Wide Tri-Elmar",
-            "category": "summer afternoon",
-            "location": {
-              "name": "Sannomaru Plaza",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
-          },
-          "13": {
-            "title": "White Heron Castle Beginning to Change Color",
-            "date": "2025.11.13",
-            "gear": "Leica M10",
-            "category": "autumn afternoon",
-            "location": {
-              "name": "Shirotopia Memorial Park",
-              "lat": 34.8355,
-              "lng": 134.6905
-            }
-          },
-          "14": {
-            "title": "Inverted Castle from Hokusei-Kakushimon Ruins",
-            "date": "2025.11.13",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "autumn afternoon",
-            "location": {
-              "name": "Hokusei-Kakushimon Ruins",
-              "lat": 34.8395,
-              "lng": 134.6920
-            }
-          },
-          "15": {
-            "title": "Autumn Leaves at Art Museum and Castle",
-            "date": "2025.11.13",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "autumn afternoon",
-            "location": {
-              "name": "Himeji City Museum of Art",
-              "lat": 34.8353,
-              "lng": 134.6892
-            }
-          },
-          "16": {
-            "title": "Moat and Autumn Leaves",
-            "date": "2025.11.13",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "autumn afternoon",
-            "location": {
-              "name": "Inner Moat Area",
-              "lat": 34.8380,
-              "lng": 134.6915
-            }
-          },
-          "17": {
-            "title": "Otemon Gate in Evening Sun",
-            "date": "2025.10.01",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "autumn afternoon",
-            "location": {
-              "name": "Otemon Gate",
-              "lat": 34.8380,
-              "lng": 134.6925
-            }
-          },
-          "18": {
-            "title": "Autumn View from Sakuramon Bridge",
-            "date": "2025.10.01",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "autumn afternoon",
-            "location": {
-              "name": "Sakuramon Bridge",
-              "lat": 34.8385,
-              "lng": 134.6931
-            }
-          },
-          "19": {
-            "title": "Cherry Tree Awaiting Spring",
-            "date": "2025.03.18",
-            "gear": "Leica M10 + Summilux 50mm",
-            "category": "winter afternoon",
-            "location": {
-              "name": "Sannomaru Plaza",
-              "lat": 34.8390,
-              "lng": 134.6935
-            }
-          },
-          "20": {
-            "title": "Winter Lights on Otemae",
-            "date": "2025.12.31",
-            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-            "category": "winter night",
-            "location": {
-              "name": "Otemae Street",
-              "lat": 34.8342,
-              "lng": 134.6925
-            }
-          },
-          "21": {
-            "title": "White Heron from Castle View",
-            "date": "2025.12.31",
-            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-            "category": "winter night",
-            "location": {
-              "name": "Himeji Castle Viewpoint",
-              "lat": 34.8360,
-              "lng": 134.6955
-            }
-          },
-          "22": {
-            "title": "Castle at First Light",
-            "date": "2026.01.01",
-            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-            "category": "winter morning",
-            "location": {
-              "name": "Nagoyama",
-              "lat": 34.8423,
-              "lng": 134.6776
-            }
-          },
-          "23": {
-            "title": "New Year Water Salute",
-            "date": "2026.01.11",
-            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-            "category": "winter afternoon",
-            "location": {
-              "name": "Sannomaru Plaza, Himeji Castle",
-              "lat": 34.8374,
-              "lng": 134.6933
-            }
-          },
-          "24": {
-            "title": "Rescue Team Demonstration",
-            "date": "2026.01.11",
-            "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-            "category": "winter afternoon",
-            "location": {
-              "name": "Sannomaru Plaza, Himeji Castle",
-              "lat": 34.8374,
-              "lng": 134.6933
-            }
-          }
+          "1": { "title": "Flower Boat at Red Bridge", "date": "2025.04.05", "gear": "Leica M10 + Summilux 50mm", "category": "spring morning", "location": { "name": "Beni-bashi Bridge", "lat": 34.8420, "lng": 134.6928 } },
+          "2": { "title": "Full View of Himeji Castle", "date": "2025.04.05", "gear": "Leica M10 + Summilux 50mm", "category": "spring evening", "location": { "name": "Sannomaru Plaza", "lat": 34.8390, "lng": 134.6935 } },
+          "3": { "title": "Night Cherry Blossoms", "date": "2025.04.09", "gear": "Leica M10 + Summilux 50mm", "category": "spring night", "location": { "name": "Sakuramon Bridge", "lat": 34.8385, "lng": 134.6931 } },
+          "4": { "title": "Cherry Blossoms and Castle", "date": "2025.04.01", "gear": "Leica M10 + Summilux 50mm", "category": "spring afternoon", "location": { "name": "Sannomaru Plaza", "lat": 34.8390, "lng": 134.6935 } },
+          "5": { "title": "From Sannomaru Plaza", "date": "2025.04.05", "gear": "Leica M10", "category": "spring afternoon", "location": { "name": "Sannomaru Plaza", "lat": 34.8390, "lng": 134.6935 } },
+          "6": { "title": "From Hakuro Junior High School Ground", "date": "2025.04.05", "gear": "Leica M10 + Summilux 50mm", "category": "spring afternoon", "location": { "name": "Hakuro Junior High School Ground", "lat": 34.8407, "lng": 134.6918 } },
+          "7": { "title": "Castle in Fresh Green from Otokoyama Reservoir", "date": "2025.05.20", "gear": "Leica M10 + Summilux 50mm", "category": "summer afternoon", "location": { "name": "Otokoyama Reservoir Park", "lat": 34.8445, "lng": 134.6950 } },
+          "8": { "title": "White Heron Castle from Cemetery", "date": "2025.05.04", "gear": "Xiaomi 15 Ultra", "category": "summer evening", "location": { "name": "Johoku Cemetery", "lat": 34.8440, "lng": 134.6910 } },
+          "9": { "title": "Castle Illuminated by Evening Sun", "date": "2025.07.29", "gear": "Leica M10 + Wide Tri-Elmar", "category": "summer evening", "location": { "name": "Himeyama Parking Area", "lat": 34.8365, "lng": 134.6945 } },
+          "10": { "title": "White Heron Castle from Sakuramon Bridge", "date": "2025.07.29", "gear": "Leica M10 + Wide Tri-Elmar", "category": "summer evening", "location": { "name": "Sakuramon Bridge", "lat": 34.8385, "lng": 134.6931 } },
+          "11": { "title": "Castle Under Blue Sky", "date": "2025.07.30", "gear": "Leica M10 + Wide Tri-Elmar", "category": "summer afternoon", "location": { "name": "Sannomaru Plaza", "lat": 34.8390, "lng": 134.6935 } },
+          "13": { "title": "White Heron Castle Beginning to Change Color", "date": "2025.11.13", "gear": "Leica M10", "category": "autumn afternoon", "location": { "name": "Shirotopia Memorial Park", "lat": 34.8355, "lng": 134.6905 } },
+          "14": { "title": "Inverted Castle from Hokusei-Kakushimon Ruins", "date": "2025.11.13", "gear": "Leica M10 + Summilux 50mm", "category": "autumn afternoon", "location": { "name": "Hokusei-Kakushimon Ruins", "lat": 34.8395, "lng": 134.6920 } },
+          "15": { "title": "Autumn Leaves at Art Museum and Castle", "date": "2025.11.13", "gear": "Leica M10 + Summilux 50mm", "category": "autumn afternoon", "location": { "name": "Himeji City Museum of Art", "lat": 34.8353, "lng": 134.6892 } },
+          "16": { "title": "Moat and Autumn Leaves", "date": "2025.11.13", "gear": "Leica M10 + Summilux 50mm", "category": "autumn afternoon", "location": { "name": "Inner Moat Area", "lat": 34.8380, "lng": 134.6915 } },
+          "17": { "title": "Otemon Gate in Evening Sun", "date": "2025.10.01", "gear": "Leica M10 + Summilux 50mm", "category": "autumn afternoon", "location": { "name": "Otemon Gate", "lat": 34.8380, "lng": 134.6925 } },
+          "18": { "title": "Autumn View from Sakuramon Bridge", "date": "2025.10.01", "gear": "Leica M10 + Summilux 50mm", "category": "autumn afternoon", "location": { "name": "Sakuramon Bridge", "lat": 34.8385, "lng": 134.6931 } },
+          "19": { "title": "Cherry Tree Awaiting Spring", "date": "2025.03.18", "gear": "Leica M10 + Summilux 50mm", "category": "winter afternoon", "location": { "name": "Sannomaru Plaza", "lat": 34.8390, "lng": 134.6935 } },
+          "20": { "title": "Winter Lights on Otemae", "date": "2025.12.31", "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN", "category": "winter night", "location": { "name": "Otemae Street", "lat": 34.8342, "lng": 134.6925 } },
+          "21": { "title": "White Heron from Castle View", "date": "2025.12.31", "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN", "category": "winter night", "location": { "name": "Himeji Castle Viewpoint", "lat": 34.8360, "lng": 134.6955 } },
+          "22": { "title": "Castle at First Light", "date": "2026.01.01", "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN", "category": "winter morning", "location": { "name": "Nagoyama", "lat": 34.8423, "lng": 134.6776 } },
+          "23": { "title": "New Year Water Salute", "date": "2026.01.11", "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN", "category": "winter afternoon", "location": { "name": "Sannomaru Plaza, Himeji Castle", "lat": 34.8374, "lng": 134.6933 } },
+          "24": { "title": "Rescue Team Demonstration", "date": "2026.01.11", "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN", "category": "winter afternoon", "location": { "name": "Sannomaru Plaza, Himeji Castle", "lat": 34.8374, "lng": 134.6933 } }
         };
 
-        const seasonRanges = {
-            'spring': [1, 6], 'summer': [7, 12], 'autumn': [13, 18], 'winter': [19, 24], 'special': [25, 36]
-        };
-
+        const seasonRanges = { 'spring': [1, 6], 'summer': [7, 12], 'autumn': [13, 18], 'winter': [19, 24], 'special': [25, 36] };
         let currentFilter = 'all';
         let currentModalId = null;
 
@@ -600,18 +350,19 @@
             }
         }
 
+        // Updated updateProgress function to show count instead of percentage
         function updateProgress() {
             const total = 36;
             const count = Object.keys(photosData).length;
-            const percent = Math.round((count / total) * 100);
+            // No percentage calculation needed for text display
             const el = document.getElementById('progress-text');
             let start = 0;
             if(count > 0) {
                 const timer = setInterval(() => {
                     start++;
                     el.innerText = start;
-                    if (start >= percent) clearInterval(timer);
-                }, 20);
+                    if (start >= count) clearInterval(timer);
+                }, 50);
             } else { el.innerText = 0; }
         }
 
