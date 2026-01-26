@@ -2,7 +2,7 @@
 <html lang="ja">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
     
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
@@ -76,22 +76,17 @@
             font-weight: 600;
         }
 
-        /* 特調リンク（白鷺三十六景用） */
+        /* 共通ヘッダースクリプト用に追加のスタイルが必要ならここに */
         .featured-link {
-            color: #1A3FB9 !important; /* 白鷺ブルー */
+            color: #1A3FB9 !important;
             font-weight: 600;
             display: flex;
             align-items: center;
             gap: 0.4rem;
         }
-        
         .featured-link:hover {
             background-color: rgba(26, 63, 185, 0.05);
             border-radius: 4px;
-        }
-
-        .featured-link .icon {
-            font-size: 1.1em;
         }
 
         @media (prefers-color-scheme: dark) {
@@ -99,12 +94,6 @@
                 background: rgba(255,255,255,0.15);
                 color: #fff;
                 border-color: #fff;
-            }
-            .featured-link {
-                color: #60a5fa !important;
-            }
-            .featured-link:hover {
-                background-color: rgba(96, 165, 250, 0.1);
             }
         }
 
@@ -320,29 +309,8 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="gallery.html" class="nav-link active">Gallery</a></li>
-                <!-- 白鷺三十六景リンクを追加 -->
-                <li>
-                    <a href="shirasagi36.html" class="nav-link featured-link">
-                        <span class="icon">🏯</span> 白鷺三十六景
-                    </a>
-                </li>
-                <li><a href="gear.html" class="nav-link">Gear</a></li>
-                <li><a href="writings.html" class="nav-link">Writings</a></li>
-                <li><a href="hongkong.html" class="nav-link">Hong Kong</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation (Injected by JS) -->
+    <script src="js/site-header.js"></script>
 
     <!-- Hero -->
     <header class="gallery-hero">
@@ -386,11 +354,6 @@
 
     <!-- Scripts -->
     <script>
-        // Navigation Logic
-        document.getElementById('nav-toggle').addEventListener('click', () => {
-            document.getElementById('nav-menu').classList.toggle('active');
-        });
-
         // Gallery Logic
         let allItems = [];
 
