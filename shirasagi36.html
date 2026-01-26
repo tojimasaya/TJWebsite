@@ -70,8 +70,8 @@
 </head>
 <body class="bg-washi-bg bg-washi-texture text-shirasagi-ink font-serif-jp antialiased selection:bg-shirasagi-blue selection:text-white">
 
-    <!-- Navigation (Safe Area Fix) -->
-    <!-- padding-top: env(safe-area-inset-top) でステータスバーの分だけ下げる -->
+    <!-- Navigation -->
+    <!-- ナビゲーションバーは通常通り上部に配置 -->
     <nav class="fixed w-full z-50 top-0 bg-washi-bg/95 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300" style="padding-top: env(safe-area-inset-top);">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -107,28 +107,33 @@
                 </div>
             </div>
         </div>
+    </nav>
 
-        <!-- Mobile Menu Overlay (Safe Area Fix) -->
-        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-6 transition-opacity duration-300 opacity-0 pointer-events-none" style="padding-top: env(safe-area-inset-top);">
+    <!-- Mobile Menu Overlay (完全に独立させ、画面中央に配置) -->
+    <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-[60] hidden flex-col items-center justify-center space-y-8 transition-opacity duration-300 opacity-0 pointer-events-none">
+        
+        <!-- 閉じるボタン (右上に配置、セーフエリア考慮) -->
+        <button onclick="toggleMobileMenu()" class="absolute right-6 p-4 text-gray-500 hover:text-shirasagi-ink" style="top: max(2rem, env(safe-area-inset-top));">
+            <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
+        </button>
+
+        <!-- メニュー項目 (画面中央) -->
+        <div class="flex flex-col items-center space-y-6">
             <a href="/" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Home</a>
             <a href="about.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">About</a>
             <a href="gallery.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gallery</a>
-            <a href="shirasagi36.html" class="text-xl font-serif-en tracking-widest text-shirasagi-blue font-bold border-b border-shirasagi-blue pb-1">白鷺三十六景</a>
+            <a href="shirasagi36.html" class="text-2xl font-serif-en tracking-widest text-shirasagi-blue font-bold border-b-2 border-shirasagi-blue pb-2">白鷺三十六景</a>
             <a href="gear.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gear</a>
             <a href="writings.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Writings</a>
             <a href="hongkong.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Hong Kong</a>
             
-            <a href="shirasagi36-en.html" class="text-sm font-sans border border-gray-400 rounded-full px-6 py-2 mt-4">English</a>
-            
-            <!-- 閉じるボタンもSafe Area分下げる -->
-            <button onclick="toggleMobileMenu()" class="absolute right-6 text-gray-500 p-2" style="top: calc(1.5rem + env(safe-area-inset-top));">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
-            </button>
+            <div class="pt-8">
+                <a href="shirasagi36-en.html" class="text-sm font-sans border border-gray-400 rounded-full px-8 py-3 mt-4 hover:bg-gray-800 hover:text-white transition-colors">English</a>
+            </div>
         </div>
-    </nav>
+    </div>
 
-    <!-- Hero Section (Padding increased for fixed nav) -->
-    <!-- pt-40: ナビゲーションの高さ + Safe Area分を考慮して余白を広めに確保 -->
+    <!-- Hero Section -->
     <header class="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden pb-10 pt-40 md:pt-32">
         
         <!-- 中央寄せコンテナ: 横並び配置 -->
@@ -198,7 +203,7 @@
                     
                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-end">
                         <div class="text-white mb-2 md:mb-0">
-                            <span class="text-[10px] md:text-xs font-serif-en tracking-widest opacity-80 mb-1 md:mb-2 block">LATEST VIEW — No.<span id="latest-number">--</span></span>
+                            <span class="text-[10px] md:text-xs font-serif-en tracking-widest opacity-80 mb-1 md:mb-2 block uppercase">LATEST VIEW — No.<span id="latest-number">--</span></span>
                             <h2 class="text-xl md:text-3xl font-bold font-serif-jp tracking-wide" id="latest-title">読み込み中...</h2>
                         </div>
                         <div class="hidden md:block">
@@ -294,9 +299,11 @@
             if (menu.classList.contains('hidden')) {
                 menu.classList.remove('hidden', 'pointer-events-none', 'opacity-0');
                 menu.classList.add('flex', 'opacity-100', 'pointer-events-auto');
+                document.body.style.overflow = 'hidden'; // 背景スクロール禁止
             } else {
                 menu.classList.remove('flex', 'opacity-100', 'pointer-events-auto');
                 menu.classList.add('hidden', 'pointer-events-none', 'opacity-0');
+                document.body.style.overflow = ''; // 背景スクロール解除
             }
         }
 
