@@ -18,23 +18,15 @@
         .gear-name { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; color: var(--text-color); }
         .gear-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 15px; }
         .gear-links a { color: var(--accent-color); text-decoration: none; font-size: 0.85rem; margin-right: 15px; }
+        /* featured-link styles will be loaded from site-header.js injected HTML if CSS is in style.css or here */
+        .featured-link { color: #1A3FB9 !important; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; }
+        .featured-link:hover { background-color: rgba(26, 63, 185, 0.05); border-radius: 4px; }
+        .featured-link .icon { font-size: 1.1em; }
+        @media (prefers-color-scheme: dark) { .featured-link { color: #60a5fa !important; } .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); } }
     </style>
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="gear.html" class="nav-link active">Gear</a></li>
-                <li><a href="writings.html" class="nav-link">Writings</a></li>
-                <li><a href="hongkong.html" class="nav-link">Hong Kong</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation will be injected by site-header.js -->
 
     <header class="detail-hero">
         <a href="gear.html" class="detail-back-link">← Back to Categories</a>
@@ -46,17 +38,18 @@
 
     <footer class="footer"><div class="footer-content"><p>&copy; 2026 Toji Masaya.</p></div></footer>
 
+    <!-- 共通スクリプトの読み込み -->
+    <script src="js/site-header.js"></script>
+    <script src="js/gear-data.js"></script>
     <script>
-        document.getElementById('nav-toggle').addEventListener('click', () => { document.getElementById('nav-menu').classList.toggle('active'); });
-        
-        async function loadData() {
-            try {
-                const res = await fetch('data/gear.json'); // パス修正
-                if (!res.ok) throw new Error('Network response was not ok');
-                const data = await res.json();
-                renderGrid('drone-grid', data.categories.drone.items);
-            } catch (e) { console.error(e); document.getElementById('drone-grid').innerText = 'Failed to load data.'; }
-        }
+        // gear-data.js が読み込まれた後に実行
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof gearData !== 'undefined') {
+                renderGrid('drone-grid', gearData.categories.drone.items);
+            } else {
+                document.getElementById('drone-grid').innerText = 'Data not found.';
+            }
+        });
 
         function renderGrid(id, items) {
             const container = document.getElementById(id);
@@ -70,7 +63,6 @@
                     </div>
                 </article>`).join('');
         }
-        document.addEventListener('DOMContentLoaded', loadData);
     </script>
 </body>
 </html>
