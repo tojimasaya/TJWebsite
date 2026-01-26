@@ -68,7 +68,7 @@
 </head>
 <body class="bg-washi-bg bg-washi-texture text-shirasagi-ink font-serif-body antialiased selection:bg-shirasagi-blue selection:text-white">
 
-    <!-- Navigation -->
+    <!-- Navigation (Updated) -->
     <nav class="fixed w-full z-50 top-0 bg-washi-bg/95 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -76,12 +76,19 @@
                     TOJI MASAYA
                 </a>
 
-                <div class="hidden md:flex items-center space-x-8 font-serif-display text-sm font-semibold tracking-widest text-gray-500">
+                <div class="hidden md:flex items-center space-x-6 font-serif-display text-sm font-semibold tracking-widest text-gray-500">
                     <a href="/" class="hover:text-shirasagi-blue transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-shirasagi-blue transition-colors">About</a>
                     <a href="gallery.html" class="hover:text-shirasagi-blue transition-colors">Gallery</a>
+                    <!-- Active Page -->
+                    <a href="shirasagi36-en.html" class="text-shirasagi-ink border-b border-shirasagi-ink pb-1 flex items-center gap-1">
+                        <span class="text-base">🏯</span> 36 Views
+                    </a>
                     <a href="gear.html" class="hover:text-shirasagi-blue transition-colors">Gear</a>
                     <a href="writings.html" class="hover:text-shirasagi-blue transition-colors">Writings</a>
-                    <a href="shirasagi36-en.html" class="text-shirasagi-ink border-b border-shirasagi-ink pb-1">Shirasagi 36</a>
+                    <a href="hongkong.html" class="hover:text-shirasagi-blue transition-colors">Hong Kong</a>
+                    
+                    <!-- Language Switcher -->
                     <a href="shirasagi36.html" class="ml-4 text-xs font-sans font-medium border border-gray-400 rounded-full px-4 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">日本語</a>
                 </div>
 
@@ -93,12 +100,16 @@
             </div>
         </div>
 
-        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-8 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <!-- Mobile Menu Overlay -->
+        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-6 transition-opacity duration-300 opacity-0 pointer-events-none">
             <a href="/" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Home</a>
+            <a href="about.html" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">About</a>
             <a href="gallery.html" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gallery</a>
+            <a href="shirasagi36-en.html" class="text-xl font-serif-display tracking-widest text-shirasagi-blue font-bold border-b border-shirasagi-blue pb-1">36 Views</a>
             <a href="gear.html" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gear</a>
             <a href="writings.html" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Writings</a>
-            <a href="shirasagi36-en.html" class="text-xl font-serif-display tracking-widest text-shirasagi-blue font-bold border-b border-shirasagi-blue pb-1">Shirasagi 36</a>
+            <a href="hongkong.html" class="text-xl font-serif-display tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Hong Kong</a>
+            
             <a href="shirasagi36.html" class="text-sm font-sans border border-gray-400 rounded-full px-6 py-2 mt-4">日本語</a>
             <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-gray-500 p-2">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -234,6 +245,7 @@
             </button>
             <div class="w-full md:w-3/4 h-[40vh] md:h-auto bg-gray-50 flex items-center justify-center relative group p-4 md:p-8">
                 <img id="modal-img" src="" class="max-w-full max-h-full object-contain shadow-lg" alt="">
+                <!-- Mobile: Make arrows tap-friendly -->
                 <button class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition md:opacity-0 group-hover:opacity-100 p-2" onclick="prevPhoto()">
                     <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
@@ -336,14 +348,14 @@
                              loading="lazy"
                              class="w-full h-full object-cover transition duration-700 group-hover:scale-110 filter sepia-[0.1] group-hover:sepia-0">
                         <div class="absolute inset-0 bg-shirasagi-ink/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
-                            <span class="text-white font-serif-display text-lg tracking-widest mb-2 border-b border-white/50 pb-1">No.${String(i).padStart(2, '0')}</span>
-                            <h4 class="text-white font-serif-display text-sm tracking-widest text-center">${photo.title}</h4>
+                            <span class="text-white font-serif-en text-lg tracking-widest mb-2 border-b border-white/50 pb-1">No.${String(i).padStart(2, '0')}</span>
+                            <h4 class="text-white font-serif-jp text-sm tracking-widest text-center">${photo.title}</h4>
                         </div>
                     `;
                 } else {
                     card.className = "aspect-square bg-white rounded-sm border border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-300 group";
                     card.innerHTML = `
-                        <span class="font-serif-display text-2xl font-light opacity-30">${String(i).padStart(2, '0')}</span>
+                        <span class="font-serif-en text-2xl font-light opacity-30">${String(i).padStart(2, '0')}</span>
                     `;
                 }
                 grid.appendChild(card);
@@ -409,7 +421,7 @@
 
             document.getElementById('modal-title').innerText = p.title;
             document.getElementById('modal-num').innerText = String(id).padStart(2, '0');
-            document.getElementById('modal-desc').innerText = p.desc || (p.location ? `Taken at ${p.location.name}.` : "Description pending.");
+            document.getElementById('modal-desc').innerText = p.desc || (p.location ? `${p.location.name}にて。` : "解説は準備中です。");
             document.getElementById('modal-date').innerText = p.date;
             document.getElementById('modal-gear').innerText = p.gear;
 
