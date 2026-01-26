@@ -272,7 +272,7 @@
         </div>
     </div>
 
-    <!-- Logic (Same as before) -->
+    <!-- Logic (Updated for count display) -->
     <script>
         // Toggle Mobile Menu
         function toggleMobileMenu() {
@@ -502,18 +502,19 @@
             }
         }
 
+        // Updated updateProgress function to show count instead of percentage
         function updateProgress() {
             const total = 36;
             const count = Object.keys(photosData).length;
-            const percent = Math.round((count / total) * 100);
+            // No percentage calculation needed for text display
             const el = document.getElementById('progress-text');
             let start = 0;
             if(count > 0) {
                 const timer = setInterval(() => {
                     start++;
                     el.innerText = start;
-                    if (start >= percent) clearInterval(timer);
-                }, 20);
+                    if (start >= count) clearInterval(timer);
+                }, 50);
             } else { el.innerText = 0; }
         }
 
