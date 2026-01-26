@@ -30,7 +30,6 @@
                     backgroundImage: {
                         // 繊維感のある和紙テクスチャ（SVGパターン）
                         'washi-texture': "url('data:image/svg+xml,%3Csvg width=\\'200\\' height=\\'200\\' viewBox=\\'0 0 200 200\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cfilter id=\\'noise\\' x=\\'0\\' y=\\'0\\'%3E%3CfeTurbulence type=\\'fractalNoise\\' baseFrequency=\\'0.65\\' numOctaves=\\'3\\' stitchTiles=\\'stitch\\'/%3E%3C/filter%3E%3Crect width=\\'100%25\\' height=\\'100%25\\' filter=\\'url(%23noise)\\' opacity=\\'0.08\\'/%3E%3C/svg%3E')",
-                        'seigaiha': "url('data:image/svg+xml,%3Csvg width=\\'20\\' height=\\'20\\' viewBox=\\'0 0 20 20\\' xmlns=\\'http://www.w3.org/2000/svg\\'%3E%3Cg fill=\\'%23d1d5db\\' fill-opacity=\\'0.4\\' fill-rule=\\'evenodd\\'%3E%3Ccircle cx=\\'3\\' cy=\\'3\\' r=\\'3\\'/%3E%3Ccircle cx=\\'13\\' cy=\\'13\\' r=\\'3\\'/%3E%3C/g%3E%3C/svg%3E')",
                     }
                 }
             }
@@ -73,7 +72,7 @@
 <body class="bg-washi-bg bg-washi-texture text-shirasagi-ink font-serif-jp antialiased selection:bg-shirasagi-blue selection:text-white">
 
     <!-- Navigation -->
-    <nav class="fixed w-full z-50 top-0 bg-washi-bg/90 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300">
+    <nav class="fixed w-full z-50 top-0 bg-washi-bg/95 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
                 <!-- Logo -->
@@ -106,12 +105,12 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/95 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-8 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-8 transition-opacity duration-300 opacity-0 pointer-events-none">
             <a href="/" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Home</a>
             <a href="gallery.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gallery</a>
             <a href="gear.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gear</a>
             <a href="writings.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Writings</a>
-            <a href="shirasagi36.html" class="text-xl font-serif-en tracking-widest text-shirasagi-blue font-bold border-b border-shirasagi-blue pb-1">Shirasagi 36</a>
+            <a href="shirasagi36.html" class="text-xl font-serif-en tracking-widest text-shirasagi-blue font-bold border-b border-shirasagi-blue pb-1">白鷺三十六景</a>
             <a href="shirasagi36-en.html" class="text-sm font-sans border border-gray-400 rounded-full px-6 py-2 mt-4">English</a>
             
             <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-gray-500 p-2">
@@ -121,27 +120,28 @@
     </nav>
 
     <!-- Hero Section (Washi Style) -->
-    <header class="relative min-h-[85vh] flex flex-col items-center justify-center overflow-hidden pt-20">
+    <header class="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-24 md:pt-20 pb-12">
         
-        <div class="max-w-4xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-16 md:gap-32 p-8 fade-in">
+        <div class="max-w-4xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-32 p-6 md:p-8 fade-in">
             
             <!-- メインタイトル (縦書き) -->
-            <div class="writing-vertical h-[50vh] flex items-center select-none">
-                <div class="flex items-center gap-6">
-                    <h1 class="text-6xl md:text-8xl font-bold text-shirasagi-ink leading-relaxed drop-shadow-sm">
+            <div class="writing-vertical h-[45vh] md:h-[50vh] flex items-center select-none justify-center md:justify-start">
+                <div class="flex items-center gap-4 md:gap-6">
+                    <!-- スマホ向けにフォントサイズ調整 -->
+                    <h1 class="text-5xl md:text-8xl font-bold text-shirasagi-ink leading-relaxed drop-shadow-sm">
                         白鷺三十六景
                     </h1>
                     <!-- サブタイトル -->
-                    <div class="flex flex-col gap-4 mt-8 pt-8 border-t border-gray-300">
-                        <p class="text-lg md:text-xl text-gray-600 font-serif-en tracking-widest">Shirasagi Sanjūrokkei</p>
+                    <div class="flex flex-col gap-4 mt-6 md:mt-8 pt-6 md:pt-8 border-t border-gray-300">
+                        <p class="text-base md:text-xl text-gray-600 font-serif-en tracking-widest">Shirasagi Sanjūrokkei</p>
                     </div>
                 </div>
             </div>
 
             <!-- ステートメント & 落款 -->
-            <div class="md:h-[50vh] flex flex-col justify-between py-4 text-center md:text-left">
-                <div class="space-y-8 max-w-sm">
-                    <div class="w-12 h-1 bg-shirasagi-blue mb-8 mx-auto md:mx-0"></div>
+            <div class="md:h-[50vh] flex flex-col justify-between py-4 text-center md:text-left w-full md:w-auto items-center md:items-start">
+                <div class="space-y-6 md:space-y-8 max-w-sm">
+                    <div class="w-12 h-1 bg-shirasagi-blue mb-6 md:mb-8 mx-auto md:mx-0"></div>
                     <p class="text-base leading-loose text-gray-700 font-medium">
                         白鷺が羽を休めるが如く。<br>
                         季節、時間、角度。<br>
@@ -155,7 +155,7 @@
                 </div>
 
                 <!-- 落款風デザイン -->
-                <div class="mt-12 flex justify-center md:justify-start items-end gap-4">
+                <div class="mt-8 md:mt-12 flex justify-center md:justify-start items-end gap-4 scale-90 md:scale-100">
                     <div class="flex flex-col items-center gap-2">
                         <div class="w-12 h-12 hanko-border flex items-center justify-center bg-white/50">
                             <span class="text-shirasagi-red font-bold text-sm writing-vertical leading-none" style="letter-spacing: 0;">田路<br>写</span>
@@ -173,9 +173,9 @@
         </div>
 
         <!-- Scroll Indicator -->
-        <div class="absolute bottom-12 left-1/2 transform -translate-x-1/2 animate-bounce">
-            <span class="text-xs font-serif-en tracking-[0.2em] text-gray-400 mb-2 block text-center">SCROLL</span>
-            <div class="w-[1px] h-12 bg-gray-300 mx-auto"></div>
+        <div class="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce opacity-50">
+            <span class="text-[10px] md:text-xs font-serif-en tracking-[0.2em] text-gray-400 mb-2 block text-center">SCROLL</span>
+            <div class="w-[1px] h-8 md:h-12 bg-gray-300 mx-auto"></div>
         </div>
     </header>
 
@@ -183,15 +183,15 @@
     <main class="relative z-10 pb-32">
         
         <!-- Latest/Featured Section -->
-        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-24">
+        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 md:mb-24">
             <div class="bg-white p-2 md:p-4 rounded-sm shadow-sm border border-gray-100">
-                <div class="bg-washi-bg relative overflow-hidden group cursor-pointer aspect-video md:aspect-[21/9]" onclick="openModalWithLatest()">
+                <div class="bg-washi-bg relative overflow-hidden group cursor-pointer aspect-[4/3] md:aspect-[21/9]" onclick="openModalWithLatest()">
                     <img id="latest-image" src="" alt="Latest Shot" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 ease-in-out">
                     
-                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/60 to-transparent p-6 md:p-10 flex justify-between items-end">
-                        <div class="text-white">
-                            <span class="text-xs font-serif-en tracking-widest opacity-80 mb-2 block">LATEST VIEW — No.<span id="latest-number">--</span></span>
-                            <h2 class="text-2xl md:text-3xl font-bold font-serif-jp tracking-wide" id="latest-title">読み込み中...</h2>
+                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-end">
+                        <div class="text-white mb-2 md:mb-0">
+                            <span class="text-[10px] md:text-xs font-serif-en tracking-widest opacity-80 mb-1 md:mb-2 block">LATEST VIEW — No.<span id="latest-number">--</span></span>
+                            <h2 class="text-xl md:text-3xl font-bold font-serif-jp tracking-wide" id="latest-title">読み込み中...</h2>
                         </div>
                         <div class="hidden md:block">
                             <span class="inline-block px-4 py-2 border border-white/30 text-white text-xs tracking-widest hover:bg-white hover:text-black transition-colors">VIEW DETAIL</span>
@@ -205,36 +205,36 @@
         <section class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8" id="gallery-anchor">
             
             <!-- Controls -->
-            <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-300 pb-4 mb-12">
-                <div class="mb-6 md:mb-0">
+            <div class="flex flex-col md:flex-row justify-between items-end border-b border-gray-300 pb-4 mb-8 md:mb-12">
+                <div class="mb-6 md:mb-0 w-full md:w-auto">
                     <h3 class="text-xl font-bold font-serif-jp text-shirasagi-ink flex items-center gap-4">
                         全三十六景一覧
                     </h3>
                     <p class="text-sm text-gray-500 mt-2 font-serif-jp">現在 <span id="progress-text" class="text-lg font-bold text-shirasagi-blue">0</span> 景まで完成</p>
                 </div>
                 
-                <div class="flex flex-wrap gap-3 font-serif-jp text-sm">
-                    <button class="filter-btn active px-5 py-2 rounded-sm border border-gray-400 bg-shirasagi-ink text-white transition-all hover:opacity-80" data-filter="all">すべて</button>
-                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="spring">春</button>
-                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="summer">夏</button>
-                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="autumn">秋</button>
-                    <button class="filter-btn px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all" data-filter="winter">冬</button>
+                <div class="flex flex-wrap gap-2 md:gap-3 font-serif-jp text-[12px] md:text-sm w-full md:w-auto">
+                    <button class="filter-btn active px-3 md:px-5 py-2 rounded-sm border border-gray-400 bg-shirasagi-ink text-white transition-all hover:opacity-80 flex-grow md:flex-grow-0 text-center" data-filter="all">すべて</button>
+                    <button class="filter-btn px-3 md:px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all flex-grow md:flex-grow-0 text-center" data-filter="spring">春</button>
+                    <button class="filter-btn px-3 md:px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all flex-grow md:flex-grow-0 text-center" data-filter="summer">夏</button>
+                    <button class="filter-btn px-3 md:px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all flex-grow md:flex-grow-0 text-center" data-filter="autumn">秋</button>
+                    <button class="filter-btn px-3 md:px-5 py-2 rounded-sm border border-gray-300 bg-transparent text-gray-600 hover:border-shirasagi-blue hover:text-shirasagi-blue transition-all flex-grow md:flex-grow-0 text-center" data-filter="winter">冬</button>
                 </div>
             </div>
 
             <!-- Grid System -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-6 md:gap-8" id="shirasagi-grid">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-6 lg:gap-8" id="shirasagi-grid">
                 <!-- Javascript populates this -->
             </div>
         </section>
     </main>
 
     <!-- Footer -->
-    <footer class="bg-shirasagi-ink text-white/80 py-16 border-t border-gray-800">
+    <footer class="bg-shirasagi-ink text-white/80 py-12 md:py-16 border-t border-gray-800">
         <div class="max-w-7xl mx-auto px-4 text-center">
-            <div class="mb-8 font-serif-en text-3xl tracking-[0.2em] font-light">TOJI MASAYA</div>
+            <div class="mb-8 font-serif-en text-2xl md:text-3xl tracking-[0.2em] font-light">TOJI MASAYA</div>
             <div class="w-8 h-[1px] bg-gray-600 mx-auto mb-8"></div>
-            <p class="text-xs font-sans tracking-wide opacity-60">
+            <p class="text-[10px] md:text-xs font-sans tracking-wide opacity-60">
                 &copy; 2025 Toji Masaya. All rights reserved.<br>
                 Himeji, Japan.
             </p>
@@ -246,26 +246,27 @@
         <div class="absolute inset-0 bg-washi-bg/95 backdrop-blur-md transition-opacity opacity-0" id="modal-backdrop"></div>
         <div class="relative w-full max-w-6xl max-h-[90vh] bg-white flex flex-col md:flex-row shadow-2xl overflow-hidden transform scale-95 opacity-0 transition-all duration-500 border border-gray-100" id="modal-content">
             <button class="absolute top-4 right-4 z-50 text-gray-500 hover:text-shirasagi-ink bg-white/80 rounded-full p-2 transition-all" onclick="closeModal()">
-                <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
+                <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            <div class="w-full md:w-3/4 h-[50vh] md:h-auto bg-gray-50 flex items-center justify-center relative group p-4 md:p-8">
+            <div class="w-full md:w-3/4 h-[40vh] md:h-auto bg-gray-50 flex items-center justify-center relative group p-4 md:p-8">
                 <img id="modal-img" src="" class="max-w-full max-h-full object-contain shadow-lg" alt="">
-                <button class="absolute left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="prevPhoto()">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path></svg>
+                <!-- Mobile: Make arrows tap-friendly -->
+                <button class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition md:opacity-0 group-hover:opacity-100 p-2" onclick="prevPhoto()">
+                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
-                <button class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition opacity-0 group-hover:opacity-100 hidden md:block" onclick="nextPhoto()">
-                    <svg class="w-10 h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg>
+                <button class="absolute right-2 md:right-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition md:opacity-0 group-hover:opacity-100 p-2" onclick="nextPhoto()">
+                    <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
-            <div class="w-full md:w-1/4 bg-white p-8 flex flex-col overflow-y-auto border-l border-gray-100">
+            <div class="w-full md:w-1/4 bg-white p-6 md:p-8 flex flex-col overflow-y-auto border-l border-gray-100">
                 <div class="mb-auto">
-                    <span class="text-shirasagi-blue font-serif-en text-xs font-bold tracking-widest block mb-3">No. <span id="modal-num">01</span></span>
-                    <h3 class="text-2xl font-bold font-serif-jp mb-6 leading-normal text-shirasagi-ink" id="modal-title">タイトル</h3>
+                    <span class="text-shirasagi-blue font-serif-en text-xs font-bold tracking-widest block mb-2 md:mb-3">No. <span id="modal-num">01</span></span>
+                    <h3 class="text-xl md:text-2xl font-bold font-serif-jp mb-4 md:mb-6 leading-normal text-shirasagi-ink" id="modal-title">タイトル</h3>
                     <p class="text-gray-600 text-sm leading-8 font-light font-serif-jp text-justify" id="modal-desc">
                         <!-- 解説 -->
                     </p>
                 </div>
-                <div class="border-t border-gray-100 pt-6 space-y-4 text-xs font-sans text-gray-500 mt-8">
+                <div class="border-t border-gray-100 pt-4 md:pt-6 space-y-3 md:space-y-4 text-xs font-sans text-gray-500 mt-6 md:mt-8">
                     <div class="flex items-center gap-3"><span class="w-16 opacity-50">DATE</span> <span id="modal-date" class="font-medium text-gray-800">--</span></div>
                     <div class="flex items-center gap-3"><span class="w-16 opacity-50">GEAR</span> <span id="modal-gear" class="font-medium text-gray-800">--</span></div>
                     <div class="flex items-center gap-3" id="modal-map-container">
@@ -277,7 +278,7 @@
         </div>
     </div>
 
-    <!-- Logic -->
+    <!-- Logic (Same as before) -->
     <script>
         // Toggle Mobile Menu
         function toggleMobileMenu() {
