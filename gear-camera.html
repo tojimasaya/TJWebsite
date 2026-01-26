@@ -86,23 +86,37 @@
             background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px;
         }
         .gear-links a { color: var(--accent-color); text-decoration: none; font-size: 0.85rem; margin-right: 15px; }
+
+        /* 特調リンク（白鷺三十六景用） */
+        .featured-link {
+            color: #1A3FB9 !important; /* 白鷺ブルー */
+            font-weight: 600;
+            display: flex;
+            align-items: center;
+            gap: 0.4rem;
+        }
+        
+        .featured-link:hover {
+            background-color: rgba(26, 63, 185, 0.05);
+            border-radius: 4px;
+        }
+
+        .featured-link .icon {
+            font-size: 1.1em;
+        }
+
+        @media (prefers-color-scheme: dark) {
+            .featured-link {
+                color: #60a5fa !important;
+            }
+            .featured-link:hover {
+                background-color: rgba(96, 165, 250, 0.1);
+            }
+        }
     </style>
 </head>
 <body>
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="gear.html" class="nav-link active">Gear</a></li>
-                <li><a href="writings.html" class="nav-link">Writings</a></li>
-                <li><a href="hongkong.html" class="nav-link">Hong Kong</a></li>
-            </ul>
-        </div>
-    </nav>
+    <!-- Navigation will be injected by site-header.js -->
 
     <header class="detail-hero">
         <a href="gear.html" class="detail-back-link">← Back to Categories</a>
@@ -122,81 +136,42 @@
 
     <footer class="footer"><div class="footer-content"><p>&copy; 2026 Toji Masaya.</p></div></footer>
 
+    <!-- 共通スクリプトの読み込み -->
+    <script src="js/site-header.js"></script>
+    <script src="js/gear-data.js"></script>
     <script>
-        document.getElementById('nav-toggle').addEventListener('click', () => {
-            document.getElementById('nav-menu').classList.toggle('active');
-        });
-
-        async function loadData() {
-            try {
-                const res = await fetch('data/gear.json'); 
-                if (!res.ok) throw new Error(`HTTP error! status: ${res.status}`);
-                const data = await res.json();
-                
-                const items = data.categories.camera.items;
+        document.addEventListener('DOMContentLoaded', () => {
+            if (typeof gearData !== 'undefined') {
+                const items = gearData.categories.camera.items;
                 const bodyItems = [];
                 const lensItems = [];
 
-                // ボディ判定用の強力なキーワード（ここに含まれれば問答無用でボディ）
-                const bodyKeywords = [
-                    'leica m10', 'leica sl', 'leica q', 'leica d-lux', 
-                    'fujifilm', 'x100', 'gfx', 'x-pro', 'x-t', 'x-e',
-                    'ricoh', 'gr', 'pentax', 
-                    'sony alpha', 'sony a7', 'sony a9', 'sony a1', 'sony zv',
-                    'panasonic', 'lumix', 'nikon', 'canon', 'hasselblad',
-                    'sigma fp', // Sigma fp対策
-                    'body', 'camera'
-                ];
-
-                // レンズ判定用のキーワード（ボディキーワードに該当しなかった場合、これを含めばレンズ）
-                const lensKeywords = [
-                    'mm', // 焦点距離 (28-70mmなど)
-                    'f/', 'f1.', 'f2.', 'f3.', 'f4.', 'f5.', 'f6.', // F値
-                    'summilux', 'summicron', 'elmarit', 'noctilux', 'summaron', 
-                    'apo', 'nokton', 'ultron', 'skopar', 'biogon', 'planar', 
-                    'elmar', 'hektor', 'summarit', 'thambar', 'telyt', 
-                    'macro', 'zoom', 'vario',
-                    'dg', 'dn', 'art', 'contemporary', 'sports', // Sigmaレンズの特徴
-                    'adapter', 'mount', 'visoflex' // アクセサリー類もレンズ側へ
-                ];
+                // キーワードでボディとレンズを振り分け
+                const bodyKeywords = ['camera', 'body', 'leica m', 'leica sl', 'leica q', 'fujifilm', 'sony', 'panasonic', 'ricoh', 'gr', 'xiaomi'];
+                const lensKeywords = ['mm', 'f/', 'summilux', 'summicron', 'elmarit', 'noctilux', 'apo', 'nokton', 'ultron', 'biogon', 'planar', 'elmar', 'tri-elmar', 'zoom', 'lens'];
 
                 items.forEach(item => {
                     const name = item.name.toLowerCase();
-                    const id = item.id.toLowerCase();
-
-                    // 1. ボディ判定（最優先）
-                    // マウントアダプターやケース等の誤判定を防ぐため、除外ワードもチェック
-                    if (bodyKeywords.some(k => name.includes(k) || id.includes(k))) {
-                        if (!name.includes('adapter') && !name.includes('case') && !name.includes('mount')) {
-                            bodyItems.push(item);
-                            return;
-                        }
-                    }
-
-                    // 2. レンズ判定
+                    // レンズキーワードが先にマッチするか確認
                     if (lensKeywords.some(k => name.includes(k))) {
                         lensItems.push(item);
-                        return;
+                    } else {
+                        // それ以外はボディ扱い
+                        bodyItems.push(item);
                     }
-
-                    // 3. どちらにも引っかからない場合（不明なアイテム）
-                    // 基本的にはボディ扱いにして目立たせる（またはレンズに入れても良いが、今回はボディへ）
-                    bodyItems.push(item);
                 });
 
                 renderGrid('body-grid', bodyItems);
                 renderGrid('lens-grid', lensItems);
-            } catch (e) {
-                console.error(e);
-                document.getElementById('body-grid').innerHTML = '<p>データの読み込みに失敗しました。</p>';
-                document.getElementById('lens-grid').innerHTML = '';
+            } else {
+                document.getElementById('body-grid').innerText = 'Data could not be loaded.';
             }
-        }
+        });
 
         function renderGrid(id, items) {
             const container = document.getElementById(id);
             if (items.length === 0) {
-                container.innerHTML = '<p style="padding:20px; color:#999;">アイテムがありません</p>';
+                container.innerHTML = '<p style="padding:20px; color:#999;">No items found.</p>';
                 return;
             }
             container.innerHTML = items.map(item => `
@@ -217,8 +192,6 @@
                 </article>
             `).join('');
         }
-
-        document.addEventListener('DOMContentLoaded', loadData);
     </script>
 </body>
 </html>
