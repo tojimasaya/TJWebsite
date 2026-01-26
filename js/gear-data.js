@@ -1,6 +1,3 @@
-// JSONデータをJavaScriptオブジェクトとして直接定義します
-// これにより fetch エラーを回避できます
-
 const gearData = {
   "updated_at": "2025-12-10T00:00:00Z",
   "categories": {
@@ -16,6 +13,7 @@ const gearData = {
           "brand": "Leica",
           "image": "assets/images/gear/m10.jpg",
           "status": "available",
+          "type": "body",
           "specs": ["24MP Full Frame", "Rangefinder", "M-Mount"],
           "description": "デジタルMの中でもフィルム機にもっとも近いサイズ感を持つ世代のM10。24MPセンサーと素直な色再現で、レンジファインダーらしい“光を読んで合わせる”撮影感覚を保ちながら、現代的なダイナミックレンジと高感度耐性を備えている。",
           "links": {
@@ -29,35 +27,126 @@ const gearData = {
           "brand": "Leica",
           "image": "assets/images/gear/sl2s.jpg",
           "status": "available",
-          "specs": ["24.6MP BSI CMOS", "L-Mount"],
+          "type": "body",
+          "specs": ["24.6MP BSI CMOS", "L-Mount", "5-axis IBIS"],
           "description": "24.6MPのBSIセンサーと5軸IBISを備えたフルサイズミラーレス。解像力よりも階調と高感度耐性を重視したチューニングで、暗所や動画撮影の“保険”として頼りになるボディ。",
           "links": {
             "official": "https://leica-camera.com/ja-JP/photography/cameras/sl/sl2-s-reporter/technical-specification"
           }
         },
         {
+          "id": "leica-m2",
+          "name": "Leica M2",
+          "brand": "Leica",
+          "image": "assets/images/gear/m2.jpg",
+          "status": "available",
+          "type": "body",
+          "specs": ["Mechanical", "0.72x Viewfinder", "M-Mount"],
+          "description": "1958年登場の完全機械式Mボディ。露出計を持たず、絞り・シャッター・距離を自分で決めて撮る“レンジファインダーの基本形”。0.72倍ファインダーには35/50/90mm枠が入る。",
+          "links": {
+            "manual": "https://www.cameramanuals.org/leica_pdf/leica_m2.pdf"
+          }
+        },
+        {
+          "id": "leica-c-typ112",
+          "name": "Leica C (Typ 112)",
+          "brand": "Leica",
+          "image": "assets/images/gear/leica_c.jpg",
+          "status": "unused",
+          "type": "body",
+          "specs": ["1/1.7-inch Sensor", "12.1MP", "F2.0-5.9"],
+          "description": "コンパクトなボディに詰まった、ライカの哲学。",
+          "links": {}
+        },
+        {
+          "id": "leica-d-lux-typ109",
+          "name": "Leica D-LUX (Typ 109)",
+          "brand": "Leica",
+          "image": "assets/images/gear/leica_d-lux.jpg",
+          "status": "unused",
+          "type": "body",
+          "specs": ["4/3-inch Sensor", "12.8MP", "F1.7-2.8"],
+          "description": "大型センサーと明るいレンズを持つ、本格的なコンパクトカメラ。",
+          "links": {}
+        },
+        {
           "id": "summilux-35-fle",
-          "name": "Summilux-M 35mm f/1.4 ASPH",
+          "name": "Summilux-M 35mm f/1.4 ASPH (11663)",
           "brand": "Leica",
           "image": "assets/images/gear/lenses/summilux-35-fle.jpg",
           "status": "available",
-          "specs": ["35mm F1.4", "ASPH FLE"],
+          "type": "lens",
+          "specs": ["35mm F1.4", "ASPH FLE", "M-Mount"],
           "description": "FLE（フローティングエレメント）搭載の現代ルクス。近接から無限遠まで安定したシャープネスを保ちながら、開放では柔らかな空気感を残す。旅先で一本だけ選ぶならこれ。",
           "links": {
-            "reference": "https://wiki.l-camera-forum.com/"
+            "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=35mm_f/1.4_ASPH.fle_Summilux-M"
           }
         },
-         {
+        {
+          "id": "summilux-50-v2",
+          "name": "Summilux-M 50mm f/1.4 v2",
+          "brand": "Leica",
+          "image": "assets/images/gear/lenses/summilux-50.jpg",
+          "status": "available",
+          "type": "lens",
+          "specs": ["50mm F1.4", "Vintage (1973)", "M-Mount"],
+          "description": "柔らかな輪郭、滲むハイライト、クラシカルなボケ味。球面レンズ構成による、現行ASPHにはない優しい描写。オールドルクス特有の甘さと空気感が魅力。",
+          "links": {}
+        },
+        {
+          "id": "elmarit-28-v4",
+          "name": "Elmarit-M 28mm f/2.8 v4",
+          "brand": "Leica",
+          "image": "assets/images/gear/lenses/elmarit-28.jpg",
+          "status": "available",
+          "type": "lens",
+          "specs": ["28mm F2.8", "Compact", "M-Mount"],
+          "description": "コンパクトで軽量。M型の28mmといえばこれ。開放から周辺まで安定してシャープ。スナップでは軽快そのもの。",
+          "links": {}
+        },
+        {
           "id": "tri-elmar",
           "name": "Tri-Elmar-M 16-18-21mm f/4 ASPH",
           "brand": "Leica",
           "image": "assets/images/gear/lenses/tri-elmar.jpg",
           "status": "available",
-          "specs": ["16/18/21mm F4"],
+          "type": "lens",
+          "specs": ["16/18/21mm F4", "WATE", "M-Mount"],
           "description": "超広角で三つの焦点距離を切り替えられるWATE。単焦点並みの描写を保ちながら、超広角の運用を驚くほどシンプルにしてくれる。",
-          "links": {
-            "reference": "https://wiki.l-camera-forum.com/"
-          }
+          "links": {}
+        },
+        {
+          "id": "summarit-75",
+          "name": "Summarit-M 75mm f/2.5",
+          "brand": "Leica",
+          "image": "assets/images/gear/lenses/summarit-75.jpg",
+          "status": "available",
+          "type": "lens",
+          "specs": ["75mm F2.5", "M-Mount"],
+          "description": "11枚羽根の美しいボケ。中望遠の距離感は、街中での切り取りやポートレートに独特の空気感を生む。",
+          "links": {}
+        },
+        {
+          "id": "planar-50-zm",
+          "name": "Carl Zeiss Planar T* 2/50 ZM",
+          "brand": "Carl Zeiss",
+          "image": "assets/images/gear/lenses/carlzeiss-50.jpg",
+          "status": "available",
+          "type": "lens",
+          "specs": ["50mm F2.0", "M-Mount Compatible"],
+          "description": "極めて高い解像度と、画面全体にわたる均等な光量分布が特徴。ライカの50mmとは異なる、理知的で端正な画作りが魅力。",
+          "links": {}
+        },
+        {
+          "id": "sigma-24-70-dgdn",
+          "name": "Sigma 24-70mm F2.8 DG DN Art",
+          "brand": "Sigma",
+          "image": "assets/images/gear/lenses/sigma.jpg",
+          "status": "available",
+          "type": "lens",
+          "specs": ["24-70mm F2.8", "L-Mount", "Art Line"],
+          "description": "Lマウント唯一の大口径標準ズーム。Artラインの高い光学性能を持ち、24mmから70mmまでズーム全域で安定した解像力を発揮する。",
+          "links": {}
         }
       ]
     },
@@ -133,7 +222,7 @@ const gearData = {
       "title": "Daily Drivers",
       "subtitle": "毎日使う定番機材",
       "hero_image": "assets/images/gear/editing.jpg",
-      "description": "Mac／iPad／iPhoneを中心に、毎日を支える常用デジタル。",
+      "description": "Mac／iPad／iPhoneを中心に、毎日を支える常用デジタル。出先でも完結できる環境。",
       "items": [
         {
           "id": "macbook-pro-14-m3",
