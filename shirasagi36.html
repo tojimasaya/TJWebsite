@@ -87,7 +87,7 @@
                     <a href="gear.html" class="hover:text-shirasagi-blue transition-colors">Gear</a>
                     <a href="writings.html" class="hover:text-shirasagi-blue transition-colors">Writings</a>
                     <!-- Active Page -->
-                    <a href="shirasagi36.html" class="text-shirasagi-ink border-b border-shirasagi-ink pb-1 font-semibold">Shirasagi 36</a>
+                    <a href="shirasagi36.html" class="text-shirasagi-ink border-b border-shirasagi-ink pb-1 font-semibold">白鷺三十六景</a>
                     
                     <!-- Language Switcher -->
                     <a href="shirasagi36-en.html" class="ml-4 text-xs font-sans font-medium border border-gray-400 rounded-full px-4 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">
@@ -120,35 +120,36 @@
     </nav>
 
     <!-- Hero Section (Washi Style) -->
-    <header class="relative min-h-[90vh] flex flex-col items-center justify-center overflow-hidden pt-24 md:pt-20 pb-12">
+    <!-- 修正: pt-32で上部余白を確保、min-h-screenで全体高さを確保 -->
+    <header class="relative min-h-screen flex flex-col items-center justify-center overflow-hidden pt-32 pb-20 md:pt-20">
         
-        <div class="max-w-4xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-10 md:gap-32 p-6 md:p-8 fade-in">
+        <div class="max-w-4xl mx-auto w-full flex flex-col md:flex-row items-center justify-center gap-12 md:gap-32 p-6 md:p-8 fade-in">
             
             <!-- メインタイトル (縦書き) -->
-            <div class="writing-vertical h-[45vh] md:h-[50vh] flex items-center select-none justify-center md:justify-start">
+            <!-- 修正: text-4xlでモバイル時のフォントサイズを調整し、横向き表示での見切れを防止 -->
+            <div class="writing-vertical flex items-center select-none justify-center md:justify-start flex-shrink-0">
                 <div class="flex items-center gap-4 md:gap-6">
-                    <!-- スマホ向けにフォントサイズ調整 -->
-                    <h1 class="text-5xl md:text-8xl font-bold text-shirasagi-ink leading-relaxed drop-shadow-sm">
+                    <h1 class="text-4xl md:text-7xl lg:text-8xl font-bold text-shirasagi-ink leading-relaxed drop-shadow-sm whitespace-nowrap">
                         白鷺三十六景
                     </h1>
                     <!-- サブタイトル -->
                     <div class="flex flex-col gap-4 mt-6 md:mt-8 pt-6 md:pt-8 border-t border-gray-300">
-                        <p class="text-base md:text-xl text-gray-600 font-serif-en tracking-widest">Shirasagi Sanjūrokkei</p>
+                        <p class="text-sm md:text-xl text-gray-600 font-serif-en tracking-widest">Shirasagi Sanjūrokkei</p>
                     </div>
                 </div>
             </div>
 
             <!-- ステートメント & 落款 -->
-            <div class="md:h-[50vh] flex flex-col justify-between py-4 text-center md:text-left w-full md:w-auto items-center md:items-start">
+            <div class="flex flex-col justify-between py-4 text-center md:text-left w-full md:w-auto items-center md:items-start flex-shrink-0">
                 <div class="space-y-6 md:space-y-8 max-w-sm">
-                    <div class="w-12 h-1 bg-shirasagi-blue mb-6 md:mb-8 mx-auto md:mx-0"></div>
-                    <p class="text-base leading-loose text-gray-700 font-medium">
+                    <div class="w-10 md:w-12 h-1 bg-shirasagi-blue mb-6 md:mb-8 mx-auto md:mx-0"></div>
+                    <p class="text-sm md:text-base leading-loose text-gray-700 font-medium">
                         白鷺が羽を休めるが如く。<br>
                         季節、時間、角度。<br>
                         36の視点が織りなす、<br>
                         姫路城の肖像。
                     </p>
-                    <p class="text-sm text-gray-500 font-serif-en mt-4">
+                    <p class="text-xs md:text-sm text-gray-500 font-serif-en mt-4">
                         Captured by Toji Masaya<br>
                         Himeji, Japan
                     </p>
