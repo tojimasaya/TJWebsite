@@ -70,7 +70,7 @@
 </head>
 <body class="bg-washi-bg bg-washi-texture text-shirasagi-ink font-serif-jp antialiased selection:bg-shirasagi-blue selection:text-white">
 
-    <!-- Navigation -->
+    <!-- Navigation (Updated) -->
     <nav class="fixed w-full z-50 top-0 bg-washi-bg/95 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
             <div class="flex justify-between items-center h-20">
@@ -80,12 +80,19 @@
                 </a>
 
                 <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-8 font-serif-en text-sm tracking-widest text-gray-500">
+                <div class="hidden md:flex items-center space-x-6 font-serif-en text-sm tracking-widest text-gray-500">
                     <a href="/" class="hover:text-shirasagi-blue transition-colors">Home</a>
+                    <a href="about.html" class="hover:text-shirasagi-blue transition-colors">About</a>
                     <a href="gallery.html" class="hover:text-shirasagi-blue transition-colors">Gallery</a>
+                    <!-- Active Page -->
+                    <a href="shirasagi36.html" class="text-shirasagi-ink border-b border-shirasagi-ink pb-1 font-semibold flex items-center gap-1">
+                        <span class="text-base">🏯</span> 白鷺三十六景
+                    </a>
                     <a href="gear.html" class="hover:text-shirasagi-blue transition-colors">Gear</a>
                     <a href="writings.html" class="hover:text-shirasagi-blue transition-colors">Writings</a>
-                    <a href="shirasagi36.html" class="text-shirasagi-ink border-b border-shirasagi-ink pb-1 font-semibold">白鷺三十六景</a>
+                    <a href="hongkong.html" class="hover:text-shirasagi-blue transition-colors">Hong Kong</a>
+                    
+                    <!-- Language Switcher -->
                     <a href="shirasagi36-en.html" class="ml-4 text-xs font-sans font-medium border border-gray-400 rounded-full px-4 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">
                         English
                     </a>
@@ -101,13 +108,17 @@
         </div>
 
         <!-- Mobile Menu Overlay -->
-        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-8 transition-opacity duration-300 opacity-0 pointer-events-none">
+        <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-40 hidden flex-col items-center justify-center space-y-6 transition-opacity duration-300 opacity-0 pointer-events-none">
             <a href="/" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Home</a>
+            <a href="about.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">About</a>
             <a href="gallery.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gallery</a>
+            <a href="shirasagi36.html" class="text-xl font-serif-en tracking-widest text-shirasagi-blue font-bold border-b border-shirasagi-blue pb-1">白鷺三十六景</a>
             <a href="gear.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gear</a>
             <a href="writings.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Writings</a>
-            <a href="shirasagi36.html" class="text-xl font-serif-en tracking-widest text-shirasagi-blue font-bold border-b border-shirasagi-blue pb-1">白鷺三十六景</a>
+            <a href="hongkong.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Hong Kong</a>
+            
             <a href="shirasagi36-en.html" class="text-sm font-sans border border-gray-400 rounded-full px-6 py-2 mt-4">English</a>
+            
             <button onclick="toggleMobileMenu()" class="absolute top-6 right-6 text-gray-500 p-2">
                 <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
@@ -272,7 +283,7 @@
         </div>
     </div>
 
-    <!-- Logic (Updated for count display) -->
+    <!-- Logic -->
     <script>
         // Toggle Mobile Menu
         function toggleMobileMenu() {
