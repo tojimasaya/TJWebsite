@@ -17,8 +17,6 @@
         .gear-content { padding: 20px; flex: 1; display: flex; flex-direction: column; }
         .gear-name { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; color: var(--text-color); }
         .gear-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 15px; }
-        .gear-specs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
-        .spec-tag { background: rgba(0,0,0,0.05); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; color: var(--text-light); }
         .gear-links a { color: var(--accent-color); text-decoration: none; font-size: 0.85rem; margin-right: 15px; }
         
         /* 特調リンク（白鷺三十六景用） */
@@ -29,7 +27,7 @@
     </style>
 </head>
 <body>
-    <!-- Navigation (Injected by site-header.js) -->
+    <!-- Navigation will be injected by site-header.js -->
 
     <header class="detail-hero">
         <a href="gear.html" class="detail-back-link">← Back to Categories</a>
@@ -41,12 +39,12 @@
 
     <footer class="footer"><div class="footer-content"><p>&copy; 2026 Toji Masaya.</p></div></footer>
 
-    <!-- Scripts -->
+    <!-- 共通スクリプトの読み込み -->
     <script src="js/site-header.js"></script>
     <script src="js/gear-data.js"></script>
     <script>
+        // gear-data.js が読み込まれた後に実行
         document.addEventListener('DOMContentLoaded', () => {
-            // gearDataが読み込まれているかチェック
             if (typeof gearData !== 'undefined') {
                 renderGrid('drone-grid', gearData.categories.drone.items);
             } else {
@@ -58,18 +56,14 @@
             const container = document.getElementById(id);
             container.innerHTML = items.map(item => `
                 <article class="gear-item">
-                    <div class="gear-img-box">
-                        <img src="${item.image}" alt="${item.name}" class="gear-img" onerror="this.src='https://placehold.co/600x400?text=No+Image'">
-                    </div>
+                    <div class="gear-img-box"><img src="${item.image}" alt="${item.name}" class="gear-img" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></div>
                     <div class="gear-content">
                         <h3 class="gear-name">${item.name}</h3>
                         <div class="gear-specs">
-                            ${item.specs ? item.specs.map(s => `<span class="spec-tag">${s}</span>`).join('') : ''}
+                            ${item.specs ? item.specs.map(s => `<span class="spec-tag" style="background: rgba(0,0,0,0.05); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; color: #666; margin-right: 5px;">${s}</span>`).join('') : ''}
                         </div>
                         <p class="gear-desc">${item.description}</p>
-                        <div class="gear-links">
-                            ${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank">${key} →</a>`).join('')}
-                        </div>
+                        <div class="gear-links">${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank">${key} →</a>`).join('')}</div>
                     </div>
                 </article>`).join('');
         }
