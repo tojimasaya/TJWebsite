@@ -1,5 +1,5 @@
-// 全機材データをここで一元管理します
-// DroneやCameraを追加・削除する場合は、このファイルの該当カテゴリの items 配列を編集してください。
+// JSONデータをJavaScriptオブジェクトとして直接定義します
+// これにより fetch エラーを回避できます
 
 const gearData = {
   "updated_at": "2025-12-10T00:00:00Z",
@@ -17,7 +17,7 @@ const gearData = {
           "image": "assets/images/gear/m10.jpg",
           "status": "available",
           "specs": ["24MP Full Frame", "Rangefinder", "M-Mount"],
-          "description": "デジタルMの中でもフィルム機にもっとも近いサイズ感を持つ世代のM10。24MPセンサーと素直な色再現で、レンジファインダーらしい“光を読んで合わせる”撮影感覚を保ちながら、現代的なダイナミックレンジと高感度耐性を備えている。旅ではこの一台に35mmを付けて歩くことが多い。",
+          "description": "デジタルMの中でもフィルム機にもっとも近いサイズ感を持つ世代のM10。24MPセンサーと素直な色再現で、レンジファインダーらしい“光を読んで合わせる”撮影感覚を保ちながら、現代的なダイナミックレンジと高感度耐性を備えている。",
           "links": {
             "note": "https://note.com/tojimasaya/m/m7f56444c7b97",
             "official": "https://leica-camera.com/ja-JP/photography/cameras/m/m10-black/details"
@@ -30,21 +30,21 @@ const gearData = {
           "image": "assets/images/gear/sl2s.jpg",
           "status": "available",
           "specs": ["24.6MP BSI CMOS", "L-Mount"],
-          "description": "24.6MPのBSIセンサーと5軸IBISを備えたフルサイズミラーレス。解像力よりも階調と高感度耐性を重視したチューニングで、暗所や動画撮影の“保険”として頼りになるボディ。高精細EVFとシンプルな操作系のおかげで、Lマウントのズームや単焦点を付け替えながらも、静止画とムービーを同じリズムで扱える。",
+          "description": "24.6MPのBSIセンサーと5軸IBISを備えたフルサイズミラーレス。解像力よりも階調と高感度耐性を重視したチューニングで、暗所や動画撮影の“保険”として頼りになるボディ。",
           "links": {
             "official": "https://leica-camera.com/ja-JP/photography/cameras/sl/sl2-s-reporter/technical-specification"
           }
         },
         {
           "id": "summilux-35-fle",
-          "name": "Summilux-M 35mm f/1.4 ASPH (11663)",
+          "name": "Summilux-M 35mm f/1.4 ASPH",
           "brand": "Leica",
           "image": "assets/images/gear/lenses/summilux-35-fle.jpg",
           "status": "available",
           "specs": ["35mm F1.4", "ASPH FLE"],
-          "description": "2011年製 Ver.2。FLE（フローティングエレメント）搭載の現代ルクス。近接から無限遠まで安定したシャープネスを保ちながら、開放では柔らかな空気感を残す。旅先で一本だけ選ぶなら、最も信頼を置くレンズ。",
+          "description": "FLE（フローティングエレメント）搭載の現代ルクス。近接から無限遠まで安定したシャープネスを保ちながら、開放では柔らかな空気感を残す。旅先で一本だけ選ぶならこれ。",
           "links": {
-            "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=35mm_f/1.4_ASPH.fle_Summilux-M"
+            "reference": "https://wiki.l-camera-forum.com/"
           }
         },
          {
@@ -54,9 +54,9 @@ const gearData = {
           "image": "assets/images/gear/lenses/tri-elmar.jpg",
           "status": "available",
           "specs": ["16/18/21mm F4"],
-          "description": "超広角で三つの焦点距離を切り替えられるWATE。単焦点並みの描写を保ちながら、超広角の運用を驚くほどシンプルにしてくれる。旅先の建築撮影や風景撮影で重宝している。",
+          "description": "超広角で三つの焦点距離を切り替えられるWATE。単焦点並みの描写を保ちながら、超広角の運用を驚くほどシンプルにしてくれる。",
           "links": {
-            "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=16mm-18mm-21mm_f/4_ASPH_Tri-Elmar-M"
+            "reference": "https://wiki.l-camera-forum.com/"
           }
         }
       ]
@@ -98,7 +98,7 @@ const gearData = {
           "image": "assets/images/gear/neo2.jpg",
           "status": "available",
           "specs": ["<249g", "Gesture Control"],
-          "description": "Neoの後継ドローンを深圳DJIにて購入。ジェスチャーでの操作が楽しい。最初はコントローラで飛ばそうかと思っていましたが、ジェスチャーで数枚と少しの動画で十分な気がします。",
+          "description": "Neoの後継ドローンを深圳DJIにて購入。ジェスチャーでの操作が楽しい。コントローラなしで十分楽しめます。",
           "links": {
              "Note": "https://drone.jp/column/20251113211015121785.html"
           }
@@ -110,7 +110,7 @@ const gearData = {
           "image": "assets/images/gear/avata2.jpg",
           "status": "available",
           "specs": [">250g", "4K/60fps", "D-Log M"],
-          "description": "初代Avataは駄目でしたが、二代目になって日本でも飛行可能に！",
+          "description": "初代Avataは駄目でしたが、二代目になって日本でも飛行可能に！没入感のある飛行体験。",
           "links": {
             "Review": "https://drone.jp/column/2024041122201885883.html"
           }
@@ -133,7 +133,7 @@ const gearData = {
       "title": "Daily Drivers",
       "subtitle": "毎日使う定番機材",
       "hero_image": "assets/images/gear/editing.jpg",
-      "description": "Mac／iPad／iPhoneを中心に、毎日を支える常用デジタル。出先でも完結できる環境。",
+      "description": "Mac／iPad／iPhoneを中心に、毎日を支える常用デジタル。",
       "items": [
         {
           "id": "macbook-pro-14-m3",
@@ -142,7 +142,7 @@ const gearData = {
           "image": "assets/images/gear/macbookpro14m3.jpg",
           "status": "available",
           "specs": ["M3 Pro", "18GB RAM", "512GB SSD"],
-          "description": "Macbook 14インチにした理由は、何インチにしたところで見えないのは一緒、27インチ以上の外部モニターなしではなにも見えないローガンズの宿命",
+          "description": "Macbook 14インチにした理由は、何インチにしたところで見えないのは一緒、27インチ以上の外部モニターなしではなにも見えないローガンズの宿命。",
           "links": {
              "Note": "https://note.com/tojimasaya/n/n57968ed8d4ae"
           }
@@ -154,7 +154,7 @@ const gearData = {
           "image": "assets/images/gear/iphone17pro.jpg",
           "status": "available",
           "specs": ["512GB", "Blue Titanium"],
-          "description": "iPhone 17 Pro は「信頼を軸にしたメイン携帯」なんだけど、「写真もきちんとこなす頼もしい相棒」",
+          "description": "iPhone 17 Pro は「信頼を軸にしたメイン携帯」なんだけど、「写真もきちんとこなす頼もしい相棒」。",
           "links": {
              "Note": "https://note.com/tojimasaya/n/nd229cd856751"
           }
@@ -166,7 +166,7 @@ const gearData = {
           "image": "assets/images/gear/xiaomi15ultra.jpg",
           "status": "available",
           "specs": ["16GB RAM", "512GB Storage"],
-          "description": "iPhone 17 Pro はカメラがぐっと良くなっています、しかしそれでもなお望遠カメラはまだXiaomi 15 Ultraには敵わない、そう気がついて一層 愛情が湧きました。",
+          "description": "iPhone 17 Pro はカメラがぐっと良くなっていますが、望遠カメラはまだXiaomi 15 Ultraには敵わない。",
           "links": {
              "Note": "https://note.com/tojimasaya/n/nc12013eb2323"
           }
@@ -198,7 +198,7 @@ const gearData = {
           "image": "assets/images/gear/acasis.jpg",
           "status": "available",
           "specs": ["MagSafe", "M.2 SSD Slot"],
-          "description": "Macbookでもスマートフォンでも利用可能な高速SSD内蔵 多機能HUB",
+          "description": "Macbookでもスマートフォンでも利用可能な高速SSD内蔵 多機能HUB。",
           "links": {
              "Note": "https://note.com/tojimasaya/n/ne60ce62cf179"
           }
