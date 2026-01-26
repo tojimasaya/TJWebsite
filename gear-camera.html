@@ -116,7 +116,8 @@
     </style>
 </head>
 <body>
-    <!-- Navigation will be injected by site-header.js -->
+    <!-- Navigation (Injected by site-header.js) -->
+    <script src="js/site-header.js"></script>
 
     <header class="detail-hero">
         <a href="gear.html" class="detail-back-link">← Back to Categories</a>
@@ -136,9 +137,9 @@
 
     <footer class="footer"><div class="footer-content"><p>&copy; 2026 Toji Masaya.</p></div></footer>
 
-    <!-- 共通スクリプトの読み込み -->
-    <script src="js/site-header.js"></script>
+    <!-- データ読み込み -->
     <script src="js/gear-data.js"></script>
+    
     <script>
         document.addEventListener('DOMContentLoaded', () => {
             if (typeof gearData !== 'undefined') {
@@ -146,17 +147,12 @@
                 const bodyItems = [];
                 const lensItems = [];
 
-                // キーワードでボディとレンズを振り分け
-                const bodyKeywords = ['camera', 'body', 'leica m', 'leica sl', 'leica q', 'fujifilm', 'sony', 'panasonic', 'ricoh', 'gr', 'xiaomi'];
-                const lensKeywords = ['mm', 'f/', 'summilux', 'summicron', 'elmarit', 'noctilux', 'apo', 'nokton', 'ultron', 'biogon', 'planar', 'elmar', 'tri-elmar', 'zoom', 'lens'];
-
                 items.forEach(item => {
-                    const name = item.name.toLowerCase();
-                    // レンズキーワードが先にマッチするか確認
-                    if (lensKeywords.some(k => name.includes(k))) {
+                    // データ内の 'type' 属性で振り分け (body または lens)
+                    if (item.type === 'lens') {
                         lensItems.push(item);
                     } else {
-                        // それ以外はボディ扱い
+                        // typeが 'body' または未定義の場合はボディ扱い
                         bodyItems.push(item);
                     }
                 });
@@ -164,7 +160,8 @@
                 renderGrid('body-grid', bodyItems);
                 renderGrid('lens-grid', lensItems);
             } else {
-                document.getElementById('body-grid').innerText = 'Data could not be loaded.';
+                document.getElementById('body-grid').innerHTML = '<p>Data could not be loaded.</p>';
+                document.getElementById('lens-grid').innerHTML = '';
             }
         });
 
