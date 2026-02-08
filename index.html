@@ -1,572 +1,106 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-806426BQX2');
-  </script>
-  
-  <title>Toji Masaya – drone/camera/travel</title>
-
-  <link rel="icon" href="/favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" href="/favicon.png">
-  <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-
-  <meta name="description" content="田路昌也(TJ)のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
-  <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, カッパドキア, note">
-  <meta name="author" content="Toji Masaya">
-
-  <meta property="og:title" content="TJM – drone/camera/travel">
-  <meta property="og:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。イスタンブールから香港まで、ライカとドローンで切り取った世界。">
-  <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
-  <meta property="og:url" content="https://tojimasaya.com">
-  <meta property="og:type" content="website">
-
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-
-  <link rel="stylesheet" href="style.css">
-  
-  <style>
-    /* --- スクロール動作（パララックス）の修正 --- */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Masaya Toji | 姫路城とドローンの物語</title>
+    <meta name="description" content="空から見る、日本の美。田路昌也の公式ポートフォリオサイト。「白鷺三十六景」プロジェクト進行中。">
     
-    /* ヒーローセクションのスペース確保 */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh; /* 画面いっぱいの高さを確保 */
-      overflow: hidden;
-    }
-
-    /* 画像を固定するラッパー */
-    .hero-fixed-wrapper {
-      position: fixed; /* 画面に対して固定 */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      z-index: -1; /* コンテンツの裏側に配置 */
-      will-change: transform;
-    }
-
-    /* スライダーコンテナ */
-    .slider-container {
-      position: relative;
-      width: 100%;
-      height: 100%;
-    }
-
-    /* 各スライド */
-    .hero-slide {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out;
-      z-index: 1;
-    }
-
-    .hero-slide.active {
-      opacity: 1;
-      z-index: 2;
-    }
-
-    .hero-slide img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-    }
-
-    /* メインコンテンツ：背景色をつけて画像の上に被せる */
-    .main-content {
-      position: relative;
-      z-index: 10; /* 画像より手前に表示 */
-      background-color: #fff; /* 背景色必須（透過しないように） */
-      width: 100%;
-      box-shadow: 0 -10px 20px rgba(0,0,0,0.05); /* 境界に薄い影 */
-    }
-
-    /* --- ここまで修正スタイル --- */
-
-
-    /* 特調リンク（白鷺三十六景用） */
-    .featured-link {
-        color: #1A3FB9 !important; /* 白鷺ブルー */
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-    }
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&family=Noto+Serif+JP:wght@400;700&display=swap" rel="stylesheet">
     
-    .featured-link:hover {
-        background-color: rgba(26, 63, 185, 0.05);
-        border-radius: 4px;
-    }
-
-    /* 動画モーダル等のスタイル */
-    .modal-video {
-      position: relative;
-      width: 90%;
-      max-width: 900px;
-      aspect-ratio: 16 / 9;
-    }
-    .modal-video iframe {
-      width: 100%;
-      height: 100%;
-      border: none;
-    }
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
-    /* Play Button */
-    .play-button {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px; height: 60px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: #333; font-size: 24px; padding-left: 4px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      z-index: 10;
-    }
-    .video-card:hover .play-button {
-      transform: translate(-50%, -50%) scale(1.1);
-      background: #fff;
-    }
-
-    /* その他の微調整 */
-    .latest-title {
-      font-family: 'Crimson Text', serif;
-      font-size: 2rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      color: #2c2c2c;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-    .projects-grid-3col {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .project-card {
-      background: white;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex; flex-direction: column; height: 100%;
-    }
-    .project-image {
-      position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 10;
-    }
-    .project-image img {
-      width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
-    }
-    .project-card:hover .project-image img { transform: scale(1.05); }
-    .project-info { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-    .project-label {
-      font-size: 0.7rem; color: #999; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.8rem; font-family: 'Inter', sans-serif; font-weight: 600;
-    }
-    .project-info h3 {
-      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 1.3rem; font-weight: 500; line-height: 1.4; color: #2c2c2c; margin-bottom: 0.8rem; letter-spacing: 0.05em;
-    }
-    .project-description {
-      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 0.9rem; line-height: 1.8; color: #666; margin-bottom: 1.5rem; letter-spacing: 0.03em; flex: 1;
-    }
-    .project-btn {
-      display: inline-block; padding: 0.8rem 0; color: #2c2c2c; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.15em; font-family: 'Inter', sans-serif; font-weight: 600; border-bottom: 1px solid #2c2c2c; transition: all 0.3s ease; align-self: flex-start;
-    }
-    .progress-badge {
-      position: absolute; top: 1rem; right: 1rem; background: rgba(139, 115, 85, 0.9); color: white; padding: 0.4rem 0.8rem; font-size: 0.7rem; letter-spacing: 0.1em; font-weight: 500; border-radius: 4px; z-index: 10; backdrop-filter: blur(4px);
-    }
-
-    @media (max-width: 992px) { .projects-grid-3col { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 768px) { .projects-grid-3col { grid-template-columns: 1fr; } }
-  </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-  <!-- 共通ヘッダーの読み込み -->
-  <script src="js/site-header.js"></script>
+    <header>
+        <div class="logo">TOJIMASAYA.COM</div>
+        <nav>
+            <ul>
+                <li><a href="#about">About</a></li>
+                <li><a href="#shirasagi">Shirasagi 36</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
 
-  <!-- ヒーローセクション（パララックス用に固定） -->
-  <div class="hero">
-    <div class="hero-fixed-wrapper">
-      <div class="slider-container">
-        
-        <div class="hero-slide active">
-          <img src="assets/images/gallery/castle31.jpg" alt="大晦日の姫路城" onerror="this.src='https://placehold.co/1920x1080/222/555?text=Himeji+Castle'">
+    <section id="hero">
+        <div class="hero-content">
+            <h1>空から紐解く、<br>白鷺の物語。</h1>
+            <p class="subtitle">Discover the Beauty of Himeji from the Sky.</p>
+            <a href="#shirasagi" class="btn btn-primary">白鷺三十六景を見る <i class="fas fa-arrow-right"></i></a>
         </div>
+        </section>
 
-        <div class="hero-slide">
-          <img src="assets/images/gallery/weekly.jpg" alt="Weekly" onerror="this.src='https://placehold.co/1920x1080/222/555?text=Weekly'">
+    <section id="shirasagi" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">白鷺三十六景<span class="en-title">The 36 Views of Shirasagi</span></h2>
+            <div class="project-card">
+                <div class="project-text">
+                    <h3>世界遺産・姫路城の新たな表情</h3>
+                    <p>四季折々の光、ドローンによる鳥瞰、そして歴史の息吹。葛飾北斎の「富嶽三十六景」にインスピレーションを受け、現代のテクノロジーで切り取る36の絶景。</p>
+                    <a href="#" class="btn btn-outline">ギャラリーへ進む (Coming Soon)</a>
+                </div>
+                <div class="project-image-placeholder">
+                    <i class="fas fa-camera-retro"></i>
+                    <p>ここにベストショットを配置</p>
+                </div>
+            </div>
         </div>
-
-        <div class="hero-slide">
-          <img src="assets/images/gallery/monthly.jpg" alt="Monthly" onerror="this.src='https://placehold.co/1920x1080/222/555?text=Monthly'">
-        </div>
-
-        <div class="hero-slide">
-          <img src="assets/images/gallery/cappadocia.jpg" alt="カッパドキア" onerror="this.src='https://placehold.co/1920x1080/222/555?text=Cappadocia'">
-        </div>
-
-        <div class="hero-overlay">
-          <h1 class="hero-title">LEICA, DRONE, AND TRAVEL</h1>
-          <p class="lead">香港・日本を拠点に、旅の断片を写真と文章で記録しています。</p>
-          <div class="hero-dots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-            <span class="dot" data-slide="3"></span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <!-- メインコンテンツ（画像の上をスライドする） -->
-  <main class="main-content">
-    
-    <section class="intro container">
-      <p class="lead intro-text">
-        イスタンブールから香港まで。<br>
-        Leica M10とドローンを片手に、旅先で出会った風景や小さな発見を写真と言葉で綴っています。
-      </p>
     </section>
 
-    <!-- Featured Projects -->
-    <section class="featured-projects container">
-      <h2 class="latest-title">Featured Projects</h2>
-      <div class="projects-grid-3col">
-        
-        <!-- Project 1: 白鷺三十六景 (先頭に配置) -->
-        <article class="project-card">
-          <a href="shirasagi36.html" class="project-image">
-            <img src="assets/images/shirasagi/21.jpg" alt="白鷺三十六景" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Himeji+Castle'">
-            <span class="progress-badge">Ongoing</span>
-          </a>
-          <div class="project-info">
-            <span class="project-label">Photography Project</span>
-            <h3>白鷺三十六景</h3>
-            <p class="project-description">姫路城を36の視点から捉える写真プロジェクト。北斎の「富嶽三十六景」に着想を得て、白鷺城の多様な表情を四季折々に記録していく。</p>
-            <a href="shirasagi36.html" class="project-btn">プロジェクトを見る</a>
-          </div>
-        </article>
-
-        <!-- Project 2: トルコ旅行記 -->
-        <article class="project-card">
-          <a href="turkey-travel-journal.html" class="project-image">
-            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Turkey'">
-          </a>
-          <div class="project-info">
-            <span class="project-label">Travel Journal</span>
-            <h3>トルコ旅行記</h3>
-            <p class="project-description">カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚。オスマン帝国の面影から幻想的な奇岩群まで、9日間の旅の全記録。</p>
-            <a href="turkey-travel-journal.html" class="project-btn">旅の記録を読む</a>
-          </div>
-        </article>
-
-        <!-- Project 3: 香港探訪 -->
-        <article class="project-card">
-          <a href="hongkong.html" class="project-image">
-            <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280" alt="香港探訪" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Hong+Kong'">
-          </a>
-          <div class="project-info">
-            <span class="project-label">City Guide & Photo</span>
-            <h3>香港探訪</h3>
-            <p class="project-description">消えゆくネオンの光、街角のカメラショップ、フォトジェニックな風景。住んでいたからこそ知る、変わりゆく香港の「今」と「昔」を記録する。</p>
-            <a href="hongkong.html" class="project-btn">香港を見る</a>
-          </div>
-        </article>
-
-      </div>
+    <section id="about" class="section-padding bg-light">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="profile-grid">
+                <div class="profile-text">
+                    <h3>田路 昌也 <span class="en-name">Masaya Toji</span></h3>
+                    <p>ドローンパイロット / ウェブクリエイター。姫路城を中心に、日本の伝統美をテクノロジーの力で世界へ発信しています。空からの視点は、私たちが住む世界の美しさを再発見させてくれます。</p>
+                    <div class="skills">
+                        <span><i class="fas fa-drone"></i> Drone Pilot</span>
+                        <span><i class="fas fa-pen-nib"></i> Writer</span>
+                        <span><i class="fas fa-code"></i> Web Creator</span>
+                    </div>
+                </div>
+            </div>
+        </div>
     </section>
 
-    <!-- Highlights -->
-    <section class="latest-section container">
-      <h2 class="latest-title">Highlights</h2>
-      <div class="articles-grid-3col">
-        
-        <article class="content-card">
-          <a href="https://note.com/tojimasaya/n/nc507e45ecb75" target="_blank" rel="noopener" class="content-image">
-            <img src="https://assets.st-note.com/production/uploads/images/238879575/rectangle_large_type_2_5fca1f331b6c75601906af25a88580b9.png?width=1280" alt="わたしがXiaomi 15 Ultraを売った理由" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Note'">
-          </a>
-          <div class="content-info">
-            <span class="card-date">note.com</span>
-            <h3>わたしがXiaomi 15 Ultraを売った理由</h3>
-            <p class="card-excerpt">Xiaomi 15 Ultraを手放した理由、そして次世代Xiaomi 17 Ultraへの期待。61歳のガジェット好きが語る「終わり」と「始まり」の話。</p>
-            <a href="https://note.com/tojimasaya/n/nc507e45ecb75" target="_blank" rel="noopener" class="card-action-btn">Read on note</a>
-          </div>
-        </article>
-
-        <article class="content-card video-card" onclick="openVideo('cJ2lFRqmeBA', 'カッパドキアのホテルから')">
-          <div class="content-image video-thumbnail">
-            <img src="assets/images/gallery/cappadocia-thumbnail.jpg" alt="カッパドキアのホテルから" loading="lazy" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Video'">
-            <div class="play-button">▶</div>
-          </div>
-          <div class="content-info">
-            <span class="card-date">YouTube</span>
-            <h3>カッパドキアのホテルから</h3>
-            <p class="card-excerpt">妻と訪れたカッパドキアのホテルから眺めた朝の風景。宿泊した洞窟ホテルのベランダからドローニー撮影。</p>
-            <span class="card-action-btn">Watch on YouTube</span>
-          </div>
-        </article>
-
-        <article class="content-card">
-          <a href="writings.html" class="content-image">
-            <img src="assets/images/gallery/writings-thumb.jpg" alt="執筆記事" onerror="this.src='assets/images/gallery/weekly.jpg'">
-          </a>
-          <div class="content-info">
-            <span class="card-date">Writings</span>
-            <h3>執筆記事一覧</h3>
-            <p class="card-excerpt">note、DRONE.jpでの連載記事をまとめています。旅の記録から機材レビューまで。</p>
-            <a href="writings.html" class="card-action-btn">記事を見る</a>
-          </div>
-        </article>
-
-      </div>
+    <section id="links" class="section-padding">
+        <div class="container">
+            <h2 class="section-title">External Links</h2>
+            <div class="link-grid">
+                <a href="https://note.com/tojimasaya" target="_blank" class="link-card">
+                    <i class="fas fa-book-open"></i>
+                    <h4>Note</h4>
+                    <p>日々の活動と思考の記録</p>
+                </a>
+                <a href="https://viva-drone.com/" target="_blank" class="link-card">
+                    <i class="fas fa-paper-plane"></i>
+                    <h4>Media</h4>
+                    <p>ドローン関連の執筆記事</p>
+                </a>
+                <a href="https://github.com/tojimasaya" target="_blank" class="link-card">
+                    <i class="fab fa-github"></i>
+                    <h4>GitHub</h4>
+                    <p>開発プロジェクト</p>
+                </a>
+            </div>
+        </div>
     </section>
 
-    <!-- What's New -->
-    <section class="latest-section latest-new container">
-      <h2 class="latest-title">What's New</h2>
-      <div class="articles-grid-3col" id="whats-new-grid">
-        <p class="text-center" style="grid-column: 1 / -1; color: var(--text-light);">
-            最新の記事を読み込み中です...
-        </p>
-      </div>
-      <div class="text-center" style="margin-top: 40px;">
-        <a href="writings.html" class="card-action-btn" style="background: var(--text-light);">すべての記事を見る</a>
-      </div>
-    </section>
+    <footer>
+        <div class="container">
+            <div class="social-links">
+                <a href="#"><i class="fab fa-x-twitter"></i></a>
+                <a href="#"><i class="fab fa-instagram"></i></a>
+            </div>
+            <p>&copy; 2024 Masaya Toji. All Rights Reserved.</p>
+        </div>
+    </footer>
 
-    <section class="latest-section container" style="border-bottom: none;">
-      <h2 class="latest-title">Follow Me</h2>
-      <div class="link-grid">
-        <a href="https://www.facebook.com/masaya.toji" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">Facebook</div>
-          <p class="link-description">Facebookページ</p>
-        </a>
-        <a href="https://www.youtube.com/TJVlog" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">YouTube</div>
-          <p class="link-description">旅とドローンの動画</p>
-        </a>
-        <a href="https://x.com/mongkok93" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">X</div>
-          <p class="link-description">日々のつぶやき</p>
-        </a>
-        <a href="https://instagram.com/tojimasaya" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">Instagram</div>
-          <p class="link-description">日々のスナップ</p>
-        </a>
-        <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">note</div>
-          <p class="link-description">記事とコラム</p>
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 Toji Masaya. All rights reserved.</p>
-    </div>
-  </footer>
-  
-  <script>
-    // ヒーロースライダー
-    (function() {
-      const sliderContainer = document.querySelector('.slider-container');
-      if (!sliderContainer) return;
-
-      const slides = Array.from(document.querySelectorAll('.hero-slide'));
-      const dots = Array.from(document.querySelectorAll('.hero-dots .dot'));
-      let currentSlide = 0;
-      let intervalId;
-      const slideInterval = 6000;
-
-      function changeSlide(nextIndex) {
-        if (nextIndex === currentSlide) return;
-        const current = slides[currentSlide];
-        const next = slides[nextIndex];
-        current.classList.remove('active');
-        next.classList.add('active');
-        dots[currentSlide].classList.remove('active');
-        dots[nextIndex].classList.add('active');
-        currentSlide = nextIndex;
-      }
-
-      function startAutoSlide() {
-        intervalId = setInterval(() => {
-          const nextIndex = (currentSlide + 1) % slides.length;
-          changeSlide(nextIndex);
-        }, slideInterval);
-      }
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          clearInterval(intervalId);
-          changeSlide(index);
-          startAutoSlide();
-        });
-      });
-
-      startAutoSlide();
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          clearInterval(intervalId);
-        } else {
-          clearInterval(intervalId);
-          startAutoSlide();
-        }
-      });
-    })();
-
-    // スムーズスクロール
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // External links
-    document.querySelectorAll('a[target="_blank"]').forEach(link => {
-        link.rel = 'noopener noreferrer';
-    });
-
-    // What's New (RSS Fetcher)
-    async function loadWhatsNew() {
-      const container = document.getElementById('whats-new-grid');
-      
-      try {
-        const ogResponse = await fetch('/data/writings-og.json');
-        let articlesData = {};
-        if (ogResponse.ok) {
-            articlesData = await ogResponse.json();
-        }
-        
-        const noteFeeds = [
-          { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
-          { url: 'https://note.com/tojimasaya/m/md99dd54590fa/rss', name: '次はどこへ' }
-        ];
-        
-        const noteArticles = [];
-        
-        for (const feed of noteFeeds) {
-          try {
-            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
-            const response = await fetch(proxyUrl);
-            const xmlText = await response.text();
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-            const items = xmlDoc.querySelectorAll('item');
-            
-            items.forEach((item, index) => {
-              if (index < 1) { // 各フィードから最新1件
-                const title = item.querySelector('title')?.textContent || '';
-                const link = item.querySelector('link')?.textContent || '';
-                const description = item.querySelector('description')?.textContent || '';
-                const pubDate = item.querySelector('pubDate')?.textContent || '';
-                const excerpt = description.replace(/<[^>]*>/g, '').substring(0, 60) + '...';
-                const date = new Date(pubDate);
-                
-                const ogData = articlesData[link];
-                const imageUrl = ogData?.image || 'assets/images/gallery/weekly.jpg';
-                
-                noteArticles.push({
-                  title, link, excerpt, date: date.toISOString(), imageUrl, source: 'note'
-                });
-              }
-            });
-          } catch (error) { console.error('RSS Error:', error); }
-        }
-        
-        // DRONE.jp (Mock from json)
-        const droneArticles = Object.entries(articlesData)
-          .filter(([url]) => url.includes('drone.jp/column'))
-          .slice(0, 1)
-          .map(([url, data]) => ({
-              title: data.title || 'DRONE.jp記事',
-              link: url,
-              excerpt: data.description?.substring(0, 60) + '...' || '',
-              imageUrl: data.image || 'assets/images/gallery/hongkong.jpg',
-              source: 'DRONE.jp'
-          }));
-        
-        const allArticles = [...noteArticles, ...droneArticles].slice(0, 3);
-        
-        if (allArticles.length > 0) {
-          container.innerHTML = allArticles.map(article => `
-            <article class="content-card">
-              <a href="${article.link}" target="_blank" rel="noopener" class="content-image">
-                <img src="${article.imageUrl}" alt="${article.title}" onerror="this.src='assets/images/gallery/weekly.jpg'">
-              </a>
-              <div class="content-info">
-                <span class="card-date">${article.source}</span>
-                <h3>${article.title}</h3>
-                <p class="card-excerpt">${article.excerpt}</p>
-                <a href="${article.link}" target="_blank" rel="noopener" class="card-action-btn">読む</a>
-              </div>
-            </article>
-          `).join('');
-        } else {
-            throw new Error("No articles");
-        }
-      } catch (error) {
-        console.log('Using static content for What\'s New');
-        container.innerHTML = `
-          <article class="content-card">
-            <a href="https://note.com/tojimasaya" target="_blank" class="content-image"><img src="assets/images/gallery/weekly.jpg" alt="note"></a>
-            <div class="content-info"><span class="card-date">note</span><h3>最新記事をチェック</h3><a href="https://note.com/tojimasaya" class="card-action-btn">noteを見る</a></div>
-          </article>
-          <article class="content-card">
-            <a href="https://drone.jp/column/masaya-toji" target="_blank" class="content-image"><img src="assets/images/gallery/hongkong.jpg" alt="DRONE.jp"></a>
-            <div class="content-info"><span class="card-date">DRONE.jp</span><h3>ドローン連載</h3><a href="https://drone.jp/column/masaya-toji" class="card-action-btn">連載を見る</a></div>
-          </article>
-        `;
-      }
-    }
-    
-    document.addEventListener('DOMContentLoaded', loadWhatsNew);
-
-    function openVideo(youtubeId, title) {
-      const html = `
-        <div class="modal" id="videoModal" style="display:flex;" onclick="closeVideo()">
-          <button class="close-modal" onclick="closeVideo()">×</button>
-          <div class="modal-video" onclick="event.stopPropagation()">
-            <iframe src="https://www.youtube.com/embed/${youtubeId}?autoplay=1&rel=0" title="${title}" allow="autoplay; encrypted-media; picture-in-picture" allowfullscreen></iframe>
-          </div>
-        </div>`;
-      document.body.insertAdjacentHTML('beforeend', html);
-      document.body.style.overflow = 'hidden';
-    }
-
-    function closeVideo() {
-      const modal = document.getElementById('videoModal');
-      if (modal) modal.remove();
-      document.body.style.overflow = '';
-    }
-
-    document.addEventListener('keydown', (e) => {
-      if (e.key === 'Escape') closeVideo();
-    });
-  </script>
 </body>
 </html>
