@@ -271,3 +271,20 @@ footer {
         height: 200px;
     }
 }
+/* プロジェクトカードの追加スタイル */
+.reverse-layout {
+    flex-direction: row-reverse; /* 画像と文字を左右逆にする */
+}
+
+.bio-text {
+    text-align: left;
+    margin-top: 20px;
+    line-height: 1.8;
+}
+
+/* スマホ表示の時の調整 */
+@media (max-width: 768px) {
+    .reverse-layout {
+        flex-direction: column; /* スマホでは縦並びに戻す */
+    }
+}
