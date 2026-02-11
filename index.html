@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
-  
+
   <!-- Google tag (gtag.js) -->
   <script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
   <script>
@@ -12,7 +12,7 @@
     gtag('js', new Date());
     gtag('config', 'G-806426BQX2');
   </script>
-  
+
   <title>Toji Masaya – drone/camera/travel</title>
 
   <link rel="icon" href="/favicon.ico" sizes="any">
@@ -20,180 +20,622 @@
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
   <meta name="description" content="田路昌也(TJ)のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
-  <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, カッパドキア, note">
+  <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, 姫路城, 白鷺三十六景, 香港ネオン残照, note">
   <meta name="author" content="Toji Masaya">
 
-  <meta property="og:title" content="TJM – drone/camera/travel">
-  <meta property="og:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。イスタンブールから香港まで、ライカとドローンで切り取った世界。">
-  <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
+  <meta property="og:title" content="Toji Masaya – drone/camera/travel">
+  <meta property="og:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。白鷺三十六景・香港ネオン残照、2つのプロジェクトを軸に。">
+  <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/castle31.jpg">
   <meta property="og:url" content="https://tojimasaya.com">
   <meta property="og:type" content="website">
 
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="style.css">
-  
+
   <style>
-    /* --- スクロール動作（パララックス）の修正 --- */
-    
-    /* ヒーローセクションのスペース確保 */
-    .hero {
+    /* ==============================================
+       INDEX REDESIGN — Project-First Layout
+       ============================================== */
+
+    /* ── Hero: 2-Panel Split ── */
+    .hero-redesign {
       position: relative;
       width: 100%;
-      height: 100vh; /* 画面いっぱいの高さを確保 */
+      height: calc(100vh - 70px);
+      min-height: 500px;
+      overflow: hidden;
+      background: #1a1a1a;
+      margin-top: 70px;
+    }
+
+    .hero-split {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      height: 100%;
+    }
+
+    .hero-panel {
+      position: relative;
       overflow: hidden;
     }
 
-    /* 画像を固定するラッパー */
-    .hero-fixed-wrapper {
-      position: fixed; /* 画面に対して固定 */
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100vh;
-      z-index: -1; /* コンテンツの裏側に配置 */
-      will-change: transform;
-    }
-
-    /* スライダーコンテナ */
-    .slider-container {
-      position: relative;
+    .hero-panel a {
+      display: block;
       width: 100%;
       height: 100%;
+      text-decoration: none;
+      color: white;
     }
 
-    /* 各スライド */
-    .hero-slide {
+    .hero-panel-bg {
       position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      opacity: 0;
-      transition: opacity 1.5s ease-in-out;
-      z-index: 1;
-    }
-
-    .hero-slide.active {
-      opacity: 1;
-      z-index: 2;
-    }
-
-    .hero-slide img {
+      inset: 0;
       width: 100%;
       height: 100%;
       object-fit: cover;
+      transition: transform 0.8s ease, filter 0.5s ease;
+      filter: brightness(0.55);
     }
 
-    /* メインコンテンツ：背景色をつけて画像の上に被せる */
-    .main-content {
+    .hero-panel:hover .hero-panel-bg {
+      transform: scale(1.05);
+      filter: brightness(0.72);
+    }
+
+    .hero-panel-content {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 3rem;
+      color: white;
+      background: linear-gradient(transparent 0%, rgba(0,0,0,0.65) 100%);
+      z-index: 2;
+    }
+
+    .hero-panel-label {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.3em;
+      opacity: 0.8;
+      margin-bottom: 0.8rem;
+      text-transform: uppercase;
+    }
+
+    .hero-panel-title {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: clamp(1.6rem, 2.8vw, 2.6rem);
+      font-weight: 400;
+      letter-spacing: 0.1em;
+      margin-bottom: 0.8rem;
+      line-height: 1.5;
+    }
+
+    .hero-panel-sub {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.85rem;
+      opacity: 0.8;
+      letter-spacing: 0.05em;
+      line-height: 1.9;
+    }
+
+    .hero-panel-arrow {
+      display: inline-block;
+      margin-top: 1.5rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.15em;
+      opacity: 0;
+      transition: opacity 0.4s ease, transform 0.4s ease;
+      transform: translateX(-8px);
+    }
+
+    .hero-panel:hover .hero-panel-arrow {
+      opacity: 0.9;
+      transform: translateX(0);
+    }
+
+    /* 中央の縦ディバイダー */
+    .hero-divider {
+      position: absolute;
+      top: 15%;
+      bottom: 15%;
+      left: 50%;
+      width: 1px;
+      background: rgba(255,255,255,0.2);
+      z-index: 10;
+      pointer-events: none;
+    }
+
+    /* サイト名オーバーレイ */
+    .hero-site-name {
+      position: absolute;
+      top: 2.5rem;
+      left: 50%;
+      transform: translateX(-50%);
+      z-index: 20;
+      color: white;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.35em;
+      opacity: 0.7;
+      pointer-events: none;
+    }
+
+    /* ── Intro Statement ── */
+    .intro-statement {
+      max-width: 700px;
+      margin: 0 auto;
+      padding: 5rem 2rem;
+      text-align: center;
+    }
+
+    .intro-statement-text {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 1rem;
+      line-height: 2.4;
+      color: var(--text-light, #666);
+      letter-spacing: 0.05em;
+    }
+
+    .intro-byline {
+      margin-top: 2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      color: var(--text-lighter, #999);
+      letter-spacing: 0.15em;
+    }
+
+    .intro-byline a {
+      color: #c49a6c;
+      text-decoration: none;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.3s;
+    }
+
+    .intro-byline a:hover {
+      border-color: #c49a6c;
+    }
+
+    /* ── Travels Section ── */
+    .travels {
+      background: var(--white, #fff);
+      padding: 5rem 2rem;
+    }
+
+    .travels-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .section-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.5rem;
+    }
+
+    .section-title-jp {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
+      color: var(--text-color, #333);
+    }
+
+    .section-link {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-lighter, #999);
+      text-decoration: none;
+      letter-spacing: 0.1em;
+      transition: color 0.3s;
+    }
+
+    .section-link:hover {
+      color: #c49a6c;
+    }
+
+    .travel-grid {
+      display: grid;
+      grid-template-columns: 1.2fr 1fr 1fr;
+      grid-template-rows: 1fr 1fr;
+      gap: 1.2rem;
+    }
+
+    .travel-card {
       position: relative;
-      z-index: 10; /* 画像より手前に表示 */
-      background-color: #fff; /* 背景色必須（透過しないように） */
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .travel-card a {
+      display: block;
       width: 100%;
-      box-shadow: 0 -10px 20px rgba(0,0,0,0.05); /* 境界に薄い影 */
+      height: 100%;
+      text-decoration: none;
+      color: white;
     }
 
-    /* --- ここまで修正スタイル --- */
-
-
-    /* 特調リンク（白鷺三十六景用） */
-    .featured-link {
-        color: #1A3FB9 !important; /* 白鷺ブルー */
-        font-weight: 600;
-        display: flex;
-        align-items: center;
-        gap: 0.4rem;
-    }
-    
-    .featured-link:hover {
-        background-color: rgba(26, 63, 185, 0.05);
-        border-radius: 4px;
+    .travel-card-featured {
+      grid-row: span 2;
     }
 
-    /* 動画モーダル等のスタイル */
+    .travel-card img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .travel-card:hover img {
+      transform: scale(1.05);
+    }
+
+    .travel-card-overlay {
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      padding: 1.5rem;
+      background: linear-gradient(transparent, rgba(0,0,0,0.7));
+      color: white;
+      z-index: 2;
+    }
+
+    .travel-card-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.08em;
+      margin-bottom: 0.3rem;
+    }
+
+    .travel-card-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      opacity: 0.7;
+      letter-spacing: 0.1em;
+    }
+
+    .travel-card-small {
+      height: 200px;
+    }
+
+    .travel-card-small .travel-card-overlay {
+      padding: 1rem;
+    }
+
+    .travel-card-small .travel-card-title {
+      font-size: 0.95rem;
+    }
+
+    .travel-card-featured {
+      min-height: 420px;
+    }
+
+    /* ── Latest Articles ── */
+    .latest-articles {
+      padding: 5rem 2rem;
+      max-width: 1100px;
+      margin: 0 auto;
+    }
+
+    .latest-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.8rem;
+    }
+
+    .latest-item {
+      background: var(--white, #fff);
+      border-radius: 6px;
+      overflow: hidden;
+      border: 1px solid var(--border-color, #e5e5e5);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .latest-item:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+    }
+
+    .latest-item a {
+      text-decoration: none;
+      color: inherit;
+      display: block;
+    }
+
+    .latest-thumb {
+      width: 100%;
+      aspect-ratio: 16 / 9;
+      object-fit: cover;
+      display: block;
+    }
+
+    .latest-content {
+      padding: 1.3rem 1.5rem 1.5rem;
+    }
+
+    .latest-source {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      color: var(--text-lighter, #999);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 0.5rem;
+    }
+
+    .latest-item-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      letter-spacing: 0.04em;
+      line-height: 1.7;
+      color: var(--text-color, #333);
+    }
+
+    .latest-more-row {
+      text-align: center;
+      margin-top: 2.5rem;
+    }
+
+    .latest-more-btn {
+      display: inline-block;
+      padding: 0.7rem 2rem;
+      border: 1px solid var(--border-color, #e5e5e5);
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      color: var(--text-light, #666);
+      text-decoration: none;
+      transition: all 0.3s ease;
+    }
+
+    .latest-more-btn:hover {
+      border-color: #c49a6c;
+      color: #c49a6c;
+    }
+
+    /* ── About Strip ── */
+    .about-strip {
+      background: #2c2c2c;
+      color: white;
+      padding: 4rem 2rem;
+    }
+
+    .about-inner {
+      max-width: 900px;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      gap: 3rem;
+    }
+
+    .about-photo {
+      width: 110px;
+      height: 110px;
+      border-radius: 50%;
+      object-fit: cover;
+      flex-shrink: 0;
+    }
+
+    .about-text-area {
+      flex: 1;
+    }
+
+    .about-name {
+      font-family: 'Inter', sans-serif;
+      font-size: 1.1rem;
+      letter-spacing: 0.15em;
+      margin-bottom: 0.8rem;
+      font-weight: 400;
+    }
+
+    .about-bio {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.9rem;
+      line-height: 2;
+      color: #aaa;
+      letter-spacing: 0.03em;
+    }
+
+    .about-more {
+      display: inline-block;
+      margin-top: 1rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: #c49a6c;
+      text-decoration: none;
+      letter-spacing: 0.15em;
+      transition: opacity 0.3s;
+    }
+
+    .about-more:hover {
+      opacity: 0.7;
+    }
+
+    /* ── Footer ── */
+    .footer-redesign {
+      background: #1a1a1a;
+      color: white;
+      padding: 3rem 2rem;
+    }
+
+    .footer-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .footer-nav {
+      display: flex;
+      gap: 2rem;
+    }
+
+    .footer-nav a {
+      font-family: 'Inter', sans-serif;
+      color: #666;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.1em;
+      transition: color 0.3s;
+    }
+
+    .footer-nav a:hover {
+      color: #c49a6c;
+    }
+
+    .footer-social {
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    .footer-social a {
+      font-family: 'Inter', sans-serif;
+      color: #666;
+      text-decoration: none;
+      font-size: 0.8rem;
+      letter-spacing: 0.05em;
+      transition: color 0.3s;
+    }
+
+    .footer-social a:hover {
+      color: #c49a6c;
+    }
+
+    .footer-copy {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: #555;
+      letter-spacing: 0.1em;
+      text-align: center;
+      margin-top: 2rem;
+    }
+
+    /* ── Responsive ── */
+    @media (max-width: 768px) {
+      .hero-redesign {
+        height: auto;
+        min-height: auto;
+      }
+
+      .hero-split {
+        grid-template-columns: 1fr;
+      }
+
+      .hero-panel {
+        height: 50vh;
+        min-height: 320px;
+      }
+
+      .hero-divider {
+        display: none;
+      }
+
+      .hero-site-name {
+        top: 1.5rem;
+        font-size: 0.7rem;
+      }
+
+      .hero-panel-content {
+        padding: 2rem;
+      }
+
+      .hero-panel-arrow {
+        opacity: 0.8;
+        transform: translateX(0);
+      }
+
+      .intro-statement {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .travels {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .travel-grid {
+        grid-template-columns: 1fr;
+        grid-template-rows: auto;
+      }
+
+      .travel-card-featured {
+        grid-row: span 1;
+        min-height: 260px;
+      }
+
+      .travel-card-small {
+        height: 180px;
+      }
+
+      .latest-articles {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .latest-grid {
+        grid-template-columns: 1fr;
+        gap: 1.2rem;
+      }
+
+      .about-strip {
+        padding: 3rem 1.5rem;
+      }
+
+      .about-inner {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        gap: 1.5rem;
+        text-align: center;
+      }
+
+      .footer-nav {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 1rem;
+      }
+
+      .footer-social {
+        flex-wrap: wrap;
+        justify-content: center;
+      }
+    }
+
+    @media (max-width: 1000px) and (min-width: 769px) {
+      .travel-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .travel-card-featured {
+        grid-column: span 2;
+        grid-row: span 1;
+        min-height: 300px;
+      }
+
+      .latest-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* ── Video Modal (既存の動画再生機能) ── */
     .modal-video {
       position: relative;
       width: 90%;
       max-width: 900px;
       aspect-ratio: 16 / 9;
     }
+
     .modal-video iframe {
       width: 100%;
       height: 100%;
       border: none;
     }
-    
-    /* Play Button */
-    .play-button {
-      position: absolute;
-      top: 50%; left: 50%;
-      transform: translate(-50%, -50%);
-      width: 60px; height: 60px;
-      background: rgba(255, 255, 255, 0.9);
-      border-radius: 50%;
-      display: flex; align-items: center; justify-content: center;
-      color: #333; font-size: 24px; padding-left: 4px;
-      transition: all 0.3s ease;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
-      z-index: 10;
-    }
-    .video-card:hover .play-button {
-      transform: translate(-50%, -50%) scale(1.1);
-      background: #fff;
-    }
-
-    /* その他の微調整 */
-    .latest-title {
-      font-family: 'Crimson Text', serif;
-      font-size: 2rem;
-      font-weight: 400;
-      letter-spacing: 0.05em;
-      color: #2c2c2c;
-      margin-bottom: 2.5rem;
-      text-align: center;
-    }
-    .projects-grid-3col {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 2rem;
-      max-width: 1200px;
-      margin: 0 auto;
-    }
-    .project-card {
-      background: white;
-      border: 1px solid #eee;
-      border-radius: 8px;
-      overflow: hidden;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-      display: flex; flex-direction: column; height: 100%;
-    }
-    .project-image {
-      position: relative; display: block; overflow: hidden; aspect-ratio: 16 / 10;
-    }
-    .project-image img {
-      width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease;
-    }
-    .project-card:hover .project-image img { transform: scale(1.05); }
-    .project-info { padding: 1.5rem; flex: 1; display: flex; flex-direction: column; }
-    .project-label {
-      font-size: 0.7rem; color: #999; letter-spacing: 0.15em; text-transform: uppercase; margin-bottom: 0.8rem; font-family: 'Inter', sans-serif; font-weight: 600;
-    }
-    .project-info h3 {
-      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 1.3rem; font-weight: 500; line-height: 1.4; color: #2c2c2c; margin-bottom: 0.8rem; letter-spacing: 0.05em;
-    }
-    .project-description {
-      font-family: 'Hiragino Mincho ProN', 'Yu Mincho', serif; font-size: 0.9rem; line-height: 1.8; color: #666; margin-bottom: 1.5rem; letter-spacing: 0.03em; flex: 1;
-    }
-    .project-btn {
-      display: inline-block; padding: 0.8rem 0; color: #2c2c2c; text-decoration: none; font-size: 0.8rem; letter-spacing: 0.15em; font-family: 'Inter', sans-serif; font-weight: 600; border-bottom: 1px solid #2c2c2c; transition: all 0.3s ease; align-self: flex-start;
-    }
-    .progress-badge {
-      position: absolute; top: 1rem; right: 1rem; background: rgba(139, 115, 85, 0.9); color: white; padding: 0.4rem 0.8rem; font-size: 0.7rem; letter-spacing: 0.1em; font-weight: 500; border-radius: 4px; z-index: 10; backdrop-filter: blur(4px);
-    }
-
-    @media (max-width: 992px) { .projects-grid-3col { grid-template-columns: repeat(2, 1fr); } }
-    @media (max-width: 768px) { .projects-grid-3col { grid-template-columns: 1fr; } }
   </style>
 </head>
 <body>
@@ -201,274 +643,182 @@
   <!-- 共通ヘッダーの読み込み -->
   <script src="js/site-header.js"></script>
 
-  <!-- ヒーローセクション（パララックス用に固定） -->
-  <div class="hero">
-    <div class="hero-fixed-wrapper">
-      <div class="slider-container">
-        
-        <div class="hero-slide active">
-          <img src="assets/images/gallery/castle31.jpg" alt="大晦日の姫路城" onerror="this.src='https://placehold.co/1920x1080/222/555?text=Himeji+Castle'">
-        </div>
+  <!-- ======================================
+       SECTION 1: ヒーロー（左右分割）
+       ====================================== -->
+  <section class="hero-redesign">
+    <div class="hero-site-name">TOJIMASAYA.COM</div>
+    <div class="hero-divider"></div>
+    <div class="hero-split">
 
-        <div class="hero-slide">
-          <img src="assets/images/gallery/weekly.jpg" alt="Weekly" onerror="this.src='https://placehold.co/1920x1080/222/555?text=Weekly'">
-        </div>
-
-        <div class="hero-slide">
-          <img src="assets/images/gallery/monthly.jpg" alt="Monthly" onerror="this.src='https://placehold.co/1920x1080/222/555?text=Monthly'">
-        </div>
-
-        <div class="hero-slide">
-          <img src="assets/images/gallery/cappadocia.jpg" alt="カッパドキア" onerror="this.src='https://placehold.co/1920x1080/222/555?text=Cappadocia'">
-        </div>
-
-        <div class="hero-overlay">
-          <h1 class="hero-title">LEICA, DRONE, AND TRAVEL</h1>
-          <p class="lead">香港・日本を拠点に、旅の断片を写真と文章で記録しています。</p>
-          <div class="hero-dots">
-            <span class="dot active" data-slide="0"></span>
-            <span class="dot" data-slide="1"></span>
-            <span class="dot" data-slide="2"></span>
-            <span class="dot" data-slide="3"></span>
+      <!-- 左パネル: 白鷺三十六景 -->
+      <div class="hero-panel">
+        <a href="shirasagi36.html">
+          <img class="hero-panel-bg" src="assets/images/gallery/castle31.jpg" alt="白鷺三十六景 — 姫路城" loading="eager">
+          <div class="hero-panel-content">
+            <p class="hero-panel-label">Photography Project</p>
+            <h2 class="hero-panel-title">白鷺三十六景</h2>
+            <p class="hero-panel-sub">姫路城を36の視点から。<br>北斎に着想を得た、四季の記録。</p>
+            <span class="hero-panel-arrow">プロジェクトを見る →</span>
           </div>
+        </a>
+      </div>
+
+      <!-- 右パネル: 香港ネオン残照 -->
+      <div class="hero-panel">
+        <a href="hongkong-neon.html">
+          <img class="hero-panel-bg" src="assets/images/hongkong-neon/01.jpg" alt="香港ネオン残照" loading="eager">
+          <div class="hero-panel-content">
+            <p class="hero-panel-label">Documentation Project</p>
+            <h2 class="hero-panel-title">香港ネオン残照</h2>
+            <p class="hero-panel-sub">消えゆくネオンの光を追いかけて。<br>変わりゆく街の記憶を記録する。</p>
+            <span class="hero-panel-arrow">プロジェクトを見る →</span>
+          </div>
+        </a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ======================================
+       SECTION 2: ステートメント
+       ====================================== -->
+  <section class="intro-statement">
+    <p class="intro-statement-text">
+      Leicaとドローンを携え、香港と日本を行き来しながら<br>
+      消えゆくもの、変わらないものを記録しています。
+    </p>
+    <p class="intro-byline">
+      写真と文章 — <a href="about.html">Toji Masaya</a>
+    </p>
+  </section>
+
+  <!-- ======================================
+       SECTION 3: 旅の記録
+       ====================================== -->
+  <section class="travels">
+    <div class="travels-inner">
+      <div class="section-header-row">
+        <h2 class="section-title-jp">旅の記録</h2>
+        <a href="trips.html" class="section-link">すべての旅を見る →</a>
+      </div>
+      <div class="travel-grid">
+
+        <!-- 大カード: トルコ旅行記 -->
+        <div class="travel-card travel-card-featured">
+          <a href="turkey-travel-journal.html">
+            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記" loading="lazy">
+            <div class="travel-card-overlay">
+              <h3 class="travel-card-title">トルコ旅行記</h3>
+              <p class="travel-card-meta">2024.10 — 9日間・6都市</p>
+            </div>
+          </a>
         </div>
+
+        <!-- 小カード: チベット・ラサ -->
+        <div class="travel-card travel-card-small">
+          <a href="trips.html">
+            <img src="assets/images/gallery/lhasa.jpg" alt="チベット・ラサ" loading="lazy">
+            <div class="travel-card-overlay">
+              <h3 class="travel-card-title">チベット・ラサ</h3>
+              <p class="travel-card-meta">Coming Soon</p>
+            </div>
+          </a>
+        </div>
+
+        <!-- 小カード: ケルンからプラハへ -->
+        <div class="travel-card travel-card-small">
+          <a href="trips.html">
+            <img src="assets/images/gallery/cologne.jpg" alt="ケルンからプラハへ" loading="lazy">
+            <div class="travel-card-overlay">
+              <h3 class="travel-card-title">ケルンからプラハへ</h3>
+              <p class="travel-card-meta">Coming Soon</p>
+            </div>
+          </a>
+        </div>
+
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- メインコンテンツ（画像の上をスライドする） -->
-  <main class="main-content">
-    
-    <section class="intro container">
-      <p class="lead intro-text">
-        イスタンブールから香港まで。<br>
-        Leica M10とドローンを片手に、旅先で出会った風景や小さな発見を写真と言葉で綴っています。
+  <!-- ======================================
+       SECTION 4: 最新の記事（RSS連携）
+       ====================================== -->
+  <section class="latest-articles">
+    <div class="section-header-row">
+      <h2 class="section-title-jp">最新の記事</h2>
+      <a href="writings.html" class="section-link">すべての記事 →</a>
+    </div>
+    <div class="latest-grid" id="latest-grid">
+      <p style="grid-column: 1 / -1; text-align: center; color: var(--text-lighter, #999); font-size: 0.9rem;">
+        最新の記事を読み込み中...
       </p>
-    </section>
-
-    <!-- Featured Projects -->
-    <section class="featured-projects container">
-      <h2 class="latest-title">Featured Projects</h2>
-      <div class="projects-grid-3col">
-        
-        <!-- Project 1: 白鷺三十六景 (先頭に配置) -->
-        <article class="project-card">
-          <a href="shirasagi36.html" class="project-image">
-            <img src="assets/images/shirasagi/21.jpg" alt="白鷺三十六景" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Himeji+Castle'">
-            <span class="progress-badge">Ongoing</span>
-          </a>
-          <div class="project-info">
-            <span class="project-label">Photography Project</span>
-            <h3>白鷺三十六景</h3>
-            <p class="project-description">姫路城を36の視点から捉える写真プロジェクト。北斎の「富嶽三十六景」に着想を得て、白鷺城の多様な表情を四季折々に記録していく。</p>
-            <a href="shirasagi36.html" class="project-btn">プロジェクトを見る</a>
-          </div>
-        </article>
-
-        <!-- Project 2: トルコ旅行記 -->
-        <article class="project-card">
-          <a href="turkey-travel-journal.html" class="project-image">
-            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Turkey'">
-          </a>
-          <div class="project-info">
-            <span class="project-label">Travel Journal</span>
-            <h3>トルコ旅行記</h3>
-            <p class="project-description">カッパドキアの熱気球、コンヤの旋回舞踊、パムッカレの白い石灰棚。オスマン帝国の面影から幻想的な奇岩群まで、9日間の旅の全記録。</p>
-            <a href="turkey-travel-journal.html" class="project-btn">旅の記録を読む</a>
-          </div>
-        </article>
-
-        <!-- Project 3: 香港探訪 -->
-        <article class="project-card">
-          <a href="hongkong.html" class="project-image">
-            <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280" alt="香港探訪" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Hong+Kong'">
-          </a>
-          <div class="project-info">
-            <span class="project-label">City Guide & Photo</span>
-            <h3>香港探訪</h3>
-            <p class="project-description">消えゆくネオンの光、街角のカメラショップ、フォトジェニックな風景。住んでいたからこそ知る、変わりゆく香港の「今」と「昔」を記録する。</p>
-            <a href="hongkong.html" class="project-btn">香港を見る</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- Highlights -->
-    <section class="latest-section container">
-      <h2 class="latest-title">Highlights</h2>
-      <div class="articles-grid-3col">
-        
-        <article class="content-card">
-          <a href="https://note.com/tojimasaya/n/nc507e45ecb75" target="_blank" rel="noopener" class="content-image">
-            <img src="https://assets.st-note.com/production/uploads/images/238879575/rectangle_large_type_2_5fca1f331b6c75601906af25a88580b9.png?width=1280" alt="わたしがXiaomi 15 Ultraを売った理由" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Note'">
-          </a>
-          <div class="content-info">
-            <span class="card-date">note.com</span>
-            <h3>わたしがXiaomi 15 Ultraを売った理由</h3>
-            <p class="card-excerpt">Xiaomi 15 Ultraを手放した理由、そして次世代Xiaomi 17 Ultraへの期待。61歳のガジェット好きが語る「終わり」と「始まり」の話。</p>
-            <a href="https://note.com/tojimasaya/n/nc507e45ecb75" target="_blank" rel="noopener" class="card-action-btn">Read on note</a>
-          </div>
-        </article>
-
-        <article class="content-card video-card" onclick="openVideo('cJ2lFRqmeBA', 'カッパドキアのホテルから')">
-          <div class="content-image video-thumbnail">
-            <img src="assets/images/gallery/cappadocia-thumbnail.jpg" alt="カッパドキアのホテルから" loading="lazy" onerror="this.src='https://placehold.co/600x400/e0e0e0/ffffff?text=Video'">
-            <div class="play-button">▶</div>
-          </div>
-          <div class="content-info">
-            <span class="card-date">YouTube</span>
-            <h3>カッパドキアのホテルから</h3>
-            <p class="card-excerpt">妻と訪れたカッパドキアのホテルから眺めた朝の風景。宿泊した洞窟ホテルのベランダからドローニー撮影。</p>
-            <span class="card-action-btn">Watch on YouTube</span>
-          </div>
-        </article>
-
-        <article class="content-card">
-          <a href="writings.html" class="content-image">
-            <img src="assets/images/gallery/writings-thumb.jpg" alt="執筆記事" onerror="this.src='assets/images/gallery/weekly.jpg'">
-          </a>
-          <div class="content-info">
-            <span class="card-date">Writings</span>
-            <h3>執筆記事一覧</h3>
-            <p class="card-excerpt">note、DRONE.jpでの連載記事をまとめています。旅の記録から機材レビューまで。</p>
-            <a href="writings.html" class="card-action-btn">記事を見る</a>
-          </div>
-        </article>
-
-      </div>
-    </section>
-
-    <!-- What's New -->
-    <section class="latest-section latest-new container">
-      <h2 class="latest-title">What's New</h2>
-      <div class="articles-grid-3col" id="whats-new-grid">
-        <p class="text-center" style="grid-column: 1 / -1; color: var(--text-light);">
-            最新の記事を読み込み中です...
-        </p>
-      </div>
-      <div class="text-center" style="margin-top: 40px;">
-        <a href="writings.html" class="card-action-btn" style="background: var(--text-light);">すべての記事を見る</a>
-      </div>
-    </section>
-
-    <section class="latest-section container" style="border-bottom: none;">
-      <h2 class="latest-title">Follow Me</h2>
-      <div class="link-grid">
-        <a href="https://www.facebook.com/masaya.toji" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">Facebook</div>
-          <p class="link-description">Facebookページ</p>
-        </a>
-        <a href="https://www.youtube.com/TJVlog" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">YouTube</div>
-          <p class="link-description">旅とドローンの動画</p>
-        </a>
-        <a href="https://x.com/mongkok93" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">X</div>
-          <p class="link-description">日々のつぶやき</p>
-        </a>
-        <a href="https://instagram.com/tojimasaya" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">Instagram</div>
-          <p class="link-description">日々のスナップ</p>
-        </a>
-        <a href="https://note.com/tojimasaya" target="_blank" rel="noopener" class="link-item">
-          <div class="link-title">note</div>
-          <p class="link-description">記事とコラム</p>
-        </a>
-      </div>
-    </section>
-
-  </main>
-
-  <footer class="footer">
-    <div class="container">
-      <p>&copy; 2024 Toji Masaya. All rights reserved.</p>
     </div>
+    <div class="latest-more-row">
+      <a href="writings.html" class="latest-more-btn">すべての記事を見る</a>
+    </div>
+  </section>
+
+  <!-- ======================================
+       SECTION 5: About Strip
+       ====================================== -->
+  <section class="about-strip">
+    <div class="about-inner">
+      <img class="about-photo" src="assets/images/about/TJ.jpg" alt="Toji Masaya" loading="lazy">
+      <div class="about-text-area">
+        <h2 class="about-name">Toji Masaya</h2>
+        <p class="about-bio">
+          香港・日本を拠点にする写真家。Leicaとドローンで旅の断片を記録。<br>
+          note、DRONE.jpで連載中。
+        </p>
+        <a href="about.html" class="about-more">プロフィールを見る →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================
+       FOOTER
+       ====================================== -->
+  <footer class="footer-redesign">
+    <div class="footer-inner">
+      <nav class="footer-nav">
+        <a href="gallery.html">Gallery</a>
+        <a href="gear.html">Gear</a>
+        <a href="writings.html">Writings</a>
+        <a href="trips.html">Trips</a>
+        <a href="about.html">About</a>
+      </nav>
+      <div class="footer-social">
+        <a href="https://instagram.com/tojimasaya" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">note</a>
+        <a href="https://www.youtube.com/TJVlog" target="_blank" rel="noopener noreferrer">YouTube</a>
+        <a href="https://x.com/mongkok93" target="_blank" rel="noopener noreferrer">X</a>
+        <a href="https://www.facebook.com/masaya.toji" target="_blank" rel="noopener noreferrer">Facebook</a>
+      </div>
+    </div>
+    <p class="footer-copy">&copy; 2024 Toji Masaya</p>
   </footer>
-  
+
   <script>
-    // ヒーロースライダー
-    (function() {
-      const sliderContainer = document.querySelector('.slider-container');
-      if (!sliderContainer) return;
+    // ===== 最新記事の読み込み（RSS連携） =====
+    async function loadLatestArticles() {
+      const container = document.getElementById('latest-grid');
 
-      const slides = Array.from(document.querySelectorAll('.hero-slide'));
-      const dots = Array.from(document.querySelectorAll('.hero-dots .dot'));
-      let currentSlide = 0;
-      let intervalId;
-      const slideInterval = 6000;
-
-      function changeSlide(nextIndex) {
-        if (nextIndex === currentSlide) return;
-        const current = slides[currentSlide];
-        const next = slides[nextIndex];
-        current.classList.remove('active');
-        next.classList.add('active');
-        dots[currentSlide].classList.remove('active');
-        dots[nextIndex].classList.add('active');
-        currentSlide = nextIndex;
-      }
-
-      function startAutoSlide() {
-        intervalId = setInterval(() => {
-          const nextIndex = (currentSlide + 1) % slides.length;
-          changeSlide(nextIndex);
-        }, slideInterval);
-      }
-
-      dots.forEach((dot, index) => {
-        dot.addEventListener('click', () => {
-          clearInterval(intervalId);
-          changeSlide(index);
-          startAutoSlide();
-        });
-      });
-
-      startAutoSlide();
-
-      document.addEventListener('visibilitychange', () => {
-        if (document.hidden) {
-          clearInterval(intervalId);
-        } else {
-          clearInterval(intervalId);
-          startAutoSlide();
-        }
-      });
-    })();
-
-    // スムーズスクロール
-    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-        anchor.addEventListener('click', function (e) {
-            e.preventDefault();
-            document.querySelector(this.getAttribute('href')).scrollIntoView({
-                behavior: 'smooth'
-            });
-        });
-    });
-
-    // External links
-    document.querySelectorAll('a[target="_blank"]').forEach(link => {
-        link.rel = 'noopener noreferrer';
-    });
-
-    // What's New (RSS Fetcher)
-    async function loadWhatsNew() {
-      const container = document.getElementById('whats-new-grid');
-      
       try {
+        // OGP データの取得
         const ogResponse = await fetch('/data/writings-og.json');
         let articlesData = {};
         if (ogResponse.ok) {
-            articlesData = await ogResponse.json();
+          articlesData = await ogResponse.json();
         }
-        
+
         const noteFeeds = [
           { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
           { url: 'https://note.com/tojimasaya/m/md99dd54590fa/rss', name: '次はどこへ' }
         ];
-        
+
         const noteArticles = [];
-        
+
         for (const feed of noteFeeds) {
           try {
             const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
@@ -477,75 +827,93 @@
             const parser = new DOMParser();
             const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
             const items = xmlDoc.querySelectorAll('item');
-            
+
             items.forEach((item, index) => {
-              if (index < 1) { // 各フィードから最新1件
+              if (index < 1) {
                 const title = item.querySelector('title')?.textContent || '';
                 const link = item.querySelector('link')?.textContent || '';
-                const description = item.querySelector('description')?.textContent || '';
                 const pubDate = item.querySelector('pubDate')?.textContent || '';
-                const excerpt = description.replace(/<[^>]*>/g, '').substring(0, 60) + '...';
                 const date = new Date(pubDate);
-                
                 const ogData = articlesData[link];
                 const imageUrl = ogData?.image || 'assets/images/gallery/weekly.jpg';
-                
-                noteArticles.push({
-                  title, link, excerpt, date: date.toISOString(), imageUrl, source: 'note'
-                });
+                noteArticles.push({ title, link, imageUrl, source: 'note', date });
               }
             });
-          } catch (error) { console.error('RSS Error:', error); }
+          } catch (error) {
+            console.error('RSS Error:', error);
+          }
         }
-        
-        // DRONE.jp (Mock from json)
+
+        // DRONE.jp
         const droneArticles = Object.entries(articlesData)
           .filter(([url]) => url.includes('drone.jp/column'))
           .slice(0, 1)
           .map(([url, data]) => ({
-              title: data.title || 'DRONE.jp記事',
-              link: url,
-              excerpt: data.description?.substring(0, 60) + '...' || '',
-              imageUrl: data.image || 'assets/images/gallery/hongkong.jpg',
-              source: 'DRONE.jp'
+            title: data.title || 'DRONE.jp記事',
+            link: url,
+            imageUrl: data.image || 'assets/images/gallery/weekly.jpg',
+            source: 'DRONE.jp'
           }));
-        
+
         const allArticles = [...noteArticles, ...droneArticles].slice(0, 3);
-        
+
         if (allArticles.length > 0) {
           container.innerHTML = allArticles.map(article => `
-            <article class="content-card">
-              <a href="${article.link}" target="_blank" rel="noopener" class="content-image">
-                <img src="${article.imageUrl}" alt="${article.title}" onerror="this.src='assets/images/gallery/weekly.jpg'">
+            <article class="latest-item">
+              <a href="${article.link}" target="_blank" rel="noopener noreferrer">
+                <img class="latest-thumb" src="${article.imageUrl}" alt="${article.title}" loading="lazy" onerror="this.src='assets/images/gallery/weekly.jpg'">
+                <div class="latest-content">
+                  <p class="latest-source">${article.source}</p>
+                  <h3 class="latest-item-title">${article.title}</h3>
+                </div>
               </a>
-              <div class="content-info">
-                <span class="card-date">${article.source}</span>
-                <h3>${article.title}</h3>
-                <p class="card-excerpt">${article.excerpt}</p>
-                <a href="${article.link}" target="_blank" rel="noopener" class="card-action-btn">読む</a>
-              </div>
             </article>
           `).join('');
         } else {
-            throw new Error("No articles");
+          throw new Error('No articles');
         }
       } catch (error) {
-        console.log('Using static content for What\'s New');
+        console.log('Using static content for latest articles');
         container.innerHTML = `
-          <article class="content-card">
-            <a href="https://note.com/tojimasaya" target="_blank" class="content-image"><img src="assets/images/gallery/weekly.jpg" alt="note"></a>
-            <div class="content-info"><span class="card-date">note</span><h3>最新記事をチェック</h3><a href="https://note.com/tojimasaya" class="card-action-btn">noteを見る</a></div>
+          <article class="latest-item">
+            <a href="https://note.com/tojimasaya" target="_blank" rel="noopener">
+              <img class="latest-thumb" src="assets/images/gallery/weekly.jpg" alt="note" loading="lazy">
+              <div class="latest-content">
+                <p class="latest-source">note</p>
+                <h3 class="latest-item-title">最新記事をチェック</h3>
+              </div>
+            </a>
           </article>
-          <article class="content-card">
-            <a href="https://drone.jp/column/masaya-toji" target="_blank" class="content-image"><img src="assets/images/gallery/hongkong.jpg" alt="DRONE.jp"></a>
-            <div class="content-info"><span class="card-date">DRONE.jp</span><h3>ドローン連載</h3><a href="https://drone.jp/column/masaya-toji" class="card-action-btn">連載を見る</a></div>
+          <article class="latest-item">
+            <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener">
+              <img class="latest-thumb" src="assets/images/gallery/hongkong.jpg" alt="DRONE.jp" loading="lazy">
+              <div class="latest-content">
+                <p class="latest-source">DRONE.jp</p>
+                <h3 class="latest-item-title">ドローン連載</h3>
+              </div>
+            </a>
+          </article>
+          <article class="latest-item">
+            <a href="writings.html">
+              <img class="latest-thumb" src="assets/images/gallery/monthly.jpg" alt="Writings" loading="lazy">
+              <div class="latest-content">
+                <p class="latest-source">Writings</p>
+                <h3 class="latest-item-title">執筆記事一覧</h3>
+              </div>
+            </a>
           </article>
         `;
       }
     }
-    
-    document.addEventListener('DOMContentLoaded', loadWhatsNew);
 
+    document.addEventListener('DOMContentLoaded', loadLatestArticles);
+
+    // ===== External links =====
+    document.querySelectorAll('a[target="_blank"]').forEach(link => {
+      link.rel = 'noopener noreferrer';
+    });
+
+    // ===== Video Modal（将来の動画埋め込み用） =====
     function openVideo(youtubeId, title) {
       const html = `
         <div class="modal" id="videoModal" style="display:flex;" onclick="closeVideo()">
