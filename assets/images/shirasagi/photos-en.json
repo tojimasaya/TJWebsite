@@ -5,9 +5,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring morning",
     "location": {
-      "name": "Beni-bashi Bridge",
-      "lat": 34.8420,
-      "lng": 134.6928
+      "lat": 34.836111,
+      "lng": 134.69477
     }
   },
   "2": {
@@ -16,9 +15,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring evening",
     "location": {
-      "name": "Sannomaru Plaza",
-      "lat": 34.8390,
-      "lng": 134.6935
+      "lat": 34.837359,
+      "lng": 134.686569
     }
   },
   "3": {
@@ -27,9 +25,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring night",
     "location": {
-      "name": "Sakuramon Bridge",
-      "lat": 34.8385,
-      "lng": 134.6931
+      "lat": 34.838124,
+      "lng": 134.69267
     }
   },
   "4": {
@@ -38,8 +35,7 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon",
     "location": {
-      "name": "Sannomaru Plaza",
-      "lat": 34.8390,
+      "lat": 34.839,
       "lng": 134.6935
     }
   },
@@ -49,8 +45,7 @@
     "gear": "Leica M10",
     "category": "spring afternoon",
     "location": {
-      "name": "Sannomaru Plaza",
-      "lat": 34.8390,
+      "lat": 34.839,
       "lng": 134.6935
     }
   },
@@ -60,7 +55,6 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon",
     "location": {
-      "name": "Hakuro Junior High School Ground",
       "lat": 34.8407,
       "lng": 134.6918
     }
@@ -71,9 +65,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "summer afternoon",
     "location": {
-      "name": "Otokoyama Reservoir Park",
       "lat": 34.8445,
-      "lng": 134.6950
+      "lng": 134.695
     }
   },
   "8": {
@@ -82,9 +75,8 @@
     "gear": "Xiaomi 15 Ultra",
     "category": "summer evening",
     "location": {
-      "name": "Johoku Cemetery",
-      "lat": 34.8440,
-      "lng": 134.6910
+      "lat": 34.844,
+      "lng": 134.691
     }
   },
   "9": {
@@ -93,7 +85,6 @@
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
     "location": {
-      "name": "Himeyama Parking Area",
       "lat": 34.8365,
       "lng": 134.6945
     }
@@ -104,7 +95,6 @@
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
     "location": {
-      "name": "Sakuramon Bridge",
       "lat": 34.8385,
       "lng": 134.6931
     }
@@ -115,8 +105,7 @@
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer afternoon",
     "location": {
-      "name": "Sannomaru Plaza",
-      "lat": 34.8390,
+      "lat": 34.839,
       "lng": 134.6935
     }
   },
@@ -126,7 +115,6 @@
     "gear": "Leica M10",
     "category": "autumn afternoon",
     "location": {
-      "name": "Shirotopia Memorial Park",
       "lat": 34.8355,
       "lng": 134.6905
     }
@@ -137,9 +125,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "Hokusei-Kakushimon Ruins",
       "lat": 34.8395,
-      "lng": 134.6920
+      "lng": 134.692
     }
   },
   "15": {
@@ -148,7 +135,6 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "Himeji City Museum of Art",
       "lat": 34.8353,
       "lng": 134.6892
     }
@@ -159,8 +145,7 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "Inner Moat Area",
-      "lat": 34.8380,
+      "lat": 34.838,
       "lng": 134.6915
     }
   },
@@ -170,8 +155,7 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "Otemon Gate",
-      "lat": 34.8380,
+      "lat": 34.838,
       "lng": 134.6925
     }
   },
@@ -181,7 +165,6 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "Sakuramon Bridge",
       "lat": 34.8385,
       "lng": 134.6931
     }
@@ -192,8 +175,7 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "winter afternoon",
     "location": {
-      "name": "Sannomaru Plaza",
-      "lat": 34.8390,
+      "lat": 34.839,
       "lng": 134.6935
     }
   },
@@ -203,7 +185,6 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter night",
     "location": {
-      "name": "Otemae Street",
       "lat": 34.8342,
       "lng": 134.6925
     }
@@ -214,8 +195,7 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter night",
     "location": {
-      "name": "Himeji Castle Viewpoint",
-      "lat": 34.8360,
+      "lat": 34.836,
       "lng": 134.6955
     }
   },
@@ -225,7 +205,6 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter morning",
     "location": {
-      "name": "Nagoyama",
       "lat": 34.8423,
       "lng": 134.6776
     }
@@ -236,7 +215,6 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter afternoon",
     "location": {
-      "name": "Sannomaru Plaza, Himeji Castle",
       "lat": 34.8374,
       "lng": 134.6933
     }
@@ -247,7 +225,6 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter afternoon",
     "location": {
-      "name": "Sannomaru Plaza, Himeji Castle",
       "lat": 34.8374,
       "lng": 134.6933
     }

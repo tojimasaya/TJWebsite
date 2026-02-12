@@ -5,9 +5,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring morning",
     "location": {
-      "name": "紅橋",
-      "lat": 34.8420,
-      "lng": 134.6928
+      "lat": 34.836111,
+      "lng": 134.69477
     }
   },
   "2": {
@@ -16,9 +15,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring evening",
     "location": {
-      "name": "三の丸広場",
-      "lat": 34.8390,
-      "lng": 134.6935
+      "lat": 34.837359,
+      "lng": 134.686569
     }
   },
   "3": {
@@ -27,9 +25,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring night",
     "location": {
-      "name": "桜門橋",
-      "lat": 34.8385,
-      "lng": 134.6931
+      "lat": 34.838124,
+      "lng": 134.69267
     }
   },
   "4": {
@@ -38,8 +35,7 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon",
     "location": {
-      "name": "三の丸広場",
-      "lat": 34.8390,
+      "lat": 34.839,
       "lng": 134.6935
     }
   },
@@ -49,8 +45,7 @@
     "gear": "Leica M10",
     "category": "spring afternoon",
     "location": {
-      "name": "三の丸広場",
-      "lat": 34.8390,
+      "lat": 34.839,
       "lng": 134.6935
     }
   },
@@ -60,7 +55,6 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon",
     "location": {
-      "name": "白鷺中学校グラウンド",
       "lat": 34.8407,
       "lng": 134.6918
     }
@@ -71,9 +65,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "summer afternoon",
     "location": {
-      "name": "男山配水池公園",
       "lat": 34.8445,
-      "lng": 134.6950
+      "lng": 134.695
     }
   },
   "8": {
@@ -82,9 +75,8 @@
     "gear": "Xiaomi 15 Ultra",
     "category": "summer evening",
     "location": {
-      "name": "城北墓地",
-      "lat": 34.8440,
-      "lng": 134.6910
+      "lat": 34.844,
+      "lng": 134.691
     }
   },
   "9": {
@@ -93,7 +85,6 @@
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
     "location": {
-      "name": "姫山駐車場",
       "lat": 34.8365,
       "lng": 134.6945
     }
@@ -104,7 +95,6 @@
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
     "location": {
-      "name": "桜門橋",
       "lat": 34.8385,
       "lng": 134.6931
     }
@@ -115,8 +105,7 @@
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer afternoon",
     "location": {
-      "name": "三の丸広場",
-      "lat": 34.8390,
+      "lat": 34.839,
       "lng": 134.6935
     }
   },
@@ -126,7 +115,6 @@
     "gear": "Leica M10",
     "category": "autumn afternoon",
     "location": {
-      "name": "シロトピア記念公園",
       "lat": 34.8355,
       "lng": 134.6905
     }
@@ -137,9 +125,8 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "北勢隠門跡",
       "lat": 34.8395,
-      "lng": 134.6920
+      "lng": 134.692
     }
   },
   "15": {
@@ -148,7 +135,6 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "姫路市立美術館",
       "lat": 34.8353,
       "lng": 134.6892
     }
@@ -159,8 +145,7 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "内堀沿い",
-      "lat": 34.8380,
+      "lat": 34.838,
       "lng": 134.6915
     }
   },
@@ -170,8 +155,7 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "追手門",
-      "lat": 34.8380,
+      "lat": 34.838,
       "lng": 134.6925
     }
   },
@@ -181,7 +165,6 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "location": {
-      "name": "桜門橋",
       "lat": 34.8385,
       "lng": 134.6931
     }
@@ -192,8 +175,7 @@
     "gear": "Leica M10 + Summilux 50mm",
     "category": "winter afternoon",
     "location": {
-      "name": "三の丸広場",
-      "lat": 34.8390,
+      "lat": 34.839,
       "lng": 134.6935
     }
   },
@@ -203,7 +185,6 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter night",
     "location": {
-      "name": "大手前通り",
       "lat": 34.8342,
       "lng": 134.6925
     }
@@ -214,8 +195,7 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter night",
     "location": {
-      "name": "姫路城ビューポイント",
-      "lat": 34.8360,
+      "lat": 34.836,
       "lng": 134.6955
     }
   },
@@ -225,7 +205,6 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter morning",
     "location": {
-      "name": "名古山",
       "lat": 34.8423,
       "lng": 134.6776
     }
@@ -236,7 +215,6 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter afternoon",
     "location": {
-      "name": "姫路城三の丸広場",
       "lat": 34.8374,
       "lng": 134.6933
     }
@@ -247,7 +225,6 @@
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter afternoon",
     "location": {
-      "name": "姫路城三の丸広場",
       "lat": 34.8374,
       "lng": 134.6933
     }
