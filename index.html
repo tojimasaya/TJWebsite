@@ -768,7 +768,7 @@
       <div class="about-text-area">
         <h2 class="about-name">Toji Masaya</h2>
         <p class="about-bio">
-          還暦を機に香港・日本の２拠点ライフをエンジョイ中。Leicaとドローンで旅の断片を記録。<br>
+          香港・日本を拠点にする写真家。Leicaとドローンで旅の断片を記録。<br>
           note、DRONE.jpで連載中。
         </p>
         <a href="about.html" class="about-more">プロフィールを見る →</a>
@@ -800,62 +800,22 @@
   </footer>
 
   <script>
-    // ===== 最新記事の読み込み（RSS連携） =====
+    // ===== 最新記事の読み込み（articles.json） =====
     async function loadLatestArticles() {
       const container = document.getElementById('latest-grid');
 
       try {
-        // OGP データの取得
-        const ogResponse = await fetch('/data/writings-og.json');
-        let articlesData = {};
-        if (ogResponse.ok) {
-          articlesData = await ogResponse.json();
-        }
+        const res = await fetch('/data/articles.json');
+        if (!res.ok) throw new Error('Failed to load articles.json');
+        const articles = await res.json();
 
-        const noteFeeds = [
-          { url: 'https://note.com/tojimasaya/m/m22c44596304b/rss', name: '香港レンズ' },
-          { url: 'https://note.com/tojimasaya/m/md99dd54590fa/rss', name: '次はどこへ' }
-        ];
-
-        const noteArticles = [];
-
-        for (const feed of noteFeeds) {
-          try {
-            const proxyUrl = `https://api.allorigins.win/raw?url=${encodeURIComponent(feed.url)}`;
-            const response = await fetch(proxyUrl);
-            const xmlText = await response.text();
-            const parser = new DOMParser();
-            const xmlDoc = parser.parseFromString(xmlText, 'text/xml');
-            const items = xmlDoc.querySelectorAll('item');
-
-            items.forEach((item, index) => {
-              if (index < 1) {
-                const title = item.querySelector('title')?.textContent || '';
-                const link = item.querySelector('link')?.textContent || '';
-                const pubDate = item.querySelector('pubDate')?.textContent || '';
-                const date = new Date(pubDate);
-                const ogData = articlesData[link];
-                const imageUrl = ogData?.image || 'assets/images/gallery/weekly.jpg';
-                noteArticles.push({ title, link, imageUrl, source: 'note', date });
-              }
-            });
-          } catch (error) {
-            console.error('RSS Error:', error);
-          }
-        }
-
-        // DRONE.jp
-        const droneArticles = Object.entries(articlesData)
-          .filter(([url]) => url.includes('drone.jp/column'))
-          .slice(0, 1)
-          .map(([url, data]) => ({
-            title: data.title || 'DRONE.jp記事',
-            link: url,
-            imageUrl: data.image || 'assets/images/gallery/weekly.jpg',
-            source: 'DRONE.jp'
-          }));
-
-        const allArticles = [...noteArticles, ...droneArticles].slice(0, 3);
+        // 日付降順でソート済み、最新3件を取得
+        const allArticles = articles.slice(0, 3).map(a => ({
+          title: a.title,
+          link: a.link,
+          imageUrl: a.image || 'assets/images/gallery/weekly.jpg',
+          source: a.sourceLabel || a.source
+        }));
 
         if (allArticles.length > 0) {
           container.innerHTML = allArticles.map(article => `
