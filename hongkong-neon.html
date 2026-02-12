@@ -127,6 +127,21 @@
         @media (max-width: 768px) {
             .neon-grid { grid-template-columns: repeat(2, 1fr); padding: 0 20px; gap: 10px; }
         }
+
+        /* Count badge */
+        .filter-btn .count {
+            display: inline-block; margin-left: 4px; font-size: 0.75rem; opacity: 0.6;
+        }
+        .filter-btn .count::before { content: '('; }
+        .filter-btn .count::after  { content: ')'; }
+
+        /* Modal gear info */
+        .modal-gear {
+            font-size: 0.8rem; color: var(--text-sub); margin-top: 8px; letter-spacing: 0.05em; opacity: 0.7;
+        }
+        .modal-meta {
+            font-size: 0.85rem; color: var(--text-sub);
+        }
     </style>
 </head>
 <body>
@@ -160,11 +175,11 @@
 
     <!-- Filter -->
     <section class="category-filter">
-        <button class="filter-btn active" data-category="all">すべて</button>
-        <button class="filter-btn" data-category="mongkok">旺角・油麻地<span>Mong Kok</span></button>
-        <button class="filter-btn" data-category="shamshuipo">深水埗<span>Sham Shui Po</span></button>
-        <button class="filter-btn" data-category="kowlooncity">九龍城<span>Kowloon City</span></button>
-        <button class="filter-btn" data-category="central">中環・湾仔<span>Central</span></button>
+        <button class="filter-btn active" data-category="all">すべて <span class="count">19</span></button>
+        <button class="filter-btn" data-category="kowlooncity">九龍城 <span class="count">10</span></button>
+        <button class="filter-btn" data-category="mongkok">旺角・油麻地 <span class="count">9</span></button>
+        <button class="filter-btn" data-category="shamshuipo">深水埗 <span class="count">0</span></button>
+        <button class="filter-btn" data-category="central">中環・湾仔 <span class="count">0</span></button>
     </section>
 
     <!-- Grid -->
@@ -184,29 +199,66 @@
 
     <!-- Scripts -->
     <script>
-        // Sample Data (Embedded to prevent fetch errors)
-        const photosData = {
-            "1": { "title": "Shing Hing Sign", "location": "Mong Kok", "category": "mongkok", "date": "2023.11" },
-            "2": { "title": "Tung Po Kitchen", "location": "North Point", "category": "other", "date": "2023.10" },
-            "3": { "title": "Mido Cafe", "location": "Yau Ma Tei", "category": "mongkok", "date": "2024.01" },
-            "4": { "title": "Sammy's Kitchen", "location": "Sai Ying Pun", "category": "central", "date": "Captured 2015 (Demolished)" }
-        };
+        let photosData = {};
         let currentCategory = 'all';
+        const IMAGE_DIR = 'assets/images/hongkong-neon/';
+
+        // 外部JSONから読み込み → 失敗時はフォールバック
+        async function loadPhotos() {
+            try {
+                const res = await fetch('assets/images/hongkong-neon/photos.json');
+                if (!res.ok) throw new Error(`HTTP ${res.status}`);
+                photosData = await res.json();
+            } catch (e) {
+                console.warn('photos.json の読み込みに失敗。フォールバックデータを使用:', e);
+                photosData = {
+                    "1": { "title": "夜の九龍城、自転車とネオン", "location": "九龍城", "category": "kowlooncity", "date": "2025-12-03", "gear": "Leica SL2-S" },
+                    "2": { "title": "永富上海蟹專門店の緑のネオン", "location": "九龍城", "category": "kowlooncity", "date": "2025-12-03", "gear": "Leica SL2-S" }
+                };
+            }
+            updateFilterCounts();
+            generateGallery();
+        }
+
+        // フィルターボタンに件数バッジを表示
+        function updateFilterCounts() {
+            const entries = Object.values(photosData);
+            document.querySelectorAll('.filter-btn').forEach(btn => {
+                const cat = btn.dataset.category;
+                const count = cat === 'all' ? entries.length : entries.filter(p => p.category === cat).length;
+                const badge = btn.querySelector('.count');
+                if (badge) badge.textContent = count;
+                // 該当写真がないカテゴリは薄く表示
+                if (cat !== 'all' && count === 0) {
+                    btn.style.opacity = '0.35';
+                    btn.style.pointerEvents = 'none';
+                } else {
+                    btn.style.opacity = '';
+                    btn.style.pointerEvents = '';
+                }
+            });
+        }
 
         function generateGallery() {
             const grid = document.getElementById('neon-grid');
             grid.innerHTML = '';
-            const filtered = Object.entries(photosData).filter(([id, photo]) => {
-                return currentCategory === 'all' || photo.category === currentCategory;
-            });
+
+            // IDを数値順にソート
+            const filtered = Object.entries(photosData)
+                .filter(([id, photo]) => currentCategory === 'all' || photo.category === currentCategory)
+                .sort(([a], [b]) => Number(a) - Number(b));
 
             if (filtered.length > 0) {
                 filtered.forEach(([id, photo]) => {
+                    const filename = `${String(id).padStart(2, '0')}.jpg`;
                     const article = document.createElement('article');
                     article.className = 'neon-item';
-                    article.onclick = () => openModal(`assets/images/hongkong-neon/${String(id).padStart(2, '0')}.jpg`, photo.title, photo.location, photo.date);
+                    article.onclick = () => openModal(
+                        `${IMAGE_DIR}${filename}`, photo.title, photo.location, photo.date, photo.gear
+                    );
                     article.innerHTML = `
-                        <img src="assets/images/hongkong-neon/${String(id).padStart(2, '0')}.jpg" alt="${photo.title}" loading="lazy" onerror="this.src='https://placehold.co/600x800/222/555?text=Neon'">
+                        <img src="${IMAGE_DIR}${filename}" alt="${photo.title}" loading="lazy"
+                             onerror="this.src='https://placehold.co/600x800/222/555?text=Neon'">
                         <div class="neon-item-overlay">
                             <h3 class="neon-item-title">${photo.title}</h3>
                             <div class="neon-item-info">${photo.location}</div>
@@ -227,20 +279,28 @@
             });
         });
 
-        function openModal(src, title, location, date) {
+        function openModal(src, title, location, date, gear) {
             const modal = document.getElementById('modal');
+            const gearHtml = gear ? `<div class="modal-gear">${gear}</div>` : '';
             modal.querySelector('.modal-content').innerHTML = `
-                <img src="${src}" class="modal-image" alt="${title}" onerror="this.src='https://placehold.co/800x600/222/555?text=Neon'">
-                <div class="modal-info"><h3 class="modal-title">${title}</h3><div class="modal-meta">${location} | ${date}</div></div>`;
+                <img src="${src}" class="modal-image" alt="${title}"
+                     onerror="this.src='https://placehold.co/800x600/222/555?text=Neon'">
+                <div class="modal-info">
+                    <h3 class="modal-title">${title}</h3>
+                    <div class="modal-meta">${location} | ${date}</div>
+                    ${gearHtml}
+                </div>`;
             modal.style.display = 'flex';
             document.body.style.overflow = 'hidden';
         }
+
         function closeModal() {
             document.getElementById('modal').style.display = 'none';
             document.body.style.overflow = 'auto';
         }
+
         document.addEventListener('keydown', (e) => { if (e.key === 'Escape') closeModal(); });
-        document.addEventListener('DOMContentLoaded', generateGallery);
+        document.addEventListener('DOMContentLoaded', loadPhotos);
     </script>
 </body>
 </html>
