@@ -29,8 +29,88 @@
         /* Gear Hub Specific Styles */
         .gear-hub-hero {
             padding: 120px 20px 80px;
-            text-align: center;
-            background-color: var(--bg-color);
+            background: radial-gradient(circle at top, #1f2933 0, #050816 55%, #020617 100%);
+            color: #f9fafb;
+        }
+
+        .gear-hub-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 1.5fr) minmax(0, 1fr);
+            gap: 40px;
+            align-items: center;
+        }
+
+        .gear-hub-title {
+            font-family: 'Crimson Text', serif;
+            font-size: clamp(2.4rem, 4vw, 3.3rem);
+            margin-bottom: 0.75rem;
+            letter-spacing: 0.03em;
+        }
+
+        .gear-hub-subtitle {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1rem;
+            line-height: 2;
+            color: rgba(249, 250, 251, 0.8);
+            margin-bottom: 1.5rem;
+        }
+
+        .gear-hub-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 0.5rem;
+            font-family: var(--secondary-font);
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.16em;
+            color: rgba(209, 213, 219, 0.9);
+        }
+
+        .gear-hub-pill {
+            border-radius: 999px;
+            border: 1px solid rgba(148, 163, 184, 0.6);
+            padding: 0.2rem 0.9rem;
+            background: rgba(15, 23, 42, 0.6);
+        }
+
+        .gear-hub-hero-thumb {
+            position: relative;
+            border-radius: 18px;
+            overflow: hidden;
+            border: 1px solid rgba(148, 163, 184, 0.4);
+            box-shadow: 0 24px 60px rgba(15, 23, 42, 0.9);
+            min-height: 220px;
+            background: radial-gradient(circle at top left, #1f2933, #020617);
+        }
+
+        .gear-hub-hero-thumb img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.9;
+        }
+
+        .gear-hub-hero-badge {
+            position: absolute;
+            left: 18px;
+            bottom: 18px;
+            background: rgba(15, 23, 42, 0.85);
+            border-radius: 999px;
+            padding: 0.4rem 0.9rem;
+            font-family: var(--secondary-font);
+            font-size: 0.75rem;
+            color: #e5e7eb;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(148, 163, 184, 0.8);
+        }
+
+        .gear-hub-hero-badge span.icon {
+            font-size: 0.9rem;
         }
 
         .category-grid {
@@ -46,23 +126,35 @@
             position: relative;
             display: block;
             text-decoration: none;
-            border-radius: 4px;
+            border-radius: 16px;
             overflow: hidden;
             aspect-ratio: 16/9;
-            background-color: #f0f0f0; /* Loading placeholder color */
+            background-color: #020617; /* Loading placeholder color */
+            border: 1px solid rgba(15, 23, 42, 0.8);
+            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+        }
+
+        .category-card::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(135deg, rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.35), rgba(15, 23, 42, 0.9));
+            mix-blend-mode: multiply;
+            opacity: 1;
+            z-index: 1;
         }
 
         .category-bg {
             position: absolute;
             top: 0; left: 0; width: 100%; height: 100%;
             object-fit: cover;
-            transition: transform 0.6s ease;
-            filter: brightness(0.7);
+            transition: transform 0.7s ease;
+            filter: saturate(1.1) brightness(0.8);
         }
 
         .category-card:hover .category-bg {
-            transform: scale(1.05);
-            filter: brightness(0.6);
+            transform: scale(1.06);
+            filter: saturate(1.2) brightness(0.9);
         }
 
         .category-content {
@@ -71,40 +163,56 @@
             height: 100%;
             display: flex;
             flex-direction: column;
-            justify-content: center;
-            align-items: center;
+            justify-content: flex-end;
+            align-items: flex-start;
             color: white;
-            text-align: center;
-            padding: 20px;
+            text-align: left;
+            padding: 22px 24px 24px;
+        }
+
+        .category-tag {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.4rem;
+            font-family: var(--secondary-font);
+            font-size: 0.75rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            padding: 0.25rem 0.9rem;
+            border-radius: 999px;
+            background: rgba(15, 23, 42, 0.85);
+            border: 1px solid rgba(148, 163, 184, 0.9);
+            margin-bottom: 0.9rem;
         }
 
         .category-icon {
-            font-size: 2rem;
-            margin-bottom: 15px;
-            opacity: 0.9;
+            font-size: 1.1rem;
+            opacity: 0.95;
         }
 
         .category-title {
             font-family: var(--primary-font);
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-            font-weight: 400;
-            text-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            font-size: 1.5rem;
+            margin-bottom: 6px;
+            font-weight: 500;
+            text-shadow: 0 4px 10px rgba(0,0,0,0.45);
         }
 
         .category-desc {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1rem;
-            opacity: 0.9;
-            max-width: 400px;
-            line-height: 1.6;
+            font-size: 0.9rem;
+            opacity: 0.92;
+            max-width: 360px;
+            line-height: 1.7;
         }
 
         .category-arrow {
-            margin-top: 20px;
+            margin-top: 18px;
             font-family: var(--secondary-font);
-            font-size: 0.9rem;
-            border-bottom: 1px solid white;
+            font-size: 0.8rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            border-bottom: 1px solid rgba(249, 250, 251, 0.6);
             padding-bottom: 3px;
             opacity: 0;
             transform: translateY(10px);
@@ -144,13 +252,17 @@
         }
 
         /* Responsive */
+        @media (max-width: 900px) {
+            .gear-hub-inner {
+                grid-template-columns: 1fr;
+                gap: 32px;
+            }
+        }
+
         @media (max-width: 768px) {
             .category-grid {
                 grid-template-columns: 1fr;
-                gap: 20px;
-            }
-            .category-title {
-                font-size: 2rem;
+                gap: 22px;
             }
         }
     </style>
@@ -181,8 +293,27 @@
 
     <!-- Hero -->
     <header class="gear-hub-hero">
-        <h1 style="font-family: 'Crimson Text', serif; font-size: 3.5rem; margin-bottom: 1rem;">Tools of the Trade</h1>
-        <p style="font-family: 'Noto Serif JP', serif; color: var(--text-light);">旅と日常を切り取るための愛すべき道具たち</p>
+        <div class="gear-hub-inner">
+            <div>
+                <h1 class="gear-hub-title">Tools of the Trade</h1>
+                <p class="gear-hub-subtitle">
+                    香港と日本、ときどき旅先。<br>
+                    Leicaの静止画とドローンの俯瞰を支える、小さな相棒たち。
+                </p>
+                <div class="gear-hub-meta">
+                    <span class="gear-hub-pill">Leica M / Q / L-Mount</span>
+                    <span class="gear-hub-pill">DJI Drones</span>
+                    <span class="gear-hub-pill">Editing & Carry</span>
+                </div>
+            </div>
+            <div class="gear-hub-hero-thumb">
+                <img src="assets/images/gear/hero-m2.jpg" alt="Leicaと機材のテーブルショット" loading="lazy" decoding="async">
+                <div class="gear-hub-hero-badge">
+                    <span class="icon">●</span>
+                    <span>Everyday Carry &amp; Travel Setup</span>
+                </div>
+            </div>
+        </div>
     </header>
 
     <!-- Categories Grid -->
@@ -218,21 +349,25 @@
             'camera': {
                 link: 'gear-camera.html',
                 icon: '📷',
+                label: 'Camera',
                 fallbackImage: 'assets/images/gear/m2.jpg'
             },
             'drone': {
                 link: 'gear-drone.html',
                 icon: '🚁',
+                label: 'Drone',
                 fallbackImage: 'assets/images/gear/drone-mini4.jpg'
             },
             'editing': {
                 link: 'gear-editing.html',
                 icon: '💻',
+                label: 'Editing',
                 fallbackImage: 'assets/images/gear/ipad.jpg'
             },
             'accessories': {
                 link: 'gear-accessories.html',
                 icon: '🎒',
+                label: 'Carry & Etc.',
                 fallbackImage: 'assets/images/gear/bag.jpg'
             }
         };
@@ -264,7 +399,10 @@
                             <a href="${config.link}" class="category-card">
                                 <img src="${imgSrc}" alt="${categoryData.title}" class="category-bg" loading="lazy" decoding="async" onerror="this.src='${config.fallbackImage}'">
                                 <div class="category-content">
-                                    <div class="category-icon">${config.icon}</div>
+                                    <div class="category-tag">
+                                        <span class="category-icon">${config.icon}</span>
+                                        <span>${config.label}</span>
+                                    </div>
                                     <h2 class="category-title">${categoryData.title}</h2>
                                     <p class="category-desc">${categoryData.description}</p>
                                     <span class="category-arrow">View Collection →</span>
