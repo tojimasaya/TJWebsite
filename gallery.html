@@ -17,11 +17,27 @@
     <meta name="description" content="田路昌也の写真・動画ポートフォリオ。香港、トルコ、姫路、ドローン空撮など、旅と日常の記録。">
     <meta name="author" content="Toji Masaya">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Fonts (optimized loading) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data (Image Gallery) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Gallery — Toji Masaya",
+      "description": "香港、トルコ、姫路などで撮影した写真と動画のポートフォリオギャラリー。",
+      "url": "https://tojimasaya.com/gallery.html"
+    }
+    </script>
 
     <style>
         /* --- Gallery Page Styles --- */
@@ -311,6 +327,7 @@
 
     <!-- Navigation (Injected by JS) -->
     <script src="js/site-header.js"></script>
+    <script src="js/image-fallback.js"></script>
 
     <!-- Hero -->
     <header class="gallery-hero">
@@ -421,7 +438,7 @@
 
                 el.innerHTML = `
                     <div class="item-img-wrapper">
-                        <img src="${thumbSrc}" alt="${item.title}" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'">
+                        <img src="${thumbSrc}" alt="${item.title}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'">
                     </div>
                     <div class="item-overlay">
                         <div class="item-title">${item.title}</div>

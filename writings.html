@@ -18,11 +18,27 @@
     <meta name="description" content="田路昌也の執筆記事一覧。noteでのエッセイ、DRONE.jpでの連載コラム、旅の記録や機材レビューなど。">
     <meta name="author" content="Toji Masaya">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Fonts (optimized loading) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
+
+    <!-- Structured Data (CollectionPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "CollectionPage",
+      "name": "Writings — Toji Masaya",
+      "description": "田路昌也の執筆記事一覧。note、DRONE.jpなど外部メディアへの寄稿を含む記事コレクション。",
+      "url": "https://tojimasaya.com/writings.html"
+    }
+    </script>
 
     <style>
         /* Writings Page Specific Styles */
@@ -205,6 +221,7 @@
 
     <!-- Navigation (Injected by JS) -->
     <script src="js/site-header.js"></script>
+    <script src="js/image-fallback.js"></script>
 
     <header class="writings-hero">
         <h1 class="writings-title">Writings</h1>
@@ -279,7 +296,7 @@
 
                 card.innerHTML = `
                     <div class="article-image-wrapper">
-                        <img src="${imgSrc}" alt="${article.title}" class="article-image" onerror="this.src='https://placehold.co/600x400/e0e0e0/333333?text=No+Image'">
+                        <img src="${imgSrc}" alt="${article.title}" class="article-image" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x400/e0e0e0/333333?text=No+Image'">
                     </div>
                     <div class="article-meta">
                         <span class="article-source" style="color: ${article.source === 'note' ? '#41C9B4' : '#2563eb'}">${article.sourceLabel}</span>

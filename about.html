@@ -9,8 +9,13 @@
     <meta name="description" content="田路昌也（Toji Masaya）のプロフィール。香港でのガジェット生活から、ライカでの写真撮影に至るまでの軌跡。">
     <meta name="author" content="Toji Masaya">
 
-    <!-- Fonts: Matching tojimasaya.com style -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <!-- Fonts: Matching tojimasaya.com style (optimized) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -75,7 +80,7 @@
 <body class="bg-tm-bg text-tm-text font-serif antialiased leading-relaxed selection:bg-gray-200">
 
     <!-- Navigation (Updated) -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200">
+    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200" aria-label="プロフィールページ ナビゲーション">
         <div class="max-w-6xl mx-auto px-6">
             <div class="h-16 flex items-center justify-between">
                 <!-- Logo -->
@@ -100,7 +105,7 @@
                 </div>
 
                 <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-2xl focus:outline-none" aria-label="Menu">
+                <button id="mobile-menu-btn" class="md:hidden p-2 text-2xl focus:outline-none" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
                     &#8801;
                 </button>
             </div>
@@ -126,7 +131,7 @@
             <!-- Profile Image -->
             <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 relative">
                 <div class="absolute inset-0 bg-gray-200 rounded-full transform rotate-3"></div>
-                <img src="assets/images/about/TJ.jpg" alt="Toji Masaya" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg relative z-10" onerror="this.src='https://placehold.co/400x400/e0e0e0/ffffff?text=TJ'">
+                <img src="assets/images/about/TJ.jpg" alt="Toji Masaya" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg relative z-10" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/400x400/e0e0e0/ffffff?text=TJ'">
             </div>
 
             <!-- Hero Text -->
@@ -248,7 +253,7 @@
                 <div class="relative mt-8 md:mt-0">
                     <!-- Engadget Screenshot -->
                     <figure class="relative rounded-lg overflow-hidden shadow-2xl border border-gray-700 transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
-                        <img src="assets/images/about/engadget_article.png" alt="Engadget Article Screenshot" class="w-full h-auto opacity-95 hover:opacity-100 transition-opacity" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gray-800 p-8 text-center text-gray-400\'>Image placeholder: assets/images/about/engadget_article.png</div>'">
+                        <img src="assets/images/about/engadget_article.png" alt="Engadget Article Screenshot" class="w-full h-auto opacity-95 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gray-800 p-8 text-center text-gray-400\'>Image placeholder: assets/images/about/engadget_article.png</div>'">
                         <figcaption class="absolute bottom-0 left-0 right-0 bg-black/80 text-white text-xs py-2 px-4 font-sans text-center">
                             Featured on Engadget US (2011)
                         </figcaption>
@@ -321,6 +326,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="js/image-fallback.js"></script>
     <script>
         // --- 1. Mobile Menu Logic ---
         const mobileMenuBtn = document.getElementById('mobile-menu-btn');
@@ -328,7 +334,10 @@
         
         if (mobileMenuBtn && mobileMenu) {
             mobileMenuBtn.addEventListener('click', () => {
+                const isOpen = mobileMenu.classList.contains('open');
                 mobileMenu.classList.toggle('open');
+                mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
+                mobileMenuBtn.setAttribute('aria-label', !isOpen ? 'メニューを閉じる' : 'メニューを開く');
             });
         }
 

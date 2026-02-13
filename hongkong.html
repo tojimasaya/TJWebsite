@@ -17,8 +17,13 @@
     <meta name="description" content="消えゆくネオンの光、街角のカメラショップ、フォトジェニックな風景。変わりゆく香港の「今」と「昔」を記録する。">
     <meta name="author" content="Toji Masaya">
 
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Fonts (optimized loading) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    </noscript>
     
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
@@ -497,14 +502,24 @@
             }
         }
     </style>
+    <!-- Structured Data (Hong Kong page) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "WebPage",
+      "name": "Hong Kong — 香港を撮る、香港で撮る",
+      "description": "消えゆくネオンの光、街角のカメラショップ、フォトジェニックな風景。変わりゆく香港の「今」と「昔」を記録するガイドページ。",
+      "url": "https://tojimasaya.com/hongkong.html"
+    }
+    </script>
 </head>
 <body>
 
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="香港ページ ナビゲーション">
         <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="Menu">
+            <a href="/" class="nav-logo" aria-label="ホームページへ戻る">TJM</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
                 <span></span><span></span><span></span>
             </button>
             <ul class="nav-menu" id="nav-menu">
@@ -581,7 +596,7 @@
         <div class="shop-list">
             <!-- Shop 1 -->
             <article class="shop-item">
-                <img src="https://assets.st-note.com/production/uploads/images/150970991/rectangle_large_type_2_97a2407f61d10f18710ec0f0bade3b17.jpeg?width=1280" alt="Fotopia" class="shop-image">
+                <img src="https://assets.st-note.com/production/uploads/images/150970991/rectangle_large_type_2_97a2407f61d10f18710ec0f0bade3b17.jpeg?width=1280" alt="Fotopia" class="shop-image" loading="lazy" decoding="async">
                 <div class="shop-info">
                     <span class="shop-area">Tsim Sha Tsui</span>
                     <h3 class="shop-name">Fotopia</h3>
@@ -595,7 +610,7 @@
 
             <!-- Shop 2 -->
             <article class="shop-item">
-                <img src="https://assets.st-note.com/production/uploads/images/165365687/rectangle_large_type_2_4e8c4b4dd444212104250a92ffa4a479.jpeg?width=1280" alt="All Good Friend Camera" class="shop-image">
+                <img src="https://assets.st-note.com/production/uploads/images/165365687/rectangle_large_type_2_4e8c4b4dd444212104250a92ffa4a479.jpeg?width=1280" alt="All Good Friend Camera" class="shop-image" loading="lazy" decoding="async">
                 <div class="shop-info">
                     <span class="shop-area">Tsim Sha Tsui</span>
                     <h3 class="shop-name">All Good Friend Camera</h3>
@@ -609,7 +624,7 @@
 
             <!-- Shop 3 -->
             <article class="shop-item">
-                <img src="https://assets.st-note.com/production/uploads/images/171311238/rectangle_large_type_2_601238f29492b1807425a9e63c11b2ce.jpeg?width=1280" alt="Meteor" class="shop-image">
+                <img src="https://assets.st-note.com/production/uploads/images/171311238/rectangle_large_type_2_601238f29492b1807425a9e63c11b2ce.jpeg?width=1280" alt="Meteor" class="shop-image" loading="lazy" decoding="async">
                 <div class="shop-info">
                     <span class="shop-area">Causeway Bay</span>
                     <h3 class="shop-name">Meteor</h3>
@@ -623,7 +638,7 @@
 
             <!-- Shop 4 -->
             <article class="shop-item">
-                <img src="https://assets.st-note.com/img/1746426160-sLnVPMY7xU4yRtNBEJil2Izg.jpg?width=1200" alt="iMg" class="shop-image">
+                <img src="https://assets.st-note.com/img/1746426160-sLnVPMY7xU4yRtNBEJil2Izg.jpg?width=1200" alt="iMg" class="shop-image" loading="lazy" decoding="async">
                 <div class="shop-info">
                     <span class="shop-area">Causeway Bay</span>
                     <h3 class="shop-name">iMg</h3>
@@ -648,7 +663,7 @@
         <div class="shop-list">
             <!-- Spot 1 -->
             <article class="shop-item">
-                <img src="https://assets.st-note.com/production/uploads/images/153152209/rectangle_large_type_2_fecefe73f61ba00c65e154934cb9a90a.jpeg?width=1280" alt="Monster Mansion" class="shop-image">
+                <img src="https://assets.st-note.com/production/uploads/images/153152209/rectangle_large_type_2_fecefe73f61ba00c65e154934cb9a90a.jpeg?width=1280" alt="Monster Mansion" class="shop-image" loading="lazy" decoding="async">
                 <div class="shop-info">
                     <span class="shop-area">Quarry Bay</span>
                     <h3 class="shop-name">Monster Mansion</h3>
@@ -662,7 +677,7 @@
 
             <!-- Spot 2 -->
             <article class="shop-item">
-                <img src="https://assets.st-note.com/production/uploads/images/162018369/rectangle_large_type_2_0e0e53f6125c76b71e413b09dca2f9ee.jpeg?width=1280" alt="Shing Hing Sign" class="shop-image">
+                <img src="https://assets.st-note.com/production/uploads/images/162018369/rectangle_large_type_2_0e0e53f6125c76b71e413b09dca2f9ee.jpeg?width=1280" alt="Shing Hing Sign" class="shop-image" loading="lazy" decoding="async">
                 <div class="shop-info">
                     <span class="shop-area">Mong Kok</span>
                     <h3 class="shop-name">Shing Hing Sign</h3>
@@ -676,7 +691,7 @@
 
             <!-- Spot 3 -->
             <article class="shop-item">
-                <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280" alt="Kowloon City" class="shop-image">
+                <img src="https://assets.st-note.com/production/uploads/images/233920867/rectangle_large_type_2_e4b6e9ecf43f24998496720c14a0e3a3.jpeg?width=1280" alt="Kowloon City" class="shop-image" loading="lazy" decoding="async">
                 <div class="shop-info">
                     <span class="shop-area">Kowloon City</span>
                     <h3 class="shop-name">Kowloon City Neon</h3>
@@ -690,7 +705,7 @@
 
             <!-- Spot 4 -->
             <article class="shop-item">
-                <img src="https://assets.st-note.com/production/uploads/images/242614364/rectangle_large_type_2_35150bf78006c50980c0fa4fa45a1ced.jpeg?width=1280" alt="Ma Tso Lung" class="shop-image">
+                <img src="https://assets.st-note.com/production/uploads/images/242614364/rectangle_large_type_2_35150bf78006c50980c0fa4fa45a1ced.jpeg?width=1280" alt="Ma Tso Lung" class="shop-image" loading="lazy" decoding="async">
                 <div class="shop-info">
                     <span class="shop-area">New Territories</span>
                     <h3 class="shop-name">Ma Tso Lung</h3>
@@ -721,6 +736,7 @@
     </footer>
 
     <!-- Scripts -->
+    <script src="js/image-fallback.js"></script>
     <script>
         // Navigation Toggle
         const navToggle = document.getElementById('nav-toggle');
@@ -728,8 +744,11 @@
 
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
+                const isExpanded = navMenu.classList.contains('active');
                 navMenu.classList.toggle('active');
                 navToggle.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', String(!isExpanded));
+                navToggle.setAttribute('aria-label', !isExpanded ? 'メニューを閉じる' : 'メニューを開く');
             });
         }
 

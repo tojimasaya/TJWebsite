@@ -1,0 +1,23 @@
+<IfModule mod_headers.c>
+  # Security headers
+  Header set X-Content-Type-Options "nosniff"
+  Header set X-Frame-Options "SAMEORIGIN"
+  Header set X-XSS-Protection "1; mode=block"
+  Header set Referrer-Policy "strict-origin-when-cross-origin"
+</IfModule>
+
+<IfModule mod_expires.c>
+  ExpiresActive On
+
+  # Images
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/webp "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+
+  # Stylesheets & Scripts
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType text/javascript "access plus 1 month"
+</IfModule>
+

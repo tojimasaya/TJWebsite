@@ -29,9 +29,64 @@
   <meta property="og:url" content="https://tojimasaya.com">
   <meta property="og:type" content="website">
 
-  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <!-- フォント読み込みの最適化 -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
   <link rel="stylesheet" href="style.css">
+
+  <!-- 構造化データ (JSON-LD) -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "name": "Toji Masaya",
+    "alternateName": "田路昌也",
+    "jobTitle": "Photographer, Writer",
+    "url": "https://tojimasaya.com",
+    "image": "https://tojimasaya.com/assets/images/about/TJ.jpg",
+    "sameAs": [
+      "https://instagram.com/tojimasaya",
+      "https://note.com/tojimasaya",
+      "https://www.youtube.com/TJVlog",
+      "https://x.com/mongkok93",
+      "https://www.facebook.com/masaya.toji"
+    ],
+    "description": "香港と日本を行き来する写真家・ライター。Leicaとドローンで旅の断片を記録。白鷺三十六景・香港ネオン残照プロジェクトを進行中。"
+  }
+  </script>
+
+  <!-- Web Vitals 計測（Lighthouseと同等の指標をGAに送信） -->
+  <script>
+    function sendToAnalytics(metric) {
+      if (typeof gtag !== 'undefined') {
+        gtag('event', metric.name, {
+          value: Math.round(metric.name === 'CLS' ? metric.value * 1000 : metric.value),
+          event_category: 'Web Vitals',
+          non_interaction: true
+        });
+      }
+    }
+    (function() {
+      var s = document.createElement('script');
+      s.src = 'https://unpkg.com/web-vitals@3/dist/web-vitals.umd.js';
+      s.defer = true;
+      s.onload = function() {
+        try {
+          webVitals.onCLS(sendToAnalytics);
+          webVitals.onFID(sendToAnalytics);
+          webVitals.onFCP(sendToAnalytics);
+          webVitals.onLCP(sendToAnalytics);
+          webVitals.onTTFB(sendToAnalytics);
+        } catch (e) {
+          console.warn('Web Vitals setup failed', e);
+        }
+      };
+      document.head.appendChild(s);
+    })();
+  </script>
 
   <style>
     /* ==============================================
@@ -642,6 +697,8 @@
 
   <!-- 共通ヘッダーの読み込み -->
   <script src="js/site-header.js"></script>
+  <!-- 画像エラーハンドリング -->
+  <script src="js/image-fallback.js"></script>
 
   <!-- ======================================
        SECTION 1: ヒーロー（左右分割）
@@ -707,7 +764,7 @@
         <!-- 大カード: トルコ旅行記 -->
         <div class="travel-card travel-card-featured">
           <a href="turkey-travel-journal.html">
-            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記" loading="lazy">
+            <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記" loading="lazy" decoding="async">
             <div class="travel-card-overlay">
               <h3 class="travel-card-title">トルコ旅行記</h3>
               <p class="travel-card-meta">2024.10 — 9日間・6都市</p>
@@ -718,7 +775,7 @@
         <!-- 小カード: チベット・ラサ -->
         <div class="travel-card travel-card-small">
           <a href="https://note.com/tojimasaya/n/n9e58036e3b01" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/gallery/lhasa.jpg" alt="チベット・ラサ" loading="lazy">
+            <img src="assets/images/gallery/lhasa.jpg" alt="チベット・ラサ" loading="lazy" decoding="async">
             <div class="travel-card-overlay">
               <h3 class="travel-card-title">チベット・ラサ</h3>
               <p class="travel-card-meta">note</p>
@@ -729,7 +786,7 @@
         <!-- 小カード: プラハ -->
         <div class="travel-card travel-card-small">
           <a href="https://note.com/tojimasaya/n/n58be6060ac3b" target="_blank" rel="noopener noreferrer">
-            <img src="assets/images/gallery/cologne.jpg" alt="プラハ" loading="lazy">
+            <img src="assets/images/gallery/cologne.jpg" alt="プラハ" loading="lazy" decoding="async">
             <div class="travel-card-overlay">
               <h3 class="travel-card-title">プラハ</h3>
               <p class="travel-card-meta">note</p>
@@ -764,7 +821,7 @@
        ====================================== -->
   <section class="about-strip">
     <div class="about-inner">
-      <img class="about-photo" src="assets/images/about/TJ.jpg" alt="Toji Masaya" loading="lazy">
+              <img class="about-photo" src="assets/images/about/TJ.jpg" alt="Toji Masaya" loading="lazy" decoding="async">
       <div class="about-text-area">
         <h2 class="about-name">Toji Masaya</h2>
         <p class="about-bio">
@@ -821,7 +878,7 @@
           container.innerHTML = allArticles.map(article => `
             <article class="latest-item">
               <a href="${article.link}" target="_blank" rel="noopener noreferrer">
-                <img class="latest-thumb" src="${article.imageUrl}" alt="${article.title}" loading="lazy" onerror="this.src='assets/images/gallery/weekly.jpg'">
+                <img class="latest-thumb" src="${article.imageUrl}" alt="${article.title}" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
                 <div class="latest-content">
                   <p class="latest-source">${article.source}</p>
                   <h3 class="latest-item-title">${article.title}</h3>

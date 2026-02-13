@@ -16,8 +16,13 @@
 
     <meta name="description" content="田路昌也が愛用する撮影機材コレクション。Leica、ドローン、編集ツール、アクセサリーのカテゴリー別紹介。">
     
-    <!-- Fonts & CSS -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <!-- Fonts & CSS (optimized) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    </noscript>
     <link rel="stylesheet" href="style.css">
 
     <style>
@@ -153,10 +158,10 @@
 <body>
 
     <!-- Navigation -->
-    <nav class="main-nav">
+    <nav class="main-nav" aria-label="機材ページ ナビゲーション">
         <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <button class="nav-toggle" id="nav-toggle"><span></span><span></span><span></span></button>
+            <a href="/" class="nav-logo" aria-label="ホームページへ戻る">TJM</a>
+            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="/" class="nav-link">Home</a></li>
                 <li><a href="about.html" class="nav-link">About</a></li>
@@ -193,14 +198,18 @@
         </div>
     </footer>
 
+    <script src="js/image-fallback.js"></script>
     <script>
         // Navigation Toggle
         const navToggle = document.getElementById('nav-toggle');
         const navMenu = document.getElementById('nav-menu');
         if (navToggle && navMenu) {
             navToggle.addEventListener('click', () => {
+                const isExpanded = navMenu.classList.contains('active');
                 navMenu.classList.toggle('active');
                 navToggle.classList.toggle('active');
+                navToggle.setAttribute('aria-expanded', String(!isExpanded));
+                navToggle.setAttribute('aria-label', !isExpanded ? 'メニューを閉じる' : 'メニューを開く');
             });
         }
 
@@ -253,7 +262,7 @@
                         
                         const html = `
                             <a href="${config.link}" class="category-card">
-                                <img src="${imgSrc}" alt="${categoryData.title}" class="category-bg" onerror="this.src='${config.fallbackImage}'">
+                                <img src="${imgSrc}" alt="${categoryData.title}" class="category-bg" loading="lazy" decoding="async" onerror="this.src='${config.fallbackImage}'">
                                 <div class="category-content">
                                     <div class="category-icon">${config.icon}</div>
                                     <h2 class="category-title">${categoryData.title}</h2>
