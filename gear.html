@@ -348,25 +348,25 @@
         const CATEGORY_CONFIG = {
             'camera': {
                 link: 'gear-camera.html',
-                icon: '📷',
+                icon: '',
                 label: 'Camera',
                 fallbackImage: 'assets/images/gear/m2.jpg'
             },
             'drone': {
                 link: 'gear-drone.html',
-                icon: '🚁',
+                icon: '',
                 label: 'Drone',
                 fallbackImage: 'assets/images/gear/drone-mini4.jpg'
             },
             'editing': {
                 link: 'gear-editing.html',
-                icon: '💻',
+                icon: '',
                 label: 'Editing',
                 fallbackImage: 'assets/images/gear/ipad.jpg'
             },
             'accessories': {
                 link: 'gear-accessories.html',
-                icon: '🎒',
+                icon: '',
                 label: 'Carry & Etc.',
                 fallbackImage: 'assets/images/gear/bag.jpg'
             }
@@ -400,7 +400,7 @@
                                 <img src="${imgSrc}" alt="${categoryData.title}" class="category-bg" loading="lazy" decoding="async" onerror="this.src='${config.fallbackImage}'">
                                 <div class="category-content">
                                     <div class="category-tag">
-                                        <span class="category-icon">${config.icon}</span>
+                                        ${config.icon ? `<span class="category-icon">${config.icon}</span>` : ''}
                                         <span>${config.label}</span>
                                     </div>
                                     <h2 class="category-title">${categoryData.title}</h2>
