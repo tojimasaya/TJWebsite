@@ -210,11 +210,18 @@
         // 機材データをロード
         async function loadGearData() {
             try {
-                const response = await fetch('gear-data.json');
+                const response = await fetch('data/gear.json');
                 if (!response.ok) {
                     throw new Error('データの読み込みに失敗しました');
                 }
-                gearData = await response.json();
+                const json = await response.json();
+                // data/gear.json の categories 構造をフラットなオブジェクトに変換
+                gearData = {};
+                Object.entries(json.categories || {}).forEach(([catKey, cat]) => {
+                    (cat.items || []).forEach(item => {
+                        gearData[item.id] = { ...item, category: catKey };
+                    });
+                });
                 renderGearItems();
                 initializeFilters();
             } catch (error) {
