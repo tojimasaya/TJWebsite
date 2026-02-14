@@ -281,10 +281,28 @@
 
                 renderArticles(allArticles);
 
+                // ローカルキャッシュが実際に存在する場合のみ画像を差し替え（非同期）
+                upgradeToLocalImages();
+
             } catch (err) {
                 console.error(err);
                 container.innerHTML = '<p class="loading-message">記事の読み込みに失敗しました。</p>';
             }
+        }
+
+        // ローカルキャッシュ画像が存在する場合のみ差し替える
+        function upgradeToLocalImages() {
+            allArticles.forEach(article => {
+                if (!article.localImage) return;
+                const testImg = new Image();
+                testImg.onload = () => {
+                    // ローカル画像が読み込めた → 該当カードの画像を差し替え
+                    const card = document.querySelector(`a.article-card[href="${article.link}"] .article-image`);
+                    if (card) card.src = article.localImage;
+                };
+                // onloadが発火しなければ何もしない（外部URLのまま）
+                testImg.src = article.localImage;
+            });
         }
 
         function renderArticles(articles) {
@@ -308,20 +326,14 @@
                 // 段階的に表示させるアニメーション設定
                 card.style.animation = `fadeInUp 0.5s ease ${index * 0.05}s forwards`;
                 
-                // 画像処理（ローカルキャッシュ優先 → 外部URL → デフォルト）
-                let imgSrc = article.localImage || article.image;
+                // 画像処理（外部URL優先、ローカルキャッシュがあれば差し替え）
+                let imgSrc = article.image;
                 if (!imgSrc) imgSrc = 'assets/images/gallery/weekly.jpg';
-                if (imgSrc.startsWith('/')) imgSrc = imgSrc.substring(1); // パス補正
-
-                // ローカルキャッシュが失敗した場合の外部URLフォールバック
-                const fallbackSrc = article.localImage && article.image ? article.image : '';
-                const onerrorChain = fallbackSrc
-                    ? `this.onerror=function(){this.src='https://placehold.co/600x400/e0e0e0/333333?text=No+Image'};this.src='${fallbackSrc}'`
-                    : `this.src='https://placehold.co/600x400/e0e0e0/333333?text=No+Image'`;
+                if (imgSrc.startsWith('/')) imgSrc = imgSrc.substring(1);
 
                 card.innerHTML = `
                     <div class="article-image-wrapper">
-                        <img src="${imgSrc}" alt="${article.title}" class="article-image" loading="lazy" decoding="async" onerror="${onerrorChain}">
+                        <img src="${imgSrc}" alt="${article.title}" class="article-image" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
                     </div>
                     <div class="article-meta">
                         <span class="article-source" style="color: ${article.source === 'note' ? '#41C9B4' : '#2563eb'}">${article.sourceLabel}</span>
