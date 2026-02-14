@@ -685,33 +685,13 @@
                 }
             ];
 
-            map.on('style.load', () => {
-                // 地形と空
-                if (!map.getSource('mapbox-dem')) {
-                    map.addSource('mapbox-dem', {
-                        type: 'raster-dem',
-                        url: 'mapbox://mapbox.terrain-rgb',
-                        tileSize: 512,
-                        maxzoom: 14
-                    });
-                }
-                map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.5 });
-                
-                if (!map.getLayer('sky')) {
-                    map.addLayer({
-                        id: 'sky',
-                        type: 'sky',
-                        paint: {
-                            'sky-type': 'atmosphere',
-                            'sky-atmosphere-sun-intensity': 5
-                        }
-                    });
-                }
-            });
+            // ルートとマーカーを再利用可能な関数に分離
+            let markers = [];
+            let dash = 0;
+            let dashAnimRunning = false;
 
-            // マーカーとルート
-            map.on('load', () => {
-                // アーク（ルートライン）
+            function addRouteToMap() {
+                if (map.getSource('arcs')) return;
                 const arcs = [];
                 for (let i = 0; i < places.length - 1; i++) {
                     const gc = turf.greatCircle(
@@ -729,25 +709,31 @@
                     type: 'line',
                     source: 'arcs',
                     paint: {
-                        'line-color': '#2563eb', // Theme Accent Blue
+                        'line-color': '#2563eb',
                         'line-width': 3,
                         'line-opacity': 0.8,
                         'line-dasharray': [0, 2]
                     }
                 });
 
-                // アニメーション用
-                let dash = 0;
-                function animateDash() {
-                    dash = (dash + 0.02) % 2; // Speed up slightly
-                    if(map.getLayer('arcs-line')) {
-                        map.setPaintProperty('arcs-line', 'line-dasharray', [dash, 2]);
-                    }
-                    requestAnimationFrame(animateDash);
+                if (!dashAnimRunning) {
+                    dashAnimRunning = true;
+                    animateDash();
                 }
-                animateDash();
+            }
 
-                // マーカー設置
+            function animateDash() {
+                if (!dashAnimRunning) return;
+                dash = (dash + 0.02) % 2;
+                if (map.getLayer('arcs-line')) {
+                    map.setPaintProperty('arcs-line', 'line-dasharray', [dash, 2]);
+                }
+                requestAnimationFrame(animateDash);
+            }
+
+            function addMarkersToMap() {
+                markers.forEach(m => m.remove());
+                markers = [];
                 places.forEach(p => {
                     const el = document.createElement('div');
                     el.className = 'marker';
@@ -765,8 +751,8 @@
                     el.style.fontWeight = 'bold';
                     el.style.fontSize = '12px';
                     el.textContent = p.idx;
-                    
-                    const popup = new mapboxgl.Popup({ 
+
+                    const popup = new mapboxgl.Popup({
                         offset: 25,
                         closeButton: false,
                         maxWidth: '300px'
@@ -781,12 +767,47 @@
                             </div>
                         </div>
                     `);
-                    
-                    new mapboxgl.Marker({ element: el })
+
+                    const marker = new mapboxgl.Marker({ element: el })
                         .setLngLat(p.coord)
                         .setPopup(popup)
                         .addTo(map);
+                    markers.push(marker);
                 });
+            }
+
+            map.on('style.load', () => {
+                // 地形と空
+                if (!map.getSource('mapbox-dem')) {
+                    map.addSource('mapbox-dem', {
+                        type: 'raster-dem',
+                        url: 'mapbox://mapbox.terrain-rgb',
+                        tileSize: 512,
+                        maxzoom: 14
+                    });
+                }
+                map.setTerrain({ source: 'mapbox-dem', exaggeration: 1.5 });
+
+                if (!map.getLayer('sky')) {
+                    map.addLayer({
+                        id: 'sky',
+                        type: 'sky',
+                        paint: {
+                            'sky-type': 'atmosphere',
+                            'sky-atmosphere-sun-intensity': 5
+                        }
+                    });
+                }
+
+                // スタイル切替後にルートとマーカーを再描画
+                addRouteToMap();
+                addMarkersToMap();
+            });
+
+            // 初回ロード
+            map.on('load', () => {
+                addRouteToMap();
+                addMarkersToMap();
 
                 // 全体表示
                 const bounds = new mapboxgl.LngLatBounds();
