@@ -24,11 +24,14 @@ jobs:
       - name: Run OGP pipeline
         run: node tools/ogp-pipeline.mjs
 
+      - name: Debug — list cached images
+        run: ls -la assets/og/ || echo "No og directory"
+
+      - name: Stage cached images explicitly
+        run: git add -f assets/og/ || true
+
       - name: Commit JSON and cached images
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(ogp): scrape & cache thumbnails'
-          file_pattern: |
-            data/writings-og.json
-            data/articles.json
-            assets/og/**
+          file_pattern: 'data/writings-og.json data/articles.json'
