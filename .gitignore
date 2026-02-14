@@ -1,0 +1,5 @@
+# Claude Code worktrees
+.claude/
+
+# API tokens (public but excluded for GitHub Push Protection)
+js/mapbox-config.js

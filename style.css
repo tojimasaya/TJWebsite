@@ -728,7 +728,7 @@ body {
 
 .featured-tag {
     background: var(--error-color);
-    color: var(--white);
+    color: #ffffff;
     padding: 2px 8px;
     border-radius: 4px;
 }

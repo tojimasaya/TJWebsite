@@ -371,6 +371,12 @@
             } else { el.innerText = 0; }
         }
 
+        function openModalWithLatest() {
+            const ids = Object.keys(photosData).map(Number);
+            if (ids.length === 0) return;
+            openModal(Math.max(...ids));
+        }
+
         function loadLatest() {
             const ids = Object.keys(photosData).map(Number);
             if (ids.length === 0) return;
