@@ -250,18 +250,37 @@
 
         async function fetchArticles() {
             const container = document.getElementById('articles-container');
-            
+
             try {
-                // ローカルのJSONファイルを読み込む（高速）
-                const res = await fetch('data/articles.json');
-                if (!res.ok) throw new Error('Failed to load articles.json');
-                const data = await res.json();
-                
+                // 記事一覧とOGPキャッシュを並行読み込み
+                const [articlesRes, ogRes] = await Promise.all([
+                    fetch('data/articles.json'),
+                    fetch('data/writings-og.json').catch(() => null)
+                ]);
+                if (!articlesRes.ok) throw new Error('Failed to load articles.json');
+                const data = await articlesRes.json();
+
+                // OGPキャッシュ（ローカル画像パス）を読み込み
+                let ogMap = {};
+                if (ogRes && ogRes.ok) {
+                    try { ogMap = await ogRes.json(); } catch {}
+                }
+
+                // ローカルキャッシュ画像があれば優先的に使用
+                for (const article of data) {
+                    const cached = ogMap[article.link];
+                    if (cached && cached.local) {
+                        let localPath = cached.local;
+                        if (localPath.startsWith('/')) localPath = localPath.substring(1);
+                        article.localImage = localPath;
+                    }
+                }
+
                 // 日付で降順ソート
                 allArticles = data.sort((a, b) => new Date(b.date) - new Date(a.date));
-                
+
                 renderArticles(allArticles);
-                
+
             } catch (err) {
                 console.error(err);
                 container.innerHTML = '<p class="loading-message">記事の読み込みに失敗しました。</p>';
@@ -289,8 +308,8 @@
                 // 段階的に表示させるアニメーション設定
                 card.style.animation = `fadeInUp 0.5s ease ${index * 0.05}s forwards`;
                 
-                // 画像処理
-                let imgSrc = article.image;
+                // 画像処理（ローカルキャッシュ優先 → 外部URL → デフォルト）
+                let imgSrc = article.localImage || article.image;
                 if (!imgSrc) imgSrc = 'assets/images/gallery/weekly.jpg';
                 if (imgSrc.startsWith('/')) imgSrc = imgSrc.substring(1); // パス補正
 

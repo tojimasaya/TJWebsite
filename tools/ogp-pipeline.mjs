@@ -6,32 +6,33 @@ import * as cheerio from 'cheerio';
 import crypto from 'node:crypto';
 
 const ROOT = process.cwd();
-const WRITINGS_HTML = path.join(ROOT, 'writings.html');      // 既存のページからURLを拾う
-const JSON_OUT = path.join(ROOT, 'data', 'writings-og.json'); // 出力先
-const OG_DIR = path.join(ROOT, 'assets', 'og');               // 画像保存先
-const NOTE_RSS = 'https://note.com/tojimasaya/rss';           // noteのRSSも併用
+const ARTICLES_JSON = path.join(ROOT, 'data', 'articles.json'); // 記事一覧（主データソース）
+const JSON_OUT = path.join(ROOT, 'data', 'writings-og.json');   // 出力先
+const OG_DIR = path.join(ROOT, 'assets', 'og');                 // 画像保存先
+const NOTE_RSS = 'https://note.com/tojimasaya/rss';             // noteのRSSも併用
 
 await fs.mkdir(path.dirname(JSON_OUT), { recursive: true });
 await fs.mkdir(OG_DIR, { recursive: true });
 
 const UA = 'Mozilla/5.0 (compatible; OGP-fetcher/1.0; +https://tojimasaya.com/)';
 
-// ------- 1) URL収集（writings.htmlの data-article-url / note RSS） -------
+// ------- 1) URL収集（articles.json + note RSS） -------
 const urls = new Set();
 
-// writings.html から
+// articles.json から
 try {
-  const html = await fs.readFile(WRITINGS_HTML, 'utf8');
-  const $ = cheerio.load(html);
-  $('.article-item[data-article-url]').each((_i, el) => {
-    const u = ($(el).attr('data-article-url') || '').trim();
+  const raw = await fs.readFile(ARTICLES_JSON, 'utf8');
+  const articles = JSON.parse(raw);
+  for (const a of articles) {
+    const u = (a.link || '').trim();
     if (/^https?:\/\//i.test(u)) urls.add(u);
-  });
+  }
+  console.log(`articles.json から ${urls.size} 件のURLを取得`);
 } catch (e) {
-  console.log('WARN: writings.html 読み込みに失敗:', e.message);
+  console.log('WARN: articles.json 読み込みに失敗:', e.message);
 }
 
-// note RSS から（最大12件）
+// note RSS から（最大12件、articles.jsonに無い新着を補完）
 try {
   const res = await fetch(NOTE_RSS, { headers: { 'user-agent': UA } });
   if (res.ok) {

@@ -30,4 +30,5 @@ jobs:
           commit_message: 'chore(ogp): scrape & cache thumbnails'
           file_pattern: |
             data/writings-og.json
+            data/articles.json
             assets/og/**
