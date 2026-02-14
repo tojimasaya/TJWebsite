@@ -313,9 +313,15 @@
                 if (!imgSrc) imgSrc = 'assets/images/gallery/weekly.jpg';
                 if (imgSrc.startsWith('/')) imgSrc = imgSrc.substring(1); // パス補正
 
+                // ローカルキャッシュが失敗した場合の外部URLフォールバック
+                const fallbackSrc = article.localImage && article.image ? article.image : '';
+                const onerrorChain = fallbackSrc
+                    ? `this.onerror=function(){this.src='https://placehold.co/600x400/e0e0e0/333333?text=No+Image'};this.src='${fallbackSrc}'`
+                    : `this.src='https://placehold.co/600x400/e0e0e0/333333?text=No+Image'`;
+
                 card.innerHTML = `
                     <div class="article-image-wrapper">
-                        <img src="${imgSrc}" alt="${article.title}" class="article-image" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x400/e0e0e0/333333?text=No+Image'">
+                        <img src="${imgSrc}" alt="${article.title}" class="article-image" loading="lazy" decoding="async" onerror="${onerrorChain}">
                     </div>
                     <div class="article-meta">
                         <span class="article-source" style="color: ${article.source === 'note' ? '#41C9B4' : '#2563eb'}">${article.sourceLabel}</span>
