@@ -251,6 +251,43 @@
             }
         }
 
+        /* Leica DB Link */
+        .leica-db-link {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            padding: 20px 28px;
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+        }
+        .leica-db-link:hover {
+            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
+            border-color: var(--accent-color);
+        }
+        .leica-db-icon {
+            font-size: 1.5rem;
+            flex-shrink: 0;
+        }
+        .leica-db-title {
+            font-family: var(--primary-font);
+            font-size: 1.15rem;
+            margin-bottom: 2px;
+        }
+        .leica-db-desc {
+            font-size: 0.82rem;
+            color: var(--text-lighter);
+        }
+        .leica-db-arrow {
+            margin-left: auto;
+            font-size: 1.2rem;
+            color: var(--accent-color);
+            flex-shrink: 0;
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
             .gear-hub-inner {
@@ -304,22 +341,23 @@
         </div>
     </header>
 
+    <!-- Leica Serial Tool Link -->
+    <section style="max-width:1100px;margin:24px auto 0;padding:0 20px;">
+        <a href="leica-serial.html" class="leica-db-link">
+            <div class="leica-db-icon">🔍</div>
+            <div>
+                <div class="leica-db-title">Leica Serial Number Database</div>
+                <div class="leica-db-desc">シリアル番号から製造年・モデルを検索</div>
+            </div>
+            <span class="leica-db-arrow">→</span>
+        </a>
+    </section>
+
     <!-- Categories Grid -->
     <main class="category-grid" id="category-grid">
         <!-- JS will populate this -->
         <p style="grid-column: 1/-1; text-align: center;">Loading categories...</p>
     </main>
-
-    <!-- Leica Serial Tool Link -->
-    <section style="max-width:1100px;margin:0 auto;padding:0 20px 40px;">
-        <a href="leica-serial.html" style="display:flex;align-items:center;justify-content:space-between;padding:24px 32px;background:var(--white);border:1px solid var(--border-color);border-radius:12px;text-decoration:none;color:var(--text-color);transition:box-shadow 0.3s ease,border-color 0.3s ease;" onmouseover="this.style.boxShadow='0 4px 12px rgba(0,0,0,0.08)';this.style.borderColor='var(--accent-color)'" onmouseout="this.style.boxShadow='none';this.style.borderColor='var(--border-color)'">
-            <div>
-                <div style="font-family:var(--primary-font);font-size:1.25rem;margin-bottom:4px;">Leica Serial Number Database</div>
-                <div style="font-size:0.85rem;color:var(--text-lighter);">シリアル番号から製造年・モデルを検索</div>
-            </div>
-            <span style="font-size:1.2rem;color:var(--accent-color);">→</span>
-        </a>
-    </section>
 
     <!-- Footer -->
     <footer class="footer">
