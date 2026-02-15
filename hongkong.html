@@ -515,29 +515,7 @@
 </head>
 <body>
 
-    <!-- Navigation -->
-    <nav class="main-nav" aria-label="香港ページ ナビゲーション">
-        <div class="nav-container">
-            <a href="/" class="nav-logo" aria-label="ホームページへ戻る">TJM</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu">
-                <span></span><span></span><span></span>
-            </button>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <!-- 白鷺三十六景リンクを追加 -->
-                <li>
-                    <a href="shirasagi36.html" class="nav-link featured-link">
-                        <span class="icon">🏯</span> 白鷺三十六景
-                    </a>
-                </li>
-                <li><a href="gear.html" class="nav-link">Gear</a></li>
-                <li><a href="writings.html" class="nav-link">Writings</a></li>
-                <li><a href="hongkong.html" class="nav-link active">Hong Kong</a></li>
-            </ul>
-        </div>
-    </nav>
+    <script src="js/site-header.js"></script>
 
     <!-- Hero -->
     <header class="hk-hero">
@@ -738,20 +716,6 @@
     <!-- Scripts -->
     <script src="js/image-fallback.js"></script>
     <script>
-        // Navigation Toggle
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                const isExpanded = navMenu.classList.contains('active');
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-                navToggle.setAttribute('aria-expanded', String(!isExpanded));
-                navToggle.setAttribute('aria-label', !isExpanded ? 'メニューを閉じる' : 'メニューを開く');
-            });
-        }
-
         // ページ内リンクのスムーズスクロールとアクティブ状態の切り替え
         document.querySelectorAll('a[href^="#"]').forEach(anchor => {
             anchor.addEventListener('click', function (e) {

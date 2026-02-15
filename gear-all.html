@@ -31,22 +31,7 @@
     <!-- Skip to main content -->
     <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-    <!-- ナビゲーションバー -->
-    <nav class="main-nav" id="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">Toji Masaya</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="/gear.html" class="nav-link active">Gear</a></li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
-        </div>
-    </nav>
+    <script src="js/site-header.js"></script>
 
     <!-- ギアヒーロー -->
     <section class="gear-hero" role="banner">
@@ -167,45 +152,10 @@
 
         // 初期化
         document.addEventListener('DOMContentLoaded', function() {
-            initializeNavigation();
             loadGearData();
         });
 
-        // ナビゲーション初期化
-        function initializeNavigation() {
-            const navToggle = document.getElementById('nav-toggle');
-            const navMenu = document.getElementById('nav-menu');
-
-            if (navToggle && navMenu) {
-                navToggle.addEventListener('click', function() {
-                    navMenu.classList.toggle('active');
-                    navToggle.classList.toggle('active');
-                    document.body.classList.toggle('nav-open');
-                });
-
-                // メニューリンクをクリックしたらメニューを閉じる（モバイル）
-                const navLinks = document.querySelectorAll('.nav-link');
-                navLinks.forEach(link => {
-                    link.addEventListener('click', function() {
-                        if (window.innerWidth <= 768) {
-                            navMenu.classList.remove('active');
-                            navToggle.classList.remove('active');
-                            document.body.classList.remove('nav-open');
-                        }
-                    });
-                });
-            }
-
-            // スクロール時のナビゲーション背景変更
-            window.addEventListener('scroll', function() {
-                const nav = document.getElementById('main-nav');
-                if (window.scrollY > 50) {
-                    nav.classList.add('scrolled');
-                } else {
-                    nav.classList.remove('scrolled');
-                }
-            });
-        }
+        // initializeNavigation は site-header.js に移行済み
 
         // 機材データをロード
         async function loadGearData() {
