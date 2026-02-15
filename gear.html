@@ -251,40 +251,41 @@
             }
         }
 
-        /* Leica DB Link */
+        /* Leica DB Link (inside dark hero) */
         .leica-db-link {
             display: flex;
             align-items: center;
-            gap: 16px;
-            padding: 20px 28px;
-            background: var(--white);
-            border: 1px solid var(--border-color);
-            border-radius: 12px;
+            gap: 14px;
+            margin-top: 14px;
+            padding: 14px 18px;
+            background: rgba(255,255,255,0.08);
+            border: 1px solid rgba(148,163,184,0.3);
+            border-radius: 10px;
             text-decoration: none;
-            color: var(--text-color);
-            transition: box-shadow 0.3s ease, border-color 0.3s ease;
+            color: #f9fafb;
+            transition: background 0.3s ease, border-color 0.3s ease;
         }
         .leica-db-link:hover {
-            box-shadow: 0 4px 16px rgba(0,0,0,0.08);
-            border-color: var(--accent-color);
+            background: rgba(255,255,255,0.14);
+            border-color: rgba(148,163,184,0.6);
         }
         .leica-db-icon {
-            font-size: 1.5rem;
+            font-size: 1.2rem;
             flex-shrink: 0;
         }
         .leica-db-title {
             font-family: var(--primary-font);
-            font-size: 1.15rem;
+            font-size: 1rem;
             margin-bottom: 2px;
         }
         .leica-db-desc {
-            font-size: 0.82rem;
-            color: var(--text-lighter);
+            font-size: 0.75rem;
+            color: rgba(148,163,184,0.9);
         }
         .leica-db-arrow {
             margin-left: auto;
-            font-size: 1.2rem;
-            color: var(--accent-color);
+            font-size: 1rem;
+            color: rgba(148,163,184,0.9);
             flex-shrink: 0;
         }
 
@@ -337,21 +338,17 @@
                     <span class="icon">●</span>
                     <span>Everyday Carry &amp; Travel Setup</span>
                 </div>
+                <a href="leica-serial.html" class="leica-db-link">
+                    <div class="leica-db-icon">🔍</div>
+                    <div>
+                        <div class="leica-db-title">Leica Serial Number Database</div>
+                        <div class="leica-db-desc">シリアル番号から製造年・モデルを検索</div>
+                    </div>
+                    <span class="leica-db-arrow">→</span>
+                </a>
             </div>
         </div>
     </header>
-
-    <!-- Leica Serial Tool Link -->
-    <section style="max-width:1100px;margin:24px auto 0;padding:0 20px;">
-        <a href="leica-serial.html" class="leica-db-link">
-            <div class="leica-db-icon">🔍</div>
-            <div>
-                <div class="leica-db-title">Leica Serial Number Database</div>
-                <div class="leica-db-desc">シリアル番号から製造年・モデルを検索</div>
-            </div>
-            <span class="leica-db-arrow">→</span>
-        </a>
-    </section>
 
     <!-- Categories Grid -->
     <main class="category-grid" id="category-grid">
