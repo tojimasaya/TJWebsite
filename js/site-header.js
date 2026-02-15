@@ -20,7 +20,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </li>
                 <li><a href="gear.html" class="nav-link ${page.includes('gear') ? 'active' : ''}">Gear</a></li>
                 <li><a href="writings.html" class="nav-link ${page === 'writings.html' ? 'active' : ''}">Writings</a></li>
-                <li><a href="trips.html" class="nav-link ${page === 'trips.html' ? 'active' : ''}">Trips</a></li>
+                <!-- <li><a href="trips.html" class="nav-link ${page === 'trips.html' ? 'active' : ''}">Trips</a></li> -->
                 <li><a href="hongkong.html" class="nav-link ${page.includes('hongkong') ? 'active' : ''}">Hong Kong</a></li>
             </ul>
         </div>
