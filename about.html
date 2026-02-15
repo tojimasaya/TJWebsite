@@ -7,77 +7,146 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>About Me — Toji Masaya</title>
-    
+
     <!-- SEO Meta Tags -->
     <meta name="description" content="田路昌也（Toji Masaya）のプロフィール。香港でのガジェット生活から、ライカでの写真撮影に至るまでの軌跡。">
     <meta name="author" content="Toji Masaya">
 
-    <!-- Fonts: Matching tojimasaya.com style (optimized) -->
+    <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
     <noscript>
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     </noscript>
-    
-    <!-- Tailwind CSS -->
-    <script src="https://cdn.tailwindcss.com"></script>
-    
+
     <!-- Chart.js -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
-    <!-- Tailwind Config -->
-    <script>
-        tailwind.config = {
-            theme: {
-                extend: {
-                    fontFamily: {
-                        serif: ['"Crimson Text"', '"Noto Serif JP"', 'serif'],
-                        sans: ['"Inter"', 'sans-serif'],
-                    },
-                    colors: {
-                        'tm-bg': '#fafafa',
-                        'tm-text': '#333333',
-                        'tm-text-light': '#666666',
-                        'tm-accent': '#2563eb',
-                        'tm-warm': '#fdfbf7',
-                    }
-                }
-            }
-        }
-    </script>
+    <!-- Base CSS -->
+    <link rel="stylesheet" href="style.css">
 
+    <!-- Page-specific styles -->
     <style>
-        .chart-container {
-            position: relative;
-            width: 100%;
-            max-width: 800px;
-            margin-left: auto;
-            margin-right: auto;
-            height: 350px;
-            max-height: 400px;
-        }
-        @media (max-width: 640px) {
-            .chart-container {
-                height: 300px;
-            }
-        }
-        
-        html {
-            scroll-behavior: smooth;
-        }
+        /* About page layout */
+        .about-hero { padding: 5rem 1.5rem; max-width: 72rem; margin: 0 auto; }
+        .about-hero-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3rem; }
+        @media (min-width: 768px) { .about-hero-inner { flex-direction: row; gap: 5rem; } }
 
-        /* Mobile Menu Transitions */
-        #mobile-menu {
-            transition: max-height 0.3s ease-in-out, opacity 0.3s ease-in-out;
-            max-height: 0;
-            opacity: 0;
-            overflow: hidden;
-        }
-        #mobile-menu.open {
-            max-height: 400px;
-            opacity: 1;
-        }
+        .profile-img-wrap { width: 12rem; height: 12rem; flex-shrink: 0; position: relative; }
+        @media (min-width: 768px) { .profile-img-wrap { width: 16rem; height: 16rem; } }
+        .profile-img-bg { position: absolute; inset: 0; background: #e5e5e5; border-radius: 9999px; transform: rotate(3deg); }
+        .profile-img { width: 100%; height: 100%; object-fit: cover; border-radius: 9999px; border: 4px solid #fff; box-shadow: var(--shadow-lg); position: relative; z-index: 10; }
+
+        .hero-text { text-align: center; max-width: 36rem; }
+        @media (min-width: 768px) { .hero-text { text-align: left; } }
+        .hero-label { font-family: var(--secondary-font); font-size: var(--text-sm); letter-spacing: 0.1em; color: var(--text-light); text-transform: uppercase; margin-bottom: 0.75rem; display: block; }
+        .hero-title { font-size: var(--text-4xl); font-weight: 400; margin-bottom: 1.5rem; line-height: 1.2; }
+        @media (min-width: 768px) { .hero-title { font-size: 3rem; } }
+        .hero-subtitle { font-size: var(--text-lg); color: var(--text-light); font-family: var(--secondary-font); font-weight: 300; line-height: 1.8; }
+        .hero-subtitle .note { font-size: var(--text-sm); margin-top: 0.75rem; display: block; color: var(--text-lighter); }
+
+        /* Philosophy section */
+        .about-philosophy { padding: 4rem 1.5rem; background: var(--white); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        .about-philosophy-inner { max-width: 48rem; margin: 0 auto; }
+        .about-philosophy h2 { font-size: var(--text-2xl); text-align: center; margin-bottom: 1rem; }
+        @media (min-width: 768px) { .about-philosophy h2 { font-size: var(--text-3xl); } }
+        .about-divider { width: 3rem; height: 2px; background: #d1d5db; margin: 0 auto 3rem; }
+        .about-prose { color: var(--text-light); font-family: var(--secondary-font); font-weight: 300; font-size: var(--text-lg); line-height: 1.8; }
+        .about-prose p { margin-bottom: 1.5rem; }
+
+        /* Chart section */
+        .about-chart { padding: 5rem 1.5rem; }
+        .about-chart-inner { max-width: 64rem; margin: 0 auto; }
+        .about-chart-header { margin-bottom: 2.5rem; }
+        @media (min-width: 768px) { .about-chart-header { text-align: left; } }
+        .about-chart-header h3 { font-size: var(--text-xl); font-family: var(--secondary-font); font-weight: 600; color: var(--text-color); }
+        .about-chart-header p { font-size: var(--text-sm); color: var(--text-lighter); font-family: var(--secondary-font); margin-top: 0.25rem; }
+        .chart-card { background: var(--white); padding: 1.5rem; border-radius: 0.75rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); }
+        .chart-container { position: relative; width: 100%; max-width: 800px; margin: 0 auto; height: 350px; }
+        @media (max-width: 640px) { .chart-container { height: 300px; } }
+        .chart-note { text-align: center; font-size: var(--text-xs); color: var(--text-lighter); margin-top: 1rem; font-family: var(--secondary-font); }
+
+        /* Chronicle / Timeline */
+        .about-timeline { padding: 5rem 1.5rem; background: var(--white); }
+        .about-timeline-inner { max-width: 72rem; margin: 0 auto; }
+        .about-timeline h2 { font-size: var(--text-3xl); text-align: center; margin-bottom: 4rem; }
+        .timeline-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
+        @media (min-width: 768px) { .timeline-grid { grid-template-columns: 4fr 8fr; } }
+        .timeline-nav { position: sticky; top: 6rem; align-self: start; }
+        @media (max-width: 767px) { .timeline-nav { position: static; } }
+        .timeline-nav-btn { width: 100%; text-align: left; padding: 0.75rem 1rem; border-radius: 0.25rem; border-left: 2px solid transparent; transition: all 0.3s; font-family: var(--secondary-font); font-size: var(--text-sm); color: var(--text-lighter); background: none; cursor: pointer; }
+        .timeline-nav-btn:hover { color: var(--text-color); }
+        .timeline-nav-btn.active { border-left-color: var(--accent-color); background: var(--hover-color); color: var(--accent-color); font-weight: 700; }
+        .timeline-nav-btn span { display: inline-block; width: 3rem; }
+        .timeline-content { display: flex; flex-direction: column; gap: 5rem; }
+
+        .timeline-item { position: relative; }
+        .timeline-item-inner { display: flex; align-items: flex-start; gap: 1.5rem; }
+        @media (max-width: 767px) { .timeline-item-inner { flex-direction: column; } }
+        .timeline-icon { width: 3rem; height: 3rem; border-radius: 9999px; background: var(--hover-color); color: var(--text-lighter); display: flex; align-items: center; justify-content: center; font-family: var(--primary-font); font-size: var(--text-lg); flex-shrink: 0; transition: all 0.3s; }
+        .timeline-item:hover .timeline-icon { background: var(--accent-color); color: #fff; }
+        .timeline-line { width: 1px; height: 6rem; background: var(--border-color); margin: 0.5rem auto; }
+        .timeline-body { flex: 1; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color); }
+        .timeline-body .year { font-size: var(--text-sm); font-family: var(--secondary-font); font-weight: 700; color: var(--accent-color); margin-bottom: 0.25rem; display: block; }
+        .timeline-body h3 { font-size: var(--text-2xl); margin-bottom: 0.75rem; }
+        .timeline-body p { color: var(--text-light); line-height: 1.8; font-family: var(--secondary-font); font-weight: 300; }
+
+        /* Engadget feature section */
+        .about-engadget { padding: 6rem 1.5rem; background: #111827; color: #fff; position: relative; overflow: hidden; }
+        .about-engadget-inner { max-width: 72rem; margin: 0 auto; position: relative; z-index: 10; }
+        .engadget-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
+        @media (min-width: 768px) { .engadget-grid { grid-template-columns: 1fr 1fr; } }
+        .engadget-label { color: var(--accent-color); font-family: var(--secondary-font); font-weight: 700; letter-spacing: 0.1em; font-size: var(--text-sm); text-transform: uppercase; }
+        .engadget-title { font-size: var(--text-4xl); margin-top: 1rem; margin-bottom: 1.5rem; }
+        @media (min-width: 768px) { .engadget-title { font-size: 3rem; } }
+        .engadget-text { color: #d1d5db; font-family: var(--secondary-font); font-weight: 300; line-height: 2; margin-bottom: 1.5rem; }
+        .engadget-text strong { color: #fff; }
+        .engadget-link { display: block; background: #1f2937; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid #374151; transition: background 0.3s; }
+        .engadget-link:hover { background: #293548; }
+        .engadget-link-inner { display: flex; align-items: center; gap: 1rem; }
+        .engadget-link-icon { width: 4rem; height: 4rem; border-radius: 9999px; border: 2px solid #4b5563; display: flex; align-items: center; justify-content: center; background: #111827; flex-shrink: 0; }
+        .engadget-link-icon-inner { width: 3rem; height: 3rem; border-radius: 9999px; border: 1px solid #6b7280; background: #1f2937; }
+        .engadget-link h3 { font-size: var(--text-lg); font-weight: 700; color: #fff; }
+        .engadget-link p { font-size: var(--text-sm); color: #9ca3af; }
+        .engadget-figure { position: relative; border-radius: 0.5rem; overflow: hidden; box-shadow: var(--shadow-xl); border: 1px solid #374151; }
+        @media (min-width: 768px) { .engadget-figure { transform: rotate(2deg); } .engadget-figure:hover { transform: rotate(0deg); } }
+        .engadget-figure { transition: transform 0.5s; }
+        .engadget-figure img { width: 100%; height: auto; opacity: 0.95; }
+        .engadget-figure img:hover { opacity: 1; }
+        .engadget-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); color: #fff; font-size: var(--text-xs); padding: 0.5rem 1rem; font-family: var(--secondary-font); text-align: center; }
+
+        /* Himeji / Current Mission */
+        .about-himeji { padding: 6rem 1.5rem; background: #fdfbf7; border-top: 1px solid var(--border-color); }
+        .about-himeji-inner { max-width: 48rem; margin: 0 auto; text-align: center; }
+        .about-himeji .mission-label { font-family: var(--secondary-font); font-size: var(--text-xs); letter-spacing: 0.1em; color: var(--text-light); text-transform: uppercase; margin-bottom: 1rem; display: block; }
+        .about-himeji h2 { font-size: var(--text-3xl); margin-bottom: 2rem; }
+        @media (min-width: 768px) { .about-himeji h2 { font-size: 3rem; } }
+        .about-himeji .prose { color: var(--text-light); font-family: var(--secondary-font); font-weight: 300; font-size: var(--text-lg); line-height: 1.8; margin-bottom: 3rem; }
+        .about-himeji .prose p { margin-bottom: 1.5rem; }
+        .about-himeji .prose .highlight { font-weight: 500; color: var(--text-color); }
+        .about-cta { display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
+        @media (min-width: 768px) { .about-cta { flex-direction: row; } }
+        .about-cta a { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; border-radius: 0.25rem; font-family: var(--secondary-font); text-decoration: none; transition: all 0.3s; }
+        .about-cta .cta-primary { background: var(--text-color); color: #fff; }
+        .about-cta .cta-primary:hover { background: #1f2937; }
+        .about-cta .cta-secondary { border: 1px solid var(--border-color); color: var(--text-color); }
+        .about-cta .cta-secondary:hover { background: var(--hover-color); }
+
+        /* Footer */
+        .about-footer { background: var(--white); border-top: 1px solid var(--border-color); padding: 4rem 1.5rem 2rem; }
+        .about-footer-grid { max-width: 72rem; margin: 0 auto 3rem; display: grid; grid-template-columns: 1fr; gap: 2rem; }
+        @media (min-width: 768px) { .about-footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
+        .about-footer h4 { font-size: var(--text-lg); margin-bottom: 1rem; }
+        .about-footer-bio { font-size: var(--text-sm); color: var(--text-light); line-height: 1.8; max-width: 20rem; font-family: var(--secondary-font); }
+        .about-footer h5 { font-family: var(--secondary-font); font-weight: 700; font-size: var(--text-xs); text-transform: uppercase; color: var(--text-lighter); margin-bottom: 1rem; letter-spacing: 0.05em; }
+        .about-footer ul { list-style: none; padding: 0; }
+        .about-footer li { margin-bottom: 0.5rem; }
+        .about-footer li a { font-size: var(--text-sm); font-family: var(--secondary-font); color: var(--text-light); text-decoration: none; }
+        .about-footer li a:hover { color: var(--accent-color); }
+        .about-footer-copy { text-align: center; font-size: var(--text-xs); color: var(--text-lighter); font-family: var(--secondary-font); padding-top: 2rem; border-top: 1px solid var(--border-color); }
+
+        html { scroll-behavior: smooth; }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -88,88 +157,40 @@
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toji Masaya">
 </head>
-<body class="bg-tm-bg text-tm-text font-serif antialiased leading-relaxed selection:bg-gray-200">
+<body>
 
-    <!-- Navigation (Updated) -->
-    <nav class="sticky top-0 z-50 bg-white/95 backdrop-blur-md border-b border-gray-200" aria-label="プロフィールページ ナビゲーション">
-        <div class="max-w-6xl mx-auto px-6">
-            <div class="h-16 flex items-center justify-between">
-                <!-- Logo -->
-                <a href="index.html" class="text-xl tracking-tight font-semibold hover:text-gray-600 transition-colors font-serif">
-                    Toji Masaya
-                </a>
+    <script src="js/site-header.js"></script>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex space-x-8 text-sm font-sans font-medium text-tm-text-light items-center">
-                    <a href="index.html" class="hover:text-tm-text transition-colors">Home</a>
-                    <a href="about.html" class="text-tm-text border-b-2 border-tm-accent pb-0.5">About</a>
-                    <a href="gallery.html" class="hover:text-tm-text transition-colors">Gallery</a>
-                    
-                    <!-- 白鷺三十六景リンクを追加 (Featured Link Style) -->
-                    <a href="shirasagi36.html" class="text-tm-accent font-semibold flex items-center gap-1 hover:bg-blue-50 px-2 py-1 rounded transition-colors">
-                        <span>🏯</span> 白鷺三十六景
-                    </a>
-
-                    <a href="gear.html" class="hover:text-tm-text transition-colors">Gear</a>
-                    <a href="writings.html" class="hover:text-tm-text transition-colors">Writings</a>
-                    <a href="hongkong.html" class="hover:text-tm-text transition-colors">Hong Kong</a>
-                </div>
-
-                <!-- Mobile Menu Button -->
-                <button id="mobile-menu-btn" class="md:hidden p-2 text-2xl focus:outline-none" aria-label="メニューを開く" aria-expanded="false" aria-controls="mobile-menu">
-                    &#8801;
-                </button>
+    <!-- Hero Section -->
+    <header class="about-hero">
+        <div class="about-hero-inner">
+            <div class="profile-img-wrap">
+                <div class="profile-img-bg"></div>
+                <img src="assets/images/about/TJ.jpg" alt="Toji Masaya" class="profile-img" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/400x400/e0e0e0/ffffff?text=TJ'">
             </div>
-
-            <!-- Mobile Menu Dropdown -->
-            <div id="mobile-menu" class="md:hidden border-t border-gray-100 bg-white">
-                <div class="flex flex-col py-4 space-y-4 px-2 font-sans text-tm-text-light">
-                    <a href="index.html" class="block px-4 py-2 hover:bg-gray-50 rounded">Home</a>
-                    <a href="about.html" class="block px-4 py-2 bg-gray-50 text-tm-accent font-medium rounded">About</a>
-                    <a href="gallery.html" class="block px-4 py-2 hover:bg-gray-50 rounded">Gallery</a>
-                    <a href="shirasagi36.html" class="block px-4 py-2 text-tm-accent font-semibold hover:bg-blue-50 rounded">白鷺三十六景</a>
-                    <a href="gear.html" class="block px-4 py-2 hover:bg-gray-50 rounded">Gear</a>
-                    <a href="writings.html" class="block px-4 py-2 hover:bg-gray-50 rounded">Writings</a>
-                    <a href="hongkong.html" class="block px-4 py-2 hover:bg-gray-50 rounded">Hong Kong</a>
-                </div>
-            </div>
-        </div>
-    </nav>
-
-    <!-- Hero Section with Profile Image -->
-    <header class="relative pt-20 pb-20 px-6 max-w-6xl mx-auto">
-        <div class="flex flex-col md:flex-row items-center justify-center gap-12 md:gap-20">
-            <!-- Profile Image -->
-            <div class="w-48 h-48 md:w-64 md:h-64 flex-shrink-0 relative">
-                <div class="absolute inset-0 bg-gray-200 rounded-full transform rotate-3"></div>
-                <img src="assets/images/about/TJ.jpg" alt="Toji Masaya" class="w-full h-full object-cover rounded-full border-4 border-white shadow-lg relative z-10" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/400x400/e0e0e0/ffffff?text=TJ'">
-            </div>
-
-            <!-- Hero Text -->
-            <div class="text-center md:text-left max-w-xl">
-                <span class="font-sans text-sm tracking-widest text-tm-text-light uppercase mb-3 block">Profile</span>
-                <h1 class="text-4xl md:text-5xl font-normal mb-6 leading-tight">
+            <div class="hero-text">
+                <span class="hero-label">Profile</span>
+                <h1 class="hero-title">
                     Technologist in Hong Kong,<br>
                     Enthusiast in Himeji.
                 </h1>
-                <p class="text-lg text-tm-text-light font-sans font-light leading-relaxed">
+                <p class="hero-subtitle">
                     香港の熱気と、姫路の静寂。<br>
                     2つの都市、2つの視点を行き来する。<br>
-                    <span class="text-sm mt-3 block text-gray-400">Born in Himeji, 1964. Based in HK since 1993.</span>
+                    <span class="note">Born in Himeji, 1964. Based in HK since 1993.</span>
                 </p>
             </div>
         </div>
     </header>
 
-    <!-- Core Philosophy Section -->
-    <section class="py-16 px-6 bg-white border-y border-gray-100">
-        <div class="max-w-3xl mx-auto">
-            <div class="text-center mb-12">
-                <h2 class="text-2xl md:text-3xl mb-4">"From Gadgets to Photography."</h2>
-                <div class="w-12 h-0.5 bg-gray-300 mx-auto"></div>
+    <!-- Core Philosophy -->
+    <section class="about-philosophy">
+        <div class="about-philosophy-inner">
+            <div style="text-align:center; margin-bottom:3rem;">
+                <h2>"From Gadgets to Photography."</h2>
+                <div class="about-divider"></div>
             </div>
-            
-            <div class="prose prose-lg mx-auto text-tm-text-light font-sans font-light space-y-6">
+            <div class="about-prose">
                 <p>
                     私の原点は、1993年に渡った香港、そして深水埗（シャムスイポー）の電脳街にあります。
                 </p>
@@ -186,88 +207,68 @@
         </div>
     </section>
 
-    <!-- Interactive Data Visualization Section -->
-    <section class="py-20 px-6 bg-tm-bg">
-        <div class="max-w-5xl mx-auto">
-            <div class="mb-10 text-center md:text-left">
-                <h3 class="text-xl font-sans font-semibold text-gray-800">My Creative Trajectory</h3>
-                <p class="text-sm text-gray-500 font-sans mt-1">興味の変遷と創造性の焦点</p>
+    <!-- Chart Section -->
+    <section class="about-chart">
+        <div class="about-chart-inner">
+            <div class="about-chart-header">
+                <h3>My Creative Trajectory</h3>
+                <p>興味の変遷と創造性の焦点</p>
             </div>
-            
-            <div class="bg-white p-6 rounded-xl shadow-sm border border-gray-100">
+            <div class="chart-card">
                 <div class="chart-container">
                     <canvas id="trajectoryChart"></canvas>
                 </div>
             </div>
-            <p class="text-center text-xs text-gray-400 mt-4 font-sans">
-                Data reflects relative focus of activity over time.
-            </p>
+            <p class="chart-note">Data reflects relative focus of activity over time.</p>
         </div>
     </section>
 
-    <!-- Timeline & History Section -->
-    <section class="py-20 px-6 bg-white">
-        <div class="max-w-6xl mx-auto">
-            <h2 class="text-3xl text-center mb-16">Chronicle</h2>
-            
-            <div class="grid grid-cols-1 md:grid-cols-12 gap-12">
-                <!-- Sticky Navigation -->
-                <div class="md:col-span-4 md:sticky md:top-24 self-start">
-                    <div class="space-y-2 font-sans" id="timeline-nav">
-                        <!-- JS Generated -->
-                    </div>
-                </div>
-
-                <!-- Timeline Content -->
-                <div class="md:col-span-8 space-y-20" id="timeline-content">
-                    <!-- JS Generated -->
-                </div>
+    <!-- Timeline -->
+    <section class="about-timeline">
+        <div class="about-timeline-inner">
+            <h2>Chronicle</h2>
+            <div class="timeline-grid">
+                <div class="timeline-nav" id="timeline-nav"></div>
+                <div class="timeline-content" id="timeline-content"></div>
             </div>
         </div>
     </section>
 
-    <!-- The Engadget Story (Feature) -->
-    <section class="py-24 px-6 bg-gray-900 text-white relative overflow-hidden">
-        <div class="absolute top-0 right-0 w-64 h-64 bg-gray-800 rounded-full mix-blend-overlay filter blur-3xl opacity-20 transform translate-x-1/2 -translate-y-1/2"></div>
-        
-        <div class="max-w-6xl mx-auto relative z-10">
-            <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
-                <div class="space-y-8">
-                    <div>
-                        <span class="text-tm-accent font-sans font-bold tracking-widest text-sm uppercase">The Highlight</span>
-                        <h2 class="text-4xl md:text-5xl font-serif mt-4 mb-6">The Engadget Moment</h2>
-                        <p class="text-gray-300 font-sans font-light leading-loose mb-6">
+    <!-- The Engadget Story -->
+    <section class="about-engadget">
+        <div class="about-engadget-inner">
+            <div class="engadget-grid">
+                <div>
+                    <div style="margin-bottom:2rem;">
+                        <span class="engadget-label">The Highlight</span>
+                        <h2 class="engadget-title">The Engadget Moment</h2>
+                        <p class="engadget-text">
                             2011年、iPhoneに一眼レフのレンズを装着する「Turtle Jacket」を開発。
                             当時、本家アメリカの <strong>Engadget</strong> に製品が掲載された時の興奮は忘れられません。
                         </p>
-                        <p class="text-gray-300 font-sans font-light leading-loose">
+                        <p class="engadget-text">
                             記事には数千件ものコメントが付きました。その多くは「馬鹿げている」「クレイジーだ」という嘲笑でした。
                             しかし、スティーブ・ジョブズがまだ生きていたあの時代に、世界中のギークたちが私の作った
                             "奇妙な製品" について熱く議論している。
                             その事実が、私にとっては製品が売れること以上に、何よりも嬉しかったのです。
                         </p>
                     </div>
-
-                    <a href="https://www.pinterest.com/tojimasaya/turtleback/" target="_blank" rel="noopener noreferrer" class="block bg-gray-800 rounded-xl p-6 border border-gray-700 hover:bg-gray-750 transition-colors group">
-                        <div class="flex items-center gap-4">
-                            <div class="w-16 h-16 rounded-full border-2 border-gray-600 group-hover:border-white transition-all flex items-center justify-center bg-gray-900 flex-shrink-0">
-                                <div class="w-12 h-12 rounded-full border border-gray-500 bg-gray-800"></div>
+                    <a href="https://www.pinterest.com/tojimasaya/turtleback/" target="_blank" rel="noopener noreferrer" class="engadget-link">
+                        <div class="engadget-link-inner">
+                            <div class="engadget-link-icon">
+                                <div class="engadget-link-icon-inner"></div>
                             </div>
                             <div>
-                                <h3 class="text-lg font-bold">View Turtleback Designs</h3>
-                                <p class="text-sm text-gray-400">See the collection on Pinterest &rarr;</p>
+                                <h3>View Turtleback Designs</h3>
+                                <p>See the collection on Pinterest &rarr;</p>
                             </div>
                         </div>
                     </a>
                 </div>
-                
-                <div class="relative mt-8 md:mt-0">
-                    <!-- Engadget Screenshot -->
-                    <figure class="relative rounded-lg overflow-hidden shadow-2xl border border-gray-700 transform md:rotate-2 hover:rotate-0 transition-transform duration-500">
-                        <img src="assets/images/about/engadget_article.png" alt="Engadget Article Screenshot" class="w-full h-auto opacity-95 hover:opacity-100 transition-opacity" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentElement.innerHTML='<div class=\'bg-gray-800 p-8 text-center text-gray-400\'>Image placeholder: assets/images/about/engadget_article.png</div>'">
-                        <figcaption class="absolute bottom-0 left-0 right-0 bg-black/80 text-white text-xs py-2 px-4 font-sans text-center">
-                            Featured on Engadget US (2011)
-                        </figcaption>
+                <div style="margin-top:2rem;">
+                    <figure class="engadget-figure">
+                        <img src="assets/images/about/engadget_article.png" alt="Engadget Article Screenshot" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"background:#1f2937;padding:2rem;text-align:center;color:#9ca3af;\">Image: engadget_article.png</div>'">
+                        <figcaption class="engadget-caption">Featured on Engadget US (2011)</figcaption>
                     </figure>
                 </div>
             </div>
@@ -275,63 +276,54 @@
     </section>
 
     <!-- Himeji / Future Section -->
-    <section class="py-24 px-6 bg-tm-warm border-t border-gray-200">
-        <div class="max-w-4xl mx-auto text-center">
-            <span class="font-sans text-xs tracking-widest text-tm-text-light uppercase mb-4 block">Current Mission</span>
-            <h2 class="text-3xl md:text-5xl font-serif mb-8">Rediscovering Himeji</h2>
-            
-            <div class="prose prose-lg mx-auto text-tm-text-light font-sans font-light mb-12">
+    <section class="about-himeji">
+        <div class="about-himeji-inner">
+            <span class="mission-label">Current Mission</span>
+            <h2>Rediscovering Himeji</h2>
+            <div class="prose">
                 <p>
                     長く海外に住み、たまに帰国して姫路城を散策すると、そこには多くの外国人がいます。
                     彼らの眼差しを通して初めて、私は「近すぎて見えていなかった」姫路城の真の偉大さに気づきました。
                 </p>
-                <p class="font-medium text-tm-text">
-                    「白鷺三十六景」
-                </p>
+                <p class="highlight">「白鷺三十六景」</p>
                 <p>
                     このプロジェクトは、単なる観光写真ではありません。
                     外からの視点を持った私が、世界に向けて姫路城の美しさと物語を再定義し、発信する試みです。
                 </p>
             </div>
-
-            <div class="flex flex-col md:flex-row justify-center gap-4">
-                <!-- Link to Shirasagi Project -->
-                <a href="shirasagi36.html" class="inline-flex items-center justify-center px-8 py-4 bg-tm-text text-white rounded hover:bg-gray-800 transition-colors font-sans">
-                    View "Shirasagi 36" Project
-                </a>
-                <a href="writings.html" class="inline-flex items-center justify-center px-8 py-4 border border-gray-300 text-tm-text rounded hover:bg-gray-50 transition-colors font-sans">
-                    Read Stories
-                </a>
+            <div class="about-cta">
+                <a href="shirasagi36.html" class="cta-primary">View "Shirasagi 36" Project</a>
+                <a href="writings.html" class="cta-secondary">Read Stories</a>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 pt-16 pb-8 px-6">
-        <div class="max-w-6xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
-            <div class="md:col-span-2">
-                <h4 class="text-lg font-serif mb-4">Toji Masaya</h4>
-                <p class="text-sm text-tm-text-light leading-relaxed max-w-xs font-sans">
+    <footer class="about-footer">
+        <div class="about-footer-grid">
+            <div>
+                <h4>Toji Masaya</h4>
+                <p class="about-footer-bio">
                     Technologist, Writer, and Observer.<br>
                     Bridging cultures through lenses and code.
                 </p>
             </div>
             <div>
-                <h5 class="font-sans font-bold text-xs uppercase text-gray-400 mb-4 tracking-wider">Explore</h5>
-                <ul class="space-y-2 text-sm font-sans text-tm-text-light">
-                    <li><a href="gallery.html" class="hover:text-tm-accent">Gallery</a></li>
-                    <li><a href="writings.html" class="hover:text-tm-accent">Writings</a></li>
-                    <li><a href="gear.html" class="hover:text-tm-accent">Gear</a></li>
+                <h5>Explore</h5>
+                <ul>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="writings.html">Writings</a></li>
+                    <li><a href="gear.html">Gear</a></li>
                 </ul>
             </div>
             <div>
-                <h5 class="font-sans font-bold text-xs uppercase text-gray-400 mb-4 tracking-wider">Connect</h5>
-                <ul class="space-y-2 text-sm font-sans text-tm-text-light">
-                    <li><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer" class="hover:text-tm-accent">note</a></li>
+                <h5>Connect</h5>
+                <ul>
+                    <li><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">note</a></li>
                 </ul>
             </div>
         </div>
-        <div class="text-center text-xs text-gray-400 font-sans pt-8 border-t border-gray-100">
+        <div class="about-footer-copy">
             &copy; <script>document.write(new Date().getFullYear())</script> Toji Masaya. All rights reserved.
         </div>
     </footer>
@@ -339,24 +331,11 @@
     <!-- Scripts -->
     <script src="js/image-fallback.js"></script>
     <script>
-        // --- 1. Mobile Menu Logic ---
-        const mobileMenuBtn = document.getElementById('mobile-menu-btn');
-        const mobileMenu = document.getElementById('mobile-menu');
-        
-        if (mobileMenuBtn && mobileMenu) {
-            mobileMenuBtn.addEventListener('click', () => {
-                const isOpen = mobileMenu.classList.contains('open');
-                mobileMenu.classList.toggle('open');
-                mobileMenuBtn.setAttribute('aria-expanded', String(!isOpen));
-                mobileMenuBtn.setAttribute('aria-label', !isOpen ? 'メニューを閉じる' : 'メニューを開く');
-            });
-        }
-
-        // --- 2. Chart Logic ---
+        // --- 1. Chart Logic ---
         const initChart = () => {
             const ctx = document.getElementById('trajectoryChart').getContext('2d');
             const years = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024];
-            
+
             new Chart(ctx, {
                 type: 'line',
                 data: {
@@ -413,13 +392,13 @@
             });
         };
 
-        // --- 3. Timeline Logic ---
+        // --- 2. Timeline Logic ---
         const timelineData = [
             { year: "1964", title: "Origin", desc: "兵庫県姫路市に生まれる。", icon: "★" },
             { year: "1993", title: "Move to Hong Kong", desc: "香港・深水埗（シャムスイポー）の「黄金電腦商場」に魅せられ、移住を決意。ここから私の電脳生活が始まる。", icon: "HK" },
             { year: "1995", title: "Internet Solutions Ltd.", desc: "仲間と共にインターネット関連事業を創業。香港のIT黎明期を駆け抜ける。", icon: "IT" },
             { year: "2004", title: "Blogging Era", desc: "ブログ「亜洲モバイル人柱隊」を開始。本業の傍ら、スマートフォンやガジェット情報を発信し始める。", icon: "✎" },
-            { year: "2007", title: "iPhone & Jailbreak", desc: "初代iPhone (2G) のJailbreakに成功（日本人初？）。「電脳中心買物隊 in 香港」を立ち上げ、スマホ関連製品の販売を開始。", icon: "" },
+            { year: "2007", title: "iPhone & Jailbreak", desc: "初代iPhone (2G) のJailbreakに成功（日本人初？）。「電脳中心買物隊 in 香港」を立ち上げ、スマホ関連製品の販売を開始。", icon: "" },
             { year: "2010", title: "Turtleback Ltd.", desc: "iPhoneカメラジャケットを企画・製造する会社を創業。ハードウェア開発への挑戦。", icon: "⚙" },
             { year: "2011", title: "The Breakthrough", desc: "iPhoneに一眼レンズを装着する「SLR Mount」を発表。Engadget、LA Times、Vogue等に掲載され世界的ヒットとなる。", icon: "★" },
             { year: "Present", title: "Back to Himeji", desc: "香港と日本を行き来する中で、故郷・姫路城の魅力を再発見。「白鷺三十六景」プロジェクトを通じて、その美しさを世界に発信中。", icon: "🏯" }
@@ -428,14 +407,13 @@
         const renderTimeline = () => {
             const navContainer = document.getElementById('timeline-nav');
             const contentContainer = document.getElementById('timeline-content');
-
             if (!navContainer || !contentContainer) return;
 
             timelineData.forEach((item, index) => {
-                // Nav
+                // Nav button
                 const navBtn = document.createElement('button');
-                navBtn.className = `w-full text-left py-3 px-4 rounded border-l-2 transition-all duration-300 font-sans text-sm ${index === 0 ? 'border-tm-accent bg-gray-50 text-tm-accent font-bold' : 'border-transparent text-gray-500 hover:text-gray-800'}`;
-                navBtn.innerHTML = `<span class="inline-block w-12">${item.year}</span> ${item.title}`;
+                navBtn.className = `timeline-nav-btn ${index === 0 ? 'active' : ''}`;
+                navBtn.innerHTML = `<span>${item.year}</span> ${item.title}`;
                 navBtn.onclick = () => scrollToTimelineItem(index);
                 navBtn.id = `nav-btn-${index}`;
                 navContainer.appendChild(navBtn);
@@ -443,21 +421,17 @@
                 // Content
                 const contentDiv = document.createElement('div');
                 contentDiv.id = `timeline-item-${index}`;
-                contentDiv.className = "group relative pl-0 md:pl-0";
+                contentDiv.className = "timeline-item";
                 contentDiv.innerHTML = `
-                    <div class="md:flex items-start gap-6">
-                        <div class="hidden md:flex flex-col items-center pt-1">
-                            <div class="w-12 h-12 rounded-full bg-gray-100 text-gray-500 flex items-center justify-center font-serif text-lg group-hover:bg-tm-accent group-hover:text-white transition-colors">
-                                ${item.icon}
-                            </div>
-                            ${index !== timelineData.length - 1 ? '<div class="w-px h-24 bg-gray-200 my-2"></div>' : ''}
+                    <div class="timeline-item-inner">
+                        <div style="display:flex; flex-direction:column; align-items:center; padding-top:0.25rem;">
+                            <div class="timeline-icon">${item.icon}</div>
+                            ${index !== timelineData.length - 1 ? '<div class="timeline-line"></div>' : ''}
                         </div>
-                        <div class="flex-1 pb-8 border-b border-gray-100 last:border-0">
-                            <span class="text-sm font-sans font-bold text-tm-accent mb-1 block">${item.year}</span>
-                            <h3 class="text-2xl font-serif mb-3">${item.title}</h3>
-                            <p class="text-tm-text-light leading-relaxed font-sans font-light">
-                                ${item.desc}
-                            </p>
+                        <div class="timeline-body">
+                            <span class="year">${item.year}</span>
+                            <h3>${item.title}</h3>
+                            <p>${item.desc}</p>
                         </div>
                     </div>
                 `;
@@ -471,9 +445,7 @@
             const offset = 100;
             const bodyRect = document.body.getBoundingClientRect().top;
             const elementRect = el.getBoundingClientRect().top;
-            const elementPosition = elementRect - bodyRect;
-            const offsetPosition = elementPosition - offset;
-
+            const offsetPosition = elementRect - bodyRect - offset;
             window.scrollTo({ top: offsetPosition, behavior: "smooth" });
             updateNavState(index);
         };
@@ -482,11 +454,7 @@
             const navContainer = document.getElementById('timeline-nav');
             if (!navContainer) return;
             Array.from(navContainer.children).forEach((btn, idx) => {
-                if (idx === activeIndex) {
-                    btn.className = 'w-full text-left py-3 px-4 rounded border-l-2 transition-all duration-300 font-sans text-sm border-tm-accent bg-gray-50 text-tm-accent font-bold';
-                } else {
-                    btn.className = 'w-full text-left py-3 px-4 rounded border-l-2 transition-all duration-300 font-sans text-sm border-transparent text-gray-500 hover:text-gray-800';
-                }
+                btn.className = idx === activeIndex ? 'timeline-nav-btn active' : 'timeline-nav-btn';
             });
         };
 
