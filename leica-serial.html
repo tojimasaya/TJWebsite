@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-806426BQX2');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Leica Serial Number Database — Toji Masaya</title>
+    <meta name="description" content="ライカのシリアル番号からカメラ・レンズの製造年を検索。1923年〜2015年の全モデル対応データベース。">
+    <meta name="author" content="Toji Masaya">
+
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
+    <noscript>
+        <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
+    </noscript>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="favicon.png">
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="Leica Serial Number Database — Toji Masaya">
+    <meta property="og:description" content="ライカのシリアル番号からカメラ・レンズの製造年を検索。1923年〜2015年の全モデル対応。">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://tojimasaya.com/leica-serial.html">
+    <link rel="canonical" href="https://tojimasaya.com/leica-serial.html">
+
+    <style>
+        /* ===== Hero ===== */
+        .serial-hero {
+            padding: 120px 20px 60px;
+            text-align: center;
+            background: var(--bg-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+        .serial-hero h1 {
+            font-family: var(--primary-font);
+            font-size: clamp(2rem, 4vw, 3rem);
+            color: var(--text-color);
+            letter-spacing: 0.02em;
+            margin-bottom: 0.5rem;
+        }
+        .serial-hero .subtitle {
+            font-family: var(--secondary-font);
+            font-size: var(--text-base);
+            color: var(--text-light);
+            max-width: 600px;
+            margin: 0 auto;
+            line-height: 1.8;
+        }
+
+        /* ===== Search Section ===== */
+        .search-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        .search-box {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 32px;
+            transition: box-shadow var(--transition-base);
+        }
+        .search-box:focus-within {
+            box-shadow: var(--shadow-lg);
+            border-color: var(--accent-color);
+        }
+        .search-label {
+            display: block;
+            font-family: var(--secondary-font);
+            font-size: var(--text-xs);
+            font-weight: 500;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--text-lighter);
+            margin-bottom: 8px;
+        }
+        .search-input-row {
+            display: flex;
+            gap: 12px;
+        }
+        .search-input {
+            flex: 1;
+            font-family: var(--secondary-font);
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+            font-weight: 300;
+            letter-spacing: 0.05em;
+            padding: 12px 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--bg-color);
+            color: var(--text-color);
+            outline: none;
+            transition: border-color var(--transition-base);
+        }
+        .search-input:focus {
+            border-color: var(--accent-color);
+        }
+        .search-input::placeholder {
+            color: var(--text-lighter);
+            font-weight: 300;
+        }
+        .search-btn {
+            padding: 12px 24px;
+            background: var(--accent-color);
+            color: #fff;
+            border: none;
+            border-radius: 8px;
+            font-family: var(--secondary-font);
+            font-size: var(--text-sm);
+            font-weight: 500;
+            cursor: pointer;
+            transition: opacity var(--transition-base);
+            white-space: nowrap;
+        }
+        .search-btn:hover { opacity: 0.85; }
+
+        /* Tab switcher */
+        .search-tabs {
+            display: flex;
+            gap: 0;
+            margin-top: 20px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        .search-tab {
+            flex: 1;
+            padding: 10px 16px;
+            font-family: var(--secondary-font);
+            font-size: var(--text-sm);
+            font-weight: 400;
+            color: var(--text-light);
+            background: var(--bg-color);
+            border: none;
+            cursor: pointer;
+            transition: all var(--transition-base);
+            text-align: center;
+        }
+        .search-tab:not(:last-child) {
+            border-right: 1px solid var(--border-color);
+        }
+        .search-tab.active {
+            background: var(--accent-color);
+            color: #fff;
+            font-weight: 500;
+        }
+        .search-tab:hover:not(.active) {
+            background: var(--hover-color);
+        }
+
+        /* ===== Results ===== */
+        .results-section {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 20px 40px;
+        }
+        .result-card {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 12px;
+            padding: 28px 32px;
+            margin-bottom: 16px;
+            animation: fadeIn 0.3s ease;
+        }
+        .result-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: baseline;
+            margin-bottom: 8px;
+        }
+        .result-type {
+            font-family: var(--secondary-font);
+            font-size: var(--text-xs);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            color: var(--accent-color);
+        }
+        .result-year {
+            font-family: var(--primary-font);
+            font-size: var(--text-4xl);
+            font-weight: 600;
+            color: var(--text-color);
+            line-height: 1.2;
+        }
+        .result-model {
+            font-family: var(--primary-font);
+            font-size: var(--text-xl);
+            color: var(--text-color);
+            font-style: italic;
+            margin-bottom: 12px;
+        }
+        .result-range {
+            font-family: var(--secondary-font);
+            font-size: var(--text-sm);
+            color: var(--text-lighter);
+        }
+        .result-range span {
+            color: var(--text-light);
+            font-weight: 500;
+        }
+
+        .no-result {
+            text-align: center;
+            padding: 40px 20px;
+            color: var(--text-lighter);
+            font-size: var(--text-sm);
+        }
+        .no-result .icon {
+            font-size: 2rem;
+            display: block;
+            margin-bottom: 12px;
+        }
+
+        /* ===== Reference Table ===== */
+        .table-section {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 20px 80px;
+        }
+        .table-toggle {
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 16px 0;
+            border: none;
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+            background: transparent;
+            cursor: pointer;
+            color: var(--text-color);
+            font-family: var(--primary-font);
+            font-size: var(--text-lg);
+        }
+        .table-toggle:hover { color: var(--accent-color); }
+        .table-toggle .arrow {
+            transition: transform var(--transition-base);
+            font-size: var(--text-sm);
+            color: var(--text-lighter);
+        }
+        .table-toggle.open .arrow { transform: rotate(180deg); }
+
+        .table-wrapper {
+            display: none;
+            overflow-x: auto;
+            margin-top: 16px;
+            -webkit-overflow-scrolling: touch;
+        }
+        .table-wrapper.visible { display: block; }
+
+        .serial-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-family: var(--secondary-font);
+            font-size: var(--text-sm);
+        }
+        .serial-table th {
+            text-align: left;
+            padding: 10px 16px;
+            font-weight: 600;
+            font-size: var(--text-xs);
+            text-transform: uppercase;
+            letter-spacing: 0.08em;
+            color: var(--text-lighter);
+            border-bottom: 2px solid var(--border-color);
+            white-space: nowrap;
+            position: sticky;
+            top: 0;
+            background: var(--bg-color);
+        }
+        .serial-table td {
+            padding: 8px 16px;
+            border-bottom: 1px solid var(--border-color);
+            color: var(--text-color);
+            white-space: nowrap;
+        }
+        .serial-table tbody tr:hover {
+            background: var(--hover-color);
+        }
+        .serial-table .col-year { width: 100px; }
+        .serial-table .col-serial { font-variant-numeric: tabular-nums; }
+        .serial-table .col-model {
+            font-style: italic;
+            color: var(--text-light);
+        }
+
+        /* Max height for scrollable table */
+        .table-scroll {
+            max-height: 500px;
+            overflow-y: auto;
+        }
+
+        /* ===== Credit ===== */
+        .data-credit {
+            text-align: center;
+            padding: 20px;
+            font-size: var(--text-xs);
+            color: var(--text-lighter);
+        }
+        .data-credit a {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .data-credit a:hover { text-decoration: underline; }
+
+        /* ===== Footer ===== */
+        .footer {
+            border-top: 1px solid var(--border-color);
+            padding: 40px 20px;
+            text-align: center;
+            font-size: var(--text-sm);
+            color: var(--text-lighter);
+        }
+
+        /* ===== Animations ===== */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(8px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        /* ===== Mobile ===== */
+        @media (max-width: 640px) {
+            .serial-hero { padding: 100px 16px 40px; }
+            .search-box { padding: 20px; }
+            .search-input-row { flex-direction: column; }
+            .search-btn { width: 100%; padding: 14px; }
+            .result-card { padding: 20px; }
+            .result-year { font-size: var(--text-3xl); }
+        }
+    </style>
+</head>
+<body>
+    <script src="js/site-header.js"></script>
+
+    <!-- Hero -->
+    <header class="serial-hero">
+        <h1>Leica Serial Number Database</h1>
+        <p class="subtitle">
+            シリアル番号を入力すると、カメラ・レンズの製造年やモデルを検索できます。<br>
+            1923年〜2015年のデータに対応しています。
+        </p>
+    </header>
+
+    <!-- Search -->
+    <section class="search-section">
+        <div class="search-box">
+            <label class="search-label" for="serial-input">Serial Number</label>
+            <div class="search-input-row">
+                <input
+                    type="text"
+                    id="serial-input"
+                    class="search-input"
+                    placeholder="例: 1200000"
+                    inputmode="numeric"
+                    autocomplete="off"
+                >
+                <button class="search-btn" id="search-btn">検索</button>
+            </div>
+            <div class="search-tabs">
+                <button class="search-tab active" data-mode="all">すべて</button>
+                <button class="search-tab" data-mode="camera">カメラ</button>
+                <button class="search-tab" data-mode="lens">レンズ</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Results -->
+    <section class="results-section" id="results">
+        <!-- Results injected here by JS -->
+    </section>
+
+    <!-- Reference Tables -->
+    <section class="table-section">
+        <!-- Lens table -->
+        <button class="table-toggle" id="toggle-lens">
+            レンズ シリアル番号一覧（1931〜2015）
+            <span class="arrow">&#9660;</span>
+        </button>
+        <div class="table-wrapper" id="table-lens">
+            <div class="table-scroll">
+                <table class="serial-table">
+                    <thead>
+                        <tr>
+                            <th class="col-year">製造年</th>
+                            <th class="col-serial">開始番号</th>
+                            <th class="col-serial">終了番号</th>
+                        </tr>
+                    </thead>
+                    <tbody id="lens-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <!-- Camera table -->
+        <button class="table-toggle" id="toggle-camera" style="margin-top: 8px;">
+            カメラ シリアル番号一覧（1923〜2002）
+            <span class="arrow">&#9660;</span>
+        </button>
+        <div class="table-wrapper" id="table-camera">
+            <div class="table-scroll">
+                <table class="serial-table">
+                    <thead>
+                        <tr>
+                            <th class="col-year">製造年</th>
+                            <th class="col-serial">開始番号</th>
+                            <th class="col-serial">終了番号</th>
+                            <th class="col-model">モデル</th>
+                        </tr>
+                    </thead>
+                    <tbody id="camera-tbody"></tbody>
+                </table>
+            </div>
+        </div>
+
+        <p class="data-credit">
+            データ出典: <a href="https://at-leica.com/serial/" target="_blank" rel="noopener noreferrer">at-leica.com</a><br>
+            シリアル番号は各年度の当初に割り振られた目安です。
+        </p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <p>&copy; <script>document.write(new Date().getFullYear())</script> Toji Masaya. All rights reserved.</p>
+    </footer>
+
+    <script>
+    (function() {
+        'use strict';
+
+        let db = null;
+        let mode = 'all'; // 'all' | 'camera' | 'lens'
+
+        const input = document.getElementById('serial-input');
+        const btn = document.getElementById('search-btn');
+        const resultsEl = document.getElementById('results');
+
+        // ── Load data ──
+        fetch('data/leica-serial.json')
+            .then(r => r.json())
+            .then(data => {
+                db = data;
+                populateTables(data);
+            })
+            .catch(() => {
+                resultsEl.innerHTML = '<p class="no-result">データの読み込みに失敗しました。</p>';
+            });
+
+        // ── Tab switching ──
+        document.querySelectorAll('.search-tab').forEach(tab => {
+            tab.addEventListener('click', () => {
+                document.querySelector('.search-tab.active').classList.remove('active');
+                tab.classList.add('active');
+                mode = tab.dataset.mode;
+                doSearch();
+            });
+        });
+
+        // ── Search ──
+        function doSearch() {
+            if (!db) return;
+            const raw = input.value.replace(/[\s,.\-]/g, '');
+            if (!raw) {
+                resultsEl.innerHTML = '';
+                return;
+            }
+            const serial = parseInt(raw, 10);
+            if (isNaN(serial) || serial < 1) {
+                resultsEl.innerHTML = '<p class="no-result"><span class="icon">🔢</span>数字を入力してください</p>';
+                return;
+            }
+
+            const results = [];
+
+            // Search lens
+            if (mode === 'all' || mode === 'lens') {
+                for (const entry of db.lens) {
+                    const end = entry.end || Infinity;
+                    if (serial >= entry.start && serial <= end) {
+                        results.push({ type: 'lens', ...entry });
+                    }
+                }
+            }
+
+            // Search camera
+            if (mode === 'all' || mode === 'camera') {
+                for (const entry of db.camera) {
+                    const end = entry.end || Infinity;
+                    if (serial >= entry.start && serial <= end) {
+                        results.push({ type: 'camera', ...entry });
+                    }
+                }
+            }
+
+            renderResults(serial, results);
+        }
+
+        function renderResults(serial, results) {
+            if (results.length === 0) {
+                resultsEl.innerHTML = `
+                    <div class="no-result">
+                        <span class="icon">🔍</span>
+                        シリアル番号 <strong>${serial.toLocaleString()}</strong> に該当するデータは見つかりませんでした。
+                    </div>`;
+                return;
+            }
+
+            let html = '';
+            for (const r of results) {
+                const typeLabel = r.type === 'lens' ? 'Lens' : 'Camera';
+                const startFmt = r.start ? r.start.toLocaleString() : '—';
+                const endFmt = r.end ? r.end.toLocaleString() : '—';
+                html += `
+                    <div class="result-card">
+                        <div class="result-card-header">
+                            <span class="result-type">${typeLabel}</span>
+                        </div>
+                        <div class="result-year">${r.year}</div>
+                        ${r.model ? `<div class="result-model">${r.model}</div>` : ''}
+                        <div class="result-range">
+                            Serial Range: <span>${startFmt}</span> — <span>${endFmt}</span>
+                        </div>
+                    </div>`;
+            }
+            resultsEl.innerHTML = html;
+        }
+
+        // Debounced realtime search
+        let timer = null;
+        input.addEventListener('input', () => {
+            clearTimeout(timer);
+            timer = setTimeout(doSearch, 300);
+        });
+
+        // Button & Enter key
+        btn.addEventListener('click', doSearch);
+        input.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter') doSearch();
+        });
+
+        // ── Populate reference tables ──
+        function populateTables(data) {
+            // Lens
+            const lensTbody = document.getElementById('lens-tbody');
+            let lensHtml = '';
+            for (const e of data.lens) {
+                const endStr = e.end ? e.end.toLocaleString() : '—';
+                lensHtml += `<tr>
+                    <td class="col-year">${e.year}</td>
+                    <td class="col-serial">${e.start.toLocaleString()}</td>
+                    <td class="col-serial">${endStr}</td>
+                </tr>`;
+            }
+            lensTbody.innerHTML = lensHtml;
+
+            // Camera
+            const cameraTbody = document.getElementById('camera-tbody');
+            let camHtml = '';
+            for (const e of data.camera) {
+                const endStr = e.end ? e.end.toLocaleString() : '—';
+                camHtml += `<tr>
+                    <td class="col-year">${e.year}</td>
+                    <td class="col-serial">${e.start.toLocaleString()}</td>
+                    <td class="col-serial">${endStr}</td>
+                    <td class="col-model">${e.model}</td>
+                </tr>`;
+            }
+            cameraTbody.innerHTML = camHtml;
+        }
+
+        // ── Toggle tables ──
+        function setupToggle(btnId, wrapperId) {
+            const togBtn = document.getElementById(btnId);
+            const wrapper = document.getElementById(wrapperId);
+            togBtn.addEventListener('click', () => {
+                togBtn.classList.toggle('open');
+                wrapper.classList.toggle('visible');
+            });
+        }
+        setupToggle('toggle-lens', 'table-lens');
+        setupToggle('toggle-camera', 'table-camera');
+    })();
+    </script>
+</body>
+</html>
