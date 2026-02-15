@@ -174,7 +174,7 @@ const gearData = {
           "brand": "DJI",
           "image": "assets/images/gear/djineo.jpg",
           "status": "available",
-          "specs": ["<249g", "4K/60fps"],
+          "specs": ["249g未満", "4K/60fps"],
           "description": "小さくて可愛いドローン。コントローラなしで手のひらから飛ばすこともできるし、ゴーグルを使ってFPV的に飛ばすことも可能",
           "links": {
             "Review": "https://drone.jp/news/2024090522010796961.html"
@@ -186,7 +186,7 @@ const gearData = {
           "brand": "DJI",
           "image": "assets/images/gear/neo2.jpg",
           "status": "available",
-          "specs": ["<249g", "Gesture Control"],
+          "specs": ["249g未満", "Gesture Control"],
           "description": "Neoの後継ドローンを深圳DJIにて購入。ジェスチャーでの操作が楽しい。コントローラなしで十分楽しめます。",
           "links": {
              "Note": "https://drone.jp/column/20251113211015121785.html"
@@ -210,7 +210,7 @@ const gearData = {
           "brand": "DJI",
           "image": "assets/images/gear/mini4pro.jpg",
           "status": "available",
-          "specs": ["<249g", "4K/60fps"],
+          "specs": ["249g未満", "4K/60fps"],
           "description": "DJI Mini 5 Proが250gを数グラム超え、国によっては登録必要ということで、２台体制でいくことに。",
           "links": {
             "Review": "https://drone.jp/column/2023092522000773147.html"

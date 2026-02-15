@@ -322,6 +322,14 @@
             .close-btn { top: 15px; right: 15px; font-size: 2.5rem; }
         }
     </style>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://tojimasaya.com/gallery.html">
+<meta property="og:title" content="Gallery — Toji Masaya">
+<meta property="og:description" content="田路昌也の写真・動画ポートフォリオ。香港、トルコ、姫路、ドローン空撮など、旅と日常の記録。">
+<meta property="og:url" content="https://tojimasaya.com/gallery.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Toji Masaya">
 </head>
 <body>
 
@@ -350,20 +358,20 @@
     <!-- Footer -->
     <footer class="footer">
         <div class="footer-content">
-            <p>&copy; 2026 Toji Masaya. All rights reserved.</p>
+            <p>&copy; <script>document.write(new Date().getFullYear())</script> Toji Masaya. All rights reserved.</p>
         </div>
     </footer>
 
     <!-- Photo Lightbox -->
-    <div id="lightbox" class="lightbox" onclick="closeLightbox()">
-        <button class="close-btn" onclick="closeLightbox()">&times;</button>
-        <img id="lightbox-img" class="lightbox-content" src="" alt="" onclick="event.stopPropagation()">
+    <div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="写真ビューア">
+        <button class="close-btn" onclick="closeLightbox()" aria-label="閉じる">&times;</button>
+        <img id="lightbox-img" class="lightbox-content" src="" alt="Gallery photo" onclick="event.stopPropagation()">
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
     <!-- Video Modal -->
-    <div id="videoModal" class="video-modal" onclick="closeVideo()">
-        <button class="close-btn" onclick="closeVideo()">&times;</button>
+    <div id="videoModal" class="video-modal" onclick="closeVideo()" role="dialog" aria-modal="true" aria-label="動画プレーヤー">
+        <button class="close-btn" onclick="closeVideo()" aria-label="閉じる">&times;</button>
         <div class="video-container" onclick="event.stopPropagation()">
             <div id="video-placeholder"></div>
         </div>

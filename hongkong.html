@@ -512,6 +512,14 @@
       "url": "https://tojimasaya.com/hongkong.html"
     }
     </script>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://tojimasaya.com/hongkong.html">
+<meta property="og:title" content="Hong Kong — 香港を撮る、香港で撮る">
+<meta property="og:description" content="消えゆくネオンの光、街角のカメラショップ、フォトジェニックな風景。変わりゆく香港の「今」と「昔」を記録する。">
+<meta property="og:url" content="https://tojimasaya.com/hongkong.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Toji Masaya">
 </head>
 <body>
 
@@ -734,7 +742,7 @@
 
             sections.forEach(section => {
                 const sectionTop = section.offsetTop;
-                if (pageYOffset >= sectionTop - 150) {
+                if (window.scrollY >= sectionTop - 150) {
                     current = section.getAttribute('id');
                 }
             });
