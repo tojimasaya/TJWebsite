@@ -1,0 +1,89 @@
+name: Convert shirasagi JPGs to WebP
+
+on:
+  push:
+    paths:
+      - 'assets/images/shirasagi/*.jpg'
+  workflow_dispatch:
+    inputs:
+      force_all:
+        description: 'Force reconvert all images'
+        type: boolean
+        default: false
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install cwebp
+        run: sudo apt-get update && sudo apt-get install -y webp
+
+      - name: Create output directories
+        run: |
+          mkdir -p assets/images/shirasagi/webp/thumb
+          mkdir -p assets/images/shirasagi/webp/full
+
+      - name: Determine files to convert
+        id: files
+        run: |
+          if [ "${{ github.event.inputs.force_all }}" = "true" ]; then
+            FILES=$(find assets/images/shirasagi -maxdepth 1 -name '*.jpg' | sort)
+          else
+            # Changed files in this push
+            CHANGED=$(git diff --name-only HEAD~1 HEAD -- 'assets/images/shirasagi/*.jpg' 2>/dev/null || true)
+            # Also find JPGs that have no WebP yet
+            MISSING=""
+            for f in assets/images/shirasagi/*.jpg; do
+              [ -f "$f" ] || continue
+              base=$(basename "$f" .jpg)
+              if [ ! -f "assets/images/shirasagi/webp/full/${base}.webp" ]; then
+                MISSING="$MISSING $f"
+              fi
+            done
+            FILES=$(echo "$CHANGED $MISSING" | tr ' ' '\n' | grep -v '^$' | sort -u)
+          fi
+          echo "Converting these files:"
+          echo "$FILES"
+          # Save to a temp file for the next step
+          echo "$FILES" > /tmp/files_to_convert.txt
+
+      - name: Convert to WebP
+        run: |
+          while IFS= read -r f; do
+            [ -z "$f" ] && continue
+            [ -f "$f" ] || continue
+            base=$(basename "$f" .jpg)
+            echo "Converting $base..."
+            # Full size: 1600px wide, quality 82, max compression
+            cwebp -q 82 -m 6 -resize 1600 0 "$f" \
+              -o "assets/images/shirasagi/webp/full/${base}.webp"
+            # Thumbnail: 600px wide, quality 75
+            cwebp -q 75 -m 6 -resize 600 0 "$f" \
+              -o "assets/images/shirasagi/webp/thumb/${base}.webp"
+            full_size=$(stat -c%s "assets/images/shirasagi/webp/full/${base}.webp" 2>/dev/null || stat -f%z "assets/images/shirasagi/webp/full/${base}.webp")
+            thumb_size=$(stat -c%s "assets/images/shirasagi/webp/thumb/${base}.webp" 2>/dev/null || stat -f%z "assets/images/shirasagi/webp/thumb/${base}.webp")
+            echo "  full: ${full_size} bytes, thumb: ${thumb_size} bytes"
+          done < /tmp/files_to_convert.txt
+
+      - name: List generated files
+        run: |
+          echo "=== Full ==="
+          ls -lh assets/images/shirasagi/webp/full/ 2>/dev/null || echo "No full files"
+          echo "=== Thumb ==="
+          ls -lh assets/images/shirasagi/webp/thumb/ 2>/dev/null || echo "No thumb files"
+
+      - name: Stage WebP files
+        run: git add -f assets/images/shirasagi/webp/
+
+      - name: Commit converted images
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(images): convert shirasagi JPGs to WebP'
+          file_pattern: 'assets/images/shirasagi/webp/**/*.webp'

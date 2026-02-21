@@ -204,7 +204,10 @@
         <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 md:mb-24">
             <div class="bg-white p-2 md:p-4 rounded-sm shadow-sm border border-gray-100">
                 <div class="bg-washi-bg relative overflow-hidden group cursor-pointer aspect-[4/3] md:aspect-[21/9]" onclick="openModalWithLatest()">
-                    <img id="latest-image" src="" alt="Latest Shot" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 ease-in-out">
+                    <picture>
+                        <source id="latest-source" srcset="" type="image/webp">
+                        <img id="latest-image" src="" alt="Latest Shot" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 ease-in-out">
+                    </picture>
                     
                     <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-end">
                         <div class="text-white mb-2 md:mb-0">
@@ -291,7 +294,10 @@
                 <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
             <div class="w-full md:w-3/4 h-[60vh] md:h-auto bg-gray-50 flex items-center justify-center relative group p-2 md:p-8">
-                <img id="modal-img" src="" class="max-w-full max-h-[56vh] md:max-h-full object-contain shadow-lg" alt="">
+                <picture>
+                    <source id="modal-source" srcset="" type="image/webp">
+                    <img id="modal-img" src="" class="max-w-full max-h-[56vh] md:max-h-full object-contain shadow-lg" alt="">
+                </picture>
                 <button class="absolute left-2 md:left-4 top-1/2 -translate-y-1/2 text-gray-400 hover:text-shirasagi-ink transition md:opacity-0 group-hover:opacity-100 p-2" onclick="prevPhoto()">
                     <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M15 19l-7-7 7-7"></path></svg>
                 </button>
@@ -369,8 +375,13 @@
             setupFilters();
         }
 
-        function getImagePath(id) {
-            return `assets/images/shirasagi/${String(id).padStart(2, '0')}.jpg`;
+        function getImagePaths(id) {
+            const num = String(id).padStart(2, '0');
+            return {
+                thumb: `assets/images/shirasagi/webp/thumb/${num}.webp`,
+                full:  `assets/images/shirasagi/webp/full/${num}.webp`,
+                fallback: `assets/images/shirasagi/${num}.jpg`
+            };
         }
 
         // Season labels for featured cards
@@ -390,7 +401,7 @@
                 if (!photo) continue; // Skip unfinished — no empty placeholders
 
                 const card = document.createElement('div');
-                const imgSrc = getImagePath(i);
+                const paths = getImagePaths(i);
 
                 // In "all" view, first photo of each season is featured (large)
                 const isSeasonLead = isAllView && seasonLabels[i];
@@ -399,11 +410,14 @@
                     card.className = "group relative bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ease-out col-span-2 row-span-2 aspect-square";
                     card.onclick = () => openModal(i);
                     card.innerHTML = `
-                        <img src="${imgSrc}"
-                             onerror="this.src='https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=80'"
-                             alt="${photo.title}"
-                             loading="lazy"
-                             class="w-full h-full object-cover transition duration-700 group-hover:scale-105 filter sepia-[0.1] group-hover:sepia-0">
+                        <picture>
+                            <source srcset="${paths.thumb}" type="image/webp">
+                            <img src="${paths.fallback}"
+                                 onerror="this.src='https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=80'"
+                                 alt="${photo.title}"
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition duration-700 group-hover:scale-105 filter sepia-[0.1] group-hover:sepia-0">
+                        </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-shirasagi-ink/70 via-transparent to-transparent flex flex-col justify-end p-5 md:p-8">
                             <span class="text-white/60 font-serif-display text-[10px] md:text-xs tracking-[0.2em] uppercase mb-1">${seasonLabels[i]}</span>
                             <span class="text-white font-serif-display text-sm md:text-base tracking-widest mb-1">No.${String(i).padStart(2, '0')}</span>
@@ -414,11 +428,14 @@
                     card.className = "group relative aspect-square bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 ease-out";
                     card.onclick = () => openModal(i);
                     card.innerHTML = `
-                        <img src="${imgSrc}"
-                             onerror="this.src='https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=800&q=80'"
-                             alt="${photo.title}"
-                             loading="lazy"
-                             class="w-full h-full object-cover transition duration-700 group-hover:scale-110 filter sepia-[0.1] group-hover:sepia-0">
+                        <picture>
+                            <source srcset="${paths.thumb}" type="image/webp">
+                            <img src="${paths.fallback}"
+                                 onerror="this.src='https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=800&q=80'"
+                                 alt="${photo.title}"
+                                 loading="lazy"
+                                 class="w-full h-full object-cover transition duration-700 group-hover:scale-110 filter sepia-[0.1] group-hover:sepia-0">
+                        </picture>
                         <div class="absolute inset-0 bg-shirasagi-ink/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
                             <span class="text-white font-serif-display text-lg tracking-widest mb-2 border-b border-white/50 pb-1">No.${String(i).padStart(2, '0')}</span>
                             <h4 class="text-white font-serif-display text-sm tracking-widest text-center">${photo.title}</h4>
@@ -456,10 +473,11 @@
             if (ids.length === 0) return;
             const latestId = Math.max(...ids);
             const p = photosData[latestId];
-            const imgSrc = getImagePath(latestId);
+            const paths = getImagePaths(latestId);
 
+            document.getElementById('latest-source').srcset = paths.full;
             const imgEl = document.getElementById('latest-image');
-            imgEl.src = imgSrc;
+            imgEl.src = paths.fallback;
             imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1600&q=80'; };
 
             document.getElementById('latest-title').innerText = p.title;
@@ -511,9 +529,10 @@
             currentModalId = parseInt(id);
             const p = photosData[id];
             if (!p) return;
-            const imgSrc = getImagePath(id);
+            const paths = getImagePaths(id);
+            document.getElementById('modal-source').srcset = paths.full;
             const imgEl = document.getElementById('modal-img');
-            imgEl.src = imgSrc;
+            imgEl.src = paths.fallback;
             imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=80'; };
 
             document.getElementById('modal-title').innerText = p.title;
