@@ -555,30 +555,31 @@
             imgEl.src = paths.fallback;
             imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=80'; };
 
-            // Portrait layout adjustment
+            // Portrait / Landscape layout switch
             const isPortrait = p.orientation === 'portrait';
             const content = document.getElementById('modal-content');
             const photoArea = document.getElementById('modal-photo-area');
             const infoPanel = document.getElementById('modal-info-panel');
             if (isPortrait) {
+                // Stack vertically: photo on top, compact info bar below
                 content.classList.remove('md:flex-row');
-                content.classList.add('md:flex-col');
+                content.classList.add('md:flex-row');          // keep row: photo left, info right
                 photoArea.classList.remove('md:w-3/4');
-                photoArea.classList.add('md:w-full');
-                photoArea.style.maxHeight = '75vh';
+                photoArea.classList.add('md:w-1/2');           // photo takes half
+                photoArea.style.maxHeight = '';
                 infoPanel.classList.remove('md:w-1/4');
-                infoPanel.classList.add('md:w-full');
+                infoPanel.classList.add('md:w-1/2');           // info takes half
                 imgEl.classList.remove('md:max-h-full');
-                imgEl.classList.add('md:max-h-[70vh]');
+                imgEl.classList.add('md:max-h-[80vh]');
             } else {
                 content.classList.remove('md:flex-col');
                 content.classList.add('md:flex-row');
-                photoArea.classList.remove('md:w-full');
+                photoArea.classList.remove('md:w-1/2');
                 photoArea.classList.add('md:w-3/4');
                 photoArea.style.maxHeight = '';
-                infoPanel.classList.remove('md:w-full');
+                infoPanel.classList.remove('md:w-1/2');
                 infoPanel.classList.add('md:w-1/4');
-                imgEl.classList.remove('md:max-h-[70vh]');
+                imgEl.classList.remove('md:max-h-[80vh]');
                 imgEl.classList.add('md:max-h-full');
             }
 
