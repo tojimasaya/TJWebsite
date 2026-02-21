@@ -214,14 +214,15 @@
     }
   },
   "22": {
-    "title": "Castle at First Light",
+    "title": "First Light Over the Castle",
+    "desc": "New Year's Sunrise, 2026 / At Nagoyama.\nRising light, an emerging silhouette. A visionary White Heron faces the sun. A new year dawns in silence.",
     "date": "2026.01.01",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter morning",
     "location": {
       "lat": 34.842445396006696,
       "lng": 134.67761073668575,
-      "name": "Nagoyama"
+      "name": "名古山"
     }
   },
   "23": {
