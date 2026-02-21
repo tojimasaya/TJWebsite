@@ -250,7 +250,7 @@
             </div>
 
             <!-- Grid System -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-6 lg:gap-8 auto-rows-auto" id="shirasagi-grid">
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-6 lg:gap-8 auto-rows-auto" id="shirasagi-grid" style="transition: opacity 0.25s ease, transform 0.25s ease;">
                 <!-- Javascript populates this -->
             </div>
         </section>
@@ -481,7 +481,32 @@
                     e.target.classList.remove('bg-transparent', 'text-gray-600');
                     e.target.classList.add('bg-shirasagi-ink', 'text-white');
                     currentFilter = e.target.dataset.filter;
-                    renderGrid();
+
+                    // Fade out, swap, fade in
+                    const grid = document.getElementById('shirasagi-grid');
+                    grid.style.opacity = '0';
+                    grid.style.transform = 'translateY(8px)';
+                    setTimeout(() => {
+                        renderGrid();
+                        // Stagger fade-in for each card
+                        requestAnimationFrame(() => {
+                            grid.style.opacity = '1';
+                            grid.style.transform = 'translateY(0)';
+                            const cards = grid.children;
+                            for (let c = 0; c < cards.length; c++) {
+                                cards[c].style.opacity = '0';
+                                cards[c].style.transform = 'translateY(12px)';
+                                cards[c].style.transition = 'opacity 0.4s ease, transform 0.4s ease';
+                                cards[c].style.transitionDelay = `${c * 40}ms`;
+                            }
+                            requestAnimationFrame(() => {
+                                for (let c = 0; c < cards.length; c++) {
+                                    cards[c].style.opacity = '1';
+                                    cards[c].style.transform = 'translateY(0)';
+                                }
+                            });
+                        });
+                    }, 250);
                 });
             });
         }
