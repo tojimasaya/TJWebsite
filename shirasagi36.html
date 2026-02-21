@@ -444,7 +444,8 @@
                         </div>
                     `;
                 } else {
-                    card.className = "group relative aspect-square bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 ease-out";
+                    const isPortrait = photo.orientation === 'portrait';
+                    card.className = `group relative ${isPortrait ? 'row-span-2 aspect-[2/3]' : 'aspect-square'} bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 ease-out`;
                     card.onclick = () => openModal(i);
                     card.innerHTML = `
                         <picture>
