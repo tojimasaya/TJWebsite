@@ -242,7 +242,7 @@
             </div>
 
             <!-- Grid System -->
-            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-6 lg:gap-8" id="shirasagi-grid"></div>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 gap-3 md:gap-6 lg:gap-8 auto-rows-auto" id="shirasagi-grid"></div>
         </section>
     </main>
 
@@ -357,37 +357,56 @@
             return `assets/images/shirasagi/${String(id).padStart(2, '0')}.jpg`;
         }
 
+        // Season labels for featured cards
+        const seasonLabels = { 1: 'Spring', 7: 'Summer', 13: 'Autumn', 19: 'Winter', 25: 'Special' };
+
         function renderGrid() {
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
+            const isAllView = currentFilter === 'all';
             let start = 1, end = 36;
-            if (currentFilter !== 'all' && seasonRanges[currentFilter]) {
+            if (!isAllView && seasonRanges[currentFilter]) {
                 [start, end] = seasonRanges[currentFilter];
             }
 
             for (let i = start; i <= end; i++) {
                 const photo = photosData[i];
+                if (!photo) continue; // Skip unfinished — no empty placeholders
+
                 const card = document.createElement('div');
-                
-                if (photo) {
-                    const imgSrc = getImagePath(i);
+                const imgSrc = getImagePath(i);
+
+                // In "all" view, first photo of each season is featured (large)
+                const isSeasonLead = isAllView && seasonLabels[i];
+
+                if (isSeasonLead) {
+                    card.className = "group relative bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ease-out col-span-2 row-span-2 aspect-square";
+                    card.onclick = () => openModal(i);
+                    card.innerHTML = `
+                        <img src="${imgSrc}"
+                             onerror="this.src='https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=80'"
+                             alt="${photo.title}"
+                             loading="lazy"
+                             class="w-full h-full object-cover transition duration-700 group-hover:scale-105 filter sepia-[0.1] group-hover:sepia-0">
+                        <div class="absolute inset-0 bg-gradient-to-t from-shirasagi-ink/70 via-transparent to-transparent flex flex-col justify-end p-5 md:p-8">
+                            <span class="text-white/60 font-serif-display text-[10px] md:text-xs tracking-[0.2em] uppercase mb-1">${seasonLabels[i]}</span>
+                            <span class="text-white font-serif-display text-sm md:text-base tracking-widest mb-1">No.${String(i).padStart(2, '0')}</span>
+                            <h4 class="text-white font-serif-display text-base md:text-xl tracking-wide">${photo.title}</h4>
+                        </div>
+                    `;
+                } else {
                     card.className = "group relative aspect-square bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 ease-out";
                     card.onclick = () => openModal(i);
                     card.innerHTML = `
-                        <img src="${imgSrc}" 
+                        <img src="${imgSrc}"
                              onerror="this.src='https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=800&q=80'"
-                             alt="${photo.title}" 
+                             alt="${photo.title}"
                              loading="lazy"
                              class="w-full h-full object-cover transition duration-700 group-hover:scale-110 filter sepia-[0.1] group-hover:sepia-0">
                         <div class="absolute inset-0 bg-shirasagi-ink/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
                             <span class="text-white font-serif-display text-lg tracking-widest mb-2 border-b border-white/50 pb-1">No.${String(i).padStart(2, '0')}</span>
                             <h4 class="text-white font-serif-display text-sm tracking-widest text-center">${photo.title}</h4>
                         </div>
-                    `;
-                } else {
-                    card.className = "aspect-square bg-white rounded-sm border border-dashed border-gray-300 flex flex-col items-center justify-center text-gray-300 group";
-                    card.innerHTML = `
-                        <span class="font-serif-display text-2xl font-light opacity-30">${String(i).padStart(2, '0')}</span>
                     `;
                 }
                 grid.appendChild(card);
