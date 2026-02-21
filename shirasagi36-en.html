@@ -293,7 +293,7 @@
             <button class="absolute top-4 right-4 z-50 text-gray-500 hover:text-shirasagi-ink bg-white/80 rounded-full p-2 transition-all" onclick="closeModal()">
                 <svg class="w-6 h-6 md:w-8 md:h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M6 18L18 6M6 6l12 12"></path></svg>
             </button>
-            <div class="w-full md:w-3/4 h-[60vh] md:h-auto bg-gray-50 flex items-center justify-center relative group p-2 md:p-8">
+            <div id="modal-photo-area" class="w-full md:w-3/4 h-[60vh] md:h-auto bg-gray-50 flex items-center justify-center relative group p-2 md:p-8">
                 <picture>
                     <source id="modal-source" srcset="" type="image/webp">
                     <img id="modal-img" src="" class="max-w-full max-h-[56vh] md:max-h-full object-contain shadow-lg" alt="">
@@ -305,7 +305,7 @@
                     <svg class="w-8 h-8 md:w-10 md:h-10" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="1" d="M9 5l7 7-7 7"></path></svg>
                 </button>
             </div>
-            <div class="w-full md:w-1/4 bg-white p-6 md:p-8 flex flex-col overflow-y-auto border-l border-gray-100">
+            <div id="modal-info-panel" class="w-full md:w-1/4 bg-white p-6 md:p-8 flex flex-col overflow-y-auto border-l border-gray-100">
                 <div class="mb-auto">
                     <span class="text-shirasagi-blue font-serif-display text-xs font-bold tracking-widest block mb-2 md:mb-3 uppercase">No. <span id="modal-num">01</span></span>
                     <h3 class="text-xl md:text-2xl font-serif-display mb-4 md:mb-6 leading-normal text-shirasagi-ink" id="modal-title">Title</h3>
@@ -425,8 +425,7 @@
                         </div>
                     `;
                 } else {
-                    const isPortrait = photo.orientation === 'portrait';
-                    card.className = `group relative ${isPortrait ? 'row-span-2 aspect-[2/3]' : 'aspect-square'} bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 ease-out`;
+                    card.className = "group relative aspect-square bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-sm hover:shadow-lg transition-all duration-500 ease-out";
                     card.onclick = () => openModal(i);
                     card.innerHTML = `
                         <picture>
@@ -536,6 +535,33 @@
             imgEl.src = paths.fallback;
             imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=80'; };
 
+            // Portrait layout adjustment
+            const isPortrait = p.orientation === 'portrait';
+            const content = document.getElementById('modal-content');
+            const photoArea = document.getElementById('modal-photo-area');
+            const infoPanel = document.getElementById('modal-info-panel');
+            if (isPortrait) {
+                content.classList.remove('md:flex-row');
+                content.classList.add('md:flex-col');
+                photoArea.classList.remove('md:w-3/4');
+                photoArea.classList.add('md:w-full');
+                photoArea.style.maxHeight = '75vh';
+                infoPanel.classList.remove('md:w-1/4');
+                infoPanel.classList.add('md:w-full');
+                imgEl.classList.remove('md:max-h-full');
+                imgEl.classList.add('md:max-h-[70vh]');
+            } else {
+                content.classList.remove('md:flex-col');
+                content.classList.add('md:flex-row');
+                photoArea.classList.remove('md:w-full');
+                photoArea.classList.add('md:w-3/4');
+                photoArea.style.maxHeight = '';
+                infoPanel.classList.remove('md:w-full');
+                infoPanel.classList.add('md:w-1/4');
+                imgEl.classList.remove('md:max-h-[70vh]');
+                imgEl.classList.add('md:max-h-full');
+            }
+
             document.getElementById('modal-title').innerText = p.title;
             document.getElementById('modal-num').innerText = String(id).padStart(2, '0');
             document.getElementById('modal-desc').innerText = p.desc || (p.location ? `Taken at ${p.location.name}.` : "Description pending.");
@@ -564,7 +590,6 @@
 
             const modal = document.getElementById('modal');
             const backdrop = document.getElementById('modal-backdrop');
-            const content = document.getElementById('modal-content');
 
             modal.classList.remove('hidden');
             modal.classList.add('flex');
