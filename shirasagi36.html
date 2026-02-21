@@ -588,6 +588,28 @@
             if(e.target.id === 'modal-backdrop' || e.target.id === 'modal') closeModal();
         });
 
+        // Swipe support for mobile
+        (function() {
+            let touchStartX = 0;
+            let touchStartY = 0;
+            const modalEl = document.getElementById('modal');
+
+            modalEl.addEventListener('touchstart', (e) => {
+                touchStartX = e.changedTouches[0].screenX;
+                touchStartY = e.changedTouches[0].screenY;
+            }, { passive: true });
+
+            modalEl.addEventListener('touchend', (e) => {
+                const dx = e.changedTouches[0].screenX - touchStartX;
+                const dy = e.changedTouches[0].screenY - touchStartY;
+                // Only trigger if horizontal swipe > 50px and more horizontal than vertical
+                if (Math.abs(dx) > 50 && Math.abs(dx) > Math.abs(dy) * 1.5) {
+                    if (dx < 0) nextPhoto();
+                    else prevPhoto();
+                }
+            }, { passive: true });
+        })();
+
         document.addEventListener('DOMContentLoaded', init);
     </script>
 </body>
