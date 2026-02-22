@@ -1,0 +1,50 @@
+name: Convert homepage JPGs to WebP
+
+on:
+  push:
+    paths:
+      - 'assets/images/gallery/*.jpg'
+      - 'assets/images/hongkong-neon/*.jpg'
+      - 'assets/images/about/*.jpg'
+      - 'assets/images/turkey-hero.jpg'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  convert:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 2
+
+      - name: Install cwebp
+        run: sudo apt-get update && sudo apt-get install -y webp
+
+      - name: Convert changed JPGs to WebP
+        run: |
+          converted=0
+          for dir in assets/images/gallery assets/images/hongkong-neon assets/images/about assets/images; do
+            for f in ${dir}/*.jpg; do
+              [ -f "$f" ] || continue
+              base="${f%.jpg}"
+              webp="${base}.webp"
+              if [ ! -f "$webp" ] || [ "$f" -nt "$webp" ]; then
+                echo "Converting $f → $webp"
+                cwebp -q 80 -m 6 -resize 1600 0 "$f" -o "$webp"
+                jpg_size=$(stat -c%s "$f" 2>/dev/null || stat -f%z "$f")
+                webp_size=$(stat -c%s "$webp" 2>/dev/null || stat -f%z "$webp")
+                echo "  JPG: ${jpg_size} bytes → WebP: ${webp_size} bytes"
+                converted=$((converted + 1))
+              fi
+            done
+          done
+          echo "Converted ${converted} file(s)"
+
+      - name: Stage and commit
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(images): convert homepage JPGs to WebP'
+          file_pattern: 'assets/images/**/*.webp'
