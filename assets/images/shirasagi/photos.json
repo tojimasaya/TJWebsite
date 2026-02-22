@@ -5,7 +5,14 @@
     "date": "2025.04.05",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring morning",
-    "desc": "姫路城が一年で最も華やぐ春。満開の桜に彩られた最高峰のビュースポットが、姫路市立動物園のすぐ横にあります。\n\n満開のソメイヨシノが形作る淡い桜色の額縁。その向こうには、水面に鮮やかなコントラストを描く真紅の「城見橋（しろみばし）」と、静かな内堀を滑るように進む風雅な和船。そして、すべての奥で春の空に泰然とそびえ立つ白亜の大天守。これらがひとつの視界に完璧なバランスで重なる構図は、まさに息を呑むほどの美しさです。\n\nここは少し奥まった場所にある絶景ポイントですが、桜が満開を迎える数日間は、この奇跡の瞬景を求める人々の静かな熱気に包まれます。動物園のそばまで足を運べば、たくさんの人がカメラを構えているため、すぐにその場所を見つけることができるでしょう。\n\n訪問される方へ（Tips & Etiquette）\n・奇跡の瞬間を待つ: 定期的に運行している和船が、赤い橋の付近を通り過ぎる瞬間が最高のシャッターチャンスです。\n・譲り合いの精神: 大変人気のある限られたスペースです。世界中から訪れるすべての人がこの美しい景色を心に刻めるよう、順番とマナーを守っての撮影をお願いいたします。\n・ロケーション: 正確な撮影位置（動物園横・内堀沿い）は、下部のマップにてご確認ください。",
+    "summary": "姫路城が一年で最も華やぐ春。満開の桜に彩られた最高峰のビュースポットが、姫路市立動物園のすぐ横にあります。",
+    "tips": [
+      { "icon": "📍", "label": "場所", "text": "動物園横・内堀沿い（城見橋付近）" },
+      { "icon": "📷", "label": "撮影のヒント", "text": "定期運行の和船が、赤い橋を通り過ぎる瞬間が最高のシャッターチャンスです。" },
+      { "icon": "🤝", "label": "マナー", "text": "大変人気のある限られたスペースです。譲り合いの精神での撮影をお願いいたします。" }
+    ],
+    "story": "満開のソメイヨシノが形作る淡い桜色の額縁。その向こうには、水面に鮮やかなコントラストを描く真紅の「城見橋（しろみばし）」と、静かな内堀を滑るように進む風雅な和船。そして、すべての奥で春の空に泰然とそびえ立つ白亜の大天守。これらがひとつの視界に完璧なバランスで重なる構図は、まさに息を呑むほどの美しさです。\n\nここは少し奥まった場所にある絶景ポイントですが、桜が満開を迎える数日間は、この奇跡の瞬景を求める人々の静かな熱気に包まれます。動物園のそばまで足を運べば、たくさんの人がカメラを構えているため、すぐにその場所を見つけることができるでしょう。",
+    "story_en": "Imagine a natural frame made of pale pink Somei-Yoshino cherry blossoms in full bloom. Beyond it, the striking crimson of the Shiromibashi bridge contrasts beautifully with the water, as an elegant Wasen (traditional Japanese boat) glides peacefully along the inner moat. In the background, the majestic white Main Keep (Daitenshu) towers calmly against the spring sky. The composition of these elements overlapping in perfect harmony is truly breathtaking.\n\nTucked away slightly, this hidden viewpoint buzzes with a quiet, passionate energy during the few days the cherry blossoms are at their peak. If you head near the zoo, you will easily spot the exact location by the crowd of photographers with their cameras ready.",
     "location": {
       "lat": 34.836111,
       "lng": 134.69477
@@ -79,7 +86,13 @@
     "date": "2025.05.04",
     "gear": "Xiaomi 15 Ultra",
     "category": "summer evening",
-    "desc": "美しく、そして清らかに整備された東光寺霊園。その最上段まで歩みを進め振り返ると、静寂の彼方に姫路城がひっそりと姿を現します。\n\n日没前後、空が神秘的な色彩のグラデーションに染まる「マジックアワー」。暮れゆく街のシルエットの向こうで、白亜の天守がふわりと浮かび上がる光景は、現実離れした美しさを持っています。この静かな高台で永遠の眠りにつく人々が、いつでも遠くに美しい城を眺めていられることを、少し羨ましくも感じる——そんな、城と人々の深い精神的な繋がりを感じさせる特別な「景」です。\n\n訪問される方へ（Tips & Etiquette）\n・撮影のポイント: お城までの距離が遠いため、迫力あるサイズで切り取るには「400mm相当」の超望遠レンズが必要です（本プロジェクトの作例は、高倍率望遠カメラを搭載したスマートフォン「Xiaomi 15 Ultra」の望遠モードを使用して撮影されています）。\n・絶対的な敬意とマナー: ここは観光地ではなく、ご先祖様が眠る神聖な祈りの場です。大声での会話は慎み、静粛な態度での訪問をお願いいたします。また、墓石に刻まれた個人のお名前が写真に写り込まないよう、画角には十分なご配慮をお願いいたします。",
+    "summary": "美しく、そして清らかに整備された東光寺霊園。その最上段まで歩みを進め振り返ると、静寂の彼方に姫路城がひっそりと姿を現します。",
+    "tips": [
+      { "icon": "📷", "label": "撮影のポイント", "text": "400mm相当の超望遠レンズが必要です（作例はXiaomi 15 Ultraの望遠モードで撮影）。" },
+      { "icon": "🙏", "label": "敬意とマナー", "text": "観光地ではなく神聖な祈りの場です。静粛な態度で、墓石の個人名が写り込まないようご配慮ください。" }
+    ],
+    "story": "日没前後、空が神秘的な色彩のグラデーションに染まる「マジックアワー」。暮れゆく街のシルエットの向こうで、白亜の天守がふわりと浮かび上がる光景は、現実離れした美しさを持っています。この静かな高台で永遠の眠りにつく人々が、いつでも遠くに美しい城を眺めていられることを、少し羨ましくも感じる——そんな、城と人々の深い精神的な繋がりを感じさせる特別な「景」です。",
+    "story_en": "During the \"magic hour\"—the fleeting time around sunset when the sky is painted in mystical gradients of color—the white majestic keep seems to gently float above the darkening silhouette of the city. It is a surreal and breathtaking sight. One cannot help but feel a sense of peaceful envy for those resting in this quiet high ground, knowing they can gaze upon this beautiful castle for eternity. This view truly reflects the profound, spiritual connection between the locals and their beloved castle.",
     "location": {
       "lat": 34.85122823181544,
       "lng": 134.69356315389032,
@@ -124,7 +137,14 @@
     "date": "2025.11.13",
     "gear": "Leica M10",
     "category": "autumn afternoon",
-    "desc": "大手前公園に隣接する「イーグレ姫路」。その屋上展望台は、姫路城に最も近いビルから城郭の全貌を見渡すことができる、天空の特等席です。\n\n視界を遮るもののない広大なパノラマのなかで、特に息を呑むのが秋の情景です。白亜の大天守を取り囲むように、城域全体が燃えるような赤や鮮やかな黄金色に染まりゆく「錦秋（きんしゅう）」のグラデーションは、この高台からでなければその全貌を捉えることはできません。\n\nまた、ここには無料で利用できる双眼鏡が設置されています。レンズを覗き込めば、天守閣の精巧な造りや、広大な城内を歩く人々の姿まで鮮明に確認でき、お城の圧倒的な巨大さを肌で感じることができます。ぜひ、ご自身の目でその迫力を体感してください。\n\n訪問される方へ（Tips & Etiquette）\n・秋の全景を収める: 姫路城周辺の紅葉のスケール感を一枚の写真に収めるには、ここが最高のスポットです。広角レンズやスマートフォンのパノラマ機能の活用をおすすめします。\n・双眼鏡でのディテール観察: 撮影を楽しんだ後は、ぜひ備え付けの双眼鏡で城の細部を観察してみてください。遠景の美しさと、近景の緻密さの両方を味わうことができます。\n・施設への配慮: 屋上は市民に開放された公共の憩いの場です。三脚を使用する際などは、周囲の方々の通行や景観の妨げにならないようご配慮をお願いいたします。",
+    "summary": "大手前公園に隣接する「イーグレ姫路」。その屋上展望台は、姫路城に最も近いビルから城郭の全貌を見渡すことができる、天空の特等席です。",
+    "tips": [
+      { "icon": "📷", "label": "秋の全景を収める", "text": "広角レンズやスマートフォンのパノラマ機能の活用がおすすめです。" },
+      { "icon": "🔭", "label": "双眼鏡", "text": "無料の備え付け双眼鏡で天守閣の精巧な造りを観察できます。" },
+      { "icon": "🤝", "label": "施設への配慮", "text": "公共の憩いの場です。三脚使用時は周囲の方々へのご配慮を。" }
+    ],
+    "story": "視界を遮るもののない広大なパノラマのなかで、特に息を呑むのが秋の情景です。白亜の大天守を取り囲むように、城域全体が燃えるような赤や鮮やかな黄金色に染まりゆく「錦秋（きんしゅう）」のグラデーションは、この高台からでなければその全貌を捉えることはできません。\n\nまた、ここには無料で利用できる双眼鏡が設置されています。レンズを覗き込めば、天守閣の精巧な造りや、広大な城内を歩く人々の姿まで鮮明に確認でき、お城の圧倒的な巨大さを肌で感じることができます。ぜひ、ご自身の目でその迫力を体感してください。",
+    "story_en": "In this expansive, unobstructed panorama, the autumn scenery is particularly breathtaking. The entire castle grounds are dyed in fiery reds and brilliant golds, surrounding the majestic white Main Keep. This stunning gradient of autumn colors (Kinshu) can only be fully captured from this elevated vantage point.\n\nAdditionally, free binoculars are available on the rooftop. Looking through the lenses, you can clearly see the intricate details of the castle's architecture and even the people walking through the vast grounds, giving you a real sense of the castle's overwhelming scale. We highly recommend trying them to experience the grandeur firsthand.",
     "location": {
       "lat": 34.833760539765045,
       "lng": 134.6942266552122,
@@ -215,7 +235,14 @@
     "date": "2025.12.31",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter night",
-    "desc": "かつて地上を走っていた鉄道が高架化され、大きく生まれ変わった姫路駅。その駅前に誕生した木造の展望デッキ「キャッスルビュー」は、現代の姫路における新たな最高のビュースポットです。\n\nここから真っ直ぐにお城へと伸びるメインストリート「大手前通り」。駅が高架化される以前は「50m道路」と呼ばれ親しまれていたこの大通りの両側には、今では近代的なビルが立ち並びます。そして冬の歳末（大晦日）の時期には、街路樹が美しいイルミネーションの光で彩られます。その光の道の終着点に、同じくライトアップされて夜空に白く浮かび上がる姫路城が鎮座する光景は、息を呑むほどの美しさです。\n\n築城から400年。この場所からの眺めは、姫路の街で最も劇的な変化を遂げた風景と言えるでしょう。もし、かつての戦国武将たちがこの光り輝く現代の城下町と、変わらず凛とそびえる白鷺の姿を見たら一体どう思うだろうか——そんな時空を超えた想像を巡らせるのも、この展望台ならではの醍醐味です。\n\n訪問される方へ（Tips & Etiquette）\n・光の帯を切り取る: 駅前からお城まで続くイルミネーションと大天守を一枚に収めるには、標準から中望遠レンズ（50mm〜85mm程度）を使用すると、街の奥行きが圧縮され、より印象的な一枚になります。\n・歴史と現代の対比: 冬のイルミネーションの時期（11月下旬〜12月末頃）や大晦日の夜は、現代の光と歴史的建造物のコントラストが最も際立つ特別な瞬間です。\n・公共の場でのマナー: キャッスルビューは駅を利用する多くの人々が行き交う公共の展望デッキです。三脚を使用する際は、歩行者の動線を塞がないよう十分なご配慮をお願いいたします。",
+    "summary": "かつて地上を走っていた鉄道が高架化され、大きく生まれ変わった姫路駅。その駅前に誕生した木造の展望デッキ「キャッスルビュー」は、現代の姫路における新たな最高のビュースポットです。",
+    "tips": [
+      { "icon": "📷", "label": "光の帯を切り取る", "text": "50mm〜85mm程度の中望遠レンズで街の奥行きを圧縮すると印象的な一枚に。" },
+      { "icon": "✨", "label": "歴史と現代の対比", "text": "冬のイルミネーション時期（11月下旬〜12月末）や大晦日の夜が最も際立つ瞬間です。" },
+      { "icon": "🤝", "label": "公共の場でのマナー", "text": "多くの人が行き交う展望デッキです。三脚使用時は歩行者の動線にご配慮を。" }
+    ],
+    "story": "ここから真っ直ぐにお城へと伸びるメインストリート「大手前通り」。駅が高架化される以前は「50m道路」と呼ばれ親しまれていたこの大通りの両側には、今では近代的なビルが立ち並びます。そして冬の歳末（大晦日）の時期には、街路樹が美しいイルミネーションの光で彩られます。その光の道の終着点に、同じくライトアップされて夜空に白く浮かび上がる姫路城が鎮座する光景は、息を呑むほどの美しさです。\n\n築城から400年。この場所からの眺めは、姫路の街で最も劇的な変化を遂げた風景と言えるでしょう。もし、かつての戦国武将たちがこの光り輝く現代の城下町と、変わらず凛とそびえる白鷺の姿を見たら一体どう思うだろうか——そんな時空を超えた想像を巡らせるのも、この展望台ならではの醍醐味です。",
+    "story_en": "Stretching straight ahead toward the castle is the main street, \"Otemae-dori.\" Before the station was elevated, locals affectionately called it the \"50-Meter Road.\" Today, lined with modern high-rise buildings, the street's trees are adorned with beautiful illuminations during the winter and year-end season (New Year's Eve). At the end of this dazzling path of light sits Himeji Castle, itself illuminated and floating pure white against the night sky. The sight is nothing short of spectacular.\n\nOver 400 years since the castle's construction, this specific view represents the most dramatic evolution of the city. What would the samurai of the past think if they could see this glowing modern castle town, with their beloved White Heron still standing proudly at its center? Letting your imagination transcend time is one of the true joys of this observatory.",
     "location": {
       "lat": 34.827377867722156,
       "lng": 134.69023007264178,

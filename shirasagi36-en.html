@@ -310,6 +310,14 @@
                     <span class="text-shirasagi-blue font-serif-display text-xs font-bold tracking-widest block mb-2 md:mb-3 uppercase">No. <span id="modal-num">01</span></span>
                     <h3 class="text-xl md:text-2xl font-serif-display mb-2 leading-normal text-shirasagi-ink" id="modal-title">Title</h3>
                     <p class="text-gray-400 text-xs font-serif-display mb-4 md:mb-6" id="modal-subtitle" style="display:none;"></p>
+
+                    <!-- New structured UI: summary + tips (shown when summary exists) -->
+                    <div id="modal-structured" style="display:none;">
+                        <p class="text-gray-600 text-sm leading-relaxed font-light font-serif-body mb-4" id="modal-summary"></p>
+                        <div id="modal-tips" class="space-y-2 mb-4"></div>
+                    </div>
+
+                    <!-- Legacy desc (fallback for photos without summary) -->
                     <p class="text-gray-600 text-sm md:text-base leading-relaxed font-light font-serif-body text-justify" id="modal-desc" style="white-space:pre-line;"></p>
                 </div>
                 <div class="border-t border-gray-100 pt-4 md:pt-6 space-y-3 md:space-y-4 text-xs font-sans text-gray-500 mt-6 md:mt-8">
@@ -336,6 +344,25 @@
                         <line x1="10" y1="14" x2="21" y2="3"></line>
                     </svg>
                 </a>
+
+                <!-- Accordion: Story expand button + content -->
+                <div id="modal-accordion-wrapper" style="display:none;" class="mt-4">
+                    <button id="modal-accordion-btn" onclick="toggleStoryAccordion()"
+                        class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium font-serif-body tracking-wide transition-all duration-200 border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-600 hover:text-shirasagi-ink">
+                        <span id="modal-accordion-icon">＋</span>
+                        <span id="modal-accordion-label">Read the Full Story</span>
+                    </button>
+                    <div id="modal-accordion-content" class="hidden mt-4 pt-4 border-t border-gray-100">
+                        <div class="mb-4">
+                            <h4 class="text-xs font-bold font-serif-display text-shirasagi-ink tracking-wider mb-2 opacity-60">THE STORY</h4>
+                            <p class="text-gray-600 text-sm leading-7 font-light font-serif-body" id="modal-story" style="white-space:pre-line;"></p>
+                        </div>
+                        <div class="mt-4 pt-4 border-t border-gray-100">
+                            <h4 class="text-xs font-bold font-serif-jp text-shirasagi-ink tracking-wider mb-2 opacity-60">【日本語で読む】</h4>
+                            <p class="text-gray-500 text-sm leading-8 font-light font-serif-jp" id="modal-story-alt" style="white-space:pre-line;"></p>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -573,7 +600,51 @@
             } else {
                 subtitleEl.style.display = 'none';
             }
-            document.getElementById('modal-desc').innerText = p.desc || (p.location ? `Taken at ${p.location.name}.` : "Description pending.");
+            // Structured UI vs legacy desc
+            const structuredEl = document.getElementById('modal-structured');
+            const descEl = document.getElementById('modal-desc');
+            const accordionWrapper = document.getElementById('modal-accordion-wrapper');
+            const accordionContent = document.getElementById('modal-accordion-content');
+            const accordionIcon = document.getElementById('modal-accordion-icon');
+            const accordionLabel = document.getElementById('modal-accordion-label');
+
+            if (p.summary) {
+                // New structured layout
+                structuredEl.style.display = '';
+                descEl.style.display = 'none';
+                document.getElementById('modal-summary').innerText = p.summary;
+
+                // Render tips
+                const tipsEl = document.getElementById('modal-tips');
+                tipsEl.innerHTML = '';
+                if (p.tips && p.tips.length > 0) {
+                    p.tips.forEach(tip => {
+                        const div = document.createElement('div');
+                        div.className = 'flex items-start gap-2 text-xs text-gray-500 leading-relaxed';
+                        div.innerHTML = `<span class="text-base flex-shrink-0">${tip.icon}</span><span><span class="font-bold text-gray-700">${tip.label}:</span> ${tip.text}</span>`;
+                        tipsEl.appendChild(div);
+                    });
+                }
+
+                // Accordion
+                if (p.story) {
+                    accordionWrapper.style.display = '';
+                    accordionContent.classList.add('hidden');
+                    accordionIcon.innerText = '＋';
+                    accordionLabel.innerText = 'Read the Full Story';
+                    document.getElementById('modal-story').innerText = p.story;
+                    document.getElementById('modal-story-alt').innerText = p.story_jp || '';
+                } else {
+                    accordionWrapper.style.display = 'none';
+                }
+            } else {
+                // Legacy fallback
+                structuredEl.style.display = 'none';
+                descEl.style.display = '';
+                descEl.innerText = p.desc || (p.location ? `Taken at ${p.location.name}.` : "Description pending.");
+                accordionWrapper.style.display = 'none';
+            }
+
             document.getElementById('modal-date').innerText = p.date;
             document.getElementById('modal-gear').innerText = p.gear;
 
@@ -670,6 +741,22 @@
                 }
             }, { passive: true });
         })();
+
+        function toggleStoryAccordion() {
+            const content = document.getElementById('modal-accordion-content');
+            const icon = document.getElementById('modal-accordion-icon');
+            const label = document.getElementById('modal-accordion-label');
+            const isOpen = !content.classList.contains('hidden');
+            if (isOpen) {
+                content.classList.add('hidden');
+                icon.innerText = '＋';
+                label.innerText = 'Read the Full Story';
+            } else {
+                content.classList.remove('hidden');
+                icon.innerText = '－';
+                label.innerText = 'Close';
+            }
+        }
 
         document.addEventListener('DOMContentLoaded', init);
     </script>
