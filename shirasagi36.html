@@ -451,7 +451,10 @@
 
                 if (isSeasonLead || isFeatured) {
                     const label = seasonLabels[i] || '';
-                    card.className = "group relative bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ease-out col-span-2 row-span-2 aspect-square";
+                    const isWide = photo.orientation === 'wide';
+                    card.className = isWide
+                        ? "group relative bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ease-out col-span-2 aspect-[2/1]"
+                        : "group relative bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ease-out col-span-2 row-span-2 aspect-square";
                     card.onclick = () => openModal(i);
                     card.innerHTML = `
                         <picture>
@@ -592,7 +595,9 @@
             infoPanel.classList.remove('md:w-1/4', 'md:w-1/2', 'md:w-full');
             imgEl.classList.remove('md:max-h-full', 'md:max-h-[80vh]', 'md:max-h-[60vh]');
             photoArea.style.maxHeight = '';
+            photoArea.style.padding = '';
             imgEl.style.width = '';
+            imgEl.style.maxHeight = '';
             imgEl.style.objectFit = '';
 
             if (orientation === 'portrait') {
@@ -605,7 +610,8 @@
                 content.classList.add('md:flex-col');
                 photoArea.classList.add('md:w-full');
                 infoPanel.classList.add('md:w-full');
-                imgEl.classList.add('md:max-h-[60vh]');
+                photoArea.style.padding = '0.5rem';
+                imgEl.style.maxHeight = '55vh';
                 imgEl.style.width = '100%';
                 imgEl.style.objectFit = 'contain';
             } else {
