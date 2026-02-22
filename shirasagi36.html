@@ -324,7 +324,8 @@
             <div id="modal-info-panel" class="w-full md:w-1/4 bg-white p-6 md:p-8 flex flex-col overflow-y-auto border-l border-gray-100">
                 <div class="mb-auto">
                     <span class="text-shirasagi-blue font-serif-en text-xs font-bold tracking-widest block mb-2 md:mb-3">No. <span id="modal-num">01</span></span>
-                    <h3 class="text-xl md:text-2xl font-bold font-serif-jp mb-4 md:mb-6 leading-normal text-shirasagi-ink" id="modal-title">タイトル</h3>
+                    <h3 class="text-xl md:text-2xl font-bold font-serif-jp mb-2 leading-normal text-shirasagi-ink" id="modal-title">タイトル</h3>
+                    <p class="text-gray-400 text-xs font-serif-jp mb-4 md:mb-6" id="modal-subtitle" style="display:none;"></p>
                     <p class="text-gray-600 text-sm leading-8 font-light font-serif-jp text-justify" id="modal-desc" style="white-space:pre-line;">
                         <!-- 解説 -->
                     </p>
@@ -585,6 +586,13 @@
 
             document.getElementById('modal-title').innerText = p.title;
             document.getElementById('modal-num').innerText = String(id).padStart(2, '0');
+            const subtitleEl = document.getElementById('modal-subtitle');
+            if (p.subtitle) {
+                subtitleEl.innerText = p.subtitle;
+                subtitleEl.style.display = '';
+            } else {
+                subtitleEl.style.display = 'none';
+            }
             document.getElementById('modal-desc').innerText = p.desc || (p.location ? `${p.location.name}にて。` : "解説は準備中です。");
             document.getElementById('modal-date').innerText = p.date;
             document.getElementById('modal-gear').innerText = p.gear;
