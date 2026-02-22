@@ -337,6 +337,43 @@
                     <p class="text-gray-600 text-sm leading-8 font-light font-serif-jp text-justify" id="modal-desc" style="white-space:pre-line;">
                         <!-- 解説 -->
                     </p>
+
+                    <!-- Map button (moved above metadata) -->
+                    <a href="#" id="modal-map-link" target="_blank"
+                       class="mt-4 md:mt-6 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-200"
+                       style="display:none; background:linear-gradient(135deg,#e8f5e9 0%,#e3f2fd 100%); color:#2e7d32; border:1px solid rgba(46,125,50,0.15);"
+                       onmouseenter="this.style.background='linear-gradient(135deg,#c8e6c9 0%,#bbdefb 100%)';this.style.boxShadow='0 2px 8px rgba(46,125,50,0.15)';this.style.transform='translateY(-1px)'"
+                       onmouseleave="this.style.background='linear-gradient(135deg,#e8f5e9 0%,#e3f2fd 100%)';this.style.boxShadow='none';this.style.transform='translateY(0)'">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+                            <circle cx="12" cy="10" r="3"></circle>
+                        </svg>
+                        <span id="modal-map-text">Google Map で見る</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5">
+                            <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
+                            <polyline points="15 3 21 3 21 9"></polyline>
+                            <line x1="10" y1="14" x2="21" y2="3"></line>
+                        </svg>
+                    </a>
+
+                    <!-- Accordion: Story expand button + content (moved above metadata) -->
+                    <div id="modal-accordion-wrapper" style="display:none;" class="mt-4">
+                        <button id="modal-accordion-btn" onclick="toggleStoryAccordion()"
+                            class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium font-serif-jp tracking-wide transition-all duration-200 border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-600 hover:text-shirasagi-ink">
+                            <span id="modal-accordion-icon">＋</span>
+                            <span id="modal-accordion-label">景色の詳細と物語を読む</span>
+                        </button>
+                        <div id="modal-accordion-content" class="hidden mt-4 pt-4 border-t border-gray-100">
+                            <div class="mb-4">
+                                <h4 class="text-xs font-bold font-serif-jp text-shirasagi-ink tracking-wider mb-2 opacity-60">【情景の物語】</h4>
+                                <p class="text-gray-600 text-sm leading-8 font-light font-serif-jp" id="modal-story" style="white-space:pre-line;"></p>
+                            </div>
+                            <div class="mt-4 pt-4 border-t border-gray-100">
+                                <h4 class="text-xs font-bold font-serif-en text-shirasagi-ink tracking-wider mb-2 opacity-60">【English View】</h4>
+                                <p class="text-gray-500 text-sm leading-7 font-light font-serif-en" id="modal-story-alt" style="white-space:pre-line;"></p>
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="border-t border-gray-100 pt-4 md:pt-6 space-y-3 md:space-y-4 text-xs font-sans text-gray-500 mt-6 md:mt-8">
                     <div class="flex items-center gap-3"><span class="w-16 opacity-50">DATE</span> <span id="modal-date" class="font-medium text-gray-800">--</span></div>
@@ -344,41 +381,6 @@
                     <div class="flex items-center gap-3" id="modal-map-container" style="display:none;">
                         <span class="w-16 opacity-50">LOC</span>
                         <span id="modal-loc-name" class="font-medium text-gray-800">--</span>
-                    </div>
-                </div>
-                <a href="#" id="modal-map-link" target="_blank"
-                   class="mt-4 md:mt-6 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-200"
-                   style="display:none; background:linear-gradient(135deg,#e8f5e9 0%,#e3f2fd 100%); color:#2e7d32; border:1px solid rgba(46,125,50,0.15);"
-                   onmouseenter="this.style.background='linear-gradient(135deg,#c8e6c9 0%,#bbdefb 100%)';this.style.boxShadow='0 2px 8px rgba(46,125,50,0.15)';this.style.transform='translateY(-1px)'"
-                   onmouseleave="this.style.background='linear-gradient(135deg,#e8f5e9 0%,#e3f2fd 100%)';this.style.boxShadow='none';this.style.transform='translateY(0)'">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                        <circle cx="12" cy="10" r="3"></circle>
-                    </svg>
-                    <span id="modal-map-text">Google Map で見る</span>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5">
-                        <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                        <polyline points="15 3 21 3 21 9"></polyline>
-                        <line x1="10" y1="14" x2="21" y2="3"></line>
-                    </svg>
-                </a>
-
-                <!-- Accordion: Story expand button + content -->
-                <div id="modal-accordion-wrapper" style="display:none;" class="mt-4">
-                    <button id="modal-accordion-btn" onclick="toggleStoryAccordion()"
-                        class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium font-serif-jp tracking-wide transition-all duration-200 border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-600 hover:text-shirasagi-ink">
-                        <span id="modal-accordion-icon">＋</span>
-                        <span id="modal-accordion-label">景色の詳細と物語を読む</span>
-                    </button>
-                    <div id="modal-accordion-content" class="hidden mt-4 pt-4 border-t border-gray-100">
-                        <div class="mb-4">
-                            <h4 class="text-xs font-bold font-serif-jp text-shirasagi-ink tracking-wider mb-2 opacity-60">【情景の物語】</h4>
-                            <p class="text-gray-600 text-sm leading-8 font-light font-serif-jp" id="modal-story" style="white-space:pre-line;"></p>
-                        </div>
-                        <div class="mt-4 pt-4 border-t border-gray-100">
-                            <h4 class="text-xs font-bold font-serif-en text-shirasagi-ink tracking-wider mb-2 opacity-60">【English View】</h4>
-                            <p class="text-gray-500 text-sm leading-7 font-light font-serif-en" id="modal-story-alt" style="white-space:pre-line;"></p>
-                        </div>
                     </div>
                 </div>
             </div>
