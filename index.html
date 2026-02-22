@@ -924,14 +924,18 @@
 
         if (allArticles.length > 0) {
           container.innerHTML = allArticles.map(article => {
-            const webpUrl = article.imageUrl.replace(/\.jpg$/, '.webp');
+            const isLocal = !article.imageUrl.startsWith('http');
+            const webpUrl = article.imageUrl.replace(/\.(jpg|jpeg|png)$/, '.webp');
+            const imgTag = isLocal
+              ? `<picture>
+                  <source srcset="${webpUrl}" type="image/webp">
+                  <img class="latest-thumb" src="${article.imageUrl}" alt="${article.title}" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
+                </picture>`
+              : `<img class="latest-thumb" src="${article.imageUrl}" alt="${article.title}" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">`;
             return `
             <article class="latest-item">
               <a href="${article.link}" target="_blank" rel="noopener noreferrer">
-                <picture>
-                  <source srcset="${webpUrl}" type="image/webp">
-                  <img class="latest-thumb" src="${article.imageUrl}" alt="${article.title}" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
-                </picture>
+                ${imgTag}
                 <div class="latest-content">
                   <p class="latest-source">${article.source}</p>
                   <h3 class="latest-item-title">${article.title}</h3>
