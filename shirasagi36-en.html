@@ -428,8 +428,10 @@
 
                 // In "all" view, first photo of each season is featured (large)
                 const isSeasonLead = isAllView && seasonLabels[i];
+                const isFeatured = photo.featured;
 
-                if (isSeasonLead) {
+                if (isSeasonLead || isFeatured) {
+                    const label = seasonLabels[i] || '';
                     card.className = "group relative bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ease-out col-span-2 row-span-2 aspect-square";
                     card.onclick = () => openModal(i);
                     card.innerHTML = `
@@ -442,7 +444,7 @@
                                  class="w-full h-full object-cover transition duration-700 group-hover:scale-105 filter sepia-[0.1] group-hover:sepia-0">
                         </picture>
                         <div class="absolute inset-0 bg-gradient-to-t from-shirasagi-ink/70 via-transparent to-transparent flex flex-col justify-end p-5 md:p-8">
-                            <span class="text-white/60 font-serif-display text-[10px] md:text-xs tracking-[0.2em] uppercase mb-1">${seasonLabels[i]}</span>
+                            ${label ? `<span class="text-white/60 font-serif-display text-[10px] md:text-xs tracking-[0.2em] uppercase mb-1">${label}</span>` : ''}
                             <span class="text-white font-serif-display text-sm md:text-base tracking-widest mb-1">No.${String(i).padStart(2, '0')}</span>
                             <h4 class="text-white font-serif-display text-base md:text-xl tracking-wide">${photo.title}</h4>
                         </div>
@@ -558,31 +560,39 @@
             imgEl.src = paths.fallback;
             imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1200&q=80'; };
 
-            // Portrait / Landscape layout switch
-            const isPortrait = p.orientation === 'portrait';
+            // Portrait / Wide / Landscape layout switch
+            const orientation = p.orientation || 'landscape';
             const content = document.getElementById('modal-content');
             const photoArea = document.getElementById('modal-photo-area');
             const infoPanel = document.getElementById('modal-info-panel');
-            if (isPortrait) {
-                // Keep row but give photo and info equal halves
-                content.classList.remove('md:flex-col');
+
+            // Reset all layout classes and inline styles
+            content.classList.remove('md:flex-row', 'md:flex-col');
+            photoArea.classList.remove('md:w-3/4', 'md:w-1/2', 'md:w-full');
+            infoPanel.classList.remove('md:w-1/4', 'md:w-1/2', 'md:w-full');
+            imgEl.classList.remove('md:max-h-full', 'md:max-h-[80vh]', 'md:max-h-[60vh]');
+            photoArea.style.maxHeight = '';
+            imgEl.style.width = '';
+            imgEl.style.objectFit = '';
+
+            if (orientation === 'portrait') {
                 content.classList.add('md:flex-row');
-                photoArea.classList.remove('md:w-3/4');
                 photoArea.classList.add('md:w-1/2');
-                photoArea.style.maxHeight = '';
-                infoPanel.classList.remove('md:w-1/4');
                 infoPanel.classList.add('md:w-1/2');
-                imgEl.classList.remove('md:max-h-full');
                 imgEl.classList.add('md:max-h-[80vh]');
+            } else if (orientation === 'wide') {
+                // Wide landscape: photo on top full width, info below
+                content.classList.add('md:flex-col');
+                photoArea.classList.add('md:w-full');
+                infoPanel.classList.add('md:w-full');
+                imgEl.classList.add('md:max-h-[60vh]');
+                imgEl.style.width = '100%';
+                imgEl.style.objectFit = 'contain';
             } else {
-                content.classList.remove('md:flex-col');
+                // Normal landscape
                 content.classList.add('md:flex-row');
-                photoArea.classList.remove('md:w-1/2');
                 photoArea.classList.add('md:w-3/4');
-                photoArea.style.maxHeight = '';
-                infoPanel.classList.remove('md:w-1/2');
                 infoPanel.classList.add('md:w-1/4');
-                imgEl.classList.remove('md:max-h-[80vh]');
                 imgEl.classList.add('md:max-h-full');
             }
 

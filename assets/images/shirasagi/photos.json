@@ -255,6 +255,8 @@
     "date": "2026.01.01",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter morning",
+    "featured": true,
+    "orientation": "wide",
     "location": {
       "lat": 34.842445396006696,
       "lng": 134.67761073668575,
