@@ -192,14 +192,23 @@
     }
   },
   "15": {
-    "title": "Autumn Leaves at Art Museum and Castle",
+    "title": "Autumn Colors and the Red Brick Museum Garden",
+    "subtitle": "The Changing Reds and the Unchanging White Heron / At Himeji City Museum of Art",
     "date": "2025.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
+    "summary": "As autumn deepens, the elegant red bricks of the Himeji City Museum of Art and the surrounding foliage create a beautiful gradient of autumn colors, forming a striking contrast with the majestic white Himeji Castle towering in the background. This is a special place where you can appreciate not only visual beauty but also the profound historical transitions of Himeji.",
+    "tips": [
+      { "icon": "📍", "label": "Location", "text": "Himeji City Museum of Art Front Garden" },
+      { "icon": "📷", "label": "Photo Tip", "text": "Compose your shot with autumn foliage in the foreground, the red brick building in the middle ground, and the Main Keep in the background — layering these 'three planes' brings out the most vivid contrast of colors." },
+      { "icon": "🤝", "label": "Historical Perspective", "text": "A castle that has marked 400 years of time, and a modern building that has changed its role with each era. Consider the 'contrast of time' between these two structures." }
+    ],
+    "story": "As autumn deepens, the elegant red bricks of the Himeji City Museum of Art and the surrounding foliage create a beautiful gradient of autumn colors. This vibrant display forms a striking contrast with the majestic white Himeji Castle towering in the background.\n\nThis beautiful red brick building was originally constructed in the Meiji era as a military arsenal and clothing depot for the former Japanese Army. Having survived the fires of war, it was repurposed as the \"Himeji City Hall\" to support the city's post-war reconstruction. Finally, it was reborn into its current role as a \"Museum of Art,\" a sanctuary of peace and culture.\n\nHimeji Castle, on the other hand, has stood unchanged for over 400 years. The grand Main Keep seems to have quietly and gently watched over this red brick building at its feet as it transformed from a military facility to a civic center, and finally to an art museum.\n\nThe view from here is not merely a brilliant visual contrast of red and white; it is a profound, poetic reflection of \"the unchanging\" versus \"the changing\" — a beautiful testament to the very history the city of Himeji has navigated.",
+    "story_jp": "姫路城の東側に広がる姫路市立美術館。秋を迎えると、庭園の木々が色づき、建物の赤レンガと溶け合うように見事な錦秋のグラデーションを描き出します。そして、その燃えるような色彩の背後には、一点の曇りもない白亜の大天守が静かにそびえ立っています。\n\nこの美しき赤レンガの建物は、明治時代に「旧陸軍の兵器庫・被服庫」として建てられました。戦火をくぐり抜けた後は、戦後復興を支える「姫路市役所」として市民のために働き、そして現在は平和と文化の象徴である「美術館」へと、時代に合わせてその役割を大きく変えてきました。\n\n築城から400年以上、決して変わることなくそこに在り続ける姫路城。大天守は、足元で軍事施設から市役所、そして美術館へと生まれ変わっていくこの赤レンガの建物を、まるで親のようにずっと優しく見守ってきたのでしょう。この場所からの眺めは、赤と白の鮮やかなコントラストであると同時に、「不変」と「変化」という、姫路の街が歩んできた歴史そのものの美しい対比なのです。",
     "location": {
       "lat": 34.839204642259396,
       "lng": 134.69729562796454,
-      "name": "Himeji City Museum of Art"
+      "name": "Himeji City Museum of Art Front Garden"
     }
   },
   "16": {

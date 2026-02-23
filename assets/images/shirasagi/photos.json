@@ -192,14 +192,23 @@
     }
   },
   "15": {
-    "title": "美術館の秋",
+    "title": "美術館庭園 錦秋と赤煉瓦",
+    "subtitle": "移ろいゆく赤と、変わらぬ白鷺 / 姫路市立美術館にて",
     "date": "2025.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
+    "summary": "秋が深まると、美術館の瀟洒な赤レンガと木々の紅葉が美しいグラデーションを描き、背後にそびえる白亜の姫路城と見事な色彩のコントラストを生み出します。ここは、視覚の美しさだけでなく、姫路の深い歴史の移ろいを感じることができる特別な場所です。",
+    "tips": [
+      { "icon": "📍", "label": "場所", "text": "姫路市立美術館 前庭広場" },
+      { "icon": "📷", "label": "撮影のヒント", "text": "手前に紅葉、中景に赤レンガの建物、そして背景に大天守という「3つの層」を重ねて切り取ると、色彩の対比が最も際立ちます。" },
+      { "icon": "🤝", "label": "歴史の視点", "text": "400年の時を刻む城と、時代と共に役割を変えてきた近代建築。二つの建物の「時間の対比」にぜひ思いを馳せてみてください。" }
+    ],
+    "story": "姫路城の東側に広がる姫路市立美術館。秋を迎えると、庭園の木々が色づき、建物の赤レンガと溶け合うように見事な錦秋のグラデーションを描き出します。そして、その燃えるような色彩の背後には、一点の曇りもない白亜の大天守が静かにそびえ立っています。\n\nこの美しき赤レンガの建物は、明治時代に「旧陸軍の兵器庫・被服庫」として建てられました。戦火をくぐり抜けた後は、戦後復興を支える「姫路市役所」として市民のために働き、そして現在は平和と文化の象徴である「美術館」へと、時代に合わせてその役割を大きく変えてきました。\n\n築城から400年以上、決して変わることなくそこに在り続ける姫路城。大天守は、足元で軍事施設から市役所、そして美術館へと生まれ変わっていくこの赤レンガの建物を、まるで親のようにずっと優しく見守ってきたのでしょう。この場所からの眺めは、赤と白の鮮やかなコントラストであると同時に、「不変」と「変化」という、姫路の街が歩んできた歴史そのものの美しい対比なのです。",
+    "story_en": "As autumn deepens, the elegant red bricks of the Himeji City Museum of Art and the surrounding foliage create a beautiful gradient of autumn colors. This vibrant display forms a striking contrast with the majestic white Himeji Castle towering in the background.\n\nThis beautiful red brick building was originally constructed in the Meiji era as a military arsenal and clothing depot for the former Japanese Army. Having survived the fires of war, it was repurposed as the \"Himeji City Hall\" to support the city's post-war reconstruction. Finally, it was reborn into its current role as a \"Museum of Art,\" a sanctuary of peace and culture.\n\nHimeji Castle, on the other hand, has stood unchanged for over 400 years. The grand Main Keep seems to have quietly and gently watched over this red brick building at its feet as it transformed from a military facility to a civic center, and finally to an art museum.\n\nThe view from here is not merely a brilliant visual contrast of red and white; it is a profound, poetic reflection of \"the unchanging\" versus \"the changing\" — a beautiful testament to the very history the city of Himeji has navigated.",
     "location": {
       "lat": 34.839204642259396,
       "lng": 134.69729562796454,
-      "name": "姫路市立美術館"
+      "name": "姫路市立美術館 前庭広場"
     }
   },
   "16": {
