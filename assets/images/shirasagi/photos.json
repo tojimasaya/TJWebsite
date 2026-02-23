@@ -250,17 +250,25 @@
     }
   },
   "22": {
-    "title": "初日の城",
-    "desc": "2026年 初日の出 / 名古山にて。\n昇光、浮かび上がるシルエット。 太陽と対峙する、幻想的な白鷺の姿。 静けさの中で迎えた、新年の幕開け。",
+    "title": "名古山霊園 迎春の暁光",
+    "subtitle": "初日の城、2026年 初日の出 / 名古山にて",
     "date": "2026.01.01",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter morning",
     "featured": true,
     "orientation": "wide",
+    "summary": "新年を祝う「初日の出」。名古山から望む、新年の瑞々しい朝陽に照らされて神々しく輝く白亜の天守は、一年の始まりを告げるにふさわしい絶景です。",
+    "tips": [
+      { "icon": "📍", "label": "場所", "text": "名古山霊園 高台" },
+      { "icon": "📷", "label": "撮影のヒント", "text": "姫路の元旦の日の出は7時過ぎ。定番の「男山配水池公園」は大変混雑するため、この名古山は素晴らしい撮影の選択肢（プランB）となります。" },
+      { "icon": "🤝", "label": "マナー", "text": "神聖な場所です。静粛を保ち、墓石への配慮と万全の防寒対策をしてお出かけください。" }
+    ],
+    "story": "2026年の元旦。初日の出と姫路城を一枚に収めようと、王道の撮影スポットである「男山配水池公園」へ向かいましたが、すでに想像以上の人出。そこで急遽、次善の策として考えていたこの「名古山霊園」へと目的地を変更しました。\n\n冬の日の出は朝7時頃と比較的遅いため、過酷な早起きは必要ありませんでしたが、男山の特等席を確保するにはさらなる覚悟が必要だったと痛感しました（来年こそはもっと早く起きるぞ！と心に誓っています）。\n\nしかし、名古山へ場所を移した判断は決して間違っていませんでした。昇る初日の出の光を一身に受け、ほんのりと黄金色に染まりゆく姫路城の姿は息を呑むほど神々しく、静かな感動に包まれました。太陽とお城のシルエットをより近づけて撮るなら男山に軍配が上がりますが、名古山から望む清らかな新年の空気と輝く白鷺の姿もまた、間違いなく「行った甲斐がある」珠玉の情景です。",
+    "story_en": "The \"First Sunrise\" (Hatsuhinode) of the New Year is a deeply cherished tradition in Japan. The sight of the majestic white keep bathed in the fresh, golden light of the year's first morning, viewed from Nagoyama, is a perfectly divine landscape to mark a new beginning.\n\nOn New Year's Day 2026, the original plan was to capture the sunrise and the castle together from the highly popular Otokoyama Reservoir. However, the unexpected density of the crowds prompted a quick pivot to Plan B: Nagoyama Cemetery.\n\nSince the winter sunrise isn't until around 7:00 AM, it doesn't require an extreme early wake-up call—though securing a prime spot at Otokoyama clearly demands much stronger dedication (a definite goal for next year!).\n\nNevertheless, adjusting the destination to Nagoyama was incredibly rewarding. Watching Himeji Castle gently take on a golden hue as it caught the first rays of the sun was a breathtaking and profoundly spiritual experience. While Otokoyama might offer a closer visual alignment of the sun and the castle, the pristine New Year's air and the radiant White Heron viewed from Nagoyama make this a truly magnificent scene worth seeking out.",
     "location": {
       "lat": 34.842445396006696,
       "lng": 134.67761073668575,
-      "name": "名古山"
+      "name": "名古山霊園"
     }
   },
   "23": {
