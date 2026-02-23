@@ -29,13 +29,23 @@
     }
   },
   "3": {
-    "title": "Night Cherry Blossoms",
+    "title": "Night Cherry Blossoms — The Natural Frame at Sannomaru",
+    "subtitle": "Night Cherry Blossoms and the White Heron / At Sannomaru Square",
     "date": "2025.04.09",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring night",
+    "summary": "The collaboration of the illuminated Himeji Castle and Yozakura (cherry blossoms at night) in the spring evening is truly magical. Taking a leisurely stroll through Sannomaru Square at night is a delightful and uplifting experience unique to this season.",
+    "tips": [
+      { "icon": "📍", "label": "Location", "text": "Sannomaru Square" },
+      { "icon": "📷", "label": "Photo Tip", "text": "Use the drooping cherry blossom branches as a natural 'picture frame,' placing the Main Keep at the center for a stunning composition." },
+      { "icon": "🤝", "label": "Etiquette", "text": "This is a popular Hanami spot bustling with visitors. Please be mindful of others' privacy and avoid blocking pathways." }
+    ],
+    "story": "The collaboration of the illuminated Himeji Castle and Yozakura (cherry blossoms at night) in the spring evening is truly magical. Taking a leisurely stroll through Sannomaru Square at night is a delightful and uplifting experience unique to this season.\n\nThis particular photograph was composed by using the surrounding full-bloom cherry blossom branches as a natural picture frame, capturing the dignified Main Keep perfectly in the center.\n\nBeyond the beauty of the blossoms and the grandeur of the architecture, the lively yet peaceful presence of people enjoying Hanami (cherry blossom viewing parties) under the trees is an essential part of the castle town's spring scenery. One day, I secretly plan to capture a sweeping photograph that includes the joyful gatherings of these people, adding a new chapter to these \"Thirty-Six Views.\"",
+    "story_jp": "夜空に白く浮かび上がる大天守と、ほのかに照らされた夜桜。春の夜、三の丸広場を散策するのは、本当に気持ちが良く、心が浮き立つような楽しさがあります。\n\nこの一枚は、周囲に咲き誇る満開の桜をフレーム（額縁）のように使い、その中心に凛とした姫路城を捉える構図で撮影しました。\n\n桜の美しさや建築の雄大さはもちろんですが、桜の下でシートを広げ、和やかにお花見を楽しむ人々の気配や賑わいもまた、城下町の春を彩る大切な風景の一部です。いつか、そんな人々の楽しげな営みも一緒に広大な一枚の写真に収め、この「三十六景」の新たな1ページとして加えたいと密かに計画しています。",
     "location": {
       "lat": 34.838124,
-      "lng": 134.69267
+      "lng": 134.69267,
+      "name": "Sannomaru Square"
     }
   },
   "4": {
