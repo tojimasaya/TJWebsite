@@ -1,4 +1,4 @@
-name: Convert homepage JPGs to WebP
+name: Convert JPGs to WebP
 
 on:
   push:
@@ -7,6 +7,8 @@ on:
       - 'assets/images/hongkong-neon/*.jpg'
       - 'assets/images/about/*.jpg'
       - 'assets/images/turkey-hero.jpg'
+      - 'assets/images/gear/*.jpg'
+      - 'assets/images/gear/lenses/*.jpg'
   workflow_dispatch:
 
 permissions:
@@ -26,7 +28,7 @@ jobs:
       - name: Convert changed JPGs to WebP
         run: |
           converted=0
-          for dir in assets/images/gallery assets/images/hongkong-neon assets/images/about assets/images; do
+          for dir in assets/images/gallery assets/images/hongkong-neon assets/images/about assets/images assets/images/gear assets/images/gear/lenses; do
             for f in ${dir}/*.jpg; do
               [ -f "$f" ] || continue
               base="${f%.jpg}"
@@ -46,5 +48,5 @@ jobs:
       - name: Stage and commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore(images): convert homepage JPGs to WebP'
+          commit_message: 'chore(images): convert JPGs to WebP [auto]'
           file_pattern: 'assets/images/**/*.webp'

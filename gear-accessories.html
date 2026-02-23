@@ -64,9 +64,11 @@
 
         function renderGrid(id, items) {
             const container = document.getElementById(id);
-            container.innerHTML = items.map(item => `
+            container.innerHTML = items.map(item => {
+                const webpSrc = item.image.replace(/\.(jpg|jpeg|png)$/, '.webp');
+                return `
                 <article class="gear-item">
-                    <div class="gear-img-box"><img src="${item.image}" alt="${item.name}" class="gear-img" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></div>
+                    <div class="gear-img-box"><picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></picture></div>
                     <div class="gear-content">
                         <h3 class="gear-name">${item.name}</h3>
                         <div class="gear-specs">
@@ -75,7 +77,7 @@
                         <p class="gear-desc">${item.description}</p>
                         <div class="gear-links">${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank">${key} →</a>`).join('')}</div>
                     </div>
-                </article>`).join('');
+                </article>`}).join('');
         }
     </script>
 </body>

@@ -212,9 +212,13 @@
             article.className = `gear-item ${gear.featured ? 'featured' : ''}`;
             article.setAttribute('data-category', gear.category);
 
+            const webpSrc = gear.image.replace(/\.(jpg|jpeg|png)$/, '.webp');
             article.innerHTML = `
                 <div class="gear-image">
-                    <img src="${gear.image}" alt="${gear.name}" loading="lazy" width="400" height="300">
+                    <picture>
+                        <source srcset="${webpSrc}" type="image/webp">
+                        <img src="${gear.image}" alt="${gear.name}" loading="lazy" width="400" height="300">
+                    </picture>
                     <div class="gear-status ${gear.status}">${getStatusLabel(gear.status)}</div>
                 </div>
                 <div class="gear-info">

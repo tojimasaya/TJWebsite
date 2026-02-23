@@ -182,10 +182,15 @@
                 container.innerHTML = '<p style="padding:20px; color:#999;">No items found.</p>';
                 return;
             }
-            container.innerHTML = items.map(item => `
+            container.innerHTML = items.map(item => {
+                const webpSrc = item.image.replace(/\.(jpg|jpeg|png)$/, '.webp');
+                return `
                 <article class="gear-item">
                     <div class="gear-img-box">
-                        <img src="${item.image}" alt="${item.name}" class="gear-img" onerror="this.src='https://placehold.co/600x400?text=No+Image'">
+                        <picture>
+                            <source srcset="${webpSrc}" type="image/webp">
+                            <img src="${item.image}" alt="${item.name}" class="gear-img" onerror="this.src='https://placehold.co/600x400?text=No+Image'">
+                        </picture>
                     </div>
                     <div class="gear-content">
                         <h3 class="gear-name">${item.name}</h3>
@@ -198,7 +203,7 @@
                         </div>
                     </div>
                 </article>
-            `).join('');
+            `}).join('');
         }
     </script>
 </body>

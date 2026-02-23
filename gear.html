@@ -334,7 +334,10 @@
                 </div>
             </div>
             <div class="gear-hub-hero-thumb">
-                <img src="assets/images/gear/hero-m2.jpg" alt="Leicaと機材のテーブルショット" loading="lazy" decoding="async">
+                <picture>
+                    <source srcset="assets/images/gear/hero-m2.webp" type="image/webp">
+                    <img src="assets/images/gear/hero-m2.jpg" alt="Leicaと機材のテーブルショット" loading="lazy" decoding="async">
+                </picture>
                 <div class="gear-hub-hero-badge">
                     <span class="icon">●</span>
                     <span>Everyday Carry &amp; Travel Setup</span>
@@ -414,12 +417,14 @@
                         // Use image from JSON, remove leading slash if present to make relative
                         let imgSrc = categoryData.hero_image;
                         if (imgSrc.startsWith('/')) imgSrc = imgSrc.substring(1);
+                        const webpSrc = imgSrc.replace(/\.(jpg|jpeg|png)$/, '.webp');
 
-                        // If JSON image fails, fallback is handled by onerror in HTML
-                        
                         const html = `
                             <a href="${config.link}" class="category-card">
-                                <img src="${imgSrc}" alt="${categoryData.title}" class="category-bg" loading="lazy" decoding="async" onerror="this.src='${config.fallbackImage}'">
+                                <picture>
+                                    <source srcset="${webpSrc}" type="image/webp">
+                                    <img src="${imgSrc}" alt="${categoryData.title}" class="category-bg" loading="lazy" decoding="async">
+                                </picture>
                                 <div class="category-content">
                                     <h2 class="category-title">${categoryData.title}</h2>
                                     <p class="category-desc">${categoryData.description}</p>
