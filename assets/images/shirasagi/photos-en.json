@@ -171,15 +171,24 @@
     }
   },
   "14": {
-    "title": "Inverted Castle from Hokusei-Kakushimon Ruins",
+    "title": "The Hidden Water Mirror at Kita-Segakushi Gate Ruins",
+    "subtitle": "Inverted Castle / At Kita-Segakushi Gate Ruins",
     "date": "2025.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "orientation": "portrait",
+    "summary": "This is a secret vantage point that only those who explore Himeji Castle with the utmost curiosity can discover. It is the miracle of the \"Water Mirror\" (Mizukagami), where the majestic white keep is perfectly reflected upside down in a small pond beside the historic spring, Sagi-no-Shimizu.",
+    "tips": [
+      { "icon": "📍", "label": "Location", "text": "Outside the Kita-Segakushi Gate ruins (small pond beside Sagi-no-Shimizu spring)" },
+      { "icon": "📷", "label": "Photo Tip", "text": "Choose a calm, windless day for the water surface to become a perfect mirror, capturing the beautiful 'Inverted Himeji Castle.'" },
+      { "icon": "🤝", "label": "Explorer's Tip", "text": "You won't find this by simply walking along the inner moat through Himeyama Park. The autumn foliage season is especially stunning — seek it out like a treasure hunt." }
+    ],
+    "story": "This spot is like a hidden stage within the castle grounds; if you aren't actively looking for it, you will easily walk right past. When strolling around the inner moat, most people simply follow the walking path through Himeyama Park. However, you cannot see this view from that path. It is only when you intentionally step \"outside\" through the stone walls of the Kita-Segakushi Gate ruins that this secret landscape reveals itself.\n\nThere lies Sagi-no-Shimizu. The surface of the small pond next to it acts as a canvas, reflecting the castle like a flawless mirror. During the autumn foliage season, the surrounding trees turn vibrant shades of red and yellow, creating a breathtaking, miniature-garden-like masterpiece of the white castle and its reflection. Because it is so easily overlooked, it is a hidden gem that we highly recommend seeking out.",
+    "story_jp": "この場所は、相当意識して探さないと通り過ぎてしまう、姫路城における「隠しステージ」のような場所です。\n\n城の周囲を内堀に沿ってぐるりと回る際、多くの人はそのまま姫山公園の遊歩道を通り抜けてしまいます。しかし、そこからはこの景色は見えません。かつての城の出入り口であった「北勢隠門跡（きたせがくしもんあと）」の石垣をあえて「外」へと抜け出したとき、初めてこの秘密の風景が目の前に広がります。\n\nそこにあるのは「鷺の清水（さぎのしみず）」と呼ばれる井戸の跡。そのすぐ横にある小さな池の水面がキャンバスとなり、姫路城の壮麗な姿を鏡のように映し出すのです。周囲の木々が色づく紅葉の季節には、赤や黄色の錦秋と白亜の城、そしてその水鏡という、息を呑むような箱庭的絶景に出会うことができます。気が付きにくい場所だからこそ、絶対に訪れてほしいと強くおすすめする名スポットです。",
     "location": {
       "lat": 34.84101926090324,
       "lng": 134.69188914683946,
-      "name": "Hokusei-Kakushimon Ruins"
+      "name": "Kita-Segakushi Gate Ruins"
     }
   },
   "15": {
