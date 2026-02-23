@@ -80,10 +80,19 @@
     }
   },
   "7": {
-    "title": "男山の新緑",
+    "title": "男山高台 新緑の連立陣",
+    "subtitle": "男山の新緑 / 男山配水池公園にて",
     "date": "2025.05.20",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "summer afternoon",
+    "summary": "360度、見る角度によって全く異なる表情を見せる姫路城。数百段の階段を登った先にある男山は、姫路城最大の特徴である「連立式天守」の複雑な美しさを、天守と同じ目線で堪能できる最高の方角です。",
+    "tips": [
+      { "icon": "📍", "label": "場所", "text": "男山配水池公園（山頂広場）" },
+      { "icon": "📷", "label": "撮影のヒント", "text": "大天守の手前に「西小天守」と「乾小天守（いぬいこてんしゅ）」が重なり合う、要塞としての立体的で複雑な造形美を水平の視線で捉えることができます。" },
+      { "icon": "🤝", "label": "マナーと注意点", "text": "絶景に辿り着くには約200段の急な階段を登る必要があります。歩きやすい靴で、水分補給を忘れずに。" }
+    ],
+    "story": "姫路城の建築的な偉大さは、大天守が単独で建っているのではなく、複数の小天守が渡櫓（わたりやぐら）で結ばれた「連立式天守」である点にあります。\n\n男山からの眺めが特別な理由は大きく2つあります。1つ目は、この北西の方角から城を望むと、大天守の手前に「西小天守」と「乾小天守」という2つの小天守が同時に見え、他に類を見ない圧倒的な複雑さと堅牢さが際立つことです。\n\n2つ目は「高さ」です。息を切らして急な階段を登り切ったこの場所は、姫路城が建つ「姫山」とほぼ同じ標高（約46m）に位置しています。見上げるのではなく、天守群と「目が合う」ような水平の視線で城の全貌を捉えることができるため、その真の形とスケール感を最も正確に把握できるのです。\n\n新緑に包まれた初夏、爽やかな風に吹かれながらこのパノラマを眺める時間は、登りの苦労を完全に忘れさせてくれる至福のひとときです。",
+    "story_en": "The architectural greatness of Himeji Castle lies in the fact that the Main Keep does not stand alone. It is connected to multiple smaller keeps by roofed passages.\n\nThe view from Otokoyama is special for two main reasons. First, looking from this northwestern direction, you can simultaneously see two smaller keeps—the West Small Keep and the Inui Small Keep—layered in front of the Main Keep. This highlights an overwhelming architectural complexity and formidable defense seen in few other castles.\n\nSecond is the elevation. This spot, reached after a breathless climb up nearly 200 steep steps, is at almost the exact same altitude as Himeyama, the hill on which the castle stands. Instead of looking up, you meet the castle eye-to-eye on a horizontal line of sight, allowing you to grasp its true shape and massive scale with perfect accuracy. Feeling the fresh early summer breeze surrounded by new greenery here makes the arduous climb completely worthwhile.",
     "location": {
       "lat": 34.84193162015072,
       "lng": 134.6899754350028,

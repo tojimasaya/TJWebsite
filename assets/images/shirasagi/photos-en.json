@@ -80,10 +80,19 @@
     }
   },
   "7": {
-    "title": "Castle in Fresh Green from Otokoyama Reservoir",
+    "title": "The Complex Keep System in Fresh Greenery from Mount Otokoyama",
+    "subtitle": "Castle in Fresh Green / At Otokoyama Reservoir Park",
     "date": "2025.05.20",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "summer afternoon",
+    "summary": "Himeji Castle shows a completely different face depending on the angle from which you view it. Mount Otokoyama, reached after climbing hundreds of steps, offers one of the best vantage points to appreciate the castle's most defining architectural feature: the Renritsu-shiki Tenshu (complex interconnected keep system), viewed from the exact same elevation as the keep itself.",
+    "tips": [
+      { "icon": "📍", "label": "Location", "text": "Otokoyama Reservoir Park (summit plaza)" },
+      { "icon": "📷", "label": "Photo Tip", "text": "From here you can capture the West Small Keep and Inui Small Keep layered in front of the Main Keep — the fortress's complex, three-dimensional beauty at eye level." },
+      { "icon": "🤝", "label": "Safety Note", "text": "Reaching this view requires climbing roughly 200 steep steps. Wear comfortable shoes and bring water." }
+    ],
+    "story": "The architectural greatness of Himeji Castle lies in the fact that the Main Keep does not stand alone. It is connected to multiple smaller keeps by roofed passages.\n\nThe view from Otokoyama is special for two main reasons. First, looking from this northwestern direction, you can simultaneously see two smaller keeps—the West Small Keep and the Inui Small Keep—layered in front of the Main Keep. This highlights an overwhelming architectural complexity and formidable defense seen in few other castles.\n\nSecond is the elevation. This spot, reached after a breathless climb up nearly 200 steep steps, is at almost the exact same altitude as Himeyama, the hill on which the castle stands. Instead of looking up, you meet the castle eye-to-eye on a horizontal line of sight, allowing you to grasp its true shape and massive scale with perfect accuracy. Feeling the fresh early summer breeze surrounded by new greenery here makes the arduous climb completely worthwhile.",
+    "story_jp": "姫路城の建築的な偉大さは、大天守が単独で建っているのではなく、複数の小天守が渡櫓（わたりやぐら）で結ばれた「連立式天守」である点にあります。\n\n男山からの眺めが特別な理由は大きく2つあります。1つ目は、この北西の方角から城を望むと、大天守の手前に「西小天守」と「乾小天守」という2つの小天守が同時に見え、他に類を見ない圧倒的な複雑さと堅牢さが際立つことです。\n\n2つ目は「高さ」です。息を切らして急な階段を登り切ったこの場所は、姫路城が建つ「姫山」とほぼ同じ標高（約46m）に位置しています。見上げるのではなく、天守群と「目が合う」ような水平の視線で城の全貌を捉えることができるため、その真の形とスケール感を最も正確に把握できるのです。\n\n新緑に包まれた初夏、爽やかな風に吹かれながらこのパノラマを眺める時間は、登りの苦労を完全に忘れさせてくれる至福のひとときです。",
     "location": {
       "lat": 34.84193162015072,
       "lng": 134.6899754350028,
