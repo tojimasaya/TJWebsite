@@ -309,14 +309,23 @@
     }
   },
   "23": {
-    "title": "New Year Water Salute",
+    "title": "The New Year's Fire Review and a Rainbow at Sannomaru Square",
+    "subtitle": "New Year's Fire Review / At Sannomaru Square, Himeji Castle",
     "date": "2026.01.11",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter afternoon",
+    "summary": "The annual Dezomeshiki (New Year's Fire Review) is a beloved tradition held every January. The beautiful synchronized water discharge soaring high into the winter sky, crowned by a miraculous rainbow, symbolizes the reassuring presence of those who protect the white castle and the peace of the city — a special 'view' that can only be witnessed on this one day.",
+    "tips": [
+      { "icon": "📍", "label": "Location", "text": "Sannomaru Square, Himeji Castle" },
+      { "icon": "📷", "label": "Photo Tip", "text": "Amid the ever-changing winter weather, the ultimate shutter chance comes when sunlight pierces through the water columns launched into the sky, creating a rainbow." },
+      { "icon": "🤝", "label": "Enjoying the Event", "text": "This spectacle can only be seen on the event day in early January each year (January 11 in 2026). Experience the warm community spirit through the dignified firefighters and charming children's performances." }
+    ],
+    "story": "January 11, 2026, marked the highly anticipated annual Dezomeshiki (New Year's Fire Review) by the Himeji City Fire Brigade. Held at Sannomaru Square, this traditional event gathers city officials and countless citizens to watch the impressive results of the firefighters' training, as well as charming performances by local children.\n\nThe weather that day was incredibly fickle and dramatic, alternating unpredictably between sudden snow flurries and clear blue skies. Despite the changing skies, the climax of the event — the synchronized mass water discharge — was a moment of pure beauty. As the water powerfully arced into the air, the sunlight broke through the clouds, catching the spray and creating a miraculous, breathtaking rainbow.\n\nWatching these highly trained firefighters in action under the blue sky was deeply reassuring. Knowing that they stand ready to respond to any emergency fire gives us the profound confidence that this irreplaceable wooden castle, and the city itself, are in the safest of hands.",
+    "story_jp": "2026年1月11日。私が心待ちにしていた、姫路市消防団による新春恒例の「出初式」の日です。\n\nこの日の天候は非常にドラマチックでした。雪が舞ったかと思えば、スッと青空が覗くという、冬特有の目まぐるしく変わる不思議な空模様。そんな中、多くの市民や来賓が見守る三の丸広場では、訓練を重ねた消防団員たちの凛々しい姿や、子どもたちの可愛らしい演技が披露され、会場は温かい活気に包まれました。\n\nそして迎えたクライマックスの一斉放水。空高く幾重にも放たれた美しい水柱に、雲間から射した陽光が反射し、見事な虹が架かった瞬間は思わず息を呑むほど感動的でした。\n\n青空の下で躍動する消防員たちの頼もしい姿。彼らの日々の鍛錬があればこそ、万が一の出火時にも、このかけがえのない木造の白鷺城と私たちの街は確実に守り抜かれるだろう――そんな強い安心感と誇りを胸に抱かせてくれる、新春の素晴らしい伝統行事です。",
     "location": {
       "lat": 34.8375541463092,
       "lng": 134.6932678047162,
-      "name": "Sannomaru Plaza, Himeji Castle"
+      "name": "Sannomaru Square, Himeji Castle"
     }
   },
   "24": {
