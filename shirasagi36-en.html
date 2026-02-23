@@ -429,13 +429,20 @@
                 // In "all" view, first photo of each season is featured (large)
                 const isSeasonLead = isAllView && seasonLabels[i];
                 const isFeatured = photo.featured;
+                const isPortrait = photo.orientation === 'portrait';
 
-                if (isSeasonLead || isFeatured) {
+                if (isSeasonLead || isFeatured || isPortrait) {
                     const label = seasonLabels[i] || '';
-                    const isWide = photo.orientation === 'wide';
-                    card.className = isWide
-                        ? "group relative bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ease-out col-span-2 aspect-[2/1]"
-                        : "group relative bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ease-out col-span-2 row-span-2 aspect-square";
+                    const orientation = photo.orientation || 'landscape';
+                    let cardClass;
+                    if (orientation === 'wide') {
+                        cardClass = "col-span-2 md:col-span-3 aspect-[3/1]";
+                    } else if (orientation === 'portrait') {
+                        cardClass = "row-span-2 aspect-[1/2]";
+                    } else {
+                        cardClass = "col-span-2 row-span-2 aspect-square";
+                    }
+                    card.className = "group relative bg-gray-100 rounded-sm overflow-hidden cursor-pointer shadow-md hover:shadow-xl transition-all duration-500 ease-out " + cardClass;
                     card.onclick = () => openModal(i);
                     card.innerHTML = `
                         <picture>
