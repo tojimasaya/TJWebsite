@@ -338,10 +338,19 @@
     }
   },
   "24": {
-    "title": "レスキュー隊演技",
+    "title": "三の丸広場 蒼穹の守り人",
+    "subtitle": "レスキュー隊演技 / 姫路城三の丸広場にて",
     "date": "2026.01.11",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter afternoon",
+    "summary": "白亜の大天守に迫るほどの高空を、精鋭たちが美しく舞う。2026年の新春・出初式（でぞめしき）で披露されたレスキュー隊のダイナミックな空中演技は、青空と名城を背景にした、頼もしくも美しい現代の「絶景」です。",
+    "tips": [
+      { "icon": "📍", "label": "場所", "text": "姫路城 三の丸広場" },
+      { "icon": "📷", "label": "見どころ", "text": "大天守の高さにも匹敵する空中で繰り広げられる、鍛え抜かれた隊員たちの力強く美しいパフォーマンス。" },
+      { "icon": "🤝", "label": "行事の温かさ", "text": "張り詰めた緊張感の中で行われる高度な訓練展示ですが、隊員たちの素顔を紹介するユーモアたっぷりの場内アナウンスが、会場に温かい笑いをもたらしてくれます。" }
+    ],
+    "story": "第弐拾参景（No. 23）と同じく、2026年1月11日の「姫路市消防出初式」での一コマです。\n\nこの日は時折雪が舞い、強い風が吹き荒れる非常に厳しい天候でした。安全を考慮し、はしご車の高さを予定よりも低く制限せざるを得ない状況だったそうですが、そんな悪条件の中でも、高度に訓練されたレスキュー隊員たちは見事な空中演技を繰り広げました。澄み切った青空の下、まるで大天守と同じ高さで宙を舞うかのような彼らの躍動的な姿は、ハッとするほど美しく、力強いものでした。\n\nそして、この日の演舞をさらに魅力的なものにしていたのが、会場内に響く素晴らしいアナウンスです。宙を舞う隊員一人ひとりの人となりや趣味などを、ユーモアを交えながら細やかに紹介していくその温かい実況に、見守る観客からは微笑ましい笑いが漏れていました。\n\n厳しい訓練の成果と、緊張をほぐすユーモラスな言葉の絶妙なコントラスト。会場全体が一体となって盛り上がる温かい空気の中で、「ああ、姫路の街とこの美しいお城は、こういう素晴らしい人たちに守られているのだな」と、胸が熱くなるような安心感と誇りを感じた一日でした。",
+    "story_en": "This scene, like View No. 23, was captured during the Himeji City Fire Brigade's New Year's Fire Review (Dezomeshiki) on January 11, 2026.\n\nThe weather that day was incredibly harsh, with strong gusts of wind and occasional snow flurries. Due to safety concerns in the rough conditions, the fire trucks had to operate their aerial ladders at a lower height than originally planned. Yet, even under such challenging circumstances, the highly trained rescue workers delivered an astonishing mid-air performance. Watching them dynamically \"dance\" in the clear blue sky, seemingly reaching the very height of the grand Main Keep, was a breathtakingly beautiful and powerful sight.\n\nWhat made this performance even more captivating was the excellent live announcement echoing through the venue. The announcer introduced each airborne rescue worker not just by name, but by sharing charming, humorous details about their personalities and hobbies. This warm commentary brought delightful smiles and laughter from the crowd.\n\nIt was a perfect contrast: the display of rigorous, life-saving training balanced by lighthearted humor. Surrounded by the warm, unified atmosphere of the venue, I felt a deep sense of pride and profound reassurance, knowing that the beautiful city of Himeji and its historic castle are protected by such wonderful, dedicated people.",
     "location": {
       "lat": 34.8375541463092,
       "lng": 134.6932678047162,
