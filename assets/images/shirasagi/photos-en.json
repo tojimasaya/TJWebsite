@@ -212,14 +212,23 @@
     }
   },
   "16": {
-    "title": "Moat and Autumn Leaves",
+    "title": "Autumn Colors at the Moat Edge along Senhime's Path",
+    "subtitle": "Autumn Foliage along the Moat / At Senhime's Path (Inner Moat)",
     "date": "2025.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
+    "summary": "\"Where exactly is this?\" — Even among local Himeji residents, very few could correctly identify the location just by looking at this photograph. It is a best-kept secret walking path where the quiet, everyday life of the castle town blends seamlessly with breathtaking autumn foliage.",
+    "tips": [
+      { "icon": "📍", "label": "Location", "text": "Senhime's Path along the inner moat" },
+      { "icon": "📷", "label": "Photo Tip", "text": "Include the path's handrail and stream in the foreground, then layer the autumn foliage and a subtle glimpse of the Nishi-no-Maru in the background to create a depth-rich, atmospheric composition." },
+      { "icon": "🤝", "label": "Walking Advice", "text": "This spot is very close to the Kita-Segakushi Gate Ruins featured in View No. 14. Map apps may show a slightly inaccurate position, so use the coordinates above and follow the sound of the murmuring stream." }
+    ],
+    "story": "\"Where exactly is this?\" — Even among local Himeji residents, very few could correctly identify the location just by looking at this photograph. It is a best-kept secret walking path where the quiet, everyday life of the castle town blends seamlessly with breathtaking autumn foliage.\n\nLocated along the western inner moat is a tranquil promenade known as \"Senhime's Path\" (Senhime-no-Komichi). This spot offers a deep, atmospheric elegance (fuzei) that differs entirely from the grand, overwhelming scale of the main castle views.\n\nAs autumn deepens, the trees turn vibrant shades of yellow and fiery red. The handrail visible in the foreground belongs to Senhime's Path, running alongside a clear, murmuring stream. Combined with the traditional townhouses (machiya) of the neighboring Korikicho district and a subtle glimpse of the westernmost edge of the Nishi-no-Maru (Western Bailey) peeking through the leaves, the scene resembles a flawless traditional Japanese painting.\n\nWhile dynamic views featuring the Main Keep are magnificent, it is in these understated, quiet landscapes along the moat that you can truly feel the profound depth of Himeji Castle — a fortress that has peacefully coexisted with the daily lives of the townspeople for over 400 years.",
+    "story_jp": "姫路城の西側、内堀に沿って続く「千姫の小径（せんひめのこみち）」と呼ばれる静かな遊歩道。ここは、姫路城の壮大なスケール感とはまた違う、しっとりとした城下町の「風情」を色濃く残す秘密の場所です。\n\n秋が深まると、木々が鮮やかな黄色や燃えるような赤に染まり、静かな水面を彩ります。写真の手前に見える手すりが千姫の小径のもので、そこを流れる澄んだ小川、隣接する小利木町（こりきちょう）の伝統的な町家、そして木々の隙間からひっそりと顔を覗かせる西の丸の西端。これらの要素が一つに溶け合った情景は、まるで一枚の美しい日本画のようです。\n\n大天守が主役のダイナミックな風景も素晴らしいですが、こうした何気ない堀端の風景にこそ、400年にわたって人々の暮らしと共にあった姫路城の「奥深さ」が宿っています。喧騒から離れ、小川のせせらぎを聞きながらこの紅葉を眺める時間は、格別の体験となるはずです。",
     "location": {
-      "lat": 34.84069868459606,
-      "lng": 134.69220901267542,
-      "name": "Inner Moat Area"
+      "lat": 34.840715,
+      "lng": 134.691696,
+      "name": "Senhime's Path (Inner Moat)"
     }
   },
   "17": {

@@ -212,14 +212,23 @@
     }
   },
   "16": {
-    "title": "堀端の紅葉",
+    "title": "千姫小径 堀端の錦秋",
+    "subtitle": "堀端の紅葉 / 内堀（千姫の小径）沿いにて",
     "date": "2025.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
+    "summary": "「一体ここはどこだろう？」——この写真を見て撮影場所を言い当てることができる人は、地元の姫路市民でもごく僅かでしょう。城下町の静かな日常と、息を呑むような紅葉が溶け合う、知る人ぞ知る極上の散策路です。",
+    "tips": [
+      { "icon": "📍", "label": "場所", "text": "内堀沿い・千姫の小径" },
+      { "icon": "📷", "label": "撮影のヒント", "text": "画面の手前に小径の手すりと小川を入れ、奥の紅葉と少しだけ顔を覗かせる西の丸を重ねることで、奥行きのある風情豊かな一枚になります。" },
+      { "icon": "🤝", "label": "散策のアドバイス", "text": "第拾四景（No. 14）の「北勢隠門跡」のすぐ近くです。地図アプリでは少し位置がズレて表示されることがあるため、上記の座標を頼りに、小川のせせらぎを探してみてください。" }
+    ],
+    "story": "姫路城の西側、内堀に沿って続く「千姫の小径（せんひめのこみち）」と呼ばれる静かな遊歩道。ここは、姫路城の壮大なスケール感とはまた違う、しっとりとした城下町の「風情」を色濃く残す秘密の場所です。\n\n秋が深まると、木々が鮮やかな黄色や燃えるような赤に染まり、静かな水面を彩ります。写真の手前に見える手すりが千姫の小径のもので、そこを流れる澄んだ小川、隣接する小利木町（こりきちょう）の伝統的な町家、そして木々の隙間からひっそりと顔を覗かせる西の丸の西端。これらの要素が一つに溶け合った情景は、まるで一枚の美しい日本画のようです。\n\n大天守が主役のダイナミックな風景も素晴らしいですが、こうした何気ない堀端の風景にこそ、400年にわたって人々の暮らしと共にあった姫路城の「奥深さ」が宿っています。喧騒から離れ、小川のせせらぎを聞きながらこの紅葉を眺める時間は、格別の体験となるはずです。",
+    "story_en": "\"Where exactly is this?\" — Even among local Himeji residents, very few could correctly identify the location just by looking at this photograph. It is a best-kept secret walking path where the quiet, everyday life of the castle town blends seamlessly with breathtaking autumn foliage.\n\nLocated along the western inner moat is a tranquil promenade known as \"Senhime's Path\" (Senhime-no-Komichi). This spot offers a deep, atmospheric elegance (fuzei) that differs entirely from the grand, overwhelming scale of the main castle views.\n\nAs autumn deepens, the trees turn vibrant shades of yellow and fiery red. The handrail visible in the foreground belongs to Senhime's Path, running alongside a clear, murmuring stream. Combined with the traditional townhouses (machiya) of the neighboring Korikicho district and a subtle glimpse of the westernmost edge of the Nishi-no-Maru (Western Bailey) peeking through the leaves, the scene resembles a flawless traditional Japanese painting.\n\nWhile dynamic views featuring the Main Keep are magnificent, it is in these understated, quiet landscapes along the moat that you can truly feel the profound depth of Himeji Castle — a fortress that has peacefully coexisted with the daily lives of the townspeople for over 400 years.",
     "location": {
-      "lat": 34.84069868459606,
-      "lng": 134.69220901267542,
-      "name": "内堀沿い"
+      "lat": 34.840715,
+      "lng": 134.691696,
+      "name": "千姫の小径（内堀沿い）"
     }
   },
   "17": {
