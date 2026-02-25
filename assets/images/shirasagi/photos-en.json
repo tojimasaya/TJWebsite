@@ -79,14 +79,23 @@
     }
   },
   "6": {
-    "title": "From Hakuro Junior High School Ground",
+    "title": "View of Youth from the Hakuro Schoolgrounds",
+    "subtitle": "A World Heritage backdrop to everyday school life / From the perimeter road near Hakuro Elementary and Junior High School",
     "date": "2025.04.05",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon",
+    "summary": "Behind the students sweating on the athletic field, a World Heritage site towers as if it were the most natural thing in the world. This place, which brings back fond memories from decades past, is a luxuriously fresh everyday scene where the castle quietly watches over the youth of Himeji's children.",
+    "tips": [
+      { "icon": "📍", "label": "Location", "text": "Perimeter road around Hakuro Elementary and Junior High School" },
+      { "icon": "📷", "label": "Scenic Highlights", "text": "The striking contrast between vibrant modern school life and a 400-year-old historic monument." },
+      { "icon": "🤝", "label": "Strict Rules", "text": "This is an active school where children study every day. Unauthorized entry onto school grounds and any photography that could compromise students' privacy (including pointing a camera toward them) is strictly prohibited. Please enjoy the scenery only from the public perimeter sidewalk, with full respect for the rules." }
+    ],
+    "story": "Decades ago, when I was a junior high school student, I visited this very ground several times to compete in city tennis tournaments. I still fondly remember playing matches on the courts that used to be here.\n\nAlthough the school is now a combined elementary and junior high school (Hakuro Elementary and Junior High School), the magnificent view of Himeji Castle towering over the athletic field remains exactly the same. The students who attend this school might take this incredible \"luck\" for granted, not fully realizing what a privilege it is to spend their daily lives watched over by a World Heritage site.\n\nHowever, years from now, when they are adults looking back at the smartphone photos from their school days, they will notice that the majestic white castle was always standing beautifully behind their lively, smiling faces. Imagining the moment they make that heartwarming discovery fills me with excitement and warmth. The castle quietly watches over not just the history of the city, but also the precious memories of its people's youth.",
+    "story_jp": "何十年も前、私がまだ中学生だった頃。姫路市のテニスの大会で、このグラウンドにあったコートで何度か試合をした懐かしい記憶があります。\n\n現在、この場所は統合により小中一貫校（白鷺小中学校）へと姿を変えましたが、グラウンドから雄大な姫路城を見上げる素晴らしい景色は当時のままです。この学び舎に通う生徒たちは、毎日お城に見守られながら過ごすという「幸運」を、今は当たり前のこととして特に意識していないかもしれません。\n\nしかし何年か後、大人になってからふと学生時代のスマホの写真を見返したとき、生き生きと笑う自分たちの背後に、いつもあの白亜の城が美しく佇んでいたことに気がつくはずです。その事実に巡り会う彼らの未来の瞬間を想像すると、なんだかとってもワクワクして、温かい気持ちになります。お城は、街の歴史だけでなく、人々の青春の記憶もこうして静かに見守り続けているのです。",
     "location": {
       "lat": 34.83417812343474,
       "lng": 134.68831030207494,
-      "name": "Hakuro Junior High School Ground"
+      "name": "Near Hakuro Elementary & Junior High School (from perimeter road)"
     }
   },
   "7": {

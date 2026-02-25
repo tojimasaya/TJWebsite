@@ -79,14 +79,23 @@
     }
   },
   "6": {
-    "title": "白露の眺望",
+    "title": "白鷺学舎 青春の眺望",
+    "subtitle": "白露の眺望 / 白鷺小中学校（旧・白鷺中学校）グラウンド越しにて",
     "date": "2025.04.05",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon",
+    "summary": "グラウンドで汗を流す生徒たちの背景に、当たり前のように世界遺産がそびえ立つ。何十年も前の懐かしい記憶が蘇るこの場所は、お城が姫路の子供たちの青春を静かに見守り続けている、贅沢で瑞々しい日常の風景です。",
+    "tips": [
+      { "icon": "📍", "label": "場所", "text": "姫路市立白鷺小中学校 周辺の外周道路" },
+      { "icon": "📷", "label": "情景の魅力", "text": "活気あふれる現代の学校生活と、400年変わらぬ歴史的建造物のコントラスト。" },
+      { "icon": "🤝", "label": "絶対のルール", "text": "現在も子供たちが通う教育施設です。敷地内への無断立ち入りや、生徒のプライバシーに関わる撮影（カメラを向ける行為）は厳禁です。外周の歩道から、マナーを守って景色のみをお楽しみください。" }
+    ],
+    "story": "何十年も前、私がまだ中学生だった頃。姫路市のテニスの大会で、このグラウンドにあったコートで何度か試合をした懐かしい記憶があります。\n\n現在、この場所は統合により小中一貫校（白鷺小中学校）へと姿を変えましたが、グラウンドから雄大な姫路城を見上げる素晴らしい景色は当時のままです。この学び舎に通う生徒たちは、毎日お城に見守られながら過ごすという「幸運」を、今は当たり前のこととして特に意識していないかもしれません。\n\nしかし何年か後、大人になってからふと学生時代のスマホの写真を見返したとき、生き生きと笑う自分たちの背後に、いつもあの白亜の城が美しく佇んでいたことに気がつくはずです。その事実に巡り会う彼らの未来の瞬間を想像すると、なんだかとってもワクワクして、温かい気持ちになります。お城は、街の歴史だけでなく、人々の青春の記憶もこうして静かに見守り続けているのです。",
+    "story_en": "Decades ago, when I was a junior high school student, I visited this very ground several times to compete in city tennis tournaments. I still fondly remember playing matches on the courts that used to be here.\n\nAlthough the school is now a combined elementary and junior high school (Hakuro Elementary and Junior High School), the magnificent view of Himeji Castle towering over the athletic field remains exactly the same. The students who attend this school might take this incredible \"luck\" for granted, not fully realizing what a privilege it is to spend their daily lives watched over by a World Heritage site.\n\nHowever, years from now, when they are adults looking back at the smartphone photos from their school days, they will notice that the majestic white castle was always standing beautifully behind their lively, smiling faces. Imagining the moment they make that heartwarming discovery fills me with excitement and warmth. The castle quietly watches over not just the history of the city, but also the precious memories of its people's youth.",
     "location": {
       "lat": 34.83417812343474,
       "lng": 134.68831030207494,
-      "name": "白鷺中学校グラウンド"
+      "name": "白鷺小中学校周辺（外周道路より）"
     }
   },
   "7": {
