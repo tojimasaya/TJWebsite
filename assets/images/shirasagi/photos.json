@@ -64,9 +64,9 @@
     "category": "spring afternoon",
     "summary": "満開の桜にぐっと近づき、背後の大天守をあえて「美しいボケ」として春の霞（かすみ）に溶け込ませた一枚です。一見して姫路城とは分からないかもしれませんが、私にはこれが姫路城だと確かに分かっています。",
     "tips": [
-      "📍 場所 (Location): 姫路城 三の丸広場",
-      "📷 撮影のヒント: 桜の花びらにぐっと近づき、絞りを開放（F値を小さく）して撮影すると、背景の巨大な建築物も幻想的な「ボケ（Bokeh）」に変わります。",
-      "🤝 視点の楽しみ方: ランドマークを鮮明に写すだけが写真ではありません。その場で心に感じた春の空気感そのものを切り取るような表現も、お城撮影の醍醐味です。"
+      {"icon": "📍", "label": "場所", "text": "姫路城 三の丸広場"},
+      {"icon": "📷", "label": "撮影のヒント", "text": "桜の花びらにぐっと近づき、絞りを開放（F値を小さく）して撮影すると、背景の巨大な建築物も幻想的な「ボケ（Bokeh）」に変わります。"},
+      {"icon": "🤝", "label": "視点の楽しみ方", "text": "ランドマークを鮮明に写すだけが写真ではありません。その場で心に感じた春の空気感そのものを切り取るような表現も、お城撮影の醍醐味です。"}
     ],
     "story": "4月、三の丸広場が一年で最も華やぐ満開の季節。ある日、私は桜の花にぐっと近づいてこの写真を撮影しました。背後に見えるのは、かなりボケていますが、紛れもなく姫路城の天守閣です。\n\nまるで姫路城で撮ったとは思えないような写真かもしれません。しかし、私にはこれが姫路城だと分かっています。\n\n観光名所を誰もが分かるように鮮明に切り取るのではなく、あえて主従を逆転させ、巨大な城を背景の「彩り」として贅沢に使う。そこには、400年の歴史を持つお城と、その瞬間にカメラを構えた私との間にだけ存在する、密やかな対話があるように感じています。ただの記録写真ではなく、あの日の春の空気感と私の心象風景をそのまま写し取った、とても思い入れのある一枚です。",
     "story_en": "On a day in April when the cherry blossoms were in full bloom, I got up close to the flowers in Sannomaru Square to take this shot. The structure visible in the background is the Main Keep of Himeji Castle, though it is significantly blurred.\n\nIt might not look like a photo taken at Himeji Castle at all to others. But I know for a fact that it is.\n\nInstead of capturing the landmark sharply for everyone to easily recognize, I intentionally reversed the roles, using the colossal castle as a luxurious background of soft color. It feels as though there is a secret, intimate dialogue that exists solely between the 400-year-old fortress and myself standing there in that exact moment. It is not just a visual record, but a capture of the spring air and my own personal memory—making it a very special piece to me.",
