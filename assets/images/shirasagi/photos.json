@@ -19,13 +19,23 @@
     }
   },
   "2": {
-    "title": "桜雲の城",
+    "title": "南西遠望 桜雲の城",
+    "subtitle": "桜雲の城 / プライベートな空間にて",
     "date": "2025.04.05",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring evening",
+    "summary": "姫路城を南西方向から見晴らす、息を呑むほど美しい全景。少し春霞（はるがすみ）がかかったゆったりとした空気感の中、桜の雲に浮かぶような白亜の天守がたまらなく美しい一枚です。",
+    "tips": [
+      { "icon": "📍", "label": "場所", "text": "非公開（プライベートなマンションより撮影）" },
+      { "icon": "📷", "label": "見どころ", "text": "手前に「好古園（こうこえん）」の豊かな緑を配し、その奥に姫路城の全貌が広がる、観光客の視点からは決して見ることのできない完璧な構図です。" },
+      { "icon": "🤝", "label": "ご案内", "text": "この写真は一般には立ち入ることのできない私有地から撮影されたため、場所は伏せさせていただいております。ぜひ、この一枚を通して特別な春の景色をお楽しみください。" }
+    ],
+    "story": "姫路城を南西方向から見渡す、非常に美しい全景です。手前には姫路城西御屋敷跡庭園である「好古園」の緑が広がり、その奥に連立式天守の全貌が素晴らしいバランスでそびえ立っています。\n\n春の訪れとともに、街全体がほんのりと「春霞（はるがすみ）」に包まれます。張り詰めた冬の空気が緩み、すべてが淡い色彩に染まるような時間。桜の雲海にふわりと浮かび上がるような白鷺城の姿は、いつまで眺めていても飽きることがありません。\n\n実はこの一枚は、あるプライベートなマンションの一室から撮影されたものです。観光名所からのダイナミックな眺めとは異なり、この写真からどこか「ゆったりとした空気感」が伝わってくるのは、これが姫路城と共に暮らす人々の、穏やかな日常の視点だからかもしれません。プライバシーの観点から場所を明かすことはできませんが、このプロジェクトを通して、姫路の街に暮らす人だけが知る「秘密の特等席」からの景色を皆様と分かち合えればと思います。",
+    "story_en": "This photograph captures a spectacular, panoramic view of Himeji Castle from the southwest. As spring arrives, the city is gently enveloped in a soft \"spring haze\" (Harugasumi). The sight of the white castle seemingly floating on a sea of cherry blossom clouds creates a deeply relaxing and breathtakingly beautiful scene.\n\nIn the foreground, you can see the lush greenery of Koko-en, the beautiful Japanese garden built on the castle's former western residence grounds. Beyond it, the entire complex of the Main Keep stands in perfect balance.\n\nThis particular photograph was actually taken from a private condominium. Unlike the dynamic views from busy tourist spots, the uniquely relaxed and gentle atmosphere of this image comes from the fact that it represents the everyday perspective of the locals who live alongside the castle.\n\nOut of respect for privacy, the exact location cannot be disclosed. However, through this project, we are thrilled to share with you this exclusive, privileged glimpse from a \"secret premium seat\" known only to those who call this city home.",
     "location": {
       "lat": 34.837359,
-      "lng": 134.686569
+      "lng": 134.686569,
+      "name": "非公開（プライベートな空間より撮影）"
     }
   },
   "3": {
