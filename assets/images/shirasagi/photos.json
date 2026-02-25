@@ -57,13 +57,23 @@
     }
   },
   "4": {
-    "title": "花霞の城",
+    "title": "三の丸広場 花霞の幻城",
+    "subtitle": "花霞の城 / 三の丸広場にて",
     "date": "2025.04.01",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon",
+    "summary": "満開の桜を主役に据え、背後の大天守をあえて「美しいボケ」として春の霞に溶け込ませた抽象的な一枚。一見して姫路城とは分からないかもしれませんが、そこには撮影者だけが知る、お城との密やかな対話が隠されています。",
+    "tips": [
+      "📍 場所: 姫路城 三の丸広場",
+      "📷 撮影のヒント: 桜の花びらにぐっと近づき、絞りを開放（F値を小さく）して撮影することで、背景の巨大な建築物を幻想的な「ボケ（Bokeh）」に変えることができます。",
+      "🤝 視点の楽しみ方: ランドマークを鮮明に写すだけが写真ではありません。心で感じた春の空気感そのものを切り取るような、自由な表現を楽しんでみてください。"
+    ],
+    "story": "4月、三の丸広場が一年で最も華やぐ満開の季節。桜の花にぐっとレンズを近づけてシャッターを切ったこの作品は、背後にそびえるはずの天守閣が、まるで淡い花霞のようにボケて溶け込んでいます。\n\n「まるで姫路城で撮ったとは思えないような写真かもしれない。でも、私にはこれが姫路城だと確かに分かっている」\n\nこれは、撮影者であるあなた自身が残した言葉です。観光名所を誰もが分かるように鮮明に切り取るのではなく、あえて主従を逆転させ、巨大な城を背景の「彩り」として贅沢に使う。そこには、400年の歴史を持つお城と、その瞬間に立ち会った撮影者との間にだけ存在する、秘密の繋がりが表現されています。記録ではなく、記憶と感情を写し取った、このプロジェクトの中でもひときわ詩的な「景」です。",
+    "story_en": "This abstract piece features full-bloom cherry blossoms as the primary subject, intentionally dissolving the massive Main Keep in the background into a beautiful, soft blur (bokeh), like a spring floral haze (Hanagasumi). At first glance, it might not look like a typical photo of Himeji Castle, but it holds a secret, intimate dialogue known only to the photographer.\n\nCaptured in April, when Sannomaru Square is at its most vibrant, the camera was brought extremely close to the petals.\n\n\"It might not look like a photo taken at Himeji Castle at all to others. But I know for a fact that it is.\"\n\nThese are the very words of the photographer. Instead of capturing the landmark sharply for everyone to easily recognize, the colossal castle is used as a luxurious background of color. This approach reveals a private connection that exists solely between the 400-year-old fortress and the person standing before it in that exact moment. It is not just a visual record, but a capture of memory and emotion—making it one of the most poetic views in this entire project.",
     "location": {
       "lat": 34.837603544433335,
-      "lng": 134.69401920176045
+      "lng": 134.69401920176045,
+      "name": "三の丸広場"
     }
   },
   "5": {
