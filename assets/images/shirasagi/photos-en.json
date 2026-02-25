@@ -275,14 +275,23 @@
     }
   },
   "20": {
-    "title": "Winter Lights on Otemae",
+    "title": "The Winter Ribbon of Light along Otemae-dori",
+    "subtitle": "Otemae Illumination / At Otemae-dori Street",
     "date": "2025.12.31",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter night",
+    "summary": "On a winter night, the street trees along Otemae-dori are adorned with beautiful illumination lights, and at the end of this ribbon of light, the white castle emerges against the dark sky. Captured handheld from the central median of the roadway, this is a composition allowed only in a fleeting, miraculous moment.",
+    "tips": [
+      { "icon": "📍", "label": "Location", "text": "Otemae-dori (central median near the Egret Himeji intersection)" },
+      { "icon": "📷", "label": "Photo Tip", "text": "Tripods cannot be used here (see safety rules below). A high-ISO capable camera and a fast lens (f/2.8 or wider) for handheld shooting are essential. The only shutter chance comes during the few seconds when the pedestrian signal turns green." },
+      { "icon": "🤝", "label": "Safety Rules", "text": "This is a vehicle roadway median with active traffic on both sides. Never set up a tripod here. Return to the sidewalk immediately when the signal changes. Safety comes first — photography here must be a brief, momentary act." }
+    ],
+    "story": "While View No. 21 from the \"Castle View\" observatory offers a sweeping, pulled-back panorama of Otemae-dori from the elevated station, this View No. 20 is an immersive photograph taken from the very center of the street, placing the photographer right in the middle of the river of light.\n\nThe shooting location is the central median strip near the Egret Himeji intersection on Otemae-dori. With headlights from cars constantly approaching from both sides, setting up a tripod here is absolutely out of the question for safety reasons. The only chance comes during the few seconds when the pedestrian signal turns green — just enough time to cross to the median, raise a high-ISO handheld camera, and capture the white castle floating at the end of the ribbon of light in a single decisive moment.\n\nThe illumination lights in this photograph and the dignified Himeji Castle standing far in the distance — it is a winter night's spectacle where \"modern brilliance\" and \"timeless grace\" are connected by a single path of light. However, the ground you stand on is a vehicle roadway. If you attempt this shot, please prioritize safety above all else, strictly obey traffic signals, and focus only on that brief, fleeting shutter chance.",
+    "story_jp": "第弐拾壱景（No. 21）の「キャッスルビュー」からの展望が、駅の高台から大手前通りの全貌を見渡す「引きの構図」であるのに対し、この第弐拾景（No. 20）はその通りの真ん中に自ら立ち、光の渦中に身を置いて撮影した「没入の一枚」です。\n\n撮影場所は、大手前通りのイーグレ姫路前交差点付近にある中央分離帯。左右の車道から絶え間なく車のヘッドライトが迫るこの場所で、三脚を立てることは安全上、絶対に許されません。歩行者信号が青に変わった僅かな時間に中央分離帯へ渡り、高感度に設定したカメラを手持ちで構え、光の帯の先に浮かぶ白亜の天守を一瞬で切り取る。許された時間はほんの数秒です。\n\nこの写真に写っているイルミネーションの光と、遠くに凛と佇む姫路城。それは「現代の華やかさ」と「不変の品格」が、一本の光の道で結ばれた冬の夜だけの絶景です。しかしそのために足を踏み入れるのは、あくまで車道です。挑戦される方は、周囲の安全を最優先にし、信号のルールを厳守した上で、ほんの一瞬のシャッターチャンスに集中してください。",
     "location": {
       "lat": 34.834310087759384,
       "lng": 134.69248927029412,
-      "name": "Otemae Street"
+      "name": "Otemae-dori (near Egret Himeji intersection)"
     }
   },
   "21": {
