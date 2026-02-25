@@ -763,15 +763,25 @@
             const content = document.getElementById('modal-accordion-content');
             const icon = document.getElementById('modal-accordion-icon');
             const label = document.getElementById('modal-accordion-label');
+            const btn = document.getElementById('modal-accordion-btn');
+            const arrow = btn.querySelector('svg');
             const isOpen = !content.classList.contains('hidden');
             if (isOpen) {
                 content.classList.add('hidden');
                 icon.innerText = '＋';
+                icon.classList.remove('bg-shirasagi-blue', 'text-white', 'border-transparent');
+                icon.classList.add('border-shirasagi-blue/30');
                 label.innerText = 'Read the Full Story';
+                btn.style.background = 'linear-gradient(135deg, rgba(26,63,185,0.04) 0%, rgba(26,63,185,0.08) 100%)';
+                if (arrow) { arrow.style.transform = ''; }
             } else {
                 content.classList.remove('hidden');
                 icon.innerText = '－';
-                label.innerText = 'Close';
+                icon.classList.add('bg-shirasagi-blue', 'text-white', 'border-transparent');
+                icon.classList.remove('border-shirasagi-blue/30');
+                label.innerText = 'Close Story';
+                btn.style.background = 'linear-gradient(135deg, rgba(26,63,185,0.08) 0%, rgba(26,63,185,0.12) 100%)';
+                if (arrow) { arrow.style.transform = 'rotate(90deg)'; }
             }
         }
 
