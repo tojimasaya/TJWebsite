@@ -77,13 +77,23 @@
     }
   },
   "5": {
-    "title": "三の丸春光",
+    "title": "千姫坂道 三の丸春光",
+    "subtitle": "三の丸春光 / 千姫ぼたん園へと続く坂道にて",
     "date": "2025.04.05",
     "gear": "Leica M10",
     "category": "spring afternoon",
+    "summary": "王道の見学ルートから少しだけ外れた場所にある、春の隠れスポット。千姫ぼたん園へと続くゆるやかな坂道の途中からお城を見上げると、満開の桜の海に白亜の天守がふわりと浮かぶような、夢幻の絶景に出会えます。",
+    "tips": [
+      {"icon": "📍", "label": "場所", "text": "千姫ぼたん園へ続く坂道の途中（正確な座標：34.836720, 134.692414）"},
+      {"icon": "📷", "label": "撮影のヒント", "text": "坂を少し登った中腹で足を止め、お城の方角へ振り返るようにカメラを構えるのがポイントです。桜の枝葉が下からお城を包み込むような構図になります。"},
+      {"icon": "🤝", "label": "散策のアドバイス", "text": "桜門から入って真っ直ぐ入城口へ向かうのではなく、三の丸広場の西側にある「千姫ぼたん園」の看板を目印に寄り道をしてみてください。"}
+    ],
+    "story": "姫路城を訪れた際、桜門橋を渡って三の丸広場の横を通り、そのまま天守閣の入城口へと真っ直ぐに向かうのが最も一般的な見学ルートです。しかし、そこから少しだけ寄り道をして、広場の西側に位置する「千姫ぼたん園」へと続く、なだらかな坂道を登ってみてください。\n\nその坂の途中でふと足を止め、お城の方角を覗き込むように見上げると、この奇跡的な構図が現れます。手前から奥へ幾重にも重なる満開の桜の下から、白亜の大天守がふわりと顔を出し、まるで淡いピンク色の海に城が浮かんでいるかのような一枚を撮ることができるのです。\n\n多くの人が足早に通り過ぎてしまうメインルートのすぐそばに、これほど春爛漫の美しい「寄り道」の景色が隠されている。姫路城の懐の深さと、歩き回ることで見つかる新しい発見の喜びを教えてくれる素晴らしいスポットです。",
+    "story_en": "When visiting Himeji Castle, the standard route is to enter through the Sakuramon Gate, walk past Sannomaru Square, and head straight for the main ticket booth. However, we highly recommend taking a slight detour. Try walking up the gentle slope leading to the \"Senhime Peony Gardens\" (Senhime Botan-en) on the western side of the square.\n\nIf you stop halfway up this slope and look back toward the Main Keep, a miraculous composition reveals itself. With layers of full-bloom cherry blossoms stretching from the foreground, the majestic white castle appears to float gracefully on a sea of pink petals.\n\nIt is a beautiful, spring-filled \"detour\" view, hidden right next to the main path that most visitors hurriedly walk past. This spot teaches us the profound depth of Himeji Castle and the joy of new discoveries that come from simply wandering a little off the beaten path.",
     "location": {
-      "lat": 34.83741732376614,
-      "lng": 134.6921878763701
+      "lat": 34.836720,
+      "lng": 134.692414,
+      "name": "千姫ぼたん園へ続く坂道の途中"
     }
   },
   "6": {
