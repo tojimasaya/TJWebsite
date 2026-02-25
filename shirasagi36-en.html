@@ -311,44 +311,44 @@
                     <h3 class="text-xl md:text-2xl font-serif-display mb-2 leading-normal text-shirasagi-ink" id="modal-title">Title</h3>
                     <p class="text-gray-400 text-xs font-serif-display mb-4 md:mb-6" id="modal-subtitle" style="display:none;"></p>
 
-                    <!-- New structured UI: summary + tips (shown when summary exists) -->
+                    <!-- New structured UI: summary + accordion + tips (shown when summary exists) -->
                     <div id="modal-structured" style="display:none;">
                         <p class="text-gray-600 text-sm leading-relaxed font-light font-serif-body mb-4" id="modal-summary"></p>
+
+                        <!-- Accordion: Story expand button + content (placed right after summary) -->
+                        <div id="modal-accordion-wrapper" style="display:none;" class="mb-5">
+                            <button id="modal-accordion-btn" onclick="toggleStoryAccordion()"
+                                class="w-full group/acc relative overflow-hidden flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl text-xs font-medium font-serif-body tracking-wider transition-all duration-300 border border-shirasagi-blue/20 text-shirasagi-blue hover:border-shirasagi-blue/40 hover:shadow-md hover:shadow-shirasagi-blue/10"
+                                style="background: linear-gradient(135deg, rgba(26,63,185,0.04) 0%, rgba(26,63,185,0.08) 100%);">
+                                <span id="modal-accordion-icon" class="inline-flex items-center justify-center w-5 h-5 rounded-full border border-shirasagi-blue/30 text-[10px] font-bold transition-all duration-300 group-hover/acc:bg-shirasagi-blue group-hover/acc:text-white group-hover/acc:border-transparent">＋</span>
+                                <span id="modal-accordion-label" class="transition-colors duration-300">Read the Full Story</span>
+                                <svg class="w-3 h-3 opacity-40 transition-all duration-300 group-hover/acc:opacity-70 group-hover/acc:translate-x-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7"/></svg>
+                            </button>
+                            <div id="modal-accordion-content" class="hidden mt-4 pt-4 border-t border-shirasagi-blue/10">
+                                <p class="text-gray-600 text-sm leading-7 font-light font-serif-body" id="modal-story" style="white-space:pre-line;"></p>
+                            </div>
+                        </div>
+
                         <div id="modal-tips" class="space-y-2 mb-4"></div>
                     </div>
 
                     <!-- Legacy desc (fallback for photos without summary) -->
                     <p class="text-gray-600 text-sm md:text-base leading-relaxed font-light font-serif-body text-justify" id="modal-desc" style="white-space:pre-line;"></p>
 
-                    <!-- Map button (moved above metadata) -->
+                    <!-- Map button -->
                     <a href="#" id="modal-map-link" target="_blank"
-                       class="mt-4 md:mt-6 flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium tracking-wide transition-all duration-200"
-                       style="display:none; background:linear-gradient(135deg,#e8f5e9 0%,#e3f2fd 100%); color:#2e7d32; border:1px solid rgba(46,125,50,0.15);"
-                       onmouseenter="this.style.background='linear-gradient(135deg,#c8e6c9 0%,#bbdefb 100%)';this.style.boxShadow='0 2px 8px rgba(46,125,50,0.15)';this.style.transform='translateY(-1px)'"
-                       onmouseleave="this.style.background='linear-gradient(135deg,#e8f5e9 0%,#e3f2fd 100%)';this.style.boxShadow='none';this.style.transform='translateY(0)'">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                            <circle cx="12" cy="10" r="3"></circle>
-                        </svg>
-                        <span id="modal-map-text">View on Google Maps</span>
-                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="opacity:0.5">
+                       class="group/map mt-4 md:mt-6 relative flex items-center justify-center gap-2.5 px-5 py-3 rounded-xl text-xs font-medium tracking-wide transition-all duration-300 overflow-hidden"
+                       style="display:none; background:linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #ede7f6 100%); color:#2e7d32; border:1px solid rgba(46,125,50,0.12); box-shadow: 0 1px 3px rgba(46,125,50,0.08);"
+                       onmouseenter="this.style.background='linear-gradient(135deg, #c8e6c9 0%, #bbdefb 50%, #d1c4e9 100%)';this.style.boxShadow='0 4px 15px rgba(46,125,50,0.15)';this.style.transform='translateY(-2px)';this.style.borderColor='rgba(46,125,50,0.25)'"
+                       onmouseleave="this.style.background='linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #ede7f6 100%)';this.style.boxShadow='0 1px 3px rgba(46,125,50,0.08)';this.style.transform='translateY(0)';this.style.borderColor='rgba(46,125,50,0.12)'">
+                        <img src="assets/images/ui/map-pin.png" alt="" class="w-7 h-7 object-contain transition-transform duration-300 group-hover/map:scale-110" />
+                        <span id="modal-map-text" class="font-serif-body">View on Google Maps</span>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-40 transition-all duration-300 group-hover/map:opacity-70 group-hover/map:translate-x-0.5">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
                             <polyline points="15 3 21 3 21 9"></polyline>
                             <line x1="10" y1="14" x2="21" y2="3"></line>
                         </svg>
                     </a>
-
-                    <!-- Accordion: Story expand button + content (moved above metadata) -->
-                    <div id="modal-accordion-wrapper" style="display:none;" class="mt-4">
-                        <button id="modal-accordion-btn" onclick="toggleStoryAccordion()"
-                            class="w-full flex items-center justify-center gap-2 px-4 py-2.5 rounded-lg text-xs font-medium font-serif-body tracking-wide transition-all duration-200 border border-gray-200 bg-gray-50 hover:bg-gray-100 text-gray-600 hover:text-shirasagi-ink">
-                            <span id="modal-accordion-icon">＋</span>
-                            <span id="modal-accordion-label">Read the Full Story</span>
-                        </button>
-                        <div id="modal-accordion-content" class="hidden mt-4 pt-4 border-t border-gray-100">
-                            <p class="text-gray-600 text-sm leading-7 font-light font-serif-body" id="modal-story" style="white-space:pre-line;"></p>
-                        </div>
-                    </div>
                 </div>
                 <div class="border-t border-gray-100 pt-4 md:pt-6 space-y-3 md:space-y-4 text-xs font-sans text-gray-500 mt-6 md:mt-8">
                     <div class="flex items-center gap-3"><span class="w-16 opacity-50 tracking-widest">DATE</span> <span id="modal-date" class="font-medium text-gray-800">--</span></div>
