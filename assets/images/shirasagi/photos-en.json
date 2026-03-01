@@ -437,14 +437,34 @@
     }
   },
   "17": {
-    "title": "Otemon Gate in Evening Sun",
+    "title": "Evening Glow at Otemon Gate and Sakuramon Bridge",
+    "subtitle": "Sunset at Sakuramon Bridge",
     "date": "2025.10.01",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
+    "summary": "The magnificent Otemon (Main Gate) and the elegant wooden Sakuramon Bridge bathed in the golden light of the winter setting sun. The intriguing mismatch between the names of the bridge and the gate hides a fascinating tale of Himeji Castle's historical evolution.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Otemon Gate (Sakuramon Bridge), Himeji Castle"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tips",
+        "text": "The late afternoon winter sun casts dramatic shadows, beautifully highlighting the textures of the wooden bridge and the grand gate, making it the perfect time to shoot."
+      },
+      {
+        "icon": "🤝",
+        "label": "Historical Perspective",
+        "text": "As you cross, ponder why a bridge named \"Sakuramon\" leads to a gate named \"Otemon.\" It is a wonderful historical mystery waiting to be uncovered."
+      }
+    ],
+    "story": "The Otemon Gate shines beautifully, illuminated by the winter evening sun. The warm light reflecting off the wooden Sakuramon Bridge on the left adds a profound, atmospheric charm to the scene.\n\nWhen I was growing up in Himeji, there was actually no such grand bridge at the castle entrance. I remember being quite surprised upon returning home one year to find it had been replaced by this beautiful wooden bridge, brimming with Edo-period atmosphere.\n\nHowever, when I learned its name was \"Sakuramon Bridge,\" I felt a slight sense of incongruity. \"Why is it the 'Sakuramon' (Cherry Gate) Bridge when the familiar gate right in front of it is the 'Otemon' (Main Gate)?\"\n\nThe signboard standing behind the gate provided the answer. The original, massive main gate was lost during the Meiji period, and the current Otemon was actually reconstructed in 1938. The bridge before it, however, was restored much later in 2007, based on archaeological excavations. This means that the newly built Sakuramon Bridge serves as a vital historical storyteller, keeping the memory and name of the lost original gate alive today.",
     "location": {
       "lat": 34.835603,
       "lng": 134.692688,
-      "name": "Sakuramon Gate"
+      "name": "Sakuramon Bridge"
     }
   },
   "18": {

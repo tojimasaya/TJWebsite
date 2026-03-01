@@ -451,10 +451,31 @@
     }
   },
   "17": {
-    "title": "追手門夕照",
+    "title": "桜門橋 追手門夕照",
+    "subtitle": "追手門夕照 / 桜門にて",
     "date": "2025.10.01",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
+    "summary": "冬の西日を浴びて黄金色に輝く立派な大手門と、手前に架かる風情ある木造橋「桜門橋」。橋と門で名前が異なる理由には、姫路城が歩んだ歴史の変遷と、時代を超えたロマンが隠されています。",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "場所",
+        "text": "姫路城 大手門（桜門橋）"
+      },
+      {
+        "icon": "📷",
+        "label": "撮影のヒント",
+        "text": "冬の西日が射し込む夕暮れ時、木造の橋と門がドラマチックな陰影を描き出し、最も美しく輝く瞬間を迎えます。"
+      },
+      {
+        "icon": "🤝",
+        "label": "歴史の視点",
+        "text": "橋を渡る際、なぜ「桜門橋」の先に「大手門」があるのか、その名前のちぐはぐな関係に隠された歴史の謎をぜひ紐解いてみてください。"
+      }
+    ],
+    "story": "冬の西日に照らされ、美しく輝く大手門。左に続く木造の「桜門橋」からの光もまた、深い風情を醸し出しています。\n\n私が姫路で育った頃、実はお城の入り口にこれほど立派な橋はありませんでした。いつだったか帰省した際、江戸情緒あふれる美しい木造橋に架け替えられていて大変驚いたのを覚えています。\n\nしかし、その名が「桜門橋」だと知った時、ふと違和感を覚えました。「橋は『桜門』なのに、その先にある馴染み深い門は『大手門』。なぜ名前が違うのか？」と。\n\n門の後ろにある立て看板が、その謎を教えてくれました。かつての巨大な主門は明治時代に失われ、現在の大手門は昭和13年（1938年）に再建されたもの。そして手前の橋は、発掘調査をもとに平成19年（2007年）に復元されたものだったのです。つまりこの新しい桜門橋は、失われたかつての門の名と歴史を今に伝える、大切な「歴史の語り部」だったのですね。",
+    "story_en": "The Otemon Gate shines beautifully, illuminated by the winter evening sun. The warm light reflecting off the wooden Sakuramon Bridge on the left adds a profound, atmospheric charm to the scene.\n\nWhen I was growing up in Himeji, there was actually no such grand bridge at the castle entrance. I remember being quite surprised upon returning home one year to find it had been replaced by this beautiful wooden bridge, brimming with Edo-period atmosphere.\n\nHowever, when I learned its name was \"Sakuramon Bridge,\" I felt a slight sense of incongruity. \"Why is it the 'Sakuramon' (Cherry Gate) Bridge when the familiar gate right in front of it is the 'Otemon' (Main Gate)?\"\n\nThe signboard standing behind the gate provided the answer. The original, massive main gate was lost during the Meiji period, and the current Otemon was actually reconstructed in 1938. The bridge before it, however, was restored much later in 2007, based on archaeological excavations. This means that the newly built Sakuramon Bridge serves as a vital historical storyteller, keeping the memory and name of the lost original gate alive today.",
     "location": {
       "lat": 34.835603,
       "lng": 134.692688,
