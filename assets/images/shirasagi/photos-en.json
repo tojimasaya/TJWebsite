@@ -1,55 +1,88 @@
 {
   "1": {
-    "title": "Cherry Blossoms and Spring Mist by Shiromibashi Bridge",
-    "subtitle": "Cherry Blossoms, the Red Bridge, and a Traditional Boat on the Moat",
+    "title": "Shiromibashi Riverside — Cherry Blossoms in Spring Haze",
+    "subtitle": "Cherry Blossoms, Red Bridge, and a Wasen on the Moat",
     "date": "2025.04.05",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring morning",
     "summary": "Spring is when Himeji Castle is at its most spectacular. Right next to the Himeji City Zoo lies one of the finest spots to capture this seasonal beauty.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Next to the zoo, along the inner moat (near Shiromibashi Bridge)" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Wait for the regularly scheduled traditional boat to pass near the red bridge for the best shot." },
-      { "icon": "🤝", "label": "Etiquette", "text": "A highly popular but limited space. Please be mindful and take turns." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Next to the zoo, along the inner moat (near Shiromibashi Bridge)"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Wait for the regularly scheduled traditional boat to pass near the red bridge for the best shot."
+      },
+      {
+        "icon": "🤝",
+        "label": "Etiquette",
+        "text": "A highly popular but limited space. Please be mindful and take turns."
+      }
     ],
     "story": "Imagine a natural frame made of pale pink Somei-Yoshino cherry blossoms in full bloom. Beyond it, the striking crimson of the Shiromibashi bridge contrasts beautifully with the water, as an elegant Wasen (traditional Japanese boat) glides peacefully along the inner moat. In the background, the majestic white Main Keep (Daitenshu) towers calmly against the spring sky. The composition of these elements overlapping in perfect harmony is truly breathtaking.\n\nTucked away slightly, this hidden viewpoint buzzes with a quiet, passionate energy during the few days the cherry blossoms are at their peak. If you head near the zoo, you will easily spot the exact location by the crowd of photographers with their cameras ready.",
-    "story_jp": "満開のソメイヨシノが形作る淡い桜色の額縁。その向こうには、水面に鮮やかなコントラストを描く真紅の「城見橋（しろみばし）」と、静かな内堀を滑るように進む風雅な和船。そして、すべての奥で春の空に泰然とそびえ立つ白亜の大天守。これらがひとつの視界に完璧なバランスで重なる構図は、まさに息を呑むほどの美しさです。\n\nここは少し奥まった場所にある絶景ポイントですが、桜が満開を迎える数日間は、この奇跡の瞬景を求める人々の静かな熱気に包まれます。動物園のそばまで足を運べば、たくさんの人がカメラを構えているため、すぐにその場所を見つけることができるでしょう。",
     "location": {
       "lat": 34.836111,
       "lng": 134.69477
     }
   },
   "2": {
-    "title": "Castle of Cherry Blossom Clouds from a Southwestern Viewpoint",
-    "subtitle": "Castle of Cherry Blossom Clouds / From a Private Location",
+    "title": "Southwest Panorama — Castle in Cherry Blossom Clouds",
+    "subtitle": "Castle in Cherry Blossom Clouds / From a Private Space",
     "date": "2025.04.05",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring evening",
     "summary": "A breathtakingly beautiful panoramic view of Himeji Castle from the southwest. Amid the gentle, relaxed atmosphere of a soft spring haze, the white castle appears to float on a sea of cherry blossom clouds — an irresistibly beautiful scene.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Undisclosed (photographed from a private condominium)" },
-      { "icon": "📷", "label": "Highlights", "text": "With the lush greenery of Koko-en Garden in the foreground and the full majesty of Himeji Castle beyond, this is a perfect composition that can never be seen from a tourist's vantage point." },
-      { "icon": "🤝", "label": "Note", "text": "This photograph was taken from private property that is not accessible to the public. The location is therefore kept confidential. Please enjoy this special spring view through this photograph." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Undisclosed (photographed from a private condominium)"
+      },
+      {
+        "icon": "📷",
+        "label": "Highlights",
+        "text": "With the lush greenery of Koko-en Garden in the foreground and the full majesty of Himeji Castle beyond, this is a perfect composition that can never be seen from a tourist's vantage point."
+      },
+      {
+        "icon": "🤝",
+        "label": "Note",
+        "text": "This photograph was taken from private property that is not accessible to the public. The location is therefore kept confidential. Please enjoy this special spring view through this photograph."
+      }
     ],
     "story": "This photograph captures a spectacular, panoramic view of Himeji Castle from the southwest. As spring arrives, the city is gently enveloped in a soft \"spring haze\" (Harugasumi). The sight of the white castle seemingly floating on a sea of cherry blossom clouds creates a deeply relaxing and breathtakingly beautiful scene.\n\nIn the foreground, you can see the lush greenery of Koko-en, the beautiful Japanese garden built on the castle's former western residence grounds. Beyond it, the entire complex of the Main Keep stands in perfect balance.\n\nThis particular photograph was actually taken from a private condominium. Unlike the dynamic views from busy tourist spots, the uniquely relaxed and gentle atmosphere of this image comes from the fact that it represents the everyday perspective of the locals who live alongside the castle.\n\nOut of respect for privacy, the exact location cannot be disclosed. However, through this project, we are thrilled to share with you this exclusive, privileged glimpse from a \"secret premium seat\" known only to those who call this city home.",
-    "story_jp": "姫路城を南西方向から見渡す、非常に美しい全景です。手前には姫路城西御屋敷跡庭園である「好古園」の緑が広がり、その奥に連立式天守の全貌が素晴らしいバランスでそびえ立っています。\n\n春の訪れとともに、街全体がほんのりと「春霞（はるがすみ）」に包まれます。張り詰めた冬の空気が緩み、すべてが淡い色彩に染まるような時間。桜の雲海にふわりと浮かび上がるような白鷺城の姿は、いつまで眺めていても飽きることがありません。\n\n実はこの一枚は、あるプライベートなマンションの一室から撮影されたものです。観光名所からのダイナミックな眺めとは異なり、この写真からどこか「ゆったりとした空気感」が伝わってくるのは、これが姫路城と共に暮らす人々の、穏やかな日常の視点だからかもしれません。プライバシーの観点から場所を明かすことはできませんが、このプロジェクトを通して、姫路の街に暮らす人だけが知る「秘密の特等席」からの景色を皆様と分かち合えればと思います。",
     "location": {
-      "name": "Undisclosed (photographed from a private residence)"
+      "name": "Undisclosed (private location)"
     }
   },
   "3": {
-    "title": "Night Cherry Blossoms — The Natural Frame at Sannomaru",
-    "subtitle": "Night Cherry Blossoms and the White Heron / At Sannomaru Square",
+    "title": "Sannomaru — Night Cherry Blossom Frame",
+    "subtitle": "Night Cherry Blossom White Heron / At Sannomaru Square",
     "date": "2025.04.09",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring night",
     "summary": "The collaboration of the illuminated Himeji Castle and Yozakura (cherry blossoms at night) in the spring evening is truly magical. Taking a leisurely stroll through Sannomaru Square at night is a delightful and uplifting experience unique to this season.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Sannomaru Square" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Use the drooping cherry blossom branches as a natural 'picture frame,' placing the Main Keep at the center for a stunning composition." },
-      { "icon": "🤝", "label": "Etiquette", "text": "This is a popular Hanami spot bustling with visitors. Please be mindful of others' privacy and avoid blocking pathways." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Sannomaru Square"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Use the drooping cherry blossom branches as a natural 'picture frame,' placing the Main Keep at the center for a stunning composition."
+      },
+      {
+        "icon": "🤝",
+        "label": "Etiquette",
+        "text": "This is a popular Hanami spot bustling with visitors. Please be mindful of others' privacy and avoid blocking pathways."
+      }
     ],
     "story": "The collaboration of the illuminated Himeji Castle and Yozakura (cherry blossoms at night) in the spring evening is truly magical. Taking a leisurely stroll through Sannomaru Square at night is a delightful and uplifting experience unique to this season.\n\nThis particular photograph was composed by using the surrounding full-bloom cherry blossom branches as a natural picture frame, capturing the dignified Main Keep perfectly in the center.\n\nBeyond the beauty of the blossoms and the grandeur of the architecture, the lively yet peaceful presence of people enjoying Hanami (cherry blossom viewing parties) under the trees is an essential part of the castle town's spring scenery. One day, I secretly plan to capture a sweeping photograph that includes the joyful gatherings of these people, adding a new chapter to these \"Thirty-Six Views.\"",
-    "story_jp": "夜空に白く浮かび上がる大天守と、ほのかに照らされた夜桜。春の夜、三の丸広場を散策するのは、本当に気持ちが良く、心が浮き立つような楽しさがあります。\n\nこの一枚は、周囲に咲き誇る満開の桜をフレーム（額縁）のように使い、その中心に凛とした姫路城を捉える構図で撮影しました。\n\n桜の美しさや建築の雄大さはもちろんですが、桜の下でシートを広げ、和やかにお花見を楽しむ人々の気配や賑わいもまた、城下町の春を彩る大切な風景の一部です。いつか、そんな人々の楽しげな営みも一緒に広大な一枚の写真に収め、この「三十六景」の新たな1ページとして加えたいと密かに計画しています。",
     "location": {
       "lat": 34.838124,
       "lng": 134.69267,
@@ -57,19 +90,30 @@
     }
   },
   "4": {
-    "title": "Phantom Castle in the Floral Haze at Sannomaru Square",
-    "subtitle": "A World Heritage backdrop dissolved into beautiful bokeh / From Sannomaru Square",
+    "title": "Sannomaru Square — Phantom Castle in Cherry Haze",
+    "subtitle": "Castle in Cherry Haze / At Sannomaru Square",
     "date": "2025.04.01",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon",
     "summary": "I got up close to the cherry blossoms in full bloom and intentionally dissolved the massive Main Keep behind them into a beautiful, soft blur (bokeh), letting it melt into the spring haze. At first glance, it might not look like Himeji Castle at all—but I know for a fact that it is.",
     "tips": [
-      {"icon": "📍", "label": "Location", "text": "Sannomaru Square, Himeji Castle"},
-      {"icon": "📷", "label": "Photo Tip", "text": "By getting extremely close to the cherry blossoms and shooting with a wide-open aperture (low f-stop), even the massive architecture in the background transforms into a dreamy bokeh effect."},
-      {"icon": "🤝", "label": "Viewing Perspective", "text": "Photography is not just about capturing landmarks in sharp focus. Capturing the very feeling of spring air as your heart perceives it on the spot is also one of the great joys of castle photography."}
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Sannomaru Square, Himeji Castle"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "By getting extremely close to the cherry blossoms and shooting with a wide-open aperture (low f-stop), even the massive architecture in the background transforms into a dreamy bokeh effect."
+      },
+      {
+        "icon": "🤝",
+        "label": "Viewing Perspective",
+        "text": "Photography is not just about capturing landmarks in sharp focus. Capturing the very feeling of spring air as your heart perceives it on the spot is also one of the great joys of castle photography."
+      }
     ],
     "story": "On a day in April when the cherry blossoms were in full bloom, I got up close to the flowers in Sannomaru Square to take this shot. The structure visible in the background is the Main Keep of Himeji Castle, though it is significantly blurred.\n\nIt might not look like a photo taken at Himeji Castle at all to others. But I know for a fact that it is.\n\nInstead of capturing the landmark sharply for everyone to easily recognize, I intentionally reversed the roles, using the colossal castle as a luxurious background of soft color. It feels as though there is a secret, intimate dialogue that exists solely between the 400-year-old fortress and myself standing there in that exact moment. It is not just a visual record, but a capture of the spring air and my own personal memory—making it a very special piece to me.",
-    "story_jp": "4月、三の丸広場が一年で最も華やぐ満開の季節。ある日、私は桜の花にぐっと近づいてこの写真を撮影しました。背後に見えるのは、かなりボケていますが、紛れもなく姫路城の天守閣です。\n\nまるで姫路城で撮ったとは思えないような写真かもしれません。しかし、私にはこれが姫路城だと分かっています。\n\n観光名所を誰もが分かるように鮮明に切り取るのではなく、あえて主従を逆転させ、巨大な城を背景の「彩り」として贅沢に使う。そこには、400年の歴史を持つお城と、その瞬間にカメラを構えた私との間にだけ存在する、密やかな対話があるように感じています。ただの記録写真ではなく、あの日の春の空気感と私の心象風景をそのまま写し取った、とても思い入れのある一枚です。",
     "location": {
       "lat": 34.837603544433335,
       "lng": 134.69401920176045,
@@ -77,59 +121,92 @@
     }
   },
   "5": {
-    "title": "Spring Light at Sannomaru from the Senhime Slope",
-    "subtitle": "A hidden spring gem just off the main route / From the slope to Senhime Peony Gardens",
+    "title": "Senhime Slope — Spring Light of Sannomaru",
+    "subtitle": "Spring Light / On the Slope to Senhime Peony Garden",
     "date": "2025.04.05",
     "gear": "Leica M10",
     "category": "spring afternoon",
     "summary": "A hidden spring spot just slightly off the standard sightseeing route. Halfway up the gentle slope leading to the Senhime Peony Gardens, look up toward the castle and you will find a dreamlike view—the white Main Keep floating above a sea of cherry blossoms in full bloom.",
     "tips": [
-      {"icon": "📍", "label": "Location", "text": "Halfway up the slope leading to the Senhime Peony Gardens (Coordinates: 34.836720, 134.692414)"},
-      {"icon": "📷", "label": "Photo Tip", "text": "Stop midway up the slope and turn your camera back toward the castle. The cherry branches will frame the castle from below, creating a composition where it appears to float on blossoms."},
-      {"icon": "🤝", "label": "Strolling Advice", "text": "Instead of heading straight to the ticket booth from the Sakuramon Gate, look for the sign to the Senhime Peony Gardens on the western side of Sannomaru Square and take a short detour."}
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Halfway up the slope leading to the Senhime Peony Gardens (Coordinates: 34.836720, 134.692414)"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Stop midway up the slope and turn your camera back toward the castle. The cherry branches will frame the castle from below, creating a composition where it appears to float on blossoms."
+      },
+      {
+        "icon": "🤝",
+        "label": "Strolling Advice",
+        "text": "Instead of heading straight to the ticket booth from the Sakuramon Gate, look for the sign to the Senhime Peony Gardens on the western side of Sannomaru Square and take a short detour."
+      }
     ],
     "story": "When visiting Himeji Castle, the standard route is to enter through the Sakuramon Gate, walk past Sannomaru Square, and head straight for the main ticket booth. However, we highly recommend taking a slight detour. Try walking up the gentle slope leading to the \"Senhime Peony Gardens\" (Senhime Botan-en) on the western side of the square.\n\nIf you stop halfway up this slope and look back toward the Main Keep, a miraculous composition reveals itself. With layers of full-bloom cherry blossoms stretching from the foreground, the majestic white castle appears to float gracefully on a sea of pink petals.\n\nIt is a beautiful, spring-filled \"detour\" view, hidden right next to the main path that most visitors hurriedly walk past. This spot teaches us the profound depth of Himeji Castle and the joy of new discoveries that come from simply wandering a little off the beaten path.",
-    "story_jp": "姫路城を訪れた際、桜門橋を渡って三の丸広場の横を通り、そのまま天守閣の入城口へと真っ直ぐに向かうのが最も一般的な見学ルートです。しかし、そこから少しだけ寄り道をして、広場の西側に位置する「千姫ぼたん園」へと続く、なだらかな坂道を登ってみてください。\n\nその坂の途中でふと足を止め、お城の方角を覗き込むように見上げると、この奇跡的な構図が現れます。手前から奥へ幾重にも重なる満開の桜の下から、白亜の大天守がふわりと顔を出し、まるで淡いピンク色の海に城が浮かんでいるかのような一枚を撮ることができるのです。\n\n多くの人が足早に通り過ぎてしまうメインルートのすぐそばに、これほど春爛漫の美しい「寄り道」の景色が隠されている。姫路城の懐の深さと、歩き回ることで見つかる新しい発見の喜びを教えてくれる素晴らしいスポットです。",
     "location": {
-      "lat": 34.836720,
+      "lat": 34.83672,
       "lng": 134.692414,
-      "name": "Slope to Senhime Peony Gardens"
+      "name": "Slope to Senhime Peony Garden"
     }
   },
   "6": {
-    "title": "View of Youth from the Hakuro Schoolgrounds",
-    "subtitle": "A World Heritage backdrop to everyday school life / From the perimeter road near Hakuro Elementary and Junior High School",
+    "title": "Hakuro School — View of Youth",
+    "subtitle": "View from Hakuro School / Across the Athletic Fields",
     "date": "2025.04.05",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "spring afternoon",
     "summary": "Behind the students sweating on the athletic field, a World Heritage site towers as if it were the most natural thing in the world. This place, which brings back fond memories from decades past, is a luxuriously fresh everyday scene where the castle quietly watches over the youth of Himeji's children.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Perimeter road around Hakuro Elementary and Junior High School" },
-      { "icon": "📷", "label": "Scenic Highlights", "text": "The striking contrast between vibrant modern school life and a 400-year-old historic monument." },
-      { "icon": "🤝", "label": "Strict Rules", "text": "This is an active school where children study every day. Unauthorized entry onto school grounds and any photography that could compromise students' privacy (including pointing a camera toward them) is strictly prohibited. Please enjoy the scenery only from the public perimeter sidewalk, with full respect for the rules." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Perimeter road around Hakuro Elementary and Junior High School"
+      },
+      {
+        "icon": "📷",
+        "label": "Scenic Highlights",
+        "text": "The striking contrast between vibrant modern school life and a 400-year-old historic monument."
+      },
+      {
+        "icon": "🤝",
+        "label": "Strict Rules",
+        "text": "This is an active school where children study every day. Unauthorized entry onto school grounds and any photography that could compromise students' privacy (including pointing a camera toward them) is strictly prohibited. Please enjoy the scenery only from the public perimeter sidewalk, with full respect for the rules."
+      }
     ],
     "story": "Decades ago, when I was a junior high school student, I visited this very ground several times to compete in city tennis tournaments. I still fondly remember playing matches on the courts that used to be here.\n\nAlthough the school is now a combined elementary and junior high school (Hakuro Elementary and Junior High School), the magnificent view of Himeji Castle towering over the athletic field remains exactly the same. The students who attend this school might take this incredible \"luck\" for granted, not fully realizing what a privilege it is to spend their daily lives watched over by a World Heritage site.\n\nHowever, years from now, when they are adults looking back at the smartphone photos from their school days, they will notice that the majestic white castle was always standing beautifully behind their lively, smiling faces. Imagining the moment they make that heartwarming discovery fills me with excitement and warmth. The castle quietly watches over not just the history of the city, but also the precious memories of its people's youth.",
-    "story_jp": "何十年も前、私がまだ中学生だった頃。姫路市のテニスの大会で、このグラウンドにあったコートで何度か試合をした懐かしい記憶があります。\n\n現在、この場所は統合により小中一貫校（白鷺小中学校）へと姿を変えましたが、グラウンドから雄大な姫路城を見上げる素晴らしい景色は当時のままです。この学び舎に通う生徒たちは、毎日お城に見守られながら過ごすという「幸運」を、今は当たり前のこととして特に意識していないかもしれません。\n\nしかし何年か後、大人になってからふと学生時代のスマホの写真を見返したとき、生き生きと笑う自分たちの背後に、いつもあの白亜の城が美しく佇んでいたことに気がつくはずです。その事実に巡り会う彼らの未来の瞬間を想像すると、なんだかとってもワクワクして、温かい気持ちになります。お城は、街の歴史だけでなく、人々の青春の記憶もこうして静かに見守り続けているのです。",
     "location": {
       "lat": 34.83417812343474,
       "lng": 134.68831030207494,
-      "name": "Near Hakuro Elementary & Junior High School (from perimeter road)"
+      "name": "Near Hakuro School (perimeter road)"
     }
   },
   "7": {
-    "title": "The Complex Keep System in Fresh Greenery from Mount Otokoyama",
-    "subtitle": "Castle in Fresh Green / At Otokoyama Reservoir Park",
+    "title": "Otokoyama Heights — Tower Complex in Fresh Green",
+    "subtitle": "Fresh Green of Otokoyama / At Otokoyama Reservoir Park",
     "date": "2025.05.20",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "summer afternoon",
     "summary": "Himeji Castle shows a completely different face depending on the angle from which you view it. The summit of Mount Otokoyama, reached after climbing 198 steps, offers a miraculous vantage point where you can see all three small keeps of the Renritsu-shiki Tenshu (complex interconnected keep system) three-dimensionally, meeting the Main Keep perfectly eye-to-eye.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Otokoyama Reservoir Park (summit plaza)" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Surrounding the Main Keep, you can frame the West Small Keep on the lower right, the Inui Small Keep in the center foreground, and the East Small Keep in the deep left — all three small keeps in one perfect composition." },
-      { "icon": "🤝", "label": "Safety Note", "text": "Reaching this view requires climbing 198 steep steps. Wear comfortable shoes and bring water." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Otokoyama Reservoir Park (summit plaza)"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Surrounding the Main Keep, you can frame the West Small Keep on the lower right, the Inui Small Keep in the center foreground, and the East Small Keep in the deep left — all three small keeps in one perfect composition."
+      },
+      {
+        "icon": "🤝",
+        "label": "Safety Note",
+        "text": "Reaching this view requires climbing 198 steep steps. Wear comfortable shoes and bring water."
+      }
     ],
     "story": "The architectural greatness of Himeji Castle lies in the fact that the Main Keep does not stand alone. It is connected to three smaller keeps by roofed passages.\n\nThe view from Otokoyama is special for two main reasons. First, looking from this northwestern direction, you can see all the small keeps simultaneously: the West Small Keep on the lower right, the Inui Small Keep closest to you in the center foreground, and the East Small Keep tucked away in the deep left. This layout perfectly highlights an overwhelming architectural complexity and formidable defense seen in few other castles.\n\nSecond is the brilliant reversal of elevation. The summit of Otokoyama, reached after a breathless climb up exactly 198 steep steps, sits at an elevation of approximately 57.5 meters. This is actually over 10 meters higher than the stone base of Himeyama (approx. 45.8 meters) where the castle stands. Because of this, you don't look up at the castle. Instead, you look slightly down upon the intricate, overlapping roofs of the three smaller keeps, while finding yourself perfectly eye-level with the middle floors of the Main Keep. It is an unparalleled premium seat to accurately grasp the true three-dimensional shape and massive scale of the fortress.",
-    "story_jp": "姫路城の建築的な偉大さは、大天守が単独で建っているのではなく、3つの小天守が渡櫓（わたりやぐら）で結ばれた「連立式天守」である点にあります。\n\n男山からの眺めが特別な理由は大きく2つあります。1つ目は、この北西の方角から城を望むと、大天守の右下に「西小天守」、男山に最も近い手前中央に「乾小天守」、そして左の奥に「東小天守」と、連立するすべての小天守の配置を一度に捉えることができる点です。他に類を見ない圧倒的な複雑さと、堅牢な要塞としての姿がこの見事な配置から浮かび上がります。\n\n2つ目は、その絶妙な「高さの逆転」です。息を切らして198段の階段を登り切った男山の頂上は、標高約57.5m。これは、姫路城が建つ「姫山」の基盤（標高約45.8m）よりも10m以上高い位置にあります。そのため、城を見上げるのではなく、眼下に3つの小天守の複雑な屋根の重なりを見下ろしつつ、そびえ立つ大天守の中層部とまさに「水平に目が合う」視線となるのです。城の真の立体感とスケールを最も正確に把握できる、比類なき特等席と言えるでしょう。",
     "location": {
       "lat": 34.84193162015072,
       "lng": 134.6899754350028,
@@ -137,37 +214,44 @@
     }
   },
   "8": {
-    "title": "Twilight and the White Heron at Toko-ji Cemetery",
-    "subtitle": "The castle quietly floating beyond the silence",
+    "title": "Tokoji Cemetery — Twilight and White Heron",
+    "subtitle": "The White Castle Beyond the Silence",
     "date": "2025.05.04",
     "gear": "Xiaomi 15 Ultra",
     "category": "summer evening",
     "summary": "The meticulously maintained and peaceful Toko-ji Cemetery offers a deeply emotional perspective of Himeji Castle. When you walk to the highest tier of the grounds and turn around, the castle quietly reveals itself in the distance.",
     "tips": [
-      { "icon": "📷", "label": "Photo Tip", "text": "An ultra-telephoto lens equivalent to 400mm is required (the sample photo was taken using the telephoto mode of a Xiaomi 15 Ultra)." },
-      { "icon": "🙏", "label": "Respect & Privacy", "text": "This is not a tourist spot, but a sacred resting place. Please maintain absolute silence and ensure no personal names on tombstones are visible in your photos." }
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "An ultra-telephoto lens equivalent to 400mm is required (the sample photo was taken using the telephoto mode of a Xiaomi 15 Ultra)."
+      },
+      {
+        "icon": "🙏",
+        "label": "Respect & Privacy",
+        "text": "This is not a tourist spot, but a sacred resting place. Please maintain absolute silence and ensure no personal names on tombstones are visible in your photos."
+      }
     ],
     "story": "During the \"magic hour\"—the fleeting time around sunset when the sky is painted in mystical gradients of color—the white majestic keep seems to gently float above the darkening silhouette of the city. It is a surreal and breathtaking sight. One cannot help but feel a sense of peaceful envy for those resting in this quiet high ground, knowing they can gaze upon this beautiful castle for eternity. This view truly reflects the profound, spiritual connection between the locals and their beloved castle.",
-    "story_jp": "日没前後、空が神秘的な色彩のグラデーションに染まる「マジックアワー」。暮れゆく街のシルエットの向こうで、白亜の天守がふわりと浮かび上がる光景は、現実離れした美しさを持っています。この静かな高台で永遠の眠りにつく人々が、いつでも遠くに美しい城を眺めていられることを、少し羨ましくも感じる——そんな、城と人々の深い精神的な繋がりを感じさせる特別な「景」です。",
     "location": {
       "lat": 34.85122823181544,
       "lng": 134.69356315389032,
-      "name": "Toko-ji Cemetery"
+      "name": "Tokoji Cemetery"
     }
   },
   "9": {
-    "title": "Castle Illuminated by Evening Sun",
+    "title": "White Heron in Evening Light",
     "date": "2025.07.29",
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
     "location": {
       "lat": 34.83674184834749,
       "lng": 134.69352446438512,
-      "name": "Sannomaru Plaza"
+      "name": "Sannomaru Square"
     }
   },
   "10": {
-    "title": "White Heron Castle from Sakuramon Bridge",
+    "title": "Sakuramon Bridge at Sunset",
     "date": "2025.07.29",
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
@@ -188,19 +272,30 @@
     }
   },
   "13": {
-    "title": "Autumn Colors of the Castle Town from Otemae High Tower",
-    "subtitle": "A sweeping panorama of fiery autumn colors surrounding the white keep",
+    "title": "Otemae Rooftop — Autumn Brocade Below the Castle",
+    "subtitle": "Autumn Colors Across the Castle Grounds from the Egret Himeji Rooftop",
     "date": "2025.11.13",
     "gear": "Leica M10",
     "category": "autumn afternoon",
     "summary": "Adjacent to Otemae Park stands \"Egret Himeji.\" Its rooftop observatory is a prime viewing deck in the sky, offering a sweeping panoramic view of Himeji Castle from the closest building to the grounds.",
     "tips": [
-      { "icon": "📷", "label": "Capture Autumn", "text": "Use a wide-angle lens or panorama mode to frame the massive scale of autumn foliage surrounding the castle." },
-      { "icon": "🔭", "label": "Binoculars", "text": "Free binoculars are available on the rooftop — use them to appreciate the intricate architectural details up close." },
-      { "icon": "🤝", "label": "Public Space", "text": "The rooftop is open to everyone. When using a tripod, please be mindful not to block pathways or views." }
+      {
+        "icon": "📷",
+        "label": "Capture Autumn",
+        "text": "Use a wide-angle lens or panorama mode to frame the massive scale of autumn foliage surrounding the castle."
+      },
+      {
+        "icon": "🔭",
+        "label": "Binoculars",
+        "text": "Free binoculars are available on the rooftop — use them to appreciate the intricate architectural details up close."
+      },
+      {
+        "icon": "🤝",
+        "label": "Public Space",
+        "text": "The rooftop is open to everyone. When using a tripod, please be mindful not to block pathways or views."
+      }
     ],
     "story": "In this expansive, unobstructed panorama, the autumn scenery is particularly breathtaking. The entire castle grounds are dyed in fiery reds and brilliant golds, surrounding the majestic white Main Keep. This stunning gradient of autumn colors (Kinshu) can only be fully captured from this elevated vantage point.\n\nAdditionally, free binoculars are available on the rooftop. Looking through the lenses, you can clearly see the intricate details of the castle's architecture and even the people walking through the vast grounds, giving you a real sense of the castle's overwhelming scale. We highly recommend trying them to experience the grandeur firsthand.",
-    "story_jp": "視界を遮るもののない広大なパノラマのなかで、特に息を呑むのが秋の情景です。白亜の大天守を取り囲むように、城域全体が燃えるような赤や鮮やかな黄金色に染まりゆく「錦秋（きんしゅう）」のグラデーションは、この高台からでなければその全貌を捉えることはできません。\n\nまた、ここには無料で利用できる双眼鏡が設置されています。レンズを覗き込めば、天守閣の精巧な造りや、広大な城内を歩く人々の姿まで鮮明に確認でき、お城の圧倒的な巨大さを肌で感じることができます。ぜひ、ご自身の目でその迫力を体感してください。",
     "location": {
       "lat": 34.833760539765045,
       "lng": 134.6942266552122,
@@ -208,64 +303,97 @@
     }
   },
   "14": {
-    "title": "The Hidden Water Mirror at Kita-Segakushi Gate Ruins",
-    "subtitle": "Inverted Castle / At Kita-Segakushi Gate Ruins",
+    "title": "Kita-Segakushimon — Hidden Water Mirror",
+    "subtitle": "Castle in the Water Mirror / At Kita-Segakushimon Ruins",
     "date": "2025.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
-    "orientation": "portrait",
     "summary": "This is a secret vantage point that only those who explore Himeji Castle with the utmost curiosity can discover. It is the miracle of the \"Water Mirror\" (Mizukagami), where the majestic white keep is perfectly reflected upside down in a small pond beside the historic spring, Sagi-no-Shimizu.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Outside the Kita-Segakushi Gate ruins (small pond beside Sagi-no-Shimizu spring)" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Choose a calm, windless day for the water surface to become a perfect mirror, capturing the beautiful 'Inverted Himeji Castle.'" },
-      { "icon": "🤝", "label": "Explorer's Tip", "text": "You won't find this by simply walking along the inner moat through Himeyama Park. The autumn foliage season is especially stunning — seek it out like a treasure hunt." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Outside the Kita-Segakushi Gate ruins (small pond beside Sagi-no-Shimizu spring)"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Choose a calm, windless day for the water surface to become a perfect mirror, capturing the beautiful 'Inverted Himeji Castle.'"
+      },
+      {
+        "icon": "🤝",
+        "label": "Explorer's Tip",
+        "text": "You won't find this by simply walking along the inner moat through Himeyama Park. The autumn foliage season is especially stunning — seek it out like a treasure hunt."
+      }
     ],
     "story": "This spot is like a hidden stage within the castle grounds; if you aren't actively looking for it, you will easily walk right past. When strolling around the inner moat, most people simply follow the walking path through Himeyama Park. However, you cannot see this view from that path. It is only when you intentionally step \"outside\" through the stone walls of the Kita-Segakushi Gate ruins that this secret landscape reveals itself.\n\nThere lies Sagi-no-Shimizu. The surface of the small pond next to it acts as a canvas, reflecting the castle like a flawless mirror. During the autumn foliage season, the surrounding trees turn vibrant shades of red and yellow, creating a breathtaking, miniature-garden-like masterpiece of the white castle and its reflection. Because it is so easily overlooked, it is a hidden gem that we highly recommend seeking out.",
-    "story_jp": "この場所は、相当意識して探さないと通り過ぎてしまう、姫路城における「隠しステージ」のような場所です。\n\n城の周囲を内堀に沿ってぐるりと回る際、多くの人はそのまま姫山公園の遊歩道を通り抜けてしまいます。しかし、そこからはこの景色は見えません。かつての城の出入り口であった「北勢隠門跡（きたせがくしもんあと）」の石垣をあえて「外」へと抜け出したとき、初めてこの秘密の風景が目の前に広がります。\n\nそこにあるのは「鷺の清水（さぎのしみず）」と呼ばれる井戸の跡。そのすぐ横にある小さな池の水面がキャンバスとなり、姫路城の壮麗な姿を鏡のように映し出すのです。周囲の木々が色づく紅葉の季節には、赤や黄色の錦秋と白亜の城、そしてその水鏡という、息を呑むような箱庭的絶景に出会うことができます。気が付きにくい場所だからこそ、絶対に訪れてほしいと強くおすすめする名スポットです。",
+    "orientation": "portrait",
     "location": {
       "lat": 34.84101926090324,
       "lng": 134.69188914683946,
-      "name": "Kita-Segakushi Gate Ruins"
+      "name": "Kita-Segakushimon Ruins"
     }
   },
   "15": {
-    "title": "Autumn Colors and the Red Brick Museum Garden",
-    "subtitle": "The Changing Reds and the Unchanging White Heron / At Himeji City Museum of Art",
+    "title": "Art Museum Garden — Autumn Colors and Red Brick",
+    "subtitle": "Changing Reds and the Eternal White Heron / At Himeji City Museum of Art",
     "date": "2025.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "summary": "As autumn deepens, the elegant red bricks of the Himeji City Museum of Art and the surrounding foliage create a beautiful gradient of autumn colors, forming a striking contrast with the majestic white Himeji Castle towering in the background. This is a special place where you can appreciate not only visual beauty but also the profound historical transitions of Himeji.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Himeji City Museum of Art Front Garden" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Compose your shot with autumn foliage in the foreground, the red brick building in the middle ground, and the Main Keep in the background — layering these 'three planes' brings out the most vivid contrast of colors." },
-      { "icon": "🤝", "label": "Historical Perspective", "text": "A castle that has marked 400 years of time, and a modern building that has changed its role with each era. Consider the 'contrast of time' between these two structures." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Himeji City Museum of Art Front Garden"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Compose your shot with autumn foliage in the foreground, the red brick building in the middle ground, and the Main Keep in the background — layering these 'three planes' brings out the most vivid contrast of colors."
+      },
+      {
+        "icon": "🤝",
+        "label": "Historical Perspective",
+        "text": "A castle that has marked 400 years of time, and a modern building that has changed its role with each era. Consider the 'contrast of time' between these two structures."
+      }
     ],
     "story": "As autumn deepens, the elegant red bricks of the Himeji City Museum of Art and the surrounding foliage create a beautiful gradient of autumn colors. This vibrant display forms a striking contrast with the majestic white Himeji Castle towering in the background.\n\nThis beautiful red brick building was originally constructed in the Meiji era as a military arsenal and clothing depot for the former Japanese Army. Having survived the fires of war, it was repurposed as the \"Himeji City Hall\" to support the city's post-war reconstruction. Finally, it was reborn into its current role as a \"Museum of Art,\" a sanctuary of peace and culture.\n\nHimeji Castle, on the other hand, has stood unchanged for over 400 years. The grand Main Keep seems to have quietly and gently watched over this red brick building at its feet as it transformed from a military facility to a civic center, and finally to an art museum.\n\nThe view from here is not merely a brilliant visual contrast of red and white; it is a profound, poetic reflection of \"the unchanging\" versus \"the changing\" — a beautiful testament to the very history the city of Himeji has navigated.",
-    "story_jp": "姫路城の東側に広がる姫路市立美術館。秋を迎えると、庭園の木々が色づき、建物の赤レンガと溶け合うように見事な錦秋のグラデーションを描き出します。そして、その燃えるような色彩の背後には、一点の曇りもない白亜の大天守が静かにそびえ立っています。\n\nこの美しき赤レンガの建物は、明治時代に「旧陸軍の兵器庫・被服庫」として建てられました。戦火をくぐり抜けた後は、戦後復興を支える「姫路市役所」として市民のために働き、そして現在は平和と文化の象徴である「美術館」へと、時代に合わせてその役割を大きく変えてきました。\n\n築城から400年以上、決して変わることなくそこに在り続ける姫路城。大天守は、足元で軍事施設から市役所、そして美術館へと生まれ変わっていくこの赤レンガの建物を、まるで親のようにずっと優しく見守ってきたのでしょう。この場所からの眺めは、赤と白の鮮やかなコントラストであると同時に、「不変」と「変化」という、姫路の街が歩んできた歴史そのものの美しい対比なのです。",
     "location": {
       "lat": 34.839204642259396,
       "lng": 134.69729562796454,
-      "name": "Himeji City Museum of Art Front Garden"
+      "name": "Himeji City Museum of Art"
     }
   },
   "16": {
-    "title": "Autumn Colors at the Moat Edge along Senhime's Path",
-    "subtitle": "Autumn Foliage along the Moat / At Senhime's Path (Inner Moat)",
+    "title": "Senhime Path — Autumn Along the Moat",
+    "subtitle": "Autumn Along the Moat / Senhime’s Path",
     "date": "2025.11.13",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
     "summary": "\"Where exactly is this?\" — Even among local Himeji residents, very few could correctly identify the location just by looking at this photograph. It is a best-kept secret walking path where the quiet, everyday life of the castle town blends seamlessly with breathtaking autumn foliage.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Senhime's Path along the inner moat" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Include the path's handrail and stream in the foreground, then layer the autumn foliage and a subtle glimpse of the Nishi-no-Maru in the background to create a depth-rich, atmospheric composition." },
-      { "icon": "🤝", "label": "Walking Advice", "text": "This spot is very close to the Kita-Segakushi Gate Ruins featured in View No. 14. Map apps may show a slightly inaccurate position, so use the coordinates above and follow the sound of the murmuring stream." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Senhime's Path along the inner moat"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Include the path's handrail and stream in the foreground, then layer the autumn foliage and a subtle glimpse of the Nishi-no-Maru in the background to create a depth-rich, atmospheric composition."
+      },
+      {
+        "icon": "🤝",
+        "label": "Walking Advice",
+        "text": "This spot is very close to the Kita-Segakushi Gate Ruins featured in View No. 14. Map apps may show a slightly inaccurate position, so use the coordinates above and follow the sound of the murmuring stream."
+      }
     ],
     "story": "\"Where exactly is this?\" — Even among local Himeji residents, very few could correctly identify the location just by looking at this photograph. It is a best-kept secret walking path where the quiet, everyday life of the castle town blends seamlessly with breathtaking autumn foliage.\n\nLocated along the western inner moat is a tranquil promenade known as \"Senhime's Path\" (Senhime-no-Komichi). This spot offers a deep, atmospheric elegance (fuzei) that differs entirely from the grand, overwhelming scale of the main castle views.\n\nAs autumn deepens, the trees turn vibrant shades of yellow and fiery red. The handrail visible in the foreground belongs to Senhime's Path, running alongside a clear, murmuring stream. Combined with the traditional townhouses (machiya) of the neighboring Korikicho district and a subtle glimpse of the westernmost edge of the Nishi-no-Maru (Western Bailey) peeking through the leaves, the scene resembles a flawless traditional Japanese painting.\n\nWhile dynamic views featuring the Main Keep are magnificent, it is in these understated, quiet landscapes along the moat that you can truly feel the profound depth of Himeji Castle — a fortress that has peacefully coexisted with the daily lives of the townspeople for over 400 years.",
-    "story_jp": "姫路城の西側、内堀に沿って続く「千姫の小径（せんひめのこみち）」と呼ばれる静かな遊歩道。ここは、姫路城の壮大なスケール感とはまた違う、しっとりとした城下町の「風情」を色濃く残す秘密の場所です。\n\n秋が深まると、木々が鮮やかな黄色や燃えるような赤に染まり、静かな水面を彩ります。写真の手前に見える手すりが千姫の小径のもので、そこを流れる澄んだ小川、隣接する小利木町（こりきちょう）の伝統的な町家、そして木々の隙間からひっそりと顔を覗かせる西の丸の西端。これらの要素が一つに溶け合った情景は、まるで一枚の美しい日本画のようです。\n\n大天守が主役のダイナミックな風景も素晴らしいですが、こうした何気ない堀端の風景にこそ、400年にわたって人々の暮らしと共にあった姫路城の「奥深さ」が宿っています。喧騒から離れ、小川のせせらぎを聞きながらこの紅葉を眺める時間は、格別の体験となるはずです。",
     "location": {
       "lat": 34.840715,
       "lng": 134.691696,
-      "name": "Senhime's Path (Inner Moat)"
+      "name": "Senhime Path (inner moat)"
     }
   },
   "17": {
@@ -291,50 +419,72 @@
     }
   },
   "19": {
-    "title": "Cherry Tree Awaiting Spring",
+    "title": "Branches Awaiting Spring",
     "date": "2025.03.18",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "winter afternoon",
     "location": {
       "lat": 34.836102,
       "lng": 134.69478,
-      "name": "Near Himeji Zoo"
+      "name": "Near the Zoo"
     }
   },
   "20": {
-    "title": "The Winter Ribbon of Light along Otemae-dori",
-    "subtitle": "Otemae Illumination / At Otemae-dori Street",
+    "title": "Otemae Street — Ribbon of Winter Light",
+    "subtitle": "Otemae Illumination / On Otemae Street",
     "date": "2025.12.31",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter night",
     "summary": "After gazing down at the path of light from the station's observation deck (View No. 21), you walk that illuminated path toward the castle. At the intersection in front of Egret Himeji, the illuminated Main Keep towers divinely at the end of the sparkling street — a breathtaking, handheld capture in a fleeting moment.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Near the crosswalk where Otemae-dori meets Egret Himeji" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Tripods cannot be used at this busy intersection. Increase your shutter speed and capture the shot handheld the instant the pedestrian signal turns green — speed and steadiness are key." },
-      { "icon": "🤝", "label": "Safety Rules", "text": "This is a busy intersection with heavy traffic and pedestrians. Setting up a tripod or sitting down is extremely dangerous and strictly prohibited. Please prioritize safety above all else." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Near the crosswalk where Otemae-dori meets Egret Himeji"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Tripods cannot be used at this busy intersection. Increase your shutter speed and capture the shot handheld the instant the pedestrian signal turns green — speed and steadiness are key."
+      },
+      {
+        "icon": "🤝",
+        "label": "Safety Rules",
+        "text": "This is a busy intersection with heavy traffic and pedestrians. Setting up a tripod or sitting down is extremely dangerous and strictly prohibited. Please prioritize safety above all else."
+      }
     ],
     "story": "After gazing down at the path of light from the station's observation deck (View No. 21), you can walk that very illuminated path toward the castle. As you draw closer, the sheer scale of the fortress towering ahead is a breathtaking winter spectacle.\n\nJust a short distance from the castle, at the intersection in front of Egret Himeji, you look up to find the illuminated Main Keep standing divinely at the end of the sparkling tree-lined street. The beauty of this moment is truly awe-inspiring.\n\nAs a photographer, the immediate instinct is to set up a tripod and take a careful, long-exposure shot of this perfect composition. However, because this is a busy intersection on the city's main street, doing so is both impossible and dangerous. Instead, in that brief moment when the pedestrian signal turns green, the shot was taken handheld at a fast shutter speed. It is precisely because of the constraint of not being able to use a tripod that this photograph captures a miraculous, fleeting 'view' — one infused with the vibrant energy of the street and the photographer's own tension.",
-    "story_jp": "第弐拾壱景で紹介した姫路駅前の「キャッスルビュー」から、お城に向かって真っ直ぐに伸びる大手前通り。冬の時期、美しく彩られたイルミネーションの並木道を歩いていくと、徐々に姫路城がその巨大な姿を現します。\n\nお城まであと少しというイーグレ姫路前の交差点。ここでふと見上げると、光の道の先にライトアップされた大天守が神々しくそびえ立っており、あまりの美しさに思わず息を呑みます。\n\n写真家としては、この完璧な構図の前に三脚を据え、時間をかけて丁寧にシャッターを切りたいという衝動に駆られます。しかし、ここは街のメインストリートの交差点。当然それは叶いません。そこで、歩行者信号が青に変わったその一瞬、シャッター速度を上げて手持ちで素早く撮影を行いました。三脚を使えないという制約があるからこそ生まれた、街の躍動感と撮影者の緊張感が封じ込められた、奇跡的な一瞬の「景」です。",
     "location": {
       "lat": 34.834310087759384,
       "lng": 134.69248927029412,
-      "name": "Otemae-dori (near Egret Himeji intersection)"
+      "name": "Otemae Street (near Egret Himeji intersection)"
     }
   },
   "21": {
-    "title": "The Year-End Path of Light from the Elevated Station Observatory",
-    "subtitle": "A glowing modern castle town seen from Castle View deck",
+    "title": "Station Heights — Year-End Path of Light",
+    "subtitle": "Otemae Illumination from the Castle View Observatory",
     "date": "2025.12.31",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter night",
     "summary": "Himeji Station has undergone a massive transformation, elevating its railway tracks and giving birth to a wooden observation deck called \"Castle View.\" This deck has quickly become the premier new vantage point in modern Himeji.",
     "tips": [
-      { "icon": "📷", "label": "Photo Tip", "text": "A 50–85mm medium telephoto lens compresses the depth of the street for a dramatic shot." },
-      { "icon": "✨", "label": "Best Timing", "text": "The winter illumination season (late November to year-end) and New Year's Eve night offer the most spectacular views." },
-      { "icon": "🤝", "label": "Public Space", "text": "The observation deck is busy with passersby. Please be considerate with tripod use." }
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "A 50–85mm medium telephoto lens compresses the depth of the street for a dramatic shot."
+      },
+      {
+        "icon": "✨",
+        "label": "Best Timing",
+        "text": "The winter illumination season (late November to year-end) and New Year's Eve night offer the most spectacular views."
+      },
+      {
+        "icon": "🤝",
+        "label": "Public Space",
+        "text": "The observation deck is busy with passersby. Please be considerate with tripod use."
+      }
     ],
     "story": "Stretching straight ahead toward the castle is the main street, \"Otemae-dori.\" Before the station was elevated, locals affectionately called it the \"50-Meter Road.\" Today, lined with modern high-rise buildings, the street's trees are adorned with beautiful illuminations during the winter and year-end season (New Year's Eve). At the end of this dazzling path of light sits Himeji Castle, itself illuminated and floating pure white against the night sky. The sight is nothing short of spectacular.\n\nOver 400 years since the castle's construction, this specific view represents the most dramatic evolution of the city. What would the samurai of the past think if they could see this glowing modern castle town, with their beloved White Heron still standing proudly at its center? Letting your imagination transcend time is one of the true joys of this observatory.",
-    "story_jp": "ここから真っ直ぐにお城へと伸びるメインストリート「大手前通り」。駅が高架化される以前は「50m道路」と呼ばれ親しまれていたこの大通りの両側には、今では近代的なビルが立ち並びます。そして冬の歳末（大晦日）の時期には、街路樹が美しいイルミネーションの光で彩られます。その光の道の終着点に、同じくライトアップされて夜空に白く浮かび上がる姫路城が鎮座する光景は、息を呑むほどの美しさです。\n\n築城から400年。この場所からの眺めは、姫路の街で最も劇的な変化を遂げた風景と言えるでしょう。もし、かつての戦国武将たちがこの光り輝く現代の城下町と、変わらず凛とそびえる白鷺の姿を見たら一体どう思うだろうか——そんな時空を超えた想像を巡らせるのも、この展望台ならではの醍醐味です。",
     "location": {
       "lat": 34.827377867722156,
       "lng": 134.69023007264178,
@@ -342,21 +492,32 @@
     }
   },
   "22": {
-    "title": "First Light at Nagoyama Cemetery",
-    "subtitle": "New Year's Sunrise 2026 — Viewed from Nagoyama",
+    "title": "Nagoyama Cemetery — First Light of the New Year",
+    "subtitle": "Castle at First Light, 2026 / At Nagoyama",
     "date": "2026.01.01",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter morning",
-    "featured": true,
-    "orientation": "wide",
     "summary": "The \"First Sunrise\" (Hatsuhinode) of the New Year is a deeply cherished tradition in Japan. The sight of the majestic white keep bathed in the fresh, golden light of the year's first morning, viewed from Nagoyama, is a perfectly divine landscape to mark a new beginning.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Nagoyama Cemetery hilltop" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Sunrise on New Year's Day in Himeji is just after 7:00 AM. The popular Otokoyama Reservoir gets extremely crowded, making Nagoyama an excellent alternative (Plan B)." },
-      { "icon": "🤝", "label": "Etiquette", "text": "This is a sacred place. Please maintain silence, be respectful of the graves, and dress warmly for the cold." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Nagoyama Cemetery hilltop"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Sunrise on New Year's Day in Himeji is just after 7:00 AM. The popular Otokoyama Reservoir gets extremely crowded, making Nagoyama an excellent alternative (Plan B)."
+      },
+      {
+        "icon": "🤝",
+        "label": "Etiquette",
+        "text": "This is a sacred place. Please maintain silence, be respectful of the graves, and dress warmly for the cold."
+      }
     ],
-    "story": "On New Year's Day 2026, the original plan was to capture the sunrise and the castle together from the highly popular Otokoyama Reservoir. However, the unexpected density of the crowds prompted a quick pivot to Plan B: Nagoyama Cemetery.\n\nSince the winter sunrise isn't until around 7:00 AM, it doesn't require an extreme early wake-up call—though securing a prime spot at Otokoyama clearly demands much stronger dedication (a definite goal for next year!).\n\nNevertheless, adjusting the destination to Nagoyama was incredibly rewarding. Watching Himeji Castle gently take on a golden hue as it caught the first rays of the sun was a breathtaking and profoundly spiritual experience. While Otokoyama might offer a closer visual alignment of the sun and the castle, the pristine New Year's air and the radiant White Heron viewed from Nagoyama make this a truly magnificent scene worth seeking out.",
-    "story_jp": "2026年の元旦。初日の出と姫路城を一枚に収めようと、王道の撮影スポットである「男山配水池公園」へ向かいましたが、すでに想像以上の人出。そこで急遽、次善の策として考えていたこの「名古山霊園」へと目的地を変更しました。\n\n冬の日の出は朝7時頃と比較的遅いため、過酷な早起きは必要ありませんでしたが、男山の特等席を確保するにはさらなる覚悟が必要だったと痛感しました（来年こそはもっと早く起きるぞ！と心に誓っています）。\n\nしかし、名古山へ場所を移した判断は決して間違っていませんでした。昇る初日の出の光を一身に受け、ほんのりと黄金色に染まりゆく姫路城の姿は息を呑むほど神々しく、静かな感動に包まれました。太陽とお城のシルエットをより近づけて撮るなら男山に軍配が上がりますが、名古山から望む清らかな新年の空気と輝く白鷺の姿もまた、間違いなく「行った甲斐がある」珠玉の情景です。",
+    "story": "The \"First Sunrise\" (Hatsuhinode) of the New Year is a deeply cherished tradition in Japan. The sight of the majestic white keep bathed in the fresh, golden light of the year's first morning, viewed from Nagoyama, is a perfectly divine landscape to mark a new beginning.\n\nOn New Year's Day 2026, the original plan was to capture the sunrise and the castle together from the highly popular Otokoyama Reservoir. However, the unexpected density of the crowds prompted a quick pivot to Plan B: Nagoyama Cemetery.\n\nSince the winter sunrise isn't until around 7:00 AM, it doesn't require an extreme early wake-up call—though securing a prime spot at Otokoyama clearly demands much stronger dedication (a definite goal for next year!).\n\nNevertheless, adjusting the destination to Nagoyama was incredibly rewarding. Watching Himeji Castle gently take on a golden hue as it caught the first rays of the sun was a breathtaking and profoundly spiritual experience. While Otokoyama might offer a closer visual alignment of the sun and the castle, the pristine New Year's air and the radiant White Heron viewed from Nagoyama make this a truly magnificent scene worth seeking out.",
+    "featured": true,
+    "orientation": "wide",
     "location": {
       "lat": 34.842445396006696,
       "lng": 134.67761073668575,
@@ -364,19 +525,30 @@
     }
   },
   "23": {
-    "title": "The New Year's Fire Review and a Rainbow at Sannomaru Square",
-    "subtitle": "New Year's Fire Review / At Sannomaru Square, Himeji Castle",
+    "title": "Sannomaru Square — Rainbow at the Fire Review",
+    "subtitle": "New Year Water Salute / At Sannomaru Square",
     "date": "2026.01.11",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter afternoon",
     "summary": "The annual Dezomeshiki (New Year's Fire Review) is a beloved tradition held every January. The beautiful synchronized water discharge soaring high into the winter sky, crowned by a miraculous rainbow, symbolizes the reassuring presence of those who protect the white castle and the peace of the city — a special 'view' that can only be witnessed on this one day.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Sannomaru Square, Himeji Castle" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Amid the ever-changing winter weather, the ultimate shutter chance comes when sunlight pierces through the water columns launched into the sky, creating a rainbow." },
-      { "icon": "🤝", "label": "Enjoying the Event", "text": "This spectacle can only be seen on the event day in early January each year (January 11 in 2026). Experience the warm community spirit through the dignified firefighters and charming children's performances." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Sannomaru Square, Himeji Castle"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Amid the ever-changing winter weather, the ultimate shutter chance comes when sunlight pierces through the water columns launched into the sky, creating a rainbow."
+      },
+      {
+        "icon": "🤝",
+        "label": "Enjoying the Event",
+        "text": "This spectacle can only be seen on the event day in early January each year (January 11 in 2026). Experience the warm community spirit through the dignified firefighters and charming children's performances."
+      }
     ],
     "story": "January 11, 2026, marked the highly anticipated annual Dezomeshiki (New Year's Fire Review) by the Himeji City Fire Brigade. Held at Sannomaru Square, this traditional event gathers city officials and countless citizens to watch the impressive results of the firefighters' training, as well as charming performances by local children.\n\nThe weather that day was incredibly fickle and dramatic, alternating unpredictably between sudden snow flurries and clear blue skies. Despite the changing skies, the climax of the event — the synchronized mass water discharge — was a moment of pure beauty. As the water powerfully arced into the air, the sunlight broke through the clouds, catching the spray and creating a miraculous, breathtaking rainbow.\n\nWatching these highly trained firefighters in action under the blue sky was deeply reassuring. Knowing that they stand ready to respond to any emergency fire gives us the profound confidence that this irreplaceable wooden castle, and the city itself, are in the safest of hands.",
-    "story_jp": "2026年1月11日。私が心待ちにしていた、姫路市消防団による新春恒例の「出初式」の日です。\n\nこの日の天候は非常にドラマチックでした。雪が舞ったかと思えば、スッと青空が覗くという、冬特有の目まぐるしく変わる不思議な空模様。そんな中、多くの市民や来賓が見守る三の丸広場では、訓練を重ねた消防団員たちの凛々しい姿や、子どもたちの可愛らしい演技が披露され、会場は温かい活気に包まれました。\n\nそして迎えたクライマックスの一斉放水。空高く幾重にも放たれた美しい水柱に、雲間から射した陽光が反射し、見事な虹が架かった瞬間は思わず息を呑むほど感動的でした。\n\n青空の下で躍動する消防員たちの頼もしい姿。彼らの日々の鍛錬があればこそ、万が一の出火時にも、このかけがえのない木造の白鷺城と私たちの街は確実に守り抜かれるだろう――そんな強い安心感と誇りを胸に抱かせてくれる、新春の素晴らしい伝統行事です。",
     "location": {
       "lat": 34.8375541463092,
       "lng": 134.6932678047162,
@@ -384,19 +556,30 @@
     }
   },
   "24": {
-    "title": "Protectors of the Azure Sky at Sannomaru Square",
-    "subtitle": "Rescue Team Performance / At Sannomaru Square, Himeji Castle",
+    "title": "Sannomaru Square — Guardians Under Blue Sky",
+    "subtitle": "Rescue Team Aerial Performance / At Sannomaru Square",
     "date": "2026.01.11",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "winter afternoon",
     "summary": "Elite rescue workers perform a breathtaking aerial display, soaring to heights rivaling the grand Main Keep. Their dynamic mid-air performance during the 2026 New Year's Fire Review, set against the backdrop of blue skies and the historic castle, is a reassuringly beautiful modern-day 'spectacular view.'",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Sannomaru Square, Himeji Castle" },
-      { "icon": "📷", "label": "Highlights", "text": "The powerful and graceful performance of highly trained rescue workers, carried out in mid-air at heights rivaling the Main Keep itself." },
-      { "icon": "🤝", "label": "Event Warmth", "text": "While the advanced training demonstration is performed with intense focus, the announcer's humorous introductions of each rescue worker's personality and hobbies bring warm laughter throughout the venue." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Sannomaru Square, Himeji Castle"
+      },
+      {
+        "icon": "📷",
+        "label": "Highlights",
+        "text": "The powerful and graceful performance of highly trained rescue workers, carried out in mid-air at heights rivaling the Main Keep itself."
+      },
+      {
+        "icon": "🤝",
+        "label": "Event Warmth",
+        "text": "While the advanced training demonstration is performed with intense focus, the announcer's humorous introductions of each rescue worker's personality and hobbies bring warm laughter throughout the venue."
+      }
     ],
     "story": "This scene, like View No. 23, was captured during the Himeji City Fire Brigade's New Year's Fire Review (Dezomeshiki) on January 11, 2026.\n\nThe weather that day was incredibly harsh, with strong gusts of wind and occasional snow flurries. Due to safety concerns in the rough conditions, the fire trucks had to operate their aerial ladders at a lower height than originally planned. Yet, even under such challenging circumstances, the highly trained rescue workers delivered an astonishing mid-air performance. Watching them dynamically \"dance\" in the clear blue sky, seemingly reaching the very height of the grand Main Keep, was a breathtakingly beautiful and powerful sight.\n\nWhat made this performance even more captivating was the excellent live announcement echoing through the venue. The announcer introduced each airborne rescue worker not just by name, but by sharing charming, humorous details about their personalities and hobbies. This warm commentary brought delightful smiles and laughter from the crowd.\n\nIt was a perfect contrast: the display of rigorous, life-saving training balanced by lighthearted humor. Surrounded by the warm, unified atmosphere of the venue, I felt a deep sense of pride and profound reassurance, knowing that the beautiful city of Himeji and its historic castle are protected by such wonderful, dedicated people.",
-    "story_jp": "第弐拾参景（No. 23）と同じく、2026年1月11日の「姫路市消防出初式」での一コマです。\n\nこの日は時折雪が舞い、強い風が吹き荒れる非常に厳しい天候でした。安全を考慮し、はしご車の高さを予定よりも低く制限せざるを得ない状況だったそうですが、そんな悪条件の中でも、高度に訓練されたレスキュー隊員たちは見事な空中演技を繰り広げました。澄み切った青空の下、まるで大天守と同じ高さで宙を舞うかのような彼らの躍動的な姿は、ハッとするほど美しく、力強いものでした。\n\nそして、この日の演舞をさらに魅力的なものにしていたのが、会場内に響く素晴らしいアナウンスです。宙を舞う隊員一人ひとりの人となりや趣味などを、ユーモアを交えながら細やかに紹介していくその温かい実況に、見守る観客からは微笑ましい笑いが漏れていました。\n\n厳しい訓練の成果と、緊張をほぐすユーモラスな言葉の絶妙なコントラスト。会場全体が一体となって盛り上がる温かい空気の中で、「ああ、姫路の街とこの美しいお城は、こういう素晴らしい人たちに守られているのだな」と、胸が熱くなるような安心感と誇りを感じた一日でした。",
     "location": {
       "lat": 34.8375541463092,
       "lng": 134.6932678047162,
