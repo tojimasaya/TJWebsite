@@ -271,10 +271,30 @@
     }
   },
   "10": {
-    "title": "Sakuramon Bridge at Sunset",
+    "title": "Evening Glow at Sakuramon Bridge and the Old Stone Monument",
+    "subtitle": "Sunset from Sakuramon Bridge",
     "date": "2025.07.29",
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
+    "summary": "Himeji Castle floats against the beautiful magic hour sky of a summer evening. Yet, the quiet protagonist of this spectacular shot is the weathered, historical stone monument standing modestly in front of the grand stone walls.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Sakuramon Bridge, Himeji Castle"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tips",
+        "text": "Aim for the \"magic hour\" just after sunset when the sky changes colors dramatically. Align the bridge and monument in the foreground, the stone walls in the midground, and the Main Keep in the background to create a composition full of narrative."
+      },
+      {
+        "icon": "🤝",
+        "label": "Viewing Perspective",
+        "text": "While most visitors look straight up at the castle and walk past, take a moment to notice the small, quiet stone monument at your feet that has been conveying the castle's history for years."
+      }
+    ],
+    "story": "On a summer evening, just as the sky began to tint beautifully during the magic hour, I released the shutter from the Sakuramon Bridge. The breathtaking view features the wooden bridge in the foreground, the massive stone walls leading to the Otemon Gate behind it, and the majestic white castle standing in the evening twilight.\n\nHowever, what I really want you to notice in this photograph is the old stone monument faintly engraved with \"Himeji Castle,\" standing quietly and inconspicuously in front of the magnificent stone walls.\n\nTo introduce a National Treasure and a UNESCO World Heritage site, this small stone marker might seem a bit meager and understated. Yet, its weathered appearance exudes a profound sense of the passage of time. When you make your grand entrance to the castle through the main approach, please take a moment to cast a warm glance at this seemingly forgotten, yet historically rich, stone monument.",
     "location": {
       "lat": 34.83557157249841,
       "lng": 134.69271687541374,

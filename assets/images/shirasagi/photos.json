@@ -280,10 +280,31 @@
     }
   },
   "10": {
-    "title": "桜門橋夕景",
+    "title": "桜門橋 暮れなずむ古碑",
+    "subtitle": "桜門橋夕景 / 桜門橋にて",
     "date": "2025.07.29",
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
+    "summary": "夏の夕暮れ、マジックアワーの美しい空に浮かび上がる姫路城。その華やかな絶景の手前で、立派な石垣の前にひっそりと佇む「時代を感じさせる古い石碑」に静かなスポットライトを当てた一枚です。",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "場所",
+        "text": "姫路城 桜門橋"
+      },
+      {
+        "icon": "📷",
+        "label": "撮影のヒント",
+        "text": "空が劇的に色づく日没直後（マジックアワー）を狙い、手前の橋と石碑、中景の石垣、そして背景の大天守を一直線に重ねることで、物語性のある構図になります。"
+      },
+      {
+        "icon": "🤝",
+        "label": "視点の楽しみ方",
+        "text": "誰もが天守閣を見上げて通り過ぎてしまいますが、足元で静かにお城の歴史を伝えてきた小さな石碑にも、ぜひ目を向けてみてください。"
+      }
+    ],
+    "story": "ある夏の日の夕方、空が美しく色づき始めたマジックアワーの瞬間に、桜門橋の上からシャッターを切りました。手前には木造の桜門橋、その後ろには大手門へと続く重厚な石垣、そして奥には夕空の中に建つ白亜の姫路城という、息を呑むような絶景です。\n\nしかし、この一枚で私が皆さんに最もよく見てほしいのは、立派な石垣の前にひっそりと立ち続けている「姫路城」と刻まれた古い石碑です。\n\n国宝であり、ユネスコ世界遺産にも登録されている壮大な姫路城を紹介するものとしては、少し貧相で控えめな石碑に感じるかもしれません。しかし、風雨に耐えてきたその姿には、何とも言えない深い「時代」を感じるのです。正面入り口から堂々とお城を訪れる際、つい見落としてしまいがちな、この忘れ去られた感のある小さな石碑。次に訪れるときは、ぜひ彼らにも温かい目を向けてあげてください。",
+    "story_en": "On a summer evening, just as the sky began to tint beautifully during the magic hour, I released the shutter from the Sakuramon Bridge. The breathtaking view features the wooden bridge in the foreground, the massive stone walls leading to the Otemon Gate behind it, and the majestic white castle standing in the evening twilight.\n\nHowever, what I really want you to notice in this photograph is the old stone monument faintly engraved with \"Himeji Castle,\" standing quietly and inconspicuously in front of the magnificent stone walls.\n\nTo introduce a National Treasure and a UNESCO World Heritage site, this small stone marker might seem a bit meager and understated. Yet, its weathered appearance exudes a profound sense of the passage of time. When you make your grand entrance to the castle through the main approach, please take a moment to cast a warm glance at this seemingly forgotten, yet historically rich, stone monument.",
     "location": {
       "lat": 34.83557157249841,
       "lng": 134.69271687541374,
