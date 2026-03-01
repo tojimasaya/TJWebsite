@@ -312,13 +312,35 @@
     }
   },
   "11": {
-    "title": "快晴の城",
+    "title": "土産屋裏手 抜けるような夏空",
+    "subtitle": "快晴の城 / 白鷺小中学校からお城へ向かう道にて",
     "date": "2025.07.30",
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer afternoon",
+    "summary": "土産物屋の屋根越しに見上げる、夏の広い空と姫路城。美しく晴れ渡った快晴の一枚ですが、実は撮影者である私の中では「いつか差し替えたい」と野心を燃やしている、未完成の絶景でもあります。",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "場所",
+        "text": "白鷺小中学校の正門前から姫路城へ向かう道の途中（土産物屋の裏手付近）"
+      },
+      {
+        "icon": "📷",
+        "label": "撮影のヒント",
+        "text": "手前に低い建物を入れ、上部の空の面積を思い切り広く取ることで、夏の空の広大さを強調できます。"
+      },
+      {
+        "icon": "🤝",
+        "label": "写真家の野心",
+        "text": "風景写真は一期一会です。「完璧な条件」を求めて何度も同じ場所へ通うのも、地元で撮影を続ける大きな醍醐味です。"
+      }
+    ],
+    "story": "姫路市立白鷺小中学校の正門前から、お城へと向かう道の途中。お城の前に並ぶ土産物屋のさらに後ろから、屋根越しに天守閣を仰ぎ見るような構図で撮影しました。\n\n抜けるような夏の広い青空と、白亜の城。十分に美しい快晴の一枚なのですが、実を言うと、私としては少しだけ悔いが残っています。「ここは、もくもくと沸き立つ巨大な入道雲であってほしかった」と。\n\nいつの日か、姫路城の背後にドラマチックな入道雲が立ち上る、まさに夏本番という完璧な写真が撮れた暁には、このプロジェクトのNo. 11の写真をこっそりと置き換えたいと野心を燃やしています。そんな「未来への宿題」のような、個人的に思い入れのある一枚です。",
+    "story_en": "I took this shot while walking from the main gate of Hakuro Elementary/Junior High School toward the castle. The composition looks up at the Main Keep over the roofs of the souvenir shops lined up in front of the castle grounds.\n\nIt is a wide, clear blue summer sky framing the majestic white castle. It's certainly a beautiful, sunny shot. However, to tell you the truth, I have one slight regret: \"I really wished there was a massive, billowing cumulonimbus cloud right there.\"\n\nI harbor a secret ambition: the day I finally capture a dramatic, towering thunderhead rising behind Himeji Castle—the ultimate symbol of high summer—I fully intend to quietly replace this No. 11 photo. Until then, this image remains a piece of \"homework for the future.\"",
     "location": {
       "lat": 34.83527572859923,
-      "lng": 134.69103710685653
+      "lng": 134.69103710685653,
+      "name": "白鷺小中学校付近"
     }
   },
   "13": {

@@ -302,13 +302,34 @@
     }
   },
   "11": {
-    "title": "Castle Under Blue Sky",
+    "title": "Clear Summer Sky from Behind the Souvenir Shops",
+    "subtitle": "Castle in Clear Sky / On the path from Hakuro School to the Castle",
     "date": "2025.07.30",
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer afternoon",
+    "summary": "A wide summer sky and Himeji Castle viewed over the roofs of souvenir shops. While it is a beautifully clear shot, in my mind as the photographer, it is actually an \"incomplete\" spectacular view that I secretly harbor ambitions to replace one day.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "On the path from the front gate of Hakuro Elementary/Junior High School toward the castle (behind the souvenir shops)."
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tips",
+        "text": "Include low buildings in the foreground and leave a large portion of the frame for the sky to emphasize the vastness of the summer heavens."
+      },
+      {
+        "icon": "🤝",
+        "label": "The Photographer's Ambition",
+        "text": "Landscape photography is a once-in-a-lifetime encounter. Visiting the same spot repeatedly in pursuit of the \"perfect conditions\" is one of the greatest joys of photographing your hometown."
+      }
+    ],
+    "story": "I took this shot while walking from the main gate of Hakuro Elementary/Junior High School toward the castle. The composition looks up at the Main Keep over the roofs of the souvenir shops lined up in front of the castle grounds.\n\nIt is a wide, clear blue summer sky framing the majestic white castle. It's certainly a beautiful, sunny shot. However, to tell you the truth, I have one slight regret: \"I really wished there was a massive, billowing cumulonimbus cloud right there.\"\n\nI harbor a secret ambition: the day I finally capture a dramatic, towering thunderhead rising behind Himeji Castle—the ultimate symbol of high summer—I fully intend to quietly replace this No. 11 photo. Until then, this image remains a piece of \"homework for the future.\"",
     "location": {
       "lat": 34.83527572859923,
-      "lng": 134.69103710685653
+      "lng": 134.69103710685653,
+      "name": "Near Hakuro School"
     }
   },
   "13": {
