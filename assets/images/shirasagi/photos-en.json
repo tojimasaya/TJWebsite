@@ -500,14 +500,34 @@
     }
   },
   "19": {
-    "title": "Branches Awaiting Spring",
+    "title": "The Quiet Before the Bloom by the Zoo",
+    "subtitle": "Branches Waiting for Spring / Beside the Zoo",
     "date": "2025.03.18",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "winter afternoon",
+    "summary": "Mid-March by the moat next to the zoo, a famous cherry blossom spot. In a seemingly barren and deserted landscape, the slightly swelling buds on the tips of the branches quietly whisper the approaching footsteps of spring.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Along the inner moat next to the Himeji City Zoo (The exact same spot as View No. 1)."
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tips",
+        "text": "Without the distraction of colorful flowers, focus directly on the tiny buds, leaving the castle softly blurred in the background to convey the breath of new life."
+      },
+      {
+        "icon": "🤝",
+        "label": "Viewing Perspective",
+        "text": "Appreciating the quiet anticipation of \"blooming in a week or two\" is just as enriching as seeing the flowers in full bloom."
+      }
+    ],
+    "story": "Mid-March. I intentionally visited this exact spot (the location of View No. 1), which becomes so crowded in spring that you have to wait in line just to take a photo. Now, there is absolutely no one here.\n\nAt first glance, it might look like the coldest, most barren winter landscape. However, if you look closely at the branches right in front of you, you can see that the hard buds are definitely beginning to swell.\n\nI released the shutter while imagining: \"In just a week, these buds will start to open, and in two weeks, this entire area will be engulfed in an overwhelming sea of full bloom.\" It is a piece that captures the quiet, powerful \"preparation for life\" just moments before the glorious spring arrives.",
     "location": {
       "lat": 34.836102,
       "lng": 134.69478,
-      "name": "Near the Zoo"
+      "name": "Beside the Zoo"
     }
   },
   "20": {

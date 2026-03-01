@@ -516,10 +516,31 @@
     }
   },
   "19": {
-    "title": "春待つ枝",
+    "title": "動物園横 芽吹きの静寂",
+    "subtitle": "春待つ枝 / 動物園横にて",
     "date": "2025.03.18",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "winter afternoon",
+    "summary": "3月中旬、桜の名所として知られる動物園横の堀端。満開の喧騒が嘘のように誰もいない寒々とした風景の中、枝先に膨らみ始めた小さな蕾（つぼみ）に確かな「春の足音」を感じる一枚です。",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "場所",
+        "text": "姫路市立動物園横、内堀沿い（第壱景と同じスポット）"
+      },
+      {
+        "icon": "📷",
+        "label": "撮影のヒント",
+        "text": "華やかな花がない時期だからこそ、ピントを枝先の小さな蕾に合わせ、背景にお城をぼかして配置すると、命の息吹が伝わる写真になります。"
+      },
+      {
+        "icon": "🤝",
+        "label": "視点の楽しみ方",
+        "text": "満開の桜だけでなく、「あと1〜2週間で咲く」という静かな期待感を切り取るのも、季節を愛でる豊かな視点です。"
+      }
+    ],
+    "story": "3月中旬。春になれば撮影の順番待ちができるほどの人だかりになるこの場所（第壱景のスポット）を、あえて訪れてみました。そこには誰もいません。\n\n一見すると、冬枯れの最も寒々とした風景に見えるかもしれません。しかし、目の前の枝をよく観察してみると、硬かった蕾（つぼみ）が確かに膨らみ始めているのがわかります。\n\n「あと1週間もすればこの蕾が緩み始め、2週間後にはあの圧倒的な満開の桜に包まれるのだろう」——そんな想像を巡らせながらシャッターを切りました。華やかな春を目前に控えた、静かで力強い「命の準備期間」を捉えた思い入れのある一枚です。",
+    "story_en": "Mid-March. I intentionally visited this exact spot (the location of View No. 1), which becomes so crowded in spring that you have to wait in line just to take a photo. Now, there is absolutely no one here.\n\nAt first glance, it might look like the coldest, most barren winter landscape. However, if you look closely at the branches right in front of you, you can see that the hard buds are definitely beginning to swell.\n\nI released the shutter while imagining: \"In just a week, these buds will start to open, and in two weeks, this entire area will be engulfed in an overwhelming sea of full bloom.\" It is a piece that captures the quiet, powerful \"preparation for life\" just moments before the glorious spring arrives.",
     "location": {
       "lat": 34.836102,
       "lng": 134.69478,
