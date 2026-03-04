@@ -76,44 +76,54 @@ const gearData = {
           "image": "assets/images/gear/lenses/summilux-35-fle.jpg",
           "status": "available",
           "type": "lens",
-          "specs": ["35mm F1.4", "ASPH FLE", "M-Mount"],
-          "description": "FLE（フローティングエレメント）搭載の現代ルクス。近接から無限遠まで安定したシャープネスを保ちながら、開放では柔らかな空気感を残す。旅先で一本だけ選ぶならこれ。",
+          "mount": "M",
+          "specs": ["35mm F1.4 ASPH FLE", "#11663", "9枚5群", "最短0.7m", "320g", "2011年製造"],
+          "description": "2011年製 Ver.2。FLE（フローティングエレメント）搭載の現代ルクス。近接から無限遠まで安定したシャープネスを保ちながら、開放では柔らかな空気感を残す。FLEにより最短距離付近の描写が大きく改善され、絞ればキレ味が立ち、開放では淡くとろけるボケが生まれる。そのバランスの良さから、M10との相性も抜群。旅先で一本だけ選ぶなら、最も信頼を置くレンズ。 S/N 4139258。",
           "links": {
             "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=35mm_f/1.4_ASPH.fle_Summilux-M"
           }
         },
         {
           "id": "summilux-50-v2",
-          "name": "Summilux-M 50mm f/1.4 v2",
+          "name": "Summilux-M 50mm f/1.4 第2世代 後期型",
           "brand": "Leica",
           "image": "assets/images/gear/lenses/summilux-50.jpg",
           "status": "available",
           "type": "lens",
-          "specs": ["50mm F1.4", "Vintage (1973)", "M-Mount"],
-          "description": "柔らかな輪郭、滲むハイライト、クラシカルなボケ味。球面レンズ構成による、現行ASPHにはない優しい描写。オールドルクス特有の甘さと空気感が魅力。",
-          "links": {}
+          "mount": "M",
+          "specs": ["50mm F1.4 Vintage", "#11114", "7枚5群", "最短1.0m", "275g", "1973年製造"],
+          "description": "1973年製造。柔らかな輪郭、滲むハイライト、クラシカルなボケ味。球面レンズ構成による、現行ASPHにはない優しい描写。逆光ではフレアが乗ることもあるが、その不完全さこそが雰囲気を作る。人物でも風景でも、画面にノスタルジックな湿度を加えてくれる一本。オールドルクス特有の甘さと空気感が魅力。 S/N 2628516。",
+          "links": {
+            "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=50mm_f/1.4_Summilux-M_II"
+          }
         },
         {
           "id": "elmarit-28-v4",
-          "name": "Elmarit-M 28mm f/2.8 v4",
+          "name": "Elmarit-M 28mm f/2.8 第4世代",
           "brand": "Leica",
           "image": "assets/images/gear/lenses/elmarit-28.jpg",
           "status": "available",
           "type": "lens",
-          "specs": ["28mm F2.8", "Compact", "M-Mount"],
-          "description": "コンパクトで軽量。M型の28mmといえばこれ。開放から周辺まで安定してシャープ。スナップでは軽快そのもの。",
-          "links": {}
+          "mount": "M",
+          "specs": ["28mm F2.8 Compact", "#11606", "8枚6群", "最短0.7m", "180g", "2009年製造"],
+          "description": "コンパクトで軽量。M型の28mmといえばこれ、と言われるほど完成度の高い常用広角。小さな鏡胴に均質な描写性能が収まり、開放から周辺まで安定してシャープ。スナップでは軽快そのもので、M10につけたまま街を歩くと視界そのままを写し取るような感覚になる。旅の荷物を少なくしたいとき、必ず選ぶレンズ。 S/N 4043161。",
+          "links": {
+            "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=28mm_f/2.8_ASPH_Elmarit-M"
+          }
         },
         {
           "id": "tri-elmar",
-          "name": "Tri-Elmar-M 16-18-21mm f/4 ASPH",
+          "name": "Tri-Elmar-M 16\u201318\u201321mm f/4 ASPH (11626)",
           "brand": "Leica",
           "image": "assets/images/gear/lenses/tri-elmar.jpg",
           "status": "available",
           "type": "lens",
-          "specs": ["16/18/21mm F4", "WATE", "M-Mount"],
-          "description": "超広角で三つの焦点距離を切り替えられるWATE。単焦点並みの描写を保ちながら、超広角の運用を驚くほどシンプルにしてくれる。",
-          "links": {}
+          "mount": "M",
+          "specs": ["16/18/21mm F4.0 ASPH", "#11626", "10枚7群", "最短0.5m", "335g", "2012年製造"],
+          "description": "超広角で三つの焦点距離を切り替えられるWATE（Wide-Angle Tri-Elmar）。単焦点並みの描写を保ちながら、超広角の運用を驚くほどシンプルにしてくれる。光学性能は非常に高く、歪曲の少ない端正な広角描写。16mmで迫力を出し、18mmでバランスを取り、21mmで街を記録する。視点の切り替えがダイヤル一つで済むため、旅先の建築撮影や風景撮影で重宝している。 S/N 4182283。",
+          "links": {
+            "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=16mm-18mm-21mm_f/4_ASPH_Tri-Elmar-M"
+          }
         },
         {
           "id": "summarit-75",
@@ -122,8 +132,9 @@ const gearData = {
           "image": "assets/images/gear/lenses/summarit-75.jpg",
           "status": "available",
           "type": "lens",
-          "specs": ["75mm F2.5", "M-Mount"],
-          "description": "11枚羽根の美しいボケ。中望遠の距離感は、街中での切り取りやポートレートに独特の空気感を生む。",
+          "mount": "M",
+          "specs": ["75mm F2.5", "#11645", "6枚4群", "最短0.9m", "345g", "2007年製造"],
+          "description": "2007-2014年製造モデル。11枚羽根の美しいボケ。中望遠の距離感は、街中での切り取りやポートレートに独特の空気感を生む。f/2.5という絞り値は、開放から安定したシャープネスと適度なボケ量のバランスが絶妙。M型レンジファインダーで扱える焦点距離の上限に近く、視野角の狭さが逆に被写体との対話を深めてくれる。 S/N 4053810。",
           "links": {}
         },
         {
@@ -133,8 +144,9 @@ const gearData = {
           "image": "assets/images/gear/lenses/carlzeiss-50.jpg",
           "status": "available",
           "type": "lens",
-          "specs": ["50mm F2.0", "M-Mount Compatible"],
-          "description": "極めて高い解像度と、画面全体にわたる均等な光量分布が特徴。ライカの50mmとは異なる、理知的で端正な画作りが魅力。",
+          "mount": "M",
+          "specs": ["50mm F2.0", "6枚4群", "最短0.7m", "210g", "E43"],
+          "description": "4群6枚の対称型プラナー設計。ツァイスの伝統的な光学思想が詰まった一本。極めて高い解像度と、画面全体にわたる均等な光量分布が特徴。フレアやゴーストを徹底的に抑えたT*コーティングにより、逆光でも安定した描写。開放F2.0から中央はシャープで、絞ればさらにキレが増す。ライカの50mmとは異なる、理知的で端正な画作りが魅力。コンパクトで軽量なため、スナップでも気軽に使える。",
           "links": {}
         },
         {
@@ -144,8 +156,9 @@ const gearData = {
           "image": "assets/images/gear/lenses/sigma.jpg",
           "status": "available",
           "type": "lens",
-          "specs": ["24-70mm F2.8", "L-Mount", "Art Line"],
-          "description": "Lマウント唯一の大口径標準ズーム。Artラインの高い光学性能を持ち、24mmから70mmまでズーム全域で安定した解像力を発揮する。",
+          "mount": "L",
+          "specs": ["24\u201370mm F2.8", "DG DN Art", "19枚15群", "約835g"],
+          "description": "Lマウント唯一の大口径標準ズーム。Artラインの高い光学性能を持ち、24mmから70mmまでズーム全域で安定した解像力を発揮する。動画でも静止画でも頼れる万能性があり、旅先ではこれ一本で完結することも多い。防塵防滴構造と高速・静音AFで実用性も申し分ない。",
           "links": {}
         }
       ]
