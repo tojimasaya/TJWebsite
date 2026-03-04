@@ -20,9 +20,6 @@
         <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
     </noscript>
 
-    <!-- Chart.js -->
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-
     <!-- Base CSS -->
     <link rel="stylesheet" href="style.css">
 
@@ -55,18 +52,6 @@
         .about-prose { color: var(--text-light); font-family: var(--secondary-font); font-weight: 300; font-size: var(--text-lg); line-height: 1.8; }
         .about-prose p { margin-bottom: 1.5rem; }
 
-        /* Chart section */
-        .about-chart { padding: 5rem 1.5rem; }
-        .about-chart-inner { max-width: 64rem; margin: 0 auto; }
-        .about-chart-header { margin-bottom: 2.5rem; }
-        @media (min-width: 768px) { .about-chart-header { text-align: left; } }
-        .about-chart-header h3 { font-size: var(--text-xl); font-family: var(--secondary-font); font-weight: 600; color: var(--text-color); }
-        .about-chart-header p { font-size: var(--text-sm); color: var(--text-lighter); font-family: var(--secondary-font); margin-top: 0.25rem; }
-        .chart-card { background: var(--white); padding: 1.5rem; border-radius: 0.75rem; box-shadow: var(--shadow-sm); border: 1px solid var(--border-color); }
-        .chart-container { position: relative; width: 100%; max-width: 800px; margin: 0 auto; height: 350px; }
-        @media (max-width: 640px) { .chart-container { height: 300px; } }
-        .chart-note { text-align: center; font-size: var(--text-xs); color: var(--text-lighter); margin-top: 1rem; font-family: var(--secondary-font); }
-
         /* Chronicle / Timeline */
         .about-timeline { padding: 5rem 1.5rem; background: var(--white); }
         .about-timeline-inner { max-width: 72rem; margin: 0 auto; }
@@ -91,47 +76,6 @@
         .timeline-body .year { font-size: var(--text-sm); font-family: var(--secondary-font); font-weight: 700; color: var(--accent-color); margin-bottom: 0.25rem; display: block; }
         .timeline-body h3 { font-size: var(--text-2xl); margin-bottom: 0.75rem; }
         .timeline-body p { color: var(--text-light); line-height: 1.8; font-family: var(--secondary-font); font-weight: 300; }
-
-        /* Engadget feature section */
-        .about-engadget { padding: 6rem 1.5rem; background: #111827; color: #fff; position: relative; overflow: hidden; }
-        .about-engadget-inner { max-width: 72rem; margin: 0 auto; position: relative; z-index: 10; }
-        .engadget-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; align-items: start; }
-        @media (min-width: 768px) { .engadget-grid { grid-template-columns: 1fr 1fr; } }
-        .engadget-label { color: var(--accent-color); font-family: var(--secondary-font); font-weight: 700; letter-spacing: 0.1em; font-size: var(--text-sm); text-transform: uppercase; }
-        .engadget-title { font-size: var(--text-4xl); margin-top: 1rem; margin-bottom: 1.5rem; }
-        @media (min-width: 768px) { .engadget-title { font-size: 3rem; } }
-        .engadget-text { color: #d1d5db; font-family: var(--secondary-font); font-weight: 300; line-height: 2; margin-bottom: 1.5rem; }
-        .engadget-text strong { color: #fff; }
-        .engadget-link { display: block; background: #1f2937; border-radius: 0.75rem; padding: 1.5rem; border: 1px solid #374151; transition: background 0.3s; }
-        .engadget-link:hover { background: #293548; }
-        .engadget-link-inner { display: flex; align-items: center; gap: 1rem; }
-        .engadget-link-icon { width: 4rem; height: 4rem; border-radius: 9999px; border: 2px solid #4b5563; display: flex; align-items: center; justify-content: center; background: #111827; flex-shrink: 0; }
-        .engadget-link-icon-inner { width: 3rem; height: 3rem; border-radius: 9999px; border: 1px solid #6b7280; background: #1f2937; }
-        .engadget-link h3 { font-size: var(--text-lg); font-weight: 700; color: #fff; }
-        .engadget-link p { font-size: var(--text-sm); color: #9ca3af; }
-        .engadget-figure { position: relative; border-radius: 0.5rem; overflow: hidden; box-shadow: var(--shadow-xl); border: 1px solid #374151; }
-        @media (min-width: 768px) { .engadget-figure { transform: rotate(2deg); } .engadget-figure:hover { transform: rotate(0deg); } }
-        .engadget-figure { transition: transform 0.5s; }
-        .engadget-figure img { width: 100%; height: auto; opacity: 0.95; }
-        .engadget-figure img:hover { opacity: 1; }
-        .engadget-caption { position: absolute; bottom: 0; left: 0; right: 0; background: rgba(0,0,0,0.8); color: #fff; font-size: var(--text-xs); padding: 0.5rem 1rem; font-family: var(--secondary-font); text-align: center; }
-
-        /* Himeji / Current Mission */
-        .about-himeji { padding: 6rem 1.5rem; background: #fdfbf7; border-top: 1px solid var(--border-color); }
-        .about-himeji-inner { max-width: 48rem; margin: 0 auto; text-align: center; }
-        .about-himeji .mission-label { font-family: var(--secondary-font); font-size: var(--text-xs); letter-spacing: 0.1em; color: var(--text-light); text-transform: uppercase; margin-bottom: 1rem; display: block; }
-        .about-himeji h2 { font-size: var(--text-3xl); margin-bottom: 2rem; }
-        @media (min-width: 768px) { .about-himeji h2 { font-size: 3rem; } }
-        .about-himeji .prose { color: var(--text-light); font-family: var(--secondary-font); font-weight: 300; font-size: var(--text-lg); line-height: 1.8; margin-bottom: 3rem; }
-        .about-himeji .prose p { margin-bottom: 1.5rem; }
-        .about-himeji .prose .highlight { font-weight: 500; color: var(--text-color); }
-        .about-cta { display: flex; flex-direction: column; justify-content: center; gap: 1rem; }
-        @media (min-width: 768px) { .about-cta { flex-direction: row; } }
-        .about-cta a { display: inline-flex; align-items: center; justify-content: center; padding: 1rem 2rem; border-radius: 0.25rem; font-family: var(--secondary-font); text-decoration: none; transition: all 0.3s; }
-        .about-cta .cta-primary { background: var(--text-color); color: #fff; }
-        .about-cta .cta-primary:hover { background: #1f2937; }
-        .about-cta .cta-secondary { border: 1px solid var(--border-color); color: var(--text-color); }
-        .about-cta .cta-secondary:hover { background: var(--hover-color); }
 
         /* Footer */
         .about-footer { background: var(--white); border-top: 1px solid var(--border-color); padding: 4rem 1.5rem 2rem; }
@@ -183,7 +127,7 @@
         </div>
     </header>
 
-    <!-- Core Philosophy -->
+    <!-- Philosophy & Mission -->
     <section class="about-philosophy">
         <div class="about-philosophy-inner">
             <div style="text-align:center; margin-bottom:3rem;">
@@ -193,33 +137,18 @@
             <div class="about-prose">
                 <p>
                     私の原点は、1993年に渡った香港、そして深水埗（シャムスイポー）の電脳街にあります。
-                </p>
-                <p>
-                    iPhoneの登場以来、そのデバイスとしての魅力に取り憑かれ、写真を撮る楽しさに目覚めました。
-                    「もっと面白く撮りたい」というガジェット愛が高じて、ついにはカメラアクセサリーまで自作してしまい、
+                    iPhoneの登場以来、写真を撮る楽しさに目覚め、ガジェット愛が高じてカメラアクセサリーまで自作。
                     気がつけば、手に持つ機材がiPhoneからライカへと変わっていました。
                 </p>
                 <p>
-                    つまり私は、昔も今も変わらず、純粋な「写真好き、カメラ好きのマニア」なのです。
-                    そんなマニアの視点で切り取る世界を、楽しんでいただければ幸いです。
+                    長く海外に住み、たまに帰国して姫路城を散策すると、外国人観光客の眼差しを通して初めて、
+                    「近すぎて見えていなかった」故郷の城の真の偉大さに気づきました。
+                </p>
+                <p>
+                    <a href="shirasagi36.html" style="font-weight:500; color:var(--text-color); text-decoration:underline; text-underline-offset:3px;">「白鷺三十六景」</a>は、
+                    外からの視点を持った一人のマニアが、世界に向けて姫路城の美しさと物語を再定義し、発信する試みです。
                 </p>
             </div>
-        </div>
-    </section>
-
-    <!-- Chart Section -->
-    <section class="about-chart">
-        <div class="about-chart-inner">
-            <div class="about-chart-header">
-                <h3>My Creative Trajectory</h3>
-                <p>興味の変遷と創造性の焦点</p>
-            </div>
-            <div class="chart-card">
-                <div class="chart-container">
-                    <canvas id="trajectoryChart"></canvas>
-                </div>
-            </div>
-            <p class="chart-note">Data reflects relative focus of activity over time.</p>
         </div>
     </section>
 
@@ -230,70 +159,6 @@
             <div class="timeline-grid">
                 <div class="timeline-nav" id="timeline-nav"></div>
                 <div class="timeline-content" id="timeline-content"></div>
-            </div>
-        </div>
-    </section>
-
-    <!-- The Engadget Story -->
-    <section class="about-engadget">
-        <div class="about-engadget-inner">
-            <div class="engadget-grid">
-                <div>
-                    <div style="margin-bottom:2rem;">
-                        <span class="engadget-label">The Highlight</span>
-                        <h2 class="engadget-title">The Engadget Moment</h2>
-                        <p class="engadget-text">
-                            2011年、iPhoneに一眼レフのレンズを装着する「Turtle Jacket」を開発。
-                            当時、本家アメリカの <strong>Engadget</strong> に製品が掲載された時の興奮は忘れられません。
-                        </p>
-                        <p class="engadget-text">
-                            記事には数千件ものコメントが付きました。その多くは「馬鹿げている」「クレイジーだ」という嘲笑でした。
-                            しかし、スティーブ・ジョブズがまだ生きていたあの時代に、世界中のギークたちが私の作った
-                            "奇妙な製品" について熱く議論している。
-                            その事実が、私にとっては製品が売れること以上に、何よりも嬉しかったのです。
-                        </p>
-                    </div>
-                    <a href="https://www.pinterest.com/tojimasaya/turtleback/" target="_blank" rel="noopener noreferrer" class="engadget-link">
-                        <div class="engadget-link-inner">
-                            <div class="engadget-link-icon">
-                                <div class="engadget-link-icon-inner"></div>
-                            </div>
-                            <div>
-                                <h3>View Turtleback Designs</h3>
-                                <p>See the collection on Pinterest &rarr;</p>
-                            </div>
-                        </div>
-                    </a>
-                </div>
-                <div style="margin-top:2rem;">
-                    <figure class="engadget-figure">
-                        <img src="assets/images/about/engadget_article.png" alt="Engadget Article Screenshot" loading="lazy" decoding="async" onerror="this.style.display='none'; this.parentElement.innerHTML='<div style=\"background:#1f2937;padding:2rem;text-align:center;color:#9ca3af;\">Image: engadget_article.png</div>'">
-                        <figcaption class="engadget-caption">Featured on Engadget US (2011)</figcaption>
-                    </figure>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Himeji / Future Section -->
-    <section class="about-himeji">
-        <div class="about-himeji-inner">
-            <span class="mission-label">Current Mission</span>
-            <h2>Rediscovering Himeji</h2>
-            <div class="prose">
-                <p>
-                    長く海外に住み、たまに帰国して姫路城を散策すると、そこには多くの外国人がいます。
-                    彼らの眼差しを通して初めて、私は「近すぎて見えていなかった」姫路城の真の偉大さに気づきました。
-                </p>
-                <p class="highlight">「白鷺三十六景」</p>
-                <p>
-                    このプロジェクトは、単なる観光写真ではありません。
-                    外からの視点を持った私が、世界に向けて姫路城の美しさと物語を再定義し、発信する試みです。
-                </p>
-            </div>
-            <div class="about-cta">
-                <a href="shirasagi36.html" class="cta-primary">View "Shirasagi 36" Project</a>
-                <a href="writings.html" class="cta-secondary">Read Stories</a>
             </div>
         </div>
     </section>
@@ -331,68 +196,7 @@
     <!-- Scripts -->
     <script src="js/image-fallback.js"></script>
     <script>
-        // --- 1. Chart Logic ---
-        const initChart = () => {
-            const ctx = document.getElementById('trajectoryChart').getContext('2d');
-            const years = [1990, 1995, 2000, 2005, 2010, 2015, 2020, 2024];
-
-            new Chart(ctx, {
-                type: 'line',
-                data: {
-                    labels: years,
-                    datasets: [
-                        {
-                            label: 'IT & Business',
-                            data: [20, 90, 85, 80, 70, 60, 50, 45],
-                            borderColor: '#cbd5e1',
-                            backgroundColor: 'transparent',
-                            borderWidth: 2,
-                            tension: 0.4,
-                            pointRadius: 0
-                        },
-                        {
-                            label: 'Gadget Modding',
-                            data: [10, 20, 40, 70, 100, 60, 40, 30],
-                            borderColor: '#2563eb',
-                            backgroundColor: 'transparent',
-                            borderWidth: 2,
-                            tension: 0.4
-                        },
-                        {
-                            label: 'Photography & Himeji',
-                            data: [5, 10, 15, 30, 50, 70, 90, 100],
-                            borderColor: '#f59e0b',
-                            backgroundColor: 'transparent',
-                            borderWidth: 3,
-                            tension: 0.4
-                        }
-                    ]
-                },
-                options: {
-                    responsive: true,
-                    maintainAspectRatio: false,
-                    plugins: {
-                        legend: { position: 'bottom' },
-                        tooltip: {
-                            mode: 'index',
-                            intersect: false,
-                            backgroundColor: 'rgba(255, 255, 255, 0.9)',
-                            titleColor: '#333',
-                            bodyColor: '#666',
-                            borderColor: '#e5e5e5',
-                            borderWidth: 1
-                        }
-                    },
-                    scales: {
-                        y: { display: false, min: 0 },
-                        x: { grid: { display: false } }
-                    },
-                    interaction: { mode: 'nearest', axis: 'x', intersect: false }
-                }
-            });
-        };
-
-        // --- 2. Timeline Logic ---
+        // --- Timeline Logic ---
         const timelineData = [
             { year: "1964", title: "Origin", desc: "兵庫県姫路市に生まれる。", icon: "★" },
             { year: "1993", title: "Move to Hong Kong", desc: "香港・深水埗（シャムスイポー）の「黄金電腦商場」に魅せられ、移住を決意。ここから私の電脳生活が始まる。", icon: "HK" },
@@ -400,7 +204,7 @@
             { year: "2004", title: "Blogging Era", desc: "ブログ「亜洲モバイル人柱隊」を開始。本業の傍ら、スマートフォンやガジェット情報を発信し始める。", icon: "✎" },
             { year: "2007", title: "iPhone & Jailbreak", desc: "初代iPhone (2G) のJailbreakに成功（日本人初？）。「電脳中心買物隊 in 香港」を立ち上げ、スマホ関連製品の販売を開始。", icon: "" },
             { year: "2010", title: "Turtleback Ltd.", desc: "iPhoneカメラジャケットを企画・製造する会社を創業。ハードウェア開発への挑戦。", icon: "⚙" },
-            { year: "2011", title: "The Breakthrough", desc: "iPhoneに一眼レンズを装着する「SLR Mount」を発表。Engadget、LA Times、Vogue等に掲載され世界的ヒットとなる。", icon: "★" },
+            { year: "2011", title: "The Breakthrough", desc: "iPhoneに一眼レンズを装着する「SLR Mount」を発表。本家アメリカのEngadgetに掲載され、数千件のコメントが殺到。「馬鹿げている」「クレイジーだ」という嘲笑が大半でしたが、スティーブ・ジョブズがまだ生きていたあの時代に、世界中のギークたちが私の作った"奇妙な製品"について熱く議論している——その事実が、何よりも嬉しかった。", icon: "★", image: "assets/images/about/engadget_article.png", imageCaption: "Featured on Engadget US (2011)", link: "https://www.pinterest.com/tojimasaya/turtleback/", linkText: "View Turtleback Designs on Pinterest" },
             { year: "Present", title: "Back to Himeji", desc: "香港と日本を行き来する中で、故郷・姫路城の魅力を再発見。「白鷺三十六景」プロジェクトを通じて、その美しさを世界に発信中。", icon: "🏯" }
         ];
 
@@ -422,6 +226,16 @@
                 const contentDiv = document.createElement('div');
                 contentDiv.id = `timeline-item-${index}`;
                 contentDiv.className = "timeline-item";
+                let extraHTML = '';
+                if (item.image) {
+                    extraHTML += `<figure style="margin-top:1rem; border-radius:0.5rem; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); border:1px solid var(--border-color);">
+                        <img src="${item.image}" alt="${item.imageCaption || ''}" loading="lazy" decoding="async" style="width:100%; height:auto;">
+                        ${item.imageCaption ? `<figcaption style="background:#f9fafb; padding:0.5rem 1rem; font-size:var(--text-xs); color:var(--text-lighter); font-family:var(--secondary-font); text-align:center;">${item.imageCaption}</figcaption>` : ''}
+                    </figure>`;
+                }
+                if (item.link) {
+                    extraHTML += `<a href="${item.link}" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:0.75rem; font-size:var(--text-sm); font-family:var(--secondary-font); color:var(--accent-color); text-decoration:none;">${item.linkText || item.link} &rarr;</a>`;
+                }
                 contentDiv.innerHTML = `
                     <div class="timeline-item-inner">
                         <div style="display:flex; flex-direction:column; align-items:center; padding-top:0.25rem;">
@@ -432,6 +246,7 @@
                             <span class="year">${item.year}</span>
                             <h3>${item.title}</h3>
                             <p>${item.desc}</p>
+                            ${extraHTML}
                         </div>
                     </div>
                 `;
@@ -477,7 +292,6 @@
 
         // Init
         document.addEventListener('DOMContentLoaded', () => {
-            initChart();
             renderTimeline();
             setupObserver();
         });
