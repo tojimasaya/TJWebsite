@@ -116,6 +116,28 @@
                 background-color: rgba(96, 165, 250, 0.1);
             }
         }
+        /* Leica DB Link */
+        .leica-db-link {
+            display: flex;
+            align-items: center;
+            gap: 14px;
+            max-width: 1200px;
+            margin: 0 auto 40px;
+            padding: 14px 18px;
+            background: var(--hover-color, #f9fafb);
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            text-decoration: none;
+            color: var(--text-color);
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+        .leica-db-link:hover {
+            background: var(--border-color, #e5e7eb);
+        }
+        .leica-db-icon { font-size: 1.2rem; flex-shrink: 0; }
+        .leica-db-title { font-family: var(--primary-font); font-size: 1rem; margin-bottom: 2px; }
+        .leica-db-desc { font-size: 0.75rem; color: var(--text-lighter); }
+        .leica-db-arrow { margin-left: auto; font-size: 1rem; color: var(--text-lighter); flex-shrink: 0; }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -135,6 +157,17 @@
         <h1>Camera & Lenses</h1>
         <p>Leica M System, SL System, Compacts, and Lenses.</p>
     </header>
+
+    <div style="padding: 30px 30px 0;">
+        <a href="leica-serial.html" class="leica-db-link">
+            <div class="leica-db-icon">🔍</div>
+            <div>
+                <div class="leica-db-title">Leica Serial Number Database</div>
+                <div class="leica-db-desc">シリアル番号から製造年・モデルを検索</div>
+            </div>
+            <span class="leica-db-arrow">→</span>
+        </a>
+    </div>
 
     <h2 class="section-label">Bodies</h2>
     <div class="detail-grid" id="body-grid">
