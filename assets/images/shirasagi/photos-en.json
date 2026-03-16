@@ -791,36 +791,36 @@
     "category": "spring afternoon"
   },
   "31": {
-    "title": "Castle Town Twilight — View from the Keep",
-    "subtitle": "Himeji City and Sunset Sky from the Main Keep",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring evening",
-    "summary": "Looking down from the upper floors of the Main Keep, Otemae-dori avenue stretches straight toward Himeji Station under a sky painted in pink and purple — a special panorama that evokes the view once seen by castle lords.",
+    "title": "Looking Toward Himeji Station from Bizenmaru",
+    "subtitle": "A View to Shock a Shogun / Overlooking Himeji Station from Bizenmaru",
+    "summary": "Looking straight down Otemae Street toward Himeji Station from the \"Bizenmaru\" square below the Main Keep. This is the exact reverse perspective of View No. 21, showcasing a modern cityscape that would surely make a feudal lord faint from shock.",
     "tips": [
       {
         "icon": "📍",
         "label": "Location",
-        "text": "Upper floors of Himeji Castle Main Keep"
+        "text": "Bizenmaru (The square directly in front of the Main Keep)"
       },
       {
         "icon": "📷",
-        "label": "Photo Tip",
-        "text": "The magic hour around sunset produces the most beautiful light. Shoot through the lattice windows by positioning your lens close to the bars and focusing on the background."
+        "label": "Photo Tips",
+        "text": "Aim for perfect symmetry by placing Otemae Street right in the center of your frame. This emphasizes the profound depth and scale of the modern city."
       },
       {
         "icon": "🤝",
-        "label": "Visiting Info",
-        "text": "The top floor of the keep is accessible during regular visiting hours. Late afternoon tends to be less crowded."
+        "label": "Viewing Perspective",
+        "text": "Be sure to compare this with View No. 21 (the view from Castle View). You can truly appreciate the unique urban design of Himeji, where the station and the castle gaze directly at each other down a straight 1.5km line."
       }
     ],
-    "story": "Standing on an upper floor of the Main Keep and looking south, the grand Otemae-dori avenue stretches in a straight line toward Himeji Station, revealing the full expanse of the castle town below. Buildings and streetlights along the avenue begin to glow in the fading twilight, while the silhouettes of trees in San-no-Maru Square create a gentle foreground.\n\nPink and pale purple clouds spread across the sky, softly embracing the city of Himeji as it transitions from day to night. When the castle lords once looked down from this very spot, they would have seen an expanse of traditional tiled rooftops stretching into the distance. Though eras have passed and buildings have changed, the essence of watching over the town from this elevated vantage point remains unchanged.\n\nA castle town viewed from atop the stone walls of its keep — it is a deeply moving sight where history and the present quietly overlap, transcending words.",
-    "story_jp": "大天守の上階に立ち、南を見下ろすと、大手前通りが姫路駅へと一直線に伸びる城下町の姿が広がります。通りの両側に立ち並ぶビルや街灯が、夕暮れ時の薄明かりの中で輝き始め、三の丸広場の木々のシルエットが穏やかな前景を形作っています。\n\n空にはピンクと薄紫の雲が広がり、昼から夜へと移り変わる姫路の街を優しく包み込んでいます。かつてこの同じ場所から城主が見下ろした時、眼下に広がっていたのは瓦屋根の連なる城下町だったことでしょう。時代は移り、建物は変わっても、この高台から街を見守る眺めの本質は変わりません。\n\n石垣の上に立つ天守から見下ろす城下町。それは、歴史と現在が静かに重なり合う、言葉にし難い感動の眺めです。",
+    "story": "This is a view looking south towards Himeji Station from \"Bizenmaru,\" the open square located directly in front of the Main Keep. The main avenue stretching straight down the center of the frame ends right at modern-day JR Himeji Station.\n\nThis is the exact opposite perspective of View No. 21! While No. 21 looked up at the castle from the station's \"Castle View\" deck, this one looks down from the castle to the station. This brilliant urban design, where the station and the castle gaze at each other, is one of Himeji's greatest charms.\n\nWhen the castle was built, the area below was filled only with low wooden houses, completely enveloped in pitch-black darkness at night. If the lords of the past were to time-travel to the present and stand here, how would they react? Towering buildings reaching into the sky, countless car headlights streaming down the massive avenue, and vivid illuminations lighting up the entire city like a sleepless fortress. The sheer gap between the empty landscape of their time and this modern metropolis would undoubtedly make their knees give out from pure shock! (laughs)",
+    "story_jp": "大天守のすぐ目の前に広がる広場「備前丸」から、南の方角、つまり姫路駅方面を見下ろした一枚です。画面の中央を真っ直ぐに伸びる大通りの突き当たりが、現在のJR姫路駅になります。\n\nこの写真は、第弐拾壱景（No. 21）で紹介した姫路駅前の「キャッスルビュー」からお城を見上げた構図と、まったく「正反対」の方向から眺めたものです。駅からお城へ、お城から駅へ。この真っ直ぐな都市設計は、姫路という街の大きな魅力の一つです。\n\nお城が築かれた当時、眼下に広がっていたのは背の低い木造の家屋ばかりで、夜になれば漆黒の闇に包まれていたはずです。もし当時の城主が現代にタイムスリップしてこの場に立ったら、どう感じるでしょうか。空高くそびえ立つビル群、真っ直ぐに伸びる巨大な通りを行き交う無数の車のヘッドライト、そして街全体を不夜城のように照らし出す色鮮やかなイルミネーション。かつての何もない風景とのあまりのギャップに、きっと驚きのあまり腰を抜かしてしまうことでしょうね（笑）。",
     "location": {
-      "lat": 34.8394,
-      "lng": 134.6939,
-      "name": "Himeji Castle Main Keep"
-    }
+      "lat": 34.8389691,
+      "lng": 134.6938425,
+      "name": "Bizenmaru, Himeji Castle"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring evening"
   },
   "32": {
     "title": "Blue Sky Ascent — White Peaks of the Keep",
