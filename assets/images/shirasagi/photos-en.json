@@ -700,36 +700,31 @@
     "category": "spring night"
   },
   "28": {
-    "title": "The Shachihoko Guardian — Glittering Night",
-    "subtitle": "Rooftop Shachihoko with Himeji's City Lights",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring night",
-    "summary": "The shachihoko atop the Main Keep's roof — a mythical guardian against fire. The glittering cityscape of Himeji beyond it is a view reserved for those who ascend the keep.",
+    "title": "The Shachihoko and City Lights from the Keep",
+    "subtitle": "A Gaze Across Time / Looking South from the Top Floor of the Main Keep",
+    "summary": "Looking south from the top floor of the Main Keep. The glittering night view of Himeji city spreads beyond the illuminated Shachihoko. It is a spectacular view that evokes historical romance by contrasting today's bright city lights with the pitch-black castle town the feudal lords once saw.",
     "tips": [
       {
         "icon": "📍",
         "label": "Location",
-        "text": "Upper floors of Himeji Castle Main Keep"
+        "text": "The top floor of the Main Keep, Himeji Castle (South-facing window)"
       },
       {
-        "icon": "📷",
-        "label": "Photo Tip",
-        "text": "Focus on the shachihoko and let the city lights become a beautiful bokeh background for a dreamlike image."
-      },
-      {
-        "icon": "🤝",
-        "label": "Special Opening",
-        "text": "Nighttime photography from inside the keep is a rare opportunity available only during special evening openings."
+        "icon": "💡",
+        "label": "Castle Secret",
+        "text": "Do you know how many Shachihoko are on the Main Keep? There aren't just the two at the very top; there are actually 11 in total! Because of the complex, asymmetrical roof structure connecting the keeps, it ends up being an unusual odd number."
       }
     ],
-    "story": "The shachihoko — a mythical, dolphin-like guardian figure — sits atop the Main Keep's roof. Placed at both ends of the ridge as protectors against fire, these ceramic sentinels have watched over the city of Himeji for centuries.\n\nBeyond the shachihoko, the nighttime cityscape of Himeji spreads out like scattered jewels. The city lights dissolve into a beautiful bokeh that accentuates the shachihoko's silhouette, creating a stunning fusion of history and modernity within a single frame.\n\nThe exquisite craftsmanship is evident in every individually sculpted scale. With its tail raised high, the shachihoko's powerful form radiates a spirit of guardianship. This close-up perspective, possible only during special nighttime openings, captures a guardian that is usually seen only from far below.",
-    "story_jp": "大天守の最上階から見える鯱鉾（しゃちほこ）。火除けの守り神として屋根の両端に据えられたこの瓦製の霊獣は、何百年もの間、姫路の街を見下ろし続けてきました。\n\nその鯱鉾の向こうに広がるのは、宝石を散りばめたような姫路の夜景。街の灯りが美しいボケとなって鯱鉾のシルエットを際立たせ、歴史と現代が一枚の絵の中で見事に溶け合っています。\n\n鯱鉾の鱗一枚一枚まで精緻に作り込まれた造形美。尾を高く跳ね上げたその力強い姿は、城を守護する気概に満ちています。日中は遠くからしか望めないこの守護者の姿を、夜の特別公開ならではの至近距離で捉えた一枚です。",
+    "story": "I took this shot from a south-facing window after climbing to the top floor of the Main Keep. An illuminated Shachihoko sits in the foreground, with the glittering night view of Himeji city spreading out behind it.\n\nIdeally, I would have loved to capture the massive pair of Shachihoko on the very top roof ridge, but since I obviously couldn't climb onto the roof (laughs), I made this one right outside the window my main subject!\n\nAlthough the tile itself has been restored, successive lords of Himeji Castle must have looked down at the town below from this exact same direction. Thinking about the stark contrast between the pitch-black darkness the powerful rulers of centuries past would have seen, and the dazzling modern nightscape spreading before my eyes today, fills me with deep emotion, making me realize the vast passage of time.\n\nBy the way, as mentioned in the tips, there are 11 Shachihoko on the Main Keep. Interestingly, during the major Showa-era restoration, they used the oldest surviving Edo-period tile (which happened to be a closed-mouth female) as a mold for all of them. Thus, for a time, all 11 tiles had the exact same female face! (The top pair was finally corrected to a proper male-female pair during the recent Heisei restoration.)",
+    "story_jp": "大天守の最上階まで登り、南向きの窓から撮影した一枚です。手前にライトアップされた鯱瓦、その後ろには姫路の街の煌びやかな夜景が広がっています。\n\n本当ならば一番上の大棟に乗っている巨大な二対の鯱瓦を撮りたいところなのですが、さすがに屋根に登るわけにはいきませんので（笑）、すぐ窓の向こうに見えるこの鯱を主役に据えました。\n\n瓦自体は修理の際に新しく作り直されたものですが、歴代の城主たちも、これと全く同じ方角から眼下の城下町を見下ろしていたはずです。数百年前の権力者たちが見ていたであろう漆黒の闇と、いま目の前に広がる現代の眩い夜景。そのコントラストに思いを馳せると、時の流れの長さを実感し、非常に感慨深いものがあります。\n\nちなみに、先ほどのTipsで大天守には「11尾」の鯱がいると書きましたが、昭和の大修理でこれらを新調する際、一番古い江戸時代の鯱（口を閉じたメスの形）をモデルにすべての型をとったため、一時期「11尾すべてが同じメスの顔」になっていたという面白い歴史があります（※現在の一番上の鯱は、平成の修理で正しいオスメスのペアに直されています）。",
     "location": {
-      "lat": 34.8394,
+      "lat": 34.839,
       "lng": 134.6939,
-      "name": "Himeji Castle Main Keep"
-    }
+      "name": "Top floor of the Main Keep, Himeji Castle"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring night"
   },
   "29": {
     "title": "Castle Gate Pine — Samurai Elegance",
