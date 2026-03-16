@@ -724,7 +724,8 @@
     },
     "date": "2026.03.13",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring night"
+    "category": "spring night",
+    "featured": true
   },
   "29": {
     "title": "Hishi no Mon: Flower of Momoyama and Memories of Opening the Gate",
