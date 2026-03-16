@@ -668,36 +668,36 @@
     "category": "spring night"
   },
   "27": {
-    "title": "白壁迴廊 仰望天守",
-    "subtitle": "城內迴廊夜望大天守",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring night",
-    "summary": "Walking along the illuminated white-walled corridor, the Main Keep rises dramatically against the night sky ahead — an immersive nighttime view possible only from within the castle walls.",
+    "title": "夜之將軍坂 靜謐的石階",
+    "subtitle": "夜之將軍坂 / 通往「波之門 (ha-no-mon)」的石階",
+    "summary": "這裡是被稱為「將軍坂」的著名時代劇拍攝場地。平時總是擠滿遊客的經典景點，透過參加一年一度的特別導覽，奇蹟般地捕捉到了「空無一人」且點亮燈光的絕美瞬間。",
     "tips": [
       {
         "icon": "📍",
-        "label": "Location",
-        "text": "Near Nishinomaru Corridor, Himeji Castle"
+        "label": "地點",
+        "text": "通稱「將軍坂」（通往「波之門」的石階）"
       },
       {
         "icon": "📷",
-        "label": "Photo Tip",
-        "text": "A wider focal length captures the corridor's depth leading to the keep, creating a dramatic composition."
+        "label": "拍攝貼士",
+        "text": "從坡道下方仰拍，將右側帶有「狹間（防禦用的射擊孔）」的土牆與正前方的天守閣一同入鏡，是最經典的構圖。"
       },
       {
         "icon": "🤝",
-        "label": "Night Viewing",
-        "text": "Nighttime access inside the castle grounds is only available during special events."
+        "label": "特別背景",
+        "text": "其實這張照片，是我在每年僅舉辦一次、為期三天的「姬路城頂級夜間導覽（Premium Night Tour）」中拍攝的。空無一人的夜晚將軍坂，是只有在這個限定機會下才能見到的夢幻光景。"
       }
     ],
-    "story": "Guided by the gentle glow of lanterns at your feet, you walk along the white-walled corridor. Through the bare winter branches, the illuminated Main Keep emerges, floating against the night sky.\n\nThe corridor at night is an entirely different world from its daytime appearance. Light reflected off the white walls illuminates the path, and the keep visible at its end glows with an almost divine radiance, as if existing in another dimension. The corridor's linear composition naturally draws your gaze toward the keep, creating a dramatic scene full of depth.\n\nThis corridor, where samurai walked for hundreds of years, takes on a profound atmosphere in the nighttime silence. Walking through it, you feel the heartbeat of history resonating from beneath your feet.",
-    "story_jp": "足元を照らす行灯の柔らかな光に導かれ、白壁の回廊を歩みを進めると、冬枯れの木々の枝越しに、ライトアップされた大天守が夜空に浮かび上がります。\n\n昼間に歩く回廊とは全く異なる世界がそこにはあります。白壁に反射する光が道を照らし、その先に見える天守は、まるで別次元の存在のように神々しく輝いています。回廊の直線的な構図が、天守へと視線を自然に導き、奥行きのあるドラマチックな景観を生み出しています。\n\n何百年もの間、武士たちが行き来したであろうこの回廊。夜の静寂の中で歩くと、歴史の鼓動が足元から伝わってくるような感覚に包まれます。",
+    "story": "這是一條通往「波之門」的石階。右側是排列著「狹間（用於射擊火繩槍或弓箭的孔洞）」的土牆，正前方則可仰望姬路城的天守閣。由於這裡經常在日本知名時代劇《暴坊將軍》中作為江戶城的場景出現，不知不覺間，人們便開始稱呼它為「將軍坂」。\n\n這裡是城內首屈一指的人氣拍照景點，白天總是有絡繹不絕的遊客。然而，這張照片是因為我參加了一年一度、僅舉辦三天的「姬路城頂級夜間導覽」，才奇蹟般地獨占了這片空無一人、被打上燈光的靜謐坡道。\n\n寂靜無聲的夜晚將軍坂，散發出一股彷彿真的穿越時空回到江戶時代的震撼力。順帶一提，畫面左側從石牆中伸出的樹枝是櫻花樹。再過一段時日，當櫻花盛開，這條無人的將軍坂在夜櫻的點綴下，想必會呈現出更加令人屏息的絕景吧。",
+    "story_jp": "右手に狭間（さま：鉄砲や弓を撃つための穴）が並ぶ土塀を据え、正面に姫路城の天守を望みながら「はの門」へと上っていく石段。ここは、松平健さん主演の時代劇『暴れん坊将軍』で、江戸城内の風景として度々登場したことから、いつしか「将軍坂」という通称で呼ばれるようになりました。\n\nお城の中でも屈指の人気撮影スポットであり、日中は途切れることなく多くの人で賑わっています。しかしこの一枚は、年に一度、わずか3日間にわたって開催される「姫路城プレミアムナイトツアー」に参加したことで、奇跡的に誰もいないライトアップされた状態を独占して撮影することができたものです。\n\n静まり返った夜の将軍坂は、本当に江戸時代にタイムスリップしたかのような凄みがあります。ちなみに、画面左側の石垣から伸びている枝は桜の木です。あと少し季節が進めば、この無人の将軍坂に夜桜が彩りを添える、さらに息を呑むような絶景が見られることでしょう。",
     "location": {
-      "lat": 34.8393,
-      "lng": 134.6925,
-      "name": "姬路城西之丸迴廊附近"
-    }
+      "lat": 34.839546,
+      "lng": 134.692916,
+      "name": "通稱「將軍坂」（通往「波之門」的石階）"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring night"
   },
   "28": {
     "title": "鯱鉾守護 夜景璀璨",

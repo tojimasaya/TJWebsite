@@ -668,36 +668,36 @@
     "category": "spring night"
   },
   "27": {
-    "title": "White Corridor — Gazing Up to the Keep",
-    "subtitle": "The Main Keep Seen from a Castle Corridor at Night",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring night",
-    "summary": "Walking along the illuminated white-walled corridor, the Main Keep rises dramatically against the night sky ahead — an immersive nighttime view possible only from within the castle walls.",
+    "title": "The Silent Shogun Slope at Night",
+    "subtitle": "Night at Shogun Slope / The stone steps leading to Ha-no-Mon Gate",
+    "summary": "Commonly known as \"Shogun Slope,\" a famous filming location for historical samurai dramas. Normally packed with tourists, this miraculous shot captures the iconic spot completely deserted and beautifully illuminated during an exclusive annual tour.",
     "tips": [
       {
         "icon": "📍",
         "label": "Location",
-        "text": "Near Nishinomaru Corridor, Himeji Castle"
+        "text": "Commonly known as \"Shogun Slope\" (Stone steps leading to Ha-no-Mon Gate)"
       },
       {
         "icon": "📷",
-        "label": "Photo Tip",
-        "text": "A wider focal length captures the corridor's depth leading to the keep, creating a dramatic composition."
+        "label": "Photo Tips",
+        "text": "The classic composition is to shoot looking up the slope, framing the earthen wall with its loopholes (hazama) on the right and the Main Keep in the center background."
       },
       {
         "icon": "🤝",
-        "label": "Night Viewing",
-        "text": "Nighttime access inside the castle grounds is only available during special events."
+        "label": "Exclusive Background",
+        "text": "This photo was actually taken during the \"Himeji Castle Premium Night Tour,\" an exclusive event held for only three days once a year. A completely empty Shogun Slope at night is a phantom sight you can only witness during this limited opportunity."
       }
     ],
-    "story": "Guided by the gentle glow of lanterns at your feet, you walk along the white-walled corridor. Through the bare winter branches, the illuminated Main Keep emerges, floating against the night sky.\n\nThe corridor at night is an entirely different world from its daytime appearance. Light reflected off the white walls illuminates the path, and the keep visible at its end glows with an almost divine radiance, as if existing in another dimension. The corridor's linear composition naturally draws your gaze toward the keep, creating a dramatic scene full of depth.\n\nThis corridor, where samurai walked for hundreds of years, takes on a profound atmosphere in the nighttime silence. Walking through it, you feel the heartbeat of history resonating from beneath your feet.",
-    "story_jp": "足元を照らす行灯の柔らかな光に導かれ、白壁の回廊を歩みを進めると、冬枯れの木々の枝越しに、ライトアップされた大天守が夜空に浮かび上がります。\n\n昼間に歩く回廊とは全く異なる世界がそこにはあります。白壁に反射する光が道を照らし、その先に見える天守は、まるで別次元の存在のように神々しく輝いています。回廊の直線的な構図が、天守へと視線を自然に導き、奥行きのあるドラマチックな景観を生み出しています。\n\n何百年もの間、武士たちが行き来したであろうこの回廊。夜の静寂の中で歩くと、歴史の鼓動が足元から伝わってくるような感覚に包まれます。",
+    "story": "These stone steps lead up to the \"Ha-no-Mon Gate,\" flanked on the right by an earthen wall lined with hazama (loopholes for firing matchlocks and arrows), with a direct view of the Main Keep straight ahead. Because this location frequently appeared as a scene inside Edo Castle in the classic historical TV drama Abarenbo Shogun (The Unfettered Shogun), it has come to be affectionately known as \"Shogun Slope.\"\n\nIt is one of the most popular photo spots in the castle, constantly bustling with people during the day. However, by participating in the \"Himeji Castle Premium Night Tour\"—a highly exclusive event held over just three days once a year—I was miraculously able to monopolize and photograph this illuminated, completely deserted slope.\n\nThe silent Shogun Slope at night possesses an intense atmosphere, making you feel as if you've truly slipped back in time to the Edo period. By the way, the branches extending from the stone wall on the left belong to a cherry tree. In just a little while, as the season progresses, one can only imagine the breathtaking view when night cherry blossoms add their colors to this empty slope.",
+    "story_jp": "右手に狭間（さま：鉄砲や弓を撃つための穴）が並ぶ土塀を据え、正面に姫路城の天守を望みながら「はの門」へと上っていく石段。ここは、松平健さん主演の時代劇『暴れん坊将軍』で、江戸城内の風景として度々登場したことから、いつしか「将軍坂」という通称で呼ばれるようになりました。\n\nお城の中でも屈指の人気撮影スポットであり、日中は途切れることなく多くの人で賑わっています。しかしこの一枚は、年に一度、わずか3日間にわたって開催される「姫路城プレミアムナイトツアー」に参加したことで、奇跡的に誰もいないライトアップされた状態を独占して撮影することができたものです。\n\n静まり返った夜の将軍坂は、本当に江戸時代にタイムスリップしたかのような凄みがあります。ちなみに、画面左側の石垣から伸びている枝は桜の木です。あと少し季節が進めば、この無人の将軍坂に夜桜が彩りを添える、さらに息を呑むような絶景が見られることでしょう。",
     "location": {
-      "lat": 34.8393,
-      "lng": 134.6925,
-      "name": "Near Nishinomaru Corridor, Himeji Castle"
-    }
+      "lat": 34.839546,
+      "lng": 134.692916,
+      "name": "\"Shogun Slope\" (Stone steps leading to Ha-no-Mon Gate)"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring night"
   },
   "28": {
     "title": "The Shachihoko Guardian — Glittering Night",
