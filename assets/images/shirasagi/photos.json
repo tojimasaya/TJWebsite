@@ -727,36 +727,36 @@
     "category": "spring night"
   },
   "29": {
-    "title": "城門古松 武家の佇まい",
-    "subtitle": "門前の松と白壁が語る武家の風格",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring afternoon",
-    "summary": "姫路城の城門の前に佇む見事な松。白壁と格子窓を背景に、丁寧に手入れされた枝ぶりが武家の格式と美意識を今に伝えます。",
+    "title": "菱の門 桃山の華と開門の記憶",
+    "subtitle": "歴史に触れる夜 / 菱の門の前にて",
+    "summary": "料金所を抜けて最初に迎えてくれる城内最大の門「菱の門」。安土桃山時代の華やかな様式を伝えるこの門を、特別なツアーで自らの手で開閉した、歴史の重みを感じる忘れられない夜の記録です。",
     "tips": [
       {
         "icon": "📍",
         "label": "場所",
-        "text": "姫路城 二の丸付近の門"
+        "text": "姫路城 菱の門（入城口を抜けてすぐ）"
       },
       {
         "icon": "📷",
         "label": "撮影のヒント",
-        "text": "松の枝ぶりと門の構図を活かすため、少し離れた位置からの撮影がおすすめです。"
+        "text": "2階部分にある釣り鐘のような形をした「火灯窓（かとうまど）」の曲線美と、黒漆塗りの格子窓、そして白漆喰のコントラストに注目して撮影すると、この門の優雅さが際立ちます。"
       },
       {
         "icon": "🤝",
-        "label": "見どころ",
-        "text": "姫路城の松は職人によって丁寧に手入れされており、城の景観美を支える重要な要素です。"
+        "label": "特別な体験",
+        "text": "年に一度の「プレミアムナイトツアー」では、この歴史的な門を参加者自身の手で開け閉めできるという、他では決して味わえない特別な体験が用意されていました。"
       }
     ],
-    "story": "姫路城の城門をくぐろうとすると、その手前で出迎えてくれるのが、見事に手入れされた一本の松。横に広がる枝ぶりは、まるで訪れる者に「ようこそ」と腕を広げているかのようです。\n\n背景には、白漆喰の壁と木製の格子窓が並ぶ多聞櫓（たもんやぐら）。石垣の上に建つその堂々とした姿と、門前の松の優美な曲線が、剛と柔の見事な調和を生み出しています。\n\n城を守るための実用的な建築と、来訪者を迎える美しい庭園の松。この二つが共存する風景は、武家社会の「強さの中にある美意識」を象徴しているようです。何気ない城内の一角ですが、足を止めてじっくり眺めると、先人たちの美へのこだわりが伝わってきます。",
-    "story_en": "Approaching one of Himeji Castle's gates, you're greeted by a magnificently maintained pine tree. Its branches spread horizontally as if extending welcoming arms to each visitor.\n\nBehind it stands a tamon-yagura (long guard tower) with white plaster walls and wooden lattice windows, rising imposingly atop the stone walls. The stately architecture and the pine's graceful curves create a beautiful harmony of strength and elegance.\n\nThe practical defensive architecture and the ornamental garden pine coexist in perfect balance — a landscape that embodies the aesthetic sensibility within the warrior class's world of strength. Though it may seem like just another corner of the castle grounds, pausing to truly observe reveals the profound attention to beauty that the castle's builders wove into every detail.",
+    "story": "料金所を抜けて、姫路城の中枢へと向かう道すがら、最初に私たちを迎えてくれるのがこの立派な「菱の門」です。\n\n実戦的で無骨な門が多い姫路城の中で、この門は安土桃山時代の華やかな建築様式を色濃く残しています。特に、2階部分にある釣り鐘のような形をした「火灯窓（かとうまど）」の曲線美や、黒漆塗りの格子窓と全体を覆う白漆喰のコントラストは、ため息が出るほど見事です。\n\n実は、この写真を撮影した「姫路城プレミアムナイトツアー」では、参加者が二手に分かれて、実際にこの重厚な門の「開門」と「閉門」を体験させていただきました。数百年の歴史を持つ本物の城門を自らの手で動かしたあの瞬間のずっしりとした重みと感動は、今でも私の心に強く焼き付いています。ただ美しい建物を眺めるだけでなく、歴史に直接触れることができた、非常に思い出深い体験と一枚です。",
+    "story_en": "Just past the ticket gates, as you head toward the heart of Himeji Castle, the first thing to welcome you is this magnificent structure: the \"Hishi no Mon\" (Diamond Gate).\n\nWhile many of the castle's gates are purely practical and austere, this one vividly retains the glamorous architectural style of the Azuchi-Momoyama period. The elegant curves of the bell-shaped Katomado window on the second floor, paired with the striking contrast between the black lacquered lattice windows and the bright white plaster, are truly breathtaking.\n\nActually, during the \"Himeji Castle Premium Night Tour\" when this photo was taken, our group split into two and we were allowed to physically experience opening and closing this massive gate ourselves. The physical weight and profound emotion of moving an authentic castle gate with hundreds of years of history by my own hands are deeply etched in my memory. It is a highly memorable experience—and photograph—that allowed me not just to admire a beautiful building, but to directly touch history.",
     "location": {
-      "lat": 34.8388,
-      "lng": 134.6935,
-      "name": "姫路城 二の丸付近"
-    }
+      "lat": 34.8386485,
+      "lng": 134.692453,
+      "name": "姫路城 菱の門"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring afternoon"
   },
   "30": {
     "title": "甍の波 天守聳ゆる",
