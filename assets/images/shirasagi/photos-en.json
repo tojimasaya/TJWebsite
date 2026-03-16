@@ -759,36 +759,36 @@
     "category": "spring afternoon"
   },
   "30": {
-    "title": "Waves of Roof Tiles — The Keep Rises",
-    "subtitle": "The Main Keep Through Layers of Castle Rooftops",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring afternoon",
-    "summary": "Layers of turret and watchtower roofs overlap in succession, with the Main Keep rising grandly behind them. The undulating tile rooftops convey the magnificent scale of castle architecture.",
+    "title": "Framed by Stone and Tile in the Setting Sun",
+    "subtitle": "A Framed Keep / Just before Hishi no Mon",
+    "summary": "A breathtaking view revealed by casually looking back just before Hishi no Mon. The continuous stone walls and tiled roofs act as a natural frame, highlighting the Main Keep bathed in the golden light of the late afternoon sun.",
     "tips": [
       {
         "icon": "📍",
         "label": "Location",
-        "text": "West side of Himeji Castle grounds"
+        "text": "Near the stone wall east of Hishi no Mon (Coordinates: 34.838521, 134.692622)"
       },
       {
         "icon": "📷",
-        "label": "Photo Tip",
-        "text": "Using a telephoto focal length compresses the overlapping roofs for an impactful composition."
+        "label": "Photo Tips",
+        "text": "Use the stone walls and tiled roofs in the foreground to create a \"framing effect.\" This emphasizes the three-dimensional presence of the keep in the background. The late afternoon, when the white walls glow warmly, is the perfect time."
       },
       {
         "icon": "🤝",
-        "label": "Point of Interest",
-        "text": "Himeji Castle's connected tower complex consists of the Main Keep, three small keeps, and connecting corridors — a beautifully intricate architectural ensemble."
+        "label": "Viewing Perspective",
+        "text": "Sometimes the best views are found not by looking ahead, but by glancing back. Enjoy the \"layered\" scenery unique to this complex fortress."
       }
     ],
-    "story": "From foreground to background, waves of tiled roofs overlap one upon another, culminating at the grand Main Keep that rises at their peak. This composition captures the very essence of Himeji Castle's \"connected tower complex\" — its defining architectural achievement.\n\nThe rhythmic succession of white walls and dark tiles repeats like a visual melody. Each roofline differs subtly in angle and curvature, harmonizing like musical voices as they guide the eye toward the Main Keep.\n\nIn the gentle late-afternoon light, each tile casts a soft shadow, crisply defining the contours of every structure. The texture of tiles that have endured centuries of wind and rain quietly speaks to the profound weight of this castle's history.",
-    "story_jp": "手前から奥へ、瓦屋根の波が幾重にも重なり、その頂点に大天守がそびえ立つ。この構図は、姫路城の「連立式天守群」という城郭建築としての真髄を、ひと目で伝えてくれます。\n\n白壁と黒い瓦のコントラストが繰り返されるリズミカルな屋根の連なり。それぞれの屋根の角度や曲線が微妙に異なり、まるで音楽のハーモニーのように調和しながら大天守へと視線を導きます。\n\n夕方に近い穏やかな光の中で、瓦の一枚一枚が柔らかな影を落とし、建物の輪郭をくっきりと浮かび上がらせています。何百年もの風雨に耐えてきた瓦たちの質感が、この城の歴史の重みを静かに語りかけてきます。",
+    "story": "I found this angle when I casually glanced back while keeping Hishi no Mon to my front-left. Beyond the impressive stone walls and tiled roofs extending to the east of the gate, I saw Himeji Castle glowing beautifully in the setting sun.\n\nRather than just shooting the keep in isolation, using elements of the gate, the formidable stone walls, and the sweeping tiles in the foreground to \"frame\" the keep creates a sense of scale and profound depth across the entire castle grounds.\n\nThe soft, slanting rays of the late afternoon sun dyed the usually pristine white plaster walls in warm, golden hues. It is a profoundly beautiful evening scene that evokes a sense of nostalgia within its majestic presence.",
+    "story_jp": "菱の門を左前方に見据えながら、ふと少しだけ振り返った時に見つけたアングルです。視線の先には、菱の門の東方へと伸びる立派な石垣と瓦屋根があり、その向こうに西日を浴びて美しく輝く姫路城の姿がありました。\n\nただ天守閣を単体で大きく撮るのではなく、手前にある門の一部や、堅牢な石垣、そして連なる瓦屋根をまるで「額縁」のように使って天守を縁取ることで、お城全体の広がりと奥行きが生まれます。\n\n傾きかけた柔らかな西日が、普段は冷たい白漆喰の壁を温かな色合いに染め上げていました。堂々たる威容の中にも、どこかノスタルジックで郷愁を誘う、非常に美しい夕景のひとコマです。",
     "location": {
-      "lat": 34.8391,
-      "lng": 134.693,
-      "name": "West side of Himeji Castle"
-    }
+      "lat": 34.83852,
+      "lng": 134.692622,
+      "name": "Near the stone wall east of Hishi no Mon"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring afternoon"
   },
   "31": {
     "title": "Castle Town Twilight — View from the Keep",

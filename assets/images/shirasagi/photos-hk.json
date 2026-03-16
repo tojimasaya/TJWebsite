@@ -759,36 +759,36 @@
     "category": "spring afternoon"
   },
   "30": {
-    "title": "甍浪層疊 天守聳立",
-    "subtitle": "層層屋頂間仰望大天守",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring afternoon",
-    "summary": "Layers of turret and watchtower roofs overlap in succession, with the Main Keep rising grandly behind them. The undulating tile rooftops convey the magnificent scale of castle architecture.",
+    "title": "菱之門東方 磚瓦與石牆框住的夕景",
+    "subtitle": "石牆框住的天守 / 菱之門前方",
+    "summary": "在菱之門前不經意地回頭，便會發現這幅絕景。連綿的石牆與瓦片屋頂化作天然的「畫框」，襯托出在夕陽西照下閃耀著金黃光芒的大天守，使其美感更加出眾。",
     "tips": [
       {
         "icon": "📍",
-        "label": "Location",
-        "text": "West side of Himeji Castle grounds"
+        "label": "地點",
+        "text": "菱之門前方、東側石牆附近（座標：34.838521, 134.692622）"
       },
       {
         "icon": "📷",
-        "label": "Photo Tip",
-        "text": "Using a telephoto focal length compresses the overlapping roofs for an impactful composition."
+        "label": "拍攝貼士",
+        "text": "將石牆與瓦片屋頂大面積地配置在畫面前方，利用「畫框構圖（框架構圖）」能強烈凸顯遠處天守閣的立體感與存在感。白牆被夕陽染成暖色的傍晚時分是最佳拍攝時機。"
       },
       {
         "icon": "🤝",
-        "label": "Point of Interest",
-        "text": "Himeji Castle's connected tower complex consists of the Main Keep, three small keeps, and connecting corridors — a beautifully intricate architectural ensemble."
+        "label": "觀賞視角",
+        "text": "有時候最美的風景不在前方，而在您不經意的回首之間。請盡情享受這座複雜城池獨有的「層次感」。"
       }
     ],
-    "story": "From foreground to background, waves of tiled roofs overlap one upon another, culminating at the grand Main Keep that rises at their peak. This composition captures the very essence of Himeji Castle's \"connected tower complex\" — its defining architectural achievement.\n\nThe rhythmic succession of white walls and dark tiles repeats like a visual melody. Each roofline differs subtly in angle and curvature, harmonizing like musical voices as they guide the eye toward the Main Keep.\n\nIn the gentle late-afternoon light, each tile casts a soft shadow, crisply defining the contours of every structure. The texture of tiles that have endured centuries of wind and rain quietly speaks to the profound weight of this castle's history.",
-    "story_jp": "手前から奥へ、瓦屋根の波が幾重にも重なり、その頂点に大天守がそびえ立つ。この構図は、姫路城の「連立式天守群」という城郭建築としての真髄を、ひと目で伝えてくれます。\n\n白壁と黒い瓦のコントラストが繰り返されるリズミカルな屋根の連なり。それぞれの屋根の角度や曲線が微妙に異なり、まるで音楽のハーモニーのように調和しながら大天守へと視線を導きます。\n\n夕方に近い穏やかな光の中で、瓦の一枚一枚が柔らかな影を落とし、建物の輪郭をくっきりと浮かび上がらせています。何百年もの風雨に耐えてきた瓦たちの質感が、この城の歴史の重みを静かに語りかけてきます。",
+    "story": "當我將菱之門放在左前方，不經意地稍微回頭一看，便發現了這個絕佳的視角。視線越過向菱之門東側延伸的宏偉石牆與瓦片屋頂，那座沐浴在夕陽餘暉中、閃耀著美麗光芒的姬路城便映入眼簾。\n\n與其單獨將天守閣放大拍攝，不如將前方的城門局部、堅固的石牆以及層層疊疊的瓦片作為「畫框」，將天守閣巧妙地框在其中。這樣不僅能營造出整座城堡的遼闊感，更能呈現出極佳的景深。\n\n逐漸西沉的柔和陽光，將原本清冷的純白灰漿牆面染上了一層溫暖的色調。在這座宏偉的建築中，透著一絲令人懷念的鄉愁，這真是一幅美得令人屏息的夕陽景致。",
+    "story_jp": "菱の門を左前方に見据えながら、ふと少しだけ振り返った時に見つけたアングルです。視線の先には、菱の門の東方へと伸びる立派な石垣と瓦屋根があり、その向こうに西日を浴びて美しく輝く姫路城の姿がありました。\n\nただ天守閣を単体で大きく撮るのではなく、手前にある門の一部や、堅牢な石垣、そして連なる瓦屋根をまるで「額縁」のように使って天守を縁取ることで、お城全体の広がりと奥行きが生まれます。\n\n傾きかけた柔らかな西日が、普段は冷たい白漆喰の壁を温かな色合いに染め上げていました。堂々たる威容の中にも、どこかノスタルジックで郷愁を誘う、非常に美しい夕景のひとコマです。",
     "location": {
-      "lat": 34.8391,
-      "lng": 134.693,
-      "name": "姬路城城內西側"
-    }
+      "lat": 34.83852,
+      "lng": 134.692622,
+      "name": "菱之門前方、東側石牆附近"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring afternoon"
   },
   "31": {
     "title": "天守俯瞰 黃昏城下",
