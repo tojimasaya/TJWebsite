@@ -823,35 +823,35 @@
     "category": "spring evening"
   },
   "32": {
-    "title": "蒼天仰角 白壁の連峰",
-    "subtitle": "青空を背に見上げる天守群の迫力",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring afternoon",
-    "summary": "青空の下、石垣の足元から見上げる姫路城の天守群。白壁と黒瓦の屋根が幾重にも重なり合い、まるで白い山脈のような壮大な迫力で迫ってきます。",
+    "title": "蒼天仰角 白壁連峰",
+    "subtitle": "白亜の連峰 / 備前丸から天守を見上げる",
+    "summary": "備前丸から真上を見上げると、青空に向かって幾重にも重なる白壁と黒瓦が、まるで雪を被った連峰のようにそびえ立ちます。大天守5層の軒の美しさと、頂上の鯱（しゃちほこ）までくっきりと捉えた大迫力の一枚です。",
     "tips": [
       {
         "icon": "📍",
         "label": "場所",
-        "text": "姫路城 備前丸付近"
+        "text": "姫路城 備前丸（大天守のすぐ目の前の広場）"
       },
       {
         "icon": "📷",
         "label": "撮影のヒント",
-        "text": "広角レンズで足元の石垣から天守の頂上まで収めると、高さの迫力が伝わります。"
+        "text": "広角レンズを使い、手前の石垣から天守の頂上までを一枚に収めることで、その圧倒的な高さと巨大なスケール感を強調できます。"
       },
       {
         "icon": "🤝",
-        "label": "見どころ",
-        "text": "備前丸からの見上げは、天守の巨大さを最も実感できるポイントの一つです。"
+        "label": "視点の楽しみ方",
+        "text": "右側にそびえる大天守から、左へと連なる西小天守、そして奥の乾小天守。この「連立式天守」の複雑な重なりを下から見上げることで、鉄壁の要塞としての凄みを肌で感じることができます。"
       }
     ],
-    "story": "石垣の足元から真上を見上げると、白壁と黒い瓦屋根が幾層にも重なり合いながら青空へと突き上げる天守群の姿が、圧倒的なスケールで目に飛び込んできます。\n\n下から見上げるこのアングルでは、姫路城の「高さ」と「重層性」が余すところなく伝わってきます。大天守の壁面は、近くで見ると驚くほど巨大で、白漆喰の壁が青空に映えて眩しいほどです。それぞれの階が微妙に角度を変えながら上へ上へと積み重なっていく構造は、まさに「建築の芸術」と呼ぶにふさわしい美しさです。\n\n遠くから眺める優美な姿とは異なる、足元から感じる圧倒的な迫力。この城が何百年もの間、人々を畏敬させてきた理由が、この見上げた瞬間に深く実感できます。",
-    "story_en": "Looking straight up from the base of the stone walls, the tower complex — layers upon layers of white walls and black-tiled roofs thrusting skyward — fills your field of vision with overwhelming scale.\n\nFrom this low angle, the sheer height and multi-layered complexity of Himeji Castle are conveyed without reservation. Up close, the Main Keep's walls are staggeringly massive, the white plaster dazzling against the blue sky. Each level shifts at a subtly different angle as they stack upward — a structure truly worthy of being called \"architectural art.\"\n\nThis is a completely different experience from admiring the castle's graceful silhouette from afar. The overwhelming power felt from its very foundations makes you deeply understand why this castle has inspired awe in people for hundreds of years.",
+    "story": "先ほどの第参拾壱景（No. 31）で姫路駅方面へと続く現代の大通りを見下ろした「備前丸」の広場から、今度はくるりと振り返って、お城を真下から見上げた構図です。\n\n目の前に圧倒的なスケールでそびえ立つのは、大天守と、そこに連なる西小天守、乾小天守の姿です。お城の足元から見上げることで、大天守の5層に重なる軒（のき）のラインが織りなす、幾何学的で緻密な美しさが際立って見えます。\n\n下から上へと折り重なるように続く白壁と黒瓦のコントラストは、まるで雄大な山脈を見上げているかのようです。そして、その美しい屋根の連なりの一番高い場所、青空に吸い込まれるような大天守の頂上には、城を守る一対の鯱（しゃちほこ）がくっきりと誇らしく飾られているのがわかります。訪れる者すべてを圧倒する、まさに「白亜の要塞」と呼ぶにふさわしい迫力です。",
+    "story_en": "Turning around from the spot in View No. 31, where we looked down at the modern avenue stretching toward Himeji Station from the \"Bizenmaru\" square, this composition looks straight up at the castle from its very base.\n\nTowering before you with overwhelming scale is the Main Keep, seamlessly connected to the West Small Keep and the Inui Small Keep. By looking up from the foot of the castle, the precise, geometric beauty created by the lines of the Main Keep's five overlapping tiers of eaves is strikingly highlighted.\n\nThe contrast of white walls and black tiles stacking from bottom to top feels exactly like looking up at a majestic mountain range. And at the highest point of this beautiful succession of roofs, seemingly absorbed into the blue sky, you can clearly see the proud pair of shachihoko (mythical guardians) adorning the peak. The imposing presence of Himeji Castle from this angle overwhelms all who visit, truly earning its title as a \"White Fortress.\"",
     "location": {
-      "lat": 34.8392,
-      "lng": 134.6938,
-      "name": "姫路城 備前丸付近"
-    }
+      "lat": 34.8389691,
+      "lng": 134.6938425,
+      "name": "姫路城 備前丸"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring afternoon"
   }
 }

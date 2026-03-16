@@ -823,35 +823,35 @@
     "category": "spring evening"
   },
   "32": {
-    "title": "Blue Sky Ascent — White Peaks of the Keep",
-    "subtitle": "The Dramatic Power of the Tower Complex from Below",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring afternoon",
-    "summary": "Looking up from the base of the stone walls under a blue sky, the keep's tower complex — white walls and black tiles layered upon each other — rises with the overwhelming grandeur of a white mountain range.",
+    "title": "Looking Up at the Blue Sky: A Mountain Range of White Walls",
+    "subtitle": "A White Mountain Range / Looking up at the Keep from Bizenmaru",
+    "summary": "Looking straight up from Bizenmaru, the overlapping white walls and black tiles rising toward the blue sky resemble a snow-capped mountain range. This powerful shot captures the intricate beauty of the Main Keep's five-tiered eaves and the shachihoko at the very top.",
     "tips": [
       {
         "icon": "📍",
         "label": "Location",
-        "text": "Near Bizen-maru, Himeji Castle"
+        "text": "Bizenmaru (The square directly in front of the Main Keep)"
       },
       {
         "icon": "📷",
-        "label": "Photo Tip",
-        "text": "A wide-angle lens capturing from the stone walls to the keep's summit conveys the full impact of its height."
+        "label": "Photo Tips",
+        "text": "Use a wide-angle lens to capture everything from the stone walls in the foreground to the very top of the keep in a single frame, emphasizing its overwhelming height and immense scale."
       },
       {
         "icon": "🤝",
-        "label": "Point of Interest",
-        "text": "The view from Bizen-maru looking up is one of the best spots to truly feel the enormous scale of the keep."
+        "label": "Viewing Perspective",
+        "text": "From the towering Main Keep on the right, the structure flows leftward to the West Small Keep and the Inui Small Keep. Looking up at this complex \"connected keep\" system reveals the sheer intimidation of an impregnable fortress."
       }
     ],
-    "story": "Looking straight up from the base of the stone walls, the tower complex — layers upon layers of white walls and black-tiled roofs thrusting skyward — fills your field of vision with overwhelming scale.\n\nFrom this low angle, the sheer height and multi-layered complexity of Himeji Castle are conveyed without reservation. Up close, the Main Keep's walls are staggeringly massive, the white plaster dazzling against the blue sky. Each level shifts at a subtly different angle as they stack upward — a structure truly worthy of being called \"architectural art.\"\n\nThis is a completely different experience from admiring the castle's graceful silhouette from afar. The overwhelming power felt from its very foundations makes you deeply understand why this castle has inspired awe in people for hundreds of years.",
-    "story_jp": "石垣の足元から真上を見上げると、白壁と黒い瓦屋根が幾層にも重なり合いながら青空へと突き上げる天守群の姿が、圧倒的なスケールで目に飛び込んできます。\n\n下から見上げるこのアングルでは、姫路城の「高さ」と「重層性」が余すところなく伝わってきます。大天守の壁面は、近くで見ると驚くほど巨大で、白漆喰の壁が青空に映えて眩しいほどです。それぞれの階が微妙に角度を変えながら上へ上へと積み重なっていく構造は、まさに「建築の芸術」と呼ぶにふさわしい美しさです。\n\n遠くから眺める優美な姿とは異なる、足元から感じる圧倒的な迫力。この城が何百年もの間、人々を畏敬させてきた理由が、この見上げた瞬間に深く実感できます。",
+    "story": "Turning around from the spot in View No. 31, where we looked down at the modern avenue stretching toward Himeji Station from the \"Bizenmaru\" square, this composition looks straight up at the castle from its very base.\n\nTowering before you with overwhelming scale is the Main Keep, seamlessly connected to the West Small Keep and the Inui Small Keep. By looking up from the foot of the castle, the precise, geometric beauty created by the lines of the Main Keep's five overlapping tiers of eaves is strikingly highlighted.\n\nThe contrast of white walls and black tiles stacking from bottom to top feels exactly like looking up at a majestic mountain range. And at the highest point of this beautiful succession of roofs, seemingly absorbed into the blue sky, you can clearly see the proud pair of shachihoko (mythical guardians) adorning the peak. The imposing presence of Himeji Castle from this angle overwhelms all who visit, truly earning its title as a \"White Fortress.\"",
+    "story_jp": "先ほどの第参拾壱景（No. 31）で姫路駅方面へと続く現代の大通りを見下ろした「備前丸」の広場から、今度はくるりと振り返って、お城を真下から見上げた構図です。\n\n目の前に圧倒的なスケールでそびえ立つのは、大天守と、そこに連なる西小天守、乾小天守の姿です。お城の足元から見上げることで、大天守の5層に重なる軒（のき）のラインが織りなす、幾何学的で緻密な美しさが際立って見えます。\n\n下から上へと折り重なるように続く白壁と黒瓦のコントラストは、まるで雄大な山脈を見上げているかのようです。そして、その美しい屋根の連なりの一番高い場所、青空に吸い込まれるような大天守の頂上には、城を守る一対の鯱（しゃちほこ）がくっきりと誇らしく飾られているのがわかります。訪れる者すべてを圧倒する、まさに「白亜の要塞」と呼ぶにふさわしい迫力です。",
     "location": {
-      "lat": 34.8392,
-      "lng": 134.6938,
-      "name": "Near Bizen-maru, Himeji Castle"
-    }
+      "lat": 34.8389691,
+      "lng": 134.6938425,
+      "name": "Bizenmaru, Himeji Castle"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring afternoon"
   }
 }
