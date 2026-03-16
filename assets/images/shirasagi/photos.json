@@ -854,5 +854,34 @@
     "date": "2026.03.13",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "spring afternoon"
+  },
+  "12": {
+    "title": "青空の下の合戦 人間将棋 姫路の陣",
+    "subtitle": "盤上の戦国絵巻 / 三の丸広場にて",
+    "summary": "秋の澄み切った青空の下、三の丸広場で繰り広げられる壮大な「人間将棋」。甲冑をまとった人間が駒となり、大将の采配で巨大な盤上を動く、大迫力の将棋エンターテインメントです。",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "場所",
+        "text": "姫路城 三の丸広場"
+      },
+      {
+        "icon": "💡",
+        "label": "イベント情報",
+        "text": "毎年秋（11月上旬）に開催される恒例行事。プロ棋士が対局し、本物の甲冑を着た人たちが「駒」となってその動きを盤上で再現します。"
+      },
+      {
+        "icon": "📷",
+        "label": "撮影のヒント",
+        "text": "巨大な将棋盤と甲冑武者たち、そして背後にそびえる白亜の大天守を一緒に画角に収めると、姫路城ならではの合戦絵巻のような一枚になります。"
+      }
+    ],
+    "story": "2025年11月1日、秋の澄み渡る青空の下で「人間将棋 姫路の陣」を観戦しました。姫路城の大天守を背景に広がる巨大な将棋盤は、まさに圧巻の一言です。\n\n一番の見どころは、何と言っても甲冑に身を包んだ「人間の駒」たち。檺（やぐら）の上にいる大将（プロ棋士）の号令に従って武者たちが盤上を動き、相手の王将を追い詰めていく様子は、本物の合戦さながらの迅力と面白さがありました。\n\nただ静かに盤面を見つめる通常の将棋とは違い、大将の采配で人が動き、時にはドラマチックな演出も交わるこのイベント。静寂に包まれた夜の姫路城も素晴らしいですが、こうした活気あふれる秋の姫路城もまた、非常に魅力的で素晴らしい経験でした。",
+    "story_en": "On November 1, 2025, I watched the \"Human Shogi\" match under a beautifully clear autumn sky. The giant shogi board spread out with Himeji Castle towering in the background was truly a breathtaking sight.\n\nThe absolute highlight is seeing the \"human pieces\" dressed in full samurai armor. It was incredibly fascinating to watch these warriors move across the board according to the orders of the commander (a professional shogi player) up on the scaffold, strategically closing in to capture the opponent's king.\n\nUnlike a standard, quiet game of shogi, this event is dynamic, with people physically moving to the general's commands, often accompanied by dramatic flair. While the serene, quiet Himeji Castle at night is wonderful, experiencing the castle full of such vibrant energy in the autumn was also a truly fantastic experience.",
+    "location": {
+      "lat": 34.8376,
+      "lng": 134.6932,
+      "name": "姫路城 三の丸広場"
+    }
   }
 }
