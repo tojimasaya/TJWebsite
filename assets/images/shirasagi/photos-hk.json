@@ -636,36 +636,36 @@
     }
   },
   "26": {
-    "title": "幻彩夜城 紫藍光影",
-    "subtitle": "特別燈光秀下的姬路城",
-    "date": "2026.03.13",
-    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring night",
-    "summary": "During a special illumination event, Himeji Castle is painted in a stunning gradient of pink to blue-purple — a magical night when the usually white castle wears an otherworldly palette.",
+    "title": "三國堀 妖豔的極彩色",
+    "subtitle": "妖豔的變貌 / 三國堀前方",
+    "summary": "晚上8點一過，姬路城的打光會從純白轉變為散發著妖豔紫藍光芒的姿態。能夠在「三國堀前方」這個特等席近距離仰望這場戲劇性的日常變化，是專屬夜間導覽的奢華體驗。",
     "tips": [
       {
         "icon": "📍",
-        "label": "Location",
-        "text": "Southwest side of Himeji Castle"
+        "label": "地點",
+        "text": "姬路城 三國堀前方（與第25景相同位置）"
       },
       {
         "icon": "📷",
-        "label": "Photo Tip",
-        "text": "Colors shift continuously, so setting white balance manually rather than auto will produce more consistent results."
+        "label": "拍攝貼士",
+        "text": "拍攝鮮豔的彩色燈光時容易出現過曝（死白）。稍微降低曝光值（調暗），能更好地保留那份妖豔的色彩層次。"
       },
       {
         "icon": "🤝",
-        "label": "Event Info",
-        "text": "Special illumination events are held for limited periods. Check the official Himeji City website for schedules."
+        "label": "絕對規則",
+        "text": "再次重申（同第25景），這是在閉門後進入城內的特別夜間導覽中拍攝的照片。此處嚴格禁止攜帶及使用三腳架或單腳架。"
       }
     ],
-    "story": "On a special night, the White Heron Castle is wrapped not in white, but in an otherworldly palette of colors. A gradient of pink, purple, and blue flows from the stone walls up to the keep, as if the castle itself were breathing through its shifting hues.\n\nWhile Himeji Castle is typically illuminated in pure white, special events see it adorned in various spectacular colors. The white plaster walls become a luminous canvas, beautifully reflecting every projected shade — a true intersection of modern art and living history.\n\nA masterpiece spanning centuries, this historic fortress meets modern lighting technology. Its dreamlike appearance reminds us that Himeji Castle is not merely a \"preserved heritage site\" but a living castle that continues to reveal new faces even today.",
-    "story_jp": "白鷺城が、白ではなく幻想的な色彩に包まれる特別な夜。ピンク、パープル、ブルーのグラデーションが石垣から天守へと流れるように染め上げ、まるで城が呼吸するかのように色が移ろいます。\n\n通常のライトアップでは白一色の姫路城ですが、特別イベントの際にはこのように様々な色彩で彩られます。白漆喰の壁が光のキャンバスとなり、投影された色を美しく映し出す様は、まさに現代と歴史が交差する芸術作品です。\n\n何百年もの時を超えて現代の光技術と出会った名城。この幻想的な姿は、姫路城がただの「保存された遺産」ではなく、今もなお新たな表情を見せ続ける「生きた城」であることを教えてくれます。",
+    "story": "這張照片與第25景是在完全相同的位置拍攝的。姬路城的夜間點燈是常態性的活動，一到晚上8點，原本純白的燈光便會戲劇性地轉變為帶有藍色和紫紅色的彩色照明，透著一絲「妖豔」的氣息。\n\n正如我在前一景所說的，我個人始終認為，純白色的燈光才是最適合這座「白鷺城」的。不過，觀察近來的趨勢，我也感覺到現在許多來自海外的遊客，或許更偏好這種稍微華麗、帶有娛樂效果的色彩。\n\n雖然這個燈光變化從城外也能看見，但在閉門之後，能站在「三國堀前方」如此近距離地拍攝這妖豔的姿態，是只有參加限定人數夜間導覽才能享有的特權。在嚴禁使用三腳架的規定下，我帶著手持拍攝的緊張感，深深體會到了平時無法踏足的夜間姬路城的深邃魅力。",
+    "story_jp": "第弐拾伍景（No. 25）と全く同じ場所からの撮影です。姫路城のライトアップは定期的に仕様が変わるようになっており、夜8時になると純白の光から、青や赤紫のような少し「妖艶」とも言えるカラフルな色合いへと劇的に変化します。\n\n前にも書いた通り、私個人としてはやはり「白鷺城」と呼ばれる姫路城には、純白のライトが一番似合うと思っています。しかし、昨今の状況を鑑みると、海外から訪れる多くの観光客の方々には、こうした少し派手でエンターテインメント性のある色彩の方が好まれるのかもしれないな、とも感じました。\n\nこのライトアップの変化自体は城外からも見ることができますが、閉門後の「三国堀の手前」という至近距離からこの妖艶な姿を撮影できるのは、限られた人数のナイトツアーに参加したからこその特権です。三脚禁止という制約の中、手持ち撮影の緊張感とともに、普段は立ち入れない夜のお城の奥深さを味わうことができました。",
     "location": {
-      "lat": 34.839,
-      "lng": 134.6935,
-      "name": "姬路城西南方面"
-    }
+      "lat": 34.838772,
+      "lng": 134.692666,
+      "name": "姬路城 三國堀前方"
+    },
+    "date": "2026.03.13",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring night"
   },
   "27": {
     "title": "白壁迴廊 仰望天守",

@@ -611,9 +611,21 @@
     "category": "spring night",
     "summary": "Himeji Castle floats in the pitch-black night, bathed in pure white light. Captured during an exclusive, limited-access night tour, this image reveals a mystical and solemn \"White Heron\" completely different from its daytime appearance.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "In front of Sangoku-bori moat, Himeji Castle" },
-      { "icon": "📷", "label": "Photo Tips", "text": "Since you must shoot handheld in the dark, maximize your camera's night mode or image stabilization, hold your breath, and keep as steady as possible." },
-      { "icon": "🤝", "label": "Strict Rule", "text": "This view is from a special night tour. The bringing and use of tripods or monopods is strictly prohibited here. Please respect the rules while enjoying the night walk." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "In front of Sangoku-bori moat, Himeji Castle"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tips",
+        "text": "Since you must shoot handheld in the dark, maximize your camera's night mode or image stabilization, hold your breath, and keep as steady as possible."
+      },
+      {
+        "icon": "🤝",
+        "label": "Strict Rule",
+        "text": "This view is from a special night tour. The bringing and use of tripods or monopods is strictly prohibited here. Please respect the rules while enjoying the night walk."
+      }
     ],
     "story": "Bathed in white light, Himeji Castle emerges from the darkness of the night. Its appearance exudes a mystical, ethereal beauty that is entirely different from its imposing daytime presence. From right to left, the entire complex of the Main Keep, West Small Keep, and Inui Small Keep stands out sharply against the pitch-black sky.\n\nI took this photograph while participating in a special Himeji Castle Night Tour. With only about 10 participants and no other tourists around, it felt as though we had rented out the entire castle for ourselves—an incredibly luxurious and tranquil experience.\n\nI shot this from just in front of a small moat called \"Sangoku-bori.\" At this hour, the castle was illuminated solely by white light. In the next photograph (View No. 26), you will see it lit up in colorful lights. However, true to its name, the \"White Heron Castle\" (Shirasagi-jo), I personally believe this pure, unadulterated white light suits it best.",
     "story_jp": "夜の闇の中に、白い光を纏って浮かび上がる姫路城。その姿は、昼間の堂々とした威厳とはまったく異なる、神秘的で幻想的な美しさを湛えています。右から左へ、大天守、西小天守、乾小天守と連なる連立天守の全景が、ライトアップによって漆黒の夜空にくっきりと浮かび上がります。\n\nこの写真は、特別な姫路城のナイトツアーに参加した際に撮影したものです。参加者はわずか10名ほど。一般の観光客は誰一人おらず、まるで夜の姫路城を貸切にしたかのような、極めて贅沢で静謐な時間を過ごしました。\n\n撮影場所は「三国堀」という小さな堀の手前です。この時間帯、お城はまだ純白のライトで照らされているだけでした。実は、次にご紹介する写真（第弐拾録景）ではカラフルにライトアップされた様子をご覧いただけるのですが、やはり「白鷺城」と呼ばれるだけあって、私個人としてはこの混じり気のない「白」の光こそが、一番お城に似合っていると感じています。",
@@ -624,24 +636,36 @@
     }
   },
   "26": {
-    "title": "Phantom Colors — Castle in Purple and Blue",
-    "subtitle": "Himeji Castle Under Special Color Illumination",
+    "title": "Bewitching Polychrome at Sangoku-bori",
+    "subtitle": "Bewitching Transformation / In front of Sangoku-bori",
+    "summary": "At 8:00 PM, Himeji Castle's illumination transforms from pure white to a bewitching display of purple and blue. Witnessing this dramatic daily change from the front row at Sangoku-bori is a luxury exclusive to the private night tour.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "In front of Sangoku-bori moat, Himeji Castle (Same spot as No. 25)."
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tips",
+        "text": "Colorful LED lights can easily overexpose. Slightly lower the exposure (underexpose) to preserve the rich, bewitching color gradations."
+      },
+      {
+        "icon": "🤝",
+        "label": "Strict Rule",
+        "text": "To reiterate from View No. 25, this was taken inside the closed grounds during a special night tour. The bringing and use of tripods or monopods are strictly prohibited here."
+      }
+    ],
+    "story": "This shot was taken from the exact same location as View No. 25. The castle's illumination is programmed to change regularly. At the stroke of 8:00 PM, the pure white light dramatically shifts to a colorful, almost \"bewitching\" blend of blues and reddish-purples.\n\nAs I mentioned previously, I personally believe that the pure white light is the most fitting for the \"White Heron Castle.\" Yet, considering current trends, I couldn't help but feel that many overseas tourists might actually prefer these slightly flashier, more entertaining colors.\n\nWhile this lighting change itself can be seen from outside the castle grounds, being able to photograph this bewitching figure from up close at \"Sangoku-bori\" after the gates have closed is a privilege reserved only for participants of the exclusive night tour. With the strict no-tripod rule, the tension of shooting handheld only added to the profound experience of exploring the castle at night.",
+    "story_jp": "第弐拾伍景（No. 25）と全く同じ場所からの撮影です。姫路城のライトアップは定期的に仕様が変わるようになっており、夜8時になると純白の光から、青や赤紫のような少し「妖艶」とも言えるカラフルな色合いへと劇的に変化します。\n\n前にも書いた通り、私個人としてはやはり「白鷺城」と呼ばれる姫路城には、純白のライトが一番似合うと思っています。しかし、昨今の状況を鑑みると、海外から訪れる多くの観光客の方々には、こうした少し派手でエンターテインメント性のある色彩の方が好まれるのかもしれないな、とも感じました。\n\nこのライトアップの変化自体は城外からも見ることができますが、閉門後の「三国堀の手前」という至近距離からこの妖艶な姿を撮影できるのは、限られた人数のナイトツアーに参加したからこその特権です。三脚禁止という制約の中、手持ち撮影の緊張感とともに、普段は立ち入れない夜のお城の奥深さを味わうことができました。",
+    "location": {
+      "lat": 34.838772,
+      "lng": 134.692666,
+      "name": "In front of Sangoku-bori moat, Himeji Castle"
+    },
     "date": "2026.03.13",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
-    "category": "spring night",
-    "summary": "During a special illumination event, Himeji Castle is painted in a stunning gradient of pink to blue-purple — a magical night when the usually white castle wears an otherworldly palette.",
-    "tips": [
-      { "icon": "📍", "label": "Location", "text": "Southwest side of Himeji Castle" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Colors shift continuously, so setting white balance manually rather than auto will produce more consistent results." },
-      { "icon": "🤝", "label": "Event Info", "text": "Special illumination events are held for limited periods. Check the official Himeji City website for schedules." }
-    ],
-    "story": "On a special night, the White Heron Castle is wrapped not in white, but in an otherworldly palette of colors. A gradient of pink, purple, and blue flows from the stone walls up to the keep, as if the castle itself were breathing through its shifting hues.\n\nWhile Himeji Castle is typically illuminated in pure white, special events see it adorned in various spectacular colors. The white plaster walls become a luminous canvas, beautifully reflecting every projected shade — a true intersection of modern art and living history.\n\nA masterpiece spanning centuries, this historic fortress meets modern lighting technology. Its dreamlike appearance reminds us that Himeji Castle is not merely a \"preserved heritage site\" but a living castle that continues to reveal new faces even today.",
-    "story_jp": "白鷺城が、白ではなく幻想的な色彩に包まれる特別な夜。ピンク、パープル、ブルーのグラデーションが石垣から天守へと流れるように染め上げ、まるで城が呼吸するかのように色が移ろいます。\n\n通常のライトアップでは白一色の姫路城ですが、特別イベントの際にはこのように様々な色彩で彩られます。白漆喰の壁が光のキャンバスとなり、投影された色を美しく映し出す様は、まさに現代と歴史が交差する芸術作品です。\n\n何百年もの時を超えて現代の光技術と出会った名城。この幻想的な姿は、姫路城がただの「保存された遺産」ではなく、今もなお新たな表情を見せ続ける「生きた城」であることを教えてくれます。",
-    "location": {
-      "lat": 34.8390,
-      "lng": 134.6935,
-      "name": "Southwest side of Himeji Castle"
-    }
+    "category": "spring night"
   },
   "27": {
     "title": "White Corridor — Gazing Up to the Keep",
@@ -651,9 +675,21 @@
     "category": "spring night",
     "summary": "Walking along the illuminated white-walled corridor, the Main Keep rises dramatically against the night sky ahead — an immersive nighttime view possible only from within the castle walls.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Near Nishinomaru Corridor, Himeji Castle" },
-      { "icon": "📷", "label": "Photo Tip", "text": "A wider focal length captures the corridor's depth leading to the keep, creating a dramatic composition." },
-      { "icon": "🤝", "label": "Night Viewing", "text": "Nighttime access inside the castle grounds is only available during special events." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Near Nishinomaru Corridor, Himeji Castle"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "A wider focal length captures the corridor's depth leading to the keep, creating a dramatic composition."
+      },
+      {
+        "icon": "🤝",
+        "label": "Night Viewing",
+        "text": "Nighttime access inside the castle grounds is only available during special events."
+      }
     ],
     "story": "Guided by the gentle glow of lanterns at your feet, you walk along the white-walled corridor. Through the bare winter branches, the illuminated Main Keep emerges, floating against the night sky.\n\nThe corridor at night is an entirely different world from its daytime appearance. Light reflected off the white walls illuminates the path, and the keep visible at its end glows with an almost divine radiance, as if existing in another dimension. The corridor's linear composition naturally draws your gaze toward the keep, creating a dramatic scene full of depth.\n\nThis corridor, where samurai walked for hundreds of years, takes on a profound atmosphere in the nighttime silence. Walking through it, you feel the heartbeat of history resonating from beneath your feet.",
     "story_jp": "足元を照らす行灯の柔らかな光に導かれ、白壁の回廊を歩みを進めると、冬枯れの木々の枝越しに、ライトアップされた大天守が夜空に浮かび上がります。\n\n昼間に歩く回廊とは全く異なる世界がそこにはあります。白壁に反射する光が道を照らし、その先に見える天守は、まるで別次元の存在のように神々しく輝いています。回廊の直線的な構図が、天守へと視線を自然に導き、奥行きのあるドラマチックな景観を生み出しています。\n\n何百年もの間、武士たちが行き来したであろうこの回廊。夜の静寂の中で歩くと、歴史の鼓動が足元から伝わってくるような感覚に包まれます。",
@@ -671,9 +707,21 @@
     "category": "spring night",
     "summary": "The shachihoko atop the Main Keep's roof — a mythical guardian against fire. The glittering cityscape of Himeji beyond it is a view reserved for those who ascend the keep.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Upper floors of Himeji Castle Main Keep" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Focus on the shachihoko and let the city lights become a beautiful bokeh background for a dreamlike image." },
-      { "icon": "🤝", "label": "Special Opening", "text": "Nighttime photography from inside the keep is a rare opportunity available only during special evening openings." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Upper floors of Himeji Castle Main Keep"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Focus on the shachihoko and let the city lights become a beautiful bokeh background for a dreamlike image."
+      },
+      {
+        "icon": "🤝",
+        "label": "Special Opening",
+        "text": "Nighttime photography from inside the keep is a rare opportunity available only during special evening openings."
+      }
     ],
     "story": "The shachihoko — a mythical, dolphin-like guardian figure — sits atop the Main Keep's roof. Placed at both ends of the ridge as protectors against fire, these ceramic sentinels have watched over the city of Himeji for centuries.\n\nBeyond the shachihoko, the nighttime cityscape of Himeji spreads out like scattered jewels. The city lights dissolve into a beautiful bokeh that accentuates the shachihoko's silhouette, creating a stunning fusion of history and modernity within a single frame.\n\nThe exquisite craftsmanship is evident in every individually sculpted scale. With its tail raised high, the shachihoko's powerful form radiates a spirit of guardianship. This close-up perspective, possible only during special nighttime openings, captures a guardian that is usually seen only from far below.",
     "story_jp": "大天守の最上階から見える鯱鉾（しゃちほこ）。火除けの守り神として屋根の両端に据えられたこの瓦製の霊獣は、何百年もの間、姫路の街を見下ろし続けてきました。\n\nその鯱鉾の向こうに広がるのは、宝石を散りばめたような姫路の夜景。街の灯りが美しいボケとなって鯱鉾のシルエットを際立たせ、歴史と現代が一枚の絵の中で見事に溶け合っています。\n\n鯱鉾の鱗一枚一枚まで精緻に作り込まれた造形美。尾を高く跳ね上げたその力強い姿は、城を守護する気概に満ちています。日中は遠くからしか望めないこの守護者の姿を、夜の特別公開ならではの至近距離で捉えた一枚です。",
@@ -691,9 +739,21 @@
     "category": "spring afternoon",
     "summary": "A magnificent pine stands before a castle gate. Against a backdrop of white walls and lattice windows, its carefully tended branches convey the formality and aesthetics of the samurai era.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Near Ninomaru gate, Himeji Castle" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Stepping back to compose the pine branches with the gate creates a balanced and inviting frame." },
-      { "icon": "🤝", "label": "Point of Interest", "text": "The pines at Himeji Castle are meticulously maintained by skilled gardeners and are vital to the castle's landscape beauty." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Near Ninomaru gate, Himeji Castle"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Stepping back to compose the pine branches with the gate creates a balanced and inviting frame."
+      },
+      {
+        "icon": "🤝",
+        "label": "Point of Interest",
+        "text": "The pines at Himeji Castle are meticulously maintained by skilled gardeners and are vital to the castle's landscape beauty."
+      }
     ],
     "story": "Approaching one of Himeji Castle's gates, you're greeted by a magnificently maintained pine tree. Its branches spread horizontally as if extending welcoming arms to each visitor.\n\nBehind it stands a tamon-yagura (long guard tower) with white plaster walls and wooden lattice windows, rising imposingly atop the stone walls. The stately architecture and the pine's graceful curves create a beautiful harmony of strength and elegance.\n\nThe practical defensive architecture and the ornamental garden pine coexist in perfect balance — a landscape that embodies the aesthetic sensibility within the warrior class's world of strength. Though it may seem like just another corner of the castle grounds, pausing to truly observe reveals the profound attention to beauty that the castle's builders wove into every detail.",
     "story_jp": "姫路城の城門をくぐろうとすると、その手前で出迎えてくれるのが、見事に手入れされた一本の松。横に広がる枝ぶりは、まるで訪れる者に「ようこそ」と腕を広げているかのようです。\n\n背景には、白漆喰の壁と木製の格子窓が並ぶ多聞櫓（たもんやぐら）。石垣の上に建つその堂々とした姿と、門前の松の優美な曲線が、剛と柔の見事な調和を生み出しています。\n\n城を守るための実用的な建築と、来訪者を迎える美しい庭園の松。この二つが共存する風景は、武家社会の「強さの中にある美意識」を象徴しているようです。何気ない城内の一角ですが、足を止めてじっくり眺めると、先人たちの美へのこだわりが伝わってきます。",
@@ -711,15 +771,27 @@
     "category": "spring afternoon",
     "summary": "Layers of turret and watchtower roofs overlap in succession, with the Main Keep rising grandly behind them. The undulating tile rooftops convey the magnificent scale of castle architecture.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "West side of Himeji Castle grounds" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Using a telephoto focal length compresses the overlapping roofs for an impactful composition." },
-      { "icon": "🤝", "label": "Point of Interest", "text": "Himeji Castle's connected tower complex consists of the Main Keep, three small keeps, and connecting corridors — a beautifully intricate architectural ensemble." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "West side of Himeji Castle grounds"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Using a telephoto focal length compresses the overlapping roofs for an impactful composition."
+      },
+      {
+        "icon": "🤝",
+        "label": "Point of Interest",
+        "text": "Himeji Castle's connected tower complex consists of the Main Keep, three small keeps, and connecting corridors — a beautifully intricate architectural ensemble."
+      }
     ],
     "story": "From foreground to background, waves of tiled roofs overlap one upon another, culminating at the grand Main Keep that rises at their peak. This composition captures the very essence of Himeji Castle's \"connected tower complex\" — its defining architectural achievement.\n\nThe rhythmic succession of white walls and dark tiles repeats like a visual melody. Each roofline differs subtly in angle and curvature, harmonizing like musical voices as they guide the eye toward the Main Keep.\n\nIn the gentle late-afternoon light, each tile casts a soft shadow, crisply defining the contours of every structure. The texture of tiles that have endured centuries of wind and rain quietly speaks to the profound weight of this castle's history.",
     "story_jp": "手前から奥へ、瓦屋根の波が幾重にも重なり、その頂点に大天守がそびえ立つ。この構図は、姫路城の「連立式天守群」という城郭建築としての真髄を、ひと目で伝えてくれます。\n\n白壁と黒い瓦のコントラストが繰り返されるリズミカルな屋根の連なり。それぞれの屋根の角度や曲線が微妙に異なり、まるで音楽のハーモニーのように調和しながら大天守へと視線を導きます。\n\n夕方に近い穏やかな光の中で、瓦の一枚一枚が柔らかな影を落とし、建物の輪郭をくっきりと浮かび上がらせています。何百年もの風雨に耐えてきた瓦たちの質感が、この城の歴史の重みを静かに語りかけてきます。",
     "location": {
       "lat": 34.8391,
-      "lng": 134.6930,
+      "lng": 134.693,
       "name": "West side of Himeji Castle"
     }
   },
@@ -731,9 +803,21 @@
     "category": "spring evening",
     "summary": "Looking down from the upper floors of the Main Keep, Otemae-dori avenue stretches straight toward Himeji Station under a sky painted in pink and purple — a special panorama that evokes the view once seen by castle lords.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Upper floors of Himeji Castle Main Keep" },
-      { "icon": "📷", "label": "Photo Tip", "text": "The magic hour around sunset produces the most beautiful light. Shoot through the lattice windows by positioning your lens close to the bars and focusing on the background." },
-      { "icon": "🤝", "label": "Visiting Info", "text": "The top floor of the keep is accessible during regular visiting hours. Late afternoon tends to be less crowded." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Upper floors of Himeji Castle Main Keep"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "The magic hour around sunset produces the most beautiful light. Shoot through the lattice windows by positioning your lens close to the bars and focusing on the background."
+      },
+      {
+        "icon": "🤝",
+        "label": "Visiting Info",
+        "text": "The top floor of the keep is accessible during regular visiting hours. Late afternoon tends to be less crowded."
+      }
     ],
     "story": "Standing on an upper floor of the Main Keep and looking south, the grand Otemae-dori avenue stretches in a straight line toward Himeji Station, revealing the full expanse of the castle town below. Buildings and streetlights along the avenue begin to glow in the fading twilight, while the silhouettes of trees in San-no-Maru Square create a gentle foreground.\n\nPink and pale purple clouds spread across the sky, softly embracing the city of Himeji as it transitions from day to night. When the castle lords once looked down from this very spot, they would have seen an expanse of traditional tiled rooftops stretching into the distance. Though eras have passed and buildings have changed, the essence of watching over the town from this elevated vantage point remains unchanged.\n\nA castle town viewed from atop the stone walls of its keep — it is a deeply moving sight where history and the present quietly overlap, transcending words.",
     "story_jp": "大天守の上階に立ち、南を見下ろすと、大手前通りが姫路駅へと一直線に伸びる城下町の姿が広がります。通りの両側に立ち並ぶビルや街灯が、夕暮れ時の薄明かりの中で輝き始め、三の丸広場の木々のシルエットが穏やかな前景を形作っています。\n\n空にはピンクと薄紫の雲が広がり、昼から夜へと移り変わる姫路の街を優しく包み込んでいます。かつてこの同じ場所から城主が見下ろした時、眼下に広がっていたのは瓦屋根の連なる城下町だったことでしょう。時代は移り、建物は変わっても、この高台から街を見守る眺めの本質は変わりません。\n\n石垣の上に立つ天守から見下ろす城下町。それは、歴史と現在が静かに重なり合う、言葉にし難い感動の眺めです。",
@@ -751,9 +835,21 @@
     "category": "spring afternoon",
     "summary": "Looking up from the base of the stone walls under a blue sky, the keep's tower complex — white walls and black tiles layered upon each other — rises with the overwhelming grandeur of a white mountain range.",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Near Bizen-maru, Himeji Castle" },
-      { "icon": "📷", "label": "Photo Tip", "text": "A wide-angle lens capturing from the stone walls to the keep's summit conveys the full impact of its height." },
-      { "icon": "🤝", "label": "Point of Interest", "text": "The view from Bizen-maru looking up is one of the best spots to truly feel the enormous scale of the keep." }
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Near Bizen-maru, Himeji Castle"
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "A wide-angle lens capturing from the stone walls to the keep's summit conveys the full impact of its height."
+      },
+      {
+        "icon": "🤝",
+        "label": "Point of Interest",
+        "text": "The view from Bizen-maru looking up is one of the best spots to truly feel the enormous scale of the keep."
+      }
     ],
     "story": "Looking straight up from the base of the stone walls, the tower complex — layers upon layers of white walls and black-tiled roofs thrusting skyward — fills your field of vision with overwhelming scale.\n\nFrom this low angle, the sheer height and multi-layered complexity of Himeji Castle are conveyed without reservation. Up close, the Main Keep's walls are staggeringly massive, the white plaster dazzling against the blue sky. Each level shifts at a subtly different angle as they stack upward — a structure truly worthy of being called \"architectural art.\"\n\nThis is a completely different experience from admiring the castle's graceful silhouette from afar. The overwhelming power felt from its very foundations makes you deeply understand why this castle has inspired awe in people for hundreds of years.",
     "story_jp": "石垣の足元から真上を見上げると、白壁と黒い瓦屋根が幾層にも重なり合いながら青空へと突き上げる天守群の姿が、圧倒的なスケールで目に飛び込んできます。\n\n下から見上げるこのアングルでは、姫路城の「高さ」と「重層性」が余すところなく伝わってきます。大天守の壁面は、近くで見ると驚くほど巨大で、白漆喰の壁が青空に映えて眩しいほどです。それぞれの階が微妙に角度を変えながら上へ上へと積み重なっていく構造は、まさに「建築の芸術」と呼ぶにふさわしい美しさです。\n\n遠くから眺める優美な姿とは異なる、足元から感じる圧倒的な迫力。この城が何百年もの間、人々を畏敬させてきた理由が、この見上げた瞬間に深く実感できます。",
