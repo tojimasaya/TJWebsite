@@ -604,23 +604,23 @@
     }
   },
   "25": {
-    "title": "夜浮白城 暗中威容",
-    "subtitle": "燈光映照下的姬路城全景",
+    "title": "闇夜浮城 白亞的威容",
+    "subtitle": "闇夜浮城 白亞的威容 / 三國堀前方",
     "date": "2026.03.13",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "spring night",
-    "summary": "Himeji Castle emerges from the pitch-black night, bathed in white light. The illuminated Main Keep reveals a mystical beauty entirely different from its daytime appearance.",
+    "summary": "在漆黑的夜色中，披著純白光芒浮現的姬路城。這是在僅限少數人參加的特別夜間導覽中捕捉到的珍貴畫面，展現出與白天截然不同、充滿神秘與莊嚴的「白鷺」之姿。",
     "tips": [
-      { "icon": "📍", "label": "Location", "text": "Southwest side of Himeji Castle" },
-      { "icon": "📷", "label": "Photo Tip", "text": "Use a tripod with long exposure to bring out the castle's brilliant whiteness. Keep ISO low for clean, noise-free night shots." },
-      { "icon": "🤝", "label": "Etiquette", "text": "When photographing at night, be mindful of others. Avoid using flash." }
+      { "icon": "📍", "label": "地點", "text": "姬路城 三國堀前方（座標：34.838772, 134.692666）" },
+      { "icon": "📷", "label": "拍攝貼士", "text": "由於在暗處必須手持拍攝，請盡量發揮相機或手機的夜景模式（防手震功能），屏住呼吸並保持穩定來按下快門。" },
+      { "icon": "🤝", "label": "絕對規則", "text": "這是在特別夜間導覽中拍攝的照片。此處嚴格禁止攜帶及使用三腳架或單腳架。請遵守規則，享受專屬的夜間漫步。" }
     ],
-    "story": "Himeji Castle, draped in white light, emerges from the darkness of night. Its appearance carries a mystical, dreamlike beauty entirely different from its commanding daytime presence.\n\nThe full panorama of the connected tower complex — the grand Main Keep flanked by the West and Northwest Small Keeps — is sharply defined against the pitch-black sky by the illumination. The contrast between the rough texture of the stone walls and the smooth white plaster creates a drama of light and shadow, as if time itself has frozen.\n\nTrue to its name \"White Heron Castle,\" it exudes the serene stillness of a white heron resting in the dark of night — yet its presence is absolutely overwhelming.",
-    "story_jp": "夜の闇の中に、白い光を纏って浮かび上がる姫路城。その姿は、昼間の堂々とした威厳とはまったく異なる、神秘的で幻想的な美しさを湛えています。\n\n大天守を中心に、西小天守、乾小天守が連なる連立天守の全景が、ライトアップの白い光によって漆黒の夜空にくっきりと浮かび上がります。石垣の荒々しい質感と白漆喰の滑らかな壁面のコントラストが、光と影のドラマを生み出し、まるで時が止まったかのような荘厳な空気が漂います。\n\n「白鷺城」の名にふさわしく、闇夜に羽を休める白い鷺のような静謐さ。それでいて、その存在感は圧倒的です。",
+    "story": "在夜幕之中，姬路城披著白色的光芒浮現。它的姿態散發著一種有別於白日威嚴的神秘與夢幻之美。從右至左，大天守、西小天守、乾小天守相連的連立式天守全景，在燈光的映照下，清晰地勾勒於漆黑的夜空之中。\n\n這張照片是我參加特別的姬路城夜間導覽時所拍攝的。參加者大約只有10人，周圍沒有其他一般遊客，感覺就像是我們包下了夜晚的姬路城一樣，度過了一段極其奢華且寧靜的時光。\n\n拍攝地點是在一個名為「三國堀」的小護城河前方。在這個時段，城堡還只被純白的燈光照亮著。雖然在下一張照片（第26景）中，您將會看到城堡被五彩繽紛的燈光點亮的模樣，但既然它被譽為「白鷺城」，我個人還是覺得這種純淨無暇的「白」光，才是最適合這座城堡的顏色。",
+    "story_jp": "夜の闇の中に、白い光を纏って浮かび上がる姫路城。その姿は、昼間の堂々とした威厳とはまったく異なる、神秘的で幻想的な美しさを湛えています。右から左へ、大天守、西小天守、乾小天守と連なる連立天守の全景が、ライトアップによって漆黒の夜空にくっきりと浮かび上がります。\n\nこの写真は、特別な姫路城のナイトツアーに参加した際に撮影したものです。参加者はわずか10名ほど。一般の観光客は誰一人おらず、まるで夜の姫路城を貸切にしたかのような、極めて贅沢で静謐な時間を過ごしました。\n\n撮影場所は「三国堀」という小さな堀の手前です。この時間帯、お城はまだ純白のライトで照らされているだけでした。実は、次にご紹介する写真（第弐拾録景）ではカラフルにライトアップされた様子をご覧いただけるのですが、やはり「白鷺城」と呼ばれるだけあって、私個人としてはこの混じり気のない「白」の光こそが、一番お城に似合っていると感じています。",
     "location": {
-      "lat": 34.8390,
-      "lng": 134.6935,
-      "name": "姬路城西南方面"
+      "lat": 34.838772,
+      "lng": 134.692666,
+      "name": "姬路城 三國堀前方"
     }
   },
   "26": {

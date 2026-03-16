@@ -405,22 +405,22 @@
   },
   "25": {
     "title": "闇夜浮城 白亜の威容",
-    "subtitle": "ライトアップに浮かぶ姫路城の全景",
+    "subtitle": "闇夜浮城 白亜の威容 / 三国堀の手前にて",
     "date": "2026.03.13",
     "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
     "category": "spring night",
-    "summary": "漆黒の闇に白い光で浮かび上がる姫路城。昼間とはまったく異なる表情を見せる夜の大天守は、まるで闇の中に現れた白い幻のようです。",
+    "summary": "漆黒の闇の中、純白の光を纏って浮かび上がる姫路城。限られた人数だけが参加できる特別なナイトツアーで捉えた、昼間とは全く異なる神秘的で荘厳な「白鷺」の姿です。",
     "tips": [
-      { "icon": "📍", "label": "場所", "text": "姫路城南西方面より" },
-      { "icon": "📷", "label": "撮影のヒント", "text": "三脚を使い、長時間露光で城の白さを際立たせましょう。ISO感度を抑えることでノイズの少ない美しい夜景が撮れます。" },
-      { "icon": "🤝", "label": "マナー", "text": "夜間の撮影は周囲の方への配慮を忘れずに。フラッシュの使用は控えましょう。" }
+      { "icon": "📍", "label": "場所", "text": "姫路城 三国堀前（座標：34.838772, 134.692666）" },
+      { "icon": "📷", "label": "撮影のヒント", "text": "暗所での手持ち撮影となるため、カメラやスマートフォンの夜景モード（手ブレ補正）を最大限に活用し、息を止めてシャッターを切るのがコツです。" },
+      { "icon": "🤝", "label": "絶対のルール", "text": "これは特別なナイトツアーでの一枚です。この場所への三脚や一脚の持ち込み、および使用は厳しく禁止されています。ルールを守って夜の散策を楽しみましょう。" }
     ],
-    "story": "夜の闇の中に、白い光を纏って浮かび上がる姫路城。その姿は、昼間の堂々とした威厳とはまったく異なる、神秘的で幻想的な美しさを湛えています。\n\n大天守を中心に、西小天守、乾小天守が連なる連立天守の全景が、ライトアップの白い光によって漆黒の夜空にくっきりと浮かび上がります。石垣の荒々しい質感と白漆喰の滑らかな壁面のコントラストが、光と影のドラマを生み出し、まるで時が止まったかのような荘厳な空気が漂います。\n\n「白鷺城」の名にふさわしく、闇夜に羽を休める白い鷺のような静謐さ。それでいて、その存在感は圧倒的です。",
-    "story_en": "Himeji Castle, draped in white light, emerges from the darkness of night. Its appearance carries a mystical, dreamlike beauty entirely different from its commanding daytime presence.\n\nThe full panorama of the connected tower complex — the grand Main Keep flanked by the West and Northwest Small Keeps — is sharply defined against the pitch-black sky by the illumination. The contrast between the rough texture of the stone walls and the smooth white plaster creates a drama of light and shadow, as if time itself has frozen.\n\nTrue to its name \"White Heron Castle,\" it exudes the serene stillness of a white heron resting in the dark of night — yet its presence is absolutely overwhelming.",
+    "story": "夜の闇の中に、白い光を纏って浮かび上がる姫路城。その姿は、昼間の堂々とした威厳とはまったく異なる、神秘的で幻想的な美しさを湛えています。右から左へ、大天守、西小天守、乾小天守と連なる連立天守の全景が、ライトアップによって漆黒の夜空にくっきりと浮かび上がります。\n\nこの写真は、特別な姫路城のナイトツアーに参加した際に撮影したものです。参加者はわずか10名ほど。一般の観光客は誰一人おらず、まるで夜の姫路城を貸切にしたかのような、極めて贅沢で静謐な時間を過ごしました。\n\n撮影場所は「三国堀」という小さな堀の手前です。この時間帯、お城はまだ純白のライトで照らされているだけでした。実は、次にご紹介する写真（第弐拾録景）ではカラフルにライトアップされた様子をご覧いただけるのですが、やはり「白鷺城」と呼ばれるだけあって、私個人としてはこの混じり気のない「白」の光こそが、一番お城に似合っていると感じています。",
+    "story_en": "Bathed in white light, Himeji Castle emerges from the darkness of the night. Its appearance exudes a mystical, ethereal beauty that is entirely different from its imposing daytime presence. From right to left, the entire complex of the Main Keep, West Small Keep, and Inui Small Keep stands out sharply against the pitch-black sky.\n\nI took this photograph while participating in a special Himeji Castle Night Tour. With only about 10 participants and no other tourists around, it felt as though we had rented out the entire castle for ourselves—an incredibly luxurious and tranquil experience.\n\nI shot this from just in front of a small moat called \"Sangoku-bori.\" At this hour, the castle was illuminated solely by white light. In the next photograph (View No. 26), you will see it lit up in colorful lights. However, true to its name, the \"White Heron Castle\" (Shirasagi-jo), I personally believe this pure, unadulterated white light suits it best.",
     "location": {
-      "lat": 34.8390,
-      "lng": 134.6935,
-      "name": "姫路城南西方面"
+      "lat": 34.838772,
+      "lng": 134.692666,
+      "name": "姫路城 三国堀前"
     }
   },
   "26": {
