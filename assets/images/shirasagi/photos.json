@@ -885,5 +885,37 @@
     },
     "date": "2025.11.01",
     "gear": "Xiaomi 15 Ultra"
+  },
+  "33": {
+    "title": "原寸大の双璧 城見台公園の鯱",
+    "subtitle": "大空への夢 / 城見台公園にて",
+    "date": "2026.03.18",
+    "gear": "Leica SL2-S + Sigma 24-70mm F2.8 DG DN",
+    "category": "spring",
+    "summary": "大天守の最上段に君臨する巨大な「鯱（しゃち）」。実物を目の前で見ることは叶いませんが、城見台公園にある原寸大の復元模型なら、その圧倒的なスケールを体感することができます。",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "場所",
+        "text": "城見台公園（姫路城の南東に位置する広場）"
+      },
+      {
+        "icon": "💡",
+        "label": "鯱のスケール",
+        "text": "展示されている復元模型は高さ190cm、重さ250kg。実物と全く同じ大きさで作られています。"
+      },
+      {
+        "icon": "📷",
+        "label": "撮影のヒント",
+        "text": "2つの巨大な鯱の間に、遠くそびえる姫路城の大天守をすっぽりと収める「額縁構図」が、ここでの王道の撮り方です。"
+      }
+    ],
+    "story": "姫路城の大天守の一番高い屋根に飾られている、最も立派な一対の鯱（しゃち）。下から見上げることはできても、さすがに直接目の前で見ることはできません。第弐拾捌景（No. 28）で大天守の窓から見下ろして撮影したのも、最上段のものではなくその下の階層の鯱瓦でした。\n\nそこで今回は、あの一番上の大きな鯱瓦を原寸大で復元したモニュメントを撮影してみました。高さはなんと190cm、重さは250kgもあります。遠くから見ると小さく見えますが、実際には人間の背丈を超えるほどの巨大な飾りが屋根に乗っているのですね。\n\n私には、いつの日か姫路城をドローンで空撮してみたいという密かな夢があります。もしそれが叶うなら、やはりあの一番上の立派な鯱を中心に据えて、大空から天守閣を捉えてみたいものです。",
+    "story_en": "The most magnificent pair of shachihoko (mythical carp-tiger ornaments) adorns the very highest roof of Himeji Castle's Main Keep. While you can look up at them from below, it's physically impossible to see them right in front of your eyes. (The shachihoko I photographed looking south from the Main Keep's window in View No. 28 was actually on a lower roof tier, not the very top one.)\n\nSo, I decided to photograph these full-scale replicas of the highest shachihoko. They are incredibly massive, measuring 190 cm in height and weighing 250 kg! It's amazing to realize that ornaments taller than an average human are sitting way up on that roof.\n\nI have a secret dream of someday photographing Himeji Castle with a drone. If I ever get the chance, I would absolutely want to center my shot around those topmost, magnificent shachihoko, capturing the keep from the sky.",
+    "location": {
+      "lat": 34.837,
+      "lng": 134.695,
+      "name": "城見台公園"
+    }
   }
 }
