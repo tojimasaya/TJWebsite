@@ -1,2 +1,4 @@
 # Claude Code worktrees
 .claude/
+.DS_Store
+**/.DS_Store
