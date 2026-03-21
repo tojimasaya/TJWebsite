@@ -885,6 +885,25 @@
             document.querySelector('.group.cursor-pointer').onclick = () => openModal(latestId);
         }
 
+        const filterDescriptions = {
+            all: '四季折々の姫路城が魅せる表情を、36枚の写真に収めました。この「白鷺三十六景」は、常に進化し続けるギャラリーです。これからも城に通い続け、より心に響く一枚が撮れた時には、時間とともに少しずつ写真を差し替えてアップデートしていく予定です。季節や時間とともに移り変わる白亜の名城の姿を、どうぞごゆっくりお楽しみください。',
+            sakura: '🌸 桜 — 城見橋畔の桜花春霞から三の丸の花霞まで、姫路城と桜の競演を集めた。見頃は例年3月下旬〜4月上旬。',
+            spring: '春 — 桜だけではない春の姫路城。新緑の芽吹き、春霞の柔らかな光、季節の移ろいを感じる景を収めた。',
+            summer: '夏 — 入道雲と白亜の天守、蝉時雨の中の静寂。夏の強い光が描く陰影のコントラストが美しい。',
+            autumn: '秋 — 紅葉に染まる好古園、夕焼けに浮かぶ天守のシルエット。秋の姫路城は一年で最も表情が豊かになる。',
+            winter: '冬 — 冬晴れの澄んだ空気に浮かぶ白鷺城は、最も凛とした姿を見せる。雪化粧の天守は数年に一度の僥倖。'
+        };
+
+        function updateFilterDescription(filter) {
+            const el = document.getElementById('gallery-description');
+            el.style.opacity = '0';
+            el.style.transition = 'opacity 0.25s ease';
+            setTimeout(() => {
+                el.textContent = filterDescriptions[filter] || filterDescriptions.all;
+                el.style.opacity = '1';
+            }, 250);
+        }
+
         function setupFilters() {
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
@@ -896,6 +915,7 @@
                     e.target.classList.remove('bg-transparent', 'text-gray-600');
                     e.target.classList.add('bg-shirasagi-ink', 'text-white');
                     currentFilter = e.target.dataset.filter;
+                    updateFilterDescription(currentFilter);
 
                     // Fade out, swap, fade in
                     const grid = document.getElementById('shirasagi-grid');
