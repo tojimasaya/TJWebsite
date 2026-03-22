@@ -186,25 +186,25 @@ const gearData = {
           "links": {}
         },
         {
-          "id": "r-adapter-m",
-          "name": "Leica R-Adapter M (14167)",
+          "id": "r-m-adapters",
+          "name": "R-Adapter M + M-Adapter L",
           "brand": "Leica",
           "image": "assets/images/gear/adapters/r-adapter-m.jpg",
           "status": "available",
           "type": "adapter",
-          "specs": ["R→M変換", "#14167"],
-          "description": "Leica RマウントレンズをLeica Mマウントボディに装着するための純正アダプター。本来はM型デジタルでのライブビュー撮影を想定した品だが、システムの拡張性を広げる要のパーツ。",
+          "specs": ["R→M変換 #14167", "M→L変換 #18771", "6-bit対応"],
+          "description": "RレンズをあえてMに変換し、さらにSLへ——ライカ・システムを横断する贅沢な組み合わせ。R-Adapter M（14167）でRマウントレンズをMボディに、M-Adapter L（18771）でMレンズをSL（Lマウント）ボディに装着する。2つを重ねることで、Rレンズの資産をSL2-Sで活用できる。M-Adapter Lは電子接点を備え6ビットコードの読み取りにも対応。",
           "links": {}
         },
         {
-          "id": "m-adapter-l",
-          "name": "Leica M-Adapter L (18771)",
+          "id": "r-on-sl2s",
+          "name": "SL2-S + R-Adapter M + M-Adapter L + Elmarit-R 180mm",
           "brand": "Leica",
-          "image": "assets/images/gear/adapters/m-adapter-l.jpg",
+          "image": "assets/images/gear/adapters/r-on-sl2s.jpg",
           "status": "available",
           "type": "adapter",
-          "specs": ["M→L変換", "#18771", "6-bit対応"],
-          "description": "Leica MマウントレンズをLeica SL（Lマウント）ボディに装着するための純正アダプター。電子接点を備え、6ビットコードを読み取ることができるSLユーザー必須のアダプター。",
+          "specs": ["R→M→L マウント変換", "実装例"],
+          "description": "SL2-SにM-Adapter LとR-Adapter Mを重ね、その先にElmarit-R 180mm f/2.8を装着した実際の運用例。3世代のマウントを純正アダプターで繋ぐことで、1970年代のRレンズが現代のミラーレスで蘇る。",
           "links": {}
         }
       ]
