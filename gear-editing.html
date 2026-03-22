@@ -68,7 +68,7 @@
                 const webpSrc = item.image.replace(/\.(jpg|jpeg|png)$/, '.webp');
                 return `
                 <article class="gear-item">
-                    <div class="gear-img-box"><picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></picture></div>
+                    <div class="gear-img-box"><picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></picture></div>
                     <div class="gear-content">
                         <h3 class="gear-name">${item.name}</h3>
                         <div class="gear-specs">
