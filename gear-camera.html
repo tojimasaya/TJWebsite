@@ -185,6 +185,11 @@
         <p style="padding: 20px;">Loading...</p>
     </div>
 
+    <h2 class="section-label">Mount Adapters</h2>
+    <div class="detail-grid" id="adapter-grid">
+        <p style="padding: 20px;">Loading...</p>
+    </div>
+
     <footer class="footer"><div class="footer-content"><p>&copy; <script>document.write(new Date().getFullYear())</script> Toji Masaya.</p></div></footer>
 
     <!-- データ読み込み -->
@@ -196,19 +201,21 @@
                 const items = gearData.categories.camera.items;
                 const bodyItems = [];
                 const lensItems = [];
+                const adapterItems = [];
 
                 items.forEach(item => {
-                    // データ内の 'type' 属性で振り分け (body または lens)
                     if (item.type === 'lens') {
                         lensItems.push(item);
+                    } else if (item.type === 'adapter') {
+                        adapterItems.push(item);
                     } else {
-                        // typeが 'body' または未定義の場合はボディ扱い
                         bodyItems.push(item);
                     }
                 });
 
                 renderGrid('body-grid', bodyItems);
                 renderGrid('lens-grid', lensItems);
+                renderGrid('adapter-grid', adapterItems);
             } else {
                 document.getElementById('body-grid').innerHTML = '<p>Data could not be loaded.</p>';
                 document.getElementById('lens-grid').innerHTML = '';

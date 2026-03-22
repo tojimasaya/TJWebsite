@@ -160,6 +160,52 @@ const gearData = {
           "specs": ["24\u201370mm F2.8", "DG DN Art", "19枚15群", "約835g"],
           "description": "Lマウント唯一の大口径標準ズーム。Artラインの高い光学性能を持ち、24mmから70mmまでズーム全域で安定した解像力を発揮する。動画でも静止画でも頼れる万能性があり、旅先ではこれ一本で完結することも多い。防塵防滴構造と高速・静音AFで実用性も申し分ない。",
           "links": {}
+        },
+        {
+          "id": "elmarit-r-180",
+          "name": "Elmarit-R 180mm f/2.8 (2-CAM)",
+          "brand": "Leica",
+          "image": "assets/images/gear/lenses/elmarit-r-180.jpg",
+          "status": "available",
+          "type": "lens",
+          "mount": "R",
+          "specs": ["180mm F2.8", "2-CAM", "R-Mount", "v1"],
+          "description": "1970年前後のライカ黄金期を支えた望遠レンズ。第1世代（v1）の2-CAMモデルで、現行のAPOレンズのような鋭さとは対照的に、太く安定した線と豊かな階調、そしてライカらしい深い発色が特徴。",
+          "links": {}
+        },
+        {
+          "id": "extender-r-2x",
+          "name": "Leica Extender-R 2x",
+          "brand": "Leica",
+          "image": "assets/images/gear/lenses/extender-r-2x.jpg",
+          "status": "available",
+          "type": "lens",
+          "mount": "R",
+          "specs": ["2x Teleconverter", "R-Mount"],
+          "description": "Rレンズ専用の2倍テレコンバーター。Elmarit-R 180mmに装着することで「360mm f5.6」の超望遠レンズとして運用が可能に。180mmとの組み合わせで、遠景の圧縮効果をさらに強調したい際に使用。純正ならではの整合性の高さが魅力。",
+          "links": {}
+        },
+        {
+          "id": "r-adapter-m",
+          "name": "Leica R-Adapter M (14167)",
+          "brand": "Leica",
+          "image": "assets/images/gear/adapters/r-adapter-m.jpg",
+          "status": "available",
+          "type": "adapter",
+          "specs": ["R→M変換", "#14167"],
+          "description": "Leica RマウントレンズをLeica Mマウントボディに装着するための純正アダプター。本来はM型デジタルでのライブビュー撮影を想定した品だが、システムの拡張性を広げる要のパーツ。",
+          "links": {}
+        },
+        {
+          "id": "m-adapter-l",
+          "name": "Leica M-Adapter L (18771)",
+          "brand": "Leica",
+          "image": "assets/images/gear/adapters/m-adapter-l.jpg",
+          "status": "available",
+          "type": "adapter",
+          "specs": ["M→L変換", "#18771", "6-bit対応"],
+          "description": "Leica MマウントレンズをLeica SL（Lマウント）ボディに装着するための純正アダプター。電子接点を備え、6ビットコードを読み取ることができるSLユーザー必須のアダプター。",
+          "links": {}
         }
       ]
     },
