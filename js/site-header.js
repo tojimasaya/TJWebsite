@@ -69,6 +69,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
+    // 標準フッターの注入（<footer class="footer"> を持つページのみ）
+    const stdFooter = document.querySelector('footer.footer:not([data-custom])');
+    if (stdFooter) {
+        const year = new Date().getFullYear();
+        stdFooter.innerHTML = `
+        <div class="footer-content">
+            <p>&copy; ${year} Toji Masaya. All rights reserved.</p>
+        </div>`;
+    }
+
     // モバイルメニュートグル機能
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
