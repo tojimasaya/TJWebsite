@@ -91,10 +91,32 @@
         .about-footer-copy { text-align: center; font-size: var(--text-xs); color: var(--text-lighter); font-family: var(--secondary-font); padding-top: 2rem; border-top: 1px solid var(--border-color); }
 
         html { scroll-behavior: smooth; }
-        .nav-lang-buttons { display: flex; gap: 0.5rem; align-items: center; margin-left: 0.5rem; }
-        .lang-btn { border: 1px solid #9ca3af; border-radius: 9999px; padding: 0.25rem 1rem; font-size: 0.8rem; font-family: var(--secondary-font); color: var(--text-light); text-decoration: none; transition: all 0.3s; white-space: nowrap; }
-        .lang-btn:hover { background: var(--text-color); color: #fff; border-color: var(--text-color); }
-        @media (max-width: 767px) { .nav-lang-buttons { justify-content: center; margin: 1rem 0 0; padding: 0; } }
+
+        /* Language switcher — placed in hero, not nav */
+        .lang-switcher {
+            display: flex;
+            gap: 0.5rem;
+            justify-content: center;
+            margin-bottom: 1rem;
+        }
+        @media (min-width: 768px) { .lang-switcher { justify-content: flex-start; } }
+        .lang-btn {
+            border: 1px solid var(--border-color);
+            border-radius: 9999px;
+            padding: 0.25rem 1rem;
+            font-size: 0.75rem;
+            font-family: var(--secondary-font);
+            color: var(--text-lighter);
+            text-decoration: none;
+            transition: all 0.3s;
+            white-space: nowrap;
+            letter-spacing: 0.03em;
+        }
+        .lang-btn:hover {
+            background: var(--text-color);
+            color: var(--bg-color, #fff);
+            border-color: var(--text-color);
+        }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -123,9 +145,13 @@
                 <img src="assets/images/about/TJ.jpg" alt="Toji Masaya" class="profile-img" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/400x400/e0e0e0/ffffff?text=TJ'">
             </div>
             <div class="hero-text">
+                <div class="lang-switcher">
+                    <a href="about-en.html" class="lang-btn">English</a>
+                    <a href="about-hk.html" class="lang-btn">中文</a>
+                </div>
                 <span class="hero-label">Profile</span>
                 <h1 class="hero-title">
-                    <span class="block text-base md:text-lg font-serif-jp tracking-widest text-gray-500 mb-2" style="font-family: 'Noto Serif JP', serif;">田路昌也 — 写真・テクノロジー・姫路城</span>
+                    <span style="display:block; font-family:'Noto Serif JP',serif; font-size:var(--text-base); letter-spacing:0.1em; color:var(--text-lighter); margin-bottom:0.5rem; font-weight:400;">田路昌也 — 写真・テクノロジー・姫路城</span>
                     Technologist in Hong Kong,<br>
                     Enthusiast in Himeji.
                 </h1>
@@ -305,14 +331,6 @@
         document.addEventListener('DOMContentLoaded', () => {
             renderTimeline();
             setupObserver();
-            // Add language buttons to nav
-            const navMenu = document.getElementById('nav-menu');
-            if (navMenu) {
-                const langLi = document.createElement('li');
-                langLi.className = 'nav-lang-buttons';
-                langLi.innerHTML = '<a href="about-en.html" class="lang-btn">English</a><a href="about-hk.html" class="lang-btn">中文</a>';
-                navMenu.appendChild(langLi);
-            }
         });
     </script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
