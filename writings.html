@@ -202,6 +202,102 @@
             border-radius: 4px;
         }
 
+        /* Pick Up Section */
+        .pickup-section {
+            max-width: 1200px;
+            margin: 0 auto 80px;
+            padding: 0 30px;
+        }
+
+        .pickup-heading {
+            font-family: 'Crimson Text', serif;
+            font-size: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 0.08em;
+            color: var(--text-color);
+            margin-bottom: 2rem;
+            text-align: center;
+        }
+
+        .pickup-heading span {
+            display: block;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.75rem;
+            color: var(--text-light);
+            margin-top: 0.3rem;
+            letter-spacing: 0.1em;
+        }
+
+        .pickup-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 24px;
+        }
+
+        .pickup-card {
+            display: flex;
+            gap: 16px;
+            text-decoration: none;
+            color: inherit;
+            padding: 16px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            align-items: center;
+        }
+
+        .pickup-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+        }
+
+        .pickup-card-image {
+            width: 120px;
+            height: 80px;
+            object-fit: cover;
+            border-radius: 4px;
+            flex-shrink: 0;
+        }
+
+        .pickup-card-body {
+            flex: 1;
+            min-width: 0;
+        }
+
+        .pickup-card-source {
+            font-family: var(--secondary-font);
+            font-size: 0.7rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            margin-bottom: 0.3rem;
+        }
+
+        .pickup-card-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.95rem;
+            font-weight: 500;
+            line-height: 1.5;
+            color: var(--text-color);
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+            transition: color 0.3s ease;
+        }
+
+        .pickup-card:hover .pickup-card-title {
+            color: var(--accent-color);
+        }
+
+        .pickup-divider {
+            max-width: 1200px;
+            margin: 0 auto 60px;
+            padding: 0 30px;
+            border: none;
+            border-top: 1px solid var(--border-color);
+        }
+
         @media (prefers-color-scheme: dark) {
             .filter-btn:hover, .filter-btn.active {
                 background: rgba(255,255,255,0.1);
@@ -209,11 +305,19 @@
                 color: #fff;
             }
             .article-image-wrapper { background-color: #333; }
+            .pickup-card {
+                border-color: rgba(255,255,255,0.15);
+            }
+            .pickup-card:hover {
+                box-shadow: 0 8px 24px rgba(0,0,0,0.3);
+            }
         }
 
         @media (max-width: 768px) {
             .writings-title { font-size: 2.5rem; }
             .articles-grid { grid-template-columns: 1fr; gap: 40px; }
+            .pickup-grid { grid-template-columns: 1fr; }
+            .pickup-card-image { width: 100px; height: 68px; }
         }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
@@ -241,6 +345,12 @@
         <h1 class="writings-title">Writings</h1>
         <p class="writings-subtitle">旅の記録、機材の考察、日々の思考。</p>
     </header>
+
+    <section class="pickup-section" id="pickup-section" style="display:none">
+        <h2 class="pickup-heading">Pick Up<span>おすすめ記事</span></h2>
+        <div class="pickup-grid" id="pickup-grid"></div>
+    </section>
+    <hr class="pickup-divider" id="pickup-divider" style="display:none">
 
     <div class="filter-container">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -294,6 +404,7 @@
                 allArticles = data.sort((a, b) => new Date(b.date) - new Date(a.date));
 
                 renderArticles(allArticles);
+                renderPickup(allArticles, ogMap);
 
                 // ローカルキャッシュが実際に存在する場合のみ画像を差し替え（非同期）
                 upgradeToLocalImages();
@@ -317,6 +428,45 @@
                 // onloadが発火しなければ何もしない（外部URLのまま）
                 testImg.src = article.localImage;
             });
+        }
+
+        function renderPickup(articles, ogMap) {
+            const featured = articles.filter(a => a.featured);
+            if (featured.length === 0) return;
+
+            const section = document.getElementById('pickup-section');
+            const divider = document.getElementById('pickup-divider');
+            const grid = document.getElementById('pickup-grid');
+
+            grid.innerHTML = '';
+            featured.forEach(article => {
+                let imgSrc = article.image || 'assets/images/gallery/weekly.jpg';
+                const cached = ogMap[article.link];
+                if (cached && cached.local) {
+                    let lp = cached.local;
+                    if (lp.startsWith('/')) lp = lp.substring(1);
+                    imgSrc = lp;
+                }
+
+                const sourceColor = article.source === 'note' ? '#41C9B4' : '#2563eb';
+
+                const card = document.createElement('a');
+                card.href = article.link;
+                card.target = '_blank';
+                card.rel = 'noopener noreferrer';
+                card.className = 'pickup-card';
+                card.innerHTML = `
+                    <img src="${imgSrc}" alt="${article.title}" class="pickup-card-image" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
+                    <div class="pickup-card-body">
+                        <div class="pickup-card-source" style="color:${sourceColor}">${article.sourceLabel}</div>
+                        <div class="pickup-card-title">${article.title}</div>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+
+            section.style.display = '';
+            divider.style.display = '';
         }
 
         function renderArticles(articles) {
