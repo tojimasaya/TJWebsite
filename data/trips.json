@@ -1,0 +1,64 @@
+[
+  {
+    "id": "turkey",
+    "title": "トルコ横断",
+    "subtitle": "空に浮かぶ朝と、海に沈む夕",
+    "year": 2024,
+    "days": 8,
+    "color": "#e74c3c",
+    "link": "turkey-travel-journal.html",
+    "image": "/assets/images/gallery/cappadocia-thumbnail.webp",
+    "cities": [
+      { "name": "Cappadocia",  "lat": 38.6431, "lng": 34.8289, "detail": "cappadocia-detail.html" },
+      { "name": "Konya",       "lat": 37.8746, "lng": 32.4932, "detail": "konya-detail.html" },
+      { "name": "Pamukkale",   "lat": 37.9204, "lng": 29.1187, "detail": "pamukkale-detail.html" },
+      { "name": "Ephesus",     "lat": 37.9395, "lng": 27.3417, "detail": "ephesus-detail.html" },
+      { "name": "Safranbolu",  "lat": 41.2539, "lng": 32.6927, "detail": "safranbolu-detail.html" },
+      { "name": "Istanbul",    "lat": 41.0082, "lng": 28.9784, "detail": "istanbul-detail.html" }
+    ]
+  },
+  {
+    "id": "tibet",
+    "title": "薄い空気と濃い色彩：ラサの一週間",
+    "subtitle": "祈りの旋回に混ざる8日間",
+    "year": 2023,
+    "days": 8,
+    "color": "#8e44ad",
+    "link": null,
+    "image": null,
+    "cities": [
+      { "name": "広州 (Guangzhou)", "lat": 23.1291, "lng": 113.2644 },
+      { "name": "Lhasa",            "lat": 29.6500, "lng": 91.1000 }
+    ]
+  },
+  {
+    "id": "cologne-prague",
+    "title": "ケルン〜プラハ",
+    "subtitle": "大聖堂の鐘から石畳の音へ",
+    "year": 2022,
+    "days": 9,
+    "color": "#2980b9",
+    "link": null,
+    "image": "/assets/images/gallery/charlesbridge.webp",
+    "cities": [
+      { "name": "Köln",    "lat": 50.9375, "lng": 6.9603 },
+      { "name": "Dresden", "lat": 51.0504, "lng": 13.7373 },
+      { "name": "Praha",   "lat": 50.0755, "lng": 14.4378 }
+    ]
+  },
+  {
+    "id": "italy-germany",
+    "title": "アルプス越境",
+    "subtitle": "エスプレッソからラガーへ",
+    "year": 2022,
+    "days": 7,
+    "color": "#27ae60",
+    "link": null,
+    "image": null,
+    "cities": [
+      { "name": "Milano",  "lat": 45.4642, "lng": 9.1900 },
+      { "name": "Bolzano", "lat": 46.4983, "lng": 11.3548 },
+      { "name": "München", "lat": 48.1351, "lng": 11.5820 }
+    ]
+  }
+]
