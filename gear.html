@@ -243,13 +243,11 @@
         }
 
         @media (prefers-color-scheme: dark) {
-            .featured-link {
-                color: #60a5fa !important;
-            }
-            .featured-link:hover {
-                background-color: rgba(96, 165, 250, 0.1);
-            }
+            :root:not([data-theme="light"]) .featured-link { color: #60a5fa !important; }
+            :root:not([data-theme="light"]) .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); }
         }
+        [data-theme="dark"] .featured-link { color: #60a5fa !important; }
+        [data-theme="dark"] .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); }
 
         /* Leica DB Link (inside dark hero) */
         .leica-db-link {

@@ -208,50 +208,37 @@
 
         /* ダークモード対応 */
         @media (prefers-color-scheme: dark) {
-            .instagram-hero {
-                background: linear-gradient(to bottom, #1a1a1a 0%, #0f0f0f 100%);
-            }
-
-            .instagram-hero h1,
-            .project-title,
-            .more-title,
-            .link-title {
-                color: #f5f5f5;
-            }
-
-            .instagram-hero p,
-            .project-description {
-                color: #d0d0d0;
-            }
-
-            .project-subtitle,
-            .project-description span,
-            .link-description span {
-                color: #999 !important;
-            }
-
-            .project-card,
-            .link-item {
-                background: #1a1a1a;
-                border-color: #333;
-            }
-
-            .more-section {
-                background: #0f0f0f;
-            }
-
-            .project-link {
-                background: #f5f5f5;
-                color: #1a1a1a;
-                border-color: #f5f5f5;
-            }
-
-            .project-link:hover {
-                background: transparent;
-                color: #f5f5f5;
-                border-color: #f5f5f5;
-            }
+            :root:not([data-theme="light"]) .instagram-hero { background: linear-gradient(to bottom, #1a1a1a 0%, #0f0f0f 100%); }
+            :root:not([data-theme="light"]) .instagram-hero h1,
+            :root:not([data-theme="light"]) .project-title,
+            :root:not([data-theme="light"]) .more-title,
+            :root:not([data-theme="light"]) .link-title { color: #f5f5f5; }
+            :root:not([data-theme="light"]) .instagram-hero p,
+            :root:not([data-theme="light"]) .project-description { color: #d0d0d0; }
+            :root:not([data-theme="light"]) .project-subtitle,
+            :root:not([data-theme="light"]) .project-description span,
+            :root:not([data-theme="light"]) .link-description span { color: #999 !important; }
+            :root:not([data-theme="light"]) .project-card,
+            :root:not([data-theme="light"]) .link-item { background: #1a1a1a; border-color: #333; }
+            :root:not([data-theme="light"]) .more-section { background: #0f0f0f; }
+            :root:not([data-theme="light"]) .project-link { background: #f5f5f5; color: #1a1a1a; border-color: #f5f5f5; }
+            :root:not([data-theme="light"]) .project-link:hover { background: transparent; color: #f5f5f5; border-color: #f5f5f5; }
         }
+        [data-theme="dark"] .instagram-hero { background: linear-gradient(to bottom, #1a1a1a 0%, #0f0f0f 100%); }
+        [data-theme="dark"] .instagram-hero h1,
+        [data-theme="dark"] .project-title,
+        [data-theme="dark"] .more-title,
+        [data-theme="dark"] .link-title { color: #f5f5f5; }
+        [data-theme="dark"] .instagram-hero p,
+        [data-theme="dark"] .project-description { color: #d0d0d0; }
+        [data-theme="dark"] .project-subtitle,
+        [data-theme="dark"] .project-description span,
+        [data-theme="dark"] .link-description span { color: #999 !important; }
+        [data-theme="dark"] .project-card,
+        [data-theme="dark"] .link-item { background: #1a1a1a; border-color: #333; }
+        [data-theme="dark"] .more-section { background: #0f0f0f; }
+        [data-theme="dark"] .project-link { background: #f5f5f5; color: #1a1a1a; border-color: #f5f5f5; }
+        [data-theme="dark"] .project-link:hover { background: transparent; color: #f5f5f5; border-color: #f5f5f5; }
 
         /* レスポンシブ */
         @media (max-width: 768px) {

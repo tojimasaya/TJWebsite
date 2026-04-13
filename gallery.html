@@ -106,11 +106,14 @@
         }
 
         @media (prefers-color-scheme: dark) {
-            .filter-btn:hover, .filter-btn.active {
-                background: rgba(255,255,255,0.15);
-                color: #fff;
-                border-color: #fff;
+            :root:not([data-theme="light"]) .filter-btn:hover,
+            :root:not([data-theme="light"]) .filter-btn.active {
+                background: rgba(255,255,255,0.15); color: #fff; border-color: #fff;
             }
+        }
+        [data-theme="dark"] .filter-btn:hover,
+        [data-theme="dark"] .filter-btn.active {
+            background: rgba(255,255,255,0.15); color: #fff; border-color: #fff;
         }
 
         /* Masonry Grid */

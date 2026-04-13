@@ -41,8 +41,7 @@
         }
 
         @media (prefers-color-scheme: dark) {
-            :root {
-                /* Dark Mode Overrides */
+            :root:not([data-theme="light"]) {
                 --page-text-color: #f0f0f0;
                 --page-text-light: #bbbbbb;
                 --page-bg-color: #111111;
@@ -50,10 +49,22 @@
                 --page-accent-color: #60a5fa;
                 --page-card-bg: #1a1a1a;
             }
-            body {
+            :root:not([data-theme="light"]) body {
                 background-color: var(--page-bg-color) !important;
                 color: var(--page-text-color) !important;
             }
+        }
+        [data-theme="dark"] {
+            --page-text-color: #f0f0f0;
+            --page-text-light: #bbbbbb;
+            --page-bg-color: #111111;
+            --page-border-color: #333333;
+            --page-accent-color: #60a5fa;
+            --page-card-bg: #1a1a1a;
+        }
+        [data-theme="dark"] body {
+            background-color: var(--page-bg-color) !important;
+            color: var(--page-text-color) !important;
         }
 
         /* --- Page Styles --- */
@@ -494,13 +505,11 @@
         }
 
         @media (prefers-color-scheme: dark) {
-            .featured-link {
-                color: #60a5fa !important;
-            }
-            .featured-link:hover {
-                background-color: rgba(96, 165, 250, 0.1);
-            }
+            :root:not([data-theme="light"]) .featured-link { color: #60a5fa !important; }
+            :root:not([data-theme="light"]) .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); }
         }
+        [data-theme="dark"] .featured-link { color: #60a5fa !important; }
+        [data-theme="dark"] .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); }
     </style>
     <!-- Structured Data (Hong Kong page) -->
     <script type="application/ld+json">

@@ -239,9 +239,11 @@
 
     /* Dark mode adjustments */
     @media (prefers-color-scheme: dark) {
-      .links-card { --card-bg: #121212; box-shadow: none; }
-      .link-button { --bg-elev: #121212; }
+      :root:not([data-theme="light"]) .links-card { --card-bg: #121212; box-shadow: none; }
+      :root:not([data-theme="light"]) .link-button { --bg-elev: #121212; }
     }
+    [data-theme="dark"] .links-card { --card-bg: #121212; box-shadow: none; }
+    [data-theme="dark"] .link-button { --bg-elev: #121212; }
   </style>
 
   <!-- Theme Colors -->

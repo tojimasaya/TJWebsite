@@ -299,19 +299,25 @@
         }
 
         @media (prefers-color-scheme: dark) {
-            .filter-btn:hover, .filter-btn.active {
+            :root:not([data-theme="light"]) .filter-btn:hover,
+            :root:not([data-theme="light"]) .filter-btn.active {
                 background: rgba(255,255,255,0.1);
                 border-color: #fff;
                 color: #fff;
             }
-            .article-image-wrapper { background-color: #333; }
-            .pickup-card {
-                border-color: rgba(255,255,255,0.15);
-            }
-            .pickup-card:hover {
-                box-shadow: 0 8px 24px rgba(0,0,0,0.3);
-            }
+            :root:not([data-theme="light"]) .article-image-wrapper { background-color: #333; }
+            :root:not([data-theme="light"]) .pickup-card { border-color: rgba(255,255,255,0.15); }
+            :root:not([data-theme="light"]) .pickup-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
         }
+        [data-theme="dark"] .filter-btn:hover,
+        [data-theme="dark"] .filter-btn.active {
+            background: rgba(255,255,255,0.1);
+            border-color: #fff;
+            color: #fff;
+        }
+        [data-theme="dark"] .article-image-wrapper { background-color: #333; }
+        [data-theme="dark"] .pickup-card { border-color: rgba(255,255,255,0.15); }
+        [data-theme="dark"] .pickup-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
 
         @media (max-width: 768px) {
             .writings-title { font-size: 2.5rem; }
