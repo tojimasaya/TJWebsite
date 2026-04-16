@@ -1,5 +1,15 @@
 [
   {
+    "title": "SaaS が要らなくなる日 ── Claude Code \"Channels\" とファイルシステムの再発見",
+    "link": "https://note.com/tojimasaya/n/n158a3801b0e1",
+    "date": "2026-04-16",
+    "image": "https://assets.st-note.com/production/uploads/images/267728443/0d81689903d1378b310d430cc4c2a408.jpeg?width=800",
+    "excerpt": "「俺流トラベルガジェット」AIアシスタント編の第3弾（思想編）。Claude Code の Channels 機能と、ファイルシステムをそのままデータベースとして使うという発想。SaaS が要らなくなる時代の話。",
+    "magazine": "俺流トラベルガジェット",
+    "source": "note",
+    "sourceLabel": "note"
+  },
+  {
     "title": "Telegram × Claude Code ── TJ Assistantはこう動いている",
     "link": "https://note.com/tojimasaya/n/n316fef052ca5",
     "date": "2026-04-13",
