@@ -327,12 +327,14 @@
     <!--
       ============================================================
       桜シーズン実用ガイドセクション
-      シーズンオフのため全体を非表示にしている。
-      来年の桜シーズン（3月頃）に下の閉じコメントを外して復活させる。
+      シーズンオフのため <template> で非表示化している（内部に
+      HTMLコメントが含まれるため単純な <!- - -> ではネストできない）。
+      来年の桜シーズン（3月頃）に、このすぐ下の <template> 開始タグと
+      最下部の </template> 終了タグを削除すれば復活する。
       開花・イベント情報（年度・日付）、入城料などは再表示時に要更新。
       ============================================================
     -->
-    <!--
+    <template id="sakura-guide-offseason">
     <section id="sakura-guide" class="bg-white border-t border-gray-200 py-16 md:py-24 px-4">
       <div class="max-w-4xl mx-auto">
         <!-- セクションヘッダー -->
@@ -573,7 +575,7 @@
         </div>
       </div>
     </section>
-    -->
+    </template>
 
     <!-- Artist Statement (Accordion) -->
     <section class="bg-washi-bg border-t border-gray-200 py-10 md:py-14 px-4">
