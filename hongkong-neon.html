@@ -8,7 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="color-scheme" content="dark">
     
-    <title>香港ネオン残照 — Toji Masaya</title>
+    <title>香港ネオン残照 — 消えゆく香港ネオンの写真アーカイブ | Toji Masaya</title>
 
     <!-- Fonts & CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;600&display=swap" rel="stylesheet">
@@ -83,9 +83,26 @@
         }
 
         /* --- Content --- */
-        .neon-intro { max-width: 800px; margin: 80px auto; padding: 0 30px; text-align: center; }
+        .neon-intro { max-width: 800px; margin: 80px auto 50px; padding: 0 30px; text-align: center; }
         .neon-intro h2 { font-family: 'Noto Serif JP', serif; font-size: 1.8rem; margin-bottom: 1.5rem; letter-spacing: 0.1em; }
         .neon-intro p { color: var(--text-sub); line-height: 2; margin-bottom: 1rem; }
+
+        .archive-summary {
+            max-width: 900px; margin: 0 auto 55px; padding: 0 30px;
+            display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px;
+            background: rgba(255,255,255,0.1); border: 1px solid rgba(255,255,255,0.1);
+        }
+        .archive-stat {
+            background: rgba(5,5,5,0.82); padding: 22px 18px; text-align: center;
+        }
+        .archive-stat-number {
+            display: block; font-family: 'Crimson Text', serif; font-size: 2rem;
+            color: #fff; line-height: 1; margin-bottom: 8px;
+        }
+        .archive-stat-label {
+            display: block; font-size: 0.72rem; color: var(--text-sub);
+            letter-spacing: 0.16em; text-transform: uppercase;
+        }
 
         .category-filter { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin-bottom: 40px; padding: 0 20px; }
         .filter-btn {
@@ -109,6 +126,11 @@
         .neon-item:hover .neon-item-overlay { transform: translateY(0); opacity: 1; }
         .neon-item-title { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; margin-bottom: 5px; text-shadow: 0 0 5px rgba(255,0,110,0.8); }
         .neon-item-info { font-size: 0.8rem; color: var(--text-sub); }
+        .neon-item-status {
+            display: inline-block; margin-top: 8px; padding: 3px 8px;
+            border: 1px solid rgba(255,255,255,0.25); color: #fff;
+            font-size: 0.68rem; letter-spacing: 0.08em; background: rgba(255,0,110,0.12);
+        }
 
         .nav-footer { max-width: 800px; margin: 0 auto 80px; text-align: center; display: flex; justify-content: center; gap: 20px; }
         .back-link {
@@ -145,21 +167,30 @@
         .modal-meta {
             font-size: 0.85rem; color: var(--text-sub);
         }
+        .modal-status {
+            display: inline-block; margin-top: 12px; padding: 5px 12px;
+            border: 1px solid rgba(255,255,255,0.22); color: #fff; font-size: 0.75rem;
+            letter-spacing: 0.08em; background: rgba(255,0,110,0.12);
+        }
+        .modal-note {
+            max-width: 620px; margin: 16px auto 0; color: var(--text-sub);
+            font-family: 'Noto Serif JP', serif; font-size: 0.92rem; line-height: 1.9;
+        }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/hongkong-neon.html">
-<meta name="description" content="Hong Kong Neon — 消えゆく香港のネオンサインを記録する写真シリーズ。">
-<meta property="og:title" content="香港ネオン残照 — Toji Masaya">
-<meta property="og:description" content="Hong Kong Neon — 消えゆく香港のネオンサインを記録する写真シリーズ。">
+<meta name="description" content="香港ネオン残照。九龍城、旺角・油麻地を中心に、規制と再開発の中で消えゆく香港の突き出し看板とネオンサインを写真、場所、撮影日、記録メモで残すアーカイブ。">
+<meta property="og:title" content="香港ネオン残照 — 消えゆく香港ネオンの写真アーカイブ | Toji Masaya">
+<meta property="og:description" content="九龍城、旺角・油麻地を中心に、消えゆく香港の突き出し看板とネオンサインを写真、場所、撮影日、記録メモで残すアーカイブ。">
 <meta property="og:url" content="https://tojimasaya.com/hongkong-neon.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toji Masaya">
 <meta property="og:image" content="https://tojimasaya.com/assets/images/hongkong-neon/hero.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@mongkok93">
-<meta name="twitter:title" content="香港ネオン残照 — Toji Masaya">
-<meta name="twitter:description" content="Hong Kong Neon — 消えゆく香港のネオンサインを記録する写真シリーズ。">
+<meta name="twitter:title" content="香港ネオン残照 — 消えゆく香港ネオンの写真アーカイブ | Toji Masaya">
+<meta name="twitter:description" content="九龍城、旺角・油麻地を中心に、消えゆく香港の突き出し看板とネオンサインを写真、場所、撮影日、記録メモで残すアーカイブ。">
 <meta name="twitter:image" content="https://tojimasaya.com/assets/images/hongkong-neon/hero.jpg">
 </head>
 <body>
@@ -189,6 +220,21 @@
             記録として。記憶として。<br>
             二度と戻らない香港の光を、一枚ずつ残していく。
         </p>
+    </section>
+
+    <section class="archive-summary" aria-label="香港ネオン残照アーカイブ概要">
+        <div class="archive-stat">
+            <span class="archive-stat-number" id="archive-count">19</span>
+            <span class="archive-stat-label">Records</span>
+        </div>
+        <div class="archive-stat">
+            <span class="archive-stat-number" id="archive-areas">2</span>
+            <span class="archive-stat-label">Districts</span>
+        </div>
+        <div class="archive-stat">
+            <span class="archive-stat-number" id="archive-since">2025</span>
+            <span class="archive-stat-label">Since</span>
+        </div>
     </section>
 
     <!-- Filter -->
@@ -221,6 +267,12 @@
         let currentCategory = 'all';
         const IMAGE_DIR = 'assets/images/hongkong-neon/';
 
+        function escapeHtml(value) {
+            return String(value || '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[char]));
+        }
+
         // 外部JSONから読み込み → 失敗時はフォールバック
         async function loadPhotos() {
             try {
@@ -234,8 +286,22 @@
                     "2": { "title": "永富上海蟹專門店の緑のネオン", "location": "九龍城", "category": "kowlooncity", "date": "2025-12-03", "gear": "Leica SL2-S" }
                 };
             }
+            updateArchiveSummary();
             updateFilterCounts();
             generateGallery();
+        }
+
+        function updateArchiveSummary() {
+            const entries = Object.values(photosData);
+            const activeCategories = new Set(entries.map(photo => photo.category).filter(Boolean));
+            const years = entries
+                .map(photo => String(photo.date || '').slice(0, 4))
+                .filter(year => /^\d{4}$/.test(year))
+                .sort();
+
+            document.getElementById('archive-count').textContent = entries.length;
+            document.getElementById('archive-areas').textContent = activeCategories.size;
+            document.getElementById('archive-since').textContent = years[0] || '—';
         }
 
         // フィルターボタンに件数バッジを表示
@@ -271,15 +337,18 @@
                     const filename = `${String(id).padStart(2, '0')}.jpg`;
                     const article = document.createElement('article');
                     article.className = 'neon-item';
-                    article.onclick = () => openModal(
-                        `${IMAGE_DIR}${filename}`, photo.title, photo.location, photo.date, photo.gear
-                    );
+                    article.onclick = () => openModal(`${IMAGE_DIR}${filename}`, photo);
+                    const title = escapeHtml(photo.title);
+                    const location = escapeHtml(photo.location);
+                    const date = escapeHtml(photo.date);
+                    const status = escapeHtml(photo.status || '撮影時点で現存');
                     article.innerHTML = `
-                        <img src="${IMAGE_DIR}${filename}" alt="${photo.title}" loading="lazy"
+                        <img src="${IMAGE_DIR}${filename}" alt="${title}" loading="lazy"
                              onerror="this.src='https://placehold.co/600x800/222/555?text=Neon'">
                         <div class="neon-item-overlay">
-                            <h3 class="neon-item-title">${photo.title}</h3>
-                            <div class="neon-item-info">${photo.location}</div>
+                            <h3 class="neon-item-title">${title}</h3>
+                            <div class="neon-item-info">${location} | ${date}</div>
+                            <span class="neon-item-status">${status}</span>
                         </div>`;
                     grid.appendChild(article);
                 });
@@ -297,15 +366,24 @@
             });
         });
 
-        function openModal(src, title, location, date, gear) {
+        function openModal(src, photo) {
             const modal = document.getElementById('modal');
+            const title = escapeHtml(photo.title);
+            const location = escapeHtml(photo.location);
+            const date = escapeHtml(photo.date);
+            const gear = escapeHtml(photo.gear);
+            const status = escapeHtml(photo.status || '撮影時点で現存');
+            const note = escapeHtml(photo.note);
             const gearHtml = gear ? `<div class="modal-gear">${gear}</div>` : '';
+            const noteHtml = note ? `<p class="modal-note">${note}</p>` : '';
             modal.querySelector('.modal-content').innerHTML = `
                 <img src="${src}" class="modal-image" alt="${title}"
                      onerror="this.src='https://placehold.co/800x600/222/555?text=Neon'">
                 <div class="modal-info">
                     <h3 class="modal-title">${title}</h3>
                     <div class="modal-meta">${location} | ${date}</div>
+                    <div class="modal-status">${status}</div>
+                    ${noteHtml}
                     ${gearHtml}
                 </div>`;
             modal.style.display = 'flex';
