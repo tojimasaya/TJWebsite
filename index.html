@@ -13,26 +13,26 @@
     gtag('config', 'G-806426BQX2');
   </script>
 
-  <title>田路昌也 (Toji Masaya) — 写真・ドローン・旅の記録</title>
+  <title>田路昌也 (Toji Masaya) — 消えゆく風景を写真と言葉で残す</title>
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <meta name="description" content="田路昌也(TJ)のポートフォリオサイト。ライカやドローンを片手に、旅先の空気や日々の発見を写真と文章で記録しています。">
+  <meta name="description" content="田路昌也(TJ)の個人アーカイブ。姫路城を36の視点で撮る白鷺三十六景、消えゆく香港ネオン、旅と機材の記録を写真と文章で残しています。">
   <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, 姫路城, 白鷺三十六景, 香港ネオン残照, note">
   <meta name="author" content="Toji Masaya">
 
-  <meta property="og:title" content="田路昌也 (Toji Masaya) — 写真・ドローン・旅の記録">
-  <meta property="og:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。白鷺三十六景・香港ネオン残照、2つのプロジェクトを軸に。">
+  <meta property="og:title" content="田路昌也 (Toji Masaya) — 消えゆく風景を写真と言葉で残す">
+  <meta property="og:description" content="姫路城を36の視点で撮る白鷺三十六景、消えゆく香港ネオン、旅と機材の記録。香港と日本を行き来しながら続ける個人アーカイブ。">
   <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/castle31.jpg">
   <meta property="og:url" content="https://tojimasaya.com">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@mongkok93">
-  <meta name="twitter:title" content="田路昌也 (Toji Masaya) — 写真・ドローン・旅の記録">
-  <meta name="twitter:description" content="香港と日本を行き来しながら、旅先で出会った風景や小さな発見を写真と言葉で綴っています。">
+  <meta name="twitter:title" content="田路昌也 (Toji Masaya) — 消えゆく風景を写真と言葉で残す">
+  <meta name="twitter:description" content="白鷺三十六景、香港ネオン残照、旅と機材の記録。香港と日本を行き来しながら続ける個人アーカイブ。">
   <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/castle31.jpg">
 
   <!-- フォント読み込みの最適化 -->
@@ -60,7 +60,7 @@
       "https://x.com/mongkok93",
       "https://www.facebook.com/masaya.toji"
     ],
-    "description": "香港と日本を行き来する写真家・ライター。Leicaとドローンで旅の断片を記録。白鷺三十六景・香港ネオン残照プロジェクトを進行中。"
+    "description": "香港と日本を行き来する写真家・ライター。Leicaとドローンで、姫路城を36の視点で撮る白鷺三十六景、消えゆく香港ネオン、旅と機材の記録を続けている。"
   }
   </script>
 
@@ -257,6 +257,99 @@
 
     .intro-byline a:hover {
       border-color: #c49a6c;
+    }
+
+    /* ── Site Compass ── */
+    .site-compass {
+      background: #f7f7f5;
+      border-top: 1px solid var(--border-color, #e5e5e5);
+      border-bottom: 1px solid var(--border-color, #e5e5e5);
+      padding: 0 2rem;
+    }
+
+    .site-compass-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    }
+
+    .site-compass-item {
+      position: relative;
+      display: block;
+      min-height: 210px;
+      padding: 2rem 1.6rem;
+      color: inherit;
+      text-decoration: none;
+      border-left: 1px solid var(--border-color, #e5e5e5);
+      transition: background 0.3s ease, transform 0.3s ease;
+    }
+
+    .site-compass-item:last-child {
+      border-right: 1px solid var(--border-color, #e5e5e5);
+    }
+
+    .site-compass-item::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 1.6rem;
+      right: 1.6rem;
+      height: 2px;
+      background: #c49a6c;
+      opacity: 0.55;
+      transition: opacity 0.3s ease;
+    }
+
+    .site-compass-item:nth-child(1)::before { background: #1a3fb9; }
+    .site-compass-item:nth-child(2)::before { background: #ff006e; }
+    .site-compass-item:nth-child(3)::before { background: #2f855a; }
+    .site-compass-item:nth-child(4)::before { background: #8a6f4d; }
+
+    .site-compass-item:hover {
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    .site-compass-item:hover::before {
+      opacity: 1;
+    }
+
+    .site-compass-label {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.18em;
+      color: var(--text-lighter, #999);
+      text-transform: uppercase;
+      margin-bottom: 1.4rem;
+    }
+
+    .site-compass-title {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      color: var(--text-color, #333);
+      margin-bottom: 0.8rem;
+      line-height: 1.6;
+    }
+
+    .site-compass-copy {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.82rem;
+      line-height: 1.9;
+      color: var(--text-light, #666);
+      letter-spacing: 0.03em;
+    }
+
+    .site-compass-more {
+      display: inline-block;
+      margin-top: 1.2rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #9b7a54;
     }
 
     /* ── Travels Section ── */
@@ -614,6 +707,32 @@
         padding: 3.5rem 1.5rem;
       }
 
+      .site-compass {
+        padding: 0 1.5rem;
+      }
+
+      .site-compass-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .site-compass-item {
+        min-height: auto;
+        padding: 1.7rem 0.3rem;
+        border-left: 0;
+        border-bottom: 1px solid var(--border-color, #e5e5e5);
+      }
+
+      .site-compass-item:last-child {
+        border-right: 0;
+        border-bottom: 0;
+      }
+
+      .site-compass-item::before {
+        left: 0.3rem;
+        right: auto;
+        width: 48px;
+      }
+
       .travels {
         padding: 3.5rem 1.5rem;
       }
@@ -707,7 +826,7 @@
   <!-- 画像エラーハンドリング -->
   <script src="js/image-fallback.js"></script>
 
-  <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">田路昌也 (Toji Masaya) — 写真・ドローン・旅の記録</h1>
+  <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">田路昌也 (Toji Masaya) — 消えゆく風景を写真と言葉で残す</h1>
 
   <!-- ======================================
        SECTION 1: ヒーロー（左右分割）
@@ -757,12 +876,44 @@
        ====================================== -->
   <section class="intro-statement">
     <p class="intro-statement-text">
-      Leicaとドローンを携え、香港と日本を行き来しながら<br>
-      消えゆくもの、変わらないものを記録しています。
+      香港と日本を行き来しながら、Leicaとドローンで<br>
+      消えゆく風景と、旅先で出会った小さな発見を記録しています。
     </p>
     <p class="intro-byline">
-      写真と文章 — <a href="about.html">Toji Masaya</a>
+      記録する人 — <a href="about.html">Toji Masaya</a>
     </p>
+  </section>
+
+  <!-- ======================================
+       SECTION 2.5: サイトの入口
+       ====================================== -->
+  <section class="site-compass" aria-label="サイトの主な入口">
+    <div class="site-compass-inner">
+      <a class="site-compass-item" href="shirasagi36.html">
+        <span class="site-compass-label">Himeji Castle</span>
+        <h2 class="site-compass-title">白鷺三十六景</h2>
+        <p class="site-compass-copy">故郷・姫路城を36の視点から撮る写真プロジェクト。四季、時間、人の気配の中にある白鷺城を残します。</p>
+        <span class="site-compass-more">VIEW PROJECT →</span>
+      </a>
+      <a class="site-compass-item" href="hongkong-neon.html">
+        <span class="site-compass-label">Hong Kong Neon</span>
+        <h2 class="site-compass-title">香港ネオン残照</h2>
+        <p class="site-compass-copy">規制と再開発の中で姿を消していく突き出し看板とネオン。街の光を、記憶として集めています。</p>
+        <span class="site-compass-more">VIEW ARCHIVE →</span>
+      </a>
+      <a class="site-compass-item" href="turkey-travel-journal.html">
+        <span class="site-compass-label">Travel Journal</span>
+        <h2 class="site-compass-title">旅の記録</h2>
+        <p class="site-compass-copy">トルコ、チベット、プラハ、ベネツィア。写真だけでは残らない旅先の空気を文章でも綴ります。</p>
+        <span class="site-compass-more">READ JOURNEY →</span>
+      </a>
+      <a class="site-compass-item" href="gear.html">
+        <span class="site-compass-label">Gear Notes</span>
+        <h2 class="site-compass-title">旅と撮影の道具</h2>
+        <p class="site-compass-copy">Leica、ドローン、Mac、旅の小物。実際に持ち出して使っている機材を、自分の視点でまとめます。</p>
+        <span class="site-compass-more">VIEW GEAR →</span>
+      </a>
+    </div>
   </section>
 
   <!-- ======================================
