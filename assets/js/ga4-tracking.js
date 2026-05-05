@@ -1,75 +1,269 @@
 /**
- * tojimasaya.com — GA4 詳細トラッキングスクリプト
- * 外部リンク（note / DRONE.jp / SNS）のクリックを
- * イベント名・記事タイトル・クリック元ページ込みで計測する
+ * tojimasaya.com - GA4 detail tracking
  *
- * 使い方: 全ページの </body> 直前に以下の <script> タグで読み込む
- *   <script src="/assets/js/ga4-tracking.js" defer></script>
- *
- * または各HTMLの </body> 直前に直接 <script>...</script> で貼る
+ * This file keeps site-specific engagement events in one place:
+ * outbound links, Shirasagi 36 project actions, language switches,
+ * and photo/map interactions.
  */
 
 (function () {
   'use strict';
 
-  // ── 計測対象ドメインとイベント名のマッピング ──────────────────────────
   const DOMAIN_MAP = [
-    { pattern: /drone\.jp/,       eventName: 'click_dronejo',   label: 'DRONE.jp'   },
-    { pattern: /note\.com/,       eventName: 'click_note',      label: 'note'       },
-    { pattern: /instagram\.com/,  eventName: 'click_instagram', label: 'Instagram'  },
-    { pattern: /youtube\.com/,    eventName: 'click_youtube',   label: 'YouTube'    },
-    { pattern: /x\.com/,          eventName: 'click_x',         label: 'X'          },
-    { pattern: /facebook\.com/,   eventName: 'click_facebook',  label: 'Facebook'   },
+    { pattern: /drone\.jp/i, eventName: 'click_dronejp', label: 'DRONE.jp' },
+    { pattern: /note\.com/i, eventName: 'click_note', label: 'note' },
+    { pattern: /instagram\.com/i, eventName: 'click_instagram', label: 'Instagram' },
+    { pattern: /youtube\.com/i, eventName: 'click_youtube', label: 'YouTube' },
+    { pattern: /x\.com/i, eventName: 'click_x', label: 'X' },
+    { pattern: /facebook\.com/i, eventName: 'click_facebook', label: 'Facebook' },
   ];
 
-  // ── クリックした場所の文脈ラベルを返す ────────────────────────────────
-  function getContext(el) {
-    const cls = el.closest('[class]')?.className || '';
-    if (cls.includes('travel-card'))   return '旅の記録カード';
-    if (cls.includes('latest-item'))   return '最新記事リスト';
-    if (cls.includes('articles-grid')) return '記事一覧';
-    if (cls.includes('footer-social')) return 'フッターSNS';
-    if (cls.includes('footer'))        return 'フッター';
-    if (cls.includes('hero'))          return 'ヒーロー';
-    return 'その他';
+  const FEATURE_LINKS = [
+    { pattern: /shirasagi36(?:-(en|hk))?\.html$/i, feature: 'shirasagi36' },
+    { pattern: /hongkong-neon\.html$/i, feature: 'hongkong_neon' },
+    { pattern: /hongkong\.html$/i, feature: 'hongkong' },
+    { pattern: /gear(?:-[a-z]+)?\.html$/i, feature: 'gear' },
+    { pattern: /writings\.html$/i, feature: 'writings' },
+    { pattern: /leica-serial\.html$/i, feature: 'leica_serial' },
+    { pattern: /instagram\.html$/i, feature: 'instagram_entry' },
+  ];
+
+  function cleanParams(params) {
+    return Object.fromEntries(
+      Object.entries(params || {}).filter(([, value]) => (
+        value !== undefined && value !== null && value !== ''
+      ))
+    );
   }
 
-  // ── 記事タイトルを取得（リンクテキストから媒体名プレフィックスを除去）──
+  function normalizePath(pathname) {
+    if (!pathname || pathname === '/') return '/index.html';
+    return pathname;
+  }
+
+  function getPageLanguage() {
+    const path = window.location.pathname;
+    if (/-en\.html$/i.test(path)) return 'en';
+    if (/-hk\.html$/i.test(path)) return 'zh-Hant';
+    return document.documentElement.lang || 'ja';
+  }
+
+  function trackEvent(eventName, params) {
+    if (typeof window.gtag !== 'function') return;
+
+    window.gtag('event', eventName, cleanParams({
+      source_page: normalizePath(window.location.pathname),
+      page_title: document.title,
+      language: getPageLanguage(),
+      ...params,
+    }));
+  }
+
+  function toUrl(href) {
+    try {
+      return new URL(href, window.location.href);
+    } catch (_) {
+      return null;
+    }
+  }
+
+  function getText(el) {
+    return (el.textContent || '').trim().replace(/\s+/g, ' ').substring(0, 120);
+  }
+
+  function getContext(el) {
+    const closest = (selector) => el.closest(selector);
+    if (closest('nav')) return 'global_nav';
+    if (closest('#mobile-menu')) return 'mobile_nav';
+    if (closest('footer')) return 'footer';
+    if (closest('#latest-view')) return 'latest_view';
+    if (closest('#gallery-anchor') || closest('#shirasagi-grid')) return 'gallery';
+    if (closest('.articles-grid')) return 'articles_grid';
+    if (closest('.latest-item')) return 'latest_articles';
+    if (closest('.travel-card')) return 'travel_card';
+    if (closest('.instagram-hero')) return 'instagram_hero';
+    if (closest('[class*="hero"]')) return 'hero';
+    return 'other';
+  }
+
   function getArticleTitle(el) {
-    const raw = el.textContent.trim().replace(/\s+/g, ' ');
-    // "note | 2026年..." や "DRONE.jp | 2026年..." のパターンを整形
+    const raw = getText(el);
     return raw.replace(/^(note|DRONE\.jp)\s*\|\s*[\d年月日]+\s*/i, '').substring(0, 80);
   }
 
-  // ── メインのクリックリスナー（イベント委譲）────────────────────────────
-  document.addEventListener('click', function (e) {
-    const link = e.target.closest('a[href]');
-    if (!link) return;
+  function isSameSite(url) {
+    return url && url.origin === window.location.origin;
+  }
 
-    const href = link.href || '';
-    const matched = DOMAIN_MAP.find(d => d.pattern.test(href));
-    if (!matched) return;
+  function isShirasagiPage() {
+    return /\/shirasagi36(?:-(en|hk))?\.html$/i.test(window.location.pathname);
+  }
 
-    // gtag が存在しない環境では何もしない
-    if (typeof gtag !== 'function') return;
+  function getLanguageSwitch(link, url) {
+    const target = url.pathname.match(/\/shirasagi36(?:-(en|hk))?\.html$/i);
+    if (!target || !isShirasagiPage()) return null;
+
+    const targetLanguage = target[1] === 'en' ? 'en' : target[1] === 'hk' ? 'zh-Hant' : 'ja';
+    const currentLanguage = getPageLanguage();
+    if (targetLanguage === currentLanguage) return null;
+
+    return {
+      from_language: currentLanguage,
+      to_language: targetLanguage,
+      project: 'shirasagi36',
+      link_url: url.href,
+      click_text: getText(link),
+      click_context: getContext(link),
+    };
+  }
+
+  function getShirasagiCta(link, url) {
+    if (!isShirasagiPage()) return null;
 
     const params = {
-      // ① どのリンクか
-      link_url:      href,
-      link_domain:   matched.label,
-
-      // ② 何の記事/ページか
-      article_title: getArticleTitle(link),
-
-      // ③ サイト内どこからクリックされたか
-      source_page:   window.location.pathname,   // 例: /index.html, /writings.html
-      click_context: getContext(link),            // 例: 記事一覧, フッターSNS
+      project: 'shirasagi36',
+      link_url: url.href,
+      click_text: getText(link),
+      click_context: getContext(link),
     };
 
-    gtag('event', matched.eventName, params);
+    if (url.hash === '#gallery-anchor') {
+      return { eventName: 'click_shirasagi_gallery', params: { ...params, cta_type: 'gallery' } };
+    }
 
-    // デバッグ用（本番では削除可）
-    // console.log('[GA4 tracking]', matched.eventName, params);
+    if (/\/shirasagi36-map\.html$/i.test(url.pathname)) {
+      return { eventName: 'click_shirasagi_map', params: { ...params, cta_type: 'map_page' } };
+    }
+
+    if (url.hash === '#latest-view') {
+      return { eventName: 'click_shirasagi_latest', params: { ...params, cta_type: 'latest_view' } };
+    }
+
+    return null;
+  }
+
+  function getFeatureLink(link, url) {
+    if (!isSameSite(url)) return null;
+    const targetPath = normalizePath(url.pathname);
+    const sourcePath = normalizePath(window.location.pathname);
+    if (targetPath === sourcePath && !url.hash) return null;
+
+    const matched = FEATURE_LINKS.find(item => item.pattern.test(targetPath));
+    if (!matched) return null;
+
+    return {
+      feature: matched.feature,
+      target_page: targetPath,
+      link_url: url.href,
+      click_text: getText(link),
+      click_context: getContext(link),
+    };
+  }
+
+  function getCurrentModalPhoto(fallbackId) {
+    const num = document.getElementById('modal-num')?.textContent || fallbackId;
+    const title = document.getElementById('modal-title')?.textContent;
+    const date = document.getElementById('modal-date')?.textContent;
+    const location = document.getElementById('modal-loc-name')?.textContent;
+
+    return {
+      photo_id: String(num || '').trim().padStart(2, '0'),
+      photo_title: title ? title.trim().substring(0, 120) : undefined,
+      photo_date: date ? date.trim() : undefined,
+      photo_location: location && location !== '--' ? location.trim().substring(0, 80) : undefined,
+    };
+  }
+
+  function trackShirasagiFilter(button) {
+    if (!isShirasagiPage()) return;
+
+    trackEvent('filter_shirasagi', {
+      project: 'shirasagi36',
+      filter_name: button.dataset.filter,
+      click_text: getText(button),
+      click_context: getContext(button),
+    });
+  }
+
+  function trackModalMapClick(link) {
+    if (!isShirasagiPage() || link.id !== 'modal-map-link') return false;
+
+    trackEvent('click_shirasagi_photo_map', {
+      project: 'shirasagi36',
+      link_url: link.href,
+      click_text: getText(link),
+      click_context: 'photo_modal',
+      ...getCurrentModalPhoto(),
+    });
+
+    return true;
+  }
+
+  function installOpenModalTracking() {
+    if (!isShirasagiPage()) return;
+    if (typeof window.openModal !== 'function' || window.openModal.__gaTracked) return;
+
+    const originalOpenModal = window.openModal;
+    window.openModal = function trackedOpenModal(id) {
+      const result = originalOpenModal.apply(this, arguments);
+
+      window.setTimeout(() => {
+        trackEvent('open_shirasagi_photo', {
+          project: 'shirasagi36',
+          ...getCurrentModalPhoto(id),
+        });
+      }, 0);
+
+      return result;
+    };
+    window.openModal.__gaTracked = true;
+  }
+
+  document.addEventListener('click', function (event) {
+    const filterButton = event.target.closest('.filter-btn[data-filter]');
+    if (filterButton) {
+      trackShirasagiFilter(filterButton);
+    }
+
+    const link = event.target.closest('a[href]');
+    if (!link) return;
+
+    if (trackModalMapClick(link)) return;
+
+    const url = toUrl(link.getAttribute('href'));
+    if (!url) return;
+
+    const languageSwitch = getLanguageSwitch(link, url);
+    if (languageSwitch) {
+      trackEvent('switch_language', languageSwitch);
+      return;
+    }
+
+    const shirasagiCta = getShirasagiCta(link, url);
+    if (shirasagiCta) {
+      trackEvent(shirasagiCta.eventName, shirasagiCta.params);
+      return;
+    }
+
+    const featureLink = getFeatureLink(link, url);
+    if (featureLink) {
+      trackEvent('click_feature_link', featureLink);
+      return;
+    }
+
+    const matched = DOMAIN_MAP.find(item => item.pattern.test(url.href));
+    if (!matched) return;
+
+    trackEvent(matched.eventName, {
+      link_url: url.href,
+      link_domain: matched.label,
+      article_title: getArticleTitle(link),
+      click_text: getText(link),
+      click_context: getContext(link),
+    });
   });
 
+  installOpenModalTracking();
+  document.addEventListener('DOMContentLoaded', installOpenModalTracking);
+  window.addEventListener('load', installOpenModalTracking);
 })();
