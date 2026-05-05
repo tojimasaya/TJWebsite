@@ -259,6 +259,170 @@
       border-color: #c49a6c;
     }
 
+    /* ── Current Feature ── */
+    .current-feature {
+      background: #f7f7f5;
+      border-top: 1px solid var(--border-color, #e5e5e5);
+      border-bottom: 1px solid var(--border-color, #e5e5e5);
+      padding: 4.5rem 2rem;
+    }
+
+    .current-feature-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .current-feature-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: #1a3fb9;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+
+    .current-feature-label::before {
+      content: '';
+      width: 34px;
+      height: 1px;
+      background: #1a3fb9;
+    }
+
+    .current-feature-title {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: clamp(1.65rem, 2.5vw, 2.3rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+      color: var(--text-color, #333);
+      margin-bottom: 1rem;
+    }
+
+    .current-feature-copy {
+      max-width: 620px;
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.92rem;
+      line-height: 2.1;
+      letter-spacing: 0.04em;
+      color: var(--text-light, #666);
+    }
+
+    .current-feature-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.8rem;
+      margin-top: 2rem;
+    }
+
+    .current-feature-btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.75rem 1.1rem;
+      border: 1px solid rgba(26, 63, 185, 0.25);
+      border-radius: 4px;
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: #1a3fb9;
+      background: #fff;
+      text-decoration: none;
+      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .current-feature-btn:hover {
+      border-color: rgba(26, 63, 185, 0.55);
+      transform: translateY(-1px);
+    }
+
+    .current-feature-btn.primary {
+      background: #1a3fb9;
+      border-color: #1a3fb9;
+      color: #fff;
+    }
+
+    .current-feature-btn.primary:hover {
+      background: #143294;
+      border-color: #143294;
+    }
+
+    .current-feature-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--border-color, #e5e5e5);
+    }
+
+    .current-feature-stat strong {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.9rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--text-color, #333);
+      margin-bottom: 0.35rem;
+    }
+
+    .current-feature-stat span {
+      display: block;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.75rem;
+      line-height: 1.7;
+      color: var(--text-lighter, #999);
+      letter-spacing: 0.05em;
+    }
+
+    .current-feature-media {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 6px;
+      color: #fff;
+      text-decoration: none;
+      background: #222;
+    }
+
+    .current-feature-media img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+      transition: transform 0.6s ease, filter 0.4s ease;
+    }
+
+    .current-feature-media:hover img {
+      transform: scale(1.04);
+      filter: brightness(0.86);
+    }
+
+    .current-feature-media-caption {
+      position: absolute;
+      left: 1rem;
+      right: 1rem;
+      bottom: 1rem;
+      display: inline-flex;
+      width: fit-content;
+      max-width: calc(100% - 2rem);
+      padding: 0.55rem 0.7rem;
+      background: rgba(0, 0, 0, 0.58);
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      line-height: 1.5;
+      text-transform: uppercase;
+    }
+
     /* ── Site Compass ── */
     .site-compass {
       background: #f7f7f5;
@@ -707,6 +871,32 @@
         padding: 3.5rem 1.5rem;
       }
 
+      .current-feature {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .current-feature-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .current-feature-copy {
+        font-size: 0.88rem;
+      }
+
+      .current-feature-actions {
+        margin-top: 1.6rem;
+      }
+
+      .current-feature-btn {
+        flex: 1 1 160px;
+      }
+
+      .current-feature-stats {
+        grid-template-columns: 1fr;
+        gap: 0.85rem;
+      }
+
       .site-compass {
         padding: 0 1.5rem;
       }
@@ -872,7 +1062,47 @@
   </section>
 
   <!-- ======================================
-       SECTION 2: ステートメント
+       SECTION 2: 現在おすすめのコンテンツ
+       ====================================== -->
+  <section class="current-feature" aria-labelledby="current-feature-title">
+    <div class="current-feature-inner">
+      <div>
+        <p class="current-feature-label">Currently Featured</p>
+        <h2 class="current-feature-title" id="current-feature-title">現在進行中: 白鷺三十六景</h2>
+        <p class="current-feature-copy">
+          姫路城を36の視点で撮る、いま育てている写真と言葉の作品集。季節・場所・見どころを添えながら、写真集から読み物として回遊できるアーカイブへ更新中です。
+        </p>
+        <div class="current-feature-actions">
+          <a class="current-feature-btn primary" href="shirasagi36.html">作品を見る →</a>
+          <a class="current-feature-btn" href="shirasagi36-map.html">撮影地マップ →</a>
+        </div>
+        <div class="current-feature-stats" aria-label="白鷺三十六景の現在の状態">
+          <div class="current-feature-stat">
+            <strong>33 / 36 景</strong>
+            <span>公開中</span>
+          </div>
+          <div class="current-feature-stat">
+            <strong>四季の姫路城</strong>
+            <span>春夏秋冬の視点で記録</span>
+          </div>
+          <div class="current-feature-stat">
+            <strong>写真メモ更新中</strong>
+            <span>季節・場所・見どころを追加</span>
+          </div>
+        </div>
+      </div>
+      <a class="current-feature-media" href="shirasagi36.html" aria-label="白鷺三十六景を見る">
+        <picture>
+          <source srcset="assets/images/shirasagi/33.webp" type="image/webp">
+          <img src="assets/images/shirasagi/33.jpg" alt="白鷺三十六景 — 姫路城を36の視点で撮る" loading="lazy" decoding="async">
+        </picture>
+        <span class="current-feature-media-caption">Himeji Castle / Ongoing Archive</span>
+      </a>
+    </div>
+  </section>
+
+  <!-- ======================================
+       SECTION 3: ステートメント
        ====================================== -->
   <section class="intro-statement">
     <p class="intro-statement-text">
@@ -885,7 +1115,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 2.5: サイトの入口
+       SECTION 4: サイトの入口
        ====================================== -->
   <section class="site-compass" aria-label="サイトの主な入口">
     <div class="site-compass-inner">
@@ -917,7 +1147,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 3: 旅の記録
+       SECTION 5: 旅の記録
        ====================================== -->
   <section class="travels">
     <div class="travels-inner">
@@ -1002,7 +1232,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 4: 最新の記事（RSS連携）
+       SECTION 6: 最新の記事（RSS連携）
        ====================================== -->
   <section class="latest-articles">
     <div class="section-header-row">
@@ -1020,7 +1250,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 5: About Strip
+       SECTION 7: About Strip
        ====================================== -->
   <section class="about-strip">
     <div class="about-inner">
