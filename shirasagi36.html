@@ -748,6 +748,23 @@
                     <h3 class="text-xl md:text-2xl font-bold font-serif-jp mb-2 leading-normal text-shirasagi-ink" id="modal-title">タイトル</h3>
                     <p class="text-gray-400 text-xs font-serif-jp mb-4 md:mb-6" id="modal-subtitle" style="display:none;"></p>
 
+                    <div id="modal-quick-note" class="mb-5 rounded-sm border border-gray-100 bg-gray-50/70 p-4" style="display:none;">
+                        <div class="space-y-3 text-xs leading-relaxed font-serif-jp">
+                            <div>
+                                <span class="block text-[10px] tracking-[0.18em] text-gray-400 mb-1">季節</span>
+                                <span class="text-shirasagi-ink" id="modal-season">--</span>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] tracking-[0.18em] text-gray-400 mb-1">場所</span>
+                                <span class="text-shirasagi-ink" id="modal-place">--</span>
+                            </div>
+                            <div>
+                                <span class="block text-[10px] tracking-[0.18em] text-gray-400 mb-1">見どころ</span>
+                                <span class="text-shirasagi-ink" id="modal-highlight">--</span>
+                            </div>
+                        </div>
+                    </div>
+
                     <!-- New structured UI: summary + accordion + tips (shown when summary exists) -->
                     <div id="modal-structured" style="display:none;">
                         <p class="text-gray-600 text-sm leading-7 font-light font-serif-jp mb-4" id="modal-summary"></p>
@@ -863,6 +880,49 @@
 
         // Season labels for featured cards
         const seasonLabels = { 1: '春 — Spring', 8: '夏 — Summer', 13: '秋 — Autumn', 21: '冬 — Winter', 25: '特別 — Special' };
+        const cardSeasonNames = { spring: '春', summer: '夏', autumn: '秋', winter: '冬', special: '特別', sakura: '桜' };
+        const readingText = {
+            unknownPlace: '姫路城周辺',
+            pendingHighlight: '見どころは準備中です。'
+        };
+
+        function escapeHTML(value) {
+            return String(value ?? '').replace(/[&<>"']/g, char => ({
+                '&': '&amp;',
+                '<': '&lt;',
+                '>': '&gt;',
+                '"': '&quot;',
+                "'": '&#39;'
+            }[char]));
+        }
+
+        function getSeasonText(photo) {
+            const seasonKey = (photo.category || '').split(' ')[0];
+            return cardSeasonNames[seasonKey] || '季節';
+        }
+
+        function getLocationName(photo) {
+            if (photo.location?.name) return photo.location.name;
+            if (photo.location?.lat) return readingText.unknownPlace;
+            return '場所未設定';
+        }
+
+        function getHighlight(photo) {
+            if (photo.highlight) return photo.highlight;
+            const tips = photo.tips || [];
+            const preferred = tips.find(tip => /見どころ|撮影|ヒント|ポイント/.test(tip.label || '')) || tips[1] || tips[0];
+            return preferred?.text || photo.summary || photo.desc || readingText.pendingHighlight;
+        }
+
+        function getShortNote(photo) {
+            return photo.note || photo.summary || photo.desc || '';
+        }
+
+        function truncateText(text, maxLength) {
+            const value = String(text || '').trim();
+            if (value.length <= maxLength) return value;
+            return value.slice(0, maxLength - 1) + '…';
+        }
 
         function renderGrid() {
             const grid = document.getElementById('shirasagi-grid');
@@ -879,6 +939,10 @@
 
                 const card = document.createElement('div');
                 const paths = getImagePaths(i);
+                const seasonText = getSeasonText(photo);
+                const locationText = getLocationName(photo);
+                const featuredNote = truncateText(getShortNote(photo), 78);
+                const compactNote = truncateText(getShortNote(photo), 48);
 
                 // In "all" view, first photo of each season is featured (large)
                 const isSeasonLead = isAllView && seasonLabels[i];
@@ -911,6 +975,11 @@
                             ${label ? `<span class="text-white/60 font-serif-en text-[10px] md:text-xs tracking-[0.2em] uppercase mb-1">${label}</span>` : ''}
                             <span class="text-white font-serif-en text-sm md:text-base tracking-widest mb-1">No.${String(i).padStart(2, '0')}</span>
                             <h4 class="text-white font-serif-jp text-base md:text-xl tracking-wide">${photo.title}</h4>
+                            ${featuredNote ? `<p class="mt-2 hidden sm:block text-white/75 text-xs leading-relaxed font-serif-jp max-w-xl">${escapeHTML(featuredNote)}</p>` : ''}
+                            <div class="mt-3 hidden sm:flex flex-wrap gap-1.5">
+                                <span class="border border-white/20 bg-white/10 px-2 py-0.5 text-white/75 text-[10px] tracking-wider">${escapeHTML(seasonText)}</span>
+                                <span class="border border-white/20 bg-white/10 px-2 py-0.5 text-white/75 text-[10px] tracking-wider">${escapeHTML(locationText)}</span>
+                            </div>
                         </div>
                     `;
                 } else {
@@ -928,6 +997,11 @@
                         <div class="absolute inset-0 bg-shirasagi-ink/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4">
                             <span class="text-white font-serif-en text-lg tracking-widest mb-2 border-b border-white/50 pb-1">No.${String(i).padStart(2, '0')}</span>
                             <h4 class="text-white font-serif-jp text-sm tracking-widest text-center">${photo.title}</h4>
+                            ${compactNote ? `<p class="mt-2 text-white/75 text-[11px] leading-relaxed text-center font-serif-jp" style="display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;">${escapeHTML(compactNote)}</p>` : ''}
+                            <div class="hidden md:flex mt-3 flex-wrap justify-center gap-1.5">
+                                <span class="border border-white/20 bg-white/10 px-2 py-0.5 text-white/75 text-[10px]">${escapeHTML(seasonText)}</span>
+                                <span class="border border-white/20 bg-white/10 px-2 py-0.5 text-white/75 text-[10px]">${escapeHTML(locationText)}</span>
+                            </div>
                         </div>
                     `;
                 }
@@ -1134,6 +1208,13 @@
                 subtitleEl.style.display = '';
             } else {
                 subtitleEl.style.display = 'none';
+            }
+            const quickNoteEl = document.getElementById('modal-quick-note');
+            if (quickNoteEl) {
+                quickNoteEl.style.display = '';
+                document.getElementById('modal-season').innerText = getSeasonText(p);
+                document.getElementById('modal-place').innerText = getLocationName(p);
+                document.getElementById('modal-highlight').innerText = getHighlight(p);
             }
             // Structured UI vs legacy desc
             const structuredEl = document.getElementById('modal-structured');

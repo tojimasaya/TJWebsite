@@ -252,6 +252,24 @@
     "date": "2025.07.29",
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
+    "summary": "From Sannomaru Square at dusk, the white keep rises softly against the fading sky. As the daytime bustle begins to quiet down, the outline of Himeji Castle takes on a gentler presence.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Sannomaru Square"
+      },
+      {
+        "icon": "👀",
+        "label": "Highlight",
+        "text": "The low evening light adds soft shadows to the white walls, giving the castle a depth different from midday."
+      },
+      {
+        "icon": "📷",
+        "label": "Shooting Note",
+        "text": "Aim for the brief window when color remains in the sky and the flow of visitors begins to settle."
+      }
+    ],
     "location": {
       "lat": 34.83674184834749,
       "lng": 134.69352446438512,
@@ -263,6 +281,24 @@
     "date": "2025.07.29",
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer evening",
+    "summary": "From Sakuramon Bridge, the castle is seen across the inner moat and through the rhythm of the gate. In just a few steps across the bridge, the tourist landmark and the everyday castle town overlap.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Sakuramon Bridge"
+      },
+      {
+        "icon": "👀",
+        "label": "Highlight",
+        "text": "Bridge, stone walls, water, and keep align to create the feeling of entering the castle grounds."
+      },
+      {
+        "icon": "📷",
+        "label": "Shooting Note",
+        "text": "Compose briefly from the side of the bridge so you do not block pedestrians."
+      }
+    ],
     "location": {
       "lat": 34.83557157249841,
       "lng": 134.69271687541374,
@@ -274,9 +310,28 @@
     "date": "2025.07.30",
     "gear": "Leica M10 + Wide Tri-Elmar",
     "category": "summer afternoon",
+    "summary": "Under a cloudless blue sky, this frame captures the clean white walls and crisp outline of the Main Keep. Rather than seasonal drama, it highlights the composed elegance of Himeji Castle itself.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "West side of Himeji Castle"
+      },
+      {
+        "icon": "👀",
+        "label": "Highlight",
+        "text": "The contrast between blue sky and white walls clearly expresses the purity behind the castle's White Heron nickname."
+      },
+      {
+        "icon": "📷",
+        "label": "Shooting Note",
+        "text": "In strong summer light, slightly underexpose to preserve detail in the white walls and roof shadows."
+      }
+    ],
     "location": {
       "lat": 34.83527572859923,
-      "lng": 134.69103710685653
+      "lng": 134.69103710685653,
+      "name": "West side of Himeji Castle"
     }
   },
   "13": {
@@ -413,6 +468,24 @@
     "date": "2025.10.01",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
+    "summary": "Near the Otemon entrance, evening light reaches the stone walls and gate structures. The approach to the castle shifts from a busy daytime route into a quieter, more reflective scene.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Around Sakuramon Gate"
+      },
+      {
+        "icon": "👀",
+        "label": "Highlight",
+        "text": "Light across the gate and stone walls combines the weight of the fortress with the feeling of day's end."
+      },
+      {
+        "icon": "📷",
+        "label": "Shooting Note",
+        "text": "Wait for a brief pause in foot traffic so the entrance structure and light direction read clearly."
+      }
+    ],
     "location": {
       "lat": 34.835603,
       "lng": 134.692688,
@@ -424,6 +497,24 @@
     "date": "2025.10.01",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "autumn afternoon",
+    "summary": "Standing on Sakuramon Bridge, this view gathers autumn color and the atmosphere of the inner moat together. Water, stone walls, and foliage turn the moment before entering the castle into a photograph.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Sakuramon Bridge"
+      },
+      {
+        "icon": "👀",
+        "label": "Highlight",
+        "text": "The slightly elevated bridge viewpoint lets you read the inner moat and autumn color in one glance."
+      },
+      {
+        "icon": "📷",
+        "label": "Shooting Note",
+        "text": "Keep railings and pedestrians secondary, letting the water and foliage support the composition."
+      }
+    ],
     "location": {
       "lat": 34.835642443089355,
       "lng": 134.69255167543577,
@@ -435,6 +526,24 @@
     "date": "2025.03.18",
     "gear": "Leica M10 + Summilux 50mm",
     "category": "winter afternoon",
+    "summary": "Along the inner moat near Himeji Zoo, this frame looks toward the castle through branches still waiting to bloom. It captures the quiet anticipation before the full brightness of spring.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Near Himeji Zoo"
+      },
+      {
+        "icon": "👀",
+        "label": "Highlight",
+        "text": "Winter branches draw fine lines across the frame, contrasting the season of waiting with the white keep."
+      },
+      {
+        "icon": "📷",
+        "label": "Shooting Note",
+        "text": "Leave enough space around the castle so foreground branches add atmosphere without hiding the subject."
+      }
+    ],
     "location": {
       "lat": 34.836102,
       "lng": 134.69478,
