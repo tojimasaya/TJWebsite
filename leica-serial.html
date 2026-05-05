@@ -7,7 +7,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Leica Serial Number Database — Toji Masaya</title>
-    <meta name="description" content="ライカのシリアル番号からカメラ・レンズの製造年を検索。1923年〜2015年の全モデル対応データベース。">
+    <meta name="description" content="ライカのシリアル番号からカメラ・レンズの製造年を検索。1923年〜2015年の全モデル対応データベース。愛用するLeica機材と撮影作品への入口もまとめています。">
     <meta name="author" content="Toji Masaya">
 
     <!-- Fonts -->
@@ -26,7 +26,7 @@
 
     <!-- OG Tags -->
     <meta property="og:title" content="Leica Serial Number Database — Toji Masaya">
-    <meta property="og:description" content="ライカのシリアル番号からカメラ・レンズの製造年を検索。1923年〜2015年の全モデル対応。">
+    <meta property="og:description" content="ライカのシリアル番号からカメラ・レンズの製造年を検索。1923年〜2015年の全モデル対応。愛用するLeica機材と撮影作品への入口もまとめています。">
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://tojimasaya.com/leica-serial.html">
     <link rel="canonical" href="https://tojimasaya.com/leica-serial.html">
@@ -220,6 +220,83 @@
             margin-bottom: 12px;
         }
 
+        /* ===== Work Bridge ===== */
+        .serial-work-bridge {
+            max-width: 900px;
+            margin: 0 auto 56px;
+            padding: 0 20px;
+        }
+        .serial-work-header {
+            border-top: 1px solid var(--border-color);
+            padding-top: 28px;
+            margin-bottom: 20px;
+        }
+        .serial-work-kicker {
+            display: block;
+            font-family: var(--secondary-font);
+            font-size: var(--text-xs);
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+        .serial-work-title {
+            font-family: var(--primary-font);
+            font-size: clamp(1.35rem, 3vw, 1.9rem);
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+        .serial-work-copy {
+            max-width: 680px;
+            font-size: var(--text-sm);
+            line-height: 1.9;
+            color: var(--text-light);
+        }
+        .serial-work-grid {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 14px;
+        }
+        .serial-work-card {
+            display: block;
+            min-height: 138px;
+            padding: 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--white);
+            color: var(--text-color);
+            text-decoration: none;
+            transition: border-color var(--transition-base), transform var(--transition-base), box-shadow var(--transition-base);
+        }
+        .serial-work-card:hover {
+            border-color: var(--accent-color);
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-md);
+        }
+        .serial-work-card span {
+            display: block;
+            font-family: var(--secondary-font);
+            font-size: var(--text-xs);
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--text-lighter);
+            margin-bottom: 10px;
+        }
+        .serial-work-card strong {
+            display: block;
+            font-family: var(--primary-font);
+            font-size: var(--text-lg);
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        .serial-work-card em {
+            display: block;
+            font-style: normal;
+            font-size: var(--text-xs);
+            line-height: 1.7;
+            color: var(--text-light);
+        }
+
         /* ===== Reference Table ===== */
         .table-section {
             max-width: 900px;
@@ -335,6 +412,7 @@
             .search-btn { width: 100%; padding: 14px; }
             .result-card { padding: 20px; }
             .result-year { font-size: var(--text-3xl); }
+            .serial-work-grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -376,6 +454,34 @@
     <!-- Results -->
     <section class="results-section" id="results">
         <!-- Results injected here by JS -->
+    </section>
+
+    <!-- Leica to Works -->
+    <section class="serial-work-bridge" aria-labelledby="serial-work-title">
+        <div class="serial-work-header">
+            <span class="serial-work-kicker">From Leica Data to Photographs</span>
+            <h2 class="serial-work-title" id="serial-work-title">年代を調べたあとに、実際の写真へ。</h2>
+            <p class="serial-work-copy">
+                このデータベースに来てくれた方が、数字だけで終わらず、Leicaで撮っている作品や私の機材構成にも進めるように入口をまとめました。
+            </p>
+        </div>
+        <div class="serial-work-grid">
+            <a class="serial-work-card" href="shirasagi36.html">
+                <span>Leica M / SL</span>
+                <strong>白鷺三十六景</strong>
+                <em>姫路城を36の視点から撮る、写真と言葉の進行中プロジェクト。</em>
+            </a>
+            <a class="serial-work-card" href="hongkong-neon.html">
+                <span>Leica SL2-S</span>
+                <strong>香港ネオン残照</strong>
+                <em>消えゆく香港のネオンを、街の記憶として残すアーカイブ。</em>
+            </a>
+            <a class="serial-work-card" href="gear-camera.html">
+                <span>My Setup</span>
+                <strong>Camera &amp; Lenses</strong>
+                <em>実際に使っているLeicaボディ、Mレンズ、Lマウント機材。</em>
+            </a>
+        </div>
     </section>
 
     <!-- Reference Tables -->

@@ -14,7 +14,7 @@
       gtag('config', 'G-806426BQX2');
     </script>
 
-    <meta name="description" content="田路昌也が愛用する撮影機材を紹介。Leica M11 / Q3 / SL2-S、DJIドローン、iPad編集環境、トラベルアクセサリーのカテゴリー別コレクション。">
+    <meta name="description" content="田路昌也が愛用する撮影機材を紹介。Leica M / SL、DJIドローン、iPad編集環境、トラベルアクセサリーと、それらで撮影している写真作品への入口。">
     
     <!-- Fonts & CSS (optimized) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -288,11 +288,101 @@
             flex-shrink: 0;
         }
 
+        /* Works shot with these tools */
+        .gear-work-section {
+            background: var(--bg-color);
+            padding: 58px 30px 46px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .gear-work-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
+            gap: 34px;
+            align-items: start;
+        }
+        .gear-work-kicker {
+            display: block;
+            font-family: var(--secondary-font);
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+        }
+        .gear-work-title {
+            font-family: var(--primary-font);
+            font-size: clamp(1.55rem, 3vw, 2.2rem);
+            color: var(--text-color);
+            margin-bottom: 12px;
+        }
+        .gear-work-copy {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.92rem;
+            line-height: 2;
+            color: var(--text-light);
+        }
+        .gear-work-cards {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 16px;
+        }
+        .gear-work-card {
+            display: block;
+            overflow: hidden;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--page-card-bg, #fff);
+            color: var(--text-color);
+            text-decoration: none;
+            transition: transform 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .gear-work-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-md);
+        }
+        .gear-work-card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 16 / 10;
+            object-fit: cover;
+        }
+        .gear-work-card-body {
+            padding: 16px;
+        }
+        .gear-work-card-label {
+            display: block;
+            font-family: var(--secondary-font);
+            font-size: 0.68rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-lighter);
+            margin-bottom: 8px;
+        }
+        .gear-work-card-title {
+            display: block;
+            font-family: var(--primary-font);
+            font-size: 1.1rem;
+            margin-bottom: 8px;
+        }
+        .gear-work-card-copy {
+            display: block;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.8rem;
+            line-height: 1.8;
+            color: var(--text-light);
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
             .gear-hub-inner {
                 grid-template-columns: 1fr;
                 gap: 32px;
+            }
+            .gear-work-inner {
+                grid-template-columns: 1fr;
             }
         }
 
@@ -301,13 +391,19 @@
                 grid-template-columns: 1fr;
                 gap: 22px;
             }
+            .gear-work-section {
+                padding: 42px 20px 34px;
+            }
+            .gear-work-cards {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/gear.html">
 <meta property="og:title" content="撮影機材 — Leica・ドローン・編集ツール | Toji Masaya">
-<meta property="og:description" content="田路昌也が愛用する撮影機材を紹介。Leica M11 / Q3 / SL2-S、DJIドローン、iPad編集環境、トラベルアクセサリー。">
+<meta property="og:description" content="田路昌也が愛用する撮影機材を紹介。Leica M / SL、DJIドローン、iPad編集環境、トラベルアクセサリーと、それらで撮影している写真作品への入口。">
 <meta property="og:url" content="https://tojimasaya.com/gear.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toji Masaya">
@@ -315,14 +411,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@mongkok93">
 <meta name="twitter:title" content="撮影機材 — Leica・ドローン・編集ツール | Toji Masaya">
-<meta name="twitter:description" content="田路昌也が愛用する撮影機材を紹介。Leica、DJIドローン、iPad編集環境など。">
+<meta name="twitter:description" content="Leica M / SL、DJIドローン、iPad編集環境などの撮影機材と、それらで撮影している写真作品への入口。">
 <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gear/m2.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "撮影機材 — Toji Masaya",
-  "description": "田路昌也が愛用する撮影機材コレクション。Leica、DJIドローン、iPad編集環境、トラベルアクセサリー。",
+  "description": "田路昌也が愛用する撮影機材コレクション。Leica、DJIドローン、iPad編集環境、トラベルアクセサリーと、それらで撮影している写真作品への入口。",
   "url": "https://tojimasaya.com/gear.html",
   "author": {
     "@type": "Person",
@@ -361,8 +457,52 @@
                     <span>Everyday Carry &amp; Travel Setup</span>
                 </div>
             </div>
+            <a href="leica-serial.html" class="leica-db-link">
+                <div class="leica-db-icon">DB</div>
+                <div>
+                    <div class="leica-db-title">Leica Serial Number Database</div>
+                    <div class="leica-db-desc">シリアル番号から製造年・モデルを検索するためのページ</div>
+                </div>
+                <span class="leica-db-arrow">→</span>
+            </a>
         </div>
     </header>
+
+    <section class="gear-work-section" aria-labelledby="gear-work-title">
+        <div class="gear-work-inner">
+            <div>
+                <span class="gear-work-kicker">Shot With These Tools</span>
+                <h2 class="gear-work-title" id="gear-work-title">機材から、写真作品へ。</h2>
+                <p class="gear-work-copy">
+                    ここに並べているLeicaやドローンは、棚の上のコレクションではなく、実際に旅や街歩きに持ち出している道具です。機材に興味を持って来てくれた方が、その先の写真にも自然に進めるようにしました。
+                </p>
+            </div>
+            <div class="gear-work-cards">
+                <a class="gear-work-card" href="shirasagi36.html">
+                    <picture>
+                        <source srcset="assets/images/shirasagi/33.webp" type="image/webp">
+                        <img src="assets/images/shirasagi/33.jpg" alt="白鷺三十六景 — Leicaで撮る姫路城" loading="lazy" decoding="async">
+                    </picture>
+                    <span class="gear-work-card-body">
+                        <span class="gear-work-card-label">Leica M / SL</span>
+                        <strong class="gear-work-card-title">白鷺三十六景</strong>
+                        <span class="gear-work-card-copy">姫路城を36の視点で撮る、写真と言葉の進行中プロジェクト。</span>
+                    </span>
+                </a>
+                <a class="gear-work-card" href="hongkong-neon.html">
+                    <picture>
+                        <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
+                        <img src="assets/images/hongkong-neon/01.jpg" alt="香港ネオン残照 — Leicaで撮る香港の光" loading="lazy" decoding="async">
+                    </picture>
+                    <span class="gear-work-card-body">
+                        <span class="gear-work-card-label">Leica SL2-S</span>
+                        <strong class="gear-work-card-title">香港ネオン残照</strong>
+                        <span class="gear-work-card-copy">変わりゆく香港の街から、消えゆくネオンの光を記録しています。</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
 
     <!-- Categories Grid -->
     <main class="category-grid" id="category-grid">
