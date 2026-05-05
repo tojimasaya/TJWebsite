@@ -1,11 +1,37 @@
 [
   {
+    "title": "あの中国ブランドが、結局 Apple 並みだった話 ── Laifen のひげ剃りから歯ブラシ、そして「沼」へ",
+    "link": "https://note.com/tojimasaya/n/n8eae8c1e5d01",
+    "date": "2026-05-05",
+    "image": "https://assets.st-note.com/production/uploads/images/273232357/rectangle_large_type_2_473b2f27fd0102d53e5d24921b0c213a.jpeg?width=800",
+    "excerpt": "ガジェットファンの皆さん、ようこそ『 俺流トラベルガジェットの世界 』へ。",
+    "source": "note",
+    "sourceLabel": "note"
+  },
+  {
+    "title": "SFC1年目で迎えた制度大改定——エバー航空「The Star」で牛肉麺を食べそびれた話",
+    "link": "https://note.com/tojimasaya/n/n1201bca05e7e",
+    "date": "2026-05-01",
+    "image": "https://assets.st-note.com/production/uploads/images/271821142/rectangle_large_type_2_5aadcda5d518a881ceeeb591b0c9b13f.jpeg?width=800",
+    "excerpt": "2026年4月28日、私は香港から台北経由で関空へ向かうエバー航空に乗っていました。 朝10:10発、機材はボーイング 787-10 エバー航空はスターアライアンスグループなので、去年やっと取ったばかりのSFC（ANAスーパーフライヤーズカード）の恩恵で、香港でも台北でもラウンジを楽しめる、修行明けらしい贅沢な行程の予",
+    "source": "note",
+    "sourceLabel": "note"
+  },
+  {
+    "title": "【検証編】香港の思い出の番号、日本でちゃんとSMS届きました──ローミング先は「au」、しかも時差ゼロ（追記あり）",
+    "link": "https://note.com/tojimasaya/n/n00ab45a461f2",
+    "date": "2026-04-29",
+    "image": "https://assets.st-note.com/production/uploads/images/271430200/rectangle_large_type_2_53ac442e94c0f49b8ff2e445657bdcfb.jpeg?width=800",
+    "excerpt": "第1回・第2回と書いてきた、香港のMore Mobileプリペイド＋HK$68/年ローミングの話。 思った以上にたくさんの反応をいただきました。本当にありがとうございます。",
+    "source": "note",
+    "sourceLabel": "note"
+  },
+  {
     "title": "TJアシスタント番外編 ── 「雑な一言」で AI と暮らしが繋がる",
     "link": "https://note.com/tojimasaya/n/n4393b2c8d82e",
     "date": "2026-04-20",
     "image": "https://assets.st-note.com/production/uploads/images/268818227/rectangle_large_type_2_91268a140a9ae60eeeca73a91c5b6d49.png?width=800",
-    "excerpt": "「俺流トラベルガジェット」AIアシスタント編の番外編（第4弾）。連載を読んで実際に動かしてくれた読者お二人の体験談をきっかけに、「雑な一言」だけで AI と暮らしが繋がる実感を綴ります。",
-    "magazine": "俺流トラベルガジェット",
+    "excerpt": "「俺流トラベルガジェット」AIアシスタント編、番外編です。 👉 第1弾（実践編）: スマホで話しかけるだけの俺専用AIアシスタント 👉 第2弾（仕組み編）: VPN要らずで海外からClaudeを使う 👉 第3弾（思想編）: SaaSが要らなくなる日 この番外編は、第3弾に コタキナバルのJ郎さん からいただいたコ",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -13,9 +39,8 @@
     "title": "SaaS が要らなくなる日 ── Claude Code \"Channels\" とファイルシステムの再発見",
     "link": "https://note.com/tojimasaya/n/n158a3801b0e1",
     "date": "2026-04-16",
-    "image": "https://assets.st-note.com/production/uploads/images/267728443/0d81689903d1378b310d430cc4c2a408.jpeg?width=800",
-    "excerpt": "「俺流トラベルガジェット」AIアシスタント編の第3弾（思想編）。Claude Code の Channels 機能と、ファイルシステムをそのままデータベースとして使うという発想。SaaS が要らなくなる時代の話。",
-    "magazine": "俺流トラベルガジェット",
+    "image": "https://assets.st-note.com/production/uploads/images/267728443/rectangle_large_type_2_0d81689903d1378b310d430cc4c2a408.jpeg?width=800",
+    "excerpt": "「俺流トラベルガジェット」AIアシスタント編、3回連続の第3弾です。 第1弾ではTJ Assistantの 実例 を、第2弾では 仕組み を紹介しました。 👉 第1弾: 「スマホで話しかけるだけの俺専用AIアシスタント ── 2週間でここまで育った」 👉 第2弾: 「VPN要らずで海外からClaudeを使う ── ",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -23,9 +48,8 @@
     "title": "Telegram × Claude Code ── TJ Assistantはこう動いている",
     "link": "https://note.com/tojimasaya/n/n316fef052ca5",
     "date": "2026-04-13",
-    "image": "https://assets.st-note.com/production/uploads/images/266935851/d1708e11460bd8d4574d873d333a1366.jpeg?width=800",
-    "excerpt": "「俺流トラベルガジェット」AIアシスタント編の第2弾。TJ Assistantの仕組みを解説し、スマホとMacを分ける設計がなぜ強力かを紹介します。",
-    "magazine": "俺流トラベルガジェット",
+    "image": "https://assets.st-note.com/production/uploads/images/266935851/rectangle_large_type_2_d1708e11460bd8d4574d873d333a1366.jpeg?width=800",
+    "excerpt": "「俺流トラベルガジェット」AIアシスタント編、3回連続の第2弾です。 第1弾では、TJ Assistantが 実際に何をやってくれるのか を実例で紹介しました。 👉 第1弾: 「スマホで話しかけるだけの俺専用AIアシスタント ── 2週間でここまで育った」 第2弾（この記事）では、この仕組みが どう動いているのか を",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -33,19 +57,26 @@
     "title": "スマホで話しかけるだけの俺専用AIアシスタント ── 2週間でここまで育った",
     "link": "https://note.com/tojimasaya/n/n2273af1bf21f",
     "date": "2026-04-11",
-    "image": "https://assets.st-note.com/production/uploads/images/266558084/53cc721fc0fae707c56fd359a4cbb088.jpeg?width=800",
-    "excerpt": "「俺流トラベルガジェット」AIアシスタント編、3回連続の第1弾。スマホのTelegramから話しかけると、自宅のMacで動いているAI（Claude）が何でもやってくれる、俺専用のAIアシスタント「TJ Assistant」を組み上げました。",
-    "magazine": "俺流トラベルガジェット",
+    "image": "https://assets.st-note.com/production/uploads/images/266558084/rectangle_large_type_2_53cc721fc0fae707c56fd359a4cbb088.jpeg?width=800",
+    "excerpt": "「俺流トラベルガジェット」AIアシスタント編、3回連続の第1弾です。 第1弾 (この記事): TJ Assistantが 実際に何をやってくれるのか 、実例で紹介します。 第2弾: この仕組みが どう動いているのか 。VPN不要で海外からClaude を使う方法。 第3弾: なぜこの設計なのか 。SaaSが要らなくなる",
+    "source": "note",
+    "sourceLabel": "note"
+  },
+  {
+    "title": "【続編】香港の思い出の番号、日本でSMSを受ける方法発見！──おじさんから秘策伝授？",
+    "link": "https://note.com/tojimasaya/n/nc5283408bc6f",
+    "date": "2026-04-10",
+    "image": "https://assets.st-note.com/production/uploads/images/266329881/rectangle_large_type_2_9c7dda80de64a2e449fd8c163cace50d.jpeg?width=800",
+    "excerpt": "前回の記事（ 香港の思い出の電話番号、格安で維持しませんか？ ）、おかげさまでたくさんの方に読んでいただきました。本当にありがとうございます。 そして、こんなコメントをいただきました。",
     "source": "note",
     "sourceLabel": "note"
   },
   {
     "title": "Leitzphone用ケースを探して深セン、そしてタオバオへ",
-    "link": "https://note.com/tojimasaya/n/nc5283408bc6f",
-    "date": "2026-04-10",
-    "image": "https://assets.st-note.com/production/uploads/images/266329881/9c7dda80de64a2e449fd8c163cace50d.jpeg?width=800",
-    "excerpt": "Leitzphone用のケースを求めて深センの電気街を探し歩き、最終的にタオバオで見つけるまでの顛末記。",
-    "magazine": "俺流トラベルガジェット",
+    "link": "https://note.com/tojimasaya/n/n1c51de504f53",
+    "date": "2026-04-09",
+    "image": "https://assets.st-note.com/production/uploads/images/266124040/rectangle_large_type_2_11db154697bb897cf54f0071506044c3.jpeg?width=800",
+    "excerpt": "ガジェットファンの皆さん、ようこそ『俺流トラベルガジェットの世界』へ。",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -53,9 +84,8 @@
     "title": "キャセイのマイルは妻のために。香港在住者がエバー航空で帰省を選んだ理由",
     "link": "https://note.com/tojimasaya/n/n35e25956c2c9",
     "date": "2026-04-06",
-    "image": "https://assets.st-note.com/production/uploads/images/265373435/a4117309c45cfa28e505bd792927cc88.jpeg?width=800",
-    "excerpt": "キャセイのマイルは妻の帰省用に温存し、自分はエバー航空を選ぶ。香港在住者が二拠点生活のフライト戦略を語ります。",
-    "magazine": "次はどこへ What's Next",
+    "image": "https://assets.st-note.com/production/uploads/images/265373435/rectangle_large_type_2_a4117309c45cfa28e505bd792927cc88.jpeg?width=800",
+    "excerpt": "今年、62になります。 香港に住んで長くなりました。最近は、日本と香港を行き来する暮らしを、もう少し本格的に形にしたいと考えています。理想は「2カ月香港、1カ月日本」を一年に4回ほど。そのくらいのペースで動けたら、いちばん自然だろうと思っています。",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -63,17 +93,17 @@
     "title": "敵陣vivo旗艦店で検証！Xiaomi 17 Ultraの２億画素とvivoの「35mm」というロマン",
     "link": "https://note.com/tojimasaya/n/n4772412efc23",
     "date": "2026-04-04",
-    "image": "https://assets.st-note.com/production/uploads/images/264701323/b59cb82018e9db5af22a3b6b8c633565.jpeg?width=800",
-    "excerpt": "携帯研究家と共に深センのvivo旗艦店へ。Xiaomi 17 Ultraの2億画素ペリスコープとvivo X300 Ultraの35mmレンズ、両雄のカメラ性能を実地検証する。",
+    "image": "https://assets.st-note.com/production/uploads/images/264701323/rectangle_large_type_2_b59cb82018e9db5af22a3b6b8c633565.jpeg?width=800",
+    "excerpt": "俺流トラベルガジェットにようこそ。今回はXiaomi 17 Ultra by Leicaを引っ提げて、あえて敵陣・vivo旗艦店に乗り込んできました。 同行者は、携帯研究家の山根博士。 発表当日の4月1日、2人で中国・深センへ向かいました。",
     "source": "note",
     "sourceLabel": "note"
   },
   {
-    "title": "許せる「直」と許せない「兵库県」。Xiaomi 17 Ultraの日本語化と、夜中の香港で起きた事件",
+    "title": "許せる「直」と許せない「兵库县」。Xiaomi 17 Ultraの日本語化と、夜中の香港で起きた事件",
     "link": "https://note.com/tojimasaya/n/nf84063288206",
     "date": "2026-03-30",
-    "image": "https://assets.st-note.com/production/uploads/images/263390168/8753fa3a2387ed803c89055f2a31301c.png?width=800",
-    "excerpt": "Xiaomi 17 Ultraの日本語化に挑戦。許容できる誤変換と許せない誤変換の境界線、そして香港滞在中の夜に起きた予想外の事件を綴る。",
+    "image": "https://assets.st-note.com/production/uploads/images/263390168/rectangle_large_type_2_8753fa3a2387ed803c89055f2a31301c.png?width=800",
+    "excerpt": "いつも「俺流トラベルガジェット」をご覧いただいている皆様には、もはや耳タコかもしれませんが、私のモバイル環境は以下の 「三台体制」 で構築されています。 iPhone （不動のメインスマホ、現在は iPhone 17 Pro） OPPO Find N5 （タブレット代わりの折りたたみスマホ） カメラスマホ （※ここが今",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -82,7 +112,7 @@
     "link": "https://note.com/tojimasaya/n/n1476be9aaa05",
     "date": "2026-03-20",
     "image": "https://assets.st-note.com/production/uploads/images/260586827/rectangle_large_type_2_671d5b3cb1401f1b47219545a5541cb4.jpeg?width=800",
-    "excerpt": "Xiaomi 17 Ultraレビュー後編。多彩なフィールドでの実写サンプル、フルサイズ一眼SL2-Sとの直接比較、Macとの連携性能を徹底検証。ライカルックの独特な表現力に迫る。",
+    "excerpt": "■ はじめに：後編のテーマ 前編のレビューでは、Xiaomi 17 Ultraのレンズ構成の変化（15 Ultraからの乗り換え）や、目玉である「2億画素ペリスコープ望遠」のスペック的な検証をお届けしました。",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -91,10 +121,10 @@
     "link": "https://note.com/tojimasaya/n/n748641edca32",
     "date": "2026-03-18",
     "image": "https://assets.st-note.com/production/uploads/images/260101009/rectangle_large_type_2_497cb7cd4e99b6ac76fe2a184a4b6994.jpeg?width=800",
-    "excerpt": "Xiaomi 15 Ultraから17 Ultraへ乗り換え。2億画素ペリスコープレンズの実力を、姫路城や香港の街角で実写テスト。Leicaコラボカメラの進化を前編で徹底レビュー。",
-    "featured": true,
+    "excerpt": "■ はじめに：俺流トラベルガジェット、最新の「3台体制」 私のトラベルガジェットの基本構成について、すでにご存知の方もいらっしゃるかもしれませんが、私は用途に合わせて以下の「3台体制」を構築しています。",
     "source": "note",
-    "sourceLabel": "note"
+    "sourceLabel": "note",
+    "featured": true
   },
   {
     "title": "まさに未来感！ DJI Mini 4 Proの4G通信バックアップが「eSIM」で劇的進化。プロポで完結する超・簡単契約[田路昌也の中国・香港ドローン便り]Vol.62",
@@ -111,7 +141,7 @@
     "link": "https://note.com/tojimasaya/n/n21cdaeb9a826",
     "date": "2026-03-07",
     "image": "https://assets.st-note.com/production/uploads/images/257091883/rectangle_large_type_2_0ef47c4ba44f1df04ac7700b3bfe312b.jpeg?width=800",
-    "excerpt": "香港を離れても、思い出の電話番号は手放したくない。月額不要・完全放置OKなプリペイドSIMへMNPして、格安で番号を維持する方法。",
+    "excerpt": "香港での生活が長くなると、すっかり自分の一部になっているのが「現地の携帯電話番号」ですよね。 本帰国や海外転勤で香港を離れることになったとき、あるいはメインの回線を他に移したとき。「もうあまり使わないけれど、思い出が詰まった番号だし、完全に手放してしまうのはなんだか寂しい……」と感じたことはありませんか？",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -120,7 +150,7 @@
     "link": "https://note.com/tojimasaya/n/n22c4b2553c97",
     "date": "2026-03-06",
     "image": "https://assets.st-note.com/production/uploads/images/256923833/rectangle_large_type_2_89b584f6c8362e5b81e724790af03db8.png?width=800",
-    "excerpt": "予測市場Polymarketは、イランへの空爆を事前に察知していたのか。ブロックチェーン分析が検出した、開戦24時間前の不審なウォレット動向を追う。",
+    "excerpt": "米国がイランを空爆しました。2月28日のことです。 ニュース速報が流れ、SNSが騒然となり、原油先物が跳ね上がりました。世界中の人々が「突然のことだった」と驚きました。",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -129,17 +159,17 @@
     "link": "https://note.com/tojimasaya/n/n1de39965798e",
     "date": "2026-02-26",
     "image": "https://assets.st-note.com/production/uploads/images/254791706/rectangle_large_type_2_dcd648497914b230f36174ededdbeeb4.jpeg?width=800",
-    "excerpt": "海外ノマドやトラベラーにとって、スマホの通信手段はまさに生命線。楽天モバイルの無料海外ローミングを過信していた私が、インドでの苦い経験から学んだバックアップの選び方。",
-    "featured": true,
+    "excerpt": "海外ノマドやトラベラーにとって、スマホの通信手段はまさに生命線ですよね。 私自身、これまで多くの海外居住者や旅好きの友人たちに「楽天モバイルの海外ローミング（2GB無料）は神！これさえあれば大抵の国はどうにかなります」と熱く布教してきました。",
     "source": "note",
-    "sourceLabel": "note"
+    "sourceLabel": "note",
+    "featured": true
   },
   {
     "title": "「言葉でしゃべれば、サイトができる」。AIホームページが進化して、PC音痴の友人でも作れるようになった話。",
     "link": "https://note.com/tojimasaya/n/n2d36f8438290",
     "date": "2026-02-16",
     "image": "https://assets.st-note.com/production/uploads/images/252163907/rectangle_large_type_2_dcd3cbd5fbcc6ec5ed112d7ba9712ac0.jpeg?width=800",
-    "excerpt": "最新のClaude AIが、SaaSをぶっ壊す──。今、まさにそれを実感しています。ポートフォリオサイトが、ただのリンク集から進化した話。",
+    "excerpt": "最新のClaude AIが、SaaSをぶっ壊す ——。 今、まさにそれを実感しています。",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -157,17 +187,17 @@
     "link": "https://note.com/tojimasaya/n/nef015a85a7bf",
     "date": "2026-02-10",
     "image": "https://assets.st-note.com/production/uploads/images/250610654/rectangle_large_type_2_a458253c0469b2de993a2fd3bf4dc013.jpeg?width=800",
-    "excerpt": "「あれ、この写真、上環（ションワン）のお店？」香港通の方なら、この店名と緑色の看板を見てそう思ったかもしれません。続きをみる...",
-    "featured": true,
+    "excerpt": "「あれ、この写真、上環（ションワン）のお店？」 香港通の方なら、この店名と緑色の看板を見てそう思ったかもしれません。",
     "source": "note",
-    "sourceLabel": "note"
+    "sourceLabel": "note",
+    "featured": true
   },
   {
     "title": "【日本・香港】国境を越える強盗の執念──上環5800万円事件の深層",
     "link": "https://note.com/tojimasaya/n/nba3b1a8280c2",
     "date": "2026-01-31",
     "image": "https://assets.st-note.com/production/uploads/images/247940162/rectangle_large_type_2_b58b87c63225b8ff0a6bbc933d1bcda0.jpeg?width=800",
-    "excerpt": "いま、わたしは一時帰国中で、年末年始を寒い日本で過ごしていました。 そろそろ香港へ戻る準備を進めていた矢先、飛び込んできたニュースに、香港の湿った熱気とは違う、...",
+    "excerpt": "いま、わたしは一時帰国中で、年末年始を寒い日本で過ごしていました。 そろそろ香港へ戻る準備を進めていた矢先、飛び込んできたニュースに、香港の湿った熱気とは違う、背筋の凍るような感覚を覚えました。 日本と香港をまたぐ、5800万円強奪事件。 被害に遭われた日本人の方々には心よりお見舞い申し上げますが、香港に住む人間として",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -176,7 +206,7 @@
     "link": "https://note.com/tojimasaya/n/nf2114cfacfbc",
     "date": "2026-01-29",
     "image": "https://assets.st-note.com/production/uploads/images/247244798/rectangle_large_type_2_bbd931dc53d2286ff8824b357154a12b.png?width=800",
-    "excerpt": "旅先でのデータバックアップの方法を改善しました。もう長く香港に住んでいるのですが、最近は日本の実家で生活する時間も増えています。香港と日本、二つの拠点を行き来す...",
+    "excerpt": "旅先でのデータバックアップの方法を改善しました。 もう長く香港に住んでいるのですが、最近は日本の実家で生活する時間も増えています。 香港と日本、二つの拠点を行き来する生活の中で、やっておきたいこと。 それは 「旅と日常の記録」 です。",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -185,7 +215,7 @@
     "link": "https://note.com/tojimasaya/n/n807dc4be8deb",
     "date": "2026-01-19",
     "image": "https://assets.st-note.com/production/uploads/images/245058144/rectangle_large_type_2_9a7a7680d5acfe94d72a9699bd4eea71.jpeg?width=800",
-    "excerpt": "旅とガジェットの落とし穴旅先で、自分の無力さを突きつけられる瞬間がある。続きをみる...",
+    "excerpt": "旅とガジェットの落とし穴 旅先で、自分の無力さを突きつけられる瞬間がある。",
     "source": "note",
     "sourceLabel": "note"
   },
@@ -203,17 +233,26 @@
     "link": "https://note.com/tojimasaya/n/n37e6f1590cbc",
     "date": "2026-01-09",
     "image": "https://assets.st-note.com/production/uploads/images/242614364/rectangle_large_type_2_35150bf78006c50980c0fa4fa45a1ced.jpeg?width=800",
-    "excerpt": "新年あけましておめでとうございます。今回ご紹介するのは、香港と中国・深圳の境界線に位置する「馬草壟（Ma Tso Lung）」です。ここは単なる絶景スポットでは...",
-    "featured": true,
+    "excerpt": "新年あけましておめでとうございます。 今回ご紹介するのは、香港と中国・深圳の境界線に位置する「馬草壟（Ma Tso Lung）」です。ここは単なる絶景スポットではなく、歴史の皮肉が作り出した「今しか撮れない」非常にユニークな場所なのです。",
     "source": "note",
-    "sourceLabel": "note"
+    "sourceLabel": "note",
+    "featured": true
   },
   {
     "title": "あの時描いた「焚き火を囲む場所」が、現実になりました",
     "link": "https://note.com/tojimasaya/n/n2ba6d807e058",
     "date": "2026-01-06",
     "image": "https://assets.st-note.com/production/uploads/images/241740545/rectangle_large_type_2_8180e073adede34d403e314b0fe078a2.png?width=800",
-    "excerpt": "2025年の終わりに、こんな記事を書きました。続きをみる...",
+    "excerpt": "2025年の終わりに、こんな記事を書きました。",
+    "source": "note",
+    "sourceLabel": "note"
+  },
+  {
+    "title": "2025年の終わりに、「俺流トラベルガジェット」の話を",
+    "link": "https://note.com/tojimasaya/n/na302cda8afdc",
+    "date": "2025-12-30",
+    "image": "https://d2l930y2yx77uc.cloudfront.net/production/social_images/cb548d5cca62797c0d35acdacb71a415bb0780db.png",
+    "excerpt": "ガジェットファンの皆さん、ようこそ『俺流トラベルガジェットの世界』へ。 今日は、2025年最後のノートとして、 この「俺流トラベルガジェット」の構成を少し変えることにしましたので、そのお知らせを書こうと思います。",
     "source": "note",
     "sourceLabel": "note"
   },
