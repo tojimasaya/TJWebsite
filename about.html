@@ -6,10 +6,10 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-806426BQX2');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me — Toji Masaya</title>
+    <title>About — 田路昌也 / Toji Masaya</title>
 
     <!-- SEO Meta Tags -->
-    <meta name="description" content="田路昌也（Toji Masaya）のプロフィール。香港でのガジェット生活から、ライカでの写真撮影に至るまでの軌跡。">
+    <meta name="description" content="田路昌也（Toji Masaya）のプロフィール。香港と日本を行き来しながら、写真、旅、テクノロジー、姫路城を記録する視点について。">
     <meta name="author" content="Toji Masaya">
 
     <!-- Fonts -->
@@ -25,112 +25,647 @@
 
     <!-- Page-specific styles -->
     <style>
-        /* About page layout */
-        .about-hero { padding: 5rem 1.5rem; max-width: 72rem; margin: 0 auto; }
-        .about-hero-inner { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 3rem; }
-        @media (min-width: 768px) { .about-hero-inner { flex-direction: row; gap: 5rem; } }
-
-        .profile-img-wrap { width: 12rem; height: 12rem; flex-shrink: 0; position: relative; }
-        @media (min-width: 768px) { .profile-img-wrap { width: 16rem; height: 16rem; } }
-        .profile-img-bg { position: absolute; inset: 0; background: #e5e5e5; border-radius: 9999px; transform: rotate(3deg); }
-        .profile-img { width: 100%; height: 100%; object-fit: cover; border-radius: 9999px; border: 4px solid #fff; box-shadow: var(--shadow-lg); position: relative; z-index: 10; }
-
-        .hero-text { text-align: center; max-width: 36rem; }
-        @media (min-width: 768px) { .hero-text { text-align: left; } }
-        .hero-label { font-family: var(--secondary-font); font-size: var(--text-sm); letter-spacing: 0.1em; color: var(--text-light); text-transform: uppercase; margin-bottom: 0.75rem; display: block; }
-        .hero-title { font-size: var(--text-4xl); font-weight: 400; margin-bottom: 1.5rem; line-height: 1.2; }
-        @media (min-width: 768px) { .hero-title { font-size: 3rem; } }
-        .hero-subtitle { font-size: var(--text-lg); color: var(--text-light); font-family: var(--secondary-font); font-weight: 300; line-height: 1.8; }
-        .hero-subtitle .note { font-size: var(--text-sm); margin-top: 0.75rem; display: block; color: var(--text-lighter); }
-
-        /* Philosophy section */
-        .about-philosophy { padding: 4rem 1.5rem; background: var(--white); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
-        .about-philosophy-inner { max-width: 48rem; margin: 0 auto; }
-        .about-philosophy h2 { font-size: var(--text-2xl); text-align: center; margin-bottom: 1rem; }
-        @media (min-width: 768px) { .about-philosophy h2 { font-size: var(--text-3xl); } }
-        .about-divider { width: 3rem; height: 2px; background: #d1d5db; margin: 0 auto 3rem; }
-        .about-prose { color: var(--text-light); font-family: var(--secondary-font); font-weight: 300; font-size: var(--text-lg); line-height: 1.8; }
-        .about-prose p { margin-bottom: 1.5rem; }
-
-        /* Chronicle / Timeline */
-        .about-timeline { padding: 5rem 1.5rem; background: var(--white); }
-        .about-timeline-inner { max-width: 72rem; margin: 0 auto; }
-        .about-timeline h2 { font-size: var(--text-3xl); text-align: center; margin-bottom: 4rem; }
-        .timeline-grid { display: grid; grid-template-columns: 1fr; gap: 3rem; }
-        @media (min-width: 768px) { .timeline-grid { grid-template-columns: 4fr 8fr; } }
-        .timeline-nav { position: sticky; top: 6rem; align-self: start; }
-        @media (max-width: 767px) { .timeline-nav { position: static; } }
-        .timeline-nav-btn { width: 100%; text-align: left; padding: 0.75rem 1rem; border-radius: 0.25rem; border-left: 2px solid transparent; transition: all 0.3s; font-family: var(--secondary-font); font-size: var(--text-sm); color: var(--text-lighter); background: none; cursor: pointer; }
-        .timeline-nav-btn:hover { color: var(--text-color); }
-        .timeline-nav-btn.active { border-left-color: var(--accent-color); background: var(--hover-color); color: var(--accent-color); font-weight: 700; }
-        .timeline-nav-btn span { display: inline-block; width: 3rem; }
-        .timeline-content { display: flex; flex-direction: column; gap: 5rem; }
-
-        .timeline-item { position: relative; }
-        .timeline-item-inner { display: flex; align-items: flex-start; gap: 1.5rem; }
-        @media (max-width: 767px) { .timeline-item-inner { flex-direction: column; } }
-        .timeline-icon { width: 3rem; height: 3rem; border-radius: 9999px; background: var(--hover-color); color: var(--text-lighter); display: flex; align-items: center; justify-content: center; font-family: var(--primary-font); font-size: var(--text-lg); flex-shrink: 0; transition: all 0.3s; }
-        .timeline-item:hover .timeline-icon { background: var(--accent-color); color: #fff; }
-        .timeline-line { width: 1px; height: 6rem; background: var(--border-color); margin: 0.5rem auto; }
-        .timeline-body { flex: 1; padding-bottom: 2rem; border-bottom: 1px solid var(--border-color); }
-        .timeline-body .year { font-size: var(--text-sm); font-family: var(--secondary-font); font-weight: 700; color: var(--accent-color); margin-bottom: 0.25rem; display: block; }
-        .timeline-body h3 { font-size: var(--text-2xl); margin-bottom: 0.75rem; }
-        .timeline-body p { color: var(--text-light); line-height: 1.8; font-family: var(--secondary-font); font-weight: 300; }
-
-        /* Footer */
-        .about-footer { background: var(--white); border-top: 1px solid var(--border-color); padding: 4rem 1.5rem 2rem; }
-        .about-footer-grid { max-width: 72rem; margin: 0 auto 3rem; display: grid; grid-template-columns: 1fr; gap: 2rem; }
-        @media (min-width: 768px) { .about-footer-grid { grid-template-columns: 2fr 1fr 1fr; } }
-        .about-footer h4 { font-size: var(--text-lg); margin-bottom: 1rem; }
-        .about-footer-bio { font-size: var(--text-sm); color: var(--text-light); line-height: 1.8; max-width: 20rem; font-family: var(--secondary-font); }
-        .about-footer h5 { font-family: var(--secondary-font); font-weight: 700; font-size: var(--text-xs); text-transform: uppercase; color: var(--text-lighter); margin-bottom: 1rem; letter-spacing: 0.05em; }
-        .about-footer ul { list-style: none; padding: 0; }
-        .about-footer li { margin-bottom: 0.5rem; }
-        .about-footer li a { font-size: var(--text-sm); font-family: var(--secondary-font); color: var(--text-light); text-decoration: none; }
-        .about-footer li a:hover { color: var(--accent-color); }
-        .about-footer-copy { text-align: center; font-size: var(--text-xs); color: var(--text-lighter); font-family: var(--secondary-font); padding-top: 2rem; border-top: 1px solid var(--border-color); }
-
         html { scroll-behavior: smooth; }
 
-        /* Language switcher — placed in hero, not nav */
+        body {
+            background: var(--bg-color);
+            color: var(--text-color);
+        }
+
+        .about-hero {
+            position: relative;
+            min-height: calc(92vh - 70px);
+            margin-top: 70px;
+            display: flex;
+            align-items: flex-end;
+            overflow: hidden;
+            color: #fff;
+            background: #111;
+        }
+
+        .about-hero picture,
+        .about-hero-bg {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+        }
+
+        .about-hero-bg {
+            object-fit: cover;
+            filter: brightness(0.58) contrast(1.04) saturate(0.92);
+        }
+
+        .about-hero::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(0,0,0,0.78) 0%, rgba(0,0,0,0.48) 44%, rgba(0,0,0,0.12) 100%),
+                linear-gradient(0deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0) 58%);
+            z-index: 1;
+        }
+
+        .about-hero-inner {
+            position: relative;
+            z-index: 2;
+            width: min(1120px, calc(100% - 4rem));
+            margin: 0 auto;
+            padding: 6rem 0 4.5rem;
+            display: grid;
+            grid-template-columns: minmax(0, 1fr) 220px;
+            gap: 3rem;
+            align-items: end;
+        }
+
         .lang-switcher {
             display: flex;
-            gap: 0.5rem;
-            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.6rem;
+            margin-bottom: 1.7rem;
+        }
+
+        .lang-btn {
+            display: inline-flex;
+            align-items: center;
+            min-height: 34px;
+            border: 1px solid rgba(255,255,255,0.34);
+            border-radius: 999px;
+            padding: 0.35rem 0.85rem;
+            font-size: 0.72rem;
+            font-family: var(--secondary-font);
+            color: rgba(255,255,255,0.86);
+            text-decoration: none;
+            letter-spacing: 0.06em;
+            transition: background 0.3s ease, border-color 0.3s ease;
+        }
+
+        .lang-btn:hover {
+            background: rgba(255,255,255,0.12);
+            border-color: rgba(255,255,255,0.75);
+        }
+
+        .hero-label {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.8rem;
+            font-family: var(--secondary-font);
+            font-size: 0.72rem;
+            letter-spacing: 0.24em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.72);
             margin-bottom: 1rem;
         }
-        @media (min-width: 768px) { .lang-switcher { justify-content: flex-start; } }
-        .lang-btn {
-            border: 1px solid var(--border-color);
-            border-radius: 9999px;
-            padding: 0.25rem 1rem;
-            font-size: 0.75rem;
+
+        .hero-label::before {
+            content: '';
+            width: 42px;
+            height: 1px;
+            background: #c49a6c;
+        }
+
+        .hero-title {
+            max-width: 760px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(2.35rem, 5.4vw, 5rem);
+            line-height: 1.25;
+            font-weight: 400;
+            letter-spacing: 0.04em;
+            margin: 0 0 1.6rem;
+            color: #fff;
+        }
+
+        .hero-title span {
+            display: block;
+        }
+
+        .hero-title .hero-name {
             font-family: var(--secondary-font);
+            font-size: clamp(0.9rem, 1.2vw, 1.05rem);
+            letter-spacing: 0.22em;
+            text-transform: uppercase;
+            color: rgba(255,255,255,0.76);
+            margin-bottom: 0.9rem;
+        }
+
+        .hero-subtitle {
+            max-width: 620px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(0.98rem, 1.4vw, 1.13rem);
+            line-height: 2.1;
+            letter-spacing: 0.04em;
+            color: rgba(255,255,255,0.84);
+            margin: 0;
+        }
+
+        .hero-meta {
+            display: grid;
+            gap: 0.75rem;
+            color: rgba(255,255,255,0.8);
+            font-family: var(--secondary-font);
+            font-size: 0.76rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+        }
+
+        .hero-meta span {
+            display: block;
+            padding-top: 0.75rem;
+            border-top: 1px solid rgba(255,255,255,0.28);
+        }
+
+        .about-statement {
+            padding: 6rem 2rem;
+            background: var(--bg-color);
+        }
+
+        .statement-inner {
+            max-width: 1080px;
+            margin: 0 auto;
+            display: grid;
+            grid-template-columns: minmax(260px, 0.72fr) minmax(0, 1fr);
+            gap: 4rem;
+            align-items: center;
+        }
+
+        .statement-portrait {
+            margin: 0;
+        }
+
+        .statement-portrait img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 5;
+            object-fit: cover;
+            border-radius: 6px;
+            box-shadow: 0 18px 40px rgba(0,0,0,0.12);
+        }
+
+        .statement-portrait figcaption {
+            margin-top: 0.8rem;
+            font-family: var(--secondary-font);
+            font-size: 0.72rem;
+            letter-spacing: 0.12em;
             color: var(--text-lighter);
+            text-transform: uppercase;
+        }
+
+        .section-kicker {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.7rem;
+            font-family: var(--secondary-font);
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: #9b5b2e;
+            margin-bottom: 1rem;
+        }
+
+        .section-kicker::before {
+            content: '';
+            width: 34px;
+            height: 1px;
+            background: #9b5b2e;
+        }
+
+        .statement-title,
+        .section-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(1.65rem, 3vw, 2.7rem);
+            line-height: 1.55;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            color: var(--text-color);
+            margin: 0 0 1.5rem;
+        }
+
+        .about-prose {
+            font-family: 'Noto Serif JP', serif;
+            color: var(--text-light);
+            font-size: 0.96rem;
+            line-height: 2.18;
+            letter-spacing: 0.035em;
+        }
+
+        .about-prose p {
+            margin: 0 0 1.4rem;
+        }
+
+        .about-prose a {
+            color: var(--text-color);
+            text-decoration: underline;
+            text-underline-offset: 4px;
+            text-decoration-color: #c49a6c;
+        }
+
+        .about-lenses {
+            padding: 5.5rem 2rem;
+            background: var(--white);
+            border-top: 1px solid var(--border-color);
+            border-bottom: 1px solid var(--border-color);
+        }
+
+        .lenses-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .section-heading-row {
+            display: flex;
+            justify-content: space-between;
+            gap: 2rem;
+            align-items: end;
+            margin-bottom: 2.6rem;
+        }
+
+        .section-heading-row .about-prose {
+            max-width: 460px;
+            font-size: 0.86rem;
+            line-height: 1.95;
+        }
+
+        .lens-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 1.2rem;
+        }
+
+        .lens-card {
+            position: relative;
+            overflow: hidden;
+            min-height: 360px;
+            border-radius: 6px;
+            color: #fff;
+            background: #1d1d1d;
             text-decoration: none;
-            transition: all 0.3s;
-            white-space: nowrap;
+        }
+
+        .lens-card img {
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(0.68) saturate(0.96);
+            transition: transform 0.7s ease, filter 0.4s ease;
+        }
+
+        .lens-card:hover img {
+            transform: scale(1.04);
+            filter: brightness(0.82) saturate(1.02);
+        }
+
+        .lens-card::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.78));
+        }
+
+        .lens-card-content {
+            position: absolute;
+            left: 1.4rem;
+            right: 1.4rem;
+            bottom: 1.4rem;
+            z-index: 2;
+        }
+
+        .lens-label {
+            display: block;
+            margin-bottom: 0.75rem;
+            font-family: var(--secondary-font);
+            font-size: 0.68rem;
+            letter-spacing: 0.16em;
+            color: rgba(255,255,255,0.72);
+            text-transform: uppercase;
+        }
+
+        .lens-card h3 {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.18rem;
+            line-height: 1.55;
+            font-weight: 400;
+            letter-spacing: 0.06em;
+            margin: 0 0 0.75rem;
+            color: #fff;
+        }
+
+        .lens-card p {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.82rem;
+            line-height: 1.85;
+            color: rgba(255,255,255,0.78);
+            margin: 0;
+        }
+
+        .about-timeline {
+            padding: 5.5rem 2rem 6rem;
+            background: #f7f7f5;
+        }
+
+        .about-timeline-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .timeline-grid {
+            display: grid;
+            grid-template-columns: 250px minmax(0, 1fr);
+            gap: 3rem;
+            margin-top: 2.6rem;
+        }
+
+        .timeline-nav {
+            position: sticky;
+            top: 6rem;
+            align-self: start;
+            border-left: 1px solid var(--border-color);
+        }
+
+        .timeline-nav-btn {
+            width: 100%;
+            min-height: 44px;
+            text-align: left;
+            padding: 0.75rem 1rem;
+            border: 0;
+            border-left: 2px solid transparent;
+            background: transparent;
+            color: var(--text-lighter);
+            cursor: pointer;
+            font-family: var(--secondary-font);
+            font-size: 0.78rem;
+            letter-spacing: 0.04em;
+            transition: color 0.3s ease, border-color 0.3s ease, background 0.3s ease;
+        }
+
+        .timeline-nav-btn:hover,
+        .timeline-nav-btn.active {
+            color: var(--text-color);
+            border-left-color: #9b5b2e;
+            background: rgba(255,255,255,0.58);
+        }
+
+        .timeline-nav-btn span {
+            display: inline-block;
+            width: 3.4rem;
+            color: #9b5b2e;
+            font-weight: 600;
+        }
+
+        .timeline-content {
+            display: grid;
+            gap: 1.2rem;
+        }
+
+        .timeline-item {
+            background: var(--white);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 1.5rem;
+        }
+
+        .timeline-item-inner {
+            display: grid;
+            grid-template-columns: 56px minmax(0, 1fr);
+            gap: 1.2rem;
+            align-items: start;
+        }
+
+        .timeline-icon {
+            width: 44px;
+            height: 44px;
+            border-radius: 50%;
+            border: 1px solid var(--border-color);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--secondary-font);
+            font-size: 0.74rem;
+            letter-spacing: 0.04em;
+            color: #9b5b2e;
+            background: #fbfbfa;
+        }
+
+        .timeline-line {
+            display: none;
+        }
+
+        .timeline-body .year {
+            display: block;
+            margin-bottom: 0.3rem;
+            font-family: var(--secondary-font);
+            font-size: 0.74rem;
+            letter-spacing: 0.14em;
+            color: #9b5b2e;
+            text-transform: uppercase;
+        }
+
+        .timeline-body h3 {
+            margin: 0 0 0.7rem;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.24rem;
+            font-weight: 400;
+            letter-spacing: 0.05em;
+            color: var(--text-color);
+        }
+
+        .timeline-body p {
+            margin: 0;
+            color: var(--text-light);
+            line-height: 1.9;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.88rem;
             letter-spacing: 0.03em;
         }
-        .lang-btn:hover {
-            background: var(--text-color);
-            color: var(--bg-color, #fff);
-            border-color: var(--text-color);
+
+        .timeline-figure {
+            margin: 1.1rem 0 0;
+            overflow: hidden;
+            border-radius: 6px;
+            border: 1px solid var(--border-color);
+            background: #fff;
+        }
+
+        .timeline-figure img {
+            display: block;
+            width: 100%;
+            height: auto;
+        }
+
+        .timeline-figure figcaption {
+            padding: 0.65rem 0.9rem;
+            font-size: 0.72rem;
+            color: var(--text-lighter);
+            font-family: var(--secondary-font);
+            text-align: center;
+            letter-spacing: 0.04em;
+        }
+
+        .timeline-link {
+            display: inline-block;
+            margin-top: 0.9rem;
+            font-size: 0.78rem;
+            font-family: var(--secondary-font);
+            color: #9b5b2e;
+            text-decoration: none;
+            letter-spacing: 0.04em;
+        }
+
+        .about-footer {
+            background: #1d1d1d;
+            color: #fff;
+            padding: 4rem 2rem 2rem;
+        }
+
+        .about-footer-grid {
+            max-width: 1100px;
+            margin: 0 auto 2.5rem;
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr;
+            gap: 2rem;
+        }
+
+        .about-footer h4 {
+            font-family: var(--secondary-font);
+            letter-spacing: 0.14em;
+            font-size: 1rem;
+            font-weight: 500;
+            margin: 0 0 1rem;
+        }
+
+        .about-footer-bio {
+            max-width: 420px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.86rem;
+            line-height: 2;
+            color: #aaa;
+            margin: 0;
+        }
+
+        .about-footer h5 {
+            font-family: var(--secondary-font);
+            font-weight: 600;
+            font-size: 0.72rem;
+            text-transform: uppercase;
+            color: #777;
+            margin: 0 0 1rem;
+            letter-spacing: 0.14em;
+        }
+
+        .about-footer ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .about-footer li {
+            margin-bottom: 0.55rem;
+        }
+
+        .about-footer a {
+            color: #aaa;
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-family: var(--secondary-font);
+            letter-spacing: 0.04em;
+        }
+
+        .about-footer a:hover {
+            color: #c49a6c;
+        }
+
+        .about-footer-copy {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding-top: 2rem;
+            border-top: 1px solid #333;
+            text-align: center;
+            font-size: 0.74rem;
+            color: #666;
+            font-family: var(--secondary-font);
+            letter-spacing: 0.08em;
+        }
+
+        @media (max-width: 900px) {
+            .about-hero-inner {
+                grid-template-columns: 1fr;
+                width: min(100% - 3rem, 760px);
+            }
+
+            .hero-meta {
+                grid-template-columns: repeat(3, 1fr);
+            }
+
+            .statement-inner,
+            .section-heading-row,
+            .timeline-grid,
+            .about-footer-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-nav {
+                position: static;
+                display: grid;
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .lens-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .about-hero {
+                min-height: calc(88vh - 70px);
+            }
+
+            .about-hero-inner {
+                width: calc(100% - 2rem);
+                padding: 4.2rem 0 3rem;
+            }
+
+            .hero-meta {
+                grid-template-columns: 1fr;
+            }
+
+            .about-statement,
+            .about-lenses,
+            .about-timeline {
+                padding-left: 1.3rem;
+                padding-right: 1.3rem;
+            }
+
+            .statement-inner {
+                gap: 2.2rem;
+            }
+
+            .lens-card {
+                min-height: 300px;
+            }
+
+            .timeline-nav {
+                grid-template-columns: 1fr;
+            }
+
+            .timeline-item-inner {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/about.html">
-<meta property="og:title" content="About Me — Toji Masaya">
-<meta property="og:description" content="田路昌也（Toji Masaya）のプロフィール。香港でのガジェット生活から、ライカでの写真撮影に至るまでの軌跡。">
+<meta property="og:title" content="About — 田路昌也 / Toji Masaya">
+<meta property="og:description" content="香港と日本を行き来しながら、写真、旅、テクノロジー、姫路城を記録する視点について。">
 <meta property="og:url" content="https://tojimasaya.com/about.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toji Masaya">
 <meta property="og:image" content="https://tojimasaya.com/assets/images/about/TJ.jpg">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@mongkok93">
-<meta name="twitter:title" content="About Me — Toji Masaya">
-<meta name="twitter:description" content="田路昌也（Toji Masaya）のプロフィール。香港でのガジェット生活から、ライカでの写真撮影に至るまでの軌跡。">
+<meta name="twitter:title" content="About — 田路昌也 / Toji Masaya">
+<meta name="twitter:description" content="香港と日本を行き来しながら、写真、旅、テクノロジー、姫路城を記録する視点について。">
 <meta name="twitter:image" content="https://tojimasaya.com/assets/images/about/TJ.jpg">
 </head>
 <body>
@@ -139,52 +674,108 @@
 
     <!-- Hero Section -->
     <header class="about-hero">
+        <picture>
+            <source srcset="assets/images/hero/hongkong.webp" type="image/webp">
+            <img src="assets/images/hero/hongkong.jpg" alt="香港の夜景" class="about-hero-bg" loading="eager">
+        </picture>
         <div class="about-hero-inner">
-            <div class="profile-img-wrap">
-                <div class="profile-img-bg"></div>
-                <img src="assets/images/about/TJ.jpg" alt="Toji Masaya" class="profile-img" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/400x400/e0e0e0/ffffff?text=TJ'">
-            </div>
             <div class="hero-text">
                 <div class="lang-switcher">
                     <a href="about-en.html" class="lang-btn">English</a>
                     <a href="about-hk.html" class="lang-btn">中文</a>
                 </div>
-                <span class="hero-label">Profile</span>
+                <span class="hero-label">About</span>
                 <h1 class="hero-title">
-                    <span style="display:block; font-family:'Noto Serif JP',serif; font-size:var(--text-base); letter-spacing:0.1em; color:var(--text-lighter); margin-bottom:0.5rem; font-weight:400;">田路昌也 — 写真・テクノロジー・姫路城</span>
-                    Technologist in Hong Kong,<br>
-                    Enthusiast in Himeji.
+                    <span class="hero-name">Toji Masaya / 田路昌也</span>
+                    <span>香港の速度と、</span>
+                    <span>姫路の静けさを行き来しながら。</span>
                 </h1>
                 <p class="hero-subtitle">
-                    香港の熱気と、姫路の静寂。<br>
-                    2つの都市、2つの視点を行き来する。<br>
-                    <span class="note">Born in Himeji, 1964. Based in HK since 1993.</span>
+                    テクノロジー、旅、写真、そして故郷の城。長く香港で暮らした視点から、変わっていく街と、変わらずそこにある風景を記録しています。
                 </p>
+            </div>
+            <div class="hero-meta" aria-label="プロフィール概要">
+                <span>Born in Himeji, 1964</span>
+                <span>Based in Hong Kong since 1993</span>
+                <span>Photography / Gear / Writing</span>
             </div>
         </div>
     </header>
 
-    <!-- Philosophy & Mission -->
-    <section class="about-philosophy">
-        <div class="about-philosophy-inner">
-            <div style="text-align:center; margin-bottom:3rem;">
-                <h2>"From Gadgets to Photography."</h2>
-                <div class="about-divider"></div>
+    <!-- Statement -->
+    <section class="about-statement">
+        <div class="statement-inner">
+            <figure class="statement-portrait">
+                <picture>
+                    <source srcset="assets/images/about/TJ.webp" type="image/webp">
+                    <img src="assets/images/about/TJ.jpg" alt="Toji Masaya" loading="lazy" decoding="async">
+                </picture>
+                <figcaption>Toji Masaya</figcaption>
+            </figure>
+            <div>
+                <span class="section-kicker">Point of View</span>
+                <h2 class="statement-title">近すぎて見えなかったものを、少し離れた場所から見直す。</h2>
+                <div class="about-prose">
+                    <p>
+                        私の原点は、1993年に渡った香港、そして深水埗（シャムスイポー）の電脳街にあります。スマートフォン、ガジェット、カメラアクセサリー。新しい道具が生まれる場所の熱気の中で、記録することへの興味が少しずつ育っていきました。
+                    </p>
+                    <p>
+                        iPhoneで写真を撮り始め、やがて手にする機材は<a href="gear.html">ライカ</a>へ。道具への好奇心はそのまま、街の光、旅先の空気、そして故郷・姫路城を見るための視点になりました。
+                    </p>
+                    <p>
+                        長く海外に住み、たまに帰国して姫路城を歩くと、外国人観光客の眼差しを通して初めて「近すぎて見えていなかった」風景の大きさに気づきます。<a href="shirasagi36.html">白鷺三十六景</a>は、その気づきを写真と言葉で残していく試みです。
+                    </p>
+                </div>
             </div>
-            <div class="about-prose">
-                <p>
-                    私の原点は、1993年に渡った香港、そして深水埗（シャムスイポー）の電脳街にあります。
-                    iPhoneの登場以来、写真を撮る楽しさに目覚め、ガジェット愛が高じてカメラアクセサリーまで自作。
-                    気がつけば、手に持つ機材がiPhoneから<a href="gear.html" style="font-weight:500; color:var(--text-color); text-decoration:underline; text-underline-offset:3px;">ライカ</a>へと変わっていました。
-                </p>
-                <p>
-                    長く海外に住み、たまに帰国して姫路城を散策すると、外国人観光客の眼差しを通して初めて、
-                    「近すぎて見えていなかった」故郷の城の真の偉大さに気づきました。
-                </p>
-                <p>
-                    <a href="shirasagi36.html" style="font-weight:500; color:var(--text-color); text-decoration:underline; text-underline-offset:3px;">「白鷺三十六景」</a>は、
-                    外からの視点を持った一人のマニアが、世界に向けて姫路城の美しさと物語を再定義し、発信する試みです。
-                </p>
+        </div>
+    </section>
+
+    <!-- Entry Points -->
+    <section class="about-lenses" aria-labelledby="lenses-title">
+        <div class="lenses-inner">
+            <div class="section-heading-row">
+                <div>
+                    <span class="section-kicker">Three Lenses</span>
+                    <h2 class="section-title" id="lenses-title">このサイトで見ているもの。</h2>
+                </div>
+                <div class="about-prose">
+                    写真の対象はひとつではありません。姫路城、香港、旅と道具。それぞれの入口から、同じ人間の視点が少しずつ見えてくるようにしています。
+                </div>
+            </div>
+            <div class="lens-grid">
+                <a class="lens-card" href="shirasagi36.html">
+                    <picture>
+                        <source srcset="assets/images/gallery/castle31.webp" type="image/webp">
+                        <img src="assets/images/gallery/castle31.jpg" alt="姫路城">
+                    </picture>
+                    <div class="lens-card-content">
+                        <span class="lens-label">Himeji Castle</span>
+                        <h3>白鷺三十六景</h3>
+                        <p>故郷の城を、外から戻ってきた視点で撮り直す写真プロジェクト。</p>
+                    </div>
+                </a>
+                <a class="lens-card" href="hongkong-neon.html">
+                    <picture>
+                        <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
+                        <img src="assets/images/hongkong-neon/01.jpg" alt="香港ネオン">
+                    </picture>
+                    <div class="lens-card-content">
+                        <span class="lens-label">Hong Kong</span>
+                        <h3>香港ネオン残照</h3>
+                        <p>消えていく街の光を、記憶ではなく記録として残すアーカイブ。</p>
+                    </div>
+                </a>
+                <a class="lens-card" href="gear.html">
+                    <picture>
+                        <source srcset="assets/images/gear/sl2s.webp" type="image/webp">
+                        <img src="assets/images/gear/sl2s.jpg" alt="撮影機材">
+                    </picture>
+                    <div class="lens-card-content">
+                        <span class="lens-label">Gear Notes</span>
+                        <h3>旅と撮影の道具</h3>
+                        <p>Leica、ドローン、Mac。実際に持ち出して使う道具の記録。</p>
+                    </div>
+                </a>
             </div>
         </div>
     </section>
@@ -192,7 +783,8 @@
     <!-- Timeline -->
     <section class="about-timeline">
         <div class="about-timeline-inner">
-            <h2>Chronicle</h2>
+            <span class="section-kicker">Chronicle</span>
+            <h2 class="section-title">香港とテクノロジーから、写真へ。</h2>
             <div class="timeline-grid">
                 <div class="timeline-nav" id="timeline-nav"></div>
                 <div class="timeline-content" id="timeline-content"></div>
@@ -206,8 +798,7 @@
             <div>
                 <h4>Toji Masaya</h4>
                 <p class="about-footer-bio">
-                    Technologist, Writer, and Observer.<br>
-                    Bridging cultures through lenses and code.
+                    香港と日本、ときどき旅。テクノロジーと写真を行き来しながら、消えゆく風景と、そこに残る気配を記録しています。
                 </p>
             </div>
             <div>
@@ -222,6 +813,8 @@
                 <h5>Connect</h5>
                 <ul>
                     <li><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">note</a></li>
+                    <li><a href="https://instagram.com/tojimasaya" target="_blank" rel="noopener noreferrer">Instagram</a></li>
+                    <li><a href="https://x.com/mongkok93" target="_blank" rel="noopener noreferrer">X</a></li>
                 </ul>
             </div>
         </div>
@@ -235,14 +828,14 @@
     <script>
         // --- Timeline Logic ---
         const timelineData = [
-            { year: "1964", title: "Origin", desc: "兵庫県姫路市に生まれる。", icon: "★" },
+            { year: "1964", title: "Origin", desc: "兵庫県姫路市に生まれる。", icon: "01" },
             { year: "1993", title: "Move to Hong Kong", desc: "香港・深水埗（シャムスイポー）の「黄金電腦商場」に魅せられ、移住を決意。ここから私の電脳生活が始まる。", icon: "HK" },
             { year: "1995", title: "Internet Solutions Ltd.", desc: "仲間と共にインターネット関連事業を創業。香港のIT黎明期を駆け抜ける。", icon: "IT" },
-            { year: "2004", title: "Blogging Era", desc: "ブログ「亜洲モバイル人柱隊」を開始。本業の傍ら、スマートフォンやガジェット情報を発信し始める。", icon: "✎" },
-            { year: "2007", title: "iPhone & Jailbreak", desc: "初代iPhone (2G) のJailbreakに成功（日本人初？）。「電脳中心買物隊 in 香港」を立ち上げ、スマホ関連製品の販売を開始。", icon: "" },
-            { year: "2010", title: "Turtleback Ltd.", desc: "iPhoneカメラジャケットを企画・製造する会社を創業。ハードウェア開発への挑戦。", icon: "⚙" },
-            { year: "2011", title: "The Breakthrough", desc: "iPhoneに一眼レンズを装着する「SLR Mount」を発表。本家アメリカのEngadgetに掲載され、数千件のコメントが殺到。「馬鹿げている」「クレイジーだ」という嘲笑が大半でしたが、スティーブ・ジョブズがまだ生きていたあの時代に、世界中のギークたちが私の作った\u201C奇妙な製品\u201Dについて熱く議論している——その事実が、何よりも嬉しかった。", icon: "★", image: "assets/images/about/engadget_article.png", imageCaption: "Featured on Engadget US (2011)", link: "https://www.pinterest.com/tojimasaya/turtleback/", linkText: "View Turtleback Designs on Pinterest" },
-            { year: "Present", title: "Back to Himeji", desc: "香港と日本を行き来する中で、故郷・姫路城の魅力を再発見。「白鷺三十六景」プロジェクトを通じて、その美しさを世界に発信中。", icon: "🏯" }
+            { year: "2004", title: "Blogging Era", desc: "ブログ「亜洲モバイル人柱隊」を開始。本業の傍ら、スマートフォンやガジェット情報を発信し始める。", icon: "BL" },
+            { year: "2007", title: "iPhone & Jailbreak", desc: "初代iPhone (2G) のJailbreakに成功（日本人初？）。「電脳中心買物隊 in 香港」を立ち上げ、スマホ関連製品の販売を開始。", icon: "IP" },
+            { year: "2010", title: "Turtleback Ltd.", desc: "iPhoneカメラジャケットを企画・製造する会社を創業。ハードウェア開発への挑戦。", icon: "TB" },
+            { year: "2011", title: "The Breakthrough", desc: "iPhoneに一眼レンズを装着する「SLR Mount」を発表。本家アメリカのEngadgetに掲載され、数千件のコメントが殺到。「馬鹿げている」「クレイジーだ」という嘲笑が大半でしたが、スティーブ・ジョブズがまだ生きていたあの時代に、世界中のギークたちが私の作った“奇妙な製品”について熱く議論している。その事実が、何よりも嬉しかった。", icon: "SLR", image: "assets/images/about/engadget_article.png", imageCaption: "Featured on Engadget US (2011)", link: "https://www.pinterest.com/tojimasaya/turtleback/", linkText: "View Turtleback Designs on Pinterest" },
+            { year: "Present", title: "Back to Himeji", desc: "香港と日本を行き来する中で、故郷・姫路城の魅力を再発見。「白鷺三十六景」プロジェクトを通じて、その美しさを世界に発信中。", icon: "HMJ" }
         ];
 
         const renderTimeline = () => {
@@ -265,13 +858,13 @@
                 contentDiv.className = "timeline-item";
                 let extraHTML = '';
                 if (item.image) {
-                    extraHTML += `<figure style="margin-top:1rem; border-radius:0.5rem; overflow:hidden; box-shadow:0 4px 12px rgba(0,0,0,0.1); border:1px solid var(--border-color);">
+                    extraHTML += `<figure class="timeline-figure">
                         <img src="${item.image}" alt="${item.imageCaption || ''}" loading="lazy" decoding="async" style="width:100%; height:auto;">
-                        ${item.imageCaption ? `<figcaption style="background:#f9fafb; padding:0.5rem 1rem; font-size:var(--text-xs); color:var(--text-lighter); font-family:var(--secondary-font); text-align:center;">${item.imageCaption}</figcaption>` : ''}
+                        ${item.imageCaption ? `<figcaption>${item.imageCaption}</figcaption>` : ''}
                     </figure>`;
                 }
                 if (item.link) {
-                    extraHTML += `<a href="${item.link}" target="_blank" rel="noopener noreferrer" style="display:inline-block; margin-top:0.75rem; font-size:var(--text-sm); font-family:var(--secondary-font); color:var(--accent-color); text-decoration:none;">${item.linkText || item.link} &rarr;</a>`;
+                    extraHTML += `<a class="timeline-link" href="${item.link}" target="_blank" rel="noopener noreferrer">${item.linkText || item.link} &rarr;</a>`;
                 }
                 contentDiv.innerHTML = `
                     <div class="timeline-item-inner">
