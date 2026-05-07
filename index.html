@@ -423,6 +423,159 @@
       text-transform: uppercase;
     }
 
+    /* ── Recent Frame ── */
+    .recent-frame {
+      background: var(--white, #fff);
+      border-bottom: 1px solid var(--border-color, #e5e5e5);
+      padding: 5rem 2rem;
+    }
+
+    .recent-frame-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(320px, 1.05fr) minmax(0, 0.9fr);
+      gap: 3rem;
+      align-items: center;
+    }
+
+    .recent-frame-media {
+      position: relative;
+      overflow: hidden;
+      border-radius: 6px;
+      background: #202124;
+      min-height: 340px;
+      color: #fff;
+    }
+
+    .recent-frame-media picture {
+      display: block;
+      width: 100%;
+    }
+
+    .recent-frame-media img {
+      display: block;
+      width: 100%;
+    }
+
+    .recent-frame-media img {
+      aspect-ratio: 4 / 3;
+      object-fit: cover;
+    }
+
+    .recent-frame-media.is-missing picture {
+      display: none;
+    }
+
+    .recent-frame-placeholder {
+      display: none;
+      min-height: 340px;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem;
+      background:
+        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0)),
+        #202124;
+      border: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .recent-frame-media.is-missing .recent-frame-placeholder {
+      display: flex;
+    }
+
+    .recent-frame-placeholder span {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.22em;
+      color: rgba(255,255,255,0.62);
+      text-transform: uppercase;
+    }
+
+    .recent-frame-caption {
+      position: absolute;
+      left: 1rem;
+      bottom: 1rem;
+      max-width: calc(100% - 2rem);
+      padding: 0.55rem 0.7rem;
+      background: rgba(0, 0, 0, 0.58);
+      border-radius: 4px;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.12em;
+      line-height: 1.5;
+      text-transform: uppercase;
+      color: #fff;
+    }
+
+    .recent-frame-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: #9b5b2e;
+      text-transform: uppercase;
+      margin-bottom: 1.1rem;
+    }
+
+    .recent-frame-label::before {
+      content: '';
+      width: 34px;
+      height: 1px;
+      background: #9b5b2e;
+    }
+
+    .recent-frame-title {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: clamp(1.55rem, 2.35vw, 2.2rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+      color: var(--text-color, #333);
+      margin-bottom: 0.7rem;
+    }
+
+    .recent-frame-meta {
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.12em;
+      color: var(--text-lighter, #999);
+      text-transform: uppercase;
+      margin-bottom: 1.2rem;
+    }
+
+    .recent-frame-copy {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.92rem;
+      line-height: 2.1;
+      letter-spacing: 0.04em;
+      color: var(--text-light, #666);
+      margin-bottom: 1.7rem;
+    }
+
+    .recent-frame-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 44px;
+      padding: 0.75rem 1.1rem;
+      border: 1px solid rgba(155, 91, 46, 0.32);
+      border-radius: 4px;
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.78rem;
+      letter-spacing: 0.1em;
+      color: #9b5b2e;
+      text-decoration: none;
+      transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+    }
+
+    .recent-frame-link:hover {
+      border-color: rgba(155, 91, 46, 0.65);
+      color: #7b4420;
+      transform: translateY(-1px);
+    }
+
     /* ── Site Compass ── */
     .site-compass {
       background: #f7f7f5;
@@ -897,6 +1050,24 @@
         gap: 0.85rem;
       }
 
+      .recent-frame {
+        padding: 3.5rem 1.5rem;
+      }
+
+      .recent-frame-inner {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+      }
+
+      .recent-frame-media,
+      .recent-frame-placeholder {
+        min-height: 260px;
+      }
+
+      .recent-frame-link {
+        width: 100%;
+      }
+
       .site-compass {
         padding: 0 1.5rem;
       }
@@ -990,6 +1161,10 @@
 
       .latest-grid {
         grid-template-columns: repeat(2, 1fr);
+      }
+
+      .recent-frame-inner {
+        grid-template-columns: 1fr;
       }
     }
 
@@ -1102,7 +1277,34 @@
   </section>
 
   <!-- ======================================
-       SECTION 3: ステートメント
+       SECTION 3: 最近の一枚
+       ====================================== -->
+  <section class="recent-frame" aria-labelledby="recent-frame-title">
+    <div class="recent-frame-inner">
+      <figure class="recent-frame-media" id="recent-frame-media">
+        <picture>
+          <source id="recent-frame-source" srcset="assets/images/photo-notes/wan-chai-tram-jam.webp" type="image/webp">
+          <img id="recent-frame-image" src="assets/images/photo-notes/wan-chai-tram-jam.jpg" alt="香港・湾仔の通りに二階建てトラムが連なっている様子" loading="lazy" decoding="async">
+        </picture>
+        <div class="recent-frame-placeholder" aria-hidden="true">
+          <span>Recent Frame</span>
+        </div>
+        <figcaption class="recent-frame-caption" id="recent-frame-caption">Wan Chai, Hong Kong</figcaption>
+      </figure>
+      <div class="recent-frame-text">
+        <p class="recent-frame-label" id="recent-frame-label">Recent Frame</p>
+        <h2 class="recent-frame-title" id="recent-frame-title">湾仔、トラムが止まった午後</h2>
+        <p class="recent-frame-meta" id="recent-frame-meta">香港・湾仔</p>
+        <p class="recent-frame-copy" id="recent-frame-copy">
+          ソフィアローレンで昼食を終えて通りに出ると、故障の影響でトラムが大渋滞。二階建てトラムがここまで連なる光景は、香港でもなかなか見られない。
+        </p>
+        <a class="recent-frame-link" id="recent-frame-link" href="hongkong.html">香港撮影ノートへ →</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================
+       SECTION 4: ステートメント
        ====================================== -->
   <section class="intro-statement">
     <p class="intro-statement-text">
@@ -1115,7 +1317,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 4: サイトの入口
+       SECTION 5: サイトの入口
        ====================================== -->
   <section class="site-compass" aria-label="サイトの主な入口">
     <div class="site-compass-inner">
@@ -1147,7 +1349,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 5: 旅の記録
+       SECTION 6: 旅の記録
        ====================================== -->
   <section class="travels">
     <div class="travels-inner">
@@ -1232,7 +1434,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 6: 最新の記事（RSS連携）
+       SECTION 7: 最新の記事（RSS連携）
        ====================================== -->
   <section class="latest-articles">
     <div class="section-header-row">
@@ -1250,7 +1452,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 7: About Strip
+       SECTION 8: About Strip
        ====================================== -->
   <section class="about-strip">
     <div class="about-inner">
@@ -1294,6 +1496,65 @@
   </footer>
 
   <script>
+    // ===== 最近の一枚の読み込み（recent-photos.json） =====
+    function setRecentFrameText(id, value) {
+      const element = document.getElementById(id);
+      if (element && value) element.textContent = value;
+    }
+
+    function showRecentFramePlaceholder() {
+      const media = document.getElementById('recent-frame-media');
+      const image = document.getElementById('recent-frame-image');
+      const source = document.getElementById('recent-frame-source');
+
+      if (media) media.classList.add('is-missing');
+      if (image) image.removeAttribute('src');
+      if (source) source.removeAttribute('srcset');
+    }
+
+    function renderRecentFrame(frame) {
+      if (!frame) return;
+
+      const label = frame.label || 'Recent Frame';
+      const meta = [frame.place, frame.date].filter(Boolean).join(' / ');
+      const media = document.getElementById('recent-frame-media');
+      const image = document.getElementById('recent-frame-image');
+      const source = document.getElementById('recent-frame-source');
+      const link = document.getElementById('recent-frame-link');
+
+      setRecentFrameText('recent-frame-label', label);
+      setRecentFrameText('recent-frame-title', frame.title);
+      setRecentFrameText('recent-frame-meta', meta);
+      setRecentFrameText('recent-frame-copy', frame.body);
+      setRecentFrameText('recent-frame-caption', frame.caption || meta);
+
+      if (link) {
+        link.href = frame.link || 'gallery.html';
+        link.textContent = `${frame.linkLabel || '写真を見る'} →`;
+      }
+
+      if (image && frame.alt) image.alt = frame.alt;
+      if (source && frame.imageWebp) source.srcset = frame.imageWebp;
+      if (image && frame.image) {
+        if (media) media.classList.remove('is-missing');
+        image.src = frame.image;
+      }
+    }
+
+    async function loadRecentFrame() {
+      const image = document.getElementById('recent-frame-image');
+      if (image) image.addEventListener('error', showRecentFramePlaceholder);
+
+      try {
+        const res = await fetch('data/recent-photos.json');
+        if (!res.ok) throw new Error('Failed to load recent-photos.json');
+        const photos = await res.json();
+        renderRecentFrame(Array.isArray(photos) ? photos[0] : photos);
+      } catch (error) {
+        console.log('Using static content for recent frame');
+      }
+    }
+
     // ===== 最新記事の読み込み（articles.json） =====
     async function loadLatestArticles() {
       const container = document.getElementById('latest-grid');
@@ -1378,7 +1639,10 @@
       }
     }
 
-    document.addEventListener('DOMContentLoaded', loadLatestArticles);
+    document.addEventListener('DOMContentLoaded', () => {
+      loadRecentFrame();
+      loadLatestArticles();
+    });
 
     // ===== External links =====
     document.querySelectorAll('a[target="_blank"]').forEach(link => {
