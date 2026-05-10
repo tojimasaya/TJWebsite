@@ -1,5 +1,19 @@
 [
   {
+    "slug": "strawberry-field-memory",
+    "label": "Recent Frame",
+    "title": "いちご畑と、練乳の記憶",
+    "place": "友人の実家のいちご畑",
+    "date": "2026年5月5日",
+    "body": "先週、友人の実家のいちご畑で久しぶりにいちご狩りをした。かごの中よりも、畑に残る青い実と真っ赤に熟した実の対比に目を奪われる。小学生の頃、出荷できないいちごを大胆につぶし、練乳をたっぷりかけて食べた、あの贅沢ないちごミルクの記憶まで戻ってきた。",
+    "image": "assets/images/photo-notes/strawberry-field.jpg",
+    "imageWebp": "assets/images/photo-notes/strawberry-field.webp",
+    "alt": "いちご畑で青い実と赤く熟したいちごが並んでいる様子",
+    "caption": "Strawberry Field / May 2026",
+    "link": "gallery.html",
+    "linkLabel": "写真ギャラリーへ"
+  },
+  {
     "slug": "wan-chai-tram-jam",
     "label": "Recent Frame",
     "title": "湾仔、トラムが止まった午後",
