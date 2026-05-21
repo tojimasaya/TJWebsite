@@ -639,6 +639,11 @@
       transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
     }
 
+    .recent-frame-archive-card:focus-visible {
+      outline: 2px solid rgba(155, 91, 46, 0.55);
+      outline-offset: 3px;
+    }
+
     .recent-frame-archive-card:hover {
       border-color: rgba(155, 91, 46, 0.38);
       background: #fff;
@@ -1456,7 +1461,7 @@
         <p class="recent-frame-copy" id="recent-frame-copy">
           小田原からの帰り、新幹線の駅で弁当を買った。鯛飯も考えたが、店の方と話すうちに「炙り金目鯛と小鯵押し寿司」へ。話題はいつの間にか、神奈川と兵庫の似ているところに広がった。東京の隣の神奈川、大阪の隣の兵庫。横浜と神戸には港と中華街があり、少し離れた場所には小田原城と姫路城がある。弁当ひとつで、旅の帰り道に小さな土地談義が残った。
         </p>
-        <a class="recent-frame-link" id="recent-frame-link" href="gallery.html">写真ギャラリーへ →</a>
+        <a class="recent-frame-link" id="recent-frame-link" href="#recent-frame-archive-title">これまでの一枚を見る →</a>
       </div>
     </div>
     <div class="recent-frame-archive" aria-labelledby="recent-frame-archive-title">
@@ -1468,7 +1473,7 @@
         <p class="recent-frame-archive-note">日々の写真を、短い記憶と一緒に残していきます。</p>
       </div>
       <div class="recent-frame-archive-grid" id="recent-frame-archive-grid">
-        <a class="recent-frame-archive-card" href="gallery.html">
+        <a class="recent-frame-archive-card" href="#recent-frame-title" data-recent-frame-slug="gozasoro-red-blend">
           <span class="recent-frame-archive-thumb">
             <picture>
               <source srcset="assets/images/photo-notes/gozasoro-red-blend.webp" type="image/webp">
@@ -1481,7 +1486,7 @@
             <span class="recent-frame-archive-copy">姫路で大判焼き、今川焼きといえば、やはり御座候。書写の落ち着いた喫茶室で、赤あんの御座候と、それに合わせた赤ブレンドをいただいた。</span>
           </span>
         </a>
-        <a class="recent-frame-archive-card" href="gallery.html">
+        <a class="recent-frame-archive-card" href="#recent-frame-title" data-recent-frame-slug="strawberry-field-memory">
           <span class="recent-frame-archive-thumb">
             <picture>
               <source srcset="assets/images/photo-notes/strawberry-field.webp" type="image/webp">
@@ -1494,7 +1499,7 @@
             <span class="recent-frame-archive-copy">先週、友人の実家のいちご畑で久しぶりにいちご狩りをした。畑に残る青い実と真っ赤に熟した実の対比に目を奪われる。</span>
           </span>
         </a>
-        <a class="recent-frame-archive-card" href="hongkong.html">
+        <a class="recent-frame-archive-card" href="#recent-frame-title" data-recent-frame-slug="wan-chai-tram-jam">
           <span class="recent-frame-archive-thumb">
             <picture>
               <source srcset="assets/images/photo-notes/wan-chai-tram-jam.webp" type="image/webp">
@@ -1737,8 +1742,8 @@
       setRecentFrameText('recent-frame-caption', frame.caption || meta);
 
       if (link) {
-        link.href = frame.link || 'gallery.html';
-        link.textContent = `${frame.linkLabel || '写真を見る'} →`;
+        link.href = '#recent-frame-archive-title';
+        link.textContent = 'これまでの一枚を見る →';
       }
 
       if (image && frame.alt) image.alt = frame.alt;
@@ -1749,11 +1754,31 @@
       }
     }
 
-    function createRecentArchiveCard(frame) {
+    function selectRecentFrame(frame, photos) {
+      renderRecentFrame(frame);
+      renderRecentArchive(photos, frame.slug);
+
+      if (typeof gtag !== 'undefined') {
+        gtag('event', 'select_recent_frame', {
+          frame_slug: frame.slug || '',
+          frame_title: frame.title || ''
+        });
+      }
+
+      const target = document.querySelector('.recent-frame-inner');
+      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+
+    function createRecentArchiveCard(frame, photos) {
       const card = document.createElement('a');
       const meta = [frame.place, frame.date].filter(Boolean).join(' / ');
       card.className = 'recent-frame-archive-card';
-      card.href = frame.link || 'gallery.html';
+      card.href = '#recent-frame-title';
+      if (frame.slug) card.dataset.recentFrameSlug = frame.slug;
+      card.addEventListener('click', (event) => {
+        event.preventDefault();
+        selectRecentFrame(frame, photos);
+      });
 
       const thumb = document.createElement('span');
       thumb.className = 'recent-frame-archive-thumb';
@@ -1793,18 +1818,19 @@
       return card;
     }
 
-    function renderRecentArchive(photos) {
+    function renderRecentArchive(photos, activeSlug) {
       const archive = document.getElementById('recent-frame-archive-grid');
       const archiveSection = document.querySelector('.recent-frame-archive');
       if (!archive || !Array.isArray(photos)) return;
 
-      const pastPhotos = photos.slice(1, 7);
+      const currentSlug = activeSlug || photos[0]?.slug;
+      const pastPhotos = photos.filter(photo => photo.slug !== currentSlug).slice(0, 6);
       if (!pastPhotos.length) {
         if (archiveSection) archiveSection.hidden = true;
         return;
       }
 
-      archive.replaceChildren(...pastPhotos.map(createRecentArchiveCard));
+      archive.replaceChildren(...pastPhotos.map(frame => createRecentArchiveCard(frame, photos)));
       if (archiveSection) archiveSection.hidden = false;
     }
 
