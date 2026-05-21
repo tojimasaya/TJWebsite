@@ -576,6 +576,132 @@
       transform: translateY(-1px);
     }
 
+    .recent-frame-archive {
+      max-width: 1100px;
+      margin: 3.75rem auto 0;
+      padding-top: 2.25rem;
+      border-top: 1px solid var(--border-color, #e5e5e5);
+    }
+
+    .recent-frame-archive-head {
+      display: flex;
+      align-items: end;
+      justify-content: space-between;
+      gap: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .recent-frame-archive-kicker {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      letter-spacing: 0.16em;
+      color: #9b5b2e;
+      text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+
+    .recent-frame-archive-title {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 1.25rem;
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      color: var(--text-color, #333);
+    }
+
+    .recent-frame-archive-note {
+      max-width: 360px;
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.75rem;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+      color: var(--text-lighter, #999);
+      text-align: right;
+    }
+
+    .recent-frame-archive-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1rem;
+    }
+
+    .recent-frame-archive-card {
+      display: grid;
+      grid-template-columns: 118px minmax(0, 1fr);
+      gap: 0.9rem;
+      align-items: start;
+      min-height: 132px;
+      padding: 0.8rem;
+      border: 1px solid var(--border-color, #e5e5e5);
+      border-radius: 6px;
+      background: #fbfbfa;
+      color: inherit;
+      text-decoration: none;
+      transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+    }
+
+    .recent-frame-archive-card:hover {
+      border-color: rgba(155, 91, 46, 0.38);
+      background: #fff;
+      transform: translateY(-2px);
+    }
+
+    .recent-frame-archive-thumb {
+      overflow: hidden;
+      border-radius: 4px;
+      background: #202124;
+      aspect-ratio: 4 / 3;
+    }
+
+    .recent-frame-archive-thumb picture,
+    .recent-frame-archive-thumb img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .recent-frame-archive-thumb img {
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .recent-frame-archive-card:hover img {
+      transform: scale(1.04);
+    }
+
+    .recent-frame-archive-meta {
+      display: block;
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.66rem;
+      letter-spacing: 0.1em;
+      line-height: 1.5;
+      color: var(--text-lighter, #999);
+      text-transform: uppercase;
+      margin-bottom: 0.35rem;
+    }
+
+    .recent-frame-archive-card-title {
+      display: block;
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.95rem;
+      font-weight: 400;
+      line-height: 1.65;
+      letter-spacing: 0.05em;
+      color: var(--text-color, #333);
+      margin-bottom: 0.35rem;
+    }
+
+    .recent-frame-archive-copy {
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.76rem;
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+      color: var(--text-light, #666);
+    }
+
     /* ── Site Compass ── */
     .site-compass {
       background: #f7f7f5;
@@ -1068,6 +1194,30 @@
         width: 100%;
       }
 
+      .recent-frame-archive {
+        margin-top: 2.6rem;
+        padding-top: 1.7rem;
+      }
+
+      .recent-frame-archive-head {
+        display: block;
+      }
+
+      .recent-frame-archive-note {
+        max-width: none;
+        margin-top: 0.7rem;
+        text-align: left;
+      }
+
+      .recent-frame-archive-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .recent-frame-archive-card {
+        grid-template-columns: 104px minmax(0, 1fr);
+        min-height: 120px;
+      }
+
       .site-compass {
         padding: 0 1.5rem;
       }
@@ -1164,6 +1314,14 @@
       }
 
       .recent-frame-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .recent-frame-archive-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .recent-frame-archive-card {
         grid-template-columns: 1fr;
       }
     }
@@ -1299,6 +1457,56 @@
           小田原からの帰り、新幹線の駅で弁当を買った。鯛飯も考えたが、店の方と話すうちに「炙り金目鯛と小鯵押し寿司」へ。話題はいつの間にか、神奈川と兵庫の似ているところに広がった。東京の隣の神奈川、大阪の隣の兵庫。横浜と神戸には港と中華街があり、少し離れた場所には小田原城と姫路城がある。弁当ひとつで、旅の帰り道に小さな土地談義が残った。
         </p>
         <a class="recent-frame-link" id="recent-frame-link" href="gallery.html">写真ギャラリーへ →</a>
+      </div>
+    </div>
+    <div class="recent-frame-archive" aria-labelledby="recent-frame-archive-title">
+      <div class="recent-frame-archive-head">
+        <div>
+          <p class="recent-frame-archive-kicker">Archive</p>
+          <h3 class="recent-frame-archive-title" id="recent-frame-archive-title">これまでの一枚</h3>
+        </div>
+        <p class="recent-frame-archive-note">日々の写真を、短い記憶と一緒に残していきます。</p>
+      </div>
+      <div class="recent-frame-archive-grid" id="recent-frame-archive-grid">
+        <a class="recent-frame-archive-card" href="gallery.html">
+          <span class="recent-frame-archive-thumb">
+            <picture>
+              <source srcset="assets/images/photo-notes/gozasoro-red-blend.webp" type="image/webp">
+              <img src="assets/images/photo-notes/gozasoro-red-blend.jpg" alt="御座候の赤あんと赤ブレンドのコーヒーが喫茶室のテーブルに並んでいる様子" loading="lazy" decoding="async">
+            </picture>
+          </span>
+          <span>
+            <span class="recent-frame-archive-meta">姫路・書写 / 2026年5月14日</span>
+            <span class="recent-frame-archive-card-title">書写の御座候、赤と赤ブレンド</span>
+            <span class="recent-frame-archive-copy">姫路で大判焼き、今川焼きといえば、やはり御座候。書写の落ち着いた喫茶室で、赤あんの御座候と、それに合わせた赤ブレンドをいただいた。</span>
+          </span>
+        </a>
+        <a class="recent-frame-archive-card" href="gallery.html">
+          <span class="recent-frame-archive-thumb">
+            <picture>
+              <source srcset="assets/images/photo-notes/strawberry-field.webp" type="image/webp">
+              <img src="assets/images/photo-notes/strawberry-field.jpg" alt="いちご畑で青い実と赤く熟したいちごが並んでいる様子" loading="lazy" decoding="async">
+            </picture>
+          </span>
+          <span>
+            <span class="recent-frame-archive-meta">友人の実家のいちご畑 / 2026年5月5日</span>
+            <span class="recent-frame-archive-card-title">いちご畑と、練乳の記憶</span>
+            <span class="recent-frame-archive-copy">先週、友人の実家のいちご畑で久しぶりにいちご狩りをした。畑に残る青い実と真っ赤に熟した実の対比に目を奪われる。</span>
+          </span>
+        </a>
+        <a class="recent-frame-archive-card" href="hongkong.html">
+          <span class="recent-frame-archive-thumb">
+            <picture>
+              <source srcset="assets/images/photo-notes/wan-chai-tram-jam.webp" type="image/webp">
+              <img src="assets/images/photo-notes/wan-chai-tram-jam.jpg" alt="香港・湾仔の通りに二階建てトラムが連なっている様子" loading="lazy" decoding="async">
+            </picture>
+          </span>
+          <span>
+            <span class="recent-frame-archive-meta">香港・湾仔</span>
+            <span class="recent-frame-archive-card-title">湾仔、トラムが止まった午後</span>
+            <span class="recent-frame-archive-copy">ソフィアローレンで昼食を終えて通りに出ると、故障の影響でトラムが大渋滞。二階建てトラムがここまで連なる光景は、香港でもなかなか見られない。</span>
+          </span>
+        </a>
       </div>
     </div>
   </section>
@@ -1541,6 +1749,65 @@
       }
     }
 
+    function createRecentArchiveCard(frame) {
+      const card = document.createElement('a');
+      const meta = [frame.place, frame.date].filter(Boolean).join(' / ');
+      card.className = 'recent-frame-archive-card';
+      card.href = frame.link || 'gallery.html';
+
+      const thumb = document.createElement('span');
+      thumb.className = 'recent-frame-archive-thumb';
+
+      const picture = document.createElement('picture');
+      if (frame.imageWebp) {
+        const source = document.createElement('source');
+        source.srcset = frame.imageWebp;
+        source.type = 'image/webp';
+        picture.appendChild(source);
+      }
+
+      const image = document.createElement('img');
+      image.src = frame.image || '';
+      image.alt = frame.alt || frame.title || '';
+      image.loading = 'lazy';
+      image.decoding = 'async';
+      picture.appendChild(image);
+      thumb.appendChild(picture);
+
+      const text = document.createElement('span');
+
+      const metaElement = document.createElement('span');
+      metaElement.className = 'recent-frame-archive-meta';
+      metaElement.textContent = meta;
+
+      const title = document.createElement('span');
+      title.className = 'recent-frame-archive-card-title';
+      title.textContent = frame.title || '';
+
+      const copy = document.createElement('span');
+      copy.className = 'recent-frame-archive-copy';
+      copy.textContent = frame.body || '';
+
+      text.append(metaElement, title, copy);
+      card.append(thumb, text);
+      return card;
+    }
+
+    function renderRecentArchive(photos) {
+      const archive = document.getElementById('recent-frame-archive-grid');
+      const archiveSection = document.querySelector('.recent-frame-archive');
+      if (!archive || !Array.isArray(photos)) return;
+
+      const pastPhotos = photos.slice(1, 7);
+      if (!pastPhotos.length) {
+        if (archiveSection) archiveSection.hidden = true;
+        return;
+      }
+
+      archive.replaceChildren(...pastPhotos.map(createRecentArchiveCard));
+      if (archiveSection) archiveSection.hidden = false;
+    }
+
     async function loadRecentFrame() {
       const image = document.getElementById('recent-frame-image');
       if (image) image.addEventListener('error', showRecentFramePlaceholder);
@@ -1550,6 +1817,7 @@
         if (!res.ok) throw new Error('Failed to load recent-photos.json');
         const photos = await res.json();
         renderRecentFrame(Array.isArray(photos) ? photos[0] : photos);
+        renderRecentArchive(photos);
       } catch (error) {
         console.log('Using static content for recent frame');
       }
