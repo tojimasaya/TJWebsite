@@ -64,6 +64,35 @@
   }
   </script>
 
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Event",
+    "name": "第76回姫路お城まつり",
+    "startDate": "2026-05-22",
+    "endDate": "2026-05-24",
+    "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+    "eventStatus": "https://schema.org/EventScheduled",
+    "location": {
+      "@type": "Place",
+      "name": "姫路城周辺",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "姫路市",
+        "addressRegion": "兵庫県",
+        "addressCountry": "JP"
+      }
+    },
+    "organizer": {
+      "@type": "Organization",
+      "name": "姫路お城まつり奉賛会",
+      "url": "https://www.city.himeji.lg.jp/oshirofes/"
+    },
+    "url": "https://www.city.himeji.lg.jp/shisei/0000033044.html",
+    "description": "2026年5月22日から24日まで、姫路城周辺で開催される姫路市発表のイベント。薪能、姫路大名行列、千姫輿入れ行列、キャッスルパレード、ひめじ良さ恋まつりなどが予定されている。"
+  }
+  </script>
+
   <!-- Web Vitals 計測（Lighthouseと同等の指標をGAに送信） -->
   <script>
     function sendToAnalytics(metric) {
@@ -421,6 +450,146 @@
       letter-spacing: 0.12em;
       line-height: 1.5;
       text-transform: uppercase;
+    }
+
+    /* ── Timely Notice ── */
+    .timely-notice {
+      background: var(--bg-color, #f7f7f5);
+      border-bottom: 1px solid var(--border-color, #e5e5e5);
+      padding: 2.6rem 2rem;
+    }
+
+    .timely-notice-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 0.85fr) minmax(360px, 1.15fr);
+      gap: 2.2rem;
+      align-items: start;
+    }
+
+    .timely-notice-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
+      color: #1a3fb9;
+      text-transform: uppercase;
+      margin-bottom: 1rem;
+    }
+
+    .timely-notice-kicker::before {
+      content: '';
+      width: 34px;
+      height: 1px;
+      background: #1a3fb9;
+    }
+
+    .timely-notice-title {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: clamp(1.45rem, 2.2vw, 2rem);
+      font-weight: 400;
+      letter-spacing: 0.08em;
+      line-height: 1.6;
+      color: var(--text-color, #333);
+      margin-bottom: 0.8rem;
+    }
+
+    .timely-notice-meta {
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.1em;
+      line-height: 1.8;
+      color: var(--text-lighter, #999);
+      text-transform: uppercase;
+    }
+
+    .timely-notice-copy {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.9rem;
+      line-height: 2;
+      letter-spacing: 0.04em;
+      color: var(--text-light, #666);
+      margin-bottom: 1.2rem;
+    }
+
+    .timely-notice-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .timely-notice-day {
+      min-height: 122px;
+      padding: 0.9rem;
+      border: 1px solid var(--border-color, #e5e5e5);
+      border-radius: 6px;
+      background: var(--white, #fff);
+    }
+
+    .timely-notice-day strong {
+      display: block;
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.12em;
+      color: #1a3fb9;
+      text-transform: uppercase;
+      margin-bottom: 0.45rem;
+    }
+
+    .timely-notice-day span {
+      display: block;
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.78rem;
+      line-height: 1.85;
+      letter-spacing: 0.04em;
+      color: var(--text-light, #666);
+    }
+
+    .timely-notice-note {
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.75rem;
+      line-height: 1.8;
+      letter-spacing: 0.04em;
+      color: var(--text-lighter, #999);
+      margin-bottom: 1.2rem;
+    }
+
+    .timely-notice-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.75rem;
+    }
+
+    .timely-notice-link {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 42px;
+      padding: 0.72rem 1rem;
+      border: 1px solid rgba(26, 63, 185, 0.25);
+      border-radius: 4px;
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.75rem;
+      letter-spacing: 0.08em;
+      color: #1a3fb9;
+      background: var(--white, #fff);
+      text-decoration: none;
+      transition: border-color 0.3s ease, transform 0.3s ease;
+    }
+
+    .timely-notice-link:hover {
+      border-color: rgba(26, 63, 185, 0.55);
+      transform: translateY(-1px);
+    }
+
+    .timely-notice-link.primary {
+      color: #fff;
+      background: #1a3fb9;
+      border-color: #1a3fb9;
     }
 
     /* ── Recent Frame ── */
@@ -1181,6 +1350,28 @@
         gap: 0.85rem;
       }
 
+      .timely-notice {
+        padding: 2.4rem 1.5rem;
+      }
+
+      .timely-notice-inner {
+        grid-template-columns: 1fr;
+        gap: 1.6rem;
+      }
+
+      .timely-notice-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .timely-notice-day {
+        min-height: auto;
+      }
+
+      .timely-notice-actions {
+        display: grid;
+        grid-template-columns: 1fr;
+      }
+
       .recent-frame {
         padding: 3.5rem 1.5rem;
       }
@@ -1322,6 +1513,14 @@
         grid-template-columns: 1fr;
       }
 
+      .timely-notice-inner {
+        grid-template-columns: 1fr;
+      }
+
+      .timely-notice-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
       .recent-frame-archive-grid {
         grid-template-columns: 1fr 1fr;
       }
@@ -1400,7 +1599,47 @@
   </section>
 
   <!-- ======================================
-       SECTION 2: 現在おすすめのコンテンツ
+       SECTION 2: 姫路お城まつり
+       ====================================== -->
+  <section class="timely-notice" aria-labelledby="oshiro-fes-title">
+    <div class="timely-notice-inner">
+      <div>
+        <p class="timely-notice-kicker">Now in Himeji</p>
+        <h2 class="timely-notice-title" id="oshiro-fes-title">第76回 姫路お城まつり 開催中</h2>
+        <p class="timely-notice-meta">2026年5月22日(金) - 24日(日) / 姫路城周辺</p>
+      </div>
+      <div>
+        <p class="timely-notice-copy">
+          姫路城を借景に、薪能、大名行列、千姫輿入れ行列、総踊りが行われる3日間。白鷺三十六景とあわせて、祭りのなかの姫路城の表情も追いかけます。
+        </p>
+        <div class="timely-notice-grid" aria-label="姫路お城まつりの主な日程">
+          <div class="timely-notice-day">
+            <strong>5.22 Fri</strong>
+            <span>第55回姫路城薪能、親子教室発表会</span>
+          </div>
+          <div class="timely-notice-day">
+            <strong>5.23 Sat</strong>
+            <span>姫路大名行列、千姫輿入れ行列、キャッスルパレード、総踊り</span>
+          </div>
+          <div class="timely-notice-day">
+            <strong>5.24 Sun</strong>
+            <span>ひめじ良さ恋まつり、サウンドフェスティバル、キッズイベント</span>
+          </div>
+        </div>
+        <p class="timely-notice-note">
+          5月23日・24日は姫路城周辺で交通規制が予定されています。公共交通機関の利用がおすすめです。会場内でのドローン使用など危険な行為は禁止されています。
+        </p>
+        <div class="timely-notice-actions">
+          <a class="timely-notice-link primary" href="shirasagi36.html">白鷺三十六景を見る →</a>
+          <a class="timely-notice-link" href="https://www.city.himeji.lg.jp/shisei/0000033044.html" target="_blank" rel="noopener noreferrer">姫路市の発表 →</a>
+          <a class="timely-notice-link" href="https://www.city.himeji.lg.jp/oshirofes/access/index.html" target="_blank" rel="noopener noreferrer">交通規制を見る →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ======================================
+       SECTION 3: 現在おすすめのコンテンツ
        ====================================== -->
   <section class="current-feature" aria-labelledby="current-feature-title">
     <div class="current-feature-inner">
@@ -1440,7 +1679,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 3: 最近の一枚
+       SECTION 4: 最近の一枚
        ====================================== -->
   <section class="recent-frame" aria-labelledby="recent-frame-title">
     <div class="recent-frame-inner">
@@ -1517,7 +1756,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 4: ステートメント
+       SECTION 5: ステートメント
        ====================================== -->
   <section class="intro-statement">
     <p class="intro-statement-text">
@@ -1530,7 +1769,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 5: サイトの入口
+       SECTION 6: サイトの入口
        ====================================== -->
   <section class="site-compass" aria-label="サイトの主な入口">
     <div class="site-compass-inner">
@@ -1562,7 +1801,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 6: 旅の記録
+       SECTION 7: 旅の記録
        ====================================== -->
   <section class="travels">
     <div class="travels-inner">
@@ -1647,7 +1886,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 7: 最新の記事（RSS連携）
+       SECTION 8: 最新の記事（RSS連携）
        ====================================== -->
   <section class="latest-articles">
     <div class="section-header-row">
@@ -1665,7 +1904,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 8: About Strip
+       SECTION 9: About Strip
        ====================================== -->
   <section class="about-strip">
     <div class="about-inner">
