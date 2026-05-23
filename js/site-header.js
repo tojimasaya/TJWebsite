@@ -9,7 +9,8 @@
 document.addEventListener('DOMContentLoaded', () => {
     // 現在のページファイル名を取得
     const path = window.location.pathname;
-    const page = path.split("/").pop() || "index.html";
+    const pageName = path.split("/").pop();
+    const page = (pageName === "" || pageName === "index.html") ? "index.html" : pageName;
 
     // 現在のテーマを判定
     function getCurrentTheme() {
@@ -32,10 +33,10 @@ document.addEventListener('DOMContentLoaded', () => {
     const navHtml = `
     <nav class="main-nav" aria-label="メインナビゲーション">
         <div class="nav-container">
-            <a href="index.html" class="nav-logo" aria-label="ホームページへ戻る">TOJIMASAYA</a>
+            <a href="/" class="nav-logo" aria-label="ホームページへ戻る">TOJIMASAYA</a>
             <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="index.html" class="nav-link ${page === 'index.html' ? 'active' : ''}">Home</a></li>
+                <li><a href="/" class="nav-link ${page === 'index.html' ? 'active' : ''}">Home</a></li>
                 <li><a href="about.html" class="nav-link ${page === 'about.html' ? 'active' : ''}">About</a></li>
                 <li><a href="gallery.html" class="nav-link ${page === 'gallery.html' ? 'active' : ''}">Gallery</a></li>
                 <li>
