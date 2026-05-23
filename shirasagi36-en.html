@@ -916,13 +916,14 @@
                     });
                 }
 
-                // Accordion
-                if (p.story) {
+                // Accordion — prefer English story, fall back to Japanese
+                const storyText = p.story_en || p.story;
+                if (storyText) {
                     accordionWrapper.style.display = '';
                     accordionContent.classList.add('hidden');
                     accordionIcon.innerText = '＋';
                     accordionLabel.innerText = 'Read the Full Story';
-                    document.getElementById('modal-story').innerText = p.story;
+                    document.getElementById('modal-story').innerText = storyText;
                 } else {
                     accordionWrapper.style.display = 'none';
                 }
