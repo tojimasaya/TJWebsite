@@ -1026,5 +1026,37 @@
       "lng": 134.69536134707135,
       "name": "Shiromidai Park"
     }
+  },
+  "34": {
+    "title": "Sannomaru Takigi Noh — White Heron in the Dark",
+    "subtitle": "The 55th Himeji Castle Takigi Noh / At Sannomaru Square",
+    "date": "2026.05.22",
+    "gear": "Leica M10",
+    "category": "summer night",
+    "summary": "The opening night of the Himeji Castle Festival — the 55th Takigi Noh. With the White Heron Castle bathed in blue as backdrop, firelight and Noh weave a view that exists for just one night.",
+    "tips": [
+      {
+        "icon": "📍",
+        "label": "Location",
+        "text": "Sannomaru Square, Himeji Castle"
+      },
+      {
+        "icon": "🤝",
+        "label": "Etiquette",
+        "text": "A deeply solemn ritual. Be mindful of shutter noise, keep conversation to a minimum, and note that tripods and monopods are not allowed."
+      },
+      {
+        "icon": "📷",
+        "label": "Photo Tip",
+        "text": "Castle, fire, and moving performers create an extreme dynamic range — freeze the motion and the image goes dark; preserve the atmosphere and it blurs. AI night modes on phones (e.g. Xiaomi 17 Ultra) handle it remarkably well."
+      }
+    ],
+    "story": "Every May, the Himeji Castle Festival opens with Takigi Noh — Noh performed by firelight in the open. 2026 marked the 55th edition. The programme: Noh plays \"Kochō\" (Butterflies) and \"Tenko\" (Heavenly Drum), and the kyōgen \"Kitsunezuka\" (Fox Mound). Curtain at 6 PM, on a temporary stage in Sannomaru Square.\n\nThe stage proceeds solemnly. The audience holds its breath; even the click of a shutter feels intrusive. Bonfires crackle, chant fills the dark. Tripods are not allowed.\n\nFor a photographer, this scene is a trial. A castle lit in blue, shifting firelight, performers moving through darkness — packing that dynamic range into a single frame means wrestling with nighttime ISO. Look closely at this shot and you'll see the performers are slightly blurred. Freezing them would have killed the atmosphere, so I let go. Night Noh, I suppose, is that kind of thing.\n\nAnd yet — the same scene, captured on a Xiaomi 17 Ultra, comes out cleanly composed. The AI quietly handles the blur and the noise. The night I admitted, honestly, that phones had come this far.\n\nA white castle, glowing blue, looking down at the fire. Thirty-Six Views of the White Heron, No. 34.",
+    "location": {
+      "lat": 34.8372274,
+      "lng": 134.6933402,
+      "name": "Sannomaru Square, Himeji Castle"
+    },
+    "story_jp": "毎年5月、「姫路お城まつり」の幕開けを飾る薪能。2026年はその第55回目という節目の年でした。能「胡蝶」「天鼓」、狂言「狐塚」。三の丸広場の特設舞台で、午後6時に開演します。\n\n舞台は厳かに進みます。観客は息を殺し、シャッター音さえ気になるほどの静けさのなかで、篝火の爆ぜる音と謡が闇を切り取っていく——三脚は許されません。\n\n撮影者にとって、この場は試練です。青く照らされた天守、揺れる火、闇のなかを舞う演者。これだけ明暗の幅がある被写体を一枚に収めようとすると、夜のISOと格闘することになります。実はこの一枚も、よく見ると演者は少しぶれています。止めると雰囲気が死ぬので諦めました。夜の能とは、たぶんそういうものだと思いながら。\n\nところが、同じ場面をXiaomi 17 Ultraはぜんぶ綺麗に収めてしまう。ぶれもノイズも、AIが見事に整えてくれる。スマホはついにここまで来たのか、と素直に感じた夜でした。\n\n青白く浮かぶ白鷺城を、火が静かに見上げている。白鷺三十六景、第参拾四景。"
   }
 }
