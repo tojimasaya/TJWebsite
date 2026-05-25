@@ -1,0 +1,355 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2200" viewBox="0 0 1800 2200" role="img" aria-labelledby="title desc">
+  <title id="title">JALとANAの保有・運航機材 図解</title>
+  <desc id="desc">JALグループとANAグループが保有・運航する主な機材を、機体シルエット、機数、特徴で比較した日本語の図解。</desc>
+  <defs>
+    <linearGradient id="fuselage" x1="0" x2="0" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.45" stop-color="#f7fafc"/>
+      <stop offset="0.73" stop-color="#dfe7ee"/>
+      <stop offset="1" stop-color="#b9c5d0"/>
+    </linearGradient>
+    <linearGradient id="wingMetal" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.5" stop-color="#dce5ee"/>
+      <stop offset="1" stop-color="#9eabb8"/>
+    </linearGradient>
+    <radialGradient id="engineMetal" cx="42%" cy="42%" r="65%">
+      <stop offset="0" stop-color="#ffffff"/>
+      <stop offset="0.55" stop-color="#d7e0e8"/>
+      <stop offset="1" stop-color="#8795a3"/>
+    </radialGradient>
+    <linearGradient id="cockpitGlass" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0" stop-color="#b8d8f0"/>
+      <stop offset="1" stop-color="#2f5d83"/>
+    </linearGradient>
+    <filter id="softShadow" x="-10%" y="-10%" width="120%" height="140%">
+      <feDropShadow dx="0" dy="5" stdDeviation="4" flood-color="#17202a" flood-opacity="0.18"/>
+    </filter>
+    <style>
+      .bg { fill: #f6f7f8; }
+      .panel { fill: #ffffff; stroke: #d9dee4; stroke-width: 2; }
+      .section-title { font: 800 54px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #17202a; }
+      .subtitle { font: 500 25px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #52606d; }
+      .aircraft-name { font: 800 28px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #17202a; }
+      .count { font: 800 25px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #ffffff; }
+      .feature { font: 500 21px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #2f3a45; }
+      .note { font: 500 18px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #66717d; }
+      .tiny { font: 600 17px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #66717d; }
+      .jal { fill: #d71920; }
+      .ana { fill: #1f58a8; }
+      .jal-soft { fill: #fff1f1; }
+      .ana-soft { fill: #eef5ff; }
+      .plane { fill: url(#fuselage); stroke: #2f3a45; stroke-width: 3.4; stroke-linejoin: round; filter: url(#softShadow); }
+      .wing { fill: url(#wingMetal); stroke: #2f3a45; stroke-width: 3.2; stroke-linejoin: round; }
+      .highlight { stroke: #ffffff; stroke-width: 5; stroke-linecap: round; opacity: .78; fill: none; }
+      .door { stroke: #748393; stroke-width: 2.2; fill: none; opacity: .8; }
+      .cockpit { fill: url(#cockpitGlass); stroke: #2f3a45; stroke-width: 2; }
+      .plane-line { stroke: #2f3a45; stroke-width: 4; stroke-linecap: round; fill: none; }
+      .window { fill: #6f879f; }
+      .engine { fill: url(#engineMetal); stroke: #2f3a45; stroke-width: 2.8; }
+      .fan { fill: none; stroke: #627182; stroke-width: 2; opacity: .8; }
+      .prop { stroke: #2f3a45; stroke-width: 4; stroke-linecap: round; }
+      .scale-line { stroke: #a5b0bb; stroke-width: 3; stroke-linecap: round; }
+    </style>
+    <symbol id="jet" viewBox="0 0 520 145">
+      <path class="plane" d="M26 84 C84 47 209 36 373 43 C436 46 486 61 504 78 C486 93 436 101 372 104 C213 111 83 105 26 84 Z"/>
+      <path class="highlight" d="M79 70 C178 49 335 50 452 66"/>
+      <path class="cockpit" d="M468 67 C481 70 493 74 502 79 C491 80 479 79 467 76 Z"/>
+      <path class="wing" d="M205 78 L308 8 L341 13 L286 78 Z"/>
+      <path class="wing" d="M214 88 L327 136 L354 128 L288 88 Z"/>
+      <path class="wing" d="M61 75 L24 25 L72 49 L116 73 Z"/>
+      <path class="door" d="M132 57 L132 92 M392 58 L392 98"/>
+      <ellipse class="engine" cx="263" cy="111" rx="24" ry="15"/>
+      <ellipse class="engine" cx="341" cy="109" rx="24" ry="15"/>
+      <ellipse class="fan" cx="263" cy="111" rx="13" ry="8"/>
+      <ellipse class="fan" cx="341" cy="109" rx="13" ry="8"/>
+      <g>
+        <circle class="window" cx="96" cy="70" r="4"/>
+        <circle class="window" cx="119" cy="66" r="4"/>
+        <circle class="window" cx="142" cy="63" r="4"/>
+        <circle class="window" cx="165" cy="61" r="4"/>
+        <circle class="window" cx="188" cy="59" r="4"/>
+        <circle class="window" cx="211" cy="58" r="4"/>
+        <circle class="window" cx="234" cy="57" r="4"/>
+        <circle class="window" cx="257" cy="57" r="4"/>
+        <circle class="window" cx="280" cy="57" r="4"/>
+        <circle class="window" cx="303" cy="58" r="4"/>
+        <circle class="window" cx="326" cy="59" r="4"/>
+        <circle class="window" cx="349" cy="60" r="4"/>
+      </g>
+    </symbol>
+    <symbol id="narrow" viewBox="0 0 440 130">
+      <path class="plane" d="M22 76 C74 43 174 35 314 40 C368 42 414 56 430 72 C412 85 367 93 313 96 C177 103 75 97 22 76 Z"/>
+      <path class="highlight" d="M72 63 C151 47 287 48 383 61"/>
+      <path class="cockpit" d="M399 61 C412 64 422 68 430 73 C420 74 409 73 398 70 Z"/>
+      <path class="wing" d="M171 72 L260 10 L290 15 L242 73 Z"/>
+      <path class="wing" d="M179 83 L276 120 L301 113 L242 83 Z"/>
+      <path class="wing" d="M58 68 L24 25 L70 47 L105 67 Z"/>
+      <path class="door" d="M113 52 L113 84 M321 51 L321 89"/>
+      <ellipse class="engine" cx="226" cy="99" rx="21" ry="13"/>
+      <ellipse class="fan" cx="226" cy="99" rx="11" ry="7"/>
+      <g>
+        <circle class="window" cx="83" cy="64" r="3.7"/>
+        <circle class="window" cx="105" cy="60" r="3.7"/>
+        <circle class="window" cx="127" cy="58" r="3.7"/>
+        <circle class="window" cx="149" cy="56" r="3.7"/>
+        <circle class="window" cx="171" cy="55" r="3.7"/>
+        <circle class="window" cx="193" cy="54" r="3.7"/>
+        <circle class="window" cx="215" cy="54" r="3.7"/>
+        <circle class="window" cx="237" cy="54" r="3.7"/>
+        <circle class="window" cx="259" cy="55" r="3.7"/>
+      </g>
+    </symbol>
+    <symbol id="regionalJet" viewBox="0 0 380 120">
+      <path class="plane" d="M18 72 C64 43 145 35 270 39 C318 41 358 54 372 68 C357 81 317 88 269 91 C146 96 63 92 18 72 Z"/>
+      <path class="highlight" d="M65 60 C133 47 245 47 333 58"/>
+      <path class="cockpit" d="M344 58 C356 61 365 65 372 69 C363 70 353 69 343 66 Z"/>
+      <path class="wing" d="M153 70 L229 12 L257 16 L217 71 Z"/>
+      <path class="wing" d="M60 65 L25 25 L70 45 L100 64 Z"/>
+      <path class="door" d="M105 51 L105 79"/>
+      <ellipse class="engine" cx="245" cy="83" rx="18" ry="12"/>
+      <ellipse class="fan" cx="245" cy="83" rx="9" ry="6"/>
+      <g>
+        <circle class="window" cx="79" cy="60" r="3.4"/>
+        <circle class="window" cx="100" cy="57" r="3.4"/>
+        <circle class="window" cx="121" cy="55" r="3.4"/>
+        <circle class="window" cx="142" cy="54" r="3.4"/>
+        <circle class="window" cx="163" cy="53" r="3.4"/>
+        <circle class="window" cx="184" cy="53" r="3.4"/>
+        <circle class="window" cx="205" cy="53" r="3.4"/>
+      </g>
+    </symbol>
+    <symbol id="prop" viewBox="0 0 360 130">
+      <path class="plane" d="M22 75 C70 48 154 42 260 45 C303 47 339 58 350 71 C336 83 303 89 259 91 C153 96 68 93 22 75 Z"/>
+      <path class="highlight" d="M68 64 C135 52 247 52 314 62"/>
+      <path class="cockpit" d="M322 62 C334 65 343 68 350 72 C341 73 331 72 322 69 Z"/>
+      <path class="wing" d="M54 67 L27 28 L67 47 L96 66 Z"/>
+      <path class="wing" d="M145 72 L225 18 L251 22 L213 72 Z"/>
+      <path class="door" d="M104 55 L104 81"/>
+      <circle class="engine" cx="211" cy="82" r="17"/>
+      <line class="prop" x1="211" y1="44" x2="211" y2="120"/>
+      <line class="prop" x1="176" y1="82" x2="246" y2="82"/>
+      <g>
+        <circle class="window" cx="82" cy="63" r="3.4"/>
+        <circle class="window" cx="103" cy="60" r="3.4"/>
+        <circle class="window" cx="124" cy="58" r="3.4"/>
+        <circle class="window" cx="145" cy="57" r="3.4"/>
+        <circle class="window" cx="166" cy="56" r="3.4"/>
+      </g>
+    </symbol>
+    <symbol id="superjumbo" viewBox="0 0 560 160">
+      <path class="plane" d="M25 91 C86 49 217 39 399 45 C467 48 523 64 541 84 C522 101 466 110 398 114 C220 122 86 115 25 91 Z"/>
+      <path class="highlight" d="M91 73 C196 56 354 57 486 70"/>
+      <path class="cockpit" d="M503 72 C520 76 533 81 541 85 C529 87 515 85 502 82 Z"/>
+      <path class="plane-line" d="M88 74 C180 57 327 55 450 66"/>
+      <path class="wing" d="M220 85 L340 8 L374 16 L305 86 Z"/>
+      <path class="wing" d="M230 99 L359 148 L390 138 L310 98 Z"/>
+      <path class="wing" d="M63 80 L27 27 L83 54 L123 78 Z"/>
+      <path class="door" d="M138 61 L138 101 M426 64 L426 107"/>
+      <ellipse class="engine" cx="270" cy="124" rx="22" ry="14"/>
+      <ellipse class="engine" cx="334" cy="124" rx="22" ry="14"/>
+      <ellipse class="engine" cx="398" cy="122" rx="22" ry="14"/>
+      <ellipse class="engine" cx="462" cy="119" rx="22" ry="14"/>
+      <ellipse class="fan" cx="270" cy="124" rx="11" ry="7"/>
+      <ellipse class="fan" cx="334" cy="124" rx="11" ry="7"/>
+      <ellipse class="fan" cx="398" cy="122" rx="11" ry="7"/>
+      <ellipse class="fan" cx="462" cy="119" rx="11" ry="7"/>
+      <g>
+        <circle class="window" cx="104" cy="73" r="4"/>
+        <circle class="window" cx="130" cy="69" r="4"/>
+        <circle class="window" cx="156" cy="66" r="4"/>
+        <circle class="window" cx="182" cy="64" r="4"/>
+        <circle class="window" cx="208" cy="62" r="4"/>
+        <circle class="window" cx="234" cy="61" r="4"/>
+        <circle class="window" cx="260" cy="60" r="4"/>
+        <circle class="window" cx="286" cy="60" r="4"/>
+        <circle class="window" cx="312" cy="60" r="4"/>
+        <circle class="window" cx="338" cy="61" r="4"/>
+        <circle class="window" cx="364" cy="62" r="4"/>
+        <circle class="window" cx="390" cy="63" r="4"/>
+      </g>
+    </symbol>
+  </defs>
+
+  <rect class="bg" x="0" y="0" width="1800" height="2200"/>
+  <text class="section-title" x="80" y="92">JALとANAの保有・運航機材 図解</text>
+  <text class="subtitle" x="80" y="135">機数は公式公表値。JAL: 2026年3月31日時点 / ANA: 2025年3月31日時点。グループ機材を含むため、旅客機・貨物機・地域機材が混在します。</text>
+
+  <rect class="panel" x="60" y="175" width="1680" height="930" rx="20"/>
+  <rect class="jal" x="60" y="175" width="1680" height="78" rx="20"/>
+  <text class="section-title" x="92" y="230" fill="#ffffff">JAL Group</text>
+  <text class="subtitle" x="390" y="226" fill="#ffffff">大型国際線はA350/787、国内・地方は737/Embraer/ATRが主役</text>
+
+  <g transform="translate(95 305)">
+    <rect class="jal-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#jet" x="24" y="18" width="310" height="86"/>
+    <rect class="jal" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">11機</text>
+    <text class="aircraft-name" x="24" y="130">Airbus A350-1000</text>
+    <text class="feature" x="24" y="164">JAL国際線の新しい旗艦</text>
+    <text class="feature" x="24" y="191">長距離・上級席重視</text>
+  </g>
+  <g transform="translate(645 305)">
+    <rect class="jal-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#jet" x="24" y="20" width="292" height="82"/>
+    <rect class="jal" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">17機</text>
+    <text class="aircraft-name" x="24" y="130">Airbus A350-900</text>
+    <text class="feature" x="24" y="164">国内幹線の主力大型機</text>
+    <text class="feature" x="24" y="191">777後継・静かで低燃費</text>
+  </g>
+  <g transform="translate(1195 305)">
+    <rect class="jal-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#jet" x="24" y="17" width="320" height="90"/>
+    <rect class="jal" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">9機</text>
+    <text class="aircraft-name" x="24" y="130">Boeing 777-300ER</text>
+    <text class="feature" x="24" y="164">長距離・大容量のベテラン</text>
+    <text class="feature" x="24" y="191">A350-1000へ順次更新</text>
+  </g>
+
+  <g transform="translate(95 540)">
+    <rect class="jal-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#jet" x="24" y="22" width="285" height="80"/>
+    <rect class="jal" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">22機</text>
+    <text class="aircraft-name" x="24" y="130">Boeing 787-9</text>
+    <text class="feature" x="24" y="164">中長距離の万能型</text>
+    <text class="feature" x="24" y="191">国際線・一部国内線</text>
+  </g>
+  <g transform="translate(645 540)">
+    <rect class="jal-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#jet" x="24" y="25" width="265" height="75"/>
+    <rect class="jal" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">31機</text>
+    <text class="aircraft-name" x="24" y="130">Boeing 787-8</text>
+    <text class="feature" x="24" y="164">787の短めタイプ</text>
+    <text class="feature" x="24" y="191">細い国際線にも使いやすい</text>
+  </g>
+  <g transform="translate(1195 540)">
+    <rect class="jal-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#jet" x="24" y="25" width="260" height="74"/>
+    <rect class="jal" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">27機</text>
+    <text class="aircraft-name" x="24" y="130">Boeing 767-300ER</text>
+    <text class="feature" x="24" y="164">中距離・貨物転用もあり</text>
+    <text class="feature" x="24" y="191">A321neoなどへ更新予定</text>
+  </g>
+
+  <g transform="translate(95 775)">
+    <rect class="jal-soft" x="0" y="0" width="390" height="205" rx="14"/>
+    <use href="#narrow" x="20" y="26" width="230" height="68"/>
+    <rect class="jal" x="270" y="22" width="84" height="38" rx="19"/><text class="count" x="312" y="49" text-anchor="middle">62機</text>
+    <text class="aircraft-name" x="22" y="130">Boeing 737-800</text>
+    <text class="feature" x="22" y="164">国内・近距離の主力</text>
+    <text class="feature" x="22" y="191">単通路・小回り型</text>
+  </g>
+  <g transform="translate(515 775)">
+    <rect class="jal-soft" x="0" y="0" width="390" height="205" rx="14"/>
+    <use href="#narrow" x="20" y="25" width="238" height="70"/>
+    <rect class="jal" x="270" y="22" width="84" height="38" rx="19"/><text class="count" x="312" y="49" text-anchor="middle">3機</text>
+    <text class="aircraft-name" x="22" y="130">Airbus A321ceo F</text>
+    <text class="feature" x="22" y="164">貨物専用機</text>
+    <text class="feature" x="22" y="191">ヤマトHD保有・運航委託</text>
+  </g>
+  <g transform="translate(935 775)">
+    <rect class="jal-soft" x="0" y="0" width="360" height="205" rx="14"/>
+    <use href="#regionalJet" x="20" y="32" width="215" height="68"/>
+    <rect class="jal" x="250" y="22" width="82" height="38" rx="19"/><text class="count" x="291" y="49" text-anchor="middle">32機</text>
+    <text class="aircraft-name" x="22" y="130">Embraer 170 / 190</text>
+    <text class="feature" x="22" y="164">地方都市を結ぶ小型ジェット</text>
+    <text class="feature" x="22" y="191">J-AIR中心</text>
+  </g>
+  <g transform="translate(1325 775)">
+    <rect class="jal-soft" x="0" y="0" width="360" height="205" rx="14"/>
+    <use href="#prop" x="18" y="28" width="220" height="80"/>
+    <rect class="jal" x="250" y="22" width="82" height="38" rx="19"/><text class="count" x="291" y="49" text-anchor="middle">20機</text>
+    <text class="aircraft-name" x="22" y="130">ATR / DHC-8</text>
+    <text class="feature" x="22" y="164">離島・地方路線向け</text>
+    <text class="feature" x="22" y="191">プロペラ機・短距離に強い</text>
+  </g>
+  <text class="note" x="92" y="1060">注: JAL公式表はZIPAIR TokyoとSPRING JAPANを含み、Jetstar Japanは含みません。A321ceo貨物機は表注記上、ヤマトHD保有・SPRING JAPAN運航です。</text>
+
+  <rect class="panel" x="60" y="1160" width="1680" height="900" rx="20"/>
+  <rect class="ana" x="60" y="1160" width="1680" height="78" rx="20"/>
+  <text class="section-title" x="92" y="1215" fill="#ffffff">ANA Group</text>
+  <text class="subtitle" x="405" y="1211" fill="#ffffff">787を大きな柱に、A380・777・A320系・DHC8まで幅広く運用</text>
+
+  <g transform="translate(95 1290)">
+    <rect class="ana-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#jet" x="24" y="17" width="320" height="90"/>
+    <rect class="ana" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">30機</text>
+    <text class="aircraft-name" x="24" y="130">Boeing 777-300 / 200</text>
+    <text class="feature" x="24" y="164">大型幹線・国際線の主力級</text>
+    <text class="feature" x="24" y="191">777F貨物機も2機</text>
+  </g>
+  <g transform="translate(645 1290)">
+    <rect class="ana-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#jet" x="24" y="20" width="290" height="82"/>
+    <rect class="ana" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">84機</text>
+    <text class="aircraft-name" x="24" y="130">Boeing 787-10 / -9 / -8</text>
+    <text class="feature" x="24" y="164">ANAを象徴する主力機</text>
+    <text class="feature" x="24" y="191">国内・国際の中核</text>
+  </g>
+  <g transform="translate(1195 1290)">
+    <rect class="ana-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#jet" x="24" y="25" width="260" height="74"/>
+    <rect class="ana" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">24機</text>
+    <text class="aircraft-name" x="24" y="130">Boeing 767-300 / F</text>
+    <text class="feature" x="24" y="164">中距離・貨物も担当</text>
+    <text class="feature" x="24" y="191">767F貨物機9機</text>
+  </g>
+
+  <g transform="translate(95 1525)">
+    <rect class="ana-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#superjumbo" x="20" y="12" width="330" height="95"/>
+    <rect class="ana" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">3機</text>
+    <text class="aircraft-name" x="24" y="130">Airbus A380 FLYING HONU</text>
+    <text class="feature" x="24" y="164">成田-ホノルルで有名</text>
+    <text class="feature" x="24" y="191">2階建て・超大型機</text>
+  </g>
+  <g transform="translate(645 1525)">
+    <rect class="ana-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#narrow" x="24" y="24" width="245" height="72"/>
+    <rect class="ana" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">29機</text>
+    <text class="aircraft-name" x="24" y="130">Airbus A321neoLR / neo / 200</text>
+    <text class="feature" x="24" y="164">単通路でも長めの機体</text>
+    <text class="feature" x="24" y="191">近距離国際線にも使いやすい</text>
+  </g>
+  <g transform="translate(1195 1525)">
+    <rect class="ana-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#narrow" x="24" y="27" width="220" height="66"/>
+    <rect class="ana" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">45機</text>
+    <text class="aircraft-name" x="24" y="130">Airbus A320neo / 200</text>
+    <text class="feature" x="24" y="164">国内・近距離の小型主力</text>
+    <text class="feature" x="24" y="191">A320neoは新世代型</text>
+  </g>
+
+  <g transform="translate(95 1760)">
+    <rect class="ana-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#narrow" x="24" y="27" width="230" height="68"/>
+    <rect class="ana" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">39機</text>
+    <text class="aircraft-name" x="24" y="130">Boeing 737-800</text>
+    <text class="feature" x="24" y="164">国内線・近距離の定番</text>
+    <text class="feature" x="24" y="191">特別塗装機も運用</text>
+  </g>
+  <g transform="translate(645 1760)">
+    <rect class="ana-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <use href="#prop" x="24" y="24" width="230" height="82"/>
+    <rect class="ana" x="360" y="22" width="92" height="38" rx="19"/><text class="count" x="406" y="49" text-anchor="middle">24機</text>
+    <text class="aircraft-name" x="24" y="130">De Havilland DHC8-400</text>
+    <text class="feature" x="24" y="164">ANA Wingsの地方路線</text>
+    <text class="feature" x="24" y="191">74席・プロペラ機</text>
+  </g>
+  <g transform="translate(1195 1760)">
+    <rect class="ana-soft" x="0" y="0" width="500" height="205" rx="14"/>
+    <line class="scale-line" x1="50" y1="65" x2="430" y2="65"/>
+    <circle cx="70" cy="65" r="10" fill="#1f58a8"/>
+    <circle cx="177" cy="65" r="10" fill="#1f58a8"/>
+    <circle cx="300" cy="65" r="10" fill="#1f58a8"/>
+    <circle cx="420" cy="65" r="10" fill="#1f58a8"/>
+    <text class="tiny" x="70" y="102" text-anchor="middle">DHC8</text>
+    <text class="tiny" x="177" y="102" text-anchor="middle">737/A320</text>
+    <text class="tiny" x="300" y="102" text-anchor="middle">787/767</text>
+    <text class="tiny" x="420" y="102" text-anchor="middle">777/A380</text>
+    <text class="aircraft-name" x="24" y="143">見分け方</text>
+    <text class="feature" x="24" y="177">小型地方機から超大型A380まで</text>
+  </g>
+  <text class="note" x="92" y="2015">注: ANA公式表はANAグループの機材数です。A380は全3機が特別塗装「FLYING HONU」。貨物機として777Fと767Fも含みます。</text>
+
+  <text class="note" x="80" y="2150">出典: JAL公式「Number of Aircraft」(2026年3月31日時点)、ANA公式「Business Statistics / Current Fleet」(2025年3月31日時点)。機体絵は理解用の簡略シルエットです。</text>
+</svg>

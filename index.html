@@ -64,6 +64,13 @@
   }
   </script>
 
+  <!--
+    姫路お城まつり Event JSON-LD（シーズンオフのため無効化）。
+    2026年5月24日で終了。来年（2027年5月、第77回）に復活させる場合は、
+    この HTML コメントを外し、name の「第76回」と startDate / endDate /
+    description の日付を更新するだけでよい。
+  -->
+  <!--
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
@@ -92,6 +99,7 @@
     "description": "2026年5月22日から24日まで、姫路城周辺で開催される姫路市発表のイベント。薪能、姫路大名行列、千姫輿入れ行列、キャッスルパレード、ひめじ良さ恋まつりなどが予定されている。"
   }
   </script>
+  -->
 
   <!-- Web Vitals 計測（Lighthouseと同等の指標をGAに送信） -->
   <script>
@@ -1599,8 +1607,13 @@
   </section>
 
   <!-- ======================================
-       SECTION 2: 姫路お城まつり
+       SECTION 2: 姫路お城まつり（シーズンオフのため非表示）
+       2026年5月24日で第76回お城まつり終了。来年（2027年5月、第77回）に
+       復活させる場合は、下の <template> 開始/終了タグを外し、回数（第76回→
+       第77回）と日付（5.22-5.24 など）を最新の年版に差し替えるだけでよい。
+       スタイル・構造はそのまま再利用できる。
        ====================================== -->
+  <template id="oshiro-fes-offseason">
   <section class="timely-notice" aria-labelledby="oshiro-fes-title">
     <div class="timely-notice-inner">
       <div>
@@ -1637,6 +1650,7 @@
       </div>
     </div>
   </section>
+  </template>
 
   <!-- ======================================
        SECTION 3: 現在おすすめのコンテンツ
@@ -1655,7 +1669,7 @@
         </div>
         <div class="current-feature-stats" aria-label="白鷺三十六景の現在の状態">
           <div class="current-feature-stat">
-            <strong>33 / 36 景</strong>
+            <strong>34 / 36 景</strong>
             <span>公開中</span>
           </div>
           <div class="current-feature-stat">

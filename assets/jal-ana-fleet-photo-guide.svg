@@ -1,0 +1,178 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1800" height="2500" viewBox="0 0 1800 2500" role="img" aria-labelledby="title desc">
+  <title id="title">JALとANAの保有・運航機材 写真図解</title>
+  <desc id="desc">JALグループとANAグループの主な運航機材を、実機写真に近い画像カードと特徴で比較した図解。</desc>
+  <defs>
+    <style>
+      .bg { fill: #f3f5f7; }
+      .title { font: 800 58px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #111827; }
+      .subtitle { font: 500 25px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #56616f; }
+      .section { font: 800 42px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #ffffff; }
+      .card { fill: #ffffff; stroke: #d5dce3; stroke-width: 2; }
+      .name { font: 800 28px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #111827; }
+      .count { font: 800 22px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #ffffff; }
+      .body { font: 500 21px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #374151; }
+      .note { font: 500 18px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #667085; }
+      .src { font: 500 15px -apple-system, BlinkMacSystemFont, "Hiragino Sans", "Yu Gothic", sans-serif; fill: #7b8794; }
+      .jal { fill: #d71920; }
+      .ana { fill: #1f58a8; }
+      .badge-jal { fill: #d71920; }
+      .badge-ana { fill: #1f58a8; }
+    </style>
+    <clipPath id="clip"><rect x="0" y="0" width="390" height="190" rx="16"/></clipPath>
+  </defs>
+
+  <rect class="bg" width="1800" height="2500"/>
+  <text class="title" x="70" y="95">JALとANAの保有・運航機材 写真図解</text>
+  <text class="subtitle" x="70" y="138">前回の線画版ではなく、実機写真に近い画像カードで見比べる版です。機数は公式公表値ベース。</text>
+
+  <rect class="jal" x="60" y="180" width="1680" height="76" rx="18"/>
+  <text class="section" x="90" y="232">JAL Group</text>
+  <text class="subtitle" x="350" y="228" fill="#ffffff">A350・787が中大型の柱。737、Embraer、ATRが国内・地方路線を支える。</text>
+
+  <g transform="translate(70 290)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/6/61/Japan_Airlines_A350-1000_JA01WJ.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-jal" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">11機</text>
+    <text class="name" x="22" y="235">A350-1000</text>
+    <text class="body" x="22" y="268">国際線の新しい旗艦。長距離・大型。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(490 290)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://commons.wikimedia.org/wiki/Special:FilePath/JA03XJ20220319.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-jal" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">17機</text>
+    <text class="name" x="22" y="235">A350-900</text>
+    <text class="body" x="22" y="268">国内幹線の主力大型機。静かで低燃費。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(910 290)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/4/49/JA738J_Boeing_777_JAL_Japan_Airlines_%287360980532%29.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-jal" x="302" y="212" width="70" height="34" rx="17"/><text class="count" x="337" y="236" text-anchor="middle">9機</text>
+    <text class="name" x="22" y="235">777-300ER</text>
+    <text class="body" x="22" y="268">長距離・大容量のベテラン大型機。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(1330 290)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/8/86/Japan_Airlines_Boeing_787_JA842J_Manila_2025_%2801%29.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-jal" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">53機</text>
+    <text class="name" x="22" y="235">787-8 / 787-9</text>
+    <text class="body" x="22" y="268">中長距離の万能機。窓が大きい。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+
+  <g transform="translate(70 620)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/2/24/Boeing_767-300ER_%28Japan_Airlines%29_02.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-jal" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">27機</text>
+    <text class="name" x="22" y="235">767-300ER</text>
+    <text class="body" x="22" y="268">中距離向け。やや細身のワイドボディ。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(490 620)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/1/11/Japan_Airlines_Boeing_737-800_JA312J_at_Taoyuan_February_2026.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-jal" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">62機</text>
+    <text class="name" x="22" y="235">737-800</text>
+    <text class="body" x="22" y="268">国内・近距離の主力。単通路。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(910 620)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/2/2a/J-Air%2C_JA248J%2C_Embraer_ERJ-190_%2827610826129%29.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-jal" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">32機</text>
+    <text class="name" x="22" y="235">Embraer 170 / 190</text>
+    <text class="body" x="22" y="268">地方都市を結ぶ小型ジェット。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(1330 620)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/7/72/JAPAN_AIR_COMMUTER_ATR_42-600_JA05JC_ITM_RJOO_10-DEC-2023_%2853441876023%29.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-jal" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">20機</text>
+    <text class="name" x="22" y="235">ATR / DHC-8</text>
+    <text class="body" x="22" y="268">離島・地方路線向けのプロペラ機。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+
+  <rect class="ana" x="60" y="1010" width="1680" height="76" rx="18"/>
+  <text class="section" x="90" y="1062">ANA Group</text>
+  <text class="subtitle" x="370" y="1058" fill="#ffffff">787が大きな柱。A380、777、767、A320系、737、DHC8まで幅広い。</text>
+
+  <g transform="translate(70 1120)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://commons.wikimedia.org/wiki/Special:FilePath/Airbus_A380_ANA_(Lani_Livery)_F-WWSH.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-ana" x="302" y="212" width="70" height="34" rx="17"/><text class="count" x="337" y="236" text-anchor="middle">3機</text>
+    <text class="name" x="22" y="235">A380 FLYING HONU</text>
+    <text class="body" x="22" y="268">成田-ホノルルの2階建て超大型機。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(490 1120)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://commons.wikimedia.org/wiki/Special:FilePath/All_Nippon_Airways,_Boeing_777-300ER_JA788A_NRT_(20448642064).jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-ana" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">30機</text>
+    <text class="name" x="22" y="235">777-300 / 200</text>
+    <text class="body" x="22" y="268">大型幹線・国際線。貨物型も運用。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(910 1120)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/3/36/ANA_Boeing_787-9.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-ana" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">84機</text>
+    <text class="name" x="22" y="235">787-10 / -9 / -8</text>
+    <text class="body" x="22" y="268">ANAを象徴する中核機材。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(1330 1120)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://commons.wikimedia.org/wiki/Special:FilePath/ANA_B767-300(JA8674).jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-ana" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">24機</text>
+    <text class="name" x="22" y="235">767-300 / F</text>
+    <text class="body" x="22" y="268">中距離と貨物を担当する実用機。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+
+  <g transform="translate(70 1450)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://commons.wikimedia.org/wiki/Special:FilePath/All_Nippon_Airways_Airbus_A321-200_NEO_JA134A.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-ana" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">29機</text>
+    <text class="name" x="22" y="235">A321neoLR / neo / 200</text>
+    <text class="body" x="22" y="268">単通路だが長め。近距離国際線にも。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(490 1450)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/0/0c/ANA_A320neo_%28JA211A%29.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-ana" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">45機</text>
+    <text class="name" x="22" y="235">A320neo / 200</text>
+    <text class="body" x="22" y="268">国内・近距離の小型主力。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(910 1450)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://commons.wikimedia.org/wiki/Special:FilePath/Boeing_737-800_%E2%80%98JA80AN%E2%80%99_All_Nippon_Airways.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-ana" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">39機</text>
+    <text class="name" x="22" y="235">737-800</text>
+    <text class="body" x="22" y="268">国内線・近距離の定番単通路機。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+  <g transform="translate(1330 1450)">
+    <rect class="card" width="400" height="300" rx="18"/>
+    <image href="https://upload.wikimedia.org/wikipedia/commons/4/46/De_Havilland_Canada_DHC-8-400_%28ANA%29_092.jpg" x="5" y="5" width="390" height="190" preserveAspectRatio="xMidYMid slice" clip-path="url(#clip)"/>
+    <rect class="badge-ana" x="292" y="212" width="80" height="34" rx="17"/><text class="count" x="332" y="236" text-anchor="middle">24機</text>
+    <text class="name" x="22" y="235">DHC8-400</text>
+    <text class="body" x="22" y="268">ANA Wingsの地方路線用プロペラ機。</text>
+    <text class="src" x="22" y="292">写真: Wikimedia Commons</text>
+  </g>
+
+  <rect x="70" y="1840" width="1660" height="360" rx="22" fill="#ffffff" stroke="#d5dce3" stroke-width="2"/>
+  <text class="name" x="105" y="1900">ぱっと見の違い</text>
+  <text class="body" x="105" y="1948">・A380: 2階建てで圧倒的に大きい。ANAのホヌ塗装は一目で分かる。</text>
+  <text class="body" x="105" y="1992">・777 / A350 / 787: 長距離向けの大型・中型ワイドボディ。翼が長く、エンジンも大きい。</text>
+  <text class="body" x="105" y="2036">・767: 787より古い世代で、胴体がやや細く見える中型ワイドボディ。</text>
+  <text class="body" x="105" y="2080">・737 / A320 / A321: 単通路機。国内線や近距離でよく見るサイズ。</text>
+  <text class="body" x="105" y="2124">・Embraer / ATR / DHC8: 地方路線向け。Embraerは小型ジェット、ATR/DHC8はプロペラ機。</text>
+
+  <text class="note" x="70" y="2290">注: JAL機数はJAL公式 2026年3月31日時点、ANA機数はANA公式 2025年3月31日時点。JAL/ANAともグループ機材を含むため、貨物機・地域会社機材も含めています。</text>
+  <text class="note" x="70" y="2324">画像: Wikimedia Commons の実機写真を参照表示。閲覧環境によって外部画像の読み込みに数秒かかることがあります。</text>
+</svg>
