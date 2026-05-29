@@ -1,5 +1,19 @@
 [
   {
+    "slug": "himeji-neighborhood-yakitori",
+    "label": "Recent Frame",
+    "title": "自宅近所の焼鳥屋",
+    "place": "兵庫・姫路",
+    "date": "2026年5月28日",
+    "body": "何度も見かけていたが昨日初めて行った。焼き方から串打ちまで完璧。また食べたい。",
+    "image": "assets/images/photo-notes/himeji-neighborhood-yakitori.jpg",
+    "imageWebp": "assets/images/photo-notes/himeji-neighborhood-yakitori.webp",
+    "alt": "白い皿に串打ちされた焼鳥が並び、香ばしい焼き目がついている様子",
+    "caption": "Neighborhood Yakitori / Himeji",
+    "link": "gallery.html",
+    "linkLabel": "写真ギャラリーへ"
+  },
+  {
     "slug": "himeji-castle-takigi-noh",
     "label": "Recent Frame",
     "title": "姫路城、薪能の夜",
