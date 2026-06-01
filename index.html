@@ -616,6 +616,13 @@
       align-items: center;
     }
 
+    .recent-frame-gallery {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(124px, 0.28fr);
+      gap: 0.85rem;
+      align-items: stretch;
+    }
+
     .recent-frame-media {
       position: relative;
       overflow: hidden;
@@ -623,6 +630,10 @@
       background: #202124;
       min-height: 340px;
       color: #fff;
+    }
+
+    .recent-frame-main {
+      margin: 0;
     }
 
     .recent-frame-media picture {
@@ -682,6 +693,57 @@
       line-height: 1.5;
       text-transform: uppercase;
       color: #fff;
+    }
+
+    .recent-frame-sideframes {
+      display: grid;
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 0.85rem;
+    }
+
+    .recent-frame-sidecard {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      min-height: 0;
+      border-radius: 6px;
+      background: #202124;
+      color: #fff;
+    }
+
+    .recent-frame-sidecard picture,
+    .recent-frame-sidecard img {
+      display: block;
+      width: 100%;
+      height: 100%;
+    }
+
+    .recent-frame-sidecard img {
+      object-fit: cover;
+      transition: transform 0.45s ease;
+    }
+
+    .recent-frame-sidecard:hover img {
+      transform: scale(1.04);
+    }
+
+    .recent-frame-sidecaption {
+      position: absolute;
+      left: 0.65rem;
+      right: 0.65rem;
+      bottom: 0.65rem;
+      padding: 0.45rem 0.55rem;
+      background: rgba(0, 0, 0, 0.58);
+      border-radius: 4px;
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.62rem;
+      letter-spacing: 0.08em;
+      line-height: 1.45;
+      color: #fff;
+    }
+
+    .recent-frame-sideframes:empty {
+      display: none;
     }
 
     .recent-frame-label {
@@ -1389,9 +1451,22 @@
         gap: 2rem;
       }
 
+      .recent-frame-gallery {
+        grid-template-columns: 1fr;
+      }
+
       .recent-frame-media,
       .recent-frame-placeholder {
         min-height: 260px;
+      }
+
+      .recent-frame-sideframes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        grid-template-rows: none;
+      }
+
+      .recent-frame-sidecard {
+        aspect-ratio: 4 / 3;
       }
 
       .recent-frame-link {
@@ -1697,16 +1772,19 @@
        ====================================== -->
   <section class="recent-frame" aria-labelledby="recent-frame-title">
     <div class="recent-frame-inner">
-      <figure class="recent-frame-media" id="recent-frame-media">
-        <picture>
-          <source id="recent-frame-source" srcset="assets/images/photo-notes/himeji-castle-takigi-noh.webp" type="image/webp">
-          <img id="recent-frame-image" src="assets/images/photo-notes/himeji-castle-takigi-noh.jpg" alt="姫路城の天守の下、三の丸広場で薪能の舞台が行われている夜景" loading="lazy" decoding="async">
-        </picture>
-        <div class="recent-frame-placeholder" aria-hidden="true">
-          <span>Recent Frame</span>
-        </div>
-        <figcaption class="recent-frame-caption" id="recent-frame-caption">Himeji Castle / Takigi Noh</figcaption>
-      </figure>
+      <div class="recent-frame-gallery">
+        <figure class="recent-frame-media recent-frame-main" id="recent-frame-media">
+          <picture>
+            <source id="recent-frame-source" srcset="assets/images/photo-notes/himeji-castle-takigi-noh.webp" type="image/webp">
+            <img id="recent-frame-image" src="assets/images/photo-notes/himeji-castle-takigi-noh.jpg" alt="姫路城の天守の下、三の丸広場で薪能の舞台が行われている夜景" loading="lazy" decoding="async">
+          </picture>
+          <div class="recent-frame-placeholder" aria-hidden="true">
+            <span>Recent Frame</span>
+          </div>
+          <figcaption class="recent-frame-caption" id="recent-frame-caption">Himeji Castle / Takigi Noh</figcaption>
+        </figure>
+        <div class="recent-frame-sideframes" id="recent-frame-sideframes" aria-label="同じ日の小さな写真"></div>
+      </div>
       <div class="recent-frame-text">
         <p class="recent-frame-label" id="recent-frame-label">Recent Frame</p>
         <h2 class="recent-frame-title" id="recent-frame-title">姫路城、薪能の夜</h2>
@@ -2000,6 +2078,7 @@
       const image = document.getElementById('recent-frame-image');
       const source = document.getElementById('recent-frame-source');
       const link = document.getElementById('recent-frame-link');
+      const sideframes = document.getElementById('recent-frame-sideframes');
 
       setRecentFrameText('recent-frame-label', label);
       setRecentFrameText('recent-frame-title', frame.title);
@@ -2017,6 +2096,35 @@
       if (image && frame.image) {
         if (media) media.classList.remove('is-missing');
         image.src = frame.image;
+      }
+
+      if (sideframes) {
+        sideframes.replaceChildren(...(frame.sideFrames || []).slice(0, 3).map((sideFrame) => {
+          const card = document.createElement('span');
+          card.className = 'recent-frame-sidecard';
+
+          const picture = document.createElement('picture');
+          if (sideFrame.imageWebp) {
+            const sideSource = document.createElement('source');
+            sideSource.srcset = sideFrame.imageWebp;
+            sideSource.type = 'image/webp';
+            picture.appendChild(sideSource);
+          }
+
+          const sideImage = document.createElement('img');
+          sideImage.src = sideFrame.image || '';
+          sideImage.alt = sideFrame.alt || sideFrame.title || '';
+          sideImage.loading = 'lazy';
+          sideImage.decoding = 'async';
+          picture.appendChild(sideImage);
+
+          const caption = document.createElement('span');
+          caption.className = 'recent-frame-sidecaption';
+          caption.textContent = sideFrame.title || sideFrame.caption || '';
+
+          card.append(picture, caption);
+          return card;
+        }));
       }
     }
 

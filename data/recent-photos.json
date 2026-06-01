@@ -1,5 +1,35 @@
 [
   {
+    "slug": "himeji-harakoshi-gozen",
+    "label": "Today\u0027s Frame",
+    "title": "近所の新しい店で、釜ご飯の昼",
+    "place": "兵庫・姫路",
+    "date": "2026年6月1日",
+    "body": "最近、近所にできた店へ妻と行った。初めてだったので「天下人の出陣御膳」を注文し、焼き魚と刺身のセットも頼んでみる。けれど印象に残ったのは、断然焼き魚。そして何より、一人分ずつ釜で炊いてくれるご飯だった。注文時に「おこげにしますか、おこげなし？」と聞かれ、私も妻ももちろん「おこげで」とお願いしたら、本当に見事な具合のおこげで出てきて感激した。200円追加のデザートとドリンクまで付けて満足したが、次は魚一尾のお手頃な御膳にしてみたい。",
+    "image": "assets/images/photo-notes/himeji-harakoshi-gozen-main.jpg",
+    "imageWebp": "assets/images/photo-notes/himeji-harakoshi-gozen-main.webp",
+    "alt": "焼き魚三種と刺身、小鉢、吸い物、釜炊きご飯が金色の盆に並ぶ御膳",
+    "caption": "Kamameshi Lunch / Himeji",
+    "sideFrames": [
+      {
+        "title": "天下人の出陣御膳",
+        "caption": "Menu / Okoge or Plain Rice",
+        "image": "assets/images/photo-notes/himeji-harakoshi-gozen-menu.jpg",
+        "imageWebp": "assets/images/photo-notes/himeji-harakoshi-gozen-menu.webp",
+        "alt": "釜ご飯と魚の御膳メニュー。天下人の出陣御膳や焼き魚の御膳が載っている"
+      },
+      {
+        "title": "200円追加の甘味",
+        "caption": "Dessert Set / Ice Monaka",
+        "image": "assets/images/photo-notes/himeji-harakoshi-gozen-dessert.jpg",
+        "imageWebp": "assets/images/photo-notes/himeji-harakoshi-gozen-dessert.webp",
+        "alt": "赤い皿にアイス最中と串団子が並ぶデザートセット"
+      }
+    ],
+    "link": "gallery.html",
+    "linkLabel": "写真ギャラリーへ"
+  },
+  {
     "slug": "himeji-neighborhood-yakitori",
     "label": "Recent Frame",
     "title": "自宅近所の焼鳥屋",
