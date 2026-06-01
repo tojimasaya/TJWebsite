@@ -53,6 +53,16 @@ Look especially for:
 - Guide articles becoming landing pages
 - Visitors reaching Gallery, Gear, or Writings after reading a guide
 
+## Local Site Health Check
+
+Before interpreting analytics changes, run:
+
+```bash
+node tools/validate-growth-html.mjs
+```
+
+This checks public HTML files for missing titles, missing descriptions, missing or duplicate `growth.js` loads, broken internal `.html` links, and missing sitemap entries for the three guide articles.
+
 ## Search Console Checks
 
 Record:
