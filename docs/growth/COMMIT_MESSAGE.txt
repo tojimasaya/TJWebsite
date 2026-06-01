@@ -1,0 +1,7 @@
+Add growth-focused site guides and SEO tracking
+
+- Add three evergreen guide articles for drone, Leica, and Hong Kong/two-base life
+- Add Featured Guides and Site Guides entry points
+- Improve SEO metadata, sitemap, robots, and structured data
+- Add growth.js for GA4/GTM/Plausible-friendly event tracking
+- Add Hermes growth plan and validation reports

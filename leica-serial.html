@@ -254,7 +254,7 @@
         }
         .serial-work-grid {
             display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
+            grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 14px;
         }
         .serial-work-card {
@@ -414,7 +414,14 @@
             .result-year { font-size: var(--text-3xl); }
             .serial-work-grid { grid-template-columns: 1fr; }
         }
+        @media (min-width: 641px) and (max-width: 960px) {
+            .serial-work-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
     </style>
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Leica Serial Number Database — Toji Masaya">
+<meta name="twitter:description" content="ライカのシリアル番号からカメラ・レンズの製造年を検索。1923年〜2015年の全モデル対応データベース。愛用するLeica機材と撮影作品への入口もまとめています。">
+<meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
 </head>
 <body>
     <script src="js/site-header.js"></script>
@@ -480,6 +487,11 @@
                 <span>My Setup</span>
                 <strong>Camera &amp; Lenses</strong>
                 <em>実際に使っているLeicaボディ、Mレンズ、Lマウント機材。</em>
+            </a>
+            <a class="serial-work-card" href="/articles/leica-m2-travel.html" data-growth-label="leica_serial_m2_guide">
+                <span>Leica M2 / Travel</span>
+                <strong>Leica M2と旅写真</strong>
+                <em>シリアル番号から年代を調べたあとに、旅で使うフィルムカメラの話へ。</em>
             </a>
         </div>
     </section>
@@ -705,5 +717,6 @@
     })();
     </script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
+    <script src="/growth.js" defer></script>
 </body>
 </html>
