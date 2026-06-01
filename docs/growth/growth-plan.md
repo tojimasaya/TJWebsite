@@ -5,6 +5,8 @@
 - **Daily pace:** about 33 new visitors / day
 - **Primary measurement:** GA4 `New users` by `First user default channel group`
 - **Secondary measurements:** Search Console clicks, indexed pages, internal CTA click rate, outbound article click rate
+- **Recurring review checklist:** `docs/growth/monthly-visitor-checklist.md`
+- **Baseline report:** `docs/growth/reports/2026-06-02-baseline.md`
 
 ## HERMES Orchestrator
 HERMES is the parent agent that keeps all sub-agents aligned to the single metric: new monthly visitors.
