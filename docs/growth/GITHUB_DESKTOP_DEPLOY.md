@@ -80,7 +80,7 @@ https://tojimasaya.com/sitemap.xml
 
 ## 6. 公開後の計測
 Search Consoleで `https://tojimasaya.com/sitemap.xml` を送信してください。
-GA4では週次で以下を見ます。
+GA4では月曜・木曜の定期チェックで以下を見ます。
 
 - New users
 - First user default channel group
