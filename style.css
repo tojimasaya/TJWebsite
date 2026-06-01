@@ -1292,6 +1292,30 @@ body {
     text-decoration: none;
 }
 
+.article-faq {
+    margin: 48px 0 0;
+    padding: 28px 0 0;
+    border-top: 1px solid var(--border-color);
+}
+
+.article-faq h2 {
+    margin-top: 0;
+}
+
+.article-faq h3 {
+    margin: 28px 0 10px;
+    font-family: var(--primary-font);
+    font-size: var(--text-xl);
+    line-height: 1.4;
+}
+
+.article-faq a {
+    color: var(--accent-color);
+    font-weight: 600;
+    text-decoration-thickness: 0.08em;
+    text-underline-offset: 0.18em;
+}
+
 .topic-routes.compact {
     padding: 48px 0 56px;
     border-top: 1px solid var(--border-color);
