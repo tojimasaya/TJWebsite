@@ -1,5 +1,35 @@
 [
   {
+    "slug": "taipei-bento-fair-awajiya",
+    "label": "Today's Frame",
+    "title": "台北駅の弁当フェア、淡路屋のひっぱりだこ",
+    "place": "台湾・台北駅",
+    "date": "2026年6月6日",
+    "body": "6月6日、台湾で開かれた弁当フェアへ行ってきた。ここ数年、機会があれば覗いているが、今年は約1時間並んで地元神戸の淡路屋さんの「ひっぱりだこ」をゲット。ホテルに戻って食べると、やっぱりめちゃくちゃ美味しい。タコの吸盤の食感が今でも口の中に残っていて、思い出すとまた食べたくなる、そんな味だった。台湾では他にも美味しいものをいくつか食べたので、これから少しずつ紹介していきたい。",
+    "image": "assets/images/photo-notes/taipei-bento-fair-hipparidako.jpg",
+    "imageWebp": "assets/images/photo-notes/taipei-bento-fair-hipparidako.webp",
+    "alt": "淡路屋のひっぱりだこの壺の中に、タコの足や具材が入っている様子",
+    "caption": "Awajiya Hipparidako / Taipei",
+    "sideFrames": [
+      {
+        "title": "淡路屋ブース",
+        "caption": "Awajiya Bento / Taipei Main Station",
+        "image": "assets/images/photo-notes/taipei-bento-fair-awajiya-booth.jpg",
+        "imageWebp": "assets/images/photo-notes/taipei-bento-fair-awajiya-booth.webp",
+        "alt": "台北駅の弁当フェアに出店した淡路屋のブースに人が並んでいる様子"
+      },
+      {
+        "title": "台北駅の熱気",
+        "caption": "Bento Fair / Taipei Main Station",
+        "image": "assets/images/photo-notes/taipei-bento-fair-hall.jpg",
+        "imageWebp": "assets/images/photo-notes/taipei-bento-fair-hall.webp",
+        "alt": "台北駅の広いホールに弁当フェアのブースと多くの来場者が集まっている様子"
+      }
+    ],
+    "link": "gallery.html",
+    "linkLabel": "写真ギャラリーへ"
+  },
+  {
     "slug": "himeji-harakoshi-gozen",
     "label": "Today\u0027s Frame",
     "title": "近所の新しい店で、釜ご飯の昼",

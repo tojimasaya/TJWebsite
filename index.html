@@ -649,6 +649,7 @@
     .recent-frame-media img {
       aspect-ratio: 4 / 3;
       object-fit: cover;
+      transition: opacity 0.25s ease, transform 0.45s ease;
     }
 
     .recent-frame-media.is-missing picture {
@@ -706,9 +707,15 @@
       display: block;
       overflow: hidden;
       min-height: 0;
+      width: 100%;
+      border: 0;
       border-radius: 6px;
+      padding: 0;
       background: #202124;
       color: #fff;
+      cursor: pointer;
+      font: inherit;
+      text-align: left;
     }
 
     .recent-frame-sidecard picture,
@@ -725,6 +732,11 @@
 
     .recent-frame-sidecard:hover img {
       transform: scale(1.04);
+    }
+
+    .recent-frame-sidecard:focus-visible {
+      outline: 2px solid rgba(155, 91, 46, 0.72);
+      outline-offset: 3px;
     }
 
     .recent-frame-sidecaption {
@@ -1775,22 +1787,22 @@
       <div class="recent-frame-gallery">
         <figure class="recent-frame-media recent-frame-main" id="recent-frame-media">
           <picture>
-            <source id="recent-frame-source" srcset="assets/images/photo-notes/himeji-castle-takigi-noh.webp" type="image/webp">
-            <img id="recent-frame-image" src="assets/images/photo-notes/himeji-castle-takigi-noh.jpg" alt="姫路城の天守の下、三の丸広場で薪能の舞台が行われている夜景" loading="lazy" decoding="async">
+            <source id="recent-frame-source" srcset="assets/images/photo-notes/taipei-bento-fair-hipparidako.webp" type="image/webp">
+            <img id="recent-frame-image" src="assets/images/photo-notes/taipei-bento-fair-hipparidako.jpg" alt="淡路屋のひっぱりだこの壺の中に、タコの足や具材が入っている様子" loading="lazy" decoding="async">
           </picture>
           <div class="recent-frame-placeholder" aria-hidden="true">
             <span>Recent Frame</span>
           </div>
-          <figcaption class="recent-frame-caption" id="recent-frame-caption">Himeji Castle / Takigi Noh</figcaption>
+          <figcaption class="recent-frame-caption" id="recent-frame-caption">Awajiya Hipparidako / Taipei</figcaption>
         </figure>
         <div class="recent-frame-sideframes" id="recent-frame-sideframes" aria-label="同じ日の小さな写真"></div>
       </div>
       <div class="recent-frame-text">
         <p class="recent-frame-label" id="recent-frame-label">Recent Frame</p>
-        <h2 class="recent-frame-title" id="recent-frame-title">姫路城、薪能の夜</h2>
-        <p class="recent-frame-meta" id="recent-frame-meta">兵庫・姫路城 三の丸広場 / 2026年5月22日</p>
+        <h2 class="recent-frame-title" id="recent-frame-title">台北駅の弁当フェア、淡路屋のひっぱりだこ</h2>
+        <p class="recent-frame-meta" id="recent-frame-meta">台湾・台北駅 / 2026年6月6日</p>
         <p class="recent-frame-copy" id="recent-frame-copy">
-          夜8時ごろ、姫路城三の丸広場で開かれた薪能を見に行った。舞台の火、提灯、青く浮かぶ天守が重なり、姫路城のすぐ下で物語が立ち上がっていくような迫力があった。
+          6月6日、台湾で開かれた弁当フェアへ行ってきた。ここ数年、機会があれば覗いているが、今年は約1時間並んで地元神戸の淡路屋さんの「ひっぱりだこ」をゲット。ホテルに戻って食べると、やっぱりめちゃくちゃ美味しい。
         </p>
         <a class="recent-frame-link" id="recent-frame-link" href="#recent-frame-archive-title">これまでの一枚を見る →</a>
       </div>
@@ -2111,6 +2123,9 @@
 
       const label = frame.label || 'Recent Frame';
       const meta = [frame.place, frame.date].filter(Boolean).join(' / ');
+      const mediaItems = [frame, ...(frame.sideFrames || [])].filter(item => item && item.image);
+      const activeMediaIndex = Number.isInteger(frame.activeMediaIndex) ? frame.activeMediaIndex : 0;
+      const activeMedia = mediaItems[activeMediaIndex] || frame;
       const media = document.getElementById('recent-frame-media');
       const image = document.getElementById('recent-frame-image');
       const source = document.getElementById('recent-frame-source');
@@ -2121,24 +2136,41 @@
       setRecentFrameText('recent-frame-title', frame.title);
       setRecentFrameText('recent-frame-meta', meta);
       setRecentFrameText('recent-frame-copy', frame.body);
-      setRecentFrameText('recent-frame-caption', frame.caption || meta);
+      setRecentFrameText('recent-frame-caption', activeMedia.caption || activeMedia.title || frame.caption || meta);
 
       if (link) {
         link.href = '#recent-frame-archive-title';
         link.textContent = 'これまでの一枚を見る →';
       }
 
-      if (image && frame.alt) image.alt = frame.alt;
-      if (source && frame.imageWebp) source.srcset = frame.imageWebp;
-      if (image && frame.image) {
+      if (image && activeMedia.alt) image.alt = activeMedia.alt;
+      if (source && activeMedia.imageWebp) source.srcset = activeMedia.imageWebp;
+      if (image && activeMedia.image) {
         if (media) media.classList.remove('is-missing');
-        image.src = frame.image;
+        image.src = activeMedia.image;
       }
 
       if (sideframes) {
-        sideframes.replaceChildren(...(frame.sideFrames || []).slice(0, 3).map((sideFrame) => {
-          const card = document.createElement('span');
+        sideframes.replaceChildren(...mediaItems
+          .map((sideFrame, index) => ({ sideFrame, index }))
+          .filter(({ index }) => index !== activeMediaIndex)
+          .slice(0, 3)
+          .map(({ sideFrame, index }) => {
+          const card = document.createElement('button');
+          card.type = 'button';
           card.className = 'recent-frame-sidecard';
+          card.setAttribute('aria-label', `${sideFrame.title || sideFrame.caption || '写真'}を大きく表示`);
+          card.addEventListener('click', () => {
+            frame.activeMediaIndex = index;
+            renderRecentFrame(frame);
+
+            if (typeof gtag !== 'undefined') {
+              gtag('event', 'select_recent_frame_photo', {
+                frame_slug: frame.slug || '',
+                photo_title: sideFrame.title || sideFrame.caption || ''
+              });
+            }
+          });
 
           const picture = document.createElement('picture');
           if (sideFrame.imageWebp) {
@@ -2166,6 +2198,7 @@
     }
 
     function selectRecentFrame(frame, photos) {
+      frame.activeMediaIndex = 0;
       renderRecentFrame(frame);
       renderRecentArchive(photos, frame.slug);
 
