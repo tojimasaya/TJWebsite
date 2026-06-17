@@ -1,5 +1,35 @@
 [
   {
+    "slug": "shatin-bruce-lee-monalisa",
+    "label": "Today's Frame",
+    "title": "ブルース・リーと弥勒とモナリザと、妻",
+    "place": "香港・沙田",
+    "date": "2026年6月15日",
+    "body": "沙田の香港文化博物館へ妻と出かけたのだが、まず断っておくと、入ってすぐのブルース・リー展で、娘シャノン・リーの挨拶文を背にした等身大のフライングキックの切り抜きを前に、私が軽い気持ちで「対決してみろ」と言った途端、妻が本当に腰を落として拳を構え、あの跳び蹴りの軌道へ自分の顎を差し出すような命知らずのいいポーズを決めてしまい、本日の傑作はもう撮れたかもしれないという予感を抱えたまま奥の徐展堂中国芸術館へ進むと、今度は金銅の巨大な手のひらの上で太鼓腹を丸出しにした弥勒が金錠を抱えて大口を開けて笑っており、殺気の塊だった隣室の蹴りとは正反対に「まあ怒るな、笑え、抱え込むな」とひたすら脱力を説いてきて、その緩んだ顔のまま本日の目玉モナリザ展に出ると、本物はルーヴルから動かないので壁一面は高精細プリント、ところが面白いのは仕掛けのほうで、絵の中の彼女が一人称で『私はリザ・ゲラルディーニ、フィレンツェの絹商人フランチェスコ・デル・ジョコンドの若い妻です』と名乗りはじめ、これがイタリア語の通称『ラ・ジョコンダ』の語源、つまり主催者は五百年来の神秘の微笑を『なに、どこにでもいる人妻ですよ』と一気に等身大まで引きずり下ろしにかかっており、隣には彩色復元された『最後の晩餐』まで並ぶ、まったく香港らしい振れ幅ばかり大きな一日だったわけだが——結局その日いちばんの傑作として持ち帰ったのは、五百年かけてようやく人妻まで降りてきた絹商人の奥方ではなく、入口でブルース・リーの顎を蹴り上げる一歩手前で固まった、うちの妻のほうだった。",
+    "image": "assets/images/photo-notes/shatin-bruce-lee-monalisa-spar.jpg",
+    "imageWebp": "assets/images/photo-notes/shatin-bruce-lee-monalisa-spar.webp",
+    "alt": "黒い帽子と黒いTシャツの妻が、ブルース・リーの等身大フライングキックの切り抜きに向かってファイティングポーズで対峙している",
+    "caption": "Sparring with Bruce Lee / Sha Tin",
+    "sideFrames": [
+      {
+        "title": "邂逅蒙娜麗莎",
+        "caption": "Meet Mona Lisa / Sha Tin",
+        "image": "assets/images/photo-notes/shatin-bruce-lee-monalisa-gioconda.jpg",
+        "imageWebp": "assets/images/photo-notes/shatin-bruce-lee-monalisa-gioconda.webp",
+        "alt": "博物館の階段に大きく掲げられたモナリザの高精細プリントと「MEET MONA LISA 邂逅蒙娜麗莎」の文字"
+      },
+      {
+        "title": "金の手のひらの弥勒",
+        "caption": "Maitreya in a Gilt Palm / T.T. Tsui Gallery",
+        "image": "assets/images/photo-notes/shatin-bruce-lee-monalisa-maitreya.jpg",
+        "imageWebp": "assets/images/photo-notes/shatin-bruce-lee-monalisa-maitreya.webp",
+        "alt": "金銅の大きな手のひらの上で、太鼓腹を出した弥勒が大口を開けて笑っている仏像"
+      }
+    ],
+    "link": "gallery.html",
+    "linkLabel": "写真ギャラリーへ"
+  },
+  {
     "slug": "taipei-bento-fair-awajiya",
     "label": "Today's Frame",
     "title": "台北駅の弁当フェア、淡路屋のひっぱりだこ",
