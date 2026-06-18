@@ -386,6 +386,47 @@ const gearData = {
           }
         }
       ]
+    },
+    "bags": {
+      "title": "Bags",
+      "subtitle": "旅を運ぶ Peak Design",
+      "hero_image": "assets/images/gear/bags/roller-pro.jpg",
+      "description": "撮影旅行の荷物を運ぶ Peak Design。母艦・分割・ローラーを使い分けて、香港と日本、ときどき旅先を移動する。",
+      "items": [
+        {
+          "id": "pd-travel-2in1",
+          "name": "Peak Design Travel Backpack 2-in-1 40L",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/pd-2in1.jpg",
+          "status": "available",
+          "type": "backpack",
+          "specs": ["40L（合体30+10 / 分離34+16）", "Sage", "機内持ち込み", "親子で分割"],
+          "description": "34Lのベースと16Lのデイパックが、背面ジッパー一本で脱着する“親子”構造。合体すれば40Lの機内持ち込み、切り離せば身軽なデイパックになる。2026年のKickstarterで手に入れた、いまの旅の母艦。",
+          "links": { "official": "https://www.peakdesign.com/products/travel-backpack-2-in-1" }
+        },
+        {
+          "id": "pd-roller-pro",
+          "name": "Peak Design Roller Pro Carry-On",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/roller-pro.jpg",
+          "status": "available",
+          "type": "roller",
+          "specs": ["34–39L 拡張", "Eclipse", "ドローブリッジ開き", "カーボントロリー"],
+          "description": "前ヒンジのドローブリッジ式に開くキャリーオン。薄いカーボントロリーで容量を稼ぎ、34〜39Lの中にカメラキューブやパッキングキューブをそのまま収める。2-in-1の相棒として導入した。",
+          "links": { "official": "https://www.peakdesign.com/products/roller-pro" }
+        },
+        {
+          "id": "pd-travel-45l",
+          "name": "Peak Design Travel Backpack 45L",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/pd-45l.jpg",
+          "status": "available",
+          "type": "backpack",
+          "specs": ["35–45L 可変", "Sage", "2018〜", "旧メイン"],
+          "description": "2018年のKickstarterから約8年使い続けた、旅のメイン機。35〜45Lの可変容量と複数のインナーで“大概のものが入る”母艦。新しい2-in-1に主役を譲りつつ、いまも現役。",
+          "links": { "official": "https://www.peakdesign.com/products/travel-backpack" }
+        }
+      ]
     }
   }
 };
