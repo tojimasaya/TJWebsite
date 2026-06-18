@@ -494,7 +494,7 @@
     "bags": {
       "title": "Bags",
       "subtitle": "旅を運ぶ Peak Design",
-      "hero_image": "/assets/images/gear/bags/roller-pro.jpg",
+      "hero_image": "/assets/images/gear/bags/bags-hero.jpg",
       "description": "撮影旅行の荷物を運ぶ Peak Design。母艦・分割・ローラーを使い分けて、香港と日本、ときどき旅先を移動する。",
       "items": [
         {
@@ -517,7 +517,7 @@
           "type": "roller",
           "specs": ["34–39L 拡張", "Eclipse", "ドローブリッジ開き", "カーボントロリー"],
           "description": "前ヒンジのドローブリッジ式に開くキャリーオン。薄いカーボントロリーで容量を稼ぎ、34〜39Lの中にカメラキューブやパッキングキューブをそのまま収める。2-in-1の相棒として導入した。",
-          "links": { "official": "https://www.peakdesign.com/products/roller-pro" }
+          "links": { "amazon": "https://www.amazon.co.jp/dp/B0FDHWRSM3?tag=ojunktion-22" }
         },
         {
           "id": "pd-travel-45l",
@@ -528,7 +528,7 @@
           "type": "backpack",
           "specs": ["35–45L 可変", "Sage", "2018〜", "旧メイン"],
           "description": "2018年のKickstarterから約8年使い続けた、旅のメイン機。35〜45Lの可変容量と複数のインナーで“大概のものが入る”母艦。新しい2-in-1に主役を譲りつつ、いまも現役。",
-          "links": { "official": "https://www.peakdesign.com/products/travel-backpack" }
+          "links": { "amazon": "https://www.amazon.co.jp/dp/B0DDL6K3XL?tag=ojunktion-22" }
         }
       ]
     }
