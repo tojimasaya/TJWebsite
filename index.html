@@ -50,7 +50,7 @@
     "@type": "Person",
     "name": "Toji Masaya",
     "alternateName": "田路昌也",
-    "jobTitle": "Photographer, Writer",
+    "jobTitle": "Writer / Photography and Travel Documentarian",
     "url": "https://tojimasaya.com",
     "image": "https://tojimasaya.com/assets/images/about/TJ.jpg",
     "sameAs": [
@@ -60,7 +60,7 @@
       "https://x.com/mongkok93",
       "https://www.facebook.com/masaya.toji"
     ],
-    "description": "香港と日本を行き来する写真家・ライター。Leicaとドローンで、姫路城を36の視点で撮る白鷺三十六景、消えゆく香港ネオン、旅と機材の記録を続けている。"
+    "description": "香港と日本を行き来しながら、姫路城、香港、旅、カメラとドローンで見た景色を写真と言葉で残している。"
   }
   </script>
 
@@ -136,328 +136,208 @@
        INDEX REDESIGN — Project-First Layout
        ============================================== */
 
-    /* ── Hero: 2-Panel Split ── */
-    .hero-redesign {
+    /* ── Hero: Identity Gateway ── */
+    .identity-hero {
       position: relative;
       width: 100%;
-      height: calc(100vh - 70px);
-      min-height: 500px;
+      min-height: min(720px, calc(100svh - 90px));
       overflow: hidden;
       background: #1a1a1a;
       margin-top: 70px;
+      color: #fff;
     }
 
-    .hero-split {
+    .identity-hero-media {
+      position: absolute;
+      inset: 0;
       display: grid;
-      grid-template-columns: 1fr 1fr;
+      grid-template-columns: minmax(0, 1.22fr) minmax(320px, 0.78fr);
+      grid-template-rows: 1fr 1fr;
       height: 100%;
     }
 
-    .hero-panel {
+    .identity-hero-media picture {
       position: relative;
+      display: block;
       overflow: hidden;
     }
 
-    .hero-panel a {
+    .identity-hero-media picture:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .identity-hero-media img {
       display: block;
       width: 100%;
       height: 100%;
-      text-decoration: none;
-      color: white;
+      object-fit: cover;
+      filter: brightness(0.62) saturate(0.92);
     }
 
-    .hero-panel-bg {
+    .identity-hero::after {
+      content: '';
       position: absolute;
       inset: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.8s ease, filter 0.5s ease;
-      filter: brightness(0.55);
+      background:
+        linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.48) 46%, rgba(0,0,0,0.36) 100%),
+        linear-gradient(0deg, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.08) 42%, rgba(0,0,0,0.4) 100%);
+      pointer-events: none;
     }
 
-    .hero-panel:hover .hero-panel-bg {
-      transform: scale(1.05);
-      filter: brightness(0.72);
-    }
-
-    .hero-panel-content {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 3rem;
-      color: white;
-      background: linear-gradient(transparent 0%, rgba(0,0,0,0.65) 100%);
+    .identity-hero-inner {
+      position: relative;
       z-index: 2;
-    }
-
-    .hero-panel-label {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0.3em;
-      opacity: 0.8;
-      margin-bottom: 0.8rem;
-      text-transform: uppercase;
-    }
-
-    .hero-panel-title {
-      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: clamp(1.6rem, 2.8vw, 2.6rem);
-      font-weight: 400;
-      letter-spacing: 0.1em;
-      margin-bottom: 0.8rem;
-      line-height: 1.5;
-    }
-
-    .hero-panel-sub {
-      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: 0.85rem;
-      opacity: 0.8;
-      letter-spacing: 0.05em;
-      line-height: 1.9;
-    }
-
-    .hero-panel-arrow {
-      display: inline-block;
-      margin-top: 1.5rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.15em;
-      opacity: 0;
-      transition: opacity 0.4s ease, transform 0.4s ease;
-      transform: translateX(-8px);
-    }
-
-    .hero-panel:hover .hero-panel-arrow {
-      opacity: 0.9;
-      transform: translateX(0);
-    }
-
-    /* 中央の縦ディバイダー */
-    .hero-divider {
-      position: absolute;
-      top: 15%;
-      bottom: 15%;
-      left: 50%;
-      width: 1px;
-      background: rgba(255,255,255,0.2);
-      z-index: 10;
-      pointer-events: none;
-    }
-
-    /* サイト名オーバーレイ */
-    .hero-site-name {
-      position: absolute;
-      top: 2.5rem;
-      left: 50%;
-      transform: translateX(-50%);
-      z-index: 20;
-      color: white;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.8rem;
-      letter-spacing: 0.35em;
-      opacity: 0.7;
-      pointer-events: none;
-    }
-
-    /* ── Intro Statement ── */
-    .intro-statement {
-      max-width: 700px;
+      width: min(1100px, calc(100% - 4rem));
+      min-height: inherit;
       margin: 0 auto;
-      padding: 5rem 2rem;
-      text-align: center;
+      display: flex;
+      flex-direction: column;
+      justify-content: flex-end;
+      padding: 4.2rem 0 3.2rem;
     }
 
-    .intro-statement-text {
-      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: 1rem;
-      line-height: 2.4;
-      color: var(--text-light, #666);
-      letter-spacing: 0.05em;
-    }
-
-    .intro-byline {
-      margin-top: 2rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      color: var(--text-lighter, #999);
-      letter-spacing: 0.15em;
-    }
-
-    .intro-byline a {
-      color: #c49a6c;
-      text-decoration: none;
-      border-bottom: 1px solid transparent;
-      transition: border-color 0.3s;
-    }
-
-    .intro-byline a:hover {
-      border-color: #c49a6c;
-    }
-
-    /* ── Current Feature ── */
-    .current-feature {
-      background: #f7f7f5;
-      border-top: 1px solid var(--border-color, #e5e5e5);
-      border-bottom: 1px solid var(--border-color, #e5e5e5);
-      padding: 4.5rem 2rem;
-    }
-
-    .current-feature-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.75fr);
-      gap: 3rem;
-      align-items: center;
-    }
-
-    .current-feature-label {
+    .identity-hero-kicker {
       display: inline-flex;
       align-items: center;
-      gap: 0.65rem;
+      gap: 0.7rem;
       font-family: 'Inter', sans-serif;
       font-size: 0.7rem;
-      letter-spacing: 0.16em;
-      color: #1a3fb9;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      margin-bottom: 1.1rem;
+      color: rgba(255,255,255,0.74);
+      margin-bottom: 1.2rem;
     }
 
-    .current-feature-label::before {
+    .identity-hero-kicker::before {
       content: '';
       width: 34px;
       height: 1px;
-      background: #1a3fb9;
+      background: rgba(255,255,255,0.74);
     }
 
-    .current-feature-title {
+    .identity-hero-title {
+      max-width: 760px;
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: clamp(1.65rem, 2.5vw, 2.3rem);
+      font-size: clamp(2rem, 4.6vw, 4.4rem);
       font-weight: 400;
-      letter-spacing: 0.08em;
-      line-height: 1.6;
-      color: var(--text-color, #333);
-      margin-bottom: 1rem;
+      letter-spacing: 0.05em;
+      line-height: 1.34;
+      margin-bottom: 1.2rem;
     }
 
-    .current-feature-copy {
-      max-width: 620px;
+    .identity-hero-lead {
+      max-width: 680px;
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: 0.92rem;
-      line-height: 2.1;
-      letter-spacing: 0.04em;
-      color: var(--text-light, #666);
+      font-size: 1rem;
+      line-height: 2.05;
+      letter-spacing: 0.045em;
+      color: rgba(255,255,255,0.84);
     }
 
-    .current-feature-actions {
+    .identity-hero-actions {
       display: flex;
       flex-wrap: wrap;
       gap: 0.8rem;
       margin-top: 2rem;
     }
 
-    .current-feature-btn {
+    .identity-hero-action {
       display: inline-flex;
       align-items: center;
       justify-content: center;
       min-height: 44px;
-      padding: 0.75rem 1.1rem;
-      border: 1px solid rgba(26, 63, 185, 0.25);
+      padding: 0.76rem 1.1rem;
+      border: 1px solid rgba(255,255,255,0.44);
       border-radius: 4px;
+      color: #fff;
+      background: rgba(0,0,0,0.18);
       font-family: 'Inter', 'Noto Serif JP', sans-serif;
       font-size: 0.78rem;
       letter-spacing: 0.1em;
-      color: #1a3fb9;
-      background: #fff;
       text-decoration: none;
       transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
     }
 
-    .current-feature-btn:hover {
-      border-color: rgba(26, 63, 185, 0.55);
+    .identity-hero-action:hover {
+      background: rgba(255,255,255,0.12);
+      border-color: rgba(255,255,255,0.72);
       transform: translateY(-1px);
     }
 
-    .current-feature-btn.primary {
-      background: #1a3fb9;
-      border-color: #1a3fb9;
-      color: #fff;
+    .identity-hero-action.primary {
+      color: #222;
+      background: rgba(255,255,255,0.92);
+      border-color: rgba(255,255,255,0.92);
     }
 
-    .current-feature-btn.primary:hover {
-      background: #143294;
-      border-color: #143294;
-    }
-
-    .current-feature-stats {
+    .identity-hero-routes {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1rem;
-      margin-top: 2rem;
-      padding-top: 1.5rem;
-      border-top: 1px solid var(--border-color, #e5e5e5);
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 0;
+      margin-top: 3.2rem;
+      border-top: 1px solid rgba(255,255,255,0.24);
+      border-bottom: 1px solid rgba(255,255,255,0.24);
     }
 
-    .current-feature-stat strong {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.9rem;
-      font-weight: 600;
-      letter-spacing: 0.1em;
-      color: var(--text-color, #333);
-      margin-bottom: 0.35rem;
-    }
-
-    .current-feature-stat span {
-      display: block;
-      font-family: 'Noto Serif JP', serif;
-      font-size: 0.75rem;
-      line-height: 1.7;
-      color: var(--text-lighter, #999);
-      letter-spacing: 0.05em;
-    }
-
-    .current-feature-media {
-      position: relative;
-      display: block;
-      overflow: hidden;
-      border-radius: 6px;
+    .identity-hero-route {
+      min-height: 150px;
+      padding: 1.35rem 1.15rem 1.25rem 0;
       color: #fff;
       text-decoration: none;
-      background: #222;
+      border-right: 1px solid rgba(255,255,255,0.18);
+      transition: background 0.3s ease, padding-left 0.3s ease;
     }
 
-    .current-feature-media img {
+    .identity-hero-route:last-child {
+      border-right: 0;
+    }
+
+    .identity-hero-route:hover {
+      background: rgba(255,255,255,0.08);
+      padding-left: 1rem;
+    }
+
+    .identity-hero-route span {
       display: block;
-      width: 100%;
-      aspect-ratio: 4 / 3;
-      object-fit: cover;
-      transition: transform 0.6s ease, filter 0.4s ease;
-    }
-
-    .current-feature-media:hover img {
-      transform: scale(1.04);
-      filter: brightness(0.86);
-    }
-
-    .current-feature-media-caption {
-      position: absolute;
-      left: 1rem;
-      right: 1rem;
-      bottom: 1rem;
-      display: inline-flex;
-      width: fit-content;
-      max-width: calc(100% - 2rem);
-      padding: 0.55rem 0.7rem;
-      background: rgba(0, 0, 0, 0.58);
-      border-radius: 4px;
       font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      line-height: 1.5;
+      font-size: 0.64rem;
+      letter-spacing: 0.18em;
+      color: rgba(255,255,255,0.58);
       text-transform: uppercase;
+      margin-bottom: 0.75rem;
+    }
+
+    .identity-hero-route strong {
+      display: block;
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.98rem;
+      font-weight: 500;
+      letter-spacing: 0.08em;
+      line-height: 1.55;
+      margin-bottom: 0.45rem;
+    }
+
+    .identity-hero-route em {
+      display: block;
+      font-style: normal;
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.76rem;
+      line-height: 1.75;
+      letter-spacing: 0.04em;
+      color: rgba(255,255,255,0.72);
+    }
+
+    .identity-hero-site {
+      position: absolute;
+      top: 2rem;
+      left: 2rem;
+      z-index: 3;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.28em;
+      color: rgba(255,255,255,0.64);
+      text-transform: uppercase;
+      pointer-events: none;
     }
 
     /* ── Timely Notice ── */
@@ -958,99 +838,6 @@
       color: var(--text-light, #666);
     }
 
-    /* ── Site Compass ── */
-    .site-compass {
-      background: #f7f7f5;
-      border-top: 1px solid var(--border-color, #e5e5e5);
-      border-bottom: 1px solid var(--border-color, #e5e5e5);
-      padding: 0 2rem;
-    }
-
-    .site-compass-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    }
-
-    .site-compass-item {
-      position: relative;
-      display: block;
-      min-height: 210px;
-      padding: 2rem 1.6rem;
-      color: inherit;
-      text-decoration: none;
-      border-left: 1px solid var(--border-color, #e5e5e5);
-      transition: background 0.3s ease, transform 0.3s ease;
-    }
-
-    .site-compass-item:last-child {
-      border-right: 1px solid var(--border-color, #e5e5e5);
-    }
-
-    .site-compass-item::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 1.6rem;
-      right: 1.6rem;
-      height: 2px;
-      background: #c49a6c;
-      opacity: 0.55;
-      transition: opacity 0.3s ease;
-    }
-
-    .site-compass-item:nth-child(1)::before { background: #1a3fb9; }
-    .site-compass-item:nth-child(2)::before { background: #ff006e; }
-    .site-compass-item:nth-child(3)::before { background: #2f855a; }
-    .site-compass-item:nth-child(4)::before { background: #8a6f4d; }
-
-    .site-compass-item:hover {
-      background: #fff;
-      transform: translateY(-2px);
-    }
-
-    .site-compass-item:hover::before {
-      opacity: 1;
-    }
-
-    .site-compass-label {
-      display: block;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.18em;
-      color: var(--text-lighter, #999);
-      text-transform: uppercase;
-      margin-bottom: 1.4rem;
-    }
-
-    .site-compass-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      color: var(--text-color, #333);
-      margin-bottom: 0.8rem;
-      line-height: 1.6;
-    }
-
-    .site-compass-copy {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 0.82rem;
-      line-height: 1.9;
-      color: var(--text-light, #666);
-      letter-spacing: 0.03em;
-    }
-
-    .site-compass-more {
-      display: inline-block;
-      margin-top: 1.2rem;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.12em;
-      color: #9b7a54;
-    }
-
     /* ── Travels Section ── */
     .travels {
       background: var(--white, #fff);
@@ -1370,66 +1157,75 @@
 
     /* ── Responsive ── */
     @media (max-width: 768px) {
-      .hero-redesign {
-        height: auto;
-        min-height: auto;
+      .identity-hero {
+        min-height: calc(100svh - 110px);
       }
 
-      .hero-split {
+      .identity-hero-media {
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: 1.25fr 0.75fr;
+      }
+
+      .identity-hero-media picture:first-child {
+        grid-column: 1 / 3;
+        grid-row: 1;
+      }
+
+      .identity-hero::after {
+        background:
+          linear-gradient(0deg, rgba(0,0,0,0.84) 0%, rgba(0,0,0,0.42) 48%, rgba(0,0,0,0.34) 100%);
+      }
+
+      .identity-hero-inner {
+        width: calc(100% - 3rem);
+        padding: 4.2rem 0 1.1rem;
+      }
+
+      .identity-hero-title {
+        font-size: clamp(1.85rem, 9vw, 2.55rem);
+      }
+
+      .identity-hero-lead {
+        font-size: 0.9rem;
+        line-height: 2;
+      }
+
+      .identity-hero-actions {
+        display: grid;
         grid-template-columns: 1fr;
+        margin-top: 1.5rem;
       }
 
-      .hero-panel {
-        height: 50vh;
-        min-height: 320px;
+      .identity-hero-routes {
+        grid-template-columns: 1fr 1fr;
+        margin-top: 1.25rem;
       }
 
-      .hero-divider {
-        display: none;
+      .identity-hero-route {
+        min-height: 84px;
+        padding: 0.78rem 0.65rem 0.72rem 0;
       }
 
-      .hero-site-name {
-        top: 1.5rem;
-        font-size: 0.7rem;
+      .identity-hero-route:nth-child(2) {
+        border-right: 0;
       }
 
-      .hero-panel-content {
-        padding: 2rem;
+      .identity-hero-route:nth-child(n+3) {
+        border-top: 1px solid rgba(255,255,255,0.18);
       }
 
-      .hero-panel-arrow {
-        opacity: 0.8;
-        transform: translateX(0);
-      }
-
-      .intro-statement {
-        padding: 3.5rem 1.5rem;
-      }
-
-      .current-feature {
-        padding: 3.5rem 1.5rem;
-      }
-
-      .current-feature-inner {
-        grid-template-columns: 1fr;
-        gap: 2rem;
-      }
-
-      .current-feature-copy {
+      .identity-hero-route strong {
         font-size: 0.88rem;
       }
 
-      .current-feature-actions {
-        margin-top: 1.6rem;
+      .identity-hero-route em {
+        display: none;
       }
 
-      .current-feature-btn {
-        flex: 1 1 160px;
-      }
-
-      .current-feature-stats {
-        grid-template-columns: 1fr;
-        gap: 0.85rem;
+      .identity-hero-site {
+        top: 1.4rem;
+        left: 1.5rem;
+        font-size: 0.64rem;
       }
 
       .timely-notice {
@@ -1507,32 +1303,6 @@
       .recent-frame-archive-card {
         grid-template-columns: 104px minmax(0, 1fr);
         min-height: 120px;
-      }
-
-      .site-compass {
-        padding: 0 1.5rem;
-      }
-
-      .site-compass-inner {
-        grid-template-columns: 1fr;
-      }
-
-      .site-compass-item {
-        min-height: auto;
-        padding: 1.7rem 0.3rem;
-        border-left: 0;
-        border-bottom: 1px solid var(--border-color, #e5e5e5);
-      }
-
-      .site-compass-item:last-child {
-        border-right: 0;
-        border-bottom: 0;
-      }
-
-      .site-compass-item::before {
-        left: 0.3rem;
-        right: auto;
-        width: 48px;
       }
 
       .travels {
@@ -1648,48 +1418,58 @@
   <!-- 画像エラーハンドリング -->
   <script src="js/image-fallback.js"></script>
 
-  <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">田路昌也 (Toji Masaya) — 消えゆく風景を写真と言葉で残す</h1>
+  <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">田路昌也 (Toji Masaya) — 姫路城、香港、旅とカメラの記録</h1>
 
   <!-- ======================================
-       SECTION 1: ヒーロー（左右分割）
+       SECTION 1: ヒーロー（B+D中間案）
        ====================================== -->
-  <section class="hero-redesign">
-    <div class="hero-site-name">TOJIMASAYA.COM</div>
-    <div class="hero-divider"></div>
-    <div class="hero-split">
-
-      <!-- 左パネル: 白鷺三十六景 -->
-      <div class="hero-panel">
-        <a href="shirasagi36.html">
-          <picture>
-            <source srcset="assets/images/gallery/castle31.webp" type="image/webp">
-            <img class="hero-panel-bg" src="assets/images/gallery/castle31.jpg" alt="白鷺三十六景 — 姫路城" loading="eager">
-          </picture>
-          <div class="hero-panel-content">
-            <p class="hero-panel-label">Photography Project</p>
-            <h2 class="hero-panel-title">白鷺三十六景</h2>
-            <p class="hero-panel-sub">姫路城を36の視点から。<br>北斎に着想を得た、四季の記録。</p>
-            <span class="hero-panel-arrow">プロジェクトを見る →</span>
-          </div>
-        </a>
+  <section class="identity-hero" aria-labelledby="identity-hero-title">
+    <div class="identity-hero-site">TOJIMASAYA.COM</div>
+    <div class="identity-hero-media" aria-hidden="true">
+      <picture>
+        <source srcset="assets/images/gallery/castle31.webp" type="image/webp">
+        <img src="assets/images/gallery/castle31.jpg" alt="" loading="eager">
+      </picture>
+      <picture>
+        <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
+        <img src="assets/images/hongkong-neon/01.jpg" alt="" loading="eager">
+      </picture>
+      <picture>
+        <img src="assets/images/gear/drone.jpg" alt="" loading="eager">
+      </picture>
+    </div>
+    <div class="identity-hero-inner">
+      <p class="identity-hero-kicker">Himeji, Hong Kong, Travel and Cameras</p>
+      <h2 class="identity-hero-title" id="identity-hero-title">好きで撮り続けた風景を、次の誰かの入口に。</h2>
+      <p class="identity-hero-lead">
+        姫路城と香港。長く自分を育ててくれた二つの場所への感謝を軸に、旅先で出会った光、カメラとドローンで見た景色を、写真と言葉で残しています。
+      </p>
+      <div class="identity-hero-actions">
+        <a class="identity-hero-action primary" href="shirasagi36.html">白鷺三十六景を見る →</a>
+        <a class="identity-hero-action" href="hongkong-neon.html">香港の記録を見る →</a>
       </div>
-
-      <!-- 右パネル: 香港ネオン残照 -->
-      <div class="hero-panel">
-        <a href="hongkong-neon.html">
-          <picture>
-            <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
-            <img class="hero-panel-bg" src="assets/images/hongkong-neon/01.jpg" alt="香港ネオン残照" loading="eager">
-          </picture>
-          <div class="hero-panel-content">
-            <p class="hero-panel-label">Documentation Project</p>
-            <h2 class="hero-panel-title">香港ネオン残照</h2>
-            <p class="hero-panel-sub">消えゆくネオンの光を追いかけて。<br>変わりゆく街の記憶を記録する。</p>
-            <span class="hero-panel-arrow">プロジェクトを見る →</span>
-          </div>
+      <nav class="identity-hero-routes" aria-label="サイトの主な入口">
+        <a class="identity-hero-route" href="shirasagi36.html">
+          <span>Himeji Castle</span>
+          <strong>白鷺三十六景</strong>
+          <em>60年以上見てきた姫路城を、四季と時間の中で残す。</em>
         </a>
-      </div>
-
+        <a class="identity-hero-route" href="hongkong-neon.html">
+          <span>Hong Kong</span>
+          <strong>香港ネオン残照</strong>
+          <em>28歳からの日々を育ててくれた街の光と記憶。</em>
+        </a>
+        <a class="identity-hero-route" href="turkey-travel-journal.html">
+          <span>Travel</span>
+          <strong>旅の記録</strong>
+          <em>世界で出会った場所を、写真と文章で紹介する。</em>
+        </a>
+        <a class="identity-hero-route" href="gear.html">
+          <span>Cameras / Drone</span>
+          <strong>旅と撮影の道具</strong>
+          <em>Leica、ドローン、旅先で使う道具の実感。</em>
+        </a>
+      </nav>
     </div>
   </section>
 
@@ -1740,47 +1520,7 @@
   </template>
 
   <!-- ======================================
-       SECTION 3: 現在おすすめのコンテンツ
-       ====================================== -->
-  <section class="current-feature" aria-labelledby="current-feature-title">
-    <div class="current-feature-inner">
-      <div>
-        <p class="current-feature-label">Currently Featured</p>
-        <h2 class="current-feature-title" id="current-feature-title">現在進行中: 白鷺三十六景</h2>
-        <p class="current-feature-copy">
-          姫路城を36の視点で撮る、いま育てている写真と言葉の作品集。季節・場所・見どころを添えながら、写真集から読み物として回遊できるアーカイブへ更新中です。
-        </p>
-        <div class="current-feature-actions">
-          <a class="current-feature-btn primary" href="shirasagi36.html">作品を見る →</a>
-          <a class="current-feature-btn" href="shirasagi36-map.html">撮影地マップ →</a>
-        </div>
-        <div class="current-feature-stats" aria-label="白鷺三十六景の現在の状態">
-          <div class="current-feature-stat">
-            <strong>34 / 36 景</strong>
-            <span>公開中</span>
-          </div>
-          <div class="current-feature-stat">
-            <strong>四季の姫路城</strong>
-            <span>春夏秋冬の視点で記録</span>
-          </div>
-          <div class="current-feature-stat">
-            <strong>写真メモ更新中</strong>
-            <span>季節・場所・見どころを追加</span>
-          </div>
-        </div>
-      </div>
-      <a class="current-feature-media" href="shirasagi36.html" aria-label="白鷺三十六景を見る">
-        <picture>
-          <source srcset="assets/images/shirasagi/33.webp" type="image/webp">
-          <img src="assets/images/shirasagi/33.jpg" alt="白鷺三十六景 — 姫路城を36の視点で撮る" loading="lazy" decoding="async">
-        </picture>
-        <span class="current-feature-media-caption">Himeji Castle / Ongoing Archive</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ======================================
-       SECTION 4: 最近の一枚
+       SECTION 3: 最近の一枚
        ====================================== -->
   <section class="recent-frame" aria-labelledby="recent-frame-title">
     <div class="recent-frame-inner">
@@ -1873,52 +1613,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 5: ステートメント
-       ====================================== -->
-  <section class="intro-statement">
-    <p class="intro-statement-text">
-      香港と日本を行き来しながら、Leicaとドローンで<br>
-      消えゆく風景と、旅先で出会った小さな発見を記録しています。
-    </p>
-    <p class="intro-byline">
-      記録する人 — <a href="about.html">Toji Masaya</a>
-    </p>
-  </section>
-
-  <!-- ======================================
-       SECTION 6: サイトの入口
-       ====================================== -->
-  <section class="site-compass" aria-label="サイトの主な入口">
-    <div class="site-compass-inner">
-      <a class="site-compass-item" href="shirasagi36.html">
-        <span class="site-compass-label">Himeji Castle</span>
-        <h2 class="site-compass-title">白鷺三十六景</h2>
-        <p class="site-compass-copy">故郷・姫路城を36の視点から撮る写真プロジェクト。四季、時間、人の気配の中にある白鷺城を残します。</p>
-        <span class="site-compass-more">VIEW PROJECT →</span>
-      </a>
-      <a class="site-compass-item" href="hongkong-neon.html">
-        <span class="site-compass-label">Hong Kong Neon</span>
-        <h2 class="site-compass-title">香港ネオン残照</h2>
-        <p class="site-compass-copy">規制と再開発の中で姿を消していく突き出し看板とネオン。街の光を、記憶として集めています。</p>
-        <span class="site-compass-more">VIEW ARCHIVE →</span>
-      </a>
-      <a class="site-compass-item" href="turkey-travel-journal.html">
-        <span class="site-compass-label">Travel Journal</span>
-        <h2 class="site-compass-title">旅の記録</h2>
-        <p class="site-compass-copy">トルコ、チベット、プラハ、ベネツィア。写真だけでは残らない旅先の空気を文章でも綴ります。</p>
-        <span class="site-compass-more">READ JOURNEY →</span>
-      </a>
-      <a class="site-compass-item" href="gear.html">
-        <span class="site-compass-label">Gear Notes</span>
-        <h2 class="site-compass-title">旅と撮影の道具</h2>
-        <p class="site-compass-copy">Leica、ドローン、Mac、旅の小物。実際に持ち出して使っている機材を、自分の視点でまとめます。</p>
-        <span class="site-compass-more">VIEW GEAR →</span>
-      </a>
-    </div>
-  </section>
-
-  <!-- ======================================
-       SECTION 7: Featured Guides
+       SECTION 4: Featured Guides
        ====================================== -->
   <section class="featured-guides" aria-labelledby="featured-guides-title">
     <div class="section-header-row">
@@ -1955,7 +1650,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 7: 旅の記録
+       SECTION 5: 旅の記録
        ====================================== -->
   <section class="travels">
     <div class="travels-inner">
@@ -2040,7 +1735,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 8: 最新の記事（RSS連携）
+       SECTION 6: 最新の記事（RSS連携）
        ====================================== -->
   <section class="latest-articles">
     <div class="section-header-row">
@@ -2058,7 +1753,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 9: About Strip
+       SECTION 7: About Strip
        ====================================== -->
   <section class="about-strip">
     <div class="about-inner">
