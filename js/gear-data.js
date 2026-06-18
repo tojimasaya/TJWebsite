@@ -308,15 +308,15 @@ const gearData = {
           }
         },
         {
-          "id": "xiaomi-15-ultra",
-          "name": "Xiaomi 15 Ultra",
+          "id": "xiaomi-17-ultra",
+          "name": "Xiaomi 17 Ultra by Leica",
           "brand": "Xiaomi",
-          "image": "assets/images/gear/xiaomi15ultra.jpg",
+          "image": "assets/images/gear/xiaomi17ultra.jpg",
           "status": "available",
-          "specs": ["16GB RAM", "512GB Storage"],
-          "description": "iPhone 17 Pro はカメラがぐっと良くなっていますが、望遠カメラはまだXiaomi 15 Ultraには敵わない。",
+          "specs": ["Leica 監修カメラ", "LOFIC センサー", "フレイムモード"],
+          "description": "山根さんから譲り受けた現行メイン機。ライカ監修のカメラに加え、強い光源を「炎」と認識して白飛びを抑えるフレイムモード（LOFICセンサー）が独特。篝火や夜景の難しい光も、シャッターを押すだけで最適解に仕上げてくれる。",
           "links": {
-             "Note": "https://note.com/tojimasaya/n/nc12013eb2323"
+             "Note": "https://note.com/tojimasaya/n/nc3f0d5e2ed2f"
           }
         },
         {
