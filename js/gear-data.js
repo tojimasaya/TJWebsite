@@ -316,7 +316,7 @@ const gearData = {
           "specs": ["Leica 監修カメラ", "LOFIC センサー", "フレイムモード"],
           "description": "山根さんから譲り受けた現行メイン機。ライカ監修のカメラに加え、強い光源を「炎」と認識して白飛びを抑えるフレイムモード（LOFICセンサー）が独特。篝火や夜景の難しい光も、シャッターを押すだけで最適解に仕上げてくれる。",
           "links": {
-             "Note": "https://note.com/tojimasaya/n/nc3f0d5e2ed2f"
+             "Note": "https://note.com/tojimasaya/n/n748641edca32"
           }
         },
         {
