@@ -375,6 +375,12 @@
             color: var(--text-light);
         }
 
+        .anchor-target {
+            display: block;
+            height: 0;
+            scroll-margin-top: 96px;
+        }
+
         /* Responsive */
         @media (max-width: 900px) {
             .gear-hub-inner {
@@ -504,10 +510,65 @@
         </div>
     </section>
 
+    <span class="anchor-target" id="travel-gear" aria-hidden="true"></span>
+
     <!-- Categories Grid -->
     <main class="category-grid" id="category-grid">
-        <!-- JS will populate this -->
-        <p style="grid-column: 1/-1; text-align: center;">Loading categories...</p>
+        <a href="gear-camera.html" class="category-card">
+            <picture>
+                <source srcset="assets/images/gear/m2.webp" type="image/webp">
+                <img src="assets/images/gear/m2.jpg" alt="Leicaのカメラ機材" class="category-bg" loading="lazy" decoding="async">
+            </picture>
+            <div class="category-content">
+                <h2 class="category-title">Camera</h2>
+                <p class="category-desc">Leica M / SL、Mレンズ、Lマウント機材と、それらで撮っている作品への入口。</p>
+                <span class="category-arrow">View Collection →</span>
+            </div>
+        </a>
+        <a href="gear-drone.html" class="category-card">
+            <picture>
+                <source srcset="assets/images/gear/drone.webp" type="image/webp">
+                <img src="assets/images/gear/drone.jpg" alt="旅で使うDJIドローン機材" class="category-bg" loading="lazy" decoding="async">
+            </picture>
+            <div class="category-content">
+                <h2 class="category-title">Drone</h2>
+                <p class="category-desc">旅先の空撮で使っているDJIドローンと、持ち出しやすさを重視した構成。</p>
+                <span class="category-arrow">View Collection →</span>
+            </div>
+        </a>
+        <a href="gear-editing.html" class="category-card">
+            <picture>
+                <source srcset="assets/images/gear/editing.webp" type="image/webp">
+                <img src="assets/images/gear/editing.jpg" alt="写真と動画の編集環境" class="category-bg" loading="lazy" decoding="async">
+            </picture>
+            <div class="category-content">
+                <h2 class="category-title">Editing</h2>
+                <p class="category-desc">Mac、iPad、iPhoneなど、写真・動画・文章制作を支える日常の編集環境。</p>
+                <span class="category-arrow">View Collection →</span>
+            </div>
+        </a>
+        <a href="gear-accessories.html" class="category-card">
+            <picture>
+                <source srcset="assets/images/gear/accessories.webp" type="image/webp">
+                <img src="assets/images/gear/accessories.jpg" alt="旅と撮影に持ち歩くアクセサリー" class="category-bg" loading="lazy" decoding="async">
+            </picture>
+            <div class="category-content">
+                <h2 class="category-title">Carry & Etc.</h2>
+                <p class="category-desc">旅と撮影に持ち歩く充電器、ケーブル、収納小物などの道具メモ。</p>
+                <span class="category-arrow">View Collection →</span>
+            </div>
+        </a>
+        <a href="gear-bags.html" class="category-card">
+            <picture>
+                <source srcset="assets/images/gear/bags/bags-hero.webp" type="image/webp">
+                <img src="assets/images/gear/bags/bags-hero.jpg" alt="旅を運ぶバッグと収納機材" class="category-bg" loading="lazy" decoding="async">
+            </picture>
+            <div class="category-content">
+                <h2 class="category-title">Bags</h2>
+                <p class="category-desc">母艦・分割・ローラー。旅と撮影を運ぶPeak Design中心のバッグ構成。</p>
+                <span class="category-arrow">View Collection →</span>
+            </div>
+        </a>
     </main>
 
     <!-- Footer -->
@@ -590,7 +651,6 @@
 
             } catch (error) {
                 console.error('Error loading gear data:', error);
-                document.getElementById('category-grid').innerHTML = '<p style="text-align:center;">データの読み込みに失敗しました。</p>';
             }
         });
     </script>

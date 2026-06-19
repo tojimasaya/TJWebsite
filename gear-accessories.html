@@ -6,7 +6,7 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-806426BQX2');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Accessories — Toji Masaya</title>
+    <title>旅の撮影アクセサリー — 充電器・ケーブル・小物 | Toji Masaya</title>
     <meta name="description" content="田路昌也が旅と撮影に持ち歩くアクセサリー、充電器、収納小物などの道具メモ。">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
@@ -35,15 +35,16 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/gear-accessories.html">
-<meta property="og:title" content="Accessories — Toji Masaya">
-<meta property="og:description" content="Accessories — Toji Masaya">
+<meta property="og:title" content="旅の撮影アクセサリー — 充電器・ケーブル・小物 | Toji Masaya">
+<meta property="og:description" content="田路昌也が旅と撮影に持ち歩くアクセサリー、充電器、ケーブル、収納小物などの道具メモ。">
 <meta property="og:url" content="https://tojimasaya.com/gear-accessories.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toji Masaya">
+<meta property="og:image" content="https://tojimasaya.com/assets/images/gear/accessories.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Accessories — Toji Masaya">
+<meta name="twitter:title" content="旅の撮影アクセサリー — 充電器・ケーブル・小物 | Toji Masaya">
 <meta name="twitter:description" content="田路昌也が旅と撮影に持ち歩くアクセサリー、充電器、収納小物などの道具メモ。">
-<meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
+<meta name="twitter:image" content="https://tojimasaya.com/assets/images/gear/accessories.jpg">
 </head>
 <body>
     <!-- Navigation will be injected by site-header.js -->
@@ -59,15 +60,29 @@
     <footer class="footer"></footer>
 
     <script src="js/site-header.js"></script>
-    <script src="js/gear-data.js"></script>
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof gearData !== 'undefined') {
-                renderGrid('accessories-grid', gearData.categories.accessories.items);
-            } else {
-                document.getElementById('accessories-grid').innerText = 'Data could not be loaded.';
+        document.addEventListener('DOMContentLoaded', async () => {
+            const grid = document.getElementById('accessories-grid');
+            try {
+                const response = await fetch('data/gear.json');
+                if (!response.ok) throw new Error('Data could not be loaded.');
+                const data = await response.json();
+                if (data.categories.accessories) {
+                    renderGrid('accessories-grid', data.categories.accessories.items);
+                } else {
+                    grid.innerText = 'Data could not be loaded.';
+                }
+            } catch (error) {
+                console.error('Error loading gear data:', error);
+                grid.innerText = 'Data could not be loaded.';
             }
         });
+
+        function linkRel(url) {
+            const host = new URL(url, window.location.href).hostname;
+            const isSponsored = host === 'amzn.to' || host.includes('amazon.');
+            return isSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
+        }
 
         function renderGrid(id, items) {
             const container = document.getElementById(id);
@@ -75,14 +90,14 @@
                 const webpSrc = item.image.replace(/\.(jpg|jpeg|png)$/, '.webp');
                 return `
                 <article class="gear-item">
-                    <div class="gear-img-box"><picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></picture></div>
+                    <div class="gear-img-box"><picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.onerror=null;this.src='assets/images/gear/accessories.jpg'"></picture></div>
                     <div class="gear-content">
                         <h3 class="gear-name">${item.name}</h3>
                         <div class="gear-specs">
                             ${item.specs ? item.specs.map(s => `<span class="spec-tag">${s}</span>`).join('') : ''}
                         </div>
                         <p class="gear-desc">${item.description}</p>
-                        <div class="gear-links">${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank">${key} →</a>`).join('')}</div>
+                        <div class="gear-links">${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank" rel="${linkRel(url)}">${key} →</a>`).join('')}</div>
                     </div>
                 </article>`}).join('');
         }

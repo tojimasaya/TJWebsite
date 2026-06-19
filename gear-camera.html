@@ -349,13 +349,14 @@
 
     <footer class="footer"></footer>
 
-    <!-- データ読み込み -->
-    <script src="js/gear-data.js"></script>
-    
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            if (typeof gearData !== 'undefined') {
-                const items = gearData.categories.camera.items;
+        document.addEventListener('DOMContentLoaded', async () => {
+            try {
+                const response = await fetch('data/gear.json');
+                if (!response.ok) throw new Error('Data could not be loaded.');
+                const data = await response.json();
+                if (data.categories.camera) {
+                    const items = data.categories.camera.items;
                 const bodyItems = [];
                 const lensItems = [];
                 const adapterItems = [];
@@ -373,9 +374,14 @@
                 renderGrid('body-grid', bodyItems);
                 renderGrid('lens-grid', lensItems);
                 renderGrid('adapter-grid', adapterItems);
-            } else {
+                } else {
+                    throw new Error('Camera data not found.');
+                }
+            } catch (error) {
+                console.error('Error loading gear data:', error);
                 document.getElementById('body-grid').innerHTML = '<p>Data could not be loaded.</p>';
                 document.getElementById('lens-grid').innerHTML = '';
+                document.getElementById('adapter-grid').innerHTML = '';
             }
         });
 
@@ -408,6 +414,20 @@
             `;
         }
 
+        function linkLabel(key) {
+            if (key === 'note') return 'Read Review';
+            if (key === 'manual') return 'Manual';
+            if (key === 'reference') return 'Reference';
+            if (key === 'amazon') return 'Amazon';
+            return 'Official';
+        }
+
+        function linkRel(url) {
+            const host = new URL(url, window.location.href).hostname;
+            const isSponsored = host === 'amzn.to' || host.includes('amazon.');
+            return isSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
+        }
+
         function renderGrid(id, items) {
             const container = document.getElementById(id);
             if (items.length === 0) {
@@ -421,7 +441,7 @@
                     <div class="gear-img-box">
                         <picture>
                             <source srcset="${webpSrc}" type="image/webp">
-                            <img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=No+Image'">
+                            <img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.onerror=null;this.src='assets/images/gear/m2.jpg'">
                         </picture>
                     </div>
                     <div class="gear-content">
@@ -431,7 +451,7 @@
                         </div>
                         <p class="gear-desc">${item.description}</p>
                         <div class="gear-links">
-                            ${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank">${key === 'note' ? 'Read Review' : 'Official'} →</a>`).join('')}
+                            ${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank" rel="${linkRel(url)}">${linkLabel(key)} →</a>`).join('')}
                         </div>
                         ${renderWorkLinks(item)}
                     </div>

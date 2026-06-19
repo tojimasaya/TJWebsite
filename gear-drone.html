@@ -6,8 +6,8 @@
 <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-806426BQX2');</script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Drone Gear — Toji Masaya</title>
-    <meta name="description" content="田路昌也が旅先の空撮で使っているDJIドローン機材と、持ち出しやすさを重視した構成。">
+    <title>ドローン機材 — DJI Mini・旅の空撮 | Toji Masaya</title>
+    <meta name="description" content="田路昌也が旅先の空撮で使っているDJIドローン機材。DJI Miniや小型ドローンを中心に、持ち出しやすさと旅での使いやすさを重視した構成。">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <style>
@@ -36,15 +36,16 @@
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/gear-drone.html">
-<meta property="og:title" content="Drone Gear — Toji Masaya">
-<meta property="og:description" content="Drone Gear — Toji Masaya">
+<meta property="og:title" content="ドローン機材 — DJI Mini・旅の空撮 | Toji Masaya">
+<meta property="og:description" content="田路昌也が旅先の空撮で使っているDJIドローン機材。持ち出しやすさと旅での使いやすさを重視した構成。">
 <meta property="og:url" content="https://tojimasaya.com/gear-drone.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toji Masaya">
+<meta property="og:image" content="https://tojimasaya.com/assets/images/gear/drone.jpg">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Drone Gear — Toji Masaya">
-<meta name="twitter:description" content="田路昌也が旅先の空撮で使っているDJIドローン機材と、持ち出しやすさを重視した構成。">
-<meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
+<meta name="twitter:title" content="ドローン機材 — DJI Mini・旅の空撮 | Toji Masaya">
+<meta name="twitter:description" content="DJI Miniや小型ドローンを中心に、旅先の空撮で使っている機材と構成を紹介。">
+<meta name="twitter:image" content="https://tojimasaya.com/assets/images/gear/drone.jpg">
 </head>
 <body>
     <!-- 共通ヘッダー読み込み (navタグは削除) -->
@@ -78,18 +79,29 @@
 
     <footer class="footer"></footer>
 
-    <!-- データスクリプト読み込み -->
-    <script src="js/gear-data.js"></script>
-    
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
-            // グローバル変数 gearData が読み込まれているか確認
-            if (typeof gearData !== 'undefined' && gearData.categories.drone) {
-                renderGrid('drone-grid', gearData.categories.drone.items);
-            } else {
-                document.getElementById('drone-grid').innerText = 'Data not found.';
+        document.addEventListener('DOMContentLoaded', async () => {
+            const grid = document.getElementById('drone-grid');
+            try {
+                const response = await fetch('data/gear.json');
+                if (!response.ok) throw new Error('Data could not be loaded.');
+                const data = await response.json();
+                if (data.categories.drone) {
+                    renderGrid('drone-grid', data.categories.drone.items);
+                } else {
+                    grid.innerText = 'Data not found.';
+                }
+            } catch (error) {
+                console.error('Error loading gear data:', error);
+                grid.innerText = 'Data could not be loaded.';
             }
         });
+
+        function linkRel(url) {
+            const host = new URL(url, window.location.href).hostname;
+            const isSponsored = host === 'amzn.to' || host.includes('amazon.');
+            return isSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
+        }
 
         function renderGrid(id, items) {
             const container = document.getElementById(id);
@@ -101,14 +113,14 @@
                 const webpSrc = item.image.replace(/\.(jpg|jpeg|png)$/, '.webp');
                 return `
                 <article class="gear-item">
-                    <div class="gear-img-box"><picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.src='https://placehold.co/600x400?text=No+Image'"></picture></div>
+                    <div class="gear-img-box"><picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.onerror=null;this.src='assets/images/gear/drone.jpg'"></picture></div>
                     <div class="gear-content">
                         <h3 class="gear-name">${item.name}</h3>
                         <div class="gear-specs">
                             ${item.specs ? item.specs.map(s => `<span class="spec-tag">${s}</span>`).join('') : ''}
                         </div>
                         <p class="gear-desc">${item.description}</p>
-                        <div class="gear-links">${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank">${key} →</a>`).join('')}</div>
+                        <div class="gear-links">${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank" rel="${linkRel(url)}">${key} →</a>`).join('')}</div>
                     </div>
                 </article>`}).join('');
         }

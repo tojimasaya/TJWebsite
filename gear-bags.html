@@ -140,18 +140,29 @@
 
     <footer class="footer"></footer>
 
-    <!-- データ読み込み -->
-    <script src="js/gear-data.js"></script>
-
     <script>
-        document.addEventListener('DOMContentLoaded', () => {
+        document.addEventListener('DOMContentLoaded', async () => {
             const grid = document.getElementById('bags-grid');
-            if (typeof gearData !== 'undefined' && gearData.categories.bags) {
-                renderGrid('bags-grid', gearData.categories.bags.items);
-            } else {
+            try {
+                const response = await fetch('data/gear.json');
+                if (!response.ok) throw new Error('Data could not be loaded.');
+                const data = await response.json();
+                if (data.categories.bags) {
+                    renderGrid('bags-grid', data.categories.bags.items);
+                } else {
+                    grid.innerHTML = '<p>Data could not be loaded.</p>';
+                }
+            } catch (error) {
+                console.error('Error loading gear data:', error);
                 grid.innerHTML = '<p>Data could not be loaded.</p>';
             }
         });
+
+        function linkRel(url) {
+            const host = new URL(url, window.location.href).hostname;
+            const isSponsored = host === 'amzn.to' || host.includes('amazon.');
+            return isSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
+        }
 
         function renderGrid(id, items) {
             const container = document.getElementById(id);
@@ -174,7 +185,7 @@
                         <div class="gear-links">
                             ${Object.entries(item.links || {}).map(([key, url]) => {
                                 const label = key === 'note' || key === 'Note' || key === 'TJによるレビュー' ? 'TJによるレビュー' : key === 'amazon' ? 'Amazon で見る' : 'Official';
-                                return `<a href="${url}" target="_blank" rel="noopener sponsored">${label} →</a>`;
+                                return `<a href="${url}" target="_blank" rel="${linkRel(url)}">${label} →</a>`;
                             }).join('')}
                         </div>
                     </div>
