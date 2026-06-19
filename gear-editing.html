@@ -84,13 +84,17 @@
             return isSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
         }
 
+        function newBadge(item) {
+            return item.is_new ? `<span class="gear-new-badge">${item.new_label || 'NEW'}</span>` : '';
+        }
+
         function renderGrid(id, items) {
             const container = document.getElementById(id);
             container.innerHTML = items.map(item => {
                 const webpSrc = item.image.replace(/\.(jpg|jpeg|png)$/, '.webp');
                 return `
                 <article class="gear-item">
-                    <div class="gear-img-box"><picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.onerror=null;this.src='assets/images/gear/editing.jpg'"></picture></div>
+                    <div class="gear-img-box">${newBadge(item)}<picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.onerror=null;this.src='assets/images/gear/editing.jpg'"></picture></div>
                     <div class="gear-content">
                         <h3 class="gear-name">${item.name}</h3>
                         <div class="gear-specs">

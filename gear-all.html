@@ -218,6 +218,7 @@
                         <source srcset="${webpSrc}" type="image/webp">
                         <img src="${gear.image}" alt="${gear.name}" loading="lazy" width="400" height="300">
                     </picture>
+                    ${gear.is_new ? `<div class="gear-new-badge">${gear.new_label || 'NEW'}</div>` : ''}
                     <div class="gear-status ${gear.status}">${getStatusLabel(gear.status)}</div>
                 </div>
                 <div class="gear-info">

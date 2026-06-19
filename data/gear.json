@@ -294,6 +294,8 @@
           "brand": "DJI",
           "image": "/assets/images/gear/neo2.jpg",
           "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
           "specs": [
             "<249g / 4K60",
             "ジェスチャー操作"
@@ -376,6 +378,8 @@
           "brand": "Xiaomi",
           "image": "/assets/images/gear/xiaomi17ultra.jpg",
           "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
           "specs": [
             "Leica 監修カメラ",
             "LOFIC センサー",
@@ -468,6 +472,8 @@
           "brand": "Peak Design",
           "image": "/assets/images/gear/peak-design-wrist-strap.jpg",
           "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
           "specs": [
             "リストストラップ",
             "Anchor Link",
@@ -499,6 +505,8 @@
           "brand": "Baseus",
           "image": "/assets/images/gear/baseus-retractable-watch-cable.jpg",
           "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
           "specs": [
             "USB-C",
             "100W",
@@ -557,6 +565,8 @@
           "brand": "Peak Design",
           "image": "/assets/images/gear/bags/pd-2in1.jpg",
           "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
           "type": "backpack",
           "specs": ["40L（合体30+10 / 分離34+16）", "Sage", "機内持ち込み", "親子で分割"],
           "description": "34Lのベースと16Lのデイパックが、背面ジッパー一本で脱着する“親子”構造。合体すれば40Lの機内持ち込み、切り離せば身軽なデイパックになる。2026年のKickstarterで手に入れた、いまの旅の母艦。",
@@ -568,6 +578,8 @@
           "brand": "Peak Design",
           "image": "/assets/images/gear/bags/roller-pro.jpg",
           "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
           "type": "roller",
           "specs": ["34–39L 拡張", "Eclipse", "ドローブリッジ開き", "カーボントロリー"],
           "description": "前ヒンジのドローブリッジ式に開くキャリーオン。薄いカーボントロリーで容量を稼ぎ、34〜39Lの中にカメラキューブやパッキングキューブをそのまま収める。2-in-1の相棒として導入した。",
