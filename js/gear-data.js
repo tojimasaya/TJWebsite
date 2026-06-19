@@ -386,6 +386,18 @@ const gearData = {
           }
         },
         {
+          "id": "baseus-retractable-watch-cable",
+          "name": "Baseus 2-in-1 リトラクタブル USB-Cケーブル",
+          "brand": "Baseus",
+          "image": "assets/images/gear/baseus-retractable-watch-cable.jpg",
+          "status": "available",
+          "specs": ["USB-C", "100W", "Apple Watch", "リトラクタブル"],
+          "description": "iPhoneとApple Watchを1本で同時に充電できるBaseusの巻取り式USB-Cケーブル。巻取りケーブルと言えばBaseusという安心感があり、ケーブル周りを考えずに使えるのがいい。隣で紹介しているCIO NovaWaveはiPhone、Apple Watch、AirPodsまで充電できるすぐれものだが、バランス取りに少し気を使う。こちらは何も考えずに使える気軽さが魅力。",
+          "links": {
+             "Amazon": "https://amzn.to/4auHsCj"
+          }
+        },
+        {
           "id": "mcdodo-67w",
           "name": "Mcdodo 67W GaN Charger",
           "brand": "Mcdodo",
