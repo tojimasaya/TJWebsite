@@ -398,6 +398,18 @@ const gearData = {
           }
         },
         {
+          "id": "yazawa-hpm6ac3wh-travel-power-tap",
+          "name": "YAZAWA 海外用マルチ変換タップ3個口 HPM6AC3WH",
+          "brand": "YAZAWA",
+          "image": "assets/images/gear/yazawa-hpm6ac3wh-travel-power-tap.jpg",
+          "status": "available",
+          "specs": ["3個口", "AC100〜240V", "海外旅行用", "コード長1m"],
+          "description": "海外旅行には欠かせない電源タップ。以前はTofu Maruを使っていたが、このコンパクトさと入手しやすさで最近はこちらを使っている。何台か買って友人にプレゼントするほどの一品で、これを持っていればUSBアダプタは日本プラグの小型タイプを選べるのも良い。絶対的におすすめだが、以前買ったときより値段が上がっている気もする。",
+          "links": {
+             "Amazon": "https://www.amazon.co.jp/dp/B0G4R16XFN?tag=ojunktion-22"
+          }
+        },
+        {
           "id": "mcdodo-67w",
           "name": "Mcdodo 67W GaN Charger",
           "brand": "Mcdodo",
