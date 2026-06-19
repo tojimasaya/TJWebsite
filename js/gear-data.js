@@ -368,7 +368,7 @@ const gearData = {
           "image": "assets/images/gear/peak-design-wrist-strap.jpg",
           "status": "available",
           "specs": ["リストストラップ", "Anchor Link", "CRS-WR-DS-1"],
-          "description": "Peak Designのアンカーリンク式リストストラップ。カメラを手首で支えながら、必要なときはワンタッチで着脱できる。M型ライカや小型カメラを身軽に持ち歩くときの安全策として使いやすい。",
+          "description": "Leitz Phoneと一緒に使っているPeak Designのアンカーリンク式リストストラップ。持ち運びや撮影時は落下防止のためにストラップを付けておき、自宅に戻ったら外してスマートフォン単体で扱いやすくする。ワンタッチで着脱できるので、この使い分けがしやすい。",
           "links": {
              "Amazon": "https://amzn.to/4gv45Kk"
           }
