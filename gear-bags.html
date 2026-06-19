@@ -172,7 +172,10 @@
                         </div>
                         <p class="gear-desc">${item.description}</p>
                         <div class="gear-links">
-                            ${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank" rel="noopener sponsored">${key === 'note' ? 'Read Review' : key === 'amazon' ? 'Amazon で見る' : 'Official'} →</a>`).join('')}
+                            ${Object.entries(item.links || {}).map(([key, url]) => {
+                                const label = key === 'note' || key === 'Note' || key === 'TJによるレビュー' ? 'TJによるレビュー' : key === 'amazon' ? 'Amazon で見る' : 'Official';
+                                return `<a href="${url}" target="_blank" rel="noopener sponsored">${label} →</a>`;
+                            }).join('')}
                         </div>
                     </div>
                 </article>
