@@ -14,7 +14,7 @@
       gtag('config', 'G-806426BQX2');
     </script>
 
-    <meta name="description" content="田路昌也が愛用する撮影機材を紹介。Leica M / SL、DJIドローン、iPad編集環境、トラベルアクセサリーと、それらで撮影している写真作品への入口。">
+    <meta name="description" content="田路昌也が愛用する撮影機材を紹介。Leica M / SL、DJIドローン、iPad編集環境、トラベルアクセサリーと、旅や街歩きの用途別セットへの入口。">
     
     <!-- Fonts & CSS (optimized) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -375,6 +375,108 @@
             color: var(--text-light);
         }
 
+        .gear-setup-section {
+            background: var(--white, #fff);
+            padding: 58px 30px 54px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .gear-setup-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+        .gear-setup-header {
+            max-width: 680px;
+            margin-bottom: 28px;
+        }
+        .gear-setup-kicker {
+            display: block;
+            font-family: var(--secondary-font);
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 12px;
+        }
+        .gear-setup-title {
+            font-family: var(--primary-font);
+            font-size: clamp(1.55rem, 3vw, 2.15rem);
+            color: var(--text-color);
+            margin-bottom: 12px;
+        }
+        .gear-setup-copy {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.92rem;
+            line-height: 2;
+            color: var(--text-light);
+        }
+        .gear-setup-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 18px;
+        }
+        .gear-setup-card {
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            min-height: 100%;
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            background: var(--page-card-bg, #fff);
+            color: var(--text-color);
+            text-decoration: none;
+            transition: transform 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+        }
+        .gear-setup-card:hover {
+            transform: translateY(-2px);
+            border-color: var(--accent-color);
+            box-shadow: var(--shadow-md);
+        }
+        .gear-setup-card img {
+            display: block;
+            width: 100%;
+            aspect-ratio: 4 / 3;
+            object-fit: cover;
+        }
+        .gear-setup-body {
+            display: flex;
+            flex-direction: column;
+            flex: 1;
+            padding: 16px;
+        }
+        .gear-setup-label {
+            display: block;
+            font-family: var(--secondary-font);
+            font-size: 0.66rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: var(--text-lighter);
+            margin-bottom: 8px;
+        }
+        .gear-setup-name {
+            display: block;
+            font-family: var(--primary-font);
+            font-size: 1.06rem;
+            line-height: 1.5;
+            margin-bottom: 8px;
+        }
+        .gear-setup-text {
+            display: block;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.8rem;
+            line-height: 1.8;
+            color: var(--text-light);
+            flex: 1;
+        }
+        .gear-setup-link {
+            display: inline-flex;
+            margin-top: 14px;
+            font-family: var(--secondary-font);
+            font-size: 0.76rem;
+            letter-spacing: 0.12em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+        }
+
         .anchor-target {
             display: block;
             height: 0;
@@ -390,6 +492,9 @@
             .gear-work-inner {
                 grid-template-columns: 1fr;
             }
+            .gear-setup-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
@@ -403,13 +508,19 @@
             .gear-work-cards {
                 grid-template-columns: 1fr;
             }
+            .gear-setup-section {
+                padding: 42px 20px 40px;
+            }
+            .gear-setup-grid {
+                grid-template-columns: 1fr;
+            }
         }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/gear.html">
 <meta property="og:title" content="撮影機材 — Leica・ドローン・編集ツール | Toji Masaya">
-<meta property="og:description" content="田路昌也が愛用する撮影機材を紹介。Leica M / SL、DJIドローン、iPad編集環境、トラベルアクセサリーと、それらで撮影している写真作品への入口。">
+<meta property="og:description" content="田路昌也が愛用する撮影機材を紹介。Leica M / SL、DJIドローン、iPad編集環境、トラベルアクセサリーと、旅や街歩きの用途別セットへの入口。">
 <meta property="og:url" content="https://tojimasaya.com/gear.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toji Masaya">
@@ -417,14 +528,14 @@
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:site" content="@mongkok93">
 <meta name="twitter:title" content="撮影機材 — Leica・ドローン・編集ツール | Toji Masaya">
-<meta name="twitter:description" content="Leica M / SL、DJIドローン、iPad編集環境などの撮影機材と、それらで撮影している写真作品への入口。">
+<meta name="twitter:description" content="Leica M / SL、DJIドローン、iPad編集環境などの撮影機材と、旅や街歩きの用途別セットへの入口。">
 <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gear/m2.jpg">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "CollectionPage",
   "name": "撮影機材 — Toji Masaya",
-  "description": "田路昌也が愛用する撮影機材コレクション。Leica、DJIドローン、iPad編集環境、トラベルアクセサリーと、それらで撮影している写真作品への入口。",
+  "description": "田路昌也が愛用する撮影機材コレクション。Leica、DJIドローン、iPad編集環境、トラベルアクセサリーと、旅や街歩きの用途別セットへの入口。",
   "url": "https://tojimasaya.com/gear.html",
   "author": {
     "@type": "Person",
@@ -504,6 +615,68 @@
                         <span class="gear-work-card-label">Leica SL2-S</span>
                         <strong class="gear-work-card-title">香港ネオン残照</strong>
                         <span class="gear-work-card-copy">変わりゆく香港の街から、消えゆくネオンの光を記録しています。</span>
+                    </span>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section class="gear-setup-section" aria-labelledby="gear-setup-title">
+        <div class="gear-setup-inner">
+            <div class="gear-setup-header">
+                <span class="gear-setup-kicker">Field Setups</span>
+                <h2 class="gear-setup-title" id="gear-setup-title">用途別セット</h2>
+                <p class="gear-setup-copy">
+                    機材は単体で選ぶより、どこを歩き、何を残したいかで組み合わせが変わります。香港、姫路城、旅の空撮、短い移動で実際に持ち出す組み合わせを入口にしました。
+                </p>
+            </div>
+            <div class="gear-setup-grid">
+                <a class="gear-setup-card" href="hongkong-neon.html" data-growth-label="gear_setup_hongkong_walk">
+                    <picture>
+                        <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
+                        <img src="assets/images/hongkong-neon/01.jpg" alt="香港の夜を歩くためのLeica街歩きセット" loading="lazy" decoding="async">
+                    </picture>
+                    <span class="gear-setup-body">
+                        <span class="gear-setup-label">Hong Kong Walk</span>
+                        <strong class="gear-setup-name">香港街歩きセット</strong>
+                        <span class="gear-setup-text">夜の光、看板、雨上がりの反射を歩いて拾うためのLeica中心の軽い構成。</span>
+                        <span class="gear-setup-link">香港の記録へ →</span>
+                    </span>
+                </a>
+                <a class="gear-setup-card" href="shirasagi36.html" data-growth-label="gear_setup_himeji_castle">
+                    <picture>
+                        <source srcset="assets/images/shirasagi/33.webp" type="image/webp">
+                        <img src="assets/images/shirasagi/33.jpg" alt="姫路城を撮るための白鷺三十六景セット" loading="lazy" decoding="async">
+                    </picture>
+                    <span class="gear-setup-body">
+                        <span class="gear-setup-label">Himeji Castle</span>
+                        <strong class="gear-setup-name">姫路城撮影セット</strong>
+                        <span class="gear-setup-text">遠景、石垣、季節の光まで拾えるように、Leica SL / Mと標準域を軸にした構成。</span>
+                        <span class="gear-setup-link">白鷺三十六景へ →</span>
+                    </span>
+                </a>
+                <a class="gear-setup-card" href="/articles/drone-travel-guide.html" data-growth-label="gear_setup_drone_travel">
+                    <picture>
+                        <source srcset="assets/images/gear/drone.webp" type="image/webp">
+                        <img src="assets/images/gear/drone.jpg" alt="海外旅行で使う小型ドローンセット" loading="lazy" decoding="async">
+                    </picture>
+                    <span class="gear-setup-body">
+                        <span class="gear-setup-label">Drone Travel</span>
+                        <strong class="gear-setup-name">海外ドローン旅セット</strong>
+                        <span class="gear-setup-text">機体、予備バッテリー、編集環境まで、旅先で実際に飛ばす回数を増やすための構成。</span>
+                        <span class="gear-setup-link">ドローン旅ガイドへ →</span>
+                    </span>
+                </a>
+                <a class="gear-setup-card" href="gear-bags.html" data-growth-label="gear_setup_light_trip">
+                    <picture>
+                        <source srcset="assets/images/gear/bags/bags-hero.webp" type="image/webp">
+                        <img src="assets/images/gear/bags/bags-hero.jpg" alt="一泊旅で使うバッグと収納セット" loading="lazy" decoding="async">
+                    </picture>
+                    <span class="gear-setup-body">
+                        <span class="gear-setup-label">Light Trip</span>
+                        <strong class="gear-setup-name">一泊旅の軽量セット</strong>
+                        <span class="gear-setup-text">大きく運び、現地では小さく分ける。バッグと小物で身軽さを保つための構成。</span>
+                        <span class="gear-setup-link">バッグ構成へ →</span>
                     </span>
                 </a>
             </div>
