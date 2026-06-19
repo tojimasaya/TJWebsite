@@ -406,7 +406,8 @@ const gearData = {
           "specs": ["3個口", "AC100〜240V", "海外旅行用", "コード長1m"],
           "description": "海外旅行には欠かせない電源タップ。以前はTofu Maruを使っていたが、このコンパクトさと入手しやすさで最近はこちらを使っている。何台か買って友人にプレゼントするほどの一品で、これを持っていればUSBアダプタは日本プラグの小型タイプを選べるのも良い。絶対的におすすめだが、以前買ったときより値段が上がっている気もする。",
           "links": {
-             "Amazon": "https://www.amazon.co.jp/dp/B0G4R16XFN?tag=ojunktion-22"
+             "Amazon": "https://www.amazon.co.jp/dp/B0G4R16XFN?tag=ojunktion-22",
+             "Note": "https://note.com/tojimasaya/n/n55dfd508febb"
           }
         },
         {
@@ -493,7 +494,7 @@ const gearData = {
           "type": "camera-cube",
           "specs": ["X-Small", "Black", "V2", "小型カメラ用"],
           "description": "小型カメラやレンズを必要最小限で守るCamera Cube V2。バッグの中に小さな撮影区画を作りたいときに便利なサイズ。",
-          "links": { "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=X-Small&Color=Black" }
+          "links": { "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=X-Small&Color=Black", "Note": "https://note.com/tojimasaya/n/n149d3295b30d" }
         },
         {
           "id": "pd-camera-cube-v2-small-black",
@@ -548,7 +549,7 @@ const gearData = {
           "type": "tote",
           "specs": ["14.5L", "約600g", "折りたたみ可能", "旅先サブバッグ"],
           "description": "軽量で簡単に畳めるトート。キャリーケースに入れておき、旅先で荷物が増えたときや街歩き用のサブバッグとして使うことが多い。",
-          "links": { "official": "https://www.alpakagear.jp/view/item/000000000031" }
+          "links": { "official": "https://www.alpakagear.jp/view/item/000000000031", "Note": "https://note.com/tojimasaya/n/n149d3295b30d" }
         },
         {
           "id": "alpaka-metro-tote",
