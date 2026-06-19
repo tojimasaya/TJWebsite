@@ -362,6 +362,18 @@ const gearData = {
           "links": {}
         },
         {
+          "id": "peak-design-wrist-strap",
+          "name": "Peak Design リストストラップ CRS-WR-DS-1",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/peak-design-wrist-strap.jpg",
+          "status": "available",
+          "specs": ["リストストラップ", "Anchor Link", "CRS-WR-DS-1"],
+          "description": "Peak Designのアンカーリンク式リストストラップ。カメラを手首で支えながら、必要なときはワンタッチで着脱できる。M型ライカや小型カメラを身軽に持ち歩くときの安全策として使いやすい。",
+          "links": {
+             "Amazon": "https://amzn.to/4gv45Kk"
+          }
+        },
+        {
           "id": "cio-novawave",
           "name": "CIO NovaWave 3way",
           "brand": "CIO",
@@ -425,6 +437,83 @@ const gearData = {
           "specs": ["35–45L 可変", "Sage", "2018〜", "旧メイン"],
           "description": "2018年のKickstarterから約8年使い続けた、旅のメイン機。35〜45Lの可変容量と複数のインナーで“大概のものが入る”母艦。新しい2-in-1に主役を譲りつつ、いまも現役。",
           "links": { "amazon": "https://www.amazon.co.jp/dp/B0DDL6K3XL?tag=ojunktion-22" }
+        },
+        {
+          "id": "pd-everyday-backpack-zip-15l-midnight",
+          "name": "Peak Design Everyday Backpack Zip 15L",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/pd-everyday-backpack-zip-15l-midnight.jpg",
+          "status": "available",
+          "type": "backpack",
+          "specs": ["15L", "Midnight", "サイドアクセス", "街歩き・小型撮影"],
+          "description": "Everyday Backpackの機能を、よりシンプルで目立たないジップ仕様にした15Lモデル。街歩きや身軽な撮影にちょうどいいサイズ感で、日常持ちにもカメラバッグにも振れる。",
+          "links": { "official": "https://www.peakdesign.com/en-jp/products/everyday-backpack-zip?Size=15L&Color=Midnight" }
+        },
+        {
+          "id": "pd-everyday-totepack-20l-black",
+          "name": "Peak Design Everyday Totepack 20L",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/pd-everyday-totepack-20l-black.jpg",
+          "status": "available",
+          "type": "totepack",
+          "specs": ["20L", "Black", "トート/バックパック", "FlexFold Divider"],
+          "description": "トートの気軽さとバックパックの機動力を一つにした20Lモデル。カメラも日用品も入れやすく、持ち方を切り替えられるので移動の多い日に使いやすい。",
+          "links": { "official": "https://www.peakdesign.com/en-jp/products/everyday-totepack?Size=20L&Color=Black" }
+        },
+        {
+          "id": "pd-camera-cube-v2-xsmall-black",
+          "name": "Peak Design Camera Cube V2 X-Small",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/pd-camera-cube-v2-xsmall-black.jpg",
+          "status": "available",
+          "type": "camera-cube",
+          "specs": ["X-Small", "Black", "V2", "小型カメラ用"],
+          "description": "小型カメラやレンズを必要最小限で守るCamera Cube V2。バッグの中に小さな撮影区画を作りたいときに便利なサイズ。",
+          "links": { "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=X-Small&Color=Black" }
+        },
+        {
+          "id": "pd-camera-cube-v2-small-black",
+          "name": "Peak Design Camera Cube V2 Small",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/pd-camera-cube-v2-small-black.jpg",
+          "status": "available",
+          "type": "camera-cube",
+          "specs": ["Small", "Black", "V2", "カメラ収納"],
+          "description": "カメラ一式をほどよくまとめるSmallサイズのCamera Cube V2。仕切りを組み替えながら、旅バッグの中を撮影機材用に整えられる。",
+          "links": { "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=Small&Color=Black" }
+        },
+        {
+          "id": "pd-camera-cube-v2-medium-black",
+          "name": "Peak Design Camera Cube V2 Medium",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/pd-camera-cube-v2-medium-black.jpg",
+          "status": "available",
+          "type": "camera-cube",
+          "specs": ["Medium", "Black", "V2", "複数機材向け"],
+          "description": "複数のボディやレンズをまとめて運ぶMediumサイズのCamera Cube V2。Travel Backpack系の母艦に入れて、機材量が多い移動に使う。",
+          "links": { "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=Medium&Color=Black" }
+        },
+        {
+          "id": "pd-tech-pouch-regular-black",
+          "name": "Peak Design Tech Pouch Regular",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/pd-tech-pouch-regular-black.jpg",
+          "status": "available",
+          "type": "pouch",
+          "specs": ["Regular", "Black", "ケーブル整理", "ガジェット収納"],
+          "description": "ケーブル、充電器、SSDなど細かいガジェット類をまとめて運ぶTech Pouch。バッグの中で散らばりがちな小物を一つの区画に集約できる。",
+          "links": { "official": "https://www.peakdesign.com/en-jp/products/tech-pouch?Size=Regular&Color=Black" }
+        },
+        {
+          "id": "pd-packable-tote-sage",
+          "name": "Peak Design Packable Tote",
+          "brand": "Peak Design",
+          "image": "assets/images/gear/bags/pd-packable-tote-sage.jpg",
+          "status": "available",
+          "type": "tote",
+          "specs": ["Sage", "折りたたみ", "軽量トート", "旅先サブバッグ"],
+          "description": "小さく畳んで持ち歩けるPeak DesignのPackable Tote。旅先で荷物が増えたときや、近所への買い物、ホテル周りの軽い外出に使いやすい。",
+          "links": { "official": "https://www.peakdesign.com/en-jp/products/packable-tote?Color=Sage" }
         }
       ]
     }
