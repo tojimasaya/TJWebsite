@@ -520,6 +520,27 @@
           }
         },
         {
+          "id": "momax-1-power-x-pro-mini",
+          "name": "Momax 1-Power X Pro Mini+ 5000mAh",
+          "brand": "Momax",
+          "image": "/assets/images/gear/momax-1-power-x-pro-mini.jpg",
+          "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
+          "specs": [
+            "5000mAh",
+            "折りたたみUSB-Cプラグ",
+            "内蔵USB-Cケーブル",
+            "Apple Watch急速充電",
+            "USB-C PD 20W"
+          ],
+          "description": "最近調達した、Apple Watch充電器まで内蔵した小型モバイルバッテリー。折りたたみUSB-Cプラグ、内蔵USB-Cケーブル、USB-Cポートを備え、旅先でケーブルを減らせるのが魅力。5000mAhなので、一日外出や機内・ホテルまわりの補助電源として使いやすそう。",
+          "comment": "",
+          "links": {
+            "official": "https://hk.momax.net/products/1-power-x-pro-mini-5000mah-integrated-foldable-usb-c-plug-and-built-in-usb-c-cable-battery-pack-with-apple-watch-fast-charger"
+          }
+        },
+        {
           "id": "yazawa-hpm6ac3wh-travel-power-tap",
           "name": "YAZAWA 海外用マルチ変換タップ3個口 HPM6AC3WH",
           "brand": "YAZAWA",
