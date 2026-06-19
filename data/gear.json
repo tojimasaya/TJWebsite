@@ -624,6 +624,28 @@
           "specs": ["Sage", "折りたたみ", "軽量トート", "旅先サブバッグ"],
           "description": "小さく畳んで持ち歩けるPeak DesignのPackable Tote。旅先で荷物が増えたときや、近所への買い物、ホテル周りの軽い外出に使いやすい。",
           "links": { "official": "https://www.peakdesign.com/en-jp/products/packable-tote?Color=Sage" }
+        },
+        {
+          "id": "alpaka-elements-tote-m",
+          "name": "ALPAKA Elements Tote M",
+          "brand": "ALPAKA",
+          "image": "/assets/images/gear/bags/alpaka-elements-tote-m.jpg",
+          "status": "available",
+          "type": "tote",
+          "specs": ["14.5L", "約600g", "折りたたみ可能", "旅先サブバッグ"],
+          "description": "軽量で簡単に畳めるトート。キャリーケースに入れておき、旅先で荷物が増えたときや街歩き用のサブバッグとして使うことが多い。",
+          "links": { "official": "https://www.alpakagear.jp/view/item/000000000031" }
+        },
+        {
+          "id": "alpaka-metro-tote",
+          "name": "ALPAKA Metro Tote",
+          "brand": "ALPAKA",
+          "image": "/assets/images/gear/bags/alpaka-metro-tote.jpg",
+          "status": "available",
+          "type": "tote",
+          "specs": ["ジッパー開閉", "ラゲッジパススルー", "16インチPC対応", "約900g"],
+          "description": "上部にジッパーがあるので旅行時はこちらが安心。キャリーバッグのハンドルに差し込めるラゲッジパススルー付きなのも良く、移動中の使い勝手が高い。",
+          "links": { "official": "https://www.alpakagear.jp/view/item/000000000045" }
         }
       ]
     }
