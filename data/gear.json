@@ -439,87 +439,6 @@
       "description": "旅を快適にしてくれるアクセサリー。",
       "items": [
         {
-          "id": "acasis-ssd",
-          "name": "ACASIS SSD ",
-          "brand": "ACASIS",
-          "image": "/assets/images/gear/acasis.jpg",
-          "status": "available",
-          "specs": [
-            "MagSafe",
-            "M.2 SSD"
-          ],
-          "description": "Macbookでもスマートフォンでも利用可能な高速SSD内蔵 多機能HUB",
-          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/ne60ce62cf179?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">HAGiBiSからACASISへ——MagSafe対応SSDケースを乗り換えた理由</a>",
-          "links": {}
-        },
-        {
-          "id": "pgytech-magcam",
-          "name": "PGYTECH MagCam グリップ",
-          "brand": "PGYTECH",
-          "image": "/assets/images/gear/pgytech_magcam.jpg",
-          "status": "available",
-          "specs": [
-            "MagSafe",
-            "グリップ一体"
-          ],
-          "description": "iPhoneを“カメラ化”する革命的小物。",
-          "comment": "",
-          "links": {}
-        },
-        {
-          "id": "peak-design-wrist-strap",
-          "name": "Peak Design リストストラップ CRS-WR-DS-1",
-          "brand": "Peak Design",
-          "image": "/assets/images/gear/peak-design-wrist-strap.jpg",
-          "status": "available",
-          "is_new": true,
-          "new_label": "NEW 2026",
-          "specs": [
-            "リストストラップ",
-            "Anchor Link",
-            "CRS-WR-DS-1"
-          ],
-          "description": "Leitz Phoneと一緒に使っているPeak Designのアンカーリンク式リストストラップ。持ち運びや撮影時は落下防止のためにストラップを付けておき、自宅に戻ったら外してスマートフォン単体で扱いやすくする。ワンタッチで着脱できるので、この使い分けがしやすい。",
-          "comment": "",
-          "links": {
-            "amazon": "https://amzn.to/4gv45Kk"
-          }
-        },
-        {
-          "id": "cio-novawave",
-          "name": "CIO NovaWave 3way",
-          "brand": "CIO",
-          "image": "/assets/images/gear/cio_novawave.jpg",
-          "status": "available",
-          "specs": [
-            "Type-C 3in1",
-            "出先充電の相棒"
-          ],
-          "description": "iPhone、Apple Watch、AirPodsの３つを充電できるスグレモノ。ただ別途USB充電器が必要なことに注意。ぜひ私の使い方をしたのリンクで確認してください。",
-          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
-          "links": {}
-        },
-        {
-          "id": "baseus-retractable-watch-cable",
-          "name": "Baseus 2-in-1 リトラクタブル USB-Cケーブル",
-          "brand": "Baseus",
-          "image": "/assets/images/gear/baseus-retractable-watch-cable.jpg",
-          "status": "available",
-          "is_new": true,
-          "new_label": "NEW 2026",
-          "specs": [
-            "USB-C",
-            "100W",
-            "Apple Watch充電器付き",
-            "巻取りケーブル"
-          ],
-          "description": "iPhoneとApple Watchを1本で同時に充電できるBaseusの巻取り式USB-Cケーブル。巻取りケーブルと言えばBaseusという安心感があり、ケーブル周りを考えずに使えるのがいい。隣で紹介しているCIO NovaWaveはiPhone、Apple Watch、AirPodsまで充電できるすぐれものだが、バランス取りに少し気を使う。こちらは何も考えずに使える気軽さが魅力。",
-          "comment": "",
-          "links": {
-            "amazon": "https://amzn.to/4auHsCj"
-          }
-        },
-        {
           "id": "momax-1-power-x-pro-mini",
           "name": "Momax 1-Power X Pro Mini+ 5000mAh",
           "brand": "Momax",
@@ -559,6 +478,59 @@
           }
         },
         {
+          "id": "baseus-retractable-watch-cable",
+          "name": "Baseus 2-in-1 リトラクタブル USB-Cケーブル",
+          "brand": "Baseus",
+          "image": "/assets/images/gear/baseus-retractable-watch-cable.jpg",
+          "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
+          "specs": [
+            "USB-C",
+            "100W",
+            "Apple Watch充電器付き",
+            "巻取りケーブル"
+          ],
+          "description": "iPhoneとApple Watchを1本で同時に充電できるBaseusの巻取り式USB-Cケーブル。巻取りケーブルと言えばBaseusという安心感があり、ケーブル周りを考えずに使えるのがいい。隣で紹介しているCIO NovaWaveはiPhone、Apple Watch、AirPodsまで充電できるすぐれものだが、バランス取りに少し気を使う。こちらは何も考えずに使える気軽さが魅力。",
+          "comment": "",
+          "links": {
+            "amazon": "https://amzn.to/4auHsCj"
+          }
+        },
+        {
+          "id": "peak-design-wrist-strap",
+          "name": "Peak Design リストストラップ CRS-WR-DS-1",
+          "brand": "Peak Design",
+          "image": "/assets/images/gear/peak-design-wrist-strap.jpg",
+          "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
+          "specs": [
+            "リストストラップ",
+            "Anchor Link",
+            "CRS-WR-DS-1"
+          ],
+          "description": "Leitz Phoneと一緒に使っているPeak Designのアンカーリンク式リストストラップ。持ち運びや撮影時は落下防止のためにストラップを付けておき、自宅に戻ったら外してスマートフォン単体で扱いやすくする。ワンタッチで着脱できるので、この使い分けがしやすい。",
+          "comment": "",
+          "links": {
+            "amazon": "https://amzn.to/4gv45Kk"
+          }
+        },
+        {
+          "id": "cio-novawave",
+          "name": "CIO NovaWave 3way",
+          "brand": "CIO",
+          "image": "/assets/images/gear/cio_novawave.jpg",
+          "status": "available",
+          "specs": [
+            "Type-C 3in1",
+            "出先充電の相棒"
+          ],
+          "description": "iPhone、Apple Watch、AirPodsの３つを充電できるスグレモノ。ただ別途USB充電器が必要なことに注意。ぜひ私の使い方をしたのリンクで確認してください。",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
+          "links": {}
+        },
+        {
           "id": "mcdodo-67w-charger",
           "name": "Mcdodo 67W GaN 急速充電器",
           "brand": "Mcdodo",
@@ -570,6 +542,34 @@
           ],
           "description": "上で紹介しているNovaWave 3wayとペアで使うと最強。下の noteで使い勝手を確認してください。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
+          "links": {}
+        },
+        {
+          "id": "pgytech-magcam",
+          "name": "PGYTECH MagCam グリップ",
+          "brand": "PGYTECH",
+          "image": "/assets/images/gear/pgytech_magcam.jpg",
+          "status": "available",
+          "specs": [
+            "MagSafe",
+            "グリップ一体"
+          ],
+          "description": "iPhoneを“カメラ化”する革命的小物。",
+          "comment": "",
+          "links": {}
+        },
+        {
+          "id": "acasis-ssd",
+          "name": "ACASIS SSD ",
+          "brand": "ACASIS",
+          "image": "/assets/images/gear/acasis.jpg",
+          "status": "available",
+          "specs": [
+            "MagSafe",
+            "M.2 SSD"
+          ],
+          "description": "Macbookでもスマートフォンでも利用可能な高速SSD内蔵 多機能HUB",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/ne60ce62cf179?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">HAGiBiSからACASISへ——MagSafe対応SSDケースを乗り換えた理由</a>",
           "links": {}
         }
       ]
