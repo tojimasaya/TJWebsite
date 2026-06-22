@@ -370,7 +370,10 @@
           ],
           "description": "iPhone 17 Pro は「信頼を軸にしたメイン携帯」なんだけど、「写真もきちんとこなす頼もしい相棒」",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/nd229cd856751\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【前編】iPhone 17 Pro検証：x2・x8は単なるクロップか？</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n53df41f14082\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【後編】iPhone 17 Pro vs Xiaomi 15 Ultra：生活と創造のあいだで揺れる2台体制</a>",
-          "links": {}
+          "links": {
+            "レビュー前編": "https://note.com/tojimasaya/n/nd229cd856751",
+            "レビュー後編": "https://note.com/tojimasaya/n/n53df41f14082"
+          }
         },
         {
           "id": "xiaomi-17-ultra",
@@ -387,7 +390,12 @@
           ],
           "description": "山根さんから譲り受けた現行メイン機。ライカ監修のカメラに加え、強い光源を「炎」と認識して白飛びを抑えるフレイムモード（LOFICセンサー）が独特。篝火や夜景の難しい光も、シャッターを押すだけで最適解に仕上げてくれます。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n748641edca32\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Xiaomi 17 Ultra実写レビュー（前編）　15 Ultraからの乗り換えと、2億画素ペリスコープの真価</a>",
-          "links": {}
+          "links": {
+            "レビュー前編": "https://note.com/tojimasaya/n/n748641edca32",
+            "レビュー後編": "https://note.com/tojimasaya/n/n1476be9aaa05",
+            "vivo比較": "https://note.com/tojimasaya/n/n4772412efc23",
+            "姫路夜景": "https://note.com/tojimasaya/n/nc3f0d5e2ed2f"
+          }
         },
         {
           "id": "oppo-find-n5",
