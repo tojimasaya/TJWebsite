@@ -584,7 +584,7 @@
         },
         {
           "id": "acasis-ssd",
-          "name": "ACASIS SSD ",
+          "name": "ACASIS SSD",
           "brand": "ACASIS",
           "image": "/assets/images/gear/acasis.jpg",
           "status": "available",
@@ -592,9 +592,11 @@
             "MagSafe",
             "M.2 SSD"
           ],
-          "description": "Macbookでもスマートフォンでも利用可能な高速SSD内蔵 多機能HUB",
+          "description": "MacBookでもスマートフォンでも使える、MagSafe対応のSSD内蔵多機能HUB。スマホへのデータコピーや、撮影した大きなファイルを外部SSDに逃がす用途で便利。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/ne60ce62cf179?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">HAGiBiSからACASISへ——MagSafe対応SSDケースを乗り換えた理由</a>",
-          "links": {}
+          "links": {
+            "レビュー": "https://note.com/tojimasaya/n/ne60ce62cf179"
+          }
         }
       ]
     },
