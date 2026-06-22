@@ -144,7 +144,7 @@
         document.addEventListener('DOMContentLoaded', async () => {
             const grid = document.getElementById('bags-grid');
             try {
-                const response = await fetch('data/gear.json');
+                const response = await fetch('data/gear.json', { cache: 'no-cache' });
                 if (!response.ok) throw new Error('Data could not be loaded.');
                 const data = await response.json();
                 if (data.categories.bags) {

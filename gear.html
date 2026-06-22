@@ -787,7 +787,7 @@
         document.addEventListener('DOMContentLoaded', async () => {
             try {
                 // Fetch JSON
-                const res = await fetch('data/gear.json');
+                const res = await fetch('data/gear.json', { cache: 'no-cache' });
                 if (!res.ok) throw new Error('Failed to load JSON');
                 const data = await res.json();
                 

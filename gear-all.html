@@ -165,7 +165,7 @@
         // 機材データをロード
         async function loadGearData() {
             try {
-                const response = await fetch('data/gear.json');
+                const response = await fetch('data/gear.json', { cache: 'no-cache' });
                 if (!response.ok) {
                     throw new Error('データの読み込みに失敗しました');
                 }
