@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-22T00:00:00Z",
+  "updated_at": "2026-06-23T00:00:00Z",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -407,9 +407,12 @@
             "16GB",
             "512GB"
           ],
-          "description": "AndroidはAppleのエコシステムに入れないという先入観を完全否定されました。Find N5はAirdrop的ファイルシェアが可能です。",
+          "description": "折りたたみスマホとしての大画面に加え、ColorOS 16以降はMac上で画面ミラーリングできるのが強み。AndroidだからApple連携から外れる、という不安をかなり薄めてくれたタブレット代わりの一台。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n82331875d2b8\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">O+ Connectで広がる可能性──OPPO Find N5とAppleデバイスの相互連携</a>",
-          "links": {}
+          "links": {
+            "Mac連携レビュー": "https://note.com/tojimasaya/n/n802d7acd7aeb",
+            "O+ Connect": "https://note.com/tojimasaya/n/n82331875d2b8"
+          }
         },
         {
           "id": "iphone-se-3rd-64gb-black",
@@ -511,9 +514,10 @@
             "Apple Watch充電器付き",
             "巻取りケーブル"
           ],
-          "description": "iPhoneとApple Watchを1本で同時に充電できるBaseusの巻取り式USB-Cケーブル。巻取りケーブルと言えばBaseusという安心感があり、ケーブル周りを考えずに使えるのがいい。隣で紹介しているCIO NovaWaveはiPhone、Apple Watch、AirPodsまで充電できるすぐれものだが、バランス取りに少し気を使う。こちらは何も考えずに使える気軽さが魅力。",
+          "description": "iPhoneとApple Watchを1本で同時に充電できるBaseusの巻取り式USB-Cケーブル。Baseusは絡みにくさや耐久性、少し変わった機能の取り込みが面白いブランドで、ケーブル周りを考えずに使える気軽さが魅力。CIO NovaWaveより充電対象は絞られるが、そのぶん何も考えずに使える。",
           "comment": "",
           "links": {
+            "関連レビュー": "https://note.com/tojimasaya/n/ndb48daa36430",
             "amazon": "https://amzn.to/4auHsCj"
           }
         },
@@ -546,7 +550,7 @@
             "Type-C 3in1",
             "出先充電の相棒"
           ],
-          "description": "iPhone、Apple Watch、AirPodsの３つを充電できるスグレモノ。ただ別途USB充電器が必要なことに注意。ぜひ私の使い方をしたのリンクで確認してください。",
+          "description": "iPhone、Apple Watch、AirPodsをまとめて充電できる3wayチャージャー。旅先でApple Watchの電池切れはかなり痛いので、腕時計・イヤホン・スマホを一晩で戻せる安心感が大きい。ベッドサイドではナイトスタンド的にも使えるが、別途USB充電器は必要。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
           "links": {
             "レビュー": "https://note.com/tojimasaya/n/n7e6bcdb29165"
@@ -562,7 +566,7 @@
             "67W",
             "リトラクタブルケーブルが便利"
           ],
-          "description": "上で紹介しているNovaWave 3wayとペアで使うと最強。下の noteで使い勝手を確認してください。",
+          "description": "折りたたみ式の日本向けACプラグに、USB-CとUSB-A、さらに巻き取り式USB-Cケーブルを内蔵した67W GaN充電器。ケーブル忘れや断線リスクを減らせるうえ、出力表示で充電状況も見える。NovaWave 3wayと組み合わせると旅先の電源まわりがかなり安定する。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
           "links": {
             "レビュー": "https://note.com/tojimasaya/n/n7e6bcdb29165"
@@ -576,11 +580,15 @@
           "status": "available",
           "specs": [
             "MagSafe",
-            "グリップ一体"
+            "グリップ一体",
+            "Bluetoothシャッター",
+            "スタンド"
           ],
-          "description": "iPhoneを“カメラ化”する革命的小物。",
+          "description": "Xiaomi 15 Ultraを“写真機”として使うために導入したMagSafe対応グリップ。装着するとスマホをカメラのように構えられ、Bluetoothシャッターやスタンド機能も使える。スマホを撮影専用機として見せたいときに効く小物。",
           "comment": "",
-          "links": {}
+          "links": {
+            "使用記事": "https://note.com/tojimasaya/n/n7e99cfcd1cd0"
+          }
         },
         {
           "id": "acasis-ssd",
