@@ -1,5 +1,42 @@
 [
   {
+    "slug": "one-dim-sum-prince-edward",
+    "label": "Today's Frame",
+    "title": "友人を連れていく飲茶 — 太子・一點心",
+    "place": "香港・太子",
+    "date": "2026年6月18日",
+    "body": "友人が香港に来るたび、飲茶ならまず連れていくのは太子のこの一點心で、荷葉をほどけば湯気の立つ糯米鶏、割れば黄身がとろりと流れ出す奶皇包、咖喱の染みた魷魚に、てっぺんの裂けた叉燒包と、いわゆる『外国人が思い描く飲茶』がひと通り、文句なしに旨い形で並んでいて、店員も観光客に驚くほど親切で丁寧、ただ——旨いのは間違いないぶん、あまりにお手本通りで隙がなく、長く香港にいる人間にはむしろ少し物足りないほどで、おまけに店の外には傘を差した行列が途切れないものだから、腰を据えて茶をだらだら飲む気にはなれず、つい早く食べて早く立たねばと追い立てられてしまうのが私の性分なのだが、裏を返せば、明日空港に降り立つ友人にとっては、これ以上ない『これぞ香港の飲茶』なわけで——だから、海外から来る人にこそ、迷わず勧めたい。",
+    "image": "assets/images/photo-notes/one-dim-sum-prince-edward-spread.jpg",
+    "imageWebp": "assets/images/photo-notes/one-dim-sum-prince-edward-spread.webp",
+    "alt": "竹せいろの叉燒包と奶皇包、白い器に入った咖喱魷魚、荷葉に包まれた糯米鶏が並ぶ飲茶のテーブル",
+    "caption": "Yum Cha Spread / One Dim Sum",
+    "sideFrames": [
+      {
+        "title": "とろり奶皇包",
+        "caption": "Custard Bun / 奶皇包",
+        "image": "assets/images/photo-notes/one-dim-sum-prince-edward-custard-bun.jpg",
+        "imageWebp": "assets/images/photo-notes/one-dim-sum-prince-edward-custard-bun.webp",
+        "alt": "半分に割った奶皇包から黄色いカスタード状の餡がとろりと流れ出している"
+      },
+      {
+        "title": "一點心・太子",
+        "caption": "One Dim Sum / Prince Edward",
+        "image": "assets/images/photo-notes/one-dim-sum-prince-edward-storefront.jpg",
+        "imageWebp": "assets/images/photo-notes/one-dim-sum-prince-edward-storefront.webp",
+        "alt": "「ONE DIM SUM 一點心」の店頭に観光客が行列を作っている様子"
+      },
+      {
+        "title": "糯米鶏（荷葉飯）",
+        "caption": "Lotus Leaf Rice / 糯米鶏",
+        "image": "assets/images/photo-notes/one-dim-sum-prince-edward-lo-mai-gai.jpg",
+        "imageWebp": "assets/images/photo-notes/one-dim-sum-prince-edward-lo-mai-gai.webp",
+        "alt": "蓮の葉を開いた中の、こんがりした糯米鶏（もち米のおこわ）"
+      }
+    ],
+    "link": "gallery.html",
+    "linkLabel": "写真ギャラリーへ"
+  },
+  {
     "slug": "shatin-bruce-lee-monalisa",
     "label": "Today's Frame",
     "title": "ブルース・リーと弥勒とモナリザと、妻",
