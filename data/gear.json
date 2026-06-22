@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-19T00:00:00Z",
+  "updated_at": "2026-06-22T00:00:00Z",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -404,31 +404,42 @@
           "links": {}
         },
         {
-          "id": "iphone-15-Pro",
-          "name": "iPhone 15 Pro 512GB",
+          "id": "iphone-se-3rd-64gb-black",
+          "name": "iPhone SE 3rd 64GB Black",
           "brand": "Apple",
-          "image": "/assets/images/gear/iphone15pro512gb.jpg",
-          "status": "sold",
+          "image": "/assets/images/gear/iphone-se-3rd-black.png",
+          "status": "available",
           "specs": [
-            "512GB"
+            "64GB",
+            "Black",
+            "バックアップ",
+            "検証用"
           ],
-          "description": "iPhone 17 Proへ移行したため売却。でも２年間メインスマホとして頑張ってくれました。２年使って売却したときのリセール価格が予想以上で驚きました。",
+          "description": "バックアップ用に買ったモデル。小さくて手に馴染むので、検証などでたまに使っている。",
           "comment": "",
-          "links": {}
+          "links": {
+            "official": "https://support.apple.com/en-us/111866"
+          }
         },
         {
-          "id": "ipad-pro-m4-11",
-          "name": "iPad Pro 11\" (M4)",
-          "brand": "Apple",
-          "image": "/assets/images/gear/ipad11m4.jpg",
-          "status": "sold",
+          "id": "tcl-note-a1-nxtpaper",
+          "name": "TCL Note A1 NXTPAPER",
+          "brand": "TCL",
+          "image": "/assets/images/gear/tcl-note-a1-nxtpaper.png",
+          "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
           "specs": [
-            "M4",
-            "Apple Pencil Pro"
+            "NXTPAPER",
+            "スタイラス",
+            "机上メモ",
+            "Kickstarter"
           ],
-          "description": "iPadOS26でほぼMacbookだったのですが、それでも十分に活用できず結局のところ売却へ。コンテンツ消費はOPPO Find N5へ、iPadでは重くてやれない寝モバもこいつならできるんですよね。",
+          "description": "NXTPAPERを使ってみたくてKickstarterでプレッジした一台。届いたときは正直がっかりしたが、使っているうちに常に机に置いてメモ用として使うようになった。スタイラスを持ったときのバランスと質感はほかより優れている。決して書き味が最高とは言わない。でも悪くもない。期待せずに使っているのが、逆にちょうどいいのかもしれない。",
           "comment": "",
-          "links": {}
+          "links": {
+            "official": "https://www.tcl.com/global/en/tablets/tcl-note-a1-nxtpaper"
+          }
         }
       ]
     },
