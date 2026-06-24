@@ -1,5 +1,28 @@
 [
   {
+    "slug": "bobby-birthday-curry",
+    "label": "Today's Frame",
+    "title": "ボビーさん65歳、本気のタンドリーチキン",
+    "place": "中国・深圳（華強北）",
+    "date": "2026年6月23日",
+    "body": "六月四日が誕生日のボビーさんを、少々遅ればせながら、太子からバスで深圳の華強北まで足を延ばし、お気に入りのインドカレー屋に四人で集まって六十五歳を祝ったのだが、主役はなんといっても、初めて来た時その旨さに感動し、二度目にハーフで頼んだら冷めていてがっかりさせられた因縁のタンドリーチキンで、今回は中国人スタッフではなくインド人の兄ちゃんをわざわざ呼び、最初は最高だったのに二度目は今ひとつだった経緯をかくかくしかじか訴え、ところで今日はこの人の誕生日なんだとボビーさんを指させば、彼も『おお、おめでとう』と腕によりをかけ、全身全霊のタンドリーチキンを焼き上げてくれて、これが文句なしに旨い——惜しむらくは遅れてきた仲間に焼きたての熱いやつを食わせそびれたことだが、結局その日いちばんの隠し味は、ボビーさんの六十五回目の誕生日だった。",
+    "image": "assets/images/photo-notes/bobby-birthday-curry-table.jpg",
+    "imageWebp": "assets/images/photo-notes/bobby-birthday-curry-table.webp",
+    "alt": "インドカレー屋のテーブルを囲む男性4人。タンドリーチキンやカレーの皿、銅のカップが並ぶ",
+    "caption": "Bobby's 65th / Masalla Bites",
+    "sideFrames": [
+      {
+        "title": "レモネードで乾杯",
+        "caption": "Lemonade Toast / Luckin Coffee",
+        "image": "assets/images/photo-notes/bobby-birthday-curry-lemonade.jpg",
+        "imageWebp": "assets/images/photo-notes/bobby-birthday-curry-lemonade.webp",
+        "alt": "ラッキンコーヒーでレモネードを前に並ぶ男性4人の記念写真"
+      }
+    ],
+    "link": "gallery.html",
+    "linkLabel": "写真ギャラリーへ"
+  },
+  {
     "slug": "one-dim-sum-prince-edward",
     "label": "Today's Frame",
     "title": "友人を連れていく飲茶 — 太子・一點心",
