@@ -6,11 +6,25 @@
     "place": "中国・深圳（華強北）",
     "date": "2026年6月23日",
     "body": "六月四日が誕生日のボビーさんを、少々遅ればせながら、太子からバスで深圳の華強北まで足を延ばし、お気に入りのインドカレー屋に四人で集まって六十五歳を祝ったのだが、主役はなんといっても、初めて来た時その旨さに感動し、二度目にハーフで頼んだら冷めていてがっかりさせられた因縁のタンドリーチキンで、今回は中国人スタッフではなくインド人の兄ちゃんをわざわざ呼び、最初は最高だったのに二度目は今ひとつだった経緯をかくかくしかじか訴え、ところで今日はこの人の誕生日なんだとボビーさんを指させば、彼も『おお、おめでとう』と腕によりをかけ、全身全霊のタンドリーチキンを焼き上げてくれて、これが文句なしに旨い——惜しむらくは遅れてきた仲間に焼きたての熱いやつを食わせそびれたことだが、結局その日いちばんの隠し味は、ボビーさんの六十五回目の誕生日だった。",
-    "image": "assets/images/photo-notes/bobby-birthday-curry-table.jpg",
-    "imageWebp": "assets/images/photo-notes/bobby-birthday-curry-table.webp",
-    "alt": "インドカレー屋のテーブルを囲む男性4人。タンドリーチキンやカレーの皿、銅のカップが並ぶ",
-    "caption": "Bobby's 65th / Masalla Bites",
+    "image": "assets/images/photo-notes/bobby-birthday-curry-tandoori.jpg",
+    "imageWebp": "assets/images/photo-notes/bobby-birthday-curry-tandoori.webp",
+    "alt": "細長い皿に盛られた、こんがり焼けたタンドリーチキン。千切りキャベツとミントソース添え",
+    "caption": "Tandoori Chicken / Masalla Bites",
     "sideFrames": [
+      {
+        "title": "カレーとビリヤニ",
+        "caption": "Curry & Biryani / Masalla Bites",
+        "image": "assets/images/photo-notes/bobby-birthday-curry-biryani.jpg",
+        "imageWebp": "assets/images/photo-notes/bobby-birthday-curry-biryani.webp",
+        "alt": "銅の鍋に入ったカレーと、ビリヤニ（炊き込みご飯）"
+      },
+      {
+        "title": "バターナンとカレー",
+        "caption": "Butter Naan & Curry / Masalla Bites",
+        "image": "assets/images/photo-notes/bobby-birthday-curry-naan.jpg",
+        "imageWebp": "assets/images/photo-notes/bobby-birthday-curry-naan.webp",
+        "alt": "新聞紙を敷いた籠のバターナンと、銅の鍋のカレー"
+      },
       {
         "title": "レモネードで乾杯",
         "caption": "Lemonade Toast / Luckin Coffee",
