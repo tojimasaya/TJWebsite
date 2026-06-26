@@ -271,7 +271,9 @@
           ],
           "description": "Mini 5 Pro 初フライトは日本の紅葉を撮影、でもちょっと早すぎたかな",
           "comment": "📖 <a href=\"https://drone.jp/column/20251117152032121873.html\">Mini 5 Pro、“紅葉前夜”のテストフライト──静けさの中で見えた進化[田路昌也の中国・香港ドローン便り]Vol.58</a>",
-          "links": {}
+          "links": {
+            "Mini 5 Pro “紅葉前夜” テストフライト": "https://drone.jp/column/20251117152032121873.html"
+          }
         },
         {
           "id": "dji-neo",
@@ -302,7 +304,9 @@
           ],
           "description": "Neoの後継ドローンを深圳DJIにて購入。ジェスチャーでの操作が楽しい。最初はコントローラで飛ばそうかと思っていましたが、ジェスチャーで数枚と少しの動画で十分な気がします。",
           "comment": "📖 <a href=\"https://drone.jp/column/20251113211015121785.html\">DJI Neo2、手のひらから始まる\\\"新しい撮り方\\\"──ジェスチャー操作とAI追尾の進化</a>",
-          "links": {}
+          "links": {
+            "Neo2、手のひらから始まる新しい撮り方": "https://drone.jp/column/20251113211015121785.html"
+          }
         },
         {
           "id": "dji-avata2",

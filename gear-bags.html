@@ -201,20 +201,21 @@
         function linkLabel(key) {
             if (key === 'amazon') return 'Amazon で見る';
             if (key === 'official') return 'Official';
-            if (key === 'note' || key === 'Note' || key === 'TJによるレビュー') return 'TJによるレビュー';
+            if (key === 'note' || key === 'Note' || key === 'review' || key === 'TJによるレビュー') return 'レビューを読む';
             return key;
         }
 
         function isReviewLink(key, url) {
             const host = new URL(url, window.location.href).hostname;
-            return host.includes('note.com') || key === 'note' || key === 'Note' || key === 'TJによるレビュー' || key.includes('レビュー');
+            const normalizedKey = key.toLowerCase();
+            return host.includes('note.com') || host.includes('drone.jp') || normalizedKey === 'note' || normalizedKey === 'review' || key === 'TJによるレビュー' || key.includes('レビュー') || key.includes('記事');
         }
 
         function renderLinks(links = {}) {
             const entries = Object.entries(links);
-            const review = entries.find(([key, url]) => isReviewLink(key, url));
+            const reviewLinks = entries.filter(([key, url]) => isReviewLink(key, url));
             const productLinks = entries.filter(([key, url]) => !isReviewLink(key, url));
-            const reviewHtml = review ? `<a class="gear-review-link" href="${review[1]}" target="_blank" rel="${linkRel(review[1])}"><span class="gear-review-label">TJによるレビュー</span><span class="gear-review-title">${linkLabel(review[0])} →</span></a>` : '';
+            const reviewHtml = reviewLinks.map(([key, url]) => `<a class="gear-review-link" href="${url}" target="_blank" rel="${linkRel(url)}"><span class="gear-review-label">TJによるレビュー</span><span class="gear-review-title">${linkLabel(key)} →</span></a>`).join('');
             const productHtml = productLinks.length ? `<div class="gear-product-links">${productLinks.map(([key, url]) => `<a href="${url}" target="_blank" rel="${linkRel(url)}">${linkLabel(key)} →</a>`).join('')}</div>` : '';
             return reviewHtml || productHtml ? `<div class="gear-links">${reviewHtml}${productHtml}</div>` : '';
         }
