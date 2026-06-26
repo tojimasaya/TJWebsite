@@ -44,7 +44,10 @@
         /* Writings Page Specific Styles */
         
         .writings-hero {
-            padding: 140px 20px 40px;
+            height: auto;
+            min-height: 0;
+            margin-top: 70px;
+            padding: 92px 20px 44px;
             text-align: center;
             background-color: var(--bg-color);
         }
@@ -205,7 +208,7 @@
         /* Pick Up Section */
         .pickup-section {
             max-width: 1200px;
-            margin: 0 auto 80px;
+            margin: 0 auto 54px;
             padding: 0 30px;
         }
 
@@ -215,7 +218,7 @@
             font-weight: 400;
             letter-spacing: 0.08em;
             color: var(--text-color);
-            margin-bottom: 2rem;
+            margin-bottom: 1.45rem;
             text-align: center;
         }
 
@@ -292,7 +295,7 @@
 
         .pickup-divider {
             max-width: 1200px;
-            margin: 0 auto 60px;
+            margin: 0 auto 44px;
             padding: 0 30px;
             border: none;
             border-top: 1px solid var(--border-color);
@@ -320,6 +323,9 @@
         [data-theme="dark"] .pickup-card:hover { box-shadow: 0 8px 24px rgba(0,0,0,0.3); }
 
         @media (max-width: 768px) {
+            .writings-hero {
+                padding: 66px 20px 34px;
+            }
             .writings-title { font-size: 2.5rem; }
             .articles-grid { grid-template-columns: 1fr; gap: 40px; }
             .pickup-grid { grid-template-columns: 1fr; }

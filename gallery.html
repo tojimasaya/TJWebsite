@@ -43,7 +43,10 @@
         /* --- Gallery Page Styles --- */
         
         .gallery-hero {
-            padding: 120px 20px 60px;
+            height: auto;
+            min-height: 0;
+            margin-top: 70px;
+            padding: 82px 20px 34px;
             text-align: center;
             background-color: var(--bg-color);
         }
@@ -68,7 +71,7 @@
             display: flex;
             justify-content: center;
             gap: 12px;
-            margin-bottom: 60px;
+            margin-bottom: 34px;
             padding: 0 20px;
         }
 
@@ -319,7 +322,7 @@
         }
         @media (max-width: 640px) {
             .gallery-grid { column-count: 1; }
-            .gallery-hero { padding-top: 100px; }
+            .gallery-hero { padding: 64px 20px 28px; }
             .gallery-title { font-size: 2.5rem; }
             .lightbox, .video-modal { padding: 10px; }
             .close-btn { top: 15px; right: 15px; font-size: 2.5rem; }
