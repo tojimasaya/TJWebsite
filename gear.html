@@ -113,25 +113,67 @@
             font-size: 0.9rem;
         }
 
+        .gear-category-section {
+            background: var(--bg-color);
+            padding: 58px 30px 64px;
+        }
+
+        .gear-section-inner {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .gear-section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: end;
+            gap: 2rem;
+            margin-bottom: 26px;
+        }
+
+        .gear-section-kicker {
+            display: block;
+            font-family: var(--secondary-font);
+            font-size: 0.72rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 10px;
+        }
+
+        .gear-section-title {
+            font-family: var(--primary-font);
+            font-size: clamp(1.65rem, 3vw, 2.25rem);
+            color: var(--text-color);
+            margin: 0;
+        }
+
+        .gear-section-copy {
+            max-width: 460px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.88rem;
+            line-height: 1.95;
+            color: var(--text-light);
+        }
+
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(2, 1fr);
-            gap: 30px;
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 30px;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 16px;
+            margin: 0;
+            padding: 0;
         }
 
         .category-card {
             position: relative;
             display: block;
             text-decoration: none;
-            border-radius: 16px;
+            border-radius: 10px;
             overflow: hidden;
-            aspect-ratio: 16/9;
+            min-height: 260px;
             background-color: #020617; /* Loading placeholder color */
             border: 1px solid rgba(15, 23, 42, 0.8);
-            box-shadow: 0 18px 45px rgba(15, 23, 42, 0.9);
+            box-shadow: 0 12px 28px rgba(15, 23, 42, 0.32);
         }
 
         .category-card::before {
@@ -167,7 +209,7 @@
             align-items: flex-start;
             color: white;
             text-align: left;
-            padding: 22px 24px 24px;
+            padding: 18px;
         }
 
         .category-tag {
@@ -192,7 +234,7 @@
 
         .category-title {
             font-family: var(--primary-font);
-            font-size: 1.5rem;
+            font-size: 1.22rem;
             margin-bottom: 6px;
             font-weight: 500;
             text-shadow: 0 4px 10px rgba(0,0,0,0.45);
@@ -200,22 +242,22 @@
 
         .category-desc {
             font-family: 'Noto Serif JP', serif;
-            font-size: 0.9rem;
+            font-size: 0.76rem;
             opacity: 0.92;
             max-width: 360px;
-            line-height: 1.7;
+            line-height: 1.75;
         }
 
         .category-arrow {
-            margin-top: 18px;
+            margin-top: 13px;
             font-family: var(--secondary-font);
-            font-size: 0.8rem;
+            font-size: 0.68rem;
             letter-spacing: 0.18em;
             text-transform: uppercase;
             border-bottom: 1px solid rgba(249, 250, 251, 0.6);
             padding-bottom: 3px;
-            opacity: 0;
-            transform: translateY(10px);
+            opacity: 0.82;
+            transform: translateY(0);
             transition: all 0.3s ease;
         }
 
@@ -291,16 +333,15 @@
         /* Works shot with these tools */
         .gear-work-section {
             background: var(--bg-color);
-            padding: 58px 30px 46px;
-            border-bottom: 1px solid var(--border-color);
+            padding: 34px 30px 58px;
         }
         .gear-work-inner {
             max-width: 1100px;
             margin: 0 auto;
             display: grid;
-            grid-template-columns: minmax(0, 0.8fr) minmax(0, 1.2fr);
-            gap: 34px;
-            align-items: start;
+            grid-template-columns: minmax(0, 0.72fr) minmax(0, 1.28fr);
+            gap: 28px;
+            align-items: center;
         }
         .gear-work-kicker {
             display: block;
@@ -326,7 +367,7 @@
         .gear-work-cards {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 16px;
+            gap: 14px;
         }
         .gear-work-card {
             display: block;
@@ -346,7 +387,7 @@
         .gear-work-card img {
             display: block;
             width: 100%;
-            aspect-ratio: 16 / 10;
+            aspect-ratio: 16 / 8;
             object-fit: cover;
         }
         .gear-work-card-body {
@@ -377,7 +418,8 @@
 
         .gear-setup-section {
             background: var(--white, #fff);
-            padding: 58px 30px 54px;
+            padding: 42px 30px 42px;
+            border-top: 1px solid var(--border-color);
             border-bottom: 1px solid var(--border-color);
         }
         .gear-setup-inner {
@@ -385,8 +427,11 @@
             margin: 0 auto;
         }
         .gear-setup-header {
-            max-width: 680px;
-            margin-bottom: 28px;
+            display: grid;
+            grid-template-columns: minmax(0, 0.65fr) minmax(0, 1fr);
+            gap: 24px;
+            align-items: end;
+            margin-bottom: 20px;
         }
         .gear-setup-kicker {
             display: block;
@@ -399,20 +444,20 @@
         }
         .gear-setup-title {
             font-family: var(--primary-font);
-            font-size: clamp(1.55rem, 3vw, 2.15rem);
+            font-size: clamp(1.35rem, 2.4vw, 1.8rem);
             color: var(--text-color);
-            margin-bottom: 12px;
+            margin-bottom: 0;
         }
         .gear-setup-copy {
             font-family: 'Noto Serif JP', serif;
-            font-size: 0.92rem;
-            line-height: 2;
+            font-size: 0.82rem;
+            line-height: 1.9;
             color: var(--text-light);
         }
         .gear-setup-grid {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 18px;
+            gap: 12px;
         }
         .gear-setup-card {
             display: flex;
@@ -434,14 +479,14 @@
         .gear-setup-card img {
             display: block;
             width: 100%;
-            aspect-ratio: 4 / 3;
+            aspect-ratio: 16 / 8;
             object-fit: cover;
         }
         .gear-setup-body {
             display: flex;
             flex-direction: column;
             flex: 1;
-            padding: 16px;
+            padding: 13px;
         }
         .gear-setup-label {
             display: block;
@@ -455,23 +500,23 @@
         .gear-setup-name {
             display: block;
             font-family: var(--primary-font);
-            font-size: 1.06rem;
+            font-size: 0.92rem;
             line-height: 1.5;
-            margin-bottom: 8px;
+            margin-bottom: 6px;
         }
         .gear-setup-text {
             display: block;
             font-family: 'Noto Serif JP', serif;
-            font-size: 0.8rem;
-            line-height: 1.8;
+            font-size: 0.72rem;
+            line-height: 1.75;
             color: var(--text-light);
             flex: 1;
         }
         .gear-setup-link {
             display: inline-flex;
-            margin-top: 14px;
+            margin-top: 10px;
             font-family: var(--secondary-font);
-            font-size: 0.76rem;
+            font-size: 0.66rem;
             letter-spacing: 0.12em;
             text-transform: uppercase;
             color: var(--accent-color);
@@ -495,12 +540,26 @@
             .gear-setup-grid {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
+            .gear-section-header,
+            .gear-setup-header {
+                grid-template-columns: 1fr;
+                display: grid;
+            }
+            .category-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
         }
 
         @media (max-width: 768px) {
             .category-grid {
                 grid-template-columns: 1fr;
-                gap: 22px;
+                gap: 14px;
+            }
+            .gear-category-section {
+                padding: 42px 20px 44px;
+            }
+            .category-card {
+                min-height: 220px;
             }
             .gear-work-section {
                 padding: 42px 20px 34px;
@@ -585,47 +644,87 @@
         </div>
     </header>
 
-    <section class="gear-work-section" aria-labelledby="gear-work-title">
-        <div class="gear-work-inner">
-            <div>
-                <span class="gear-work-kicker">Shot With These Tools</span>
-                <h2 class="gear-work-title" id="gear-work-title">機材から、写真作品へ。</h2>
-                <p class="gear-work-copy">
-                    ここに並べているLeicaやドローンは、棚の上のコレクションではなく、実際に旅や街歩きに持ち出している道具です。機材に興味を持って来てくれた方が、その先の写真にも自然に進めるようにしました。
+    <span class="anchor-target" id="travel-gear" aria-hidden="true"></span>
+
+    <!-- Gear Categories -->
+    <section class="gear-category-section" aria-labelledby="gear-category-title">
+        <div class="gear-section-inner">
+            <div class="gear-section-header">
+                <div>
+                    <span class="gear-section-kicker">Gear Categories</span>
+                    <h2 class="gear-section-title" id="gear-category-title">機材カテゴリ</h2>
+                </div>
+                <p class="gear-section-copy">
+                    まずは道具そのものから。カメラ、ドローン、編集環境、アクセサリ、バッグを用途ごとに分けて整理しています。
                 </p>
             </div>
-            <div class="gear-work-cards">
-                <a class="gear-work-card" href="shirasagi36.html">
+            <main class="category-grid" id="category-grid">
+                <a href="gear-camera.html" class="category-card">
                     <picture>
-                        <source srcset="assets/images/shirasagi/33.webp" type="image/webp">
-                        <img src="assets/images/shirasagi/33.jpg" alt="白鷺三十六景 — Leicaで撮る姫路城" loading="lazy" decoding="async">
+                        <source srcset="assets/images/gear/m2.webp" type="image/webp">
+                        <img src="assets/images/gear/m2.jpg" alt="Leicaのカメラ機材" class="category-bg" loading="lazy" decoding="async">
                     </picture>
-                    <span class="gear-work-card-body">
-                        <span class="gear-work-card-label">Leica M / SL</span>
-                        <strong class="gear-work-card-title">白鷺三十六景</strong>
-                        <span class="gear-work-card-copy">姫路城を36の視点で撮る、写真と言葉の進行中プロジェクト。</span>
-                    </span>
+                    <div class="category-content">
+                        <h2 class="category-title">Camera</h2>
+                        <p class="category-desc">Leica M / SL、Mレンズ、Lマウント機材と、それらで撮っている作品への入口。</p>
+                        <span class="category-arrow">View Collection →</span>
+                    </div>
                 </a>
-                <a class="gear-work-card" href="hongkong-neon.html">
+                <a href="gear-drone.html" class="category-card">
                     <picture>
-                        <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
-                        <img src="assets/images/hongkong-neon/01.jpg" alt="香港ネオン残照 — Leicaで撮る香港の光" loading="lazy" decoding="async">
+                        <source srcset="assets/images/gear/drone.webp" type="image/webp">
+                        <img src="assets/images/gear/drone.jpg" alt="旅で使うDJIドローン機材" class="category-bg" loading="lazy" decoding="async">
                     </picture>
-                    <span class="gear-work-card-body">
-                        <span class="gear-work-card-label">Leica SL2-S</span>
-                        <strong class="gear-work-card-title">香港ネオン残照</strong>
-                        <span class="gear-work-card-copy">変わりゆく香港の街から、消えゆくネオンの光を記録しています。</span>
-                    </span>
+                    <div class="category-content">
+                        <h2 class="category-title">Drone</h2>
+                        <p class="category-desc">旅先の空撮で使っているDJIドローンと、持ち出しやすさを重視した構成。</p>
+                        <span class="category-arrow">View Collection →</span>
+                    </div>
                 </a>
-            </div>
+                <a href="gear-editing.html" class="category-card">
+                    <picture>
+                        <source srcset="assets/images/gear/editing.webp" type="image/webp">
+                        <img src="assets/images/gear/editing.jpg" alt="写真と動画の編集環境" class="category-bg" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="category-content">
+                        <h2 class="category-title">Editing</h2>
+                        <p class="category-desc">Mac、iPad、iPhoneなど、写真・動画・文章制作を支える日常の編集環境。</p>
+                        <span class="category-arrow">View Collection →</span>
+                    </div>
+                </a>
+                <a href="gear-accessories.html" class="category-card">
+                    <picture>
+                        <source srcset="assets/images/gear/accessories.webp" type="image/webp">
+                        <img src="assets/images/gear/accessories.jpg" alt="旅と撮影に持ち歩くアクセサリー" class="category-bg" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="category-content">
+                        <h2 class="category-title">Carry & Etc.</h2>
+                        <p class="category-desc">旅と撮影に持ち歩く充電器、ケーブル、収納小物などの道具メモ。</p>
+                        <span class="category-arrow">View Collection →</span>
+                    </div>
+                </a>
+                <a href="gear-bags.html" class="category-card">
+                    <picture>
+                        <source srcset="assets/images/gear/bags/bags-hero.webp" type="image/webp">
+                        <img src="assets/images/gear/bags/bags-hero.jpg" alt="旅を運ぶバッグと収納機材" class="category-bg" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="category-content">
+                        <h2 class="category-title">Bags</h2>
+                        <p class="category-desc">母艦・分割・ローラー。旅と撮影を運ぶPeak Design中心のバッグ構成。</p>
+                        <span class="category-arrow">View Collection →</span>
+                    </div>
+                </a>
+            </main>
         </div>
     </section>
 
     <section class="gear-setup-section" aria-labelledby="gear-setup-title">
         <div class="gear-setup-inner">
             <div class="gear-setup-header">
-                <span class="gear-setup-kicker">Field Setups</span>
-                <h2 class="gear-setup-title" id="gear-setup-title">用途別セット</h2>
+                <div>
+                    <span class="gear-setup-kicker">Field Setups</span>
+                    <h2 class="gear-setup-title" id="gear-setup-title">用途別セット</h2>
+                </div>
                 <p class="gear-setup-copy">
                     機材は単体で選ぶより、どこを歩き、何を残したいかで組み合わせが変わります。香港、姫路城、旅の空撮、短い移動で実際に持ち出す組み合わせを入口にしました。
                 </p>
@@ -683,66 +782,41 @@
         </div>
     </section>
 
-    <span class="anchor-target" id="travel-gear" aria-hidden="true"></span>
-
-    <!-- Categories Grid -->
-    <main class="category-grid" id="category-grid">
-        <a href="gear-camera.html" class="category-card">
-            <picture>
-                <source srcset="assets/images/gear/m2.webp" type="image/webp">
-                <img src="assets/images/gear/m2.jpg" alt="Leicaのカメラ機材" class="category-bg" loading="lazy" decoding="async">
-            </picture>
-            <div class="category-content">
-                <h2 class="category-title">Camera</h2>
-                <p class="category-desc">Leica M / SL、Mレンズ、Lマウント機材と、それらで撮っている作品への入口。</p>
-                <span class="category-arrow">View Collection →</span>
+    <section class="gear-work-section" aria-labelledby="gear-work-title">
+        <div class="gear-work-inner">
+            <div>
+                <span class="gear-work-kicker">Shot With These Tools</span>
+                <h2 class="gear-work-title" id="gear-work-title">機材から、写真作品へ。</h2>
+                <p class="gear-work-copy">
+                    ここに並べているLeicaやドローンは、棚の上のコレクションではなく、実際に旅や街歩きに持ち出している道具です。機材に興味を持って来てくれた方が、その先の写真にも自然に進めるようにしました。
+                </p>
             </div>
-        </a>
-        <a href="gear-drone.html" class="category-card">
-            <picture>
-                <source srcset="assets/images/gear/drone.webp" type="image/webp">
-                <img src="assets/images/gear/drone.jpg" alt="旅で使うDJIドローン機材" class="category-bg" loading="lazy" decoding="async">
-            </picture>
-            <div class="category-content">
-                <h2 class="category-title">Drone</h2>
-                <p class="category-desc">旅先の空撮で使っているDJIドローンと、持ち出しやすさを重視した構成。</p>
-                <span class="category-arrow">View Collection →</span>
+            <div class="gear-work-cards">
+                <a class="gear-work-card" href="shirasagi36.html">
+                    <picture>
+                        <source srcset="assets/images/shirasagi/33.webp" type="image/webp">
+                        <img src="assets/images/shirasagi/33.jpg" alt="白鷺三十六景 — Leicaで撮る姫路城" loading="lazy" decoding="async">
+                    </picture>
+                    <span class="gear-work-card-body">
+                        <span class="gear-work-card-label">Leica M / SL</span>
+                        <strong class="gear-work-card-title">白鷺三十六景</strong>
+                        <span class="gear-work-card-copy">姫路城を36の視点で撮る、写真と言葉の進行中プロジェクト。</span>
+                    </span>
+                </a>
+                <a class="gear-work-card" href="hongkong-neon.html">
+                    <picture>
+                        <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
+                        <img src="assets/images/hongkong-neon/01.jpg" alt="香港ネオン残照 — Leicaで撮る香港の光" loading="lazy" decoding="async">
+                    </picture>
+                    <span class="gear-work-card-body">
+                        <span class="gear-work-card-label">Leica SL2-S</span>
+                        <strong class="gear-work-card-title">香港ネオン残照</strong>
+                        <span class="gear-work-card-copy">変わりゆく香港の街から、消えゆくネオンの光を記録しています。</span>
+                    </span>
+                </a>
             </div>
-        </a>
-        <a href="gear-editing.html" class="category-card">
-            <picture>
-                <source srcset="assets/images/gear/editing.webp" type="image/webp">
-                <img src="assets/images/gear/editing.jpg" alt="写真と動画の編集環境" class="category-bg" loading="lazy" decoding="async">
-            </picture>
-            <div class="category-content">
-                <h2 class="category-title">Editing</h2>
-                <p class="category-desc">Mac、iPad、iPhoneなど、写真・動画・文章制作を支える日常の編集環境。</p>
-                <span class="category-arrow">View Collection →</span>
-            </div>
-        </a>
-        <a href="gear-accessories.html" class="category-card">
-            <picture>
-                <source srcset="assets/images/gear/accessories.webp" type="image/webp">
-                <img src="assets/images/gear/accessories.jpg" alt="旅と撮影に持ち歩くアクセサリー" class="category-bg" loading="lazy" decoding="async">
-            </picture>
-            <div class="category-content">
-                <h2 class="category-title">Carry & Etc.</h2>
-                <p class="category-desc">旅と撮影に持ち歩く充電器、ケーブル、収納小物などの道具メモ。</p>
-                <span class="category-arrow">View Collection →</span>
-            </div>
-        </a>
-        <a href="gear-bags.html" class="category-card">
-            <picture>
-                <source srcset="assets/images/gear/bags/bags-hero.webp" type="image/webp">
-                <img src="assets/images/gear/bags/bags-hero.jpg" alt="旅を運ぶバッグと収納機材" class="category-bg" loading="lazy" decoding="async">
-            </picture>
-            <div class="category-content">
-                <h2 class="category-title">Bags</h2>
-                <p class="category-desc">母艦・分割・ローラー。旅と撮影を運ぶPeak Design中心のバッグ構成。</p>
-                <span class="category-arrow">View Collection →</span>
-            </div>
-        </a>
-    </main>
+        </div>
+    </section>
 
     <!-- Footer -->
     <footer class="footer"></footer>
