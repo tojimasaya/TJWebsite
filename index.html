@@ -1014,6 +1014,19 @@
       color: var(--text-color, #333);
     }
 
+    .latest-excerpt {
+      margin-top: 0.7rem;
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.78rem;
+      line-height: 1.8;
+      letter-spacing: 0.03em;
+      color: var(--text-light, #666);
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+    }
+
     .latest-more-row {
       text-align: center;
       margin-top: 2.5rem;
@@ -2002,7 +2015,8 @@
           title: a.title,
           link: a.link,
           imageUrl: a.image || 'assets/images/gallery/weekly.jpg',
-          source: a.sourceLabel || a.source
+          source: a.sourceLabel || a.source,
+          excerpt: a.excerpt || ''
         }));
 
         if (allArticles.length > 0) {
@@ -2022,6 +2036,7 @@
                 <div class="latest-content">
                   <p class="latest-source">${article.source}</p>
                   <h3 class="latest-item-title">${article.title}</h3>
+                  ${article.excerpt ? `<p class="latest-excerpt">${article.excerpt}</p>` : ''}
                 </div>
               </a>
             </article>
