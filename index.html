@@ -480,7 +480,7 @@
       border-color: #1a3fb9;
     }
 
-    /* ── Recent Frame ── */
+    /* ── 今日の断章 ── */
     .recent-frame {
       background: var(--white, #fff);
       border-bottom: 1px solid var(--border-color, #e5e5e5);
@@ -1520,7 +1520,7 @@
   </template>
 
   <!-- ======================================
-       SECTION 3: 最近の一枚
+       SECTION 3: 今日の断章
        ====================================== -->
   <section class="recent-frame" aria-labelledby="recent-frame-title">
     <div class="recent-frame-inner">
@@ -1531,29 +1531,29 @@
             <img id="recent-frame-image" src="assets/images/photo-notes/taipei-bento-fair-hipparidako.jpg" alt="淡路屋のひっぱりだこの壺の中に、タコの足や具材が入っている様子" loading="lazy" decoding="async">
           </picture>
           <div class="recent-frame-placeholder" aria-hidden="true">
-            <span>Recent Frame</span>
+            <span>今日の断章</span>
           </div>
           <figcaption class="recent-frame-caption" id="recent-frame-caption">Awajiya Hipparidako / Taipei</figcaption>
         </figure>
         <div class="recent-frame-sideframes" id="recent-frame-sideframes" aria-label="同じ日の小さな写真"></div>
       </div>
       <div class="recent-frame-text">
-        <p class="recent-frame-label" id="recent-frame-label">Recent Frame</p>
+        <p class="recent-frame-label" id="recent-frame-label">今日の断章</p>
         <h2 class="recent-frame-title" id="recent-frame-title">台北駅の弁当フェア、淡路屋のひっぱりだこ</h2>
         <p class="recent-frame-meta" id="recent-frame-meta">台湾・台北駅 / 2026年6月6日</p>
         <p class="recent-frame-copy" id="recent-frame-copy">
-          6月6日、台湾で開かれた弁当フェアへ行ってきた。ここ数年、機会があれば覗いているが、今年は約1時間並んで地元神戸の淡路屋さんの「ひっぱりだこ」をゲット。ホテルに戻って食べると、やっぱりめちゃくちゃ美味しい。
+          台北駅の弁当フェアに淡路屋が来ると聞けば、神戸の味を台湾で買うという妙な遠回りをせずにはいられず、約一時間並んで手に入れた「ひっぱりだこ」をホテルで開けると、壺の中の蛸の吸盤までがきちんと旅をしてきたようで、結局いちばん遠回りしていたのは私の食欲だった。
         </p>
-        <a class="recent-frame-link" id="recent-frame-link" href="#recent-frame-archive-title">これまでの一枚を見る →</a>
+        <a class="recent-frame-link" id="recent-frame-link" href="#recent-frame-archive-title">これまでの断章を見る →</a>
       </div>
     </div>
     <div class="recent-frame-archive" aria-labelledby="recent-frame-archive-title">
       <div class="recent-frame-archive-head">
         <div>
-          <p class="recent-frame-archive-kicker">Archive</p>
-          <h3 class="recent-frame-archive-title" id="recent-frame-archive-title">これまでの一枚</h3>
+          <p class="recent-frame-archive-kicker">Fragments</p>
+          <h3 class="recent-frame-archive-title" id="recent-frame-archive-title">これまでの断章</h3>
         </div>
-        <p class="recent-frame-archive-note">日々の写真を、短い記憶と一緒に残していきます。</p>
+        <p class="recent-frame-archive-note">写真を入口に、その日の出来事を一文で残します。</p>
       </div>
       <div class="recent-frame-archive-grid" id="recent-frame-archive-grid">
         <a class="recent-frame-archive-card" href="#recent-frame-title" data-recent-frame-slug="odawara-kinmedai-oshizushi">
@@ -1797,7 +1797,7 @@
   </footer>
 
   <script>
-    // ===== 最近の一枚の読み込み（recent-photos.json） =====
+    // ===== 今日の断章の読み込み（recent-photos.json） =====
     function setRecentFrameText(id, value) {
       const element = document.getElementById(id);
       if (element && value) element.textContent = value;
@@ -1816,7 +1816,7 @@
     function renderRecentFrame(frame) {
       if (!frame) return;
 
-      const label = frame.label || 'Recent Frame';
+      const label = frame.label || '今日の断章';
       const meta = [frame.place, frame.date].filter(Boolean).join(' / ');
       const mediaItems = [frame, ...(frame.sideFrames || [])].filter(item => item && item.image);
       const activeMediaIndex = Number.isInteger(frame.activeMediaIndex) ? frame.activeMediaIndex : 0;
@@ -1835,7 +1835,7 @@
 
       if (link) {
         link.href = '#recent-frame-archive-title';
-        link.textContent = 'これまでの一枚を見る →';
+        link.textContent = 'これまでの断章を見る →';
       }
 
       if (image && activeMedia.alt) image.alt = activeMedia.alt;
