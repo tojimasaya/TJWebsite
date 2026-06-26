@@ -24,7 +24,37 @@
         .gear-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 15px; }
         .gear-specs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
         .spec-tag { background: rgba(0,0,0,0.05); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; color: var(--text-light); }
-        .gear-links a { color: var(--accent-color); text-decoration: none; font-size: 0.85rem; margin-right: 15px; }
+        .gear-links { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
+        .gear-review-link {
+            display: block;
+            padding: 12px 14px;
+            border: 1px solid rgba(26, 63, 185, 0.22);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 6px;
+            background: rgba(26, 63, 185, 0.045);
+            color: var(--accent-color);
+            text-decoration: none;
+            line-height: 1.55;
+        }
+        .gear-review-label {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--text-light);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+        .gear-review-title { font-size: 0.88rem; font-weight: 600; }
+        .gear-product-links { display: flex; flex-wrap: wrap; gap: 8px 12px; }
+        .gear-product-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            font-size: 0.8rem;
+            border-bottom: 1px solid rgba(0,0,0,0.16);
+        }
+        .gear-product-links a:hover { color: var(--accent-color); border-color: var(--accent-color); }
+        [data-theme="dark"] .gear-review-link { background: rgba(96, 165, 250, 0.08); border-color: rgba(96, 165, 250, 0.28); border-left-color: #60a5fa; }
+        [data-theme="dark"] .gear-product-links a { border-color: rgba(255,255,255,0.22); }
         /* Shared link styles */
         .featured-link { color: #1A3FB9 !important; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; }
         .featured-link:hover { background-color: rgba(26, 63, 185, 0.05); border-radius: 4px; }
@@ -88,6 +118,27 @@
             return item.is_new ? `<span class="gear-new-badge">${item.new_label || 'NEW'}</span>` : '';
         }
 
+        function linkLabel(key) {
+            if (key === 'amazon') return 'Amazon で見る';
+            if (key === 'official') return 'Official';
+            if (key === 'note' || key === 'Note' || key === 'TJによるレビュー') return 'TJによるレビュー';
+            return key;
+        }
+
+        function isReviewLink(key, url) {
+            const host = new URL(url, window.location.href).hostname;
+            return host.includes('note.com') || key === 'note' || key === 'Note' || key === 'TJによるレビュー' || key.includes('レビュー');
+        }
+
+        function renderLinks(links = {}) {
+            const entries = Object.entries(links);
+            const review = entries.find(([key, url]) => isReviewLink(key, url));
+            const productLinks = entries.filter(([key, url]) => !isReviewLink(key, url));
+            const reviewHtml = review ? `<a class="gear-review-link" href="${review[1]}" target="_blank" rel="${linkRel(review[1])}"><span class="gear-review-label">TJによるレビュー</span><span class="gear-review-title">${linkLabel(review[0])} →</span></a>` : '';
+            const productHtml = productLinks.length ? `<div class="gear-product-links">${productLinks.map(([key, url]) => `<a href="${url}" target="_blank" rel="${linkRel(url)}">${linkLabel(key)} →</a>`).join('')}</div>` : '';
+            return reviewHtml || productHtml ? `<div class="gear-links">${reviewHtml}${productHtml}</div>` : '';
+        }
+
         function renderGrid(id, items) {
             const container = document.getElementById(id);
             container.innerHTML = items.map(item => {
@@ -101,7 +152,7 @@
                             ${item.specs ? item.specs.map(s => `<span class="spec-tag">${s}</span>`).join('') : ''}
                         </div>
                         <p class="gear-desc">${item.description}</p>
-                        <div class="gear-links">${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank" rel="${linkRel(url)}">${key} →</a>`).join('')}</div>
+                        ${renderLinks(item.links)}
                     </div>
                 </article>`}).join('');
         }
