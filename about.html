@@ -260,10 +260,9 @@
         }
 
         .about-lenses {
-            padding: 5.5rem 2rem;
+            padding: 4.25rem 2rem;
             background: var(--white);
             border-top: 1px solid var(--border-color);
-            border-bottom: 1px solid var(--border-color);
         }
 
         .lenses-inner {
@@ -274,13 +273,13 @@
         .section-heading-row {
             display: flex;
             justify-content: space-between;
-            gap: 2rem;
-            align-items: end;
-            margin-bottom: 2.6rem;
+            gap: 2.5rem;
+            align-items: start;
+            margin-bottom: 2rem;
         }
 
         .section-heading-row .about-prose {
-            max-width: 460px;
+            max-width: 520px;
             font-size: 0.86rem;
             line-height: 1.95;
         }
@@ -294,7 +293,7 @@
         .lens-card {
             position: relative;
             overflow: hidden;
-            min-height: 360px;
+            min-height: 230px;
             border-radius: 6px;
             color: #fff;
             background: #1d1d1d;
@@ -325,9 +324,9 @@
 
         .lens-card-content {
             position: absolute;
-            left: 1.4rem;
-            right: 1.4rem;
-            bottom: 1.4rem;
+            left: 1.2rem;
+            right: 1.2rem;
+            bottom: 1.15rem;
             z-index: 2;
         }
 
@@ -343,7 +342,7 @@
 
         .lens-card h3 {
             font-family: 'Noto Serif JP', serif;
-            font-size: 1.18rem;
+            font-size: 1.05rem;
             line-height: 1.55;
             font-weight: 400;
             letter-spacing: 0.06em;
@@ -353,7 +352,7 @@
 
         .lens-card p {
             font-family: 'Noto Serif JP', serif;
-            font-size: 0.82rem;
+            font-size: 0.76rem;
             line-height: 1.85;
             color: rgba(255,255,255,0.78);
             margin: 0;
@@ -362,6 +361,7 @@
         .about-timeline {
             padding: 5.5rem 2rem 6rem;
             background: #f7f7f5;
+            border-top: 1px solid var(--border-color);
         }
 
         .about-timeline-inner {
@@ -641,7 +641,7 @@
             }
 
             .lens-card {
-                min-height: 300px;
+                min-height: 240px;
             }
 
             .timeline-nav {
@@ -730,16 +730,28 @@
         </div>
     </section>
 
+    <!-- Timeline -->
+    <section class="about-timeline">
+        <div class="about-timeline-inner">
+            <span class="section-kicker">Chronicle</span>
+            <h2 class="section-title">香港とテクノロジーから、写真へ。</h2>
+            <div class="timeline-grid">
+                <div class="timeline-nav" id="timeline-nav"></div>
+                <div class="timeline-content" id="timeline-content"></div>
+            </div>
+        </div>
+    </section>
+
     <!-- Entry Points -->
     <section class="about-lenses" aria-labelledby="lenses-title">
         <div class="lenses-inner">
             <div class="section-heading-row">
                 <div>
-                    <span class="section-kicker">Three Lenses</span>
-                    <h2 class="section-title" id="lenses-title">このサイトで見ているもの。</h2>
+                    <span class="section-kicker">Explore</span>
+                    <h2 class="section-title" id="lenses-title">このサイトの入口。</h2>
                 </div>
                 <div class="about-prose">
-                    写真の対象はひとつではありません。姫路城、香港、旅と道具。それぞれの入口から、同じ人間の視点が少しずつ見えてくるようにしています。
+                    プロフィールを読んだあとに、実際の記録へ。姫路城、香港、旅と道具。それぞれ別の入口ですが、見ている人間は同じです。
                 </div>
             </div>
             <div class="lens-grid">
@@ -776,18 +788,6 @@
                         <p>Leica、ドローン、Mac。実際に持ち出して使う道具の記録。</p>
                     </div>
                 </a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Timeline -->
-    <section class="about-timeline">
-        <div class="about-timeline-inner">
-            <span class="section-kicker">Chronicle</span>
-            <h2 class="section-title">香港とテクノロジーから、写真へ。</h2>
-            <div class="timeline-grid">
-                <div class="timeline-nav" id="timeline-nav"></div>
-                <div class="timeline-content" id="timeline-content"></div>
             </div>
         </div>
     </section>
