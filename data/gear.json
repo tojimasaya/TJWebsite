@@ -349,21 +349,6 @@
       "description": "Mac／iPad／iPhoneを中心に、毎日を支える常用デジタル。出先でも完結できる環境。",
       "items": [
         {
-          "id": "macbook-pro-14-m3",
-          "name": "MacBook Pro 14\" (M3)",
-          "brand": "Apple",
-          "image": "/assets/images/gear/macbookpro14m3.jpg",
-          "status": "available",
-          "specs": [
-            "M3",
-            "18GB",
-            "512GB"
-          ],
-          "description": "Macbook 14インチにした理由は、何インチにしたところで見えないのは一緒、27インチ以上の外部モニターなしではなにも見えないローガンズの宿命",
-          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n57968ed8d4ae?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">iPadシフトは、いまか？ 第1回 ～移行への第一歩～</a>",
-          "links": {}
-        },
-        {
           "id": "iphone-17-pro",
           "name": "iPhone 17 Pro 512GB Blue",
           "brand": "Apple",
@@ -417,6 +402,21 @@
             "Mac連携レビュー": "https://note.com/tojimasaya/n/n802d7acd7aeb",
             "O+ Connect": "https://note.com/tojimasaya/n/n82331875d2b8"
           }
+        },
+        {
+          "id": "macbook-pro-14-m3",
+          "name": "MacBook Pro 14\" (M3)",
+          "brand": "Apple",
+          "image": "/assets/images/gear/macbookpro14m3.jpg",
+          "status": "available",
+          "specs": [
+            "M3",
+            "18GB",
+            "512GB"
+          ],
+          "description": "Macbook 14インチにした理由は、何インチにしたところで見えないのは一緒、27インチ以上の外部モニターなしではなにも見えないローガンズの宿命",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n57968ed8d4ae?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">iPadシフトは、いまか？ 第1回 ～移行への第一歩～</a>",
+          "links": {}
         },
         {
           "id": "iphone-se-3rd-64gb-black",
