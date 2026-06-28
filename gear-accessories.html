@@ -24,6 +24,35 @@
         .gear-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 15px; }
         .gear-specs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
         .spec-tag { background: rgba(0,0,0,0.05); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; color: var(--text-light); }
+        .spec-tag.is-warning { background: rgba(220, 38, 38, 0.1); color: #b91c1c; border: 1px solid rgba(220, 38, 38, 0.2); font-weight: 600; }
+        .gear-notice {
+            margin: 0 0 16px;
+            padding: 13px 14px;
+            border: 1px solid rgba(220, 38, 38, 0.24);
+            border-left: 4px solid #dc2626;
+            border-radius: 6px;
+            background: rgba(220, 38, 38, 0.055);
+            color: var(--text-color);
+        }
+        .gear-notice-title {
+            display: block;
+            margin-bottom: 5px;
+            color: #b91c1c;
+            font-size: 0.8rem;
+            font-weight: 700;
+            letter-spacing: 0.03em;
+        }
+        .gear-notice-body { display: block; color: var(--text-light); font-size: 0.82rem; line-height: 1.7; }
+        .gear-notice-link {
+            display: inline-block;
+            margin-top: 8px;
+            color: #b91c1c;
+            font-size: 0.8rem;
+            font-weight: 600;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(185, 28, 28, 0.35);
+        }
+        .gear-notice-link:hover { border-color: #b91c1c; }
         .gear-links { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
         .gear-review-link {
             display: block;
@@ -53,6 +82,10 @@
             border-bottom: 1px solid rgba(0,0,0,0.16);
         }
         .gear-product-links a:hover { color: var(--accent-color); border-color: var(--accent-color); }
+        [data-theme="dark"] .spec-tag.is-warning { background: rgba(248, 113, 113, 0.12); color: #fca5a5; border-color: rgba(248, 113, 113, 0.28); }
+        [data-theme="dark"] .gear-notice { background: rgba(248, 113, 113, 0.08); border-color: rgba(248, 113, 113, 0.25); border-left-color: #f87171; }
+        [data-theme="dark"] .gear-notice-title,
+        [data-theme="dark"] .gear-notice-link { color: #fca5a5; }
         [data-theme="dark"] .gear-review-link { background: rgba(96, 165, 250, 0.08); border-color: rgba(96, 165, 250, 0.28); border-left-color: #60a5fa; }
         [data-theme="dark"] .gear-product-links a { border-color: rgba(255,255,255,0.22); }
         /* Shared link styles */
@@ -140,6 +173,16 @@
             return reviewHtml || productHtml ? `<div class="gear-links">${reviewHtml}${productHtml}</div>` : '';
         }
 
+        function renderNotice(notice) {
+            if (!notice) return '';
+            const linkHtml = notice.link ? `<a class="gear-notice-link" href="${notice.link}" target="_blank" rel="${linkRel(notice.link)}">${notice.linkLabel || '詳しく読む'} →</a>` : '';
+            return `<div class="gear-notice"><strong class="gear-notice-title">${notice.title}</strong><span class="gear-notice-body">${notice.body}</span>${linkHtml}</div>`;
+        }
+
+        function specTagClass(spec) {
+            return spec.includes('CCC') ? 'spec-tag is-warning' : 'spec-tag';
+        }
+
         function renderGrid(id, items) {
             const container = document.getElementById(id);
             container.innerHTML = items.map(item => {
@@ -150,9 +193,10 @@
                     <div class="gear-content">
                         <h3 class="gear-name">${item.name}</h3>
                         <div class="gear-specs">
-                            ${item.specs ? item.specs.map(s => `<span class="spec-tag">${s}</span>`).join('') : ''}
+                            ${item.specs ? item.specs.map(s => `<span class="${specTagClass(s)}">${s}</span>`).join('') : ''}
                         </div>
                         <p class="gear-desc">${item.description}</p>
+                        ${renderNotice(item.notice)}
                         ${renderLinks(item.links)}
                     </div>
                 </article>`}).join('');

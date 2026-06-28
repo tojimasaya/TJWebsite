@@ -481,6 +481,12 @@
             "CCCマーク"
           ],
           "description": "最近調達した、Apple Watch充電器まで内蔵した小型モバイルバッテリー。スマホ下部のUSB-Cポートに直接挿せるだけでなく、短い内蔵ケーブルでも充電できるのが便利。そして何より、Apple Watchをその場で充電できる安心感が大きい。5000mAhあれば、私の使い方では十分な容量。中国での飛行機搭乗も考えて、CCCマーク入りであることも選んだ理由のひとつ。",
+          "notice": {
+            "title": "中国国内線ではCCCマークに注意",
+            "body": "中国国内から飛行機に乗る場合、CCCマークが記載されていないモバイルバッテリーは、荷物検査で発覚すると廃棄、または宅配便で指定場所に送り返す対応になることがあります。このMomax製品にはCCCマークが付いています。",
+            "link": "https://note.com/tojimasaya/n/n3f3715a31a0c",
+            "linkLabel": "CCCマークの記事を読む"
+          },
           "comment": "",
           "links": {
             "official": "https://hk.momax.net/products/1-power-x-pro-mini-5000mah-integrated-foldable-usb-c-plug-and-built-in-usb-c-cable-battery-pack-with-apple-watch-fast-charger"
