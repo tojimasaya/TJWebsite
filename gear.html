@@ -158,7 +158,7 @@
 
         .category-grid {
             display: grid;
-            grid-template-columns: repeat(5, minmax(0, 1fr));
+            grid-template-columns: repeat(3, minmax(0, 1fr));
             gap: 16px;
             margin: 0;
             padding: 0;
@@ -659,7 +659,7 @@
                     <h2 class="gear-section-title" id="gear-category-title">私が使っている機材</h2>
                 </div>
                 <p class="gear-section-copy">
-                    ここにあるのは、実際に持ち出し、撮り、書き、旅してきた道具たち。カメラ、ドローン、日々のデジタル、アクセサリ、バッグを用途ごとに整理しています。
+                    ここにあるのは、実際に持ち出し、撮り、書き、旅してきた道具たち。カメラ、ドローン、日々のデジタル、アクセサリ、バッグ、通信環境を用途ごとに整理しています。
                 </p>
             </div>
             <main class="category-grid" id="category-grid">
@@ -715,6 +715,17 @@
                     <div class="category-content">
                         <h2 class="category-title">Bags</h2>
                         <p class="category-desc">香港、日本、ときどき遠征。実際の旅と撮影を運ぶPeak Design中心のバッグ構成。</p>
+                        <span class="category-arrow">View Collection →</span>
+                    </div>
+                </a>
+                <a href="gear-sim.html" class="category-card">
+                    <picture>
+                        <source srcset="assets/images/gear/sim/banana-travel-sim.webp" type="image/webp">
+                        <img src="assets/images/gear/sim/banana-travel-sim.jpg" alt="旅と二拠点生活で使うSIMカード" class="category-bg" loading="lazy" decoding="async">
+                    </picture>
+                    <div class="category-content">
+                        <h2 class="category-title">SIM / Connectivity</h2>
+                        <p class="category-desc">香港・中国・日本を行き来するためのSIM、eSIM、プリペイド回線の使い分け。</p>
                         <span class="category-arrow">View Collection →</span>
                     </div>
                 </a>
@@ -858,6 +869,12 @@
                 icon: '',
                 label: 'Bags',
                 fallbackImage: 'assets/images/gear/bags/bags-hero.jpg'
+            },
+            'sim': {
+                link: 'gear-sim.html',
+                icon: '',
+                label: 'SIM / Connectivity',
+                fallbackImage: 'assets/images/gear/sim/banana-travel-sim.jpg'
             }
         };
 

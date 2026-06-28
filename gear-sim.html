@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-806426BQX2');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SIM / Connectivity — 旅と二拠点生活の通信環境 | Toji Masaya</title>
+    <meta name="description" content="田路昌也が香港・中国・日本の行き来で使っているSIM、eSIM、プリペイド回線、バックアップ回線の使い分けメモ。">
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .detail-hero { padding: 100px 20px 54px; text-align: center; background-color: var(--bg-color); }
+        .detail-back-link { display: inline-block; margin-bottom: 20px; color: var(--accent-color); text-decoration: none; }
+        .detail-hero h1 { font-family: var(--primary-font); font-size: clamp(2.4rem, 5vw, 3.6rem); margin-bottom: 0.8rem; color: var(--text-color); }
+        .detail-hero p { font-family: 'Noto Serif JP', serif; color: var(--text-light); line-height: 1.9; }
+
+        .sim-section { max-width: 1180px; margin: 0 auto 64px; padding: 0 30px; }
+        .sim-section-header { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); gap: 28px; align-items: end; margin-bottom: 22px; }
+        .sim-kicker { display: block; font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-color); margin-bottom: 10px; }
+        .sim-title { font-family: var(--primary-font); font-size: clamp(1.45rem, 3vw, 2rem); color: var(--text-color); margin: 0; }
+        .sim-lead { font-family: 'Noto Serif JP', serif; font-size: 0.9rem; line-height: 1.95; color: var(--text-light); }
+
+        .sim-notice {
+            padding: 16px 18px;
+            border: 1px solid rgba(185, 28, 28, 0.22);
+            border-left: 4px solid #dc2626;
+            border-radius: 8px;
+            background: rgba(220, 38, 38, 0.05);
+            font-family: 'Noto Serif JP', serif;
+            color: var(--text-light);
+            line-height: 1.85;
+            margin-bottom: 26px;
+        }
+        .sim-notice strong { display: block; color: #b91c1c; margin-bottom: 4px; }
+
+        .sim-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .sim-card {
+            background: var(--page-card-bg, #fff);
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        .sim-card picture,
+        .sim-card img { display: block; }
+        .sim-card img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; background: #f8fafc; }
+        .sim-card-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+        .sim-card-label { font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: 0.12em; text-transform: uppercase; color: var(--accent-color); margin-bottom: 8px; }
+        .sim-card-title { font-family: var(--primary-font); color: var(--text-color); font-size: 1.2rem; margin-bottom: 10px; }
+        .sim-tags { display: flex; flex-wrap: wrap; gap: 7px; margin-bottom: 12px; }
+        .sim-tag { background: rgba(0,0,0,0.05); border-radius: 4px; color: var(--text-light); font-size: 0.74rem; padding: 3px 7px; }
+        .sim-card-copy { color: var(--text-light); font-size: 0.86rem; line-height: 1.8; flex: 1; }
+
+        .sim-template-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+        .sim-template-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 18px;
+            background: var(--page-card-bg, #fff);
+        }
+        .sim-template-card h3 { font-family: var(--primary-font); color: var(--text-color); font-size: 1.1rem; margin-bottom: 10px; }
+        .sim-template-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.8; }
+        .sim-template-card ul { margin: 10px 0 0; padding-left: 1.1rem; color: var(--text-light); font-size: 0.84rem; line-height: 1.8; }
+
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .sim-notice { background: rgba(248, 113, 113, 0.08); border-color: rgba(248, 113, 113, 0.24); border-left-color: #f87171; }
+            :root:not([data-theme="light"]) .sim-notice strong { color: #fca5a5; }
+            :root:not([data-theme="light"]) .sim-tag { background: rgba(255,255,255,0.08); }
+        }
+        [data-theme="dark"] .sim-notice { background: rgba(248, 113, 113, 0.08); border-color: rgba(248, 113, 113, 0.24); border-left-color: #f87171; }
+        [data-theme="dark"] .sim-notice strong { color: #fca5a5; }
+        [data-theme="dark"] .sim-tag { background: rgba(255,255,255,0.08); }
+
+        @media (max-width: 900px) {
+            .sim-section-header { grid-template-columns: 1fr; }
+            .sim-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        }
+        @media (max-width: 640px) {
+            .detail-hero { padding: 82px 20px 42px; }
+            .sim-card-grid,
+            .sim-template-grid { grid-template-columns: 1fr; }
+            .sim-section { padding: 0 20px; }
+        }
+    </style>
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="apple-touch-icon.png">
+<link rel="canonical" href="https://tojimasaya.com/gear-sim.html">
+<meta property="og:title" content="SIM / Connectivity — 旅と二拠点生活の通信環境 | Toji Masaya">
+<meta property="og:description" content="香港・中国・日本の行き来で使っているSIM、eSIM、プリペイド回線の使い分けメモ。">
+<meta property="og:url" content="https://tojimasaya.com/gear-sim.html">
+<meta property="og:type" content="website">
+<meta property="og:site_name" content="Toji Masaya">
+<meta property="og:image" content="https://tojimasaya.com/assets/images/gear/sim/banana-travel-sim.jpg">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="SIM / Connectivity — 旅と二拠点生活の通信環境 | Toji Masaya">
+<meta name="twitter:description" content="旅、ローミング、SMS認証、バックアップ回線としてのSIM選び。">
+<meta name="twitter:image" content="https://tojimasaya.com/assets/images/gear/sim/banana-travel-sim.jpg">
+</head>
+<body>
+    <script src="js/site-header.js"></script>
+
+    <header class="detail-hero">
+        <a href="gear.html" class="detail-back-link">← Back to Categories</a>
+        <h1>SIM / Connectivity</h1>
+        <p>香港・中国・日本を行き来するための通信環境。<br>旅行、SMS認証、ローミング、バックアップ回線の使い分け。</p>
+    </header>
+
+    <section class="sim-section" aria-labelledby="sim-public-policy-title">
+        <div class="sim-section-header">
+            <div>
+                <span class="sim-kicker">Public Notes</span>
+                <h2 class="sim-title" id="sim-public-policy-title">公開できる粒度で整理する</h2>
+            </div>
+            <p class="sim-lead">
+                ここでは管理用の電話番号や残量ではなく、旅や二拠点生活でどう使い分けているかを公開します。SIMそのものの評価、向いている用途、注意点を残すページです。
+            </p>
+        </div>
+        <div class="sim-notice">
+            <strong>非公開にする情報</strong>
+            電話番号、ICCID、契約者名、家族や貸出先、残量、有効期限、管理画面の具体的な情報は掲載しません。公開するのは、サービス名・用途・地域・維持費の目安・実用上の注意点に限定します。
+        </div>
+    </section>
+
+    <section class="sim-section" aria-labelledby="sim-current-title">
+        <div class="sim-section-header">
+            <div>
+                <span class="sim-kicker">Prepaid Examples</span>
+                <h2 class="sim-title" id="sim-current-title">掲載候補のプリペイドSIM</h2>
+            </div>
+            <p class="sim-lead">
+                まずはパッケージ写真を入口に、実際に使っている、または検証しているプリペイドSIMを匿名化したメモとして追加していく想定です。
+            </p>
+        </div>
+        <div class="sim-card-grid">
+            <article class="sim-card">
+                <picture>
+                    <source srcset="assets/images/gear/sim/china-telecom-prepaid-sim.webp" type="image/webp">
+                    <img src="assets/images/gear/sim/china-telecom-prepaid-sim.jpg" alt="China Telecom prepaid SIM package" loading="lazy" decoding="async">
+                </picture>
+                <div class="sim-card-body">
+                    <span class="sim-card-label">Hong Kong / China / Macau</span>
+                    <h3 class="sim-card-title">China Telecom 三地共用データSIM</h3>
+                    <div class="sim-tags">
+                        <span class="sim-tag">物理SIM</span>
+                        <span class="sim-tag">プリペイド</span>
+                        <span class="sim-tag">三地共用</span>
+                    </div>
+                    <p class="sim-card-copy">香港・中国本土・マカオをまたぐ短期利用向け。中国本土での通信確認や、旅先の予備データ回線として使いやすいかを記録していく候補。</p>
+                </div>
+            </article>
+            <article class="sim-card">
+                <picture>
+                    <source srcset="assets/images/gear/sim/banana-travel-sim.webp" type="image/webp">
+                    <img src="assets/images/gear/sim/banana-travel-sim.jpg" alt="Banana Travel SIM package" loading="lazy" decoding="async">
+                </picture>
+                <div class="sim-card-body">
+                    <span class="sim-card-label">Asia / Travel Data</span>
+                    <h3 class="sim-card-title">Banana Travel SIM</h3>
+                    <div class="sim-tags">
+                        <span class="sim-tag">物理SIM</span>
+                        <span class="sim-tag">旅行用</span>
+                        <span class="sim-tag">複数地域</span>
+                    </div>
+                    <p class="sim-card-copy">複数国をまたぐ旅行で使えるデータSIM。短期旅行だけでなく、予備回線として1枚持っておく価値があるかを検証していく。</p>
+                </div>
+            </article>
+            <article class="sim-card">
+                <picture>
+                    <source srcset="assets/images/gear/sim/valuegb-year-sim.webp" type="image/webp">
+                    <img src="assets/images/gear/sim/valuegb-year-sim.jpg" alt="ValueGB whole year SIM package" loading="lazy" decoding="async">
+                </picture>
+                <div class="sim-card-body">
+                    <span class="sim-card-label">Hong Kong / Year SIM</span>
+                    <h3 class="sim-card-title">ValueGB Whole Year SIM</h3>
+                    <div class="sim-tags">
+                        <span class="sim-tag">物理SIM</span>
+                        <span class="sim-tag">長期維持</span>
+                        <span class="sim-tag">実名登録</span>
+                    </div>
+                    <p class="sim-card-copy">香港で長めに使うデータ・通話回線の候補。実名登録やアプリ管理を含め、旅行者向けSIMとは違う注意点を整理していく。</p>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="sim-section" aria-labelledby="sim-template-title">
+        <div class="sim-section-header">
+            <div>
+                <span class="sim-kicker">Card Template</span>
+                <h2 class="sim-title" id="sim-template-title">今後のカード項目</h2>
+            </div>
+            <p class="sim-lead">
+                SIMカードを追加するときは、管理情報ではなく「誰に向いているか」と「どこで困るか」を中心に書くと、公開ページとして読みやすくなります。
+            </p>
+        </div>
+        <div class="sim-template-grid">
+            <div class="sim-template-card">
+                <h3>基本情報</h3>
+                <ul>
+                    <li>サービス名 / キャリア名</li>
+                    <li>物理SIM / eSIM / 端末内蔵eSIM</li>
+                    <li>プリペイド / ポストペイド / 年間維持</li>
+                    <li>主な対応地域</li>
+                </ul>
+            </div>
+            <div class="sim-template-card">
+                <h3>用途</h3>
+                <ul>
+                    <li>旅行用データ回線</li>
+                    <li>SMS認証 / 銀行 / 重要アプリ</li>
+                    <li>中国本土・香港・日本の行き来</li>
+                    <li>バックアップ回線</li>
+                </ul>
+            </div>
+            <div class="sim-template-card">
+                <h3>評価</h3>
+                <ul>
+                    <li>一軍 / 予備 / 検証中 / 退役</li>
+                    <li>維持費の目安</li>
+                    <li>速度・安定性の体感</li>
+                    <li>管理アプリやチャージのしやすさ</li>
+                </ul>
+            </div>
+            <div class="sim-template-card">
+                <h3>注意点</h3>
+                <ul>
+                    <li>実名登録の有無</li>
+                    <li>ローミング時の制限</li>
+                    <li>SMS受信の可否</li>
+                    <li>公開してはいけない管理情報</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer"></footer>
+    <script src="/assets/js/ga4-tracking.js" defer></script>
+    <script src="/growth.js" defer></script>
+</body>
+</html>
