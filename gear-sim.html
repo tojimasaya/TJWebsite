@@ -36,6 +36,7 @@
         .sim-notice strong { display: block; color: #b91c1c; margin-bottom: 4px; }
 
         .sim-card-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .sim-card-grid.two-up { grid-template-columns: repeat(2, minmax(0, 1fr)); }
         .sim-card {
             background: var(--page-card-bg, #fff);
             border: 1px solid var(--border-color);
@@ -66,6 +67,143 @@
         .sim-template-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.8; }
         .sim-template-card ul { margin: 10px 0 0; padding-left: 1.1rem; color: var(--text-light); font-size: 0.84rem; line-height: 1.8; }
 
+        .resident-sim-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 18px; }
+        .resident-sim-card {
+            border: 1px solid var(--border-color);
+            border-radius: 8px;
+            padding: 20px;
+            background: var(--page-card-bg, #fff);
+            display: flex;
+            flex-direction: column;
+            min-height: 100%;
+        }
+        .resident-card-head {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 12px;
+        }
+        .resident-rank {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            margin-bottom: 14px;
+            background: var(--accent-color);
+            color: #fff;
+            font-family: var(--secondary-font);
+            font-size: 0.8rem;
+            font-weight: 700;
+        }
+        .carrier-logo {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 86px;
+            height: 38px;
+            padding: 0 12px;
+            border-radius: 7px;
+            font-family: var(--secondary-font);
+            font-size: 0.84rem;
+            font-weight: 800;
+            letter-spacing: 0.02em;
+            background: #f8fafc;
+            border: 1px solid var(--border-color);
+            color: var(--text-color);
+            white-space: nowrap;
+        }
+        .carrier-logo.povo { color: #00a0df; }
+        .carrier-logo.rakuten { color: #bf0040; }
+        .carrier-logo.jal {
+            min-width: 116px;
+            color: #111827;
+            gap: 7px;
+        }
+        .carrier-logo.jal::before {
+            content: "JAL";
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            height: 22px;
+            padding: 0 7px;
+            border-radius: 3px;
+            background: #111827;
+            color: #fff;
+            font-size: 0.7rem;
+            letter-spacing: 0.08em;
+        }
+        .resident-sim-card h3 {
+            font-family: var(--primary-font);
+            font-size: 1.18rem;
+            line-height: 1.45;
+            color: var(--text-color);
+            margin-bottom: 8px;
+        }
+        .resident-sim-status {
+            display: inline-flex;
+            align-self: flex-start;
+            margin-bottom: 12px;
+            padding: 3px 8px;
+            border-radius: 4px;
+            background: rgba(26, 63, 185, 0.08);
+            color: var(--accent-color);
+            font-size: 0.72rem;
+            font-weight: 700;
+            letter-spacing: 0.04em;
+        }
+        .resident-sim-card p { color: var(--text-light); font-size: 0.86rem; line-height: 1.8; margin-bottom: 12px; }
+        .resident-points { margin: 0 0 14px; padding-left: 1.1rem; color: var(--text-light); font-size: 0.82rem; line-height: 1.75; }
+        .resident-links {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: auto;
+            padding-top: 14px;
+            border-top: 1px solid var(--border-color);
+        }
+        .resident-links a {
+            color: var(--accent-color);
+            text-decoration: none;
+            font-size: 0.82rem;
+            font-weight: 600;
+            line-height: 1.5;
+        }
+        .resident-links a:hover { text-decoration: underline; }
+        .tj-article-link {
+            display: block;
+            padding: 12px 14px;
+            border: 1px solid rgba(26, 63, 185, 0.22);
+            border-left: 4px solid var(--accent-color);
+            border-radius: 6px;
+            background: rgba(26, 63, 185, 0.045);
+            color: var(--accent-color);
+            text-decoration: none;
+            line-height: 1.55;
+        }
+        .tj-article-link:hover { text-decoration: none; border-color: rgba(26, 63, 185, 0.36); }
+        .tj-article-label {
+            display: block;
+            margin-bottom: 3px;
+            color: var(--text-light);
+            font-size: 0.72rem;
+            font-weight: 600;
+            letter-spacing: 0.04em;
+        }
+        .tj-article-title {
+            display: block;
+            font-size: 0.88rem;
+            font-weight: 600;
+        }
+        .official-link {
+            color: var(--text-light) !important;
+            font-size: 0.8rem !important;
+            font-weight: 500 !important;
+        }
+        .official-link:hover { color: var(--accent-color) !important; }
+
         @media (prefers-color-scheme: dark) {
             :root:not([data-theme="light"]) .sim-notice { background: rgba(248, 113, 113, 0.08); border-color: rgba(248, 113, 113, 0.24); border-left-color: #f87171; }
             :root:not([data-theme="light"]) .sim-notice strong { color: #fca5a5; }
@@ -74,14 +212,19 @@
         [data-theme="dark"] .sim-notice { background: rgba(248, 113, 113, 0.08); border-color: rgba(248, 113, 113, 0.24); border-left-color: #f87171; }
         [data-theme="dark"] .sim-notice strong { color: #fca5a5; }
         [data-theme="dark"] .sim-tag { background: rgba(255,255,255,0.08); }
+        [data-theme="dark"] .tj-article-link { background: rgba(96, 165, 250, 0.08); border-color: rgba(96, 165, 250, 0.28); border-left-color: #60a5fa; }
+        [data-theme="dark"] .carrier-logo { background: rgba(255,255,255,0.08); border-color: rgba(255,255,255,0.15); }
+        [data-theme="dark"] .carrier-logo.jal { color: #f9fafb; }
 
         @media (max-width: 900px) {
             .sim-section-header { grid-template-columns: 1fr; }
             .sim-card-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+            .resident-sim-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 640px) {
             .detail-hero { padding: 82px 20px 42px; }
             .sim-card-grid,
+            .sim-card-grid.two-up,
             .sim-template-grid { grid-template-columns: 1fr; }
             .sim-section { padding: 0 20px; }
         }
@@ -125,17 +268,116 @@
         </div>
     </section>
 
-    <section class="sim-section" aria-labelledby="sim-current-title">
+    <section class="sim-section" aria-labelledby="resident-sim-title">
         <div class="sim-section-header">
             <div>
-                <span class="sim-kicker">Prepaid Examples</span>
-                <h2 class="sim-title" id="sim-current-title">掲載候補のプリペイドSIM</h2>
+                <span class="sim-kicker">For Japanese Residents Abroad</span>
+                <h2 class="sim-title" id="resident-sim-title">海外在住日本人向けオススメ日本SIM</h2>
             </div>
             <p class="sim-lead">
-                まずはパッケージ写真を入口に、実際に使っている、または検証しているプリペイドSIMを匿名化したメモとして追加していく想定です。
+                日本の電話番号を維持しながら、海外でSMS認証を受け、日本へ一時帰国したときだけデータを使う。海外在住者にとっての日本SIMは、安さだけでなく「止められない認証」と「帰国時の安心感」で選びます。
             </p>
         </div>
-        <div class="sim-card-grid">
+        <div class="resident-sim-grid">
+            <article class="resident-sim-card">
+                <div class="resident-card-head">
+                    <span class="resident-rank">1</span>
+                    <span class="carrier-logo povo">povo</span>
+                </div>
+                <h3>povo</h3>
+                <span class="resident-sim-status">番号維持 / SMS認証</span>
+                <p>使わない月は基本料0円で維持でき、海外でも日本のSMSを受けられるので二重認証用として扱いやすい日本SIM。</p>
+                <ul class="resident-points">
+                    <li>日本に一時帰国したときだけ必要なデータ量を課金できる。</li>
+                    <li>課金中でなくても海外でSMS受信できるのが大きい。</li>
+                    <li>長期間トッピング購入がないと利用停止・契約解除になる点は注意。</li>
+                    <li>放置すれば自動的に解約されるので、解約手続きの手間が少ない。</li>
+                </ul>
+                <div class="resident-links">
+                    <a class="official-link" href="https://povo.jp/" target="_blank" rel="noopener noreferrer">povo公式を見る →</a>
+                </div>
+            </article>
+            <article class="resident-sim-card">
+                <div class="resident-card-head">
+                    <span class="resident-rank">2</span>
+                    <span class="carrier-logo rakuten">Rakuten</span>
+                </div>
+                <h3>楽天モバイル</h3>
+                <span class="resident-sim-status">海外2GB / Rakuten Link</span>
+                <p>3GBまでの低額スタートに海外データ2GBが含まれ、Rakuten Linkを使った通話の強さが海外在住者には大きい。</p>
+                <ul class="resident-points">
+                    <li>3GBまで月1,078円（税込）から使える段階制プラン。</li>
+                    <li>海外指定地域では毎月2GBまで追加料金なしで使える。</li>
+                    <li>日本帰国時に使いすぎても段階的に上がるだけなので安心感がある。</li>
+                    <li>Rakuten Linkなら海外から日本への通話、日本から海外滞在中の受話でも無料になる場面が多い。</li>
+                    <li>Rakuten Linkには発信先・着信方法などの制限があるので事前確認が必要。</li>
+                </ul>
+                <div class="resident-links">
+                    <a class="tj-article-link" href="https://note.com/tojimasaya/n/ne46974dcf8f3" target="_blank" rel="noopener noreferrer">
+                        <span class="tj-article-label">TJによる記事</span>
+                        <span class="tj-article-title">海外在住者・出張族に楽天モバイルをすすめる理由 →</span>
+                    </a>
+                    <a class="tj-article-link" href="https://note.com/tojimasaya/n/na177dcb599b6" target="_blank" rel="noopener noreferrer">
+                        <span class="tj-article-label">TJによる記事</span>
+                        <span class="tj-article-title">Rakuten Linkで海外通話を節約する →</span>
+                    </a>
+                    <a class="tj-article-link" href="https://note.com/tojimasaya/n/n1de39965798e" target="_blank" rel="noopener noreferrer">
+                        <span class="tj-article-label">TJによる記事</span>
+                        <span class="tj-article-title">海外ローミングを過信した反省とバックアップ選び →</span>
+                    </a>
+                    <a class="official-link" href="https://network.mobile.rakuten.co.jp/" target="_blank" rel="noopener noreferrer">楽天モバイル公式を見る →</a>
+                </div>
+            </article>
+            <article class="resident-sim-card">
+                <div class="resident-card-head">
+                    <span class="resident-rank">3</span>
+                    <span class="carrier-logo jal">ahamo</span>
+                </div>
+                <h3>JAL Mobile powered by ahamo</h3>
+                <span class="resident-sim-status">検討中 / JALマイル</span>
+                <p>月額2,970円で30GB、海外ローミングでも30GB枠を使えるahamo系プラン。JALマイル特典が付くので、次回帰省時に契約を検討中。</p>
+                <ul class="resident-points">
+                    <li>30GBを国内外で使えるのは旅行者にはかなり強い。</li>
+                    <li>海外ローミングは利用開始から15日を超えると速度制限または停止扱いになる点が海外在住者には重い。</li>
+                    <li>日本に戻って国内通信をするまで海外利用期間がリセットされない。</li>
+                    <li>毎月JALマイルが貯まり、条件次第で「どこかにマイル」に使えるのが魅力。</li>
+                    <li>長期で日本を離れる人は、16日目以降の回避策を別に用意したい。</li>
+                </ul>
+                <div class="resident-links">
+                    <a class="official-link" href="https://www.jal.co.jp/jp/ja/jmb/jal-mobile/ahamo/" target="_blank" rel="noopener noreferrer">JAL Mobile powered by ahamo公式を見る →</a>
+                    <a class="official-link" href="https://ahamo.com/" target="_blank" rel="noopener noreferrer">ahamo公式を見る →</a>
+                </div>
+            </article>
+        </div>
+    </section>
+
+    <section class="sim-section" aria-labelledby="sim-hongkong-title">
+        <div class="sim-section-header">
+            <div>
+                <span class="sim-kicker">Hong Kong Prepaid SIM</span>
+                <h2 class="sim-title" id="sim-hongkong-title">香港旅行者・長期滞在者用プリペイドSIM</h2>
+            </div>
+            <p class="sim-lead">
+                香港で短期旅行として使うのか、数か月から1年単位で番号やデータ回線を維持するのかで、選ぶSIMは変わります。ここでは実際に使っている、または検証しているプリペイドSIMを、用途別に公開できる範囲で整理します。
+            </p>
+        </div>
+        <div class="sim-card-grid two-up">
+            <article class="sim-card">
+                <picture>
+                    <source srcset="assets/images/gear/sim/valuegb-year-sim.webp" type="image/webp">
+                    <img src="assets/images/gear/sim/valuegb-year-sim.jpg" alt="ValueGB whole year SIM package" loading="lazy" decoding="async">
+                </picture>
+                <div class="sim-card-body">
+                    <span class="sim-card-label">Hong Kong / Long Stay</span>
+                    <h3 class="sim-card-title">ValueGB Whole Year SIM（激SIM）</h3>
+                    <div class="sim-tags">
+                        <span class="sim-tag">物理SIM</span>
+                        <span class="sim-tag">長期滞在</span>
+                        <span class="sim-tag">1年利用</span>
+                    </div>
+                    <p class="sim-card-copy">香港で長めに使うデータ・通話回線の候補。データ追加は可能だが、基本は1年間の利用期限があるため、短期旅行用というより香港滞在を前提にしたSIMとして扱いたい。</p>
+                </div>
+            </article>
             <article class="sim-card">
                 <picture>
                     <source srcset="assets/images/gear/sim/china-telecom-prepaid-sim.webp" type="image/webp">
@@ -146,42 +388,10 @@
                     <h3 class="sim-card-title">China Telecom 三地共用データSIM</h3>
                     <div class="sim-tags">
                         <span class="sim-tag">物理SIM</span>
-                        <span class="sim-tag">プリペイド</span>
                         <span class="sim-tag">三地共用</span>
+                        <span class="sim-tag">追加チャージ</span>
                     </div>
-                    <p class="sim-card-copy">香港・中国本土・マカオをまたぐ短期利用向け。中国本土での通信確認や、旅先の予備データ回線として使いやすいかを記録していく候補。</p>
-                </div>
-            </article>
-            <article class="sim-card">
-                <picture>
-                    <source srcset="assets/images/gear/sim/banana-travel-sim.webp" type="image/webp">
-                    <img src="assets/images/gear/sim/banana-travel-sim.jpg" alt="Banana Travel SIM package" loading="lazy" decoding="async">
-                </picture>
-                <div class="sim-card-body">
-                    <span class="sim-card-label">Asia / Travel Data</span>
-                    <h3 class="sim-card-title">Banana Travel SIM</h3>
-                    <div class="sim-tags">
-                        <span class="sim-tag">物理SIM</span>
-                        <span class="sim-tag">旅行用</span>
-                        <span class="sim-tag">複数地域</span>
-                    </div>
-                    <p class="sim-card-copy">複数国をまたぐ旅行で使えるデータSIM。短期旅行だけでなく、予備回線として1枚持っておく価値があるかを検証していく。</p>
-                </div>
-            </article>
-            <article class="sim-card">
-                <picture>
-                    <source srcset="assets/images/gear/sim/valuegb-year-sim.webp" type="image/webp">
-                    <img src="assets/images/gear/sim/valuegb-year-sim.jpg" alt="ValueGB whole year SIM package" loading="lazy" decoding="async">
-                </picture>
-                <div class="sim-card-body">
-                    <span class="sim-card-label">Hong Kong / Year SIM</span>
-                    <h3 class="sim-card-title">ValueGB Whole Year SIM</h3>
-                    <div class="sim-tags">
-                        <span class="sim-tag">物理SIM</span>
-                        <span class="sim-tag">長期維持</span>
-                        <span class="sim-tag">実名登録</span>
-                    </div>
-                    <p class="sim-card-copy">香港で長めに使うデータ・通話回線の候補。実名登録やアプリ管理を含め、旅行者向けSIMとは違う注意点を整理していく。</p>
+                    <p class="sim-card-copy">香港・中国本土・マカオをまたいで使うためのプリペイドSIM。クレジットカードやAlipayで追加チャージすれば長期利用も可能で、中国本土でもFacebook、YouTube、LINEなどをそのまま使えるのが大きい。</p>
                 </div>
             </article>
         </div>
