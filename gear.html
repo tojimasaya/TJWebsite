@@ -298,40 +298,120 @@
         /* Leica DB Link (inside dark hero) */
         .leica-db-link {
             grid-column: 1 / -1;
-            display: flex;
+            position: relative;
+            display: grid;
+            grid-template-columns: auto minmax(0, 1fr) auto;
             align-items: center;
-            gap: 14px;
+            gap: 18px;
+            overflow: hidden;
             margin-top: 0;
-            padding: 14px 18px;
-            background: rgba(255,255,255,0.08);
-            border: 1px solid rgba(148,163,184,0.3);
-            border-radius: 10px;
+            padding: 18px 22px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045));
+            border: 1px solid rgba(203,213,225,0.26);
+            border-radius: 14px;
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 18px 48px rgba(0,0,0,0.2);
             text-decoration: none;
             color: #f9fafb;
-            transition: background 0.3s ease, border-color 0.3s ease;
+            transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+        }
+        .leica-db-link::before {
+            content: "";
+            position: absolute;
+            inset: 0 auto 0 0;
+            width: 4px;
+            background: #d71920;
+            opacity: 0.95;
+        }
+        .leica-db-link::after {
+            content: "";
+            position: absolute;
+            right: 72px;
+            top: -45px;
+            width: 150px;
+            height: 150px;
+            border: 1px solid rgba(255,255,255,0.08);
+            border-radius: 50%;
+            pointer-events: none;
         }
         .leica-db-link:hover {
-            background: rgba(255,255,255,0.14);
-            border-color: rgba(148,163,184,0.6);
+            transform: translateY(-2px);
+            background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.07));
+            border-color: rgba(226,232,240,0.5);
+            box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 24px 54px rgba(0,0,0,0.26);
         }
-        .leica-db-icon {
-            font-size: 1.2rem;
+        .leica-db-mark {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            width: 52px;
+            height: 52px;
             flex-shrink: 0;
+            border-radius: 50%;
+            background: radial-gradient(circle at 32% 28%, #ff6b6b 0, #d71920 42%, #8b1116 100%);
+            box-shadow: 0 0 0 1px rgba(255,255,255,0.14), 0 12px 24px rgba(0,0,0,0.25);
+            font-family: var(--secondary-font);
+            font-size: 0.76rem;
+            font-weight: 700;
+            letter-spacing: 0.08em;
+        }
+        .leica-db-copy {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            gap: 4px;
+        }
+        .leica-db-eyebrow {
+            font-family: var(--secondary-font);
+            font-size: 0.62rem;
+            letter-spacing: 0.2em;
+            text-transform: uppercase;
+            color: rgba(203,213,225,0.72);
         }
         .leica-db-title {
             font-family: var(--primary-font);
-            font-size: 1rem;
-            margin-bottom: 2px;
+            font-size: 1.12rem;
+            line-height: 1.2;
         }
         .leica-db-desc {
-            font-size: 0.75rem;
-            color: rgba(148,163,184,0.9);
+            font-size: 0.76rem;
+            color: rgba(203,213,225,0.82);
+        }
+        .leica-db-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 6px;
+            margin-top: 6px;
+        }
+        .leica-db-meta span {
+            padding: 4px 8px;
+            border-radius: 999px;
+            background: rgba(15,23,42,0.45);
+            border: 1px solid rgba(148,163,184,0.22);
+            font-family: var(--secondary-font);
+            font-size: 0.58rem;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+            color: rgba(226,232,240,0.72);
         }
         .leica-db-arrow {
-            margin-left: auto;
+            position: relative;
+            z-index: 1;
+            display: grid;
+            place-items: center;
+            width: 38px;
+            height: 38px;
+            border-radius: 50%;
+            background: rgba(15,23,42,0.62);
+            border: 1px solid rgba(203,213,225,0.22);
             font-size: 1rem;
-            color: rgba(148,163,184,0.9);
+            color: rgba(226,232,240,0.86);
             flex-shrink: 0;
+            transition: transform 0.3s ease, background 0.3s ease;
+        }
+        .leica-db-link:hover .leica-db-arrow {
+            transform: translateX(3px);
+            background: rgba(215,25,32,0.86);
         }
 
         /* Works shot with these tools */
@@ -555,6 +635,29 @@
         }
 
         @media (max-width: 768px) {
+            .leica-db-link {
+                grid-template-columns: auto minmax(0, 1fr);
+                gap: 14px;
+                padding: 16px 18px;
+            }
+            .leica-db-link::after {
+                right: -46px;
+                top: -54px;
+            }
+            .leica-db-mark {
+                width: 44px;
+                height: 44px;
+                font-size: 0.68rem;
+            }
+            .leica-db-arrow {
+                grid-column: 2;
+                justify-self: start;
+                width: auto;
+                height: auto;
+                padding: 0;
+                border: 0;
+                background: transparent;
+            }
             .category-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
@@ -638,11 +741,17 @@
                 </div>
             </div>
             <a href="leica-serial.html" class="leica-db-link">
-                <div class="leica-db-icon">DB</div>
-                <div>
-                    <div class="leica-db-title">Leica Serial Number Database</div>
-                    <div class="leica-db-desc">シリアル番号から製造年・モデルを検索するためのページ</div>
-                </div>
+                <span class="leica-db-mark" aria-hidden="true">DB</span>
+                <span class="leica-db-copy">
+                    <span class="leica-db-eyebrow">Leica Serial Lookup</span>
+                    <span class="leica-db-title">Leica Serial Number Database</span>
+                    <span class="leica-db-desc">シリアル番号から製造年・モデルを検索するためのページ</span>
+                    <span class="leica-db-meta" aria-hidden="true">
+                        <span>Camera</span>
+                        <span>Lens</span>
+                        <span>Year</span>
+                    </span>
+                </span>
                 <span class="leica-db-arrow">→</span>
             </a>
         </div>
