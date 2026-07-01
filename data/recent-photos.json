@@ -1,26 +1,33 @@
 [
   {
-    "slug": "rokid-yamane-mongkok-glasses",
+    "slug": "sham-shui-po-turin-pasta",
     "label": "今日の断章",
-    "title": "二人ともRokid AIグラス",
-    "place": "香港・旺角",
-    "date": "2026年6月29日",
-    "body": "久しぶりに香港へ戻ってきた山根さんと旺角ランハムで夕食をとり、目の前の彼も私もそろってRokid AIグラスをかけていることに気づいて、冷静に考えるとかなり異常な光景なのだが、店の中でそれに気づく人はほとんどおらず、二人で食事しているところを一枚、食事後に外へ出て旺角の夜景をもう一枚撮ってみれば、これがメガネで撮れるならいいでしょう？と思わず笑ってしまう出来で、未来というものは案外こうして普通の夕食のテーブルと夜の歩道に紛れ込むのだなと思う一方で、楽しいからこそ撮る前にはやはり『撮りますよ』と声をかけ、隠し撮りにならないようにするところまでが、眼鏡で撮るということなのだった。",
-    "image": "assets/images/photo-notes/rokid-yamane-dinner.jpg",
-    "imageWebp": "assets/images/photo-notes/rokid-yamane-dinner.webp",
-    "alt": "旺角ランハムで、Rokid AIグラスをかけた山根博士が夕食のテーブルに座っている様子。ROKID Glassesで撮影",
-    "caption": "Rokid AI Glasses Dinner / Mong Kok",
+    "title": "深水埗で、トリノから来たパスタ",
+    "place": "香港・深水埗",
+    "date": "2026年7月1日",
+    "body": "先日入ったピザ屋で、トリノ出身のイタリア人のおばさんから『同じビルの別の階で息子がパスタ屋をやっている』と聞いていたので、七月一日の香港返還記念日だからというわけでもないが、妻とその店を訪ねてみると、前に撮ったお母さんの写真を見せた途端に息子さんはにっこりして、そうだよ、トリノだよと話がつながり、紙皿で出てくるパスタに日本円で千六百円から二千円ほど払うのは一瞬高い気もするのだけれど、妻と二皿を分け合えばどちらもちゃんとおいしく、深水埗の電脳中心で歩き疲れたあとに少し寄り道して、トリノから来た親子の点と点が同じビルの中でつながるなら、香港の散歩としては十分すぎる昼だった。",
+    "image": "assets/images/photo-notes/sham-shui-po-turin-pasta-staff.jpg",
+    "imageWebp": "assets/images/photo-notes/sham-shui-po-turin-pasta-staff.webp",
+    "alt": "深水埗の小さなパスタ店で、スタッフが厨房の前に立っている様子",
+    "caption": "Turin Pasta / Sham Shui Po",
     "sideFrames": [
       {
-        "title": "旺角ランハムの夜",
-        "caption": "Mong Kok Night / ROKID Glasses",
-        "image": "assets/images/photo-notes/rokid-mongkok-langham-night.jpg",
-        "imageWebp": "assets/images/photo-notes/rokid-mongkok-langham-night.webp",
-        "alt": "旺角ランハム近くの通りに、赤や緑のネオン看板が光っている夜景。ROKID Glassesで撮影"
+        "title": "トンナートの一皿",
+        "caption": "Tonnato Pasta / Sham Shui Po",
+        "image": "assets/images/photo-notes/sham-shui-po-turin-pasta-tonnato.jpg",
+        "imageWebp": "assets/images/photo-notes/sham-shui-po-turin-pasta-tonnato.webp",
+        "alt": "紙皿に盛られたトンナート風のパスタとパン"
+      },
+      {
+        "title": "ボロネーゼを分け合う",
+        "caption": "Bolognese / Sham Shui Po",
+        "image": "assets/images/photo-notes/sham-shui-po-turin-pasta-bolognese.jpg",
+        "imageWebp": "assets/images/photo-notes/sham-shui-po-turin-pasta-bolognese.webp",
+        "alt": "紙皿に盛られたボロネーゼのパスタ"
       }
     ],
-    "link": "gear-editing.html",
-    "linkLabel": "Daily Driversへ"
+    "link": "hongkong.html",
+    "linkLabel": "香港の記録へ"
   },
   {
     "slug": "bobby-birthday-curry",
