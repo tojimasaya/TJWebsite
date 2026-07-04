@@ -90,19 +90,31 @@
     ]
   },
   {
-    "id": "ukfrance-2017",
-    "title": "ロンドンからパリへ — 竜一の卒業式の旅",
-    "subtitle": "バースの晴れ舞台、そしてモンサンミッシェルの空",
+    "id": "london-2017",
+    "title": "ロンドンとバース — 竜一の卒業式の旅",
+    "subtitle": "家族で祝う、Prior Park College の晴れの日",
     "year": 2017,
     "days": null,
     "color": "#e84393",
-    "link": "ukfrance-travel-journal.html",
+    "link": "london-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "ロンドン (London)", "lat": 51.5074, "lng": -0.1278, "detail": "ukfrance-uk.html" },
-      { "name": "バース (Bath) — Prior Park College", "lat": 51.3811, "lng": -2.3590, "detail": "ukfrance-uk.html" },
-      { "name": "パリ (Paris)", "lat": 48.8566, "lng": 2.3522, "detail": "ukfrance-france.html" },
-      { "name": "モンサンミッシェル (Mont Saint-Michel)", "lat": 48.6361, "lng": -1.5115, "detail": "ukfrance-france.html" }
+      { "name": "ロンドン (London)", "lat": 51.5074, "lng": -0.1278, "detail": "london-travel-journal.html" },
+      { "name": "バース (Bath) — Prior Park College", "lat": 51.3811, "lng": -2.3590, "detail": "london-travel-journal.html" }
+    ]
+  },
+  {
+    "id": "france-2017",
+    "title": "パリとモンサンミッシェル — 男三人衆の旅",
+    "subtitle": "いつもの三人で、ユーロスターに乗って",
+    "year": 2017,
+    "days": null,
+    "color": "#5f27cd",
+    "link": "france-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "パリ (Paris)", "lat": 48.8566, "lng": 2.3522, "detail": "france-travel-journal.html" },
+      { "name": "モンサンミッシェル (Mont Saint-Michel)", "lat": 48.6361, "lng": -1.5115, "detail": "france-travel-journal.html" }
     ]
   },
   {

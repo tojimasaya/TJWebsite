@@ -400,25 +400,19 @@
     <priority>0.5</priority>
   </url>
   <url>
-    <loc>https://tojimasaya.com/germany-nurnberg.html</loc>
-    <lastmod>2026-07-04</lastmod>
-    <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
-  </url>
-  <url>
-    <loc>https://tojimasaya.com/ukfrance-travel-journal.html</loc>
+    <loc>https://tojimasaya.com/london-travel-journal.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tojimasaya.com/ukfrance-uk.html</loc>
+    <loc>https://tojimasaya.com/france-travel-journal.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>yearly</changefreq>
-    <priority>0.5</priority>
+    <priority>0.6</priority>
   </url>
   <url>
-    <loc>https://tojimasaya.com/ukfrance-france.html</loc>
+    <loc>https://tojimasaya.com/germany-nurnberg.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.5</priority>
