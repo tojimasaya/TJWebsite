@@ -90,6 +90,22 @@
     ]
   },
   {
+    "id": "ukfrance-2017",
+    "title": "ロンドンからパリへ — 竜一の卒業式の旅",
+    "subtitle": "バースの晴れ舞台、そしてモンサンミッシェルの空",
+    "year": 2017,
+    "days": null,
+    "color": "#e84393",
+    "link": "ukfrance-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "ロンドン (London)", "lat": 51.5074, "lng": -0.1278, "detail": "ukfrance-uk.html" },
+      { "name": "バース (Bath) — Prior Park College", "lat": 51.3811, "lng": -2.3590, "detail": "ukfrance-uk.html" },
+      { "name": "パリ (Paris)", "lat": 48.8566, "lng": 2.3522, "detail": "ukfrance-france.html" },
+      { "name": "モンサンミッシェル (Mont Saint-Michel)", "lat": 48.6361, "lng": -1.5115, "detail": "ukfrance-france.html" }
+    ]
+  },
+  {
     "id": "muine-2018",
     "title": "ムイネーの砂漠、そしてカムラン湾",
     "subtitle": "ドローンと歩いた3日間",
