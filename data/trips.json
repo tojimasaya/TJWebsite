@@ -86,6 +86,21 @@
     ]
   },
   {
+    "id": "muine-2018",
+    "title": "ムイネーの砂漠、そしてカムラン湾",
+    "subtitle": "ドローンと歩いた3日間",
+    "year": 2018,
+    "days": 3,
+    "color": "#34495e",
+    "link": "muine-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "ホーチミン (Ho Chi Minh City)", "lat": 10.8231, "lng": 106.6297 },
+      { "name": "ムイネー (Mui Ne)", "lat": 10.9330, "lng": 108.2872, "detail": "muine-travel-journal.html" },
+      { "name": "カムラン湾 (Cam Ranh Bay)", "lat": 11.9136, "lng": 109.1590, "detail": "muine-travel-journal.html" }
+    ]
+  },
+  {
     "id": "hochiminh-2025",
     "title": "7年ぶりのホーチミン",
     "subtitle": "Leica Elmarit 28mmで捉える進化する街",
