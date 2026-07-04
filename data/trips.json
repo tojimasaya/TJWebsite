@@ -38,19 +38,23 @@
     ]
   },
   {
-    "id": "prague-2014",
-    "title": "プラハの奇跡を求めて",
-    "subtitle": "写真家の楽園への旅",
+    "id": "germany-prague-2014",
+    "title": "ドイツ縦断、そしてプラハ",
+    "subtitle": "ライツパークとフォトキナ、写真家の楽園へ",
     "year": 2014,
-    "days": 3,
+    "days": null,
     "color": "#2980b9",
-    "link": "prague-travel-journal.html",
-    "image": "/assets/images/gallery/charlesbridge.webp",
+    "link": "germany-travel-journal.html",
+    "image": "/assets/images/gallery/cologne.webp",
     "cities": [
-      { "name": "Nürnberg",  "lat": 49.4521, "lng": 11.0767 },
-      { "name": "Praha",     "lat": 50.0755, "lng": 14.4378 },
-      { "name": "Dresden",   "lat": 51.0504, "lng": 13.7373 },
-      { "name": "Frankfurt", "lat": 50.1109, "lng": 8.6821 }
+      { "name": "フランクフルト (Frankfurt)", "lat": 50.1109, "lng": 8.6821 },
+      { "name": "ヴェッツラー (Wetzlar) — Leitz Park", "lat": 50.5520, "lng": 8.5045, "detail": "germany-wetzlar.html" },
+      { "name": "ケルン (Köln) — Photokina", "lat": 50.9375, "lng": 6.9603, "detail": "germany-koln.html" },
+      { "name": "ハイデルベルク (Heidelberg)", "lat": 49.3988, "lng": 8.6724, "detail": "germany-heidelberg.html" },
+      { "name": "シュトゥットガルト (Stuttgart)", "lat": 48.7758, "lng": 9.1829, "detail": "germany-heidelberg.html" },
+      { "name": "ニュルンベルク (Nürnberg)", "lat": 49.4521, "lng": 11.0767, "detail": "germany-nurnberg.html" },
+      { "name": "プラハ (Praha)", "lat": 50.0755, "lng": 14.4378, "detail": "prague-travel-journal.html" },
+      { "name": "ドレスデン (Dresden)", "lat": 51.0504, "lng": 13.7373, "detail": "prague-travel-journal.html" }
     ]
   },
   {
