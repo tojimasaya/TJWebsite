@@ -71,5 +71,18 @@
       { "name": "ローマ (Roma)",          "lat": 41.9028, "lng": 12.4964, "detail": "italy-roma.html" },
       { "name": "ケルン (Köln) — Photokina", "lat": 50.9375, "lng": 6.9603 }
     ]
+  },
+  {
+    "id": "hochiminh-2025",
+    "title": "7年ぶりのホーチミン",
+    "subtitle": "Leica Elmarit 28mmで捉える進化する街",
+    "year": 2025,
+    "days": null,
+    "color": "#f39c12",
+    "link": "hochiminh-travel-journal.html",
+    "image": "/assets/images/gallery/vietnam.webp",
+    "cities": [
+      { "name": "ホーチミン (Ho Chi Minh City)", "lat": 10.8231, "lng": 106.6297, "detail": "hochiminh-travel-journal.html" }
+    ]
   }
 ]
