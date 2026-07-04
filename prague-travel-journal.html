@@ -1,0 +1,322 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-806426BQX2');
+    </script>
+
+    <title>プラハの奇跡を求めて — 写真家の楽園への旅 | Toji Masaya</title>
+    <meta name="description" content="「プラハは写真家の楽園である」— 田中長徳氏の言葉に導かれ、2014年秋、ニュルンベルクからプラハへ。カレル橋の朝日、天文時計、そして帰路の10時間列車。写真と言葉で辿る旅行記。">
+    <meta name="author" content="Toji Masaya">
+
+    <!-- Favicons -->
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <!-- Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="canonical" href="https://tojimasaya.com/prague-travel-journal.html">
+    <meta property="og:title" content="プラハの奇跡を求めて — 写真家の楽園への旅">
+    <meta property="og:description" content="2014年秋、ニュルンベルクからプラハへ。カレル橋の朝日、天文時計、帰路の10時間列車。写真と言葉で辿る旅行記。">
+    <meta property="og:url" content="https://tojimasaya.com/prague-travel-journal.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Toji Masaya">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/trips/prague/hero.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mongkok93">
+    <meta name="twitter:title" content="プラハの奇跡を求めて — 写真家の楽園への旅">
+    <meta name="twitter:image" content="https://tojimasaya.com/assets/images/trips/prague/hero.jpg">
+
+    <style>
+        .journal-hero {
+            position: relative;
+            height: 70vh;
+            min-height: 480px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            text-align: center;
+            overflow: hidden;
+            margin-top: 70px;
+        }
+        .journal-hero-bg {
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            object-fit: cover;
+            z-index: 1;
+            filter: brightness(0.62) contrast(1.08);
+            transition: transform 10s ease;
+        }
+        .journal-hero:hover .journal-hero-bg { transform: scale(1.05); }
+        .journal-hero-content {
+            position: relative;
+            z-index: 2;
+            padding: 20px;
+            max-width: 900px;
+            animation: fadeInUp 1.5s ease 0.2s forwards;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+        .journal-label {
+            font-family: var(--secondary-font);
+            font-size: 0.85rem;
+            letter-spacing: 0.2em;
+            margin-bottom: 1.5rem;
+            text-transform: uppercase;
+            opacity: 0.9;
+            display: block;
+        }
+        .journal-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(1.8rem, 5vw, 3.2rem);
+            font-weight: 500;
+            letter-spacing: 0.08em;
+            line-height: 1.5;
+            margin-bottom: 1.2rem;
+            text-shadow: 0 4px 20px rgba(0,0,0,0.35);
+        }
+        .journal-subtitle {
+            font-family: var(--primary-font);
+            font-size: clamp(0.95rem, 2vw, 1.15rem);
+            font-style: italic;
+            opacity: 0.92;
+        }
+        @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+
+        .journal-meta-bar {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 46px auto 0;
+            padding: 0 20px;
+        }
+        .journal-meta-bar .pill {
+            font-size: var(--text-xs);
+            background: var(--hover-color);
+            color: var(--text-color);
+            padding: 6px 14px;
+            border-radius: 999px;
+            font-weight: 600;
+        }
+        .journal-meta-bar .pill.route { background: var(--accent-color); color: #fff; }
+
+        .essay {
+            max-width: 720px;
+            margin: 56px auto 40px;
+            padding: 0 24px;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.02rem;
+            line-height: 2.15;
+            color: var(--text-color);
+        }
+        .essay p { margin: 0 0 1.9em; }
+        .essay .lead-quote {
+            font-size: 1.15rem;
+            line-height: 2.2;
+            text-align: center;
+            font-weight: 500;
+            margin: 0 0 2.2em;
+        }
+        .essay figure {
+            margin: 2.6em 0;
+        }
+        .essay figure img {
+            width: 100%;
+            height: auto;
+            border-radius: 12px;
+            border: 1px solid var(--border-color);
+            display: block;
+        }
+        .essay figcaption {
+            font-family: var(--primary-font);
+            font-size: 0.82rem;
+            color: var(--text-light);
+            text-align: center;
+            margin-top: 10px;
+            letter-spacing: 0.02em;
+        }
+        .essay .books {
+            font-family: var(--primary-font);
+            font-size: 0.9rem;
+            color: var(--text-light);
+            border-left: 3px solid var(--border-color);
+            padding: 4px 0 4px 16px;
+            margin: 0 0 2em;
+            line-height: 1.9;
+        }
+        .essay .books a { color: var(--accent-color); text-decoration: none; }
+        .essay .books a:hover { text-decoration: underline; }
+
+        .journal-origin {
+            max-width: 720px;
+            margin: 0 auto 70px;
+            padding: 18px 24px;
+            font-family: var(--primary-font);
+            font-size: 0.85rem;
+            color: var(--text-light);
+            text-align: center;
+        }
+        .journal-origin a { color: var(--accent-color); text-decoration: none; }
+        .journal-origin a:hover { text-decoration: underline; }
+
+        .journal-nav-links {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin: 0 auto 90px;
+            padding: 0 20px;
+        }
+        .journal-nav-links a {
+            padding: 11px 20px;
+            border-radius: 24px;
+            border: 1px solid var(--border-color);
+            text-decoration: none;
+            font-size: var(--text-sm);
+            color: var(--text-color);
+            font-family: var(--primary-font);
+            transition: transform .2s ease, box-shadow .2s ease;
+        }
+        .journal-nav-links a:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
+        .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
+    <script src="js/site-header.js"></script>
+
+    <!-- Hero -->
+    <header class="journal-hero">
+        <img src="./assets/images/trips/prague/hero.jpg" alt="プラハ、カレル橋の朝" class="journal-hero-bg">
+        <div class="journal-hero-content">
+            <span class="journal-label">Travel Journal — 2014</span>
+            <h1 class="journal-title">プラハの奇跡を求めて</h1>
+            <p class="journal-subtitle">写真家の楽園への旅</p>
+        </div>
+    </header>
+
+    <main id="main-content">
+
+        <div class="journal-meta-bar">
+            <span class="pill route">Route: Nürnberg → Praha → Dresden → Frankfurt</span>
+            <span class="pill">2014年9月</span>
+            <span class="pill">プラハ 2泊3日</span>
+            <span class="pill">3人旅</span>
+        </div>
+
+        <article class="essay">
+
+            <p class="lead-quote">「プラハは写真家の楽園である。<br>世界中でこれほど魅力のある都会を知らない。」</p>
+
+            <p>これは、写真家の田中長徳氏の言葉です。氏はさらに続けます。「それは巨匠ヨゼフ・スデクの仕事が示している。千年の古都を今に歩行して写真を撮影できるのは奇跡のようなものだ。」</p>
+
+            <div class="books">
+                参考：田中長徳『<a href="https://amzn.to/3VIKg6i" target="_blank" rel="noopener noreferrer">屋根裏プラハ</a>』／ヨゼフ・スデク写真集『<a href="https://www.nitesha.com/?pid=109684169" target="_blank" rel="noopener noreferrer">LIGHT OF PRAGUE</a>』
+            </div>
+
+            <p>この言葉に惹きつけられるように我々三人は、2014年、ドイツに続いてプラハを訪れました。<br>ドイツ数都市の後、我々はこの「奇跡」とはなにかを自分たちの目で確かめるべくプラハの街へ足を踏み入れたことを覚えています。</p>
+
+            <p>ところで、前日のニュルンベルクからはバスが便利だとネットに書いてあったので素直に従いましたが、やはり先人の言葉は偉大、ほぼ高速道路で快適でした。<br>列車だとかなり北回りで、多くの人がこのバスを利用する意味がわかりました。（このときはまだ帰り道で大事になるとは思いもしませんでした）<br>＊あくまで2014年の話なので今どうなのかご存じの方教えて下さい。</p>
+
+            <figure><img src="./assets/images/trips/prague/01-bus-route.jpg" alt="ニュルンベルクからプラハへのバス移動ルート" loading="lazy" decoding="async"><figcaption>ニュルンベルクからプラハへバス移動の軌跡</figcaption></figure>
+
+            <p>無事予約していたカレル橋 徒歩1分のホテルにチェックイン、三泊四日の予定でしたが最終的に一日早めて戻ったことを思い出しました。</p>
+
+            <figure><img src="./assets/images/trips/prague/02-hotel-map.png" alt="宿泊したホテルの位置" loading="lazy" decoding="async"><figcaption>宿泊したホテル、とにかくカレル橋から近くて最高</figcaption></figure>
+
+            <p>翌朝 朝靄に包まれたプラハ城が、カレル橋越しに姿を現す瞬間。黄金色に輝く太陽の光が、ヴルタヴァ川の水面を染め上げます。その光景を目にした時、心が震えました。時が止まったかのような静寂の中、歴史の重みと美しさが交錯します。<br>ファインダーを覗き込む私の指が、必死でシャッターを切りました。</p>
+
+            <figure><img src="./assets/images/trips/prague/03-charles-bridge-sunrise.jpg" alt="カレル橋から見るプラハ城と朝日" loading="lazy" decoding="async"><figcaption>カレル橋からプラハ城に映る朝日をみる</figcaption></figure>
+
+            <p>ドイツの街々も魅力的でした。古城や歴史的建造物が、現代的な建物と共存する景観。新旧が融合した都市の姿は、それはそれで興味深いものでした。</p>
+
+            <p>しかし、プラハに一歩足を踏み入れた瞬間、全く異なる世界に迷い込んだような感覚に襲われました。ここには、写真に収めたくなる被写体が無数に存在しています。</p>
+
+            <figure><img src="./assets/images/trips/prague/04-castle-view.jpg" alt="プラハ城から見る町並み" loading="lazy" decoding="async"><figcaption>プラハ城からみる町並み</figcaption></figure>
+
+            <figure><img src="./assets/images/trips/prague/05-carriage.jpg" alt="時計台の広場にいた馬車" loading="lazy" decoding="async"><figcaption>時計台の広場にいた馬車</figcaption></figure>
+
+            <p>プラハの街並み、特に旧市街は、まるで何百年もの時を超えてそのままでした。第二次世界大戦の被害をほとんど受けなかったこの街は、中欧で最もよく保存された都市の一つと言われています。その景観は、単なる観光資源ではなく、生きた歴史書のようです。<br>我々はその歴史の一ページ一ページを丁寧に記録したことを覚えています。</p>
+
+            <figure><img src="./assets/images/trips/prague/06-empty-bridge.jpg" alt="早朝のまだ誰もいないカレル橋" loading="lazy" decoding="async"><figcaption>早朝のまだ誰もいないカレル橋</figcaption></figure>
+
+            <p>カレル橋を歩けば、中世の石畳を踏みしめます。橋の上に立つ聖人像たちが、何世紀もの間見守ってきた風景を自分の目で確かめることができます。その瞬間、歴史の一部になったような感覚に包まれます。<br>レンズを通して見るそれらの像は、まるで語りかけてくるかのようでした。</p>
+
+            <figure><img src="./assets/images/trips/prague/07-saints.jpg" alt="カレル橋に立つ聖人像" loading="lazy" decoding="async"><figcaption>カレル橋に立つ聖人像</figcaption></figure>
+
+            <p>そして、早朝のカレル橋で目にしたファイアーショーは、忘れられない体験でした。朝日が昇る前の薄暗い空を背景に、大道芸人の操る炎が描く軌跡が、幻想的な世界を作り出します。橋の石畳に映る揺らめく光、静寂を破る炎の音。</p>
+
+            <p>歴史ある橋の上で繰り広げられる現代的なパフォーマンス。それは、プラハという街の本質を象徴しているようでした。<br>シャッタースピードを遅くして、炎の軌跡を一枚の写真に収めようと試みました。</p>
+
+            <figure><img src="./assets/images/trips/prague/08-fireshow.jpg" alt="早朝のカレル橋で見たファイアーショー" loading="lazy" decoding="async"><figcaption>早朝のカレル橋でみたファイアーショー</figcaption></figure>
+
+            <p>旧市街広場では、600年以上の歴史を持つ天文時計の仕掛け人形に目を奪われます。周囲の建物も、まるでタイムスリップしたかのような佇まいです。しかし、プラハは決して時間が止まった街ではありません。広場に集う人々の笑顔や活気が、現代の息吹を感じさせてくれます。<br>古いものと新しいものの共存する瞬間だと感じました。</p>
+
+            <figure><img src="./assets/images/trips/prague/09-astro-clock.jpg" alt="600年前の天文時計とそこに集う人々" loading="lazy" decoding="async"><figcaption>600年前の天文時計とそこに集う人々</figcaption></figure>
+
+            <p>プラハ城の中にあるスターバックス。これこそが、プラハの新旧融合を象徴する場所かもしれません。<br>1000年の歴史を持つ城の一角に、現代的なコーヒーチェーンが居を構えています。</p>
+
+            <figure><img src="./assets/images/trips/prague/10-starbucks-entry.jpg" alt="プラハ城にあるスターバックスの入口" loading="lazy" decoding="async"><figcaption>プラハ城にあるスターバックス入口</figcaption></figure>
+
+            <p>窓際の席に座れば、プラハの街を見下ろす絶景が広がります。現代的なラテを手に、中世の景色を眺める。この不思議な体験こそ、プラハの魅力そのものです。コントラストの効いたこの光景を、どう切り取るべきか考えながらシャッターを切りました。</p>
+
+            <figure><img src="./assets/images/trips/prague/11-starbucks-two.jpg" alt="スターバックスでくつろぐ二人" loading="lazy" decoding="async"><figcaption>スタバでくつろぐ二人</figcaption></figure>
+
+            <figure><img src="./assets/images/trips/prague/12-terrace-view.jpg" alt="テラス席から見える町並み" loading="lazy" decoding="async"><figcaption>テラス席なら町並みがみえます</figcaption></figure>
+
+            <p>確かに、プラハも時代とともに変化しています。特に旧市街の外では新しい建築物も見られ、観光産業の発展と歴史的景観の保存のバランスを取ろうとする努力が感じられます。しかし、その変化の中にあっても、プラハは「生きている博物館」としての魅力を失っていません。古いものを大切に保存しながら、必要に応じて新しいものを受け入れる。その絶妙なバランス感覚が、プラハを特別な街にしているのかもしれないですね。</p>
+
+            <p>本当ならもう一日滞在するはずだったのですが、天候の関係だったか最終日のフライト時間に遅れるのが怖かったのかとにかく滞在を一日早めてフランクフルトに戻ったのでした。</p>
+
+            <figure><img src="./assets/images/trips/prague/13-to-train.jpg" alt="急遽、列車での移動に" loading="lazy" decoding="async"><figcaption>急遽 列車移動に</figcaption></figure>
+
+            <p>ただ行きと同じバスが一杯で、しかたなく列車で戻ったのですが、プラハからドレスデンまでの列車が遅れて10時間ほどかかったと記憶しています。<br>下の地図を見ると判りますが、線路がエルベ川に沿ってグネグネ曲がっていたのには驚きました、時間がかかるわけです。</p>
+
+            <figure><img src="./assets/images/trips/prague/14-rail-map.jpg" alt="帰路の列車経路図" loading="lazy" decoding="async"><figcaption>赤が列車の経路、黒はプラハーニュルンベルクーフランクフルトを結ぶ直線</figcaption></figure>
+
+            <figure><img src="./assets/images/trips/prague/15-train-inside.jpg" alt="列車の車内風景" loading="lazy" decoding="async"><figcaption>車内風景</figcaption></figure>
+
+            <figure><img src="./assets/images/trips/prague/16-frankfurt-hbf.jpg" alt="プラハから到着したフランクフルト中央駅" loading="lazy" decoding="async"><figcaption>プラハから到着したフランクフルト中央駅</figcaption></figure>
+
+            <p>そして今、プラハでの日々を振り返り、私は田中氏の言葉の真意を理解できた気がします。<br>確かに、プラハは写真家の楽園でした。しかし、それは単に美しい被写体が多いからではありません。</p>
+
+            <p>プラハの「奇跡」とは、時間を超越した美しさなのです。カレル橋の上で見た朝日、旧市街広場の天文時計、プラハ城の威容。これらは何世紀もの時を経ても、なお息づいています。</p>
+
+            <p>現代の喧騒の中に、過去の安穏が共存している。それこそが、ヨゼフ・スデクが捉え、そして私も少しですが感じ取ることができた「奇跡」なのでしょう。</p>
+
+        </article>
+
+        <div class="journal-origin">
+            初出：<a href="https://note.com/tojimasaya/n/n58be6060ac3b" target="_blank" rel="noopener noreferrer">note（2024年6月公開）</a>。本ページはその完全版です。
+        </div>
+
+        <div class="journal-nav-links">
+            <a href="trips.html" class="primary">← 旅の一覧（Trips）へ</a>
+            <a href="/">Home</a>
+        </div>
+
+        <footer class="footer" role="contentinfo"></footer>
+
+    </main>
+
+    <script src="js/image-fallback.js"></script>
+    <script src="/assets/js/ga4-tracking.js" defer></script>
+    <script src="/growth.js" defer></script>
+</body>
+</html>

@@ -215,9 +215,15 @@
   </url>
   <url>
     <loc>https://tojimasaya.com/trips.html</loc>
-    <lastmod>2026-02-15</lastmod>
+    <lastmod>2026-07-04</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/prague-travel-journal.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
   </url>
   <url>
     <loc>https://tojimasaya.com/links.html</loc>

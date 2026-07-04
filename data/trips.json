@@ -32,18 +32,19 @@
     ]
   },
   {
-    "id": "cologne-prague",
-    "title": "ケルン〜プラハ",
-    "subtitle": "大聖堂の鐘から石畳の音へ",
-    "year": 2022,
-    "days": 9,
+    "id": "prague-2014",
+    "title": "プラハの奇跡を求めて",
+    "subtitle": "写真家の楽園への旅",
+    "year": 2014,
+    "days": 3,
     "color": "#2980b9",
-    "link": "https://note.com/tojimasaya/n/n58be6060ac3b",
+    "link": "prague-travel-journal.html",
     "image": "/assets/images/gallery/charlesbridge.webp",
     "cities": [
-      { "name": "Köln",    "lat": 50.9375, "lng": 6.9603 },
-      { "name": "Dresden", "lat": 51.0504, "lng": 13.7373 },
-      { "name": "Praha",   "lat": 50.0755, "lng": 14.4378 }
+      { "name": "Nürnberg",  "lat": 49.4521, "lng": 11.0767 },
+      { "name": "Praha",     "lat": 50.0755, "lng": 14.4378 },
+      { "name": "Dresden",   "lat": 51.0504, "lng": 13.7373 },
+      { "name": "Frankfurt", "lat": 50.1109, "lng": 8.6821 }
     ]
   },
   {
