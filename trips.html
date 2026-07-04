@@ -26,7 +26,7 @@
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.4/dist/leaflet.css" integrity="sha256-p4NxAoJBhIIN+hmNHrzRCf9tD/miZyoHS5obTRR9BMY=" crossorigin="">
 
   <!-- Meta -->
-  <meta name="description" content="1週間以上の周遊旅をまとめた特集ページ。トルコ横断、チベット・ラサ、プラハ。ルート地図と写真で辿る。">
+  <meta name="description" content="1週間以上の周遊旅をまとめた特集ページ。トルコ横断、チベット・西安、イタリア縦断、プラハ。ルート地図と写真で辿る。">
   <meta name="theme-color" content="#fafafa">
   <meta name="theme-color" content="#1a1a1a" media="(prefers-color-scheme: dark)">
 
@@ -171,13 +171,13 @@
   </style>
 <link rel="canonical" href="https://tojimasaya.com/trips.html">
 <meta property="og:title" content="Trips — Toji Masaya">
-<meta property="og:description" content="1週間以上の周遊旅をまとめた特集ページ。トルコ横断、チベット・ラサ、プラハ。ルート地図と写真で辿る。">
+<meta property="og:description" content="1週間以上の周遊旅をまとめた特集ページ。トルコ横断、チベット・西安、イタリア縦断、プラハ。ルート地図と写真で辿る。">
 <meta property="og:url" content="https://tojimasaya.com/trips.html">
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Toji Masaya">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Trips — Toji Masaya">
-<meta name="twitter:description" content="1週間以上の周遊旅をまとめた特集ページ。トルコ横断、チベット・ラサ、プラハ。ルート地図と写真で辿る。">
+<meta name="twitter:description" content="1週間以上の周遊旅をまとめた特集ページ。トルコ横断、チベット・西安、イタリア縦断、プラハ。ルート地図と写真で辿る。">
 <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
 </head>
 <body>
@@ -270,7 +270,37 @@
         </div>
       </section>
 
-      <!-- 3) カッパドキア → イスタンブール -->
+      <!-- 3) イタリア縦断 (2016) -->
+      <section class="trip-feature">
+        <div class="trip-visual">
+          <img src="/assets/images/trips/italy/venezia/09.jpg" alt="ゴンドラの向こうにライトアップされたサン・ジョルジョ・マッジョーレ聖堂" loading="lazy" decoding="async">
+        </div>
+        <div class="trip-copy">
+          <span class="pill route">Route: Milano → Venezia → Firenze → Cinque Terre → Napoli → Roma → Köln</span>
+          <div class="trip-meta">
+            <span class="pill">2016年9月</span>
+            <span class="pill">6都市</span>
+            <span class="pill">Photokina</span>
+          </div>
+          <h2>イタリア縦断、フォトキナへの旅</h2>
+          <p>
+            ミラノの「効率追求」が初日に崩壊。深夜3時のサンマルコ広場、2キロのビステッカ、
+            カプリ島の青の洞窟、ローマのパスタ巡り——そして最後はケルンのカメラの祭典へ。
+          </p>
+
+          <div class="trip-gallery">
+            <figure class="tall"><img src="/assets/images/trips/italy/venezia/10.jpg" alt="誰もいない夜明け前のサンマルコ広場" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/italy/cinqueterre/02.jpg" alt="チンクエ・テッレ、リオマッジョーレ" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/italy/napoli/11.jpg" alt="ナポリ全景" loading="lazy" decoding="async"></figure>
+          </div>
+
+          <div class="trip-actions">
+            <a href="/italy-travel-journal.html" class="primary">旅行記を読む（全6都市）</a>
+          </div>
+        </div>
+      </section>
+
+      <!-- 4) カッパドキア → イスタンブール -->
       <section class="trip-feature reverse">
         <div class="trip-copy">
           <span class="pill route">Route: Cappadocia → Istanbul</span>
@@ -398,7 +428,7 @@
               + imgHtml
               + '<div class="trip-popup-body">'
               + '<div class="trip-popup-title">' + city.name + '</div>'
-              + '<div class="trip-popup-sub">' + trip.title + ' (' + trip.year + ') — ' + trip.days + ' days</div>'
+              + '<div class="trip-popup-sub">' + trip.title + ' (' + trip.year + ')' + (trip.days ? ' — ' + trip.days + ' days' : '') + '</div>'
               + linkHtml
               + '</div></div>';
 
