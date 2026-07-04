@@ -18,17 +18,23 @@
     ]
   },
   {
-    "id": "tibet",
-    "title": "薄い空気と濃い色彩：ラサの一週間",
-    "subtitle": "祈りの旋回に混ざる8日間",
-    "year": 2023,
-    "days": 8,
+    "id": "tibet-xian-2016",
+    "title": "チベット拉薩・西安 兵馬俑の旅",
+    "subtitle": "広州から54時間の列車で標高3,650mへ",
+    "year": 2016,
+    "days": 11,
     "color": "#8e44ad",
-    "link": "https://note.com/tojimasaya/n/n9e58036e3b01",
+    "link": "tibet-travel-journal.html",
     "image": "/assets/images/gallery/lhasa.webp",
     "cities": [
-      { "name": "広州 (Guangzhou)", "lat": 23.1291, "lng": 113.2644 },
-      { "name": "Lhasa",            "lat": 29.6500, "lng": 91.1000 }
+      { "name": "広州 (Guangzhou)", "lat": 23.1291, "lng": 113.2644, "detail": "tibet-day01.html" },
+      { "name": "武昌 (Wuchang)",   "lat": 30.5539, "lng": 114.3162, "detail": "tibet-day01.html" },
+      { "name": "ゴルムド (Golmud)", "lat": 36.4021, "lng": 94.9034, "detail": "tibet-day03.html" },
+      { "name": "拉薩 (Lhasa)",     "lat": 29.6500, "lng": 91.1000, "detail": "tibet-day04.html" },
+      { "name": "ギャンツェ (Gyantse)", "lat": 28.9500, "lng": 89.6300, "detail": "tibet-day05.html" },
+      { "name": "シガツェ (Xigaze)", "lat": 29.2500, "lng": 88.8800, "detail": "tibet-day06.html" },
+      { "name": "西安 (Xi'an)",     "lat": 34.3416, "lng": 108.9398, "detail": "tibet-day09.html" },
+      { "name": "香港 (Hong Kong)", "lat": 22.3193, "lng": 114.1694, "detail": "tibet-day11.html" }
     ]
   },
   {
