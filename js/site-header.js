@@ -43,6 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                 </li>
                 <li><a href="hongkong.html" class="nav-link ${page.includes('hongkong') ? 'active' : ''}">香港</a></li>
+                <li><a href="trips.html" class="nav-link ${page === 'trips.html' ? 'active' : ''}">旅</a></li>
                 <li><a href="gallery.html" class="nav-link ${page === 'gallery.html' ? 'active' : ''}">Gallery</a></li>
                 <li><a href="writings.html" class="nav-link ${page === 'writings.html' ? 'active' : ''}">Writings</a></li>
                 <li><a href="gear.html" class="nav-link ${page.includes('gear') ? 'active' : ''}">Gear</a></li>

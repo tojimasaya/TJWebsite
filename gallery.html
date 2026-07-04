@@ -75,55 +75,6 @@
             padding: 0 20px;
         }
 
-        .trips-banner {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            gap: 16px;
-            max-width: 720px;
-            margin: 0 auto 34px;
-            padding: 16px 22px;
-            border: 1px solid var(--border-color);
-            border-radius: 14px;
-            text-decoration: none;
-            background: var(--hover-color);
-            transition: transform .2s ease, box-shadow .2s ease;
-        }
-        .trips-banner:hover {
-            transform: translateY(-2px);
-            box-shadow: var(--shadow-md);
-        }
-        .trips-banner-overline {
-            display: block;
-            font-size: var(--text-xs);
-            letter-spacing: .12em;
-            text-transform: uppercase;
-            color: var(--accent-color);
-            font-weight: 600;
-            margin-bottom: 2px;
-        }
-        .trips-banner-title {
-            display: block;
-            font-family: var(--primary-font);
-            font-size: 1.05rem;
-            color: var(--text-color);
-            font-weight: 600;
-        }
-        .trips-banner-sub {
-            display: block;
-            font-size: var(--text-sm);
-            color: var(--text-light);
-            margin-top: 2px;
-        }
-        .trips-banner-arrow {
-            flex-shrink: 0;
-            font-size: 1.2rem;
-            color: var(--accent-color);
-        }
-        @media (max-width: 560px) {
-            .trips-banner { margin-left: 20px; margin-right: 20px; }
-        }
-
         .filter-btn {
             padding: 8px 24px;
             border: 1px solid var(--border-color);
@@ -403,16 +354,6 @@
         <h1 class="gallery-title">Gallery</h1>
         <p class="gallery-subtitle">Portfolio / Moments / Scenery</p>
     </header>
-
-    <!-- Trips 特集への入口 -->
-    <a href="trips.html" class="trips-banner">
-        <span>
-            <span class="trips-banner-overline">Feature</span>
-            <span class="trips-banner-title">Trips — 一週間超の周遊旅アーカイブ</span>
-            <span class="trips-banner-sub">トルコ横断・チベット・ラサ・ケルン〜プラハをルート地図と写真で</span>
-        </span>
-        <span class="trips-banner-arrow" aria-hidden="true">→</span>
-    </a>
 
     <!-- Filters (Simple 3 options) -->
     <div class="gallery-filter">
