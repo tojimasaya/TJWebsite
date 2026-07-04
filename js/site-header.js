@@ -37,17 +37,16 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="/" class="nav-link ${page === 'index.html' ? 'active' : ''}">Home</a></li>
-                <li><a href="about.html" class="nav-link ${page === 'about.html' ? 'active' : ''}">About</a></li>
-                <li><a href="gallery.html" class="nav-link ${page === 'gallery.html' ? 'active' : ''}">Gallery</a></li>
                 <li>
                     <a href="shirasagi36.html" class="nav-link featured-link ${page.includes('shirasagi') ? 'active' : ''}">
                         <span class="icon">🏯</span> 白鷺三十六景
                     </a>
                 </li>
-                <li><a href="gear.html" class="nav-link ${page.includes('gear') ? 'active' : ''}">Gear</a></li>
+                <li><a href="hongkong.html" class="nav-link ${page.includes('hongkong') ? 'active' : ''}">香港</a></li>
+                <li><a href="gallery.html" class="nav-link ${page === 'gallery.html' ? 'active' : ''}">Gallery</a></li>
                 <li><a href="writings.html" class="nav-link ${page === 'writings.html' ? 'active' : ''}">Writings</a></li>
-                <!-- <li><a href="trips.html" class="nav-link ${page === 'trips.html' ? 'active' : ''}">Trips</a></li> -->
-                <li><a href="hongkong.html" class="nav-link ${page.includes('hongkong') ? 'active' : ''}">Hong Kong</a></li>
+                <li><a href="gear.html" class="nav-link ${page.includes('gear') ? 'active' : ''}">Gear</a></li>
+                <li><a href="about.html" class="nav-link ${page === 'about.html' ? 'active' : ''}">About</a></li>
                 <li><button class="theme-toggle" id="theme-toggle" aria-label="${getThemeLabel(currentTheme)}">${getThemeIcon(currentTheme)}</button></li>
             </ul>
         </div>

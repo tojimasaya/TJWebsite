@@ -24,8 +24,8 @@
     "year": 2023,
     "days": 8,
     "color": "#8e44ad",
-    "link": null,
-    "image": null,
+    "link": "https://note.com/tojimasaya/n/n9e58036e3b01",
+    "image": "/assets/images/gallery/lhasa.webp",
     "cities": [
       { "name": "広州 (Guangzhou)", "lat": 23.1291, "lng": 113.2644 },
       { "name": "Lhasa",            "lat": 29.6500, "lng": 91.1000 }
@@ -38,7 +38,7 @@
     "year": 2022,
     "days": 9,
     "color": "#2980b9",
-    "link": null,
+    "link": "https://note.com/tojimasaya/n/n58be6060ac3b",
     "image": "/assets/images/gallery/charlesbridge.webp",
     "cities": [
       { "name": "Köln",    "lat": 50.9375, "lng": 6.9603 },
