@@ -879,8 +879,7 @@
 
     .travel-grid {
       display: grid;
-      grid-template-columns: 1.2fr 1fr 1fr;
-      grid-template-rows: 1fr 1fr;
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.2rem;
     }
 
@@ -888,6 +887,7 @@
       position: relative;
       overflow: hidden;
       border-radius: 6px;
+      aspect-ratio: 16 / 10;
     }
 
     .travel-card a {
@@ -896,10 +896,6 @@
       height: 100%;
       text-decoration: none;
       color: white;
-    }
-
-    .travel-card-featured {
-      grid-row: span 2;
     }
 
     .travel-card img {
@@ -938,20 +934,43 @@
       letter-spacing: 0.1em;
     }
 
-    .travel-card-small {
-      height: 200px;
+    .travel-card .travel-card-overlay {
+      padding: 1.1rem;
     }
 
-    .travel-card-small .travel-card-overlay {
-      padding: 1rem;
+    .travel-card .travel-card-title {
+      font-size: 1rem;
     }
 
-    .travel-card-small .travel-card-title {
-      font-size: 0.95rem;
+    .travel-card-cta a {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      gap: 8px;
+      border: 1px solid var(--border-color, #e5e2da);
+      border-radius: 6px;
+      background: var(--hover-color, #f4f2ec);
+      color: var(--text-color, #333);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .travel-card-featured {
-      min-height: 420px;
+    .travel-card-cta a:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+    }
+
+    .travel-cta-big {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 1.05rem;
+      letter-spacing: 0.12em;
+    }
+
+    .travel-cta-sub {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      color: var(--text-lighter, #999);
+      letter-spacing: 0.08em;
     }
 
     /* ── Latest Articles ── */
@@ -1323,17 +1342,28 @@
       }
 
       .travel-grid {
-        grid-template-columns: 1fr;
-        grid-template-rows: auto;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0.7rem;
       }
 
-      .travel-card-featured {
-        grid-row: span 1;
-        min-height: 260px;
+      .travel-card .travel-card-overlay {
+        padding: 0.75rem;
       }
 
-      .travel-card-small {
-        height: 180px;
+      .travel-card .travel-card-title {
+        font-size: 0.85rem;
+      }
+
+      .travel-card .travel-card-meta {
+        font-size: 0.65rem;
+      }
+
+      .travel-cta-big {
+        font-size: 0.9rem;
+      }
+
+      .travel-cta-sub {
+        font-size: 0.65rem;
       }
 
       .latest-articles {
@@ -1448,7 +1478,8 @@
         <img src="assets/images/hongkong-neon/01.jpg" alt="" loading="eager">
       </picture>
       <picture>
-        <img src="assets/images/gear/drone.jpg" alt="" loading="eager">
+        <source srcset="assets/images/turkey/istanbul/hero.webp" type="image/webp">
+        <img src="assets/images/turkey/istanbul/hero.jpg" alt="" loading="eager">
       </picture>
     </div>
     <div class="identity-hero-inner">
@@ -1673,8 +1704,8 @@
       </div>
       <div class="travel-grid">
 
-        <!-- 大カード: トルコ旅行記 -->
-        <div class="travel-card travel-card-featured">
+        <!-- トルコ旅行記 -->
+        <div class="travel-card">
           <a href="turkey-travel-journal.html">
             <picture>
               <source srcset="assets/images/turkey-hero.webp" type="image/webp">
@@ -1688,7 +1719,7 @@
         </div>
 
         <!-- 小カード: チベット・西安 -->
-        <div class="travel-card travel-card-small">
+        <div class="travel-card">
           <a href="tibet-travel-journal.html">
             <picture>
               <source srcset="assets/images/gallery/lhasa.webp" type="image/webp">
@@ -1702,7 +1733,7 @@
         </div>
 
         <!-- 小カード: プラハ -->
-        <div class="travel-card travel-card-small">
+        <div class="travel-card">
           <a href="prague-travel-journal.html">
             <picture>
               <source srcset="assets/images/gallery/charlesbridge.webp" type="image/webp">
@@ -1716,7 +1747,7 @@
         </div>
 
         <!-- 小カード: ホーチミン -->
-        <div class="travel-card travel-card-small">
+        <div class="travel-card">
           <a href="hochiminh-travel-journal.html">
             <picture>
               <source srcset="assets/images/gallery/vietnam.webp" type="image/webp">
@@ -1730,7 +1761,7 @@
         </div>
 
         <!-- 小カード: イタリア縦断 -->
-        <div class="travel-card travel-card-small">
+        <div class="travel-card">
           <a href="italy-travel-journal.html">
             <picture>
               <source srcset="assets/images/gallery/venice.webp" type="image/webp">
@@ -1740,6 +1771,14 @@
               <h3 class="travel-card-title">イタリア縦断、フォトキナへの旅</h3>
               <p class="travel-card-meta">2016 — 旅行記・全6都市</p>
             </div>
+          </a>
+        </div>
+
+        <!-- 一覧へのタイル -->
+        <div class="travel-card travel-card-cta">
+          <a href="trips.html">
+            <span class="travel-cta-big">すべての旅を見る</span>
+            <span class="travel-cta-sub">5つの旅・ルート地図つき →</span>
           </a>
         </div>
 
