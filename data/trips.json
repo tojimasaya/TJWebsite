@@ -73,6 +73,19 @@
     ]
   },
   {
+    "id": "hoian-trilogy",
+    "title": "ホイアン、変わらぬ笑顔",
+    "subtitle": "三度通った古都の定点観測",
+    "year": "2013–2018",
+    "days": null,
+    "color": "#16a085",
+    "link": "hoian-travel-journal.html",
+    "image": "/assets/images/trips/hoian/2016/03-03.png",
+    "cities": [
+      { "name": "ホイアン (Hoi An)", "lat": 15.8801, "lng": 108.3380, "detail": "hoian-travel-journal.html" }
+    ]
+  },
+  {
     "id": "hochiminh-2025",
     "title": "7年ぶりのホーチミン",
     "subtitle": "Leica Elmarit 28mmで捉える進化する街",

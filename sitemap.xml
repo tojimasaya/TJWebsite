@@ -346,6 +346,30 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://tojimasaya.com/hoian-travel-journal.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/hoian-2013.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/hoian-2016.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/hoian-2018.html</loc>
+    <lastmod>2026-07-04</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.5</priority>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/links.html</loc>
     <lastmod>2026-02-15</lastmod>
     <changefreq>monthly</changefreq>
