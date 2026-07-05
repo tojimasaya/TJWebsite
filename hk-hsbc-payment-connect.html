@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-806426BQX2');
+    </script>
+
+    <title>HSBC「Payment Connect」で中国本土に即時送金してみた | Toji Masaya</title>
+    <meta name="description" content="香港と中国本土をつなぐ新しい送金サービスの実体験レポート。">
+    <meta name="author" content="Toji Masaya">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="canonical" href="https://tojimasaya.com/hk-hsbc-payment-connect.html">
+    <meta property="og:title" content="HSBC「Payment Connect」で中国本土に即時送金してみた">
+    <meta property="og:description" content="香港と中国本土をつなぐ新しい送金サービスの実体験レポート。">
+    <meta property="og:url" content="https://tojimasaya.com/hk-hsbc-payment-connect.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Toji Masaya">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/handbook/hk-hsbc-payment-connect-01-01.png">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mongkok93">
+    <meta name="twitter:title" content="HSBC「Payment Connect」で中国本土に即時送金してみた">
+    <meta name="twitter:image" content="https://tojimasaya.com/assets/images/handbook/hk-hsbc-payment-connect-01-01.png">
+
+    <style>
+        .guide-head { max-width: 760px; margin: 120px auto 0; padding: 0 24px; }
+        .guide-cat { font-family: var(--secondary-font); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-color); }
+        .guide-cat a { color: var(--accent-color); text-decoration: none; }
+        .guide-cat a:hover { text-decoration: underline; }
+        .guide-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3.6vw, 2.2rem); font-weight: 600; letter-spacing: 0.03em; line-height: 1.6; margin: 14px 0 18px; color: var(--text-color); }
+        .guide-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+        .guide-meta .pill { font-size: var(--text-xs); background: var(--hover-color); color: var(--text-color); padding: 5px 12px; border-radius: 999px; font-weight: 600; }
+        .guide-notice { max-width: 760px; margin: 26px auto 0; padding: 12px 24px; }
+        .guide-notice-inner { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 14px; line-height: 1.8; background: var(--hover-color); }
+        .essay { max-width: 720px; margin: 34px auto 30px; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 1.0rem; line-height: 2.1; color: var(--text-color); }
+        .essay p { margin: 0 0 1.8em; }
+        .essay h2 { font-family: 'Noto Serif JP', serif; font-size: 1.28rem; font-weight: 600; margin: 2.8em 0 1.2em; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); letter-spacing: 0.03em; }
+        .essay .h2-first { margin-top: 0.6em; }
+        .essay .chap-date { font-family: var(--primary-font); font-size: 0.78rem; color: var(--text-lighter, #999); letter-spacing: 0.06em; margin: -0.8em 0 1.4em; }
+        .essay h3 { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 600; margin: 2em 0 1em; }
+        .essay figure { margin: 2.2em 0; }
+        .essay figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); display: block; }
+        .essay figcaption { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); text-align: center; margin-top: 10px; }
+        .essay a { color: var(--accent-color); }
+        .video-wrap { position: relative; width: 100%; aspect-ratio: 16/9; border-radius: 12px; overflow: hidden; border: 1px solid var(--border-color); }
+        .video-wrap iframe { position: absolute; top:0; left:0; width:100%; height:100%; border:0; }
+        .journal-origin { max-width: 720px; margin: 0 auto 50px; padding: 14px 24px; font-family: var(--primary-font); font-size: 0.85rem; color: var(--text-light); text-align: center; line-height: 2; }
+        .journal-origin a { color: var(--accent-color); text-decoration: none; }
+        .journal-origin a:hover { text-decoration: underline; }
+        .journal-nav-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0 auto 90px; padding: 0 20px; }
+        .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
+        .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+</style>
+
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "HSBC「Payment Connect」で中国本土に即時送金してみた", "description": "香港と中国本土をつなぐ新しい送金サービスの実体験レポート。", "image": "https://tojimasaya.com/assets/images/handbook/hk-hsbc-payment-connect-01-01.png", "author": {"@type": "Person", "name": "田路昌也 (Toji Masaya)", "url": "https://tojimasaya.com/about.html"}, "publisher": {"@type": "Person", "name": "田路昌也 (Toji Masaya)"}, "mainEntityOfPage": "https://tojimasaya.com/hk-hsbc-payment-connect.html", "inLanguage": "ja", "datePublished": "2026-07-05", "dateModified": "2026-07-05"}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
+    <script src="js/site-header.js"></script>
+
+    <header class="guide-head">
+        <p class="guide-cat"><a href="hongkong-handbook.html">香港ハンドブック</a> ／ 銀行・送金</p>
+        <h1 class="guide-title">HSBC「Payment Connect」で中国本土に即時送金してみた</h1>
+        <div class="guide-meta">
+            <span class="pill">初出 2025-09-03</span>
+            <span class="pill">銀行・送金</span>
+        </div>
+    </header>
+
+    <div class="guide-notice"><div class="guide-notice-inner">ℹ️ 本ページは執筆時点での個人の体験記録です。制度・手数料・条件は変更されることがあります。実際の手続きの際は必ず公式情報をご確認ください。</div></div>
+
+    <main id="main-content">
+        <article class="essay">
+            <p>本日 ９月３日、HSBC香港から届いたメールを見て、新しく始まった「Payment Connect」を早速試してみました。</p>
+            <figure><picture><source srcset="/assets/images/handbook/hk-hsbc-payment-connect-01-01.webp" type="image/webp"><img src="/assets/images/handbook/hk-hsbc-payment-connect-01-01.png" alt="HSBCから届いたメールのヘッダー部分" loading="lazy" decoding="async"></picture><figcaption>HSBCから届いたメールのヘッダー部分</figcaption></figure>
+            <p>まず、私自身のHSBC香港の口座から、中国本土で持っている私の中国工商銀行（ICBC）の口座に 1000人民元を送金。</p>
+            <p>結果は驚くほどスムーズで、ほんの数秒で着金しました。香港内でFPSを使うのと同じ感覚で、国境をまたぐ送金ができてしまったのです。</p>
+            <p>HSBCのスマホアプリにすでにこんなメニューがありました。</p>
+            <figure><picture><source srcset="/assets/images/handbook/hk-hsbc-payment-connect-01-02.webp" type="image/webp"><img src="/assets/images/handbook/hk-hsbc-payment-connect-01-02.png" alt="Payという送金タブにPayment Connect メニューがありました。" loading="lazy" decoding="async"></picture><figcaption>Payという送金タブにPayment Connect メニューがありました。</figcaption></figure>
+            <h2>これはどんなサービス？</h2>
+            <p>「Payment Connect」は、香港の銀行口座から中国本土の個人口座へ、リアルタイムで人民元を送金できる仕組みです。（香港ドル口座から送金する場合には口座内で人民元に両替した上での送金となります）</p>
+            <p>香港から中国本土への即時決済送金</p>
+            <p>HSBC香港アプリやオンラインバンキングで利用可能</p>
+            <p>対応銀行の個人口座に数秒で着金</p>
+            <p>手数料無料、為替両替もサポート</p>
+            <p>いわば “クロスボーダーFPS” と呼べるサービスだと感じました。従来の国際送金に比べると「早い・安い・簡単」が際立っています。</p>
+            <h2>従来送金との違い</h2>
+            <figure><picture><source srcset="/assets/images/handbook/hk-hsbc-payment-connect-01-03.webp" type="image/webp"><img src="/assets/images/handbook/hk-hsbc-payment-connect-01-03.png" alt="HSBC新サービス「Payment Connect」で中国本土に即時送金してみた" loading="lazy" decoding="async"></picture></figure>
+            <h2>対応銀行一覧（本日時点）</h2>
+            <h2>香港側</h2>
+            <p>HSBC（香港上海銀行）</p>
+            <p>Bank of China Hong Kong</p>
+            <p>ICBC Asia（中国工商銀行（アジア））</p>
+            <p>China Construction Bank Asia</p>
+            <p>Hang Seng Bank</p>
+            <p>Standard Chartered Bank</p>
+            <h2>中国本土側</h2>
+            <p>中国工商銀行（ICBC）</p>
+            <p>中国銀行（Bank of China）</p>
+            <p>中国建設銀行（CCB）</p>
+            <p>中国農業銀行（ABC）</p>
+            <p>交通銀行（BOCOM）</p>
+            <p>招商銀行（CMB）</p>
+            <p>⚠️ 本土側銀行からも同様に送金可能とのことでしたが、「クロスボーダー即時受取サービス」の有効化が必要なのか、わたしの中国工商銀行（ICBC)には本日時点で、このメニューがありませんでした。</p>
+            <h2>まとめ</h2>
+            <p>従来の「高コスト・遅い・複雑」から、Payment Connectで「安い・瞬時・簡単」へ。</p>
+            <p>香港居住者が家族への仕送りや学費、給与、公共料金などを送金する際に大きなメリットがありますし、我々のような香港駐在者も中国での手元小口現金の手当には便利だと思います。<br>まさに“クロスボーダーFPS”だと感じます。<br>香港において、FPSが香港生活の必需品になったように、Payment Connectも香港と中国をまたぐ生活者にとって「必須インフラ」になるかもしれませんね。</p>
+        </article>
+
+        <div class="journal-origin">
+            初出（note）：<a href="https://note.com/tojimasaya/n/n0d4f1784dc14" target="_blank" rel="noopener noreferrer">HSBC新サービス「Payment Connect」で中国本土に即時送金してみた（2025-09-03）</a>
+        </div>
+
+        <div class="journal-nav-links">
+            <a href="hongkong-handbook.html" class="primary">← 香港ハンドブックへ</a>
+            <a href="hongkong.html">香港（撮影・カメラ散歩）</a>
+            <a href="/">Home</a>
+        </div>
+
+        <footer class="footer" role="contentinfo"></footer>
+
+    </main>
+
+
+    <script src="js/image-fallback.js"></script>
+    <script src="/assets/js/ga4-tracking.js" defer></script>
+    <script src="/growth.js" defer></script>
+</body>
+</html>
