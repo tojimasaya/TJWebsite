@@ -27,8 +27,20 @@
     '.comments-section h2{font-family:"Noto Serif JP",serif;font-size:1.3rem;font-weight:600;' +
     'margin:0 0 0.8em;padding-bottom:10px;border-bottom:1px solid var(--border-color);color:var(--text-color);}' +
     '.comments-intro{font-family:var(--primary-font);font-size:0.85rem;color:var(--text-light);' +
-    'line-height:1.9;margin:0 0 1.6em;}';
+    'line-height:1.9;margin:0 0 1.6em;}' +
+    '#cusdis_thread iframe{min-height:480px;width:100%;border:0;}';
   document.head.appendChild(style);
+
+  // Cusdis の自動リサイズが効かない環境向けに、resizeメッセージを自前で反映
+  window.addEventListener('message', function (e) {
+    if (!/cusdis\.com$/.test(new URL(e.origin === 'null' ? 'https://cusdis.com' : e.origin).hostname)) return;
+    var d = e.data;
+    if (d && d.from === 'cusdis' && d.event === 'resize') {
+      var f = document.querySelector('#cusdis_thread iframe');
+      var h = parseInt(d.data, 10);
+      if (f && h > 0) f.style.height = Math.max(h, 480) + 'px';
+    }
+  });
 
   var section = document.createElement('section');
   section.className = 'comments-section';
