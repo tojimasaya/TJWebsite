@@ -91,6 +91,20 @@
     ]
   },
   {
+    "id": "myanmar-2012",
+    "title": "ミャンマー、仏塔の国へ",
+    "subtitle": "ヤンゴンの黄金、バガンのKokoとMomo",
+    "year": 2012,
+    "days": null,
+    "color": "#6F1E51",
+    "link": "myanmar-travel-journal.html",
+    "image": "/assets/images/trips/myanmar/bagan-01.webp",
+    "cities": [
+      { "name": "ヤンゴン (Yangon)", "lat": 16.8409, "lng": 96.1735, "detail": "myanmar-travel-journal.html" },
+      { "name": "バガン (Bagan)", "lat": 21.1717, "lng": 94.8585, "detail": "myanmar-travel-journal.html" }
+    ]
+  },
+  {
     "id": "hoian-trilogy",
     "title": "ホイアン、変わらぬ笑顔",
     "subtitle": "三度通った古都の定点観測",
