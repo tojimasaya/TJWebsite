@@ -77,6 +77,20 @@
     ]
   },
   {
+    "id": "taiwan-visits",
+    "title": "台湾、笑顔と美食の島",
+    "subtitle": "通い続ける隣人の記録",
+    "year": "2024–2026",
+    "days": null,
+    "color": "#795548",
+    "link": "taiwan-travel-journal.html",
+    "image": "/assets/images/trips/taiwan/sunmoonlake/01-05.webp",
+    "cities": [
+      { "name": "台北 (Taipei)", "lat": 25.0330, "lng": 121.5654, "detail": "taiwan-travel-journal.html" },
+      { "name": "日月潭 (Sun Moon Lake)", "lat": 23.8516, "lng": 120.9155, "detail": "taiwan-sunmoonlake.html" }
+    ]
+  },
+  {
     "id": "hoian-trilogy",
     "title": "ホイアン、変わらぬ笑顔",
     "subtitle": "三度通った古都の定点観測",
