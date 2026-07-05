@@ -8,7 +8,7 @@
 (function () {
   'use strict';
 
-  var CUSDIS_APP_ID = ''; // ← cusdis.com の App ID を設定すると全ページで有効化
+  var CUSDIS_APP_ID = '9f52aa98-e437-47cb-81f7-1cdc411a7cf8'; // cusdis.com App ID
 
   if (!CUSDIS_APP_ID) return;
 
