@@ -53,12 +53,13 @@
     .route { background: var(--accent-color); color:#fff; }
     .trip-copy p { color: var(--text-light); line-height: 1.8; }
 
-    /* サブギャラリー（迫力レイアウト） */
-    .trip-gallery { margin-top: 18px; display:grid; gap: 12px; grid-template-columns: 2fr 1fr; grid-auto-rows: 170px; }
-    .trip-gallery figure { width:100%; height:100%; overflow:hidden; border-radius:12px; border:1px solid var(--border-color); }
+    /* メディア列: 大きなHero + 小さなサムネ帯 */
+    .trip-media { display: flex; flex-direction: column; gap: 12px; }
+    .trip-media .trip-visual { aspect-ratio: 3 / 2; }
+    .trip-gallery { display:grid; gap: 10px; grid-template-columns: repeat(3, 1fr); grid-auto-rows: 92px; }
+    .trip-gallery figure { width:100%; height:100%; overflow:hidden; border-radius:10px; border:1px solid var(--border-color); margin:0; }
     .trip-gallery img { width:100%; height:100%; object-fit: cover; display:block; }
-    .tall { grid-row: span 2; }
-    .wide { grid-column: span 2; grid-row: span 2; }
+    .trip-gallery .tall, .trip-gallery .wide { grid-row: auto; grid-column: auto; }
 
     .trip-actions { margin-top: 16px; display:flex; gap:10px; flex-wrap:wrap; }
     .trip-actions a { padding: 10px 16px; border-radius: 22px; border:1px solid var(--border-color); text-decoration:none; font-size: var(--text-sm); }
@@ -161,12 +162,10 @@
     /* レスポンシブ */
     @media (max-width: 900px) {
       .trip-feature, .trip-feature.reverse { grid-template-columns: 1fr; }
-      .trip-gallery { grid-template-columns: 1fr 1fr; grid-auto-rows: 140px; }
-      .wide { grid-column: span 2; }
+      .trip-gallery { grid-auto-rows: 84px; }
     }
     @media (max-width: 560px) {
-      .trip-gallery { grid-template-columns: 1fr; grid-auto-rows: 180px; }
-      .wide { grid-column: span 1; grid-row: span 1; }
+      .trip-gallery { grid-auto-rows: 72px; }
     }
   </style>
 <link rel="canonical" href="https://tojimasaya.com/trips.html">
@@ -212,8 +211,15 @@
 
       <!-- 1) チベット・西安 (2016) -->
       <section class="trip-feature">
-        <div class="trip-visual">
+        <div class="trip-media">
+          <div class="trip-visual">
           <img src="/assets/images/gallery/lhasa.jpg" alt="チベット・ラサ、ポタラ宮" loading="lazy" decoding="async">
+        </div>
+          <div class="trip-gallery">
+            <figure><img src="/assets/images/trips/tibet/day09/019-01.png" alt="始皇帝の兵馬俑" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/tibet/day05/010-01.png" alt="ヤムドク湖" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/tibet/day06/013-01.png" alt="タシルンポ寺" loading="lazy" decoding="async"></figure>
+            </div>
         </div>
         <div class="trip-copy">
           <span class="pill route">Route: 広州 → 拉薩 → シガツェ → 西安 → 香港</span>
@@ -228,12 +234,6 @@
             帰路は西安で始皇帝の兵馬俑と華清池。日別・全11日の記録。
           </p>
 
-          <div class="trip-gallery">
-            <figure class="tall"><img src="/assets/images/trips/tibet/day04/008-01.png" alt="拉薩・ポタラ宮" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/tibet/day05/010-01.png" alt="ヤムドク湖" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/tibet/day09/019-01.png" alt="始皇帝の兵馬俑" loading="lazy" decoding="async"></figure>
-          </div>
-
           <div class="trip-actions">
             <a href="/tibet-travel-journal.html" class="primary">旅行記を読む（全11日）</a>
           </div>
@@ -242,8 +242,15 @@
 
       <!-- ドイツ縦断 (2014) -->
       <section class="trip-feature reverse">
-        <div class="trip-visual">
+        <div class="trip-media">
+          <div class="trip-visual">
           <img src="/assets/images/gallery/cologne.jpg" alt="ケルン大聖堂" loading="lazy" decoding="async">
+        </div>
+          <div class="trip-gallery">
+            <figure class="tall"><img src="/assets/images/trips/germany/wetzlar/01-05.png" alt="ライツパーク、Oskar Barnack氏の銅像" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/germany/heidelberg/01-07.png" alt="対岸から見た夜のハイデルベルク城" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/germany/nurnberg/01-01.jpg" alt="メルヘンなニュルンベルクの街" loading="lazy" decoding="async"></figure>
+            </div>
         </div>
         <div class="trip-copy">
           <span class="pill route">Route: Frankfurt → Wetzlar → Köln → Heidelberg → Stuttgart → Nürnberg → Praha</span>
@@ -257,12 +264,6 @@
             ライカの総本山ヴェッツラーに始まり、「最悪で最高」のケルン、古城のハイデルベルク、
             ポルシェミュージアム、スピード違反の思い出——そして写真家の楽園プラハへ続く旅の前半戦。
           </p>
-
-          <div class="trip-gallery">
-            <figure class="tall"><img src="/assets/images/trips/germany/wetzlar/01-05.png" alt="ライツパーク、Oskar Barnack氏の銅像" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/germany/heidelberg/01-07.png" alt="対岸から見た夜のハイデルベルク城" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/germany/nurnberg/01-01.jpg" alt="メルヘンなニュルンベルクの街" loading="lazy" decoding="async"></figure>
-          </div>
 
           <div class="trip-actions">
             <a href="/germany-travel-journal.html" class="primary">旅行記を読む（全4章＋プラハ）</a>
@@ -285,25 +286,33 @@
             朝靄のプラハ城、聖人像の並ぶカレル橋、600年動き続ける天文時計。帰路は列車が10時間かかった。
           </p>
 
-          <div class="trip-gallery">
-            <figure class="tall"><img src="/assets/images/trips/prague/08-fireshow.jpg" alt="早朝のカレル橋で見たファイアーショー" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/prague/09-astro-clock.jpg" alt="天文時計と広場に集う人々" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/prague/04-castle-view.jpg" alt="プラハ城から見る町並み" loading="lazy" decoding="async"></figure>
-          </div>
-
           <div class="trip-actions">
             <a href="/prague-travel-journal.html" class="primary">旅行記を読む</a>
           </div>
         </div>
-        <div class="trip-visual">
+        <div class="trip-media">
+          <div class="trip-visual">
           <img src="/assets/images/gallery/charlesbridge.jpg" alt="プラハ、早朝のカレル橋" loading="lazy" decoding="async">
+        </div>
+          <div class="trip-gallery">
+            <figure><img src="/assets/images/trips/prague/03-charles-bridge-sunrise.jpg" alt="カレル橋から見る朝日" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/prague/09-astro-clock.jpg" alt="天文時計と広場に集う人々" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/prague/07-saints.jpg" alt="カレル橋に立つ聖人像" loading="lazy" decoding="async"></figure>
+            </div>
         </div>
       </section>
 
       <!-- 3) イタリア縦断 (2016) -->
       <section class="trip-feature reverse">
-        <div class="trip-visual">
+        <div class="trip-media">
+          <div class="trip-visual">
           <img src="/assets/images/trips/italy/venezia/09.jpg" alt="ゴンドラの向こうにライトアップされたサン・ジョルジョ・マッジョーレ聖堂" loading="lazy" decoding="async">
+        </div>
+          <div class="trip-gallery">
+            <figure class="tall"><img src="/assets/images/trips/italy/venezia/10.jpg" alt="誰もいない夜明け前のサンマルコ広場" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/italy/cinqueterre/02.jpg" alt="チンクエ・テッレ、リオマッジョーレ" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/italy/napoli/11.jpg" alt="ナポリ全景" loading="lazy" decoding="async"></figure>
+            </div>
         </div>
         <div class="trip-copy">
           <span class="pill route">Route: Milano → Venezia → Firenze → Cinque Terre → Napoli → Roma → Köln</span>
@@ -317,12 +326,6 @@
             ミラノの「効率追求」が初日に崩壊。深夜3時のサンマルコ広場、2キロのビステッカ、
             カプリ島の青の洞窟、ローマのパスタ巡り——そして最後はケルンのカメラの祭典へ。
           </p>
-
-          <div class="trip-gallery">
-            <figure class="tall"><img src="/assets/images/trips/italy/venezia/10.jpg" alt="誰もいない夜明け前のサンマルコ広場" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/italy/cinqueterre/02.jpg" alt="チンクエ・テッレ、リオマッジョーレ" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/italy/napoli/11.jpg" alt="ナポリ全景" loading="lazy" decoding="async"></figure>
-          </div>
 
           <div class="trip-actions">
             <a href="/italy-travel-journal.html" class="primary">旅行記を読む（全6都市）</a>
@@ -393,28 +396,36 @@
             レンズを変えるだけで、同じ街が別の街になる。
           </p>
 
+          <div class="trip-actions">
+            <a href="/turkey-travel-journal.html" class="primary">旅行記を読む</a>
+            <a href="https://www.youtube.com/@tjvlog" target="_blank" rel="noopener noreferrer">動画</a>
+          </div>
+        </div>
+        <div class="trip-media">
+          <div class="trip-visual">
+          <img src="/assets/images/turkey/istanbul/hero.jpg" alt="イスタンブール、ボスポラス海峡の夕景" loading="lazy" decoding="async">
+        </div>
           <div class="trip-gallery">
             <figure class="tall"><img src="/assets/images/turkey/cappadocia/hero.jpg" alt="カッパドキアの奇岩群と熱気球" loading="lazy" decoding="async"></figure>
             <figure><img src="/assets/images/turkey/konya/hero.jpg" alt="コンヤ" loading="lazy" decoding="async"></figure>
             <figure class="wide"><img src="/assets/images/turkey/pamukkale/hero.jpg" alt="パムッカレの石灰棚" loading="lazy" decoding="async"></figure>
             <figure><img src="/assets/images/turkey/ephesus/hero.jpg" alt="エフェソス遺跡" loading="lazy" decoding="async"></figure>
             <figure><img src="/assets/images/turkey/safranbolu/hero.jpg" alt="サフランボルの旧市街" loading="lazy" decoding="async"></figure>
-          </div>
-
-          <div class="trip-actions">
-            <a href="/turkey-travel-journal.html" class="primary">旅行記を読む</a>
-            <a href="https://www.youtube.com/@tjvlog" target="_blank" rel="noopener noreferrer">動画</a>
-          </div>
-        </div>
-        <div class="trip-visual">
-          <img src="/assets/images/turkey/istanbul/hero.jpg" alt="イスタンブール、ボスポラス海峡の夕景" loading="lazy" decoding="async">
+            </div>
         </div>
       </section>
 
       <!-- 5) ホーチミン (2025) -->
       <section class="trip-feature reverse">
-        <div class="trip-visual">
+        <div class="trip-media">
+          <div class="trip-visual">
           <img src="/assets/images/trips/hochiminh/main-02.jpg" alt="ホーチミンのランドマーク81" loading="lazy" decoding="async">
+        </div>
+          <div class="trip-gallery">
+            <figure class="tall"><img src="/assets/images/trips/hochiminh/main-06.jpg" alt="ノートルダム大聖堂" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/hochiminh/main-03.jpg" alt="開通した地下鉄にて" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/hochiminh/food-10.jpg" alt="好みだった麺" loading="lazy" decoding="async"></figure>
+            </div>
         </div>
         <div class="trip-copy">
           <span class="pill route">Ho Chi Minh City / ホーチミン</span>
@@ -428,12 +439,6 @@
             高層ビルがそびえ、地下鉄が開通——未来都市に変貌した街をLeica片手に歩く。
             空港で出会った“ガチの”日本オタ、日本人街の確かな味。全3篇。
           </p>
-
-          <div class="trip-gallery">
-            <figure class="tall"><img src="/assets/images/trips/hochiminh/main-06.jpg" alt="ノートルダム大聖堂" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/hochiminh/main-03.jpg" alt="開通した地下鉄にて" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/hochiminh/food-10.jpg" alt="好みだった麺" loading="lazy" decoding="async"></figure>
-          </div>
 
           <div class="trip-actions">
             <a href="/hochiminh-travel-journal.html" class="primary">旅行記を読む（全3篇）</a>
@@ -456,18 +461,19 @@
             店員さんと盛り上がる——町は変わっても笑顔は変わらない、定点観測の三部作。
           </p>
 
-          <div class="trip-gallery">
-            <figure class="tall"><img src="/assets/images/trips/hoian/2016/03-03.png" alt="ホイアンの色とりどりの提灯" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/hoian/2013/05-01.png" alt="2013年、ポーズを決める三人の女性" loading="lazy" decoding="async"></figure>
-            <figure><img src="/assets/images/trips/hoian/2016/01-02.png" alt="2016年の女性たち" loading="lazy" decoding="async"></figure>
-          </div>
-
           <div class="trip-actions">
             <a href="/hoian-travel-journal.html" class="primary">三部作を読む</a>
           </div>
         </div>
-        <div class="trip-visual">
+        <div class="trip-media">
+          <div class="trip-visual">
           <img src="/assets/images/trips/hoian/2016/03-01.png" alt="トゥーボン川に流れる灯籠" loading="lazy" decoding="async">
+        </div>
+          <div class="trip-gallery">
+            <figure><img src="/assets/images/trips/hoian/2013/04-01.png" alt="日本人が作ったと云われる日本橋" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/hoian/2013/05-01.png" alt="2013年、ポーズを決める三人の女性" loading="lazy" decoding="async"></figure>
+            <figure><img src="/assets/images/trips/hoian/2016/01-02.png" alt="2016年の女性たち" loading="lazy" decoding="async"></figure>
+            </div>
         </div>
       </section>
 
