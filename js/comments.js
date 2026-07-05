@@ -23,7 +23,7 @@
 
   var style = document.createElement('style');
   style.textContent =
-    '.comments-section{max-width:720px;margin:0 auto 80px;padding:0 24px;}' +
+    '.comments-section{max-width:720px;margin:0 auto 80px;padding:0 24px;scroll-margin-top:90px;}' +
     '.comments-section h2{font-family:"Noto Serif JP",serif;font-size:1.3rem;font-weight:600;' +
     'margin:0 0 0.8em;padding-bottom:10px;border-bottom:1px solid var(--border-color);color:var(--text-color);}' +
     '.comments-intro{font-family:var(--primary-font);font-size:0.85rem;color:var(--text-light);' +
@@ -32,6 +32,7 @@
 
   var section = document.createElement('section');
   section.className = 'comments-section';
+  section.id = 'comments';
   section.setAttribute('aria-label', 'コメント');
 
   var h2 = document.createElement('h2');
@@ -69,5 +70,28 @@
         window.CUSDIS.setTheme(currentTheme());
       }, 50);
     }
+  });
+
+  // 「書き込みはこちら」→コメント欄への確実なジャンプ
+  // 遅延読み込み画像やコメントiframeでレイアウトが伸びるため、
+  // 上の画像を先読みし、ロード完了ごとに再スクロールして着地を確定させる
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest ? e.target.closest('a[href="#comments"]') : null;
+    if (!a) return;
+    e.preventDefault();
+    var target = document.getElementById('comments');
+    if (!target) return;
+    var jump = function (smooth) {
+      target.scrollIntoView({ behavior: smooth ? 'smooth' : 'auto', block: 'start' });
+    };
+    var imgs = document.querySelectorAll('img[loading="lazy"]');
+    for (var i = 0; i < imgs.length; i++) {
+      imgs[i].loading = 'eager';
+      if (!imgs[i].complete) imgs[i].addEventListener('load', function () { jump(false); }, { once: true });
+    }
+    jump(true);
+    // フォント・iframe等の遅れた再レイアウトも拾う短いテール
+    var tries = 0;
+    (function settle() { jump(false); if (++tries < 6) setTimeout(settle, 300); })();
   });
 })();
