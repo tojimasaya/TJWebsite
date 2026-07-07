@@ -331,6 +331,21 @@
             .pickup-grid { grid-template-columns: 1fr; }
             .pickup-card-image { width: 100px; height: 68px; }
         }
+
+        /* ── Collections（ガイドカード2枚・ハンドブックハブと同言語） ── */
+        .hb-guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 880px; margin: 0 auto; }
+        .hb-guide-card { display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 14px; overflow: hidden; text-decoration: none; background: var(--bg-color, #fff); transition: transform .25s ease, box-shadow .25s ease; }
+        .hb-guide-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,0.10); }
+        .hb-guide-thumb { display: block; aspect-ratio: 16/9; overflow: hidden; border-bottom: 1px solid var(--border-color); }
+        .hb-guide-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hb-guide-body { display: flex; flex-direction: column; gap: 8px; padding: 16px 16px 18px; }
+        .hb-guide-kicker { font-family: var(--secondary-font); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-color); font-weight: 600; }
+        .hb-guide-title { font-family: 'Noto Serif JP', serif; font-size: 1.02rem; font-weight: 600; line-height: 1.75; color: var(--text-color); }
+        .hb-guide-sub { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-lighter, #999); }
+        .hb-guide-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+        .hb-guide-chips i { font-style: normal; font-family: var(--primary-font); font-size: 0.72rem; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 999px; padding: 0.24em 0.75em; }
+        .hb-guide-cta { margin-top: 10px; font-family: 'Noto Serif JP', serif; font-size: 0.85rem; font-weight: 600; color: var(--accent-color); }
+        @media (max-width: 640px) { .hb-guide-grid { grid-template-columns: 1fr; } }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -365,40 +380,32 @@
     <hr class="pickup-divider" id="pickup-divider" style="display:none">
 
     <section class="site-guides-section" id="site-guides" aria-labelledby="site-guides-title">
-        <h2 class="pickup-heading" id="site-guides-title">Site Guides<span>ドローン旅行・Leica・二拠点生活・香港の実務の入口</span></h2>
-        <div class="guide-grid">
-            <article class="guide-card">
-                <a href="/articles/drone-travel-guide.html" data-growth-label="writings_guide_drone">
-                    <img src="assets/images/gear/drone.jpg" alt="旅行用ドローンと空撮機材" loading="lazy" decoding="async" width="600" height="400">
-                    <span>Drone / Travel</span>
-                    <h3>ドローン旅行ガイド</h3>
-                    <p>DJI Miniシリーズを中心に、旅先でドローンを使う準備、空撮の判断、撮影を続ける考え方。</p>
-                </a>
-            </article>
-            <article class="guide-card">
-                <a href="/articles/leica-m2-travel.html" data-growth-label="writings_guide_leica">
-                    <img src="assets/images/gear/m2.jpg" alt="Leica M2と旅写真" loading="lazy" decoding="async" width="600" height="400">
-                    <span>Camera / Leica</span>
-                    <h3>Leica M2で撮る旅写真</h3>
-                    <p>Leica M2を旅へ持ち出す理由、フィルムカメラで記憶を残す撮り方と機材選び。</p>
-                </a>
-            </article>
-            <article class="guide-card">
-                <a href="/articles/hong-kong-two-base-life.html" data-growth-label="writings_guide_hongkong">
-                    <img src="assets/images/gallery/hongkong.jpg" alt="香港の街並み" loading="lazy" decoding="async" width="600" height="400">
-                    <span>Hong Kong / Essay</span>
-                    <h3>香港と日本の二拠点生活</h3>
-                    <p>香港生活、日本との行き来、撮影スポットや日常の距離感を写真と言葉で残す記録。</p>
-                </a>
-            </article>
-            <article class="guide-card">
-                <a href="/hongkong-handbook.html" data-growth-label="writings_guide_handbook">
-                    <picture><source srcset="assets/images/handbook/hk-return-permit-04-01.webp" type="image/webp"><img src="assets/images/handbook/hk-return-permit-04-01.png" alt="回郷証（非中国籍）" loading="lazy" decoding="async" width="600" height="400"></picture>
-                    <span>Hong Kong / How-to</span>
-                    <h3>香港ハンドブック</h3>
-                    <p>回郷証・中国入国、銀行・送金。30年暮らした実務の記録。</p>
-                </a>
-            </article>
+        <h2 class="pickup-heading" id="site-guides-title">Collections<span>通しで読む — 香港の実務と、日々の断章</span></h2>
+        <div class="hb-guide-grid">
+            <a class="hb-guide-card" href="/hongkong-handbook.html" data-growth-label="writings_guide_handbook">
+                <span class="hb-guide-thumb">
+                    <picture><source srcset="assets/images/handbook/hk-return-permit-04-01.webp" type="image/webp"><img src="assets/images/handbook/hk-return-permit-04-01.png" alt="回郷証（非中国籍）の実物カード" loading="lazy" decoding="async"></picture>
+                </span>
+                <span class="hb-guide-body">
+                    <span class="hb-guide-kicker">Hong Kong / How-to</span>
+                    <span class="hb-guide-title">香港ハンドブック</span>
+                    <span class="hb-guide-sub">暮らしと実務の記録 — 在住30年の実地</span>
+                    <span class="hb-guide-chips"><i>回郷証・中国入国</i><i>銀行・送金</i><i>SIM・電話番号</i></span>
+                    <span class="hb-guide-cta">ハンドブックを開く →</span>
+                </span>
+            </a>
+            <a class="hb-guide-card" href="fragments.html" data-growth-label="writings_guide_fragments">
+                <span class="hb-guide-thumb">
+                    <picture><source id="frag-card-src" srcset="assets/images/photo-notes/taipei-bento-fair-hipparidako.webp" type="image/webp"><img id="frag-card-img" src="assets/images/photo-notes/taipei-bento-fair-hipparidako.jpg" alt="最新の断章の写真" loading="lazy" decoding="async"></picture>
+                </span>
+                <span class="hb-guide-body">
+                    <span class="hb-guide-kicker">Fragments / Daily</span>
+                    <span class="hb-guide-title">断章 — 写真を入口に、その日の一文</span>
+                    <span class="hb-guide-sub" id="frag-card-sub">随時更新 — 姫路と香港、ときどき旅</span>
+                    <span class="hb-guide-chips"><i>姫路</i><i>香港</i><i>ときどき旅</i></span>
+                    <span class="hb-guide-cta">すべての断章を読む →</span>
+                </span>
+            </a>
         </div>
     </section>
 
@@ -588,5 +595,23 @@
     </script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
     <script src="/growth.js" defer></script>
+    <script>
+    // Collectionsの断章カードを最新の断章に同期
+    (async function () {
+      try {
+        const res = await fetch('data/recent-photos.json');
+        if (!res.ok) return;
+        const photos = await res.json();
+        if (!Array.isArray(photos) || !photos.length) return;
+        const latest = photos[0];
+        const img = document.getElementById('frag-card-img');
+        const src = document.getElementById('frag-card-src');
+        const sub = document.getElementById('frag-card-sub');
+        if (img && latest.image) { img.src = latest.image; if (latest.alt || latest.title) img.alt = latest.alt || latest.title; }
+        if (src && latest.imageWebp) src.srcset = latest.imageWebp;
+        if (sub) sub.textContent = '随時更新 / 現在' + photos.length + '篇 — 最新「' + (latest.title || '') + '」';
+      } catch (e) { /* 静的フォールバックのまま */ }
+    })();
+    </script>
 </body>
 </html>
