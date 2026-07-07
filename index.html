@@ -234,42 +234,6 @@
       color: rgba(255,255,255,0.84);
     }
 
-    .identity-hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 0.8rem;
-      margin-top: 2rem;
-    }
-
-    .identity-hero-action {
-      display: inline-flex;
-      align-items: center;
-      justify-content: center;
-      min-height: 44px;
-      padding: 0.76rem 1.1rem;
-      border: 1px solid rgba(255,255,255,0.44);
-      border-radius: 4px;
-      color: #fff;
-      background: rgba(0,0,0,0.18);
-      font-family: 'Inter', 'Noto Serif JP', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      text-decoration: none;
-      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
-    }
-
-    .identity-hero-action:hover {
-      background: rgba(255,255,255,0.12);
-      border-color: rgba(255,255,255,0.72);
-      transform: translateY(-1px);
-    }
-
-    .identity-hero-action.primary {
-      color: #222;
-      background: rgba(255,255,255,0.92);
-      border-color: rgba(255,255,255,0.92);
-    }
-
     .identity-hero-routes {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -900,6 +864,72 @@
       gap: 1.2rem;
     }
 
+    /* ── 実用ガイド（コンパクト帯） ── */
+    .featured-guides.compact {
+      padding: 44px 24px 56px;
+    }
+
+    .guide-band {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0 44px;
+    }
+
+    .guide-band a {
+      position: relative;
+      display: flex;
+      align-items: baseline;
+      gap: 14px;
+      padding: 0.95rem 1.5rem 0.95rem 0.1rem;
+      border-bottom: 1px solid var(--border-color);
+      text-decoration: none;
+      transition: padding-left 0.25s ease;
+    }
+
+    .guide-band a::after {
+      content: "→";
+      position: absolute;
+      right: 0.1rem;
+      color: var(--text-lighter, #999);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.85rem;
+      transition: transform 0.25s ease, color 0.25s ease;
+    }
+
+    .guide-band a:hover {
+      padding-left: 0.45rem;
+    }
+
+    .guide-band a:hover::after {
+      transform: translateX(3px);
+      color: var(--text-color);
+    }
+
+    .guide-band strong {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.98rem;
+      font-weight: 600;
+      color: var(--text-color);
+      white-space: nowrap;
+    }
+
+    .guide-band span {
+      flex: 1;
+      min-width: 0;
+      font-size: 0.78rem;
+      color: var(--text-light);
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    @media (max-width: 760px) {
+      .guide-band {
+        grid-template-columns: 1fr;
+        gap: 0;
+      }
+    }
+
     .travel-card {
       position: relative;
       overflow: hidden;
@@ -1239,12 +1269,6 @@
         line-height: 2;
       }
 
-      .identity-hero-actions {
-        display: grid;
-        grid-template-columns: 1fr;
-        margin-top: 1.5rem;
-      }
-
       .identity-hero-routes {
         grid-template-columns: 1fr 1fr;
         gap: 10px;
@@ -1504,10 +1528,6 @@
       <p class="identity-hero-lead">
         姫路城と香港。長く自分を育ててくれた二つの場所への感謝を軸に、ミャンマーからヨーロッパまで——15年分の旅で出会った光と笑顔を、写真と言葉で残しています。
       </p>
-      <div class="identity-hero-actions">
-        <a class="identity-hero-action primary" href="shirasagi36.html">白鷺三十六景を見る →</a>
-        <a class="identity-hero-action" href="hongkong-neon.html">香港の記録を見る →</a>
-      </div>
       <nav class="identity-hero-routes" aria-label="サイトの主な入口">
         <a class="identity-hero-route" href="shirasagi36.html">
           <span>Himeji Castle</span>
@@ -1655,67 +1675,10 @@
             <span class="recent-frame-archive-copy">先週、友人の実家のいちご畑で久しぶりにいちご狩りをした。畑に残る青い実と真っ赤に熟した実の対比に目を奪われる。</span>
           </span>
         </a>
-        <a class="recent-frame-archive-card" href="#recent-frame-title" data-recent-frame-slug="wan-chai-tram-jam">
-          <span class="recent-frame-archive-thumb">
-            <picture>
-              <source srcset="assets/images/photo-notes/wan-chai-tram-jam.webp" type="image/webp">
-              <img src="assets/images/photo-notes/wan-chai-tram-jam.jpg" alt="香港・湾仔の通りに二階建てトラムが連なっている様子" loading="lazy" decoding="async">
-            </picture>
-          </span>
-          <span>
-            <span class="recent-frame-archive-meta">香港・湾仔</span>
-            <span class="recent-frame-archive-card-title">湾仔、トラムが止まった午後</span>
-            <span class="recent-frame-archive-copy">ソフィアローレンで昼食を終えて通りに出ると、故障の影響でトラムが大渋滞。二階建てトラムがここまで連なる光景は、香港でもなかなか見られない。</span>
-          </span>
-        </a>
       </div>
     </div>
   </section>
 
-  <!-- ======================================
-       SECTION 4: Featured Guides
-       ====================================== -->
-  <section class="featured-guides" aria-labelledby="featured-guides-title">
-    <div class="section-header-row">
-      <h2 class="section-title-jp" id="featured-guides-title">Featured Guides</h2>
-      <a href="writings.html#site-guides" class="section-link">ガイド一覧 →</a>
-    </div>
-    <p class="section-lead">ドローン旅行、Leica M2の旅写真、二拠点生活、そして香港の暮らしの実務。探して来た人への入口です。</p>
-    <div class="guide-grid">
-      <article class="guide-card">
-        <a href="/articles/drone-travel-guide.html" data-growth-label="home_guide_drone">
-          <img src="assets/images/gear/drone.jpg" alt="旅行用ドローンと空撮機材" loading="lazy" decoding="async" width="600" height="400">
-          <span>Drone / Travel</span>
-          <h3>ドローン旅行ガイド</h3>
-          <p>旅先でドローンを使う前に考える準備、空撮の判断、軽い機体で続ける撮影スタイル。</p>
-        </a>
-      </article>
-      <article class="guide-card">
-        <a href="/articles/leica-m2-travel.html" data-growth-label="home_guide_leica">
-          <img src="assets/images/gear/m2.jpg" alt="Leica M2と旅写真" loading="lazy" decoding="async" width="600" height="400">
-          <span>Camera / Leica</span>
-          <h3>Leica M2で撮る旅写真</h3>
-          <p>フィルムカメラを旅へ持ち出す理由、Leica M2で記憶を残す撮り方と機材選び。</p>
-        </a>
-      </article>
-      <article class="guide-card">
-        <a href="/articles/hong-kong-two-base-life.html" data-growth-label="home_guide_hongkong">
-          <img src="assets/images/gallery/hongkong.jpg" alt="香港の街並み" loading="lazy" decoding="async" width="600" height="400">
-          <span>Hong Kong / Essay</span>
-          <h3>香港と日本の二拠点生活</h3>
-          <p>香港生活、日本との行き来、街の撮影スポットや日常の距離感を写真と言葉で残す記録。</p>
-        </a>
-      </article>
-      <article class="guide-card">
-        <a href="/hongkong-handbook.html" data-growth-label="home_guide_handbook">
-          <picture><source srcset="assets/images/handbook/hk-return-permit-04-01.webp" type="image/webp"><img src="assets/images/handbook/hk-return-permit-04-01.png" alt="回郷証（非中国籍）" loading="lazy" decoding="async" width="600" height="400"></picture>
-          <span>Hong Kong / How-to</span>
-          <h3>香港ハンドブック</h3>
-          <p>回郷証・中国入国、銀行・送金。30年暮らした実務の記録。</p>
-        </a>
-      </article>
-    </div>
-  </section>
 
   <!-- ======================================
        SECTION 5: 旅の記録
@@ -1742,7 +1705,7 @@
           </a>
         </div>
 
-        <!-- 小カード: チベット・西安 -->
+        <!-- チベット・西安 -->
         <div class="travel-card">
           <a href="tibet-travel-journal.html">
             <picture>
@@ -1756,7 +1719,7 @@
           </a>
         </div>
 
-        <!-- 小カード: プラハ -->
+        <!-- プラハ -->
         <div class="travel-card">
           <a href="prague-travel-journal.html">
             <picture>
@@ -1770,46 +1733,35 @@
           </a>
         </div>
 
-        <!-- 小カード: ホーチミン -->
-        <div class="travel-card">
-          <a href="hochiminh-travel-journal.html">
-            <picture>
-              <source srcset="assets/images/gallery/vietnam.webp" type="image/webp">
-              <img src="assets/images/gallery/vietnam.jpg" alt="ホーチミン" loading="lazy" decoding="async">
-            </picture>
-            <div class="travel-card-overlay">
-              <h3 class="travel-card-title">7年ぶりのホーチミン</h3>
-              <p class="travel-card-meta">2025 — 旅行記・全3篇</p>
-            </div>
-          </a>
-        </div>
-
-        <!-- 小カード: イタリア縦断 -->
-        <div class="travel-card">
-          <a href="italy-travel-journal.html">
-            <picture>
-              <source srcset="assets/images/gallery/venice.webp" type="image/webp">
-              <img src="assets/images/gallery/venice.jpg" alt="水の都 ベネツィア" loading="lazy" decoding="async">
-            </picture>
-            <div class="travel-card-overlay">
-              <h3 class="travel-card-title">イタリア縦断、フォトキナへの旅</h3>
-              <p class="travel-card-meta">2016 — 旅行記・全6都市</p>
-            </div>
-          </a>
-        </div>
-
-        <!-- 小カード: ホイアン三部作 -->
-        <div class="travel-card">
-          <a href="hoian-travel-journal.html">
-            <picture><source srcset="assets/images/trips/hoian/2016/03-03.webp" type="image/webp"><img src="assets/images/trips/hoian/2016/03-03.png" alt="ホイアンの色とりどりの提灯" loading="lazy" decoding="async"></picture>
-            <div class="travel-card-overlay">
-              <h3 class="travel-card-title">ホイアン、変わらぬ笑顔</h3>
-              <p class="travel-card-meta">2013–2018 — 定点観測・三部作</p>
-            </div>
-          </a>
-        </div>
-
       </div>
+    </div>
+  </section>
+
+  <!-- ======================================
+       SECTION: 実用ガイド（コンパクト帯）
+       ====================================== -->
+  <section class="featured-guides compact" aria-labelledby="featured-guides-title">
+    <div class="section-header-row">
+      <h2 class="section-title-jp" id="featured-guides-title">実用ガイド</h2>
+      <a href="writings.html#site-guides" class="section-link">ガイド一覧 →</a>
+    </div>
+    <div class="guide-band">
+      <a href="/hongkong-handbook.html" data-growth-label="home_guide_handbook">
+        <strong>香港ハンドブック</strong>
+        <span>回郷証・中国入国、銀行・送金、SIM。30年の実務記録</span>
+      </a>
+      <a href="/articles/drone-travel-guide.html" data-growth-label="home_guide_drone">
+        <strong>ドローン旅行ガイド</strong>
+        <span>旅先で飛ばす前の準備と空撮の判断</span>
+      </a>
+      <a href="/articles/leica-m2-travel.html" data-growth-label="home_guide_leica">
+        <strong>Leica M2で撮る旅写真</strong>
+        <span>フィルムカメラを旅へ持ち出す理由と撮り方</span>
+      </a>
+      <a href="/articles/hong-kong-two-base-life.html" data-growth-label="home_guide_hongkong">
+        <strong>香港と日本の二拠点生活</strong>
+        <span>行き来の距離感を写真と言葉で残す</span>
+      </a>
     </div>
   </section>
 
@@ -2042,7 +1994,7 @@
       if (!archive || !Array.isArray(photos)) return;
 
       const currentSlug = activeSlug || photos[0]?.slug;
-      const pastPhotos = photos.filter(photo => photo.slug !== currentSlug).slice(0, 6);
+      const pastPhotos = photos.filter(photo => photo.slug !== currentSlug).slice(0, 3);
       if (!pastPhotos.length) {
         if (archiveSection) archiveSection.hidden = true;
         return;
