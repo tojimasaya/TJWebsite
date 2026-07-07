@@ -1,5 +1,40 @@
 [
   {
+    "slug": "shenzhen-police-drone-and-dji-flip",
+    "label": "今日の断章",
+    "title": "公安のドローンと、店内から飛ぶFlip",
+    "place": "中国・深圳",
+    "date": "2026年7月6日",
+    "body": "友人のe道登録に付き合って、深圳の口岸まで来た。建屋の外で待っていると頭上であの羽音がして、こんな場所で飛ばす豪胆な者がいるものだと見上げれば、数メートル上にドローンが浮かんでいて、操縦していたのは公安その人だった。さすがに離陸の瞬間へカメラを向ける度胸はなく、飛んでいる姿だけを撮る。出入境の目の前で不審な動きを空から見張ることは、この街ではもう日常なのだ。北京ではドローンの販売がほぼ止まり、店頭からはOsmo Pocketまで消えたと聞く。その数千キロ南のこの街では、公安が当たり前に飛ばし、DJIの直営店では女性スタッフが「ほら、こんなに簡単」とプロペラごと畳めるFlipを店内から飛ばして、年配のお客さんたちに見せていた。同じ国で、空の自由はこれほど違う。この振れ幅が深圳なのだと思う。",
+    "image": "assets/images/photo-notes/shenzhen-port-police-drone.jpg",
+    "imageWebp": "assets/images/photo-notes/shenzhen-port-police-drone.webp",
+    "alt": "口岸の屋根の下、頭上数メートルに浮かぶ公安のドローン。奥に高層ビルとPOLICEの詰所",
+    "caption": "Police Drone over the Port / Shenzhen",
+    "sideFrames": [
+      {
+        "title": "DJIの直営店",
+        "caption": "DJI Store / Shenzhen",
+        "image": "assets/images/photo-notes/shenzhen-dji-store-mavic4.jpg",
+        "imageWebp": "assets/images/photo-notes/shenzhen-dji-store-mavic4.webp",
+        "alt": "DJI直営店の店内、スタンドに展示されたドローン"
+      },
+      {
+        "title": "店員さんのFlipデモ",
+        "caption": "DJI Flip Demo / Shenzhen",
+        "image": "assets/images/photo-notes/shenzhen-dji-flip-demo.jpg",
+        "imageWebp": "assets/images/photo-notes/shenzhen-dji-flip-demo.webp",
+        "alt": "DJIの店内で送信機を手にFlipのデモをする店員と、見守るお客さんたち"
+      },
+      {
+        "title": "店から飛び立ったFlip",
+        "caption": "DJI Flip in the Sky / Shenzhen",
+        "image": "assets/images/photo-notes/shenzhen-dji-flip-flying.jpg",
+        "imageWebp": "assets/images/photo-notes/shenzhen-dji-flip-flying.webp",
+        "alt": "曇り空のビルの上を飛ぶ、プロペラガード付きのDJI Flip"
+      }
+    ]
+  },
+  {
     "slug": "huanggang-port-rokid-new-terminal",
     "label": "今日の断章",
     "title": "皇崗口岸、開く前の曲線",
