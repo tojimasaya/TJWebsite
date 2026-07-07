@@ -730,6 +730,16 @@
       text-align: right;
     }
 
+    .recent-frame-archive-note a {
+      color: var(--accent-color);
+      text-decoration: none;
+      white-space: nowrap;
+    }
+
+    .recent-frame-archive-note a:hover {
+      text-decoration: underline;
+    }
+
     .recent-frame-archive-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
@@ -1668,7 +1678,7 @@
         <p class="recent-frame-copy" id="recent-frame-copy">
           台北駅の弁当フェアに淡路屋が来ると聞けば、神戸の味を台湾で買うという妙な遠回りをせずにはいられず、約一時間並んで手に入れた「ひっぱりだこ」をホテルで開けると、壺の中の蛸の吸盤までがきちんと旅をしてきたようで、結局いちばん遠回りしていたのは私の食欲だった。
         </p>
-        <a class="recent-frame-link" id="recent-frame-link" href="#recent-frame-archive-title">これまでの断章を見る →</a>
+        <a class="recent-frame-link" id="recent-frame-link" href="fragments.html">すべての断章を見る →</a>
       </div>
     </div>
     <div class="recent-frame-archive" aria-labelledby="recent-frame-archive-title">
@@ -1677,7 +1687,7 @@
           <p class="recent-frame-archive-kicker">Fragments</p>
           <h3 class="recent-frame-archive-title" id="recent-frame-archive-title">これまでの断章</h3>
         </div>
-        <p class="recent-frame-archive-note">写真を入口に、その日の出来事を一文で残します。</p>
+        <p class="recent-frame-archive-note">写真を入口に、その日の出来事を一文で残します。 <a href="fragments.html">すべての断章 →</a></p>
       </div>
       <div class="recent-frame-archive-grid" id="recent-frame-archive-grid">
         <a class="recent-frame-archive-card" href="#recent-frame-title" data-recent-frame-slug="odawara-kinmedai-oshizushi">
@@ -1907,8 +1917,8 @@
       setRecentFrameText('recent-frame-caption', activeMedia.caption || activeMedia.title || frame.caption || meta);
 
       if (link) {
-        link.href = '#recent-frame-archive-title';
-        link.textContent = 'これまでの断章を見る →';
+        link.href = 'fragments.html';
+        link.textContent = 'すべての断章を見る →';
       }
 
       if (image && activeMedia.alt) image.alt = activeMedia.alt;
