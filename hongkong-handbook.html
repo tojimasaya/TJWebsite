@@ -82,6 +82,21 @@
         .hb-date { flex-shrink: 0; width: 5.4em; font-size: 0.76rem; color: var(--text-lighter, #999); letter-spacing: 0.04em; font-variant-numeric: tabular-nums; padding-top: 2px; }
         .hb-item-title { font-family: 'Noto Serif JP', serif; font-size: 0.98rem; font-weight: 600; line-height: 1.7; padding-right: 20px; }
         .hb-item-sub { display: block; font-family: var(--primary-font); font-size: 0.78rem; font-weight: 400; color: var(--text-light); margin-top: 3px; line-height: 1.7; }
+        .hb-lead { font-family: var(--primary-font); font-size: 0.85rem; color: var(--text-light); margin: -0.3em 0 1.1em; line-height: 1.9; }
+        .hb-guides { margin-top: 30px; }
+        .hb-guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .hb-guide-card { display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 14px; overflow: hidden; text-decoration: none; background: var(--bg-color, #fff); transition: transform .25s ease, box-shadow .25s ease; }
+        .hb-guide-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,0.10); }
+        .hb-guide-thumb { display: block; aspect-ratio: 16/9; overflow: hidden; border-bottom: 1px solid var(--border-color); }
+        .hb-guide-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
+        .hb-guide-body { display: flex; flex-direction: column; gap: 8px; padding: 16px 16px 18px; }
+        .hb-section h2.hb-guide-kicker { font-family: var(--secondary-font); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-color); font-weight: 600; margin: 0; padding: 0; border-bottom: 0; }
+        .hb-guide-title { font-family: 'Noto Serif JP', serif; font-size: 1.02rem; font-weight: 600; line-height: 1.75; color: var(--text-color); }
+        .hb-guide-sub { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-lighter, #999); }
+        .hb-guide-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
+        .hb-guide-chips i { font-style: normal; font-family: var(--primary-font); font-size: 0.72rem; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 999px; padding: 0.24em 0.75em; }
+        .hb-guide-cta { margin-top: 10px; font-family: 'Noto Serif JP', serif; font-size: 0.85rem; font-weight: 600; color: var(--accent-color); }
+        @media (max-width: 640px) { .hb-guide-grid { grid-template-columns: 1fr; } }
 
     </style>
 
@@ -116,15 +131,44 @@
             <p>香港に30年暮らすなかで通ってきた、手続きとお金の実務記録です。旅行記のように時間が止まった記録ではなく、制度とともに変わっていく話なので、各ページに初出日を明記しています。撮影スポットやカメラ散歩は<a href="hongkong.html">香港（撮影）ページ</a>へ。</p>
         </article>
 
-        <section class="hb-section" aria-labelledby="hb-permit">
-            <h2 id="hb-permit">回郷証・中国入国</h2>
-            <ul class="hb-list">
-                <li><a href="hk-return-permit.html"><span class="hb-date">2024.08–11</span><span class="hb-item-title">非中国籍・香港永住者の回郷証 — 取得から中国入国まで<span class="hb-item-sub">制度開始 → 申請・遅延 → 初入国とe道登録 → 日本人ビザ免除の動き（全6篇）</span></span></a></li>
-            </ul>
+        <section class="hb-section hb-guides" aria-label="通しで読むガイド">
+            <div class="hb-guide-grid">
+                <a class="hb-guide-card" href="hk-return-permit.html">
+                    <span class="hb-guide-thumb">
+                        <picture>
+                            <source srcset="assets/images/handbook/hk-return-permit-04-01.webp" type="image/webp">
+                            <img src="assets/images/handbook/hk-return-permit-04-01.png" alt="回郷証（非中国籍者用）の実物カード" loading="lazy" decoding="async">
+                        </picture>
+                    </span>
+                    <span class="hb-guide-body">
+                        <h2 class="hb-guide-kicker" id="hb-permit">回郷証・中国入国</h2>
+                        <span class="hb-guide-title">非中国籍・香港永住者の回郷証 — 取得から中国入国まで</span>
+                        <span class="hb-guide-sub">2024.08–11 初出 / 全6章を1ページで通し読み</span>
+                        <span class="hb-guide-chips"><i>制度開始</i><i>申請・遅延</i><i>初入国とe道登録</i><i>ビザ免除の動き</i></span>
+                        <span class="hb-guide-cta">通しで読む →</span>
+                    </span>
+                </a>
+                <a class="hb-guide-card" href="gear-sim.html">
+                    <span class="hb-guide-thumb">
+                        <picture>
+                            <source srcset="assets/images/gear/sim/sim-connectivity-card.webp" type="image/webp">
+                            <img src="assets/images/gear/sim/sim-connectivity-card.jpg" alt="旅と海外在住のSIMカードいろいろ" loading="lazy" decoding="async">
+                        </picture>
+                    </span>
+                    <span class="hb-guide-body">
+                        <h2 class="hb-guide-kicker" id="hb-sim">SIM・電話番号</h2>
+                        <span class="hb-guide-title">SIM / Connectivity — 通信環境のまとめ</span>
+                        <span class="hb-guide-sub">随時更新 / Gearページの詳細まとめへ</span>
+                        <span class="hb-guide-chips"><i>日本SIMの維持</i><i>ローミング</i><i>香港番号</i><i>プリペイドSIM</i></span>
+                        <span class="hb-guide-cta">まとめを開く →</span>
+                    </span>
+                </a>
+            </div>
         </section>
 
         <section class="hb-section" aria-labelledby="hb-bank">
             <h2 id="hb-bank">銀行・送金</h2>
+            <p class="hb-lead">口座・送金まわりで実際に起きたことの記録です。関心のある項目からどうぞ。事例はこれからも増えていきます。</p>
             <ul class="hb-list">
                 <li><a href="hk-hsbc-premier.html"><span class="hb-date">2024.11</span><span class="hb-item-title">HSBC Premierとの付き合い方<span class="hb-item-sub">100万ドルの珈琲の代償と、再発見したメリット（全2篇）</span></span></a></li>
                 <li><a href="hk-remittance.html"><span class="hb-date">2024.12</span><span class="hb-item-title">香港の賢い送金術<span class="hb-item-sub">PayMe・FPS・バーチャルバンクの活用法</span></span></a></li>
@@ -134,13 +178,6 @@
                 <li><a href="hk-dbs-account.html"><span class="hb-date">2025.12</span><span class="hb-item-title">新しくDBS銀行で口座をつくった理由<span class="hb-item-sub">HSBC・Citiとの付き合いを振り返りながら</span></span></a></li>
                 <li><a href="cn-icbc-dormant.html"><span class="hb-date">2024.11</span><span class="hb-item-title">中国工商銀行の休眠口座を解決してみた</span></a></li>
                 <li><a href="cn-bank-passport-update.html"><span class="hb-date">2025.01</span><span class="hb-item-title">中国の銀行口座のパスポート情報更新 — 深セン体験記</span></a></li>
-            </ul>
-        </section>
-
-        <section class="hb-section" aria-labelledby="hb-sim">
-            <h2 id="hb-sim">SIM・電話番号</h2>
-            <ul class="hb-list">
-                <li><a href="gear-sim.html"><span class="hb-date">随時更新</span><span class="hb-item-title">SIM / Connectivity — 通信環境のまとめ<span class="hb-item-sub">海外在住者向け日本SIM・ローミング・香港番号の維持・プリペイドSIM（Gearページ）</span></span></a></li>
             </ul>
         </section>
 
