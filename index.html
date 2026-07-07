@@ -864,69 +864,113 @@
       gap: 1.2rem;
     }
 
-    /* ── 実用ガイド（コンパクト帯） ── */
-    .featured-guides.compact {
-      padding: 44px 24px 56px;
-    }
-
-    .guide-band {
-      display: grid;
-      grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0 44px;
-    }
-
-    .guide-band a {
-      position: relative;
-      display: flex;
-      align-items: baseline;
-      gap: 14px;
-      padding: 0.95rem 1.5rem 0.95rem 0.1rem;
+    /* ── 香港ハンドブック（一枚看板） ── */
+    .handbook-feature {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 24px;
       border-bottom: 1px solid var(--border-color);
-      text-decoration: none;
-      transition: padding-left 0.25s ease;
     }
 
-    .guide-band a::after {
-      content: "→";
-      position: absolute;
-      right: 0.1rem;
-      color: var(--text-lighter, #999);
+    .handbook-feature-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      gap: 52px;
+      align-items: center;
+    }
+
+    .handbook-feature-media {
+      display: block;
+      border-radius: 10px;
+      overflow: hidden;
+      border: 1px solid var(--border-color);
+    }
+
+    .handbook-feature-media img {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    .handbook-feature-kicker {
       font-family: 'Inter', sans-serif;
-      font-size: 0.85rem;
-      transition: transform 0.25s ease, color 0.25s ease;
+      font-size: 0.7rem;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--text-lighter);
+      margin: 0 0 0.9em;
     }
 
-    .guide-band a:hover {
-      padding-left: 0.45rem;
-    }
-
-    .guide-band a:hover::after {
-      transform: translateX(3px);
-      color: var(--text-color);
-    }
-
-    .guide-band strong {
+    .handbook-feature-title {
       font-family: 'Noto Serif JP', serif;
-      font-size: 0.98rem;
+      font-size: 1.8rem;
       font-weight: 600;
       color: var(--text-color);
-      white-space: nowrap;
+      margin: 0 0 0.65em;
     }
 
-    .guide-band span {
-      flex: 1;
-      min-width: 0;
-      font-size: 0.78rem;
+    .handbook-feature-lead {
+      font-size: 0.95rem;
+      line-height: 1.95;
       color: var(--text-light);
-      overflow: hidden;
-      text-overflow: ellipsis;
-      white-space: nowrap;
+      margin: 0 0 1.3em;
+    }
+
+    .handbook-feature-chips {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      list-style: none;
+      margin: 0 0 1.3em;
+      padding: 0;
+    }
+
+    .handbook-feature-chips li {
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.06em;
+      color: var(--text-light);
+      border: 1px solid var(--border-color);
+      border-radius: 999px;
+      padding: 0.34em 0.95em;
+    }
+
+    .handbook-feature-note {
+      font-size: 0.78rem;
+      color: var(--text-lighter);
+      margin: 0 0 1.9em;
+    }
+
+    .handbook-feature-cta {
+      display: inline-block;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.92rem;
+      letter-spacing: 0.05em;
+      color: var(--bg-color);
+      background: var(--text-color);
+      border-radius: 6px;
+      padding: 0.85em 1.7em;
+      text-decoration: none;
+      transition: opacity 0.25s ease, transform 0.25s ease;
+    }
+
+    .handbook-feature-cta:hover {
+      opacity: 0.85;
+      transform: translateY(-2px);
     }
 
     @media (max-width: 760px) {
-      .guide-band {
+      .handbook-feature {
+        padding: 48px 20px;
+      }
+
+      .handbook-feature-inner {
         grid-template-columns: 1fr;
-        gap: 0;
+        gap: 26px;
+      }
+
+      .handbook-feature-title {
+        font-size: 1.45rem;
       }
     }
 
@@ -1683,6 +1727,32 @@
   <!-- ======================================
        SECTION 5: 旅の記録
        ====================================== -->
+  <!-- ======================================
+       SECTION: 香港ハンドブック（一枚看板）
+       ====================================== -->
+  <section class="handbook-feature" aria-labelledby="handbook-feature-title">
+    <div class="handbook-feature-inner">
+      <a class="handbook-feature-media" href="hongkong-handbook.html" tabindex="-1" aria-hidden="true">
+        <picture>
+          <source srcset="assets/images/handbook/hk-return-permit-04-01.webp" type="image/webp">
+          <img src="assets/images/handbook/hk-return-permit-04-01.png" alt="回郷証（非中国籍者用の中国出入りカード）の実物" loading="lazy" decoding="async" width="600" height="400">
+        </picture>
+      </a>
+      <div class="handbook-feature-text">
+        <p class="handbook-feature-kicker">Hong Kong Handbook</p>
+        <h2 class="handbook-feature-title" id="handbook-feature-title">香港ハンドブック</h2>
+        <p class="handbook-feature-lead">回郷証の取り方から、銀行口座・送金、SIMまで。香港在住30年の実務をそのまま記録した、暮らしと出入りの手引き。</p>
+        <ul class="handbook-feature-chips" aria-label="収録内容">
+          <li>回郷証・中国入国</li>
+          <li>銀行・送金</li>
+          <li>SIM・電話番号</li>
+        </ul>
+        <p class="handbook-feature-note">制度は変わるもの。「ここが変わったよ」の最新情報コメントを歓迎します（匿名OK・承認制）。</p>
+        <a class="handbook-feature-cta" href="hongkong-handbook.html" data-growth-label="home_handbook_feature">ハンドブックを開く →</a>
+      </div>
+    </div>
+  </section>
+
   <section class="travels">
     <div class="travels-inner">
       <div class="section-header-row">
@@ -1734,34 +1804,6 @@
         </div>
 
       </div>
-    </div>
-  </section>
-
-  <!-- ======================================
-       SECTION: 実用ガイド（コンパクト帯）
-       ====================================== -->
-  <section class="featured-guides compact" aria-labelledby="featured-guides-title">
-    <div class="section-header-row">
-      <h2 class="section-title-jp" id="featured-guides-title">実用ガイド</h2>
-      <a href="writings.html#site-guides" class="section-link">ガイド一覧 →</a>
-    </div>
-    <div class="guide-band">
-      <a href="/hongkong-handbook.html" data-growth-label="home_guide_handbook">
-        <strong>香港ハンドブック</strong>
-        <span>回郷証・中国入国、銀行・送金、SIM。30年の実務記録</span>
-      </a>
-      <a href="/articles/drone-travel-guide.html" data-growth-label="home_guide_drone">
-        <strong>ドローン旅行ガイド</strong>
-        <span>旅先で飛ばす前の準備と空撮の判断</span>
-      </a>
-      <a href="/articles/leica-m2-travel.html" data-growth-label="home_guide_leica">
-        <strong>Leica M2で撮る旅写真</strong>
-        <span>フィルムカメラを旅へ持ち出す理由と撮り方</span>
-      </a>
-      <a href="/articles/hong-kong-two-base-life.html" data-growth-label="home_guide_hongkong">
-        <strong>香港と日本の二拠点生活</strong>
-        <span>行き来の距離感を写真と言葉で残す</span>
-      </a>
     </div>
   </section>
 
