@@ -63,6 +63,21 @@
         .journal-nav-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0 auto 90px; padding: 0 20px; }
         .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+        .guide-now { max-width: 720px; margin: 30px auto 0; padding: 0 24px; }
+        .guide-now-inner { border: 1.5px solid var(--accent-color); border-radius: 12px; padding: 16px 22px; background: var(--hover-color); font-family: var(--primary-font); font-size: 0.92rem; line-height: 2; color: var(--text-color); }
+        .guide-now-title { font-weight: 700; font-size: 0.95rem; margin: 0 0 6px; color: var(--accent-color); }
+        .guide-now-inner ul { margin: 0 0 8px 1.2em; padding: 0; }
+        .guide-now-inner li { margin: 0; }
+        .guide-now-inner a { color: var(--accent-color); font-weight: 600; }
+        .guide-toc { max-width: 720px; margin: 16px auto 0; padding: 0 24px; }
+        .guide-toc-inner { border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 22px; font-family: var(--primary-font); font-size: 0.88rem; line-height: 2.1; }
+        .guide-toc-title { font-weight: 600; font-size: 0.82rem; letter-spacing: 0.08em; color: var(--text-light); margin: 0 0 4px; }
+        .guide-toc ol { margin: 0 0 0 1.3em; padding: 0; }
+        .guide-toc a { color: var(--text-color); text-decoration: none; }
+        .guide-toc a:hover { color: var(--accent-color); text-decoration: underline; }
+        .guide-toc .toc-date { color: var(--text-light); font-size: 0.76rem; margin-left: 8px; white-space: nowrap; }
+        .guide-toc .toc-new a { color: var(--accent-color); font-weight: 700; }
+        .essay h2 { scroll-margin-top: 90px; }
 </style>
 
     <script type="application/ld+json">
@@ -86,8 +101,34 @@
     <div class="guide-notice"><div class="guide-notice-inner">ℹ️ 本ページは執筆時点での個人の体験記録です。制度・手数料・条件は変更されることがあります。実際の手続きの際は必ず公式情報をご確認ください。<br>💬 最新情報へアップデートしていくため、皆さまのコメントを募集しています。「この手順で成功した」「役に立った」というご報告も——いただけると私が喜びます。<a href="#comments" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">書き込みはこちら（ページ下部）→</a></div></div>
 
     <main id="main-content">
+        <div class="guide-now">
+            <div class="guide-now-inner">
+                <p class="guide-now-title">✅ いまの状態（2026-07-07 更新）</p>
+                <ul>
+                    <li>回郷証（非中国籍）＋e道登録済みなら、<strong>パスポートもカードも出さずに顔認証だけ</strong>で香港⇔中国を往復できます</li>
+                    <li>e道の新規登録は中国側イミグレ先の登録所で<strong>約5分・即日有効</strong>（受付 08:00〜18:00）</li>
+                    <li>未登録でも、カード提示＋簡単な質疑＋指紋採取のみ（日本語音声ガイダンスあり）。紙の記入は不要</li>
+                    <li>申請費用 HK$260・有効期限5年（申請手順は下記コラム1を参照）</li>
+                </ul>
+                → 詳しくは <a href="#chap-7">最新アップデート（2026年7月）</a> へ
+            </div>
+        </div>
+        <div class="guide-toc">
+            <div class="guide-toc-inner">
+                <p class="guide-toc-title">目次 — 制度開始からの全記録（時系列）</p>
+                <ol>
+                    <li><a href="#chap-1">非中国籍永住権保持者向け回郷証取得について</a><span class="toc-date">2024-08-10</span></li>
+                    <li><a href="#chap-2">回郷証があればパスポート無しで中国入国できるように</a><span class="toc-date">2024-08-13</span></li>
+                    <li><a href="#chap-3">回郷証取得の遅延と端末による自動発行</a><span class="toc-date">2024-09-16</span></li>
+                    <li><a href="#chap-4">回郷証で初めての中国入国と「e道」登録のすすめ</a><span class="toc-date">2024-10-15</span></li>
+                    <li><a href="#chap-5">関連：中国、日本人の短期滞在ビザ免除再開へ？</a><span class="toc-date">2024-11-18</span></li>
+                    <li><a href="#chap-6">関連：中国、日本人ビザ免除を正式発表</a><span class="toc-date">2024-11-22</span></li>
+                    <li class="toc-new"><a href="#chap-7">🆕 カードすら不要に──顔認証だけで通れるようになったe道</a><span class="toc-date">2026-07-07</span></li>
+                </ol>
+            </div>
+        </div>
         <article class="essay">
-            <h2 class="h2-first">非中国籍永住権保持者向け回郷証取得について</h2>
+            <h2 class="h2-first" id="chap-1">非中国籍永住権保持者向け回郷証取得について</h2>
             <p class="chap-date">初出：2024-08-10</p>
             <p>香港在住の日本人の間で、最近 大きな話題となっているのが「非中国籍永住権保持者向けの回郷証取得」です。<br>コロナ以降、日本人の中国入国に際しては２週間以内の短期滞在でもビザが必要となっています。<br>このためビザ取得は、当日発行ビザを入国時に並んで取得するか、APECカードを自分の所属する会社経由で申請するなどが必要でした。</p>
             <h3>香港在住日本人に大きなニュース</h3>
@@ -129,7 +170,7 @@
             <p>受付が完了し費用２６０ドル＋αを払うと下記書類をもらえますので、これを持って約ひと月後に回郷証がピックアップ可能となります。</p>
             <figure><picture><source srcset="/assets/images/handbook/hk-return-permit-01-09.webp" type="image/webp"><img src="/assets/images/handbook/hk-return-permit-01-09.jpg" alt="受付完了書類" loading="lazy" decoding="async"></picture><figcaption>受付完了書類</figcaption></figure>
             <p>以上 今後 取得する人の参考になれば幸いです。</p>
-            <h2>外国人用 回郷証があればパスポート無しで中国入国できるように</h2>
+            <h2 id="chap-2">外国人用 回郷証があればパスポート無しで中国入国できるように</h2>
             <p class="chap-date">初出：2024-08-13</p>
             <p><a href="https://note.com/tojimasaya/n/n359ab6603fba" target="_blank" rel="noopener noreferrer">前回 紹介した「非中国籍永住権保持者向け回郷証」、</a>つまり香港やマカオに７年以上住んで永久居民（永住権）を取得している人が取得できる回郷証をいち早く取得した知人と昨日 中国深センに入り、実際の運用状況を体験したのでその様子を報告します。</p>
             <figure><picture><source srcset="/assets/images/handbook/hk-return-permit-02-01.webp" type="image/webp"><img src="/assets/images/handbook/hk-return-permit-02-01.jpg" alt="外国人用 回郷証があればパスポート無しで中国入国できるように" loading="lazy" decoding="async"></picture></figure>
@@ -153,7 +194,7 @@
             <p>さらなる期待は、中国に多くある安宿は、中国人の身分証や、香港人が持っている回郷証の提示が求められ日本人のパスポートでは泊まれないことが多いですが、この非中国籍 回郷証があれば日本人でもこういった安宿に泊まれるのではと思います。</p>
             <p>以上 今回は先に取得した友人の付き添いでの検証となりましたが、今後 ９月９日に私が手に入れた際にはまたさらなる検証をしてみようと思います。</p>
             <p>今後取る方の参考になれば幸いです。</p>
-            <h2>回郷証取得の遅延と端末による自動発行</h2>
+            <h2 id="chap-3">回郷証取得の遅延と端末による自動発行</h2>
             <p class="chap-date">初出：2024-09-16</p>
             <p>何度かこちらで報告していますが、申請していた非中国籍者用の回郷証を本日（9月16日）受け取ってきました。</p>
             <p>８月１０日に旺角で申請、本来であれば１ヶ月後の９月９日にもらえるはずだったのですが、数日前に 中国旅行社 (CTS Entry Permit Service Hong Kong Limited) から下のようなタイトルのメールが届きました。</p>
@@ -178,7 +219,7 @@
             <p>有効期限は２０２９年９月ということで５年ですね。<br>費用などは以前の記事を読んでいただくと詳しく書いています。</p>
             <p>本日の取得に関してはこの端末操作だけで、本人確認などは不要でしたので代理人でもOKだと思います。</p>
             <p>以上 今後取得する方の参考になれば。</p>
-            <h2>回郷証で初めての中国入国：手続きの流れと「e道」登録のすすめ</h2>
+            <h2 id="chap-4">回郷証で初めての中国入国：手続きの流れと「e道」登録のすすめ</h2>
             <p class="chap-date">初出：2024-10-15</p>
             <h3>はじめに</h3>
             <p>皆さん、こんにちは。これまで回郷証についていくつかのコラムを書いてきましたが、今回はついに回郷証（非中国籍）を使って初めて中国に入国した体験をお伝えします。加えて、e道（自動ゲート）の設定手順もご紹介します。</p>
@@ -213,7 +254,7 @@
             <p>皇崗口岸駅で見つけた、WeChatで登録すると無料でもらえる水の自販機をご紹介します。国慶節特別版もあり、ちょっと面白い体験でした。</p>
             <figure><picture><source srcset="/assets/images/handbook/hk-return-permit-04-03.webp" type="image/webp"><img src="/assets/images/handbook/hk-return-permit-04-03.jpg" alt="回郷証で初めての中国入国：手続きの流れと「e道」登録のすすめ" loading="lazy" decoding="async"></picture></figure>
             <p>回郷証を使った初めての中国入国は、少し緊張しましたが、思ったよりもスムーズでした。e道の設定も簡単で、次回からの入国がさらに便利になりそうです。皆さんも回郷証を取得された際は、ぜひe道の設定をお忘れなく！</p>
-            <h2>関連：中国、日本人の短期滞在ビザ免除再開へ？</h2>
+            <h2 id="chap-5">関連：中国、日本人の短期滞在ビザ免除再開へ？</h2>
             <p class="chap-date">初出：2024-11-18</p>
             <p>日本から中国への渡航がより容易になる可能性が出てきました。</p>
             <p>中国国営の旅行会社に当局から、日本人の短期滞在ビザ免除措置の今月中の再開を検討しているとの通知があったとのことです。</p>
@@ -235,7 +276,7 @@
             <p>このビザ免除措置が実現すれば、観光やビジネスでの人的往来が活発化し、経済面での交流促進が期待できます。それは両国の相互理解を深める基礎ともなりえます。</p>
             <p>中国側のこの動きは、地政学的な計算に基づく外交戦略の一環でありながら、実務レベルでの交流促進という実質的な効果も期待できる施策と言えます。</p>
             <p>特に、従来の相互主義的なアプローチを超えて一歩を踏み出そうとする姿勢は、対日関係改善への積極的な意思を示すものとして注目に値します。<br>今後、具体的な進展があればまたこちらで報告したいと思います。</p>
-            <h2>関連：中国、日本人ビザ免除を正式発表</h2>
+            <h2 id="chap-6">関連：中国、日本人ビザ免除を正式発表</h2>
             <p class="chap-date">初出：2024-11-22</p>
             <p>先日のAPECで印象的な場面がありました。習近平国家主席と石破首相の握手です。これまでの日本の首相との会見で見せていた苦虫を噛み潰したような表情とは打って変わり、習主席は柔和な笑顔を見せていました。そしてその直後、日本人の短期滞在ビザ免除措置の正式発表がありました。</p>
             <h3>注目すべき30日という期間</h3>
@@ -262,7 +303,7 @@
             <p>香港在住の日本人として、30日という期間は確かな可能性を感じさせます。ビジネスの展開により余裕を持って取り組めることは、確実にプラスとなるでしょう。</p>
             <p>この１年間で日中関係が改善するのか、あるいは遅々として進まないのか、興味を持って見ていきたいと思います。</p>
             <p>\</p>
-            <h2>【2026年7月アップデート】カードすら不要に──顔認証だけで通れるようになったe道</h2>
+            <h2 id="chap-7">【2026年7月アップデート】カードすら不要に──顔認証だけで通れるようになったe道</h2>
             <p class="chap-date">初出：2026-07-07</p>
             <p>約2年ぶりのアップデートです。2026年7月6日、回郷証（非中国籍）を取ったばかりの友人のe道登録に付き合って、皇崗口岸から深センへ日帰りしてきました。<a href="https://note.com/tojimasaya/n/n74b8e87fa529" target="_blank" rel="noopener noreferrer">詳しい体験記はnote（香港レンズ）に書きました</a>が、ハンドブックとして要点をまとめておきます。</p>
             <h3>e道はカード提出が不要になった</h3>
