@@ -327,10 +327,10 @@
   },
   {
     "title": "この景色は、もう二度と撮れない──香港・10年に一度の祝祭と・馬草壟[田路昌也の中国・香港ドローン便り]Vol.60",
-    "link": "https://www.drone.jp/column/20260114103546124675.html",
+    "link": "https://drone.jp/column/20260114103546124675.html",
     "date": "2026-01-14",
     "image": "https://drone.jp/wp-content/uploads/20260113_tohzi_mNMjbFB3.jpg",
-    "excerpt": "中国・香港ドローン便り",
+    "excerpt": "香港の国境地帯・馬草壟で、再開発によって変わりゆく景色をDJI Mini 5 Proで記録。いましか撮れない風景を、未来へのデジタルアーカイブとして残す視点で振り返ります。",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   },
@@ -364,19 +364,82 @@
   },
   {
     "title": "2025年の締めくくり──Neo 2が連れてきた、旅と映像の新しい流れ[田路昌也の中国・香港ドローン便り]Vol.59",
-    "link": "https://www.drone.jp/column/20251211100437123019.html",
+    "link": "https://drone.jp/column/20251211100437123019.html",
     "date": "2025-12-11",
     "image": "https://drone.jp/wp-content/uploads/top20251210_tohzi_Zmt7rCcc.jpg",
-    "excerpt": "中国・香港ドローン便り",
+    "excerpt": "Mini 5 ProとNeo 2を手にした2025年の終わりに、旅の撮影スタイルがどう変わったのかを整理。小型ドローンの自由さと、2026年の旅に向けた機材の整え方をまとめています。",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   },
   {
     "title": "Mini 5 Pro、“紅葉前夜”のテストフライト──静けさの中で見えた進化[田路昌也の中国・香港ドローン便り]Vol.58",
-    "link": "https://www.drone.jp/column/20251117152032121873.html",
+    "link": "https://drone.jp/column/20251117152032121873.html",
     "date": "2025-11-17",
     "image": "https://drone.jp/wp-content/uploads/20251112_tohzi_J8aSXlbe.jpg",
-    "excerpt": "中国・香港ドローン便り",
+    "excerpt": "紅葉には少し早い静かな池で、DJI Mini 5 Proをテストフライト。1インチセンサーの描写、新しいパノラマ機能、Mini 4 Proとの2台体制で見えた進化を確かめます。",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "DJI本拠地・深圳でMini 5 Proを購入──進化と“249gの壁”を超えて[田路昌也の中国・香港ドローン便り]Vol.57",
+    "link": "https://drone.jp/column/20251020120029120764.html",
+    "date": "2025-10-20",
+    "image": "https://drone.jp/wp-content/uploads/20251010_tohzi_Jkk9mRa0.jpg",
+    "excerpt": "WeChatに届いた一通の連絡をきっかけに、DJI本拠地の深圳でMini 5 Proを購入。Miniシリーズを使い続けてきた目線で、249gの壁を超えた新機種の意味を考えます。",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "GoProに勝ったDJI、次のライバルはInsta360。360度ドローン時代の幕開け[田路昌也の中国・香港ドローン便り]Vol.56",
+    "link": "https://drone.jp/column/20250912114426119738.html",
+    "date": "2025-09-12",
+    "image": "https://drone.jp/wp-content/uploads/20250911_tohzi_top.jpg",
+    "excerpt": "DJI OSMO 360、Insta360 X5、Antigravity A1を手がかりに、360度カメラとドローンの競争を読み解く回。誰でもFPV風の空撮を楽しめる時代の入口を見ています。",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "3C認証は必要？中国国内でのDJIドローンバッテリー持ち込み事情[田路昌也の中国・香港ドローン便り]Vol.55",
+    "link": "https://drone.jp/column/20250827103506118604.html",
+    "date": "2025-08-27",
+    "image": "https://drone.jp/wp-content/uploads/20250819_touji_top2.jpg",
+    "excerpt": "中国国内線で強化されたモバイルバッテリー規制を、DJIドローン用バッテリーの持ち込み目線で整理。3C認証の扱いと、旅行者が現場で確認したい注意点をまとめています。",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "ガチじゃない旅、ガチじゃないドローン。でも、見えたもの。[田路昌也の中国・香港ドローン便り]Vol.54",
+    "link": "https://drone.jp/column/20250718091041117398.html",
+    "date": "2025-07-18",
+    "image": "https://drone.jp/wp-content/uploads/tohzi_54_top.jpg",
+    "excerpt": "ANAのSFC修行を兼ねた台湾、秋田、盛岡の旅で、DJI Mini 4 Proを気負わず飛ばした記録。構えすぎない旅だからこそ見えた空撮の楽しさを綴っています。",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "Mini 4 Proユーザーが深センで見 た“新しい誘惑”──Mavic 4 Pro を手にして思ったこと[田路昌也の中国・香港ドローン便り]Vol.53",
+    "link": "https://drone.jp/column/20250619135305116533.html",
+    "date": "2025-06-19",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/06/250617_drone_touji_top.jpg",
+    "excerpt": "Mini 4 Proを旅の相棒にしてきた目線で、深圳で手にしたMavic 4 Proの魅力を考察。小型機の気軽さと上位機の誘惑、そのあいだで揺れる実感を記録しています。",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "幻に終わった張家界ドローン旅。だ からこそ見えた“撮る視点”の磨き方[田路昌也の中国・香港ドローン便り]Vol.52",
+    "link": "https://drone.jp/column/20250521101003115777.html",
+    "date": "2025-05-21",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/05/250520_SFC_touji_top.jpg",
+    "excerpt": "張家界でのドローン撮影計画は幻に終わったものの、準備の過程で見えたVlog機材戦略と撮る視点を整理。旅を映像に残すための考え方を磨く回です。",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "2025年のドローン飛行計画: Mini 4 Proと巡るSFC修行旅 [田路昌也の中国・香港ドローン便り]Vol.51",
+    "link": "https://drone.jp/column/20250422180507115300.html",
+    "date": "2025-04-22",
+    "image": "https://d2llikhal5te33.cloudfront.net/wpdronenews/wp-content/uploads/2025/04/250422_SFC_touji_top-1.jpg",
+    "excerpt": "ANAのSFC修行を兼ねて、仙台・松島・沖縄をDJI Mini 4 Proと巡る空撮旅。各地のフライト、旅先の食、そして新しい機材への関心までをまとめた計画編です。",
     "source": "drone",
     "sourceLabel": "DRONE.jp"
   }
