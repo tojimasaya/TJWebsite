@@ -259,16 +259,7 @@
             text-decoration-color: #c49a6c;
         }
 
-        .about-lenses {
-            padding: 4.25rem 2rem;
-            background: var(--white);
-            border-top: 1px solid var(--border-color);
-        }
 
-        .lenses-inner {
-            max-width: 1100px;
-            margin: 0 auto;
-        }
 
         .section-heading-row {
             display: flex;
@@ -284,79 +275,14 @@
             line-height: 1.95;
         }
 
-        .lens-grid {
-            display: grid;
-            grid-template-columns: repeat(3, 1fr);
-            gap: 1.2rem;
-        }
 
-        .lens-card {
-            position: relative;
-            overflow: hidden;
-            min-height: 230px;
-            border-radius: 6px;
-            color: #fff;
-            background: #1d1d1d;
-            text-decoration: none;
-        }
 
-        .lens-card img {
-            position: absolute;
-            inset: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(0.68) saturate(0.96);
-            transition: transform 0.7s ease, filter 0.4s ease;
-        }
 
-        .lens-card:hover img {
-            transform: scale(1.04);
-            filter: brightness(0.82) saturate(1.02);
-        }
 
-        .lens-card::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(180deg, rgba(0,0,0,0.12), rgba(0,0,0,0.78));
-        }
 
-        .lens-card-content {
-            position: absolute;
-            left: 1.2rem;
-            right: 1.2rem;
-            bottom: 1.15rem;
-            z-index: 2;
-        }
 
-        .lens-label {
-            display: block;
-            margin-bottom: 0.75rem;
-            font-family: var(--secondary-font);
-            font-size: 0.68rem;
-            letter-spacing: 0.16em;
-            color: rgba(255,255,255,0.72);
-            text-transform: uppercase;
-        }
 
-        .lens-card h3 {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 1.05rem;
-            line-height: 1.55;
-            font-weight: 400;
-            letter-spacing: 0.06em;
-            margin: 0 0 0.75rem;
-            color: #fff;
-        }
 
-        .lens-card p {
-            font-family: 'Noto Serif JP', serif;
-            font-size: 0.76rem;
-            line-height: 1.85;
-            color: rgba(255,255,255,0.78);
-            margin: 0;
-        }
 
         .about-timeline {
             padding: 5.5rem 2rem 6rem;
@@ -610,9 +536,6 @@
                 grid-template-columns: repeat(2, 1fr);
             }
 
-            .lens-grid {
-                grid-template-columns: 1fr;
-            }
         }
 
         @media (max-width: 640px) {
@@ -630,7 +553,6 @@
             }
 
             .about-statement,
-            .about-lenses,
             .about-timeline {
                 padding-left: 1.3rem;
                 padding-right: 1.3rem;
@@ -640,9 +562,6 @@
                 gap: 2.2rem;
             }
 
-            .lens-card {
-                min-height: 240px;
-            }
 
             .timeline-nav {
                 grid-template-columns: 1fr;
@@ -815,54 +734,6 @@
     </section>
 
     <!-- Entry Points -->
-    <section class="about-lenses" aria-labelledby="lenses-title">
-        <div class="lenses-inner">
-            <div class="section-heading-row">
-                <div>
-                    <span class="section-kicker">Explore</span>
-                    <h2 class="section-title" id="lenses-title">このサイトの入口。</h2>
-                </div>
-                <div class="about-prose">
-                    プロフィールを読んだあとに、実際の記録へ。姫路城、香港、旅と道具。それぞれ別の入口ですが、見ている人間は同じです。
-                </div>
-            </div>
-            <div class="lens-grid">
-                <a class="lens-card" href="shirasagi36.html">
-                    <picture>
-                        <source srcset="assets/images/gallery/castle31.webp" type="image/webp">
-                        <img src="assets/images/gallery/castle31.jpg" alt="姫路城">
-                    </picture>
-                    <div class="lens-card-content">
-                        <span class="lens-label">Himeji Castle</span>
-                        <h3>白鷺三十六景</h3>
-                        <p>故郷の城を、外から戻ってきた視点で撮り直す写真プロジェクト。</p>
-                    </div>
-                </a>
-                <a class="lens-card" href="hongkong-neon.html">
-                    <picture>
-                        <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
-                        <img src="assets/images/hongkong-neon/01.jpg" alt="香港ネオン">
-                    </picture>
-                    <div class="lens-card-content">
-                        <span class="lens-label">Hong Kong</span>
-                        <h3>香港ネオン残照</h3>
-                        <p>消えていく街の光を、記憶ではなく記録として残すアーカイブ。</p>
-                    </div>
-                </a>
-                <a class="lens-card" href="gear.html">
-                    <picture>
-                        <source srcset="assets/images/gear/sl2s.webp" type="image/webp">
-                        <img src="assets/images/gear/sl2s.jpg" alt="撮影機材">
-                    </picture>
-                    <div class="lens-card-content">
-                        <span class="lens-label">Gear Notes</span>
-                        <h3>旅と撮影の道具</h3>
-                        <p>Leica、ドローン、Mac。実際に持ち出して使う道具の記録。</p>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </section>
 
     <section class="about-connect" aria-labelledby="connect-title">
         <div class="connect-inner">
