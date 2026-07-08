@@ -652,6 +652,78 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ── Connect（SNS） ── */
+        .about-connect {
+            padding: 4.25rem 2rem;
+            background: var(--bg-color);
+            border-top: 1px solid var(--border-color);
+        }
+
+        .connect-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        .connect-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+            gap: 14px;
+        }
+
+        .connect-card {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+            padding: 1.15rem 1.2rem 1.25rem;
+            border: 1px solid var(--border-color);
+            border-radius: 14px;
+            background: var(--white);
+            text-decoration: none;
+            position: relative;
+            transition: transform .25s ease, box-shadow .25s ease;
+        }
+
+        .connect-card::after {
+            content: "↗";
+            position: absolute;
+            top: 1rem;
+            right: 1.1rem;
+            font-family: var(--secondary-font);
+            font-size: 0.85rem;
+            color: var(--text-lighter);
+            transition: color .25s ease, transform .25s ease;
+        }
+
+        .connect-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 10px 26px rgba(0,0,0,0.08);
+        }
+
+        .connect-card:hover::after {
+            color: var(--accent-color);
+            transform: translate(2px, -2px);
+        }
+
+        .connect-service {
+            font-family: var(--secondary-font);
+            font-size: 1.02rem;
+            font-weight: 600;
+            color: var(--text-color);
+        }
+
+        .connect-handle {
+            font-family: var(--secondary-font);
+            font-size: 0.8rem;
+            color: var(--accent-color);
+        }
+
+        .connect-desc {
+            font-family: var(--primary-font);
+            font-size: 0.78rem;
+            color: var(--text-light);
+            line-height: 1.7;
+        }
     </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -792,6 +864,47 @@
         </div>
     </section>
 
+    <section class="about-connect" aria-labelledby="connect-title">
+        <div class="connect-inner">
+            <div class="section-heading-row">
+                <div>
+                    <span class="section-kicker">Connect</span>
+                    <h2 class="section-title" id="connect-title">日々の投稿は、こちらで。</h2>
+                </div>
+                <div class="about-prose">
+                    ここまで読んでいただいたなら、たぶん気が合います。旅の断片や更新のお知らせは、それぞれの場所に流しています。
+                </div>
+            </div>
+            <div class="connect-grid">
+                <a class="connect-card" href="https://x.com/mongkok93" target="_blank" rel="noopener noreferrer" data-growth-label="about_connect_x">
+                    <span class="connect-service">X</span>
+                    <span class="connect-handle">@mongkok93</span>
+                    <span class="connect-desc">日々のつぶやきと更新のお知らせ</span>
+                </a>
+                <a class="connect-card" href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer" data-growth-label="about_connect_note">
+                    <span class="connect-service">note</span>
+                    <span class="connect-handle">tojimasaya</span>
+                    <span class="connect-desc">記事とエッセイの初出</span>
+                </a>
+                <a class="connect-card" href="https://instagram.com/tojimasaya" target="_blank" rel="noopener noreferrer" data-growth-label="about_connect_instagram">
+                    <span class="connect-service">Instagram</span>
+                    <span class="connect-handle">@tojimasaya</span>
+                    <span class="connect-desc">写真の近況</span>
+                </a>
+                <a class="connect-card" href="https://www.youtube.com/@TJ2" target="_blank" rel="noopener noreferrer" data-growth-label="about_connect_youtube">
+                    <span class="connect-service">YouTube</span>
+                    <span class="connect-handle">@TJ2</span>
+                    <span class="connect-desc">旅と空撮の動画</span>
+                </a>
+                <a class="connect-card" href="https://www.facebook.com/masaya.toji" target="_blank" rel="noopener noreferrer" data-growth-label="about_connect_facebook">
+                    <span class="connect-service">Facebook</span>
+                    <span class="connect-handle">masaya.toji</span>
+                    <span class="connect-desc">近況と交流</span>
+                </a>
+            </div>
+        </div>
+    </section>
+
     <!-- Footer -->
     <footer class="about-footer">
         <div class="about-footer-grid">
@@ -815,6 +928,8 @@
                     <li><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">note</a></li>
                     <li><a href="https://instagram.com/tojimasaya" target="_blank" rel="noopener noreferrer">Instagram</a></li>
                     <li><a href="https://x.com/mongkok93" target="_blank" rel="noopener noreferrer">X</a></li>
+                    <li><a href="https://www.youtube.com/@TJ2" target="_blank" rel="noopener noreferrer">YouTube</a></li>
+                    <li><a href="https://www.facebook.com/masaya.toji" target="_blank" rel="noopener noreferrer">Facebook</a></li>
                 </ul>
             </div>
         </div>
