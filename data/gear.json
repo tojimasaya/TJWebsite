@@ -501,6 +501,32 @@
           }
         },
         {
+          "id": "momax-1world-pocket-mini",
+          "name": "Momax 1-World Pocket Mini（UA37）",
+          "brand": "Momax",
+          "image": "/assets/images/gear/momax-1world-pocket-mini.jpg",
+          "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
+          "specs": [
+            "万国対応 変換アダプター",
+            "重量69g",
+            "55.5\u00d733\u00d750mm",
+            "100〜250V / 2500W Max",
+            "UK/BF爪で共用ソケットにしっかり固定",
+            "一軍昇格"
+          ],
+          "description": "小さくて軽い（わずか69g）万国対応の変換アダプター。上面のマルチソケットで受け、下面でUSA/日本・UK・EU・AUSのプラグを切り替えられる。いちばんの決め手は、空港やラウンジの共用電源の“ゆるゆる問題”対策。日本プラグはスカスカで落ちがちだが、UK（BF）の太い三本爪なら公共のマルチソケットにガッチリ食い込む。まずMomaxのUK爪で壁側の安定を確保し、その先に手持ちのUSB充電器を挿す——この発想の逆転で接続が一気に安定する。今回、かさばるYAZAWAに代わって一軍に昇格させた。",
+          "notice": {
+            "title": "受け口はUK（BF）非対応",
+            "body": "受け口（差込口）はUK（BF）プラグには対応していません。私は充電器を日本タイプで統一しているので実害はありませんが、挿す“自分の充電器側”のプラグ形状はご確認を。"
+          },
+          "comment": "",
+          "links": {
+            "一軍二軍入れ替え": "__NEW_ARTICLE_URL__"
+          }
+        },
+        {
           "id": "yazawa-hpm6ac3wh-travel-power-tap",
           "name": "YAZAWA 海外用マルチ変換タップ3個口 HPM6AC3WH",
           "brand": "YAZAWA",
@@ -512,11 +538,12 @@
             "A/C/O/BF/SE対応",
             "コード長1m"
           ],
-          "description": "海外旅行には欠かせない電源タップ。以前はTofu Maruを使っていたが、このコンパクトさと入手しやすさで最近はこちらを使っている。何台か買って友人にプレゼントするほどの一品で、これを持っていればUSBアダプタは日本プラグの小型タイプを選べるのも良い。絶対的におすすめだが、以前買ったときより値段が上がっている気もする。USBポート付きがあればと思う人も多いはずで、実際にそういうモデルもある。ただしUSB-Aのみなのでおすすめしにくく、少し嵩張っても手持ちの高出力小型USBチャージャーを組み合わせて使うほうをすすめたい。",
+          "description": "海外旅行には欠かせない電源タップ。以前はTofu Maruを使っていたが、このコンパクトさと入手しやすさで最近はこちらを使っている。何台か買って友人にプレゼントするほどの一品で、これを持っていればUSBアダプタは日本プラグの小型タイプを選べるのも良い。絶対的におすすめだが、以前買ったときより値段が上がっている気もする。USBポート付きがあればと思う人も多いはずで、実際にそういうモデルもある。ただしUSB-Aのみなのでおすすめしにくく、少し嵩張っても手持ちの高出力小型USBチャージャーを組み合わせて使うほうをすすめたい。なお最近は、もっと小さいMomaxの変換アダプターに一軍を譲り、これは複数口が効く長期旅行用の二軍に回しています。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n55dfd508febb\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">海外旅行の電源タップはYAZAWAの3個口が最適解かもしれない</a>",
           "links": {
             "レビュー": "https://note.com/tojimasaya/n/n55dfd508febb",
-            "amazon": "https://www.amazon.co.jp/dp/B0G4R16XFN?tag=ojunktion-22"
+            "amazon": "https://www.amazon.co.jp/dp/B0G4R16XFN?tag=ojunktion-22",
+            "一軍二軍入れ替え": "__NEW_ARTICLE_URL__"
           }
         },
         {
@@ -531,13 +558,15 @@
             "USB-C",
             "100W",
             "Apple Watch充電器付き",
-            "巻取りケーブル"
+            "巻取りケーブル",
+            "一軍昇格"
           ],
-          "description": "iPhoneとApple Watchを1本で同時に充電できるBaseusの巻取り式USB-Cケーブル。Baseusといえば巻取りケーブル、という安心感があり、何も考えずに使えるのがいい。CIO NovaWaveのようなワイヤレス3-in-1より充電対象は絞られるが、ケーブルでiPhoneやスマホを充電するほうが効率もよく、発熱も少ない。これを調達してから、CIOを一軍から外すかもしれないと思い始めている。",
+          "description": "iPhoneとApple Watchを1本で同時に充電できるBaseusの巻取り式USB-Cケーブル。Baseusといえば巻取りケーブル、という安心感があり、何も考えずに使えるのがいい。CIO NovaWaveのようなワイヤレス3-in-1より充電対象は絞られるが、ケーブルでiPhoneやスマホを充電するほうが効率もよく、発熱も少ない。そしてついに、CIOを二軍に下げ、これを一軍に昇格させました。マグネットでどんなバンドでも安定し、寝る前に挿しっぱなしで枕元にポンと置ける気楽さが決め手です。",
           "comment": "",
           "links": {
             "関連レビュー": "https://note.com/tojimasaya/n/ndb48daa36430",
-            "amazon": "https://amzn.to/4auHsCj"
+            "amazon": "https://amzn.to/4auHsCj",
+            "一軍二軍入れ替え": "__NEW_ARTICLE_URL__"
           }
         },
         {
@@ -570,12 +599,13 @@
             "MagSafe",
             "Apple Watch",
             "AirPods",
-            "一軍見直し中"
+            "二軍降格（Baseusと交代）"
           ],
-          "description": "iPhone、Apple Watch、AirPodsをまとめて充電できる3wayチャージャーで、発想としてはすごくいい。旅先で一晩置いておけば全部戻せる安心感は大きい。ただ、Apple Watchを置いた状態でiPhoneをMagSafeに載せようとすると、Watch側とのバランス取りが意外に難しい。少し崩れると全体が傾いてしまい、正直なところ使いにくさもある。Baseus 2-in-1 リトラクタブル USB-Cケーブルを導入してからは、有線充電の効率と扱いやすさのほうに気持ちが傾いていて、このCIOは一軍から外すかもしれない。",
+          "description": "iPhone、Apple Watch、AirPodsをまとめて充電できる3wayチャージャーで、発想としてはすごくいい。旅先で一晩置いておけば全部戻せる安心感は大きい。ただ、Apple Watchを置いた状態でiPhoneをMagSafeに載せようとすると、Watch側とのバランス取りが意外に難しい。少し崩れると全体が傾いてしまい、正直なところ使いにくさもある。Baseus 2-in-1 リトラクタブル USB-Cケーブルを導入してからは、有線充電の効率と扱いやすさのほうに気持ちが傾いていました。そしてついに、このCIOを一軍から二軍へ。多機能の誘惑より、シンプルで確実なほうを選んだかたちです。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
           "links": {
-            "レビュー": "https://note.com/tojimasaya/n/n7e6bcdb29165"
+            "レビュー": "https://note.com/tojimasaya/n/n7e6bcdb29165",
+            "一軍二軍入れ替え": "__NEW_ARTICLE_URL__"
           }
         },
         {
