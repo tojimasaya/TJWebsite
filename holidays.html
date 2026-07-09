@@ -50,12 +50,17 @@
         .cal-wrap { max-width: 980px; margin: 26px auto 30px; padding: 0 24px; }
 
         .cal-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
-        .cal-toggle { display: inline-flex; align-items: center; gap: 8px; font-family: var(--primary-font); font-size: 0.86rem; color: var(--text-color); border: 1px solid var(--border-color); border-radius: 999px; padding: 7px 14px; cursor: pointer; user-select: none; background: var(--bg-color); transition: opacity .2s, border-color .2s; }
+        .cal-toggle { display: inline-flex; align-items: center; gap: 9px; font-family: var(--primary-font); font-size: 0.88rem; color: var(--text-color); border: 1px solid var(--border-color); border-radius: 999px; padding: 7px 14px 7px 9px; cursor: pointer; user-select: none; background: var(--bg-color); transition: border-color .2s, background .2s; }
         .cal-toggle input { display: none; }
-        .cal-toggle .dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
-        .cal-toggle.off { opacity: 0.38; }
-        .cal-legend { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-light); margin: 6px 0 22px; line-height: 1.9; }
-        .cal-legend .ring { display: inline-block; width: 9px; height: 9px; border-radius: 50%; border: 2px solid #e09a2e; vertical-align: -1px; }
+        .cal-toggle .sw { position: relative; width: 34px; height: 20px; border-radius: 999px; background: var(--border-color); transition: background .25s; flex-shrink: 0; }
+        .cal-toggle .sw::after { content: ""; position: absolute; top: 2.5px; left: 3px; width: 15px; height: 15px; border-radius: 50%; background: #fff; box-shadow: 0 1px 3px rgba(0,0,0,0.3); transition: left .25s; }
+        .cal-toggle.on .sw { background: var(--sw-color); }
+        .cal-toggle.on .sw::after { left: 16px; }
+        .cal-toggle.off { color: var(--text-lighter, #999); }
+        .cal-toggle .bdg { margin-left: 2px; }
+        .cal-legend { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-light); margin: 6px 0 22px; line-height: 2.1; }
+        .bdg { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 4px; color: #fff; font-family: var(--primary-font); font-size: 10px; font-weight: 600; line-height: 1; vertical-align: -2px; }
+        .bdg.work { background: transparent !important; border: 1.5px solid; box-sizing: border-box; }
 
         .cal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
         .cal-month { border: 1px solid var(--border-color); border-radius: 14px; padding: 14px 14px 10px; background: var(--bg-color); }
@@ -64,17 +69,16 @@
         .cal-table th { font-family: var(--secondary-font); font-size: 0.62rem; font-weight: 500; color: var(--text-lighter, #999); padding: 2px 0 6px; letter-spacing: 0.05em; }
         .cal-table th.sun, .cal-table td.sun .d { color: #c05656; }
         .cal-table th.sat, .cal-table td.sat .d { color: #5674c0; }
-        .cal-table td { text-align: center; vertical-align: top; padding: 1px 0 5px; height: 40px; }
+        .cal-table td { text-align: center; vertical-align: top; padding: 1px 0 5px; height: 46px; }
         .cal-table .d { font-family: var(--secondary-font); font-size: 0.78rem; color: var(--text-color); line-height: 1.5; display: inline-block; min-width: 20px; border-radius: 6px; }
         .cal-table td.today .d { background: var(--accent-color); color: #fff; font-weight: 600; padding: 0 3px; }
-        .cal-dots { display: flex; justify-content: center; gap: 2.5px; margin-top: 2px; min-height: 8px; flex-wrap: wrap; }
-        .cal-dots i { width: 6.5px; height: 6.5px; border-radius: 50%; display: inline-block; }
-        .cal-dots i.work { background: transparent !important; border: 1.7px solid; box-sizing: border-box; width: 8px; height: 8px; }
+        .cal-dots { display: flex; justify-content: center; gap: 2px; margin-top: 2.5px; min-height: 15px; flex-wrap: wrap; }
+        .cal-dots .bdg { width: 14px; height: 14px; font-size: 9.5px; border-radius: 3.5px; }
+        .cal-dots .bdg.work { border-width: 1.4px; }
 
         .cal-month-list { margin: 10px 0 2px; padding: 8px 2px 0; border-top: 1px dashed var(--border-color); font-family: var(--primary-font); font-size: 0.72rem; line-height: 1.85; color: var(--text-light); }
         .cal-month-list b { color: var(--text-color); font-weight: 600; font-family: var(--secondary-font); font-size: 0.7rem; }
-        .cal-month-list .tag { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: -0.5px; }
-        .cal-month-list .tag.work { background: transparent !important; border: 1.6px solid; box-sizing: border-box; }
+        .cal-month-list .bdg { margin-right: 4px; width: 14px; height: 14px; font-size: 9.5px; }
 
         .cal-notes { max-width: 760px; margin: 44px auto 30px; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 1rem; line-height: 2.1; color: var(--text-color); }
         .cal-notes h2 { font-family: 'Noto Serif JP', serif; font-size: 1.28rem; font-weight: 600; margin: 2.4em 0 1em; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); }
@@ -119,7 +123,7 @@
 
         <div class="cal-wrap">
             <div class="cal-controls" id="cal-controls" aria-label="表示する地域"></div>
-            <p class="cal-legend">● 祝日・休日　<span class="ring"></span> 中国の振替出勤日（土日でも出勤・銀行や役所が動く日）　※タップ／ホバーで名称を表示。各月の下に一覧があります。</p>
+            <p class="cal-legend"><span class="bdg" style="background:#4a7fd4">日</span> 日本　<span class="bdg" style="background:#d64550">港</span> 香港　<span class="bdg" style="background:#3f9d63">台</span> 台湾　<span class="bdg" style="background:#e09a2e">中</span> 中国の祝日・休日　<span class="bdg work" style="border-color:#e09a2e; color:#e09a2e">中</span> ＝中国の振替出勤日（土日でも出勤・銀行や役所が動く日）。スイッチで地域の表示を切り替えられます。各月の下に名称一覧。</p>
             <div class="cal-grid" id="cal-grid"><p style="font-family: var(--primary-font); color: var(--text-lighter);">カレンダーを読み込み中…</p></div>
         </div>
 
@@ -163,17 +167,21 @@
         const data = await res.json();
         const YEAR = data.year;
         const regions = data.regions;
-        const order = ['hk', 'cn', 'tw', 'jp'];
+        const order = ['jp', 'hk', 'tw', 'cn'];
+        const CHAR = { jp: '日', hk: '港', tw: '台', cn: '中' };
         const active = { hk: true, cn: true, tw: true, jp: true };
 
-        // 地域トグル
+        // 地域トグル（スイッチ）
         order.forEach(function (key) {
           const r = regions[key];
           const label = document.createElement('label');
-          label.className = 'cal-toggle';
-          label.innerHTML = '<input type="checkbox" checked><span class="dot" style="background:' + r.color + '"></span>' + r.label;
+          label.className = 'cal-toggle on';
+          label.style.setProperty('--sw-color', r.color);
+          label.innerHTML = '<input type="checkbox" checked><span class="sw"></span>' + r.label +
+            ' <span class="bdg" style="background:' + r.color + '">' + CHAR[key] + '</span>';
           label.querySelector('input').addEventListener('change', function (e) {
             active[key] = e.target.checked;
+            label.classList.toggle('on', e.target.checked);
             label.classList.toggle('off', !e.target.checked);
             render();
             if (typeof gtag !== 'undefined') gtag('event', 'toggle_holiday_region', { region: key, on: e.target.checked });
@@ -244,7 +252,9 @@
               dots.className = 'cal-dots';
               entries.forEach(function (e) {
                 const i2 = document.createElement('i');
-                if (e.work) { i2.className = 'work'; i2.style.borderColor = e.color; }
+                i2.className = 'bdg' + (e.work ? ' work' : '');
+                i2.textContent = CHAR[e.key];
+                if (e.work) { i2.style.borderColor = e.color; i2.style.color = e.color; }
                 else { i2.style.background = e.color; }
                 dots.appendChild(i2);
                 monthEntries.push({ d: d, e: e });
@@ -269,7 +279,7 @@
                 const line = document.createElement('div');
                 let html = '<b>' + d + '日</b> ';
                 byDay[d].forEach(function (e, i) {
-                  html += (i ? '　' : '') + '<span class="tag' + (e.work ? ' work' : '') + '" style="' + (e.work ? 'border-color:' : 'background:') + e.color + '"></span>' + e.name;
+                  html += (i ? '　' : '') + '<span class="bdg' + (e.work ? ' work' : '') + '" style="' + (e.work ? 'border-color:' + e.color + ';color:' + e.color : 'background:' + e.color) + '">' + CHAR[e.key] + '</span>' + e.name;
                 });
                 line.innerHTML = html;
                 list.appendChild(line);
