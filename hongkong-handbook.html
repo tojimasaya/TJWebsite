@@ -84,7 +84,7 @@
         .hb-item-sub { display: block; font-family: var(--primary-font); font-size: 0.78rem; font-weight: 400; color: var(--text-light); margin-top: 3px; line-height: 1.7; }
         .hb-lead { font-family: var(--primary-font); font-size: 0.85rem; color: var(--text-light); margin: -0.3em 0 1.1em; line-height: 1.9; }
         .hb-guides { margin-top: 30px; }
-        .hb-guide-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; }
+        .hb-guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
         .hb-guide-card { display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 14px; overflow: hidden; text-decoration: none; background: var(--bg-color, #fff); transition: transform .25s ease, box-shadow .25s ease; }
         .hb-guide-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,0.10); }
         .hb-guide-thumb { display: block; aspect-ratio: 16/9; overflow: hidden; border-bottom: 1px solid var(--border-color); }
@@ -122,6 +122,7 @@
         <span class="pill">回郷証・中国入国</span>
         <span class="pill">銀行・送金</span>
         <span class="pill">SIM・電話番号</span>
+        <span class="pill">祝日カレンダー</span>
     </div>
 
     <div class="guide-notice"><div class="guide-notice-inner">ℹ️ 本ページは執筆時点での個人の体験記録です。制度・手数料・条件は変更されることがあります。実際の手続きの際は必ず公式情報をご確認ください。<br>💬 最新情報へアップデートしていくため、皆さまのコメントを募集しています。「この手順で成功した」「役に立った」というご報告も——いただけると私が喜びます。<a href="#comments" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">書き込みはこちら（ページ下部）→</a></div></div>
@@ -161,6 +162,18 @@
                         <span class="hb-guide-sub">随時更新 / Gearページの詳細まとめへ</span>
                         <span class="hb-guide-chips"><i>日本SIMの維持</i><i>ローミング</i><i>香港番号</i><i>プリペイドSIM</i></span>
                         <span class="hb-guide-cta">まとめを開く →</span>
+                    </span>
+                </a>
+                <a class="hb-guide-card" href="holidays.html">
+                    <span class="hb-guide-thumb">
+                        <img src="assets/images/handbook/holidays-calendar-card.svg" alt="香港・中国・台湾・日本の祝日を重ねたカレンダーのイメージ" loading="lazy" decoding="async">
+                    </span>
+                    <span class="hb-guide-body">
+                        <h2 class="hb-guide-kicker" id="hb-holidays">祝日・営業日</h2>
+                        <span class="hb-guide-title">香港・中国・台湾・日本 祝日カレンダー 2026</span>
+                        <span class="hb-guide-sub">4地域を重ねて表示 / 中国の振替出勤日も収録</span>
+                        <span class="hb-guide-chips"><i>春節のずれ</i><i>国慶節</i><i>銀行休業</i></span>
+                        <span class="hb-guide-cta">カレンダーを見る →</span>
                     </span>
                 </a>
             </div>

@@ -1,0 +1,296 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+      gtag('config', 'G-806426BQX2');
+    </script>
+
+    <title>香港・中国・台湾・日本 祝日カレンダー2026 — 重ねて見る4地域の休日 | Toji Masaya</title>
+    <meta name="description" content="香港・中国・台湾・日本の2026年の祝日・連休を1つのカレンダーに重ねて表示。中国の振替出勤日（調休）も収録。春節・国慶節のずれ、銀行休業や送金への影響など、行き来する人のための実務カレンダー。">
+    <meta name="author" content="Toji Masaya">
+
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="canonical" href="https://tojimasaya.com/holidays.html">
+    <meta property="og:title" content="香港・中国・台湾・日本 祝日カレンダー2026 — 重ねて見る4地域の休日">
+    <meta property="og:description" content="4地域の祝日を1つのカレンダーに重ねて表示。中国の振替出勤日も収録した、行き来する人のための実務カレンダー。">
+    <meta property="og:url" content="https://tojimasaya.com/holidays.html">
+    <meta property="og:type" content="article">
+    <meta property="og:site_name" content="Toji Masaya">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/hero/hongkong.jpg">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@mongkok93">
+    <meta name="twitter:title" content="香港・中国・台湾・日本 祝日カレンダー2026">
+    <meta name="twitter:image" content="https://tojimasaya.com/assets/images/hero/hongkong.jpg">
+
+    <style>
+        .guide-head { max-width: 980px; margin: 120px auto 0; padding: 0 24px; }
+        .guide-cat { font-family: var(--secondary-font); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-color); }
+        .guide-cat a { color: var(--accent-color); text-decoration: none; }
+        .guide-cat a:hover { text-decoration: underline; }
+        .guide-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3.6vw, 2.2rem); font-weight: 600; letter-spacing: 0.03em; line-height: 1.6; margin: 14px 0 10px; color: var(--text-color); }
+        .guide-sub { font-family: var(--primary-font); font-size: 0.95rem; color: var(--text-light); line-height: 2; margin: 0 0 18px; }
+        .guide-meta { display: flex; flex-wrap: wrap; gap: 8px; }
+        .guide-meta .pill { font-size: var(--text-xs); background: var(--hover-color); color: var(--text-color); padding: 5px 12px; border-radius: 999px; font-weight: 600; }
+        .guide-notice { max-width: 980px; margin: 22px auto 0; padding: 0 24px; }
+        .guide-notice-inner { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 14px; line-height: 1.8; background: var(--hover-color); }
+
+        .cal-wrap { max-width: 980px; margin: 26px auto 30px; padding: 0 24px; }
+
+        .cal-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .cal-toggle { display: inline-flex; align-items: center; gap: 8px; font-family: var(--primary-font); font-size: 0.86rem; color: var(--text-color); border: 1px solid var(--border-color); border-radius: 999px; padding: 7px 14px; cursor: pointer; user-select: none; background: var(--bg-color); transition: opacity .2s, border-color .2s; }
+        .cal-toggle input { display: none; }
+        .cal-toggle .dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+        .cal-toggle.off { opacity: 0.38; }
+        .cal-legend { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-light); margin: 6px 0 22px; line-height: 1.9; }
+        .cal-legend .ring { display: inline-block; width: 9px; height: 9px; border-radius: 50%; border: 2px solid #e09a2e; vertical-align: -1px; }
+
+        .cal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
+        .cal-month { border: 1px solid var(--border-color); border-radius: 14px; padding: 14px 14px 10px; background: var(--bg-color); }
+        .cal-month h3 { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 600; color: var(--text-color); margin: 0 0 8px; text-align: center; letter-spacing: 0.08em; }
+        .cal-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
+        .cal-table th { font-family: var(--secondary-font); font-size: 0.62rem; font-weight: 500; color: var(--text-lighter, #999); padding: 2px 0 6px; letter-spacing: 0.05em; }
+        .cal-table th.sun, .cal-table td.sun .d { color: #c05656; }
+        .cal-table th.sat, .cal-table td.sat .d { color: #5674c0; }
+        .cal-table td { text-align: center; vertical-align: top; padding: 1px 0 5px; height: 40px; }
+        .cal-table .d { font-family: var(--secondary-font); font-size: 0.78rem; color: var(--text-color); line-height: 1.5; display: inline-block; min-width: 20px; border-radius: 6px; }
+        .cal-table td.today .d { background: var(--accent-color); color: #fff; font-weight: 600; padding: 0 3px; }
+        .cal-dots { display: flex; justify-content: center; gap: 2.5px; margin-top: 2px; min-height: 8px; flex-wrap: wrap; }
+        .cal-dots i { width: 6.5px; height: 6.5px; border-radius: 50%; display: inline-block; }
+        .cal-dots i.work { background: transparent !important; border: 1.7px solid; box-sizing: border-box; width: 8px; height: 8px; }
+
+        .cal-month-list { margin: 10px 0 2px; padding: 8px 2px 0; border-top: 1px dashed var(--border-color); font-family: var(--primary-font); font-size: 0.72rem; line-height: 1.85; color: var(--text-light); }
+        .cal-month-list b { color: var(--text-color); font-weight: 600; font-family: var(--secondary-font); font-size: 0.7rem; }
+        .cal-month-list .tag { display: inline-block; width: 8px; height: 8px; border-radius: 50%; margin-right: 4px; vertical-align: -0.5px; }
+        .cal-month-list .tag.work { background: transparent !important; border: 1.6px solid; box-sizing: border-box; }
+
+        .cal-notes { max-width: 760px; margin: 44px auto 30px; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 1rem; line-height: 2.1; color: var(--text-color); }
+        .cal-notes h2 { font-family: 'Noto Serif JP', serif; font-size: 1.28rem; font-weight: 600; margin: 2.4em 0 1em; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); }
+        .cal-notes h2:first-child { margin-top: 0.4em; }
+        .cal-notes p { margin: 0 0 1.6em; }
+        .cal-notes a { color: var(--accent-color); }
+        .cal-src { max-width: 760px; margin: 0 auto 50px; padding: 14px 24px; font-family: var(--primary-font); font-size: 0.8rem; color: var(--text-light); line-height: 2; border-top: 1px dashed var(--border-color); }
+        .cal-src a { color: var(--accent-color); text-decoration: none; }
+        .cal-src a:hover { text-decoration: underline; }
+
+        .journal-nav-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0 auto 90px; padding: 0 20px; }
+        .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
+        .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+
+        @media (max-width: 900px) { .cal-grid { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 580px) { .cal-grid { grid-template-columns: 1fr; } .guide-head { margin-top: 96px; } }
+    </style>
+
+    <script type="application/ld+json">
+    {"@context": "https://schema.org", "@type": "Article", "headline": "香港・中国・台湾・日本 祝日カレンダー2026 — 重ねて見る4地域の休日", "description": "香港・中国・台湾・日本の2026年の祝日・連休を1つのカレンダーに重ねて表示。中国の振替出勤日（調休）も収録。", "image": "https://tojimasaya.com/assets/images/hero/hongkong.jpg", "author": {"@type": "Person", "name": "田路昌也 (Toji Masaya)", "url": "https://tojimasaya.com/about.html"}, "publisher": {"@type": "Person", "name": "田路昌也 (Toji Masaya)"}, "mainEntityOfPage": "https://tojimasaya.com/holidays.html", "inLanguage": "ja", "datePublished": "2026-07-07", "dateModified": "2026-07-07"}
+    </script>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
+    <script src="js/site-header.js"></script>
+
+    <main id="main-content">
+        <header class="guide-head">
+            <p class="guide-cat"><a href="hongkong-handbook.html">Hong Kong Handbook</a></p>
+            <h1 class="guide-title">香港・中国・台湾・日本<br>祝日カレンダー 2026</h1>
+            <p class="guide-sub">「あちらは連休、こちらは平日」を一目で。4地域の休みを重ねて見る、行き来する人のためのカレンダーです。中国の<strong>振替出勤日（調休）</strong>も収録しています。</p>
+            <div class="guide-meta">
+                <span class="pill">香港 17日</span>
+                <span class="pill">中国 7連休期間＋出勤6日</span>
+                <span class="pill">台湾 22日（補班なし）</span>
+                <span class="pill">日本 18日</span>
+            </div>
+        </header>
+
+        <div class="guide-notice"><div class="guide-notice-inner">ℹ️ 各政府の公式発表（2026年分）に基づいています。臨時の変更が出ることがあるので、重要な予定は必ず公式情報をご確認ください。<br>💬 「発表が変わった」「この日は実際こうだった」という情報を歓迎します。<a href="#comments" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">書き込みはこちら（ページ下部）→</a></div></div>
+
+        <div class="cal-wrap">
+            <div class="cal-controls" id="cal-controls" aria-label="表示する地域"></div>
+            <p class="cal-legend">● 祝日・休日　<span class="ring"></span> 中国の振替出勤日（土日でも出勤・銀行や役所が動く日）　※タップ／ホバーで名称を表示。各月の下に一覧があります。</p>
+            <div class="cal-grid" id="cal-grid"><p style="font-family: var(--primary-font); color: var(--text-lighter);">カレンダーを読み込み中…</p></div>
+        </div>
+
+        <section class="cal-notes">
+            <h2>2026年の読みどころ</h2>
+            <p><strong>春節のずれ（2月）。</strong>中国は2月15日〜23日の9連休（前後の土曜2/14・2/28が振替出勤）、台湾は2月14日〜22日の実質9連休。一方、香港の旧正月休みは初一〜初三の3日だけで、日本は完全に平日です。中華圏に仕事を持つ人にとって、1年でいちばん「時差」が大きい週になります。</p>
+            <p><strong>4月の交差点。</strong>2026年は清明節（4月5日）がイースターと重なる珍しい年で、香港はグッドフライデーから振替・追加休日が連鎖して<strong>4月3日〜7日が休み（土日を含め実質5連休）</strong>になります。中国は4月4日〜6日、台湾は4月3日〜6日。この週は三地が同時に止まります。</p>
+            <p><strong>9月下旬〜10月上旬は「交互に止まる3週間」。</strong>日本は9月19日〜23日のシルバーウィーク5連休（22日が国民の休日になる年です）。その直後に中国と台湾の中秋（9月25日〜）、台湾は教師節で9月28日まで、そして中国の国慶節7連休（10月1日〜7日）、台湾の双十節（10月9日〜11日）、香港も9月26日と10月1日が休み。<strong>越境送金や物流はこの期間、どこかが常に止まっている</strong>と考えておくのが安全です。</p>
+            <p><strong>中国の振替出勤日に注意。</strong>1月4日（日）・2月14日（土）・2月28日（土）・5月9日（土）・9月20日（日）・10月10日（土）は、中国では<strong>土日でも平日扱い</strong>です。銀行や役所は動き、深圳の街も平日の顔になります。逆に日本・香港側は休みなので、「あちらだけ動いている日」として使えます。</p>
+            <p><strong>12月。</strong>香港と台湾は12月25日（＋香港は26日も）が休みですが、中国は平日、日本も平日です。年末の送金・決済は12月最終週の営業日カレンダーを地域ごとに確認してください。</p>
+
+            <h2>銀行・送金の実務メモ</h2>
+            <p>祝日は銀行窓口と銀行間決済が止まります。香港のFPSやPayMeは祝日でも動きますが、<a href="hk-hsbc-payment-connect.html">Payment Connect</a>のような越境送金は相手側（中国）の営業日にも左右されます。中国の連休前は着金を急ぐ送金を早めに、連休中はレート変動にも注意。詳しくは<a href="hongkong-handbook.html">香港ハンドブック</a>の銀行・送金の各記事へ。</p>
+
+            <h2>更新について</h2>
+            <p>各地域の翌年分は発表時期が違います：香港は前年5月ごろ（政府官報）、台湾は前年6月ごろ（人事行政総処）、日本は前年2月（官報の暦要項）、そして中国だけが<strong>前年11月上旬の国務院発表待ち</strong>です。2027年分は発表され次第このページに追記します。</p>
+        </section>
+
+        <div class="cal-src">
+            出典：<a href="https://www.gov.hk/tc/about/abouthk/holiday/2026.htm" target="_blank" rel="noopener noreferrer">香港政府（2026年公眾假期）</a> ・ <a href="https://www.gov.cn/zhengce/content/202511/content_7047090.htm" target="_blank" rel="noopener noreferrer">中国国務院弁公庁（2026年節仮日安排の通知）</a> ・ <a href="https://www.dgpa.gov.tw/information?uid=41&pid=12573" target="_blank" rel="noopener noreferrer">台湾行政院人事行政総処（115年辦公日曆表）</a> ・ <a href="https://www8.cao.go.jp/chosei/shukujitsu/gaiyou.html" target="_blank" rel="noopener noreferrer">内閣府（国民の祝日）</a>
+        </div>
+
+        <div id="comments-slot"></div>
+
+        <div class="journal-nav-links">
+            <a href="hongkong-handbook.html" class="primary">香港ハンドブックへ</a>
+            <a href="gear-sim.html">SIMまとめ</a>
+            <a href="/">Home</a>
+        </div>
+
+        <footer class="footer" role="contentinfo"></footer>
+    </main>
+
+    <script>
+    (async function () {
+      const grid = document.getElementById('cal-grid');
+      const controls = document.getElementById('cal-controls');
+      try {
+        const res = await fetch('data/holidays-2026.json');
+        if (!res.ok) throw new Error('load failed');
+        const data = await res.json();
+        const YEAR = data.year;
+        const regions = data.regions;
+        const order = ['hk', 'cn', 'tw', 'jp'];
+        const active = { hk: true, cn: true, tw: true, jp: true };
+
+        // 地域トグル
+        order.forEach(function (key) {
+          const r = regions[key];
+          const label = document.createElement('label');
+          label.className = 'cal-toggle';
+          label.innerHTML = '<input type="checkbox" checked><span class="dot" style="background:' + r.color + '"></span>' + r.label;
+          label.querySelector('input').addEventListener('change', function (e) {
+            active[key] = e.target.checked;
+            label.classList.toggle('off', !e.target.checked);
+            render();
+            if (typeof gtag !== 'undefined') gtag('event', 'toggle_holiday_region', { region: key, on: e.target.checked });
+          });
+          controls.appendChild(label);
+        });
+
+        function pad(n) { return n < 10 ? '0' + n : '' + n; }
+        const MONTH_NAMES = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
+        const DOW = ['日','月','火','水','木','金','土'];
+        const now = new Date();
+        const todayKey = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
+
+        function entriesFor(dateKey) {
+          const out = [];
+          order.forEach(function (key) {
+            if (!active[key]) return;
+            const r = regions[key];
+            if (r.days[dateKey]) out.push({ key: key, color: r.color, label: r.label, name: r.days[dateKey], work: false });
+            if (r.workdays && r.workdays[dateKey]) out.push({ key: key, color: r.color, label: r.label, name: r.workdays[dateKey], work: true });
+          });
+          return out;
+        }
+
+        function render() {
+          const frag = document.createDocumentFragment();
+          for (let m = 0; m < 12; m++) {
+            const card = document.createElement('div');
+            card.className = 'cal-month';
+            const h3 = document.createElement('h3');
+            h3.textContent = YEAR + '年 ' + MONTH_NAMES[m];
+            card.appendChild(h3);
+
+            const table = document.createElement('table');
+            table.className = 'cal-table';
+            const thead = document.createElement('thead');
+            const hr = document.createElement('tr');
+            DOW.forEach(function (d, i) {
+              const th = document.createElement('th');
+              th.textContent = d;
+              if (i === 0) th.className = 'sun';
+              if (i === 6) th.className = 'sat';
+              hr.appendChild(th);
+            });
+            thead.appendChild(hr);
+            table.appendChild(thead);
+
+            const tbody = document.createElement('tbody');
+            const first = new Date(YEAR, m, 1).getDay();
+            const daysInMonth = new Date(YEAR, m + 1, 0).getDate();
+            let tr = document.createElement('tr');
+            for (let i = 0; i < first; i++) tr.appendChild(document.createElement('td'));
+            const monthEntries = [];
+            for (let d = 1; d <= daysInMonth; d++) {
+              const dow = (first + d - 1) % 7;
+              if (dow === 0 && d !== 1) { tbody.appendChild(tr); tr = document.createElement('tr'); }
+              const td = document.createElement('td');
+              if (dow === 0) td.className = 'sun';
+              if (dow === 6) td.className = 'sat';
+              const key = YEAR + '-' + pad(m + 1) + '-' + pad(d);
+              if (key === todayKey) td.classList.add('today');
+              const span = document.createElement('span');
+              span.className = 'd';
+              span.textContent = d;
+              td.appendChild(span);
+              const entries = entriesFor(key);
+              const dots = document.createElement('span');
+              dots.className = 'cal-dots';
+              entries.forEach(function (e) {
+                const i2 = document.createElement('i');
+                if (e.work) { i2.className = 'work'; i2.style.borderColor = e.color; }
+                else { i2.style.background = e.color; }
+                dots.appendChild(i2);
+                monthEntries.push({ d: d, e: e });
+              });
+              if (entries.length) td.title = d + '日: ' + entries.map(function (e) { return e.label + '＝' + e.name; }).join(' / ');
+              td.appendChild(dots);
+              tr.appendChild(td);
+            }
+            tbody.appendChild(tr);
+            table.appendChild(tbody);
+            card.appendChild(table);
+
+            if (monthEntries.length) {
+              const list = document.createElement('div');
+              list.className = 'cal-month-list';
+              // 日付順にまとめる
+              const byDay = {};
+              monthEntries.forEach(function (me) {
+                (byDay[me.d] = byDay[me.d] || []).push(me.e);
+              });
+              Object.keys(byDay).map(Number).sort(function (a, b) { return a - b; }).forEach(function (d) {
+                const line = document.createElement('div');
+                let html = '<b>' + d + '日</b> ';
+                byDay[d].forEach(function (e, i) {
+                  html += (i ? '　' : '') + '<span class="tag' + (e.work ? ' work' : '') + '" style="' + (e.work ? 'border-color:' : 'background:') + e.color + '"></span>' + e.name;
+                });
+                line.innerHTML = html;
+                list.appendChild(line);
+              });
+              card.appendChild(list);
+            }
+            frag.appendChild(card);
+          }
+          grid.replaceChildren(frag);
+        }
+
+        render();
+      } catch (e) {
+        grid.innerHTML = '<p style="font-family: var(--primary-font); color: var(--text-lighter);">カレンダーを読み込めませんでした。時間をおいて再度お試しください。</p>';
+      }
+    })();
+    </script>
+
+    <script src="js/image-fallback.js"></script>
+    <script src="js/comments.js" defer></script>
+    <script src="/assets/js/ga4-tracking.js" defer></script>
+    <script src="/growth.js" defer></script>
+</body>
+</html>
