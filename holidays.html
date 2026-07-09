@@ -126,8 +126,9 @@
         <div class="guide-notice"><div class="guide-notice-inner">ℹ️ 各政府の公式発表に基づいています（2027年の中国のみ法定基準日・11月発表待ち）。臨時の変更が出ることがあるので、重要な予定は必ず公式情報をご確認ください。<br>💬 「発表が変わった」「この日は実際こうだった」という情報を歓迎します。<a href="#comments" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">書き込みはこちら（ページ下部）→</a></div></div>
 
         <div class="cal-wrap">
-            <div class="cal-years" id="cal-years" role="tablist" aria-label="年の切り替え">
-                <button class="cal-year-btn active" data-year="2026" role="tab">2026年</button>
+            <div class="cal-years" id="cal-years" role="tablist" aria-label="表示範囲の切り替え">
+                <button class="cal-year-btn active" data-year="roll" role="tab">直近12ヶ月</button>
+                <button class="cal-year-btn" data-year="2026" role="tab">2026年</button>
                 <button class="cal-year-btn" data-year="2027" role="tab">2027年</button>
             </div>
             <div class="cal-pending" id="cn-pending" hidden>⚠️ 中国の2027年は<strong>法定祝日の基準日のみ</strong>表示しています。連休の並び・振替出勤日は、例年11月上旬の国務院発表後に反映します。</div>
@@ -206,8 +207,9 @@
       };
       const active = { hk: true, cn: true, tw: true, jp: true, us: true };
       const cache = {};
-      let YEAR = 2026;
-      let regions = null;
+      const missing = {};
+      let MODE = 'roll';
+      let months = [];
 
       // 地域トグル（スイッチ）
       order.forEach(function (key) {
@@ -227,45 +229,83 @@
         controls.appendChild(label);
       });
 
-      // 年タブ
       yearsBox.addEventListener('click', function (e) {
         const btn = e.target.closest('.cal-year-btn');
         if (!btn) return;
-        const y = Number(btn.dataset.year);
-        if (y === YEAR) return;
-        loadYear(y).catch(showError);
-        if (typeof gtag !== 'undefined') gtag('event', 'switch_holiday_year', { year: y });
+        const mode = btn.dataset.year === 'roll' ? 'roll' : Number(btn.dataset.year);
+        if (mode === MODE) return;
+        setMode(mode).catch(showError);
+        if (typeof gtag !== 'undefined') gtag('event', 'switch_holiday_year', { year: String(mode) });
       });
 
       function pad(n) { return n < 10 ? '0' + n : '' + n; }
-      const MONTH_NAMES = ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月'];
       const DOW = ['日','月','火','水','木','金','土'];
       const now = new Date();
       const todayKey = now.getFullYear() + '-' + pad(now.getMonth() + 1) + '-' + pad(now.getDate());
 
-      async function loadYear(y) {
-        if (!cache[y]) {
+      function monthsFor(mode) {
+        if (mode === 'roll') {
+          const out = [];
+          let y = now.getFullYear(), m = now.getMonth();
+          for (let i = 0; i < 12; i++) {
+            out.push({ y: y, m: m });
+            m++; if (m > 11) { m = 0; y++; }
+          }
+          return out;
+        }
+        const out = [];
+        for (let m = 0; m < 12; m++) out.push({ y: mode, m: m });
+        return out;
+      }
+
+      async function ensureYear(y) {
+        if (cache[y] || missing[y]) return;
+        try {
           const res = await fetch('data/holidays-' + y + '.json');
           if (!res.ok) throw new Error('load failed');
           cache[y] = await res.json();
+        } catch (e) {
+          missing[y] = true;
         }
-        YEAR = y;
-        regions = cache[y].regions;
-        if (pillsBox) pillsBox.innerHTML = (PILLS[y] || []).map(function (t) { return '<span class="pill">' + t + '</span>'; }).join('');
-        if (cnPending) cnPending.hidden = (y !== 2027);
-        if (notes26) notes26.hidden = (y !== 2026);
-        if (notes27) notes27.hidden = (y !== 2027);
+      }
+
+      async function setMode(mode) {
+        MODE = mode;
+        months = monthsFor(mode);
+        const years = [...new Set(months.map(function (x) { return x.y; }))];
+        for (const y of years) await ensureYear(y);
+        if (mode !== 'roll' && !cache[mode]) { showError(); return; }
+
+        const has27 = months.some(function (x) { return x.y === 2027; });
+        if (pillsBox) {
+          if (mode === 'roll') {
+            const f = months[0], l = months[months.length - 1];
+            const pills = ['表示: ' + f.y + '年' + (f.m + 1) + '月 〜 ' + l.y + '年' + (l.m + 1) + '月'];
+            if (has27) pills.push('中国の2027年分は法定日のみ（11月発表待ち）');
+            pills.push('米国市場＝NYSE/NASDAQ休場日');
+            pillsBox.innerHTML = pills.map(function (t) { return '<span class="pill">' + t + '</span>'; }).join('');
+          } else {
+            pillsBox.innerHTML = (PILLS[mode] || []).map(function (t) { return '<span class="pill">' + t + '</span>'; }).join('');
+          }
+        }
+        if (cnPending) cnPending.hidden = !has27;
+        if (notes26) notes26.hidden = !(mode === 2026 || mode === 'roll');
+        if (notes27) notes27.hidden = !(mode === 2027 || mode === 'roll');
         yearsBox.querySelectorAll('.cal-year-btn').forEach(function (b) {
-          b.classList.toggle('active', Number(b.dataset.year) === y);
+          const bMode = b.dataset.year === 'roll' ? 'roll' : Number(b.dataset.year);
+          b.classList.toggle('active', bMode === MODE);
         });
         render();
       }
 
-      function entriesFor(dateKey) {
+      function entriesFor(y, dateKey) {
+        const data = cache[y];
+        if (!data) return [];
         const out = [];
         order.forEach(function (key) {
           if (!active[key]) return;
-          const r = regions[key];
+          const r = data.regions[key];
+          if (!r) return;
           if (r.days[dateKey]) out.push({ key: key, color: META[key].color, label: META[key].label, name: r.days[dateKey], work: false });
           if (r.workdays && r.workdays[dateKey]) out.push({ key: key, color: META[key].color, label: META[key].label, name: r.workdays[dateKey], work: true });
         });
@@ -274,11 +314,12 @@
 
       function render() {
         const frag = document.createDocumentFragment();
-        for (let m = 0; m < 12; m++) {
+        months.forEach(function (mm) {
+          const Y = mm.y, m = mm.m;
           const card = document.createElement('div');
           card.className = 'cal-month';
           const h3 = document.createElement('h3');
-          h3.textContent = YEAR + '年 ' + MONTH_NAMES[m];
+          h3.textContent = Y + '年 ' + (m + 1) + '月';
           card.appendChild(h3);
 
           const table = document.createElement('table');
@@ -296,8 +337,8 @@
           table.appendChild(thead);
 
           const tbody = document.createElement('tbody');
-          const first = new Date(YEAR, m, 1).getDay();
-          const daysInMonth = new Date(YEAR, m + 1, 0).getDate();
+          const first = new Date(Y, m, 1).getDay();
+          const daysInMonth = new Date(Y, m + 1, 0).getDate();
           let tr = document.createElement('tr');
           for (let i = 0; i < first; i++) tr.appendChild(document.createElement('td'));
           const monthEntries = [];
@@ -307,13 +348,13 @@
             const td = document.createElement('td');
             if (dow === 0) td.className = 'sun';
             if (dow === 6) td.className = 'sat';
-            const key = YEAR + '-' + pad(m + 1) + '-' + pad(d);
+            const key = Y + '-' + pad(m + 1) + '-' + pad(d);
             if (key === todayKey) td.classList.add('today');
             const span = document.createElement('span');
             span.className = 'd';
             span.textContent = d;
             td.appendChild(span);
-            const entries = entriesFor(key);
+            const entries = entriesFor(Y, key);
             const dots = document.createElement('span');
             dots.className = 'cal-dots';
             entries.forEach(function (e) {
@@ -352,7 +393,7 @@
             card.appendChild(list);
           }
           frag.appendChild(card);
-        }
+        });
         grid.replaceChildren(frag);
       }
 
@@ -360,9 +401,7 @@
         grid.innerHTML = '<p style="font-family: var(--primary-font); color: var(--text-lighter);">カレンダーを読み込めませんでした。時間をおいて再度お試しください。</p>';
       }
 
-      // 今が2027年以降ならデフォルトを2027に
-      const startYear = (now.getFullYear() >= 2027) ? 2027 : 2026;
-      loadYear(startYear).catch(showError);
+      setMode('roll').catch(showError);
     })();
     </script>
 
