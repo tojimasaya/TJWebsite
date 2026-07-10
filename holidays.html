@@ -63,7 +63,7 @@
         .cal-toggle.off { color: var(--text-lighter, #999); }
         .cal-toggle .bdg { margin-left: 2px; }
         .cal-legend { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-light); margin: 6px 0 22px; line-height: 2.1; }
-        .bdg { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 4px; color: #fff; font-family: var(--primary-font); font-size: 10px; font-weight: 600; line-height: 1; vertical-align: -2px; }
+        .bdg { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 4px; color: #fff; font-family: var(--primary-font); font-size: 10px; font-weight: 600; line-height: 1; vertical-align: 0.05em; }
         .bdg.work { background: transparent !important; border: 1.5px solid; box-sizing: border-box; }
 
         .cal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
@@ -80,9 +80,11 @@
         .cal-dots .bdg { width: 14px; height: 14px; font-size: 9.5px; border-radius: 3.5px; }
         .cal-dots .bdg.work { border-width: 1.4px; }
 
-        .cal-month-list { margin: 10px 0 2px; padding: 8px 2px 0; border-top: 1px dashed var(--border-color); font-family: var(--primary-font); font-size: 0.72rem; line-height: 1.85; color: var(--text-light); }
-        .cal-month-list b { color: var(--text-color); font-weight: 600; font-family: var(--secondary-font); font-size: 0.7rem; }
-        .cal-month-list .bdg { margin-right: 4px; width: 14px; height: 14px; font-size: 9.5px; }
+        .cal-month-list { margin: 10px 0 2px; padding: 8px 2px 0; border-top: 1px dashed var(--border-color); font-family: var(--primary-font); font-size: 0.72rem; line-height: 1.7; color: var(--text-light); }
+        .cal-month-list > div { display: flex; align-items: center; flex-wrap: wrap; column-gap: 8px; row-gap: 1px; padding: 1.5px 0; }
+        .cal-month-list b { color: var(--text-color); font-weight: 600; font-family: var(--secondary-font); font-size: 0.7rem; flex-shrink: 0; min-width: 2.6em; }
+        .cal-month-list .ent { display: inline-flex; align-items: center; gap: 4px; }
+        .cal-month-list .bdg { width: 14px; height: 14px; font-size: 9.5px; }
 
         .cal-notes { max-width: 760px; margin: 44px auto 30px; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 1rem; line-height: 2.1; color: var(--text-color); }
         .cal-notes h2 { font-family: 'Noto Serif JP', serif; font-size: 1.28rem; font-weight: 600; margin: 2.4em 0 1em; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); }
@@ -384,8 +386,8 @@
             Object.keys(byDay).map(Number).sort(function (a, b) { return a - b; }).forEach(function (d) {
               const line = document.createElement('div');
               let html = '<b>' + d + '日</b> ';
-              byDay[d].forEach(function (e, i) {
-                html += (i ? '　' : '') + '<span class="bdg' + (e.work ? ' work' : '') + '" style="' + (e.work ? 'border-color:' + e.color + ';color:' + e.color : 'background:' + e.color) + '">' + CHAR[e.key] + '</span>' + e.name;
+              byDay[d].forEach(function (e) {
+                html += '<span class="ent"><span class="bdg' + (e.work ? ' work' : '') + '" style="' + (e.work ? 'border-color:' + e.color + ';color:' + e.color : 'background:' + e.color) + '">' + CHAR[e.key] + '</span><span>' + e.name + '</span></span>';
               });
               line.innerHTML = html;
               list.appendChild(line);
