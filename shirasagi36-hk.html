@@ -329,6 +329,7 @@
             </div>
 
             <!-- Gallery description -->
+            <p class="text-xs text-gray-400 mb-3">※ 圖集依當下季節排序。</p>
             <p id="gallery-description" class="text-sm text-gray-500 leading-relaxed mb-6 max-w-2xl font-serif-zh">
                 透過36張照片，為您展現姬路城四季更迭的美麗面貌。「白鷺三十六景」是一個會不斷進化的線上藝廊。未來我也會持續拍攝，當捕捉到更觸動人心的瞬間時，便會隨著時間慢慢替換、更新這裡的作品。邀請您細細品味這座白亞名城隨季節與時間變換的迷人姿態。
             </p>
@@ -625,12 +626,25 @@
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
             const isAllView = currentFilter === 'all';
-            let start = 1, end = 36;
-            if (!isAllView && seasonRanges[currentFilter]) {
-                [start, end] = seasonRanges[currentFilter];
+            // 「すべて」表示は、いまの季節から順に(例: 夏→秋→冬→春)。特別は常に最後
+            let ids = [];
+            if (isAllView) {
+                const m = new Date().getMonth() + 1;
+                const cur = (m >= 3 && m <= 5) ? 'spring' : (m >= 6 && m <= 8) ? 'summer' : (m >= 9 && m <= 11) ? 'autumn' : 'winter';
+                const cycle = ['spring', 'summer', 'autumn', 'winter'];
+                const startIdx = cycle.indexOf(cur);
+                for (let k = 0; k < 4; k++) {
+                    const [s, e] = seasonRanges[cycle[(startIdx + k) % 4]];
+                    for (let i = s; i <= e; i++) ids.push(i);
+                }
+                const [ss, se] = seasonRanges['special'];
+                for (let i = ss; i <= se; i++) ids.push(i);
+            } else {
+                const [s, e] = seasonRanges[currentFilter] || [1, 36];
+                for (let i = s; i <= e; i++) ids.push(i);
             }
 
-            for (let i = start; i <= end; i++) {
+            for (const i of ids) {
                 const photo = photosData[i];
                 if (!photo) continue; // Skip unfinished — no empty placeholders
 

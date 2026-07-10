@@ -367,6 +367,7 @@
             </div>
 
             <!-- ギャラリー説明テキスト -->
+            <p class="text-xs text-gray-400 mb-3" style="font-family: 'Noto Serif JP', serif;">※ 一覧は、いまの季節から順に並べています。</p>
             <p id="gallery-description" class="text-sm text-gray-500 leading-relaxed mb-6 max-w-2xl"
                style="font-family: 'Noto Serif JP', serif;">
                 四季折々の姫路城が魅せる表情を、36枚の写真に収めました。この「白鷺三十六景」は、常に進化し続けるギャラリーです。これからも城に通い続け、より心に響く一枚が撮れた時には、時間とともに少しずつ写真を差し替えてアップデートしていく予定です。季節や時間とともに移り変わる白亜の名城の姿を、どうぞごゆっくりお楽しみください。
@@ -960,12 +961,25 @@
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
             const isAllView = currentFilter === 'all';
-            let start = 1, end = 36;
-            if (!isAllView && seasonRanges[currentFilter]) {
-                [start, end] = seasonRanges[currentFilter];
+            // 「すべて」表示は、いまの季節から順に(例: 夏→秋→冬→春)。特別は常に最後
+            let ids = [];
+            if (isAllView) {
+                const m = new Date().getMonth() + 1;
+                const cur = (m >= 3 && m <= 5) ? 'spring' : (m >= 6 && m <= 8) ? 'summer' : (m >= 9 && m <= 11) ? 'autumn' : 'winter';
+                const cycle = ['spring', 'summer', 'autumn', 'winter'];
+                const startIdx = cycle.indexOf(cur);
+                for (let k = 0; k < 4; k++) {
+                    const [s, e] = seasonRanges[cycle[(startIdx + k) % 4]];
+                    for (let i = s; i <= e; i++) ids.push(i);
+                }
+                const [ss, se] = seasonRanges['special'];
+                for (let i = ss; i <= se; i++) ids.push(i);
+            } else {
+                const [s, e] = seasonRanges[currentFilter] || [1, 36];
+                for (let i = s; i <= e; i++) ids.push(i);
             }
 
-            for (let i = start; i <= end; i++) {
+            for (const i of ids) {
                 const photo = photosData[i];
                 if (!photo) continue; // Skip unfinished — no empty placeholders
 
