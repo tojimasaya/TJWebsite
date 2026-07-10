@@ -42,7 +42,8 @@ document.addEventListener('DOMContentLoaded', () => {
                         <span class="icon">🏯</span> 白鷺三十六景
                     </a>
                 </li>
-                <li><a href="hongkong.html" class="nav-link ${page.includes('hongkong') ? 'active' : ''}">香港</a></li>
+                <li><a href="hongkong.html" class="nav-link ${page.includes('hongkong') && !page.includes('handbook') ? 'active' : ''}">香港</a></li>
+                <li><a href="hongkong-handbook.html" class="nav-link ${page === 'hongkong-handbook.html' || page.startsWith('hk-') || page.startsWith('cn-') || page === 'holidays.html' ? 'active' : ''}">ハンドブック</a></li>
                 <li><a href="trips.html" class="nav-link ${page === 'trips.html' ? 'active' : ''}">旅</a></li>
                 <li><a href="gallery.html" class="nav-link ${page === 'gallery.html' ? 'active' : ''}">Gallery</a></li>
                 <li><a href="writings.html" class="nav-link ${page === 'writings.html' ? 'active' : ''}">Writings</a></li>
