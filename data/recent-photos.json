@@ -1,5 +1,35 @@
 [
   {
+    "slug": "sincere-podium-banana-sim",
+    "label": "今日の断章",
+    "title": "台風が連れてきた友人と、先達廣場のSIM棚",
+    "place": "香港・旺角 先達廣場",
+    "date": "2026年7月11日",
+    "body": "台風の影響で、Metroさんがなぜか沖縄から香港へ飛んできた。せっかくなので旺角の先達廣場へ、中古スマホと最新SIM価格の定点観測に繰り出す。私の定番は、正面から入って突き当たり右手の903特賣店。棚ではBanana Travel SIMの年卡が相変わらずの人気で、52の国と地域で365日使えるカードが10GBならHK$118、30GBでもHK$218。日本・韓国・台湾の5G無制限カードもずらりと並んでいて、この棚の前に立つたびに、香港では通信の自由が棚売りの日用品なのだと実感する。中古スマホの相場を眺め、SIMを物色し、友人と電脳街を歩く——台風のおかげの、良い土曜日だった。",
+    "image": "assets/images/photo-notes/sincere-podium-banana-sim.jpg",
+    "imageWebp": "assets/images/photo-notes/sincere-podium-banana-sim.webp",
+    "alt": "Banana Travel SIMの年間カード3種（10GB・20GB・30GB）の価格札が並ぶ店頭",
+    "caption": "Banana Travel SIM / Sincere Podium, Mong Kok",
+    "link": "gear-sim.html",
+    "linkLabel": "SIMの使い分けは「SIM / Connectivity まとめ」へ →",
+    "sideFrames": [
+      {
+        "title": "旅行SIMの棚",
+        "caption": "Travel SIM Rack",
+        "image": "assets/images/photo-notes/sincere-podium-sim-rack.jpg",
+        "imageWebp": "assets/images/photo-notes/sincere-podium-sim-rack.webp",
+        "alt": "日本・韓国・台湾・タイなど各国の旅行SIMがぎっしり並ぶ棚"
+      },
+      {
+        "title": "903特賣店の店頭",
+        "caption": "Shop 903 / Sincere Podium",
+        "image": "assets/images/photo-notes/sincere-podium-903-shop.jpg",
+        "imageWebp": "assets/images/photo-notes/sincere-podium-903-shop.webp",
+        "alt": "先達廣場の903特賣店。最新スマホのスペック表と支払い方法のステッカーが並ぶ店頭"
+      }
+    ]
+  },
+  {
     "slug": "shenzhen-police-drone-and-dji-flip",
     "label": "今日の断章",
     "title": "公安のドローンと、店内から飛ぶFlip",
