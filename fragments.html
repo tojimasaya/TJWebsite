@@ -47,7 +47,10 @@
         .frag figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); display: block; }
         .frag figcaption { font-family: var(--primary-font); font-size: 0.78rem; color: var(--text-light); text-align: center; margin-top: 8px; }
         .frag-sides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; margin-top: 10px; }
+        .frag-sides button { padding: 0; border: 0; background: none; cursor: pointer; border-radius: 8px; overflow: hidden; transition: transform .2s ease, box-shadow .2s ease; }
+        .frag-sides button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
         .frag-sides img { width: 100%; height: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color); display: block; }
+        .frag-hint { font-family: var(--primary-font); font-size: 0.72rem; color: var(--text-lighter, #999); text-align: center; margin: 6px 0 0; }
         .frag-meta { font-family: var(--primary-font); font-size: 0.78rem; color: var(--text-lighter, #999); margin: 18px 0 6px; letter-spacing: 0.04em; }
         .frag-meta a { color: inherit; text-decoration: none; }
         .frag-meta a:hover { color: var(--accent-color); }
@@ -105,51 +108,73 @@
           art.className = 'frag';
           if (p.slug) art.id = p.slug;
 
+          const sides = (p.sideFrames || []).filter(function (sf) { return sf && sf.image; });
           if (p.image) {
+            const media = [{ image: p.image, imageWebp: p.imageWebp, alt: p.alt || p.title || '', caption: p.caption || '' }]
+              .concat(sides.map(function (sf) {
+                return { image: sf.image, imageWebp: sf.imageWebp, alt: sf.alt || sf.title || '', caption: sf.caption || sf.title || '' };
+              }));
+            let active = 0;
+
             const fig = document.createElement('figure');
             const pic = document.createElement('picture');
-            if (p.imageWebp) {
-              const src = document.createElement('source');
-              src.srcset = p.imageWebp;
-              src.type = 'image/webp';
-              pic.appendChild(src);
-            }
+            const src = document.createElement('source');
+            src.type = 'image/webp';
+            pic.appendChild(src);
             const img = document.createElement('img');
-            img.src = p.image;
-            img.alt = p.alt || p.title || '';
             img.loading = 'lazy';
             img.decoding = 'async';
             pic.appendChild(img);
             fig.appendChild(pic);
-            if (p.caption) {
-              const fc = document.createElement('figcaption');
-              fc.textContent = p.caption;
-              fig.appendChild(fc);
-            }
+            const fc = document.createElement('figcaption');
+            fig.appendChild(fc);
             art.appendChild(fig);
-          }
 
-          const sides = (p.sideFrames || []).filter(function (sf) { return sf && sf.image; });
-          if (sides.length) {
-            const grid = document.createElement('div');
-            grid.className = 'frag-sides';
-            sides.forEach(function (sf) {
-              const pic = document.createElement('picture');
-              if (sf.imageWebp) {
-                const s = document.createElement('source');
-                s.srcset = sf.imageWebp;
-                s.type = 'image/webp';
-                pic.appendChild(s);
-              }
-              const im = document.createElement('img');
-              im.src = sf.image;
-              im.alt = sf.alt || sf.title || '';
-              im.loading = 'lazy';
-              im.decoding = 'async';
-              pic.appendChild(im);
-              grid.appendChild(pic);
-            });
-            art.appendChild(grid);
+            let grid = null;
+            let hint = null;
+            if (media.length > 1) {
+              grid = document.createElement('div');
+              grid.className = 'frag-sides';
+              art.appendChild(grid);
+              hint = document.createElement('p');
+              hint.className = 'frag-hint';
+              hint.textContent = '小さな写真をタップすると大きく表示されます';
+              art.appendChild(hint);
+            }
+
+            function renderMedia() {
+              const m = media[active];
+              if (m.imageWebp) { src.srcset = m.imageWebp; } else { src.removeAttribute('srcset'); }
+              img.src = m.image;
+              img.alt = m.alt;
+              fc.textContent = m.caption;
+              fc.style.display = m.caption ? '' : 'none';
+              if (!grid) return;
+              grid.replaceChildren.apply(grid, media.map(function (mm, i) { return { mm: mm, i: i }; })
+                .filter(function (x) { return x.i !== active; })
+                .map(function (x) {
+                  const btn = document.createElement('button');
+                  btn.type = 'button';
+                  btn.setAttribute('aria-label', (x.mm.caption || '写真') + 'を大きく表示');
+                  btn.addEventListener('click', function () { active = x.i; renderMedia(); });
+                  const p2 = document.createElement('picture');
+                  if (x.mm.imageWebp) {
+                    const s2 = document.createElement('source');
+                    s2.srcset = x.mm.imageWebp;
+                    s2.type = 'image/webp';
+                    p2.appendChild(s2);
+                  }
+                  const im = document.createElement('img');
+                  im.src = x.mm.image;
+                  im.alt = x.mm.alt;
+                  im.loading = 'lazy';
+                  im.decoding = 'async';
+                  p2.appendChild(im);
+                  btn.appendChild(p2);
+                  return btn;
+                }));
+            }
+            renderMedia();
           }
 
           const meta = document.createElement('p');
