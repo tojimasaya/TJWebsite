@@ -78,7 +78,7 @@ document.addEventListener('DOMContentLoaded', () => {
         stdFooter.innerHTML = `
         <div class="footer-content">
             <p>&copy; ${year} Toji Masaya. All rights reserved.</p>
-            <p style="font-size: 0.7rem; opacity: 0.72; margin-top: 6px;">当サイトには広告（アフィリエイトリンク）を含むページがあります。Amazonのアソシエイトとして、適格販売により収入を得ています。</p>
+            <p style="font-size: 0.7rem; opacity: 0.72; margin-top: 6px;">当サイトには広告（アフィリエイトリンク）を含むページがあります。Amazonのアソシエイトとして、当サイト運営者・田路昌也は適格販売により収入を得ています。</p>
         </div>`;
     }
 
