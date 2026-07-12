@@ -65,7 +65,7 @@
 
     var label = link.dataset.growthLabel || link.getAttribute('aria-label') || safeText(link.textContent) || url.pathname;
     var isOutbound = url.hostname && url.hostname !== window.location.hostname;
-    var isCTA = link.matches('.guide-card a, .start-card, .route-card, .category-btn, .card-action-btn, .external-link, .subscribe-btn, .social-link, .note-link');
+    var isCTA = link.matches('.guide-card a, .start-card, .route-card, .category-btn, .card-action-btn, .external-link, .subscribe-btn, .social-link, .note-link, .hb-guide-card, .hb-list a, .journal-meta-bar a, .journal-nav-links a, [data-growth-label]');
 
     if (isOutbound) {
       emit('tjm_outbound_click', { label: label, href: url.href, destination_host: url.hostname });

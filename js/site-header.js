@@ -55,8 +55,13 @@ document.addEventListener('DOMContentLoaded', () => {
     </nav>
     `;
 
-    // bodyの先頭に挿入
-    document.body.insertAdjacentHTML('afterbegin', navHtml);
+    // スキップリンクがあるページでは、その直後に挿入して最初のTab順を保つ
+    const skipLink = document.querySelector('.skip-link');
+    if (skipLink) {
+        skipLink.insertAdjacentHTML('afterend', navHtml);
+    } else {
+        document.body.insertAdjacentHTML('afterbegin', navHtml);
+    }
 
     // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');

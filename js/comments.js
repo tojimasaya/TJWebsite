@@ -14,6 +14,7 @@
 
   var slot = document.getElementById('comments-slot');
   if (!slot) return;
+  var staticAnchor = slot.parentElement && slot.parentElement.id === 'comments' ? slot.parentElement : null;
 
   function currentTheme() {
     var saved = localStorage.getItem('theme');
@@ -67,7 +68,7 @@
   thread.setAttribute('data-lang', 'ja');
   section.appendChild(thread);
 
-  slot.replaceWith(section);
+  (staticAnchor || slot).replaceWith(section);
 
   var script = document.createElement('script');
   script.src = 'https://cusdis.com/js/cusdis.es.js';
