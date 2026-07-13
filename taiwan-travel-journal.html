@@ -64,14 +64,34 @@
         .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
 
-        .visit-grid { max-width: 1100px; margin: 40px auto 60px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-        .visit-card { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-color); text-decoration: none; aspect-ratio: 16/10; display: block; }
-        .visit-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; display: block; }
-        .visit-card:hover img { transform: scale(1.04); }
-        .visit-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 18px; }
-        .visit-card-label { font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: .14em; color: rgba(255,255,255,.85); text-transform: uppercase; margin-bottom: 4px; }
-        .visit-card-title { font-family: 'Noto Serif JP', serif; font-size: 1.0rem; font-weight: 600; color: #fff; line-height: 1.55; }
-        .visit-card-meta { font-family: var(--primary-font); font-size: 0.75rem; color: rgba(255,255,255,.8); margin-top: 4px; }
+        /* 訪問タイムライン(ジグザグ) */
+        .days-section { max-width: 1000px; margin: 70px auto 90px; padding: 0 30px; position: relative; }
+        .day-item { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; scroll-margin-top: 100px; }
+        .day-item:last-child { margin-bottom: 0; }
+        .day-item.visible { opacity: 1; transform: translateY(0); }
+        .day-item:nth-child(even) { direction: rtl; }
+        .day-item:nth-child(even) .day-content { direction: ltr; text-align: right; }
+        .day-image-wrapper { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.08); aspect-ratio: 4/3; }
+        .day-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(0.2, 1, 0.3, 1); display: block; }
+        .day-item:hover .day-image-wrapper img { transform: scale(1.05); }
+        .day-content { padding: 20px; background: var(--bg-color); }
+        .day-number { font-family: var(--primary-font); font-size: 3rem; color: var(--border-color); line-height: 1; margin-bottom: 12px; font-weight: 600; }
+        .day-date { font-family: var(--secondary-font); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-lighter, #999); margin-bottom: 10px; }
+        .day-name { font-family: 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 600; margin: 0 0 15px; color: var(--text-color); letter-spacing: 0.04em; line-height: 1.6; }
+        .day-description { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; line-height: 2; color: var(--text-light); margin: 0 0 26px; }
+        .day-read-button { display: inline-block; padding: 12px 30px; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.1em; transition: all 0.3s ease; }
+        .day-read-button:hover { background: var(--text-color); color: var(--bg-color); }
+        @media (min-width: 769px) {
+            .days-section::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: linear-gradient(to bottom, transparent, var(--border-color) 6%, var(--border-color) 94%, transparent); transform: translateX(-50%); z-index: -1; }
+        }
+        @media (max-width: 768px) {
+            .days-section { padding: 0 20px; margin: 50px auto 70px; }
+            .day-item, .day-item:nth-child(even) { grid-template-columns: 1fr; gap: 22px; direction: ltr; margin-bottom: 60px; }
+            .day-item:nth-child(even) .day-content { text-align: left; }
+            .day-content { padding: 0; }
+            .day-number { font-size: 2.4rem; }
+            .day-name { font-size: 1.25rem; }
+        }
 </style>
 
     <script type="application/ld+json">
@@ -93,7 +113,7 @@
         </div>
     </header>
 
-    <main id="main-content">
+    <main id="main-content" data-trip-share-title="台湾、四回の旅と一緒にいた人たち" data-trip-share-text="妻との二人旅3回と、友人たちとの2026年。台北と日月潭、四回の台湾の記録です。">
 
         <div class="journal-meta-bar">
             <span class="pill route">Taipei / Sun Moon Lake</span>
@@ -103,43 +123,101 @@
             <span class="pill">友人との旅 1回</span>
         </div>
 
+        <section class="trip-context" aria-labelledby="trip-companions-title">
+            <div class="trip-context-media">
+                <picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/02-06.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/02-06.jpg" alt="日月潭のホテルのバルコニーから、ドローンに向かって手を振る妻とTJ" loading="eager" decoding="async"></picture>
+            </div>
+            <div class="trip-context-copy">
+                <span class="trip-context-kicker">この旅の仲間</span>
+                <h2 id="trip-companions-title">妻と三回、友人たちと一回</h2>
+                <p>2024年から2026年、台北と日月潭を四回訪ねました。三回は妻との二人旅。牛肉麺に並び、霧雨の湖に泊まり、朝ごはんを歩いて探した旅です。2026年だけは、山根博士・metroさん・たけもとさんと食卓を囲んだ、友人たちとの台北でした。</p>
+                <div class="trip-context-facts" aria-label="旅の特徴">
+                    <span>4回の訪問</span>
+                    <span>妻との二人旅 3回</span>
+                    <span>友人との旅 1回</span>
+                    <span>写真 89枚</span>
+                </div>
+                <div class="trip-context-actions">
+                    <a href="taiwan-2024.html" class="trip-action primary">2024年から読む</a>
+                    <button type="button" class="trip-action" data-share-trip>この旅を共有</button>
+                    <span class="share-status" aria-live="polite"></span>
+                </div>
+            </div>
+        </section>
+
         <article class="essay" style="margin-bottom: 10px;">
             <p>香港に暮らしていると、台湾は「隣町」のような距離感です。妻と30分待ちの牛肉麺に挑んだ2024年、二人で霧雨の日月潭に泊まった2025年の冬、同じ年の夏も妻と朝ごはんの行列とカキ氷へ。そして2026年は、山根さん、metroさん、たけもとさんら友人たちと台北の味を囲みました。誰と一緒だったかまで含めて、四回の記憶を残します。</p>
         </article>
 
-        <section class="visit-grid" aria-label="妻との3回と友人との2026年、訪問ごとの記録">
-            <a class="visit-card" href="taiwan-2024.html">
-                <picture><source srcset="/assets/images/trips/taiwan/2024/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2024/01-01.jpg" alt="台北 — 牛肉麺紀行、時間との戦い" loading="lazy" decoding="async"></picture>
-                <div class="visit-card-overlay">
-                    <span class="visit-card-label">2024年8月</span>
-                    <span class="visit-card-title">台北 — 牛肉麺紀行、時間との戦い</span>
-                    <span class="visit-card-meta">台北 ・ 妻との二人旅 ・ 写真14枚</span>
+        <section class="days-section" aria-label="訪問ごとの記録">
+            <article class="day-item" id="v2024">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/taiwan/2024/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2024/01-01.jpg" alt="台北 — 牛肉麺紀行、時間との戦い" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="visit-card" href="taiwan-sunmoonlake.html">
-                <picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/01-05.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/01-05.jpg" alt="日月潭 — 霧雨の湖、贅沢なステイ" loading="lazy" decoding="async"></picture>
-                <div class="visit-card-overlay">
-                    <span class="visit-card-label">2025年2月</span>
-                    <span class="visit-card-title">日月潭 — 霧雨の湖、贅沢なステイ</span>
-                    <span class="visit-card-meta">日月潭2泊3日 ・ 妻との二人旅 ・ 写真34枚</span>
+                <div class="day-content">
+                    <div class="day-number">01</div>
+                    <p class="day-date">2024年8月 ・ 妻との二人旅 ・ 写真14枚</p>
+                    <h2 class="day-name">台北 — 牛肉麺紀行、時間との戦い</h2>
+                    <p class="day-description">フライトまで4時間半。ミシュラン・ビブグルマン3年連続の「牛店」に、妻と10組待ちで並びました。札を交換してくれた男性の親切、なかなか出てこない丼への冷や汗、そしてまさかのオチはキャセイラウンジの一杯——「翠玉白菜」も紅焼牛肉麺も宿題に残した、時間との戦いの最終日です。</p>
+                    <a href="taiwan-2024.html" class="day-read-button">2024年8月を読む</a>
                 </div>
-            </a>
-            <a class="visit-card" href="taiwan-2025.html">
-                <picture><source srcset="/assets/images/trips/taiwan/2025/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2025/01-01.jpg" alt="台北 — 朝ごはんからカキ氷まで" loading="lazy" decoding="async"></picture>
-                <div class="visit-card-overlay">
-                    <span class="visit-card-label">2025年6月</span>
-                    <span class="visit-card-title">台北 — 朝ごはんからカキ氷まで</span>
-                    <span class="visit-card-meta">台北 ・ 妻との二人旅 ・ 写真24枚</span>
+            </article>
+            <article class="day-item" id="vsml">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/01-05.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/01-05.jpg" alt="日月潭 — 霧雨の湖、贅沢なステイ" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="visit-card" href="taiwan-2026.html">
-                <picture><source srcset="/assets/images/trips/taiwan/2026/01-02.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2026/01-02.jpg" alt="台北は、笑顔と美食でできていた" loading="lazy" decoding="async"></picture>
-                <div class="visit-card-overlay">
-                    <span class="visit-card-label">2026年6月</span>
-                    <span class="visit-card-title">台北は、笑顔と美食でできていた</span>
-                    <span class="visit-card-meta">台北 ・ 友人たちと ・ 写真17枚</span>
+                <div class="day-content">
+                    <div class="day-number">02</div>
+                    <p class="day-date">2025年2月 ・ 妻との二人旅 ・ 写真34枚</p>
+                    <h2 class="day-name">日月潭 — 霧雨の湖、贅沢なステイ</h2>
+                    <p class="day-description">妻と過ごした、霧雨の日月潭2泊3日。バス・船・ロープウェイを乗り継ぎ、雨上がりの一瞬を突いてドローンを上げた文武廟と慈恩塔。「こんな贅沢してもったいない」と言っていた妻も、レイクビューの部屋からの眺めには感激していました。</p>
+                    <a href="taiwan-sunmoonlake.html" class="day-read-button">2025年2月を読む</a>
                 </div>
-            </a>
+            </article>
+            <article class="day-item" id="v2025">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/taiwan/2025/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2025/01-01.jpg" alt="台北 — 朝ごはんからカキ氷まで" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">03</div>
+                    <p class="day-date">2025年6月 ・ 妻との二人旅 ・ 写真24枚</p>
+                    <h2 class="day-name">台北 — 朝ごはんからカキ氷まで</h2>
+                    <p class="day-description">朝は妻と永和豆漿の飯糰、翌朝は行列に釣られた青島早餐の鉄板麺。昼下がりの迪化街のカキ氷屋では、隣に並んだ青年のスマホが私と同じXiaomi 15 Ultra——なのに彼の視線は私の首のLeica M2へ。妻の通訳で盛り上がった、かき氷より冷たい視線の顛末は本文で。</p>
+                    <a href="taiwan-2025.html" class="day-read-button">2025年6月を読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="v2026">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/taiwan/2026/01-02.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2026/01-02.jpg" alt="台北は、笑顔と美食でできていた" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">04</div>
+                    <p class="day-date">2026年6月 ・ 友人たちとの旅 ・ 写真17枚</p>
+                    <h2 class="day-name">台北は、笑顔と美食でできていた</h2>
+                    <p class="day-description">山根博士とmetroさん——二人の「飛行機の師匠」が同じ週に台北に重なり、関空からエバーに飛び乗りました。たけもとさんも加わった四人の食卓、注文を一刀両断するおにぎり屋のおばあさん、ペンを構え直した麺屋のご主人。顔と食でできていた2泊3日です。</p>
+                    <a href="taiwan-2026.html" class="day-read-button">2026年6月を読む</a>
+                </div>
+            </article>
+        </section>
+
+        <section class="related-journeys" aria-labelledby="related-journeys-title">
+            <span class="section-kicker">More journeys together</span>
+            <h2 id="related-journeys-title">妻と歩いた、ほかの場所</h2>
+            <div class="related-journey-grid">
+                <a href="london-travel-journal.html" class="related-journey">
+                    <small>2017年</small>
+                    <strong>ロンドンとバース — 竜一の卒業式の旅</strong>
+                </a>
+            </div>
+        </section>
+
+        <section class="closing-share" aria-labelledby="closing-share-title">
+            <h2 id="closing-share-title">あの旅を、誰かに見せる</h2>
+            <p>一緒に旅した人や、この旅の話をしたい相手へ、このページをそのまま共有できます。</p>
+            <div class="trip-context-actions">
+                <button type="button" class="trip-action primary" data-share-trip>この旅を共有</button>
+                <span class="share-status" aria-live="polite"></span>
+            </div>
         </section>
 
         <div class="journal-origin">
@@ -156,7 +234,27 @@
     </main>
 
 
+    <script>
+    (function () {
+      const items = document.querySelectorAll('.day-item');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { observer.observe(el); });
+    })();
+    </script>
+
     <script src="js/image-fallback.js"></script>
+    <script src="js/trip-share.js"></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
     <script src="/growth.js" defer></script>
 </body>

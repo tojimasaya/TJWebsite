@@ -1841,3 +1841,29 @@ body {
         font-size: var(--text-2xl);
     }
 }
+
+
+/* ============================================
+   誌面リズム(旅行記エッセイ用の組版プリミティブ)
+   ph-wide: 山場写真のブレイクアウト / ph-pair・ph-trio: 組写真
+   ph-side: 本文横写真 / pull-quote: 結びの引用
+   ============================================ */
+.ph-wide { margin: 3em 0; margin-left: 50%; width: min(1080px, calc(100vw - 40px)); transform: translateX(-50%); }
+.ph-wide img { border-radius: 14px; }
+.ph-pair, .ph-trio { display: grid; gap: 12px; margin: 2.6em 0; }
+.ph-pair { grid-template-columns: 1fr 1fr; }
+.ph-trio { grid-template-columns: 1fr 1fr 1fr; }
+.ph-pair figure, .ph-trio figure, .ph-side figure { margin: 0; }
+.ph-pair img, .ph-trio img { aspect-ratio: 4/3; object-fit: cover; height: 100%; }
+.ph-pair.sq img { aspect-ratio: 1/1; }
+.ph-pair.tall img { aspect-ratio: 3/4; }
+.ph-pair.natural img { aspect-ratio: auto; object-fit: fill; height: auto; }
+.ph-pair.natural figure { align-self: start; }
+.ph-side { display: grid; grid-template-columns: 1fr 280px; gap: 30px; align-items: center; margin: 2.8em 0; }
+.ph-side p { margin: 0; }
+.pull-quote { font-family: 'Noto Serif JP', serif; font-size: 1.22rem; line-height: 2.1; text-align: center; font-weight: 600; letter-spacing: 0.05em; margin: 2.8em 0; padding: 1.3em 10px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+@media (max-width: 700px) {
+    .ph-trio { grid-template-columns: 1fr 1fr; }
+    .ph-trio figure:last-child { grid-column: 1 / -1; }
+    .ph-side { grid-template-columns: 1fr; gap: 14px; }
+}
