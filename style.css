@@ -95,6 +95,73 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Travel series context shown on individual journal chapters. */
+.trip-series-context {
+    max-width: 720px;
+    margin: 30px auto 0;
+    padding: 18px 22px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+}
+
+.trip-series-context-copy {
+    min-width: 0;
+}
+
+.trip-series-context-label {
+    display: block;
+    margin-bottom: 5px;
+    color: var(--text-lighter);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.trip-series-context-title {
+    display: block;
+    color: var(--text-color);
+    font-family: var(--primary-font);
+    font-size: 1.02rem;
+    font-weight: 600;
+    line-height: 1.5;
+    text-decoration: none;
+}
+
+.trip-series-context-meta {
+    display: block;
+    margin-top: 4px;
+    color: var(--text-light);
+    font-size: 0.76rem;
+}
+
+.trip-series-context-link {
+    flex: 0 0 auto;
+    color: var(--accent-color);
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-decoration: none;
+}
+
+.trip-series-context-title:hover,
+.trip-series-context-link:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 600px) {
+    .trip-series-context {
+        margin-top: 26px;
+        padding: 16px 20px;
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
+
 .gear-img-box,
 .gear-image {
     position: relative;

@@ -14,7 +14,7 @@
     </script>
 
     <title>チベット拉薩・西安 兵馬俑の旅（2016）— 11日間の記録 | Toji Masaya</title>
-    <meta name="description" content="2016年5月、広州から54時間の列車でチベット拉薩へ。ポタラ宮、ヤムドク湖、タシルンポ寺、西安の兵馬俑。11日間・写真202枚の旅行記。">
+    <meta name="description" content="2016年5月、師匠と二人、広州から54時間の列車でチベット拉薩へ。ポタラ宮、ヤムドク湖、タシルンポ寺、西安の兵馬俑を巡った11日間・写真202枚の旅行記。">
     <meta name="author" content="Toji Masaya">
 
     <link rel="icon" type="image/png" href="favicon.png">
@@ -24,15 +24,16 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="canonical" href="https://tojimasaya.com/tibet-travel-journal.html">
-    <meta property="og:title" content="チベット拉薩・西安 兵馬俑の旅（2016）— 11日間の記録">
-    <meta property="og:description" content="2016年5月、広州から54時間の列車でチベット拉薩へ。ポタラ宮、ヤムドク湖、タシルンポ寺、西安の兵馬俑。11日間・写真202枚の旅行記。">
+    <meta property="og:title" content="師匠と二人、チベット拉薩・西安へ — 11日間の記録">
+    <meta property="og:description" content="高山病に苦しむTJと、どこまでも元気な師匠。広州から54時間の列車で拉薩へ向かい、西安の兵馬俑まで巡った二人旅。">
     <meta property="og:url" content="https://tojimasaya.com/tibet-travel-journal.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Toji Masaya">
     <meta property="og:image" content="https://tojimasaya.com/assets/images/trips/tibet/day04/008-01.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@mongkok93">
-    <meta name="twitter:title" content="チベット拉薩・西安 兵馬俑の旅（2016）— 11日間の記録">
+    <meta name="twitter:title" content="師匠と二人、チベット拉薩・西安へ — 11日間の記録">
+    <meta name="twitter:description" content="高山病に苦しむTJと、どこまでも元気な師匠。広州から拉薩、西安へ向かった11日間の二人旅。">
     <meta name="twitter:image" content="https://tojimasaya.com/assets/images/trips/tibet/day04/008-01.png">
 
     <style>
@@ -66,13 +67,52 @@
         .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
 
+        /* 旅の人間関係と全体像 */
+        .trip-context { max-width: 960px; margin: 48px auto 56px; display: grid; grid-template-columns: minmax(280px, 0.9fr) 1.1fr; overflow: hidden; border: 1px solid var(--border-color); border-radius: 18px; background: var(--white); box-shadow: 0 18px 55px rgba(0,0,0,0.08); }
+        .trip-context-media { min-height: 340px; background: var(--hover-color); }
+        .trip-context-media picture { display: block; width: 100%; height: 100%; }
+        .trip-context-media img { display: block; width: 100%; height: 100%; object-fit: cover; }
+        .trip-context-copy { align-self: center; padding: clamp(30px, 5vw, 58px); }
+        .trip-context-kicker, .section-kicker { display: block; margin-bottom: 12px; color: var(--text-lighter); font-family: var(--secondary-font); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+        .trip-context h2 { margin: 0 0 18px; font-family: 'Noto Serif JP', serif; font-size: clamp(1.45rem, 3vw, 2rem); font-weight: 500; letter-spacing: 0.05em; line-height: 1.6; }
+        .trip-context p { margin: 0 0 22px; color: var(--text-light); font-family: 'Noto Serif JP', serif; font-size: 0.98rem; line-height: 2; }
+        .trip-context-facts { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 28px; }
+        .trip-context-facts span { padding: 6px 11px; border: 1px solid var(--border-color); border-radius: 999px; color: var(--text-light); font-family: var(--secondary-font); font-size: 0.75rem; }
+        .trip-context-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 12px; }
+        .trip-action { appearance: none; display: inline-flex; align-items: center; justify-content: center; min-height: 44px; padding: 10px 18px; border: 1px solid var(--text-color); border-radius: 999px; background: transparent; color: var(--text-color); font-family: var(--secondary-font); font-size: 0.82rem; font-weight: 600; text-decoration: none; cursor: pointer; transition: background .2s ease, color .2s ease, transform .2s ease; }
+        .trip-action:hover { background: var(--text-color); color: var(--bg-color); transform: translateY(-1px); }
+        .trip-action.primary { border-color: var(--accent-color); background: var(--accent-color); color: #fff; }
+        .share-status { min-height: 1.4em; color: var(--text-light); font-family: var(--secondary-font); font-size: 0.75rem; }
+        .journey-overview { max-width: 960px; margin: 0 auto 52px; padding: 0 24px; text-align: center; }
+        .journey-overview h2, .related-journeys h2, .closing-share h2 { margin: 0 0 12px; font-family: 'Noto Serif JP', serif; font-size: clamp(1.35rem, 2.5vw, 1.8rem); font-weight: 500; letter-spacing: 0.05em; }
+        .journey-overview-intro { max-width: 680px; margin: 0 auto 28px; color: var(--text-light); font-family: 'Noto Serif JP', serif; line-height: 2; }
+        .journey-acts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; text-align: left; }
+        .journey-act-link { display: block; padding: 22px; border: 1px solid var(--border-color); border-radius: 14px; background: var(--white); color: var(--text-color); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease; }
+        .journey-act-link:hover { transform: translateY(-2px); border-color: var(--accent-color); box-shadow: var(--shadow-md); }
+        .journey-act-number { display: block; margin-bottom: 9px; color: var(--accent-color); font-family: var(--secondary-font); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; }
+        .journey-act-title { display: block; margin-bottom: 6px; font-family: 'Noto Serif JP', serif; font-size: 1.02rem; font-weight: 600; }
+        .journey-act-range { color: var(--text-light); font-family: var(--secondary-font); font-size: 0.78rem; }
+        .journey-act-heading { position: relative; z-index: 1; max-width: 640px; margin: 20px auto 58px; padding: 18px 24px; background: var(--bg-color); text-align: center; scroll-margin-top: 100px; }
+        .journey-act-heading span { display: block; margin-bottom: 8px; color: var(--accent-color); font-family: var(--secondary-font); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; }
+        .journey-act-heading h2 { margin: 0 0 8px; font-family: 'Noto Serif JP', serif; font-size: clamp(1.35rem, 3vw, 1.8rem); font-weight: 500; letter-spacing: 0.05em; }
+        .journey-act-heading p { margin: 0; color: var(--text-light); font-family: 'Noto Serif JP', serif; font-size: 0.9rem; line-height: 1.8; }
+        .related-journeys { max-width: 960px; margin: 0 auto 60px; padding: 0 24px; text-align: center; }
+        .related-journey-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 26px; text-align: left; }
+        .related-journey { display: block; padding: 22px; border: 1px solid var(--border-color); border-radius: 14px; background: var(--white); color: var(--text-color); text-decoration: none; transition: transform .2s ease, box-shadow .2s ease; }
+        .related-journey:hover { transform: translateY(-2px); box-shadow: var(--shadow-md); }
+        .related-journey small { display: block; margin-bottom: 8px; color: var(--text-lighter); font-family: var(--secondary-font); letter-spacing: 0.1em; }
+        .related-journey strong { display: block; font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 500; line-height: 1.7; }
+        .closing-share { max-width: 720px; margin: 0 auto 48px; padding: 40px 24px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); text-align: center; }
+        .closing-share p { margin: 0 auto 22px; color: var(--text-light); font-family: 'Noto Serif JP', serif; line-height: 1.9; }
+        .closing-share .trip-context-actions { justify-content: center; }
+
         /* 日別タイムライン(ジグザグ) */
         .days-section { max-width: 1000px; margin: 70px auto 90px; padding: 0 30px; position: relative; }
         .day-item { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; scroll-margin-top: 100px; }
         .day-item:last-child { margin-bottom: 0; }
         .day-item.visible { opacity: 1; transform: translateY(0); }
-        .day-item:nth-child(even) { direction: rtl; }
-        .day-item:nth-child(even) .day-content { direction: ltr; text-align: right; }
+        .day-item:nth-of-type(even) { direction: rtl; }
+        .day-item:nth-of-type(even) .day-content { direction: ltr; text-align: right; }
         .day-image-wrapper { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.08); aspect-ratio: 4/3; }
         .day-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(0.2, 1, 0.3, 1); display: block; }
         .day-item:hover .day-image-wrapper img { transform: scale(1.05); }
@@ -87,12 +127,18 @@
             .days-section::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: linear-gradient(to bottom, transparent, var(--border-color) 6%, var(--border-color) 94%, transparent); transform: translateX(-50%); z-index: -1; }
         }
         @media (max-width: 768px) {
+            .trip-context { grid-template-columns: 1fr; margin: 36px 20px 46px; }
+            .trip-context-media { min-height: 0; aspect-ratio: 4 / 3; }
+            .trip-context-copy { padding: 30px 24px; }
+            .journey-acts, .related-journey-grid { grid-template-columns: 1fr; }
             .days-section { padding: 0 20px; margin: 50px auto 70px; }
-            .day-item, .day-item:nth-child(even) { grid-template-columns: 1fr; gap: 22px; direction: ltr; margin-bottom: 60px; }
-            .day-item:nth-child(even) .day-content { text-align: left; }
+            .day-item, .day-item:nth-of-type(even) { grid-template-columns: 1fr; gap: 22px; direction: ltr; margin-bottom: 60px; }
+            .day-item:nth-of-type(even) .day-content { text-align: left; }
             .day-content { padding: 0; }
             .day-number { font-size: 2.4rem; }
             .day-name { font-size: 1.25rem; }
+            .journey-act-heading { margin-bottom: 40px; }
+            .gps-map-section iframe { height: 360px; }
         }
         .gps-map-section { max-width: 1100px; margin: 0 auto 30px; padding: 0 24px; }
         .gps-map-section iframe { width: 100%; height: 480px; border: 1px solid var(--border-color); border-radius: 14px; }
@@ -100,7 +146,7 @@
 </style>
 
     <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "チベット拉薩・西安 兵馬俑の旅（2016）— 11日間の記録", "description": "2016年5月、広州から54時間の列車でチベット拉薩へ。ポタラ宮、ヤムドク湖、タシルンポ寺、西安の兵馬俑。11日間・写真202枚の旅行記。", "image": "https://tojimasaya.com/assets/images/trips/tibet/day04/008-01.png", "author": {"@type": "Person", "name": "田路昌也 (Toji Masaya)", "url": "https://tojimasaya.com/about.html"}, "publisher": {"@type": "Person", "name": "田路昌也 (Toji Masaya)"}, "mainEntityOfPage": "https://tojimasaya.com/tibet-travel-journal.html", "inLanguage": "ja", "datePublished": "2026-07-04", "dateModified": "2026-07-05"}
+    {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "チベット拉薩・西安 兵馬俑の旅（2016）— 11日間の記録", "description": "2016年5月、師匠と二人、広州から54時間の列車でチベット拉薩へ。西安の兵馬俑まで巡った11日間・写真202枚の旅行記。", "image": "https://tojimasaya.com/assets/images/trips/tibet/day04/008-01.png", "author": {"@type": "Person", "name": "田路昌也 (Toji Masaya)", "url": "https://tojimasaya.com/about.html"}, "publisher": {"@type": "Person", "name": "田路昌也 (Toji Masaya)"}, "mainEntityOfPage": "https://tojimasaya.com/tibet-travel-journal.html", "inLanguage": "ja", "datePublished": "2026-07-04", "dateModified": "2026-07-13"}
     </script>
 </head>
 <body>
@@ -114,7 +160,7 @@
         <div class="journal-hero-content">
             <span class="journal-label">Travel Journal — 2016</span>
             <h1 class="journal-title">チベット拉薩・西安 兵馬俑の旅</h1>
-            <p class="journal-subtitle">広州から54時間の列車で標高3,650mへ — 11日間・202枚の記録</p>
+            <p class="journal-subtitle">師匠と二人、広州から54時間の列車で標高3,650mへ</p>
         </div>
     </header>
 
@@ -125,18 +171,69 @@
             <span class="pill">2016年5月16日〜26日</span>
             <span class="pill">11日間</span>
             <span class="pill">標高3,650m</span>
+            <span class="pill">TJ・師匠の二人旅</span>
         </div>
 
-        <article class="essay" style="margin-bottom: 10px;">
-            <p>2016年に行った私的大冒険の記録を残しておきます。<br>iPhoneを使って GPSデータを取っていたのですが青海から少しデータが取れませんでした。取れたデータをGoogle Mapに掲載します。</p>
+        <section class="trip-context" aria-labelledby="trip-companions-title">
+            <div class="trip-context-media">
+                <picture><source srcset="/assets/images/trips/tibet/day04/009-11.webp" type="image/webp"><img src="/assets/images/trips/tibet/day04/009-11.png" alt="ジョカン寺屋上で並ぶTJと師匠" loading="eager" decoding="async"></picture>
+            </div>
+            <div class="trip-context-copy">
+                <span class="trip-context-kicker">この旅の仲間</span>
+                <h2 id="trip-companions-title">TJと師匠、二人でチベットへ</h2>
+                <p>高山病に苦しむ私と、どこまでも元気な師匠。広州から拉薩、西安、そして香港まで、列車を乗り継いだ11日間です。</p>
+                <div class="trip-context-facts" aria-label="旅の特徴">
+                    <span>二人旅</span>
+                    <span>列車 54時間</span>
+                    <span>全11日</span>
+                    <span>写真 202枚</span>
+                </div>
+                <div class="trip-context-actions">
+                    <a href="tibet-day01.html" class="trip-action primary">最初の日から読む</a>
+                    <button type="button" class="trip-action" data-share-trip>この旅を共有</button>
+                    <span class="share-status" aria-live="polite"></span>
+                </div>
+            </div>
+        </section>
+
+        <article class="essay" style="margin-bottom: 28px;">
+            <p>2016年に師匠と二人で出かけた、私的大冒険の記録です。54時間の寝台列車、高山病に苦しみながら歩いた拉薩、チベット人ガイドと過ごした時間、そして西安の兵馬俑。場所だけでなく、その場にいた人と出来事が分かるよう、11日間を三つの章に分けました。</p>
         </article>
+
+        <section class="journey-overview" aria-labelledby="journey-overview-title">
+            <span class="section-kicker">11 days, 3 chapters</span>
+            <h2 id="journey-overview-title">十一日間を、三つの章で読む</h2>
+            <p class="journey-overview-intro">一日ずつ順に読むほか、思い出したい場所から直接開くこともできます。</p>
+            <nav class="journey-acts" aria-label="旅の章">
+                <a class="journey-act-link" href="#act-1">
+                    <span class="journey-act-number">Chapter 1</span>
+                    <span class="journey-act-title">拉薩へ向かう</span>
+                    <span class="journey-act-range">Day 1–3｜広州から54時間の列車</span>
+                </a>
+                <a class="journey-act-link" href="#act-2">
+                    <span class="journey-act-number">Chapter 2</span>
+                    <span class="journey-act-title">チベットを巡る</span>
+                    <span class="journey-act-range">Day 4–6｜拉薩・ギャンツェ・シガツェ</span>
+                </a>
+                <a class="journey-act-link" href="#act-3">
+                    <span class="journey-act-number">Chapter 3</span>
+                    <span class="journey-act-title">西安を経て香港へ</span>
+                    <span class="journey-act-range">Day 7–11｜兵馬俑と帰路</span>
+                </a>
+            </nav>
+        </section>
 
         <section class="gps-map-section" aria-label="旅のGPSログ地図">
             <iframe src="https://www.google.com/maps/d/embed?mid=1AIy6XdouDQ8GRSxUAbVyIru8oQE" title="2016 チベット・西安の旅 GPSログ" loading="lazy"></iframe>
-            <p class="gps-note">iPhoneで記録したGPSログ（青海付近は一部欠損）</p>
+            <p class="gps-note">iPhoneで記録した二人旅のGPSログ（青海付近は一部欠損）</p>
         </section>
 
         <section class="days-section" aria-label="日別の記録">
+            <header class="journey-act-heading" id="act-1">
+                <span>Chapter 1 — Day 1–3</span>
+                <h2>拉薩へ向かう</h2>
+                <p>広州から二泊三日。標高とともに体調も変わっていった、54時間の寝台列車。</p>
+            </header>
             <article class="day-item" id="day01">
                 <div class="day-image-wrapper">
                     <picture><source srcset="/assets/images/trips/tibet/day01/002-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day01/002-01.png" alt="Day 1 広州出発 — Z264 拉薩行、54時間の旅へ" loading="lazy" decoding="async"></picture>
@@ -173,6 +270,11 @@
                     <a href="tibet-day03.html" class="day-read-button">Day 3 を読む</a>
                 </div>
             </article>
+            <header class="journey-act-heading" id="act-2">
+                <span>Chapter 2 — Day 4–6</span>
+                <h2>チベットを巡る</h2>
+                <p>拉薩からギャンツェ、シガツェへ。風景と祈り、ガイドさんとの時間。</p>
+            </header>
             <article class="day-item" id="day04">
                 <div class="day-image-wrapper">
                     <picture><source srcset="/assets/images/trips/tibet/day04/008-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day04/008-01.png" alt="Day 4 拉薩 — ポタラ宮と大昭寺" loading="lazy" decoding="async"></picture>
@@ -209,6 +311,11 @@
                     <a href="tibet-day06.html" class="day-read-button">Day 6 を読む</a>
                 </div>
             </article>
+            <header class="journey-act-heading" id="act-3">
+                <span>Chapter 3 — Day 7–11</span>
+                <h2>西安を経て香港へ</h2>
+                <p>拉薩を離れ、兵馬俑へ。高度が下がる喜びと、二人旅の帰り道。</p>
+            </header>
             <article class="day-item" id="day07">
                 <div class="day-image-wrapper">
                     <picture><source srcset="/assets/images/trips/tibet/day07/015-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day07/015-01.png" alt="Day 7 チベットのスターバックス、西安へ" loading="lazy" decoding="async"></picture>
@@ -271,6 +378,34 @@
             </article>
         </section>
 
+        <section class="related-journeys" aria-labelledby="related-journeys-title">
+            <span class="section-kicker">More journeys together</span>
+            <h2 id="related-journeys-title">師匠と行った、ほかの旅</h2>
+            <div class="related-journey-grid">
+                <a href="germany-travel-journal.html" class="related-journey">
+                    <small>2014年</small>
+                    <strong>ドイツ縦断、ライツパークとフォトキナ</strong>
+                </a>
+                <a href="italy-travel-journal.html" class="related-journey">
+                    <small>2016年</small>
+                    <strong>いつもの三人で巡ったイタリア縦断</strong>
+                </a>
+                <a href="france-travel-journal.html" class="related-journey">
+                    <small>2017年</small>
+                    <strong>男三人衆のパリとモンサンミッシェル</strong>
+                </a>
+            </div>
+        </section>
+
+        <section class="closing-share" aria-labelledby="closing-share-title">
+            <h2 id="closing-share-title">あの旅を、誰かに見せる</h2>
+            <p>一緒に旅した人や、この旅の話をしたい相手へ、このページをそのまま共有できます。</p>
+            <div class="trip-context-actions">
+                <button type="button" class="trip-action primary" data-share-trip>この旅を共有</button>
+                <span class="share-status" aria-live="polite"></span>
+            </div>
+        </section>
+
         <div class="journal-origin">
             初出：<a href="https://note.com/tojimasaya/n/n9e58036e3b01" target="_blank" rel="noopener noreferrer">note 連載（2024年公開・全25回）</a>。日ごとに分かれた連載を、一つづきの旅として通して読めるよう再構成したものです。
         </div>
@@ -301,6 +436,50 @@
         });
       }, { threshold: 0.12 });
       items.forEach(function (el) { observer.observe(el); });
+    })();
+
+    (function () {
+      const buttons = document.querySelectorAll('[data-share-trip]');
+      const canonical = document.querySelector('link[rel="canonical"]');
+      const shareData = {
+        title: '師匠と二人、チベット拉薩・西安へ',
+        text: '高山病に苦しむTJと、どこまでも元気な師匠。広州から拉薩、西安へ向かった11日間の二人旅です。',
+        url: canonical ? canonical.href : window.location.href
+      };
+
+      function copyUrl() {
+        if (navigator.clipboard && window.isSecureContext) {
+          return navigator.clipboard.writeText(shareData.url);
+        }
+        const textarea = document.createElement('textarea');
+        textarea.value = shareData.url;
+        textarea.setAttribute('readonly', '');
+        textarea.style.position = 'fixed';
+        textarea.style.opacity = '0';
+        document.body.appendChild(textarea);
+        textarea.select();
+        document.execCommand('copy');
+        textarea.remove();
+        return Promise.resolve();
+      }
+
+      buttons.forEach(function (button) {
+        button.addEventListener('click', async function () {
+          const status = button.parentElement.querySelector('.share-status');
+          try {
+            if (navigator.share) {
+              await navigator.share(shareData);
+              if (status) status.textContent = '共有しました。';
+            } else {
+              await copyUrl();
+              if (status) status.textContent = 'URLをコピーしました。';
+            }
+          } catch (error) {
+            if (error && error.name === 'AbortError') return;
+            if (status) status.textContent = '共有できませんでした。URLをコピーしてお使いください。';
+          }
+        });
+      });
     })();
     </script>
 
