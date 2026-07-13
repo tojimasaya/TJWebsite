@@ -37,7 +37,10 @@
 
     <style>
         .journal-hero { position: relative; height: 58vh; min-height: 410px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; margin-top: 70px; }
-        .journal-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.6) contrast(1.08); }
+        .journal-hero-blur { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: hidden; }
+        .journal-hero-blur img { width: 100%; height: 100%; object-fit: cover; filter: blur(34px) brightness(0.42) saturate(1.15); transform: scale(1.18); }
+        .journal-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: contain; z-index: 1; filter: brightness(0.9) contrast(1.04); }
+        .journal-hero::after { content: ""; position: absolute; inset: 0; z-index: 1; pointer-events: none; background: radial-gradient(ellipse 72% 62% at 50% 46%, rgba(0,0,0,0.44) 0%, rgba(0,0,0,0.14) 58%, rgba(0,0,0,0.30) 100%); }
         .journal-hero-content { position: relative; z-index: 2; padding: 20px; max-width: 900px; }
         .journal-label { font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 1.2rem; text-transform: uppercase; opacity: 0.9; display: block; }
         .journal-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 4.2vw, 2.7rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.55; margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(0,0,0,0.35); }
@@ -76,6 +79,7 @@
 
     <!-- Hero -->
     <header class="journal-hero">
+        <picture class="journal-hero-blur"><source srcset="/assets/images/trips/taiwan/2024/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2024/01-01.jpg" alt="" aria-hidden="true"></picture>
         <picture><source srcset="/assets/images/trips/taiwan/2024/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2024/01-01.jpg" alt="台北 — 牛肉麺紀行、時間との戦い" class="journal-hero-bg"></picture>
         <div class="journal-hero-content">
             <span class="journal-label">Taiwan — 2024年8月</span>
