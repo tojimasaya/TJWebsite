@@ -66,14 +66,34 @@
         .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
 
-        .day-grid { max-width: 1100px; margin: 60px auto 80px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-        .day-card { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-color); text-decoration: none; aspect-ratio: 16/10; display: block; }
-        .day-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; display: block; }
-        .day-card:hover img { transform: scale(1.04); }
-        .day-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 18px; }
-        .day-card-label { font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: .14em; color: rgba(255,255,255,.85); text-transform: uppercase; margin-bottom: 4px; }
-        .day-card-title { font-family: 'Noto Serif JP', serif; font-size: 1.02rem; font-weight: 600; color: #fff; line-height: 1.5; }
-        .day-card-meta { font-family: var(--primary-font); font-size: 0.75rem; color: rgba(255,255,255,.8); margin-top: 4px; }
+        /* 日別タイムライン(ジグザグ) */
+        .days-section { max-width: 1000px; margin: 70px auto 90px; padding: 0 30px; position: relative; }
+        .day-item { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; scroll-margin-top: 100px; }
+        .day-item:last-child { margin-bottom: 0; }
+        .day-item.visible { opacity: 1; transform: translateY(0); }
+        .day-item:nth-child(even) { direction: rtl; }
+        .day-item:nth-child(even) .day-content { direction: ltr; text-align: right; }
+        .day-image-wrapper { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.08); aspect-ratio: 4/3; }
+        .day-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(0.2, 1, 0.3, 1); display: block; }
+        .day-item:hover .day-image-wrapper img { transform: scale(1.05); }
+        .day-content { padding: 20px; background: var(--bg-color); }
+        .day-number { font-family: var(--primary-font); font-size: 3rem; color: var(--border-color); line-height: 1; margin-bottom: 12px; font-weight: 600; }
+        .day-date { font-family: var(--secondary-font); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-lighter, #999); margin-bottom: 10px; }
+        .day-name { font-family: 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 600; margin: 0 0 15px; color: var(--text-color); letter-spacing: 0.04em; line-height: 1.6; }
+        .day-description { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; line-height: 2; color: var(--text-light); margin: 0 0 26px; }
+        .day-read-button { display: inline-block; padding: 12px 30px; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.1em; transition: all 0.3s ease; }
+        .day-read-button:hover { background: var(--text-color); color: var(--bg-color); }
+        @media (min-width: 769px) {
+            .days-section::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: linear-gradient(to bottom, transparent, var(--border-color) 6%, var(--border-color) 94%, transparent); transform: translateX(-50%); z-index: -1; }
+        }
+        @media (max-width: 768px) {
+            .days-section { padding: 0 20px; margin: 50px auto 70px; }
+            .day-item, .day-item:nth-child(even) { grid-template-columns: 1fr; gap: 22px; direction: ltr; margin-bottom: 60px; }
+            .day-item:nth-child(even) .day-content { text-align: left; }
+            .day-content { padding: 0; }
+            .day-number { font-size: 2.4rem; }
+            .day-name { font-size: 1.25rem; }
+        }
         .gps-map-section { max-width: 1100px; margin: 0 auto 30px; padding: 0 24px; }
         .gps-map-section iframe { width: 100%; height: 480px; border: 1px solid var(--border-color); border-radius: 14px; }
         .gps-note { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); text-align: center; margin-top: 10px; }
@@ -116,95 +136,139 @@
             <p class="gps-note">iPhoneで記録したGPSログ（青海付近は一部欠損）</p>
         </section>
 
-        <section class="day-grid" aria-label="日別の記録">
-            <a class="day-card" href="tibet-day01.html">
-                <picture><source srcset="/assets/images/trips/tibet/day01/002-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day01/002-01.png" alt="Day 1 広州出発 — Z264 拉薩行、54時間の旅へ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 1 — 5月16日</span>
-                    <span class="day-card-title">広州出発 — Z264 拉薩行、54時間の旅へ</span>
-                    <span class="day-card-meta">広州 → 車中泊 ・ 写真12枚</span>
+        <section class="days-section" aria-label="日別の記録">
+            <article class="day-item" id="day01">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day01/002-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day01/002-01.png" alt="Day 1 広州出発 — Z264 拉薩行、54時間の旅へ" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day02.html">
-                <picture><source srcset="/assets/images/trips/tibet/day02/005-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day02/005-01.png" alt="Day 2 ひたすらチベットに向かう" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 2 — 5月17日</span>
-                    <span class="day-card-title">ひたすらチベットに向かう</span>
-                    <span class="day-card-meta">車中 — 中国大陸を西へ ・ 写真9枚</span>
+                <div class="day-content">
+                    <div class="day-number">01</div>
+                    <p class="day-date">Day 1 — 5月16日 ・ 広州 → 車中泊 ・ 写真12枚</p>
+                    <h2 class="day-name">広州出発 — Z264 拉薩行、54時間の旅へ</h2>
+                    <p class="day-description">全長4,980km、中国最長・世界7位という列車の旅が広州駅から始まります。4人部屋を2人で使う贅沢な寝台、期待を裏切らない雑さの食堂車、香港A-1ベーカリーで調達した持ち込みパン。出発から11時間、武昌駅で初日が暮れていきます。</p>
+                    <a href="tibet-day01.html" class="day-read-button">Day 1 を読む</a>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day03.html">
-                <picture><source srcset="/assets/images/trips/tibet/day03/006-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day03/006-01.png" alt="Day 3 魔のゴルムド駅、そして拉薩へ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 3 — 5月18日</span>
-                    <span class="day-card-title">魔のゴルムド駅、そして拉薩へ</span>
-                    <span class="day-card-meta">ゴルムド → 拉薩 ・ 写真7枚</span>
+            </article>
+            <article class="day-item" id="day02">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day02/005-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day02/005-01.png" alt="Day 2 ひたすらチベットに向かう" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day04.html">
-                <picture><source srcset="/assets/images/trips/tibet/day04/008-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day04/008-01.png" alt="Day 4 拉薩 — ポタラ宮と大昭寺" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 4 — 5月19日</span>
-                    <span class="day-card-title">拉薩 — ポタラ宮と大昭寺</span>
-                    <span class="day-card-meta">拉薩 ・ 写真29枚</span>
+                <div class="day-content">
+                    <div class="day-number">02</div>
+                    <p class="day-date">Day 2 — 5月17日 ・ 車中 — 中国大陸を西へ ・ 写真9枚</p>
+                    <h2 class="day-name">ひたすらチベットに向かう</h2>
+                    <p class="day-description">丸一日24時間を列車の中で過ごす日。鄭州から進路を西に変え、高山病対策の薬を飲み始めた朝、西安駅の売店で調達した紅焼牛肉麺——このあたりから私の体調は崩れ始めます。標高2,200mの西寧駅で高地仕様の車両に乗り換え、頭痛とともに夜へ。</p>
+                    <a href="tibet-day02.html" class="day-read-button">Day 2 を読む</a>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day05.html">
-                <picture><source srcset="/assets/images/trips/tibet/day05/010-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day05/010-01.png" alt="Day 5 ヤムドク湖とギャンツェ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 5 — 5月20日</span>
-                    <span class="day-card-title">ヤムドク湖とギャンツェ</span>
-                    <span class="day-card-meta">拉薩 → ギャンツェ ・ 写真23枚</span>
+            </article>
+            <article class="day-item" id="day03">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day03/006-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day03/006-01.png" alt="Day 3 魔のゴルムド駅、そして拉薩へ" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day06.html">
-                <picture><source srcset="/assets/images/trips/tibet/day06/013-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day06/013-01.png" alt="Day 6 タシルンポ寺、シガツェから拉薩へ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 6 — 5月21日</span>
-                    <span class="day-card-title">タシルンポ寺、シガツェから拉薩へ</span>
-                    <span class="day-card-meta">シガツェ → 拉薩 ・ 写真17枚</span>
+                <div class="day-content">
+                    <div class="day-number">03</div>
+                    <p class="day-date">Day 3 — 5月18日 ・ ゴルムド → 拉薩 ・ 写真7枚</p>
+                    <h2 class="day-name">魔のゴルムド駅、そして拉薩へ</h2>
+                    <p class="day-description">深夜2時のゴルムド駅。頭痛に嘔吐感、全身の毛穴から吹き出す冷や汗に「俺はここで死ぬな」と覚悟した夜が明け、出発から54時間、午後5時半についに拉薩駅へ。音信不通で「田路は死んだ」と噂が流れるなか、寒空に半袖でスカーフを掛けられた勇姿をご覧ください。</p>
+                    <a href="tibet-day03.html" class="day-read-button">Day 3 を読む</a>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day07.html">
-                <picture><source srcset="/assets/images/trips/tibet/day07/015-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day07/015-01.png" alt="Day 7 チベットのスターバックス、西安へ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 7 — 5月22日</span>
-                    <span class="day-card-title">チベットのスターバックス、西安へ</span>
-                    <span class="day-card-meta">拉薩 → 車中泊 ・ 写真12枚</span>
+            </article>
+            <article class="day-item" id="day04">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day04/008-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day04/008-01.png" alt="Day 4 拉薩 — ポタラ宮と大昭寺" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day08.html">
-                <picture><source srcset="/assets/images/trips/tibet/day08/018-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day08/018-01.png" alt="Day 8 西安に到着" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 8 — 5月23日</span>
-                    <span class="day-card-title">西安に到着</span>
-                    <span class="day-card-meta">車中 → 西安 ・ 写真7枚</span>
+                <div class="day-content">
+                    <div class="day-number">04</div>
+                    <p class="day-date">Day 4 — 5月19日 ・ 拉薩 ・ 写真29枚</p>
+                    <h2 class="day-name">拉薩 — ポタラ宮と大昭寺</h2>
+                    <p class="day-description">10歩歩けば息切れする体で、ない気力を振り絞って坂と階段300段、標高3,765mのポタラ宮へ。写真を撮った途端「金よこせ！」と迫るお婆さん、五体投地の巡礼者が行き交う大昭寺・ジョカン寺。チベット仏教の心臓部を一日で巡ります。</p>
+                    <a href="tibet-day04.html" class="day-read-button">Day 4 を読む</a>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day09.html">
-                <picture><source srcset="/assets/images/trips/tibet/day09/019-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day09/019-01.png" alt="Day 9 兵馬俑、華清池、鐘楼夜市" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 9 — 5月24日</span>
-                    <span class="day-card-title">兵馬俑、華清池、鐘楼夜市</span>
-                    <span class="day-card-meta">西安 ・ 写真56枚</span>
+            </article>
+            <article class="day-item" id="day05">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day05/010-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day05/010-01.png" alt="Day 5 ヤムドク湖とギャンツェ" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day10.html">
-                <picture><source srcset="/assets/images/trips/tibet/day10/023-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day10/023-01.jpg" alt="Day 10 乾陵と漢の陽陵" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 10 — 5月25日</span>
-                    <span class="day-card-title">乾陵と漢の陽陵</span>
-                    <span class="day-card-meta">西安郊外 ・ 写真24枚</span>
+                <div class="day-content">
+                    <div class="day-number">05</div>
+                    <p class="day-date">Day 5 — 5月20日 ・ 拉薩 → ギャンツェ ・ 写真23枚</p>
+                    <h2 class="day-name">ヤムドク湖とギャンツェ</h2>
+                    <p class="day-description">海抜4,441mの石碑、眼下に広がるエメラルド色のヤムドク湖、10元で写真に納まるチベット犬。白居寺のクンブムで無数の仏像と曼荼羅に圧倒され、夜はシガツェのチベット料理店で、ガイドさんが小声で語ったダライ・ラマ14世の話。</p>
+                    <a href="tibet-day05.html" class="day-read-button">Day 5 を読む</a>
                 </div>
-            </a>
-            <a class="day-card" href="tibet-day11.html">
-                <picture><source srcset="/assets/images/trips/tibet/day11/025-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day11/025-01.png" alt="Day 11 香港に向けて" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">Day 11 — 5月26日</span>
-                    <span class="day-card-title">香港に向けて</span>
-                    <span class="day-card-meta">西安 → 香港 ・ 写真6枚</span>
+            </article>
+            <article class="day-item" id="day06">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day06/013-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day06/013-01.png" alt="Day 6 タシルンポ寺、シガツェから拉薩へ" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
+                <div class="day-content">
+                    <div class="day-number">06</div>
+                    <p class="day-date">Day 6 — 5月21日 ・ シガツェ → 拉薩 ・ 写真17枚</p>
+                    <h2 class="day-name">タシルンポ寺、シガツェから拉薩へ</h2>
+                    <p class="day-description">1447年建立、歴代パンチェン・ラマの座所タシルンポ寺へ。高さ30mの大弥勒殿、そして中庭で若いお坊さんたちが繰り広げる問答の練習。帰路はヤルンツァンポ川沿いの絶景を280km、拉薩へ戻ります。</p>
+                    <a href="tibet-day06.html" class="day-read-button">Day 6 を読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="day07">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day07/015-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day07/015-01.png" alt="Day 7 チベットのスターバックス、西安へ" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">07</div>
+                    <p class="day-date">Day 7 — 5月22日 ・ 拉薩 → 車中泊 ・ 写真12枚</p>
+                    <h2 class="day-name">チベットのスターバックス、西安へ</h2>
+                    <p class="day-description">チベットにスターバックスはあるか？——「スターバックスクローン」を頼りに交番で道を聞き、最後の一杯を拉薩で。昼のZ266で西安に向かう32時間の車中には、往路とは別物のうまい食堂車と、青海の絶景車窓が待っていました。</p>
+                    <a href="tibet-day07.html" class="day-read-button">Day 7 を読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="day08">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day08/018-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day08/018-01.png" alt="Day 8 西安に到着" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">08</div>
+                    <p class="day-date">Day 8 — 5月23日 ・ 車中 → 西安 ・ 写真7枚</p>
+                    <h2 class="day-name">西安に到着</h2>
+                    <p class="day-description">晴天のトンネルを抜けると吹雪、そして車掌さんが各部屋に声を掛けて回るほどの青海湖の大眺望。持ち込み食料が尽き、朝は20元の激辛朝食、昼はとっておきの日清ラ王。夜10時、いくら歩いても息が切れない海抜400mの西安に降り立ちます。</p>
+                    <a href="tibet-day08.html" class="day-read-button">Day 8 を読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="day09">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day09/019-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day09/019-01.png" alt="Day 9 兵馬俑、華清池、鐘楼夜市" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">09</div>
+                    <p class="day-date">Day 9 — 5月24日 ・ 西安 ・ 写真56枚</p>
+                    <h2 class="day-name">兵馬俑、華清池、鐘楼夜市</h2>
+                    <p class="day-description">身長180cm・8,000体の兵士が2,200年前のまま並ぶ始皇帝の兵馬俑。発見者・楊志発さんの井戸の話から、青銅馬車の見事な溶接技術まで。午後は楊貴妃の華清池、夜は回族の鐘楼夜市で羊肉串とびゃんびゃん麵——この旅最多、写真56枚の一日です。</p>
+                    <a href="tibet-day09.html" class="day-read-button">Day 9 を読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="day10">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day10/023-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day10/023-01.jpg" alt="Day 10 乾陵と漢の陽陵" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">10</div>
+                    <p class="day-date">Day 10 — 5月25日 ・ 西安郊外 ・ 写真24枚</p>
+                    <h2 class="day-name">乾陵と漢の陽陵</h2>
+                    <p class="day-description">小雨まじりの寒空の下、中国史上唯一の女帝・武則天と高宗が眠る乾陵へ。何も刻まれていない「無字碑」と、首を失った六十一蕃臣の像が残す謎。漢の陽陵では30cmの兵士俑と紀元前の調理道具に、中国人の食への執念を見ました。</p>
+                    <a href="tibet-day10.html" class="day-read-button">Day 10 を読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="day11">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/tibet/day11/025-01.webp" type="image/webp"><img src="/assets/images/trips/tibet/day11/025-01.png" alt="Day 11 香港に向けて" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">11</div>
+                    <p class="day-date">Day 11 — 5月26日 ・ 西安 → 香港 ・ 写真6枚</p>
+                    <h2 class="day-name">香港に向けて</h2>
+                    <p class="day-description">帰りは空港と見紛う巨大な西安北駅から、新幹線で深圳北へ10時間。先頭車両に6席だけのVIP仕様に座り、11日間の全経路を地図にプロットして旅を締めくくります。「チベットは最初で最後かな」——無事に戻れたことが何よりの土産でした。</p>
+                    <a href="tibet-day11.html" class="day-read-button">Day 11 を読む</a>
+                </div>
+            </article>
         </section>
 
         <div class="journal-origin">
@@ -220,6 +284,25 @@
 
     </main>
 
+
+    <script>
+    (function () {
+      const items = document.querySelectorAll('.day-item');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { observer.observe(el); });
+    })();
+    </script>
 
     <script src="js/image-fallback.js"></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
