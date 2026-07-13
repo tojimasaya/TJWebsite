@@ -162,6 +162,336 @@ body {
     }
 }
 
+/* Shared travel-journal overview components. */
+.trip-context {
+    max-width: 960px;
+    margin: 48px auto 56px;
+    display: grid;
+    grid-template-columns: minmax(280px, 0.9fr) 1.1fr;
+    overflow: hidden;
+    border: 1px solid var(--border-color);
+    border-radius: 18px;
+    background: var(--white);
+    box-shadow: 0 18px 55px rgba(0,0,0,0.08);
+}
+
+.trip-context-media {
+    min-height: 340px;
+    background: var(--hover-color);
+}
+
+.trip-context-media picture {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.trip-context-media img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.trip-context-copy {
+    align-self: center;
+    padding: clamp(30px, 5vw, 58px);
+}
+
+.trip-context-kicker,
+.section-kicker {
+    display: block;
+    margin-bottom: 12px;
+    color: var(--text-lighter);
+    font-family: var(--secondary-font);
+    font-size: 0.72rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.trip-context h2 {
+    margin: 0 0 18px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.45rem, 3vw, 2rem);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+    line-height: 1.6;
+}
+
+.trip-context p {
+    margin: 0 0 22px;
+    color: var(--text-light);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.98rem;
+    line-height: 2;
+}
+
+.trip-context-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 28px;
+}
+
+.trip-context-facts span {
+    padding: 6px 11px;
+    border: 1px solid var(--border-color);
+    border-radius: 999px;
+    color: var(--text-light);
+    font-family: var(--secondary-font);
+    font-size: 0.75rem;
+}
+
+.trip-context-actions {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    gap: 12px;
+}
+
+.trip-action {
+    appearance: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 10px 18px;
+    border: 1px solid var(--text-color);
+    border-radius: 999px;
+    background: transparent;
+    color: var(--text-color);
+    font-family: var(--secondary-font);
+    font-size: 0.82rem;
+    font-weight: 600;
+    text-decoration: none;
+    cursor: pointer;
+    transition: background .2s ease, color .2s ease, transform .2s ease;
+}
+
+.trip-action:hover {
+    background: var(--text-color);
+    color: var(--bg-color);
+    transform: translateY(-1px);
+}
+
+.trip-action.primary {
+    border-color: var(--accent-color);
+    background: var(--accent-color);
+    color: #fff;
+}
+
+.share-status {
+    min-height: 1.4em;
+    color: var(--text-light);
+    font-family: var(--secondary-font);
+    font-size: 0.75rem;
+}
+
+.journey-overview {
+    max-width: 960px;
+    margin: 0 auto 52px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.journey-overview h2,
+.related-journeys h2,
+.closing-share h2 {
+    margin: 0 0 12px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.35rem, 2.5vw, 1.8rem);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.journey-overview-intro {
+    max-width: 680px;
+    margin: 0 auto 28px;
+    color: var(--text-light);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 2;
+}
+
+.journey-acts {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    text-align: left;
+}
+
+.journey-act-link {
+    display: block;
+    padding: 22px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: var(--white);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease, border-color .2s ease;
+}
+
+.journey-act-link:hover {
+    transform: translateY(-2px);
+    border-color: var(--accent-color);
+    box-shadow: var(--shadow-md);
+}
+
+.journey-act-number {
+    display: block;
+    margin-bottom: 9px;
+    color: var(--accent-color);
+    font-family: var(--secondary-font);
+    font-size: 0.68rem;
+    font-weight: 600;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+.journey-act-title {
+    display: block;
+    margin-bottom: 6px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1.02rem;
+    font-weight: 600;
+}
+
+.journey-act-range {
+    color: var(--text-light);
+    font-family: var(--secondary-font);
+    font-size: 0.78rem;
+}
+
+.journey-act-heading {
+    position: relative;
+    z-index: 1;
+    max-width: 640px;
+    margin: 20px auto 58px;
+    padding: 18px 24px;
+    background: var(--bg-color);
+    text-align: center;
+    scroll-margin-top: 100px;
+}
+
+.journey-act-heading span {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--accent-color);
+    font-family: var(--secondary-font);
+    font-size: 0.7rem;
+    font-weight: 600;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+}
+
+.journey-act-heading h2 {
+    margin: 0 0 8px;
+    font-family: 'Noto Serif JP', serif;
+    font-size: clamp(1.35rem, 3vw, 1.8rem);
+    font-weight: 500;
+    letter-spacing: 0.05em;
+}
+
+.journey-act-heading p {
+    margin: 0;
+    color: var(--text-light);
+    font-family: 'Noto Serif JP', serif;
+    font-size: 0.9rem;
+    line-height: 1.8;
+}
+
+.related-journeys {
+    max-width: 960px;
+    margin: 0 auto 60px;
+    padding: 0 24px;
+    text-align: center;
+}
+
+.related-journey-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 14px;
+    margin-top: 26px;
+    text-align: left;
+}
+
+.related-journey {
+    display: block;
+    padding: 22px;
+    border: 1px solid var(--border-color);
+    border-radius: 14px;
+    background: var(--white);
+    color: var(--text-color);
+    text-decoration: none;
+    transition: transform .2s ease, box-shadow .2s ease;
+}
+
+.related-journey:hover {
+    transform: translateY(-2px);
+    box-shadow: var(--shadow-md);
+}
+
+.related-journey small {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-lighter);
+    font-family: var(--secondary-font);
+    letter-spacing: 0.1em;
+}
+
+.related-journey strong {
+    display: block;
+    font-family: 'Noto Serif JP', serif;
+    font-size: 1rem;
+    font-weight: 500;
+    line-height: 1.7;
+}
+
+.closing-share {
+    max-width: 720px;
+    margin: 0 auto 48px;
+    padding: 40px 24px;
+    border-top: 1px solid var(--border-color);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.closing-share p {
+    margin: 0 auto 22px;
+    color: var(--text-light);
+    font-family: 'Noto Serif JP', serif;
+    line-height: 1.9;
+}
+
+.closing-share .trip-context-actions {
+    justify-content: center;
+}
+
+@media (max-width: 768px) {
+    .trip-context {
+        grid-template-columns: 1fr;
+        margin: 36px 20px 46px;
+    }
+
+    .trip-context-media {
+        min-height: 0;
+        aspect-ratio: 4 / 3;
+    }
+
+    .trip-context-copy {
+        padding: 30px 24px;
+    }
+
+    .journey-acts,
+    .related-journey-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .journey-act-heading {
+        margin-bottom: 40px;
+    }
+}
+
 .gear-img-box,
 .gear-image {
     position: relative;
