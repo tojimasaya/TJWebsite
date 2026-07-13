@@ -36,24 +36,27 @@
     <meta name="twitter:image" content="https://tojimasaya.com/assets/images/hero/hongkong.jpg">
 
     <style>
-        .guide-head { max-width: 980px; margin: 120px auto 0; padding: 0 24px; }
+        .guide-head { max-width: 980px; margin: 96px auto 0; padding: 0 24px; }
         .guide-cat { font-family: var(--secondary-font); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-color); }
         .guide-cat a { color: var(--accent-color); text-decoration: none; }
         .guide-cat a:hover { text-decoration: underline; }
-        .guide-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3.6vw, 2.2rem); font-weight: 600; letter-spacing: 0.03em; line-height: 1.6; margin: 14px 0 10px; color: var(--text-color); }
-        .guide-sub { font-family: var(--primary-font); font-size: 0.95rem; color: var(--text-light); line-height: 2; margin: 0 0 18px; }
+        .guide-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3.6vw, 2.2rem); font-weight: 600; letter-spacing: 0.03em; line-height: 1.45; margin: 10px 0 8px; color: var(--text-color); }
+        .guide-sub { font-family: var(--primary-font); font-size: 0.92rem; color: var(--text-light); line-height: 1.75; margin: 0 0 12px; }
         .guide-meta { display: flex; flex-wrap: wrap; gap: 8px; }
         .guide-meta .pill { font-size: var(--text-xs); background: var(--hover-color); color: var(--text-color); padding: 5px 12px; border-radius: 999px; font-weight: 600; }
-        .guide-notice { max-width: 980px; margin: 22px auto 0; padding: 0 24px; }
-        .guide-notice-inner { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 14px; line-height: 1.8; background: var(--hover-color); }
+        .guide-notice { max-width: 980px; margin: 12px auto 0; padding: 0 24px; }
+        .guide-notice-inner { font-family: var(--primary-font); font-size: 0.8rem; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 10px; padding: 8px 12px; line-height: 1.7; background: var(--hover-color); }
+        .guide-notice-inner summary, .cal-legend summary { cursor: pointer; color: var(--text-color); font-weight: 600; }
+        .guide-notice-inner p, .cal-legend p { margin: 7px 0 0; }
 
-        .cal-wrap { max-width: 980px; margin: 26px auto 30px; padding: 0 24px; }
+        .cal-wrap { max-width: 980px; margin: 16px auto 30px; padding: 0 24px; }
 
         .cal-years { display: flex; gap: 8px; margin-bottom: 16px; }
         .cal-year-btn { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; padding: 8px 24px; border-radius: 999px; border: 1px solid var(--border-color); background: var(--bg-color); color: var(--text-light); cursor: pointer; transition: all .2s; }
         .cal-year-btn.active { background: var(--text-color); color: var(--bg-color); border-color: var(--text-color); font-weight: 600; }
         .cal-pending { font-family: var(--primary-font); font-size: 0.8rem; color: var(--text-light); border: 1px dashed var(--border-color); border-radius: 10px; padding: 9px 13px; line-height: 1.8; margin: 0 0 18px; }
-        .cal-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 8px; }
+        .cal-controls { display: flex; flex-wrap: wrap; align-items: center; gap: 10px; margin-bottom: 6px; }
+        .cal-pref-note { width: 100%; margin: 0 0 2px; font-family: var(--primary-font); font-size: 0.72rem; color: var(--text-lighter, #888); }
         .cal-toggle { display: inline-flex; align-items: center; gap: 9px; font-family: var(--primary-font); font-size: 0.88rem; color: var(--text-color); border: 1px solid var(--border-color); border-radius: 999px; padding: 7px 14px 7px 9px; cursor: pointer; user-select: none; background: var(--bg-color); transition: border-color .2s, background .2s; }
         .cal-toggle input { display: none; }
         .cal-toggle .sw { position: relative; width: 34px; height: 20px; border-radius: 999px; background: var(--border-color); transition: background .25s; flex-shrink: 0; }
@@ -62,13 +65,13 @@
         .cal-toggle.on .sw::after { left: 16px; }
         .cal-toggle.off { color: var(--text-lighter, #999); }
         .cal-toggle .bdg { margin-left: 2px; }
-        .cal-legend { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-light); margin: 6px 0 22px; line-height: 2.1; }
+        .cal-legend { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-light); margin: 7px 0 16px; line-height: 2; }
         .bdg { display: inline-flex; align-items: center; justify-content: center; width: 15px; height: 15px; border-radius: 4px; color: #fff; font-family: var(--primary-font); font-size: 10px; font-weight: 600; line-height: 1; vertical-align: 0.05em; }
         .bdg.work { background: transparent !important; border: 1.5px solid; box-sizing: border-box; }
 
-        .cal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; }
-        .cal-month { border: 1px solid var(--border-color); border-radius: 14px; padding: 14px 14px 10px; background: var(--bg-color); }
-        .cal-month h3 { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 600; color: var(--text-color); margin: 0 0 8px; text-align: center; letter-spacing: 0.08em; }
+        .cal-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px 18px; }
+        .cal-month { border: 1.5px solid rgba(90, 90, 90, 0.24); border-radius: 16px; padding: 0 14px 12px; background: var(--bg-color); box-shadow: 0 5px 18px rgba(30, 30, 30, 0.055); overflow: hidden; }
+        .cal-month h3 { font-family: 'Noto Serif JP', serif; font-size: 1.08rem; font-weight: 600; color: var(--text-color); margin: 0 -14px 10px; padding: 11px 14px 10px; text-align: center; letter-spacing: 0.1em; background: var(--hover-color); border-bottom: 1px solid rgba(90, 90, 90, 0.16); }
         .cal-table { width: 100%; border-collapse: collapse; table-layout: fixed; }
         .cal-table th { font-family: var(--secondary-font); font-size: 0.62rem; font-weight: 500; color: var(--text-lighter, #999); padding: 2px 0 6px; letter-spacing: 0.05em; }
         .cal-table th.sun, .cal-table td.sun .d { color: #c05656; }
@@ -100,11 +103,11 @@
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
 
         @media (max-width: 900px) { .cal-grid { grid-template-columns: repeat(2, 1fr); } }
-        @media (max-width: 580px) { .cal-grid { grid-template-columns: 1fr; } .guide-head { margin-top: 96px; } }
+        @media (max-width: 580px) { .cal-grid { grid-template-columns: 1fr; } .guide-head { margin-top: 82px; } .guide-sub { line-height: 1.65; } }
     </style>
 
     <script type="application/ld+json">
-    {"@context": "https://schema.org", "@type": "Article", "headline": "香港・中国・台湾・日本・シンガポール・米国市場 祝日カレンダー 2026・2027 — 重ねて見る休日と休場日", "description": "香港・中国・台湾・日本の2026年の祝日・連休を1つのカレンダーに重ねて表示。中国の振替出勤日（調休）も収録。", "image": "https://tojimasaya.com/assets/images/hero/hongkong.jpg", "author": {"@type": "Person", "name": "田路昌也 (Toji Masaya)", "url": "https://tojimasaya.com/about.html"}, "publisher": {"@type": "Person", "name": "田路昌也 (Toji Masaya)"}, "mainEntityOfPage": "https://tojimasaya.com/holidays.html", "inLanguage": "ja", "datePublished": "2026-07-07", "dateModified": "2026-07-10"}
+    {"@context": "https://schema.org", "@type": "Article", "headline": "香港・中国・台湾・日本・シンガポール・米国市場 祝日カレンダー 2026・2027 — 重ねて見る休日と休場日", "description": "香港・中国・台湾・日本の2026年の祝日・連休を1つのカレンダーに重ねて表示。中国の振替出勤日（調休）も収録。", "image": "https://tojimasaya.com/assets/images/hero/hongkong.jpg", "author": {"@type": "Person", "name": "田路昌也 (Toji Masaya)", "url": "https://tojimasaya.com/about.html"}, "publisher": {"@type": "Person", "name": "田路昌也 (Toji Masaya)"}, "mainEntityOfPage": "https://tojimasaya.com/holidays.html", "inLanguage": "ja", "datePublished": "2026-07-07", "dateModified": "2026-07-13"}
     </script>
 </head>
 <body>
@@ -125,7 +128,7 @@
             </div>
         </header>
 
-        <div class="guide-notice"><div class="guide-notice-inner">ℹ️ 各政府の公式発表に基づいています（2027年の中国のみ法定基準日・11月発表待ち）。臨時の変更が出ることがあるので、重要な予定は必ず公式情報をご確認ください。<br>💬 「発表が変わった」「この日は実際こうだった」という情報を歓迎します。<a href="#comments" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">書き込みはこちら（ページ下部）→</a></div></div>
+        <div class="guide-notice"><details class="guide-notice-inner"><summary>ℹ️ データの注意事項・情報提供</summary><p>各政府の公式発表に基づいています（2027年の中国のみ法定基準日・11月発表待ち）。臨時の変更が出ることがあるので、重要な予定は必ず公式情報をご確認ください。 「発表が変わった」「この日は実際こうだった」という情報は<a href="#comments" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">ページ下部からお寄せください →</a></p></details></div>
 
         <div class="cal-wrap">
             <div class="cal-years" id="cal-years" role="tablist" aria-label="表示範囲の切り替え">
@@ -134,8 +137,8 @@
                 <button class="cal-year-btn" data-year="2027" role="tab">2027年</button>
             </div>
             <div class="cal-pending" id="cn-pending" hidden>⚠️ 中国の2027年は<strong>法定祝日の基準日のみ</strong>表示しています。連休の並び・振替出勤日は、例年11月上旬の国務院発表後に反映します。</div>
-            <div class="cal-controls" id="cal-controls" aria-label="表示する地域"></div>
-            <p class="cal-legend"><span class="bdg" style="background:#4a7fd4">日</span> 日本　<span class="bdg" style="background:#d64550">港</span> 香港　<span class="bdg" style="background:#3f9d63">台</span> 台湾　<span class="bdg" style="background:#e09a2e">中</span> 中国　<span class="bdg" style="background:#1a9daa">星</span> シンガポール　<span class="bdg" style="background:#7e57c2">米</span> 米国市場（NYSE/NASDAQ休場日）。<strong>枠だけのバッジ＝特別な平日</strong>——<span class="bdg work" style="border-color:#e09a2e; color:#e09a2e">中</span> 中国の振替出勤日（土日でも出勤）、<span class="bdg work" style="border-color:#7e57c2; color:#7e57c2">米</span> 米国市場の短縮取引（13時閉場）。スイッチで表示を切り替え。各月の下に名称一覧。</p>
+            <div class="cal-controls" id="cal-controls" aria-label="表示する地域"><p class="cal-pref-note">選んだ地域はこの端末に保存され、次回も同じ表示になります。</p></div>
+            <details class="cal-legend"><summary>凡例を見る</summary><p><span class="bdg" style="background:#4a7fd4">日</span> 日本　<span class="bdg" style="background:#d64550">港</span> 香港　<span class="bdg" style="background:#3f9d63">台</span> 台湾　<span class="bdg" style="background:#e09a2e">中</span> 中国　<span class="bdg" style="background:#1a9daa">星</span> シンガポール　<span class="bdg" style="background:#7e57c2">米</span> 米国市場（NYSE/NASDAQ休場日）。<strong>枠だけのバッジ＝特別な平日</strong>——<span class="bdg work" style="border-color:#e09a2e; color:#e09a2e">中</span> 中国の振替出勤日（土日でも出勤）、<span class="bdg work" style="border-color:#7e57c2; color:#7e57c2">米</span> 米国市場の短縮取引（13時閉場）。各月の下に名称一覧。</p></details>
             <div class="cal-grid" id="cal-grid"><p style="font-family: var(--primary-font); color: var(--text-lighter);">カレンダーを読み込み中…</p></div>
         </div>
 
@@ -209,7 +212,18 @@
         2026: ['香港 17日', '中国 7連休期間＋出勤6日', '台湾 22日（補班なし）', '日本 18日', 'シンガポール 14日', '米国市場 休場10日＋短縮2日'],
         2027: ['香港 17日', '中国 法定日のみ（11月発表待ち）', '台湾 23日（補班なし）', '日本 17日', 'シンガポール 12日', '米国市場 休場10日＋短縮1日']
       };
+      const PREF_KEY = 'holiday-calendar-regions-v1';
       const active = { hk: true, cn: true, tw: true, jp: true, sg: true, us: true };
+      try {
+        const saved = JSON.parse(localStorage.getItem(PREF_KEY));
+        if (saved && typeof saved === 'object') {
+          order.forEach(function (key) {
+            if (typeof saved[key] === 'boolean') active[key] = saved[key];
+          });
+        }
+      } catch (e) {
+        // 保存が使えない環境では、全地域表示のまま動作を続ける。
+      }
       const cache = {};
       const missing = {};
       let MODE = 'roll';
@@ -219,14 +233,15 @@
       order.forEach(function (key) {
         const r = META[key];
         const label = document.createElement('label');
-        label.className = 'cal-toggle on';
+        label.className = 'cal-toggle ' + (active[key] ? 'on' : 'off');
         label.style.setProperty('--sw-color', r.color);
-        label.innerHTML = '<input type="checkbox" checked><span class="sw"></span>' + r.label +
+        label.innerHTML = '<input type="checkbox"' + (active[key] ? ' checked' : '') + '><span class="sw"></span>' + r.label +
           ' <span class="bdg" style="background:' + r.color + '">' + CHAR[key] + '</span>';
         label.querySelector('input').addEventListener('change', function (e) {
           active[key] = e.target.checked;
           label.classList.toggle('on', e.target.checked);
           label.classList.toggle('off', !e.target.checked);
+          try { localStorage.setItem(PREF_KEY, JSON.stringify(active)); } catch (err) {}
           render();
           if (typeof gtag !== 'undefined') gtag('event', 'toggle_holiday_region', { region: key, on: e.target.checked });
         });
