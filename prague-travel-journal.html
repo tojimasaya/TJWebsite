@@ -162,6 +162,23 @@
         .essay .books a { color: var(--accent-color); text-decoration: none; }
         .essay .books a:hover { text-decoration: underline; }
 
+        /* 誌面リズム: 幅広ブレイクアウト・組写真・本文横写真・引用 */
+        .ph-wide { margin: 3em 0; margin-left: 50%; width: min(1080px, calc(100vw - 40px)); transform: translateX(-50%); }
+        .ph-wide img { border-radius: 14px; }
+        .ph-pair, .ph-trio { display: grid; gap: 12px; margin: 2.6em 0; }
+        .ph-pair { grid-template-columns: 1fr 1fr; }
+        .ph-trio { grid-template-columns: 1fr 1fr 1fr; }
+        .ph-pair figure, .ph-trio figure, .ph-side figure { margin: 0; }
+        .ph-pair img, .ph-trio img { aspect-ratio: 4/3; object-fit: cover; height: 100%; }
+        .ph-side { display: grid; grid-template-columns: 1fr 280px; gap: 30px; align-items: center; margin: 2.8em 0; }
+        .ph-side p { margin: 0; }
+        .pull-quote { font-size: 1.22rem; line-height: 2.1; text-align: center; font-weight: 600; letter-spacing: 0.05em; margin: 2.8em 0; padding: 1.3em 10px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+        @media (max-width: 700px) {
+            .ph-trio { grid-template-columns: 1fr 1fr; }
+            .ph-trio figure:last-child { grid-column: 1 / -1; }
+            .ph-side { grid-template-columns: 1fr; gap: 14px; }
+        }
+
         .journal-origin {
             max-width: 720px;
             margin: 0 auto 70px;
@@ -207,7 +224,7 @@
 
     <!-- Hero -->
     <header class="journal-hero">
-        <img src="./assets/images/trips/prague/hero.jpg" alt="プラハ、カレル橋の朝" class="journal-hero-bg">
+        <picture><source srcset="./assets/images/trips/prague/hero.webp" type="image/webp"><img src="./assets/images/trips/prague/hero.jpg" alt="プラハ、カレル橋の朝" class="journal-hero-bg"></picture>
         <div class="journal-hero-content">
             <span class="journal-label">Travel Journal — 2014</span>
             <h1 class="journal-title">プラハの奇跡を求めて</h1>
@@ -238,69 +255,72 @@
 
             <p>ところで、前日のニュルンベルクからはバスが便利だとネットに書いてあったので素直に従いましたが、やはり先人の言葉は偉大、ほぼ高速道路で快適でした。<br>列車だとかなり北回りで、多くの人がこのバスを利用する意味がわかりました。（このときはまだ帰り道で大事になるとは思いもしませんでした）<br>＊あくまで2014年の話なので今どうなのかご存じの方教えて下さい。</p>
 
-            <figure><img src="./assets/images/trips/prague/01-bus-route.jpg" alt="ニュルンベルクからプラハへのバス移動ルート" loading="lazy" decoding="async"><figcaption>ニュルンベルクからプラハへバス移動の軌跡</figcaption></figure>
-
             <p>無事予約していたカレル橋 徒歩1分のホテルにチェックイン、三泊四日の予定でしたが最終的に一日早めて戻ったことを思い出しました。</p>
 
-            <figure><img src="./assets/images/trips/prague/02-hotel-map.png" alt="宿泊したホテルの位置" loading="lazy" decoding="async"><figcaption>宿泊したホテル、とにかくカレル橋から近くて最高</figcaption></figure>
+            <div class="ph-pair">
+                <figure><picture><source srcset="./assets/images/trips/prague/01-bus-route.webp" type="image/webp"><img src="./assets/images/trips/prague/01-bus-route.jpg" alt="ニュルンベルクからプラハへのバス移動ルート" loading="lazy" decoding="async"></picture><figcaption>ニュルンベルクからプラハへバス移動の軌跡</figcaption></figure>
+                <figure><picture><source srcset="./assets/images/trips/prague/02-hotel-map.webp" type="image/webp"><img src="./assets/images/trips/prague/02-hotel-map.png" alt="宿泊したホテルの位置" loading="lazy" decoding="async"></picture><figcaption>ホテルはカレル橋から徒歩1分</figcaption></figure>
+            </div>
 
             <p>翌朝 朝靄に包まれたプラハ城が、カレル橋越しに姿を現す瞬間。黄金色に輝く太陽の光が、ヴルタヴァ川の水面を染め上げます。その光景を目にした時、心が震えました。時が止まったかのような静寂の中、歴史の重みと美しさが交錯します。<br>ファインダーを覗き込む私の指が、必死でシャッターを切りました。</p>
 
-            <figure><img src="./assets/images/trips/prague/03-charles-bridge-sunrise.jpg" alt="カレル橋から見るプラハ城と朝日" loading="lazy" decoding="async"><figcaption>カレル橋からプラハ城に映る朝日をみる</figcaption></figure>
+            <div class="ph-wide"><figure><picture><source srcset="./assets/images/trips/prague/03-charles-bridge-sunrise.webp" type="image/webp"><img src="./assets/images/trips/prague/03-charles-bridge-sunrise.jpg" alt="カレル橋から見るプラハ城と朝日" loading="lazy" decoding="async"></picture><figcaption>カレル橋からプラハ城に映る朝日をみる</figcaption></figure></div>
 
             <p>ドイツの街々も魅力的でした。古城や歴史的建造物が、現代的な建物と共存する景観。新旧が融合した都市の姿は、それはそれで興味深いものでした。</p>
 
             <p>しかし、プラハに一歩足を踏み入れた瞬間、全く異なる世界に迷い込んだような感覚に襲われました。ここには、写真に収めたくなる被写体が無数に存在しています。</p>
 
-            <figure><img src="./assets/images/trips/prague/04-castle-view.jpg" alt="プラハ城から見る町並み" loading="lazy" decoding="async"><figcaption>プラハ城からみる町並み</figcaption></figure>
-
-            <figure><img src="./assets/images/trips/prague/05-carriage.jpg" alt="時計台の広場にいた馬車" loading="lazy" decoding="async"><figcaption>時計台の広場にいた馬車</figcaption></figure>
+            <div class="ph-pair">
+                <figure><picture><source srcset="./assets/images/trips/prague/04-castle-view.webp" type="image/webp"><img src="./assets/images/trips/prague/04-castle-view.jpg" alt="プラハ城から見る町並み" loading="lazy" decoding="async"></picture><figcaption>プラハ城からみる町並み</figcaption></figure>
+                <figure><picture><source srcset="./assets/images/trips/prague/05-carriage.webp" type="image/webp"><img src="./assets/images/trips/prague/05-carriage.jpg" alt="時計台の広場にいた馬車" loading="lazy" decoding="async"></picture><figcaption>時計台の広場にいた馬車</figcaption></figure>
+            </div>
 
             <p>プラハの街並み、特に旧市街は、まるで何百年もの時を超えてそのままでした。第二次世界大戦の被害をほとんど受けなかったこの街は、中欧で最もよく保存された都市の一つと言われています。その景観は、単なる観光資源ではなく、生きた歴史書のようです。<br>我々はその歴史の一ページ一ページを丁寧に記録したことを覚えています。</p>
 
-            <figure><img src="./assets/images/trips/prague/06-empty-bridge.jpg" alt="早朝のまだ誰もいないカレル橋" loading="lazy" decoding="async"><figcaption>早朝のまだ誰もいないカレル橋</figcaption></figure>
+            <div class="ph-wide"><figure><picture><source srcset="./assets/images/trips/prague/06-empty-bridge.webp" type="image/webp"><img src="./assets/images/trips/prague/06-empty-bridge.jpg" alt="早朝のまだ誰もいないカレル橋" loading="lazy" decoding="async"></picture><figcaption>早朝のまだ誰もいないカレル橋</figcaption></figure></div>
 
             <p>カレル橋を歩けば、中世の石畳を踏みしめます。橋の上に立つ聖人像たちが、何世紀もの間見守ってきた風景を自分の目で確かめることができます。その瞬間、歴史の一部になったような感覚に包まれます。<br>レンズを通して見るそれらの像は、まるで語りかけてくるかのようでした。</p>
 
-            <figure><img src="./assets/images/trips/prague/07-saints.jpg" alt="カレル橋に立つ聖人像" loading="lazy" decoding="async"><figcaption>カレル橋に立つ聖人像</figcaption></figure>
+            <figure><picture><source srcset="./assets/images/trips/prague/07-saints.webp" type="image/webp"><img src="./assets/images/trips/prague/07-saints.jpg" alt="カレル橋に立つ聖人像" loading="lazy" decoding="async"></picture><figcaption>カレル橋に立つ聖人像</figcaption></figure>
 
             <p>そして、早朝のカレル橋で目にしたファイアーショーは、忘れられない体験でした。朝日が昇る前の薄暗い空を背景に、大道芸人の操る炎が描く軌跡が、幻想的な世界を作り出します。橋の石畳に映る揺らめく光、静寂を破る炎の音。</p>
 
             <p>歴史ある橋の上で繰り広げられる現代的なパフォーマンス。それは、プラハという街の本質を象徴しているようでした。<br>シャッタースピードを遅くして、炎の軌跡を一枚の写真に収めようと試みました。</p>
 
-            <figure><img src="./assets/images/trips/prague/08-fireshow.jpg" alt="早朝のカレル橋で見たファイアーショー" loading="lazy" decoding="async"><figcaption>早朝のカレル橋でみたファイアーショー</figcaption></figure>
+            <div class="ph-wide"><figure><picture><source srcset="./assets/images/trips/prague/08-fireshow.webp" type="image/webp"><img src="./assets/images/trips/prague/08-fireshow.jpg" alt="早朝のカレル橋で見たファイアーショー" loading="lazy" decoding="async"></picture><figcaption>早朝のカレル橋でみたファイアーショー</figcaption></figure></div>
 
-            <p>旧市街広場では、600年以上の歴史を持つ天文時計の仕掛け人形に目を奪われます。周囲の建物も、まるでタイムスリップしたかのような佇まいです。しかし、プラハは決して時間が止まった街ではありません。広場に集う人々の笑顔や活気が、現代の息吹を感じさせてくれます。<br>古いものと新しいものの共存する瞬間だと感じました。</p>
+            <div class="ph-side">
+                <p>旧市街広場では、600年以上の歴史を持つ天文時計の仕掛け人形に目を奪われます。周囲の建物も、まるでタイムスリップしたかのような佇まいです。しかし、プラハは決して時間が止まった街ではありません。広場に集う人々の笑顔や活気が、現代の息吹を感じさせてくれます。<br>古いものと新しいものの共存する瞬間だと感じました。</p>
+                <figure><picture><source srcset="./assets/images/trips/prague/09-astro-clock.webp" type="image/webp"><img src="./assets/images/trips/prague/09-astro-clock.jpg" alt="600年前の天文時計とそこに集う人々" loading="lazy" decoding="async"></picture><figcaption>600年前の天文時計とそこに集う人々</figcaption></figure>
+            </div>
 
-            <figure><img src="./assets/images/trips/prague/09-astro-clock.jpg" alt="600年前の天文時計とそこに集う人々" loading="lazy" decoding="async"><figcaption>600年前の天文時計とそこに集う人々</figcaption></figure>
+            <p>プラハ城の中にあるスターバックス。これこそが、プラハの新旧融合を象徴する場所かもしれません。<br>1000年の歴史を持つ城の一角に、現代的なコーヒーチェーンが居を構えています。窓際の席に座れば、プラハの街を見下ろす絶景が広がります。現代的なラテを手に、中世の景色を眺める。この不思議な体験こそ、プラハの魅力そのものです。コントラストの効いたこの光景を、どう切り取るべきか考えながらシャッターを切りました。</p>
 
-            <p>プラハ城の中にあるスターバックス。これこそが、プラハの新旧融合を象徴する場所かもしれません。<br>1000年の歴史を持つ城の一角に、現代的なコーヒーチェーンが居を構えています。</p>
-
-            <figure><img src="./assets/images/trips/prague/10-starbucks-entry.jpg" alt="プラハ城にあるスターバックスの入口" loading="lazy" decoding="async"><figcaption>プラハ城にあるスターバックス入口</figcaption></figure>
-
-            <p>窓際の席に座れば、プラハの街を見下ろす絶景が広がります。現代的なラテを手に、中世の景色を眺める。この不思議な体験こそ、プラハの魅力そのものです。コントラストの効いたこの光景を、どう切り取るべきか考えながらシャッターを切りました。</p>
-
-            <figure><img src="./assets/images/trips/prague/11-starbucks-two.jpg" alt="スターバックスでくつろぐ二人" loading="lazy" decoding="async"><figcaption>スタバでくつろぐ二人</figcaption></figure>
-
-            <figure><img src="./assets/images/trips/prague/12-terrace-view.jpg" alt="テラス席から見える町並み" loading="lazy" decoding="async"><figcaption>テラス席なら町並みがみえます</figcaption></figure>
+            <div class="ph-trio">
+                <figure><picture><source srcset="./assets/images/trips/prague/10-starbucks-entry.webp" type="image/webp"><img src="./assets/images/trips/prague/10-starbucks-entry.jpg" alt="プラハ城にあるスターバックスの入口" loading="lazy" decoding="async"></picture><figcaption>プラハ城にあるスターバックス入口</figcaption></figure>
+                <figure><picture><source srcset="./assets/images/trips/prague/11-starbucks-two.webp" type="image/webp"><img src="./assets/images/trips/prague/11-starbucks-two.jpg" alt="スターバックスでくつろぐ二人" loading="lazy" decoding="async"></picture><figcaption>スタバでくつろぐ二人</figcaption></figure>
+                <figure><picture><source srcset="./assets/images/trips/prague/12-terrace-view.webp" type="image/webp"><img src="./assets/images/trips/prague/12-terrace-view.jpg" alt="テラス席から見える町並み" loading="lazy" decoding="async"></picture><figcaption>テラス席なら町並みがみえます</figcaption></figure>
+            </div>
 
             <p>確かに、プラハも時代とともに変化しています。特に旧市街の外では新しい建築物も見られ、観光産業の発展と歴史的景観の保存のバランスを取ろうとする努力が感じられます。しかし、その変化の中にあっても、プラハは「生きている博物館」としての魅力を失っていません。古いものを大切に保存しながら、必要に応じて新しいものを受け入れる。その絶妙なバランス感覚が、プラハを特別な街にしているのかもしれないですね。</p>
 
             <p>本当ならもう一日滞在するはずだったのですが、天候の関係だったか最終日のフライト時間に遅れるのが怖かったのかとにかく滞在を一日早めてフランクフルトに戻ったのでした。</p>
 
-            <figure><img src="./assets/images/trips/prague/13-to-train.jpg" alt="急遽、列車での移動に" loading="lazy" decoding="async"><figcaption>急遽 列車移動に</figcaption></figure>
-
             <p>ただ行きと同じバスが一杯で、しかたなく列車で戻ったのですが、プラハからドレスデンまでの列車が遅れて10時間ほどかかったと記憶しています。<br>下の地図を見ると判りますが、線路がエルベ川に沿ってグネグネ曲がっていたのには驚きました、時間がかかるわけです。</p>
 
-            <figure><img src="./assets/images/trips/prague/14-rail-map.jpg" alt="帰路の列車経路図" loading="lazy" decoding="async"><figcaption>赤が列車の経路、黒はプラハーニュルンベルクーフランクフルトを結ぶ直線</figcaption></figure>
+            <figure><picture><source srcset="./assets/images/trips/prague/14-rail-map.webp" type="image/webp"><img src="./assets/images/trips/prague/14-rail-map.jpg" alt="帰路の列車経路図" loading="lazy" decoding="async"></picture><figcaption>赤が列車の経路、黒はプラハーニュルンベルクーフランクフルトを結ぶ直線</figcaption></figure>
 
-            <figure><img src="./assets/images/trips/prague/15-train-inside.jpg" alt="列車の車内風景" loading="lazy" decoding="async"><figcaption>車内風景</figcaption></figure>
-
-            <figure><img src="./assets/images/trips/prague/16-frankfurt-hbf.jpg" alt="プラハから到着したフランクフルト中央駅" loading="lazy" decoding="async"><figcaption>プラハから到着したフランクフルト中央駅</figcaption></figure>
+            <div class="ph-trio">
+                <figure><picture><source srcset="./assets/images/trips/prague/13-to-train.webp" type="image/webp"><img src="./assets/images/trips/prague/13-to-train.jpg" alt="急遽、列車での移動に" loading="lazy" decoding="async"></picture><figcaption>急遽 列車移動に</figcaption></figure>
+                <figure><picture><source srcset="./assets/images/trips/prague/15-train-inside.webp" type="image/webp"><img src="./assets/images/trips/prague/15-train-inside.jpg" alt="列車の車内風景" loading="lazy" decoding="async"></picture><figcaption>車内風景</figcaption></figure>
+                <figure><picture><source srcset="./assets/images/trips/prague/16-frankfurt-hbf.webp" type="image/webp"><img src="./assets/images/trips/prague/16-frankfurt-hbf.jpg" alt="プラハから到着したフランクフルト中央駅" loading="lazy" decoding="async"></picture><figcaption>10時間かけて到着したフランクフルト中央駅</figcaption></figure>
+            </div>
 
             <p>そして今、プラハでの日々を振り返り、私は田中氏の言葉の真意を理解できた気がします。<br>確かに、プラハは写真家の楽園でした。しかし、それは単に美しい被写体が多いからではありません。</p>
 
-            <p>プラハの「奇跡」とは、時間を超越した美しさなのです。カレル橋の上で見た朝日、旧市街広場の天文時計、プラハ城の威容。これらは何世紀もの時を経ても、なお息づいています。</p>
+            <p class="pull-quote">プラハの「奇跡」とは、<br>時間を超越した美しさなのです。</p>
+
+            <p>カレル橋の上で見た朝日、旧市街広場の天文時計、プラハ城の威容。これらは何世紀もの時を経ても、なお息づいています。</p>
 
             <p>現代の喧騒の中に、過去の安穏が共存している。それこそが、ヨゼフ・スデクが捉え、そして私も少しですが感じ取ることができた「奇跡」なのでしょう。</p>
 
