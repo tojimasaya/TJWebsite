@@ -65,14 +65,34 @@
         .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
 
-        .day-grid { max-width: 1100px; margin: 40px auto 60px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-        .day-card { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-color); text-decoration: none; aspect-ratio: 16/10; display: block; }
-        .day-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; display: block; }
-        .day-card:hover img { transform: scale(1.04); }
-        .day-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 18px; }
-        .day-card-label { font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: .14em; color: rgba(255,255,255,.85); text-transform: uppercase; margin-bottom: 4px; }
-        .day-card-title { font-family: 'Noto Serif JP', serif; font-size: 1.0rem; font-weight: 600; color: #fff; line-height: 1.55; }
-        .day-card-meta { font-family: var(--primary-font); font-size: 0.75rem; color: rgba(255,255,255,.8); margin-top: 4px; }
+        /* 章別タイムライン(ジグザグ) */
+        .days-section { max-width: 1000px; margin: 70px auto 90px; padding: 0 30px; position: relative; }
+        .day-item { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; scroll-margin-top: 100px; }
+        .day-item:last-child { margin-bottom: 0; }
+        .day-item.visible { opacity: 1; transform: translateY(0); }
+        .day-item:nth-child(even) { direction: rtl; }
+        .day-item:nth-child(even) .day-content { direction: ltr; text-align: right; }
+        .day-image-wrapper { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.08); aspect-ratio: 4/3; }
+        .day-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(0.2, 1, 0.3, 1); display: block; }
+        .day-item:hover .day-image-wrapper img { transform: scale(1.05); }
+        .day-content { padding: 20px; background: var(--bg-color); }
+        .day-number { font-family: var(--primary-font); font-size: 3rem; color: var(--border-color); line-height: 1; margin-bottom: 12px; font-weight: 600; }
+        .day-date { font-family: var(--secondary-font); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-lighter, #999); margin-bottom: 10px; }
+        .day-name { font-family: 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 600; margin: 0 0 15px; color: var(--text-color); letter-spacing: 0.04em; line-height: 1.6; }
+        .day-description { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; line-height: 2; color: var(--text-light); margin: 0 0 26px; }
+        .day-read-button { display: inline-block; padding: 12px 30px; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.1em; transition: all 0.3s ease; }
+        .day-read-button:hover { background: var(--text-color); color: var(--bg-color); }
+        @media (min-width: 769px) {
+            .days-section::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: linear-gradient(to bottom, transparent, var(--border-color) 6%, var(--border-color) 94%, transparent); transform: translateX(-50%); z-index: -1; }
+        }
+        @media (max-width: 768px) {
+            .days-section { padding: 0 20px; margin: 50px auto 70px; }
+            .day-item, .day-item:nth-child(even) { grid-template-columns: 1fr; gap: 22px; direction: ltr; margin-bottom: 60px; }
+            .day-item:nth-child(even) .day-content { text-align: left; }
+            .day-content { padding: 0; }
+            .day-number { font-size: 2.4rem; }
+            .day-name { font-size: 1.25rem; }
+        }
 </style>
 
     <script type="application/ld+json">
@@ -106,47 +126,67 @@
             <p>2014年9月、写真の祭典フォトキナの年。ライカの総本山ライツパーク（ヴェッツラー）に始まり、「最悪で最高」のケルン、古城のハイデルベルク、ポルシェミュージアム、そしてスピード違反の思い出とともにニュルンベルクへ——最後はバスで国境を越え、「写真家の楽園」プラハに至る周遊の前半戦です。2年後、逆回りでイタリアからフォトキナを目指すことになる（<a href="italy-travel-journal.html">イタリア縦断、フォトキナへの旅</a>）、その原点となった旅。</p>
         </article>
 
-        <section class="day-grid" aria-label="都市別の記録">
-            <a class="day-card" href="germany-wetzlar.html">
-                <picture><source srcset="/assets/images/trips/germany/wetzlar/01-01.webp" type="image/webp"><img src="/assets/images/trips/germany/wetzlar/01-01.jpg" alt="ヴェッツラー" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">01 — 2014.09.16</span>
-                    <span class="day-card-title">ライツパーク — Leicaの総本山へ</span>
-                    <span class="day-card-meta">写真9枚</span>
+        <section class="days-section" aria-label="都市別の記録">
+            <article class="day-item" id="wetzlar">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/germany/wetzlar/01-01.webp" type="image/webp"><img src="/assets/images/trips/germany/wetzlar/01-01.jpg" alt="ヴェッツラー" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="germany-koln.html">
-                <picture><source srcset="/assets/images/gallery/cologne.webp" type="image/webp"><img src="/assets/images/gallery/cologne.jpg" alt="ケルン大聖堂" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">02 — 2014.09.17–19</span>
-                    <span class="day-card-title">ケルン — 最悪で最高の街、そしてフォトキナ</span>
-                    <span class="day-card-meta">写真16枚</span>
+                <div class="day-content">
+                    <div class="day-number">01</div>
+                    <p class="day-date">2014.09.16 — Wetzlar ・ 写真9枚</p>
+                    <h2 class="day-name">ライツパーク — Leicaの総本山へ</h2>
+                    <p class="day-description">フランクフルトからノンストップで、念願のライカ総本山ライツパークへ。オスカー・バルナックの銅像、キャパの「崩れ落ちる兵士」、ライカ一筋の師匠の記念撮影。そして最初の試練は「Herren」と「Damen」、どちらが男子トイレかでした。</p>
+                    <a href="germany-wetzlar.html" class="day-read-button">ヴェッツラーを読む</a>
                 </div>
-            </a>
-            <a class="day-card" href="germany-heidelberg.html">
-                <picture><source srcset="/assets/images/trips/germany/heidelberg/01-05.webp" type="image/webp"><img src="/assets/images/trips/germany/heidelberg/01-05.png" alt="ハイデルベルク城跡" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">03 — 2014.09.19–20</span>
-                    <span class="day-card-title">ハイデルベルク、そしてポルシェミュージアム</span>
-                    <span class="day-card-meta">写真22枚</span>
+            </article>
+            <article class="day-item" id="koln">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/gallery/cologne.webp" type="image/webp"><img src="/assets/images/gallery/cologne.jpg" alt="ケルン大聖堂" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="germany-nurnberg.html">
-                <picture><source srcset="/assets/images/trips/germany/nurnberg/01-01.webp" type="image/webp"><img src="/assets/images/trips/germany/nurnberg/01-01.jpg" alt="ニュルンベルク" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">04 — 2014.09.21</span>
-                    <span class="day-card-title">ニュルンベルク — 夜景とスピード違反の思い出</span>
-                    <span class="day-card-meta">写真12枚</span>
+                <div class="day-content">
+                    <div class="day-number">02</div>
+                    <p class="day-date">2014.09.17–19 — Köln ・ 写真16枚</p>
+                    <h2 class="day-name">ケルン — 最悪で最高の街、そしてフォトキナ</h2>
+                    <p class="day-description">朝市の立つ広場から我々の車が消えた——レッカー移動事件と、タクシーを止めて行き先まで説明し、お礼を頑なに受け取らなかった優しいおばさん。フォトキナでは自作のQX100ブラケットが各ブースで大ウケ。夜はライン川対岸から大聖堂を30秒露光で。</p>
+                    <a href="germany-koln.html" class="day-read-button">ケルンを読む</a>
                 </div>
-            </a>
-            <a class="day-card" href="prague-travel-journal.html">
-                <picture><source srcset="/assets/images/gallery/charlesbridge.webp" type="image/webp"><img src="/assets/images/gallery/charlesbridge.jpg" alt="プラハ、早朝のカレル橋" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">05 — 2014.09.22</span>
-                    <span class="day-card-title">そしてプラハへ — 写真家の楽園</span>
-                    <span class="day-card-meta">この旅の最終章（プラハ旅行記）</span>
+            </article>
+            <article class="day-item" id="heidelberg">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/germany/heidelberg/01-05.webp" type="image/webp"><img src="/assets/images/trips/germany/heidelberg/01-05.png" alt="ハイデルベルク城跡" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
+                <div class="day-content">
+                    <div class="day-number">03</div>
+                    <p class="day-date">2014.09.19–20 — Heidelberg ・ 写真22枚</p>
+                    <h2 class="day-name">ハイデルベルク、そしてポルシェミュージアム</h2>
+                    <p class="day-description">ドイツの「日本食 サクラ」で撃沈した天ぷらうどんに始まり、ゲーテも歩いた哲学の道からネッカー川越しに望むハイデルベルク城跡へ。バスターさんたっての願いで訪れたポルシェミュージアム——この旅一番の美味は、実はその併設レストランでした。</p>
+                    <a href="germany-heidelberg.html" class="day-read-button">ハイデルベルクを読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="nurnberg">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/germany/nurnberg/01-01.webp" type="image/webp"><img src="/assets/images/trips/germany/nurnberg/01-01.jpg" alt="ニュルンベルク" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">04</div>
+                    <p class="day-date">2014.09.21 — Nürnberg ・ 写真12枚</p>
+                    <h2 class="day-name">ニュルンベルク — 夜景とスピード違反の思い出</h2>
+                    <p class="day-description">メルヘンの権化ノイシュバンシュタイン城から、激しい嵐を抜けてニュルンベルクへ。スパイ映画のような夜の街並みにシャッターを切りまくった旅の数週間後、香港に届いたのは、バスターさんの顔写真入りスピード違反請求書(29.75ユーロ)だったのです。</p>
+                    <a href="germany-nurnberg.html" class="day-read-button">ニュルンベルクを読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="praha">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/gallery/charlesbridge.webp" type="image/webp"><img src="/assets/images/gallery/charlesbridge.jpg" alt="プラハ、早朝のカレル橋" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">05</div>
+                    <p class="day-date">2014.09.22 — Praha ・ この旅の最終章</p>
+                    <h2 class="day-name">そしてプラハへ — 写真家の楽園</h2>
+                    <p class="day-description">「プラハは写真家の楽園である」——田中長徳氏の言葉に導かれ、バスで国境を越えて千年の古都へ。朝靄のカレル橋、炎のファイアーショー、600年動き続ける天文時計。この旅の最終章は、独立した一篇「プラハの奇跡を求めて」にまとめています。</p>
+                    <a href="prague-travel-journal.html" class="day-read-button">プラハ旅行記を読む</a>
+                </div>
+            </article>
         </section>
 
         <div class="journal-origin">
@@ -162,6 +202,25 @@
 
     </main>
 
+
+    <script>
+    (function () {
+      const items = document.querySelectorAll('.day-item');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { observer.observe(el); });
+    })();
+    </script>
 
     <script src="js/image-fallback.js"></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>

@@ -63,14 +63,34 @@
         .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
 
-        .day-grid { max-width: 1100px; margin: 40px auto 80px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-        .day-card { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-color); text-decoration: none; aspect-ratio: 16/10; display: block; }
-        .day-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; display: block; }
-        .day-card:hover img { transform: scale(1.04); }
-        .day-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 18px; }
-        .day-card-label { font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: .14em; color: rgba(255,255,255,.85); text-transform: uppercase; margin-bottom: 4px; }
-        .day-card-title { font-family: 'Noto Serif JP', serif; font-size: 1.0rem; font-weight: 600; color: #fff; line-height: 1.55; }
-        .day-card-meta { font-family: var(--primary-font); font-size: 0.75rem; color: rgba(255,255,255,.8); margin-top: 4px; }
+        /* 章別タイムライン(ジグザグ) */
+        .days-section { max-width: 1000px; margin: 70px auto 90px; padding: 0 30px; position: relative; }
+        .day-item { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; scroll-margin-top: 100px; }
+        .day-item:last-child { margin-bottom: 0; }
+        .day-item.visible { opacity: 1; transform: translateY(0); }
+        .day-item:nth-child(even) { direction: rtl; }
+        .day-item:nth-child(even) .day-content { direction: ltr; text-align: right; }
+        .day-image-wrapper { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.08); aspect-ratio: 4/3; }
+        .day-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(0.2, 1, 0.3, 1); display: block; }
+        .day-item:hover .day-image-wrapper img { transform: scale(1.05); }
+        .day-content { padding: 20px; background: var(--bg-color); }
+        .day-number { font-family: var(--primary-font); font-size: 3rem; color: var(--border-color); line-height: 1; margin-bottom: 12px; font-weight: 600; }
+        .day-date { font-family: var(--secondary-font); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-lighter, #999); margin-bottom: 10px; }
+        .day-name { font-family: 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 600; margin: 0 0 15px; color: var(--text-color); letter-spacing: 0.04em; line-height: 1.6; }
+        .day-description { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; line-height: 2; color: var(--text-light); margin: 0 0 26px; }
+        .day-read-button { display: inline-block; padding: 12px 30px; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.1em; transition: all 0.3s ease; }
+        .day-read-button:hover { background: var(--text-color); color: var(--bg-color); }
+        @media (min-width: 769px) {
+            .days-section::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: linear-gradient(to bottom, transparent, var(--border-color) 6%, var(--border-color) 94%, transparent); transform: translateX(-50%); z-index: -1; }
+        }
+        @media (max-width: 768px) {
+            .days-section { padding: 0 20px; margin: 50px auto 70px; }
+            .day-item, .day-item:nth-child(even) { grid-template-columns: 1fr; gap: 22px; direction: ltr; margin-bottom: 60px; }
+            .day-item:nth-child(even) .day-content { text-align: left; }
+            .day-content { padding: 0; }
+            .day-number { font-size: 2.4rem; }
+            .day-name { font-size: 1.25rem; }
+        }
 </style>
 
     <script type="application/ld+json">
@@ -104,55 +124,79 @@
             <p>2014年のドイツ周遊（最後にプラハ）から2年。今度は逆回りで、イタリアの街々を巡ってから、ケルンで開かれるカメラの祭典・フォトキナに向かった2016年9月の記録です。ミラノの「効率追求」が初日から崩壊する話に始まり、深夜3時のサンマルコ広場、2キロのビステッカ、チンクエ・テッレの海、カプリ島の青の洞窟、そしてローマのパスタ巡りまで——6つの街の記憶を、都市ごとにまとめました。</p>
         </article>
 
-        <section class="day-grid" aria-label="都市別の記録">
-            <a class="day-card" href="italy-milano.html">
-                <picture><source srcset="/assets/images/trips/italy/milano/01.webp" type="image/webp"><img src="/assets/images/trips/italy/milano/01.jpg" alt="ミラノ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">01 — Milano</span>
-                    <span class="day-card-title">失敗こそ最高の思い出 〜ミラノ、効率追求旅の意外な展開〜</span>
-                    <span class="day-card-meta">写真5枚</span>
+        <section class="days-section" aria-label="都市別の記録">
+            <article class="day-item" id="milano">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/italy/milano/01.webp" type="image/webp"><img src="/assets/images/trips/italy/milano/01.jpg" alt="ミラノ" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="italy-venezia.html">
-                <picture><source srcset="/assets/images/trips/italy/venezia/01.webp" type="image/webp"><img src="/assets/images/trips/italy/venezia/01.jpg" alt="ベネツィア" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">02 — Venezia</span>
-                    <span class="day-card-title">水の都 ベネツィアの魅力と思い出</span>
-                    <span class="day-card-meta">写真15枚</span>
+                <div class="day-content">
+                    <div class="day-number">01</div>
+                    <p class="day-date">Milano ・ 写真5枚</p>
+                    <h2 class="day-name">失敗こそ最高の思い出 〜ミラノ、効率追求旅の意外な展開〜</h2>
+                    <p class="day-description">「効率」を信条とする旅の達人3人組。しかし地下鉄の改札で師匠のポケットからチケットが消え、ホテルとの往復2回で効率の文字も消えました——その先に待っていた夕陽のドゥオーモの荘厳さ。数年後に香港で再会し抱き合うことになる、大道芸人のおじさんとの出会いもこの街です。</p>
+                    <a href="italy-milano.html" class="day-read-button">ミラノを読む</a>
                 </div>
-            </a>
-            <a class="day-card" href="italy-firenze.html">
-                <picture><source srcset="/assets/images/trips/italy/firenze/01.webp" type="image/webp"><img src="/assets/images/trips/italy/firenze/01.jpg" alt="フィレンツェ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">03 — Firenze</span>
-                    <span class="day-card-title">フィレンツェ再発見：ダビデ像より心に残った2キロのステーキ</span>
-                    <span class="day-card-meta">写真9枚</span>
+            </article>
+            <article class="day-item" id="venezia">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/italy/venezia/01.webp" type="image/webp"><img src="/assets/images/trips/italy/venezia/01.jpg" alt="ベネツィア" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="italy-cinqueterre.html">
-                <picture><source srcset="/assets/images/trips/italy/cinqueterre/01.webp" type="image/webp"><img src="/assets/images/trips/italy/cinqueterre/01.jpg" alt="チンクエ・テッレ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">04 — Cinque Terre</span>
-                    <span class="day-card-title">チンクエ・テッレの奇跡：カメラが捉えなかった最高の一枚</span>
-                    <span class="day-card-meta">写真13枚</span>
+                <div class="day-content">
+                    <div class="day-number">02</div>
+                    <p class="day-date">Venezia ・ 写真15枚</p>
+                    <h2 class="day-name">水の都 ベネツィアの魅力と思い出</h2>
+                    <p class="day-description">ダニエル・クレイグが出てきそうな水の都へ、気の良い運ちゃんの水上タクシーで乗りつける。暗い部屋の小さなWiFiパスワードを老眼の師匠に代わって読み上げる最年少の私。リアルト市場そばのレストランには、滞在中2度も通いました。</p>
+                    <a href="italy-venezia.html" class="day-read-button">ベネツィアを読む</a>
                 </div>
-            </a>
-            <a class="day-card" href="italy-napoli.html">
-                <picture><source srcset="/assets/images/trips/italy/napoli/01.webp" type="image/webp"><img src="/assets/images/trips/italy/napoli/01.jpg" alt="ナポリ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">05 — Napoli</span>
-                    <span class="day-card-title">サンタルチアの歌声が響くナポリ 青の洞窟</span>
-                    <span class="day-card-meta">写真16枚</span>
+            </article>
+            <article class="day-item" id="firenze">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/italy/firenze/01.webp" type="image/webp"><img src="/assets/images/trips/italy/firenze/01.jpg" alt="フィレンツェ" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="day-card" href="italy-roma.html">
-                <picture><source srcset="/assets/images/trips/italy/roma/01.webp" type="image/webp"><img src="/assets/images/trips/italy/roma/01.jpg" alt="ローマ" loading="lazy" decoding="async"></picture>
-                <div class="day-card-overlay">
-                    <span class="day-card-label">06 — Roma</span>
-                    <span class="day-card-title">ローマ散策とパスタ巡り：味わう歴史、発見する文化</span>
-                    <span class="day-card-meta">写真12枚</span>
+                <div class="day-content">
+                    <div class="day-number">03</div>
+                    <p class="day-date">Firenze ・ 写真9枚</p>
+                    <h2 class="day-name">フィレンツェ再発見：ダビデ像より心に残った2キロのステーキ</h2>
+                    <p class="day-description">我々にとってのフィレンツェは、ビステッカ・アッラ・フィオレンティーナの聖地。「この肉の山を征服できるかな？」——店主が差し出す2キロのTボーンをほぼ岩塩だけで平らげ、翌々日には別の店でまた注文。大聖堂とポンテベッキオは、その合間に巡ります。</p>
+                    <a href="italy-firenze.html" class="day-read-button">フィレンツェを読む</a>
                 </div>
-            </a>
+            </article>
+            <article class="day-item" id="cinqueterre">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/italy/cinqueterre/01.webp" type="image/webp"><img src="/assets/images/trips/italy/cinqueterre/01.jpg" alt="チンクエ・テッレ" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">04</div>
+                    <p class="day-date">Cinque Terre ・ 写真13枚</p>
+                    <h2 class="day-name">チンクエ・テッレの奇跡：カメラが捉えなかった最高の一枚</h2>
+                    <p class="day-description">「日本人の時間厳守は噂通り素晴らしい！」と褒められた3人組が、最後のモンテロッソで痛恨の乗り遅れ。大遅刻の末、最後の角を曲がると——バスの前に整列し手を振る南米の旅行者たちの出迎えが。カメラに収められなかった、一番心に残る一枚の話です。</p>
+                    <a href="italy-cinqueterre.html" class="day-read-button">チンクエ・テッレを読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="napoli">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/italy/napoli/01.webp" type="image/webp"><img src="/assets/images/trips/italy/napoli/01.jpg" alt="ナポリ" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">05</div>
+                    <p class="day-date">Napoli ・ 写真16枚</p>
+                    <h2 class="day-name">サンタルチアの歌声が響くナポリ 青の洞窟</h2>
+                    <p class="day-description">隣のバスと喧嘩したそばから親友のように笑い合うタクシーの運ちゃん。一発で入れた青の洞窟では、ショーン・コネリー似の船頭の歌う「サンタルチア」が幻想的な青に響きます。仕上げはガイドさん直伝、路地裏レストランの巨大モッツァレラ。</p>
+                    <a href="italy-napoli.html" class="day-read-button">ナポリを読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="roma">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/italy/roma/01.webp" type="image/webp"><img src="/assets/images/trips/italy/roma/01.jpg" alt="ローマ" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">06</div>
+                    <p class="day-date">Roma ・ 写真12枚</p>
+                    <h2 class="day-name">ローマ散策とパスタ巡り：味わう歴史、発見する文化</h2>
+                    <p class="day-description">この旅のテーマは「ローマを代表する2つのパスタ」。オードリー・ヘプバーンが通った店で目の前で和えられるフェットチーネ・アルフレードと、「発祥の店」と噂されるLa Carbonaraのカルボナーラ。工事中のスペイン階段に凹みつつ、味覚で歴史を巡ります。</p>
+                    <a href="italy-roma.html" class="day-read-button">ローマを読む</a>
+                </div>
+            </article>
         </section>
 
         <div class="journal-origin">
@@ -168,6 +212,25 @@
 
     </main>
 
+
+    <script>
+    (function () {
+      const items = document.querySelectorAll('.day-item');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { observer.observe(el); });
+    })();
+    </script>
 
     <script src="js/image-fallback.js"></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>

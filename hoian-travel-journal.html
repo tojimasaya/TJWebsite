@@ -66,14 +66,34 @@
         .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
 
-        .visit-grid { max-width: 1100px; margin: 40px auto 60px; padding: 0 24px; display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 22px; }
-        .visit-card { position: relative; border-radius: 14px; overflow: hidden; border: 1px solid var(--border-color); text-decoration: none; aspect-ratio: 16/10; display: block; }
-        .visit-card img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s ease; display: block; }
-        .visit-card:hover img { transform: scale(1.04); }
-        .visit-card-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(0,0,0,.72) 0%, rgba(0,0,0,.15) 55%, rgba(0,0,0,0) 100%); display: flex; flex-direction: column; justify-content: flex-end; padding: 16px 18px; }
-        .visit-card-label { font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: .14em; color: rgba(255,255,255,.85); text-transform: uppercase; margin-bottom: 4px; }
-        .visit-card-title { font-family: 'Noto Serif JP', serif; font-size: 1.02rem; font-weight: 600; color: #fff; line-height: 1.5; }
-        .visit-card-meta { font-family: var(--primary-font); font-size: 0.75rem; color: rgba(255,255,255,.8); margin-top: 4px; }
+        /* 章別タイムライン(ジグザグ) */
+        .days-section { max-width: 1000px; margin: 70px auto 90px; padding: 0 30px; position: relative; }
+        .day-item { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; scroll-margin-top: 100px; }
+        .day-item:last-child { margin-bottom: 0; }
+        .day-item.visible { opacity: 1; transform: translateY(0); }
+        .day-item:nth-child(even) { direction: rtl; }
+        .day-item:nth-child(even) .day-content { direction: ltr; text-align: right; }
+        .day-image-wrapper { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.08); aspect-ratio: 4/3; }
+        .day-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(0.2, 1, 0.3, 1); display: block; }
+        .day-item:hover .day-image-wrapper img { transform: scale(1.05); }
+        .day-content { padding: 20px; background: var(--bg-color); }
+        .day-number { font-family: var(--primary-font); font-size: 3rem; color: var(--border-color); line-height: 1; margin-bottom: 12px; font-weight: 600; }
+        .day-date { font-family: var(--secondary-font); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-lighter, #999); margin-bottom: 10px; }
+        .day-name { font-family: 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 600; margin: 0 0 15px; color: var(--text-color); letter-spacing: 0.04em; line-height: 1.6; }
+        .day-description { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; line-height: 2; color: var(--text-light); margin: 0 0 26px; }
+        .day-read-button { display: inline-block; padding: 12px 30px; background: transparent; border: 1px solid var(--text-color); color: var(--text-color); text-decoration: none; font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.1em; transition: all 0.3s ease; }
+        .day-read-button:hover { background: var(--text-color); color: var(--bg-color); }
+        @media (min-width: 769px) {
+            .days-section::before { content: ''; position: absolute; top: 0; bottom: 0; left: 50%; width: 1px; background: linear-gradient(to bottom, transparent, var(--border-color) 6%, var(--border-color) 94%, transparent); transform: translateX(-50%); z-index: -1; }
+        }
+        @media (max-width: 768px) {
+            .days-section { padding: 0 20px; margin: 50px auto 70px; }
+            .day-item, .day-item:nth-child(even) { grid-template-columns: 1fr; gap: 22px; direction: ltr; margin-bottom: 60px; }
+            .day-item:nth-child(even) .day-content { text-align: left; }
+            .day-content { padding: 0; }
+            .day-number { font-size: 2.4rem; }
+            .day-name { font-size: 1.25rem; }
+        }
 </style>
 
     <script type="application/ld+json">
@@ -107,31 +127,43 @@
             <p>2013年、2016年、2018年。ランタンの灯る世界遺産の古都ホイアンを、5年のあいだに三度訪ねました。町は少しずつ変わり、記録する道具もカメラから動画へと変わりましたが、変わらなかったのは人々の笑顔です。三度目の旅では、初訪のときに立ち寄ったレストランをまた訪ね、5年前の写真を店員さんに見せて盛り上がりました。これはその定点観測の記録です。</p>
         </article>
 
-        <section class="visit-grid" aria-label="訪問ごとの記録">
-            <a class="visit-card" href="hoian-2013.html">
-                <picture><source srcset="/assets/images/trips/hoian/2013/05-01.webp" type="image/webp"><img src="/assets/images/trips/hoian/2013/05-01.png" alt="2013年のホイアン" loading="lazy" decoding="async"></picture>
-                <div class="visit-card-overlay">
-                    <span class="visit-card-label">2013.01 — 第一訪</span>
-                    <span class="visit-card-title">フエ、そしてホイアンへ</span>
-                    <span class="visit-card-meta">日本橋の謎・夜景と笑顔 ・ 写真28枚</span>
+        <section class="days-section" aria-label="訪問ごとの記録">
+            <article class="day-item" id="v2013">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/hoian/2013/05-01.webp" type="image/webp"><img src="/assets/images/trips/hoian/2013/05-01.png" alt="2013年のホイアン" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
-            <a class="visit-card" href="hoian-2016.html">
-                <picture><source srcset="/assets/images/trips/hoian/2016/01-02.webp" type="image/webp"><img src="/assets/images/trips/hoian/2016/01-02.png" alt="2016年のホイアン" loading="lazy" decoding="async"></picture>
-                <div class="visit-card-overlay">
-                    <span class="visit-card-label">2016.01 — 第二訪</span>
-                    <span class="visit-card-title">三年ぶりの再会</span>
-                    <span class="visit-card-meta">変わらぬ笑顔 ・ 写真37枚</span>
+                <div class="day-content">
+                    <div class="day-number">2013</div>
+                    <p class="day-date">第一訪 — 2013.01 ・ 写真28枚</p>
+                    <h2 class="day-name">フエ、そしてホイアンへ</h2>
+                    <p class="day-description">旅の目的は「日本橋は本当に日本人が作ったのか」の検証——橋に刻まれた寄進者の名は、すべて中国名でした。夜景撮影の帰り道、「写真を撮ってあげようか」と声を掛けると迷わずポーズを決めたMiss Lyの店員さんたち。この一枚が、後の再会につながります。</p>
+                    <a href="hoian-2013.html" class="day-read-button">2013年を読む</a>
                 </div>
-            </a>
-            <a class="visit-card" href="hoian-2018.html">
-                <picture><source srcset="/assets/images/trips/hoian/2016/03-06.webp" type="image/webp"><img src="/assets/images/trips/hoian/2016/03-06.png" alt="2018年のホイアン（映像）" loading="lazy" decoding="async"></picture>
-                <div class="visit-card-overlay">
-                    <span class="visit-card-label">2018.06 — 第三訪</span>
-                    <span class="visit-card-title">映像で辿るロケハンの旅</span>
-                    <span class="visit-card-meta">オールドレンズWS下見 ・ 動画4本</span>
+            </article>
+            <article class="day-item" id="v2016">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/hoian/2016/01-02.webp" type="image/webp"><img src="/assets/images/trips/hoian/2016/01-02.png" alt="2016年のホイアン" loading="lazy" decoding="async"></picture>
                 </div>
-            </a>
+                <div class="day-content">
+                    <div class="day-number">2016</div>
+                    <p class="day-date">第二訪 — 2016.01 ・ 写真37枚</p>
+                    <h2 class="day-name">三年ぶりの再会</h2>
+                    <p class="day-description">3年前の写真を見せると「この子はいまハノイに」「この子は二人目が生まれたよ」と店中が目を輝かせたMiss Ly再訪。灯籠の流れるトゥーボン川、アートのような電線、3年前と変わらないフォーの味。Facebookを交換して写真を全部送りました——いい時代になったものです。</p>
+                    <a href="hoian-2016.html" class="day-read-button">2016年を読む</a>
+                </div>
+            </article>
+            <article class="day-item" id="v2018">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/hoian/2016/03-06.webp" type="image/webp"><img src="/assets/images/trips/hoian/2016/03-06.png" alt="2018年のホイアン（映像）" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <div class="day-number">2018</div>
+                    <p class="day-date">第三訪 — 2018.06 ・ 動画4本</p>
+                    <h2 class="day-name">映像で辿るロケハンの旅</h2>
+                    <p class="day-description">三度目は写真でも文章でもなく、映像で。オールドレンズ・ワークショップ開催地の下見に、5年前の写真を手にMiss Ly Cafeをまた訪ね、ランタンの夜、ミーソン遺跡、そして三人の日本人の墓へ。4日間のロケハンをVLOGで辿ります。</p>
+                    <a href="hoian-2018.html" class="day-read-button">2018年を観る</a>
+                </div>
+            </article>
         </section>
 
         <div class="journal-origin">
@@ -147,6 +179,25 @@
 
     </main>
 
+
+    <script>
+    (function () {
+      const items = document.querySelectorAll('.day-item');
+      if (!('IntersectionObserver' in window)) {
+        items.forEach(function (el) { el.classList.add('visible'); });
+        return;
+      }
+      const observer = new IntersectionObserver(function (entries) {
+        entries.forEach(function (entry) {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: 0.12 });
+      items.forEach(function (el) { observer.observe(el); });
+    })();
+    </script>
 
     <script src="js/image-fallback.js"></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
