@@ -1861,12 +1861,18 @@ body {
 .ph-pair.natural figure { align-self: start; }
 .ph-side { display: grid; grid-template-columns: 1fr 280px; gap: 30px; align-items: center; margin: 2.8em 0; }
 .ph-side p { margin: 0; }
+.ph-side.rev { grid-template-columns: 280px 1fr; }
 .pull-quote { font-family: 'Noto Serif JP', serif; font-size: 1.22rem; line-height: 2.1; text-align: center; font-weight: 600; letter-spacing: 0.05em; margin: 2.8em 0; padding: 1.3em 10px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
 @media (max-width: 700px) {
     .ph-trio { grid-template-columns: 1fr 1fr; }
     .ph-trio figure:last-child { grid-column: 1 / -1; }
-    .ph-side { grid-template-columns: 1fr; gap: 14px; }
+    .ph-side, .ph-side.rev { grid-template-columns: 1fr; gap: 14px; }
 }
+
+/* この旅の仲間: 写真を切り抜かず全体表示する版(横長写真で人が端に写る場合) */
+.trip-context--contain .trip-context-media { display: flex; align-items: center; }
+.trip-context--contain .trip-context-media picture { height: auto; }
+.trip-context--contain .trip-context-media img { height: auto; object-fit: contain; }
 
 /* 組写真のクリック拡大(photo-lightbox.js) */
 .ph-pair img, .ph-trio img, .ph-side img { cursor: zoom-in; }
