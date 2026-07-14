@@ -1867,3 +1867,15 @@ body {
     .ph-trio figure:last-child { grid-column: 1 / -1; }
     .ph-side { grid-template-columns: 1fr; gap: 14px; }
 }
+
+/* 組写真のクリック拡大(photo-lightbox.js) */
+.ph-pair img, .ph-trio img, .ph-side img { cursor: zoom-in; }
+.photo-lightbox { border: 0; padding: 0; background: transparent; max-width: min(1200px, 94vw); overflow: visible; }
+.photo-lightbox::backdrop { background: rgba(0, 0, 0, 0.84); }
+.photo-lightbox figure { margin: 0; }
+.photo-lightbox img { max-width: min(1200px, 94vw); max-height: 84vh; width: auto; height: auto; display: block; margin: 0 auto; border-radius: 10px; cursor: zoom-out; }
+.photo-lightbox figcaption { color: rgba(255, 255, 255, 0.88); text-align: center; font-size: 0.85rem; margin-top: 12px; letter-spacing: 0.02em; }
+.photo-lightbox .lb-close { position: absolute; top: -14px; right: -14px; z-index: 1; width: 34px; height: 34px; border-radius: 50%; border: 0; background: rgba(255, 255, 255, 0.92); color: #222; font-size: 1.15rem; line-height: 1; cursor: pointer; box-shadow: 0 2px 10px rgba(0, 0, 0, 0.35); }
+@media (max-width: 700px) {
+    .photo-lightbox .lb-close { top: -8px; right: 2px; }
+}
