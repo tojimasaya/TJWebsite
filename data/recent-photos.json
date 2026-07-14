@@ -1,5 +1,42 @@
 [
   {
+    "slug": "pasteako-birthday",
+    "label": "今日の断章",
+    "title": "家族3人の誕生日、中環のステーキ屋Pasteako",
+    "place": "香港・中環 PMQ",
+    "date": "2026年7月13日",
+    "body": "七月十二日が私の誕生日なのだが、妻の体調がすぐれず一日ずらして、妻と息子との三人でセントラルのステーキ屋Pasteakoへ行ったところ、この店の面白いのは席に着く前にまず自分の使うナイフを選ばせる趣向で、私は八本の中から、日本の名を持つ七番のサントクを選んだのに、いざリブアイの筋を前にするとまるで歯が立たず、名前だけの日本刀だったかと苦笑しつつ、しかし肉そのものは文句なしに旨く、還暦を過ぎて自分の誕生日を喜ぶ歳ではとうになくなった私には、新しい仕事に就いたばかりで毎日が緊張の連続らしく食事中も携帯のメッセージを気にし、話題も仕事のことばかりで、正直もう助言できることなどほとんどない息子と、それでも妻を挟んで同じ皿を囲み、あれこれ話せたこの一日こそが、どんな贈り物よりもありがたかった。",
+    "image": "assets/images/photo-notes/pasteako-birthday-family.jpg",
+    "imageWebp": "assets/images/photo-notes/pasteako-birthday-family.webp",
+    "alt": "赤いチェックのテーブルに料理を並べ、革張りソファ席で微笑む家族3人（妻・私・息子）",
+    "caption": "Family Dinner / Pasteako, Central",
+    "link": "gallery.html",
+    "linkLabel": "ほかの一枚も見る →",
+    "sideFrames": [
+      {
+        "title": "まずナイフを選ぶ",
+        "caption": "Choose Your Knife / Pasteako",
+        "image": "assets/images/photo-notes/pasteako-birthday-knives.jpg",
+        "imageWebp": "assets/images/photo-notes/pasteako-birthday-knives.webp",
+        "alt": "ガラスケースに1〜8番の番号を付けて並べられた、柄の異なる8本のナイフ"
+      },
+      {
+        "title": "ステーキとパスタ",
+        "caption": "Steak & Pasta / Pasteako",
+        "image": "assets/images/photo-notes/pasteako-birthday-steak.jpg",
+        "imageWebp": "assets/images/photo-notes/pasteako-birthday-steak.webp",
+        "alt": "赤チェック縁の皿に、こんがり焼けたステーキと黒胡椒クリームのパスタ"
+      },
+      {
+        "title": "Pasteako・中環",
+        "caption": "Pasteako / PMQ, Central",
+        "image": "assets/images/photo-notes/pasteako-birthday-storefront.jpg",
+        "imageWebp": "assets/images/photo-notes/pasteako-birthday-storefront.webp",
+        "alt": "「PASTEAKO」の看板が灯る中環PMQの店の入口"
+      }
+    ]
+  },
+  {
     "slug": "sincere-podium-banana-sim",
     "label": "今日の断章",
     "title": "台風が連れてきた友人と、先達廣場のSIM棚",
