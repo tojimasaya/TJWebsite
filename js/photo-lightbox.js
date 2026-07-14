@@ -2,7 +2,7 @@
 (function () {
   'use strict';
 
-  const imgs = document.querySelectorAll('.ph-pair img, .ph-trio img, .ph-side img');
+  const imgs = document.querySelectorAll('.ph-pair img, .ph-trio img, .ph-side img, .ph-tallart img');
   if (!imgs.length) return;
 
   const dlg = document.createElement('dialog');

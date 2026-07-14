@@ -1862,6 +1862,8 @@ body {
 .ph-side { display: grid; grid-template-columns: 1fr 280px; gap: 30px; align-items: center; margin: 2.8em 0; }
 .ph-side p { margin: 0; }
 .ph-side.rev { grid-template-columns: 280px 1fr; }
+.ph-tallart { margin: 2.6em 0; }
+.ph-tallart img { width: auto; max-width: 100%; max-height: 72vh; margin: 0 auto; display: block; }
 .pull-quote { font-family: 'Noto Serif JP', serif; font-size: 1.22rem; line-height: 2.1; text-align: center; font-weight: 600; letter-spacing: 0.05em; margin: 2.8em 0; padding: 1.3em 10px; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
 @media (max-width: 700px) {
     .ph-trio { grid-template-columns: 1fr 1fr; }
@@ -1875,7 +1877,7 @@ body {
 .trip-context--contain .trip-context-media img { height: auto; object-fit: contain; }
 
 /* 組写真のクリック拡大(photo-lightbox.js) */
-.ph-pair img, .ph-trio img, .ph-side img { cursor: zoom-in; }
+.ph-pair img, .ph-trio img, .ph-side img, .ph-tallart img { cursor: zoom-in; }
 .photo-lightbox { border: 0; padding: 0; background: transparent; max-width: min(1200px, 94vw); overflow: visible; }
 .photo-lightbox::backdrop { background: rgba(0, 0, 0, 0.84); }
 .photo-lightbox figure { margin: 0; }
