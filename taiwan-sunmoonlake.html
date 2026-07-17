@@ -63,6 +63,26 @@
         .journal-nav-links { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 0 auto 90px; padding: 0 20px; }
         .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+        .essay .fact-list { list-style: none; margin: 0.4em 0 1.9em; padding: 0; border-top: 1px solid var(--border-color); }
+        .essay .fact-list li { display: flex; gap: 16px; padding: 11px 2px; border-bottom: 1px solid var(--border-color); line-height: 1.75; }
+        .essay .fact-list li > span:first-child { flex: 0 0 6.2em; color: var(--text-light); font-family: var(--secondary-font); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.04em; padding-top: 0.28em; }
+        .essay .fact-list a { text-decoration: none; }
+        .essay .fact-list a:hover { text-decoration: underline; }
+        .essay .mini-head { font-weight: 700; margin: 1.7em 0 0.5em; letter-spacing: 0.03em; }
+        .essay .bullets { list-style: none; margin: 0 0 1.4em; padding: 0; }
+        .essay .bullets li { position: relative; padding: 4px 0 4px 1.35em; line-height: 1.85; }
+        .essay .bullets li::before { content: ""; position: absolute; left: 0.15em; top: 0.92em; width: 6px; height: 6px; border-radius: 50%; background: var(--accent-color); opacity: 0.6; }
+        .essay .access-card { list-style: none; margin: 1.2em 0 1.9em; padding: 4px 22px; background: var(--hover-color); border: 1px solid var(--border-color); border-radius: 12px; }
+        .essay .access-card li { display: flex; flex-wrap: wrap; gap: 4px 16px; align-items: baseline; padding: 13px 0; }
+        .essay .access-card li + li { border-top: 1px solid var(--border-color); }
+        .essay .access-card .label { flex: 0 0 8em; color: var(--text-light); font-family: var(--secondary-font); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.03em; }
+        .essay .access-card a { text-decoration: none; font-weight: 500; }
+        .essay .access-card a:hover { text-decoration: underline; }
+        @media (max-width: 520px) {
+            .essay .fact-list li { flex-direction: column; gap: 2px; }
+            .essay .fact-list li > span:first-child { padding-top: 0; }
+            .essay .access-card .label { flex-basis: 100%; }
+        }
 </style>
 
     <script type="application/ld+json">
@@ -113,36 +133,44 @@
             <p>でも、雨の日でも諦めることはありません。<br>むしろ、3つの交通手段をうまく使えば、雨の日ならではの幻想的な風景を快適に楽しむことができます。</p>
             <h3>遊湖巴士（周遊バス）</h3>
             <figure><picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/01-02.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/01-02.png" alt="バス路線図" loading="lazy" decoding="async"></picture><figcaption>バス路線図</figcaption></figure>
-            <p>時刻表は<a href="http://www.ntbus.com.tw/s03.html" target="_blank" rel="noopener noreferrer">ここをクリック</a>してご覧ください。（2025/02/01時点）</p>
-            <p>約1時間〜1時間半間隔で運行、主要観光スポットを網羅</p>
-            <p>上の簡易マップの日月潭（水社旅客中心）を出発して時計回りに玄光寺まで行くバスと、その反対に玄光寺を出発して反時計回りに日月潭まで行く2つの路線があります。</p>
-            <p>バス停はほぼ道路の向かいにそれぞれありますので、方向を間違えないように注意してください。</p>
-            <p>文武廟や慈恩塔など高台の観光地へのアクセスに最適</p>
-            <p>ロープウェイには、青年活動中心停留所からがベスト</p>
+            <ul class="fact-list">
+                <li><span>運行間隔</span>約1時間〜1時間半</li>
+                <li><span>時刻表</span><a href="http://www.ntbus.com.tw/s03.html" target="_blank" rel="noopener noreferrer">南投客運 公式サイト</a>（2025/02時点）</li>
+            </ul>
+            <p>主要観光スポットをほぼ網羅し、文武廟や慈恩塔など高台の観光地へのアクセスにも最適です。ロープウェイへは、青年活動中心停留所から乗るのがベスト。</p>
+            <p>上の簡易マップのように、日月潭（水社旅客中心）を出発して時計回りに玄光寺まで行くバスと、その反対に玄光寺を出発して反時計回りに日月潭まで行く2つの路線があります。バス停はほぼ道路の向かいにそれぞれありますので、方向を間違えないように注意してください。</p>
             <p>私たちは宿泊ホテルでこのバス１日券をもらいました。</p>
             <figure><picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/01-03.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/01-03.png" alt="初乗車時に運転手がチケットの一部を破る（左上）ことで利用開始、それ以降は乗車時にこの半券を運転手に見せて乗車" loading="lazy" decoding="async"></picture><figcaption>初乗車時に運転手がチケットの一部を破る（左上）ことで利用開始、それ以降は乗車時にこの半券を運転手に見せて乗車</figcaption></figure>
-            <h3><a href="https://www.sunmoonlake.gov.tw/ja/guide/transport#page-section-2" target="_blank" rel="noopener noreferrer">観光船（フェリー）</a></h3>
+            <h3>観光船（フェリー）</h3>
             <figure><picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/01-04.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/01-04.png" alt="日月潭 — 霧雨の湖、贅沢なステイ" loading="lazy" decoding="async"></picture></figure>
-            <p>営業時間：9:00-17:00頃</p>
-            <p>チケットの赤字で示した3つの港（水社・玄光寺・伊達邵）を結ぶ</p>
-            <p>1日乗り放題で300元</p>
-            <p>15-20分間隔で運航（時刻表はチケット裏面に記載）</p>
-            <h3><a href="https://www.sunmoonlake.gov.tw/ja/guide/transport#page-section-3" target="_blank" rel="noopener noreferrer">日月潭ロープウェイ</a></h3>
-            <p>平日：10:30-16:00、休日：10:00-16:30</p>
-            <p>片道約7分の空中散歩</p>
-            <p>一般料金380元</p>
+            <ul class="fact-list">
+                <li><span>営業時間</span>9:00〜17:00頃</li>
+                <li><span>ルート</span>水社・玄光寺・伊達邵の3つの港を結ぶ</li>
+                <li><span>料金</span>1日乗り放題 300元</li>
+                <li><span>運航間隔</span>15〜20分（時刻表はチケット裏面に記載）</li>
+            </ul>
+            <h3>日月潭ロープウェイ</h3>
+            <ul class="fact-list">
+                <li><span>運行時間</span>平日 10:30〜16:00／休日 10:00〜16:30</li>
+                <li><span>所要時間</span>片道約7分の空中散歩</li>
+                <li><span>料金</span>一般 380元</li>
+            </ul>
             <p>私たちは観光船とロープウェイをあわせたチケットを<a data-aff="kkday" href="//ck.jp.ap.valuecommerce.com/servlet/referral?sid=3775696&amp;pid=892660963&amp;vc_url=https%3A%2F%2Fwww.kkday.com%2Fja%2Fproduct%2F30423-nantou-sun-moon-lake-cable-car-boat-ticket-cycling-package" target="_blank" rel="sponsored nofollow noopener"><img src="//ad.jp.ap.valuecommerce.com/servlet/gifbanner?sid=3775696&amp;pid=892660963" height="1" width="0" border="0" alt="">KKDayで購入</a>（一人１４００円）しました。観光船乗り場やロープウェイ駅でスマホに表示されるQRコードを見せて乗車します。</p>
             <p style="font-size: 0.82rem; color: var(--text-light); margin-top: 6px;">※ 上記の観光船＋ロープウェイのセット券（KKday）の予約リンクには広告（アフィリエイト）を含みます。リンク経由でご予約いただくと、当サイト運営者・田路昌也に紹介料が入ることがあります（お支払い額は変わりません）。</p>
             <h3>3つの交通手段の賢い使い分け方</h3>
             <p>実際に体験して分かった日月潭の効率的な周遊方法をお伝えします。</p>
-            <p>バスを基本に据える</p>
-            <p>ほぼすべての観光スポットを網羅</p>
-            <p>文武廟や慈恩塔など高台の名所へ直接アクセス</p>
-            <p>雨の日でも快適な移動が可能</p>
-            <p>フェリーは湖を楽しむために</p>
-            <p>日月潭の絶景を水上から堪能</p>
-            <p>霧に包まれる山々の水墨画のような風景</p>
-            <p>港から観光地までは距離があるため、移動手段としては二の次</p>
+            <p class="mini-head">バスを基本に据える</p>
+            <ul class="bullets">
+                <li>ほぼすべての観光スポットを網羅</li>
+                <li>文武廟や慈恩塔など高台の名所へ直接アクセス</li>
+                <li>雨の日でも快適な移動が可能</li>
+            </ul>
+            <p class="mini-head">フェリーは湖を楽しむために</p>
+            <ul class="bullets">
+                <li>日月潭の絶景を水上から堪能</li>
+                <li>霧に包まれる山々の水墨画のような風景</li>
+                <li>港から観光地までは距離があるため、移動手段としては二の次</li>
+            </ul>
             <p>フェリーは確かに港間を直線的に結び、バスより短時間で移動できます。しかし、港から主要観光地までは意外と距離があります。そのため、フェリーは「移動手段」ではなく「湖上観光」と割り切って楽しむのがおすすめです。</p>
             <p>結論として、バスを軸に据えた周遊プランを立て、その合間にフェリーで湖の景色を楽しむ。これが日月潭を効率的に巡るベストな方法だと感じました。</p>
             <h3>印象的なスポット</h3>
@@ -170,9 +198,11 @@
             </div>
             <p>雨で当初の予定は変更になりましたが、バス、船、ロープウェイを組み合わせることで、効率的に観光地を巡ることができました。そして何より、晴れの日とは一味違う、幻想的な日月潭の表情に出会えたことは、特別な思い出となりました。</p>
             <h3>アクセス情報</h3>
-            <p>日月潭遊湖巴士：<a href="http://www.ntbus.com.tw/s03.html" target="_blank" rel="noopener noreferrer">http://www.ntbus.com.tw/s03.html</a></p>
-            <p>観光船・ロープウェイ：<a href="https://www.sunmoonlake.gov.tw/zh-tw/guide/transport#page-section-2" target="_blank" rel="noopener noreferrer">https://www.sunmoonlake.gov.tw/zh-tw/guide/transport#page-section-2</a></p>
-            <p>次回は宿泊したホテルを紹介します。</p>
+            <ul class="access-card">
+                <li><span class="label">周遊バス 時刻表</span><a href="http://www.ntbus.com.tw/s03.html" target="_blank" rel="noopener noreferrer">南投客運 公式サイト</a></li>
+                <li><span class="label">ロープウェイ</span><a href="https://www.ropeway.com.tw/jp/" target="_blank" rel="noopener noreferrer">日月潭ロープウェイ 公式サイト（日本語）</a></li>
+                <li><span class="label">観光情報全般</span><a href="https://www.sunmoonlake.gov.tw/ja" target="_blank" rel="noopener noreferrer">日月潭 観光情報サイト（日本語）</a></li>
+            </ul>
             <h2>日月潭の贅沢ステイ — 日月潭フローデシンホテル</h2>
             <p>日月潭北部、文武廟に程近い高台に建つフローデシンホテル。<br>二泊三日で32,000NT$(約15万円)という価格に一瞬躊躇しましたが、滞在は期待以上の価値がありました。</p>
             <div class="ph-wide"><figure><picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/02-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/02-01.jpg" alt="中央がフローデシンホテル、右側に文武廟" loading="lazy" decoding="async"></picture><figcaption>中央がフローデシンホテル、右側に文武廟</figcaption></figure></div>
