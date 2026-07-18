@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-06-23T00:00:00Z",
+  "updated_at": "2026-07-18T00:00:00Z",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -412,6 +412,27 @@
           }
         },
         {
+          "id": "rokid-ai-glasses",
+          "name": "Rokid AI Glasses",
+          "brand": "Rokid",
+          "image": "/assets/images/photo-notes/rokid-mongkok-langham-night.jpg",
+          "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
+          "specs": [
+            "AIグラス",
+            "カメラ搭載",
+            "翻訳・記録"
+          ],
+          "description": "Even G2を買う寸前から、カメラ搭載のRokidを選んだAIグラス。見たものをその場でAIに渡して、翻訳や記録の入力デバイスとして使う発想が中心。裸眼・コンタクト・モノビジョンとの相性まで含め、日常の見え方を試している。",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n949b2448e060\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす① カメラで選んだ、AIグラス</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n458a51095135\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす② メガネを、人生の入力デバイスにする</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n477f909ca135\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす③ 見えるメガネの、見え方問題</a>",
+          "links": {
+            "カメラで選んだAIグラス": "https://note.com/tojimasaya/n/n949b2448e060",
+            "人生の入力デバイス": "https://note.com/tojimasaya/n/n458a51095135",
+            "見えるメガネの見え方問題": "https://note.com/tojimasaya/n/n477f909ca135"
+          }
+        },
+        {
           "id": "macbook-pro-14-m3",
           "name": "MacBook Pro 14\" (M3)",
           "brand": "Apple",
@@ -656,6 +677,28 @@
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/ne60ce62cf179?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">HAGiBiSからACASISへ——MagSafe対応SSDケースを乗り換えた理由</a>",
           "links": {
             "レビュー": "https://note.com/tojimasaya/n/ne60ce62cf179"
+          }
+        },
+        {
+          "id": "kablecard",
+          "name": "KableCARD",
+          "brand": "KableCARD",
+          "image": "/assets/images/gear/accessories.jpg",
+          "status": "available",
+          "specs": [
+            "カードサイズ",
+            "充電ケーブル＋変換アダプター",
+            "SIMピン／SIM2枚収納",
+            "microSDリーダー",
+            "Qiワイヤレス充電",
+            "LEDライト",
+            "7年愛用"
+          ],
+          "description": "７年前から使い続けているお気に入り。似たようなものをいくつか購入したが、必要なものがこの薄さに収まっていることが、これを７年間使い続けている理由です。USB-Cケーブルを軸に、Micro USB・Lightning・USB-Aへの変換アダプター、SIMピンとSIM2枚ぶんの収納、microSDカードリーダー、置くだけのQiワイヤレス充電＆スタンドまで、この一枚に集約されている。薄さは正義。",
+          "comment": "",
+          "links": {
+            "動画レビュー": "https://www.youtube.com/watch?v=I0WBbyF4_ds",
+            "amazon": "https://amzn.to/4wkDTav"
           }
         }
       ]
