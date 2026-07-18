@@ -548,6 +548,45 @@
           }
         },
         {
+          "id": "kablecard",
+          "name": "KableCARD",
+          "brand": "KableCARD",
+          "image": "/assets/images/gear/accessories.jpg",
+          "status": "available",
+          "specs": [
+            "カードサイズ",
+            "充電ケーブル＋変換アダプター",
+            "SIMピン／SIM2枚収納",
+            "microSDリーダー",
+            "Qiワイヤレス充電",
+            "LEDライト",
+            "7年愛用"
+          ],
+          "description": "７年前から使い続けているお気に入り。似たようなものをいくつか購入したが、必要なものがこの薄さに収まっていることが、これを７年間使い続けている理由です。USB-Cケーブルを軸に、Micro USB・Lightning・USB-Aへの変換アダプター、SIMピンとSIM2枚ぶんの収納、microSDカードリーダー、置くだけのQiワイヤレス充電＆スタンドまで、この一枚に集約されている。薄さは正義。",
+          "comment": "",
+          "links": {
+            "動画レビュー": "https://www.youtube.com/watch?v=I0WBbyF4_ds",
+            "amazon": "https://amzn.to/4wkDTav"
+          }
+        },
+        {
+          "id": "mcdodo-67w-charger",
+          "name": "Mcdodo 67W GaN 急速充電器",
+          "brand": "Mcdodo",
+          "image": "/assets/images/gear/mcdodo67wcharger.jpg",
+          "status": "available",
+          "specs": [
+            "67W",
+            "リトラクタブルケーブルが便利"
+          ],
+          "description": "折りたたみ式の日本向けACプラグに、USB-CとUSB-A、さらに巻き取り式USB-Cケーブルを内蔵した67W GaN充電器。ケーブル忘れや断線リスクを減らせるうえ、出力表示で充電状況も見える。NovaWave 3wayと組み合わせると旅先の電源まわりがかなり安定する。",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
+          "links": {
+            "レビュー": "https://note.com/tojimasaya/n/n7e6bcdb29165",
+            "amazon": "https://amzn.to/45ac5cU"
+          }
+        },
+        {
           "id": "yazawa-hpm6ac3wh-travel-power-tap",
           "name": "YAZAWA 海外用マルチ変換タップ3個口 HPM6AC3WH",
           "brand": "YAZAWA",
@@ -629,41 +668,6 @@
           }
         },
         {
-          "id": "mcdodo-67w-charger",
-          "name": "Mcdodo 67W GaN 急速充電器",
-          "brand": "Mcdodo",
-          "image": "/assets/images/gear/mcdodo67wcharger.jpg",
-          "status": "available",
-          "specs": [
-            "67W",
-            "リトラクタブルケーブルが便利"
-          ],
-          "description": "折りたたみ式の日本向けACプラグに、USB-CとUSB-A、さらに巻き取り式USB-Cケーブルを内蔵した67W GaN充電器。ケーブル忘れや断線リスクを減らせるうえ、出力表示で充電状況も見える。NovaWave 3wayと組み合わせると旅先の電源まわりがかなり安定する。",
-          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n7e6bcdb29165\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">SFC修行に持っていくべき、電源まわり最適解——Mcdodo × CIOで完結する俺の装備</a>",
-          "links": {
-            "レビュー": "https://note.com/tojimasaya/n/n7e6bcdb29165",
-            "amazon": "https://amzn.to/45ac5cU"
-          }
-        },
-        {
-          "id": "pgytech-magcam",
-          "name": "PGYTECH MagCam グリップ",
-          "brand": "PGYTECH",
-          "image": "/assets/images/gear/pgytech_magcam.jpg",
-          "status": "available",
-          "specs": [
-            "MagSafe",
-            "グリップ一体",
-            "Bluetoothシャッター",
-            "スタンド"
-          ],
-          "description": "Xiaomi 15 Ultraを“写真機”として使うために導入したMagSafe対応グリップ。装着するとスマホをカメラのように構えられ、Bluetoothシャッターやスタンド機能も使える。スマホを撮影専用機として見せたいときに効く小物。",
-          "comment": "",
-          "links": {
-            "使用記事": "https://note.com/tojimasaya/n/n7e99cfcd1cd0"
-          }
-        },
-        {
           "id": "acasis-ssd",
           "name": "ACASIS SSD",
           "brand": "ACASIS",
@@ -677,28 +681,6 @@
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/ne60ce62cf179?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">HAGiBiSからACASISへ——MagSafe対応SSDケースを乗り換えた理由</a>",
           "links": {
             "レビュー": "https://note.com/tojimasaya/n/ne60ce62cf179"
-          }
-        },
-        {
-          "id": "kablecard",
-          "name": "KableCARD",
-          "brand": "KableCARD",
-          "image": "/assets/images/gear/accessories.jpg",
-          "status": "available",
-          "specs": [
-            "カードサイズ",
-            "充電ケーブル＋変換アダプター",
-            "SIMピン／SIM2枚収納",
-            "microSDリーダー",
-            "Qiワイヤレス充電",
-            "LEDライト",
-            "7年愛用"
-          ],
-          "description": "７年前から使い続けているお気に入り。似たようなものをいくつか購入したが、必要なものがこの薄さに収まっていることが、これを７年間使い続けている理由です。USB-Cケーブルを軸に、Micro USB・Lightning・USB-Aへの変換アダプター、SIMピンとSIM2枚ぶんの収納、microSDカードリーダー、置くだけのQiワイヤレス充電＆スタンドまで、この一枚に集約されている。薄さは正義。",
-          "comment": "",
-          "links": {
-            "動画レビュー": "https://www.youtube.com/watch?v=I0WBbyF4_ds",
-            "amazon": "https://amzn.to/4wkDTav"
           }
         }
       ]
