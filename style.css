@@ -1887,3 +1887,39 @@ body {
 @media (max-width: 700px) {
     .photo-lightbox .lb-close { top: -8px; right: 2px; }
 }
+
+/* === gear: Amazon購入ボタン（素テキストリンク→目立つCTAボタン化。属性セレクタで全gearページ共通・JS不要） === */
+.gear-product-links a[href*="amzn.to"],
+.gear-product-links a[href*="amazon."] {
+    flex: 1 1 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    padding: 11px 18px;
+    background: #ff9900;
+    color: #232f3e;
+    font-size: 0.9rem;
+    font-weight: 700;
+    letter-spacing: 0.01em;
+    border: none;
+    border-radius: 8px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.15);
+    transition: background 0.15s ease, transform 0.1s ease, box-shadow 0.15s ease;
+}
+.gear-product-links a[href*="amzn.to"]::before,
+.gear-product-links a[href*="amazon."]::before {
+    content: "";
+    width: 15px;
+    height: 15px;
+    flex: 0 0 auto;
+    background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='%23232f3e'%3E%3Cpath d='M7 18c-1.1 0-1.99.9-1.99 2S5.9 22 7 22s2-.9 2-2-.9-2-2-2zM1 2v2h2l3.6 7.59-1.35 2.45c-.16.28-.25.61-.25.96 0 1.1.9 2 2 2h12v-2H7.42c-.14 0-.25-.11-.25-.25l.03-.12.9-1.63h7.45c.75 0 1.41-.41 1.75-1.03l3.58-6.49c.08-.14.12-.31.12-.48 0-.55-.45-1-1-1H5.21l-.94-2H1zm16 16c-1.1 0-1.99.9-1.99 2s.89 2 1.99 2 2-.9 2-2-.9-2-2-2z'/%3E%3C/svg%3E") no-repeat center / contain;
+}
+.gear-product-links a[href*="amzn.to"]:hover,
+.gear-product-links a[href*="amazon."]:hover {
+    background: #f59300;
+    color: #232f3e;
+    border: none;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 10px rgba(255, 153, 0, 0.35);
+}
