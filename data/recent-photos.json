@@ -1,5 +1,49 @@
 [
   {
+    "slug": "mongkok-before-a-month-away",
+    "label": "今日の断章",
+    "title": "一月ぶんの香港成分を、旺角で",
+    "place": "香港・旺角 先達廣場／星際城市",
+    "date": "2026年7月19日",
+    "body": "いよいよ一月近く香港を離れる。発つ前に香港成分を注入しておこうと、旺角へ出た。まずは腹ごしらえの叉燒と燒鵝の双拼飯——白飯の上に照りの出た鵝の皮と、縁の紅い叉燒が並び、菜心が一束添えられただけの、この街ではどうということのない一皿なのに、しばらく食べられないと思うと妙に旨い。それから先達廣場。金色の看板の下をくぐって、いつもの棚を覗く。二手の札には、小米17 Ultraの16+512GBが全套國行でHK$6,680、15 Ultraが港版でHK$4,980、Redmi Turbo 5 Maxが16+512GBでHK$2,880。自分がいま使っている機種の中古相場を眺めるのは、我が身を値踏みされているようで少しおかしい。その足で星際城市へ回り、「潮流發燒友集中地」を名乗る看板の下、エスカレーターへ吸い込まれていく人の流れをしばらく眺めていた。ここにまた一月来られないとなると、やはり寂しい。いや、正直に言えば——深圳の電脳街に行けないことのほうが、もっとこたえるかもしれない。",
+    "image": "assets/images/photo-notes/mongkok-sincere-podium-entrance.jpg",
+    "imageWebp": "assets/images/photo-notes/mongkok-sincere-podium-entrance.webp",
+    "alt": "旺角の歩道から見た先達廣場の入口。金色の「先達廣場」の文字とSINCERE PODIUMのガラス扉、行き交う人々",
+    "caption": "Sincere Podium / Mong Kok",
+    "link": "hk-shenzhen-crossing.html",
+    "linkLabel": "深圳へ渡る話は「香港⇄深圳 越境ガイド」へ →",
+    "sideFrames": [
+      {
+        "title": "17 Ultraの棚",
+        "caption": "Xiaomi 17 Ultra / Sincere Podium",
+        "image": "assets/images/photo-notes/mongkok-xiaomi-17ultra-price.jpg",
+        "imageWebp": "assets/images/photo-notes/mongkok-xiaomi-17ultra-price.webp",
+        "alt": "ショーケースに並ぶ黒いXiaomi 17 Ultra。Leica銘のカメラリングと、手書きの黄色い値札"
+      },
+      {
+        "title": "二手の値札",
+        "caption": "Second-hand Prices / Mong Kok",
+        "image": "assets/images/photo-notes/mongkok-used-phone-prices.jpg",
+        "imageWebp": "assets/images/photo-notes/mongkok-used-phone-prices.webp",
+        "alt": "中古スマホの値札。小米17 Ultra 16+512GBがHK$6,680、15 UltraがHK$4,980、Redmi Turbo 5 MaxがHK$2,880"
+      },
+      {
+        "title": "星際城市（シムシティ）",
+        "caption": "Sim City / Mong Kok",
+        "image": "assets/images/photo-notes/mongkok-sim-city-entrance.jpg",
+        "imageWebp": "assets/images/photo-notes/mongkok-sim-city-entrance.webp",
+        "alt": "「SIM CITY 星際城市 潮流發燒友集中地」の看板の下、エスカレーターへ向かう人の流れ"
+      },
+      {
+        "title": "叉燒と燒鵝の双拼飯",
+        "caption": "Char Siu & Roast Goose Rice / Mong Kok",
+        "image": "assets/images/photo-notes/mongkok-charsiu-goose-rice.jpg",
+        "imageWebp": "assets/images/photo-notes/mongkok-charsiu-goose-rice.webp",
+        "alt": "白飯の上に照りの出た燒鵝と縁の紅い叉燒が並び、菜心が添えられた双拼飯"
+      }
+    ]
+  },
+  {
     "slug": "pasteako-birthday",
     "label": "今日の断章",
     "title": "家族3人の誕生日、中環のステーキ屋Pasteako",
