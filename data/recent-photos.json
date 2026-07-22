@@ -1,5 +1,47 @@
 [
   {
+    "slug": "kobe-airport-first-time-via-taoyuan",
+    "label": "今日の断章",
+    "title": "桃園の肉骨茶と、初めての神戸空港",
+    "place": "台北・桃園空港 → 神戸空港",
+    "date": "2026年7月21日",
+    "body": "香港から桃園を経由して、エバーで神戸へ——初めての経路で実家に帰った。桃園の乗り継ぎでは、いつものエバーのスターラウンジではなく、今回初めてシンガポール航空のシルバークリスに入ってみる。入口のサイネージが「新加坡特色料理・肉骨茶」を掲げるだけあって、名物のバクテーから台式魯肉飯まで並んでいて、これはこれで良い。ただ、ラウンジとしてはいささか手狭かな、とも思う。そして初めての神戸空港。夕暮れのターミナル2に降り立ち、ポートライナーで三宮へ、三宮からは新快速で40分ほど走れば、もう姫路に着いてしまう。関空や伊丹からの道のりを思えば、はるかに早い。しかもポートライナーも新快速も本数が密で、待ち時間がほとんどない。海外から実家への帰り道に、これほど頼もしい選択肢が増えたのは、素直に心強い。",
+    "image": "assets/images/photo-notes/kobe-airport-terminal2-dusk.jpg",
+    "imageWebp": "assets/images/photo-notes/kobe-airport-terminal2-dusk.webp",
+    "alt": "夕暮れの神戸空港ターミナル2。ガラスのファサードにKOBE AIRPORTの文字と、黒いTerminal 2の入口",
+    "caption": "Terminal 2 at Dusk / Kobe Airport",
+    "sideFrames": [
+      {
+        "title": "初めてのシルバークリス",
+        "caption": "SilverKris Lounge / Taoyuan",
+        "image": "assets/images/photo-notes/taoyuan-silverkris-entrance.jpg",
+        "imageWebp": "assets/images/photo-notes/taoyuan-silverkris-entrance.webp",
+        "alt": "桃園空港のシルバークリスラウンジ入口。サイネージに新加坡特色料理・肉骨茶（Bak Kut Teh）の文字"
+      },
+      {
+        "title": "肉骨茶から魯肉飯まで",
+        "caption": "Bak Kut Teh & More / SilverKris Lounge",
+        "image": "assets/images/photo-notes/taoyuan-silverkris-plate.jpg",
+        "imageWebp": "assets/images/photo-notes/taoyuan-silverkris-plate.webp",
+        "alt": "大理石のテーブルに魯肉飯やシューマイ、割包を盛った皿と、サラダ・フルーツ・トニックウォーターの缶"
+      },
+      {
+        "title": "神戸行きのエバー",
+        "caption": "EVA Air / Taoyuan",
+        "image": "assets/images/photo-notes/taoyuan-eva-air-gate.jpg",
+        "imageWebp": "assets/images/photo-notes/taoyuan-eva-air-gate.webp",
+        "alt": "桃園空港のゲートで出発準備中のエバー航空機。長榮空廚のケータリングトラックが横付けされ、奥に777が待つ"
+      },
+      {
+        "title": "ポートライナーの車窓から",
+        "caption": "From the Port Liner / Kobe Airport",
+        "image": "assets/images/photo-notes/kobe-airport-from-portliner.jpg",
+        "imageWebp": "assets/images/photo-notes/kobe-airport-from-portliner.webp",
+        "alt": "ポートライナーの車窓から見返す夕暮れの神戸空港。ターミナル1と管制塔、右手に新しいターミナル2"
+      }
+    ]
+  },
+  {
     "slug": "mongkok-before-a-month-away",
     "label": "今日の断章",
     "title": "一月ぶんの香港成分を、旺角で",
