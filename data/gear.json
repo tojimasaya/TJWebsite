@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-18T00:00:00Z",
+  "updated_at": "2026-07-31T00:00:00Z",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -533,7 +533,7 @@
           "specs": [
             "万国対応 変換アダプター",
             "重量69g",
-            "55.5\u00d733\u00d750mm",
+            "55.5×33×50mm",
             "100〜250V / 2500W Max",
             "UK/BF爪で共用ソケットにしっかり固定",
             "一軍昇格"
@@ -546,6 +546,26 @@
           "comment": "",
           "links": {
             "一軍二軍入れ替え": "https://note.com/tojimasaya/n/n51eac46a5b37"
+          }
+        },
+        {
+          "id": "ulanzi-ma88",
+          "name": "Ulanzi MA88",
+          "brand": "Ulanzi",
+          "image": "/assets/images/gear/ulanzi-ma88.jpg",
+          "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
+          "specs": [
+            "MagSafe",
+            "三脚",
+            "スマホスタンド"
+          ],
+          "description": "折りたたむと手のひら、開けば三脚、脚をたたみ直せばクランプにもなる変幻自在のMagSafeホルダー。機内では食事トレイでテーブルが埋まっても、端や前席モニターの縁をつかんで画面をキープ。iPhoneはもちろん、折りたたみのOPPO Find N5でも安定する。",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n427025a434a3?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">飛行機の座席が、少し快適になる ── 海外旅行で効くMagSafe装備 2つ</a>",
+          "links": {
+            "レビュー": "https://note.com/tojimasaya/n/n427025a434a3",
+            "amazon": "https://amzn.to/3RKH3VT"
           }
         },
         {
@@ -703,9 +723,17 @@
           "is_new": true,
           "new_label": "NEW 2026",
           "type": "backpack",
-          "specs": ["40L（合体30+10 / 分離34+16）", "Stone", "機内持ち込み", "親子で分割"],
+          "specs": [
+            "40L（合体30+10 / 分離34+16）",
+            "Stone",
+            "機内持ち込み",
+            "親子で分割"
+          ],
           "description": "34Lのベースと16Lのデイパックが、背面ジッパー一本で脱着する“親子”構造。合体すれば40Lの機内持ち込み、切り離せば身軽なデイパックになる。2026年のKickstarterで手に入れた、いまの旅の母艦。",
-          "links": { "official": "https://www.peakdesign.com/products/travel-backpack-2-in-1", "ベストなバッグは、存在しない ── こんどこそ、近づけるか": "https://note.com/tojimasaya/n/nee20e4432dc5" }
+          "links": {
+            "official": "https://www.peakdesign.com/products/travel-backpack-2-in-1",
+            "ベストなバッグは、存在しない ── こんどこそ、近づけるか": "https://note.com/tojimasaya/n/nee20e4432dc5"
+          }
         },
         {
           "id": "pd-roller-pro",
@@ -716,9 +744,17 @@
           "is_new": true,
           "new_label": "NEW 2026",
           "type": "roller",
-          "specs": ["34–39L 拡張", "Eclipse", "ドローブリッジ開き", "カーボントロリー"],
+          "specs": [
+            "34–39L 拡張",
+            "Eclipse",
+            "ドローブリッジ開き",
+            "カーボントロリー"
+          ],
           "description": "前ヒンジのドローブリッジ式に開くキャリーオン。薄いカーボントロリーで容量を稼ぎ、34〜39Lの中にカメラキューブやパッキングキューブをそのまま収める。2-in-1の相棒として導入した。",
-          "links": { "amazon": "https://www.amazon.co.jp/dp/B0FDHWRSM3?tag=ojunktion-22", "ベストなバッグは、存在しない ── こんどこそ、近づけるか": "https://note.com/tojimasaya/n/nee20e4432dc5" }
+          "links": {
+            "amazon": "https://www.amazon.co.jp/dp/B0FDHWRSM3?tag=ojunktion-22",
+            "ベストなバッグは、存在しない ── こんどこそ、近づけるか": "https://note.com/tojimasaya/n/nee20e4432dc5"
+          }
         },
         {
           "id": "pd-travel-45l",
@@ -727,9 +763,16 @@
           "image": "/assets/images/gear/bags/pd-45l.jpg",
           "status": "available",
           "type": "backpack",
-          "specs": ["35–45L 可変", "Sage", "2018〜", "旧メイン"],
+          "specs": [
+            "35–45L 可変",
+            "Sage",
+            "2018〜",
+            "旧メイン"
+          ],
           "description": "2018年のKickstarterから約8年使い続けた、旅のメイン機。35〜45Lの可変容量と複数のインナーで“大概のものが入る”母艦。新しい2-in-1に主役を譲りつつ、いまも現役。",
-          "links": { "amazon": "https://www.amazon.co.jp/dp/B0DDL6K3XL?tag=ojunktion-22" }
+          "links": {
+            "amazon": "https://www.amazon.co.jp/dp/B0DDL6K3XL?tag=ojunktion-22"
+          }
         },
         {
           "id": "pd-everyday-backpack-zip-15l-midnight",
@@ -738,9 +781,16 @@
           "image": "/assets/images/gear/bags/pd-everyday-backpack-zip-15l-midnight.jpg",
           "status": "available",
           "type": "backpack",
-          "specs": ["15L", "Midnight", "サイドアクセス", "街歩き・小型撮影"],
+          "specs": [
+            "15L",
+            "Midnight",
+            "サイドアクセス",
+            "街歩き・小型撮影"
+          ],
           "description": "Everyday Backpackの機能を、よりシンプルで目立たないジップ仕様にした15Lモデル。街歩きや身軽な撮影にちょうどいいサイズ感で、日常持ちにもカメラバッグにも振れる。",
-          "links": { "official": "https://www.peakdesign.com/en-jp/products/everyday-backpack-zip?Size=15L&Color=Midnight" }
+          "links": {
+            "official": "https://www.peakdesign.com/en-jp/products/everyday-backpack-zip?Size=15L&Color=Midnight"
+          }
         },
         {
           "id": "pd-everyday-totepack-20l-black",
@@ -749,9 +799,16 @@
           "image": "/assets/images/gear/bags/pd-everyday-totepack-20l-black.jpg",
           "status": "available",
           "type": "totepack",
-          "specs": ["20L", "Black", "トート/バックパック", "FlexFold Divider"],
+          "specs": [
+            "20L",
+            "Black",
+            "トート/バックパック",
+            "FlexFold Divider"
+          ],
           "description": "トートの気軽さとバックパックの機動力を一つにした20Lモデル。カメラも日用品も入れやすく、持ち方を切り替えられるので移動の多い日に使いやすい。",
-          "links": { "official": "https://www.peakdesign.com/en-jp/products/everyday-totepack?Size=20L&Color=Black" }
+          "links": {
+            "official": "https://www.peakdesign.com/en-jp/products/everyday-totepack?Size=20L&Color=Black"
+          }
         },
         {
           "id": "pd-camera-cube-v2-xsmall-black",
@@ -760,9 +817,17 @@
           "image": "/assets/images/gear/bags/pd-camera-cube-v2-xsmall-black.jpg",
           "status": "available",
           "type": "camera-cube",
-          "specs": ["X-Small", "Black", "V2", "小型カメラ用"],
+          "specs": [
+            "X-Small",
+            "Black",
+            "V2",
+            "小型カメラ用"
+          ],
           "description": "小型カメラやレンズを必要最小限で守るCamera Cube V2。バッグの中に小さな撮影区画を作りたいときに便利なサイズ。",
-          "links": { "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=X-Small&Color=Black", "TJによるレビュー": "https://note.com/tojimasaya/n/n149d3295b30d" }
+          "links": {
+            "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=X-Small&Color=Black",
+            "TJによるレビュー": "https://note.com/tojimasaya/n/n149d3295b30d"
+          }
         },
         {
           "id": "pd-camera-cube-v2-small-black",
@@ -771,9 +836,16 @@
           "image": "/assets/images/gear/bags/pd-camera-cube-v2-small-black.jpg",
           "status": "available",
           "type": "camera-cube",
-          "specs": ["Small", "Black", "V2", "カメラ収納"],
+          "specs": [
+            "Small",
+            "Black",
+            "V2",
+            "カメラ収納"
+          ],
           "description": "カメラ一式をほどよくまとめるSmallサイズのCamera Cube V2。仕切りを組み替えながら、旅バッグの中を撮影機材用に整えられる。",
-          "links": { "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=Small&Color=Black" }
+          "links": {
+            "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=Small&Color=Black"
+          }
         },
         {
           "id": "pd-camera-cube-v2-medium-black",
@@ -782,9 +854,16 @@
           "image": "/assets/images/gear/bags/pd-camera-cube-v2-medium-black.jpg",
           "status": "available",
           "type": "camera-cube",
-          "specs": ["Medium", "Black", "V2", "複数機材向け"],
+          "specs": [
+            "Medium",
+            "Black",
+            "V2",
+            "複数機材向け"
+          ],
           "description": "複数のボディやレンズをまとめて運ぶMediumサイズのCamera Cube V2。Travel Backpack系の母艦に入れて、機材量が多い移動に使う。",
-          "links": { "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=Medium&Color=Black" }
+          "links": {
+            "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=Medium&Color=Black"
+          }
         },
         {
           "id": "pd-tech-pouch-regular-black",
@@ -793,9 +872,16 @@
           "image": "/assets/images/gear/bags/pd-tech-pouch-regular-black.jpg",
           "status": "available",
           "type": "pouch",
-          "specs": ["Regular", "Black", "ケーブル整理", "ガジェット収納"],
+          "specs": [
+            "Regular",
+            "Black",
+            "ケーブル整理",
+            "ガジェット収納"
+          ],
           "description": "ケーブル、充電器、SSDなど細かいガジェット類をまとめて運ぶTech Pouch。バッグの中で散らばりがちな小物を一つの区画に集約できる。",
-          "links": { "official": "https://www.peakdesign.com/en-jp/products/tech-pouch?Size=Regular&Color=Black" }
+          "links": {
+            "official": "https://www.peakdesign.com/en-jp/products/tech-pouch?Size=Regular&Color=Black"
+          }
         },
         {
           "id": "pd-packable-tote-sage",
@@ -804,9 +890,16 @@
           "image": "/assets/images/gear/bags/pd-packable-tote-sage.jpg",
           "status": "available",
           "type": "tote",
-          "specs": ["Sage", "折りたたみ", "軽量トート", "旅先サブバッグ"],
+          "specs": [
+            "Sage",
+            "折りたたみ",
+            "軽量トート",
+            "旅先サブバッグ"
+          ],
           "description": "小さく畳んで持ち歩けるPeak DesignのPackable Tote。旅先で荷物が増えたときや、近所への買い物、ホテル周りの軽い外出に使いやすい。",
-          "links": { "official": "https://www.peakdesign.com/en-jp/products/packable-tote?Color=Sage" }
+          "links": {
+            "official": "https://www.peakdesign.com/en-jp/products/packable-tote?Color=Sage"
+          }
         },
         {
           "id": "alpaka-elements-tote-m",
@@ -815,9 +908,17 @@
           "image": "/assets/images/gear/bags/alpaka-elements-tote-m.jpg",
           "status": "available",
           "type": "tote",
-          "specs": ["14.5L", "約600g", "折りたたみ可能", "旅先サブバッグ"],
+          "specs": [
+            "14.5L",
+            "約600g",
+            "折りたたみ可能",
+            "旅先サブバッグ"
+          ],
           "description": "軽量で簡単に畳めるトート。キャリーケースに入れておき、旅先で荷物が増えたときや街歩き用のサブバッグとして使うことが多い。",
-          "links": { "official": "https://www.alpakagear.jp/view/item/000000000031", "TJによるレビュー": "https://note.com/tojimasaya/n/n149d3295b30d" }
+          "links": {
+            "official": "https://www.alpakagear.jp/view/item/000000000031",
+            "TJによるレビュー": "https://note.com/tojimasaya/n/n149d3295b30d"
+          }
         },
         {
           "id": "alpaka-metro-tote",
@@ -826,9 +927,16 @@
           "image": "/assets/images/gear/bags/alpaka-metro-tote.jpg",
           "status": "available",
           "type": "tote",
-          "specs": ["ジッパー開閉", "ラゲッジパススルー", "16インチPC対応", "約900g"],
+          "specs": [
+            "ジッパー開閉",
+            "ラゲッジパススルー",
+            "16インチPC対応",
+            "約900g"
+          ],
           "description": "上部にジッパーがあるので旅行時はこちらが安心。キャリーバッグのハンドルに差し込めるラゲッジパススルー付きなのも良く、移動中の使い勝手が高い。",
-          "links": { "official": "https://www.alpakagear.jp/view/item/000000000045" }
+          "links": {
+            "official": "https://www.alpakagear.jp/view/item/000000000045"
+          }
         }
       ]
     },
