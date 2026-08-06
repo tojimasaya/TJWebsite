@@ -1,5 +1,26 @@
 [
   {
+    "slug": "himeji-onepiece-shinkansen-takopia",
+    "label": "今日の断章",
+    "title": "息子を手伝えた日と、ワンピース新幹線",
+    "place": "埼玉 → 兵庫・姫路",
+    "date": "2026年8月4日",
+    "body": "息子の仕事の手伝いで、埼玉へ出かけた。息子の仕事を手伝う日が来るなんて夢にも思わなかったけれど、何か役に立てるなら、こんなに嬉しいことはない。おかしかったのは、普段は私のメッセージへの返事に数日かかったり、返事すら来ないのが日常茶飯事なのに、この件だけは何時だろうと高速で返事が返ってくること。面白いものだね。仕事へは新幹線で行き、新幹線で戻る。その姫路に降り立った瞬間、目の前にワンピース新幹線が止まっていた。初めて見たけれど、これも面白い。飛行機でもポケモンやスターウォーズなど、いろんなキャラクターをまとった乗り物がある。私はあまりキャラクターには興味がないのだけれど、大谷翔平のファンではあるので、大谷選手が描かれたJALの機体がまだ飛んでいて機会があれば、一度は乗ってみたい。そして姫路に戻ったら、やっぱりタコぴあで玉子焼きだよね。",
+    "image": "assets/images/photo-notes/himeji-onepiece-shinkansen.jpg",
+    "imageWebp": "assets/images/photo-notes/himeji-onepiece-shinkansen.webp",
+    "alt": "夕方の姫路駅ホーム。手前に銀色のN700系新幹線、右奥にワンピースのキャラクターが描かれたラッピング新幹線が停まっている",
+    "caption": "One Piece Shinkansen / Himeji",
+    "sideFrames": [
+      {
+        "title": "タコぴあの玉子焼き",
+        "caption": "Tamagoyaki / Tako-pia, Himeji",
+        "image": "assets/images/photo-notes/himeji-takopia-tamagoyaki.jpg",
+        "imageWebp": "assets/images/photo-notes/himeji-takopia-tamagoyaki.webp",
+        "alt": "赤い板に並んだタコぴあの玉子焼き（明石焼き）。ソースをかけたものと素焼きのものが半々に並ぶ"
+      }
+    ]
+  },
+  {
     "slug": "kobe-airport-first-time-via-taoyuan",
     "label": "今日の断章",
     "title": "桃園の肉骨茶と、初めての神戸空港",
