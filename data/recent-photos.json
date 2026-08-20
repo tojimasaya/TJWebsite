@@ -1,5 +1,42 @@
 [
   {
+    "slug": "kobe-airport-hyogo-lounge",
+    "label": "今日の断章",
+    "title": "明石焼きのラウンジから、神戸→台北→香港",
+    "place": "神戸空港 → 香港（台北経由）",
+    "date": "2026年8月19日",
+    "body": "八月十九日、姫路から遠くて混み合う関空へ出るのにいい加減くたびれていた私は、初めて神戸空港発・台北桃園乗り継ぎで香港へ帰る復路を試したのだが、これがなかなかどうして具合が良く、午前十一時発という余裕のおかげで姫路からのアクセスも楽なら、そもそも客はまばらでチェックインもラウンジもがら空き、しかも新設の国際線ラウンジには明石焼にソバメシ、神戸ワインの赤白からUCCのコーヒーまで並び、兵庫を丸ごとキュレーションしたような品揃えに一人にやにやしてしまい、極めつけはEva Airのカウンターの面々まで揃って親切だったことで、関空のあの人混みで消耗するのとは何もかもが正反対——早起きを強いられず、並ばされず、急かされず、静かに一杯やってから飛べるこの道を、これから香港と姫路を行き来する私の定番路線にしてしまおう。",
+    "image": "assets/images/photo-notes/kobe-airport-hyogo-lounge-akashiyaki.jpg",
+    "imageWebp": "assets/images/photo-notes/kobe-airport-hyogo-lounge-akashiyaki.webp",
+    "alt": "神戸空港の新しい国際線ラウンジの朝食トレー。明石焼き、ソバメシ、焼売、神戸ワインの白",
+    "caption": "Akashi-yaki & Soba-meshi / Kobe Airport Lounge",
+    "link": "trips.html",
+    "linkLabel": "これまでの旅は「Trips」へ →",
+    "sideFrames": [
+      {
+        "title": "新設の国際線ラウンジ",
+        "caption": "New Int'l Lounge / Kobe Airport",
+        "image": "assets/images/photo-notes/kobe-airport-hyogo-lounge-interior.jpg",
+        "imageWebp": "assets/images/photo-notes/kobe-airport-hyogo-lounge-interior.webp",
+        "alt": "タータンチェックの壁と革張りの椅子が並ぶ、新設された神戸空港の国際線ラウンジ"
+      },
+      {
+        "title": "がら空きのチェックイン",
+        "caption": "Quiet Check-in / Kobe Airport (UKB)",
+        "image": "assets/images/photo-notes/kobe-airport-hyogo-lounge-checkin.jpg",
+        "imageWebp": "assets/images/photo-notes/kobe-airport-hyogo-lounge-checkin.webp",
+        "alt": "木格子の天井が広がる、人のまばらな神戸空港のチェックインカウンター"
+      },
+      {
+        "title": "台北へのエバー",
+        "caption": "EVA Air to Taipei / Kobe Airport",
+        "image": "assets/images/photo-notes/kobe-airport-hyogo-lounge-eva.jpg",
+        "imageWebp": "assets/images/photo-notes/kobe-airport-hyogo-lounge-eva.webp",
+        "alt": "搭乗バスの窓越しに見える、駐機中のエバー航空の機体"
+      }
+    ]
+  },
+  {
     "slug": "himeji-castle-aeon-hananokita",
     "label": "今日の断章",
     "title": "ひとまず、さよなら花の北",
