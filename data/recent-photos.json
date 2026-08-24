@@ -1,5 +1,42 @@
 [
   {
+    "slug": "shenzhen-huaqiang-border",
+    "label": "今日の断章",
+    "title": "パスポートなしの国境と、深圳・華強北のガジェット行",
+    "place": "中国・深圳（皇崗／華強北）",
+    "date": "2026年8月24日",
+    "body": "日本に長くいると、決まって深圳・華強北の猥雑な活気と新しいガジェットの刺激が恋しくなるもので、八月二十四日、師匠と二人で国境を越え、着くなり定番の重慶の汁なし麺に少し辣味を足してもらえば、血圧のことなど今日は忘れようという旨さ、そのあとは日本で薄く傷のついたOPPO Find N5とLeitzphoneのフィルムを一枚三十元・約六百円で張り替えてもらったが、安さより何より、埃も気泡も噛ませず一瞬で仕上げる店員の神業を眺めるのが毎度たまらなく楽しく、極めつけは、太子からの国境越えバスがやがて乗り入れるという皇崗の新しい越境ビルで、香港を出るときはスマホのQR、中国に入るときは顔認証と指紋、永久居民はパスポートもIDも要らないこの手軽さに、便利さと裏腹の薄気味悪さも少し覚えつつ——まあ深く考えても仕方がない、いっそ日本もこうなってくれと思っている。",
+    "image": "assets/images/photo-notes/shenzhen-huaqiang-border-immigration.jpg",
+    "imageWebp": "assets/images/photo-notes/shenzhen-huaqiang-border-immigration.webp",
+    "alt": "波打つ曲線が連なる、深圳・皇崗口岸の新しい越境ビルの外観",
+    "caption": "New Border Terminal / Huanggang, Shenzhen",
+    "link": "trips.html",
+    "linkLabel": "これまでの旅は「Trips」へ →",
+    "sideFrames": [
+      {
+        "title": "定番の重慶汁なし麺",
+        "caption": "Chongqing Dry Noodles / Shenzhen",
+        "image": "assets/images/photo-notes/shenzhen-huaqiang-border-noodles.jpg",
+        "imageWebp": "assets/images/photo-notes/shenzhen-huaqiang-border-noodles.webp",
+        "alt": "青花模様の丼に盛られた、そぼろと豆をのせた重慶の汁なし麺"
+      },
+      {
+        "title": "華強北のガジェット",
+        "caption": "Huawei Store / Huaqiang, Shenzhen",
+        "image": "assets/images/photo-notes/shenzhen-huaqiang-border-huawei.jpg",
+        "imageWebp": "assets/images/photo-notes/shenzhen-huaqiang-border-huawei.webp",
+        "alt": "HUAWEI Pura90が並ぶ、華強北のファーウェイ直営店の店内"
+      },
+      {
+        "title": "国境そばの新開発",
+        "caption": "New Development / Shenzhen",
+        "image": "assets/images/photo-notes/shenzhen-huaqiang-border-tower.jpg",
+        "imageWebp": "assets/images/photo-notes/shenzhen-huaqiang-border-tower.webp",
+        "alt": "工事中の一角に建つ、深圳の国境近くの丸い高層ビル"
+      }
+    ]
+  },
+  {
     "slug": "kobe-airport-hyogo-lounge",
     "label": "今日の断章",
     "title": "明石焼きのラウンジから、神戸→台北→香港",
