@@ -6,24 +6,24 @@
     "place": "中国・深圳（皇崗口岸）",
     "date": "2026年8月28日",
     "body": "昨日、八月二十八日の金曜、山根さんと二人でいつものように皇崗から深圳へ渡ったのだが、九月は頭から後半まで日本に滞在するので、次に戻ってくる頃にはこの普段使いの国境——といっても香港と中国のあいだのイミグレだ——が新しいビルに変わっているかもしれず、つまり今のこれが最後の旧イミグレになる可能性があって、旧といってもテンポラリーに建てたプレハブのようなイミグレで、それでもそこそこしっかりしているのだけれど、実はいまの皇崗口岸には三つのイミグレビルが並んでいて、現役のこのプレハブ、真ん中には中国と聞いて誰もが思い浮かべるあの橙と黄の古めかしいビル、そしてその隣に超未来的な巨大ビル、という構成で、その未来ビルがいよいよここ数ヶ月のうちに使用開始になるという——少し前までは七月中と聞いていたから、遅れ気味なのかもしれない——ので、次にここを通るときには、プリンスエドワードから乗ってきたバスがそのまま未来ビルへ入り、ビル内のほんの数メートルで香港の出境も中国の入境も済んでしまう、そんなことになるのかもしれず、なにより嬉しいのは、いまの地下鉄七号線・皇崗口岸駅は現プレハブからそこそこ離れていて、電脳街を歩き倒したあとのあの距離が正直かなり体にこたえるのに、未来イミグレは地下鉄直結だという点で、ともあれこのプレハブも見納めかもしれないと記録を残しに行き、道中はいつものカメラではなく、ぜんぶRokidのグラスで撮ってきた——というわけで、何枚か、どうぞ見納めに。",
-    "image": "assets/images/photo-notes/huanggang-future-terminal.jpg",
-    "imageWebp": "assets/images/photo-notes/huanggang-future-terminal.webp",
-    "alt": "皇崗口岸に現れた、うねる銀色の超未来的な巨大イミグレビル。手前は工事フェンスと「地铁 Metro」の案内で、まだ開業前の姿。Rokidグラスで撮影。",
-    "caption": "New Huanggang Terminal (opening soon) / Shenzhen",
+    "image": "assets/images/photo-notes/huanggang-old-and-future.jpg",
+    "imageWebp": "assets/images/photo-notes/huanggang-old-and-future.webp",
+    "alt": "歩道橋の上から望む皇崗口岸。手前に昔からある古めかしいイミグレの建物、その奥にうねる銀色の未来イミグレ。新旧がひとつの画に収まっている。Rokidグラスで撮影。",
+    "caption": "Old & New Immigration / Huanggang Checkpoint",
     "sideFrames": [
       {
-        "title": "現役のプレハブ国境",
-        "caption": "Current Prefab Immigration / Huanggang",
+        "title": "現役プレハブの出入境ホール",
+        "caption": "Prefab Immigration Hall / Huanggang",
         "image": "assets/images/photo-notes/huanggang-prefab-immigration.jpg",
         "imageWebp": "assets/images/photo-notes/huanggang-prefab-immigration.webp",
-        "alt": "皇崗口岸の現行イミグレ。鉄骨キャノピーに覆われたバス乗降場に「相约深圳 APEC 2026」の横断幕が掛かる。"
+        "alt": "現役プレハブイミグレの構内。「入境厅」「出境厅」の赤い表示と「香港 Hong Kong ↑」の案内、頭上に『相约深圳 见证奇迹』の横断幕。"
       },
       {
-        "title": "地下鉄七号線 皇崗口岸駅",
-        "caption": "Metro Line 7 · Huanggang Checkpoint",
-        "image": "assets/images/photo-notes/huanggang-metro-line7.jpg",
-        "imageWebp": "assets/images/photo-notes/huanggang-metro-line7.webp",
-        "alt": "地下鉄七号線・皇崗口岸駅のホーム。ホームドアに「皇崗口岸 Huanggang Checkpoint」の駅名。未来イミグレはこの駅と直結するという。"
+        "title": "地下鉄までの歩道橋",
+        "caption": "Footbridge to Metro Line 7 / Huanggang",
+        "image": "assets/images/photo-notes/huanggang-footbridge-metro.jpg",
+        "imageWebp": "assets/images/photo-notes/huanggang-footbridge-metro.webp",
+        "alt": "プレハブイミグレから地下鉄七号線の駅までをつなぐ長い歩道橋を指さす。電脳街を歩き倒したあとには、この距離がなかなか応える。"
       },
       {
         "title": "歩き倒す電脳街",
