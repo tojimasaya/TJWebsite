@@ -41,6 +41,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
+  <link rel="preload" as="image" href="assets/images/gallery/castle31.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 
   <!-- 構造化データ (JSON-LD) -->
@@ -223,6 +224,15 @@
       letter-spacing: 0.05em;
       line-height: 1.34;
       margin-bottom: 1.2rem;
+    }
+
+    .identity-hero-what {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 0.85rem;
+      letter-spacing: 0.06em;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.82);
+      margin: 0 0 0.7rem;
     }
 
     .identity-hero-lead {
@@ -474,22 +484,22 @@
       display: grid;
       grid-template-columns: minmax(320px, 1.05fr) minmax(0, 0.9fr);
       gap: 3rem;
-      align-items: center;
+      align-items: start;
     }
 
     .recent-frame-gallery {
       display: grid;
       grid-template-columns: minmax(0, 1fr) minmax(124px, 0.28fr);
       gap: 0.85rem;
-      align-items: stretch;
+      align-items: start;
     }
 
     .recent-frame-media {
       position: relative;
       overflow: hidden;
       border-radius: 6px;
-      background: #202124;
-      min-height: 340px;
+      /* 写真の実寸比を JS が入れる。JS が動かないときの既定値が 4 / 3 */
+      aspect-ratio: 4 / 3;
       color: #fff;
     }
 
@@ -500,6 +510,7 @@
     .recent-frame-media picture {
       display: block;
       width: 100%;
+      height: 100%;
     }
 
     .recent-frame-media img {
@@ -508,7 +519,7 @@
     }
 
     .recent-frame-media img {
-      aspect-ratio: 4 / 3;
+      height: 100%;
       object-fit: cover;
       transition: opacity 0.25s ease, transform 0.45s ease;
     }
@@ -519,7 +530,8 @@
 
     .recent-frame-placeholder {
       display: none;
-      min-height: 340px;
+      height: 100%;
+      min-height: 240px;
       align-items: center;
       justify-content: center;
       padding: 2rem;
@@ -559,7 +571,8 @@
 
     .recent-frame-sideframes {
       display: grid;
-      grid-template-rows: repeat(2, minmax(0, 1fr));
+      grid-auto-rows: 1fr;
+      align-self: stretch;
       gap: 0.85rem;
     }
 
@@ -1409,14 +1422,14 @@
         grid-template-columns: 1fr;
       }
 
-      .recent-frame-media,
       .recent-frame-placeholder {
-        min-height: 260px;
+        min-height: 220px;
       }
 
       .recent-frame-sideframes {
         grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-template-rows: none;
+        grid-auto-rows: auto;
+        align-self: auto;
       }
 
       .recent-frame-sidecard {
@@ -1565,6 +1578,72 @@
       height: 100%;
       border: none;
     }
+
+    /* ── 白鷺三十六景ブロック（提案4 / Phase 3） ── */
+    .home-shirasagi { background: var(--bg-color, #fafafa); border-bottom: 1px solid var(--border-color, #e5e5e5); padding: 4.5rem 2rem; }
+    .home-shirasagi-inner { max-width: 1100px; margin: 0 auto; display: grid; grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr); gap: 3rem; align-items: center; }
+    .home-shirasagi-media { margin: 0; position: relative; overflow: hidden; border-radius: 6px; background: var(--hover-color, #f5f5f5); aspect-ratio: 3 / 2; }
+    .home-shirasagi-media img { display: block; width: 100%; height: 100%; object-fit: cover; transition: transform 0.6s ease; }
+    .home-shirasagi-media:hover img { transform: scale(1.02); }
+    .home-shirasagi-media figcaption { position: absolute; left: 1rem; bottom: 1rem; max-width: calc(100% - 2rem); padding: 0.5rem 0.7rem; background: rgba(0,0,0,0.58); border-radius: 4px; color: #fff; font-family: 'Inter', sans-serif; font-size: 0.66rem; letter-spacing: 0.12em; line-height: 1.5; }
+    .home-shirasagi-kicker { display: inline-flex; align-items: center; gap: 0.65rem; font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.16em; color: #9b5b2e; text-transform: uppercase; margin-bottom: 1rem; }
+    .home-shirasagi-kicker::before { content: ''; width: 34px; height: 1px; background: #9b5b2e; }
+    .home-shirasagi-title { font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif; font-size: clamp(1.45rem, 2.2vw, 2rem); font-weight: 400; letter-spacing: 0.08em; line-height: 1.6; color: var(--text-color, #333); margin: 0 0 1.1rem; }
+    .home-shirasagi-progress { margin: 0 0 1.2rem; }
+    .home-shirasagi-bar { height: 3px; border-radius: 999px; background: var(--border-color, #e5e5e5); overflow: hidden; }
+    .home-shirasagi-bar span { display: block; height: 100%; width: 0; background: #9b5b2e; transition: width 0.9s ease; }
+    .home-shirasagi-count { font-family: 'Inter', sans-serif; font-size: 0.78rem; letter-spacing: 0.08em; color: var(--text-light, #666); margin: 0.6rem 0 0; }
+    .home-shirasagi-count strong { font-size: 1.05rem; color: var(--text-color, #333); font-weight: 600; }
+    .home-shirasagi-latest { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; line-height: 1.8; color: var(--text-color, #333); margin: 0 0 0.3rem; }
+    .home-shirasagi-latest a { color: inherit; text-decoration: none; border-bottom: 1px solid var(--border-color, #e5e5e5); padding-bottom: 2px; transition: border-color 0.2s ease, color 0.2s ease; }
+    .home-shirasagi-latest a:hover { color: #9b5b2e; border-color: #9b5b2e; }
+    .home-shirasagi-meta { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--text-lighter, #999); margin: 0 0 0.9rem; }
+    .home-shirasagi-note { font-family: 'Noto Serif JP', serif; font-size: 0.84rem; line-height: 1.9; color: var(--text-light, #666); margin: 0 0 1.2rem; }
+    .home-shirasagi-seasons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.3rem; }
+    .home-shirasagi-season { display: inline-flex; align-items: baseline; gap: 6px; padding: 6px 13px; border: 1px solid var(--border-color, #e5e5e5); border-radius: 999px; font-family: 'Noto Serif JP', serif; font-size: 0.78rem; color: var(--text-light, #666); text-decoration: none; transition: border-color 0.2s ease, color 0.2s ease; }
+    .home-shirasagi-season:hover { border-color: #9b5b2e; color: #9b5b2e; }
+    .home-shirasagi-season i { font-style: normal; font-family: 'Inter', sans-serif; font-size: 0.68rem; color: var(--text-lighter, #999); }
+    .home-shirasagi-links { display: flex; flex-wrap: wrap; gap: 12px; }
+    .home-shirasagi-btn { display: inline-flex; align-items: center; padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color, #e5e5e5); font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--text-color, #333); text-decoration: none; transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease; }
+    .home-shirasagi-btn:hover { border-color: var(--text-color, #333); }
+    .home-shirasagi-btn.is-primary { background: #9b5b2e; border-color: #9b5b2e; color: #fff; }
+    .home-shirasagi-btn.is-primary:hover { opacity: 0.9; }
+
+    /* ── 最近の更新（提案4 / Phase 3） ── */
+    .home-updates { background: var(--bg-color, #fafafa); border-bottom: 1px solid var(--border-color, #e5e5e5); padding: 4.5rem 2rem; }
+    .home-updates[hidden] { display: none; }
+    .home-updates-inner { max-width: 860px; margin: 0 auto; }
+    .home-updates-head { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; flex-wrap: wrap; margin-bottom: 1.4rem; }
+    .home-updates-kicker { font-family: 'Inter', sans-serif; font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--text-lighter, #999); margin: 0 0 0.4rem; }
+    .home-updates-title { font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif; font-size: clamp(1.2rem, 1.8vw, 1.5rem); font-weight: 400; letter-spacing: 0.08em; color: var(--text-color, #333); margin: 0; }
+    .home-updates-feed { font-family: 'Inter', sans-serif; font-size: 0.76rem; color: var(--text-light, #666); text-decoration: none; border-bottom: 1px solid var(--border-color, #e5e5e5); padding-bottom: 2px; }
+    .home-updates-feed:hover { color: #b45309; border-color: #b45309; }
+    .home-updates-list { list-style: none; margin: 0; padding: 0; }
+    .home-updates-item { border-top: 1px solid var(--border-color, #e5e5e5); }
+    .home-updates-item:last-child { border-bottom: 1px solid var(--border-color, #e5e5e5); }
+    .home-updates-item a { display: grid; grid-template-columns: 48px minmax(0, 1fr) auto; gap: 14px; align-items: center; padding: 13px 4px; text-decoration: none; color: inherit; transition: background 0.2s ease; }
+    .home-updates-item a:hover { background: var(--hover-color, #f5f5f5); }
+    .home-updates-thumb { width: 48px; height: 48px; object-fit: cover; border-radius: 4px; background: var(--hover-color, #f5f5f5); display: block; }
+    .home-updates-body { min-width: 0; }
+    .home-updates-chip { display: inline-block; padding: 1px 8px; margin-right: 8px; border: 1px solid var(--border-color, #e5e5e5); border-radius: 999px; font-family: 'Inter', sans-serif; font-size: 0.6rem; letter-spacing: 0.1em; color: var(--text-light, #666); }
+    .home-updates-chip.is-fragment { border-color: #9b5b2e; color: #9b5b2e; }
+    .home-updates-chip.is-shirasagi { border-color: #2f5d7c; color: #2f5d7c; }
+    .home-updates-name { font-family: 'Noto Serif JP', serif; font-size: 0.9rem; line-height: 1.6; color: var(--text-color, #333); overflow: hidden; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; }
+    .home-updates-date { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.04em; color: var(--text-lighter, #999); white-space: nowrap; }
+    .home-updates-note { font-family: 'Inter', sans-serif; font-size: 0.75rem; color: var(--text-lighter, #999); margin: 1.1rem 0 0; text-align: right; }
+    .home-updates-note a { color: var(--text-light, #666); }
+
+    @media (max-width: 900px) {
+      .home-shirasagi-inner { grid-template-columns: 1fr; gap: 1.8rem; }
+    }
+
+    @media (max-width: 768px) {
+      .home-shirasagi { padding: 3.5rem 1.5rem; }
+      .home-updates { padding: 3.5rem 1.5rem; }
+      .home-updates-item a { grid-template-columns: 40px minmax(0, 1fr); row-gap: 4px; }
+      .home-updates-thumb { width: 40px; height: 40px; }
+      .home-updates-date { grid-column: 2; text-align: left; }
+    }
   </style>
 <link rel="canonical" href="https://tojimasaya.com/">
 <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
@@ -1586,20 +1665,21 @@
     <div class="identity-hero-media" aria-hidden="true">
       <picture>
         <source srcset="assets/images/gallery/castle31.webp" type="image/webp">
-        <img src="assets/images/gallery/castle31.jpg" alt="" loading="eager">
+        <img src="assets/images/gallery/castle31.jpg" alt="" loading="eager" fetchpriority="high" decoding="async">
       </picture>
       <picture>
         <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
-        <img src="assets/images/hongkong-neon/01.jpg" alt="" loading="eager">
+        <img src="assets/images/hongkong-neon/01.jpg" alt="" loading="eager" fetchpriority="low" decoding="async">
       </picture>
       <picture>
         <source srcset="assets/images/turkey/istanbul/hero.webp" type="image/webp">
-        <img src="assets/images/turkey/istanbul/hero.jpg" alt="" loading="eager">
+        <img src="assets/images/turkey/istanbul/hero.jpg" alt="" loading="eager" fetchpriority="low" decoding="async">
       </picture>
     </div>
     <div class="identity-hero-inner">
       <p class="identity-hero-kicker">Himeji, Hong Kong, Travel and Cameras</p>
       <h2 class="identity-hero-title" id="identity-hero-title">好きで撮り続けた風景と出会いを、次の誰かの入口に。</h2>
+      <p class="identity-hero-what">姫路城の撮影ガイド 36 景 ・ 香港で暮らす実務ハンドブック ・ 旅とカメラの記録</p>
       <p class="identity-hero-lead">
         姫路城と香港。長く自分を育ててくれた二つの場所への感謝を軸に、ミャンマーからヨーロッパまで——15年分の旅で出会った光と笑顔を、写真と言葉で残しています。
       </p>
@@ -1673,6 +1753,49 @@
     </div>
   </section>
   </template>
+
+  <!-- ======================================
+       SECTION 2.5: 白鷺三十六景（data/shirasagi-latest.json）
+       ====================================== -->
+  <section class="home-shirasagi" aria-labelledby="home-shirasagi-title">
+    <div class="home-shirasagi-inner">
+      <figure class="home-shirasagi-media">
+        <a href="/shirasagi36/no35.html" id="home-shirasagi-photo-link" data-growth-label="home_shirasagi_photo">
+          <picture>
+            <source id="home-shirasagi-source" srcset="assets/images/shirasagi/webp/full/35.webp" type="image/webp">
+            <img id="home-shirasagi-image" src="assets/images/shirasagi/35.jpg" alt="姫路城 — 第35景 花の北屋上 惜別遠望" loading="lazy" decoding="async">
+          </picture>
+        </a>
+        <figcaption id="home-shirasagi-caption">第三十五景 花の北屋上 惜別遠望</figcaption>
+      </figure>
+
+      <div class="home-shirasagi-text">
+        <p class="home-shirasagi-kicker">Himeji Castle</p>
+        <h2 class="home-shirasagi-title" id="home-shirasagi-title">白鷺三十六景 — 姫路城を、三十六の景で。</h2>
+
+        <div class="home-shirasagi-progress">
+          <div class="home-shirasagi-bar"><span id="home-shirasagi-bar-fill" style="width: 97%;"></span></div>
+          <p class="home-shirasagi-count"><strong id="home-shirasagi-count">35</strong> / <span id="home-shirasagi-total">36</span> 景 — <span id="home-shirasagi-remaining">あと一景</span></p>
+        </div>
+
+        <p class="home-shirasagi-latest">最新の景: <a href="/shirasagi36/no35.html" id="home-shirasagi-latest-link" data-growth-label="home_shirasagi_latest"><span id="home-shirasagi-latest-title">花の北屋上 惜別遠望</span></a></p>
+        <p class="home-shirasagi-meta" id="home-shirasagi-latest-meta">2026.08.09 ・ イオン姫路店（花の北）屋上</p>
+        <p class="home-shirasagi-note">四季と時間を待ちながら、次の一景を探しています。</p>
+
+        <div class="home-shirasagi-seasons" id="home-shirasagi-seasons">
+          <a class="home-shirasagi-season" href="shirasagi36.html?season=spring" data-growth-label="home_shirasagi_season">春 <i>16</i></a>
+          <a class="home-shirasagi-season" href="shirasagi36.html?season=summer" data-growth-label="home_shirasagi_season">夏 <i>6</i></a>
+          <a class="home-shirasagi-season" href="shirasagi36.html?season=autumn" data-growth-label="home_shirasagi_season">秋 <i>7</i></a>
+          <a class="home-shirasagi-season" href="shirasagi36.html?season=winter" data-growth-label="home_shirasagi_season">冬 <i>6</i></a>
+        </div>
+
+        <div class="home-shirasagi-links">
+          <a class="home-shirasagi-btn is-primary" href="shirasagi36.html" data-growth-label="home_shirasagi_hub">36 景を見る →</a>
+          <a class="home-shirasagi-btn" href="shirasagi36-map.html" data-growth-label="home_shirasagi_map">撮影地マップ →</a>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ======================================
        SECTION 3: 今日の断章
@@ -1757,6 +1880,26 @@
     </div>
   </section>
 
+
+  <!-- ======================================
+       SECTION 4: 最近の更新（data/updates.json）
+       ====================================== -->
+  <section class="home-updates" id="home-updates" aria-labelledby="home-updates-title" hidden>
+    <div class="home-updates-inner">
+      <div class="home-updates-head">
+        <div>
+          <p class="home-updates-kicker">Recent updates</p>
+          <h2 class="home-updates-title" id="home-updates-title">最近の更新</h2>
+        </div>
+        <a class="home-updates-feed" href="/feed.xml" data-growth-label="home_updates_feed">Feed で受け取る</a>
+      </div>
+      <ul class="home-updates-list" id="home-updates-list"></ul>
+      <p class="home-updates-note"><a href="writings.html" data-growth-label="home_updates_all">すべての記事 →</a></p>
+    </div>
+    <noscript>
+      <p class="home-updates-note" style="text-align:center;"><a href="writings.html">すべての記事 →</a></p>
+    </noscript>
+  </section>
 
   <!-- ======================================
        SECTION 5: 旅の記録
@@ -1887,6 +2030,10 @@
   <footer class="footer-redesign">
     <div class="footer-inner">
       <nav class="footer-nav">
+        <a href="shirasagi36.html">白鷺三十六景</a>
+        <a href="hongkong-handbook.html">香港ハンドブック</a>
+        <a href="fragments.html">断章</a>
+        <a href="/feed.xml">Feed</a>
         <a href="gallery.html">Gallery</a>
         <a href="gear.html">Gear</a>
         <a href="writings.html">Writings</a>
@@ -1921,10 +2068,25 @@
       if (source) source.removeAttribute('srcset');
     }
 
+    // 「今日の断章」→ 日付が今日でなければ「最新の断章 · 5日前」のような相対表示に
+    function relativeFrameLabel(dateText) {
+      const m = String(dateText || '').match(/(\d{4})[年.\-\/](\d{1,2})[月.\-\/](\d{1,2})/);
+      if (!m) return '断章';
+      const posted = new Date(Number(m[1]), Number(m[2]) - 1, Number(m[3]));
+      const today = new Date();
+      today.setHours(0, 0, 0, 0);
+      const days = Math.round((today - posted) / 86400000);
+      if (days <= 0) return '今日の断章';
+      if (days === 1) return '最新の断章 · 昨日';
+      if (days < 31) return `最新の断章 · ${days}日前`;
+      if (days < 365) return `最新の断章 · ${Math.floor(days / 30)}ヶ月前`;
+      return `最新の断章 · ${m[1]}.${String(m[2]).padStart(2, '0')}`;
+    }
+
     function renderRecentFrame(frame) {
       if (!frame) return;
 
-      const label = frame.label || '今日の断章';
+      const label = relativeFrameLabel(frame.date);
       const meta = [frame.place, frame.date].filter(Boolean).join(' / ');
       const mediaItems = [frame, ...(frame.sideFrames || [])].filter(item => item && item.image);
       const activeMediaIndex = Number.isInteger(frame.activeMediaIndex) ? frame.activeMediaIndex : 0;
@@ -1954,6 +2116,11 @@
       if (link) {
         link.href = 'fragments.html';
         link.textContent = 'すべての断章を見る →';
+      }
+
+      // 写真の実寸比を figure に入れて、黒い余白（レターボックス）が出ないようにする
+      if (media && activeMedia.width && activeMedia.height) {
+        media.style.aspectRatio = `${activeMedia.width} / ${activeMedia.height}`;
       }
 
       if (image && activeMedia.alt) image.alt = activeMedia.alt;
@@ -2181,8 +2348,152 @@
       }
     }
 
+    // ===== 白鷺三十六景ブロックの読み込み（data/shirasagi-latest.json） =====
+    const SEASON_LABELS = { spring: '春', summer: '夏', autumn: '秋', winter: '冬', special: '特別' };
+    const KANJI_DIGITS = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+
+    function kanjiNumber(n) {
+      const num = Number(n);
+      if (!Number.isInteger(num) || num < 1 || num > 99) return String(n);
+      const tens = Math.floor(num / 10);
+      const ones = num % 10;
+      return (tens === 1 ? '十' : tens > 1 ? `${KANJI_DIGITS[tens]}十` : '') + KANJI_DIGITS[ones];
+    }
+
+    function formatIsoDate(iso) {
+      const m = String(iso || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      return m ? `${m[1]}.${m[2]}.${m[3]}` : '';
+    }
+
+    function renderShirasagiBlock(data) {
+      if (!data || !data.latest || !data.latest.length) return;
+      const latest = data.latest[0];
+
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el && value) el.textContent = value;
+      };
+
+      const count = Number(data.count) || 0;
+      const total = Number(data.total) || 36;
+      setText('home-shirasagi-count', String(count));
+      setText('home-shirasagi-total', String(total));
+      const remaining = Math.max(total - count, 0);
+      setText('home-shirasagi-remaining', remaining === 0 ? '三十六景 完結' : (remaining === 1 ? 'あと一景' : `あと${remaining}景`));
+      const fill = document.getElementById('home-shirasagi-bar-fill');
+      if (fill) fill.style.width = `${Math.round((count / total) * 100)}%`;
+
+      const link = document.getElementById('home-shirasagi-latest-link');
+      const photoLink = document.getElementById('home-shirasagi-photo-link');
+      if (link && latest.url) link.href = latest.url;
+      if (photoLink && latest.url) photoLink.href = latest.url;
+      setText('home-shirasagi-latest-title', latest.title);
+      setText('home-shirasagi-latest-meta', [formatIsoDate(latest.date), latest.place].filter(Boolean).join(' ・ '));
+      setText('home-shirasagi-caption', `第${kanjiNumber(latest.no)}景 ${latest.title || ''}`);
+
+      const image = document.getElementById('home-shirasagi-image');
+      const source = document.getElementById('home-shirasagi-source');
+      if (source && latest.full) source.srcset = latest.full;
+      if (image && latest.full) {
+        image.src = latest.full.replace('/webp/full/', '/').replace(/\.webp$/, '.jpg');
+        image.alt = `姫路城 — 第${kanjiNumber(latest.no)}景 ${latest.title || ''}`;
+      }
+
+      const seasons = document.getElementById('home-shirasagi-seasons');
+      if (seasons && data.seasons) {
+        const entries = ['spring', 'summer', 'autumn', 'winter', 'special']
+          .filter(key => data.seasons[key])
+          .map(key => {
+            const a = document.createElement('a');
+            a.className = 'home-shirasagi-season';
+            a.href = `shirasagi36.html?season=${key}`;
+            a.setAttribute('data-growth-label', 'home_shirasagi_season');
+            a.append(SEASON_LABELS[key] || key, ' ');
+            const n = document.createElement('i');
+            n.textContent = data.seasons[key];
+            a.appendChild(n);
+            return a;
+          });
+        if (entries.length) seasons.replaceChildren(...entries);
+      }
+    }
+
+    async function loadShirasagiBlock() {
+      try {
+        const res = await fetch('data/shirasagi-latest.json');
+        if (!res.ok) throw new Error('failed');
+        renderShirasagiBlock(await res.json());
+      } catch (error) {
+        // 取得できなければ HTML に書いてある最新の景をそのまま見せる
+        console.log('Using static content for shirasagi block');
+      }
+    }
+
+    // ===== 最近の更新の読み込み（data/updates.json） =====
+    const UPDATE_CHIP_CLASS = { fragment: 'is-fragment', shirasagi: 'is-shirasagi' };
+
+    function createUpdateItem(item) {
+      const li = document.createElement('li');
+      li.className = 'home-updates-item';
+
+      const a = document.createElement('a');
+      a.href = item.url;
+      a.setAttribute('data-growth-label', `home_updates_${item.kind || 'item'}`);
+      if (item.external) { a.target = '_blank'; a.rel = 'noopener noreferrer'; }
+
+      const thumb = document.createElement('img');
+      thumb.className = 'home-updates-thumb';
+      thumb.src = item.thumb || '';
+      thumb.alt = '';
+      thumb.loading = 'lazy';
+      thumb.decoding = 'async';
+      if (!item.thumb) thumb.style.visibility = 'hidden';
+      thumb.addEventListener('error', () => { thumb.style.visibility = 'hidden'; }, { once: true });
+
+      const body = document.createElement('div');
+      body.className = 'home-updates-body';
+
+      const chip = document.createElement('span');
+      chip.className = `home-updates-chip ${UPDATE_CHIP_CLASS[item.kind] || ''}`.trim();
+      chip.textContent = item.kindLabel || '更新';
+
+      const name = document.createElement('span');
+      name.className = 'home-updates-name';
+      name.textContent = item.title || '';
+
+      body.append(chip, name);
+
+      const date = document.createElement('span');
+      date.className = 'home-updates-date';
+      date.textContent = formatIsoDate(item.date);
+
+      a.append(thumb, body, date);
+      li.appendChild(a);
+      return li;
+    }
+
+    async function loadUpdates() {
+      const section = document.getElementById('home-updates');
+      const list = document.getElementById('home-updates-list');
+      if (!section || !list) return;
+      try {
+        const res = await fetch('data/updates.json');
+        if (!res.ok) throw new Error('failed');
+        const data = await res.json();
+        const items = (data.items || []).filter(item => item && item.url && item.title).slice(0, 8);
+        if (!items.length) return;
+        list.replaceChildren(...items.map(createUpdateItem));
+        section.hidden = false;
+      } catch (error) {
+        // 取得できなければセクションごと出さない（noscript のリンクだけ残る）
+        console.log('Skipped recent updates');
+      }
+    }
+
     document.addEventListener('DOMContentLoaded', () => {
+      loadShirasagiBlock();
       loadRecentFrame();
+      loadUpdates();
       loadLatestArticles();
     });
 

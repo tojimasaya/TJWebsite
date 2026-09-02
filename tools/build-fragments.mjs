@@ -2,6 +2,7 @@
 //
 //   node tools/build-fragments.mjs           … 生成して書き込む
 //   node tools/build-fragments.mjs --check   … 差分の有無だけ見る（差分があれば exit 2）
+//   node tools/build-fragments.mjs --dims    … 生成に加えて recent-photos.json に width/height を書き足す
 //
 // 入力: data/recent-photos.json（新しい順）、tools/templates/fragment.html
 // 出力: fragments/{slug}.html、fragments/index.html（/fragments.html へリダイレクト）、
@@ -20,6 +21,9 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = 'fragments';
 const SOURCE = 'data/recent-photos.json';
 const CHECK_ONLY = process.argv.includes('--check');
+// --dims: data/recent-photos.json の各写真に width / height を書き足す（トップの断章ブロックが
+// 実寸比を使ってレターボックス（黒帯）を出さないために使う）。写真を足したときだけ実行すればよい。
+const WRITE_DIMS = process.argv.includes('--dims');
 
 const AUTHOR = { name: '田路昌也 (Toji Masaya)', url: `${SITE_ORIGIN}/about.html` };
 
@@ -283,6 +287,27 @@ async function main() {
     if (b.dateIso) return 1;
     return 0;
   });
+
+  // --dims: 各写真の実寸を JSON に書き足す
+  if (WRITE_DIMS) {
+    let touched = 0;
+    for (const item of list) {
+      for (const media of [item, ...(item.sideFrames || [])]) {
+        if (!media || !media.image) continue;
+        const size = await imageSize(path.join(ROOT, media.image));
+        if (!size) { console.warn(`注意: ${media.image} の寸法を読めません`); continue; }
+        if (media.width !== size.width || media.height !== size.height) {
+          media.width = size.width;
+          media.height = size.height;
+          touched += 1;
+        }
+      }
+    }
+    if (touched && !CHECK_ONLY) {
+      await writeIfChanged(path.join(ROOT, SOURCE), JSON.stringify(list, null, 2) + '\n');
+    }
+    console.log(`--dims: 寸法を書き足した写真 ${touched} 枚`);
+  }
 
   const written = [];
   const stripVolatile = (s) => String(s ?? '').replace(/\d{4}-\d{2}-\d{2}T\d{2}:\d{2}:\d{2}Z/g, '');

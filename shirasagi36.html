@@ -960,6 +960,17 @@
             loadLatest();
             setupFilters();
 
+            // ?season=spring などでトップページの季節チップから直接フィルタを開く
+            const seasonParam = new URLSearchParams(location.search).get('season');
+            if (seasonParam) {
+                const seasonBtn = document.querySelector(`.filter-btn[data-filter="${CSS.escape(seasonParam)}"]`);
+                if (seasonBtn) {
+                    seasonBtn.click();
+                    const galleryEl = document.getElementById('gallery-anchor');
+                    if (galleryEl) galleryEl.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
             // URLハッシュ #noXX / #view-XX で直接モーダルを開く
             const hash = location.hash;
             const viewMatch = hash.match(/^#(?:no|view-)(\d+)$/);
