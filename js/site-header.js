@@ -11,6 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const path = window.location.pathname;
     const pageName = path.split("/").pop();
     const page = (pageName === "" || pageName === "index.html") ? "index.html" : pageName;
+    const inShirasagiDir = path.indexOf('/shirasagi36/') !== -1;
 
     // 現在のテーマを判定
     function getCurrentTheme() {
@@ -38,17 +39,17 @@ document.addEventListener('DOMContentLoaded', () => {
             <ul class="nav-menu" id="nav-menu">
                 <li><a href="/" class="nav-link ${page === 'index.html' ? 'active' : ''}">Home</a></li>
                 <li>
-                    <a href="shirasagi36.html" class="nav-link featured-link ${page.includes('shirasagi') ? 'active' : ''}">
+                    <a href="/shirasagi36.html" class="nav-link featured-link ${page.includes('shirasagi') || inShirasagiDir ? 'active' : ''}">
                         <span class="icon">🏯</span> 白鷺三十六景
                     </a>
                 </li>
-                <li><a href="hongkong.html" class="nav-link ${page.includes('hongkong') && !page.includes('handbook') ? 'active' : ''}">香港</a></li>
-                <li><a href="hongkong-handbook.html" class="nav-link ${page === 'hongkong-handbook.html' || page.startsWith('hk-') || page.startsWith('cn-') || page === 'holidays.html' ? 'active' : ''}">ハンドブック</a></li>
-                <li><a href="trips.html" class="nav-link ${page === 'trips.html' ? 'active' : ''}">旅</a></li>
-                <li><a href="gallery.html" class="nav-link ${page === 'gallery.html' ? 'active' : ''}">Gallery</a></li>
-                <li><a href="writings.html" class="nav-link ${page === 'writings.html' ? 'active' : ''}">Writings</a></li>
-                <li><a href="gear.html" class="nav-link ${page.includes('gear') ? 'active' : ''}">Gear</a></li>
-                <li><a href="about.html" class="nav-link ${page === 'about.html' ? 'active' : ''}">About</a></li>
+                <li><a href="/hongkong.html" class="nav-link ${page.includes('hongkong') && !page.includes('handbook') ? 'active' : ''}">香港</a></li>
+                <li><a href="/hongkong-handbook.html" class="nav-link ${page === 'hongkong-handbook.html' || page.startsWith('hk-') || page.startsWith('cn-') || page === 'holidays.html' ? 'active' : ''}">ハンドブック</a></li>
+                <li><a href="/trips.html" class="nav-link ${page === 'trips.html' ? 'active' : ''}">旅</a></li>
+                <li><a href="/gallery.html" class="nav-link ${page === 'gallery.html' ? 'active' : ''}">Gallery</a></li>
+                <li><a href="/writings.html" class="nav-link ${page === 'writings.html' ? 'active' : ''}">Writings</a></li>
+                <li><a href="/gear.html" class="nav-link ${page.includes('gear') ? 'active' : ''}">Gear</a></li>
+                <li><a href="/about.html" class="nav-link ${page === 'about.html' ? 'active' : ''}">About</a></li>
                 <li><button class="theme-toggle" id="theme-toggle" aria-label="${getThemeLabel(currentTheme)}">${getThemeIcon(currentTheme)}</button></li>
             </ul>
         </div>

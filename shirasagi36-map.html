@@ -198,6 +198,7 @@
             .then(res => res.json())
             .then(data => {
                 const markers = [];
+                const markerById = {};
 
                 Object.keys(data).sort((a, b) => Number(a) - Number(b)).forEach(id => {
                     const photo = data[id];
@@ -230,7 +231,9 @@
                                 <div class="popup-number">No.${id}</div>
                                 <div class="popup-title">${photo.title}</div>
                                 ${locationName}
-                                <a href="shirasagi36.html#view-${num}" class="popup-link">詳しく見る →</a>
+                                <a href="/shirasagi36/no${num}.html" class="popup-link" data-growth-label="shirasagi_map_page">この景のページ →</a>
+                                <span style="margin:0 6px;color:#ccc;">|</span>
+                                <a href="shirasagi36.html#no${num}" class="popup-link" style="color:#888;font-weight:400;">一覧で開く</a>
                             </div>
                         </div>
                     `;
@@ -242,6 +245,7 @@
                     });
 
                     markers.push(marker);
+                    markerById[Number(id)] = marker;
                 });
 
                 // Fit map to show all markers
@@ -249,6 +253,17 @@
                     const group = L.featureGroup(markers);
                     map.fitBounds(group.getBounds().pad(0.1));
                 }
+
+                // #no13 / #view-13 で該当マーカーにフォーカスしてポップアップを開く（一景ページの「撮影地マップで見る」から）
+                const focusFromHash = () => {
+                    const m = location.hash.match(/^#(?:no|view-)(\d+)$/);
+                    const marker = m && markerById[parseInt(m[1], 10)];
+                    if (!marker) return;
+                    map.setView(marker.getLatLng(), 17, { animate: false });
+                    setTimeout(() => marker.openPopup(), 300);
+                };
+                focusFromHash();
+                window.addEventListener('hashchange', focusFromHash);
             })
             .catch(err => {
                 console.error('Failed to load photo data:', err);

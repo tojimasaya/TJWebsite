@@ -49,23 +49,24 @@
   section.setAttribute('aria-label', 'コメント');
 
   var h2 = document.createElement('h2');
-  h2.textContent = 'コメント — 情報のアップデート歓迎';
+  // ページ側の <div id="comments-slot" data-heading="…" data-intro="…" data-lang="…"> で文言を上書きできる
+  h2.textContent = slot.getAttribute('data-heading') || 'コメント — 情報のアップデート歓迎';
   section.appendChild(h2);
 
   var intro = document.createElement('p');
   intro.className = 'comments-intro';
-  intro.textContent = '制度や条件は変わります。「ここはもう変わっているよ」という最新情報や、みなさんの体験談をぜひ。名前だけで匿名投稿できます（承認後に公開されます）。';
+  intro.textContent = slot.getAttribute('data-intro') || '制度や条件は変わります。「ここはもう変わっているよ」という最新情報や、みなさんの体験談をぜひ。名前だけで匿名投稿できます（承認後に公開されます）。';
   section.appendChild(intro);
 
   var thread = document.createElement('div');
   thread.id = 'cusdis_thread';
   thread.setAttribute('data-host', 'https://cusdis.com');
   thread.setAttribute('data-app-id', CUSDIS_APP_ID);
-  thread.setAttribute('data-page-id', location.pathname);
+  thread.setAttribute('data-page-id', slot.getAttribute('data-page-id') || location.pathname);
   thread.setAttribute('data-page-url', location.origin + location.pathname);
   thread.setAttribute('data-page-title', document.title);
   thread.setAttribute('data-theme', currentTheme());
-  thread.setAttribute('data-lang', 'ja');
+  thread.setAttribute('data-lang', slot.getAttribute('data-lang') || 'ja');
   section.appendChild(thread);
 
   (staticAnchor || slot).replaceWith(section);
