@@ -1,0 +1,312 @@
+{
+  "generatedAt": "2026-09-02T12:48:57Z",
+  "total": 36,
+  "count": 35,
+  "remaining": 1,
+  "seasons": {
+    "spring": 16,
+    "summer": 6,
+    "autumn": 7,
+    "winter": 6
+  },
+  "hub": {
+    "ja": "/shirasagi36.html",
+    "en": "/shirasagi36-en.html",
+    "hk": "/shirasagi36-hk.html",
+    "map": "/shirasagi36-map.html"
+  },
+  "latest": [
+    {
+      "no": 35,
+      "nn": "35",
+      "title": "花の北屋上 惜別遠望",
+      "titleEn": "Rooftop Farewell — The Castle, Two Kilometres Off",
+      "titleHk": "天台惜別 — 兩公里外的白鷺",
+      "date": "2026-08-09",
+      "season": "summer",
+      "place": "イオン姫路店（花の北）屋上",
+      "url": "/shirasagi36/no35.html",
+      "urlEn": "/shirasagi36/no35-en.html",
+      "urlHk": "/shirasagi36/no35-hk.html",
+      "thumb": "/assets/images/shirasagi/webp/thumb/35.webp",
+      "full": "/assets/images/shirasagi/webp/full/35.webp"
+    },
+    {
+      "no": 34,
+      "nn": "34",
+      "title": "三の丸薪能 闇夜の白鷺",
+      "titleEn": "Sannomaru Takigi Noh — White Heron in the Dark",
+      "titleHk": "三之丸薪能 — 暗夜的白鷺",
+      "date": "2026-05-22",
+      "season": "spring",
+      "place": "姫路城三の丸広場",
+      "url": "/shirasagi36/no34.html",
+      "urlEn": "/shirasagi36/no34-en.html",
+      "urlHk": "/shirasagi36/no34-hk.html",
+      "thumb": "/assets/images/shirasagi/webp/thumb/34.webp",
+      "full": "/assets/images/shirasagi/webp/full/34.webp"
+    },
+    {
+      "no": 33,
+      "nn": "33",
+      "title": "原寸大の双璧 城見台公園の鯱",
+      "titleEn": "The Full-Scale Twin Guardians at Shiromidai Park",
+      "titleHk": "原尺寸的雙璧 城見台公園的鯱瓦",
+      "date": "2026-03-18",
+      "season": "spring",
+      "place": "城見台公園",
+      "url": "/shirasagi36/no33.html",
+      "urlEn": "/shirasagi36/no33-en.html",
+      "urlHk": "/shirasagi36/no33-hk.html",
+      "thumb": "/assets/images/shirasagi/webp/thumb/33.webp",
+      "full": "/assets/images/shirasagi/webp/full/33.webp"
+    }
+  ],
+  "views": [
+    {
+      "no": 1,
+      "title": "城見橋畔 桜花春霞",
+      "date": "2025-04-05",
+      "season": "spring",
+      "url": "/shirasagi36/no01.html"
+    },
+    {
+      "no": 2,
+      "title": "南西遠望 桜雲の城",
+      "date": "2025-04-05",
+      "season": "spring",
+      "url": "/shirasagi36/no02.html"
+    },
+    {
+      "no": 3,
+      "title": "三の丸 夜桜の額縁",
+      "date": "2025-04-09",
+      "season": "spring",
+      "url": "/shirasagi36/no03.html"
+    },
+    {
+      "no": 4,
+      "title": "三の丸広場 花霞の幻城",
+      "date": "2025-04-01",
+      "season": "spring",
+      "url": "/shirasagi36/no04.html"
+    },
+    {
+      "no": 5,
+      "title": "千姫坂道 三の丸春光",
+      "date": "2025-04-05",
+      "season": "spring",
+      "url": "/shirasagi36/no05.html"
+    },
+    {
+      "no": 6,
+      "title": "白鷺学舎 青春の眺望",
+      "date": "2025-04-05",
+      "season": "spring",
+      "url": "/shirasagi36/no06.html"
+    },
+    {
+      "no": 7,
+      "title": "男山高台 新緑の連立陣",
+      "date": "2025-05-20",
+      "season": "summer",
+      "url": "/shirasagi36/no07.html"
+    },
+    {
+      "no": 8,
+      "title": "東光寺霊園 暮色と白鷺",
+      "date": "2025-05-04",
+      "season": "summer",
+      "url": "/shirasagi36/no08.html"
+    },
+    {
+      "no": 9,
+      "title": "夕照の白鷺",
+      "date": "2025-07-29",
+      "season": "summer",
+      "url": "/shirasagi36/no09.html"
+    },
+    {
+      "no": 10,
+      "title": "桜門橋夕景",
+      "date": "2025-07-29",
+      "season": "summer",
+      "url": "/shirasagi36/no10.html"
+    },
+    {
+      "no": 11,
+      "title": "快晴の城",
+      "date": "2025-07-30",
+      "season": "summer",
+      "url": "/shirasagi36/no11.html"
+    },
+    {
+      "no": 12,
+      "title": "青空の下の合戦 人間将棋 姫路の陣",
+      "date": "2025-11-01",
+      "season": "autumn",
+      "url": "/shirasagi36/no12.html"
+    },
+    {
+      "no": 13,
+      "title": "大手前高楼 錦秋の城下",
+      "date": "2025-11-13",
+      "season": "autumn",
+      "url": "/shirasagi36/no13.html"
+    },
+    {
+      "no": 14,
+      "title": "北勢隠門 秘境の水鏡",
+      "date": "2025-11-13",
+      "season": "autumn",
+      "url": "/shirasagi36/no14.html"
+    },
+    {
+      "no": 15,
+      "title": "美術館庭園 錦秋と赤煉瓦",
+      "date": "2025-11-13",
+      "season": "autumn",
+      "url": "/shirasagi36/no15.html"
+    },
+    {
+      "no": 16,
+      "title": "千姫小径 堀端の錦秋",
+      "date": "2025-11-13",
+      "season": "autumn",
+      "url": "/shirasagi36/no16.html"
+    },
+    {
+      "no": 17,
+      "title": "追手門夕照",
+      "date": "2025-10-01",
+      "season": "autumn",
+      "url": "/shirasagi36/no17.html"
+    },
+    {
+      "no": 18,
+      "title": "橋上の秋景",
+      "date": "2025-10-01",
+      "season": "autumn",
+      "url": "/shirasagi36/no18.html"
+    },
+    {
+      "no": 19,
+      "title": "春待つ枝",
+      "date": "2025-03-18",
+      "season": "winter",
+      "url": "/shirasagi36/no19.html"
+    },
+    {
+      "no": 20,
+      "title": "大手前通り 冬夜の光帯",
+      "date": "2025-12-31",
+      "season": "winter",
+      "url": "/shirasagi36/no20.html"
+    },
+    {
+      "no": 21,
+      "title": "駅前高台 歳末の光道",
+      "date": "2025-12-31",
+      "season": "winter",
+      "url": "/shirasagi36/no21.html"
+    },
+    {
+      "no": 22,
+      "title": "名古山霊園 迎春の暁光",
+      "date": "2026-01-01",
+      "season": "winter",
+      "url": "/shirasagi36/no22.html"
+    },
+    {
+      "no": 23,
+      "title": "三の丸広場 出初めの彩虹",
+      "date": "2026-01-11",
+      "season": "winter",
+      "url": "/shirasagi36/no23.html"
+    },
+    {
+      "no": 24,
+      "title": "三の丸広場 蒼穹の守り人",
+      "date": "2026-01-11",
+      "season": "winter",
+      "url": "/shirasagi36/no24.html"
+    },
+    {
+      "no": 25,
+      "title": "闇夜浮城 白亜の威容",
+      "date": "2026-03-13",
+      "season": "spring",
+      "url": "/shirasagi36/no25.html"
+    },
+    {
+      "no": 26,
+      "title": "三国堀 妖艶なる極彩色",
+      "date": "2026-03-13",
+      "season": "spring",
+      "url": "/shirasagi36/no26.html"
+    },
+    {
+      "no": 27,
+      "title": "夜の将軍坂 静寂の石段",
+      "date": "2026-03-13",
+      "season": "spring",
+      "url": "/shirasagi36/no27.html"
+    },
+    {
+      "no": 28,
+      "title": "天守の窓辺 鯱瓦と夜景",
+      "date": "2026-03-13",
+      "season": "spring",
+      "url": "/shirasagi36/no28.html"
+    },
+    {
+      "no": 29,
+      "title": "菱の門 桃山の華と開門の記憶",
+      "date": "2026-03-13",
+      "season": "spring",
+      "url": "/shirasagi36/no29.html"
+    },
+    {
+      "no": 30,
+      "title": "菱の門東方 石垣と瓦が縁取る夕景",
+      "date": "2026-03-13",
+      "season": "spring",
+      "url": "/shirasagi36/no30.html"
+    },
+    {
+      "no": 31,
+      "title": "備前丸からの眺望 真南に延びる大手前通り",
+      "date": "2026-03-13",
+      "season": "spring",
+      "url": "/shirasagi36/no31.html"
+    },
+    {
+      "no": 32,
+      "title": "蒼天仰角 白壁連峰",
+      "date": "2026-03-13",
+      "season": "spring",
+      "url": "/shirasagi36/no32.html"
+    },
+    {
+      "no": 33,
+      "title": "原寸大の双璧 城見台公園の鯱",
+      "date": "2026-03-18",
+      "season": "spring",
+      "url": "/shirasagi36/no33.html"
+    },
+    {
+      "no": 34,
+      "title": "三の丸薪能 闇夜の白鷺",
+      "date": "2026-05-22",
+      "season": "spring",
+      "url": "/shirasagi36/no34.html"
+    },
+    {
+      "no": 35,
+      "title": "花の北屋上 惜別遠望",
+      "date": "2026-08-09",
+      "season": "summer",
+      "url": "/shirasagi36/no35.html"
+    }
+  ]
+}

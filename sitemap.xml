@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+        xmlns:xhtml="http://www.w3.org/1999/xhtml"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
 
   <!-- トップページ -->
   <url>
@@ -581,5 +582,1479 @@
     <changefreq>monthly</changefreq>
     <priority>0.85</priority>
   </url>
+
+<!-- shirasagi36:auto:start -->
+  <!-- 白鷺三十六景 一景ページ（tools/build-shirasagi.mjs が生成。手で編集しない） -->
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no01.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no01.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no01-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no01-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no01.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/01.jpg</image:loc>
+      <image:title>姫路城 — 第一景 城見橋畔 桜花春霞</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no01-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no01.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no01-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no01-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no01.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/01.jpg</image:loc>
+      <image:title>Himeji Castle — View 1: Shiromibashi Riverside — Cherry Blossoms in Spring Haze</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no01-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no01.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no01-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no01-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no01.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/01.jpg</image:loc>
+      <image:title>姬路城 — 第一景 紅橋花舟</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no02.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no02.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no02-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no02-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no02.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/02.jpg</image:loc>
+      <image:title>姫路城 — 第二景 南西遠望 桜雲の城</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no02-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no02.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no02-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no02-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no02.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/02.jpg</image:loc>
+      <image:title>Himeji Castle — View 2: Southwest Panorama — Castle in Cherry Blossom Clouds</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no02-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no02.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no02-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no02-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no02.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/02.jpg</image:loc>
+      <image:title>姬路城 — 第二景 南西遠望 櫻雲之城</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no03.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no03.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no03-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no03-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no03.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/03.jpg</image:loc>
+      <image:title>姫路城 — 第三景 三の丸 夜桜の額縁</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no03-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no03.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no03-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no03-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no03.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/03.jpg</image:loc>
+      <image:title>Himeji Castle — View 3: Sannomaru — Night Cherry Blossom Frame</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no03-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no03.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no03-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no03-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no03.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/03.jpg</image:loc>
+      <image:title>姬路城 — 第三景 夜櫻白鷺</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no04.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no04.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no04-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no04-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no04.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/04.jpg</image:loc>
+      <image:title>姫路城 — 第四景 三の丸広場 花霞の幻城</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no04-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no04.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no04-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no04-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no04.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/04.jpg</image:loc>
+      <image:title>Himeji Castle — View 4: Sannomaru Square — Phantom Castle in Cherry Haze</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no04-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no04.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no04-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no04-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no04.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/04.jpg</image:loc>
+      <image:title>姬路城 — 第四景 三之丸廣場 花霞幻城</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no05.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no05.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no05-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no05-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no05.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/05.jpg</image:loc>
+      <image:title>姫路城 — 第五景 千姫坂道 三の丸春光</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no05-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no05.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no05-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no05-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no05.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/05.jpg</image:loc>
+      <image:title>Himeji Castle — View 5: Senhime Slope — Spring Light of Sannomaru</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no05-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no05.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no05-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no05-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no05.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/05.jpg</image:loc>
+      <image:title>姬路城 — 第五景 千姬坡道 三之丸春光</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no06.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no06.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no06-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no06-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no06.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/06.jpg</image:loc>
+      <image:title>姫路城 — 第六景 白鷺学舎 青春の眺望</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no06-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no06.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no06-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no06-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no06.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/06.jpg</image:loc>
+      <image:title>Himeji Castle — View 6: Hakuro School — View of Youth</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no06-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no06.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no06-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no06-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no06.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/06.jpg</image:loc>
+      <image:title>姬路城 — 第六景 白鷺學舍 青春眺望</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no07.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no07.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no07-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no07-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no07.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/07.jpg</image:loc>
+      <image:title>姫路城 — 第七景 男山高台 新緑の連立陣</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no07-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no07.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no07-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no07-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no07.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/07.jpg</image:loc>
+      <image:title>Himeji Castle — View 7: Otokoyama Heights — Tower Complex in Fresh Green</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no07-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no07.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no07-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no07-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no07.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/07.jpg</image:loc>
+      <image:title>姬路城 — 第七景 男山新綠</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no08.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no08.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no08-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no08-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no08.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/08.jpg</image:loc>
+      <image:title>姫路城 — 第八景 東光寺霊園 暮色と白鷺</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no08-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no08.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no08-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no08-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no08.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/08.jpg</image:loc>
+      <image:title>Himeji Castle — View 8: Tokoji Cemetery — Twilight and White Heron</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no08-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no08.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no08-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no08-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no08.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/08.jpg</image:loc>
+      <image:title>姬路城 — 第八景 墓苑靜寂</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no09.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no09.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no09-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no09-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no09.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/09.jpg</image:loc>
+      <image:title>姫路城 — 第九景 夕照の白鷺</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no09-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no09.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no09-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no09-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no09.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/09.jpg</image:loc>
+      <image:title>Himeji Castle — View 9: White Heron in Evening Light</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no09-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no09.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no09-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no09-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no09.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/09.jpg</image:loc>
+      <image:title>姬路城 — 第九景 夕照白鷺</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no10.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no10.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no10-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no10-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no10.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/10.jpg</image:loc>
+      <image:title>姫路城 — 第十景 桜門橋夕景</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no10-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no10.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no10-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no10-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no10.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/10.jpg</image:loc>
+      <image:title>Himeji Castle — View 10: Sakuramon Bridge at Sunset</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no10-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no10.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no10-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no10-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no10.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/10.jpg</image:loc>
+      <image:title>姬路城 — 第十景 櫻門橋夕景</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no11.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no11.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no11-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no11-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no11.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/11.jpg</image:loc>
+      <image:title>姫路城 — 第十一景 快晴の城</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no11-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no11.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no11-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no11-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no11.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/11.jpg</image:loc>
+      <image:title>Himeji Castle — View 11: Castle Under Blue Sky</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no11-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no11.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no11-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no11-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no11.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/11.jpg</image:loc>
+      <image:title>姬路城 — 第十一景 晴空之城</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no12.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no12.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no12-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no12-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no12.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/12.jpg</image:loc>
+      <image:title>姫路城 — 第十二景 青空の下の合戦 人間将棋 姫路の陣</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no12-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no12.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no12-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no12-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no12.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/12.jpg</image:loc>
+      <image:title>Himeji Castle — View 12: Battle Under the Blue Sky: Human Shogi at Himeji Castle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no12-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no12.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no12-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no12-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no12.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/12.jpg</image:loc>
+      <image:title>姬路城 — 第十二景 藍天下的合戰 人間將棋 姬路之陣</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no13.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no13.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no13-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no13-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no13.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/13.jpg</image:loc>
+      <image:title>姫路城 — 第十三景 大手前高楼 錦秋の城下</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no13-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no13.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no13-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no13-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no13.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/13.jpg</image:loc>
+      <image:title>Himeji Castle — View 13: Otemae Rooftop — Autumn Brocade Below the Castle</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no13-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no13.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no13-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no13-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no13.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/13.jpg</image:loc>
+      <image:title>姬路城 — 第十三景 城下染秋</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no14.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no14.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no14-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no14-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no14.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/14.jpg</image:loc>
+      <image:title>姫路城 — 第十四景 北勢隠門 秘境の水鏡</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no14-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no14.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no14-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no14-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no14.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/14.jpg</image:loc>
+      <image:title>Himeji Castle — View 14: Kita-Segakushimon — Hidden Water Mirror</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no14-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no14.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no14-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no14-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no14.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/14.jpg</image:loc>
+      <image:title>姬路城 — 第十四景 水鏡之城</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no15.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no15.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no15-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no15-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no15.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/15.jpg</image:loc>
+      <image:title>姫路城 — 第十五景 美術館庭園 錦秋と赤煉瓦</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no15-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no15.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no15-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no15-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no15.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/15.jpg</image:loc>
+      <image:title>Himeji Castle — View 15: Art Museum Garden — Autumn Colors and Red Brick</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no15-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no15.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no15-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no15-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no15.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/15.jpg</image:loc>
+      <image:title>姬路城 — 第十五景 美術館之秋</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no16.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no16.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no16-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no16-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no16.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/16.jpg</image:loc>
+      <image:title>姫路城 — 第十六景 千姫小径 堀端の錦秋</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no16-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no16.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no16-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no16-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no16.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/16.jpg</image:loc>
+      <image:title>Himeji Castle — View 16: Senhime Path — Autumn Along the Moat</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no16-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no16.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no16-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no16-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no16.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/16.jpg</image:loc>
+      <image:title>姬路城 — 第十六景 護城河紅葉</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no17.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no17.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no17-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no17-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no17.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/17.jpg</image:loc>
+      <image:title>姫路城 — 第十七景 追手門夕照</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no17-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no17.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no17-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no17-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no17.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/17.jpg</image:loc>
+      <image:title>Himeji Castle — View 17: Otemon Gate in Evening Sun</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no17-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no17.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no17-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no17-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no17.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/17.jpg</image:loc>
+      <image:title>姬路城 — 第十七景 追手門夕照</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no18.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no18.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no18-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no18-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no18.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/18.jpg</image:loc>
+      <image:title>姫路城 — 第十八景 橋上の秋景</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no18-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no18.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no18-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no18-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no18.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/18.jpg</image:loc>
+      <image:title>Himeji Castle — View 18: Autumn View from Sakuramon Bridge</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no18-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no18.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no18-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no18-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no18.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/18.jpg</image:loc>
+      <image:title>姬路城 — 第十八景 橋上秋景</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no19.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no19.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no19-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no19-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no19.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/19.jpg</image:loc>
+      <image:title>姫路城 — 第十九景 春待つ枝</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no19-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no19.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no19-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no19-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no19.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/19.jpg</image:loc>
+      <image:title>Himeji Castle — View 19: Branches Awaiting Spring</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no19-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no19.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no19-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no19-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no19.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/19.jpg</image:loc>
+      <image:title>姬路城 — 第十九景 待春枝頭</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no20.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no20.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no20-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no20-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no20.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/20.jpg</image:loc>
+      <image:title>姫路城 — 第二十景 大手前通り 冬夜の光帯</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no20-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no20.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no20-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no20-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no20.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/20.jpg</image:loc>
+      <image:title>Himeji Castle — View 20: Otemae Street — Ribbon of Winter Light</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no20-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no20.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no20-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no20-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no20.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/20.jpg</image:loc>
+      <image:title>姬路城 — 第二十景 大手前通 冬夜光帶</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no21.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no21.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no21-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no21-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no21.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/21.jpg</image:loc>
+      <image:title>姫路城 — 第二十一景 駅前高台 歳末の光道</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no21-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no21.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no21-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no21-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no21.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/21.jpg</image:loc>
+      <image:title>Himeji Castle — View 21: Station Heights — Year-End Path of Light</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no21-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no21.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no21-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no21-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no21.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/21.jpg</image:loc>
+      <image:title>姬路城 — 第二十一景 除夕之城</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no22.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no22.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no22-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no22-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no22.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/22.jpg</image:loc>
+      <image:title>姫路城 — 第二十二景 名古山霊園 迎春の暁光</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no22-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no22.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no22-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no22-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no22.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/22.jpg</image:loc>
+      <image:title>Himeji Castle — View 22: Nagoyama Cemetery — First Light of the New Year</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no22-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no22.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no22-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no22-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no22.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/22.jpg</image:loc>
+      <image:title>姬路城 — 第二十二景 元旦之城</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no23.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no23.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no23-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no23-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no23.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/23.jpg</image:loc>
+      <image:title>姫路城 — 第二十三景 三の丸広場 出初めの彩虹</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no23-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no23.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no23-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no23-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no23.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/23.jpg</image:loc>
+      <image:title>Himeji Castle — View 23: Sannomaru Square — Rainbow at the Fire Review</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no23-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no23.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no23-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no23-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no23.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/23.jpg</image:loc>
+      <image:title>姬路城 — 第二十三景 新春齊放水</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no24.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no24.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no24-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no24-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no24.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/24.jpg</image:loc>
+      <image:title>姫路城 — 第二十四景 三の丸広場 蒼穹の守り人</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no24-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no24.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no24-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no24-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no24.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/24.jpg</image:loc>
+      <image:title>Himeji Castle — View 24: Sannomaru Square — Guardians Under Blue Sky</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no24-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no24.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no24-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no24-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no24.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/24.jpg</image:loc>
+      <image:title>姬路城 — 第二十四景 救助隊演練</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no25.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no25.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no25-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no25-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no25.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/25.jpg</image:loc>
+      <image:title>姫路城 — 第二十五景 闇夜浮城 白亜の威容</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no25-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no25.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no25-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no25-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no25.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/25.jpg</image:loc>
+      <image:title>Himeji Castle — View 25: Floating Castle in the Dark Night: The White Majesty</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no25-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no25.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no25-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no25-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no25.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/25.jpg</image:loc>
+      <image:title>姬路城 — 第二十五景 闇夜浮城 白亞的威容</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no26.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no26.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no26-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no26-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no26.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/26.jpg</image:loc>
+      <image:title>姫路城 — 第二十六景 三国堀 妖艶なる極彩色</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no26-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no26.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no26-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no26-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no26.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/26.jpg</image:loc>
+      <image:title>Himeji Castle — View 26: Bewitching Polychrome at Sangoku-bori</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no26-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no26.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no26-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no26-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no26.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/26.jpg</image:loc>
+      <image:title>姬路城 — 第二十六景 三國堀 妖豔的極彩色</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no27.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no27.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no27-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no27-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no27.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/27.jpg</image:loc>
+      <image:title>姫路城 — 第二十七景 夜の将軍坂 静寂の石段</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no27-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no27.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no27-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no27-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no27.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/27.jpg</image:loc>
+      <image:title>Himeji Castle — View 27: The Silent Shogun Slope at Night</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no27-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no27.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no27-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no27-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no27.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/27.jpg</image:loc>
+      <image:title>姬路城 — 第二十七景 夜之將軍坂 靜謐的石階</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no28.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no28.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no28-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no28-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no28.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/28.jpg</image:loc>
+      <image:title>姫路城 — 第二十八景 天守の窓辺 鯱瓦と夜景</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no28-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no28.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no28-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no28-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no28.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/28.jpg</image:loc>
+      <image:title>Himeji Castle — View 28: The Shachihoko and City Lights from the Keep</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no28-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no28.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no28-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no28-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no28.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/28.jpg</image:loc>
+      <image:title>姬路城 — 第二十八景 天守窗邊 鯱瓦與璀璨夜景</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no29.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no29.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no29-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no29-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no29.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/29.jpg</image:loc>
+      <image:title>姫路城 — 第二十九景 菱の門 桃山の華と開門の記憶</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no29-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no29.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no29-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no29-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no29.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/29.jpg</image:loc>
+      <image:title>Himeji Castle — View 29: Hishi no Mon: Flower of Momoyama and Memories of Opening the Gate</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no29-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no29.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no29-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no29-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no29.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/29.jpg</image:loc>
+      <image:title>姬路城 — 第二十九景 菱之門 桃山之華與開門記憶</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no30.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no30.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no30-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no30-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no30.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/30.jpg</image:loc>
+      <image:title>姫路城 — 第三十景 菱の門東方 石垣と瓦が縁取る夕景</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no30-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no30.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no30-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no30-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no30.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/30.jpg</image:loc>
+      <image:title>Himeji Castle — View 30: Framed by Stone and Tile in the Setting Sun</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no30-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no30.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no30-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no30-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no30.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/30.jpg</image:loc>
+      <image:title>姬路城 — 第三十景 菱之門東方 磚瓦與石牆框住的夕景</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no31.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no31.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no31-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no31-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no31.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/31.jpg</image:loc>
+      <image:title>姫路城 — 第三十一景 備前丸からの眺望 真南に延びる大手前通り</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no31-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no31.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no31-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no31-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no31.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/31.jpg</image:loc>
+      <image:title>Himeji Castle — View 31: Looking Toward Himeji Station from Bizenmaru</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no31-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no31.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no31-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no31-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no31.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/31.jpg</image:loc>
+      <image:title>姬路城 — 第三十一景 從備前丸眺望 向正南延伸的大手前大道</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no32.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no32.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no32-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no32-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no32.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/32.jpg</image:loc>
+      <image:title>姫路城 — 第三十二景 蒼天仰角 白壁連峰</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no32-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no32.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no32-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no32-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no32.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/32.jpg</image:loc>
+      <image:title>Himeji Castle — View 32: Looking Up at the Blue Sky: A Mountain Range of White Walls</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no32-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no32.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no32-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no32-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no32.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/32.jpg</image:loc>
+      <image:title>姬路城 — 第三十二景 蒼天仰角 白壁連峰</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no33.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no33.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no33-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no33-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no33.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/33.jpg</image:loc>
+      <image:title>姫路城 — 第三十三景 原寸大の双璧 城見台公園の鯱</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no33-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no33.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no33-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no33-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no33.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/33.jpg</image:loc>
+      <image:title>Himeji Castle — View 33: The Full-Scale Twin Guardians at Shiromidai Park</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no33-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no33.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no33-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no33-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no33.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/33.jpg</image:loc>
+      <image:title>姬路城 — 第三十三景 原尺寸的雙璧 城見台公園的鯱瓦</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no34.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no34.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no34-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no34-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no34.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/34.jpg</image:loc>
+      <image:title>姫路城 — 第三十四景 三の丸薪能 闇夜の白鷺</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no34-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no34.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no34-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no34-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no34.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/34.jpg</image:loc>
+      <image:title>Himeji Castle — View 34: Sannomaru Takigi Noh — White Heron in the Dark</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no34-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no34.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no34-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no34-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no34.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/34.jpg</image:loc>
+      <image:title>姬路城 — 第三十四景 三之丸薪能 — 暗夜的白鷺</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no35.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no35.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no35-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no35-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no35.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/35.jpg</image:loc>
+      <image:title>姫路城 — 第三十五景 花の北屋上 惜別遠望</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no35-en.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no35.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no35-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no35-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no35.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/35.jpg</image:loc>
+      <image:title>Himeji Castle — View 35: Rooftop Farewell — The Castle, Two Kilometres Off</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36/no35-hk.html</loc>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/shirasagi36/no35.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/shirasagi36/no35-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/shirasagi36/no35-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/shirasagi36/no35.html"/>
+    <lastmod>2026-09-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/shirasagi/35.jpg</image:loc>
+      <image:title>姬路城 — 第三十五景 天台惜別 — 兩公里外的白鷺</image:title>
+    </image:image>
+  </url>
+<!-- shirasagi36:auto:end -->
 
 </urlset>
