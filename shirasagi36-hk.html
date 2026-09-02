@@ -623,6 +623,12 @@
         const seasonRanges = { 'spring': [1, 6], 'summer': [7, 12], 'autumn': [13, 18], 'winter': [19, 24], 'special': [25, 36] };
         let currentFilter = 'all';
         let currentModalId = null;
+        // モーダルを開いたときに履歴を1つ積んだかどうか（URL を一景ページのアドレスに変えるため）
+        let modalUrlPushed = false;
+        const HUB_PATH = location.pathname;
+        window.addEventListener('popstate', () => {
+            if (currentModalId !== null) closeModal(true);
+        });
 
         async function init() {
             try {
@@ -1078,9 +1084,16 @@
             }, 10);
             document.body.style.overflow = 'hidden';
 
-            // URL に #noNN を持たせる（共有・再訪用。履歴は増やさない）
+            // URL バーを一景ページのアドレスにする。そのままコピーして貼れば、
+            // X や LINE がその景のカードを出す（#noNN はサーバーに渡らないため）。
             const nn = String(id).padStart(2, '0');
-            if (history.replaceState) history.replaceState(null, '', '#no' + nn);
+            if (history.pushState) {
+                const pagePath = viewPagePath(id);
+                if (location.pathname !== pagePath) {
+                    if (modalUrlPushed) history.replaceState({ shirasagiView: id }, '', pagePath);
+                    else { history.pushState({ shirasagiView: id }, '', pagePath); modalUrlPushed = true; }
+                }
+            }
             const pageLink = document.getElementById('modal-page-link');
             if (pageLink) pageLink.href = viewPagePath(id);
             const xLink = document.getElementById('modal-x-link');
@@ -1100,7 +1113,7 @@
             else window.prompt('URL', url);
         }
 
-        function closeModal() {
+        function closeModal(fromHistory) {
             const modal = document.getElementById('modal');
             const backdrop = document.getElementById('modal-backdrop');
             const content = document.getElementById('modal-content');
@@ -1113,7 +1126,17 @@
                 document.body.style.overflow = 'auto';
             }, 300);
             currentModalId = null;
-            if (history.replaceState && /^#(no|view-)\d+$/.test(location.hash)) history.replaceState(null, '', location.pathname + location.search);
+
+            // URL を一覧のアドレスに戻す。開いたときに履歴を1つ積んでいるので、
+            // 戻るボタンでも同じところに帰ってくる。
+            if (fromHistory) {
+                modalUrlPushed = false;
+            } else if (modalUrlPushed) {
+                modalUrlPushed = false;
+                history.back();
+            } else if (history.replaceState && (/^#(no|view-)\d+$/.test(location.hash) || location.pathname !== HUB_PATH)) {
+                history.replaceState(null, '', HUB_PATH + location.search);
+            }
         }
 
         function nextPhoto() {
