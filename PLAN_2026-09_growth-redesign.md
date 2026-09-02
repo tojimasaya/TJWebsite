@@ -90,7 +90,7 @@ TJ の優位は **36 か所・四季・時間帯・座標・機材・作者の�
 - hub `shirasagi36.html` の変更
   - カードの `<a href="#view-01" onclick=…>` を `href="shirasagi36/no01.html"` に。JS 有効時は従来どおり `preventDefault` でモーダル、無効時・クローラーは実ページへ（プログレッシブエンハンスメント）。
   - モーダル開閉で `history.replaceState(null, '', '#no13')`、ページ読み込み時に `#noNN` があれば自動で開く。モーダル内に「この景のページを開く ↗」「リンクをコピー」「X で共有」を追加。
-  - title を `姫路城の撮影スポット36選｜白鷺三十六景 — 地元の写真家が四季・時間帯・場所で選ぶ`（案。TJ の最終判断）に。description も「36 か所・座標つき・三言語」を明示。EN/HK hub も同様（`Himeji Castle Photo Spots: 36 Views…`）。
+  - title を `姫路城の撮影スポット36選｜白鷺三十六景 — 四季・時間帯・場所で選ぶ | 田路昌也`（TJ 決定 2026-09-02。「写真家」「地元の写真家」という語はサイト全体で使わない）に。description も「36 か所・座標つき・三言語」を明示。EN/HK hub も同様（`Himeji Castle Photo Spots: 36 Views…`）。
   - 「最新の景」ブロックの VIEW DETAIL を新ページへリンク。
 - `shirasagi36-map.html`: `#noNN` で該当マーカーにフォーカス＆ポップアップ。ポップアップに新ページへのリンク。
 - Action `.github/workflows/build-shirasagi.yml`: `push` で `assets/images/shirasagi/photos*.json`、`tools/build-shirasagi.mjs`、`tools/templates/**` が変わったら実行し、`shirasagi36/**`、`data/shirasagi-latest.json`、`sitemap.xml` を auto-commit（`webp-convert.yml` と同じ書式）。`workflow_dispatch` も付ける。ローカルでは `node tools/build-shirasagi.mjs`。
