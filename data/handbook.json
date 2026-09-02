@@ -1,0 +1,332 @@
+{
+  "note": "香港ハンドブックの目録。hub（hongkong-handbook.html）・各ページの関連ガイド・トップページ・フィードがここを単一ソースにする。audience / summary / updated は TJ が確認して直す。updated は制度や条件を見直した日付（枠を整えただけの日は入れない）。 history は各ページ末尾の「更新履歴」。制度を見直したら日付と一行を足す。 seoTitle / seoDescription は検索意図に寄せた <title> と meta description（TJ 承認 2026-09-02）。末尾の「| Toji Masaya」は生成器が付ける。",
+  "hub": "/hongkong-handbook.html",
+  "groups": [
+    {
+      "key": "cross",
+      "label": "入る・行き来する",
+      "note": "書類と口岸。香港と中国本土のあいだを動くための実務。"
+    },
+    {
+      "key": "money",
+      "label": "お金",
+      "note": "銀行口座と送金。香港・中国・シンガポール・台湾。"
+    },
+    {
+      "key": "connect",
+      "label": "通信",
+      "note": "SIM と eSIM。二拠点で番号とデータをどう持つか。"
+    },
+    {
+      "key": "life",
+      "label": "暮らしの暦",
+      "note": "祝日と休場日。予定を立てるための下敷き。"
+    }
+  ],
+  "pages": [
+    {
+      "id": "hk-return-permit",
+      "url": "/hk-return-permit.html",
+      "title": "非中国籍・香港永住者の回郷証",
+      "group": "cross",
+      "audience": "香港永住権のある非中国籍（日本国籍など）の人",
+      "summary": "申請から受け取り、初めての中国入国と e道登録、カードも不要になった顔認証通関まで。",
+      "updated": "2026-07-12",
+      "image": "/assets/images/handbook/hk-return-permit-01-01.jpg",
+      "related": [
+        "/hk-shenzhen-crossing.html",
+        "/cn-bank-passport-update.html",
+        "/holidays.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-12 時点のまま。"
+        }
+      ],
+      "seoTitle": "非中国籍の回郷証（港澳居民来往内地通行証）の取り方 — 申請・受取・中国入国・e道登録まで【2026年更新】",
+      "seoDescription": "香港永住権のある日本国籍者が回郷証を申請し、受け取り、中国へ入国してe道に登録するまでの全記録。カード提示すら不要になった2026年の顔認証通関まで。費用HK$260・有効期限5年。"
+    },
+    {
+      "id": "hk-shenzhen-crossing",
+      "url": "/hk-shenzhen-crossing.html",
+      "title": "旺角から深圳へ — 越境バスと口岸の実践ガイド",
+      "group": "cross",
+      "audience": "香港から深圳へ日帰りで渡る人",
+      "summary": "旺角発の越境バス、皇崗と福田の使い分け、顔認証だけの e道、離境退税まで。",
+      "updated": "2026-07-09",
+      "image": "/assets/images/photo-notes/huanggang-port-rokid-new-terminal.jpg",
+      "related": [
+        "/hk-return-permit.html",
+        "/gear-sim.html",
+        "/cn-bank-passport-update.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-09 時点のまま。"
+        }
+      ],
+      "seoTitle": "香港から深圳へ日帰り — 旺角発の越境バスと皇崗・福田口岸の通り方【2026年夏 e道最新】",
+      "seoDescription": "旺角から越境バスで皇崗口岸へ。DJI旗艦店や華強北への行き方、口岸の使い分け、顔認証だけになったe道、離境退税まで。月に何度も渡る在住者の実践ルート。"
+    },
+    {
+      "id": "hk-hsbc-premier",
+      "url": "/hk-hsbc-premier.html",
+      "title": "HSBC Premier との付き合い方",
+      "group": "money",
+      "audience": "香港 HSBC の口座を持っている／これから持つ人",
+      "summary": "維持条件と費用、そして 30 年使って再発見したメリット。",
+      "updated": "2026-07-05",
+      "image": "/assets/images/gallery/hongkong.jpg",
+      "related": [
+        "/hk-hsbc-fx-withdrawal.html",
+        "/hk-dbs-account.html",
+        "/hk-remittance.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ],
+      "seoTitle": "香港HSBC Premierの条件・費用・メリット — 30年使って分かった維持する価値",
+      "seoDescription": "香港HSBC Premierの維持条件と手数料、ラウンジや優遇の実際。30年の付き合いから見えた「持ち続ける意味」を、代償とメリットの両面から。"
+    },
+    {
+      "id": "hk-hsbc-fx-withdrawal",
+      "url": "/hk-hsbc-fx-withdrawal.html",
+      "title": "香港 HSBC の外貨引き出し",
+      "group": "money",
+      "audience": "香港 HSBC で日本円・米ドルを引き出したい人",
+      "summary": "外貨引き出しの実際と、2025 年 2 月の限度額改定。",
+      "updated": "2026-07-12",
+      "image": "/assets/images/handbook/hk-hsbc-fx-withdrawal-01-01.jpg",
+      "related": [
+        "/hk-hsbc-premier.html",
+        "/hk-remittance.html",
+        "/hk-hsbc-payment-connect.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-12 時点のまま。"
+        }
+      ],
+      "seoTitle": "香港HSBCで外貨（日本円・米ドル）を引き出す方法と限度額【2025年改定対応】",
+      "seoDescription": "香港HSBCの外貨引き出しの実際と、2025年2月に実施された限度額改定のポイント。時代とともに変わってきたサービスを、在住者の視点で。"
+    },
+    {
+      "id": "hk-remittance",
+      "url": "/hk-remittance.html",
+      "title": "香港の賢い送金術 — PayMe・FPS・バーチャルバンク",
+      "group": "money",
+      "audience": "香港のなかでお金を動かす人",
+      "summary": "PayMe と FPS の使い分け、バーチャルバンクを中継口座にする考え方。",
+      "updated": "2026-07-12",
+      "image": "/assets/images/gallery/hongkong.jpg",
+      "related": [
+        "/hk-hsbc-payment-connect.html",
+        "/hk-dbs-account.html",
+        "/hk-hsbc-fx-withdrawal.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-12 時点のまま。"
+        }
+      ],
+      "seoTitle": "香港の送金を手数料ゼロで回す — PayMe・FPS・バーチャルバンクの使い分け",
+      "seoDescription": "香港内の送金をほぼ手数料ゼロにする組み合わせ。PayMeとFPSの使い分け、バーチャルバンクを中継口座にする方法、Mox Creditを使うときの注意点まで。"
+    },
+    {
+      "id": "hk-hsbc-payment-connect",
+      "url": "/hk-hsbc-payment-connect.html",
+      "title": "HSBC Payment Connect で中国本土へ即時送金",
+      "group": "money",
+      "audience": "香港から中国本土の口座へ送金したい人",
+      "summary": "サービスの中身、従来送金との違い、対応銀行、実際に送ってみた記録。",
+      "updated": "2026-07-12",
+      "image": "/assets/images/handbook/hk-hsbc-payment-connect-01-01.png",
+      "related": [
+        "/hk-remittance.html",
+        "/cn-icbc-dormant.html",
+        "/cn-bank-passport-update.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-12 時点のまま。"
+        }
+      ],
+      "seoTitle": "香港から中国本土へ即時送金 — HSBC Payment Connectの使い方・対応銀行・実体験",
+      "seoDescription": "香港と中国本土をつなぐHSBC Payment Connectを実際に使った記録。従来の送金との違い、対応銀行の一覧、かかった時間。"
+    },
+    {
+      "id": "hk-dbs-account",
+      "url": "/hk-dbs-account.html",
+      "title": "DBS 銀行で口座をつくった理由",
+      "group": "money",
+      "audience": "香港で口座を分散したい人",
+      "summary": "HSBC・Citibank との付き合いを振り返って DBS を選んだ理由と、預金保護 80 万 HKD の考え方。",
+      "updated": "2026-07-05",
+      "image": "/assets/images/handbook/hk-dbs-account-01-01.png",
+      "related": [
+        "/hk-hsbc-premier.html",
+        "/hk-remittance.html",
+        "/hk-hsbc-singapore-dormant.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ],
+      "seoTitle": "香港DBS銀行の口座開設 — HSBC・Citiと比べて選んだ理由と預金保護の考え方",
+      "seoDescription": "普通預金3％台のオファーをきっかけに開いたDBS香港の口座。HSBC・Citibankとの付き合いを振り返りながら、預金保護上限80万HKDを踏まえた分散の考え方。"
+    },
+    {
+      "id": "hk-hsbc-singapore-dormant",
+      "url": "/hk-hsbc-singapore-dormant.html",
+      "title": "HSBC シンガポール口座の休眠（ドーマント）解除",
+      "group": "money",
+      "audience": "海外に口座を持ったまま動かしていない人",
+      "summary": "2 年放置で休眠になった口座を、香港からオンラインと Zoom 面談で復活させるまで。",
+      "updated": "2026-07-05",
+      "image": "/assets/images/handbook/hk-hsbc-singapore-dormant-01-01.png",
+      "related": [
+        "/cn-icbc-dormant.html",
+        "/hk-dbs-account.html",
+        "/hk-hsbc-taiwan.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ],
+      "seoTitle": "HSBCシンガポール口座が休眠（ドーマント）になったときの復活手順",
+      "seoDescription": "2年放置で休眠になった海外口座を、香港にいながらオンラインで復活させるまで。チャットからAdobe Sign、Zoom面談での本人確認まで実際の流れを。"
+    },
+    {
+      "id": "hk-hsbc-taiwan",
+      "url": "/hk-hsbc-taiwan.html",
+      "title": "台湾 HSBC で断られて知った、通貨の自由度",
+      "group": "money",
+      "audience": "台湾で銀行口座を作れるか知りたい非居住者",
+      "summary": "台北の窓口で丁寧に断られた理由と、台湾ドルという通貨の性格。",
+      "updated": "2026-07-16",
+      "image": "/assets/images/handbook/hk-hsbc-taiwan-01-01.jpg",
+      "related": [
+        "/hk-hsbc-singapore-dormant.html",
+        "/hk-hsbc-premier.html",
+        "/hk-dbs-account.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-16 時点のまま。"
+        }
+      ],
+      "seoTitle": "非居住者は台湾で銀行口座を作れるのか — 台北HSBCで断られた理由と台湾ドルの事情",
+      "seoDescription": "台北のHSBCで口座開設を断られた実体験から見えた、非居住者の壁と、台湾ドルという通貨の性格。マルチカレンシー口座にTWDが含まれない背景も。"
+    },
+    {
+      "id": "cn-icbc-dormant",
+      "url": "/cn-icbc-dormant.html",
+      "title": "中国工商銀行の休眠口座を解決する",
+      "group": "money",
+      "audience": "中国本土の口座を長く放置している人",
+      "summary": "窓口で休眠口座を復活させるまでの手続きの記録。",
+      "updated": "2026-07-05",
+      "image": "/assets/images/gallery/hongkong.jpg",
+      "related": [
+        "/cn-bank-passport-update.html",
+        "/hk-hsbc-singapore-dormant.html",
+        "/hk-hsbc-payment-connect.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ],
+      "seoTitle": "中国工商銀行（ICBC）の休眠口座を復活させる手続き — 実体験",
+      "seoDescription": "長く放置していた中国本土の口座が休眠になったときの復活手順。窓口で必要だったもの、かかった時間、気をつけたこと。"
+    },
+    {
+      "id": "cn-bank-passport-update",
+      "url": "/cn-bank-passport-update.html",
+      "title": "中国の銀行口座のパスポート情報更新",
+      "group": "money",
+      "audience": "パスポートを更新した、中国本土の口座を持つ人",
+      "summary": "深圳の窓口での更新手続き — 必要なもの、行くタイミング、実際の流れ。",
+      "updated": "2026-07-05",
+      "image": "/assets/images/handbook/cn-bank-passport-update-01-01.jpg",
+      "related": [
+        "/cn-icbc-dormant.html",
+        "/hk-shenzhen-crossing.html",
+        "/hk-return-permit.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ],
+      "seoTitle": "中国の銀行口座でパスポート更新後に必要な情報更新 — 深圳の窓口でやった手順",
+      "seoDescription": "パスポートを更新したあと、中国本土の銀行口座で必要になる情報更新。行くタイミング、必要なもの、実際の手続きと、更新後に変わったこと。"
+    },
+    {
+      "id": "gear-sim",
+      "url": "/gear-sim.html",
+      "title": "SIM / Connectivity — 二拠点の通信環境",
+      "group": "connect",
+      "audience": "香港・中国・日本を行き来する人",
+      "summary": "日本の番号を維持する SIM、データローミング、香港のプリペイドの使い分け。",
+      "updated": "2026-07-05",
+      "image": "/assets/images/og/gear-sim-og.jpg",
+      "related": [
+        "/hk-shenzhen-crossing.html",
+        "/holidays.html",
+        "/gear.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ],
+      "introAfter": "</header>",
+      "seoTitle": "香港・中国・日本を行き来するSIM/eSIMの使い分け — 二拠点生活の通信環境",
+      "seoDescription": "海外在住のまま日本の番号を維持するSIM、データローミング、香港のプリペイドSIM。SMS認証やバックアップ回線まで、二拠点で困らない組み合わせ。"
+    },
+    {
+      "id": "holidays",
+      "url": "/holidays.html",
+      "title": "祝日カレンダー 2026・2027",
+      "group": "life",
+      "audience": "香港・中国と日本をまたいで予定を立てる人",
+      "summary": "香港・中国・台湾・日本・シンガポールの祝日と米国市場の休場日を重ねて表示。中国の振替出勤日つき。",
+      "updated": "2026-07-13",
+      "image": "/assets/images/hero/hongkong.jpg",
+      "related": [
+        "/hk-remittance.html",
+        "/hk-shenzhen-crossing.html",
+        "/hk-return-permit.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-13 時点のまま。"
+        }
+      ],
+      "seoTitle": "香港の祝日カレンダー 2026・2027（中国・台湾・日本・シンガポール・米国市場と重ね表示）",
+      "seoDescription": "香港・中国・台湾・日本・シンガポールの祝日と米国市場の休場日を1つのカレンダーで。中国の振替出勤日つき。地域ごとにカレンダー登録用の.icsをダウンロードできます。"
+    }
+  ],
+  "hubSeo": {
+    "title": "香港ハンドブック｜在住30年の日本人がまとめた回郷証・銀行・送金・SIM・祝日の実務ガイド",
+    "description": "香港に30年暮らす日本人の実務記録。非中国籍の回郷証、HSBC・DBSの口座、PayMe/FPSの送金、SIM、祝日カレンダーまで、必要な手順と実体験をこの1ページから辿れます。"
+  }
+}
