@@ -576,7 +576,7 @@
                        style="display:none; background:linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #ede7f6 100%); color:#2e7d32; border:1px solid rgba(46,125,50,0.12); box-shadow: 0 1px 3px rgba(46,125,50,0.08);"
                        onmouseenter="this.style.background='linear-gradient(135deg, #c8e6c9 0%, #bbdefb 50%, #d1c4e9 100%)';this.style.boxShadow='0 4px 15px rgba(46,125,50,0.15)';this.style.transform='translateY(-2px)';this.style.borderColor='rgba(46,125,50,0.25)'"
                        onmouseleave="this.style.background='linear-gradient(135deg, #e8f5e9 0%, #e3f2fd 50%, #ede7f6 100%)';this.style.boxShadow='0 1px 3px rgba(46,125,50,0.08)';this.style.transform='translateY(0)';this.style.borderColor='rgba(46,125,50,0.12)'">
-                        <img src="assets/images/ui/map-pin.png" alt="" class="w-7 h-7 object-contain transition-transform duration-300 group-hover/map:scale-110" />
+                        <img src="/assets/images/ui/map-pin.png" alt="" class="w-7 h-7 object-contain transition-transform duration-300 group-hover/map:scale-110" />
                         <span id="modal-map-text" class="font-serif-body">View on Google Maps</span>
                         <svg xmlns="http://www.w3.org/2000/svg" width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" class="opacity-40 transition-all duration-300 group-hover/map:opacity-70 group-hover/map:translate-x-0.5">
                             <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
@@ -632,7 +632,7 @@
 
         async function init() {
             try {
-                const res = await fetch('assets/images/shirasagi/photos-en.json');
+                const res = await fetch('/assets/images/shirasagi/photos-en.json');
                 if (!res.ok) throw new Error('Failed to load photos-en.json');
                 photosData = await res.json();
             } catch (e) {
@@ -665,9 +665,9 @@
         function getImagePaths(id) {
             const num = String(id).padStart(2, '0');
             return {
-                thumb: `assets/images/shirasagi/webp/thumb/${num}.webp`,
-                full:  `assets/images/shirasagi/webp/full/${num}.webp`,
-                fallback: `assets/images/shirasagi/${num}.jpg`
+                thumb: `/assets/images/shirasagi/webp/thumb/${num}.webp`,
+                full:  `/assets/images/shirasagi/webp/full/${num}.webp`,
+                fallback: `/assets/images/shirasagi/${num}.jpg`
             };
         }
 
