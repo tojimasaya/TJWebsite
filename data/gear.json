@@ -732,7 +732,7 @@
             "機内持ち込み",
             "親子で分割"
           ],
-          "description": "34Lのベースと16Lのデイパックが、背面ジッパー一本で脱着する“親子”構造。合体すれば40Lの機内持ち込み、切り離せば身軽なデイパックになる。2026年のKickstarterで手に入れた、いまの旅の母艦。",
+          "description": "34Lのベースと16Lのデイパックが、背面ジッパー一本で脱着する“親子”構造。合体すれば40Lの機内持ち込み、切り離せば身軽なデイパックになる。2026年のKickstarterで手に入れた、いまの旅の母艦。預けるときは裸で出さず、96Lの折りたたみボストンに入れて保護している。",
           "links": {
             "official": "https://www.peakdesign.com/products/travel-backpack-2-in-1",
             "ベストなバッグは、存在しない ── こんどこそ、近づけるか": "https://note.com/tojimasaya/n/nee20e4432dc5",
@@ -758,6 +758,27 @@
           "links": {
             "amazon": "https://www.amazon.co.jp/dp/B0FDHWRSM3?tag=ojunktion-22",
             "ベストなバッグは、存在しない ── こんどこそ、近づけるか": "https://note.com/tojimasaya/n/nee20e4432dc5",
+            "スーツケースカバーを笑っていた私が、96Lの袋を買うまで": "https://note.com/tojimasaya/n/na8bf31aaa03c"
+          }
+        },
+        {
+          "id": "okamy-foldable-boston-96l",
+          "name": "OKamy 折りたたみボストンバッグ 96L",
+          "brand": "OKamy",
+          "image": "/assets/images/gear/bags/foldable-boston-96l.jpg",
+          "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
+          "type": "duffel",
+          "specs": [
+            "96L / 80×40×30cm",
+            "三辺合計150cm（受託158cm以内）",
+            "460g・畳めば手のひら大",
+            "2-in-1 40L の預け入れ用"
+          ],
+          "description": "Travel Backpack 2-in-1 40L を「裸で預けない」ために買った、補佐役のバックアップバッグ。機内持ち込みを2個に収めるとバックパックを預けることになるが、キャリーのような硬い殻がない。そこで広げれば96Lのこの袋に丸ごと入れ、四隅の隙間に衣類の収納袋を詰める。運ぶ服が、そのまま緩衝材になる。外装の擦れと汚れを防ぐのが役目で、上からの圧力には期待しない割り切った道具。畳めば手のひら大の460gなので、Roller Proの隅に忍ばせておき、帰りに荷物が増えたときの一枚としても使える。",
+          "links": {
+            "amazon": "https://amzn.to/4wSRZiL",
             "スーツケースカバーを笑っていた私が、96Lの袋を買うまで": "https://note.com/tojimasaya/n/na8bf31aaa03c"
           }
         },
