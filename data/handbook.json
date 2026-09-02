@@ -1,11 +1,27 @@
 {
-  "note": "香港ハンドブックの目録。hub（hongkong-handbook.html）・各ページの関連ガイド・トップページ・フィードがここを単一ソースにする。audience / summary / updated は TJ が確認して直す。updated は制度や条件を見直した日付（枠を整えただけの日は入れない）。",
+  "note": "香港ハンドブックの目録。hub（hongkong-handbook.html）・各ページの関連ガイド・トップページ・フィードがここを単一ソースにする。audience / summary / updated は TJ が確認して直す。updated は制度や条件を見直した日付（枠を整えただけの日は入れない）。 history は各ページ末尾の「更新履歴」。制度を見直したら日付と一行を足す。",
   "hub": "/hongkong-handbook.html",
   "groups": [
-    { "key": "cross", "label": "入る・行き来する", "note": "書類と口岸。香港と中国本土のあいだを動くための実務。" },
-    { "key": "money", "label": "お金", "note": "銀行口座と送金。香港・中国・シンガポール・台湾。" },
-    { "key": "connect", "label": "通信", "note": "SIM と eSIM。二拠点で番号とデータをどう持つか。" },
-    { "key": "life", "label": "暮らしの暦", "note": "祝日と休場日。予定を立てるための下敷き。" }
+    {
+      "key": "cross",
+      "label": "入る・行き来する",
+      "note": "書類と口岸。香港と中国本土のあいだを動くための実務。"
+    },
+    {
+      "key": "money",
+      "label": "お金",
+      "note": "銀行口座と送金。香港・中国・シンガポール・台湾。"
+    },
+    {
+      "key": "connect",
+      "label": "通信",
+      "note": "SIM と eSIM。二拠点で番号とデータをどう持つか。"
+    },
+    {
+      "key": "life",
+      "label": "暮らしの暦",
+      "note": "祝日と休場日。予定を立てるための下敷き。"
+    }
   ],
   "pages": [
     {
@@ -17,7 +33,17 @@
       "summary": "申請から受け取り、初めての中国入国と e道登録、カードも不要になった顔認証通関まで。",
       "updated": "2026-07-12",
       "image": "/assets/images/handbook/hk-return-permit-01-01.jpg",
-      "related": ["/hk-shenzhen-crossing.html", "/cn-bank-passport-update.html", "/holidays.html"]
+      "related": [
+        "/hk-shenzhen-crossing.html",
+        "/cn-bank-passport-update.html",
+        "/holidays.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-12 時点のまま。"
+        }
+      ]
     },
     {
       "id": "hk-shenzhen-crossing",
@@ -28,7 +54,17 @@
       "summary": "旺角発の越境バス、皇崗と福田の使い分け、顔認証だけの e道、離境退税まで。",
       "updated": "2026-07-09",
       "image": "/assets/images/photo-notes/huanggang-port-rokid-new-terminal.jpg",
-      "related": ["/hk-return-permit.html", "/gear-sim.html", "/cn-bank-passport-update.html"]
+      "related": [
+        "/hk-return-permit.html",
+        "/gear-sim.html",
+        "/cn-bank-passport-update.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-09 時点のまま。"
+        }
+      ]
     },
     {
       "id": "hk-hsbc-premier",
@@ -39,7 +75,17 @@
       "summary": "維持条件と費用、そして 30 年使って再発見したメリット。",
       "updated": "2026-07-05",
       "image": "/assets/images/gallery/hongkong.jpg",
-      "related": ["/hk-hsbc-fx-withdrawal.html", "/hk-dbs-account.html", "/hk-remittance.html"]
+      "related": [
+        "/hk-hsbc-fx-withdrawal.html",
+        "/hk-dbs-account.html",
+        "/hk-remittance.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ]
     },
     {
       "id": "hk-hsbc-fx-withdrawal",
@@ -50,7 +96,17 @@
       "summary": "外貨引き出しの実際と、2025 年 2 月の限度額改定。",
       "updated": "2026-07-12",
       "image": "/assets/images/handbook/hk-hsbc-fx-withdrawal-01-01.jpg",
-      "related": ["/hk-hsbc-premier.html", "/hk-remittance.html", "/hk-hsbc-payment-connect.html"]
+      "related": [
+        "/hk-hsbc-premier.html",
+        "/hk-remittance.html",
+        "/hk-hsbc-payment-connect.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-12 時点のまま。"
+        }
+      ]
     },
     {
       "id": "hk-remittance",
@@ -61,7 +117,17 @@
       "summary": "PayMe と FPS の使い分け、バーチャルバンクを中継口座にする考え方。",
       "updated": "2026-07-12",
       "image": "/assets/images/gallery/hongkong.jpg",
-      "related": ["/hk-hsbc-payment-connect.html", "/hk-dbs-account.html", "/hk-hsbc-fx-withdrawal.html"]
+      "related": [
+        "/hk-hsbc-payment-connect.html",
+        "/hk-dbs-account.html",
+        "/hk-hsbc-fx-withdrawal.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-12 時点のまま。"
+        }
+      ]
     },
     {
       "id": "hk-hsbc-payment-connect",
@@ -72,7 +138,17 @@
       "summary": "サービスの中身、従来送金との違い、対応銀行、実際に送ってみた記録。",
       "updated": "2026-07-12",
       "image": "/assets/images/handbook/hk-hsbc-payment-connect-01-01.png",
-      "related": ["/hk-remittance.html", "/cn-icbc-dormant.html", "/cn-bank-passport-update.html"]
+      "related": [
+        "/hk-remittance.html",
+        "/cn-icbc-dormant.html",
+        "/cn-bank-passport-update.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-12 時点のまま。"
+        }
+      ]
     },
     {
       "id": "hk-dbs-account",
@@ -83,7 +159,17 @@
       "summary": "HSBC・Citibank との付き合いを振り返って DBS を選んだ理由と、預金保護 80 万 HKD の考え方。",
       "updated": "2026-07-05",
       "image": "/assets/images/handbook/hk-dbs-account-01-01.png",
-      "related": ["/hk-hsbc-premier.html", "/hk-remittance.html", "/hk-hsbc-singapore-dormant.html"]
+      "related": [
+        "/hk-hsbc-premier.html",
+        "/hk-remittance.html",
+        "/hk-hsbc-singapore-dormant.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ]
     },
     {
       "id": "hk-hsbc-singapore-dormant",
@@ -94,7 +180,17 @@
       "summary": "2 年放置で休眠になった口座を、香港からオンラインと Zoom 面談で復活させるまで。",
       "updated": "2026-07-05",
       "image": "/assets/images/handbook/hk-hsbc-singapore-dormant-01-01.png",
-      "related": ["/cn-icbc-dormant.html", "/hk-dbs-account.html", "/hk-hsbc-taiwan.html"]
+      "related": [
+        "/cn-icbc-dormant.html",
+        "/hk-dbs-account.html",
+        "/hk-hsbc-taiwan.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ]
     },
     {
       "id": "hk-hsbc-taiwan",
@@ -105,7 +201,17 @@
       "summary": "台北の窓口で丁寧に断られた理由と、台湾ドルという通貨の性格。",
       "updated": "2026-07-16",
       "image": "/assets/images/handbook/hk-hsbc-taiwan-01-01.jpg",
-      "related": ["/hk-hsbc-singapore-dormant.html", "/hk-hsbc-premier.html", "/hk-dbs-account.html"]
+      "related": [
+        "/hk-hsbc-singapore-dormant.html",
+        "/hk-hsbc-premier.html",
+        "/hk-dbs-account.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-16 時点のまま。"
+        }
+      ]
     },
     {
       "id": "cn-icbc-dormant",
@@ -116,7 +222,17 @@
       "summary": "窓口で休眠口座を復活させるまでの手続きの記録。",
       "updated": "2026-07-05",
       "image": "/assets/images/gallery/hongkong.jpg",
-      "related": ["/cn-bank-passport-update.html", "/hk-hsbc-singapore-dormant.html", "/hk-hsbc-payment-connect.html"]
+      "related": [
+        "/cn-bank-passport-update.html",
+        "/hk-hsbc-singapore-dormant.html",
+        "/hk-hsbc-payment-connect.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ]
     },
     {
       "id": "cn-bank-passport-update",
@@ -127,7 +243,17 @@
       "summary": "深圳の窓口での更新手続き — 必要なもの、行くタイミング、実際の流れ。",
       "updated": "2026-07-05",
       "image": "/assets/images/handbook/cn-bank-passport-update-01-01.jpg",
-      "related": ["/cn-icbc-dormant.html", "/hk-shenzhen-crossing.html", "/hk-return-permit.html"]
+      "related": [
+        "/cn-icbc-dormant.html",
+        "/hk-shenzhen-crossing.html",
+        "/hk-return-permit.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ]
     },
     {
       "id": "gear-sim",
@@ -138,7 +264,17 @@
       "summary": "日本の番号を維持する SIM、データローミング、香港のプリペイドの使い分け。",
       "updated": "2026-07-05",
       "image": "/assets/images/og/gear-sim-og.jpg",
-      "related": ["/hk-shenzhen-crossing.html", "/holidays.html", "/gear.html"]
+      "related": [
+        "/hk-shenzhen-crossing.html",
+        "/holidays.html",
+        "/gear.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-05 時点のまま。"
+        }
+      ]
     },
     {
       "id": "holidays",
@@ -149,7 +285,17 @@
       "summary": "香港・中国・台湾・日本・シンガポールの祝日と米国市場の休場日を重ねて表示。中国の振替出勤日つき。",
       "updated": "2026-07-13",
       "image": "/assets/images/hero/hongkong.jpg",
-      "related": ["/hk-remittance.html", "/hk-shenzhen-crossing.html", "/hk-return-permit.html"]
+      "related": [
+        "/hk-remittance.html",
+        "/hk-shenzhen-crossing.html",
+        "/hk-return-permit.html"
+      ],
+      "history": [
+        {
+          "date": "2026-09-02",
+          "note": "枠を整備（この記事の前提・関連ガイド・更新履歴）。本文の内容は 2026-07-13 時点のまま。"
+        }
+      ]
     }
   ]
 }
