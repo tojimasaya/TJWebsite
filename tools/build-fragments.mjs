@@ -21,6 +21,13 @@ const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const OUT_DIR = 'fragments';
 const SOURCE = 'data/recent-photos.json';
 const CHECK_ONLY = process.argv.includes('--check');
+
+// tools/build-og.py が作ったカード（assets/og/cards/fragment-{slug}.jpg）。あれば og:image に使う。
+let OG_CARDS = new Set();
+function ogCardPath(slug) {
+  const file = `fragment-${slug}.jpg`;
+  return OG_CARDS.has(file) ? `/assets/og/cards/${file}` : null;
+}
 // --dims: data/recent-photos.json の各写真に width / height を書き足す（トップの断章ブロックが
 // 実寸比を使ってレターボックス（黒帯）を出さないために使う）。写真を足したときだけ実行すればよい。
 const WRITE_DIMS = process.argv.includes('--dims');
@@ -161,6 +168,7 @@ function jsonLd(entry, buildIso) {
 
 function buildPage(entry, prev, next, template, buildIso) {
   const item = entry.item;
+  const ogCard = ogCardPath(item.slug);
   const media = [figureHtml(item, entry.sizes), sidesHtml(entry.sides)].filter(Boolean).join('\n');
   const preload = absPath(item.imageWebp || item.image);
   const data = {
@@ -179,9 +187,9 @@ function buildPage(entry, prev, next, template, buildIso) {
     buildIso,
     buildYear: new Date().getFullYear(),
     alt: item.alt || item.title || '',
-    ogImage: absUrl(item.image),
-    ogImageWidth: entry.sizes ? entry.sizes.width : '',
-    ogImageHeight: entry.sizes ? entry.sizes.height : '',
+    ogImage: ogCard ? `${SITE_ORIGIN}${ogCard}` : absUrl(item.image),
+    ogImageWidth: ogCard ? 1200 : (entry.sizes ? entry.sizes.width : ''),
+    ogImageHeight: ogCard ? 630 : (entry.sizes ? entry.sizes.height : ''),
     preloadImage: preload,
     preloadType: preload.endsWith('.webp') ? 'image/webp' : 'image/jpeg',
     mediaHtml: media,
@@ -239,6 +247,7 @@ async function main() {
   const list = await readJson(path.join(ROOT, SOURCE));
   if (!Array.isArray(list) || !list.length) throw new Error(`${SOURCE} に断章がありません`);
   const template = await fs.readFile(path.join(ROOT, 'tools/templates/fragment.html'), 'utf8');
+  OG_CARDS = new Set((await fs.readdir(path.join(ROOT, 'assets/og/cards')).catch(() => [])).filter((f) => f.endsWith('.jpg')));
 
   const problems = [];
   const warnings = [];

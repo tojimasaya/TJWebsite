@@ -120,6 +120,13 @@ const LANGS = {
 };
 const LANG_ORDER = ['ja', 'en', 'hk'];
 
+// tools/build-og.py が作ったカード（assets/og/cards/*.jpg）。あれば og:image に使う。
+let OG_CARDS = new Set();
+function ogCardPath(nn, lang) {
+  const file = `shirasagi-${nn}${lang === 'ja' ? '' : `-${lang}`}.jpg`;
+  return OG_CARDS.has(file) ? `/assets/og/cards/${file}` : null;
+}
+
 /* ---------------- データ整形 ---------------- */
 
 function seasonKeyOf(photo) {
@@ -245,6 +252,7 @@ function buildPage(view, views, lang, template, buildIso) {
   const idx = views.indexOf(view);
   const prev = views[idx - 1];
   const next = views[idx + 1];
+  const ogCard = ogCardPath(view.nn, lang);
 
   const seasonLabel = view.seasonKey ? L.seasons[view.seasonKey] : L.unknown;
   const timeLabel = view.timeKey ? L.times[view.timeKey] : L.unknown;
@@ -282,7 +290,9 @@ function buildPage(view, views, lang, template, buildIso) {
     urlJaPath: pagePath(view.nn, 'ja'), urlEnPath: pagePath(view.nn, 'en'), urlHkPath: pagePath(view.nn, 'hk'),
     fontsHref: L.fonts,
     ogTitle: L.ogTitle(v), shareTitle: L.shareTitle(v),
-    ogImage: `${SITE_ORIGIN}/${view.paths.jpg}`, ogImageWidth: view.sizes.jpg.width, ogImageHeight: view.sizes.jpg.height,
+    ogImage: ogCard ? `${SITE_ORIGIN}${ogCard}` : `${SITE_ORIGIN}/${view.paths.jpg}`,
+    ogImageWidth: ogCard ? 1200 : view.sizes.jpg.width,
+    ogImageHeight: ogCard ? 630 : view.sizes.jpg.height,
     alt: L.alt(v), dateIso: v.dateIso, dateIsoDay: v.dateIsoDay, buildIso, buildYear: buildIso.slice(0, 4),
     jsonLd: jsonLd(view, lang, v),
     hubUrl: L.hub, aboutUrl: L.about,
@@ -434,6 +444,7 @@ async function main() {
   const en = await readJson(path.join(ROOT, ASSET_DIR, 'photos-en.json'));
   const hk = await readJson(path.join(ROOT, ASSET_DIR, 'photos-hk.json'));
   const template = await fs.readFile(path.join(ROOT, 'tools/templates/shirasagi-view.html'), 'utf8');
+  OG_CARDS = new Set((await fs.readdir(path.join(ROOT, 'assets/og/cards')).catch(() => [])).filter((f) => f.endsWith('.jpg')));
 
   const ids = Object.keys(ja).map(Number).filter((n) => Number.isInteger(n) && n >= 1 && n <= TOTAL_VIEWS).sort((a, b) => a - b);
   if (!ids.length) throw new Error('photos.json に景が見つかりません');
