@@ -1,0 +1,62 @@
+name: Build generated pages
+
+# 生成物（手で編集しないファイル）をまとめて作り直して auto-commit する。
+#   - 白鷺三十六景の一景ページ shirasagi36/noNN*.html ・ data/shirasagi-latest.json
+#   - 断章の個別ページ fragments/*.html
+#   - フィード feed.xml / feed-fragments.xml / feed.json ・ data/updates.json ・ rss/index.html
+#   - sitemap.xml のマーカー区間（三十六景・断章）と hub の全景一覧
+# 三つの生成器が sitemap.xml を共有するため、ワークフローは 1 本にまとめて競合を避けている。
+# ローカルでは `node tools/build-shirasagi.mjs && node tools/build-fragments.mjs && node tools/build-feeds.mjs`。
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/images/shirasagi/photos.json'
+      - 'assets/images/shirasagi/photos-en.json'
+      - 'assets/images/shirasagi/photos-hk.json'
+      - 'data/recent-photos.json'
+      - 'data/articles.json'
+      - 'articles/**'
+      - 'tools/build-shirasagi.mjs'
+      - 'tools/build-fragments.mjs'
+      - 'tools/build-feeds.mjs'
+      - 'tools/lib/html.mjs'
+      - 'tools/templates/shirasagi-view.html'
+      - 'tools/templates/fragment.html'
+      - '.github/workflows/build-generated.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: build-generated
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+
+      - name: Build one-page-per-view HTML (白鷺三十六景)
+        run: node tools/build-shirasagi.mjs
+
+      - name: Build fragment pages (断章)
+        run: node tools/build-fragments.mjs
+
+      - name: Build feeds and updates.json
+        run: node tools/build-feeds.mjs
+
+      - name: Validate HTML (links / meta / hreflang / sitemap)
+        run: node tools/validate-growth-html.mjs
+
+      - name: Commit generated files
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: 'chore(build): rebuild generated pages and feeds'
+          file_pattern: 'shirasagi36/*.html fragments/*.html data/shirasagi-latest.json data/updates.json feed.xml feed-fragments.xml feed.json rss/index.html sitemap.xml shirasagi36.html shirasagi36-en.html shirasagi36-hk.html'

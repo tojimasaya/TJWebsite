@@ -24,6 +24,9 @@ jobs:
       - name: Run OGP pipeline
         run: node tools/ogp-pipeline.mjs
 
+      - name: Rebuild feeds (articles.json の更新は他の workflow を起こさないためここで実行)
+        run: node tools/build-feeds.mjs
+
       - name: Debug — list cached images
         run: ls -la assets/og/ || echo "No og directory"
 
@@ -34,4 +37,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(ogp): scrape & cache thumbnails'
-          file_pattern: 'data/writings-og.json data/articles.json'
+          file_pattern: 'data/writings-og.json data/articles.json data/updates.json feed.xml feed-fragments.xml feed.json'

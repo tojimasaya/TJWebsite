@@ -73,6 +73,7 @@ function pageData(html) {
   const canonical = links.find((a) => a.rel?.toLowerCase() === 'canonical')?.href ?? '';
   const hreflangs = links.filter((a) => a.rel?.toLowerCase() === 'alternate' && a.hreflang).map((a) => ({ lang: a.hreflang, href: a.href }));
   const ogImage = metas.find((a) => a.property?.toLowerCase() === 'og:image')?.content ?? '';
+  const feedLinks = links.filter((a) => a.rel?.toLowerCase() === 'alternate' && /atom\+xml|rss\+xml|feed\+json/i.test(a.type || '')).map((a) => a.href).filter(Boolean);
   const scriptSources = tagAttrs(html, 'script').map((a) => a.src).filter(Boolean);
   const anchors = tagAttrs(html, 'a').map((a) => a.href).filter(Boolean);
   const assets = [
@@ -81,7 +82,7 @@ function pageData(html) {
     ...scriptSources,
     ...links.filter((a) => /stylesheet|icon|preload|apple-touch-icon/i.test(a.rel || '')).map((a) => a.href),
   ].filter(Boolean);
-  return { title, descriptionTags, isRedirect, isNoindex, canonical, hreflangs, ogImage, scriptSources, anchors, assets };
+  return { title, descriptionTags, isRedirect, isNoindex, canonical, hreflangs, ogImage, feedLinks, scriptSources, anchors, assets };
 }
 
 function relative(file) {
@@ -103,6 +104,7 @@ const results = {
   sitemapMissingPublicPages: [],
   sitemapLocsWithoutFile: [],
   hreflangProblems: [],
+  feedLinkProblems: [],
 };
 
 const pages = new Map(); // relative path -> data
@@ -134,6 +136,12 @@ for (const file of htmlFiles) {
       if (isSkippedHref(candidate)) continue;
       if (!await fileExists(resolveLocal(file, candidate))) results.brokenLocalAssets.push(`${rel} -> ${candidate}`);
     }
+  }
+
+  // フィードの rel=alternate: 指す先が実在すること
+  for (const href of data.feedLinks) {
+    if (isSkippedHref(href)) continue;
+    if (!await fileExists(resolveLocal(file, href))) results.feedLinkProblems.push(`${rel} -> ${href}`);
   }
 
   // sitemap 網羅: リダイレクト・noindex 以外の公開ページは sitemap に載っていること

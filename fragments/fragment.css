@@ -1,0 +1,59 @@
+/* 断章の個別ページ（tools/build-fragments.mjs が生成する fragments/*.html 用）
+   style.css の変数の上に載せる薄い層。fragments.html の見た目に合わせる。 */
+
+.fp-crumbs { max-width: 720px; margin: 108px auto 0; padding: 0 24px; }
+.fp-crumbs ol { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: 0.06em; color: var(--text-lighter); }
+.fp-crumbs li + li::before { content: "/"; margin-right: 8px; color: var(--border-color); }
+.fp-crumbs a { color: var(--text-light); text-decoration: none; }
+.fp-crumbs a:hover { color: var(--accent-color); }
+.fp-crumbs li[aria-current] { color: var(--text-lighter); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; max-width: 100%; }
+
+.fp { max-width: 720px; margin: 0 auto; padding: 0 24px 40px; }
+
+.fp-head { margin: 22px 0 26px; }
+.fp-kicker { font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: 0.22em; text-transform: uppercase; color: var(--text-lighter); margin: 0; }
+.fp-head h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.45rem, 3.6vw, 1.95rem); font-weight: 600; line-height: 1.65; letter-spacing: 0.04em; color: var(--text-color); margin: 10px 0 12px; }
+.fp-meta { font-family: var(--secondary-font); font-size: 0.78rem; letter-spacing: 0.04em; color: var(--text-lighter); margin: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.fp-meta span + time::before, .fp-meta time + span::before { content: "/"; margin-right: 10px; color: var(--border-color); }
+
+.fp-figure { margin: 0; }
+.fp-figure img { width: 100%; height: auto; display: block; border-radius: 12px; border: 1px solid var(--border-color); background: var(--hover-color); }
+.fp-figure figcaption { font-family: var(--primary-font); font-size: 0.78rem; color: var(--text-light); text-align: center; margin-top: 8px; }
+
+.fp-sides { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; margin-top: 14px; }
+@media (max-width: 520px) { .fp-sides { grid-template-columns: repeat(2, 1fr); } }
+.fp-sides figure { margin: 0; }
+.fp-sides img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-color); }
+.fp-sides figcaption { font-family: var(--primary-font); font-size: 0.72rem; color: var(--text-lighter); margin-top: 6px; line-height: 1.6; }
+
+.fp-body { max-width: 38em; margin: 30px auto 0; }
+.fp-body p { font-family: 'Noto Serif JP', serif; font-size: 1rem; line-height: 2.0; color: var(--text-color); margin: 0 0 1.4em; }
+
+.fp-related { max-width: 38em; margin: 0 auto; }
+.fp-related a { font-family: var(--secondary-font); font-size: 0.85rem; color: var(--accent-color); text-decoration: none; }
+.fp-related a:hover { text-decoration: underline; }
+
+.fp-share { max-width: 38em; margin: 34px auto 0; display: flex; align-items: center; gap: 14px; flex-wrap: wrap; padding-top: 22px; border-top: 1px solid var(--border-color); }
+.fp-share__label { font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-lighter); }
+
+.fp-pn { display: grid; grid-template-columns: 1fr; gap: 12px; margin: 34px 0 0; }
+@media (min-width: 640px) { .fp-pn { grid-template-columns: 1fr 1fr; } }
+.fp-pn a { display: grid; grid-template-columns: 64px 1fr; gap: 12px; align-items: center; text-decoration: none; border: 1px solid var(--border-color); border-radius: 10px; padding: 10px; min-height: 86px; transition: border-color .2s, box-shadow .2s; }
+.fp-pn a:hover { border-color: var(--text-color); box-shadow: var(--shadow-md); }
+.fp-pn a.is-next { grid-template-columns: 1fr 64px; text-align: right; }
+.fp-pn a.is-next .fp-pn__thumb { order: 2; }
+.fp-pn__thumb { width: 64px; height: 64px; object-fit: cover; border-radius: 8px; display: block; background: var(--hover-color); }
+.fp-pn__dir { font-family: var(--secondary-font); font-size: 0.66rem; letter-spacing: 0.2em; text-transform: uppercase; color: var(--text-lighter); display: block; }
+.fp-pn__title { font-family: 'Noto Serif JP', serif; font-size: 0.86rem; line-height: 1.6; color: var(--text-color); display: block; margin-top: 3px; }
+.fp-pn__empty { border-style: dashed; color: var(--text-lighter); font-family: var(--secondary-font); font-size: 0.78rem; display: flex; align-items: center; justify-content: center; border: 1px dashed var(--border-color); border-radius: 10px; min-height: 86px; }
+
+.fp-back { display: flex; justify-content: center; gap: 12px; flex-wrap: wrap; margin: 40px 0 0; }
+.fp-btn { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-family: var(--secondary-font); font-size: var(--text-sm); color: var(--text-color); }
+.fp-btn:hover { border-color: var(--text-color); }
+.fp-btn--primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
+.fp-btn--primary:hover { border-color: var(--accent-color); opacity: .9; }
+
+.fp-comments { margin-top: 56px; }
+.fp-comments .comments-section { padding: 0; }
+
+[data-theme="dark"] .fp-figure img, [data-theme="dark"] .fp-sides img { border-color: var(--border-color); }
