@@ -1,13 +1,16 @@
 #!/usr/bin/env python3
 """tools/build-og.py — X / LINE / Facebook に貼られたときのカード画像を作る（提案 5 / Phase 5）
 
-    python3 tools/build-og.py            # 入力が新しいものだけ作り直す
+    python3 tools/build-og.py            # 入力が変わったものだけ作り直す
     python3 tools/build-og.py --force    # 全部作り直す
     python3 tools/build-og.py --check    # 作り直しが要るかだけ見る（要るなら exit 2）
+    python3 tools/build-og.py --adopt    # 既にあるカードを正として manifest だけ作る
 
 入力: assets/images/shirasagi/photos*.json（三十六景 35景 × JA/EN/HK）
       data/recent-photos.json（断章）
-出力: assets/og/cards/{id}.jpg（1200×630・JPEG）
+出力: assets/og/cards/{id}.jpg（1200×630・JPEG）と assets/og/cards/manifest.json
+      manifest.json は「どの入力から作ったか」の鍵。これがあるので、git の checkout で
+      更新時刻が変わっても、CI と手元で同じ判定になる（無駄な作り直しとコミットを防ぐ）。
       三十六景: shirasagi-13.jpg / shirasagi-13-en.jpg / shirasagi-13-hk.jpg
       断章:     fragment-{slug}.jpg
 写真主体のカードなので PNG ではなく JPEG（品質 82）。PNG だと 1 枚 800KB を超え、
@@ -20,6 +23,7 @@
 Ubuntu なら `sudo apt-get install -y fonts-noto-cjk`、Pillow は `pip install pillow`。
 生成物は手で編集しない。
 """
+import hashlib
 import json
 import os
 import sys
@@ -29,6 +33,7 @@ from PIL import Image, ImageDraw, ImageFont
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT_DIR = ROOT / "assets/og/cards"
+MANIFEST = OUT_DIR / "manifest.json"
 W, H = 1200, 630
 MARGIN = 64
 
@@ -41,6 +46,9 @@ FONT_CANDIDATES = [
 
 FORCE = "--force" in sys.argv
 CHECK_ONLY = "--check" in sys.argv
+# 既にあるカードを「これでよい」として manifest だけ作る（描き直さない）。
+# 環境ごとに JPEG のバイト列がわずかに変わるため、作り直しの空コミットを避けたいときに使う。
+ADOPT = "--adopt" in sys.argv
 
 KANJI = ["", "一", "二", "三", "四", "五", "六", "七", "八", "九"]
 
@@ -161,11 +169,25 @@ def draw_card(photo_path: Path, eyebrow: str, title: str, footer: str, out_path:
     card.save(out_path, "JPEG", quality=82, optimize=True, progressive=True, subsampling=2)
 
 
-def newer(sources: list[Path], target: Path) -> bool:
-    if FORCE or not target.exists():
-        return True
-    t = target.stat().st_mtime
-    return any(s.exists() and s.stat().st_mtime > t for s in sources)
+def fingerprint(sources: list[Path], text: str) -> str:
+    """入力（写真・題・スクリプト）の中身から鍵を作る。mtime は git の checkout で
+    変わってしまい、CI と手元で判定が食い違うので使わない。"""
+    h = hashlib.sha1()
+    h.update(text.encode("utf-8"))
+    for src in sources:
+        h.update(str(src.relative_to(ROOT)).encode("utf-8"))
+        if src.exists():
+            with src.open("rb") as fh:
+                for chunk in iter(lambda: fh.read(1 << 20), b""):
+                    h.update(chunk)
+    return h.hexdigest()
+
+
+def load_manifest() -> dict:
+    try:
+        return json.loads(MANIFEST.read_text("utf-8")).get("cards", {})
+    except Exception:
+        return {}
 
 
 def main() -> None:
@@ -217,10 +239,23 @@ def main() -> None:
             "sources": [photo, ROOT / "data/recent-photos.json", script],
         })
 
-    todo = [j for j in jobs if newer(j["sources"], j["out"])]
+    manifest = load_manifest()
+    for job in jobs:
+        job["key"] = job["out"].name
+        job["hash"] = fingerprint(job["sources"], f"{job['eyebrow']}|{job['title']}|{job['footer']}")
+
+    todo = [j for j in jobs if FORCE or not j["out"].exists() or manifest.get(j["key"]) != j["hash"]]
+    if ADOPT:
+        todo = [j for j in jobs if not j["out"].exists()]
     if not CHECK_ONLY:
         for job in todo:
             draw_card(job["photo"], job["eyebrow"], job["title"], job["footer"], job["out"])
+        if todo or not MANIFEST.exists():
+            MANIFEST.parent.mkdir(parents=True, exist_ok=True)
+            MANIFEST.write_text(
+                json.dumps({"note": "tools/build-og.py の作り直し判定に使う入力の鍵。手で編集しない。",
+                            "cards": {j["key"]: j["hash"] for j in sorted(jobs, key=lambda x: x["key"])}},
+                           ensure_ascii=False, indent=2) + "\n", "utf-8")
 
     total_bytes = sum(p.stat().st_size for p in OUT_DIR.glob("*.jpg")) if OUT_DIR.exists() else 0
     print(f"{'[check] ' if CHECK_ONLY else ''}OG カード: 全 {len(jobs)} 枚")
