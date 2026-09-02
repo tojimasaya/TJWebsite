@@ -105,6 +105,7 @@ const results = {
   sitemapLocsWithoutFile: [],
   hreflangProblems: [],
   feedLinkProblems: [],
+  ogImageMissing: [],
 };
 
 const pages = new Map(); // relative path -> data
@@ -136,6 +137,12 @@ for (const file of htmlFiles) {
       if (isSkippedHref(candidate)) continue;
       if (!await fileExists(resolveLocal(file, candidate))) results.brokenLocalAssets.push(`${rel} -> ${candidate}`);
     }
+  }
+
+  // og:image: 自サイトを指しているならファイルが実在すること（共有カードのパス切れ防止）
+  if (data.ogImage && data.ogImage.startsWith(SITE_ORIGIN + '/')) {
+    const p = data.ogImage.slice(SITE_ORIGIN.length);
+    if (!await fileExists(path.join(ROOT, p))) results.ogImageMissing.push(`${rel} -> ${data.ogImage}`);
   }
 
   // フィードの rel=alternate: 指す先が実在すること

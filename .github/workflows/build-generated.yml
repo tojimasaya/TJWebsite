@@ -5,6 +5,7 @@ name: Build generated pages
 #   - 断章の個別ページ fragments/*.html
 #   - 香港ハンドブックの共通フレーム（前提・更新履歴・関連ガイド）と hub のカード一覧
 #   - 祝日カレンダーの calendars/*.ics と holidays.html のダウンロード導線
+#   - 共有カード assets/og/cards/*.jpg（三十六景 105 枚・断章 24 枚。Pillow で描画）
 #   - フィード feed.xml / feed-fragments.xml / feed.json ・ data/updates.json ・ rss/index.html
 #   - sitemap.xml のマーカー区間（三十六景・断章）と hub の全景一覧
 # 三つの生成器が sitemap.xml を共有するため、ワークフローは 1 本にまとめて競合を避けている。
@@ -26,6 +27,7 @@ on:
       - 'tools/build-fragments.mjs'
       - 'tools/build-feeds.mjs'
       - 'tools/build-handbook.mjs'
+      - 'tools/build-og.py'
       - 'tools/build-ics.mjs'
       - 'tools/lib/html.mjs'
       - 'tools/templates/shirasagi-view.html'
@@ -50,6 +52,15 @@ jobs:
         with:
           node-version: '22'
 
+      - name: Install OG card tooling (Pillow + Noto Serif CJK)
+        run: |
+          sudo apt-get update -qq
+          sudo apt-get install -y -qq fonts-noto-cjk
+          python3 -m pip install --quiet --upgrade pillow
+
+      - name: Build OG cards (X / LINE / Facebook のカード画像)
+        run: python3 tools/build-og.py
+
       - name: Build one-page-per-view HTML (白鷺三十六景)
         run: node tools/build-shirasagi.mjs
 
@@ -72,4 +83,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(build): rebuild generated pages and feeds'
-          file_pattern: 'shirasagi36/*.html fragments/*.html calendars/*.ics data/shirasagi-latest.json data/updates.json feed.xml feed-fragments.xml feed.json rss/index.html sitemap.xml shirasagi36.html shirasagi36-en.html shirasagi36-hk.html hongkong-handbook.html holidays.html hk-*.html cn-*.html gear-sim.html'
+          file_pattern: 'shirasagi36/*.html fragments/*.html calendars/*.ics assets/og/cards/*.jpg data/shirasagi-latest.json data/updates.json feed.xml feed-fragments.xml feed.json rss/index.html sitemap.xml shirasagi36.html shirasagi36-en.html shirasagi36-hk.html hongkong-handbook.html holidays.html hk-*.html cn-*.html gear-sim.html'
