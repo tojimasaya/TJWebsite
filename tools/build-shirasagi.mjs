@@ -70,8 +70,8 @@ const LANGS = {
     unknown: '—', unknownPlace: 'Around Himeji Castle',
     undisclosed: /undisclosed/i,
     title: (v) => (v.placeForTitle
-      ? `View ${v.n} “${v.title}” — Himeji Castle Photo Spot: ${v.placeForTitle} | 36 Views of White Heron Castle`
-      : `View ${v.n} “${v.title}” — Himeji Castle Photo Spot | 36 Views of White Heron Castle`),
+      ? `Himeji Castle Photo Spot No.${v.n}: ${v.placeForTitle} | 36 Views`
+      : `Himeji Castle Photo Spot No.${v.n}: ${v.title} | 36 Views`),
     ogTitle: (v) => `View ${v.n}: ${v.title} — 36 Views of White Heron Castle`,
     shareTitle: (v) => `View ${v.n}: ${v.title} — 36 Views of White Heron Castle (Himeji)`,
     eyebrow: (v) => `36 Views of White Heron Castle — No.${v.nn}`,
