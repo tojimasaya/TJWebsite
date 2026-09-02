@@ -83,4 +83,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(build): rebuild generated pages and feeds'
-          file_pattern: 'shirasagi36/*.html fragments/*.html calendars/*.ics assets/og/cards/*.jpg data/shirasagi-latest.json data/updates.json feed.xml feed-fragments.xml feed.json rss/index.html sitemap.xml shirasagi36.html shirasagi36-en.html shirasagi36-hk.html hongkong-handbook.html holidays.html hk-*.html cn-*.html gear-sim.html'
+          file_pattern: 'shirasagi36/*.html fragments/*.html calendars/*.ics assets/og/cards/*.jpg assets/og/cards/manifest.json data/shirasagi-latest.json data/updates.json feed.xml feed-fragments.xml feed.json rss/index.html sitemap.xml shirasagi36.html shirasagi36-en.html shirasagi36-hk.html hongkong-handbook.html holidays.html hk-*.html cn-*.html gear-sim.html'
