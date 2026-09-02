@@ -361,6 +361,7 @@
 <meta name="twitter:title" content="執筆記事一覧 — note・DRONE.jpコラム | Toji Masaya">
 <meta name="twitter:description" content="田路昌也の執筆記事一覧。noteエッセイ、DRONE.jpドローン連載コラムなど。">
 <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
+<link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
 </head>
 <body>
 
@@ -408,6 +409,10 @@
             </a>
         </div>
     </section>
+
+    <div class="writings-subscribe">
+        <div data-subscribe data-heading="更新を受け取る" data-note="note・DRONE.jp の記事と、断章・三十六景の更新は Feed（RSS / Atom）でまとめて受け取れます。"></div>
+    </div>
 
     <div class="filter-container">
         <button class="filter-btn active" data-filter="all">All</button>
@@ -594,6 +599,7 @@
         document.addEventListener('DOMContentLoaded', fetchArticles);
     </script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
+    <script src="/js/subscribe.js" defer></script>
     <script src="/growth.js" defer></script>
     <script>
     // Collectionsの断章カードを最新の断章に同期

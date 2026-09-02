@@ -638,6 +638,26 @@
       background: #9b5b2e;
     }
 
+    .recent-frame-subscribe {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 0 clamp(20px, 4vw, 48px);
+    }
+
+    .recent-frame-subscribe .tjm-subscribe {
+      margin-top: 34px;
+    }
+
+    .recent-frame-title-link {
+      color: inherit;
+      text-decoration: none;
+      transition: color 0.2s ease;
+    }
+
+    .recent-frame-title-link:hover {
+      color: var(--accent-color, #2563eb);
+    }
+
     .recent-frame-title {
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
       font-size: clamp(1.55rem, 2.35vw, 2.2rem);
@@ -1547,6 +1567,7 @@
     }
   </style>
 <link rel="canonical" href="https://tojimasaya.com/">
+<link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
 </head>
 <body>
 
@@ -1673,7 +1694,7 @@
       </div>
       <div class="recent-frame-text">
         <p class="recent-frame-label" id="recent-frame-label">今日の断章</p>
-        <h2 class="recent-frame-title" id="recent-frame-title">台北駅の弁当フェア、淡路屋のひっぱりだこ</h2>
+        <h2 class="recent-frame-title" id="recent-frame-title"><a class="recent-frame-title-link" href="fragments/taipei-bento-fair-awajiya.html" data-growth-label="home_fragment_title">台北駅の弁当フェア、淡路屋のひっぱりだこ</a></h2>
         <p class="recent-frame-meta" id="recent-frame-meta">台湾・台北駅 / 2026年6月6日</p>
         <p class="recent-frame-copy" id="recent-frame-copy">
           台北駅の弁当フェアに淡路屋が来ると聞けば、神戸の味を台湾で買うという妙な遠回りをせずにはいられず、約一時間並んで手に入れた「ひっぱりだこ」をホテルで開けると、壺の中の蛸の吸盤までがきちんと旅をしてきたようで、結局いちばん遠回りしていたのは私の食欲だった。
@@ -1690,7 +1711,7 @@
         <p class="recent-frame-archive-note">写真を入口に、その日の出来事を一文で残します。 <a href="fragments.html">すべての断章 →</a></p>
       </div>
       <div class="recent-frame-archive-grid" id="recent-frame-archive-grid">
-        <a class="recent-frame-archive-card" href="#recent-frame-title" data-recent-frame-slug="odawara-kinmedai-oshizushi">
+        <a class="recent-frame-archive-card" href="fragments/odawara-kinmedai-oshizushi.html" data-recent-frame-slug="odawara-kinmedai-oshizushi" data-growth-label="home_fragment_card">
           <span class="recent-frame-archive-thumb">
             <picture>
               <source srcset="assets/images/photo-notes/odawara-kinmedai-oshizushi.webp" type="image/webp">
@@ -1703,7 +1724,7 @@
             <span class="recent-frame-archive-copy">小田原からの帰り、新幹線の駅で弁当を買った。鯛飯も考えたが、店の方と話すうちに「炙り金目鯛と小鯵押し寿司」へ。</span>
           </span>
         </a>
-        <a class="recent-frame-archive-card" href="#recent-frame-title" data-recent-frame-slug="gozasoro-red-blend">
+        <a class="recent-frame-archive-card" href="fragments/gozasoro-red-blend.html" data-recent-frame-slug="gozasoro-red-blend" data-growth-label="home_fragment_card">
           <span class="recent-frame-archive-thumb">
             <picture>
               <source srcset="assets/images/photo-notes/gozasoro-red-blend.webp" type="image/webp">
@@ -1716,7 +1737,7 @@
             <span class="recent-frame-archive-copy">姫路で大判焼き、今川焼きといえば、やはり御座候。書写の落ち着いた喫茶室で、赤あんの御座候と、それに合わせた赤ブレンドをいただいた。</span>
           </span>
         </a>
-        <a class="recent-frame-archive-card" href="#recent-frame-title" data-recent-frame-slug="strawberry-field-memory">
+        <a class="recent-frame-archive-card" href="fragments/strawberry-field-memory.html" data-recent-frame-slug="strawberry-field-memory" data-growth-label="home_fragment_card">
           <span class="recent-frame-archive-thumb">
             <picture>
               <source srcset="assets/images/photo-notes/strawberry-field.webp" type="image/webp">
@@ -1729,6 +1750,9 @@
             <span class="recent-frame-archive-copy">先週、友人の実家のいちご畑で久しぶりにいちご狩りをした。畑に残る青い実と真っ赤に熟した実の対比に目を奪われる。</span>
           </span>
         </a>
+      </div>
+      <div class="recent-frame-subscribe">
+        <div data-subscribe data-heading="更新を受け取る" data-note="新しい断章と三十六景は Feed（RSS / Atom）で受け取れます。note・X でも同じ更新を流しています。"></div>
       </div>
     </div>
   </section>
@@ -1917,6 +1941,16 @@
       setRecentFrameText('recent-frame-copy', frame.body);
       setRecentFrameText('recent-frame-caption', activeMedia.caption || activeMedia.title || frame.caption || meta);
 
+      const titleElement = document.getElementById('recent-frame-title');
+      if (titleElement && frame.slug) {
+        const titleLink = document.createElement('a');
+        titleLink.className = 'recent-frame-title-link';
+        titleLink.href = 'fragments/' + frame.slug + '.html';
+        titleLink.textContent = frame.title || '';
+        titleLink.setAttribute('data-growth-label', 'home_fragment_title');
+        titleElement.replaceChildren(titleLink);
+      }
+
       if (link) {
         link.href = 'fragments.html';
         link.textContent = 'すべての断章を見る →';
@@ -1976,31 +2010,20 @@
       }
     }
 
-    function selectRecentFrame(frame, photos) {
-      frame.activeMediaIndex = 0;
-      renderRecentFrame(frame);
-      renderRecentArchive(photos, frame.slug);
-
-      if (typeof gtag !== 'undefined') {
-        gtag('event', 'select_recent_frame', {
-          frame_slug: frame.slug || '',
-          frame_title: frame.title || ''
-        });
-      }
-
-      const target = document.querySelector('.recent-frame-inner');
-      if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
-    }
-
-    function createRecentArchiveCard(frame, photos) {
+    function createRecentArchiveCard(frame) {
       const card = document.createElement('a');
       const meta = [frame.place, frame.date].filter(Boolean).join(' / ');
       card.className = 'recent-frame-archive-card';
-      card.href = '#recent-frame-title';
+      card.href = frame.slug ? 'fragments/' + frame.slug + '.html' : 'fragments.html';
       if (frame.slug) card.dataset.recentFrameSlug = frame.slug;
-      card.addEventListener('click', (event) => {
-        event.preventDefault();
-        selectRecentFrame(frame, photos);
+      card.setAttribute('data-growth-label', 'home_fragment_card');
+      card.addEventListener('click', () => {
+        if (typeof gtag !== 'undefined') {
+          gtag('event', 'select_recent_frame', {
+            frame_slug: frame.slug || '',
+            frame_title: frame.title || ''
+          });
+        }
       });
 
       const thumb = document.createElement('span');
@@ -2053,7 +2076,7 @@
         return;
       }
 
-      archive.replaceChildren(...pastPhotos.map(frame => createRecentArchiveCard(frame, photos)));
+      archive.replaceChildren(...pastPhotos.map(frame => createRecentArchiveCard(frame)));
       if (archiveSection) archiveSection.hidden = false;
     }
 
@@ -2192,6 +2215,7 @@
     });
   </script>
   <script src="/assets/js/ga4-tracking.js" defer></script>
+    <script src="/js/subscribe.js" defer></script>
     <script src="/growth.js" defer></script>
 </body>
 </html>

@@ -1,0 +1,119 @@
+{
+  "generatedAt": "2026-09-02T00:00:00+09:00",
+  "count": 12,
+  "feeds": {
+    "atom": "/feed.xml",
+    "json": "/feed.json",
+    "fragments": "/feed-fragments.xml"
+  },
+  "items": [
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "スーツケースカバーを笑っていた私が、96Lの袋を買うまで",
+      "url": "https://note.com/tojimasaya/n/na8bf31aaa03c",
+      "external": true,
+      "date": "2026-09-02",
+      "thumb": "https://assets.st-note.com/production/uploads/images/309469100/rectangle_large_type_2_ac4d17afb393f1fb5451c18e6bd00ca2.jpeg?width=800"
+    },
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "見納めのプレハブ国境と、うねる未来ビル",
+      "url": "/fragments/huanggang-immigration-farewell.html",
+      "external": false,
+      "date": "2026-08-28",
+      "thumb": "/assets/images/photo-notes/huanggang-old-and-future.webp"
+    },
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "血圧の警告と、ヨーグルトを育てる夏",
+      "url": "/fragments/homemade-yogurt-blood-pressure.html",
+      "external": false,
+      "date": "2026-08-27",
+      "thumb": "/assets/images/photo-notes/yogurt-oidire-maker.webp"
+    },
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "SFCで戻る、神戸⇒台北⇒香港 ── 新しいラウンジは、明石焼の香り",
+      "url": "https://note.com/tojimasaya/n/nb65e94f99ac0",
+      "external": true,
+      "date": "2026-08-25",
+      "thumb": "https://assets.st-note.com/production/uploads/images/306722082/rectangle_large_type_2_42808052e93df61f9c432f8df10b0330.jpeg?width=800"
+    },
+    {
+      "kind": "drone",
+      "kindLabel": "DRONE.jp",
+      "title": "機体から目を離さずに、風速を訊く──AIグラスをドローンフライトに持ち込んでみた [田路昌也の中国・香港ドローン便り]Vol.67",
+      "url": "https://drone.jp/column/20260825170044129205.html",
+      "external": true,
+      "date": "2026-08-25",
+      "thumb": "https://drone.jp/wp-content/uploads/tohzi_67_topYXw4UX0x.jpg"
+    },
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "パスポートなしの国境と、深圳・華強北のガジェット行",
+      "url": "/fragments/shenzhen-huaqiang-border.html",
+      "external": false,
+      "date": "2026-08-24",
+      "thumb": "/assets/images/photo-notes/shenzhen-huaqiang-border-immigration.webp"
+    },
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "Rokidと暮らす④ メガネに、「母艦」を直結しました",
+      "url": "https://note.com/tojimasaya/n/n66116e302cfe",
+      "external": true,
+      "date": "2026-08-20",
+      "thumb": "https://assets.st-note.com/production/uploads/images/305240831/rectangle_large_type_2_8eb011ba6a9d61a6e3345ccb6899d48e.jpeg?width=800"
+    },
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "明石焼きのラウンジから、神戸→台北→香港",
+      "url": "/fragments/kobe-airport-hyogo-lounge.html",
+      "external": false,
+      "date": "2026-08-19",
+      "thumb": "/assets/images/photo-notes/kobe-airport-hyogo-lounge-akashiyaki.webp"
+    },
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "ひとまず、さよなら花の北",
+      "url": "/fragments/himeji-castle-aeon-hananokita.html",
+      "external": false,
+      "date": "2026-08-09",
+      "thumb": "/assets/images/photo-notes/himeji-castle-aeon-hananokita.webp"
+    },
+    {
+      "kind": "shirasagi",
+      "kindLabel": "三十六景",
+      "title": "第35景 花の北屋上 惜別遠望",
+      "url": "/shirasagi36/no35.html",
+      "external": false,
+      "date": "2026-08-09",
+      "thumb": "/assets/images/shirasagi/webp/thumb/35.webp"
+    },
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "息子を手伝えた日と、ワンピース新幹線",
+      "url": "/fragments/himeji-onepiece-shinkansen-takopia.html",
+      "external": false,
+      "date": "2026-08-04",
+      "thumb": "/assets/images/photo-notes/himeji-onepiece-shinkansen.webp"
+    },
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "飛行機の座席が、少し快適になる ── 海外旅行で効くMagSafe装備 2つ",
+      "url": "https://note.com/tojimasaya/n/n427025a434a3",
+      "external": true,
+      "date": "2026-07-31",
+      "thumb": "https://assets.st-note.com/production/uploads/images/299149402/rectangle_large_type_2_bb826d508f8fba07022d799a6f982521.jpeg?width=800"
+    }
+  ]
+}

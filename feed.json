@@ -1,0 +1,376 @@
+{
+  "version": "https://jsonfeed.org/version/1.1",
+  "title": "tojimasaya.com — 田路昌也",
+  "description": "姫路と香港、旅とカメラ。白鷺三十六景・断章・香港ハンドブックの更新。",
+  "home_page_url": "https://tojimasaya.com/",
+  "feed_url": "https://tojimasaya.com/feed.json",
+  "language": "ja",
+  "authors": [
+    {
+      "name": "田路昌也 (Toji Masaya)",
+      "url": "https://tojimasaya.com/about.html"
+    }
+  ],
+  "items": [
+    {
+      "id": "https://note.com/tojimasaya/n/na8bf31aaa03c",
+      "url": "https://note.com/tojimasaya/n/na8bf31aaa03c",
+      "title": "スーツケースカバーを笑っていた私が、96Lの袋を買うまで",
+      "content_html": "<p>機内持ち込みは2個まで。そのアナウンスに素直に従おうとすると、買ったばかりのPeak Designのどちらかを預けることになります。カバーを掛ける人を笑っていた私が、96Lの折りたたみボストンにバックパックを収め、衣類を緩衝材にするまでの顛末。後半は、その機材を実際に使った兵庫・出石と神子畑の一日を。</p>\n<p><a href=\"https://note.com/tojimasaya/n/na8bf31aaa03c\">note で読む →</a></p>",
+      "summary": "機内持ち込みは2個まで。そのアナウンスに素直に従おうとすると、買ったばかりのPeak Designのどちらかを預けることになります。カバーを掛ける人を笑っていた私が、96Lの折りたたみボストンにバックパックを収め、…",
+      "image": "https://assets.st-note.com/production/uploads/images/309469100/rectangle_large_type_2_ac4d17afb393f1fb5451c18e6bd00ca2.jpeg?width=800",
+      "date_published": "2026-09-02T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/huanggang-immigration-farewell.html",
+      "url": "https://tojimasaya.com/fragments/huanggang-immigration-farewell.html",
+      "title": "見納めのプレハブ国境と、うねる未来ビル",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/huanggang-old-and-future.jpg\" alt=\"歩道橋の上から望む皇崗口岸。手前に昔からある古めかしいイミグレの建物、その奥にうねる銀色の未来イミグレ。新旧がひとつの画に収まっている。Rokidグラスで撮影。\"></p>\n<p>昨日、八月二十八日の金曜、山根さんと二人でいつものように皇崗から深圳へ渡ったのだが、九月は頭から後半まで日本に滞在するので、次に戻ってくる頃にはこの普段使いの国境——といっても香港と中国のあいだのイミグレだ——が新しいビルに変わっているかもしれず、つまり今のこれが最後の旧イミグレになる可能性があって、旧といってもテンポラリーに建てたプレハブのようなイミグレで、それでもそこそこしっかりしているのだけれど、実はいまの皇崗口岸には三つのイミグレビルが並んでいて、現役のこのプレハブ、真ん中には中国と聞いて誰もが思い浮かべるあの橙と黄の古めかしいビル、そしてその隣に超未来的な巨大ビル、という構成で、その未来ビルがいよいよここ数ヶ月のうちに使用開始になるという——少し前までは七月中と聞いていたから、遅れ気味なのかもしれない——ので、次にここを通るときには、プリンスエドワードから乗ってきたバスがそのまま未来ビルへ入り、ビル内のほんの数メートルで香港の出境も中国の入境も済んでしまう、そんなことになるのかもしれず、なにより嬉しいのは、いまの地下鉄七号線・皇崗口岸駅は現プレハブからそこそこ離れていて、電脳街を歩き倒したあとのあの距離が正直かなり体にこたえるのに、未来イミグレは地下鉄直結だという点で、ともあれこのプレハブも見納めかもしれないと記録を残しに行き、道中はいつものカメラではなく、ぜんぶRokidのグラスで撮ってきた——というわけで、何枚か、どうぞ見納めに。</p>\n<p>中国・深圳（皇崗口岸）</p>",
+      "summary": "昨日、八月二十八日の金曜、山根さんと二人でいつものように皇崗から深圳へ渡ったのだが、九月は頭から後半まで日本に滞在するので、次に戻ってくる頃にはこの普段使いの国境——といっても香港と中国のあいだのイミグレだ——が新しい…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/huanggang-old-and-future.jpg",
+      "date_published": "2026-08-28T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/homemade-yogurt-blood-pressure.html",
+      "url": "https://tojimasaya.com/fragments/homemade-yogurt-blood-pressure.html",
+      "title": "血圧の警告と、ヨーグルトを育てる夏",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/yogurt-oidire-maker.jpg\" alt=\"OIDIRE と刻まれたヨーグルトメーカー。ガラスのドームの中で牛乳が黄金色に発酵し、机の上でモニターの光を背にしている。\"></p>\n<p>七月から母が全面介護の施設に入居し、日本にいる間の私はすっかり一人暮らしになったのだが、その母の通院に付き添ったついでに自分も診てもらったら、血圧がなんと一八〇〜二〇〇もあって医者に「あなたのほうが危ないよ」と苦笑され、それで薬を処方してもらい、塩を控え、一日三十分は歩くよう心がけ始めたのだけれど、外食はうまくてもどうしても味が濃く塩が多いという当たり前のことをこの年になってようやく身をもって知り、料理が得意でもないのにエアフライヤーの類まで買い込んでは塩に頼らぬ工夫を凝らすうち、友人に勧められて始めたヨーグルト作りがこれがなかなか楽しく、日本なら明治の「おいしい牛乳」二七〇円ほどで、少し高いと思いつつギリシャ系のパルテノや抵抗力がつくというR-1を培養すると、買っていたものより格段にうまいのは牛乳のおかげだろうと思い、香港でも続けたくてタオバオでそこそこ人気のヨーグルトメーカーを一〇一元・二千数百円——日本製が一万五千円だったのを思えば破格で——手に入れたはいいが、今度は逆に香港では材料のほうが高く、あれこれ調べて選んだ明治の赤いパッケージ一リットル弱の濃厚なミルクはいいとして、肝心の種菌はパルテノもR-1も日系スーパーでも探さねば手に入らず高い、どうしたものかと思っていたら、この二千円ほどのOIDIRE——私にはどうしても「オイボレ」と読めてしまう——に乳酸菌のおまけが十回分（一袋十グラム）ついてきて、まずはこの十袋でミルクを育てることにし、一回で一リットル近くできるのを二日ほどかけて朝昼晩といただいている、そんな日々で、九月の頭にはまた日本へ帰り「おいしい牛乳」でR-1かパルテノを育てたいし、次の帰省は妻も一緒だが乳製品の得意でない彼女に食事は任せ、ヨーグルトは私の趣味として作ろうと思っていて、薬のおかげで血圧はぐんぐん下がっていまや一二〇を切るほど、やめるわけにはいかないがそこそこ落ち着いてきたのだから、これからは少しくらい味わって食べてもいいかな、と思っているこの頃である。</p>\n<p>香港</p>",
+      "summary": "七月から母が全面介護の施設に入居し、日本にいる間の私はすっかり一人暮らしになったのだが、その母の通院に付き添ったついでに自分も診てもらったら、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/yogurt-oidire-maker.jpg",
+      "date_published": "2026-08-27T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/nb65e94f99ac0",
+      "url": "https://note.com/tojimasaya/n/nb65e94f99ac0",
+      "title": "SFCで戻る、神戸⇒台北⇒香港 ── 新しいラウンジは、明石焼の香り",
+      "content_html": "<p>香港から台北経由で神戸へ降りた前回の続編として、神戸空港から台北経由で香港へ戻る帰路を検証。新しいラウンジ、明石焼、乗り継ぎや荷物の流れまで含めて、神戸発ルートが帰り道でも実用的かを確かめています。</p>\n<p><a href=\"https://note.com/tojimasaya/n/nb65e94f99ac0\">note で読む →</a></p>",
+      "summary": "香港から台北経由で神戸へ降りた前回の続編として、神戸空港から台北経由で香港へ戻る帰路を検証。新しいラウンジ、明石焼、乗り継ぎや荷物の流れまで含めて、神戸発ルートが帰り道でも実用的かを確かめています。",
+      "image": "https://assets.st-note.com/production/uploads/images/306722082/rectangle_large_type_2_42808052e93df61f9c432f8df10b0330.jpeg?width=800",
+      "date_published": "2026-08-25T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://drone.jp/column/20260825170044129205.html",
+      "url": "https://drone.jp/column/20260825170044129205.html",
+      "title": "機体から目を離さずに、風速を訊く──AIグラスをドローンフライトに持ち込んでみた [田路昌也の中国・香港ドローン便り]Vol.67",
+      "content_html": "<p>姫路・夢前川でDJI Mini 5 Proを飛ばしながら、RokidのAIグラスに風速や日没時刻を声で尋ねる実験。プロポと上空の機体から目を離さずに判断材料を得られる便利さと、AIの答えを鵜呑みにしない注意点を現地フライトで確かめています。</p>\n<p><a href=\"https://drone.jp/column/20260825170044129205.html\">DRONE.jp で読む →</a></p>",
+      "summary": "姫路・夢前川でDJI Mini 5 Proを飛ばしながら、RokidのAIグラスに風速や日没時刻を声で尋ねる実験。プロポと上空の機体から目を離さずに判断材料を得られる便利さと、…",
+      "image": "https://drone.jp/wp-content/uploads/tohzi_67_topYXw4UX0x.jpg",
+      "date_published": "2026-08-25T00:00:00+09:00",
+      "tags": [
+        "DRONE.jp"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/shenzhen-huaqiang-border.html",
+      "url": "https://tojimasaya.com/fragments/shenzhen-huaqiang-border.html",
+      "title": "パスポートなしの国境と、深圳・華強北のガジェット行",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/shenzhen-huaqiang-border-immigration.jpg\" alt=\"波打つ曲線が連なる、深圳・皇崗口岸の新しい越境ビルの外観\"></p>\n<p>日本に長くいると、決まって深圳・華強北の猥雑な活気と新しいガジェットの刺激が恋しくなるもので、八月二十四日、師匠と二人で国境を越え、着くなり定番の重慶の汁なし麺に少し辣味を足してもらえば、血圧のことなど今日は忘れようという旨さ、そのあとは日本で薄く傷のついたOPPO Find N5とLeitzphoneのフィルムを一枚三十元・約六百円で張り替えてもらったが、安さより何より、埃も気泡も噛ませず一瞬で仕上げる店員の神業を眺めるのが毎度たまらなく楽しく、極めつけは、太子からの国境越えバスがやがて乗り入れるという皇崗の新しい越境ビルで、香港を出るときはスマホのQR、中国に入るときは顔認証と指紋、永久居民はパスポートもIDも要らないこの手軽さに、便利さと裏腹の薄気味悪さも少し覚えつつ——まあ深く考えても仕方がない、いっそ日本もこうなってくれと思っている。</p>\n<p>中国・深圳（皇崗／華強北）</p>",
+      "summary": "日本に長くいると、決まって深圳・華強北の猥雑な活気と新しいガジェットの刺激が恋しくなるもので、八月二十四日、師匠と二人で国境を越え、着くなり定番の重慶の汁なし麺に少し辣味を足してもらえば、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/shenzhen-huaqiang-border-immigration.jpg",
+      "date_published": "2026-08-24T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/n66116e302cfe",
+      "url": "https://note.com/tojimasaya/n/n66116e302cfe",
+      "title": "Rokidと暮らす④ メガネに、「母艦」を直結しました",
+      "content_html": "<p>『Rokidと暮らす』第4回。スマホを経由せず、RokidのAIグラスから自分専用のAI（母艦）へ直接つなぐ自作アプリ「クロメガネ」を仕立てた話。声をかけるだけで、医療記録や資産情報といった「自分だけの情報」にまで、メガネから手が届くようになりました。</p>\n<p><a href=\"https://note.com/tojimasaya/n/n66116e302cfe\">note で読む →</a></p>",
+      "summary": "『Rokidと暮らす』第4回。スマホを経由せず、RokidのAIグラスから自分専用のAI（母艦）へ直接つなぐ自作アプリ「クロメガネ」を仕立てた話。声をかけるだけで、医療記録や資産情報といった「自分だけの情報」にまで、…",
+      "image": "https://assets.st-note.com/production/uploads/images/305240831/rectangle_large_type_2_8eb011ba6a9d61a6e3345ccb6899d48e.jpeg?width=800",
+      "date_published": "2026-08-20T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/kobe-airport-hyogo-lounge.html",
+      "url": "https://tojimasaya.com/fragments/kobe-airport-hyogo-lounge.html",
+      "title": "明石焼きのラウンジから、神戸→台北→香港",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/kobe-airport-hyogo-lounge-akashiyaki.jpg\" alt=\"神戸空港の新しい国際線ラウンジの朝食トレー。明石焼き、ソバメシ、焼売、神戸ワインの白\"></p>\n<p>八月十九日、姫路から遠くて混み合う関空へ出るのにいい加減くたびれていた私は、初めて神戸空港発・台北桃園乗り継ぎで香港へ帰る復路を試したのだが、これがなかなかどうして具合が良く、午前十一時発という余裕のおかげで姫路からのアクセスも楽なら、そもそも客はまばらでチェックインもラウンジもがら空き、しかも新設の国際線ラウンジには明石焼にソバメシ、神戸ワインの赤白からUCCのコーヒーまで並び、兵庫を丸ごとキュレーションしたような品揃えに一人にやにやしてしまい、極めつけはEva Airのカウンターの面々まで揃って親切だったことで、関空のあの人混みで消耗するのとは何もかもが正反対——早起きを強いられず、並ばされず、急かされず、静かに一杯やってから飛べるこの道を、これから香港と姫路を行き来する私の定番路線にしてしまおう。</p>\n<p>神戸空港 → 香港（台北経由）</p>",
+      "summary": "八月十九日、姫路から遠くて混み合う関空へ出るのにいい加減くたびれていた私は、初めて神戸空港発・台北桃園乗り継ぎで香港へ帰る復路を試したのだが、これがなかなかどうして具合が良く、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/kobe-airport-hyogo-lounge-akashiyaki.jpg",
+      "date_published": "2026-08-19T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/himeji-castle-aeon-hananokita.html",
+      "url": "https://tojimasaya.com/fragments/himeji-castle-aeon-hananokita.html",
+      "title": "ひとまず、さよなら花の北",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/himeji-castle-aeon-hananokita.jpg\" alt=\"屋上駐車場の色あせたピンクの案内看板（「くるま」の「く」の字）の脇の隙間から、夏の霞の向こうに浮かぶ姫路城。手前に住宅と緑、麓に白いマンションが見える\"></p>\n<p>私がまだ高校生の頃だっただろうか、野里駅にほど近いその場所にニチイという大きなスーパーがオープンし、同じ頃に花の北モールというのもあった気がするが数十年前のことでもう定かでなく、ともかく姫路の駅前まで出るより家からずっと近かったその店は、時とともにイオン花の北店となり、赤みがかったピンクの屋根もいつしか色褪せ、通路を行き交う人の姿もめっきりまばらになっていたのだが、そのイオンがこの二〇二六年八月末をもって、建て替えのための休業でひとまずその幕を下ろし、次に扉が開くのは何年か先になるというので、友人夫婦と連れ立って三人でその閉店セールに足を運び、ふと屋上の駐車場へ上がってみると、色の抜けかけたピンクの案内看板の「くるま」の「く」の字、その脇の隙間の向こうに白鷺城が浮かんで見え、慌てて三脚を据え、SL2-Sに二百ミリ、そこにダブラーを噛ませた四百ミリ相当で狙えば、望遠らしい圧縮の効いた夏の霞の中に、天守と、その麓のマンションと、看板のピンクとが、不思議な取り合わせのまま一枚に収まってくれて——この場所からこの構図は、もう二度と撮れないのかもしれないと思いながら、私は静かにシャッターを切った。</p>\n<p>兵庫・姫路（花の北）</p>",
+      "summary": "私がまだ高校生の頃だっただろうか、野里駅にほど近いその場所にニチイという大きなスーパーがオープンし、同じ頃に花の北モールというのもあった気がするが数十年前のことでもう定かでなく、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/himeji-castle-aeon-hananokita.jpg",
+      "date_published": "2026-08-09T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/shirasagi36/no35.html",
+      "url": "https://tojimasaya.com/shirasagi36/no35.html",
+      "title": "第35景 花の北屋上 惜別遠望",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/shirasagi/35.jpg\" alt=\"花の北屋上 惜別遠望\"></p>\n<p>北斎が市井から富士を描いたように、白鷺城もまた暮らしの風景の中にある。まもなく一旦閉店する花の北・イオン姫路店の屋上駐車場から、400mm相当の望遠で夏霞の天守を遠望した。この夏を最後に、もう撮れなくなるかもしれない一景。</p>",
+      "summary": "北斎が市井から富士を描いたように、白鷺城もまた暮らしの風景の中にある。まもなく一旦閉店する花の北・イオン姫路店の屋上駐車場から、400mm相当の望遠で夏霞の天守を遠望した。この夏を最後に、…",
+      "image": "https://tojimasaya.com/assets/images/shirasagi/35.jpg",
+      "date_published": "2026-08-09T00:00:00+09:00",
+      "tags": [
+        "三十六景"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/himeji-onepiece-shinkansen-takopia.html",
+      "url": "https://tojimasaya.com/fragments/himeji-onepiece-shinkansen-takopia.html",
+      "title": "息子を手伝えた日と、ワンピース新幹線",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/himeji-onepiece-shinkansen.jpg\" alt=\"夕方の姫路駅ホーム。手前に銀色のN700系新幹線、右奥にワンピースのキャラクターが描かれたラッピング新幹線が停まっている\"></p>\n<p>息子の仕事の手伝いで埼玉まで出かけたのだが、まさか自分が息子の仕事を手伝う日が来ようとは夢にも思わず、それでも何か役に立てるならこんなに嬉しいことはなくて、しかもおかしいことに、普段は私のメッセージへの返事に数日かかるか返事すら来ないのが常なのに、この件ばかりは何時だろうと高速で返ってくるのが面白く、行きも帰りも乗った新幹線から姫路に降り立った瞬間、目の前にワンピース新幹線が止まっているのを初めて見てこれもまた面白く、飛行機にもポケモンやスターウォーズをまとった機体があるのと同じで、キャラクターにさほど興味のない私でも、大谷翔平のファンではあるから、大谷選手を描いたJALの機体がまだ飛んでいて機会があれば一度は乗ってみたいと思いつつ、ともあれ姫路に戻ったら、やっぱりタコぴあで玉子焼きだよね。</p>\n<p>埼玉 → 兵庫・姫路</p>",
+      "summary": "息子の仕事の手伝いで埼玉まで出かけたのだが、まさか自分が息子の仕事を手伝う日が来ようとは夢にも思わず、それでも何か役に立てるならこんなに嬉しいことはなくて、しかもおかしいことに、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/himeji-onepiece-shinkansen.jpg",
+      "date_published": "2026-08-04T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/n427025a434a3",
+      "url": "https://note.com/tojimasaya/n/n427025a434a3",
+      "title": "飛行機の座席が、少し快適になる ── 海外旅行で効くMagSafe装備 2つ",
+      "content_html": "<p>香港⇔日本の定期便で効いたMagSafe周りの更新を2つ紹介。共用電源で頭が垂れないMomaxの万国コネクター（ソケットは固定・USB充電器は別体で進化させる考え方）と、三脚にもクランプにもなり狭いエコノミーの机で活躍するUlanzi MA88。旅の道具を軽く賢く更新していく話です。</p>\n<p><a href=\"https://note.com/tojimasaya/n/n427025a434a3\">note で読む →</a></p>",
+      "summary": "香港⇔日本の定期便で効いたMagSafe周りの更新を2つ紹介。共用電源で頭が垂れないMomaxの万国コネクター（ソケットは固定・USB充電器は別体で進化させる考え方）と、…",
+      "image": "https://assets.st-note.com/production/uploads/images/299149402/rectangle_large_type_2_bb826d508f8fba07022d799a6f982521.jpeg?width=800",
+      "date_published": "2026-07-31T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://drone.jp/column/20260727190457128743.html",
+      "url": "https://drone.jp/column/20260727190457128743.html",
+      "title": "公安のドローン、DJIの空撮デモ、130元の叩き売り ── 深圳で見た中国ドローンの現在地 [田路昌也の中国・香港ドローン便り]Vol.66",
+      "content_html": "<p>深圳で見たドローンの三つの顔をたどる現地ルポ。国境エリアを見張る公安の機体、華強北のDJI店頭デモ、130元で叩き売られるおもちゃドローンを通じて、北京や香港とは違う中国ドローン市場の現在地を描いています。</p>\n<p><a href=\"https://drone.jp/column/20260727190457128743.html\">DRONE.jp で読む →</a></p>",
+      "summary": "深圳で見たドローンの三つの顔をたどる現地ルポ。国境エリアを見張る公安の機体、華強北のDJI店頭デモ、130元で叩き売られるおもちゃドローンを通じて、北京や香港とは違う中国ドローン市場の現在地を描いています。",
+      "image": "https://drone.jp/wp-content/uploads/tohzi_66_topVGpWCSAS.jpg",
+      "date_published": "2026-07-27T00:00:00+09:00",
+      "tags": [
+        "DRONE.jp"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/nf1acca459fd9",
+      "url": "https://note.com/tojimasaya/n/nf1acca459fd9",
+      "title": "SFCで帰る、香港⇔関西 ── エバー・台北経由「神戸行き」という最適解",
+      "content_html": "<p>香港と関西を行き来する帰省ルートとして、エバー航空で台北を経由し、神戸へ降りる選択肢を検証。SFC特典を使いながら、関空・伊丹ではなく神戸を選ぶ理由と、姫路までの移動を含めた実用性を整理しています。</p>\n<p><a href=\"https://note.com/tojimasaya/n/nf1acca459fd9\">note で読む →</a></p>",
+      "summary": "香港と関西を行き来する帰省ルートとして、エバー航空で台北を経由し、神戸へ降りる選択肢を検証。SFC特典を使いながら、関空・伊丹ではなく神戸を選ぶ理由と、姫路までの移動を含めた実用性を整理しています。",
+      "image": "https://assets.st-note.com/production/uploads/images/296758327/rectangle_large_type_2_97c6deddcdf6e96761dad77102e8b900.jpeg?width=800",
+      "date_published": "2026-07-23T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/kobe-airport-first-time-via-taoyuan.html",
+      "url": "https://tojimasaya.com/fragments/kobe-airport-first-time-via-taoyuan.html",
+      "title": "桃園の肉骨茶と、初めての神戸空港",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/kobe-airport-terminal2-dusk.jpg\" alt=\"夕暮れの神戸空港ターミナル2。ガラスのファサードにKOBE AIRPORTの文字と、黒いTerminal 2の入口\"></p>\n<p>香港から桃園を経由しエバーで神戸へと、初めての経路で実家に帰ったのだが、桃園の乗り継ぎでは、いつものエバーのスターラウンジではなく今回初めてシンガポール航空のシルバークリスに入ってみると、入口のサイネージが「新加坡特色料理・肉骨茶」を掲げるだけあって名物のバクテーから台式魯肉飯まで並んでいて、これはこれで良いものの、ラウンジとしてはいささか手狭かなと思いながら着いた初めての神戸空港では、夕暮れのターミナル2に降り立ってポートライナーで三宮へ出て、三宮から新快速で四十分も走ればもう姫路に着いてしまうのだから、関空や伊丹からの道のりを思えばはるかに早く、しかもポートライナーも新快速も本数が密で待ち時間がほとんどなく、海外から実家への帰り道にこれほど頼もしい選択肢が増えたのは、素直に心強い。</p>\n<p>台北・桃園空港 → 神戸空港</p>",
+      "summary": "香港から桃園を経由しエバーで神戸へと、初めての経路で実家に帰ったのだが、桃園の乗り継ぎでは、いつものエバーのスターラウンジではなく今回初めてシンガポール航空のシルバークリスに入ってみると、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/kobe-airport-terminal2-dusk.jpg",
+      "date_published": "2026-07-21T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/mongkok-before-a-month-away.html",
+      "url": "https://tojimasaya.com/fragments/mongkok-before-a-month-away.html",
+      "title": "一月ぶんの香港成分を、旺角で",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/mongkok-sincere-podium-entrance.jpg\" alt=\"旺角の歩道から見た先達廣場の入口。金色の「先達廣場」の文字とSINCERE PODIUMのガラス扉、行き交う人々\"></p>\n<p>いよいよ一月近く香港を離れるので、発つ前に香港成分を注入しておこうと旺角へ出て、まずは腹ごしらえに頼んだ叉燒と燒鵝の双拼飯が、白飯の上に照りの出た鵝の皮と縁の紅い叉燒が並んで菜心が一束添えられただけの、この街ではどうということのない一皿なのに、しばらく食べられないと思うと妙に旨く、それから足を向けた先達廣場では、金色の看板の下をくぐっていつもの棚を覗けば、二手の札に小米17 Ultraの16+512GBが全套國行でHK$6,680、15 Ultraが港版でHK$4,980、Redmi Turbo 5 Maxが16+512GBでHK$2,880と並んでいて、自分がいま使っている機種の中古相場を眺めるのは我が身を値踏みされているようで少しおかしく、その足で回った星際城市では、「潮流發燒友集中地」を名乗る看板の下、エスカレーターへ吸い込まれていく人の流れをしばらく眺めながら、ここにまた一月来られないとなるとやはり寂しく、いや正直に言えば、深圳の電脳街に行けないことのほうが、もっとこたえるかもしれない。</p>\n<p>香港・旺角 先達廣場／星際城市</p>",
+      "summary": "いよいよ一月近く香港を離れるので、発つ前に香港成分を注入しておこうと旺角へ出て、まずは腹ごしらえに頼んだ叉燒と燒鵝の双拼飯が、白飯の上に照りの出た鵝の皮と縁の紅い叉燒が並んで菜心が一束添えられただけの、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/mongkok-sincere-podium-entrance.jpg",
+      "date_published": "2026-07-19T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/n477f909ca135",
+      "url": "https://note.com/tojimasaya/n/n477f909ca135",
+      "title": "Rokidと暮らす③ 見えるメガネの、見え方問題",
+      "content_html": "<p>「脱・メガネ宣言」で行き着いたモノビジョン（右目は遠く、左目は手元）が、RokidのAIグラスで思わぬ形で的中。裸眼とコンタクトで左右の役割を分けた設定が、見えるメガネの「見え方問題」にどう効いたのかを綴る第3回。</p>\n<p><a href=\"https://note.com/tojimasaya/n/n477f909ca135\">note で読む →</a></p>",
+      "summary": "「脱・メガネ宣言」で行き着いたモノビジョン（右目は遠く、左目は手元）が、RokidのAIグラスで思わぬ形で的中。裸眼とコンタクトで左右の役割を分けた設定が、見えるメガネの「見え方問題」にどう効いたのかを綴る第3回。",
+      "image": "https://assets.st-note.com/production/uploads/images/295112248/rectangle_large_type_2_81af5d85983b8435ab1cafbd623b1b59.jpeg?width=800",
+      "date_published": "2026-07-17T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/n1c959bb91226",
+      "url": "https://note.com/tojimasaya/n/n1c959bb91226",
+      "title": "2年縛りを「粘り勝ち」で途中解約──香港のSIMを1枚畳んで、JALのマイルを取りに行く",
+      "content_html": "<p>香港で増えすぎたSIM契約を整理し、2年縛り途中の解約交渉を粘り強く進めた体験記。香港番号を減らしながら、JAL Mobile powered by ahamoでマイルを取りに行く次の通信構成を考えます。</p>\n<p><a href=\"https://note.com/tojimasaya/n/n1c959bb91226\">note で読む →</a></p>",
+      "summary": "香港で増えすぎたSIM契約を整理し、2年縛り途中の解約交渉を粘り強く進めた体験記。香港番号を減らしながら、JAL Mobile powered by ahamoでマイルを取りに行く次の通信構成を考えます。",
+      "image": "https://assets.st-note.com/production/uploads/images/294776191/rectangle_large_type_2_d2fb3584f98c56bfbda4238e515bf7c5.jpeg?width=800",
+      "date_published": "2026-07-16T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/n458a51095135",
+      "url": "https://note.com/tojimasaya/n/n458a51095135",
+      "title": "Rokidと暮らす② メガネを、人生の入力デバイスにする",
+      "content_html": "<p>RokidのAIグラスを、単なるカメラ付きメガネではなく「人生の入力デバイス」として使う視点で掘り下げる第2回。見たものをその場でAIに渡し、翻訳や記録へつなげる日常の使い方を考えます。</p>\n<p><a href=\"https://note.com/tojimasaya/n/n458a51095135\">note で読む →</a></p>",
+      "summary": "RokidのAIグラスを、単なるカメラ付きメガネではなく「人生の入力デバイス」として使う視点で掘り下げる第2回。見たものをその場でAIに渡し、翻訳や記録へつなげる日常の使い方を考えます。",
+      "image": "https://assets.st-note.com/production/uploads/images/294378517/rectangle_large_type_2_a1eaefa55b701d5a5d3c521b2e7b47d9.jpeg?width=800",
+      "date_published": "2026-07-15T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/pasteako-birthday.html",
+      "url": "https://tojimasaya.com/fragments/pasteako-birthday.html",
+      "title": "家族3人の誕生日、中環のステーキ屋Pasteako",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/pasteako-birthday-family.jpg\" alt=\"赤いチェックのテーブルに料理を並べ、革張りソファ席で微笑む家族3人（妻・私・息子）\"></p>\n<p>七月十二日が私の誕生日なのだが、妻の体調がすぐれず一日ずらして、妻と息子との三人でセントラルのステーキ屋Pasteakoへ行ったところ、この店の面白いのは席に着く前にまず自分の使うナイフを選ばせる趣向で、私は八本の中から、日本の名を持つ七番のサントクを選んだのに、いざリブアイの筋を前にするとまるで歯が立たず、名前だけの日本刀だったかと苦笑しつつ、しかし肉そのものは文句なしに旨く、還暦を過ぎて自分の誕生日を喜ぶ歳ではとうになくなった私には、新しい仕事に就いたばかりで毎日が緊張の連続らしく食事中も携帯のメッセージを気にし、話題も仕事のことばかりで、正直もう助言できることなどほとんどない息子と、それでも妻を挟んで同じ皿を囲み、あれこれ話せたこの一日こそが、どんな贈り物よりもありがたかった。</p>\n<p>香港・中環 PMQ</p>",
+      "summary": "七月十二日が私の誕生日なのだが、妻の体調がすぐれず一日ずらして、妻と息子との三人でセントラルのステーキ屋Pasteakoへ行ったところ、この店の面白いのは席に着く前にまず自分の使うナイフを選ばせる趣向で、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/pasteako-birthday-family.jpg",
+      "date_published": "2026-07-13T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/sincere-podium-banana-sim.html",
+      "url": "https://tojimasaya.com/fragments/sincere-podium-banana-sim.html",
+      "title": "台風が連れてきた友人と、先達廣場のSIM棚",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/sincere-podium-banana-sim.jpg\" alt=\"Banana Travel SIMの年間カード3種（10GB・20GB・30GB）の価格札が並ぶ店頭\"></p>\n<p>台風の影響でMetroさんがなぜか沖縄から香港へ飛んできたので、せっかくなので旺角の先達廣場へ中古スマホと最新SIM価格の定点観測に繰り出し、私の定番は正面から入って突き当たり右手の903特賣店で、棚ではBanana Travel SIMの年卡が相変わらずの人気、52の国と地域で365日使えるカードが10GBならHK$118、30GBでもHK$218、日本・韓国・台湾の5G無制限カードもずらりと並び、この棚の前に立つたびに、香港では通信の自由が棚売りの日用品なのだと実感しつつ、中古スマホの相場を眺め、SIMを物色し、友人と電脳街を歩く——台風のおかげの、良い土曜日だった。</p>\n<p>香港・旺角 先達廣場</p>",
+      "summary": "台風の影響でMetroさんがなぜか沖縄から香港へ飛んできたので、せっかくなので旺角の先達廣場へ中古スマホと最新SIM価格の定点観測に繰り出し、私の定番は正面から入って突き当たり右手の903特賣店で、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/sincere-podium-banana-sim.jpg",
+      "date_published": "2026-07-11T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/n949b2448e060",
+      "url": "https://note.com/tojimasaya/n/n949b2448e060",
+      "title": "Rokidと暮らす① カメラで選んだ、AIグラス",
+      "content_html": "<p>AIグラスを本気で使うなら、見た目の自然さだけでなく「何を記録できるか」も大事になる。Even G2を買う寸前から、カメラでRokidを選ぶまでの判断をたどる新シリーズの初回です。</p>\n<p><a href=\"https://note.com/tojimasaya/n/n949b2448e060\">note で読む →</a></p>",
+      "summary": "AIグラスを本気で使うなら、見た目の自然さだけでなく「何を記録できるか」も大事になる。Even G2を買う寸前から、カメラでRokidを選ぶまでの判断をたどる新シリーズの初回です。",
+      "image": "https://assets.st-note.com/production/uploads/images/293439061/rectangle_large_type_2_3f25b14d964a6c67af342188d9adba33.jpeg?width=800",
+      "date_published": "2026-07-11T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/n51eac46a5b37",
+      "url": "https://note.com/tojimasaya/n/n51eac46a5b37",
+      "title": "充電まわりの\"一軍\"を、入れ替えました ── 俺流トラベルガジェット",
+      "content_html": "<p>旅に必ず連れて行く充電まわりを、一軍と二軍の視点で見直す回。Momaxの小型変換アダプターやBaseusのApple Watch対応ケーブルなど、実戦で残った道具を整理しています。</p>\n<p><a href=\"https://note.com/tojimasaya/n/n51eac46a5b37\">note で読む →</a></p>",
+      "summary": "旅に必ず連れて行く充電まわりを、一軍と二軍の視点で見直す回。Momaxの小型変換アダプターやBaseusのApple Watch対応ケーブルなど、実戦で残った道具を整理しています。",
+      "image": "https://assets.st-note.com/production/uploads/images/292704614/rectangle_large_type_2_6019bfbd48d8bbf55abdce70dc6cb6c8.png?width=800",
+      "date_published": "2026-07-09T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/n74b8e87fa529",
+      "url": "https://note.com/tojimasaya/n/n74b8e87fa529",
+      "title": "パスポートも、カードすらも要らない──回郷証「e道」2026年夏の最新事情",
+      "content_html": "<p>香港と深センの国境は、いまやパスポートも回郷証カードも出さずに「顔だけ」で通過できます。友人のe道登録に付き合って確かめた、2026年夏の最新の越境事情をレポートします。</p>\n<p><a href=\"https://note.com/tojimasaya/n/n74b8e87fa529\">note で読む →</a></p>",
+      "summary": "香港と深センの国境は、いまやパスポートも回郷証カードも出さずに「顔だけ」で通過できます。友人のe道登録に付き合って確かめた、2026年夏の最新の越境事情をレポートします。",
+      "image": "https://assets.st-note.com/production/uploads/images/292238490/rectangle_large_type_2_538b8057a1294f7982677eaf686c2b3c.jpeg?width=800",
+      "date_published": "2026-07-07T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/shenzhen-police-drone-and-dji-flip.html",
+      "url": "https://tojimasaya.com/fragments/shenzhen-police-drone-and-dji-flip.html",
+      "title": "公安のドローンと、店内から飛ぶFlip",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/shenzhen-port-police-drone.jpg\" alt=\"口岸の屋根の下、頭上数メートルに浮かぶ公安のドローン。奥に高層ビルとPOLICEの詰所\"></p>\n<p>友人のe道登録に付き合って深圳の口岸まで来て、建屋の外で待っていると頭上であの羽音がして、こんな場所で飛ばす豪胆な者がいるものだと見上げれば数メートル上にドローンが浮かんでいて、操縦していたのは公安その人で、さすがに離陸の瞬間へカメラを向ける度胸はなく飛んでいる姿だけを撮ったのだが、出入境の目の前で不審な動きを空から見張ることはこの街ではもう日常で、北京ではドローンの販売がほぼ止まり店頭からはOsmo Pocketまで消えたと聞くのに、その数千キロ南のこの街では公安が当たり前に飛ばし、DJIの直営店では女性スタッフが「ほら、こんなに簡単」とプロペラごと畳めるFlipを店内から飛ばして年配のお客さんたちに見せていて、同じ国で空の自由はこれほど違う——この振れ幅こそが深圳なのだと思う。</p>\n<p>中国・深圳</p>",
+      "summary": "友人のe道登録に付き合って深圳の口岸まで来て、建屋の外で待っていると頭上であの羽音がして、こんな場所で飛ばす豪胆な者がいるものだと見上げれば数メートル上にドローンが浮かんでいて、操縦していたのは公安その人で、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/shenzhen-port-police-drone.jpg",
+      "date_published": "2026-07-06T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/huanggang-port-rokid-new-terminal.html",
+      "url": "https://tojimasaya.com/fragments/huanggang-port-rokid-new-terminal.html",
+      "title": "皇崗口岸、開く前の曲線",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/huanggang-port-rokid-new-terminal.jpg\" alt=\"Rokid Glassesで撮影した、ほぼ完成した皇崗口岸の新しい旅検ビル。青空の下、曲線的な外観と工事中の足元が写っている\"></p>\n<p>深圳へ行くとき、私はわりと皇崗口岸を選ぶのだが、香港側からはバスでしか行けず、羅湖や落馬洲のような鉄道直結の便利さはないその不便さのおかげか人が少なく、入境も出境も、通関も荷物検査も、拍子抜けするほどするりと終わるところが気に入っているからこそ、Rokidの視力矯正レンズを作りに向かう途中で見上げた新しい旅検ビルの巨大さには少し驚き、いまの静かな皇崗にこれほど大きな器が本当に必要なのかと思いながらも、中国では先に巨大な駅や建物を作り、あとからそこにふさわしい人の流れが生まれていくことがあり、Rokid Glassesで撮った縦広角の写真も上下を切ってみると余計なものが落ち、巨大な曲線だけが意外とうまく収まったように、この建物にもいつか人の流れがうまく収まるのだろうかと考えると、七月開通は少し難しそうに見えるが、扉が開いたらまずは自分の足で中を歩いて確かめてみたい。</p>\n<p>中国・深圳 皇崗口岸</p>",
+      "summary": "深圳へ行くとき、私はわりと皇崗口岸を選ぶのだが、香港側からはバスでしか行けず、羅湖や落馬洲のような鉄道直結の便利さはないその不便さのおかげか人が少なく、入境も出境も、通関も荷物検査も、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/huanggang-port-rokid-new-terminal.jpg",
+      "date_published": "2026-07-02T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/sham-shui-po-turin-pasta.html",
+      "url": "https://tojimasaya.com/fragments/sham-shui-po-turin-pasta.html",
+      "title": "深水埗で、トリノから来たパスタ",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/sham-shui-po-turin-pasta-staff.jpg\" alt=\"深水埗の小さなパスタ店で、スタッフが厨房の前に立っている様子\"></p>\n<p>先日入ったピザ屋で、トリノ出身のイタリア人のおばさんから『同じビルの別の階で息子がパスタ屋をやっている』と聞いていたので、七月一日の香港返還記念日だからというわけでもないが、妻とその店を訪ねてみると、前に撮ったお母さんの写真を見せた途端に息子さんはにっこりして、そうだよ、トリノだよと話がつながり、紙皿で出てくるパスタに日本円で千六百円から二千円ほど払うのは一瞬高い気もするのだけれど、妻と二皿を分け合えばどちらもちゃんとおいしく、深水埗の電脳中心で歩き疲れたあとに少し寄り道して、トリノから来た親子の点と点が同じビルの中でつながるなら、香港の散歩としては十分すぎる昼だった。</p>\n<p>香港・深水埗</p>",
+      "summary": "先日入ったピザ屋で、トリノ出身のイタリア人のおばさんから『同じビルの別の階で息子がパスタ屋をやっている』と聞いていたので、七月一日の香港返還記念日だからというわけでもないが、妻とその店を訪ねてみると、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/sham-shui-po-turin-pasta-staff.jpg",
+      "date_published": "2026-07-01T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/na247d4e181a2",
+      "url": "https://note.com/tojimasaya/n/na247d4e181a2",
+      "title": "俺流トラベルガジェット AIアシスタント編 第5弾",
+      "content_html": "<p>AIアシスタントが、旅先や日常の予定だけでなく薬の飲み忘れまで気づく存在になってきた。俺流トラベルガジェットの延長線上で、暮らしに入り込むAIとの距離感を記録しています。</p>\n<p><a href=\"https://note.com/tojimasaya/n/na247d4e181a2\">note で読む →</a></p>",
+      "summary": "AIアシスタントが、旅先や日常の予定だけでなく薬の飲み忘れまで気づく存在になってきた。俺流トラベルガジェットの延長線上で、暮らしに入り込むAIとの距離感を記録しています。",
+      "image": "https://assets.st-note.com/production/uploads/images/289241363/rectangle_large_type_2_79361760bc06c104b06e37c71a19f23d.jpeg?width=800",
+      "date_published": "2026-06-27T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://note.com/tojimasaya/n/nc9c55f67326c",
+      "url": "https://note.com/tojimasaya/n/nc9c55f67326c",
+      "title": "台北は 笑顔と美食でできていた",
+      "content_html": "<p>関空から台北、そして香港へ。観光名所よりも強く残ったのは、市場や店先で出会った人たちの笑顔と、その横にあった一皿でした。2泊3日の旅を、顔と美食の記憶からたどります。</p>\n<p><a href=\"https://note.com/tojimasaya/n/nc9c55f67326c\">note で読む →</a></p>",
+      "summary": "関空から台北、そして香港へ。観光名所よりも強く残ったのは、市場や店先で出会った人たちの笑顔と、その横にあった一皿でした。2泊3日の旅を、顔と美食の記憶からたどります。",
+      "image": "https://assets.st-note.com/production/uploads/images/288488109/rectangle_large_type_2_d322f8c0b206e85109da83b0571ce8d0.jpeg?width=800",
+      "date_published": "2026-06-25T00:00:00+09:00",
+      "tags": [
+        "note"
+      ]
+    },
+    {
+      "id": "https://tojimasaya.com/fragments/bobby-birthday-curry.html",
+      "url": "https://tojimasaya.com/fragments/bobby-birthday-curry.html",
+      "title": "ボビーさん65歳、本気のタンドリーチキン",
+      "content_html": "<p><img src=\"https://tojimasaya.com/assets/images/photo-notes/bobby-birthday-curry-tandoori.jpg\" alt=\"細長い皿に盛られた、こんがり焼けたタンドリーチキン。千切りキャベツとミントソース添え\"></p>\n<p>六月四日が誕生日のボビーさんを、少々遅ればせながら、太子からバスで深圳の華強北まで足を延ばし、お気に入りのインドカレー屋に四人で集まって六十五歳を祝ったのだが、主役はなんといっても、初めて来た時その旨さに感動し、二度目にハーフで頼んだら冷めていてがっかりさせられた因縁のタンドリーチキンで、今回は中国人スタッフではなくインド人の兄ちゃんをわざわざ呼び、最初は最高だったのに二度目は今ひとつだった経緯をかくかくしかじか訴え、ところで今日はこの人の誕生日なんだとボビーさんを指させば、彼も『おお、おめでとう』と腕によりをかけ、全身全霊のタンドリーチキンを焼き上げてくれて、これが文句なしに旨い——惜しむらくは遅れてきた仲間に焼きたての熱いやつを食わせそびれたことだが、結局その日いちばんの隠し味は、ボビーさんの六十五回目の誕生日だった。</p>\n<p>中国・深圳（華強北）</p>",
+      "summary": "六月四日が誕生日のボビーさんを、少々遅ればせながら、太子からバスで深圳の華強北まで足を延ばし、お気に入りのインドカレー屋に四人で集まって六十五歳を祝ったのだが、主役はなんといっても、初めて来た時その旨さに感動し、…",
+      "image": "https://tojimasaya.com/assets/images/photo-notes/bobby-birthday-curry-tandoori.jpg",
+      "date_published": "2026-06-23T00:00:00+09:00",
+      "tags": [
+        "断章"
+      ]
+    }
+  ]
+}
