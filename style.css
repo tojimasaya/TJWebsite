@@ -2014,3 +2014,10 @@ html[data-lang="zh"] .lang-ja { display: none !important; }
 .ics-download-links a:hover { border-color: var(--accent-color); color: var(--accent-color); }
 .ics-download-links span { font-family: var(--secondary-font); font-size: 0.68rem; color: var(--text-lighter); }
 .ics-download-note { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.9; color: var(--text-lighter); margin: 12px 0 0; }
+
+/* ハンドブック本文の表（費用・所要日数・持ち物） */
+.hb-table { width: 100%; border-collapse: collapse; margin: 1.6em 0; font-family: var(--primary-font); font-size: 0.88rem; }
+.hb-table th, .hb-table td { border: 1px solid var(--border-color); padding: 9px 12px; text-align: left; line-height: 1.7; }
+.hb-table th { background: var(--hover-color); font-weight: 600; font-size: 0.82rem; color: var(--text-light); }
+.essay ul, .essay ol { margin: 0 0 1.8em 1.4em; padding: 0; }
+.essay li { margin: 0 0 0.5em; line-height: 2.0; }

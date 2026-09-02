@@ -4,7 +4,8 @@
 //   node tools/build-feeds.mjs --check   … 差分の有無だけ見る（差分があれば exit 2）
 //
 // 入力: data/recent-photos.json（断章）、assets/images/shirasagi/photos.json（三十六景）、
-//       data/articles.json（note / DRONE.jp）、articles/*.html（サイト内記事）
+//       data/articles.json（note / DRONE.jp）、articles/*.html（サイト内記事）、
+//       data/handbook.json（香港ハンドブック）
 // 出力: feed.xml（Atom 1.0・最新 30 件）、feed-fragments.xml（断章のみ）、feed.json（JSON Feed 1.1）、
 //       data/updates.json（トップページの「最近の更新」用・最新 12 件）、rss/index.html（/feed.xml へ）
 //
@@ -33,6 +34,7 @@ const KIND = {
   article: { label: '記事', order: 3 },
   note: { label: 'note', order: 4 },
   drone: { label: 'DRONE.jp', order: 5 },
+  handbook: { label: 'ハンドブック', order: 6 },
 };
 
 function absUrl(p) {
@@ -129,6 +131,28 @@ async function collectExternalArticles() {
       content: `${paragraphs(a.excerpt || '')}\n<p><a href="${escapeHtml(a.link)}">${escapeHtml(a.sourceLabel || kind)} で読む →</a></p>`,
       image: absUrl(a.image),
       thumb: a.image || '',
+    });
+  }
+  return items;
+}
+
+async function collectHandbook() {
+  const catalog = await readJson(path.join(ROOT, 'data/handbook.json'));
+  const items = [];
+  for (const p of catalog.pages || []) {
+    const d = parseDate(p.updated);
+    if (!d || !p.url || !p.title) continue;
+    const url = `${SITE_ORIGIN}${p.url}`;
+    items.push({
+      kind: 'handbook',
+      id: url,
+      url,
+      title: p.seoTitle || p.title,
+      date: d.iso,
+      summary: truncate(p.summary || '', 110),
+      content: `${paragraphs([p.audience ? `${p.audience}向け。` : '', p.summary].filter(Boolean).join(''))}\n<p><a href="${escapeHtml(url)}">ガイドを読む →</a></p>`,
+      image: absUrl(p.image),
+      thumb: sitePath(p.image),
     });
   }
   return items;
@@ -265,6 +289,7 @@ async function main() {
     ...await collectShirasagi(),
     ...await collectExternalArticles(),
     ...await collectSiteArticles(),
+    ...await collectHandbook(),
   ].sort((a, b) => b.date.localeCompare(a.date) || KIND[a.kind].order - KIND[b.kind].order || a.title.localeCompare(b.title, 'ja'));
 
   if (!all.length) throw new Error('フィードに載せる項目がありません');

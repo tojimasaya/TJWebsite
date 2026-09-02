@@ -147,6 +147,24 @@ function hubBlock(catalog) {
   return lines.join('\n');
 }
 
+const TITLE_SUFFIX = ' | Toji Masaya';
+
+/** <title> と meta description を目録の seoTitle / seoDescription に合わせる（H1 は触らない） */
+function applySeo(html, seoTitle, seoDescription, where) {
+  let out = html;
+  if (seoTitle) {
+    const title = `${seoTitle}${TITLE_SUFFIX}`;
+    if (!/<title[^>]*>[\s\S]*?<\/title>/i.test(out)) throw new Error(`${where}: <title> が見つかりません`);
+    out = out.replace(/<title([^>]*)>[\s\S]*?<\/title>/i, (m, attrs) => `<title${attrs}>${escapeHtml(title)}</title>`);
+  }
+  if (seoDescription) {
+    const re = /(<meta\s+name="description"\s+content=")([^"]*)(")/i;
+    if (!re.test(out)) throw new Error(`${where}: <meta name="description"> が見つかりません`);
+    out = out.replace(re, (m, a, _b, c) => a + escapeHtml(seoDescription) + c);
+  }
+  return out;
+}
+
 /** 必要なスクリプトを（無ければ）comments.js の直前に足す */
 function ensureScripts(html) {
   const needed = [
@@ -196,6 +214,7 @@ async function main() {
   for (const page of targets) {
     const rel = page.url.replace(/^\//, '');
     let html = await fs.readFile(path.join(ROOT, rel), 'utf8');
+    html = applySeo(html, page.seoTitle, page.seoDescription, page.id);
     html = putBlock(html, 'intro', introBlock(page), { after: page.introAfter || '<main id="main-content">' });
     html = putBlock(html, 'footer', footerBlock(page, byUrl), { before: '<div id="comments-slot"></div>' });
     html = ensureScripts(html);
@@ -205,10 +224,12 @@ async function main() {
   // hub は --only 指定が無いときだけ組み直す
   if (!ONLY) {
     const hubRel = catalog.hub.replace(/^\//, '');
-    const hubHtml = await fs.readFile(path.join(ROOT, hubRel), 'utf8');
+    let hubHtml = await fs.readFile(path.join(ROOT, hubRel), 'utf8');
+    if (catalog.hubSeo) hubHtml = applySeo(hubHtml, catalog.hubSeo.title, catalog.hubSeo.description, 'hub');
     if (hubHtml.includes(MARK('hub').start)) {
       await out(hubRel, putBlock(hubHtml, 'hub', hubBlock(catalog), {}));
     } else {
+      await out(hubRel, hubHtml);
       console.warn(`注意: ${hubRel} に <!-- handbook:hub:start --> が無いのでカード一覧を入れていません`);
     }
   }
