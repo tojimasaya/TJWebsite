@@ -1999,8 +1999,18 @@ html[data-lang="zh"] .lang-ja { display: none !important; }
 .hb-hub-card { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 14px; border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-decoration: none; color: inherit; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
 .hb-hub-card:hover { border-color: var(--text-color); box-shadow: var(--shadow-md); }
 .hb-hub-thumb { width: 92px; height: 92px; object-fit: cover; border-radius: 8px; background: var(--hover-color); }
-.hb-hub-title { font-family: 'Noto Serif JP', serif; font-size: 0.98rem; line-height: 1.6; color: var(--text-color); margin: 0 0 5px; }
-.hb-hub-audience { font-family: var(--secondary-font); font-size: 0.7rem; letter-spacing: 0.04em; color: var(--accent-color); margin: 0 0 5px; }
-.hb-hub-summary { font-family: var(--primary-font); font-size: 0.8rem; line-height: 1.8; color: var(--text-light); margin: 0 0 7px; }
-.hb-hub-updated { font-family: var(--secondary-font); font-size: 0.68rem; color: var(--text-lighter); }
+.hb-hub-title { display: block; font-family: 'Noto Serif JP', serif; font-size: 0.98rem; line-height: 1.6; color: var(--text-color); margin: 0 0 5px; }
+.hb-hub-audience { display: block; font-family: var(--secondary-font); font-size: 0.7rem; letter-spacing: 0.04em; color: var(--accent-color); margin: 0 0 5px; }
+.hb-hub-summary { display: block; font-family: var(--primary-font); font-size: 0.8rem; line-height: 1.8; color: var(--text-light); margin: 0 0 7px; }
+.hb-hub-updated { display: block; font-family: var(--secondary-font); font-size: 0.68rem; color: var(--text-lighter); }
 @media (max-width: 600px) { .hb-hub-card { grid-template-columns: 72px minmax(0, 1fr); } .hb-hub-thumb { width: 72px; height: 72px; } }
+
+/* === 祝日カレンダーの ICS ダウンロード（tools/build-ics.mjs が入れる） === */
+.ics-download { max-width: 900px; margin: 34px auto 0; padding: 0 24px; }
+.ics-download h2 { font-family: 'Noto Serif JP', serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.04em; color: var(--text-color); margin: 0 0 0.7em; padding-bottom: 8px; border-bottom: 1px solid var(--border-color); }
+.ics-download-lead { font-family: var(--primary-font); font-size: 0.86rem; line-height: 1.9; color: var(--text-light); margin: 0 0 14px; }
+.ics-download-links { display: flex; flex-wrap: wrap; gap: 9px; }
+.ics-download-links a { display: inline-flex; align-items: baseline; gap: 7px; padding: 9px 16px; border: 1px solid var(--border-color); border-radius: 999px; font-family: var(--primary-font); font-size: 0.86rem; color: var(--text-color); text-decoration: none; transition: border-color 0.2s ease, color 0.2s ease; }
+.ics-download-links a:hover { border-color: var(--accent-color); color: var(--accent-color); }
+.ics-download-links span { font-family: var(--secondary-font); font-size: 0.68rem; color: var(--text-lighter); }
+.ics-download-note { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.9; color: var(--text-lighter); margin: 12px 0 0; }

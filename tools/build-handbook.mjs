@@ -196,7 +196,7 @@ async function main() {
   for (const page of targets) {
     const rel = page.url.replace(/^\//, '');
     let html = await fs.readFile(path.join(ROOT, rel), 'utf8');
-    html = putBlock(html, 'intro', introBlock(page), { after: '<main id="main-content">' });
+    html = putBlock(html, 'intro', introBlock(page), { after: page.introAfter || '<main id="main-content">' });
     html = putBlock(html, 'footer', footerBlock(page, byUrl), { before: '<div id="comments-slot"></div>' });
     html = ensureScripts(html);
     await out(rel, html);
