@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T00:00:00+09:00",
+  "generatedAt": "2026-09-03T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "見送りの焼鵝と、七十ドルの妙な見栄",
+      "url": "/fragments/kison-goose-vanity-hkd70.html",
+      "external": false,
+      "date": "2026-09-03",
+      "thumb": "/assets/images/photo-notes/kison-half-half-plate.webp"
+    },
     {
       "kind": "note",
       "kindLabel": "note",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-08-04",
       "thumb": "/assets/images/photo-notes/himeji-onepiece-shinkansen.webp"
-    },
-    {
-      "kind": "note",
-      "kindLabel": "note",
-      "title": "飛行機の座席が、少し快適になる ── 海外旅行で効くMagSafe装備 2つ",
-      "url": "https://note.com/tojimasaya/n/n427025a434a3",
-      "external": true,
-      "date": "2026-07-31",
-      "thumb": "https://assets.st-note.com/production/uploads/images/299149402/rectangle_large_type_2_bb826d508f8fba07022d799a6f982521.jpeg?width=800"
     }
   ]
 }

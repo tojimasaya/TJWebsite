@@ -5,13 +5,25 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-09-02T00:00:00+09:00</updated>
+  <updated>2026-09-03T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>見送りの焼鵝と、七十ドルの妙な見栄</title>
+    <id>https://tojimasaya.com/fragments/kison-goose-vanity-hkd70.html</id>
+    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/kison-goose-vanity-hkd70.html"/>
+    <published>2026-09-03T00:00:00+09:00</published>
+    <updated>2026-09-03T00:00:00+09:00</updated>
+    <category term="断章"/>
+    <summary type="text">九月の頭に一度日本へ戻り、二十日前後まで姫路の実家に滞在するつもりで、そうなるとこの九龍・太子の棋子燒鵝（KISON）へは当分ご無沙汰になるのだが、…</summary>
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/kison-half-half-plate.jpg&quot; alt=&quot;白飯の上に焼鵝と叉燒がハーフハーフで盛られた深皿、菜心が一本のせられ、奥に氷のたっぷり入った凍檸茶。プレースマットには支店の電話番号が並ぶ。&quot;&gt;&lt;/p&gt;
+&lt;p&gt;九月の頭に一度日本へ戻り、二十日前後まで姫路の実家に滞在するつもりで、そうなるとこの九龍・太子の棋子燒鵝（KISON）へは当分ご無沙汰になるのだが、来週からしばらく食べられないと思うとかえって最後の一皿がありがたく感じるのが人のさもしいところで、太子の角の店にふらりと寄ったのは日暮れどきで、店の前の下午茶（ティータイム）ボードには十五時から十八時までのお得なセット三十五ドル——日本円にして七百円ほど——という表示があり、これがなかなか安いのだけれど、ティータイムというのはどうしてもその、いいところを切ったあとの端切れというか、繁忙時間の主力ではないほうを盛るイメージがあって、私が勝手にそう思っているだけかもしれないが、少なくとも三十五ドルであの吊るし窓の艶を頬張れるとは考えにくく、それに今夜は日本行きを控えた最後の焼鵝であるから、ここは意地でも標準メニューを頼む——といって七十ドル、日本円で千四百円ほどにすぎないのだが——ハーフハーフ、つまり焼鵝と叉燒を半分ずつ白飯の上に盛ってもらう定番を選び、菜心が一本のせられた深皿と、氷のたっぷり入った凍檸茶が運ばれてきた瞬間、あの店頭の吊るし窓に並んでいた艶と焦げのエッジが、ちゃんと皿の上まで降りてきているのが分かって、これはやはり七十ドル分の顔をしている、と思ったのだった、こういうときに三十五ドルの安いほうにしなかった自分は間違いなく妙な見栄っ張りで、しかしその見栄はブランドを見せびらかす見栄ではなく、自分の口にちゃんとした一皿を運びたいだけの、いわば「プチ富豪気分」というやつで、旅先や空の上ではついつい財布の紐が緩むくせに、七百円と千四百円の差に一瞬立ち止まってしまうのはおかしな話ではあるのだが、日常の一皿というのはそれくらい何度も何度も繰り返されるものだから、逆に一回ごとの選択が身に沁みやすく、三十五ドルの妥協を一度許してしまうとたぶん次からも同じ妥協を続けてしまう気がして、それが怖くて七十ドルを選んだのだ、と皿の上の焼鵝を齧りながら、来週からしばらく食べられないもう一皿の顔を、しっかりと覚えておこうと思ったのだった。&lt;/p&gt;
+&lt;p&gt;香港・太子（棋子 燒鵝）&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>スーツケースカバーを笑っていた私が、96Lの袋を買うまで</title>
     <id>https://note.com/tojimasaya/n/na8bf31aaa03c</id>
@@ -340,16 +352,5 @@
     <summary type="text">旅に必ず連れて行く充電まわりを、一軍と二軍の視点で見直す回。Momaxの小型変換アダプターやBaseusのApple Watch対応ケーブルなど、実戦で残った道具を整理しています。</summary>
     <content type="html">&lt;p&gt;旅に必ず連れて行く充電まわりを、一軍と二軍の視点で見直す回。Momaxの小型変換アダプターやBaseusのApple Watch対応ケーブルなど、実戦で残った道具を整理しています。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n51eac46a5b37&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>香港から深圳へ日帰り — 旺角発の越境バスと皇崗・福田口岸の通り方【2026年夏 e道最新】</title>
-    <id>https://tojimasaya.com/hk-shenzhen-crossing.html</id>
-    <link rel="alternate" type="text/html" href="https://tojimasaya.com/hk-shenzhen-crossing.html"/>
-    <published>2026-07-09T00:00:00+09:00</published>
-    <updated>2026-07-09T00:00:00+09:00</updated>
-    <category term="ハンドブック"/>
-    <summary type="text">旺角発の越境バス、皇崗と福田の使い分け、顔認証だけの e道、離境退税まで。</summary>
-    <content type="html">&lt;p&gt;香港から深圳へ日帰りで渡る人向け。旺角発の越境バス、皇崗と福田の使い分け、顔認証だけの e道、離境退税まで。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://tojimasaya.com/hk-shenzhen-crossing.html&quot;&gt;ガイドを読む →&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>

@@ -2078,6 +2078,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/kison-goose-vanity-hkd70.html</loc>
+    <lastmod>2026-09-03</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/kison-half-half-plate.jpg</image:loc>
+      <image:title>見送りの焼鵝と、七十ドルの妙な見栄</image:title>
+      <image:caption>白飯の上に焼鵝と叉燒がハーフハーフで盛られた深皿、菜心が一本のせられ、奥に氷のたっぷり入った凍檸茶。プレースマットには支店の電話番号が並ぶ。</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/huanggang-immigration-farewell.html</loc>
     <lastmod>2026-08-28</lastmod>
     <changefreq>monthly</changefreq>
