@@ -186,5 +186,19 @@
       { "name": "ハノイ (Hanoi)", "lat": 21.0278, "lng": 105.8342 },
       { "name": "ハロン湾 (Ha Long Bay)", "lat": 20.9101, "lng": 107.1839, "detail": "halong-travel-journal.html" }
     ]
+  },
+  {
+    "id": "thailand-2014",
+    "title": "バンコクとアユタヤ、十年ぶりの友と",
+    "subtitle": "仏頭、屋台、そして中華街",
+    "year": 2014,
+    "days": null,
+    "color": "#c0654a",
+    "link": "thailand-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "バンコク (Bangkok)", "lat": 13.7563, "lng": 100.5018, "detail": "thailand-travel-journal.html" },
+      { "name": "アユタヤ (Ayutthaya)", "lat": 14.3532, "lng": 100.5689, "detail": "thailand-travel-journal.html" }
+    ]
   }
 ]
