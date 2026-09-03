@@ -200,5 +200,19 @@
       { "name": "バンコク (Bangkok)", "lat": 13.7563, "lng": 100.5018, "detail": "thailand-travel-journal.html" },
       { "name": "アユタヤ (Ayutthaya)", "lat": 14.3532, "lng": 100.5689, "detail": "thailand-travel-journal.html" }
     ]
+  },
+  {
+    "id": "malaysia-2015",
+    "title": "クアラルンプールとバトゥ洞窟",
+    "subtitle": "一人で歩いた旧正月あけのマレーシア",
+    "year": 2015,
+    "days": null,
+    "color": "#3f8f7a",
+    "link": "malaysia-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "クアラルンプール (Kuala Lumpur)", "lat": 3.1578, "lng": 101.7117, "detail": "malaysia-travel-journal.html" },
+      { "name": "バトゥ洞窟 (Batu Caves)", "lat": 3.2379, "lng": 101.6840, "detail": "malaysia-travel-journal.html" }
+    ]
   }
 ]
