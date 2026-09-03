@@ -172,5 +172,19 @@
     "cities": [
       { "name": "ホーチミン (Ho Chi Minh City)", "lat": 10.8231, "lng": 106.6297, "detail": "hochiminh-travel-journal.html" }
     ]
+  },
+  {
+    "id": "halong-2014",
+    "title": "ハロン湾、霧の中の奇岩",
+    "subtitle": "EMERAUDE号で過ごした一泊二日",
+    "year": 2014,
+    "days": 2,
+    "color": "#5b7c8d",
+    "link": "halong-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "ハノイ (Hanoi)", "lat": 21.0278, "lng": 105.8342 },
+      { "name": "ハロン湾 (Ha Long Bay)", "lat": 20.9101, "lng": 107.1839, "detail": "halong-travel-journal.html" }
+    ]
   }
 ]
