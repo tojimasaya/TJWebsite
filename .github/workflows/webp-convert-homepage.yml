@@ -9,6 +9,8 @@ on:
       - 'assets/images/turkey-hero.jpg'
       - 'assets/images/gear/*.jpg'
       - 'assets/images/gear/lenses/*.jpg'
+      - 'data/gallery.json'
+      - 'tools/build-gallery-images.mjs'
   workflow_dispatch:
 
 permissions:
@@ -45,8 +47,11 @@ jobs:
           done
           echo "Converted ${converted} file(s)"
 
+      - name: Build gallery thumbnails and dimensions
+        run: node tools/build-gallery-images.mjs
+
       - name: Stage and commit
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(images): convert JPGs to WebP [auto]'
-          file_pattern: 'assets/images/**/*.webp'
+          file_pattern: 'assets/images/**/*.webp data/gallery.json'

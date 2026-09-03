@@ -2270,12 +2270,23 @@
         const res = await fetch('/data/articles.json');
         if (!res.ok) throw new Error('Failed to load articles.json');
         const articles = await res.json();
+        const latestArticles = articles.slice(0, 3);
+        let ogCache = {};
+
+        if (latestArticles.some(article => !article.imageLocal)) {
+          try {
+            const ogRes = await fetch('/data/writings-og.json');
+            if (ogRes.ok) ogCache = await ogRes.json();
+          } catch (_) {
+            // External images remain available as a last-resort fallback.
+          }
+        }
 
         // 日付降順でソート済み、最新3件を取得
-        const allArticles = articles.slice(0, 3).map(a => ({
+        const allArticles = latestArticles.map(a => ({
           title: a.title,
           link: a.link,
-          imageUrl: a.image || 'assets/images/gallery/weekly.jpg',
+          imageUrl: a.imageLocal || ogCache[a.link]?.local || a.image || 'assets/images/gallery/weekly.jpg',
           source: a.sourceLabel || a.source,
           excerpt: a.excerpt || ''
         }));

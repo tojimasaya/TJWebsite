@@ -57,6 +57,8 @@ if (urls.size === 0) {
 // 既存JSONを読み込み（差分更新）
 let map = {};
 try { map = JSON.parse(await fs.readFile(JSON_OUT, 'utf8')); } catch {}
+let articles = [];
+try { articles = JSON.parse(await fs.readFile(ARTICLES_JSON, 'utf8')); } catch {}
 
 // ------- 2) 各URLから OGP(title, image) を取得 -------
 async function getOG(url) {
@@ -90,11 +92,17 @@ function fileNameFrom(url) {
 async function cacheImage(imageUrl) {
   if (!imageUrl) return '';
   try {
+    const file = fileNameFrom(imageUrl);
+    const destination = path.join(OG_DIR, file);
+    try {
+      await fs.access(destination);
+      return `/assets/og/${file}`;
+    } catch {}
+
     const res = await fetch(imageUrl, { headers: { 'user-agent': UA }, redirect: 'follow' });
     if (!res.ok) throw new Error(`HTTP ${res.status}`);
     const buf = Buffer.from(await res.arrayBuffer());
-    const file = fileNameFrom(imageUrl);
-    await fs.writeFile(path.join(OG_DIR, file), buf);
+    await fs.writeFile(destination, buf);
     return `/assets/og/${file}`;
   } catch (e) {
     console.log('CACHE_FAIL', imageUrl, e.message);
@@ -117,3 +125,13 @@ for (const url of urls) {
 
 await fs.writeFile(JSON_OUT, JSON.stringify(map, null, 2), 'utf8');
 console.log('Wrote', JSON_OUT, 'total keys:', Object.keys(map).length);
+
+if (articles.length) {
+  const enriched = articles.map(article => {
+    const cached = map[article.link];
+    if (!cached?.local) return article;
+    return { ...article, imageLocal: cached.local };
+  });
+  await fs.writeFile(ARTICLES_JSON, `${JSON.stringify(enriched, null, 2)}\n`, 'utf8');
+  console.log('Updated articles.json with local OGP image paths');
+}

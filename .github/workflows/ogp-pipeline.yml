@@ -3,7 +3,7 @@ name: OGP scrape & cache
 on:
   workflow_dispatch:
   schedule:
-    - cron: '27 3 * * 1'   # 月曜 03:27に自動実行（お好みで）
+    - cron: '27 3 * * *'   # 毎日、記事画像をサイト内へキャッシュ
 
 permissions:
   contents: write

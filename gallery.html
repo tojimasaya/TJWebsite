@@ -374,7 +374,7 @@
     <!-- Photo Lightbox -->
     <div id="lightbox" class="lightbox" onclick="closeLightbox()" role="dialog" aria-modal="true" aria-label="写真ビューア">
         <button class="close-btn" onclick="closeLightbox()" aria-label="閉じる">&times;</button>
-        <img id="lightbox-img" class="lightbox-content" src="" alt="Gallery photo" onclick="event.stopPropagation()">
+        <img id="lightbox-img" class="lightbox-content" alt="Gallery photo" onclick="event.stopPropagation()">
         <div id="lightbox-caption" class="lightbox-caption"></div>
     </div>
 
@@ -440,9 +440,11 @@
                 
                 // Thumbnail Selection
                 // Video: if no custom image, use YouTube thumb. Photo: use item.image
-                let thumbSrc = item.image;
+                let fullSrc = item.image;
+                let thumbSrc = item.thumbnail || item.image;
                 if (!thumbSrc && item.type === 'video' && item.youtubeId) {
                     thumbSrc = `https://img.youtube.com/vi/${item.youtubeId}/maxresdefault.jpg`;
+                    fullSrc = thumbSrc;
                 }
                 
                 // Fallback
@@ -455,7 +457,10 @@
 
                 el.innerHTML = `
                     <div class="item-img-wrapper">
-                        <img src="${thumbSrc}" alt="${item.title}" loading="lazy" decoding="async" onerror="this.src='https://placehold.co/600x400?text=Image+Not+Found'">
+                        <img src="${thumbSrc}" alt="${item.title}" loading="lazy" decoding="async"
+                            ${item.width && item.height ? `width="${item.width}" height="${item.height}"` : ''}
+                            data-fallback-src="${fullSrc || ''}"
+                            onerror="if(this.dataset.fallbackSrc && this.src !== new URL(this.dataset.fallbackSrc, document.baseURI).href){this.src=this.dataset.fallbackSrc}else{this.onerror=null;this.src='https://placehold.co/600x400?text=Image+Not+Found'}">
                     </div>
                     <div class="item-overlay">
                         <div class="item-title">${item.title}</div>
@@ -468,7 +473,7 @@
                 if (item.type === 'video' && item.youtubeId) {
                     el.onclick = () => openVideo(item.youtubeId, item.title);
                 } else {
-                    el.onclick = () => openLightbox(thumbSrc, item.title, item.location, item.description);
+                    el.onclick = () => openLightbox(fullSrc, item.title, item.location, item.description);
                 }
                 
                 grid.appendChild(el);
