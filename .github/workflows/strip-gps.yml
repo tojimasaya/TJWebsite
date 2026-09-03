@@ -1,0 +1,88 @@
+name: Strip GPS from images
+
+# 公開画像に撮影時の位置情報が残らないようにする見張り番。
+# 2026-09-04 に全画像を一括処理した際、643枚中55枚にGPS座標が残っていた。
+# うち assets/images/gear/ の6枚は同じ屋内座標を指しており、自宅が特定できる状態だった。
+# 原因は経路の違いで、Pillow を通した画像はEXIFが落ちるのに、スマホから直接コピーした
+# 分だけが素通りしていた。そこで push のたびに自動で落とす。
+#
+# 方針（tools/strip-gps.py に実装）:
+#   assets/images/photo-notes/ … EXIF を丸ごと削除（断章はスナップなので撮影データ不要）
+#   それ以外                   … GPS だけ削除し、カメラ/レンズ/絞り/撮影日時は温存
+# 圧縮データには触れないので画質は不変。ICC プロファイルも残る。
+#
+# ローカルでは `python3 tools/strip-gps.py`（--check で変更せず検査のみ）。
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'assets/images/**.jpg'
+      - 'assets/images/**.jpeg'
+      - 'assets/images/**.webp'
+      - 'assets/images/**.png'
+      - 'tools/strip-gps.py'
+      - '.github/workflows/strip-gps.yml'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+concurrency:
+  group: strip-gps
+  cancel-in-progress: false
+
+jobs:
+  strip:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: ${{ github.ref_name }}
+
+      - name: Install Pillow
+        run: python3 -m pip install --quiet --upgrade pillow
+
+      - name: Strip GPS
+        id: strip
+        run: |
+          rc=0
+          python3 tools/strip-gps.py assets/images > /tmp/strip.log 2>&1 || rc=$?
+          cat /tmp/strip.log
+          {
+            echo '### 位置情報チェック'
+            echo ''
+            echo '```'
+            cat /tmp/strip.log
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+          echo "rc=$rc" >> "$GITHUB_OUTPUT"
+
+      # 他の auto-commit ワークフロー（WebP変換・生成ページ）と push が衝突しうるので、
+      # rebase して数回やり直す。
+      - name: Commit stripped images
+        run: |
+          if git diff --quiet -- assets/images; then
+            echo '位置情報付きの画像はなし。コミットするものはありません。'
+            exit 0
+          fi
+          git config user.name  'github-actions[bot]'
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git add -- assets/images
+          git commit -m 'chore(privacy): 追加画像から位置情報(GPS)を除去 [auto]'
+          for attempt in 1 2 3; do
+            if git pull --rebase --autostash origin "${GITHUB_REF_NAME}" \
+               && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            echo "push が競合しました。${attempt} 回目の再試行"
+            sleep 10
+          done
+          echo '::error::位置情報を除去したがコミットを push できなかった'
+          exit 1
+
+      # WebP/PNG に位置情報が入っていた場合など、自動で落としきれないものがあれば知らせる。
+      - name: Fail if anything needs manual attention
+        if: steps.strip.outputs.rc != '0'
+        run: |
+          echo '::error::自動処理できない画像があります。ジョブのサマリを確認してください。'
+          exit 1
