@@ -26,6 +26,13 @@
 .fp-sides img { width: 100%; aspect-ratio: 4 / 3; object-fit: cover; display: block; border-radius: 8px; border: 1px solid var(--border-color); background: var(--hover-color); }
 .fp-sides figcaption { font-family: var(--primary-font); font-size: 0.72rem; color: var(--text-lighter); margin-top: 6px; line-height: 1.6; }
 
+/* js/photo-lightbox.js がクリックで拡大する。触れるものだと分かるように合図を出す。
+   .fp-sides は 4/3 で切り抜いているので、拡大しないと写真の全体が見えない。 */
+.fp-figure img, .fp-sides img { cursor: zoom-in; transition: opacity 0.15s ease, border-color 0.15s ease; }
+.fp-sides img:hover { opacity: 0.86; border-color: var(--text-lighter); }
+.fp-figure img:hover { opacity: 0.94; }
+@media (hover: none) { .fp-figure img, .fp-sides img { transition: none; } }
+
 .fp-body { max-width: 38em; margin: 30px auto 0; }
 .fp-body p { font-family: 'Noto Serif JP', serif; font-size: 1rem; line-height: 2.0; color: var(--text-color); margin: 0 0 1.4em; }
 
