@@ -214,5 +214,20 @@
       { "name": "クアラルンプール (Kuala Lumpur)", "lat": 3.1578, "lng": 101.7117, "detail": "malaysia-travel-journal.html" },
       { "name": "バトゥ洞窟 (Batu Caves)", "lat": 3.2379, "lng": 101.6840, "detail": "malaysia-travel-journal.html" }
     ]
+  },
+  {
+    "id": "kaiping-2012",
+    "title": "開平の楼閣と赤坎古鎮",
+    "subtitle": "Turtlebackを始めた三人で訪ねた、広東省の世界遺産",
+    "year": 2012,
+    "days": null,
+    "color": "#b08d3f",
+    "link": "kaiping-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "開平 (Kaiping)", "lat": 22.3762, "lng": 112.6986, "detail": "kaiping-travel-journal.html" },
+      { "name": "赤坎古鎮 (Chikan)", "lat": 22.3247, "lng": 112.5872, "detail": "kaiping-travel-journal.html" },
+      { "name": "立園 (Li Garden)", "lat": 22.3117, "lng": 112.5636, "detail": "kaiping-travel-journal.html" }
+    ]
   }
 ]
