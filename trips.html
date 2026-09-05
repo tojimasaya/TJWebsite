@@ -80,6 +80,11 @@
       overflow: hidden;
       box-shadow: var(--shadow-md);
     }
+    /* 基盤地図の彩度だけ落として静かにする（タイル層のみ。旅ごとの色マーカーと
+       ルート線は別ペインなので鮮やかなまま残る） */
+    #trip-map .leaflet-tile-pane {
+      filter: saturate(0.15) brightness(1.08);
+    }
     .map-legend-bar {
       display: flex;
       justify-content: center;
