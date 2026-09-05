@@ -258,5 +258,45 @@
       { "name": "田路 (Taji, 朝来市)", "lat": 35.2158, "lng": 134.7303, "detail": "taji-travel-journal.html" },
       { "name": "竹田城跡 (Takeda Castle)", "lat": 35.3004, "lng": 134.8289, "detail": "taji-travel-journal.html" }
     ]
+  },
+  {
+    "id": "cebu-2014",
+    "title": "セブ島、男三人の夕食",
+    "subtitle": "研さんの家の近所のイタリアンで",
+    "year": 2014,
+    "days": null,
+    "color": "#1f8fa8",
+    "link": "cebu-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "マクタン島 (Mactan)", "lat": 10.3097, "lng": 123.9784, "detail": "cebu-travel-journal.html" }
+    ]
+  },
+  {
+    "id": "kyoto-sasayama-2014",
+    "title": "京都のライカ店と、丹波篠山の桜",
+    "subtitle": "幼馴染の松尾くんと、四月の二日間",
+    "year": 2014,
+    "days": 2,
+    "color": "#e8a0bf",
+    "link": "kyoto-sasayama-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "祇園・ライカ京都店 (Kyoto)", "lat": 35.0037, "lng": 135.7752, "detail": "kyoto-sasayama-travel-journal.html" },
+      { "name": "丹波篠山 (Tamba-Sasayama)", "lat": 35.0725, "lng": 135.2192, "detail": "kyoto-sasayama-travel-journal.html" }
+    ]
+  },
+  {
+    "id": "kuma-2014",
+    "title": "久万高原町の星空",
+    "subtitle": "息子と二人、光のない町へ",
+    "year": 2014,
+    "days": null,
+    "color": "#2c3e70",
+    "link": "kuma-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "久万高原町 (Kumakogen)", "lat": 33.6556, "lng": 132.9036, "detail": "kuma-travel-journal.html" }
+    ]
   }
 ]
