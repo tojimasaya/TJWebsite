@@ -229,5 +229,34 @@
       { "name": "赤坎古鎮 (Chikan)", "lat": 22.3247, "lng": 112.5872, "detail": "kaiping-travel-journal.html" },
       { "name": "立園 (Li Garden)", "lat": 22.3117, "lng": 112.5636, "detail": "kaiping-travel-journal.html" }
     ]
+  },
+  {
+    "id": "hiroshima-2013",
+    "title": "人柱隊、広島へ",
+    "subtitle": "モバイル＆カメラ仲間と巡った、宮島と呉の二日間",
+    "year": 2013,
+    "days": 2,
+    "color": "#c0392b",
+    "link": "hiroshima-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "広島 (Hiroshima)", "lat": 34.3925, "lng": 132.4610, "detail": "hiroshima-travel-journal.html" },
+      { "name": "宮島・厳島神社 (Miyajima)", "lat": 34.2959, "lng": 132.3197, "detail": "hiroshima-travel-journal.html" },
+      { "name": "呉・大和ミュージアム (Kure)", "lat": 34.2410, "lng": 132.5560, "detail": "hiroshima-travel-journal.html" }
+    ]
+  },
+  {
+    "id": "taji-2014",
+    "title": "田路という田舎町",
+    "subtitle": "幼馴染と二人、自分の名字と同じ名前の町へ",
+    "year": 2014,
+    "days": null,
+    "color": "#d98cae",
+    "link": "taji-travel-journal.html",
+    "image": null,
+    "cities": [
+      { "name": "田路 (Taji, 朝来市)", "lat": 35.2158, "lng": 134.7303, "detail": "taji-travel-journal.html" },
+      { "name": "竹田城跡 (Takeda Castle)", "lat": 35.3004, "lng": 134.8289, "detail": "taji-travel-journal.html" }
+    ]
   }
 ]

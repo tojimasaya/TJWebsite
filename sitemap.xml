@@ -533,6 +533,18 @@
     <priority>0.6</priority>
   </url>
   <url>
+    <loc>https://tojimasaya.com/hiroshima-travel-journal.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/taji-travel-journal.html</loc>
+    <lastmod>2026-09-05</lastmod>
+    <changefreq>yearly</changefreq>
+    <priority>0.6</priority>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/germany-travel-journal.html</loc>
     <lastmod>2026-07-04</lastmod>
     <changefreq>yearly</changefreq>
