@@ -85,6 +85,37 @@
     #trip-map .leaflet-tile-pane {
       filter: saturate(0.15) brightness(1.08);
     }
+    /* 絞り込みバー */
+    .trip-filter {
+      position: sticky; top: 70px; z-index: 20;
+      display: flex; flex-wrap: wrap; align-items: center; justify-content: center;
+      gap: 10px; padding: 14px 0 16px; margin-bottom: 10px;
+      background: var(--bg-color); border-bottom: 1px solid var(--border-color);
+    }
+    .trip-filter button {
+      font-family: var(--primary-font); font-size: var(--text-sm);
+      padding: 7px 16px; border-radius: 999px; cursor: pointer;
+      border: 1px solid var(--border-color); background: transparent; color: var(--text-color);
+      transition: background 0.2s, color 0.2s, border-color 0.2s;
+    }
+    .trip-filter button:hover { background: var(--hover-color); }
+    .trip-filter button[aria-pressed="true"] {
+      background: var(--accent-color); color: #fff; border-color: var(--accent-color);
+    }
+    .trip-filter select {
+      font-family: var(--primary-font); font-size: var(--text-sm);
+      padding: 7px 12px; border-radius: 999px;
+      border: 1px solid var(--border-color); background: transparent; color: var(--text-color);
+    }
+    .trip-filter .filter-count { font-size: var(--text-xs); color: var(--text-light); }
+    .trip-feature[hidden] { display: none !important; }
+    /* 凡例から飛んできたカードを一瞬だけ光らせる */
+    @keyframes tripFlash { from { background: var(--hover-color); } to { background: transparent; } }
+    .trip-feature.is-target { animation: tripFlash 1.6s ease-out; }
+    /* モバイルは固定しない: 2段に折り返すと画面の1/7を占めてしまうため */
+    @media (max-width: 700px) {
+      .trip-filter { position: static; gap: 8px; padding: 12px 0 14px; }
+    }
     .map-legend-bar {
       display: flex;
       justify-content: center;
@@ -216,8 +247,17 @@
         <div class="map-legend-bar" id="map-legend"></div>
       </section>
 
+      <div class="trip-filter" role="group" aria-label="旅を絞り込む">
+        <button type="button" data-region-filter="all" aria-pressed="true">すべて</button>
+        <button type="button" data-region-filter="japan" aria-pressed="false">日本</button>
+        <button type="button" data-region-filter="asia" aria-pressed="false">アジア</button>
+        <button type="button" data-region-filter="europe" aria-pressed="false">ヨーロッパ</button>
+        <select id="trip-year-filter" aria-label="年で絞り込む"><option value="all">すべての年</option></select>
+        <span class="filter-count" id="trip-filter-count" aria-live="polite"></span>
+      </div>
+
       <!-- 1) チベット・西安 (2016) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="asia" data-year="2016" id="trip-tibet">
         <div class="trip-media">
           <div class="trip-visual">
           <picture><source srcset="/assets/images/gallery/lhasa.webp" type="image/webp"><img src="/assets/images/gallery/lhasa.jpg" alt="チベット・ラサ、ポタラ宮" loading="lazy" decoding="async"></picture>
@@ -249,7 +289,7 @@
       </section>
 
       <!-- ドイツ縦断 (2014) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="europe" data-year="2014" id="trip-germany">
         <div class="trip-media">
           <div class="trip-visual">
           <picture><source srcset="/assets/images/gallery/cologne.webp" type="image/webp"><img src="/assets/images/gallery/cologne.jpg" alt="ケルン大聖堂" loading="lazy" decoding="async"></picture>
@@ -281,7 +321,7 @@
       </section>
 
       <!-- 2) プラハ (2014) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="europe" data-year="2014" id="trip-prague">
         <div class="trip-copy">
           <span class="pill route">Route: Nürnberg → Praha → Dresden → Frankfurt</span>
           <div class="trip-meta">
@@ -312,7 +352,7 @@
       </section>
 
       <!-- 3) イタリア縦断 (2016) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="europe" data-year="2016" id="trip-italy">
         <div class="trip-media">
           <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/italy/venezia/09.webp" type="image/webp"><img src="/assets/images/trips/italy/venezia/09.jpg" alt="ゴンドラの向こうにライトアップされたサン・ジョルジョ・マッジョーレ聖堂" loading="lazy" decoding="async"></picture>
@@ -344,7 +384,7 @@
       </section>
 
       <!-- ロンドン (2017) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="europe" data-year="2017" id="trip-london">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/london/companions-towerbridge.webp" type="image/webp"><img src="/assets/images/trips/london/companions-towerbridge.jpg" alt="タワーブリッジの前で。左からTJ、YKK師匠、竜一、Condy、バスターさん" loading="lazy" decoding="async"></picture>
         </div>
@@ -368,7 +408,7 @@
       </section>
 
       <!-- フランス (2017) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="europe" data-year="2017" id="trip-france">
         <div class="trip-visual">
           <img src="https://img.youtube.com/vi/QQ9UUbk9FUY/maxresdefault.jpg" alt="モンサンミッシェルの空撮" loading="lazy" decoding="async">
         </div>
@@ -392,7 +432,7 @@
       </section>
 
       <!-- 4) カッパドキア → イスタンブール -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="europe" data-year="2024" id="trip-turkey">
         <div class="trip-copy">
           <span class="pill route">Route: Cappadocia → Istanbul</span>
           <div class="trip-meta">
@@ -426,7 +466,7 @@
       </section>
 
       <!-- 5) ホーチミン (2025) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="asia" data-year="2025" id="trip-hochiminh">
         <div class="trip-media">
           <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/hochiminh/main-02.webp" type="image/webp"><img src="/assets/images/trips/hochiminh/main-02.jpg" alt="ホーチミンのランドマーク81" loading="lazy" decoding="async"></picture>
@@ -458,7 +498,7 @@
       </section>
 
       <!-- 台湾 (2024-2026) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="asia" data-year="2024" id="trip-taiwan">
         <div class="trip-media">
           <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/02-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/02-01.jpg" alt="日月潭上空から、中央にフローデシンホテル、右に文武廟" loading="lazy" decoding="async"></picture>
@@ -490,7 +530,7 @@
       </section>
 
       <!-- ミャンマー (2012) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="asia" data-year="2012" id="trip-myanmar">
         <div class="trip-media">
           <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/myanmar/bagan-01.webp" type="image/webp"><img src="/assets/images/trips/myanmar/bagan-01.jpg" alt="バガンの平原に立つ数千のパゴダ" loading="lazy" decoding="async"></picture>
@@ -522,7 +562,7 @@
       </section>
 
       <!-- 6) ホイアン定点観測 (2013-2018) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="asia" data-year="2013" id="trip-hoian">
         <div class="trip-copy">
           <span class="pill route">Hoi An / ホイアン（フエ・ミーソン）</span>
           <div class="trip-meta">
@@ -553,7 +593,7 @@
       </section>
 
       <!-- 7) ムイネー・カムラン湾 (2018.01) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="asia" data-year="2018" id="trip-muine">
         <div class="trip-visual">
           <img src="https://img.youtube.com/vi/3fg6MTK0mfc/maxresdefault.jpg" alt="ムイネーの砂漠をドローン空撮" loading="lazy" decoding="async">
         </div>
@@ -577,7 +617,7 @@
       </section>
 
       <!-- 8) ハロン湾 (2014.03) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="asia" data-year="2014" id="trip-halong">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/halong/hero.webp" type="image/webp"><img src="/assets/images/trips/halong/hero.jpg" alt="霧に包まれたハロン湾。奇岩のあいだに遊覧船や漁船が浮かぶ" loading="lazy" decoding="async"></picture>
         </div>
@@ -601,7 +641,7 @@
       </section>
 
       <!-- 9) バンコク・アユタヤ (2014.05) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="asia" data-year="2014" id="trip-thailand">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/thailand/ayutthaya-buddha-head.webp" type="image/webp"><img src="/assets/images/trips/thailand/ayutthaya-buddha-head.jpg" alt="アユタヤ・ワット マハタートの、ガジュマルの根に抱かれた仏頭" loading="lazy" decoding="async"></picture>
         </div>
@@ -626,7 +666,7 @@
       </section>
 
       <!-- 10) マレーシア (2015.02) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="asia" data-year="2015" id="trip-malaysia">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/malaysia/mosque-skylight-towers.webp" type="image/webp"><img src="/assets/images/trips/malaysia/mosque-skylight-towers.jpg" alt="モスクの天窓越しに見えるペトロナス・ツインタワー" loading="lazy" decoding="async"></picture>
         </div>
@@ -651,7 +691,7 @@
       </section>
 
       <!-- 11) 中国・広東省 開平 (2012.05) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="asia" data-year="2012" id="trip-kaiping">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/kaiping/diaolou-hillside.webp" type="image/webp"><img src="/assets/images/trips/kaiping/diaolou-hillside.jpg" alt="緑の山を背にして建つ、開平の洋風の楼閣" loading="lazy" decoding="async"></picture>
         </div>
@@ -676,7 +716,7 @@
       </section>
 
       <!-- 12) 広島遠征 (2013.05) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="japan" data-year="2013" id="trip-hiroshima">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/hiroshima/miyajima-shrine.webp" type="image/webp"><img src="/assets/images/trips/hiroshima/miyajima-shrine.jpg" alt="干潮の厳島神社と大鳥居" loading="lazy" decoding="async"></picture>
         </div>
@@ -701,7 +741,7 @@
       </section>
 
       <!-- 13) 田路という田舎町 (2014.04) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="japan" data-year="2014" id="trip-taji">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/taji/taji-sakura.webp" type="image/webp"><img src="/assets/images/trips/taji/taji-sakura.jpg" alt="満開の桜が続く田路の道" loading="lazy" decoding="async"></picture>
         </div>
@@ -725,7 +765,7 @@
       </section>
 
       <!-- 14) セブ島 (2014.01) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="asia" data-year="2014" id="trip-cebu">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/cebu/abaca-interior.webp" type="image/webp"><img src="/assets/images/trips/cebu/abaca-interior.jpg" alt="Abacaレストランの開放的な店内" loading="lazy" decoding="async"></picture>
         </div>
@@ -749,7 +789,7 @@
       </section>
 
       <!-- 15) 京都・丹波篠山 (2014.04) -->
-      <section class="trip-feature reverse">
+      <section class="trip-feature reverse" data-region="japan" data-year="2014" id="trip-kyoto-sasayama">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/kyoto-sasayama/sasayama-sakura-road.webp" type="image/webp"><img src="/assets/images/trips/kyoto-sasayama/sasayama-sakura-road.jpg" alt="川沿いに続く満開の桜並木" loading="lazy" decoding="async"></picture>
         </div>
@@ -773,7 +813,7 @@
       </section>
 
       <!-- 16) 久万高原町 (2014.07) -->
-      <section class="trip-feature">
+      <section class="trip-feature" data-region="japan" data-year="2014" id="trip-kuma">
         <div class="trip-visual">
           <picture><source srcset="/assets/images/trips/kuma/milkyway.webp" type="image/webp"><img src="/assets/images/trips/kuma/milkyway.jpg" alt="天の川が横切る久万高原町の星空" loading="lazy" decoding="async"></picture>
         </div>
@@ -812,6 +852,53 @@
   <script src="https://unpkg.com/leaflet@1.9.4/dist/leaflet.js" integrity="sha256-20nQCchB9co0qIjJZRGuk2/Z9VM+kNiyxNV1lvTlZBo=" crossorigin=""></script>
   <script>
   (function() {
+    // ---- 旅の絞り込み ----
+    (function () {
+      const cards = Array.from(document.querySelectorAll('.trip-feature'));
+      const bar = document.querySelector('.trip-filter');
+      if (!cards.length || !bar) return;
+      const buttons = Array.from(bar.querySelectorAll('[data-region-filter]'));
+      const yearSel = document.getElementById('trip-year-filter');
+      const countEl = document.getElementById('trip-filter-count');
+
+      const years = Array.from(new Set(cards.map(c => c.dataset.year))).sort((a, b) => b - a);
+      years.forEach(y => {
+        const o = document.createElement('option');
+        o.value = y; o.textContent = y + '年';
+        yearSel.appendChild(o);
+      });
+
+      let region = 'all';
+      function apply() {
+        const year = yearSel.value;
+        let shown = 0;
+        cards.forEach(c => {
+          const ok = (region === 'all' || c.dataset.region === region)
+                  && (year === 'all' || c.dataset.year === year);
+          c.hidden = !ok;
+          if (ok) shown++;
+        });
+        countEl.textContent = shown + ' / ' + cards.length + ' 本';
+        buttons.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.regionFilter === region)));
+      }
+      buttons.forEach(b => b.addEventListener('click', () => { region = b.dataset.regionFilter; apply(); }));
+      yearSel.addEventListener('change', apply);
+      apply();
+
+      // 凡例やポップアップから、その旅のカードへ運ぶ
+      window.__gotoTripCard = function (link) {
+        const slug = link.replace(/^\//, '');
+        const card = cards.find(c => c.querySelector('a[href$="' + slug + '"]'));
+        if (!card) return;
+        if (card.hidden) { region = 'all'; yearSel.value = 'all'; apply(); }
+        const top = card.getBoundingClientRect().top + window.scrollY - 130;
+        window.scrollTo({ top: top, behavior: 'smooth' });
+        cards.forEach(c => c.classList.remove('is-target'));
+        void card.offsetWidth;
+        card.classList.add('is-target');
+      };
+    })();
+
     const mapEl = document.getElementById('trip-map');
     if (!mapEl) return;
 
@@ -910,6 +997,8 @@
             } else {
               map.fitBounds(L.latLngBounds(coords).pad(0.3), { maxZoom: 10 });
             }
+            // 地図を動かしたあと、その旅のカードまで運ぶ（絞り込み中なら解除してから）
+            if (trip.link) window.__gotoTripCard && window.__gotoTripCard(trip.link);
           });
           legend.appendChild(item);
         });
