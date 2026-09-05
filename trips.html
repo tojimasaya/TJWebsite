@@ -751,10 +751,10 @@
       scrollWheelZoom: false
     });
 
-    // Tile layer — CartoDB Voyager (clean, label-friendly)
-    L.tileLayer('https://{s}.basemaps.cartocdn.com/rastertiles/voyager/{z}/{x}/{y}{r}.png', {
-      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OSM</a> &copy; <a href="https://carto.com/">CARTO</a>',
-      maxZoom: 18
+    // Tile layer — OpenStreetMap standard (白鷺三十六景の地図と同じ)
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a>',
+      maxZoom: 19
     }).addTo(map);
 
     // Add base markers
@@ -831,7 +831,7 @@
             if (coords.length === 1) {
               map.setView(coords[0], 6);
             } else {
-              map.fitBounds(L.latLngBounds(coords).pad(0.3));
+              map.fitBounds(L.latLngBounds(coords).pad(0.3), { maxZoom: 10 });
             }
           });
           legend.appendChild(item);
