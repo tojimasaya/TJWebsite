@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-03T00:00:00+09:00",
+  "generatedAt": "2026-09-06T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "しばしの別れの飲茶、ドリアン屋と不動産屋の猫",
+      "url": "/fragments/hongkong-farewell-yumcha.html",
+      "external": false,
+      "date": "2026-09-06",
+      "thumb": "/assets/images/photo-notes/hongkong-farewell-yumcha-cat.webp"
+    },
     {
       "kind": "fragment",
       "kindLabel": "断章",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-08-09",
       "thumb": "/assets/images/shirasagi/webp/thumb/35.webp"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "息子を手伝えた日と、ワンピース新幹線",
-      "url": "/fragments/himeji-onepiece-shinkansen-takopia.html",
-      "external": false,
-      "date": "2026-08-04",
-      "thumb": "/assets/images/photo-notes/himeji-onepiece-shinkansen.webp"
     }
   ]
 }
