@@ -9,12 +9,45 @@
     "link": "turkey-travel-journal.html",
     "image": "/assets/images/gallery/cappadocia-thumbnail.webp",
     "cities": [
-      { "name": "Cappadocia",  "lat": 38.6431, "lng": 34.8289, "detail": "cappadocia-detail.html" },
-      { "name": "Konya",       "lat": 37.8746, "lng": 32.4932, "detail": "konya-detail.html" },
-      { "name": "Pamukkale",   "lat": 37.9204, "lng": 29.1187, "detail": "pamukkale-detail.html" },
-      { "name": "Ephesus",     "lat": 37.9395, "lng": 27.3417, "detail": "ephesus-detail.html" },
-      { "name": "Safranbolu",  "lat": 41.2539, "lng": 32.6927, "detail": "safranbolu-detail.html" },
-      { "name": "Istanbul",    "lat": 41.0082, "lng": 28.9784, "detail": "istanbul-detail.html" }
+      {
+        "name": "Cappadocia",
+        "lat": 38.6431,
+        "lng": 34.8289,
+        "detail": "cappadocia-detail.html"
+      },
+      {
+        "name": "Konya",
+        "lat": 37.8746,
+        "lng": 32.4932,
+        "detail": "konya-detail.html"
+      },
+      {
+        "name": "Pamukkale",
+        "lat": 37.9204,
+        "lng": 29.1187,
+        "detail": "pamukkale-detail.html"
+      },
+      {
+        "name": "Ephesus",
+        "lat": 37.9395,
+        "lng": 27.3417,
+        "detail": "ephesus-detail.html"
+      },
+      {
+        "name": "Safranbolu",
+        "lat": 41.2539,
+        "lng": 32.6927,
+        "detail": "safranbolu-detail.html"
+      },
+      {
+        "name": "Istanbul",
+        "lat": 41.0082,
+        "lng": 28.9784,
+        "detail": "istanbul-detail.html"
+      }
+    ],
+    "articles": [
+      "turkey"
     ]
   },
   {
@@ -27,14 +60,57 @@
     "link": "tibet-travel-journal.html",
     "image": "/assets/images/gallery/lhasa.webp",
     "cities": [
-      { "name": "広州 (Guangzhou)", "lat": 23.1291, "lng": 113.2644, "detail": "tibet-day01.html" },
-      { "name": "武昌 (Wuchang)",   "lat": 30.5539, "lng": 114.3162, "detail": "tibet-day01.html" },
-      { "name": "ゴルムド (Golmud)", "lat": 36.4021, "lng": 94.9034, "detail": "tibet-day03.html" },
-      { "name": "拉薩 (Lhasa)",     "lat": 29.6500, "lng": 91.1000, "detail": "tibet-day04.html" },
-      { "name": "ギャンツェ (Gyantse)", "lat": 28.9500, "lng": 89.6300, "detail": "tibet-day05.html" },
-      { "name": "シガツェ (Xigaze)", "lat": 29.2500, "lng": 88.8800, "detail": "tibet-day06.html" },
-      { "name": "西安 (Xi'an)",     "lat": 34.3416, "lng": 108.9398, "detail": "tibet-day09.html" },
-      { "name": "香港 (Hong Kong)", "lat": 22.3193, "lng": 114.1694, "detail": "tibet-day11.html" }
+      {
+        "name": "広州 (Guangzhou)",
+        "lat": 23.1291,
+        "lng": 113.2644,
+        "detail": "tibet-day01.html"
+      },
+      {
+        "name": "武昌 (Wuchang)",
+        "lat": 30.5539,
+        "lng": 114.3162,
+        "detail": "tibet-day01.html"
+      },
+      {
+        "name": "ゴルムド (Golmud)",
+        "lat": 36.4021,
+        "lng": 94.9034,
+        "detail": "tibet-day03.html"
+      },
+      {
+        "name": "拉薩 (Lhasa)",
+        "lat": 29.65,
+        "lng": 91.1,
+        "detail": "tibet-day04.html"
+      },
+      {
+        "name": "ギャンツェ (Gyantse)",
+        "lat": 28.95,
+        "lng": 89.63,
+        "detail": "tibet-day05.html"
+      },
+      {
+        "name": "シガツェ (Xigaze)",
+        "lat": 29.25,
+        "lng": 88.88,
+        "detail": "tibet-day06.html"
+      },
+      {
+        "name": "西安 (Xi'an)",
+        "lat": 34.3416,
+        "lng": 108.9398,
+        "detail": "tibet-day09.html"
+      },
+      {
+        "name": "香港 (Hong Kong)",
+        "lat": 22.3193,
+        "lng": 114.1694,
+        "detail": "tibet-day11.html"
+      }
+    ],
+    "articles": [
+      "tibet"
     ]
   },
   {
@@ -47,14 +123,83 @@
     "link": "germany-travel-journal.html",
     "image": "/assets/images/gallery/cologne.webp",
     "cities": [
-      { "name": "フランクフルト (Frankfurt)", "lat": 50.1109, "lng": 8.6821 },
-      { "name": "ヴェッツラー (Wetzlar) — Leitz Park", "lat": 50.5520, "lng": 8.5045, "detail": "germany-wetzlar.html" },
-      { "name": "ケルン (Köln) — Photokina", "lat": 50.9375, "lng": 6.9603, "detail": "germany-koln.html" },
-      { "name": "ハイデルベルク (Heidelberg)", "lat": 49.3988, "lng": 8.6724, "detail": "germany-heidelberg.html" },
-      { "name": "シュトゥットガルト (Stuttgart)", "lat": 48.7758, "lng": 9.1829, "detail": "germany-heidelberg.html" },
-      { "name": "ニュルンベルク (Nürnberg)", "lat": 49.4521, "lng": 11.0767, "detail": "germany-nurnberg.html" },
-      { "name": "プラハ (Praha)", "lat": 50.0755, "lng": 14.4378, "detail": "prague-travel-journal.html" },
-      { "name": "ドレスデン (Dresden)", "lat": 51.0504, "lng": 13.7373, "detail": "prague-travel-journal.html" }
+      {
+        "name": "フランクフルト (Frankfurt)",
+        "lat": 50.1109,
+        "lng": 8.6821,
+        "articles": [
+          "germany",
+          "prague"
+        ]
+      },
+      {
+        "name": "ヴェッツラー (Wetzlar) — Leitz Park",
+        "lat": 50.552,
+        "lng": 8.5045,
+        "detail": "germany-wetzlar.html",
+        "articles": [
+          "germany"
+        ]
+      },
+      {
+        "name": "ケルン (Köln) — Photokina",
+        "lat": 50.9375,
+        "lng": 6.9603,
+        "detail": "germany-koln.html",
+        "articles": [
+          "germany"
+        ]
+      },
+      {
+        "name": "ハイデルベルク (Heidelberg)",
+        "lat": 49.3988,
+        "lng": 8.6724,
+        "detail": "germany-heidelberg.html",
+        "articles": [
+          "germany"
+        ]
+      },
+      {
+        "name": "シュトゥットガルト (Stuttgart)",
+        "lat": 48.7758,
+        "lng": 9.1829,
+        "detail": "germany-heidelberg.html",
+        "articles": [
+          "germany"
+        ]
+      },
+      {
+        "name": "ニュルンベルク (Nürnberg)",
+        "lat": 49.4521,
+        "lng": 11.0767,
+        "detail": "germany-nurnberg.html",
+        "articles": [
+          "germany",
+          "prague"
+        ]
+      },
+      {
+        "name": "プラハ (Praha)",
+        "lat": 50.0755,
+        "lng": 14.4378,
+        "detail": "prague-travel-journal.html",
+        "articles": [
+          "prague"
+        ]
+      },
+      {
+        "name": "ドレスデン (Dresden)",
+        "lat": 51.0504,
+        "lng": 13.7373,
+        "detail": "prague-travel-journal.html",
+        "articles": [
+          "prague"
+        ]
+      }
+    ],
+    "articles": [
+      "germany",
+      "prague"
     ]
   },
   {
@@ -67,13 +212,50 @@
     "link": "italy-travel-journal.html",
     "image": "/assets/images/gallery/venice.webp",
     "cities": [
-      { "name": "ミラノ (Milano)",       "lat": 45.4642, "lng": 9.1900,  "detail": "italy-milano.html" },
-      { "name": "ベネツィア (Venezia)",   "lat": 45.4408, "lng": 12.3155, "detail": "italy-venezia.html" },
-      { "name": "フィレンツェ (Firenze)", "lat": 43.7696, "lng": 11.2558, "detail": "italy-firenze.html" },
-      { "name": "チンクエ・テッレ (Cinque Terre)", "lat": 44.1461, "lng": 9.6439, "detail": "italy-cinqueterre.html" },
-      { "name": "ナポリ (Napoli)",        "lat": 40.8518, "lng": 14.2681, "detail": "italy-napoli.html" },
-      { "name": "ローマ (Roma)",          "lat": 41.9028, "lng": 12.4964, "detail": "italy-roma.html" },
-      { "name": "ケルン (Köln) — Photokina", "lat": 50.9375, "lng": 6.9603 }
+      {
+        "name": "ミラノ (Milano)",
+        "lat": 45.4642,
+        "lng": 9.19,
+        "detail": "italy-milano.html"
+      },
+      {
+        "name": "ベネツィア (Venezia)",
+        "lat": 45.4408,
+        "lng": 12.3155,
+        "detail": "italy-venezia.html"
+      },
+      {
+        "name": "フィレンツェ (Firenze)",
+        "lat": 43.7696,
+        "lng": 11.2558,
+        "detail": "italy-firenze.html"
+      },
+      {
+        "name": "チンクエ・テッレ (Cinque Terre)",
+        "lat": 44.1461,
+        "lng": 9.6439,
+        "detail": "italy-cinqueterre.html"
+      },
+      {
+        "name": "ナポリ (Napoli)",
+        "lat": 40.8518,
+        "lng": 14.2681,
+        "detail": "italy-napoli.html"
+      },
+      {
+        "name": "ローマ (Roma)",
+        "lat": 41.9028,
+        "lng": 12.4964,
+        "detail": "italy-roma.html"
+      },
+      {
+        "name": "ケルン (Köln) — Photokina",
+        "lat": 50.9375,
+        "lng": 6.9603
+      }
+    ],
+    "articles": [
+      "italy"
     ]
   },
   {
@@ -86,8 +268,21 @@
     "link": "taiwan-travel-journal.html",
     "image": "/assets/images/trips/taiwan/sunmoonlake/01-05.webp",
     "cities": [
-      { "name": "台北 (Taipei)", "lat": 25.0330, "lng": 121.5654, "detail": "taiwan-travel-journal.html" },
-      { "name": "日月潭 (Sun Moon Lake)", "lat": 23.8516, "lng": 120.9155, "detail": "taiwan-sunmoonlake.html" }
+      {
+        "name": "台北 (Taipei)",
+        "lat": 25.033,
+        "lng": 121.5654,
+        "detail": "taiwan-travel-journal.html"
+      },
+      {
+        "name": "日月潭 (Sun Moon Lake)",
+        "lat": 23.8516,
+        "lng": 120.9155,
+        "detail": "taiwan-sunmoonlake.html"
+      }
+    ],
+    "articles": [
+      "taiwan"
     ]
   },
   {
@@ -100,8 +295,21 @@
     "link": "myanmar-travel-journal.html",
     "image": "/assets/images/trips/myanmar/bagan-01.webp",
     "cities": [
-      { "name": "ヤンゴン (Yangon)", "lat": 16.8409, "lng": 96.1735, "detail": "myanmar-travel-journal.html" },
-      { "name": "バガン (Bagan)", "lat": 21.1717, "lng": 94.8585, "detail": "myanmar-travel-journal.html" }
+      {
+        "name": "ヤンゴン (Yangon)",
+        "lat": 16.8409,
+        "lng": 96.1735,
+        "detail": "myanmar-travel-journal.html"
+      },
+      {
+        "name": "バガン (Bagan)",
+        "lat": 21.1717,
+        "lng": 94.8585,
+        "detail": "myanmar-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "myanmar"
     ]
   },
   {
@@ -114,7 +322,15 @@
     "link": "hoian-travel-journal.html",
     "image": "/assets/images/trips/hoian/2016/03-03.png",
     "cities": [
-      { "name": "ホイアン (Hoi An)", "lat": 15.8801, "lng": 108.3380, "detail": "hoian-travel-journal.html" }
+      {
+        "name": "ホイアン (Hoi An)",
+        "lat": 15.8801,
+        "lng": 108.338,
+        "detail": "hoian-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "hoian"
     ]
   },
   {
@@ -127,8 +343,21 @@
     "link": "london-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "ロンドン (London)", "lat": 51.5074, "lng": -0.1278, "detail": "london-travel-journal.html" },
-      { "name": "バース (Bath) — Prior Park College", "lat": 51.3811, "lng": -2.3590, "detail": "london-travel-journal.html" }
+      {
+        "name": "ロンドン (London)",
+        "lat": 51.5074,
+        "lng": -0.1278,
+        "detail": "london-travel-journal.html"
+      },
+      {
+        "name": "バース (Bath) — Prior Park College",
+        "lat": 51.3811,
+        "lng": -2.359,
+        "detail": "london-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "london"
     ]
   },
   {
@@ -141,8 +370,21 @@
     "link": "france-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "パリ (Paris)", "lat": 48.8566, "lng": 2.3522, "detail": "france-travel-journal.html" },
-      { "name": "モンサンミッシェル (Mont Saint-Michel)", "lat": 48.6361, "lng": -1.5115, "detail": "france-travel-journal.html" }
+      {
+        "name": "パリ (Paris)",
+        "lat": 48.8566,
+        "lng": 2.3522,
+        "detail": "france-travel-journal.html"
+      },
+      {
+        "name": "モンサンミッシェル (Mont Saint-Michel)",
+        "lat": 48.6361,
+        "lng": -1.5115,
+        "detail": "france-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "france"
     ]
   },
   {
@@ -155,9 +397,26 @@
     "link": "muine-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "ホーチミン (Ho Chi Minh City)", "lat": 10.8231, "lng": 106.6297 },
-      { "name": "ムイネー (Mui Ne)", "lat": 10.9330, "lng": 108.2872, "detail": "muine-travel-journal.html" },
-      { "name": "カムラン湾 (Cam Ranh Bay)", "lat": 11.9136, "lng": 109.1590, "detail": "muine-travel-journal.html" }
+      {
+        "name": "ホーチミン (Ho Chi Minh City)",
+        "lat": 10.8231,
+        "lng": 106.6297
+      },
+      {
+        "name": "ムイネー (Mui Ne)",
+        "lat": 10.933,
+        "lng": 108.2872,
+        "detail": "muine-travel-journal.html"
+      },
+      {
+        "name": "カムラン湾 (Cam Ranh Bay)",
+        "lat": 11.9136,
+        "lng": 109.159,
+        "detail": "muine-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "muine"
     ]
   },
   {
@@ -170,7 +429,15 @@
     "link": "hochiminh-travel-journal.html",
     "image": "/assets/images/gallery/vietnam.webp",
     "cities": [
-      { "name": "ホーチミン (Ho Chi Minh City)", "lat": 10.8231, "lng": 106.6297, "detail": "hochiminh-travel-journal.html" }
+      {
+        "name": "ホーチミン (Ho Chi Minh City)",
+        "lat": 10.8231,
+        "lng": 106.6297,
+        "detail": "hochiminh-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "hochiminh"
     ]
   },
   {
@@ -183,8 +450,20 @@
     "link": "halong-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "ハノイ (Hanoi)", "lat": 21.0278, "lng": 105.8342 },
-      { "name": "ハロン湾 (Ha Long Bay)", "lat": 20.9101, "lng": 107.1839, "detail": "halong-travel-journal.html" }
+      {
+        "name": "ハノイ (Hanoi)",
+        "lat": 21.0278,
+        "lng": 105.8342
+      },
+      {
+        "name": "ハロン湾 (Ha Long Bay)",
+        "lat": 20.9101,
+        "lng": 107.1839,
+        "detail": "halong-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "halong"
     ]
   },
   {
@@ -197,8 +476,21 @@
     "link": "thailand-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "バンコク (Bangkok)", "lat": 13.7563, "lng": 100.5018, "detail": "thailand-travel-journal.html" },
-      { "name": "アユタヤ (Ayutthaya)", "lat": 14.3532, "lng": 100.5689, "detail": "thailand-travel-journal.html" }
+      {
+        "name": "バンコク (Bangkok)",
+        "lat": 13.7563,
+        "lng": 100.5018,
+        "detail": "thailand-travel-journal.html"
+      },
+      {
+        "name": "アユタヤ (Ayutthaya)",
+        "lat": 14.3532,
+        "lng": 100.5689,
+        "detail": "thailand-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "thailand"
     ]
   },
   {
@@ -211,8 +503,21 @@
     "link": "malaysia-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "クアラルンプール (Kuala Lumpur)", "lat": 3.1578, "lng": 101.7117, "detail": "malaysia-travel-journal.html" },
-      { "name": "バトゥ洞窟 (Batu Caves)", "lat": 3.2379, "lng": 101.6840, "detail": "malaysia-travel-journal.html" }
+      {
+        "name": "クアラルンプール (Kuala Lumpur)",
+        "lat": 3.1578,
+        "lng": 101.7117,
+        "detail": "malaysia-travel-journal.html"
+      },
+      {
+        "name": "バトゥ洞窟 (Batu Caves)",
+        "lat": 3.2379,
+        "lng": 101.684,
+        "detail": "malaysia-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "malaysia"
     ]
   },
   {
@@ -225,9 +530,27 @@
     "link": "kaiping-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "開平 (Kaiping)", "lat": 22.3762, "lng": 112.6986, "detail": "kaiping-travel-journal.html" },
-      { "name": "赤坎古鎮 (Chikan)", "lat": 22.3247, "lng": 112.5872, "detail": "kaiping-travel-journal.html" },
-      { "name": "立園 (Li Garden)", "lat": 22.3117, "lng": 112.5636, "detail": "kaiping-travel-journal.html" }
+      {
+        "name": "開平 (Kaiping)",
+        "lat": 22.3762,
+        "lng": 112.6986,
+        "detail": "kaiping-travel-journal.html"
+      },
+      {
+        "name": "赤坎古鎮 (Chikan)",
+        "lat": 22.3247,
+        "lng": 112.5872,
+        "detail": "kaiping-travel-journal.html"
+      },
+      {
+        "name": "立園 (Li Garden)",
+        "lat": 22.3117,
+        "lng": 112.5636,
+        "detail": "kaiping-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "kaiping"
     ]
   },
   {
@@ -240,9 +563,27 @@
     "link": "hiroshima-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "広島 (Hiroshima)", "lat": 34.3925, "lng": 132.4610, "detail": "hiroshima-travel-journal.html" },
-      { "name": "宮島・厳島神社 (Miyajima)", "lat": 34.2959, "lng": 132.3197, "detail": "hiroshima-travel-journal.html" },
-      { "name": "呉・大和ミュージアム (Kure)", "lat": 34.2410, "lng": 132.5560, "detail": "hiroshima-travel-journal.html" }
+      {
+        "name": "広島 (Hiroshima)",
+        "lat": 34.3925,
+        "lng": 132.461,
+        "detail": "hiroshima-travel-journal.html"
+      },
+      {
+        "name": "宮島・厳島神社 (Miyajima)",
+        "lat": 34.2959,
+        "lng": 132.3197,
+        "detail": "hiroshima-travel-journal.html"
+      },
+      {
+        "name": "呉・大和ミュージアム (Kure)",
+        "lat": 34.241,
+        "lng": 132.556,
+        "detail": "hiroshima-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "hiroshima"
     ]
   },
   {
@@ -255,8 +596,21 @@
     "link": "taji-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "田路 (Taji, 朝来市)", "lat": 35.2158, "lng": 134.7303, "detail": "taji-travel-journal.html" },
-      { "name": "竹田城跡 (Takeda Castle)", "lat": 35.3004, "lng": 134.8289, "detail": "taji-travel-journal.html" }
+      {
+        "name": "田路 (Taji, 朝来市)",
+        "lat": 35.2158,
+        "lng": 134.7303,
+        "detail": "taji-travel-journal.html"
+      },
+      {
+        "name": "竹田城跡 (Takeda Castle)",
+        "lat": 35.3004,
+        "lng": 134.8289,
+        "detail": "taji-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "taji"
     ]
   },
   {
@@ -269,7 +623,15 @@
     "link": "cebu-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "マクタン島 (Mactan)", "lat": 10.3097, "lng": 123.9784, "detail": "cebu-travel-journal.html" }
+      {
+        "name": "マクタン島 (Mactan)",
+        "lat": 10.3097,
+        "lng": 123.9784,
+        "detail": "cebu-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "cebu"
     ]
   },
   {
@@ -282,8 +644,21 @@
     "link": "kyoto-sasayama-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "祇園・ライカ京都店 (Kyoto)", "lat": 35.0037, "lng": 135.7752, "detail": "kyoto-sasayama-travel-journal.html" },
-      { "name": "丹波篠山 (Tamba-Sasayama)", "lat": 35.0725, "lng": 135.2192, "detail": "kyoto-sasayama-travel-journal.html" }
+      {
+        "name": "祇園・ライカ京都店 (Kyoto)",
+        "lat": 35.0037,
+        "lng": 135.7752,
+        "detail": "kyoto-sasayama-travel-journal.html"
+      },
+      {
+        "name": "丹波篠山 (Tamba-Sasayama)",
+        "lat": 35.0725,
+        "lng": 135.2192,
+        "detail": "kyoto-sasayama-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "kyoto-sasayama"
     ]
   },
   {
@@ -296,7 +671,15 @@
     "link": "kuma-travel-journal.html",
     "image": null,
     "cities": [
-      { "name": "久万高原町 (Kumakogen)", "lat": 33.6556, "lng": 132.9036, "detail": "kuma-travel-journal.html" }
+      {
+        "name": "久万高原町 (Kumakogen)",
+        "lat": 33.6556,
+        "lng": 132.9036,
+        "detail": "kuma-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "kuma"
     ]
   }
 ]
