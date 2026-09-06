@@ -18,16 +18,22 @@
         "caption": "Farewell Yum Cha / Hong Kong",
         "image": "assets/images/photo-notes/hongkong-farewell-yumcha-dimsum.jpg",
         "imageWebp": "assets/images/photo-notes/hongkong-farewell-yumcha-dimsum.webp",
-        "alt": "蒸し饅頭、黒ごま巻き、炒めた蘿蔔糕、蝦餃、鳳爪が並ぶ飲茶のテーブル"
+        "alt": "蒸し饅頭、黒ごま巻き、炒めた蘿蔔糕、蝦餃、鳳爪が並ぶ飲茶のテーブル",
+        "width": 1800,
+        "height": 1350
       },
       {
         "title": "増えるドリアン屋",
         "caption": "Durian Stall / Pei Ho St, Sham Shui Po",
         "image": "assets/images/photo-notes/hongkong-farewell-yumcha-durian.jpg",
         "imageWebp": "assets/images/photo-notes/hongkong-farewell-yumcha-durian.webp",
-        "alt": "北河街の果物屋の店先、ピンクの籠に並んだ丸ごとのドリアンの棚"
+        "alt": "北河街の果物屋の店先、ピンクの籠に並んだ丸ごとのドリアンの棚",
+        "width": 1350,
+        "height": 1800
       }
-    ]
+    ],
+    "width": 1800,
+    "height": 1350
   },
   {
     "slug": "kison-goose-vanity-hkd70",

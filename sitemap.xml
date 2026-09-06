@@ -2114,6 +2114,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/hongkong-farewell-yumcha.html</loc>
+    <lastmod>2026-09-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/hongkong-farewell-yumcha-cat.jpg</image:loc>
+      <image:title>しばしの別れの飲茶、ドリアン屋と不動産屋の猫</image:title>
+      <image:caption>不動産屋の店先、赤いマットの上に座る白黒の猫。奥に「租4200元」「租5800」の家賃札</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/kison-goose-vanity-hkd70.html</loc>
     <lastmod>2026-09-03</lastmod>
     <changefreq>monthly</changefreq>
