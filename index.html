@@ -290,6 +290,7 @@
 
     .identity-hero-route span {
       display: block;
+      overflow-wrap: anywhere;
       font-family: 'Inter', sans-serif;
       font-size: 0.64rem;
       letter-spacing: 0.18em;
@@ -471,443 +472,230 @@
       border-color: #1a3fb9;
     }
 
-    /* ── 今日の断章 ── */
-    .recent-frame {
-      background: var(--white, #fff);
-      border-bottom: 1px solid var(--border-color, #e5e5e5);
-      padding: 5rem 2rem;
-    }
-
-    .recent-frame-inner {
-      max-width: 1100px;
-      margin: 0 auto;
+    /* ── 最近の更新：特集する断章 ── */
+    .home-feature {
       display: grid;
-      grid-template-columns: minmax(320px, 1.05fr) minmax(0, 0.9fr);
-      gap: 3rem;
-      align-items: start;
-    }
-
-    .recent-frame-gallery {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) minmax(124px, 0.28fr);
-      gap: 0.85rem;
-      align-items: start;
-    }
-
-    .recent-frame-media {
-      position: relative;
-      overflow: hidden;
-      border-radius: 6px;
-      /* 写真の実寸比を JS が入れる。JS が動かないときの既定値が 4 / 3 */
-      aspect-ratio: 4 / 3;
-      color: #fff;
-    }
-
-    .recent-frame-main {
-      margin: 0;
-    }
-
-    .recent-frame-media picture {
-      display: block;
-      width: 100%;
-      height: 100%;
-    }
-
-    .recent-frame-media img {
-      display: block;
-      width: 100%;
-    }
-
-    .recent-frame-media img {
-      height: 100%;
-      object-fit: cover;
-      transition: opacity 0.25s ease, transform 0.45s ease;
-    }
-
-    .recent-frame-media.is-missing picture {
-      display: none;
-    }
-
-    .recent-frame-placeholder {
-      display: none;
-      height: 100%;
-      min-height: 240px;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 2.4rem;
       align-items: center;
-      justify-content: center;
-      padding: 2rem;
-      background:
-        linear-gradient(135deg, rgba(255,255,255,0.08), rgba(255,255,255,0)),
-        #202124;
-      border: 1px solid rgba(255,255,255,0.08);
+      padding: 0 0 2.2rem;
+      margin-bottom: 0.6rem;
     }
 
-    .recent-frame-media.is-missing .recent-frame-placeholder {
-      display: flex;
-    }
-
-    .recent-frame-placeholder span {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.22em;
-      color: rgba(255,255,255,0.62);
-      text-transform: uppercase;
-    }
-
-    .recent-frame-caption {
-      position: absolute;
-      left: 1rem;
-      bottom: 1rem;
-      max-width: calc(100% - 2rem);
-      padding: 0.55rem 0.7rem;
-      background: rgba(0, 0, 0, 0.58);
-      border-radius: 4px;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.12em;
-      line-height: 1.5;
-      text-transform: uppercase;
-      color: #fff;
-    }
-
-    .recent-frame-sideframes {
-      display: grid;
-      grid-auto-rows: 1fr;
-      align-self: stretch;
-      gap: 0.85rem;
-    }
-
-    .recent-frame-sidecard {
-      position: relative;
-      display: block;
+    .home-feature-media {
+      margin: 0;
       overflow: hidden;
-      min-height: 0;
-      width: 100%;
-      border: 0;
       border-radius: 6px;
-      padding: 0;
-      background: #202124;
-      color: #fff;
-      cursor: pointer;
-      font: inherit;
-      text-align: left;
+      background: var(--hover-color, #f5f5f5);
+      aspect-ratio: 3 / 2;
     }
 
-    .recent-frame-sidecard picture,
-    .recent-frame-sidecard img {
+    .home-feature-media a { display: block; width: 100%; height: 100%; }
+
+    .home-feature-media img {
       display: block;
       width: 100%;
       height: 100%;
-    }
-
-    .recent-frame-sidecard img {
       object-fit: cover;
-      transition: transform 0.45s ease;
+      transition: transform 0.6s ease;
     }
 
-    .recent-frame-sidecard:hover img {
-      transform: scale(1.04);
-    }
+    .home-feature-media:hover img { transform: scale(1.02); }
 
-    .recent-frame-sidecard:focus-visible {
-      outline: 2px solid rgba(155, 91, 46, 0.72);
-      outline-offset: 3px;
-    }
-
-    .recent-frame-sidecaption {
-      position: absolute;
-      left: 0.65rem;
-      right: 0.65rem;
-      bottom: 0.65rem;
-      padding: 0.45rem 0.55rem;
-      background: rgba(0, 0, 0, 0.58);
-      border-radius: 4px;
-      font-family: 'Inter', 'Noto Serif JP', sans-serif;
-      font-size: 0.62rem;
-      letter-spacing: 0.08em;
-      line-height: 1.45;
-      color: #fff;
-    }
-
-    .recent-frame-sideframes:empty {
-      display: none;
-    }
-
-    .recent-frame-label {
+    .home-feature-label {
       display: inline-flex;
       align-items: center;
       gap: 0.65rem;
       font-family: 'Inter', sans-serif;
       font-size: 0.7rem;
       letter-spacing: 0.16em;
+      text-transform: uppercase;
       color: #9b5b2e;
-      text-transform: uppercase;
-      margin-bottom: 1.1rem;
+      margin: 0 0 0.9rem;
     }
 
-    .recent-frame-label::before {
-      content: '';
-      width: 34px;
-      height: 1px;
-      background: #9b5b2e;
-    }
+    .home-feature-label::before { content: ''; width: 34px; height: 1px; background: #9b5b2e; }
 
-    .recent-frame-subscribe {
-      max-width: 1100px;
-      margin: 0 auto;
-      padding: 0 clamp(20px, 4vw, 48px);
-    }
-
-    .recent-frame-subscribe .tjm-subscribe {
-      margin-top: 34px;
-    }
-
-    .recent-frame-title-link {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s ease;
-    }
-
-    .recent-frame-title-link:hover {
-      color: var(--accent-color, #2563eb);
-    }
-
-    .recent-frame-title {
+    .home-feature-title {
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: clamp(1.55rem, 2.35vw, 2.2rem);
-      font-weight: 400;
-      letter-spacing: 0.08em;
+      font-size: clamp(1.2rem, 1.8vw, 1.55rem);
+      font-weight: 500;
       line-height: 1.6;
-      color: var(--text-color, #333);
-      margin-bottom: 0.7rem;
-    }
-
-    .recent-frame-meta {
-      font-family: 'Inter', 'Noto Serif JP', sans-serif;
-      font-size: 0.75rem;
-      letter-spacing: 0.12em;
-      color: var(--text-lighter, #999);
-      text-transform: uppercase;
-      margin-bottom: 1.2rem;
-    }
-
-    .recent-frame-copy {
-      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: 0.92rem;
-      line-height: 2.1;
       letter-spacing: 0.04em;
-      color: var(--text-light, #666);
-      margin-bottom: 1.7rem;
+      color: var(--text-color, #333);
+      margin: 0 0 0.5rem;
     }
 
-    .recent-frame-link {
+    .home-feature-title a { color: inherit; text-decoration: none; }
+    .home-feature-title a:hover { color: #9b5b2e; }
+
+    .home-feature-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.06em;
+      color: var(--text-lighter, #999);
+      margin: 0 0 0.9rem;
+    }
+
+    .home-feature-lead {
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.95rem;
+      line-height: 2;
+      letter-spacing: 0.02em;
+      color: var(--text-light, #666);
+      margin: 0 0 1.2rem;
+    }
+
+    .home-feature-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 1.2rem;
+      margin: 0;
+    }
+
+    .home-feature-read {
       display: inline-flex;
       align-items: center;
-      justify-content: center;
       min-height: 44px;
-      padding: 0.75rem 1.1rem;
-      border: 1px solid rgba(155, 91, 46, 0.32);
-      border-radius: 4px;
-      font-family: 'Inter', 'Noto Serif JP', sans-serif;
-      font-size: 0.78rem;
-      letter-spacing: 0.1em;
-      color: #9b5b2e;
-      text-decoration: none;
-      transition: border-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
-    }
-
-    .recent-frame-link:hover {
-      border-color: rgba(155, 91, 46, 0.65);
-      color: #7b4420;
-      transform: translateY(-1px);
-    }
-
-    .recent-frame-archive {
-      max-width: 1100px;
-      margin: 3.75rem auto 0;
-      padding-top: 2.25rem;
-      border-top: 1px solid var(--border-color, #e5e5e5);
-    }
-
-    .recent-frame-archive-head {
-      display: flex;
-      align-items: end;
-      justify-content: space-between;
-      gap: 1.5rem;
-      margin-bottom: 1.25rem;
-    }
-
-    .recent-frame-archive-kicker {
+      padding: 0.6rem 1.3rem;
+      border-radius: 24px;
+      background: #9b5b2e;
+      color: #fff;
       font-family: 'Inter', sans-serif;
-      font-size: 0.68rem;
-      letter-spacing: 0.16em;
-      color: #9b5b2e;
-      text-transform: uppercase;
-      margin-bottom: 0.45rem;
-    }
-
-    .recent-frame-archive-title {
-      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: 1.25rem;
-      font-weight: 400;
-      letter-spacing: 0.08em;
-      color: var(--text-color, #333);
-    }
-
-    .recent-frame-archive-note {
-      max-width: 360px;
-      font-family: 'Inter', 'Noto Serif JP', sans-serif;
-      font-size: 0.75rem;
-      line-height: 1.8;
+      font-size: 0.8rem;
       letter-spacing: 0.04em;
-      color: var(--text-lighter, #999);
-      text-align: right;
-    }
-
-    .recent-frame-archive-note a {
-      color: var(--accent-color);
       text-decoration: none;
-      white-space: nowrap;
+      transition: opacity 0.2s ease;
     }
 
-    .recent-frame-archive-note a:hover {
-      text-decoration: underline;
-    }
+    .home-feature-read:hover { opacity: 0.9; }
 
-    .recent-frame-archive-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1rem;
-    }
-
-    .recent-frame-archive-card {
-      display: grid;
-      grid-template-columns: 118px minmax(0, 1fr);
-      gap: 0.9rem;
-      align-items: start;
-      min-height: 132px;
-      padding: 0.8rem;
-      border: 1px solid var(--border-color, #e5e5e5);
-      border-radius: 6px;
-      background: #fbfbfa;
-      color: inherit;
+    .home-feature-all {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      color: var(--text-light, #666);
       text-decoration: none;
-      transition: border-color 0.3s ease, transform 0.3s ease, background 0.3s ease;
+      border-bottom: 1px solid var(--border-color, #e5e5e5);
+      padding-bottom: 2px;
     }
 
-    .recent-frame-archive-card:focus-visible {
-      outline: 2px solid rgba(155, 91, 46, 0.55);
-      outline-offset: 3px;
+    .home-feature-all:hover { color: #9b5b2e; border-color: #9b5b2e; }
+
+    /* ── 続けている作品 ── */
+    .home-works > .home-shirasagi { border-bottom: none; padding-bottom: 2.5rem; }
+    .home-neon { padding: 0 2rem 4.5rem; background: var(--bg-color, #fafafa); border-bottom: 1px solid var(--border-color, #e5e5e5); }
+
+    .home-neon-inner {
+      max-width: 1100px;
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(0, 0.95fr);
+      gap: 3rem;
+      align-items: center;
     }
 
-    .recent-frame-archive-card:hover {
-      border-color: rgba(155, 91, 46, 0.38);
-      background: #fff;
-      transform: translateY(-2px);
-    }
-
-    .recent-frame-archive-thumb {
+    .home-neon-media {
+      margin: 0;
       overflow: hidden;
-      border-radius: 4px;
-      background: #202124;
-      aspect-ratio: 4 / 3;
+      border-radius: 6px;
+      background: var(--hover-color, #f5f5f5);
+      aspect-ratio: 3 / 2;
     }
 
-    .recent-frame-archive-thumb picture,
-    .recent-frame-archive-thumb img {
+    .home-neon-media a { display: block; width: 100%; height: 100%; }
+
+    .home-neon-media img {
       display: block;
       width: 100%;
       height: 100%;
-    }
-
-    .recent-frame-archive-thumb img {
       object-fit: cover;
-      transition: transform 0.45s ease;
+      transition: transform 0.6s ease;
     }
 
-    .recent-frame-archive-card:hover img {
-      transform: scale(1.04);
-    }
+    .home-neon-media:hover img { transform: scale(1.02); }
 
-    .recent-frame-archive-meta {
-      display: block;
-      font-family: 'Inter', 'Noto Serif JP', sans-serif;
-      font-size: 0.66rem;
-      letter-spacing: 0.1em;
-      line-height: 1.5;
-      color: var(--text-lighter, #999);
+    .home-neon-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.65rem;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
-      margin-bottom: 0.35rem;
+      color: #2f5d7c;
+      margin: 0 0 1rem;
     }
 
-    .recent-frame-archive-card-title {
-      display: block;
+    .home-neon-kicker::before { content: ''; width: 34px; height: 1px; background: #2f5d7c; }
+
+    .home-neon-title {
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: 0.95rem;
+      font-size: clamp(1.35rem, 2vw, 1.8rem);
       font-weight: 400;
-      line-height: 1.65;
-      letter-spacing: 0.05em;
+      letter-spacing: 0.08em;
       color: var(--text-color, #333);
-      margin-bottom: 0.35rem;
+      margin: 0 0 1rem;
     }
 
-    .recent-frame-archive-copy {
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: 0.76rem;
-      line-height: 1.8;
-      letter-spacing: 0.03em;
-      color: var(--text-light, #666);
-    }
-
-    /* ── Travels Section ── */
-    .travels {
-      background: var(--white, #fff);
-      padding: 5rem 2rem;
-    }
-
-    .travels-inner {
-      max-width: 1100px;
-      margin: 0 auto;
-    }
-
-    .section-header-row {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      margin-bottom: 2.5rem;
-    }
-
-    .section-title-jp {
+    .home-neon-lead {
       font-family: 'Noto Serif JP', serif;
-      font-size: 1.3rem;
-      font-weight: 400;
-      letter-spacing: 0.15em;
-      color: var(--text-color, #333);
+      font-size: 0.92rem;
+      line-height: 2;
+      color: var(--text-light, #666);
+      margin: 0 0 1.4rem;
     }
 
-    .section-link {
+    .home-neon-btn {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.7rem 1.4rem;
+      border-radius: 24px;
+      border: 1px solid #2f5d7c;
+      color: #2f5d7c;
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
-      color: var(--text-lighter, #999);
+      letter-spacing: 0.04em;
       text-decoration: none;
-      letter-spacing: 0.1em;
-      transition: color 0.3s;
+      transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .section-link:hover {
-      color: #c49a6c;
+    .home-neon-btn:hover { background: #2f5d7c; color: #fff; }
+
+    /* ヒーロー直下、香港ハンドブックへの近道 */
+    .identity-hero-handbook {
+      margin: 1.6rem 0 0;
+      font-family: 'Noto Serif JP', serif;
+      font-size: 0.85rem;
+      line-height: 1.9;
+      color: rgba(255, 255, 255, 0.82);
     }
 
-    .travel-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.2rem;
+    .identity-hero-handbook a {
+      color: #fff;
+      text-decoration: none;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
+      padding-bottom: 2px;
+      margin-left: 0.4rem;
     }
 
-    /* ── 香港ハンドブック（一枚看板） ── */
+    .identity-hero-handbook a:hover { border-color: #fff; }
+
+    /* 見出しの階層だけ残して視覚的には隠す */
+    .trip-vh {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      padding: 0;
+      margin: -1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+      white-space: nowrap;
+      border: 0;
+    }
+
+    /* ── 香港ハンドブック ── */
     .handbook-feature {
       max-width: 1200px;
       margin: 0 auto;
@@ -1017,193 +805,139 @@
       }
     }
 
-    .travel-card {
-      position: relative;
-      overflow: hidden;
-      border-radius: 6px;
-      aspect-ratio: 16 / 10;
-    }
 
-    .travel-card a {
-      display: block;
-      width: 100%;
-      height: 100%;
-      text-decoration: none;
-      color: white;
-    }
-
-    .travel-card img {
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      transition: transform 0.6s ease;
-    }
-
-    .travel-card:hover img {
-      transform: scale(1.05);
-    }
-
-    .travel-card-overlay {
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      right: 0;
-      padding: 1.5rem;
-      background: linear-gradient(transparent, rgba(0,0,0,0.7));
-      color: white;
-      z-index: 2;
-    }
-
-    .travel-card-title {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.1rem;
-      letter-spacing: 0.08em;
-      margin-bottom: 0.3rem;
-    }
-
-    .travel-card-meta {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      opacity: 0.7;
-      letter-spacing: 0.1em;
-    }
-
-    .travel-card .travel-card-overlay {
-      padding: 1.1rem;
-    }
-
-    .travel-card .travel-card-title {
-      font-size: 1rem;
-    }
-
-    .travel-card-cta a {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      border: 1px solid var(--border-color, #e5e2da);
-      border-radius: 6px;
-      background: var(--hover-color, #f4f2ec);
-      color: var(--text-color, #333);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .travel-card-cta a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 18px rgba(0,0,0,0.08);
-    }
-
-    .travel-cta-big {
-      font-family: 'Noto Serif JP', serif;
-      font-size: 1.05rem;
-      letter-spacing: 0.12em;
-    }
-
-    .travel-cta-sub {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.75rem;
-      color: var(--text-lighter, #999);
-      letter-spacing: 0.08em;
-    }
-
-    /* ── Latest Articles ── */
-    .latest-articles {
+    /* ── Travels Section ── */
+    .travels {
+      background: var(--white, #fff);
       padding: 5rem 2rem;
+    }
+
+    .travels-inner {
       max-width: 1100px;
       margin: 0 auto;
     }
 
-    .latest-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 1.8rem;
+    .section-header-row {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      margin-bottom: 2.5rem;
     }
 
-    .latest-item {
-      background: var(--white, #fff);
-      border-radius: 6px;
-      overflow: hidden;
-      border: 1px solid var(--border-color, #e5e5e5);
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
-    }
-
-    .latest-item:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 24px rgba(0,0,0,0.08);
-    }
-
-    .latest-item a {
-      text-decoration: none;
-      color: inherit;
-      display: block;
-    }
-
-    .latest-thumb {
-      width: 100%;
-      aspect-ratio: 16 / 9;
-      object-fit: cover;
-      display: block;
-    }
-
-    .latest-content {
-      padding: 1.3rem 1.5rem 1.5rem;
-    }
-
-    .latest-source {
-      font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      color: var(--text-lighter, #999);
-      letter-spacing: 0.15em;
-      text-transform: uppercase;
-      margin-bottom: 0.5rem;
-    }
-
-    .latest-item-title {
+    .section-title-jp {
       font-family: 'Noto Serif JP', serif;
-      font-size: 0.95rem;
-      letter-spacing: 0.04em;
-      line-height: 1.7;
+      font-size: 1.3rem;
+      font-weight: 400;
+      letter-spacing: 0.15em;
       color: var(--text-color, #333);
     }
 
-    .latest-excerpt {
-      margin-top: 0.7rem;
-      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: 0.78rem;
-      line-height: 1.8;
-      letter-spacing: 0.03em;
-      color: var(--text-light, #666);
-      display: -webkit-box;
-      -webkit-line-clamp: 3;
-      -webkit-box-orient: vertical;
-      overflow: hidden;
-    }
-
-    .latest-more-row {
-      text-align: center;
-      margin-top: 2.5rem;
-    }
-
-    .latest-more-btn {
-      display: inline-block;
-      padding: 0.7rem 2rem;
-      border: 1px solid var(--border-color, #e5e5e5);
-      border-radius: 4px;
+    .section-link {
       font-family: 'Inter', sans-serif;
       font-size: 0.8rem;
-      letter-spacing: 0.1em;
-      color: var(--text-light, #666);
+      color: var(--text-lighter, #999);
       text-decoration: none;
-      transition: all 0.3s ease;
+      letter-spacing: 0.1em;
+      transition: color 0.3s;
     }
 
-    .latest-more-btn:hover {
-      border-color: #c49a6c;
+    .section-link:hover {
       color: #c49a6c;
     }
 
-    /* ── About Strip ── */
+    /* ── 旅の記録カード（旅行ページと同じ「写真の下にタイトル」） ── */
+    .travel-grid {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2rem;
+    }
+
+    .travel-card {
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      background: var(--white, #fff);
+      border: 1px solid var(--border-color, #e5e5e5);
+      border-radius: 6px;
+      overflow: hidden;
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .travel-card:hover { transform: translateY(-3px); box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08); }
+    .travel-card:focus-within { box-shadow: 0 0 0 3px var(--focus-color, #2563eb); }
+
+    .travel-card-media {
+      aspect-ratio: 3 / 2;
+      background: var(--hover-color, #f5f5f5);
+    }
+
+    .travel-card-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .travel-card-body { padding: 1.1rem 1.2rem 1.4rem; }
+
+    .travel-card-place {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.68rem;
+      font-weight: 600;
+      letter-spacing: 0.1em;
+      color: var(--text-light, #666);
+      margin: 0 0 0.5rem;
+    }
+
+    .travel-card-title {
+      font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
+      font-size: 1.02rem;
+      font-weight: 500;
+      line-height: 1.6;
+      letter-spacing: 0.03em;
+      color: var(--text-color, #333);
+      margin: 0 0 0.55rem;
+    }
+
+    .travel-card-title a { color: inherit; text-decoration: none; }
+    .travel-card-title a::after { content: ''; position: absolute; inset: 0; }
+    .travel-card-title a:hover { color: #9b5b2e; }
+
+    .travel-card-meta {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.74rem;
+      letter-spacing: 0.03em;
+      color: var(--text-light, #666);
+      margin: 0;
+    }
+
+    .travel-card-sep { margin: 0 0.5rem; color: var(--text-lighter, #999); }
+
+    .travels-cta { margin: 2.2rem 0 0; text-align: center; }
+
+    .travels-cta a {
+      display: inline-flex;
+      align-items: center;
+      min-height: 44px;
+      padding: 0.7rem 1.5rem;
+      border-radius: 24px;
+      border: 1px solid var(--border-color, #e5e5e5);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.8rem;
+      letter-spacing: 0.04em;
+      color: var(--text-color, #333);
+      text-decoration: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .travels-cta a:hover { border-color: var(--text-color, #333); }
+
+    /* ── プロフィール横の購読案内 ── */
+    .about-subscribe { max-width: 720px; margin: 2.6rem auto 0; }
+
     .about-strip {
       background: #2c2c2c;
       color: white;
@@ -1295,6 +1029,7 @@
     }
 
     .footer-social {
+      flex-wrap: wrap;
       display: flex;
       gap: 1.5rem;
     }
@@ -1357,7 +1092,7 @@
       }
 
       .identity-hero-routes {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
         margin-top: 1.25rem;
       }
@@ -1409,59 +1144,19 @@
         grid-template-columns: 1fr;
       }
 
-      .recent-frame {
-        padding: 3.5rem 1.5rem;
-      }
-
-      .recent-frame-inner {
+      .home-feature {
         grid-template-columns: 1fr;
-        gap: 2rem;
+        gap: 1.5rem;
+        padding-bottom: 1.8rem;
       }
 
-      .recent-frame-gallery {
+      .home-neon {
+        padding: 0 1.5rem 3.5rem;
+      }
+
+      .home-neon-inner {
         grid-template-columns: 1fr;
-      }
-
-      .recent-frame-placeholder {
-        min-height: 220px;
-      }
-
-      .recent-frame-sideframes {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        grid-auto-rows: auto;
-        align-self: auto;
-      }
-
-      .recent-frame-sidecard {
-        aspect-ratio: 4 / 3;
-      }
-
-      .recent-frame-link {
-        width: 100%;
-      }
-
-      .recent-frame-archive {
-        margin-top: 2.6rem;
-        padding-top: 1.7rem;
-      }
-
-      .recent-frame-archive-head {
-        display: block;
-      }
-
-      .recent-frame-archive-note {
-        max-width: none;
-        margin-top: 0.7rem;
-        text-align: left;
-      }
-
-      .recent-frame-archive-grid {
-        grid-template-columns: 1fr;
-      }
-
-      .recent-frame-archive-card {
-        grid-template-columns: 104px minmax(0, 1fr);
-        min-height: 120px;
+        gap: 1.8rem;
       }
 
       .travels {
@@ -1469,37 +1164,8 @@
       }
 
       .travel-grid {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 0.7rem;
-      }
-
-      .travel-card .travel-card-overlay {
-        padding: 0.75rem;
-      }
-
-      .travel-card .travel-card-title {
-        font-size: 0.85rem;
-      }
-
-      .travel-card .travel-card-meta {
-        font-size: 0.65rem;
-      }
-
-      .travel-cta-big {
-        font-size: 0.9rem;
-      }
-
-      .travel-cta-sub {
-        font-size: 0.65rem;
-      }
-
-      .latest-articles {
-        padding: 3.5rem 1.5rem;
-      }
-
-      .latest-grid {
         grid-template-columns: 1fr;
-        gap: 1.2rem;
+        gap: 1.4rem;
       }
 
       .about-strip {
@@ -1531,20 +1197,10 @@
 
     @media (max-width: 1000px) and (min-width: 769px) {
       .travel-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .travel-card-featured {
-        grid-column: span 2;
-        grid-row: span 1;
-        min-height: 300px;
-      }
-
-      .latest-grid {
         grid-template-columns: repeat(2, 1fr);
       }
 
-      .recent-frame-inner {
+      .home-feature {
         grid-template-columns: 1fr;
       }
 
@@ -1554,14 +1210,6 @@
 
       .timely-notice-grid {
         grid-template-columns: repeat(3, 1fr);
-      }
-
-      .recent-frame-archive-grid {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .recent-frame-archive-card {
-        grid-template-columns: 1fr;
       }
     }
 
@@ -1599,10 +1247,6 @@
     .home-shirasagi-latest a:hover { color: #9b5b2e; border-color: #9b5b2e; }
     .home-shirasagi-meta { font-family: 'Inter', sans-serif; font-size: 0.72rem; letter-spacing: 0.06em; color: var(--text-lighter, #999); margin: 0 0 0.9rem; }
     .home-shirasagi-note { font-family: 'Noto Serif JP', serif; font-size: 0.84rem; line-height: 1.9; color: var(--text-light, #666); margin: 0 0 1.2rem; }
-    .home-shirasagi-seasons { display: flex; flex-wrap: wrap; gap: 8px; margin-bottom: 1.3rem; }
-    .home-shirasagi-season { display: inline-flex; align-items: baseline; gap: 6px; padding: 6px 13px; border: 1px solid var(--border-color, #e5e5e5); border-radius: 999px; font-family: 'Noto Serif JP', serif; font-size: 0.78rem; color: var(--text-light, #666); text-decoration: none; transition: border-color 0.2s ease, color 0.2s ease; }
-    .home-shirasagi-season:hover { border-color: #9b5b2e; color: #9b5b2e; }
-    .home-shirasagi-season i { font-style: normal; font-family: 'Inter', sans-serif; font-size: 0.68rem; color: var(--text-lighter, #999); }
     .home-shirasagi-links { display: flex; flex-wrap: wrap; gap: 12px; }
     .home-shirasagi-btn { display: inline-flex; align-items: center; padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color, #e5e5e5); font-family: 'Inter', sans-serif; font-size: 0.8rem; letter-spacing: 0.04em; color: var(--text-color, #333); text-decoration: none; transition: border-color 0.2s ease, background 0.2s ease, color 0.2s ease; }
     .home-shirasagi-btn:hover { border-color: var(--text-color, #333); }
@@ -1650,12 +1294,17 @@
 </head>
 <body>
 
+  <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+
   <!-- 共通ヘッダーの読み込み -->
   <script src="js/site-header.js"></script>
   <!-- 画像エラーハンドリング -->
   <script src="js/image-fallback.js"></script>
 
   <h1 style="position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);border:0;">田路昌也 (Toji Masaya) — 姫路城、香港、旅とカメラの記録</h1>
+
+
+  <main id="main-content">
 
   <!-- ======================================
        SECTION 1: ヒーロー（B+D中間案）
@@ -1689,10 +1338,10 @@
           <strong>白鷺三十六景</strong>
           <em>60年以上見てきた姫路城を、四季と時間の中で残す。</em>
         </a>
-        <a class="identity-hero-route" href="hongkong-neon.html">
+        <a class="identity-hero-route" href="hongkong.html">
           <span>Hong Kong</span>
-          <strong>香港ネオン残照</strong>
-          <em>28歳からの日々を育ててくれた街の光と記憶。</em>
+          <strong>香港撮影ノート</strong>
+          <em>ネオン、撮影スポット、カメラ屋。歩いて撮るための入口。</em>
         </a>
         <a class="identity-hero-route" href="trips.html">
           <span>Travel</span>
@@ -1705,6 +1354,10 @@
           <em>Leica、ドローン、旅先で使う道具の実感。</em>
         </a>
       </nav>
+      <p class="identity-hero-handbook">
+        香港の暮らし・手続きはこちら
+        <a href="hongkong-handbook.html" data-growth-label="home_hero_handbook">香港ハンドブック →</a>
+      </p>
     </div>
   </section>
 
@@ -1715,6 +1368,7 @@
        第77回）と日付（5.22-5.24 など）を最新の年版に差し替えるだけでよい。
        スタイル・構造はそのまま再利用できる。
        ====================================== -->
+
   <template id="oshiro-fes-offseason">
   <section class="timely-notice" aria-labelledby="oshiro-fes-title">
     <div class="timely-notice-inner">
@@ -1754,137 +1408,14 @@
   </section>
   </template>
 
-  <!-- ======================================
-       SECTION 2.5: 白鷺三十六景（data/shirasagi-latest.json）
-       ====================================== -->
-  <section class="home-shirasagi" aria-labelledby="home-shirasagi-title">
-    <div class="home-shirasagi-inner">
-      <figure class="home-shirasagi-media">
-        <a href="/shirasagi36/no35.html" id="home-shirasagi-photo-link" data-growth-label="home_shirasagi_photo">
-          <picture>
-            <source id="home-shirasagi-source" srcset="assets/images/shirasagi/webp/full/35.webp" type="image/webp">
-            <img id="home-shirasagi-image" src="assets/images/shirasagi/35.jpg" alt="姫路城 — 第35景 花の北屋上 惜別遠望" loading="lazy" decoding="async">
-          </picture>
-        </a>
-        <figcaption id="home-shirasagi-caption">第三十五景 花の北屋上 惜別遠望</figcaption>
-      </figure>
-
-      <div class="home-shirasagi-text">
-        <p class="home-shirasagi-kicker">Himeji Castle</p>
-        <h2 class="home-shirasagi-title" id="home-shirasagi-title">白鷺三十六景 — 姫路城を、三十六の景で。</h2>
-
-        <div class="home-shirasagi-progress">
-          <div class="home-shirasagi-bar"><span id="home-shirasagi-bar-fill" style="width: 97%;"></span></div>
-          <p class="home-shirasagi-count"><strong id="home-shirasagi-count">35</strong> / <span id="home-shirasagi-total">36</span> 景 — <span id="home-shirasagi-remaining">あと一景</span></p>
-        </div>
-
-        <p class="home-shirasagi-latest">最新の景: <a href="/shirasagi36/no35.html" id="home-shirasagi-latest-link" data-growth-label="home_shirasagi_latest"><span id="home-shirasagi-latest-title">花の北屋上 惜別遠望</span></a></p>
-        <p class="home-shirasagi-meta" id="home-shirasagi-latest-meta">2026.08.09 ・ イオン姫路店（花の北）屋上</p>
-        <p class="home-shirasagi-note">四季と時間を待ちながら、次の一景を探しています。</p>
-
-        <div class="home-shirasagi-seasons" id="home-shirasagi-seasons">
-          <a class="home-shirasagi-season" href="shirasagi36.html?season=spring" data-growth-label="home_shirasagi_season">春 <i>16</i></a>
-          <a class="home-shirasagi-season" href="shirasagi36.html?season=summer" data-growth-label="home_shirasagi_season">夏 <i>6</i></a>
-          <a class="home-shirasagi-season" href="shirasagi36.html?season=autumn" data-growth-label="home_shirasagi_season">秋 <i>7</i></a>
-          <a class="home-shirasagi-season" href="shirasagi36.html?season=winter" data-growth-label="home_shirasagi_season">冬 <i>6</i></a>
-        </div>
-
-        <div class="home-shirasagi-links">
-          <a class="home-shirasagi-btn is-primary" href="shirasagi36.html" data-growth-label="home_shirasagi_hub">36 景を見る →</a>
-          <a class="home-shirasagi-btn" href="shirasagi36-map.html" data-growth-label="home_shirasagi_map">撮影地マップ →</a>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- ======================================
-       SECTION 3: 今日の断章
+       SECTION 2: 最近の更新（断章1件＋その他の更新）
+       断章の全文は個別ページに置き、ここでは data/recent-photos.json の
+       homeLead（無ければ本文の先頭を文の切れ目で）だけを見せる。
+       その他の更新は data/updates.json から、特集した断章と重複しないものを4件。
        ====================================== -->
-  <section class="recent-frame" aria-labelledby="recent-frame-title">
-    <div class="recent-frame-inner">
-      <div class="recent-frame-gallery">
-        <figure class="recent-frame-media recent-frame-main" id="recent-frame-media">
-          <picture>
-            <source id="recent-frame-source" srcset="assets/images/photo-notes/taipei-bento-fair-hipparidako.webp" type="image/webp">
-            <img id="recent-frame-image" src="assets/images/photo-notes/taipei-bento-fair-hipparidako.jpg" alt="淡路屋のひっぱりだこの壺の中に、タコの足や具材が入っている様子" loading="lazy" decoding="async">
-          </picture>
-          <div class="recent-frame-placeholder" aria-hidden="true">
-            <span>今日の断章</span>
-          </div>
-          <figcaption class="recent-frame-caption" id="recent-frame-caption">Awajiya Hipparidako / Taipei</figcaption>
-        </figure>
-        <div class="recent-frame-sideframes" id="recent-frame-sideframes" aria-label="同じ日の小さな写真"></div>
-      </div>
-      <div class="recent-frame-text">
-        <p class="recent-frame-label" id="recent-frame-label">今日の断章</p>
-        <h2 class="recent-frame-title" id="recent-frame-title"><a class="recent-frame-title-link" href="fragments/taipei-bento-fair-awajiya.html" data-growth-label="home_fragment_title">台北駅の弁当フェア、淡路屋のひっぱりだこ</a></h2>
-        <p class="recent-frame-meta" id="recent-frame-meta">台湾・台北駅 / 2026年6月6日</p>
-        <p class="recent-frame-copy" id="recent-frame-copy">
-          台北駅の弁当フェアに淡路屋が来ると聞けば、神戸の味を台湾で買うという妙な遠回りをせずにはいられず、約一時間並んで手に入れた「ひっぱりだこ」をホテルで開けると、壺の中の蛸の吸盤までがきちんと旅をしてきたようで、結局いちばん遠回りしていたのは私の食欲だった。
-        </p>
-        <a class="recent-frame-link" id="recent-frame-link" href="fragments.html">すべての断章を見る →</a>
-      </div>
-    </div>
-    <div class="recent-frame-archive" aria-labelledby="recent-frame-archive-title">
-      <div class="recent-frame-archive-head">
-        <div>
-          <p class="recent-frame-archive-kicker">Fragments</p>
-          <h3 class="recent-frame-archive-title" id="recent-frame-archive-title">これまでの断章</h3>
-        </div>
-        <p class="recent-frame-archive-note">写真を入口に、その日の出来事を一文で残します。 <a href="fragments.html">すべての断章 →</a></p>
-      </div>
-      <div class="recent-frame-archive-grid" id="recent-frame-archive-grid">
-        <a class="recent-frame-archive-card" href="fragments/odawara-kinmedai-oshizushi.html" data-recent-frame-slug="odawara-kinmedai-oshizushi" data-growth-label="home_fragment_card">
-          <span class="recent-frame-archive-thumb">
-            <picture>
-              <source srcset="assets/images/photo-notes/odawara-kinmedai-oshizushi.webp" type="image/webp">
-              <img src="assets/images/photo-notes/odawara-kinmedai-oshizushi.jpg" alt="新幹線の車内で開いた炙り金目鯛と小鯵押し寿司の弁当" loading="lazy" decoding="async">
-            </picture>
-          </span>
-          <span>
-            <span class="recent-frame-archive-meta">神奈川・小田原駅 / 2026年5月20日</span>
-            <span class="recent-frame-archive-card-title">小田原駅、炙り金目鯛と小鯵押し寿司</span>
-            <span class="recent-frame-archive-copy">小田原からの帰り、新幹線の駅で弁当を買った。鯛飯も考えたが、店の方と話すうちに「炙り金目鯛と小鯵押し寿司」へ。</span>
-          </span>
-        </a>
-        <a class="recent-frame-archive-card" href="fragments/gozasoro-red-blend.html" data-recent-frame-slug="gozasoro-red-blend" data-growth-label="home_fragment_card">
-          <span class="recent-frame-archive-thumb">
-            <picture>
-              <source srcset="assets/images/photo-notes/gozasoro-red-blend.webp" type="image/webp">
-              <img src="assets/images/photo-notes/gozasoro-red-blend.jpg" alt="御座候の赤あんと赤ブレンドのコーヒーが喫茶室のテーブルに並んでいる様子" loading="lazy" decoding="async">
-            </picture>
-          </span>
-          <span>
-            <span class="recent-frame-archive-meta">姫路・書写 / 2026年5月14日</span>
-            <span class="recent-frame-archive-card-title">書写の御座候、赤と赤ブレンド</span>
-            <span class="recent-frame-archive-copy">姫路で大判焼き、今川焼きといえば、やはり御座候。書写の落ち着いた喫茶室で、赤あんの御座候と、それに合わせた赤ブレンドをいただいた。</span>
-          </span>
-        </a>
-        <a class="recent-frame-archive-card" href="fragments/strawberry-field-memory.html" data-recent-frame-slug="strawberry-field-memory" data-growth-label="home_fragment_card">
-          <span class="recent-frame-archive-thumb">
-            <picture>
-              <source srcset="assets/images/photo-notes/strawberry-field.webp" type="image/webp">
-              <img src="assets/images/photo-notes/strawberry-field.jpg" alt="いちご畑で青い実と赤く熟したいちごが並んでいる様子" loading="lazy" decoding="async">
-            </picture>
-          </span>
-          <span>
-            <span class="recent-frame-archive-meta">友人の実家のいちご畑 / 2026年5月5日</span>
-            <span class="recent-frame-archive-card-title">いちご畑と、練乳の記憶</span>
-            <span class="recent-frame-archive-copy">先週、友人の実家のいちご畑で久しぶりにいちご狩りをした。畑に残る青い実と真っ赤に熟した実の対比に目を奪われる。</span>
-          </span>
-        </a>
-      </div>
-      <div class="recent-frame-subscribe">
-        <div data-subscribe data-heading="更新を受け取る" data-note="新しい断章と三十六景は Feed（RSS / Atom）で受け取れます。note・X でも同じ更新を流しています。"></div>
-      </div>
-    </div>
-  </section>
-
-
-  <!-- ======================================
-       SECTION 4: 最近の更新（data/updates.json）
-       ====================================== -->
-  <section class="home-updates" id="home-updates" aria-labelledby="home-updates-title" hidden>
+  <section class="home-updates" id="home-updates" aria-labelledby="home-updates-title">
     <div class="home-updates-inner">
       <div class="home-updates-head">
         <div>
@@ -1893,19 +1424,94 @@
         </div>
         <a class="home-updates-feed" href="/feed.xml" data-growth-label="home_updates_feed">Feed で受け取る</a>
       </div>
+
+      <article class="home-feature" id="home-feature">
+        <figure class="home-feature-media" id="home-feature-media">
+          <a href="fragments/kison-goose-vanity-hkd70.html" id="home-feature-photo-link" tabindex="-1" aria-hidden="true" data-growth-label="home_fragment_photo">
+            <picture>
+              <source id="home-feature-source" srcset="assets/images/photo-notes/kison-half-half-plate.webp" type="image/webp">
+              <img id="home-feature-image" src="assets/images/photo-notes/kison-half-half-plate.jpg" alt="白飯の上に焼鵝と叉燒がハーフハーフで盛られた深皿、菜心が一本のせられ、奥に氷のたっぷり入った凍檸茶。プレースマットには支店の電話番号が並ぶ。" width="1350" height="1800" loading="lazy" decoding="async">
+            </picture>
+          </a>
+        </figure>
+        <div class="home-feature-text">
+          <p class="home-feature-label" id="home-feature-label">最新の断章</p>
+          <h3 class="home-feature-title"><a id="home-feature-title-link" href="fragments/kison-goose-vanity-hkd70.html" data-growth-label="home_fragment_title">見送りの焼鵝と、七十ドルの妙な見栄</a></h3>
+          <p class="home-feature-meta" id="home-feature-meta">香港・太子（棋子 燒鵝） / 2026年9月3日</p>
+          <p class="home-feature-lead" id="home-feature-lead">日本へ戻る前に、太子の棋子燒鵝で最後の一皿を。下午茶の三十五ドルを横目に、七十ドルの焼鵝と叉燒を選んだ。安いほうにしなかったのは、少しの見栄か、しばらく食べられない味への名残惜しさか。</p>
+          <p class="home-feature-actions">
+            <a class="home-feature-read" id="home-feature-read" href="fragments/kison-goose-vanity-hkd70.html" data-growth-label="home_fragment_read">この断章を読む →</a>
+            <a class="home-feature-all" href="fragments.html" data-growth-label="home_fragment_all">すべての断章 →</a>
+          </p>
+        </div>
+      </article>
+
       <ul class="home-updates-list" id="home-updates-list"></ul>
-      <p class="home-updates-note"><a href="writings.html" data-growth-label="home_updates_all">すべての記事 →</a></p>
+      <p class="home-updates-note"><a href="writings.html" data-growth-label="home_updates_all">執筆記事の一覧 →</a></p>
     </div>
-    <noscript>
-      <p class="home-updates-note" style="text-align:center;"><a href="writings.html">すべての記事 →</a></p>
-    </noscript>
   </section>
 
   <!-- ======================================
-       SECTION 5: 旅の記録
+       SECTION 3: 続けている作品（白鷺三十六景 / 香港ネオン残照）
        ====================================== -->
+  <section class="home-works" aria-labelledby="home-works-title">
+    <h2 class="trip-vh" id="home-works-title">続けている作品</h2>
+    <section class="home-shirasagi" aria-labelledby="home-shirasagi-title">
+      <div class="home-shirasagi-inner">
+        <figure class="home-shirasagi-media">
+          <a href="/shirasagi36/no35.html" id="home-shirasagi-photo-link" data-growth-label="home_shirasagi_photo">
+            <picture>
+              <source id="home-shirasagi-source" srcset="assets/images/shirasagi/webp/full/35.webp" type="image/webp">
+              <img id="home-shirasagi-image" src="assets/images/shirasagi/35.jpg" alt="姫路城 — 第35景 花の北屋上 惜別遠望" loading="lazy" decoding="async">
+            </picture>
+          </a>
+          <figcaption id="home-shirasagi-caption">第三十五景 花の北屋上 惜別遠望</figcaption>
+        </figure>
+
+        <div class="home-shirasagi-text">
+          <p class="home-shirasagi-kicker">Himeji Castle</p>
+          <h2 class="home-shirasagi-title" id="home-shirasagi-title">白鷺三十六景 — 姫路城を、三十六の景で。</h2>
+
+          <div class="home-shirasagi-progress">
+            <div class="home-shirasagi-bar"><span id="home-shirasagi-bar-fill" style="width: 97%;"></span></div>
+            <p class="home-shirasagi-count"><strong id="home-shirasagi-count">35</strong> / <span id="home-shirasagi-total">36</span> 景 — <span id="home-shirasagi-remaining">あと一景</span></p>
+          </div>
+
+          <p class="home-shirasagi-latest">最新の景: <a href="/shirasagi36/no35.html" id="home-shirasagi-latest-link" data-growth-label="home_shirasagi_latest"><span id="home-shirasagi-latest-title">花の北屋上 惜別遠望</span></a></p>
+          <p class="home-shirasagi-meta" id="home-shirasagi-latest-meta">2026.08.09 ・ イオン姫路店（花の北）屋上</p>
+          <p class="home-shirasagi-note">四季と時間を待ちながら、次の一景を探しています。</p>
+
+
+          <div class="home-shirasagi-links">
+            <a class="home-shirasagi-btn is-primary" href="shirasagi36.html" data-growth-label="home_shirasagi_hub">公開中の<span id="home-shirasagi-btn-count">35</span>景を見る →</a>
+            <a class="home-shirasagi-btn" href="shirasagi36-map.html" data-growth-label="home_shirasagi_map">撮影地マップ →</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="home-neon" aria-labelledby="home-neon-title">
+      <div class="home-neon-inner">
+        <figure class="home-neon-media">
+          <a href="hongkong-neon.html" data-growth-label="home_neon_photo" tabindex="-1" aria-hidden="true">
+            <picture>
+              <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
+              <img src="assets/images/hongkong-neon/01.jpg" alt="香港の夜、通りに張り出したネオン看板の連なり" loading="lazy" decoding="async">
+            </picture>
+          </a>
+        </figure>
+        <div class="home-neon-text">
+          <p class="home-neon-kicker">Hong Kong</p>
+          <h3 class="home-neon-title" id="home-neon-title">香港ネオン残照</h3>
+          <p class="home-neon-lead">28歳からの日々を育ててくれた街の光。撤去が進むいま、消える前のネオンを一枚ずつ残しています。</p>
+          <a class="home-neon-btn" href="hongkong-neon.html" data-growth-label="home_neon_cta">ネオンの記録を見る →</a>
+        </div>
+      </div>
+    </section>
+  </section>
+
   <!-- ======================================
-       SECTION: 香港ハンドブック（一枚看板）
+       SECTION 4: 香港ハンドブック（一枚看板）
        ====================================== -->
   <section class="handbook-feature" aria-labelledby="handbook-feature-title">
     <div class="handbook-feature-inner">
@@ -1931,80 +1537,69 @@
     </div>
   </section>
 
-  <section class="travels">
+
+  <!-- ======================================
+       SECTION 5: 旅の記録（旅行ページと同じ「写真→旅先→タイトル→訪問年」の順）
+       ====================================== -->
+  <section class="travels" aria-labelledby="home-travels-title">
     <div class="travels-inner">
       <div class="section-header-row">
-        <h2 class="section-title-jp">旅の記録</h2>
-        <a href="trips.html" class="section-link">すべての旅を見る →</a>
+        <h2 class="section-title-jp" id="home-travels-title">旅の記録</h2>
       </div>
-      <div class="travel-grid">
+      <ul class="travel-grid">
 
-        <!-- トルコ旅行記 -->
-        <div class="travel-card">
-          <a href="turkey-travel-journal.html">
-            <picture>
-              <source srcset="assets/images/turkey-hero.webp" type="image/webp">
-              <img src="assets/images/turkey-hero.jpg" alt="トルコ旅行記" loading="lazy" decoding="async">
-            </picture>
-            <div class="travel-card-overlay">
-              <h3 class="travel-card-title">トルコ旅行記</h3>
-              <p class="travel-card-meta">2024.10 — 9日間・6都市</p>
-            </div>
-          </a>
-        </div>
+        <li class="travel-card">
+          <div class="travel-card-media">
+            <img src="assets/images/trips/cards/taiwan-692.webp"
+                 srcset="assets/images/trips/cards/taiwan-480.webp 480w, assets/images/trips/cards/taiwan-692.webp 692w"
+                 sizes="(min-width: 900px) 340px, calc(100vw - 3rem)"
+                 width="692" height="461"
+                 alt="日月潭上空から、中央にフローデシンホテル、右に文武廟" loading="lazy" decoding="async">
+          </div>
+          <div class="travel-card-body">
+            <p class="travel-card-place">台湾</p>
+            <h3 class="travel-card-title"><a href="taiwan-travel-journal.html" data-growth-label="home_travel_card">台湾、笑顔と美食の島</a></h3>
+            <p class="travel-card-meta">2024・2025・2026年<span class="travel-card-sep" aria-hidden="true">｜</span>4回の訪問</p>
+          </div>
+        </li>
 
-        <!-- チベット・西安 -->
-        <div class="travel-card">
-          <a href="tibet-travel-journal.html">
-            <picture>
-              <source srcset="assets/images/gallery/lhasa.webp" type="image/webp">
-              <img src="assets/images/gallery/lhasa.jpg" alt="チベット・ラサ" loading="lazy" decoding="async">
-            </picture>
-            <div class="travel-card-overlay">
-              <h3 class="travel-card-title">チベット拉薩・西安 兵馬俑の旅</h3>
-              <p class="travel-card-meta">2016 — 旅行記・全11日</p>
-            </div>
-          </a>
-        </div>
+        <li class="travel-card">
+          <div class="travel-card-media">
+            <img src="assets/images/trips/cards/tibet-800.webp"
+                 srcset="assets/images/trips/cards/tibet-480.webp 480w, assets/images/trips/cards/tibet-800.webp 800w"
+                 sizes="(min-width: 900px) 340px, calc(100vw - 3rem)"
+                 width="800" height="533"
+                 alt="チベット・ラサ、ポタラ宮" loading="lazy" decoding="async">
+          </div>
+          <div class="travel-card-body">
+            <p class="travel-card-place">チベット・西安</p>
+            <h3 class="travel-card-title"><a href="tibet-travel-journal.html" data-growth-label="home_travel_card">チベット拉薩・西安 兵馬俑の旅</a></h3>
+            <p class="travel-card-meta">2016年5月<span class="travel-card-sep" aria-hidden="true">｜</span>全11日</p>
+          </div>
+        </li>
 
-        <!-- プラハ -->
-        <div class="travel-card">
-          <a href="prague-travel-journal.html">
-            <picture>
-              <source srcset="assets/images/gallery/charlesbridge.webp" type="image/webp">
-              <img src="assets/images/gallery/charlesbridge.jpg" alt="プラハ、早朝のカレル橋にて" loading="lazy" decoding="async">
-            </picture>
-            <div class="travel-card-overlay">
-              <h3 class="travel-card-title">プラハの奇跡を求めて</h3>
-              <p class="travel-card-meta">2014 — 旅行記</p>
-            </div>
-          </a>
-        </div>
+        <li class="travel-card">
+          <div class="travel-card-media">
+            <img src="assets/images/trips/cards/turkey-800.webp"
+                 srcset="assets/images/trips/cards/turkey-480.webp 480w, assets/images/trips/cards/turkey-800.webp 800w"
+                 sizes="(min-width: 900px) 340px, calc(100vw - 3rem)"
+                 width="800" height="533"
+                 alt="イスタンブール、ボスポラス海峡の夕景" loading="lazy" decoding="async">
+          </div>
+          <div class="travel-card-body">
+            <p class="travel-card-place">トルコ</p>
+            <h3 class="travel-card-title"><a href="turkey-travel-journal.html" data-growth-label="home_travel_card">空に浮かぶ朝と、海に沈む夕：トルコ横断</a></h3>
+            <p class="travel-card-meta">2024年10〜11月<span class="travel-card-sep" aria-hidden="true">｜</span>6つの訪問地</p>
+          </div>
+        </li>
 
-      </div>
+      </ul>
+      <p class="travels-cta"><a href="trips.html" data-growth-label="home_travels_find">行き先から、旅を探す →</a></p>
     </div>
   </section>
 
   <!-- ======================================
-       SECTION 6: 最新の記事（RSS連携）
-       ====================================== -->
-  <section class="latest-articles">
-    <div class="section-header-row">
-      <h2 class="section-title-jp">最新の記事</h2>
-      <a href="writings.html" class="section-link">すべての記事 →</a>
-    </div>
-    <div class="latest-grid" id="latest-grid">
-      <p style="grid-column: 1 / -1; text-align: center; color: var(--text-lighter, #999); font-size: 0.9rem;">
-        最新の記事を読み込み中...
-      </p>
-    </div>
-    <div class="latest-more-row">
-      <a href="writings.html" class="latest-more-btn">すべての記事を見る</a>
-    </div>
-  </section>
-
-  <!-- ======================================
-       SECTION 7: About Strip
+       SECTION 6: プロフィールと更新を受け取る入口
        ====================================== -->
   <section class="about-strip">
     <div class="about-inner">
@@ -2022,7 +1617,13 @@
         <a href="about.html" class="about-more">プロフィールを見る →</a>
       </div>
     </div>
+    <div class="about-subscribe">
+      <div data-subscribe data-heading="新しい写真と文章の更新を受け取る" data-note="断章と白鷺三十六景の更新は Feed（RSS / Atom）で受け取れます。note・X でも同じ更新を流しています。"></div>
+    </div>
   </section>
+
+
+  </main>
 
   <!-- ======================================
        FOOTER
@@ -2052,21 +1653,7 @@
   </footer>
 
   <script>
-    // ===== 今日の断章の読み込み（recent-photos.json） =====
-    function setRecentFrameText(id, value) {
-      const element = document.getElementById(id);
-      if (element && value) element.textContent = value;
-    }
-
-    function showRecentFramePlaceholder() {
-      const media = document.getElementById('recent-frame-media');
-      const image = document.getElementById('recent-frame-image');
-      const source = document.getElementById('recent-frame-source');
-
-      if (media) media.classList.add('is-missing');
-      if (image) image.removeAttribute('src');
-      if (source) source.removeAttribute('srcset');
-    }
+    // ===== 最近の更新：特集する断章（data/recent-photos.json） =====
 
     // 「今日の断章」→ 日付が今日でなければ「最新の断章 · 5日前」のような相対表示に
     function relativeFrameLabel(dateText) {
@@ -2083,365 +1670,80 @@
       return `最新の断章 · ${m[1]}.${String(m[2]).padStart(2, '0')}`;
     }
 
-    function renderRecentFrame(frame) {
-      if (!frame) return;
+    // トップに出す紹介文。homeLead があればそれを使い、無ければ本文を文の切れ目で切る。
+    // 一文が長い断章は読点で切って「…」を付ける（文の途中で機械的に断ち切らない）。
+    function homeLeadOf(frame) {
+      if (frame.homeLead) return frame.homeLead;
+      const body = String(frame.body || '').trim();
+      if (!body) return '';
+      if (body.length <= 170) return body;
 
-      const label = relativeFrameLabel(frame.date);
-      const meta = [frame.place, frame.date].filter(Boolean).join(' / ');
-      const mediaItems = [frame, ...(frame.sideFrames || [])].filter(item => item && item.image);
-      const activeMediaIndex = Number.isInteger(frame.activeMediaIndex) ? frame.activeMediaIndex : 0;
-      const activeMedia = mediaItems[activeMediaIndex] || frame;
-      const media = document.getElementById('recent-frame-media');
-      const image = document.getElementById('recent-frame-image');
-      const source = document.getElementById('recent-frame-source');
-      const link = document.getElementById('recent-frame-link');
-      const sideframes = document.getElementById('recent-frame-sideframes');
-
-      setRecentFrameText('recent-frame-label', label);
-      setRecentFrameText('recent-frame-title', frame.title);
-      setRecentFrameText('recent-frame-meta', meta);
-      setRecentFrameText('recent-frame-copy', frame.body);
-      setRecentFrameText('recent-frame-caption', activeMedia.caption || activeMedia.title || frame.caption || meta);
-
-      const titleElement = document.getElementById('recent-frame-title');
-      if (titleElement && frame.slug) {
-        const titleLink = document.createElement('a');
-        titleLink.className = 'recent-frame-title-link';
-        titleLink.href = 'fragments/' + frame.slug + '.html';
-        titleLink.textContent = frame.title || '';
-        titleLink.setAttribute('data-growth-label', 'home_fragment_title');
-        titleElement.replaceChildren(titleLink);
+      let acc = '';
+      for (const part of body.split('。')) {
+        if (!part) continue;
+        const next = acc + part + '。';
+        if (next.length > 170) break;
+        acc = next;
       }
+      if (acc) return acc;
 
-      if (link) {
-        link.href = 'fragments.html';
-        link.textContent = 'すべての断章を見る →';
+      for (const cut of [130, 110, 90]) {
+        const head = body.slice(0, cut);
+        const at = head.lastIndexOf('、');
+        if (at > 40) return head.slice(0, at) + '…';
       }
-
-      // 写真の実寸比を figure に入れて、黒い余白（レターボックス）が出ないようにする
-      if (media && activeMedia.width && activeMedia.height) {
-        media.style.aspectRatio = `${activeMedia.width} / ${activeMedia.height}`;
-      }
-
-      if (image && activeMedia.alt) image.alt = activeMedia.alt;
-      if (source && activeMedia.imageWebp) source.srcset = activeMedia.imageWebp;
-      if (image && activeMedia.image) {
-        if (media) media.classList.remove('is-missing');
-        image.src = activeMedia.image;
-      }
-
-      if (sideframes) {
-        sideframes.replaceChildren(...mediaItems
-          .map((sideFrame, index) => ({ sideFrame, index }))
-          .filter(({ index }) => index !== activeMediaIndex)
-          .slice(0, 3)
-          .map(({ sideFrame, index }) => {
-          const card = document.createElement('button');
-          card.type = 'button';
-          card.className = 'recent-frame-sidecard';
-          card.setAttribute('aria-label', `${sideFrame.title || sideFrame.caption || '写真'}を大きく表示`);
-          card.addEventListener('click', () => {
-            frame.activeMediaIndex = index;
-            renderRecentFrame(frame);
-
-            if (typeof gtag !== 'undefined') {
-              gtag('event', 'select_recent_frame_photo', {
-                frame_slug: frame.slug || '',
-                photo_title: sideFrame.title || sideFrame.caption || ''
-              });
-            }
-          });
-
-          const picture = document.createElement('picture');
-          if (sideFrame.imageWebp) {
-            const sideSource = document.createElement('source');
-            sideSource.srcset = sideFrame.imageWebp;
-            sideSource.type = 'image/webp';
-            picture.appendChild(sideSource);
-          }
-
-          const sideImage = document.createElement('img');
-          sideImage.src = sideFrame.image || '';
-          sideImage.alt = sideFrame.alt || sideFrame.title || '';
-          sideImage.loading = 'lazy';
-          sideImage.decoding = 'async';
-          picture.appendChild(sideImage);
-
-          const caption = document.createElement('span');
-          caption.className = 'recent-frame-sidecaption';
-          caption.textContent = sideFrame.title || sideFrame.caption || '';
-
-          card.append(picture, caption);
-          return card;
-        }));
-      }
+      return '';
     }
 
-    function createRecentArchiveCard(frame) {
-      const card = document.createElement('a');
-      const meta = [frame.place, frame.date].filter(Boolean).join(' / ');
-      card.className = 'recent-frame-archive-card';
-      card.href = frame.slug ? 'fragments/' + frame.slug + '.html' : 'fragments.html';
-      if (frame.slug) card.dataset.recentFrameSlug = frame.slug;
-      card.setAttribute('data-growth-label', 'home_fragment_card');
-      card.addEventListener('click', () => {
-        if (typeof gtag !== 'undefined') {
-          gtag('event', 'select_recent_frame', {
-            frame_slug: frame.slug || '',
-            frame_title: frame.title || ''
-          });
-        }
-      });
-
-      const thumb = document.createElement('span');
-      thumb.className = 'recent-frame-archive-thumb';
-
-      const picture = document.createElement('picture');
-      if (frame.imageWebp) {
-        const source = document.createElement('source');
-        source.srcset = frame.imageWebp;
-        source.type = 'image/webp';
-        picture.appendChild(source);
-      }
-
-      const image = document.createElement('img');
-      image.src = frame.image || '';
-      image.alt = frame.alt || frame.title || '';
-      image.loading = 'lazy';
-      image.decoding = 'async';
-      picture.appendChild(image);
-      thumb.appendChild(picture);
-
-      const text = document.createElement('span');
-
-      const metaElement = document.createElement('span');
-      metaElement.className = 'recent-frame-archive-meta';
-      metaElement.textContent = meta;
-
-      const title = document.createElement('span');
-      title.className = 'recent-frame-archive-card-title';
-      title.textContent = frame.title || '';
-
-      const copy = document.createElement('span');
-      copy.className = 'recent-frame-archive-copy';
-      copy.textContent = frame.body || '';
-
-      text.append(metaElement, title, copy);
-      card.append(thumb, text);
-      return card;
-    }
-
-    function renderRecentArchive(photos, activeSlug) {
-      const archive = document.getElementById('recent-frame-archive-grid');
-      const archiveSection = document.querySelector('.recent-frame-archive');
-      if (!archive || !Array.isArray(photos)) return;
-
-      const currentSlug = activeSlug || photos[0]?.slug;
-      const pastPhotos = photos.filter(photo => photo.slug !== currentSlug).slice(0, 3);
-      if (!pastPhotos.length) {
-        if (archiveSection) archiveSection.hidden = true;
-        return;
-      }
-
-      archive.replaceChildren(...pastPhotos.map(frame => createRecentArchiveCard(frame)));
-      if (archiveSection) archiveSection.hidden = false;
-    }
-
-    async function loadRecentFrame() {
-      const image = document.getElementById('recent-frame-image');
-      if (image) image.addEventListener('error', showRecentFramePlaceholder);
-
-      try {
-        const res = await fetch('data/recent-photos.json');
-        if (!res.ok) throw new Error('Failed to load recent-photos.json');
-        const photos = await res.json();
-        renderRecentFrame(Array.isArray(photos) ? photos[0] : photos);
-        renderRecentArchive(photos);
-      } catch (error) {
-        console.log('Using static content for recent frame');
-      }
-    }
-
-    // ===== 最新記事の読み込み（articles.json） =====
-    async function loadLatestArticles() {
-      const container = document.getElementById('latest-grid');
-
-      try {
-        const res = await fetch('/data/articles.json');
-        if (!res.ok) throw new Error('Failed to load articles.json');
-        const articles = await res.json();
-        const latestArticles = articles.slice(0, 3);
-        let ogCache = {};
-
-        if (latestArticles.some(article => !article.imageLocal)) {
-          try {
-            const ogRes = await fetch('/data/writings-og.json');
-            if (ogRes.ok) ogCache = await ogRes.json();
-          } catch (_) {
-            // External images remain available as a last-resort fallback.
-          }
-        }
-
-        // 日付降順でソート済み、最新3件を取得
-        const allArticles = latestArticles.map(a => ({
-          title: a.title,
-          link: a.link,
-          imageUrl: a.imageLocal || ogCache[a.link]?.local || a.image || 'assets/images/gallery/weekly.jpg',
-          source: a.sourceLabel || a.source,
-          excerpt: a.excerpt || ''
-        }));
-
-        if (allArticles.length > 0) {
-          container.innerHTML = allArticles.map(article => {
-            const isLocal = !article.imageUrl.startsWith('http');
-            const webpUrl = article.imageUrl.replace(/\.(jpg|jpeg|png)$/, '.webp');
-            const imgTag = isLocal
-              ? `<picture>
-                  <source srcset="${webpUrl}" type="image/webp">
-                  <img class="latest-thumb" src="${article.imageUrl}" alt="${article.title}" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
-                </picture>`
-              : `<img class="latest-thumb" src="${article.imageUrl}" alt="${article.title}" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">`;
-            return `
-            <article class="latest-item">
-              <a href="${article.link}" target="_blank" rel="noopener noreferrer">
-                ${imgTag}
-                <div class="latest-content">
-                  <p class="latest-source">${article.source}</p>
-                  <h3 class="latest-item-title">${article.title}</h3>
-                  ${article.excerpt ? `<p class="latest-excerpt">${article.excerpt}</p>` : ''}
-                </div>
-              </a>
-            </article>
-          `}).join('');
-        } else {
-          throw new Error('No articles');
-        }
-      } catch (error) {
-        console.log('Using static content for latest articles');
-        container.innerHTML = `
-          <article class="latest-item">
-            <a href="https://note.com/tojimasaya" target="_blank" rel="noopener">
-              <picture>
-                <source srcset="assets/images/gallery/weekly.webp" type="image/webp">
-                <img class="latest-thumb" src="assets/images/gallery/weekly.jpg" alt="note" loading="lazy">
-              </picture>
-              <div class="latest-content">
-                <p class="latest-source">note</p>
-                <h3 class="latest-item-title">最新記事をチェック</h3>
-              </div>
-            </a>
-          </article>
-          <article class="latest-item">
-            <a href="https://drone.jp/column/masaya-toji" target="_blank" rel="noopener">
-              <picture>
-                <source srcset="assets/images/gallery/hongkong.webp" type="image/webp">
-                <img class="latest-thumb" src="assets/images/gallery/hongkong.jpg" alt="DRONE.jp" loading="lazy">
-              </picture>
-              <div class="latest-content">
-                <p class="latest-source">DRONE.jp</p>
-                <h3 class="latest-item-title">ドローン連載</h3>
-              </div>
-            </a>
-          </article>
-          <article class="latest-item">
-            <a href="writings.html">
-              <picture>
-                <source srcset="assets/images/gallery/monthly.webp" type="image/webp">
-                <img class="latest-thumb" src="assets/images/gallery/monthly.jpg" alt="Writings" loading="lazy">
-              </picture>
-              <div class="latest-content">
-                <p class="latest-source">Writings</p>
-                <h3 class="latest-item-title">執筆記事一覧</h3>
-              </div>
-            </a>
-          </article>
-        `;
-      }
-    }
-
-    // ===== 白鷺三十六景ブロックの読み込み（data/shirasagi-latest.json） =====
-    const SEASON_LABELS = { spring: '春', summer: '夏', autumn: '秋', winter: '冬', special: '特別' };
-    const KANJI_DIGITS = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
-
-    function kanjiNumber(n) {
-      const num = Number(n);
-      if (!Number.isInteger(num) || num < 1 || num > 99) return String(n);
-      const tens = Math.floor(num / 10);
-      const ones = num % 10;
-      return (tens === 1 ? '十' : tens > 1 ? `${KANJI_DIGITS[tens]}十` : '') + KANJI_DIGITS[ones];
-    }
-
-    function formatIsoDate(iso) {
-      const m = String(iso || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
-      return m ? `${m[1]}.${m[2]}.${m[3]}` : '';
-    }
-
-    function renderShirasagiBlock(data) {
-      if (!data || !data.latest || !data.latest.length) return;
-      const latest = data.latest[0];
+    function renderHomeFeature(frame) {
+      if (!frame) return null;
 
       const setText = (id, value) => {
         const el = document.getElementById(id);
         if (el && value) el.textContent = value;
       };
+      const href = frame.slug ? 'fragments/' + frame.slug + '.html' : 'fragments.html';
 
-      const count = Number(data.count) || 0;
-      const total = Number(data.total) || 36;
-      setText('home-shirasagi-count', String(count));
-      setText('home-shirasagi-total', String(total));
-      const remaining = Math.max(total - count, 0);
-      setText('home-shirasagi-remaining', remaining === 0 ? '三十六景 完結' : (remaining === 1 ? 'あと一景' : `あと${remaining}景`));
-      const fill = document.getElementById('home-shirasagi-bar-fill');
-      if (fill) fill.style.width = `${Math.round((count / total) * 100)}%`;
+      setText('home-feature-label', relativeFrameLabel(frame.date));
+      setText('home-feature-meta', [frame.place, frame.date].filter(Boolean).join(' / '));
+      setText('home-feature-lead', homeLeadOf(frame));
 
-      const link = document.getElementById('home-shirasagi-latest-link');
-      const photoLink = document.getElementById('home-shirasagi-photo-link');
-      if (link && latest.url) link.href = latest.url;
-      if (photoLink && latest.url) photoLink.href = latest.url;
-      setText('home-shirasagi-latest-title', latest.title);
-      setText('home-shirasagi-latest-meta', [formatIsoDate(latest.date), latest.place].filter(Boolean).join(' ・ '));
-      setText('home-shirasagi-caption', `第${kanjiNumber(latest.no)}景 ${latest.title || ''}`);
+      const titleLink = document.getElementById('home-feature-title-link');
+      if (titleLink) { titleLink.href = href; if (frame.title) titleLink.textContent = frame.title; }
+      const readLink = document.getElementById('home-feature-read');
+      if (readLink) readLink.href = href;
+      const photoLink = document.getElementById('home-feature-photo-link');
+      if (photoLink) photoLink.href = href;
 
-      const image = document.getElementById('home-shirasagi-image');
-      const source = document.getElementById('home-shirasagi-source');
-      if (source && latest.full) source.srcset = latest.full;
-      if (image && latest.full) {
-        image.src = latest.full.replace('/webp/full/', '/').replace(/\.webp$/, '.jpg');
-        image.alt = `姫路城 — 第${kanjiNumber(latest.no)}景 ${latest.title || ''}`;
+      const media = document.getElementById('home-feature-media');
+      const image = document.getElementById('home-feature-image');
+      const source = document.getElementById('home-feature-source');
+      if (media && frame.width && frame.height) media.style.aspectRatio = `${frame.width} / ${frame.height}`;
+      // WebP が無い写真もあるので、あると分かっているときだけ source を残す
+      if (source) {
+        if (frame.imageWebp) source.srcset = frame.imageWebp;
+        else source.remove();
       }
-
-      const seasons = document.getElementById('home-shirasagi-seasons');
-      if (seasons && data.seasons) {
-        const entries = ['spring', 'summer', 'autumn', 'winter', 'special']
-          .filter(key => data.seasons[key])
-          .map(key => {
-            const a = document.createElement('a');
-            a.className = 'home-shirasagi-season';
-            a.href = `shirasagi36.html?season=${key}`;
-            a.setAttribute('data-growth-label', 'home_shirasagi_season');
-            a.append(SEASON_LABELS[key] || key, ' ');
-            const n = document.createElement('i');
-            n.textContent = data.seasons[key];
-            a.appendChild(n);
-            return a;
-          });
-        if (entries.length) seasons.replaceChildren(...entries);
+      if (image && frame.image) {
+        image.src = frame.image;
+        if (frame.alt) image.alt = frame.alt;
       }
+      return frame;
     }
 
-    async function loadShirasagiBlock() {
-      try {
-        const res = await fetch('data/shirasagi-latest.json');
-        if (!res.ok) throw new Error('failed');
-        renderShirasagiBlock(await res.json());
-      } catch (error) {
-        // 取得できなければ HTML に書いてある最新の景をそのまま見せる
-        console.log('Using static content for shirasagi block');
-      }
-    }
-
-    // ===== 最近の更新の読み込み（data/updates.json） =====
+    // ===== 最近の更新：その他の更新（data/updates.json） =====
     const UPDATE_CHIP_CLASS = { fragment: 'is-fragment', shirasagi: 'is-shirasagi' };
+    const OTHER_UPDATES = 4;
+
+    // URL の表記ゆれ（絶対・相対、末尾スラッシュ、クエリ）をならして重複を判定する
+    function updateKey(url) {
+      try {
+        const u = new URL(url, location.origin);
+        return u.origin + u.pathname.replace(/\/$/, '');
+      } catch (_) {
+        return String(url || '').replace(/[?#].*$/, '').replace(/\/$/, '');
+      }
+    }
 
     function createUpdateItem(item) {
       const li = document.createElement('li');
@@ -2483,29 +1785,112 @@
       return li;
     }
 
-    async function loadUpdates() {
-      const section = document.getElementById('home-updates');
+    // 特集した断章と「その他の更新」で、同じ記事を二度見せない
+    async function loadRecentUpdates() {
+      let featuredKey = '';
+
+      try {
+        const res = await fetch('data/recent-photos.json');
+        if (!res.ok) throw new Error('failed');
+        const photos = await res.json();
+        const frame = Array.isArray(photos) ? photos[0] : photos;
+        renderHomeFeature(frame);
+        if (frame && frame.slug) featuredKey = updateKey('/fragments/' + frame.slug + '.html');
+      } catch (error) {
+        // 取得できなければ HTML に書いてある断章をそのまま見せる
+        const staticLink = document.getElementById('home-feature-title-link');
+        if (staticLink) featuredKey = updateKey(staticLink.getAttribute('href'));
+        console.log('Using static content for the featured fragment');
+      }
+
       const list = document.getElementById('home-updates-list');
-      if (!section || !list) return;
+      if (!list) return;
       try {
         const res = await fetch('data/updates.json');
         if (!res.ok) throw new Error('failed');
         const data = await res.json();
-        const items = (data.items || []).filter(item => item && item.url && item.title).slice(0, 8);
-        if (!items.length) return;
-        list.replaceChildren(...items.map(createUpdateItem));
-        section.hidden = false;
+        const seen = new Set(featuredKey ? [featuredKey] : []);
+        const items = (data.items || []).filter(item => {
+          if (!item || !item.url || !item.title) return false;
+          const key = updateKey(item.url);
+          if (seen.has(key)) return false;
+          seen.add(key);
+          return true;
+        }).slice(0, OTHER_UPDATES);
+        if (items.length) list.replaceChildren(...items.map(createUpdateItem));
       } catch (error) {
-        // 取得できなければセクションごと出さない（noscript のリンクだけ残る）
         console.log('Skipped recent updates');
+      }
+    }
+
+    // ===== 白鷺三十六景ブロックの読み込み（data/shirasagi-latest.json） =====
+    const SEASON_LABELS = { spring: '春', summer: '夏', autumn: '秋', winter: '冬', special: '特別' };
+    const KANJI_DIGITS = ['', '一', '二', '三', '四', '五', '六', '七', '八', '九'];
+
+    function kanjiNumber(n) {
+      const num = Number(n);
+      if (!Number.isInteger(num) || num < 1 || num > 99) return String(n);
+      const tens = Math.floor(num / 10);
+      const ones = num % 10;
+      return (tens === 1 ? '十' : tens > 1 ? `${KANJI_DIGITS[tens]}十` : '') + KANJI_DIGITS[ones];
+    }
+
+    function formatIsoDate(iso) {
+      const m = String(iso || '').match(/^(\d{4})-(\d{2})-(\d{2})$/);
+      return m ? `${m[1]}.${m[2]}.${m[3]}` : '';
+    }
+
+    function renderShirasagiBlock(data) {
+      if (!data || !data.latest || !data.latest.length) return;
+      const latest = data.latest[0];
+
+      const setText = (id, value) => {
+        const el = document.getElementById(id);
+        if (el && value) el.textContent = value;
+      };
+
+      const count = Number(data.count) || 0;
+      const total = Number(data.total) || 36;
+      setText('home-shirasagi-count', String(count));
+      setText('home-shirasagi-btn-count', String(count));
+      setText('home-shirasagi-total', String(total));
+      const remaining = Math.max(total - count, 0);
+      setText('home-shirasagi-remaining', remaining === 0 ? '三十六景 完結' : (remaining === 1 ? 'あと一景' : `あと${remaining}景`));
+      const fill = document.getElementById('home-shirasagi-bar-fill');
+      if (fill) fill.style.width = `${Math.round((count / total) * 100)}%`;
+
+      const link = document.getElementById('home-shirasagi-latest-link');
+      const photoLink = document.getElementById('home-shirasagi-photo-link');
+      if (link && latest.url) link.href = latest.url;
+      if (photoLink && latest.url) photoLink.href = latest.url;
+      setText('home-shirasagi-latest-title', latest.title);
+      setText('home-shirasagi-latest-meta', [formatIsoDate(latest.date), latest.place].filter(Boolean).join(' ・ '));
+      setText('home-shirasagi-caption', `第${kanjiNumber(latest.no)}景 ${latest.title || ''}`);
+
+      const image = document.getElementById('home-shirasagi-image');
+      const source = document.getElementById('home-shirasagi-source');
+      if (source && latest.full) source.srcset = latest.full;
+      if (image && latest.full) {
+        image.src = latest.full.replace('/webp/full/', '/').replace(/\.webp$/, '.jpg');
+        image.alt = `姫路城 — 第${kanjiNumber(latest.no)}景 ${latest.title || ''}`;
+      }
+
+    }
+
+    async function loadShirasagiBlock() {
+      try {
+        const res = await fetch('data/shirasagi-latest.json');
+        if (!res.ok) throw new Error('failed');
+        renderShirasagiBlock(await res.json());
+      } catch (error) {
+        // 取得できなければ HTML に書いてある最新の景をそのまま見せる
+        console.log('Using static content for shirasagi block');
       }
     }
 
     document.addEventListener('DOMContentLoaded', () => {
       loadShirasagiBlock();
-      loadRecentFrame();
-      loadUpdates();
-      loadLatestArticles();
+      loadRecentUpdates();
     });
 
     // ===== External links =====
