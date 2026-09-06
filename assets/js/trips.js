@@ -288,12 +288,19 @@
     document.head.appendChild(s);
   }
 
+  // 記事のURLの正本は一覧カードの主リンク。地図データは座標と記事IDだけを持つ。
+  function articleUrl(id) {
+    var t = byId[id];
+    if (!t) return '';
+    var link = t.el.querySelector('.trip-card__link');
+    return link ? link.getAttribute('href') : '';
+  }
+
   function popupHtml(cityName, articleIds) {
     var items = articleIds.map(function (id) {
-      var t = byId[id];
-      if (!t) return '';
-      var link = t.el.querySelector('.trip-card__link');
-      return '<li><a href="' + link.getAttribute('href') + '">' + t.title + ' を読む →</a></li>';
+      var href = articleUrl(id);
+      if (!href) return '';
+      return '<li><a href="' + href + '">' + byId[id].title + ' を読む →</a></li>';
     }).filter(Boolean).join('');
     return '<div class="trip-popup"><div class="trip-popup__city">' + cityName +
            '</div><ul class="trip-popup__list">' + items + '</ul></div>';

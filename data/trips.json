@@ -2,7 +2,6 @@
   {
     "id": "turkey",
     "title": "トルコ横断",
-    "link": "turkey-travel-journal.html",
     "cities": [
       {
         "name": "Cappadocia",
@@ -48,7 +47,6 @@
   {
     "id": "tibet-xian-2016",
     "title": "チベット拉薩・西安 兵馬俑の旅",
-    "link": "tibet-travel-journal.html",
     "cities": [
       {
         "name": "広州 (Guangzhou)",
@@ -106,7 +104,6 @@
   {
     "id": "germany-prague-2014",
     "title": "ドイツ縦断、そしてプラハ",
-    "link": "germany-travel-journal.html",
     "cities": [
       {
         "name": "フランクフルト (Frankfurt)",
@@ -190,7 +187,6 @@
   {
     "id": "italy-2016",
     "title": "イタリア縦断、フォトキナへの旅",
-    "link": "italy-travel-journal.html",
     "cities": [
       {
         "name": "ミラノ (Milano)",
@@ -241,7 +237,6 @@
   {
     "id": "taiwan-visits",
     "title": "台湾、笑顔と美食の島",
-    "link": "taiwan-travel-journal.html",
     "cities": [
       {
         "name": "台北 (Taipei)",
@@ -263,7 +258,6 @@
   {
     "id": "myanmar-2012",
     "title": "ミャンマー、仏塔の国へ",
-    "link": "myanmar-travel-journal.html",
     "cities": [
       {
         "name": "ヤンゴン (Yangon)",
@@ -285,7 +279,6 @@
   {
     "id": "hoian-trilogy",
     "title": "ホイアン、変わらぬ笑顔",
-    "link": "hoian-travel-journal.html",
     "cities": [
       {
         "name": "ホイアン (Hoi An)",
@@ -301,7 +294,6 @@
   {
     "id": "london-2017",
     "title": "ロンドンとバース — 竜一の卒業式の旅",
-    "link": "london-travel-journal.html",
     "cities": [
       {
         "name": "ロンドン (London)",
@@ -323,7 +315,6 @@
   {
     "id": "france-2017",
     "title": "パリとモンサンミッシェル — 男三人衆の旅",
-    "link": "france-travel-journal.html",
     "cities": [
       {
         "name": "パリ (Paris)",
@@ -345,7 +336,6 @@
   {
     "id": "muine-2018",
     "title": "ムイネーの砂漠、そしてカムラン湾",
-    "link": "muine-travel-journal.html",
     "cities": [
       {
         "name": "ホーチミン (Ho Chi Minh City)",
@@ -372,7 +362,6 @@
   {
     "id": "hochiminh-2025",
     "title": "7年ぶりのホーチミン",
-    "link": "hochiminh-travel-journal.html",
     "cities": [
       {
         "name": "ホーチミン (Ho Chi Minh City)",
@@ -388,7 +377,6 @@
   {
     "id": "halong-2014",
     "title": "ハロン湾、霧の中の奇岩",
-    "link": "halong-travel-journal.html",
     "cities": [
       {
         "name": "ハノイ (Hanoi)",
@@ -409,7 +397,6 @@
   {
     "id": "thailand-2014",
     "title": "バンコクとアユタヤ、十年ぶりの友と",
-    "link": "thailand-travel-journal.html",
     "cities": [
       {
         "name": "バンコク (Bangkok)",
@@ -431,7 +418,6 @@
   {
     "id": "malaysia-2015",
     "title": "クアラルンプールとバトゥ洞窟",
-    "link": "malaysia-travel-journal.html",
     "cities": [
       {
         "name": "クアラルンプール (Kuala Lumpur)",
@@ -453,7 +439,6 @@
   {
     "id": "kaiping-2012",
     "title": "開平の楼閣と赤坎古鎮",
-    "link": "kaiping-travel-journal.html",
     "cities": [
       {
         "name": "開平 (Kaiping)",
@@ -481,7 +466,6 @@
   {
     "id": "hiroshima-2013",
     "title": "人柱隊、広島へ",
-    "link": "hiroshima-travel-journal.html",
     "cities": [
       {
         "name": "広島 (Hiroshima)",
@@ -509,7 +493,6 @@
   {
     "id": "taji-2014",
     "title": "田路という田舎町",
-    "link": "taji-travel-journal.html",
     "cities": [
       {
         "name": "田路 (Taji, 朝来市)",
@@ -531,7 +514,6 @@
   {
     "id": "cebu-2014",
     "title": "セブ島、男三人の夕食",
-    "link": "cebu-travel-journal.html",
     "cities": [
       {
         "name": "マクタン島 (Mactan)",
@@ -547,7 +529,6 @@
   {
     "id": "kyoto-sasayama-2014",
     "title": "京都のライカ店と、丹波篠山の桜",
-    "link": "kyoto-sasayama-travel-journal.html",
     "cities": [
       {
         "name": "祇園・ライカ京都店 (Kyoto)",
@@ -569,7 +550,6 @@
   {
     "id": "kuma-2014",
     "title": "久万高原町の星空",
-    "link": "kuma-travel-journal.html",
     "cities": [
       {
         "name": "久万高原町 (Kumakogen)",
