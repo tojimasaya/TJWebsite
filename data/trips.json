@@ -2,12 +2,7 @@
   {
     "id": "turkey",
     "title": "トルコ横断",
-    "subtitle": "空に浮かぶ朝と、海に沈む夕",
-    "year": 2024,
-    "days": 8,
-    "color": "#e74c3c",
     "link": "turkey-travel-journal.html",
-    "image": "/assets/images/gallery/cappadocia-thumbnail.webp",
     "cities": [
       {
         "name": "Cappadocia",
@@ -53,12 +48,7 @@
   {
     "id": "tibet-xian-2016",
     "title": "チベット拉薩・西安 兵馬俑の旅",
-    "subtitle": "広州から54時間の列車で標高3,650mへ",
-    "year": 2016,
-    "days": 11,
-    "color": "#8e44ad",
     "link": "tibet-travel-journal.html",
-    "image": "/assets/images/gallery/lhasa.webp",
     "cities": [
       {
         "name": "広州 (Guangzhou)",
@@ -116,12 +106,7 @@
   {
     "id": "germany-prague-2014",
     "title": "ドイツ縦断、そしてプラハ",
-    "subtitle": "ライツパークとフォトキナ、写真家の楽園へ",
-    "year": 2014,
-    "days": null,
-    "color": "#2980b9",
     "link": "germany-travel-journal.html",
-    "image": "/assets/images/gallery/cologne.webp",
     "cities": [
       {
         "name": "フランクフルト (Frankfurt)",
@@ -205,12 +190,7 @@
   {
     "id": "italy-2016",
     "title": "イタリア縦断、フォトキナへの旅",
-    "subtitle": "ミラノからローマ、そしてケルンへ",
-    "year": 2016,
-    "days": 10,
-    "color": "#27ae60",
     "link": "italy-travel-journal.html",
-    "image": "/assets/images/gallery/venice.webp",
     "cities": [
       {
         "name": "ミラノ (Milano)",
@@ -261,12 +241,7 @@
   {
     "id": "taiwan-visits",
     "title": "台湾、笑顔と美食の島",
-    "subtitle": "通い続ける隣人の記録",
-    "year": "2024–2026",
-    "days": null,
-    "color": "#795548",
     "link": "taiwan-travel-journal.html",
-    "image": "/assets/images/trips/taiwan/sunmoonlake/01-05.webp",
     "cities": [
       {
         "name": "台北 (Taipei)",
@@ -288,12 +263,7 @@
   {
     "id": "myanmar-2012",
     "title": "ミャンマー、仏塔の国へ",
-    "subtitle": "ヤンゴンの黄金、バガンのKokoとMomo",
-    "year": 2012,
-    "days": null,
-    "color": "#6F1E51",
     "link": "myanmar-travel-journal.html",
-    "image": "/assets/images/trips/myanmar/bagan-01.webp",
     "cities": [
       {
         "name": "ヤンゴン (Yangon)",
@@ -315,12 +285,7 @@
   {
     "id": "hoian-trilogy",
     "title": "ホイアン、変わらぬ笑顔",
-    "subtitle": "三度通った古都の定点観測",
-    "year": "2013–2018",
-    "days": null,
-    "color": "#16a085",
     "link": "hoian-travel-journal.html",
-    "image": "/assets/images/trips/hoian/2016/03-03.png",
     "cities": [
       {
         "name": "ホイアン (Hoi An)",
@@ -336,12 +301,7 @@
   {
     "id": "london-2017",
     "title": "ロンドンとバース — 竜一の卒業式の旅",
-    "subtitle": "家族で祝う、Prior Park College の晴れの日",
-    "year": 2017,
-    "days": null,
-    "color": "#e84393",
     "link": "london-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "ロンドン (London)",
@@ -363,12 +323,7 @@
   {
     "id": "france-2017",
     "title": "パリとモンサンミッシェル — 男三人衆の旅",
-    "subtitle": "いつもの三人で、ユーロスターに乗って",
-    "year": 2017,
-    "days": null,
-    "color": "#5f27cd",
     "link": "france-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "パリ (Paris)",
@@ -390,12 +345,7 @@
   {
     "id": "muine-2018",
     "title": "ムイネーの砂漠、そしてカムラン湾",
-    "subtitle": "ドローンと歩いた3日間",
-    "year": 2018,
-    "days": 3,
-    "color": "#34495e",
     "link": "muine-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "ホーチミン (Ho Chi Minh City)",
@@ -422,12 +372,7 @@
   {
     "id": "hochiminh-2025",
     "title": "7年ぶりのホーチミン",
-    "subtitle": "Leica Elmarit 28mmで捉える進化する街",
-    "year": 2025,
-    "days": null,
-    "color": "#f39c12",
     "link": "hochiminh-travel-journal.html",
-    "image": "/assets/images/gallery/vietnam.webp",
     "cities": [
       {
         "name": "ホーチミン (Ho Chi Minh City)",
@@ -443,12 +388,7 @@
   {
     "id": "halong-2014",
     "title": "ハロン湾、霧の中の奇岩",
-    "subtitle": "EMERAUDE号で過ごした一泊二日",
-    "year": 2014,
-    "days": 2,
-    "color": "#5b7c8d",
     "link": "halong-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "ハノイ (Hanoi)",
@@ -469,12 +409,7 @@
   {
     "id": "thailand-2014",
     "title": "バンコクとアユタヤ、十年ぶりの友と",
-    "subtitle": "仏頭、屋台、そして中華街",
-    "year": 2014,
-    "days": null,
-    "color": "#c0654a",
     "link": "thailand-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "バンコク (Bangkok)",
@@ -496,12 +431,7 @@
   {
     "id": "malaysia-2015",
     "title": "クアラルンプールとバトゥ洞窟",
-    "subtitle": "一人で歩いた旧正月あけのマレーシア",
-    "year": 2015,
-    "days": null,
-    "color": "#3f8f7a",
     "link": "malaysia-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "クアラルンプール (Kuala Lumpur)",
@@ -523,12 +453,7 @@
   {
     "id": "kaiping-2012",
     "title": "開平の楼閣と赤坎古鎮",
-    "subtitle": "Turtlebackを始めた三人で訪ねた、広東省の世界遺産",
-    "year": 2012,
-    "days": null,
-    "color": "#b08d3f",
     "link": "kaiping-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "開平 (Kaiping)",
@@ -556,12 +481,7 @@
   {
     "id": "hiroshima-2013",
     "title": "人柱隊、広島へ",
-    "subtitle": "モバイル＆カメラ仲間と巡った、宮島と呉の二日間",
-    "year": 2013,
-    "days": 2,
-    "color": "#c0392b",
     "link": "hiroshima-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "広島 (Hiroshima)",
@@ -589,12 +509,7 @@
   {
     "id": "taji-2014",
     "title": "田路という田舎町",
-    "subtitle": "幼馴染と二人、自分の名字と同じ名前の町へ",
-    "year": 2014,
-    "days": null,
-    "color": "#d98cae",
     "link": "taji-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "田路 (Taji, 朝来市)",
@@ -616,12 +531,7 @@
   {
     "id": "cebu-2014",
     "title": "セブ島、男三人の夕食",
-    "subtitle": "研さんの家の近所のイタリアンで",
-    "year": 2014,
-    "days": null,
-    "color": "#1f8fa8",
     "link": "cebu-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "マクタン島 (Mactan)",
@@ -637,12 +547,7 @@
   {
     "id": "kyoto-sasayama-2014",
     "title": "京都のライカ店と、丹波篠山の桜",
-    "subtitle": "幼馴染の松尾くんと、四月の二日間",
-    "year": 2014,
-    "days": 2,
-    "color": "#e8a0bf",
     "link": "kyoto-sasayama-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "祇園・ライカ京都店 (Kyoto)",
@@ -664,12 +569,7 @@
   {
     "id": "kuma-2014",
     "title": "久万高原町の星空",
-    "subtitle": "息子と二人、光のない町へ",
-    "year": 2014,
-    "days": null,
-    "color": "#2c3e70",
     "link": "kuma-travel-journal.html",
-    "image": null,
     "cities": [
       {
         "name": "久万高原町 (Kumakogen)",
