@@ -125,7 +125,11 @@
       border: 2.5px solid #fff; box-shadow: 0 1px 4px rgba(0,0,0,.35); cursor: pointer;
     }
     .leaflet-marker-icon:focus-visible { outline: 3px solid var(--focus-color); outline-offset: 3px; }
-    .trip-marker--on { background: var(--accent-color); transform: scale(1.25); }
+    /* 選択中の地点。色だけでなく大きさと輪郭でも区別する */
+    .trip-marker--on {
+      background: #2563eb; transform: scale(1.5);
+      border-width: 3px; box-shadow: 0 0 0 3px rgba(37, 99, 235, .35), 0 2px 6px rgba(0,0,0,.35);
+    }
     .trip-marker-base {
       width: 20px; height: 20px; border-radius: 50%; background: #333; color: #fff;
       border: 3px solid #fff; box-shadow: 0 2px 8px rgba(0,0,0,.35);
@@ -318,7 +322,7 @@
         <ul class="trip-grid" id="trip-grid">
         <li class="trip-card" id="trip-taiwan" data-trip="taiwan"
             data-regions="asia" data-years="2024 2025 2026"
-            data-newest="2026" data-oldest="2024" data-order="0"
+            data-order="0"
             data-search="台湾、笑顔と美食の島 台湾 台湾 台北 台中 日月潭 taiwan taipei sun moon lake">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/taiwan-692.webp" srcset="/assets/images/trips/cards/taiwan-480.webp 480w, /assets/images/trips/cards/taiwan-692.webp 692w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="日月潭上空から、中央にフローデシンホテル、右に文武廟" width="692" height="461" loading="eager" fetchpriority="high" decoding="async"></div>
           <div class="trip-card__body">
@@ -331,7 +335,7 @@
         </li>
         <li class="trip-card" id="trip-tibet" data-trip="tibet"
             data-regions="asia" data-years="2016"
-            data-newest="2016" data-oldest="2016" data-order="1"
+            data-order="1"
             data-search="チベット拉薩・西安 兵馬俑の旅 チベット・西安 チベット ラサ 拉薩 西安 兵馬俑 広州 シガツェ ギャンツェ ゴルムド 武昌 香港 tibet lhasa xi&#x27;an guangzhou xigaze gyantse golmud hong kong">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/tibet-800.webp" srcset="/assets/images/trips/cards/tibet-480.webp 480w, /assets/images/trips/cards/tibet-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="チベット・ラサ、ポタラ宮" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -344,20 +348,20 @@
         </li>
         <li class="trip-card" id="trip-turkey" data-trip="turkey"
             data-regions="asia europe" data-years="2024"
-            data-newest="2024" data-oldest="2024" data-order="2"
+            data-order="2"
             data-search="空に浮かぶ朝と、海に沈む夕:トルコ横断 トルコ トルコ turkey カッパドキア cappadocia イスタンブール istanbul コンヤ konya パムッカレ pamukkale エフェソス ephesus サフランボル safranbolu">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/turkey-800.webp" srcset="/assets/images/trips/cards/turkey-480.webp 480w, /assets/images/trips/cards/turkey-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="イスタンブール、ボスポラス海峡の夕景" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
             <p class="trip-card__place">トルコ</p>
             <h3 class="trip-card__title"><a class="trip-card__link" href="/turkey-travel-journal.html">空に浮かぶ朝と、海に沈む夕：トルコ横断</a></h3>
-            <p class="trip-card__meta">2024年10月<span class="trip-card__sep" aria-hidden="true">｜</span>6都市</p>
+            <p class="trip-card__meta">2024年10〜11月<span class="trip-card__sep" aria-hidden="true">｜</span>6つの訪問地</p>
             <p class="trip-card__excerpt">熱気球の群れが空を占領する朝。ボスポラスの風が光を砕く夕方。レンズを変えるだけで、同じ街が別の街になる。</p>
             <p class="trip-card__cta" aria-hidden="true">旅行記を読む <span class="trip-card__arrow">→</span></p>
           </div>
         </li>
         <li class="trip-card" id="trip-germany" data-trip="germany"
             data-regions="europe" data-years="2014"
-            data-newest="2014" data-oldest="2014" data-order="3"
+            data-order="3"
             data-search="ドイツ縦断、ライツパークとフォトキナ ドイツ ドイツ germany フランクフルト frankfurt ヴェッツラー wetzlar ケルン köln koln cologne ハイデルベルク heidelberg シュトゥットガルト stuttgart ニュルンベルク nürnberg nurnberg ライツパーク leitz park フォトキナ photokina">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/germany-800.webp" srcset="/assets/images/trips/cards/germany-480.webp 480w, /assets/images/trips/cards/germany-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="ケルン大聖堂" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -370,7 +374,7 @@
         </li>
         <li class="trip-card" id="trip-prague" data-trip="prague"
             data-regions="europe" data-years="2014"
-            data-newest="2014" data-oldest="2014" data-order="4"
+            data-order="4"
             data-search="プラハの奇跡を求めて:写真家の楽園への旅 チェコ・プラハ プラハ praha prague チェコ czech カレル橋 天文時計 ドレスデン dresden ニュルンベルク nürnberg nurnberg フランクフルト frankfurt">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/prague-800.webp" srcset="/assets/images/trips/cards/prague-480.webp 480w, /assets/images/trips/cards/prague-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="プラハ、早朝のカレル橋" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -383,7 +387,7 @@
         </li>
         <li class="trip-card" id="trip-italy" data-trip="italy"
             data-regions="europe" data-years="2016"
-            data-newest="2016" data-oldest="2016" data-order="5"
+            data-order="5"
             data-search="イタリア縦断、フォトキナへの旅 イタリア イタリア italy ミラノ milano ベネツィア venezia フィレンツェ firenze チンクエ・テッレ cinque terre ナポリ napoli ローマ roma ケルン köln koln フォトキナ photokina">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/italy-800.webp" srcset="/assets/images/trips/cards/italy-480.webp 480w, /assets/images/trips/cards/italy-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="ゴンドラの向こうにライトアップされたサン・ジョルジョ・マッジョーレ聖堂" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -396,7 +400,7 @@
         </li>
         <li class="trip-card" id="trip-london" data-trip="london"
             data-regions="europe" data-years="2017"
-            data-newest="2017" data-oldest="2017" data-order="6"
+            data-order="6"
             data-search="ロンドンとバース — 竜一の卒業式の旅 イギリス・ロンドン ロンドン london バース bath イギリス england prior park college 竜一 タワーブリッジ tower bridge">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/london-800.webp" srcset="/assets/images/trips/cards/london-480.webp 480w, /assets/images/trips/cards/london-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="タワーブリッジの前で。左からTJ、YKK師匠、竜一、Condy、バスターさん" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -409,7 +413,7 @@
         </li>
         <li class="trip-card" id="trip-france" data-trip="france"
             data-regions="europe" data-years="2017"
-            data-newest="2017" data-oldest="2017" data-order="7"
+            data-order="7"
             data-search="パリとモンサンミッシェル — 男三人衆の旅 フランス フランス france パリ paris モンサンミッシェル mont saint-michel 凱旋門 エッフェル塔">
           <div class="trip-card__media trip-card__media--video"><img src="https://img.youtube.com/vi/QQ9UUbk9FUY/maxresdefault.jpg" alt="モンサンミッシェルの空撮" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -417,12 +421,12 @@
             <h3 class="trip-card__title"><a class="trip-card__link" href="/france-travel-journal.html">パリとモンサンミッシェル — 男三人衆の旅</a></h3>
             <p class="trip-card__meta">2017年7月<span class="trip-card__sep" aria-hidden="true">｜</span>動画6本</p>
             <p class="trip-card__excerpt">いつもの三人でユーロスターに乗ってパリへ。誕生日の凱旋門、エッフェル塔のジュール・ヴェルヌ、そして空撮。</p>
-            <p class="trip-card__cta" aria-hidden="true">写真・動画を見る <span class="trip-card__arrow">→</span></p>
+            <p class="trip-card__cta" aria-hidden="true">動画を見る <span class="trip-card__arrow">→</span></p>
           </div>
         </li>
         <li class="trip-card" id="trip-hochiminh" data-trip="hochiminh"
             data-regions="asia" data-years="2025"
-            data-newest="2025" data-oldest="2025" data-order="8"
+            data-order="8"
             data-search="7年ぶりのホーチミン ベトナム・ホーチミン ホーチミン ho chi minh city ベトナム vietnam サイゴン saigon">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/hochiminh-800.webp" srcset="/assets/images/trips/cards/hochiminh-480.webp 480w, /assets/images/trips/cards/hochiminh-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="ホーチミンのランドマーク81" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -435,7 +439,7 @@
         </li>
         <li class="trip-card" id="trip-myanmar" data-trip="myanmar"
             data-regions="asia" data-years="2012"
-            data-newest="2012" data-oldest="2012" data-order="9"
+            data-order="9"
             data-search="ミャンマー、仏塔の国へ ミャンマー ミャンマー myanmar ヤンゴン yangon バガン bagan シュエダゴン">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/myanmar-464.webp" srcset="/assets/images/trips/cards/myanmar-464.webp 464w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="バガンの平原に立つ数千のパゴダ" width="464" height="309" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -448,7 +452,7 @@
         </li>
         <li class="trip-card" id="trip-hoian" data-trip="hoian"
             data-regions="asia" data-years="2013 2016 2018"
-            data-newest="2018" data-oldest="2013" data-order="10"
+            data-order="10"
             data-search="ホイアン、変わらぬ笑顔 ベトナム・ホイアン ホイアン hoi an ベトナム vietnam フエ ミーソン ランタン">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/hoian-800.webp" srcset="/assets/images/trips/cards/hoian-480.webp 480w, /assets/images/trips/cards/hoian-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="トゥーボン川に流れる灯籠" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -461,7 +465,7 @@
         </li>
         <li class="trip-card" id="trip-muine" data-trip="muine"
             data-regions="asia" data-years="2018"
-            data-newest="2018" data-oldest="2018" data-order="11"
+            data-order="11"
             data-search="ムイネーの砂漠、そしてカムラン湾 ベトナム・ムイネー ムイネー mui ne カムラン湾 cam ranh bay ホーチミン ho chi minh city ベトナム vietnam ドローン">
           <div class="trip-card__media trip-card__media--video"><img src="https://img.youtube.com/vi/3fg6MTK0mfc/maxresdefault.jpg" alt="ムイネーの砂漠をドローン空撮" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -469,12 +473,12 @@
             <h3 class="trip-card__title"><a class="trip-card__link" href="/muine-travel-journal.html">ムイネーの砂漠、そしてカムラン湾</a></h3>
             <p class="trip-card__meta">2018年1月<span class="trip-card__sep" aria-hidden="true">｜</span>動画3本</p>
             <p class="trip-card__excerpt">師匠の「砂漠で撮影したい」の一言から始まった旅。ムイネーの砂丘のドローン撮影会と、バルチック艦隊最後の寄港地。</p>
-            <p class="trip-card__cta" aria-hidden="true">写真・動画を見る <span class="trip-card__arrow">→</span></p>
+            <p class="trip-card__cta" aria-hidden="true">動画を見る <span class="trip-card__arrow">→</span></p>
           </div>
         </li>
         <li class="trip-card" id="trip-halong" data-trip="halong"
             data-regions="asia" data-years="2014"
-            data-newest="2014" data-oldest="2014" data-order="12"
+            data-order="12"
             data-search="ハロン湾、霧の中の奇岩 ベトナム・ハロン湾 ハロン湾 ha long bay ハノイ hanoi ベトナム vietnam">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/halong-800.webp" srcset="/assets/images/trips/cards/halong-480.webp 480w, /assets/images/trips/cards/halong-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="霧に包まれたハロン湾。奇岩のあいだに遊覧船や漁船が浮かぶ" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -487,7 +491,7 @@
         </li>
         <li class="trip-card" id="trip-thailand" data-trip="thailand"
             data-regions="asia" data-years="2014"
-            data-newest="2014" data-oldest="2014" data-order="13"
+            data-order="13"
             data-search="バンコクとアユタヤ、十年ぶりの友と タイ タイ thailand バンコク bangkok アユタヤ ayutthaya">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/thailand-800.webp" srcset="/assets/images/trips/cards/thailand-480.webp 480w, /assets/images/trips/cards/thailand-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="アユタヤ・ワット マハタートの、ガジュマルの根に抱かれた仏頭" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -500,7 +504,7 @@
         </li>
         <li class="trip-card" id="trip-malaysia" data-trip="malaysia"
             data-regions="asia" data-years="2015"
-            data-newest="2015" data-oldest="2015" data-order="14"
+            data-order="14"
             data-search="クアラルンプールとバトゥ洞窟 マレーシア マレーシア malaysia クアラルンプール kuala lumpur バトゥ洞窟 batu caves ペトロナス petronas">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/malaysia-800.webp" srcset="/assets/images/trips/cards/malaysia-480.webp 480w, /assets/images/trips/cards/malaysia-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="モスクの天窓越しに見えるペトロナス・ツインタワー" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -513,7 +517,7 @@
         </li>
         <li class="trip-card" id="trip-kaiping" data-trip="kaiping"
             data-regions="asia" data-years="2012"
-            data-newest="2012" data-oldest="2012" data-order="15"
+            data-order="15"
             data-search="開平の楼閣と、赤坎の古い街 中国・開平 開平 kaiping 赤坎古鎮 chikan 立園 li garden 中国 china 広東省 guangdong">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/kaiping-800.webp" srcset="/assets/images/trips/cards/kaiping-480.webp 480w, /assets/images/trips/cards/kaiping-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="緑の山を背にして建つ、開平の洋風の楼閣" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -526,7 +530,7 @@
         </li>
         <li class="trip-card" id="trip-hiroshima" data-trip="hiroshima"
             data-regions="japan" data-years="2013"
-            data-newest="2013" data-oldest="2013" data-order="16"
+            data-order="16"
             data-search="人柱隊、広島へ 広島 広島 hiroshima 宮島 miyajima 厳島神社 呉 kure 大和ミュージアム 日本 japan お好み村">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/hiroshima-800.webp" srcset="/assets/images/trips/cards/hiroshima-480.webp 480w, /assets/images/trips/cards/hiroshima-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="干潮の厳島神社と大鳥居" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -539,7 +543,7 @@
         </li>
         <li class="trip-card" id="trip-taji" data-trip="taji"
             data-regions="japan" data-years="2014"
-            data-newest="2014" data-oldest="2014" data-order="17"
+            data-order="17"
             data-search="田路という田舎町 兵庫・朝来 田路 taji 朝来 asago 竹田城跡 takeda castle 兵庫 hyogo 日本 japan 桜">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/taji-800.webp" srcset="/assets/images/trips/cards/taji-480.webp 480w, /assets/images/trips/cards/taji-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="満開の桜が続く田路の道" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -552,7 +556,7 @@
         </li>
         <li class="trip-card" id="trip-cebu" data-trip="cebu"
             data-regions="asia" data-years="2014"
-            data-newest="2014" data-oldest="2014" data-order="18"
+            data-order="18"
             data-search="セブ島、男三人の夕食 フィリピン・セブ島 セブ島 cebu マクタン mactan フィリピン philippines abaca">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/cebu-800.webp" srcset="/assets/images/trips/cards/cebu-480.webp 480w, /assets/images/trips/cards/cebu-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="Abacaレストランの開放的な店内" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -565,7 +569,7 @@
         </li>
         <li class="trip-card" id="trip-kyoto-sasayama" data-trip="kyoto-sasayama"
             data-regions="japan" data-years="2014"
-            data-newest="2014" data-oldest="2014" data-order="19"
+            data-order="19"
             data-search="京都のライカ店と、丹波篠山の桜 京都・丹波篠山 京都 kyoto 祇園 gion ライカ leica 丹波篠山 tamba-sasayama 兵庫 hyogo 日本 japan 桜">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/kyoto-sasayama-800.webp" srcset="/assets/images/trips/cards/kyoto-sasayama-480.webp 480w, /assets/images/trips/cards/kyoto-sasayama-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="川沿いに続く満開の桜並木" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">
@@ -578,7 +582,7 @@
         </li>
         <li class="trip-card" id="trip-kuma" data-trip="kuma"
             data-regions="japan" data-years="2014"
-            data-newest="2014" data-oldest="2014" data-order="20"
+            data-order="20"
             data-search="久万高原町の星空 愛媛・久万高原 久万高原 kumakogen 松山 matsuyama 愛媛 ehime 日本 japan 星空 天の川">
           <div class="trip-card__media"><img src="/assets/images/trips/cards/kuma-800.webp" srcset="/assets/images/trips/cards/kuma-480.webp 480w, /assets/images/trips/cards/kuma-800.webp 800w" sizes="(min-width: 1040px) 296px, (min-width: 640px) 44vw, calc(100vw - 40px)" alt="天の川が横切る久万高原町の星空" width="800" height="533" loading="lazy" decoding="async"></div>
           <div class="trip-card__body">

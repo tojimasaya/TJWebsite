@@ -33,13 +33,15 @@
   /* ------------------------------------------------------------------ 索引 */
 
   var index = cards.map(function (el) {
+    // 最新年・最古年は訪問年から導く（同じ情報を二度持たない）
+    var years = (el.dataset.years || '').split(' ').filter(Boolean).map(Number);
     return {
       el: el,
       id: el.dataset.trip,
       regions: (el.dataset.regions || '').split(' ').filter(Boolean),
       years: (el.dataset.years || '').split(' ').filter(Boolean),
-      newest: parseInt(el.dataset.newest, 10) || 0,
-      oldest: parseInt(el.dataset.oldest, 10) || 0,
+      newest: years.length ? Math.max.apply(null, years) : 0,
+      oldest: years.length ? Math.min.apply(null, years) : 0,
       order: parseInt(el.dataset.order, 10) || 0,
       search: el.dataset.search || '',
       title: (el.querySelector('.trip-card__title') || {}).textContent || ''
@@ -297,6 +299,12 @@
            '</div><ul class="trip-popup__list">' + items + '</ul></div>';
   }
 
+  function markerLabel(cityName, articleIds) {
+    return cityName + '：' + articleIds.map(function (id) {
+      return byId[id] ? byId[id].title : '';
+    }).filter(Boolean).join('、');
+  }
+
   function buildMap(routes) {
     map = L.map(mapEl, {
       center: [30, 80],
@@ -346,7 +354,7 @@
         var line = L.polyline(coords, {
           color: '#5b6b7c', weight: 2, opacity: 0.45, dashArray: '6 6'
         }).addTo(map);
-        lines.push({ line: line, articles: routeArticles });
+        lines.push({ line: line, articles: routeArticles, routeId: route.id });
       }
 
       route.cities.forEach(function (city) {
@@ -354,23 +362,44 @@
           .filter(function (id) { return byId[id]; });
         if (!cityArticles.length) return;
 
-        var label = city.name + '：' + cityArticles.map(function (id) { return byId[id].title; }).join('、');
         var m = L.marker([city.lat, city.lng], {
           icon: L.divIcon({
             className: '', html: '<div class="trip-marker"></div>',
             iconSize: [13, 13], iconAnchor: [6.5, 6.5], popupAnchor: [0, -10]
           }),
-          title: label
-        }).bindPopup(popupHtml(city.name, cityArticles), { maxWidth: 260, minWidth: 200 }).addTo(map);
+          title: markerLabel(city.name, cityArticles)
+        }).bindPopup('', { maxWidth: 260, minWidth: 200 }).addTo(map);
 
         var el = m.getElement();
-        if (el) { el.setAttribute('role', 'button'); el.setAttribute('aria-label', label); }
-        markers.push({ marker: m, articles: cityArticles, latlng: [city.lat, city.lng] });
+        if (el) el.setAttribute('role', 'button');
+        markers.push({
+          marker: m, articles: cityArticles, latlng: [city.lat, city.lng],
+          routeId: route.id, city: city.name, shown: null
+        });
       });
     });
 
+    // ポップアップを開いた旅程だけ、線とマーカーを強調する（色だけに頼らず大きさも変える）
+    map.on('popupopen', function (e) {
+      var hit = markers.filter(function (m) { return m.marker === e.popup._source; })[0];
+      highlight(hit ? hit.routeId : null);
+    });
+    map.on('popupclose', function () { highlight(null); });
+
     mapReady = true;
     syncMap();
+  }
+
+  function highlight(routeId) {
+    lines.forEach(function (l) {
+      l.line.setStyle(l.routeId === routeId
+        ? { color: '#2563eb', weight: 3.5, opacity: 0.95, dashArray: null }
+        : { color: '#5b6b7c', weight: 2, opacity: 0.45, dashArray: '6 6' });
+    });
+    markers.forEach(function (m) {
+      var dot = m.marker.getElement() && m.marker.getElement().firstChild;
+      if (dot && dot.classList) dot.classList.toggle('trip-marker--on', m.routeId === routeId);
+    });
   }
 
   function syncMap() {
@@ -380,12 +409,24 @@
     var bounds = [];
 
     markers.forEach(function (m) {
-      var on = m.articles.some(function (id) { return visible[id]; });
+      // 絞り込みで消えた記事は、ポップアップとマーカー名からも外す
+      var active = m.articles.filter(function (id) { return visible[id]; });
+      var on = active.length > 0;
       var el = m.marker.getElement();
       if (el) el.style.display = on ? '' : 'none';
       m.marker.closePopup();
+
+      var key = active.join(' ');
+      if (on && key !== m.shown) {
+        var label = markerLabel(m.city, active);
+        m.marker.setPopupContent(popupHtml(m.city, active));
+        m.marker.options.title = label;
+        if (el) { el.setAttribute('aria-label', label); el.setAttribute('title', label); }
+        m.shown = key;
+      }
       if (on) bounds.push(m.latlng);
     });
+    highlight(null);
 
     lines.forEach(function (l) {
       var on = l.articles.some(function (id) { return visible[id]; });
