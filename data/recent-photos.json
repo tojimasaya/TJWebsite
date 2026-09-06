@@ -1,5 +1,35 @@
 [
   {
+    "slug": "hongkong-farewell-yumcha",
+    "label": "今日の断章",
+    "title": "しばしの別れの飲茶、ドリアン屋と不動産屋の猫",
+    "place": "香港・深水埗",
+    "date": "2026年9月6日",
+    "body": "今週いよいよ日本へ一時帰国するので、前回と同じくしばらく口にできなくなる香港の飲茶を名残に味わい、その帰り道に見かけたものを何枚か撮ったのだが、まず気になったのは、このところ街のあちこちに増えてきたドリアンで、写真の店は専門店ではないものの、ドリアンだけを売る店がやたらと目につくのは何かあったのかと首をひねりつつ、妻は好物でも私は付き合いで一口つまむ程度で、あの匂いだけで無理という人もいれば病みつきの人もいて、よく『トイレのアイスクリーム』と呼ばれるわりに冷やして食べもしないのだからアイスとは少し違う気もして、結局は納豆や干物やチーズと同じく癖が強いほど好きか大嫌いかへ極端に振れる食べ物なのだと妙に納得し、それからもう一枚は不動産屋の店先にちょこんと座っていた猫で、我が家にも保護猫が二匹いるからつい足を止めたのだが、首輪もないのに逃げもせず店番をするその猫に、不動産不況のいまの香港でどうか招き猫の役目をきっちり果たしてくれよと胸の内で声をかけながら、あと何日か寝れば日本へ帰る、そんな香港からの一日だった。",
+    "image": "assets/images/photo-notes/hongkong-farewell-yumcha-cat.jpg",
+    "imageWebp": "assets/images/photo-notes/hongkong-farewell-yumcha-cat.webp",
+    "alt": "不動産屋の店先、赤いマットの上に座る白黒の猫。奥に「租4200元」「租5800」の家賃札",
+    "caption": "Shop-front Cat / Sham Shui Po",
+    "link": "gallery.html",
+    "linkLabel": "ほかの一枚も見る →",
+    "sideFrames": [
+      {
+        "title": "しばしの別れの飲茶",
+        "caption": "Farewell Yum Cha / Hong Kong",
+        "image": "assets/images/photo-notes/hongkong-farewell-yumcha-dimsum.jpg",
+        "imageWebp": "assets/images/photo-notes/hongkong-farewell-yumcha-dimsum.webp",
+        "alt": "蒸し饅頭、黒ごま巻き、炒めた蘿蔔糕、蝦餃、鳳爪が並ぶ飲茶のテーブル"
+      },
+      {
+        "title": "増えるドリアン屋",
+        "caption": "Durian Stall / Pei Ho St, Sham Shui Po",
+        "image": "assets/images/photo-notes/hongkong-farewell-yumcha-durian.jpg",
+        "imageWebp": "assets/images/photo-notes/hongkong-farewell-yumcha-durian.webp",
+        "alt": "北河街の果物屋の店先、ピンクの籠に並んだ丸ごとのドリアンの棚"
+      }
+    ]
+  },
+  {
     "slug": "kison-goose-vanity-hkd70",
     "label": "今日の断章",
     "title": "見送りの焼鵝と、七十ドルの妙な見栄",
