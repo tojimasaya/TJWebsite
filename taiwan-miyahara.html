@@ -42,9 +42,10 @@
         .journal-label { font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 1.2rem; text-transform: uppercase; opacity: 0.9; display: block; }
         .journal-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 4.2vw, 2.6rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.55; margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(0,0,0,0.35); }
         .journal-subtitle { font-family: var(--primary-font); font-size: clamp(0.95rem, 2vw, 1.1rem); font-style: italic; opacity: 0.92; }
-        .journal-meta-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 42px auto 0; padding: 0 20px; }
-        .journal-meta-bar .pill { font-size: var(--text-xs); background: var(--hover-color); color: var(--text-color); padding: 6px 14px; border-radius: 999px; font-weight: 600; }
-        .journal-meta-bar .pill.route { background: var(--accent-color); color: #fff; }
+        /* 説明表示。押せそうに見える丸ボタンをやめ、普通の文字と間隔で並べる（このページ限定） */
+        .journal-meta-bar { display: flex; justify-content: center; flex-wrap: wrap; column-gap: 22px; row-gap: 2px; margin: 22px auto 0; padding: 0 20px; font-family: var(--primary-font); font-size: 0.85rem; line-height: 2; color: var(--text-light); }
+        .journal-meta-bar .meta-item { white-space: nowrap; }
+        .journal-meta-bar .meta-item:first-child { color: var(--text-color); font-weight: 600; }
         .essay { max-width: 720px; margin: 52px auto 30px; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 1.02rem; line-height: 2.15; color: var(--text-color); }
         .essay p { margin: 0 0 1.9em; }
         .essay figure { margin: 2.4em 0; }
@@ -82,11 +83,45 @@
     <main id="main-content" data-trip-share-title="台中・宮原眼科 — 眼科医院から生まれた絶品スイーツ" data-trip-share-text="1927年築の眼科を改装した台中の行列必至スイーツ殿堂・宮原眼科。天井の金魚、醉月樓の絶品料理。日月潭とセットでぜひ。">
 
         <div class="journal-meta-bar">
-            <span class="pill route">Taichung / 台中・宮原眼科</span>
-            <span class="pill">2025年2月</span>
-            <span class="pill">妻との二人旅</span>
-            <span class="pill">写真 21枚</span>
+            <span class="meta-item">台中・宮原眼科</span>
+            <span class="meta-item">2025年2月</span>
+            <span class="meta-item">妻との二人旅</span>
+            <span class="meta-item">写真 21枚</span>
         </div>
+
+        <section class="visit-picker visit-picker--compact" id="visit-picker-top" aria-labelledby="visit-picker-top-title">
+          <div class="visit-picker__head">
+            <h2 class="visit-picker__title" id="visit-picker-top-title">台湾のほかの旅を選ぶ</h2>
+            <p class="visit-picker__note">この記事は2025年2月の旅の一篇です。同じ旅の日月潭とあわせてどうぞ。</p>
+          </div>
+          <div class="visit-picker__grid">
+            <a class="visit-card" href="taiwan-2026.html">
+              <p class="visit-card__when">2026年6月</p>
+              <p class="visit-card__name">台北｜友人たちと囲んだ食卓</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+            <a class="visit-card" href="taiwan-2025.html">
+              <p class="visit-card__when">2025年6月</p>
+              <p class="visit-card__name">台北｜妻と朝ごはん、カキ氷</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+            <div class="visit-card">
+              <p class="visit-card__when">2025年2月</p>
+              <p class="visit-card__name">日月潭・台中｜霧雨の湖と宮原眼科</p>
+              <p class="visit-card__meta">妻との二人旅・この旅は2記事</p>
+              <div class="visit-card__links">
+                <a class="visit-card__link" href="taiwan-sunmoonlake.html"><span>日月潭の旅を読む →</span></a>
+                <a class="visit-card__link is-current" href="taiwan-miyahara.html" aria-current="page"><span>台中・宮原眼科を読む →</span><span class="visit-card__current">閲覧中</span></a>
+              </div>
+            </div>
+            <a class="visit-card" href="taiwan-2024.html">
+              <p class="visit-card__when">2024年8月</p>
+              <p class="visit-card__name">台北｜妻と牛肉麺、時間との戦い</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+          </div>
+          <p class="visit-picker__foot"><a href="taiwan-travel-journal.html#visit-selector">台湾の旅の目次 →</a></p>
+        </section>
 
         <article class="essay">
             <p>「宮原眼科」―― この名前を聞いて、誰もが想像するのは眼のお医者さんでしょう。しかし、台湾・台中にあるこの宮原眼科は、なんと行列の絶えないスイーツの名店なのです。日月潭を発ち、台中の高鉄駅へ戻る途中に立ち寄りました。</p>
@@ -171,6 +206,39 @@
         <div class="journal-origin">
             初出（note）：<a href="https://note.com/tojimasaya/n/n41096b82dfd1" target="_blank" rel="noopener noreferrer">台中の不思議 - 眼科医院から生まれた絶品スイーツ</a>（2025年2月公開）
         </div>
+
+        <section class="visit-picker visit-picker--compact" id="visit-picker-bottom" aria-labelledby="visit-picker-bottom-title">
+          <div class="visit-picker__head">
+            <h2 class="visit-picker__title" id="visit-picker-bottom-title">台湾のほかの旅を選ぶ</h2>
+          </div>
+          <div class="visit-picker__grid">
+            <a class="visit-card" href="taiwan-2026.html">
+              <p class="visit-card__when">2026年6月</p>
+              <p class="visit-card__name">台北｜友人たちと囲んだ食卓</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+            <a class="visit-card" href="taiwan-2025.html">
+              <p class="visit-card__when">2025年6月</p>
+              <p class="visit-card__name">台北｜妻と朝ごはん、カキ氷</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+            <div class="visit-card">
+              <p class="visit-card__when">2025年2月</p>
+              <p class="visit-card__name">日月潭・台中｜霧雨の湖と宮原眼科</p>
+              <p class="visit-card__meta">妻との二人旅・この旅は2記事</p>
+              <div class="visit-card__links">
+                <a class="visit-card__link" href="taiwan-sunmoonlake.html"><span>日月潭の旅を読む →</span></a>
+                <a class="visit-card__link is-current" href="taiwan-miyahara.html" aria-current="page"><span>台中・宮原眼科を読む →</span><span class="visit-card__current">閲覧中</span></a>
+              </div>
+            </div>
+            <a class="visit-card" href="taiwan-2024.html">
+              <p class="visit-card__when">2024年8月</p>
+              <p class="visit-card__name">台北｜妻と牛肉麺、時間との戦い</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+          </div>
+          <p class="visit-picker__foot"><a href="taiwan-travel-journal.html#visit-selector">台湾の旅の目次 →</a></p>
+        </section>
 
         <div class="day-nav">
             <a href="taiwan-sunmoonlake.html">← 日月潭 霧雨の湖</a>

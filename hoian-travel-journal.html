@@ -36,15 +36,19 @@
     <meta name="twitter:image" content="https://tojimasaya.com/assets/images/trips/hoian/2016/03-03.png">
 
     <style>
-        .journal-hero { position: relative; height: 58vh; min-height: 410px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; margin-top: 70px; }
+        /* 目次のヒーロー。訪問回を選ぶカードを最初の画面に入れるため、記事ページより低くしている。
+           HTML側のインライン height は外してあるので、この指定が実際に効く。 */
+        .journal-hero { position: relative; height: 32vh; min-height: 230px; max-height: 276px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; margin-top: 70px; }
+        @media (max-width: 768px) { .journal-hero { height: 30vh; min-height: 200px; max-height: 260px; } }
         .journal-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.6) contrast(1.08); }
         .journal-hero-content { position: relative; z-index: 2; padding: 20px; max-width: 900px; }
         .journal-label { font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 1.2rem; text-transform: uppercase; opacity: 0.9; display: block; }
         .journal-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 4.2vw, 2.7rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.55; margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(0,0,0,0.35); }
         .journal-subtitle { font-family: var(--primary-font); font-size: clamp(0.95rem, 2vw, 1.1rem); font-style: italic; opacity: 0.92; }
-        .journal-meta-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 42px auto 0; padding: 0 20px; }
-        .journal-meta-bar .pill { font-size: var(--text-xs); background: var(--hover-color); color: var(--text-color); padding: 6px 14px; border-radius: 999px; font-weight: 600; }
-        .journal-meta-bar .pill.route { background: var(--accent-color); color: #fff; }
+        /* 説明表示。押せそうに見える丸ボタンをやめ、普通の文字と間隔で並べる（このページ限定） */
+        .journal-meta-bar { display: flex; justify-content: center; flex-wrap: wrap; column-gap: 22px; row-gap: 2px; margin: 18px auto 0; padding: 0 20px; font-family: var(--primary-font); font-size: 0.85rem; line-height: 2; color: var(--text-light); }
+        .journal-meta-bar .meta-item { white-space: nowrap; }
+        .journal-meta-bar .meta-item:first-child { color: var(--text-color); font-weight: 600; }
         .essay { max-width: 720px; margin: 52px auto 30px; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 1.02rem; line-height: 2.15; color: var(--text-color); }
         .essay p { margin: 0 0 1.9em; }
         .essay h2 { font-family: 'Noto Serif JP', serif; font-size: 1.3rem; font-weight: 600; margin: 3em 0 1.2em; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); letter-spacing: 0.04em; }
@@ -99,6 +103,7 @@
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "ホイアン、変わらぬ笑顔 — 三度通った古都の定点観測（2013・2016・2018）", "description": "2013年、2016年、2018年。三度訪ねたベトナム・ホイアンの定点観測の旅行記。写真65枚と動画4本。", "image": "https://tojimasaya.com/assets/images/trips/hoian/2016/03-03.png", "author": {"@type": "Person", "name": "田路昌也 (Toji Masaya)", "url": "https://tojimasaya.com/about.html"}, "publisher": {"@type": "Person", "name": "田路昌也 (Toji Masaya)"}, "mainEntityOfPage": "https://tojimasaya.com/hoian-travel-journal.html", "inLanguage": "ja", "datePublished": "2026-07-04", "dateModified": "2026-07-05"}
     </script>
+<noscript><style>.day-item { opacity: 1 !important; transform: none !important; }</style></noscript>
 <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
 </head>
 <body>
@@ -107,7 +112,7 @@
     <script src="js/site-header.js"></script>
 
     <!-- Hero -->
-    <header class="journal-hero" style="height: 66vh; min-height: 450px;">
+    <header class="journal-hero">
         <picture><source srcset="/assets/images/trips/hoian/2016/03-03.webp" type="image/webp"><img src="/assets/images/trips/hoian/2016/03-03.png" alt="ホイアンの街" class="journal-hero-bg"></picture>
         <div class="journal-hero-content">
             <span class="journal-label">Travel Journal — 2013 / 2016 / 2018</span>
@@ -119,26 +124,53 @@
     <main id="main-content">
 
         <div class="journal-meta-bar">
-            <span class="pill route">Hoi An, Vietnam</span>
-            <span class="pill">3回の訪問</span>
-            <span class="pill">写真 65枚 + 動画 4本</span>
+            <span class="meta-item">ベトナム・ホイアン</span>
+            <span class="meta-item">3回の訪問</span>
+            <span class="meta-item">写真 65枚 + 動画 4本</span>
         </div>
+
+        <section class="visit-picker visit-picker--three" id="visit-selector" aria-labelledby="visit-selector-title">
+          <div class="visit-picker__head">
+            <h2 class="visit-picker__title" id="visit-selector-title">ホイアン、3回の旅から選ぶ</h2>
+            <p class="visit-picker__note">気になる回からどうぞ。旅行記や映像へ直接進めます。</p>
+          </div>
+          <div class="visit-picker__grid">
+            <a class="visit-card" href="hoian-2018.html">
+              <p class="visit-card__when">2018年6月</p>
+              <p class="visit-card__name">ホイアン｜映像で巡るロケハンの旅</p>
+              <p class="visit-card__meta">最新の訪問・動画4本</p>
+              <p class="visit-card__go">映像を見る →</p>
+            </a>
+            <a class="visit-card" href="hoian-2016.html">
+              <p class="visit-card__when">2016年1月</p>
+              <p class="visit-card__name">ホイアン｜三年ぶりの再会</p>
+              <p class="visit-card__meta">写真37枚</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+            <a class="visit-card" href="hoian-2013.html">
+              <p class="visit-card__when">2013年1月</p>
+              <p class="visit-card__name">フエ・ホイアン｜初めての古都へ</p>
+              <p class="visit-card__meta">写真28枚</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+          </div>
+        </section>
 
         <article class="essay" style="margin-bottom: 10px;">
             <p>2013年、2016年、2018年。ランタンの灯る世界遺産の古都ホイアンを、5年のあいだに三度訪ねました。町は少しずつ変わり、記録する道具もカメラから動画へと変わりましたが、変わらなかったのは人々の笑顔です。三度目の旅では、初訪のときに立ち寄ったレストランをまた訪ね、5年前の写真を店員さんに見せて盛り上がりました。これはその定点観測の記録です。</p>
         </article>
 
         <section class="days-section" aria-label="訪問ごとの記録">
-            <article class="day-item" id="v2013">
+            <article class="day-item" id="v2018">
                 <div class="day-image-wrapper">
-                    <picture><source srcset="/assets/images/trips/hoian/2013/05-01.webp" type="image/webp"><img src="/assets/images/trips/hoian/2013/05-01.png" alt="2013年のホイアン" loading="lazy" decoding="async"></picture>
+                    <picture><source srcset="/assets/images/trips/hoian/2016/03-06.webp" type="image/webp"><img src="/assets/images/trips/hoian/2016/03-06.png" alt="2018年のホイアン（映像）" loading="lazy" decoding="async"></picture>
                 </div>
                 <div class="day-content">
-                    <div class="day-number">2013</div>
-                    <p class="day-date">第一訪 — 2013.01 ・ 写真28枚</p>
-                    <h2 class="day-name">フエ、そしてホイアンへ</h2>
-                    <p class="day-description">旅の目的は「日本橋は本当に日本人が作ったのか」の検証——橋に刻まれた寄進者の名は、すべて中国名でした。夜景撮影の帰り道、「写真を撮ってあげようか」と声を掛けると迷わずポーズを決めたMiss Lyの店員さんたち。この一枚が、後の再会につながります。</p>
-                    <a href="hoian-2013.html" class="day-read-button">2013年を読む</a>
+                    <div class="day-number">2018</div>
+                    <p class="day-date">第三訪 — 2018.06 ・ 動画4本</p>
+                    <h2 class="day-name">映像で辿るロケハンの旅</h2>
+                    <p class="day-description">三度目は写真でも文章でもなく、映像で。オールドレンズ・ワークショップ開催地の下見に、5年前の写真を手にMiss Ly Cafeをまた訪ね、ランタンの夜、ミーソン遺跡、そして三人の日本人の墓へ。4日間のロケハンをVLOGで辿ります。</p>
+                    <a href="hoian-2018.html" class="day-read-button">2018年を観る</a>
                 </div>
             </article>
             <article class="day-item" id="v2016">
@@ -153,16 +185,16 @@
                     <a href="hoian-2016.html" class="day-read-button">2016年を読む</a>
                 </div>
             </article>
-            <article class="day-item" id="v2018">
+            <article class="day-item" id="v2013">
                 <div class="day-image-wrapper">
-                    <picture><source srcset="/assets/images/trips/hoian/2016/03-06.webp" type="image/webp"><img src="/assets/images/trips/hoian/2016/03-06.png" alt="2018年のホイアン（映像）" loading="lazy" decoding="async"></picture>
+                    <picture><source srcset="/assets/images/trips/hoian/2013/05-01.webp" type="image/webp"><img src="/assets/images/trips/hoian/2013/05-01.png" alt="2013年のホイアン" loading="lazy" decoding="async"></picture>
                 </div>
                 <div class="day-content">
-                    <div class="day-number">2018</div>
-                    <p class="day-date">第三訪 — 2018.06 ・ 動画4本</p>
-                    <h2 class="day-name">映像で辿るロケハンの旅</h2>
-                    <p class="day-description">三度目は写真でも文章でもなく、映像で。オールドレンズ・ワークショップ開催地の下見に、5年前の写真を手にMiss Ly Cafeをまた訪ね、ランタンの夜、ミーソン遺跡、そして三人の日本人の墓へ。4日間のロケハンをVLOGで辿ります。</p>
-                    <a href="hoian-2018.html" class="day-read-button">2018年を観る</a>
+                    <div class="day-number">2013</div>
+                    <p class="day-date">第一訪 — 2013.01 ・ 写真28枚</p>
+                    <h2 class="day-name">フエ、そしてホイアンへ</h2>
+                    <p class="day-description">旅の目的は「日本橋は本当に日本人が作ったのか」の検証——橋に刻まれた寄進者の名は、すべて中国名でした。夜景撮影の帰り道、「写真を撮ってあげようか」と声を掛けると迷わずポーズを決めたMiss Lyの店員さんたち。この一枚が、後の再会につながります。</p>
+                    <a href="hoian-2013.html" class="day-read-button">2013年を読む</a>
                 </div>
             </article>
         </section>
@@ -172,7 +204,7 @@
         </div>
 
         <div class="journal-nav-links">
-            <a href="hoian-2013.html" class="primary">2013年から読む →</a>
+            <a href="hoian-2013.html" class="read-through">最初の旅から読む（2013年1月）→</a>
             <a href="trips.html">旅の一覧（Trips）</a>
         </div>
 

@@ -36,15 +36,19 @@
     <meta name="twitter:image" content="https://tojimasaya.com/assets/images/trips/taiwan/sunmoonlake/02-01.jpg">
 
     <style>
-        .journal-hero { position: relative; height: 58vh; min-height: 410px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; margin-top: 70px; }
+        /* 目次のヒーロー。訪問回を選ぶカードを最初の画面に入れるため、記事ページより低くしている。
+           HTML側のインライン height は外してあるので、この指定が実際に効く。 */
+        .journal-hero { position: relative; height: 32vh; min-height: 230px; max-height: 276px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; margin-top: 70px; }
+        @media (max-width: 768px) { .journal-hero { height: 30vh; min-height: 200px; max-height: 260px; } }
         .journal-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.6) contrast(1.08); }
         .journal-hero-content { position: relative; z-index: 2; padding: 20px; max-width: 900px; }
         .journal-label { font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 1.2rem; text-transform: uppercase; opacity: 0.9; display: block; }
         .journal-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 4.2vw, 2.7rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.55; margin-bottom: 1rem; text-shadow: 0 4px 20px rgba(0,0,0,0.35); }
         .journal-subtitle { font-family: var(--primary-font); font-size: clamp(0.95rem, 2vw, 1.1rem); font-style: italic; opacity: 0.92; }
-        .journal-meta-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 42px auto 0; padding: 0 20px; }
-        .journal-meta-bar .pill { font-size: var(--text-xs); background: var(--hover-color); color: var(--text-color); padding: 6px 14px; border-radius: 999px; font-weight: 600; }
-        .journal-meta-bar .pill.route { background: var(--accent-color); color: #fff; }
+        /* 説明表示。押せそうに見える丸ボタンをやめ、普通の文字と間隔で並べる（このページ限定） */
+        .journal-meta-bar { display: flex; justify-content: center; flex-wrap: wrap; column-gap: 22px; row-gap: 2px; margin: 18px auto 0; padding: 0 20px; font-family: var(--primary-font); font-size: 0.85rem; line-height: 2; color: var(--text-light); }
+        .journal-meta-bar .meta-item { white-space: nowrap; }
+        .journal-meta-bar .meta-item:first-child { color: var(--text-color); font-weight: 600; }
         .essay { max-width: 720px; margin: 52px auto 30px; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 1.02rem; line-height: 2.15; color: var(--text-color); }
         .essay p { margin: 0 0 1.9em; }
         .essay h2 { font-family: 'Noto Serif JP', serif; font-size: 1.3rem; font-weight: 600; margin: 3em 0 1.2em; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); letter-spacing: 0.04em; }
@@ -67,15 +71,15 @@
         /* 訪問タイムライン(ジグザグ) */
         .days-section { max-width: 1000px; margin: 70px auto 90px; padding: 0 30px; position: relative; }
         .day-item { display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; margin-bottom: 80px; opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; scroll-margin-top: 100px; }
-        .day-item:last-child { margin-bottom: 0; }
+        .visit-group .day-item:last-child { margin-bottom: 0; }
         .day-item.visible { opacity: 1; transform: translateY(0); }
-        .day-item:nth-child(even) { direction: rtl; }
-        .day-item:nth-child(even) .day-content { direction: ltr; text-align: right; }
+        /* 訪問ごとにグループ化したので、左右の振り分けは nth-child ではなく明示クラスで行う */
+        .day-item--reverse { direction: rtl; }
+        .day-item--reverse .day-content { direction: ltr; text-align: right; }
         .day-image-wrapper { position: relative; overflow: hidden; border-radius: 14px; border: 1px solid var(--border-color); box-shadow: 0 15px 40px rgba(0,0,0,0.08); aspect-ratio: 4/3; }
         .day-image-wrapper img { width: 100%; height: 100%; object-fit: cover; transition: transform .8s cubic-bezier(0.2, 1, 0.3, 1); display: block; }
         .day-item:hover .day-image-wrapper img { transform: scale(1.05); }
         .day-content { padding: 20px; background: var(--bg-color); }
-        .day-number { font-family: var(--primary-font); font-size: 3rem; color: var(--border-color); line-height: 1; margin-bottom: 12px; font-weight: 600; }
         .day-date { font-family: var(--secondary-font); font-size: 0.75rem; letter-spacing: 0.14em; text-transform: uppercase; color: var(--text-lighter, #999); margin-bottom: 10px; }
         .day-name { font-family: 'Noto Serif JP', serif; font-size: 1.5rem; font-weight: 600; margin: 0 0 15px; color: var(--text-color); letter-spacing: 0.04em; line-height: 1.6; }
         .day-description { font-family: 'Noto Serif JP', serif; font-size: 0.95rem; line-height: 2; color: var(--text-light); margin: 0 0 26px; }
@@ -86,10 +90,9 @@
         }
         @media (max-width: 768px) {
             .days-section { padding: 0 20px; margin: 50px auto 70px; }
-            .day-item, .day-item:nth-child(even) { grid-template-columns: 1fr; gap: 22px; direction: ltr; margin-bottom: 60px; }
-            .day-item:nth-child(even) .day-content { text-align: left; }
+            .day-item, .day-item--reverse { grid-template-columns: 1fr; gap: 22px; direction: ltr; margin-bottom: 60px; }
+            .day-item--reverse .day-content { text-align: left; }
             .day-content { padding: 0; }
-            .day-number { font-size: 2.4rem; }
             .day-name { font-size: 1.25rem; }
         }
 </style>
@@ -97,6 +100,7 @@
     <script type="application/ld+json">
     {"@context": "https://schema.org", "@type": "BlogPosting", "headline": "台湾、笑顔と美食の島 — 通い続ける隣人の記録（2024–2026）", "description": "妻との二人旅3回と、友人たちと過ごした2026年。台北と日月潭を訪ねた4回の台湾旅、写真111枚の記録。", "image": "https://tojimasaya.com/assets/images/trips/taiwan/sunmoonlake/02-01.jpg", "author": {"@type": "Person", "name": "田路昌也 (Toji Masaya)", "url": "https://tojimasaya.com/about.html"}, "publisher": {"@type": "Person", "name": "田路昌也 (Toji Masaya)"}, "mainEntityOfPage": "https://tojimasaya.com/taiwan-travel-journal.html", "inLanguage": "ja", "datePublished": "2026-07-05", "dateModified": "2026-07-13"}
     </script>
+<noscript><style>.day-item { opacity: 1 !important; transform: none !important; }</style></noscript>
 <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
 </head>
 <body>
@@ -105,7 +109,7 @@
     <script src="js/site-header.js"></script>
 
     <!-- Hero -->
-    <header class="journal-hero" style="height: 66vh; min-height: 450px;">
+    <header class="journal-hero">
         <picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/02-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/02-01.jpg" alt="日月潭上空から、中央にフローデシンホテル、右に文武廟" class="journal-hero-bg"></picture>
         <div class="journal-hero-content">
             <span class="journal-label">Travel Journal — 2024 / 2025 / 2026</span>
@@ -117,12 +121,48 @@
     <main id="main-content" data-trip-share-title="台湾、四回の旅と一緒にいた人たち" data-trip-share-text="妻との二人旅3回と、友人たちとの2026年。台北と日月潭、四回の台湾の記録です。">
 
         <div class="journal-meta-bar">
-            <span class="pill route">Taipei / Sun Moon Lake</span>
-            <span class="pill">4回の訪問（2024–2026）</span>
-            <span class="pill">写真 111枚</span>
-            <span class="pill">妻との二人旅 3回</span>
-            <span class="pill">友人との旅 1回</span>
+            <span class="meta-item">台北・日月潭・台中</span>
+            <span class="meta-item">4回の訪問・5記事（2024–2026）</span>
+            <span class="meta-item">写真 111枚</span>
+            <span class="meta-item">妻との二人旅 3回</span>
+            <span class="meta-item">友人との旅 1回</span>
         </div>
+
+        <section class="visit-picker" id="visit-selector" aria-labelledby="visit-selector-title">
+          <div class="visit-picker__head">
+            <h2 class="visit-picker__title" id="visit-selector-title">台湾、4回の旅から選ぶ</h2>
+            <p class="visit-picker__note">気になる回からどうぞ。各旅行記へ直接進めます。</p>
+          </div>
+          <div class="visit-picker__grid">
+            <a class="visit-card" href="taiwan-2026.html">
+              <p class="visit-card__when">2026年6月</p>
+              <p class="visit-card__name">台北｜友人たちと囲んだ食卓</p>
+              <p class="visit-card__meta">最新の訪問・友人たちとの旅</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+            <a class="visit-card" href="taiwan-2025.html">
+              <p class="visit-card__when">2025年6月</p>
+              <p class="visit-card__name">台北｜妻と朝ごはん、カキ氷</p>
+              <p class="visit-card__meta">妻との二人旅</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+            <div class="visit-card">
+              <p class="visit-card__when">2025年2月</p>
+              <p class="visit-card__name">日月潭・台中｜霧雨の湖と宮原眼科</p>
+              <p class="visit-card__meta">妻との二人旅・この旅は2記事</p>
+              <div class="visit-card__links">
+                <a class="visit-card__link" href="taiwan-sunmoonlake.html"><span>日月潭の旅を読む →</span></a>
+                <a class="visit-card__link" href="taiwan-miyahara.html"><span>台中・宮原眼科を読む →</span></a>
+              </div>
+            </div>
+            <a class="visit-card" href="taiwan-2024.html">
+              <p class="visit-card__when">2024年8月</p>
+              <p class="visit-card__name">台北｜妻と牛肉麺、時間との戦い</p>
+              <p class="visit-card__meta">妻との二人旅</p>
+              <p class="visit-card__go">旅行記を読む →</p>
+            </a>
+          </div>
+        </section>
 
         <section class="trip-context" aria-labelledby="trip-companions-title">
             <div class="trip-context-media">
@@ -132,14 +172,8 @@
                 <span class="trip-context-kicker">この旅の仲間</span>
                 <h2 id="trip-companions-title">妻と三回、友人たちと一回</h2>
                 <p>2024年から2026年、台北と日月潭を四回訪ねました。三回は妻との二人旅。牛肉麺に並び、霧雨の湖に泊まり、朝ごはんを歩いて探した旅です。2026年だけは、山根博士・metroさん・たけもとさんと食卓を囲んだ、友人たちとの台北でした。</p>
-                <div class="trip-context-facts" aria-label="旅の特徴">
-                    <span>4回の訪問</span>
-                    <span>妻との二人旅 3回</span>
-                    <span>友人との旅 1回</span>
-                    <span>写真 111枚</span>
-                </div>
                 <div class="trip-context-actions">
-                    <a href="taiwan-2024.html" class="trip-action primary">2024年から読む</a>
+                    <a href="taiwan-2024.html" class="trip-read-through">最初の旅から読む（2024年8月）→</a>
                     <button type="button" class="trip-action" data-share-trip>この旅を共有</button>
                     <span class="share-status" aria-live="polite"></span>
                 </div>
@@ -151,66 +185,73 @@
         </article>
 
         <section class="days-section" aria-label="訪問ごとの記録">
-            <article class="day-item" id="v2024">
-                <div class="day-image-wrapper">
-                    <picture><source srcset="/assets/images/trips/taiwan/2024/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2024/01-01.jpg" alt="台北 — 牛肉麺紀行、時間との戦い" loading="lazy" decoding="async"></picture>
-                </div>
-                <div class="day-content">
-                    <div class="day-number">01</div>
-                    <p class="day-date">2024年8月 ・ 妻との二人旅 ・ 写真16枚</p>
-                    <h2 class="day-name">台北 — 牛肉麺紀行、時間との戦い</h2>
-                    <p class="day-description">フライトまで4時間半。ミシュラン・ビブグルマン3年連続の「牛店」に、妻と10組待ちで並びました。札を交換してくれた男性の親切、なかなか出てこない丼への冷や汗、そしてまさかのオチはキャセイラウンジの一杯——「翠玉白菜」も紅焼牛肉麺も宿題に残した、時間との戦いの最終日です。</p>
-                    <a href="taiwan-2024.html" class="day-read-button">2024年8月を読む</a>
-                </div>
-            </article>
-            <article class="day-item" id="vsml">
-                <div class="day-image-wrapper">
-                    <picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/01-05.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/01-05.jpg" alt="日月潭 — 霧雨の湖、贅沢なステイ" loading="lazy" decoding="async"></picture>
-                </div>
-                <div class="day-content">
-                    <div class="day-number">02</div>
-                    <p class="day-date">2025年2月 ・ 妻との二人旅 ・ 写真34枚</p>
-                    <h2 class="day-name">日月潭 — 霧雨の湖、贅沢なステイ</h2>
-                    <p class="day-description">妻と過ごした、霧雨の日月潭2泊3日。バス・船・ロープウェイを乗り継ぎ、雨上がりの一瞬を突いてドローンを上げた文武廟と慈恩塔。「こんな贅沢してもったいない」と言っていた妻も、レイクビューの部屋からの眺めには感激していました。</p>
-                    <a href="taiwan-sunmoonlake.html" class="day-read-button">2025年2月を読む</a>
-                </div>
-            </article>
-            <article class="day-item" id="vmiyahara">
-                <div class="day-image-wrapper">
-                    <picture><source srcset="/assets/images/trips/taiwan/miyahara/03.webp" type="image/webp"><img src="/assets/images/trips/taiwan/miyahara/03.jpg" alt="宮原眼科、天井から吊るされた巨大な金魚" loading="lazy" decoding="async"></picture>
-                </div>
-                <div class="day-content">
-                    <div class="day-number">03</div>
-                    <p class="day-date">2025年2月 ・ 妻との二人旅 ・ 写真21枚</p>
-                    <h2 class="day-name">台中・宮原眼科 — 眼科医院から生まれた絶品スイーツ</h2>
-                    <p class="day-description">日月潭の帰り、台中で立ち寄った不思議な一軒。1927年築の日本統治時代の眼科を改装した、行列必至のスイーツ殿堂です。天井を泳ぐ巨大な金魚、醉月樓の紹興酒角煮とカラスミ炒飯——歴史的建造物と現代スイーツが融合した空間は、ぜひ一度訪れてほしい場所。</p>
-                    <a href="taiwan-miyahara.html" class="day-read-button">宮原眼科を見る</a>
-                </div>
-            </article>
-            <article class="day-item" id="v2025">
-                <div class="day-image-wrapper">
-                    <picture><source srcset="/assets/images/trips/taiwan/2025/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2025/01-01.jpg" alt="台北 — 朝ごはんからカキ氷まで" loading="lazy" decoding="async"></picture>
-                </div>
-                <div class="day-content">
-                    <div class="day-number">04</div>
-                    <p class="day-date">2025年6月 ・ 妻との二人旅 ・ 写真23枚</p>
-                    <h2 class="day-name">台北 — 朝ごはんからカキ氷まで</h2>
-                    <p class="day-description">朝は妻と永和豆漿の飯糰、翌朝は行列に釣られた青島早餐の鉄板麺。昼下がりの迪化街のカキ氷屋では、隣に並んだ青年のスマホが私と同じXiaomi 15 Ultra——なのに彼の視線は私の首のLeica M2へ。妻の通訳で盛り上がった、かき氷より冷たい視線の顛末は本文で。</p>
-                    <a href="taiwan-2025.html" class="day-read-button">2025年6月を読む</a>
-                </div>
-            </article>
+            <div class="visit-group">
             <article class="day-item" id="v2026">
                 <div class="day-image-wrapper">
                     <picture><source srcset="/assets/images/trips/taiwan/2026/01-09.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2026/01-09.jpg" alt="山根さん・metroさん・たけもとさんと囲んだ四人の食卓（老德記）" loading="lazy" decoding="async"></picture>
                 </div>
                 <div class="day-content">
-                    <div class="day-number">05</div>
                     <p class="day-date">2026年6月 ・ 友人たちとの旅 ・ 写真17枚</p>
                     <h2 class="day-name">台北は、笑顔と美食でできていた</h2>
                     <p class="day-description">山根博士とmetroさん——二人の「飛行機の師匠」が同じ週に台北に重なり、関空からエバーに飛び乗りました。たけもとさんも加わった四人の食卓、注文を一刀両断するおにぎり屋のおばあさん、ペンを構え直した麺屋のご主人。顔と食でできていた2泊3日です。</p>
                     <a href="taiwan-2026.html" class="day-read-button">2026年6月を読む</a>
                 </div>
             </article>
+            </div>
+
+            <div class="visit-group">
+            <article class="day-item day-item--reverse" id="v2025">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/taiwan/2025/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2025/01-01.jpg" alt="台北 — 朝ごはんからカキ氷まで" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <p class="day-date">2025年6月 ・ 妻との二人旅 ・ 写真23枚</p>
+                    <h2 class="day-name">台北 — 朝ごはんからカキ氷まで</h2>
+                    <p class="day-description">朝は妻と永和豆漿の飯糰、翌朝は行列に釣られた青島早餐の鉄板麺。昼下がりの迪化街のカキ氷屋では、隣に並んだ青年のスマホが私と同じXiaomi 15 Ultra——なのに彼の視線は私の首のLeica M2へ。妻の通訳で盛り上がった、かき氷より冷たい視線の顛末は本文で。</p>
+                    <a href="taiwan-2025.html" class="day-read-button">2025年6月を読む</a>
+                </div>
+            </article>
+            </div>
+
+            <div class="visit-group visit-group--multi">
+                <p class="visit-group__head">2025年2月 ・ 妻との二人旅 ・ この旅は2記事<strong>日月潭と、台中・宮原眼科</strong></p>
+                <article class="day-item" id="vsml">
+                    <div class="day-image-wrapper">
+                        <picture><source srcset="/assets/images/trips/taiwan/sunmoonlake/01-05.webp" type="image/webp"><img src="/assets/images/trips/taiwan/sunmoonlake/01-05.jpg" alt="日月潭 — 霧雨の湖、贅沢なステイ" loading="lazy" decoding="async"></picture>
+                    </div>
+                    <div class="day-content">
+                        <p class="day-date">2025年2月 ・ 妻との二人旅 ・ 写真34枚</p>
+                        <h2 class="day-name">日月潭 — 霧雨の湖、贅沢なステイ</h2>
+                        <p class="day-description">妻と過ごした、霧雨の日月潭2泊3日。バス・船・ロープウェイを乗り継ぎ、雨上がりの一瞬を突いてドローンを上げた文武廟と慈恩塔。「こんな贅沢してもったいない」と言っていた妻も、レイクビューの部屋からの眺めには感激していました。</p>
+                        <a href="taiwan-sunmoonlake.html" class="day-read-button">2025年2月を読む</a>
+                    </div>
+                </article>
+                <article class="day-item day-item--reverse" id="vmiyahara">
+                    <div class="day-image-wrapper">
+                        <picture><source srcset="/assets/images/trips/taiwan/miyahara/03.webp" type="image/webp"><img src="/assets/images/trips/taiwan/miyahara/03.jpg" alt="宮原眼科、天井から吊るされた巨大な金魚" loading="lazy" decoding="async"></picture>
+                    </div>
+                    <div class="day-content">
+                        <p class="day-date">2025年2月 ・ 妻との二人旅 ・ 写真21枚</p>
+                        <h2 class="day-name">台中・宮原眼科 — 眼科医院から生まれた絶品スイーツ</h2>
+                        <p class="day-description">日月潭の帰り、台中で立ち寄った不思議な一軒。1927年築の日本統治時代の眼科を改装した、行列必至のスイーツ殿堂です。天井を泳ぐ巨大な金魚、醉月樓の紹興酒角煮とカラスミ炒飯——歴史的建造物と現代スイーツが融合した空間は、ぜひ一度訪れてほしい場所。</p>
+                        <a href="taiwan-miyahara.html" class="day-read-button">宮原眼科を見る</a>
+                    </div>
+                </article>
+            </div>
+
+            <div class="visit-group">
+            <article class="day-item" id="v2024">
+                <div class="day-image-wrapper">
+                    <picture><source srcset="/assets/images/trips/taiwan/2024/01-01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/2024/01-01.jpg" alt="台北 — 牛肉麺紀行、時間との戦い" loading="lazy" decoding="async"></picture>
+                </div>
+                <div class="day-content">
+                    <p class="day-date">2024年8月 ・ 妻との二人旅 ・ 写真16枚</p>
+                    <h2 class="day-name">台北 — 牛肉麺紀行、時間との戦い</h2>
+                    <p class="day-description">フライトまで4時間半。ミシュラン・ビブグルマン3年連続の「牛店」に、妻と10組待ちで並びました。札を交換してくれた男性の親切、なかなか出てこない丼への冷や汗、そしてまさかのオチはキャセイラウンジの一杯——「翠玉白菜」も紅焼牛肉麺も宿題に残した、時間との戦いの最終日です。</p>
+                    <a href="taiwan-2024.html" class="day-read-button">2024年8月を読む</a>
+                </div>
+            </article>
+            </div>
         </section>
 
         <section class="related-journeys" aria-labelledby="related-journeys-title">
@@ -238,7 +279,7 @@
         </div>
 
         <div class="journal-nav-links">
-            <a href="taiwan-2024.html" class="primary">2024年から読む →</a>
+            <a href="taiwan-2024.html" class="read-through">最初の旅から読む（2024年8月）→</a>
             <a href="trips.html">旅の一覧（Trips）</a>
         </div>
 

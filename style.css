@@ -2025,3 +2025,76 @@ html[data-lang="zh"] .lang-ja { display: none !important; }
 .hb-table th { background: var(--hover-color); font-weight: 600; font-size: 0.82rem; color: var(--text-light); }
 .essay ul, .essay ol { margin: 0 0 1.8em 1.4em; padding: 0; }
 .essay li { margin: 0 0 0.5em; line-height: 2.0; }
+
+/* === 訪問回を選ぶ導線（台湾・ホイアンなど、同じ場所を複数回訪ねた旅の目次と各記事） ===
+   「読みたい回を最初に選んで、その記事へ直接進む」ための入口。
+   専用クラスに閉じてあり、既存の .pill / .day-item / 他の旅行記には影響しない。 */
+.visit-picker { max-width: 1000px; margin: 24px auto 0; padding: 0 24px; scroll-margin-top: 100px; }
+.visit-picker__head { text-align: center; margin: 0 auto 14px; max-width: 640px; }
+.visit-picker__title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.1rem, 2.4vw, 1.35rem); font-weight: 600; letter-spacing: 0.04em; line-height: 1.7; color: var(--text-color); margin: 0 0 7px; }
+.visit-picker__note { font-family: var(--primary-font); font-size: 0.85rem; line-height: 1.85; color: var(--text-light); margin: 0; }
+.visit-picker__grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: stretch; }
+.visit-picker--three .visit-picker__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+/* カード。カード全体がリンクの場合は <a class="visit-card">、
+   2記事ある回だけ <div class="visit-card"> の中に独立したリンクを2本置く（入れ子リンクを作らない）。 */
+.visit-card { display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 12px; background: var(--white); padding: 16px 18px 15px; text-decoration: none; color: inherit; }
+a.visit-card { transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+a.visit-card:hover { border-color: var(--text-color); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); transform: translateY(-2px); }
+a.visit-card:focus-visible, .visit-card__link:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 3px; }
+.visit-card__when { font-family: var(--secondary-font); font-size: 0.74rem; font-weight: 600; letter-spacing: 0.12em; color: var(--text-light); margin: 0 0 8px; }
+.visit-card__name { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 600; line-height: 1.7; letter-spacing: 0.03em; color: var(--text-color); margin: 0 0 7px; }
+.visit-card__meta { font-family: var(--primary-font); font-size: 0.79rem; line-height: 1.75; color: var(--text-light); margin: 0; }
+.visit-card__go { font-family: var(--primary-font); font-size: 0.85rem; font-weight: 600; color: var(--accent-color); margin: 12px 0 0; }
+a.visit-card:hover .visit-card__go { text-decoration: underline; }
+
+/* 2記事ある回の内側リンク。それぞれ独立して押せる。 */
+.visit-card__links { display: flex; flex-direction: column; gap: 8px; margin: 12px 0 0; }
+.visit-card__link { display: flex; align-items: center; justify-content: space-between; gap: 10px; min-height: 44px; padding: 10px 14px; border: 1px solid var(--border-color); border-radius: 9px; text-decoration: none; font-family: var(--primary-font); font-size: 0.87rem; font-weight: 600; color: var(--accent-color); background: var(--bg-color); transition: border-color .18s ease, background .18s ease; }
+.visit-card__link:hover { border-color: var(--accent-color); background: var(--hover-color); }
+
+/* 現在開いている記事。リンクは残したまま「閲覧中」と示す。 */
+.visit-card.is-current { border-color: var(--text-light); background: var(--hover-color); }
+.visit-card__link.is-current { border-color: var(--text-light); background: var(--hover-color); color: var(--text-color); }
+.visit-card__current { display: inline-block; font-family: var(--secondary-font); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.1em; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 999px; padding: 2px 9px; margin-left: 8px; vertical-align: 2px; white-space: nowrap; }
+
+/* 目次へ戻る控えめなリンク */
+.visit-picker__foot { text-align: center; margin: 16px 0 0; font-family: var(--primary-font); font-size: 0.85rem; }
+.visit-picker__foot a { color: var(--accent-color); text-decoration: none; padding: 6px 4px; display: inline-block; }
+.visit-picker__foot a:hover { text-decoration: underline; }
+
+/* 個別記事に置く簡潔版 */
+.visit-picker--compact { max-width: 860px; margin: 26px auto 0; }
+.visit-picker--compact .visit-picker__title { font-size: 1rem; margin-bottom: 4px; }
+.visit-picker--compact .visit-picker__head { margin-bottom: 13px; }
+.visit-picker--compact .visit-picker__grid { gap: 9px; }
+.visit-picker--compact .visit-card { padding: 12px 14px; border-radius: 10px; }
+.visit-picker--compact .visit-card__when { font-size: 0.7rem; margin-bottom: 5px; }
+.visit-picker--compact .visit-card__name { font-size: 0.91rem; line-height: 1.65; margin-bottom: 0; }
+.visit-picker--compact .visit-card__go { font-size: 0.8rem; margin-top: 8px; }
+.visit-picker--compact .visit-card__links { margin-top: 9px; gap: 7px; }
+.visit-picker--compact .visit-card__link { font-size: 0.83rem; padding: 9px 12px; }
+
+@media (max-width: 860px) {
+    .visit-picker--three .visit-picker__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+@media (max-width: 620px) {
+    .visit-picker { padding: 0 20px; }
+    .visit-picker__grid, .visit-picker--three .visit-picker__grid { grid-template-columns: 1fr; }
+    .visit-card { padding: 14px 16px; }
+}
+
+/* 目次の「詳しい紹介」を訪問ごとにまとめる箱（2記事ある回のため） */
+.visit-group { margin: 0 0 78px; }
+.visit-group:last-child { margin-bottom: 0; }
+.visit-group__head { max-width: 1000px; margin: 0 0 26px; font-family: var(--secondary-font); font-size: 0.78rem; font-weight: 600; letter-spacing: 0.12em; color: var(--text-light); text-align: center; }
+.visit-group__head strong { display: block; font-family: 'Noto Serif JP', serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.04em; color: var(--text-color); margin-top: 6px; }
+@media (max-width: 768px) {
+    .visit-group { margin-bottom: 58px; }
+}
+
+/* 通読用の控えめなリンク。主な入口は上の .visit-picker なので、ここはボタンにしない。 */
+.journal-nav-links a.read-through { border: 0; padding: 11px 8px; color: var(--text-light); text-decoration: underline; text-underline-offset: 4px; }
+.journal-nav-links a.read-through:hover { color: var(--accent-color); }
+.trip-context-actions .trip-read-through { display: inline-flex; align-items: center; min-height: 44px; padding: 0 4px; font-family: var(--primary-font); font-size: 0.86rem; color: var(--text-light); text-decoration: underline; text-underline-offset: 4px; }
+.trip-context-actions .trip-read-through:hover { color: var(--accent-color); }
