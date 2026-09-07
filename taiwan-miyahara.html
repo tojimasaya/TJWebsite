@@ -36,7 +36,10 @@
     <meta name="twitter:image" content="https://tojimasaya.com/assets/images/trips/taiwan/miyahara/01.jpg">
 
     <style>
-        .journal-hero { position: relative; height: 58vh; min-height: 410px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; margin-top: 70px; }
+        .journal-hero { position: relative; height: 62vh; min-height: 440px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; margin-top: 70px; }
+        /* スマホでは、記事を開いた直後に本文の書き出しが見えるところまで
+           ヒーローを低くする。パソコン（621px以上）の見え方は 62vh; min-height: 440px のまま。 */
+        @media (max-width: 620px) { .journal-hero { height: 28vh; min-height: 205px; max-height: 230px; } }
         .journal-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.55) contrast(1.08); }
         .journal-hero-content { position: relative; z-index: 2; padding: 20px; max-width: 900px; }
         .journal-label { font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 1.2rem; text-transform: uppercase; opacity: 0.9; display: block; }
@@ -48,6 +51,7 @@
         .journal-meta-bar .meta-item:first-child { color: var(--text-color); font-weight: 600; }
         .essay { max-width: 720px; margin: 52px auto 30px; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 1.02rem; line-height: 2.15; color: var(--text-color); }
         .essay p { margin: 0 0 1.9em; }
+        @media (max-width: 620px) { .essay { margin-top: 20px; } }
         .essay figure { margin: 2.4em 0; }
         .essay figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); display: block; }
         .essay figcaption { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); text-align: center; margin-top: 10px; letter-spacing: 0.02em; }
@@ -71,7 +75,7 @@
     <script src="js/site-header.js"></script>
 
     <!-- Hero -->
-    <header class="journal-hero" style="height: 62vh; min-height: 440px;">
+    <header class="journal-hero">
         <picture><source srcset="/assets/images/trips/taiwan/miyahara/01.webp" type="image/webp"><img src="/assets/images/trips/taiwan/miyahara/01.jpg" alt="宮原眼科の赤レンガの外観、いつもの行列" class="journal-hero-bg"></picture>
         <div class="journal-hero-content">
             <span class="journal-label">Taichung — 2025年2月</span>
@@ -89,10 +93,10 @@
             <span class="meta-item">写真 21枚</span>
         </div>
 
-        <section class="visit-picker visit-picker--compact" id="visit-picker-top" aria-labelledby="visit-picker-top-title">
+        <section class="visit-picker visit-picker--compact visit-picker--rows" id="visit-picker-top" aria-labelledby="visit-picker-top-title">
           <div class="visit-picker__head">
             <h2 class="visit-picker__title" id="visit-picker-top-title">台湾のほかの旅を選ぶ</h2>
-            <p class="visit-picker__note">この記事は2025年2月の旅の一篇です。同じ旅の日月潭とあわせてどうぞ。</p>
+            <p class="visit-picker__note">この記事は2025年2月の旅の一篇です。</p>
           </div>
           <div class="visit-picker__grid">
             <a class="visit-card" href="taiwan-2026.html">
@@ -108,10 +112,10 @@
             <div class="visit-card">
               <p class="visit-card__when">2025年2月</p>
               <p class="visit-card__name">日月潭・台中｜霧雨の湖と宮原眼科</p>
-              <p class="visit-card__meta">妻との二人旅・この旅は2記事</p>
+              <p class="visit-card__meta">この旅は2記事</p>
               <div class="visit-card__links">
-                <a class="visit-card__link" href="taiwan-sunmoonlake.html"><span>日月潭の旅を読む →</span></a>
-                <a class="visit-card__link is-current" href="taiwan-miyahara.html" aria-current="page"><span>台中・宮原眼科を読む →</span><span class="visit-card__current">閲覧中</span></a>
+                <a class="visit-card__link" href="taiwan-sunmoonlake.html"><span>日月潭 →</span></a>
+                <a class="visit-card__link is-current" href="taiwan-miyahara.html" aria-current="page"><span>宮原眼科 →</span><span class="visit-card__current">閲覧中</span></a>
               </div>
             </div>
             <a class="visit-card" href="taiwan-2024.html">
@@ -225,10 +229,10 @@
             <div class="visit-card">
               <p class="visit-card__when">2025年2月</p>
               <p class="visit-card__name">日月潭・台中｜霧雨の湖と宮原眼科</p>
-              <p class="visit-card__meta">妻との二人旅・この旅は2記事</p>
+              <p class="visit-card__meta">この旅は2記事</p>
               <div class="visit-card__links">
-                <a class="visit-card__link" href="taiwan-sunmoonlake.html"><span>日月潭の旅を読む →</span></a>
-                <a class="visit-card__link is-current" href="taiwan-miyahara.html" aria-current="page"><span>台中・宮原眼科を読む →</span><span class="visit-card__current">閲覧中</span></a>
+                <a class="visit-card__link" href="taiwan-sunmoonlake.html"><span>日月潭 →</span></a>
+                <a class="visit-card__link is-current" href="taiwan-miyahara.html" aria-current="page"><span>宮原眼科 →</span><span class="visit-card__current">閲覧中</span></a>
               </div>
             </div>
             <a class="visit-card" href="taiwan-2024.html">
