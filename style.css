@@ -2035,6 +2035,9 @@ html[data-lang="zh"] .lang-ja { display: none !important; }
 .hb-hub-group-label .hb-theme-icon { width: 20px; height: 20px; }
 .hb-hub-group-note { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); margin: 9px 0 0; }
 .hb-hub-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+/* 旧ID（#hb-permit など）で直接開かれたとき、カードの地域表示とタイトルが
+   固定ヘッダーに隠れないようにする。IDを持つカードだけが対象。 */
+.hb-hub-card[id] { scroll-margin-top: 100px; }
 .hb-hub-card { display: grid; grid-template-columns: minmax(0, 1fr) 76px; gap: 14px; border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 16px; text-decoration: none; color: inherit; background: var(--white); transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
 .hb-hub-card:hover { border-color: var(--text-color); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); transform: translateY(-2px); }
 .hb-hub-card:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 3px; }
