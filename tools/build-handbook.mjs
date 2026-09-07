@@ -119,27 +119,84 @@ function footerBlock(page, byUrl) {
   return lines.join('\n');
 }
 
+/** 話題の入口に添える線画アイコン。文字ラベルは必ず併記するので aria-hidden。 */
+const THEME_ICON = {
+  bank: '<path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20h18"/>',
+  sim: '<rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 12h6v5H9z"/><path d="M9 12V9.5h6V12"/>',
+  cross: '<path d="M4 17h16"/><path d="M4 17V9l5-3 5 3v8"/><path d="M14 17V12l6-2v7"/><path d="M8 17v-3.5"/>',
+  tool: '<rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M4 10h16"/><path d="M8.5 3v4M15.5 3v4"/><path d="M8.5 14h3"/>',
+};
+function themeIcon(key) {
+  const d = THEME_ICON[key];
+  if (!d) return '';
+  return `<svg class="hb-theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${d}</svg>`;
+}
+
+/** 話題を選ぶ入口。ページ内の該当テーマへ動く普通のリンクで、記事は隠さない。 */
+function hubMenu(catalog) {
+  const menu = catalog.hubMenu || {};
+  const themes = catalog.groups.filter((g) => g.menu !== false && catalog.pages.some((p) => p.group === g.key));
+  if (!themes.length) return '';
+  const lines = [];
+  lines.push('<nav class="hb-themes" aria-labelledby="hb-themes-title">');
+  lines.push(`  <h2 class="hb-themes-title" id="hb-themes-title">${escapeHtml(menu.title || '話題から読む')}</h2>`);
+  lines.push('  <div class="hb-themes-grid">');
+  for (const g of themes) {
+    lines.push(`    <a class="hb-theme" href="#hb-group-${g.key}" data-growth-label="handbook_theme_${g.key}">`);
+    lines.push(`      <span class="hb-theme-head">${themeIcon(g.icon)}<span class="hb-theme-name">${escapeHtml(g.label)}</span></span>`);
+    if (g.note) lines.push(`      <span class="hb-theme-note">${escapeHtml(g.note)}</span>`);
+    lines.push('      <span class="hb-theme-go">この話題へ ↓</span>');
+    lines.push('    </a>');
+  }
+  lines.push('  </div>');
+  if (menu.toolUrl) {
+    lines.push(`  <p class="hb-themes-tool"><a href="${menu.toolUrl}" data-growth-label="handbook_theme_tool">${escapeHtml(menu.toolLabel || '便利な道具 →')}</a></p>`);
+  }
+  if (menu.notice) lines.push(`  <p class="hb-themes-notice">${escapeHtml(menu.notice)}</p>`);
+  lines.push('</nav>');
+  return lines.join('\n');
+}
+
 function hubBlock(catalog) {
   const lines = [];
+  const menu = hubMenu(catalog);
+  if (menu) lines.push(menu);
   for (const group of catalog.groups) {
     const pages = catalog.pages.filter((p) => p.group === group.key);
     if (!pages.length) continue;
     lines.push(`<section class="hb-hub-group" aria-labelledby="hb-group-${group.key}">`);
     lines.push('  <div class="hb-hub-group-head">');
-    lines.push(`    <h2 class="hb-hub-group-label" id="hb-group-${group.key}">${escapeHtml(group.label)}</h2>`);
+    // 旧メニューの #hb-bank などを生かす互換アンカー（見出しIDと重複させない）
+    if (group.altId) lines.push(`    <span class="hb-anchor" id="${group.altId}" aria-hidden="true"></span>`);
+    lines.push(`    <h2 class="hb-hub-group-label" id="hb-group-${group.key}">${themeIcon(group.icon)}${escapeHtml(group.label)}</h2>`);
     if (group.note) lines.push(`    <p class="hb-hub-group-note">${escapeHtml(group.note)}</p>`);
     lines.push('  </div>');
     lines.push('  <div class="hb-hub-grid">');
     for (const p of pages) {
-      lines.push(`    <a class="hb-hub-card" href="${p.url}" data-growth-label="handbook_hub_card">`);
-      lines.push(`      <img class="hb-hub-thumb" src="${p.image}" alt="" loading="lazy" decoding="async">`);
-      lines.push('      <span>');
-      lines.push(`        <span class="hb-hub-audience">${escapeHtml(p.audience)}</span>`);
+      const id = p.anchor ? ` id="${p.anchor}"` : '';
+      lines.push(`    <a class="hb-hub-card"${id} href="${p.url}" data-growth-label="handbook_hub_card">`);
+      // 記事タイトルを主役にする。地域と日付は説明表示で、押せるようには見せない。
+      lines.push(`      <span class="hb-hub-card-body">`);
+      if (p.region) lines.push(`        <span class="hb-hub-region">${escapeHtml(p.region)}</span>`);
       lines.push(`        <span class="hb-hub-title">${escapeHtml(p.title)}</span>`);
       lines.push(`        <span class="hb-hub-summary">${escapeHtml(p.summary)}</span>`);
-      lines.push(`        <span class="hb-hub-updated">最終更新 ${p.updated}</span>`);
+      // 誰が対象の制度かが紹介から分かる必要がある記事だけ、対象範囲も添える（見出しの上には置かない）
+      if (p.showAudience && p.audience) lines.push(`        <span class="hb-hub-for">${escapeHtml(p.audience)}に向けた話です</span>`);
+      lines.push('        <span class="hb-hub-foot">');
+      lines.push(`          <span class="hb-hub-updated">内容更新 ${p.updated}</span>`);
+      lines.push('          <span class="hb-hub-go">読む →</span>');
+      lines.push('        </span>');
       lines.push('      </span>');
+      lines.push(`      <img class="hb-hub-thumb" src="${p.image}" alt="" loading="lazy" decoding="async">`);
       lines.push('    </a>');
+      // まとめページの中の該当箇所へ。カードの外に置いて入れ子リンクを避ける。
+      if ((p.subLinks || []).length) {
+        lines.push('    <ul class="hb-hub-sublinks">');
+        for (const s of p.subLinks) {
+          lines.push(`      <li><a href="${s.url}" data-growth-label="handbook_hub_sublink">${escapeHtml(s.label)}</a></li>`);
+        }
+        lines.push('    </ul>');
+      }
     }
     lines.push('  </div>');
     lines.push('</section>');

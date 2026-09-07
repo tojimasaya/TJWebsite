@@ -13,8 +13,8 @@
       gtag('config', 'G-806426BQX2');
     </script>
 
-    <title>香港ハンドブック｜在住30年の日本人がまとめた回郷証・銀行・送金・SIM・祝日の実務ガイド | Toji Masaya</title>
-    <meta name="description" content="香港に30年暮らす日本人の実務記録。非中国籍の回郷証、HSBC・DBSの口座、PayMe/FPSの送金、SIM、祝日カレンダーまで、必要な手順と実体験をこの1ページから辿れます。">
+    <title>香港ハンドブック｜銀行・SIM・香港と中国の行き来の体験と気づき | Toji Masaya</title>
+    <meta name="description" content="香港暮らし30余年の田路昌也が、銀行とのやり取り、SIMと電話番号、香港と中国の行き来で体験したことや気づきを書き留めたコラム集。気になる話題から読めます。">
     <meta name="author" content="Toji Masaya">
 
     <link rel="icon" type="image/png" href="favicon.png">
@@ -24,25 +24,18 @@
     <link rel="stylesheet" href="style.css">
 
     <link rel="canonical" href="https://tojimasaya.com/hongkong-handbook.html">
-    <meta property="og:title" content="香港ハンドブック — 暮らしと実務の記録（回郷証・銀行・送金）">
-    <meta property="og:description" content="香港在住30年の実務記録。非中国籍向け回郷証の取得と中国入国、e道登録、HSBC・DBSなど銀行との付き合い方、PayMe・FPS送金術。">
+    <meta property="og:title" content="香港ハンドブック｜銀行・SIM・香港と中国の行き来の体験と気づき">
+    <meta property="og:description" content="香港暮らし30余年の田路昌也が、銀行とのやり取り、SIMと電話番号、香港と中国の行き来で体験したことや気づきを書き留めたコラム集。気になる話題から読めます。">
     <meta property="og:url" content="https://tojimasaya.com/hongkong-handbook.html">
     <meta property="og:type" content="article">
     <meta property="og:site_name" content="Toji Masaya">
     <meta property="og:image" content="https://tojimasaya.com/assets/images/handbook/hk-return-permit-04-01.png">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@mongkok93">
-    <meta name="twitter:title" content="香港ハンドブック — 暮らしと実務の記録（回郷証・銀行・送金）">
+    <meta name="twitter:title" content="香港ハンドブック｜銀行・SIM・香港と中国の行き来の体験と気づき">
     <meta name="twitter:image" content="https://tojimasaya.com/assets/images/handbook/hk-return-permit-04-01.png">
 
     <style>
-        .guide-head { max-width: 760px; margin: 120px auto 0; padding: 0 24px; }
-        .guide-cat { font-family: var(--secondary-font); font-size: 0.78rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-color); }
-        .guide-cat a { color: var(--accent-color); text-decoration: none; }
-        .guide-cat a:hover { text-decoration: underline; }
-        .guide-title { font-family: 'Noto Serif JP', serif; font-size: clamp(1.5rem, 3.6vw, 2.2rem); font-weight: 600; letter-spacing: 0.03em; line-height: 1.6; margin: 14px 0 18px; color: var(--text-color); }
-        .guide-meta { display: flex; flex-wrap: wrap; gap: 8px; }
-        .guide-meta .pill { font-size: var(--text-xs); background: var(--hover-color); color: var(--text-color); padding: 5px 12px; border-radius: 999px; font-weight: 600; }
         .guide-notice { max-width: 760px; margin: 26px auto 0; padding: 12px 24px; }
         .guide-notice-inner { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 10px; padding: 10px 14px; line-height: 1.8; background: var(--hover-color); }
         .essay { max-width: 720px; margin: 34px auto 30px; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 1.0rem; line-height: 2.1; color: var(--text-color); }
@@ -64,15 +57,15 @@
         .journal-nav-links a { padding: 11px 20px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); }
         .journal-nav-links a.primary { background: var(--accent-color); color: #fff; border-color: var(--accent-color); }
 
-        .journal-hero { position: relative; height: 52vh; min-height: 380px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; margin-top: 70px; }
+        /* コラム集の入口を最初の画面に入れるため、ヒーローは低く抑える。
+           写真の上には副題だけを置き、長い紹介文は写真の外に出している。 */
+        .journal-hero { position: relative; height: 30vh; min-height: 215px; max-height: 265px; display: flex; align-items: center; justify-content: center; color: white; text-align: center; overflow: hidden; margin-top: 70px; }
+        @media (max-width: 620px) { .journal-hero { height: 23vh; min-height: 170px; max-height: 195px; } }
         .journal-hero-bg { position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; z-index: 1; filter: brightness(0.55) contrast(1.08); }
         .journal-hero-content { position: relative; z-index: 2; padding: 20px; max-width: 900px; }
         .journal-label { font-family: var(--secondary-font); font-size: 0.85rem; letter-spacing: 0.2em; margin-bottom: 1.2rem; text-transform: uppercase; opacity: 0.9; display: block; }
         .journal-htitle { font-family: 'Noto Serif JP', serif; font-size: clamp(1.6rem, 4.5vw, 2.8rem); font-weight: 500; letter-spacing: 0.06em; line-height: 1.5; margin: 0 0 1rem; color: #fff; text-shadow: 0 4px 20px rgba(0,0,0,0.35); }
         .journal-subtitle { font-family: var(--primary-font); font-size: clamp(0.95rem, 2vw, 1.1rem); font-style: italic; opacity: 0.92; }
-        .journal-meta-bar { display: flex; justify-content: center; flex-wrap: wrap; gap: 10px; margin: 42px auto 0; padding: 0 20px; }
-        .journal-meta-bar .pill { font-size: var(--text-xs); background: var(--hover-color); color: var(--text-color); padding: 6px 14px; border-radius: 999px; font-weight: 600; text-decoration: none; border: 1px solid transparent; transition: background .2s, color .2s, border-color .2s, transform .2s; }
-        .journal-meta-bar a.pill:hover { background: var(--accent-color); color: #fff; transform: translateY(-1px); }
         .hb-section h2 { scroll-margin-top: 90px; }
         .hb-section { max-width: 760px; margin: 0 auto 34px; padding: 0 24px; }
         .hb-section h2 { font-family: 'Noto Serif JP', serif; font-size: 1.3rem; font-weight: 600; margin: 2em 0 0.9em; padding-bottom: 10px; border-bottom: 1px solid var(--border-color); color: var(--text-color); }
@@ -85,37 +78,11 @@
         .hb-item-title { font-family: 'Noto Serif JP', serif; font-size: 0.98rem; font-weight: 600; line-height: 1.7; padding-right: 20px; }
         .hb-item-sub { display: block; font-family: var(--primary-font); font-size: 0.78rem; font-weight: 400; color: var(--text-light); margin-top: 3px; line-height: 1.7; }
         .hb-lead { font-family: var(--primary-font); font-size: 0.85rem; color: var(--text-light); margin: -0.3em 0 1.1em; line-height: 1.9; }
-        .hb-audience { max-width: 760px; margin: 26px auto 42px; padding: 0 24px; }
-        .hb-audience > h2 { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 600; margin: 0 0 0.45em; color: var(--text-color); scroll-margin-top: 90px; }
-        .hb-audience-lead { font-family: var(--primary-font); font-size: 0.85rem; color: var(--text-light); line-height: 1.9; margin: 0 0 16px; }
-        .hb-audience-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
-        .hb-audience-card { border: 1px solid var(--border-color); border-radius: 14px; padding: 16px; background: var(--bg-color, #fff); }
-        .hb-audience-card h3 { font-family: 'Noto Serif JP', serif; font-size: 0.98rem; line-height: 1.65; margin: 0 0 8px; color: var(--text-color); }
-        .hb-audience-card p { font-family: var(--primary-font); font-size: 0.76rem; line-height: 1.7; color: var(--text-light); margin: 0 0 10px; }
-        .hb-audience-card ul { list-style: none; margin: 0; padding: 0; }
-        .hb-audience-card li + li { margin-top: 6px; }
-        .hb-audience-card a { font-family: var(--primary-font); font-size: 0.79rem; line-height: 1.55; color: var(--accent-color); text-decoration: none; }
-        .hb-audience-card a:hover, .hb-audience-card a:focus-visible { text-decoration: underline; }
-        .hb-guides { margin-top: 30px; }
-        .hb-guide-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(210px, 1fr)); gap: 14px; }
-        .hb-guide-card { display: flex; flex-direction: column; border: 1px solid var(--border-color); border-radius: 14px; overflow: hidden; text-decoration: none; background: var(--bg-color, #fff); transition: transform .25s ease, box-shadow .25s ease; }
-        .hb-guide-card:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(0,0,0,0.10); }
-        .hb-guide-thumb { display: block; aspect-ratio: 16/9; overflow: hidden; border-bottom: 1px solid var(--border-color); }
-        .hb-guide-thumb img { width: 100%; height: 100%; object-fit: cover; display: block; }
-        .hb-guide-body { display: flex; flex-direction: column; gap: 8px; padding: 16px 16px 18px; }
-        .hb-guide-kicker { display: block; font-family: var(--secondary-font); font-size: 0.68rem; letter-spacing: 0.18em; text-transform: uppercase; color: var(--accent-color); font-weight: 600; }
-        .hb-section h2.hb-guide-title { font-family: 'Noto Serif JP', serif; font-size: 1.02rem; font-weight: 600; line-height: 1.75; color: var(--text-color); margin: 0; padding: 0; border: 0; }
-        .hb-guide-sub { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-lighter, #999); }
-        .hb-guide-chips { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 2px; }
-        .hb-guide-chips i { font-style: normal; font-family: var(--primary-font); font-size: 0.72rem; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 999px; padding: 0.24em 0.75em; }
-        .hb-guide-cta { margin-top: 10px; font-family: 'Noto Serif JP', serif; font-size: 0.85rem; font-weight: 600; color: var(--accent-color); }
-        @media (max-width: 760px) { .hb-audience-grid { grid-template-columns: 1fr; } }
-        @media (max-width: 640px) { .hb-guide-grid { grid-template-columns: 1fr; } }
 
     </style>
 
     <script type="application/ld+json">
-    {"@context":"https://schema.org","@type":"CollectionPage","name":"香港ハンドブック — 暮らしと実務の記録（回郷証・銀行・送金）","headline":"香港ハンドブック — 暮らしと実務の記録（回郷証・銀行・送金）","description":"香港在住30年の実務記録。非中国籍向け回郷証の取得と中国入国、e道登録、HSBC・DBSなど銀行との付き合い方、PayMe・FPS送金術。","image":"https://tojimasaya.com/assets/images/handbook/hk-return-permit-04-01.png","author":{"@type":"Person","name":"田路昌也 (Toji Masaya)","url":"https://tojimasaya.com/about.html"},"publisher":{"@type":"Person","name":"田路昌也 (Toji Masaya)"},"url":"https://tojimasaya.com/hongkong-handbook.html","inLanguage":"ja","datePublished":"2026-07-05","dateModified":"2026-07-12","mainEntity":{"@type":"ItemList","numberOfItems":13,"itemListElement":[{"@type":"ListItem","position":1,"name":"非中国籍・香港永住者の回郷証 — 取得から中国入国まで","url":"https://tojimasaya.com/hk-return-permit.html"},{"@type":"ListItem","position":2,"name":"SIM / Connectivity — 通信環境のまとめ","url":"https://tojimasaya.com/gear-sim.html"},{"@type":"ListItem","position":3,"name":"香港・中国・台湾・日本・シンガポール＋米国市場 祝日カレンダー","url":"https://tojimasaya.com/holidays.html"},{"@type":"ListItem","position":4,"name":"旺角から深圳へ — 越境バスと口岸の実践ガイド","url":"https://tojimasaya.com/hk-shenzhen-crossing.html"},{"@type":"ListItem","position":5,"name":"HSBC Premierとの付き合い方","url":"https://tojimasaya.com/hk-hsbc-premier.html"},{"@type":"ListItem","position":6,"name":"香港の賢い送金術","url":"https://tojimasaya.com/hk-remittance.html"},{"@type":"ListItem","position":7,"name":"香港HSBCの外貨引き出し","url":"https://tojimasaya.com/hk-hsbc-fx-withdrawal.html"},{"@type":"ListItem","position":8,"name":"HSBC Payment Connectで中国本土に即時送金","url":"https://tojimasaya.com/hk-hsbc-payment-connect.html"},{"@type":"ListItem","position":9,"name":"HSBCシンガポール休眠口座の復活","url":"https://tojimasaya.com/hk-hsbc-singapore-dormant.html"},{"@type":"ListItem","position":10,"name":"DBS銀行で口座をつくった理由","url":"https://tojimasaya.com/hk-dbs-account.html"},{"@type":"ListItem","position":11,"name":"中国工商銀行の休眠口座を解決","url":"https://tojimasaya.com/cn-icbc-dormant.html"},{"@type":"ListItem","position":12,"name":"中国の銀行口座のパスポート情報更新","url":"https://tojimasaya.com/cn-bank-passport-update.html"},{"@type":"ListItem","position":13,"name":"台湾HSBCで“とても丁寧な門前払い”を受けて知ったこと","url":"https://tojimasaya.com/hk-hsbc-taiwan.html"}]}}
+    {"@context":"https://schema.org","@type":"CollectionPage","name":"香港ハンドブック｜銀行・SIM・香港と中国の行き来の体験と気づき","headline":"香港ハンドブック｜銀行・SIM・香港と中国の行き来の体験と気づき","description":"香港暮らし30余年の田路昌也が、銀行とのやり取り、SIMと電話番号、香港と中国の行き来で体験したことや気づきを書き留めたコラム集。気になる話題から読めます。","image":"https://tojimasaya.com/assets/images/handbook/hk-return-permit-04-01.png","author":{"@type":"Person","name":"田路昌也 (Toji Masaya)","url":"https://tojimasaya.com/about.html"},"publisher":{"@type":"Person","name":"田路昌也 (Toji Masaya)"},"url":"https://tojimasaya.com/hongkong-handbook.html","inLanguage":"ja","datePublished":"2026-07-05","dateModified":"2026-09-07","mainEntity":{"@type":"ItemList","numberOfItems":13,"itemListElement":[{"@type":"ListItem","position":1,"name":"HSBC Premier との付き合い方","url":"https://tojimasaya.com/hk-hsbc-premier.html"},{"@type":"ListItem","position":2,"name":"香港 HSBC の外貨引き出し","url":"https://tojimasaya.com/hk-hsbc-fx-withdrawal.html"},{"@type":"ListItem","position":3,"name":"香港の賢い送金術 — PayMe・FPS・バーチャルバンク","url":"https://tojimasaya.com/hk-remittance.html"},{"@type":"ListItem","position":4,"name":"HSBC Payment Connect で中国本土へ即時送金","url":"https://tojimasaya.com/hk-hsbc-payment-connect.html"},{"@type":"ListItem","position":5,"name":"DBS 銀行で口座をつくった理由","url":"https://tojimasaya.com/hk-dbs-account.html"},{"@type":"ListItem","position":6,"name":"HSBC シンガポール口座の休眠（ドーマント）解除","url":"https://tojimasaya.com/hk-hsbc-singapore-dormant.html"},{"@type":"ListItem","position":7,"name":"台湾 HSBC で断られて知った、通貨の自由度","url":"https://tojimasaya.com/hk-hsbc-taiwan.html"},{"@type":"ListItem","position":8,"name":"中国工商銀行の休眠口座を解決する","url":"https://tojimasaya.com/cn-icbc-dormant.html"},{"@type":"ListItem","position":9,"name":"中国の銀行口座のパスポート情報更新","url":"https://tojimasaya.com/cn-bank-passport-update.html"},{"@type":"ListItem","position":10,"name":"SIM / Connectivity — 二拠点の通信環境","url":"https://tojimasaya.com/gear-sim.html"},{"@type":"ListItem","position":11,"name":"非中国籍・香港永住者の回郷証","url":"https://tojimasaya.com/hk-return-permit.html"},{"@type":"ListItem","position":12,"name":"旺角から深圳へ — 越境バスと口岸の実践ガイド","url":"https://tojimasaya.com/hk-shenzhen-crossing.html"},{"@type":"ListItem","position":13,"name":"祝日カレンダー 2026・2027","url":"https://tojimasaya.com/holidays.html"}]}}
     </script>
 <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
 </head>
@@ -132,268 +99,230 @@
         <div class="journal-hero-content">
             <span class="journal-label">Hong Kong Handbook</span>
             <h1 class="journal-htitle">香港ハンドブック</h1>
-            <p class="journal-subtitle">住む・離れる・行き来する人の、手続きとお金の実務記録</p>
+            <p class="journal-subtitle">香港暮らしの、体験と気づき。</p>
         </div>
     </header>
 
-    <nav class="journal-meta-bar" aria-label="ハンドブック内メニュー">
-        <a class="pill" href="hk-return-permit.html">回郷証・中国入国</a>
-        <a class="pill" href="#hb-bank">銀行・送金</a>
-        <a class="pill" href="gear-sim.html">SIM・電話番号</a>
-        <a class="pill" href="holidays.html">祝日カレンダー</a>
-        <a class="pill" href="hk-shenzhen-crossing.html">口岸・越境</a>
-    </nav>
-
-    <div class="guide-notice"><div class="guide-notice-inner">ℹ️ 本ページは執筆時点での個人の体験記録です。制度・手数料・条件は変更されることがあります。実際の手続きの際は必ず公式情報をご確認ください。<br>💬 最新情報へアップデートしていくため、皆さまのコメントを募集しています。「この手順で成功した」「役に立った」というご報告も——いただけると私が喜びます。<a href="#comments" style="color: var(--accent-color); font-weight: 600; text-decoration: none;">書き込みはこちら（ページ下部）→</a></div></div>
-
     <main id="main-content">
-        <div class="essay" style="margin-bottom: 6px;">
-            <p>香港に30年暮らすなかで通ってきた、手続きとお金の実務記録です。旅行記のように時間が止まった記録ではなく、制度とともに変わっていく話なので、各ページに初出日を明記しています。撮影スポットやカメラ散歩は<a href="hongkong.html">香港（撮影）ページ</a>へ。</p>
+        <div class="hb-hub-lead">
+            <p>香港暮らし30余年。銀行で「あれ？」と思ったこと、電話番号を残すために試したこと、中国へ出かけて気づいたこと。</p>
+            <p>そのときどきの体験を、忘れないうちに書き留めています。どれかひとつ、誰かの参考になれば。</p>
         </div>
 
-        <section class="hb-audience" aria-labelledby="hb-audience-title">
-            <h2 id="hb-audience-title">いまの自分に近い入口から</h2>
-            <p class="hb-audience-lead">香港へ来る前、暮らしている最中、離れたあと。それぞれに必要な実務を、既存の記録から選びました。</p>
-            <div class="hb-audience-grid">
-                <article class="hb-audience-card">
-                    <h3>これから香港へ来る</h3>
-                    <p>通信、祝日、深圳への移動を先に確認。</p>
-                    <ul>
-                        <li><a href="gear-sim.html#sim-hongkong-title" data-growth-label="handbook_audience_coming_sim">香港で使うSIM</a></li>
-                        <li><a href="holidays.html" data-growth-label="handbook_audience_coming_holidays">祝日カレンダー</a></li>
-                        <li><a href="hk-shenzhen-crossing.html" data-growth-label="handbook_audience_coming_crossing">深圳への行き方</a></li>
-                    </ul>
-                </article>
-                <article class="hb-audience-card">
-                    <h3>香港に住んでいる</h3>
-                    <p>口座、送金、回郷証と越境の実務。</p>
-                    <ul>
-                        <li><a href="hk-return-permit.html" data-growth-label="handbook_audience_resident_permit">回郷証・e道</a></li>
-                        <li><a href="hk-remittance.html" data-growth-label="handbook_audience_resident_fps">PayMe・FPS</a></li>
-                        <li><a href="hk-hsbc-payment-connect.html" data-growth-label="handbook_audience_resident_payment_connect">中国本土への送金</a></li>
-                    </ul>
-                </article>
-                <article class="hb-audience-card">
-                    <h3>香港を離れた・二拠点</h3>
-                    <p>番号、認証、休眠口座を長く維持する。</p>
-                    <ul>
-                        <li><a href="gear-sim.html#sim-hk-number-title" data-growth-label="handbook_audience_returner_number">香港番号とSMS認証</a></li>
-                        <li><a href="hk-hsbc-singapore-dormant.html" data-growth-label="handbook_audience_returner_dormant">休眠口座の復活</a></li>
-                        <li><a href="cn-bank-passport-update.html" data-growth-label="handbook_audience_returner_passport">パスポート更新後の銀行手続き</a></li>
-                    </ul>
-                </article>
-            </div>
-        </section>
-
-        <section class="hb-section hb-guides" aria-label="通しで読むガイド">
-            <div class="hb-guide-grid">
-                <a class="hb-guide-card" href="hk-return-permit.html" data-growth-label="handbook_guide_return_permit">
-                    <span class="hb-guide-thumb">
-                        <picture>
-                            <source srcset="assets/images/handbook/hk-return-permit-04-01.webp" type="image/webp">
-                            <img src="assets/images/handbook/hk-return-permit-04-01.png" alt="回郷証（非中国籍者用）の実物カード" loading="lazy" decoding="async">
-                        </picture>
-                    </span>
-                    <div class="hb-guide-body">
-                        <span class="hb-guide-kicker">回郷証・中国入国</span>
-                        <h2 class="hb-guide-title" id="hb-permit">非中国籍・香港永住者の回郷証 — 取得から中国入国まで</h2>
-                        <span class="hb-guide-sub">2024.08–2026.07 / 全7章を1ページで通し読み</span>
-                        <span class="hb-guide-chips"><i>制度開始</i><i>申請・遅延</i><i>初入国とe道登録</i><i>ビザ免除の動き</i></span>
-                        <span class="hb-guide-cta">通しで読む →</span>
-                    </div>
-                </a>
-                <a class="hb-guide-card" href="gear-sim.html" data-growth-label="handbook_guide_sim">
-                    <span class="hb-guide-thumb">
-                        <picture>
-                            <source srcset="assets/images/gear/sim/sim-connectivity-card.webp" type="image/webp">
-                            <img src="assets/images/gear/sim/sim-connectivity-card.jpg" alt="旅と海外在住のSIMカードいろいろ" loading="lazy" decoding="async">
-                        </picture>
-                    </span>
-                    <div class="hb-guide-body">
-                        <span class="hb-guide-kicker">SIM・電話番号</span>
-                        <h2 class="hb-guide-title" id="hb-sim">SIM / Connectivity — 通信環境のまとめ</h2>
-                        <span class="hb-guide-sub">随時更新 / Gearページの詳細まとめへ</span>
-                        <span class="hb-guide-chips"><i>日本SIMの維持</i><i>ローミング</i><i>香港番号</i><i>プリペイドSIM</i></span>
-                        <span class="hb-guide-cta">まとめを開く →</span>
-                    </div>
-                </a>
-                <a class="hb-guide-card" href="holidays.html" data-growth-label="handbook_guide_holidays">
-                    <span class="hb-guide-thumb">
-                        <img src="assets/images/handbook/holidays-calendar-card.svg" alt="香港・中国・台湾・日本の祝日を重ねたカレンダーのイメージ" loading="lazy" decoding="async">
-                    </span>
-                    <div class="hb-guide-body">
-                        <span class="hb-guide-kicker">祝日・営業日</span>
-                        <h2 class="hb-guide-title" id="hb-holidays">香港・中国・台湾・日本・シンガポール＋米国市場 祝日カレンダー 2026・2027</h2>
-                        <span class="hb-guide-sub">アジア5地域＋米国市場を重ねて表示 / 中国の振替出勤日・米国の短縮取引日も収録</span>
-                        <span class="hb-guide-chips"><i>春節のずれ</i><i>国慶節</i><i>米国休場日</i></span>
-                        <span class="hb-guide-cta">カレンダーを見る →</span>
-                    </div>
-                </a>
-                <a class="hb-guide-card" href="hk-shenzhen-crossing.html" data-growth-label="handbook_guide_crossing">
-                    <span class="hb-guide-thumb">
-                        <picture>
-                            <source srcset="assets/images/photo-notes/huanggang-port-rokid-new-terminal.webp" type="image/webp">
-                            <img src="assets/images/photo-notes/huanggang-port-rokid-new-terminal.jpg" alt="建設中の皇崗口岸新ターミナル" loading="lazy" decoding="async">
-                        </picture>
-                    </span>
-                    <div class="hb-guide-body">
-                        <span class="hb-guide-kicker">口岸・越境</span>
-                        <h2 class="hb-guide-title" id="hb-crossing">旺角から深圳へ — 越境バスと口岸の実践ガイド</h2>
-                        <span class="hb-guide-sub">2026年7月時点 / 皇崗・福田・DJI旗艦店・華強北</span>
-                        <span class="hb-guide-chips"><i>越境バス</i><i>e道は顔だけ</i><i>離境退税</i></span>
-                        <span class="hb-guide-cta">ルートを見る →</span>
-                    </div>
-                </a>
-            </div>
-        </section>
-
         <!-- handbook:hub:start -->
-        <section class="hb-hub-group" aria-labelledby="hb-group-cross">
-          <div class="hb-hub-group-head">
-            <h2 class="hb-hub-group-label" id="hb-group-cross">入る・行き来する</h2>
-            <p class="hb-hub-group-note">書類と口岸。香港と中国本土のあいだを動くための実務。</p>
-          </div>
-          <div class="hb-hub-grid">
-            <a class="hb-hub-card" href="/hk-return-permit.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-return-permit-01-01.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">香港永住権のある非中国籍（日本国籍など）の人</span>
-                <span class="hb-hub-title">非中国籍・香港永住者の回郷証</span>
-                <span class="hb-hub-summary">申請から受け取り、初めての中国入国と e道登録、カードも不要になった顔認証通関まで。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-12</span>
-              </span>
+        <nav class="hb-themes" aria-labelledby="hb-themes-title">
+          <h2 class="hb-themes-title" id="hb-themes-title">話題から読む</h2>
+          <div class="hb-themes-grid">
+            <a class="hb-theme" href="#hb-group-money" data-growth-label="handbook_theme_money">
+              <span class="hb-theme-head"><svg class="hb-theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20h18"/></svg><span class="hb-theme-name">銀行・お金の話</span></span>
+              <span class="hb-theme-note">口座を作った理由、送金してみた経験、銀行とのやり取り。</span>
+              <span class="hb-theme-go">この話題へ ↓</span>
             </a>
-            <a class="hb-hub-card" href="/hk-shenzhen-crossing.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/photo-notes/huanggang-port-rokid-new-terminal.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">香港から深圳へ日帰りで渡る人</span>
-                <span class="hb-hub-title">旺角から深圳へ — 越境バスと口岸の実践ガイド</span>
-                <span class="hb-hub-summary">旺角発の越境バス、皇崗と福田の使い分け、顔認証だけの e道、離境退税まで。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-09</span>
-              </span>
+            <a class="hb-theme" href="#hb-group-connect" data-growth-label="handbook_theme_connect">
+              <span class="hb-theme-head"><svg class="hb-theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 12h6v5H9z"/><path d="M9 12V9.5h6V12"/></svg><span class="hb-theme-name">SIM・電話番号の話</span></span>
+              <span class="hb-theme-note">使ってみた回線、番号を残す工夫、SMS認証で気づいたこと。</span>
+              <span class="hb-theme-go">この話題へ ↓</span>
+            </a>
+            <a class="hb-theme" href="#hb-group-cross" data-growth-label="handbook_theme_cross">
+              <span class="hb-theme-head"><svg class="hb-theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 17h16"/><path d="M4 17V9l5-3 5 3v8"/><path d="M14 17V12l6-2v7"/><path d="M8 17v-3.5"/></svg><span class="hb-theme-name">香港と中国を行き来する話</span></span>
+              <span class="hb-theme-note">回郷証の申請、口岸での体験、移動して分かったこと。</span>
+              <span class="hb-theme-go">この話題へ ↓</span>
             </a>
           </div>
-        </section>
+          <p class="hb-themes-tool"><a href="/holidays.html" data-growth-label="handbook_theme_tool">便利な道具：祝日カレンダー →</a></p>
+          <p class="hb-themes-notice">それぞれ、そのときどきの体験を書き留めたものです。制度・手数料・条件は変わりますので、手続きの前に公式情報をご確認ください。</p>
+        </nav>
         <section class="hb-hub-group" aria-labelledby="hb-group-money">
           <div class="hb-hub-group-head">
-            <h2 class="hb-hub-group-label" id="hb-group-money">お金</h2>
-            <p class="hb-hub-group-note">銀行口座と送金。香港・中国・シンガポール・台湾。</p>
+            <span class="hb-anchor" id="hb-bank" aria-hidden="true"></span>
+            <h2 class="hb-hub-group-label" id="hb-group-money"><svg class="hb-theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M3 9.5 12 4l9 5.5"/><path d="M5 10v8M9.7 10v8M14.3 10v8M19 10v8"/><path d="M3 20h18"/></svg>銀行・お金の話</h2>
+            <p class="hb-hub-group-note">口座を作った理由、送金してみた経験、銀行とのやり取り。</p>
           </div>
           <div class="hb-hub-grid">
             <a class="hb-hub-card" href="/hk-hsbc-premier.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/gallery/hongkong.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">香港 HSBC の口座を持っている／これから持つ人</span>
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">香港</span>
                 <span class="hb-hub-title">HSBC Premier との付き合い方</span>
                 <span class="hb-hub-summary">維持条件と費用、そして 30 年使って再発見したメリット。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-05</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-05</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/gallery/hongkong.jpg" alt="" loading="lazy" decoding="async">
             </a>
             <a class="hb-hub-card" href="/hk-hsbc-fx-withdrawal.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-hsbc-fx-withdrawal-01-01.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">香港 HSBC で日本円・米ドルを引き出したい人</span>
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">香港</span>
                 <span class="hb-hub-title">香港 HSBC の外貨引き出し</span>
                 <span class="hb-hub-summary">外貨引き出しの実際と、2025 年 2 月の限度額改定。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-12</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-12</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-hsbc-fx-withdrawal-01-01.jpg" alt="" loading="lazy" decoding="async">
             </a>
             <a class="hb-hub-card" href="/hk-remittance.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/gallery/hongkong.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">香港のなかでお金を動かす人</span>
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">香港</span>
                 <span class="hb-hub-title">香港の賢い送金術 — PayMe・FPS・バーチャルバンク</span>
                 <span class="hb-hub-summary">PayMe と FPS の使い分け、バーチャルバンクを中継口座にする考え方。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-12</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-12</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/gallery/hongkong.jpg" alt="" loading="lazy" decoding="async">
             </a>
             <a class="hb-hub-card" href="/hk-hsbc-payment-connect.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-hsbc-payment-connect-01-01.png" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">香港から中国本土の口座へ送金したい人</span>
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">香港 → 中国本土</span>
                 <span class="hb-hub-title">HSBC Payment Connect で中国本土へ即時送金</span>
                 <span class="hb-hub-summary">サービスの中身、従来送金との違い、対応銀行、実際に送ってみた記録。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-12</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-12</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-hsbc-payment-connect-01-01.png" alt="" loading="lazy" decoding="async">
             </a>
             <a class="hb-hub-card" href="/hk-dbs-account.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-dbs-account-01-01.png" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">香港で口座を分散したい人</span>
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">香港</span>
                 <span class="hb-hub-title">DBS 銀行で口座をつくった理由</span>
                 <span class="hb-hub-summary">HSBC・Citibank との付き合いを振り返って DBS を選んだ理由と、預金保護 80 万 HKD の考え方。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-05</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-05</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-dbs-account-01-01.png" alt="" loading="lazy" decoding="async">
             </a>
             <a class="hb-hub-card" href="/hk-hsbc-singapore-dormant.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-hsbc-singapore-dormant-01-01.png" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">海外に口座を持ったまま動かしていない人</span>
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">シンガポール</span>
                 <span class="hb-hub-title">HSBC シンガポール口座の休眠（ドーマント）解除</span>
                 <span class="hb-hub-summary">2 年放置で休眠になった口座を、香港からオンラインと Zoom 面談で復活させるまで。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-05</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-05</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-hsbc-singapore-dormant-01-01.png" alt="" loading="lazy" decoding="async">
             </a>
             <a class="hb-hub-card" href="/hk-hsbc-taiwan.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-hsbc-taiwan-01-01.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">台湾で銀行口座を作れるか知りたい非居住者</span>
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">台湾</span>
                 <span class="hb-hub-title">台湾 HSBC で断られて知った、通貨の自由度</span>
                 <span class="hb-hub-summary">台北の窓口で丁寧に断られた理由と、台湾ドルという通貨の性格。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-16</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-16</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-hsbc-taiwan-01-01.jpg" alt="" loading="lazy" decoding="async">
             </a>
             <a class="hb-hub-card" href="/cn-icbc-dormant.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/gallery/hongkong.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">中国本土の口座を長く放置している人</span>
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">中国本土</span>
                 <span class="hb-hub-title">中国工商銀行の休眠口座を解決する</span>
                 <span class="hb-hub-summary">窓口で休眠口座を復活させるまでの手続きの記録。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-05</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-05</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/gallery/hongkong.jpg" alt="" loading="lazy" decoding="async">
             </a>
             <a class="hb-hub-card" href="/cn-bank-passport-update.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/handbook/cn-bank-passport-update-01-01.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">パスポートを更新した、中国本土の口座を持つ人</span>
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">中国本土</span>
                 <span class="hb-hub-title">中国の銀行口座のパスポート情報更新</span>
                 <span class="hb-hub-summary">深圳の窓口での更新手続き — 必要なもの、行くタイミング、実際の流れ。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-05</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-05</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/handbook/cn-bank-passport-update-01-01.jpg" alt="" loading="lazy" decoding="async">
             </a>
           </div>
         </section>
         <section class="hb-hub-group" aria-labelledby="hb-group-connect">
           <div class="hb-hub-group-head">
-            <h2 class="hb-hub-group-label" id="hb-group-connect">通信</h2>
-            <p class="hb-hub-group-note">SIM と eSIM。二拠点で番号とデータをどう持つか。</p>
+            <h2 class="hb-hub-group-label" id="hb-group-connect"><svg class="hb-theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="5" y="3" width="14" height="18" rx="2.5"/><path d="M9 12h6v5H9z"/><path d="M9 12V9.5h6V12"/></svg>SIM・電話番号の話</h2>
+            <p class="hb-hub-group-note">使ってみた回線、番号を残す工夫、SMS認証で気づいたこと。</p>
           </div>
           <div class="hb-hub-grid">
-            <a class="hb-hub-card" href="/gear-sim.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/og/gear-sim-og.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">香港・中国・日本を行き来する人</span>
+            <a class="hb-hub-card" id="hb-sim" href="/gear-sim.html" data-growth-label="handbook_hub_card">
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">香港・日本・中国</span>
                 <span class="hb-hub-title">SIM / Connectivity — 二拠点の通信環境</span>
                 <span class="hb-hub-summary">日本の番号を維持する SIM、データローミング、香港のプリペイドの使い分け。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-05</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-05</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/og/gear-sim-og.jpg" alt="" loading="lazy" decoding="async">
+            </a>
+            <ul class="hb-hub-sublinks">
+              <li><a href="/gear-sim.html#sim-hk-number-title" data-growth-label="handbook_hub_sublink">香港の番号を、日本でも使い続ける話 →</a></li>
+              <li><a href="/gear-sim.html#sim-hongkong-title" data-growth-label="handbook_hub_sublink">香港で使っているプリペイドSIMの話 →</a></li>
+            </ul>
+          </div>
+        </section>
+        <section class="hb-hub-group" aria-labelledby="hb-group-cross">
+          <div class="hb-hub-group-head">
+            <h2 class="hb-hub-group-label" id="hb-group-cross"><svg class="hb-theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path d="M4 17h16"/><path d="M4 17V9l5-3 5 3v8"/><path d="M14 17V12l6-2v7"/><path d="M8 17v-3.5"/></svg>香港と中国を行き来する話</h2>
+            <p class="hb-hub-group-note">回郷証の申請、口岸での体験、移動して分かったこと。</p>
+          </div>
+          <div class="hb-hub-grid">
+            <a class="hb-hub-card" id="hb-permit" href="/hk-return-permit.html" data-growth-label="handbook_hub_card">
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">香港 → 中国本土</span>
+                <span class="hb-hub-title">非中国籍・香港永住者の回郷証</span>
+                <span class="hb-hub-summary">申請から受け取り、初めての中国入国と e道登録、カードも不要になった顔認証通関まで。</span>
+                <span class="hb-hub-for">香港永住権のある非中国籍（日本国籍など）の人に向けた話です</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-12</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
+              </span>
+              <img class="hb-hub-thumb" src="/assets/images/handbook/hk-return-permit-01-01.jpg" alt="" loading="lazy" decoding="async">
+            </a>
+            <a class="hb-hub-card" id="hb-crossing" href="/hk-shenzhen-crossing.html" data-growth-label="handbook_hub_card">
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">香港 → 深圳</span>
+                <span class="hb-hub-title">旺角から深圳へ — 越境バスと口岸の実践ガイド</span>
+                <span class="hb-hub-summary">旺角発の越境バス、皇崗と福田の使い分け、顔認証だけの e道、離境退税まで。</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-09</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
+              </span>
+              <img class="hb-hub-thumb" src="/assets/images/photo-notes/huanggang-port-rokid-new-terminal.jpg" alt="" loading="lazy" decoding="async">
             </a>
           </div>
         </section>
         <section class="hb-hub-group" aria-labelledby="hb-group-life">
           <div class="hb-hub-group-head">
-            <h2 class="hb-hub-group-label" id="hb-group-life">暮らしの暦</h2>
-            <p class="hb-hub-group-note">祝日と休場日。予定を立てるための下敷き。</p>
+            <h2 class="hb-hub-group-label" id="hb-group-life"><svg class="hb-theme-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><rect x="4" y="5" width="16" height="16" rx="2.5"/><path d="M4 10h16"/><path d="M8.5 3v4M15.5 3v4"/><path d="M8.5 14h3"/></svg>便利な道具</h2>
+            <p class="hb-hub-group-note">読みものではなく、予定を立てるときに開く道具。</p>
           </div>
           <div class="hb-hub-grid">
-            <a class="hb-hub-card" href="/holidays.html" data-growth-label="handbook_hub_card">
-              <img class="hb-hub-thumb" src="/assets/images/hero/hongkong.jpg" alt="" loading="lazy" decoding="async">
-              <span>
-                <span class="hb-hub-audience">香港・中国と日本をまたいで予定を立てる人</span>
+            <a class="hb-hub-card" id="hb-holidays" href="/holidays.html" data-growth-label="handbook_hub_card">
+              <span class="hb-hub-card-body">
+                <span class="hb-hub-region">複数地域の祝日・休場日</span>
                 <span class="hb-hub-title">祝日カレンダー 2026・2027</span>
                 <span class="hb-hub-summary">香港・中国・台湾・日本・シンガポールの祝日と米国市場の休場日を重ねて表示。中国の振替出勤日つき。</span>
-                <span class="hb-hub-updated">最終更新 2026-07-13</span>
+                <span class="hb-hub-foot">
+                  <span class="hb-hub-updated">内容更新 2026-07-13</span>
+                  <span class="hb-hub-go">読む →</span>
+                </span>
               </span>
+              <img class="hb-hub-thumb" src="/assets/images/hero/hongkong.jpg" alt="" loading="lazy" decoding="async">
             </a>
           </div>
         </section>
@@ -403,7 +332,10 @@
             初出はすべて<a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">note</a>。体験の記録として、本サイトに整理して収録しています。
         </div>
 
-        <div id="comments" style="scroll-margin-top: 90px;"><div id="comments-slot"></div></div>
+        <div id="comments" style="scroll-margin-top: 90px;">
+            <p class="hb-comment-note">最新の状態へ育てていきたいので、コメントを募集しています。「この手順で通った」「ここは変わっていた」というご報告も、いただけると助かります。</p>
+            <div id="comments-slot"></div>
+        </div>
 
         <div class="journal-nav-links">
             <a href="hongkong.html" class="primary">香港（撮影・カメラ散歩）へ</a>

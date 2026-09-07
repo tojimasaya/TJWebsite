@@ -1995,20 +1995,71 @@ html[data-lang="zh"] .lang-ja { display: none !important; }
 .hb-related-hub a:hover { text-decoration: underline; }
 
 /* hub（hongkong-handbook.html）のカード一覧 */
+/* === 香港ハンドブック（コラム集）の目次 =====================================
+   読みたい話題を最初に選び、記事タイトルを主役にして中身を想像してもらう。
+   .hb-* に閉じてあり、他ページの .pill などは触っていない。 */
+
+/* 紹介文。写真の上に詰め込まず、読みやすい大きさで写真の外に置く。 */
+.hb-hub-lead { max-width: 720px; margin: 22px auto 0; padding: 0 24px; font-family: 'Noto Serif JP', serif; font-size: 0.96rem; line-height: 2.0; color: var(--text-color); }
+.hb-hub-lead p { margin: 0 0 0.7em; }
+.hb-hub-lead p:last-child { margin-bottom: 0; }
+
+/* 話題を選ぶ3つの入口 */
+.hb-themes { max-width: 900px; margin: 26px auto 0; padding: 0 24px; }
+.hb-themes-title { font-family: 'Noto Serif JP', serif; font-size: 1.06rem; font-weight: 600; letter-spacing: 0.06em; color: var(--text-color); text-align: center; margin: 0 0 14px; }
+.hb-themes-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
+.hb-theme { display: flex; flex-direction: column; gap: 7px; min-height: 44px; padding: 15px 17px; border: 1px solid var(--border-color); border-radius: 12px; background: var(--hover-color); text-decoration: none; color: inherit; transition: border-color .18s ease, box-shadow .18s ease, transform .18s ease; }
+.hb-theme:hover { border-color: var(--text-color); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); transform: translateY(-2px); }
+.hb-theme:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 3px; }
+.hb-theme-head { display: flex; align-items: center; gap: 9px; }
+.hb-theme-icon { width: 21px; height: 21px; flex: none; color: var(--accent-color); }
+.hb-theme-name { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 600; line-height: 1.55; color: var(--text-color); }
+.hb-theme-note { font-family: var(--primary-font); font-size: 0.79rem; line-height: 1.75; color: var(--text-light); }
+.hb-theme-go { font-family: var(--primary-font); font-size: 0.81rem; font-weight: 600; color: var(--accent-color); margin-top: auto; }
+.hb-theme:hover .hb-theme-go { text-decoration: underline; }
+.hb-themes-tool { text-align: center; margin: 13px 0 0; font-family: var(--primary-font); font-size: 0.86rem; }
+.hb-themes-tool a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 12px; color: var(--accent-color); text-decoration: none; font-weight: 600; }
+.hb-themes-tool a:hover { text-decoration: underline; }
+.hb-themes-tool a:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 3px; border-radius: 8px; }
+.hb-themes-notice { max-width: 640px; margin: 2px auto 0; text-align: center; font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.85; color: var(--text-lighter); }
+@media (max-width: 720px) {
+    .hb-themes-grid { grid-template-columns: 1fr; gap: 9px; }
+    .hb-theme { padding: 13px 15px; gap: 5px; }
+}
+
+/* 話題ごとのコラム一覧 */
 .hb-hub-group { max-width: 900px; margin: 44px auto 0; padding: 0 24px; }
 .hb-hub-group-head { margin: 0 0 14px; }
-.hb-hub-group-label { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; font-weight: 600; letter-spacing: 0.06em; color: var(--text-color); margin: 0; }
-.hb-hub-group-note { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); margin: 4px 0 0; }
-.hb-hub-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 14px; }
+.hb-anchor { display: block; height: 0; scroll-margin-top: 100px; }
+.hb-hub-group-label { display: flex; align-items: center; gap: 9px; font-family: 'Noto Serif JP', serif; font-size: 1.16rem; font-weight: 600; letter-spacing: 0.06em; color: var(--text-color); margin: 0; padding-bottom: 9px; border-bottom: 1px solid var(--border-color); scroll-margin-top: 100px; }
+.hb-hub-group-label .hb-theme-icon { width: 20px; height: 20px; }
+.hb-hub-group-note { font-family: var(--primary-font); font-size: 0.82rem; color: var(--text-light); margin: 9px 0 0; }
+.hb-hub-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
+.hb-hub-card { display: grid; grid-template-columns: minmax(0, 1fr) 76px; gap: 14px; border: 1px solid var(--border-color); border-radius: 12px; padding: 14px 16px; text-decoration: none; color: inherit; background: var(--white); transition: border-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease; }
+.hb-hub-card:hover { border-color: var(--text-color); box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08); transform: translateY(-2px); }
+.hb-hub-card:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 3px; }
+.hb-hub-card-body { display: block; min-width: 0; }
+.hb-hub-thumb { width: 76px; height: 76px; object-fit: cover; border-radius: 8px; background: var(--hover-color); align-self: start; }
+/* 地域は「どこの話か」を示す説明表示。押せるボタンには見せない。 */
+.hb-hub-region { display: block; font-family: var(--secondary-font); font-size: 0.69rem; font-weight: 600; letter-spacing: 0.08em; color: var(--text-light); margin: 0 0 5px; }
+.hb-hub-title { display: block; font-family: 'Noto Serif JP', serif; font-size: 1.02rem; font-weight: 600; line-height: 1.65; color: var(--text-color); margin: 0 0 6px; }
+.hb-hub-summary { display: block; font-family: var(--primary-font); font-size: 0.8rem; line-height: 1.8; color: var(--text-light); margin: 0 0 9px; }
+.hb-hub-for { display: block; font-family: var(--primary-font); font-size: 0.76rem; line-height: 1.75; color: var(--text-lighter); margin: -4px 0 9px; }
+.hb-hub-foot { display: flex; flex-wrap: wrap; align-items: baseline; gap: 4px 12px; }
+.hb-hub-updated { font-family: var(--secondary-font); font-size: 0.68rem; color: var(--text-lighter); }
+.hb-hub-go { font-family: var(--primary-font); font-size: 0.82rem; font-weight: 600; color: var(--accent-color); }
+.hb-hub-card:hover .hb-hub-go { text-decoration: underline; }
+/* まとめページの中の該当箇所へ。カードの外に置いて入れ子リンクを避ける。 */
+.hb-hub-sublinks { list-style: none; margin: -4px 0 0; padding: 0 0 0 16px; display: flex; flex-direction: column; gap: 2px; }
+.hb-hub-sublinks a { display: inline-flex; align-items: center; min-height: 44px; font-family: var(--primary-font); font-size: 0.83rem; color: var(--accent-color); text-decoration: none; }
+.hb-hub-sublinks a:hover { text-decoration: underline; }
+.hb-hub-sublinks a:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 3px; border-radius: 6px; }
+.hb-comment-note { max-width: 760px; margin: 0 auto 14px; padding: 0 24px; font-family: var(--primary-font); font-size: 0.82rem; line-height: 1.9; color: var(--text-light); }
 @media (max-width: 760px) { .hb-hub-grid { grid-template-columns: 1fr; } }
-.hb-hub-card { display: grid; grid-template-columns: 92px minmax(0, 1fr); gap: 14px; border: 1px solid var(--border-color); border-radius: 12px; padding: 14px; text-decoration: none; color: inherit; transition: border-color 0.2s ease, box-shadow 0.2s ease; }
-.hb-hub-card:hover { border-color: var(--text-color); box-shadow: var(--shadow-md); }
-.hb-hub-thumb { width: 92px; height: 92px; object-fit: cover; border-radius: 8px; background: var(--hover-color); }
-.hb-hub-title { display: block; font-family: 'Noto Serif JP', serif; font-size: 0.98rem; line-height: 1.6; color: var(--text-color); margin: 0 0 5px; }
-.hb-hub-audience { display: block; font-family: var(--secondary-font); font-size: 0.7rem; letter-spacing: 0.04em; color: var(--accent-color); margin: 0 0 5px; }
-.hb-hub-summary { display: block; font-family: var(--primary-font); font-size: 0.8rem; line-height: 1.8; color: var(--text-light); margin: 0 0 7px; }
-.hb-hub-updated { display: block; font-family: var(--secondary-font); font-size: 0.68rem; color: var(--text-lighter); }
-@media (max-width: 600px) { .hb-hub-card { grid-template-columns: 72px minmax(0, 1fr); } .hb-hub-thumb { width: 72px; height: 72px; } }
+@media (max-width: 600px) {
+    .hb-hub-card { grid-template-columns: minmax(0, 1fr) 64px; gap: 12px; }
+    .hb-hub-thumb { width: 64px; height: 64px; }
+}
 
 /* === 祝日カレンダーの ICS ダウンロード（tools/build-ics.mjs が入れる） === */
 .ics-download { max-width: 900px; margin: 34px auto 0; padding: 0 24px; }

@@ -19,7 +19,8 @@
         .sim-section { max-width: 1180px; margin: 0 auto 64px; padding: 0 30px; }
         .sim-section-header { display: grid; grid-template-columns: minmax(0, 0.75fr) minmax(0, 1.25fr); gap: 28px; align-items: end; margin-bottom: 22px; }
         .sim-kicker { display: block; font-family: var(--secondary-font); font-size: 0.72rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-color); margin-bottom: 10px; }
-        .sim-title { font-family: var(--primary-font); font-size: clamp(1.45rem, 3vw, 2rem); color: var(--text-color); margin: 0; }
+        /* ハンドブックから該当箇所へ直接来るので、固定ヘッダーに見出しが隠れないようにする */
+        .sim-title { font-family: var(--primary-font); font-size: clamp(1.45rem, 3vw, 2rem); color: var(--text-color); margin: 0; scroll-margin-top: 100px; }
         .sim-lead { font-family: 'Noto Serif JP', serif; font-size: 0.9rem; line-height: 1.95; color: var(--text-light); }
 
         .sim-notice {
@@ -594,12 +595,12 @@
         <h2 id="hb-related-title">関連ガイド</h2>
         <div class="hb-related-grid">
           <a class="hb-related-card" href="/hk-shenzhen-crossing.html" data-growth-label="handbook_related">
-            <span class="hb-related-group">入る・行き来する</span>
+            <span class="hb-related-group">香港と中国を行き来する話</span>
             <span class="hb-related-title">旺角から深圳へ — 越境バスと口岸の実践ガイド</span>
             <span class="hb-related-summary">旺角発の越境バス、皇崗と福田の使い分け、顔認証だけの e道、離境退税まで。</span>
           </a>
           <a class="hb-related-card" href="/holidays.html" data-growth-label="handbook_related">
-            <span class="hb-related-group">暮らしの暦</span>
+            <span class="hb-related-group">便利な道具</span>
             <span class="hb-related-title">祝日カレンダー 2026・2027</span>
             <span class="hb-related-summary">香港・中国・台湾・日本・シンガポールの祝日と米国市場の休場日を重ねて表示。中国の振替出勤日つき。</span>
           </a>
