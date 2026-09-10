@@ -20,6 +20,7 @@ on:
       - 'data/recent-photos.json'
       - 'data/articles.json'
       - 'data/handbook.json'
+      - 'data/iphone-prices.json'
       - 'data/holidays-2026.json'
       - 'data/holidays-2027.json'
       - 'articles/**'
@@ -27,6 +28,7 @@ on:
       - 'tools/build-fragments.mjs'
       - 'tools/build-feeds.mjs'
       - 'tools/build-handbook.mjs'
+      - 'tools/build-iphone-prices.mjs'
       - 'tools/build-og.py'
       - 'tools/build-ics.mjs'
       - 'tools/lib/html.mjs'
@@ -70,6 +72,9 @@ jobs:
       - name: Build handbook frame (香港ハンドブック)
         run: node tools/build-handbook.mjs
 
+      - name: Build iPhone price page (香港版 iPhone の価格)
+        run: node tools/build-iphone-prices.mjs
+
       - name: Build holiday calendars (ICS)
         run: node tools/build-ics.mjs
 
@@ -83,4 +88,4 @@ jobs:
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
           commit_message: 'chore(build): rebuild generated pages and feeds'
-          file_pattern: 'shirasagi36/*.html fragments/*.html calendars/*.ics assets/og/cards/*.jpg assets/og/cards/manifest.json data/shirasagi-latest.json data/updates.json feed.xml feed-fragments.xml feed.json rss/index.html sitemap.xml shirasagi36.html shirasagi36-en.html shirasagi36-hk.html hongkong-handbook.html holidays.html hk-*.html cn-*.html gear-sim.html'
+          file_pattern: 'iphone18-price.html shirasagi36/*.html fragments/*.html calendars/*.ics assets/og/cards/*.jpg assets/og/cards/manifest.json data/shirasagi-latest.json data/updates.json feed.xml feed-fragments.xml feed.json rss/index.html sitemap.xml shirasagi36.html shirasagi36-en.html shirasagi36-hk.html hongkong-handbook.html holidays.html hk-*.html cn-*.html gear-sim.html'
