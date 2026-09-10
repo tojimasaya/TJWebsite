@@ -10,6 +10,7 @@
 //   <!-- handbook:footer:start -->…<!-- handbook:footer:end -->  更新履歴・シェア・関連ガイド
 //   <!-- handbook:hub:start -->…<!-- handbook:hub:end -->        hub のカード一覧
 // 本文（TJ の文章）には触らない。マーカーの中身は手で編集しない。
+// hubOnly: true の項目は hub の一覧にだけ出し、そのページ自体は組み替えない。
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -265,8 +266,11 @@ async function main() {
     if (!CHECK_ONLY) await writeIfChanged(path.join(ROOT, rel), content);
   };
 
-  const targets = ONLY ? catalog.pages.filter((p) => p.id === ONLY) : catalog.pages;
-  if (ONLY && !targets.length) throw new Error(`--only ${ONLY} は目録にありません`);
+  // hubOnly: true は hub の一覧・関連ガイド・フィードには出すが、ページ本体には触らない。
+  // （そのページを別の生成器が持っている場合に、<title> などを奪い合わないようにするため）
+  const managed = catalog.pages.filter((p) => !p.hubOnly);
+  const targets = ONLY ? managed.filter((p) => p.id === ONLY) : managed;
+  if (ONLY && !targets.length) throw new Error(`--only ${ONLY} は目録にないか、hubOnly です`);
 
   for (const page of targets) {
     const rel = page.url.replace(/^\//, '');

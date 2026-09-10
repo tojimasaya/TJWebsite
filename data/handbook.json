@@ -1,5 +1,5 @@
 {
-  "note": "香港ハンドブックの目録。hub（hongkong-handbook.html）・各ページの関連ガイド・トップページ・フィードがここを単一ソースにする。audience / summary / updated は TJ が確認して直す。updated は制度や条件を見直した日付（枠を整えただけの日は入れない）。 history は各ページ末尾の「更新履歴」。制度を見直したら日付と一行を足す。 seoTitle / seoDescription は検索意図に寄せた <title> と meta description（TJ 承認 2026-09-02）。末尾の「| Toji Masaya」は生成器が付ける。 region は hub の一覧に出す短い地域表示（記事がどこの話かを一目で分かるように）。 anchor は hub のカードに残す旧ID（外部からのリンク先を壊さないため）。 showAudience を true にすると、hub の一覧で紹介の下に対象範囲（audience）も出す。",
+  "note": "香港ハンドブックの目録。hub（hongkong-handbook.html）・各ページの関連ガイド・トップページ・フィードがここを単一ソースにする。audience / summary / updated は TJ が確認して直す。updated は制度や条件を見直した日付（枠を整えただけの日は入れない）。 history は各ページ末尾の「更新履歴」。制度を見直したら日付と一行を足す。 seoTitle / seoDescription は検索意図に寄せた <title> と meta description（TJ 承認 2026-09-02）。末尾の「| Toji Masaya」は生成器が付ける。 region は hub の一覧に出す短い地域表示（記事がどこの話かを一目で分かるように）。 anchor は hub のカードに残す旧ID（外部からのリンク先を壊さないため）。 showAudience を true にすると、hub の一覧で紹介の下に対象範囲（audience）も出す。 hubOnly: true は hub の一覧・関連ガイド・フィードには出すが、そのページ自体は build-handbook が触らない（別の生成器が持っているページ用）。",
   "hub": "/hongkong-handbook.html",
   "groups": [
     {
@@ -319,9 +319,9 @@
       "updated": "2026-07-05",
       "image": "/assets/images/og/gear-sim-og.jpg",
       "related": [
+        "/iphone18-price.html",
         "/hk-shenzhen-crossing.html",
-        "/holidays.html",
-        "/gear.html"
+        "/holidays.html"
       ],
       "history": [
         {
@@ -357,6 +357,23 @@
       ],
       "seoTitle": "香港の祝日カレンダー 2026・2027（中国・台湾・日本・シンガポール・米国市場と重ね表示）",
       "seoDescription": "香港・中国・台湾・日本・シンガポールの祝日と米国市場の休場日を1つのカレンダーで。中国の振替出勤日つき。地域ごとにカレンダー登録用の.icsをダウンロードできます。"
+    },
+    {
+      "id": "iphone18-price",
+      "url": "/iphone18-price.html",
+      "title": "香港版 iPhone 18 の価格",
+      "group": "life",
+      "hubOnly": true,
+      "audience": "香港・日本・中国本土のどこで買うか迷っている人",
+      "summary": "アップル公式価格を三か所ぶん香港ドルに換算して比較。旺角・先達廣場の買取価格も、聞いてきた日付とともに残していきます。",
+      "region": "香港・日本・中国本土",
+      "updated": "2026-09-10",
+      "image": "/assets/images/photo-notes/sincere-podium-903-shop.jpg",
+      "related": [
+        "/gear-sim.html",
+        "/hk-shenzhen-crossing.html",
+        "/holidays.html"
+      ]
     }
   ],
   "hubSeo": {
