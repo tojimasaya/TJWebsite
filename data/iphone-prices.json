@@ -1,9 +1,17 @@
 {
-  "note": "香港版 iPhone の価格表。official = アップル公式価格（各地の税込表示価格をそのまま）。rates = HKD へ換算するときの為替で、TJ が確認した日を asOf に書く。buyback.records = 先達廣場で聞いてきた買取価格を、日付ごとに足していく（消さずに積む＝値動きが残る）。price は現地通貨の整数、date は YYYY-MM-DD。ページは tools/build-iphone-prices.mjs が組み直す。",
+  "note": "香港版 iPhone の価格表。official = アップル公式価格（各地の税込表示価格をそのまま）。rates = HKD へ換算するときの為替で、TJ が確認した日を asOf に書く。buyback.records = 先達廣場で聞いてきた買取価格を、日付ごとに足していく（消さずに積む＝値動きが残る）。price は現地通貨の整数、date は YYYY-MM-DD。ページは tools/build-iphone-prices.mjs が組み直す。 hero を差し替えるときは画像を assets/images/hero/ に置いて、このブロックのパスを直せばヒーローも OG 画像も入れ替わる。",
   "generation": "iPhone 18",
   "page": "/iphone18-price.html",
   "announced": "2026-09-09",
   "priceCheckedAt": "2026-09-10",
+  "hero": {
+    "image": "/assets/images/hero/sincere-podium-iphone18.jpg",
+    "webp": "/assets/images/hero/sincere-podium-iphone18.webp",
+    "width": 1800,
+    "height": 1013,
+    "alt": "旺角・先達廣場の赤い看板の下で、買ったばかりの iPhone 18 の箱を持つ手",
+    "focus": "68%"
+  },
   "rates": {
     "asOf": "2026-09-10",
     "source": "TJ が手元で確認したレート",
@@ -11,39 +19,142 @@
     "CNY": 1.1692
   },
   "regions": [
-    { "code": "HK", "label": "香港", "currency": "HKD", "symbol": "HK$", "base": true, "taxNote": "消費税なし・表示価格がそのまま支払額" },
-    { "code": "JP", "label": "日本", "currency": "JPY", "symbol": "¥", "taxNote": "消費税込みの表示価格" },
-    { "code": "CN", "label": "中国本土", "currency": "CNY", "symbol": "¥", "taxNote": "増値税込みの表示価格" }
+    {
+      "code": "HK",
+      "label": "香港",
+      "currency": "HKD",
+      "symbol": "HK$",
+      "base": true,
+      "taxNote": "消費税なし・表示価格がそのまま支払額"
+    },
+    {
+      "code": "JP",
+      "label": "日本",
+      "currency": "JPY",
+      "symbol": "¥",
+      "taxNote": "消費税込みの表示価格"
+    },
+    {
+      "code": "CN",
+      "label": "中国本土",
+      "currency": "CNY",
+      "symbol": "¥",
+      "taxNote": "増値税込みの表示価格"
+    }
   ],
   "models": [
     {
       "id": "iphone-18-pro",
       "name": "iPhone 18 Pro",
       "capacities": [
-        { "size": "256GB", "prices": { "HK": 10499, "JP": 219800, "CN": 9999 } },
-        { "size": "512GB", "prices": { "HK": 12299, "JP": 254800, "CN": 11999 } },
-        { "size": "1TB", "prices": { "HK": 15799, "JP": 324800, "CN": 15499 } },
-        { "size": "2TB", "prices": { "HK": 20999, "JP": 429800, "CN": 20499 } }
+        {
+          "size": "256GB",
+          "prices": {
+            "HK": 10499,
+            "JP": 219800,
+            "CN": 9999
+          }
+        },
+        {
+          "size": "512GB",
+          "prices": {
+            "HK": 12299,
+            "JP": 254800,
+            "CN": 11999
+          }
+        },
+        {
+          "size": "1TB",
+          "prices": {
+            "HK": 15799,
+            "JP": 324800,
+            "CN": 15499
+          }
+        },
+        {
+          "size": "2TB",
+          "prices": {
+            "HK": 20999,
+            "JP": 429800,
+            "CN": 20499
+          }
+        }
       ]
     },
     {
       "id": "iphone-18-pro-max",
       "name": "iPhone 18 Pro Max",
       "capacities": [
-        { "size": "256GB", "prices": { "HK": 11499, "JP": 239800, "CN": 10999 } },
-        { "size": "512GB", "prices": { "HK": 13299, "JP": 274800, "CN": 12999 } },
-        { "size": "1TB", "prices": { "HK": 16799, "JP": 344800, "CN": 16499 } },
-        { "size": "2TB", "prices": { "HK": 21999, "JP": 449800, "CN": 21499 } }
+        {
+          "size": "256GB",
+          "prices": {
+            "HK": 11499,
+            "JP": 239800,
+            "CN": 10999
+          }
+        },
+        {
+          "size": "512GB",
+          "prices": {
+            "HK": 13299,
+            "JP": 274800,
+            "CN": 12999
+          }
+        },
+        {
+          "size": "1TB",
+          "prices": {
+            "HK": 16799,
+            "JP": 344800,
+            "CN": 16499
+          }
+        },
+        {
+          "size": "2TB",
+          "prices": {
+            "HK": 21999,
+            "JP": 449800,
+            "CN": 21499
+          }
+        }
       ]
     },
     {
       "id": "iphone-duo",
       "name": "iPhone Duo",
       "capacities": [
-        { "size": "256GB", "prices": { "HK": 17499, "JP": 364800, "CN": 15999 } },
-        { "size": "512GB", "prices": { "HK": 19299, "JP": 399800, "CN": 17999 } },
-        { "size": "1TB", "prices": { "HK": 22799, "JP": 469800, "CN": 21499 } },
-        { "size": "2TB", "prices": { "HK": 27999, "JP": 574800, "CN": 26499 } }
+        {
+          "size": "256GB",
+          "prices": {
+            "HK": 17499,
+            "JP": 364800,
+            "CN": 15999
+          }
+        },
+        {
+          "size": "512GB",
+          "prices": {
+            "HK": 19299,
+            "JP": 399800,
+            "CN": 17999
+          }
+        },
+        {
+          "size": "1TB",
+          "prices": {
+            "HK": 22799,
+            "JP": 469800,
+            "CN": 21499
+          }
+        },
+        {
+          "size": "2TB",
+          "prices": {
+            "HK": 27999,
+            "JP": 574800,
+            "CN": 26499
+          }
+        }
       ]
     }
   ],
@@ -51,8 +162,14 @@
     "place": "先達廣場（旺角）",
     "note": "旺角の先達廣場で、実際に店頭で聞いてきた買取価格です。店・時間帯・在庫の具合で動きますし、私が聞いた一例にすぎません。発売直後は日単位で下がるので、聞いた日付と一緒に残していきます。",
     "conditions": [
-      { "key": "sealed", "label": "新品未開封" },
-      { "key": "used", "label": "開封済み・美品" }
+      {
+        "key": "sealed",
+        "label": "新品未開封"
+      },
+      {
+        "key": "used",
+        "label": "開封済み・美品"
+      }
     ],
     "records": []
   },

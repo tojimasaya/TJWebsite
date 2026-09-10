@@ -4,6 +4,7 @@
 //   node tools/build-iphone-prices.mjs --check   … 差分の有無だけ見る（差分があれば exit 2）
 //
 // 出力先は iphone18-price.html の次のマーカー区間。中身は手で編集しない。
+//   <!-- iphone:hero:start -->…<!-- iphone:hero:end -->       ヒーローの写真
 //   <!-- iphone:summary:start -->…<!-- iphone:summary:end -->   早見表と為替の前提
 //   <!-- iphone:prices:start -->…<!-- iphone:prices:end -->     モデル別の価格表
 //   <!-- iphone:buyback:start -->…<!-- iphone:buyback:end -->   先達廣場の買取価格（日付ごとの記録）
@@ -40,6 +41,17 @@ function toHkd(region, amount, rates) {
   if (region === 'HK') return amount;
   const rate = rates[region === 'JP' ? 'JPY' : 'CNY'];
   return amount * rate;
+}
+
+/** ヒーローの写真。og:image / twitter:image も同じ1枚から取る。 */
+function heroBlock(cat) {
+  const h = cat.hero;
+  return [
+    '<picture>',
+    `  <source srcset="${h.webp}" type="image/webp">`,
+    `  <img src="${h.image}" alt="${escapeHtml(h.alt)}" class="journal-hero-bg" width="${h.width}" height="${h.height}" style="object-position: center ${h.focus || '50%'};" decoding="async" fetchpriority="high">`,
+    '</picture>',
+  ].join('\n');
 }
 
 function summaryBlock(cat) {
@@ -206,6 +218,11 @@ function applySeo(html, cat) {
   out = out.replace(/(<meta\s+property="og:title"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(cat.seo.title) + c);
   out = out.replace(/(<meta\s+property="og:description"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(cat.seo.description) + c);
   out = out.replace(/(<meta\s+name="twitter:title"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(cat.seo.title) + c);
+  if (cat.hero) {
+    const abs = SITE_ORIGIN + cat.hero.image;
+    out = out.replace(/(<meta\s+property="og:image"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + abs + c);
+    out = out.replace(/(<meta\s+name="twitter:image"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + abs + c);
+  }
 
   const ld = {
     '@context': 'https://schema.org',
@@ -261,6 +278,7 @@ async function main() {
   const file = path.join(ROOT, rel);
   const before = await fs.readFile(file, 'utf8');
   let html = before;
+  html = putBlock(html, 'hero', heroBlock(cat));
   html = putBlock(html, 'summary', summaryBlock(cat));
   html = putBlock(html, 'prices', pricesBlock(cat));
   html = putBlock(html, 'buyback', buybackBlock(cat));
