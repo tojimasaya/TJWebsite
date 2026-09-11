@@ -68,6 +68,7 @@
         .ip-card { border: 1px solid var(--border-color); border-radius: 12px; background: var(--hover-color); padding: 15px 17px; }
         .ip-card-label { display: block; font-family: var(--secondary-font); font-size: 0.7rem; font-weight: 600; letter-spacing: 0.09em; color: var(--text-light); margin-bottom: 6px; }
         .ip-card-value { display: block; font-family: 'Noto Serif JP', serif; font-size: 1.06rem; font-weight: 600; line-height: 1.5; color: var(--text-color); font-variant-numeric: tabular-nums; }
+        .ip-card-usd { display: block; font-family: var(--secondary-font); font-size: 0.78rem; color: var(--text-light); margin-top: 3px; font-variant-numeric: tabular-nums; }
         .ip-card-note { display: block; font-family: var(--primary-font); font-size: 0.76rem; line-height: 1.7; color: var(--text-lighter); margin-top: 6px; }
         .ip-facts { margin: 16px 0 0; padding: 0; font-family: var(--primary-font); font-size: 0.82rem; line-height: 1.9; color: var(--text-light); }
         .ip-facts > div { display: grid; grid-template-columns: 7.5em minmax(0, 1fr); gap: 10px; padding: 8px 0; border-top: 1px solid var(--border-color); }
@@ -89,6 +90,9 @@
         .ip-note { display: block; font-size: 0.72rem; font-weight: 600; letter-spacing: 0.06em; color: var(--ip-best); margin-top: 4px; }
         .ip-table td.is-cheapest { background: color-mix(in srgb, var(--ip-best) 9%, transparent); }
         .ip-table-note { font-family: var(--primary-font); font-size: 0.76rem; line-height: 1.8; color: var(--text-lighter); margin: 10px 0 0; }
+        /* 香港ドルの横に添える米ドルの目安。主役はあくまで HKD なので小さく控えめに。
+           色は --text-lighter だと白地で 2.8 しか出ないので --text-light を使う。 */
+        .ip-usd { font-family: var(--secondary-font); font-size: 0.72rem; font-weight: 500; color: var(--text-light); letter-spacing: 0.01em; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
         /* 先達廣場の買取価格 */
         .ip-buyback { max-width: 900px; margin: 0 auto; padding: 0; }
@@ -186,17 +190,19 @@
             <div class="ip-card">
               <span class="ip-card-label">日本との差</span>
               <strong class="ip-card-value">+HK$714 〜 +HK$1,356</strong>
+              <span class="ip-card-usd">≈ US$91 〜 US$173</span>
               <span class="ip-card-note">香港で買った場合との差額の幅</span>
             </div>
             <div class="ip-card">
               <span class="ip-card-label">中国本土との差</span>
               <strong class="ip-card-value">+HK$1,192 〜 +HK$3,138</strong>
+              <span class="ip-card-usd">≈ US$152 〜 US$400</span>
               <span class="ip-card-note">香港で買った場合との差額の幅</span>
             </div>
           </div>
           <dl class="ip-facts">
             <div><dt>価格の確認日</dt><dd><time datetime="2026-09-10">2026年9月10日</time></dd></div>
-            <div><dt>換算レート</dt><dd>1円 = 0.05107 HKD ／ 1元 = 1.1692 HKD<br><span class="ip-muted">2026年9月10日時点・TJ が手元で確認したレート</span></dd></div>
+            <div><dt>換算レート</dt><dd>1円 = 0.05107 HKD ／ 1元 = 1.1692 HKD<br><span class="ip-muted">2026年9月10日時点・TJ が手元で確認したレート</span><br>1米ドル = 7.8412 HKD <span class="ip-muted">（2026年9月11日時点・exchangerate-api.com（TJ の為替モニターと同じ出典））</span></dd></div>
             <div><dt>税の扱い</dt><dd>香港は消費税なし・表示価格がそのまま支払額。日本は消費税込みの表示価格。中国本土は増値税込みの表示価格。いずれも店頭で払う金額どうしの比較です。</dd></div>
           </dl>
         </div>
@@ -223,74 +229,74 @@
               <tr>
                 <th scope="row">256GB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$10,499</span>
+                  <span class="ip-local">HK$10,499 <span class="ip-usd">≈ US$1,339</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥219,800</span>
-                  <span class="ip-conv">HK$11,225</span>
-                  <span class="ip-diff">+HK$726</span>
+                  <span class="ip-conv">HK$11,225 <span class="ip-usd">≈ US$1,432</span></span>
+                  <span class="ip-diff">+HK$726 <span class="ip-usd">(+US$93)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥9,999</span>
-                  <span class="ip-conv">HK$11,691</span>
-                  <span class="ip-diff">+HK$1,192</span>
+                  <span class="ip-conv">HK$11,691 <span class="ip-usd">≈ US$1,491</span></span>
+                  <span class="ip-diff">+HK$1,192 <span class="ip-usd">(+US$152)</span></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">512GB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$12,299</span>
+                  <span class="ip-local">HK$12,299 <span class="ip-usd">≈ US$1,569</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥254,800</span>
-                  <span class="ip-conv">HK$13,013</span>
-                  <span class="ip-diff">+HK$714</span>
+                  <span class="ip-conv">HK$13,013 <span class="ip-usd">≈ US$1,660</span></span>
+                  <span class="ip-diff">+HK$714 <span class="ip-usd">(+US$91)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥11,999</span>
-                  <span class="ip-conv">HK$14,029</span>
-                  <span class="ip-diff">+HK$1,730</span>
+                  <span class="ip-conv">HK$14,029 <span class="ip-usd">≈ US$1,789</span></span>
+                  <span class="ip-diff">+HK$1,730 <span class="ip-usd">(+US$221)</span></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">1TB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$15,799</span>
+                  <span class="ip-local">HK$15,799 <span class="ip-usd">≈ US$2,015</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥324,800</span>
-                  <span class="ip-conv">HK$16,588</span>
-                  <span class="ip-diff">+HK$789</span>
+                  <span class="ip-conv">HK$16,588 <span class="ip-usd">≈ US$2,115</span></span>
+                  <span class="ip-diff">+HK$789 <span class="ip-usd">(+US$101)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥15,499</span>
-                  <span class="ip-conv">HK$18,121</span>
-                  <span class="ip-diff">+HK$2,322</span>
+                  <span class="ip-conv">HK$18,121 <span class="ip-usd">≈ US$2,311</span></span>
+                  <span class="ip-diff">+HK$2,322 <span class="ip-usd">(+US$296)</span></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">2TB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$20,999</span>
+                  <span class="ip-local">HK$20,999 <span class="ip-usd">≈ US$2,678</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥429,800</span>
-                  <span class="ip-conv">HK$21,950</span>
-                  <span class="ip-diff">+HK$951</span>
+                  <span class="ip-conv">HK$21,950 <span class="ip-usd">≈ US$2,799</span></span>
+                  <span class="ip-diff">+HK$951 <span class="ip-usd">(+US$121)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥20,499</span>
-                  <span class="ip-conv">HK$23,967</span>
-                  <span class="ip-diff">+HK$2,968</span>
+                  <span class="ip-conv">HK$23,967 <span class="ip-usd">≈ US$3,057</span></span>
+                  <span class="ip-diff">+HK$2,968 <span class="ip-usd">(+US$379)</span></span>
                 </td>
               </tr>
             </tbody>
           </table>
-          <p class="ip-table-note">香港以外は香港ドル換算と、香港で買った場合との差額。端数は四捨五入しています。</p>
+          <p class="ip-table-note">香港以外は香港ドル換算と、香港で買った場合との差額。「≈ US$」は米ドル換算の目安。端数は四捨五入しています。</p>
         </section>
         <section class="ip-model" id="iphone-18-pro-max" aria-labelledby="iphone-18-pro-max-title">
           <h2 class="ip-model-title" id="iphone-18-pro-max-title">iPhone 18 Pro Max</h2>
@@ -307,74 +313,74 @@
               <tr>
                 <th scope="row">256GB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$11,499</span>
+                  <span class="ip-local">HK$11,499 <span class="ip-usd">≈ US$1,466</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥239,800</span>
-                  <span class="ip-conv">HK$12,247</span>
-                  <span class="ip-diff">+HK$748</span>
+                  <span class="ip-conv">HK$12,247 <span class="ip-usd">≈ US$1,562</span></span>
+                  <span class="ip-diff">+HK$748 <span class="ip-usd">(+US$95)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥10,999</span>
-                  <span class="ip-conv">HK$12,860</span>
-                  <span class="ip-diff">+HK$1,361</span>
+                  <span class="ip-conv">HK$12,860 <span class="ip-usd">≈ US$1,640</span></span>
+                  <span class="ip-diff">+HK$1,361 <span class="ip-usd">(+US$174)</span></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">512GB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$13,299</span>
+                  <span class="ip-local">HK$13,299 <span class="ip-usd">≈ US$1,696</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥274,800</span>
-                  <span class="ip-conv">HK$14,034</span>
-                  <span class="ip-diff">+HK$735</span>
+                  <span class="ip-conv">HK$14,034 <span class="ip-usd">≈ US$1,790</span></span>
+                  <span class="ip-diff">+HK$735 <span class="ip-usd">(+US$94)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥12,999</span>
-                  <span class="ip-conv">HK$15,198</span>
-                  <span class="ip-diff">+HK$1,899</span>
+                  <span class="ip-conv">HK$15,198 <span class="ip-usd">≈ US$1,938</span></span>
+                  <span class="ip-diff">+HK$1,899 <span class="ip-usd">(+US$242)</span></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">1TB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$16,799</span>
+                  <span class="ip-local">HK$16,799 <span class="ip-usd">≈ US$2,142</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥344,800</span>
-                  <span class="ip-conv">HK$17,609</span>
-                  <span class="ip-diff">+HK$810</span>
+                  <span class="ip-conv">HK$17,609 <span class="ip-usd">≈ US$2,246</span></span>
+                  <span class="ip-diff">+HK$810 <span class="ip-usd">(+US$103)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥16,499</span>
-                  <span class="ip-conv">HK$19,291</span>
-                  <span class="ip-diff">+HK$2,492</span>
+                  <span class="ip-conv">HK$19,291 <span class="ip-usd">≈ US$2,460</span></span>
+                  <span class="ip-diff">+HK$2,492 <span class="ip-usd">(+US$318)</span></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">2TB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$21,999</span>
+                  <span class="ip-local">HK$21,999 <span class="ip-usd">≈ US$2,806</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥449,800</span>
-                  <span class="ip-conv">HK$22,971</span>
-                  <span class="ip-diff">+HK$972</span>
+                  <span class="ip-conv">HK$22,971 <span class="ip-usd">≈ US$2,930</span></span>
+                  <span class="ip-diff">+HK$972 <span class="ip-usd">(+US$124)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥21,499</span>
-                  <span class="ip-conv">HK$25,137</span>
-                  <span class="ip-diff">+HK$3,138</span>
+                  <span class="ip-conv">HK$25,137 <span class="ip-usd">≈ US$3,206</span></span>
+                  <span class="ip-diff">+HK$3,138 <span class="ip-usd">(+US$400)</span></span>
                 </td>
               </tr>
             </tbody>
           </table>
-          <p class="ip-table-note">香港以外は香港ドル換算と、香港で買った場合との差額。端数は四捨五入しています。</p>
+          <p class="ip-table-note">香港以外は香港ドル換算と、香港で買った場合との差額。「≈ US$」は米ドル換算の目安。端数は四捨五入しています。</p>
         </section>
         <section class="ip-model" id="iphone-duo" aria-labelledby="iphone-duo-title">
           <h2 class="ip-model-title" id="iphone-duo-title">iPhone Duo</h2>
@@ -391,74 +397,74 @@
               <tr>
                 <th scope="row">256GB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$17,499</span>
+                  <span class="ip-local">HK$17,499 <span class="ip-usd">≈ US$2,232</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥364,800</span>
-                  <span class="ip-conv">HK$18,630</span>
-                  <span class="ip-diff">+HK$1,131</span>
+                  <span class="ip-conv">HK$18,630 <span class="ip-usd">≈ US$2,376</span></span>
+                  <span class="ip-diff">+HK$1,131 <span class="ip-usd">(+US$144)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥15,999</span>
-                  <span class="ip-conv">HK$18,706</span>
-                  <span class="ip-diff">+HK$1,207</span>
+                  <span class="ip-conv">HK$18,706 <span class="ip-usd">≈ US$2,386</span></span>
+                  <span class="ip-diff">+HK$1,207 <span class="ip-usd">(+US$154)</span></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">512GB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$19,299</span>
+                  <span class="ip-local">HK$19,299 <span class="ip-usd">≈ US$2,461</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥399,800</span>
-                  <span class="ip-conv">HK$20,418</span>
-                  <span class="ip-diff">+HK$1,119</span>
+                  <span class="ip-conv">HK$20,418 <span class="ip-usd">≈ US$2,604</span></span>
+                  <span class="ip-diff">+HK$1,119 <span class="ip-usd">(+US$143)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥17,999</span>
-                  <span class="ip-conv">HK$21,044</span>
-                  <span class="ip-diff">+HK$1,745</span>
+                  <span class="ip-conv">HK$21,044 <span class="ip-usd">≈ US$2,684</span></span>
+                  <span class="ip-diff">+HK$1,745 <span class="ip-usd">(+US$223)</span></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">1TB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$22,799</span>
+                  <span class="ip-local">HK$22,799 <span class="ip-usd">≈ US$2,908</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥469,800</span>
-                  <span class="ip-conv">HK$23,993</span>
-                  <span class="ip-diff">+HK$1,194</span>
+                  <span class="ip-conv">HK$23,993 <span class="ip-usd">≈ US$3,060</span></span>
+                  <span class="ip-diff">+HK$1,194 <span class="ip-usd">(+US$152)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥21,499</span>
-                  <span class="ip-conv">HK$25,137</span>
-                  <span class="ip-diff">+HK$2,338</span>
+                  <span class="ip-conv">HK$25,137 <span class="ip-usd">≈ US$3,206</span></span>
+                  <span class="ip-diff">+HK$2,338 <span class="ip-usd">(+US$298)</span></span>
                 </td>
               </tr>
               <tr>
                 <th scope="row">2TB</th>
                 <td data-label="香港" class="is-cheapest">
-                  <span class="ip-local">HK$27,999</span>
+                  <span class="ip-local">HK$27,999 <span class="ip-usd">≈ US$3,571</span></span>
                   <span class="ip-note">ここが最安</span>
                 </td>
                 <td data-label="日本">
                   <span class="ip-local">¥574,800</span>
-                  <span class="ip-conv">HK$29,355</span>
-                  <span class="ip-diff">+HK$1,356</span>
+                  <span class="ip-conv">HK$29,355 <span class="ip-usd">≈ US$3,744</span></span>
+                  <span class="ip-diff">+HK$1,356 <span class="ip-usd">(+US$173)</span></span>
                 </td>
                 <td data-label="中国本土">
                   <span class="ip-local">¥26,499</span>
-                  <span class="ip-conv">HK$30,983</span>
-                  <span class="ip-diff">+HK$2,984</span>
+                  <span class="ip-conv">HK$30,983 <span class="ip-usd">≈ US$3,951</span></span>
+                  <span class="ip-diff">+HK$2,984 <span class="ip-usd">(+US$381)</span></span>
                 </td>
               </tr>
             </tbody>
           </table>
-          <p class="ip-table-note">香港以外は香港ドル換算と、香港で買った場合との差額。端数は四捨五入しています。</p>
+          <p class="ip-table-note">香港以外は香港ドル換算と、香港で買った場合との差額。「≈ US$」は米ドル換算の目安。端数は四捨五入しています。</p>
         </section>
         <!-- iphone:prices:end -->
 

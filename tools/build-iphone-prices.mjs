@@ -35,6 +35,9 @@ function putBlock(html, name, content) {
 
 const yen = (n) => n.toLocaleString('en-US');
 const hkd = (n) => 'HK$' + Math.round(n).toLocaleString('en-US');
+/** 香港ドルの金額を米ドルの目安にする（rates.USD = 1米ドルあたりの HKD） */
+const usdOf = (h, rates) => 'US$' + Math.round(h / rates.USD).toLocaleString('en-US');
+const withUsd = (h, rates) => (rates && rates.USD ? ` <span class="ip-usd">≈ ${usdOf(h, rates)}</span>` : '');
 
 /** 各地の表示価格を香港ドルに換算する。香港はそのまま。 */
 function toHkd(region, amount, rates) {
@@ -84,7 +87,8 @@ function summaryBlock(cat) {
   for (const g of gaps) {
     lines.push('    <div class="ip-card">');
     lines.push(`      <span class="ip-card-label">${escapeHtml(g.label)}との差</span>`);
-    lines.push(`      <strong class="ip-card-value">+${hkd(g.min).replace('HK$', 'HK$')} 〜 +${hkd(g.max)}</strong>`);
+    lines.push(`      <strong class="ip-card-value">+${hkd(g.min)} 〜 +${hkd(g.max)}</strong>`);
+    if (rates.USD) lines.push(`      <span class="ip-card-usd">≈ ${usdOf(g.min, rates)} 〜 ${usdOf(g.max, rates)}</span>`);
     lines.push(`      <span class="ip-card-note">${escapeHtml(base.label)}で買った場合との差額の幅</span>`);
     lines.push('    </div>');
   }
@@ -92,7 +96,10 @@ function summaryBlock(cat) {
 
   lines.push('  <dl class="ip-facts">');
   lines.push(`    <div><dt>価格の確認日</dt><dd><time datetime="${cat.priceCheckedAt}">${formatDate(cat.priceCheckedAt, 'hk')}</time></dd></div>`);
-  lines.push(`    <div><dt>換算レート</dt><dd>1円 = ${rates.JPY} HKD ／ 1元 = ${rates.CNY} HKD<br><span class="ip-muted">${formatDate(rates.asOf, 'hk')}時点・${escapeHtml(rates.source)}</span></dd></div>`);
+  const usdLine = rates.USD
+    ? `<br>1米ドル = ${rates.USD} HKD <span class="ip-muted">（${formatDate(rates.usdAsOf || rates.asOf, 'hk')}時点・${escapeHtml(rates.usdSource || rates.source)}）</span>`
+    : '';
+  lines.push(`    <div><dt>換算レート</dt><dd>1円 = ${rates.JPY} HKD ／ 1元 = ${rates.CNY} HKD<br><span class="ip-muted">${formatDate(rates.asOf, 'hk')}時点・${escapeHtml(rates.source)}</span>${usdLine}</dd></div>`);
   lines.push(`    <div><dt>税の扱い</dt><dd>${regions.map((r) => `${escapeHtml(r.label)}は${escapeHtml(r.taxNote)}`).join('。')}。いずれも店頭で払う金額どうしの比較です。</dd></div>`);
   lines.push('  </dl>');
   lines.push('</div>');
@@ -125,12 +132,13 @@ function pricesBlock(cat) {
         const cheapest = r.code === min.code;
         const diff = r.hkd - conv.find((x) => x.code === base.code).hkd;
         lines.push(`        <td data-label="${escapeHtml(r.label)}"${cheapest ? ' class="is-cheapest"' : ''}>`);
-        lines.push(`          <span class="ip-local">${escapeHtml(r.symbol)}${yen(r.local)}</span>`);
+        lines.push(`          <span class="ip-local">${escapeHtml(r.symbol)}${yen(r.local)}${r.code === base.code ? withUsd(r.local, rates) : ''}</span>`);
         if (r.code === base.code) {
           lines.push(`          <span class="ip-note">${cheapest ? 'ここが最安' : '基準'}</span>`);
         } else {
-          lines.push(`          <span class="ip-conv">${hkd(r.hkd)}</span>`);
-          lines.push(`          <span class="ip-diff">${diff >= 0 ? '+' : '−'}${hkd(Math.abs(diff)).replace('HK$', 'HK$')}</span>`);
+          const sign = diff >= 0 ? '+' : '−';
+          lines.push(`          <span class="ip-conv">${hkd(r.hkd)}${withUsd(r.hkd, rates)}</span>`);
+          lines.push(`          <span class="ip-diff">${sign}${hkd(Math.abs(diff))}${rates.USD ? ` <span class="ip-usd">(${sign}${usdOf(Math.abs(diff), rates)})</span>` : ''}</span>`);
         }
         lines.push('        </td>');
       }
@@ -138,7 +146,7 @@ function pricesBlock(cat) {
     }
     lines.push('    </tbody>');
     lines.push('  </table>');
-    lines.push(`  <p class="ip-table-note">${escapeHtml(base.label)}以外は香港ドル換算と、${escapeHtml(base.label)}で買った場合との差額。端数は四捨五入しています。</p>`);
+    lines.push(`  <p class="ip-table-note">${escapeHtml(base.label)}以外は香港ドル換算と、${escapeHtml(base.label)}で買った場合との差額。${rates.USD ? '「≈ US$」は米ドル換算の目安。' : ''}端数は四捨五入しています。</p>`);
     lines.push('</section>');
   }
   return lines.join('\n');
@@ -186,7 +194,7 @@ function buybackBlock(cat) {
     if (condition) lines.push(`        <span class="ip-bb-cond">${escapeHtml(condLabel.get(condition) || condition)}</span>`);
     lines.push('      </header>');
     lines.push('      <p class="ip-bb-latest">');
-    lines.push(`        <span class="ip-bb-price">${hkd(latest.price)}</span>`);
+    lines.push(`        <span class="ip-bb-price">${hkd(latest.price)}${withUsd(latest.price, cat.rates)}</span>`);
     lines.push(`        <span class="ip-bb-when"><time datetime="${latest.date}">${formatDate(latest.date, 'hk')}</time>に聞いた値</span>`);
     if (rows.length > 1) {
       const delta = latest.price - first.price;
@@ -196,7 +204,7 @@ function buybackBlock(cat) {
     if (rows.length > 1) {
       lines.push('      <ol class="ip-bb-history">');
       for (const r of rows) {
-        lines.push(`        <li><time datetime="${r.date}">${formatDate(r.date, 'hk')}</time><span>${hkd(r.price)}</span>${r.memo ? `<em>${escapeHtml(r.memo)}</em>` : ''}</li>`);
+        lines.push(`        <li><time datetime="${r.date}">${formatDate(r.date, 'hk')}</time><span>${hkd(r.price)}${withUsd(r.price, cat.rates)}</span>${r.memo ? `<em>${escapeHtml(r.memo)}</em>` : ''}</li>`);
       }
       lines.push('      </ol>');
     } else if (latest.memo) {

@@ -1,5 +1,5 @@
 {
-  "note": "香港版 iPhone の価格表。official = アップル公式価格（各地の税込表示価格をそのまま）。rates = HKD へ換算するときの為替で、TJ が確認した日を asOf に書く。buyback.records = 先達廣場で聞いてきた買取価格を、日付ごとに足していく（消さずに積む＝値動きが残る）。price は現地通貨の整数、date は YYYY-MM-DD。ページは tools/build-iphone-prices.mjs が組み直す。 hero を差し替えるときは画像を assets/images/hero/ に置いて、このブロックのパスを直せばヒーローも OG 画像も入れ替わる。",
+  "note": "香港版 iPhone の価格表。official = アップル公式価格（各地の税込表示価格をそのまま）。rates = HKD へ換算するときの為替で、TJ が確認した日を asOf に書く。buyback.records = 先達廣場で聞いてきた買取価格を、日付ごとに足していく（消さずに積む＝値動きが残る）。price は現地通貨の整数、date は YYYY-MM-DD。ページは tools/build-iphone-prices.mjs が組み直す。 hero を差し替えるときは画像を assets/images/hero/ に置いて、このブロックのパスを直せばヒーローも OG 画像も入れ替わる。 rates.USD は「1米ドル = 何HKD」。HKD の金額の横に ≈ US$ を添える目安に使う（JPY / CNY と同じく、1単位あたりの HKD）。",
   "generation": "iPhone 18",
   "page": "/iphone18-price.html",
   "announced": "2026-09-09",
@@ -16,7 +16,10 @@
     "asOf": "2026-09-10",
     "source": "TJ が手元で確認したレート",
     "JPY": 0.05107,
-    "CNY": 1.1692
+    "CNY": 1.1692,
+    "USD": 7.8412,
+    "usdAsOf": "2026-09-11",
+    "usdSource": "exchangerate-api.com（TJ の為替モニターと同じ出典）"
   },
   "regions": [
     {
