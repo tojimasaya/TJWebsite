@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-10T00:00:00+09:00",
+  "generatedAt": "2026-09-11T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "iPhone 18発表 ― 去年のiPhoneが「値上がり」した日。物理SIM機の世界最安は、やはり香港だった",
+      "url": "https://note.com/tojimasaya/n/nfc321fc224db",
+      "external": true,
+      "date": "2026-09-11",
+      "thumb": "https://assets.st-note.com/production/uploads/images/312483234/rectangle_large_type_2_da89da1aff2c29f909e31d3c0c933bf8.jpeg?fit=bounds&quality=85&width=1280"
+    },
     {
       "kind": "handbook",
       "kindLabel": "ハンドブック",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-08-19",
       "thumb": "/assets/images/photo-notes/kobe-airport-hyogo-lounge-akashiyaki.webp"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "ひとまず、さよなら花の北",
-      "url": "/fragments/himeji-castle-aeon-hananokita.html",
-      "external": false,
-      "date": "2026-08-09",
-      "thumb": "/assets/images/photo-notes/himeji-castle-aeon-hananokita.webp"
     }
   ]
 }

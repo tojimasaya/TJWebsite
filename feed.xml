@@ -5,13 +5,24 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-09-10T00:00:00+09:00</updated>
+  <updated>2026-09-11T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>iPhone 18発表 ― 去年のiPhoneが「値上がり」した日。物理SIM機の世界最安は、やはり香港だった</title>
+    <id>https://note.com/tojimasaya/n/nfc321fc224db</id>
+    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/nfc321fc224db"/>
+    <published>2026-09-11T00:00:00+09:00</published>
+    <updated>2026-09-11T00:00:00+09:00</updated>
+    <category term="note"/>
+    <summary type="text">iPhone 18発表直後、香港・日本・米国の価格と物理SIMモデルの行方を見比べた恒例の価格チェック。新型そのものよりも、前年モデルの値上がりと、物理SIM機を世界最安水準で買える香港の強さに目が留まります。</summary>
+    <content type="html">&lt;p&gt;iPhone 18発表直後、香港・日本・米国の価格と物理SIMモデルの行方を見比べた恒例の価格チェック。新型そのものよりも、前年モデルの値上がりと、物理SIM機を世界最安水準で買える香港の強さに目が留まります。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/nfc321fc224db&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>香港版 iPhone 18 の価格</title>
     <id>https://tojimasaya.com/iphone18-price.html</id>
@@ -341,17 +352,5 @@
     <summary type="text">申請から受け取り、初めての中国入国と e道登録、カードも不要になった顔認証通関まで。</summary>
     <content type="html">&lt;p&gt;香港永住権のある非中国籍（日本国籍など）の人向け。申請から受け取り、初めての中国入国と e道登録、カードも不要になった顔認証通関まで。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://tojimasaya.com/hk-return-permit.html&quot;&gt;ガイドを読む →&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>台風が連れてきた友人と、先達廣場のSIM棚</title>
-    <id>https://tojimasaya.com/fragments/sincere-podium-banana-sim.html</id>
-    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/sincere-podium-banana-sim.html"/>
-    <published>2026-07-11T00:00:00+09:00</published>
-    <updated>2026-07-11T00:00:00+09:00</updated>
-    <category term="断章"/>
-    <summary type="text">台風の影響でMetroさんがなぜか沖縄から香港へ飛んできたので、せっかくなので旺角の先達廣場へ中古スマホと最新SIM価格の定点観測に繰り出し、私の定番は正面から入って突き当たり右手の903特賣店で、…</summary>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/sincere-podium-banana-sim.jpg&quot; alt=&quot;Banana Travel SIMの年間カード3種（10GB・20GB・30GB）の価格札が並ぶ店頭&quot;&gt;&lt;/p&gt;
-&lt;p&gt;台風の影響でMetroさんがなぜか沖縄から香港へ飛んできたので、せっかくなので旺角の先達廣場へ中古スマホと最新SIM価格の定点観測に繰り出し、私の定番は正面から入って突き当たり右手の903特賣店で、棚ではBanana Travel SIMの年卡が相変わらずの人気、52の国と地域で365日使えるカードが10GBならHK$118、30GBでもHK$218、日本・韓国・台湾の5G無制限カードもずらりと並び、この棚の前に立つたびに、香港では通信の自由が棚売りの日用品なのだと実感しつつ、中古スマホの相場を眺め、SIMを物色し、友人と電脳街を歩く——台風のおかげの、良い土曜日だった。&lt;/p&gt;
-&lt;p&gt;香港・旺角 先達廣場&lt;/p&gt;</content>
   </entry>
 </feed>
