@@ -5,13 +5,25 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-09-11T00:00:00+09:00</updated>
+  <updated>2026-09-16T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>台北乗り換えの二時間と、ハーゲンダッツ二スクープ</title>
+    <id>https://tojimasaya.com/fragments/eva-kobe-via-taipei.html</id>
+    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/eva-kobe-via-taipei.html"/>
+    <published>2026-09-16T00:00:00+09:00</published>
+    <updated>2026-09-16T00:00:00+09:00</updated>
+    <category term="断章"/>
+    <summary type="text">今回も妻と二人、神戸空港からエバー航空で台北・桃園を経由して、昨晩香港へ戻ってきたのだが、神戸空港ではエバーの係員さんの対応が今回も素晴らしく、チェックインカウンターの緑の服の女性は前回のことまで覚えていてくれて、…</summary>
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/eva-kobe-via-taipei-starlux.jpg&quot; alt=&quot;台北・桃園空港で、機窓から自機の翼越しに見た、手前のスターラックス機と、奥の誘導路を行く緑の尾翼のエバー航空機&quot;&gt;&lt;/p&gt;
+&lt;p&gt;今回も妻と二人、神戸空港からエバー航空で台北・桃園を経由して、昨晩香港へ戻ってきたのだが、神戸空港ではエバーの係員さんの対応が今回も素晴らしく、チェックインカウンターの緑の服の女性は前回のことまで覚えていてくれて、その続きのように話が弾み、姫路と神戸空港を結ぶリムジンバスがもっと増えたら便利なのにね、という話にまでなったのは、いまは朝七時にタクシーで姫路駅へ出て、新快速で三宮、そこからポートライナーという乗り継ぎで、バスさえできれば姫路駅からはバス一本、乗り換えが二回も減るのだから、そうなれば妻もこの空港の便利さに気づいてくれるような気がしているからで、というのも妻の中ではいまのところ、一度バスに乗ってしまえば寝ていける関空のほうがいいんじゃないの、という評価であり、おまけにワンワールドで入る台北のキャセイのラウンジには、妻が世界でいちばんうまいのではと言い、私も異論のない牛肉麺があるのだから、あちらを捨てがたい気持ちもよく分かるのだけれど、ラウンジの設備や居心地そのものはキャセイもエバーも甲乙つけがたく、いつもより混んでいた今回の台北のエバーのラウンジもやはり気持ちがよくて、牛肉麺のキャセイに対してエバーが唯一、一矢報いているのが、ハーゲンダッツ四種類の食べ放題——甘いものが好きではない妻は今回も一切口にせず、私がなんとか頑張って二スクープ——というところで、香港行きの機窓からは、エバーの御曹司が離反して立ち上げたスターラックスの機体とエバー機を一枚に収めてみたのだが、実はそのスターラックスも神戸空港から飛んでいて、エバーの十一時発に対してあちらは十二時四十五分ごろ発だから、朝ゆっくり家を出られるのは大きな魅力で、ただ噂はあるもののまだワンワールドに加盟していないので、加盟したら一度乗ってみようと思っていて、今回もエバーに乗ってSFCのありがたみを実感した私としては、神戸から台北経由で香港へというこの帰り方はとても快適なのだけれど、妻にとっては乗り換えの二時間待ちがどうにも面倒らしく、それでも、直行便で帰るという手ももちろんあるなかで、台北に寄る便でも全然それでいいわよ、と言ってくれているのだから、次はどう帰るか、彼女とゆっくり相談して決めようと思っている。&lt;/p&gt;
+&lt;p&gt;神戸空港 → 香港（台北経由・エバー航空）&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>iPhone 18発表 ― 去年のiPhoneが「値上がり」した日。物理SIM機の世界最安は、やはり香港だった</title>
     <id>https://note.com/tojimasaya/n/nfc321fc224db</id>
@@ -341,16 +353,5 @@
     <summary type="text">PayMe と FPS の使い分け、バーチャルバンクを中継口座にする考え方。</summary>
     <content type="html">&lt;p&gt;香港のなかでお金を動かす人向け。PayMe と FPS の使い分け、バーチャルバンクを中継口座にする考え方。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://tojimasaya.com/hk-remittance.html&quot;&gt;ガイドを読む →&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>非中国籍の回郷証（港澳居民来往内地通行証）の取り方 — 申請・受取・中国入国・e道登録まで【2026年更新】</title>
-    <id>https://tojimasaya.com/hk-return-permit.html</id>
-    <link rel="alternate" type="text/html" href="https://tojimasaya.com/hk-return-permit.html"/>
-    <published>2026-07-12T00:00:00+09:00</published>
-    <updated>2026-07-12T00:00:00+09:00</updated>
-    <category term="ハンドブック"/>
-    <summary type="text">申請から受け取り、初めての中国入国と e道登録、カードも不要になった顔認証通関まで。</summary>
-    <content type="html">&lt;p&gt;香港永住権のある非中国籍（日本国籍など）の人向け。申請から受け取り、初めての中国入国と e道登録、カードも不要になった顔認証通関まで。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://tojimasaya.com/hk-return-permit.html&quot;&gt;ガイドを読む →&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>

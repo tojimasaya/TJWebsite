@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-11T00:00:00+09:00",
+  "generatedAt": "2026-09-16T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "台北乗り換えの二時間と、ハーゲンダッツ二スクープ",
+      "url": "/fragments/eva-kobe-via-taipei.html",
+      "external": false,
+      "date": "2026-09-16",
+      "thumb": "/assets/images/photo-notes/eva-kobe-via-taipei-starlux.webp"
+    },
     {
       "kind": "note",
       "kindLabel": "note",
@@ -105,15 +114,6 @@
       "external": true,
       "date": "2026-08-20",
       "thumb": "https://assets.st-note.com/production/uploads/images/305240831/rectangle_large_type_2_8eb011ba6a9d61a6e3345ccb6899d48e.jpeg?width=800"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "明石焼きのラウンジから、神戸→台北→香港",
-      "url": "/fragments/kobe-airport-hyogo-lounge.html",
-      "external": false,
-      "date": "2026-08-19",
-      "thumb": "/assets/images/photo-notes/kobe-airport-hyogo-lounge-akashiyaki.webp"
     }
   ]
 }

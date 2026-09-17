@@ -2120,6 +2120,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/eva-kobe-via-taipei.html</loc>
+    <lastmod>2026-09-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/eva-kobe-via-taipei-starlux.jpg</image:loc>
+      <image:title>台北乗り換えの二時間と、ハーゲンダッツ二スクープ</image:title>
+      <image:caption>台北・桃園空港で、機窓から自機の翼越しに見た、手前のスターラックス機と、奥の誘導路を行く緑の尾翼のエバー航空機</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/hongkong-farewell-yumcha.html</loc>
     <lastmod>2026-09-06</lastmod>
     <changefreq>monthly</changefreq>
