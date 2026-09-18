@@ -200,21 +200,35 @@ function boardColors(cat, board) {
   return all.filter((c) => used.has(c.key));
 }
 
-/** 渡した板ぜんぶから、モデルごとの「アップル公式価格との差」の幅を出す。 */
+/** 板1枚の中の、そのモデルの「アップル公式価格との差」の幅。 */
+function spreadOfModel(cat, modelId, rows) {
+  let min = null;
+  let max = null;
+  for (const r of rows || []) {
+    const retail = retailPrice(cat, modelId, r.size);
+    if (retail == null) continue;
+    for (const v of Object.values(r.prices || {})) {
+      if (typeof v !== 'number') continue;
+      const gap = v - retail;
+      min = min === null ? gap : Math.min(min, gap);
+      max = max === null ? gap : Math.max(max, gap);
+    }
+  }
+  return min === null ? null : { min, max };
+}
+
+/**
+ * モデルごとに「いちばん新しい板」の差の幅を返す。
+ * 一日ぶんを全部まとめると朝の高値と夕方の安値が混ざって、
+ * 「いまいくらで売れるか」が読めなくなるため、最後の板だけを見る。
+ * boards は日付の新しい順・同じ日は書いた順（＝朝から）なので、後ろで上書きすればよい。
+ */
 function gapSpread(cat, boards) {
   const out = new Map();
   for (const board of boards) {
     for (const m of board.models || []) {
-      for (const r of m.rows || []) {
-        const retail = retailPrice(cat, m.id, r.size);
-        if (retail == null) continue;
-        for (const v of Object.values(r.prices || {})) {
-          if (typeof v !== 'number') continue;
-          const gap = v - retail;
-          const cur = out.get(m.id);
-          out.set(m.id, cur ? { min: Math.min(cur.min, gap), max: Math.max(cur.max, gap) } : { min: gap, max: gap });
-        }
-      }
+      const spread = spreadOfModel(cat, m.id, m.rows);
+      if (spread) out.set(m.id, { ...spread, when: board.label || board.shop || '' });
     }
   }
   return out;
@@ -234,9 +248,10 @@ function buybackBlock(cat) {
     const bits = cat.models
       .filter((m) => spread.has(m.id))
       .map((m) => `${escapeHtml(m.name)} は ${gapText(spread.get(m.id).min, spread.get(m.id).max)}`);
+    const when = [...spread.values()].map((v) => v.when).filter(Boolean).pop();
     lines.push(
       `  <p class="ip-bb-line">いちばん新しいのは <time datetime="${latest}">${formatDate(latest, 'hk')}</time>` +
-        `${latest === cat.released ? '（発売日）' : ''}の板です。` +
+        `${latest === cat.released ? '（発売日）' : ''}${when ? escapeHtml(when) : ''}の板です。` +
         `${bits.length ? `アップル公式価格と比べると、${bits.join('、')}。` : ''}</p>`,
     );
   } else {
@@ -289,7 +304,7 @@ function bbSummaryBlock(cat) {
     if (usdWorth) {
       lines.push(`      <span class="bb-card-usd">≈ ${usdGap(s.min)}${s.min === s.max ? '' : ` 〜 ${usdGap(s.max)}`}</span>`);
     }
-    lines.push('      <span class="bb-card-note">アップル公式価格との差</span>');
+    lines.push(`      <span class="bb-card-note">${s.when ? escapeHtml(s.when) + 'の板・' : ''}アップル公式価格との差</span>`);
     lines.push('    </div>');
   }
   lines.push('  </div>');

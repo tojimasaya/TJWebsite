@@ -409,6 +409,96 @@
             ]
           }
         ]
+      },
+      {
+        "date": "2026-09-18",
+        "label": "午後3時半",
+        "condition": "sealed",
+        "shopNote": "二時間半前の板からさらに下げて、Pro Max は 1TB が公式価格とほぼ同じ（銀で +HK$1）まで来ました。Pro は4容量とも公式価格割れです。朝10時半と比べると、Pro Max の 256GB は色によって 1,100〜1,400 下がったことになります。",
+        "models": [
+          {
+            "id": "iphone-18-pro-max",
+            "rows": [
+              {
+                "size": "256GB",
+                "prices": {
+                  "red": 12900,
+                  "blue": 12650,
+                  "silver": 12600,
+                  "black": 12900
+                }
+              },
+              {
+                "size": "512GB",
+                "prices": {
+                  "red": 13500,
+                  "blue": 13550,
+                  "silver": 13500,
+                  "black": 13600
+                }
+              },
+              {
+                "size": "1TB",
+                "prices": {
+                  "red": 16900,
+                  "blue": 16900,
+                  "silver": 16800,
+                  "black": 17200
+                }
+              },
+              {
+                "size": "2TB",
+                "prices": {
+                  "red": 22100,
+                  "blue": 22200,
+                  "silver": 22200,
+                  "black": 22200
+                }
+              }
+            ]
+          },
+          {
+            "id": "iphone-18-pro",
+            "rows": [
+              {
+                "size": "256GB",
+                "prices": {
+                  "red": 10350,
+                  "blue": 10350,
+                  "silver": 10350,
+                  "black": 10350
+                }
+              },
+              {
+                "size": "512GB",
+                "prices": {
+                  "red": 12050,
+                  "blue": 12050,
+                  "silver": 12050,
+                  "black": 12100
+                }
+              },
+              {
+                "size": "1TB",
+                "prices": {
+                  "red": 15400,
+                  "blue": 15400,
+                  "silver": 15400,
+                  "black": 15400
+                }
+              },
+              {
+                "size": "2TB",
+                "prices": {
+                  "red": 20500,
+                  "blue": 20500,
+                  "silver": 20500,
+                  "black": 20500
+                }
+              }
+            ]
+          }
+        ]
       }
     ]
   },
