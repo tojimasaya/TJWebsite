@@ -47,6 +47,12 @@ const hkd = (n) => 'HK$' + Math.round(n).toLocaleString('en-US');
 const usdOf = (h, rates) => 'US$' + Math.round(h / rates.USD).toLocaleString('en-US');
 const withUsd = (h, rates) => (rates && rates.USD ? ` <span class="ip-usd">≈ ${usdOf(h, rates)}</span>` : '');
 
+/** 米ドルのレートを確認した日（時刻まで分かっていれば添える） */
+function usdWhen(rates) {
+  const d = formatDate(rates.usdAsOf || rates.asOf, 'hk');
+  return rates.usdAsOfTime ? `${d} ${rates.usdAsOfTime}` : d;
+}
+
 /** 「+HK$2,501」「+HK$2,501 〜 +2,551」。幅が出るのは色で値が違うとき。 */
 function gapText(lo, hi) {
   const one = (n) => (n >= 0 ? '+' : '−') + hkd(Math.abs(n));
@@ -118,7 +124,7 @@ function summaryBlock(cat) {
   lines.push('  <dl class="ip-facts">');
   lines.push(`    <div><dt>価格の確認日</dt><dd><time datetime="${cat.priceCheckedAt}">${formatDate(cat.priceCheckedAt, 'hk')}</time></dd></div>`);
   const usdLine = rates.USD
-    ? `<br>1米ドル = ${rates.USD} HKD <span class="ip-muted">（${formatDate(rates.usdAsOf || rates.asOf, 'hk')}時点・${escapeHtml(rates.usdSource || rates.source)}）</span>`
+    ? `<br>1米ドル = ${rates.USD} HKD <span class="ip-muted">（${usdWhen(rates)}時点・${escapeHtml(rates.usdSource || rates.source)}）</span>`
     : '';
   lines.push(`    <div><dt>換算レート</dt><dd>1円 = ${rates.JPY} HKD ／ 1元 = ${rates.CNY} HKD<br><span class="ip-muted">${formatDate(rates.asOf, 'hk')}時点・${escapeHtml(rates.source)}</span>${usdLine}</dd></div>`);
   lines.push(`    <div><dt>税の扱い</dt><dd>${regions.map((r) => `${escapeHtml(r.label)}は${escapeHtml(r.taxNote)}`).join('。')}。いずれも店頭で払う金額どうしの比較です。</dd></div>`);
@@ -389,7 +395,7 @@ function boardsBlock(cat) {
   lines.push(
     '<p class="bb-unit">金額はすべて香港ドル。「アップル公式」は香港のアップルストアの表示価格で、' +
       '「公式との差」は買取のほうが高ければプラスです。' +
-      (cat.rates.USD ? `1米ドル = ${cat.rates.USD} HKD（${formatDate(cat.rates.usdAsOf || cat.rates.asOf, 'hk')}時点）。` : '') +
+      (cat.rates.USD ? `1米ドル = ${cat.rates.USD} HKD（${usdWhen(cat.rates)}時点）。` : '') +
       '薄く塗ってあるのは、その容量でいちばん高い色です。</p>',
   );
   return lines.join('\n');
