@@ -424,6 +424,32 @@ function boardsBlock(cat) {
       lines.push('  </section>');
     }
     // 板に出ていない機種はわざわざ断らない（まだ発売前の機種が無いのは当たり前なので）
+    // 実際に売れた値。板（店頭の提示）とは別のものなので、枠を分けて出す
+    const deals = (bb.deals || []).filter((d) => d.date === day.date);
+    if (deals.length) {
+      const byModel2 = new Map(cat.models.map((m) => [m.id, m]));
+      const colorLabel = new Map((bb.colors || []).map((c) => [c.key, c.ja ? `${c.label}（${c.ja}）` : c.label]));
+      lines.push('  <section class="bb-deals">');
+      lines.push('    <h4 class="bb-deals-title">実際に売れた値</h4>');
+      lines.push(`    <p class="bb-deals-lead">${escapeHtml(bb.dealsNote || '店頭の板ではなく、その値で実際に売れたという報告です。')}</p>`);
+      lines.push('    <ul class="bb-deal-list">');
+      for (const d of deals) {
+        const model = byModel2.get(d.model);
+        const retail = retailPrice(cat, d.model, d.capacity);
+        lines.push('      <li>');
+        lines.push(`        <span class="bb-deal-what">${escapeHtml(model ? model.name : d.model)} ${escapeHtml(d.capacity)}${d.color ? '・' + escapeHtml(colorLabel.get(d.color) || d.color) : ''}</span>`);
+        lines.push(`        <span class="bb-deal-price">${hkd(d.price)}${withUsd(d.price, cat.rates)}</span>`);
+        if (d.time) lines.push(`        <span class="bb-deal-when">${escapeHtml(d.time)}</span>`);
+        if (retail != null) {
+          const gap = d.price - retail;
+          lines.push(`        <span class="bb-deal-gap ${gap >= 0 ? 'is-up' : 'is-down'}">アップル公式 ${hkd(retail)} より ${gapText(gap, gap)}</span>`);
+        }
+        if (d.note) lines.push(`        <p class="bb-deal-note">${escapeHtml(d.note)}</p>`);
+        lines.push('      </li>');
+      }
+      lines.push('    </ul>');
+      lines.push('  </section>');
+    }
     const dayNote = (bb.dayNotes || {})[day.date];
     if (dayNote) lines.push(`  <p class="bb-day-note">${escapeHtml(dayNote)}</p>`);
     lines.push('</section>');

@@ -127,6 +127,19 @@
         .bb-table td.bb-gap.is-down { color: var(--bb-down); }
         .bb-table td.bb-na { color: var(--text-light); }
         /* その日の読み。板の数字だけでは見えない話を一段落だけ添える */
+        /* 実際に売れた値。板（店頭の提示）と混ざらないよう、枠を変えて置く */
+        .bb-deals { border: 1px dashed var(--border-color); border-radius: 12px; background: var(--hover-color); padding: 15px 18px 16px; margin-top: 14px; }
+        .bb-deals-title { font-family: var(--secondary-font); font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em; color: var(--text-color); margin: 0; }
+        .bb-deals-lead { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.8; color: var(--text-light); margin: 6px 0 0; }
+        .bb-deal-list { list-style: none; margin: 12px 0 0; padding: 0; }
+        .bb-deal-list li { padding-top: 12px; border-top: 1px solid var(--border-color); }
+        .bb-deal-what { display: block; font-family: var(--secondary-font); font-size: 0.84rem; font-weight: 700; color: var(--text-color); }
+        .bb-deal-price { display: inline-block; font-family: 'Noto Serif JP', serif; font-size: 1.2rem; font-weight: 600; color: var(--text-color); font-variant-numeric: tabular-nums; margin-top: 4px; }
+        .bb-deal-when { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-light); margin-left: 10px; }
+        .bb-deal-gap { display: block; font-family: var(--primary-font); font-size: 0.8rem; font-weight: 600; color: var(--text-light); font-variant-numeric: tabular-nums; margin-top: 3px; }
+        .bb-deal-gap.is-up { color: var(--bb-up); }
+        .bb-deal-gap.is-down { color: var(--bb-down); }
+        .bb-deal-note { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.85; color: var(--text-light); margin: 7px 0 0; }
         .bb-day-note { font-family: 'Noto Serif JP', serif; font-size: 0.88rem; line-height: 1.95; color: var(--text-color); margin: 16px 0 0; padding: 14px 16px 14px 18px; border-left: 3px solid var(--accent-color); background: var(--hover-color); border-radius: 0 10px 10px 0; }
         .bb-unit { font-family: var(--primary-font); font-size: 0.76rem; line-height: 1.85; color: var(--text-light); margin: 22px 0 0; }
 
@@ -566,6 +579,19 @@
                     </tr>
                   </tbody>
                 </table>
+              </section>
+              <section class="bb-deals">
+                <h4 class="bb-deals-title">実際に売れた値</h4>
+                <p class="bb-deals-lead">こちらは店頭の板ではなく、その値で実際に売れたという報告です。板の数字と見比べられるように、同じ日の下に置いています。</p>
+                <ul class="bb-deal-list">
+                  <li>
+                    <span class="bb-deal-what">iPhone 18 Pro Max 256GB・黑（ブラック）</span>
+                    <span class="bb-deal-price">HK$13,300 <span class="ip-usd">≈ US$1,696</span></span>
+                    <span class="bb-deal-when">夕方6時ごろ</span>
+                    <span class="bb-deal-gap is-up">アップル公式 HK$11,499 より +HK$1,801</span>
+                    <p class="bb-deal-note">仕事を終えてから持ち込んだ知人の実売価格です。午後3時半の板では同じ黑が 12,600〜12,900 でしたから、400 ほど戻ったことになります。発売日でも、一本調子で下がり続けるわけではありません。</p>
+                  </li>
+                </ul>
               </section>
               <p class="bb-day-note">面白いのは、時間が経つほど iPhone 18 Pro Max の 256GB だけが残ることです。朝は 1TB のほうが上乗せが大きかったのに、夕方には 256GB が千ドル台を保ったまま、ほかの容量は公式価格に貼りついてしまいました。去年も同じ形でした。</p>
             </section>
