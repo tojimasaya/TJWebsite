@@ -1,5 +1,5 @@
 {
-  "note": "香港版 iPhone の価格表。official = アップル公式価格（各地の税込表示価格をそのまま）。rates = HKD へ換算するときの為替で、TJ が確認した日を asOf に書く。buyback.boards = 先達廣場で見た買取価格の板を、1枚（＝1店・1日）につき1つ足していく（消さずに積む＝値動きが残る）。板は date / shop / condition と models[].rows[].prices{色キー: 香港ドル} で書く。色キーは buyback.colors に定義したものだけ。値を聞けなかった色は書かなければよく、その色の列は出ない。ページは tools/build-iphone-prices.mjs が2枚（page = 公式価格の比較、buyback.page = 買取価格）とも組み直す。hero を差し替えるときは画像を assets/images/hero/ に置いて、hero / buybackPage.hero のパスを直せば OG 画像も入れ替わる。rates.USD は「1米ドル = 何HKD」。usdAsOfTime を書くと「2026年9月11日 朝10時半時点」と時刻まで出る。HKD の金額の横に ≈ US$ を添える目安に使う（JPY / CNY と同じく、1単位あたりの HKD）。",
+  "note": "香港版 iPhone の価格表。official = アップル公式価格（各地の税込表示価格をそのまま）。rates = HKD へ換算するときの為替で、TJ が確認した日を asOf に書く。buyback.boards = 先達廣場で見た買取価格の板を、1枚（＝1店・1日）につき1つ足していく（消さずに積む＝値動きが残る）。板は date / shop / condition と models[].rows[].prices{色キー: 香港ドル} で書く。色キーは buyback.colors に定義したものだけ。値を聞けなかった色は書かなければよく、その色の列は出ない。buyback.dayNotes は日付をキーにした「その日の読み」。板の下に一段落で出る。ページは tools/build-iphone-prices.mjs が2枚（page = 公式価格の比較、buyback.page = 買取価格）とも組み直す。hero を差し替えるときは画像を assets/images/hero/ に置いて、hero / buybackPage.hero のパスを直せば OG 画像も入れ替わる。rates.USD は「1米ドル = 何HKD」。usdAsOfTime を書くと「2026年9月11日 朝10時半時点」と時刻まで出る。HKD の金額の横に ≈ US$ を添える目安に使う（JPY / CNY と同じく、1単位あたりの HKD）。",
   "generation": "iPhone 18",
   "page": "/iphone18-price.html",
   "announced": "2026-09-09",
@@ -199,6 +199,9 @@
         "label": "開封済み・美品"
       }
     ],
+    "dayNotes": {
+      "2026-09-18": "面白いのは、時間が経つほど iPhone 18 Pro Max の 256GB だけが残ることです。朝は 1TB のほうが上乗せが大きかったのに、夕方には 256GB が千ドル台を保ったまま、ほかの容量は公式価格に貼りついてしまいました。去年も同じ形でした。"
+    },
     "boards": [
       {
         "date": "2026-09-18",

@@ -383,12 +383,14 @@ function boardsBlock(cat) {
           lines.push(`          <th scope="row">${escapeHtml(r.size)}</th>`);
           for (const c of colors) {
             const v = r.prices[c.key];
+            // 狭い画面は thead が隠れて data-label だけが出るので、色の日本語もここに入れる
+            const colLabel = escapeHtml(c.ja ? `${c.label}（${c.ja}）` : c.label);
             if (typeof v !== 'number') {
-              lines.push(`          <td data-label="${escapeHtml(c.label)}" class="bb-na">—</td>`);
+              lines.push(`          <td data-label="${colLabel}" class="bb-na">—</td>`);
               continue;
             }
             const cls = marks && v === top ? ' class="is-top"' : '';
-            lines.push(`          <td data-label="${escapeHtml(c.label)}"${cls}>${yen(v)}</td>`);
+            lines.push(`          <td data-label="${colLabel}"${cls}>${yen(v)}</td>`);
           }
           lines.push(`          <td data-label="アップル公式" class="bb-official">${retail != null ? yen(retail) : '—'}</td>`);
           if (retail != null && vals.length) {
@@ -406,6 +408,8 @@ function boardsBlock(cat) {
       lines.push('  </section>');
     }
     // 板に出ていない機種はわざわざ断らない（まだ発売前の機種が無いのは当たり前なので）
+    const dayNote = (bb.dayNotes || {})[day.date];
+    if (dayNote) lines.push(`  <p class="bb-day-note">${escapeHtml(dayNote)}</p>`);
     lines.push('</section>');
   }
 
