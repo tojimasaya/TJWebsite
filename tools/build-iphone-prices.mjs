@@ -340,14 +340,30 @@ function boardsBlock(cat) {
         `<span><time datetime="${day.date}">${formatDate(day.date, 'hk')}</time>の板</span>` +
         `${day.date === cat.released ? '<span class="bb-tag">発売日</span>' : ''}</h3>`,
     );
-    for (const board of day.boards) {
+    const photos = (bb.dayPhotos || {})[day.date] || [];
+    if (photos.length) {
+      lines.push(`  <div class="bb-day-photos${photos.length > 1 ? ' is-two' : ''}">`);
+      for (const ph of photos) {
+        lines.push('    <figure class="bb-figure">');
+        lines.push('      <picture>');
+        if (ph.webp) lines.push(`        <source srcset="${ph.webp}" type="image/webp">`);
+        lines.push(`        <img src="${ph.image}" alt="${escapeHtml(ph.alt)}" width="${ph.width}" height="${ph.height}" loading="lazy" decoding="async">`);
+        lines.push('      </picture>');
+        if (ph.caption) lines.push(`      <figcaption>${escapeHtml(ph.caption)}</figcaption>`);
+        lines.push('    </figure>');
+      }
+      lines.push('  </div>');
+      lines.push('  <p class="bb-photo-note">写っている方の顔はぼかしています。</p>');
+    }
+    for (const [seq, board] of day.boards.entries()) {
       const colors = boardColors(cat, board);
       // 板の見出し。同じ日に何枚も並ぶときの見分けで、時刻（label）を優先し、
       // 店名（shop）は書いてあるときだけ。どちらも無ければ見出しを省き、
       // 一段減るぶんモデル名の見出しレベルを上げる。
       const head = board.label || board.shop || '';
       const mh = head ? 5 : 4;
-      lines.push('  <section class="bb-shop">');
+      // その日の何枚目か。朝→昼→夕を帯の色で見分けられるようにする
+      lines.push(`  <section class="bb-shop" data-seq="${seq + 1}">`);
       lines.push('    <header class="bb-shop-head">');
       if (head) lines.push(`      <h4 class="bb-shop-name">${escapeHtml(head)}</h4>`);
       const cond = condLabel.get(board.condition) || board.condition;

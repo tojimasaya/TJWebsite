@@ -45,6 +45,17 @@
             :root:not([data-theme="light"]) { --bb-up: #34d399; --bb-down: #fbbf24; --bb-red: #fca5a5; --bb-blue: #93c5fd; --bb-silver: #d1d5db; }
         }
         [data-theme="dark"] { --bb-up: #34d399; --bb-down: #fbbf24; --bb-red: #fca5a5; --bb-blue: #93c5fd; --bb-silver: #d1d5db; }
+        /* 暗いモードでは帯の文字を明るい側へ振る（暗い地に濃い色は沈む） */
+        @media (prefers-color-scheme: dark) {
+            :root:not([data-theme="light"]) .bb-shop[data-seq="1"] { --bb-ink: #fbbf24; }
+            :root:not([data-theme="light"]) .bb-shop[data-seq="2"] { --bb-ink: #7dd3fc; }
+            :root:not([data-theme="light"]) .bb-shop[data-seq="3"] { --bb-ink: #a5b4fc; }
+            :root:not([data-theme="light"]) .bb-shop[data-seq="4"] { --bb-ink: #d8b4fe; }
+        }
+        [data-theme="dark"] .bb-shop[data-seq="1"] { --bb-ink: #fbbf24; }
+        [data-theme="dark"] .bb-shop[data-seq="2"] { --bb-ink: #7dd3fc; }
+        [data-theme="dark"] .bb-shop[data-seq="3"] { --bb-ink: #a5b4fc; }
+        [data-theme="dark"] .bb-shop[data-seq="4"] { --bb-ink: #d8b4fe; }
 
         .journal-hero { position: relative; background: #1b1b1b; height: 40vh; min-height: 260px; max-height: 380px; display: flex; align-items: center; justify-content: center; color: #fff; text-align: center; overflow: hidden; margin-top: 70px; }
         @media (max-width: 620px) { .journal-hero { height: 26vh; min-height: 180px; max-height: 215px; } }
@@ -76,13 +87,27 @@
         .bb-section-title { display: flex; align-items: center; gap: 9px; font-family: 'Noto Serif JP', serif; font-size: 1.16rem; font-weight: 600; letter-spacing: 0.06em; color: var(--text-color); margin: 0 0 6px; padding-bottom: 9px; border-bottom: 1px solid var(--border-color); scroll-margin-top: 100px; }
         .bb-note { font-family: var(--primary-font); font-size: 0.82rem; line-height: 1.95; color: var(--text-light); margin: 14px 0 0; }
         .bb-day { margin-top: 30px; }
+        /* その日の様子。板の数字だけでは伝わらない混み方を見せる */
+        .bb-day-photos { display: grid; gap: 12px; margin: 14px 0 0; }
+        .bb-day-photos.is-two { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+        .bb-figure { margin: 0; }
+        .bb-figure img { display: block; width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); }
+        .bb-figure figcaption { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.8; color: var(--text-light); margin-top: 7px; }
+        .bb-photo-note { font-family: var(--primary-font); font-size: 0.74rem; line-height: 1.7; color: var(--text-light); margin: 8px 0 0; }
         .bb-day-title { display: flex; align-items: center; flex-wrap: wrap; gap: 10px; font-family: 'Noto Serif JP', serif; font-size: 1.05rem; font-weight: 600; letter-spacing: 0.05em; color: var(--text-color); margin: 0 0 4px; scroll-margin-top: 100px; }
         .bb-tag { font-family: var(--secondary-font); font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; color: #fff; background: var(--accent-color); border-radius: 999px; padding: 3px 10px; }
-        .bb-shop { border: 1px solid var(--border-color); border-radius: 12px; background: var(--white); padding: 16px 18px 18px; margin-top: 14px; }
-        .bb-shop-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; }
-        .bb-shop-name { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 600; color: var(--text-color); margin: 0; }
-        .bb-cond { font-family: var(--secondary-font); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 999px; padding: 2px 9px; }
-        .bb-shop-note { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.8; color: var(--text-light); margin: 7px 0 0; }
+        .bb-shop { border: 1px solid var(--border-color); border-radius: 12px; background: var(--white); padding: 0 18px 18px; margin-top: 14px; overflow: hidden; }
+        /* 時刻の帯。同じ日に何枚も並ぶので、朝→昼→夕を色でも見分けられるようにする。
+           data-seq はその日の何枚目か。色は朝の金色から夕方の藍へ移る。 */
+        .bb-shop { --bb-band: var(--text-light); --bb-ink: var(--text-color); }
+        .bb-shop[data-seq="1"] { --bb-band: #f59e0b; --bb-ink: #a15c07; }
+        .bb-shop[data-seq="2"] { --bb-band: #0ea5e9; --bb-ink: #0369a1; }
+        .bb-shop[data-seq="3"] { --bb-band: #6366f1; --bb-ink: #4338ca; }
+        .bb-shop[data-seq="4"] { --bb-band: #a855f7; --bb-ink: #7e22ce; }
+        .bb-shop-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 12px; margin: 0 -18px; padding: 11px 18px 10px; background: color-mix(in srgb, var(--bb-band) 13%, transparent); border-bottom: 2px solid var(--bb-band); }
+        .bb-shop-name { font-family: 'Noto Serif JP', serif; font-size: 1rem; font-weight: 600; color: var(--bb-ink); margin: 0; }
+        .bb-cond { font-family: var(--secondary-font); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 999px; padding: 2px 9px; background: var(--white); }
+        .bb-shop-note { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.8; color: var(--text-light); margin: 13px 0 0; }
         .bb-model { font-family: var(--secondary-font); font-size: 0.84rem; font-weight: 700; letter-spacing: 0.04em; color: var(--text-color); margin: 18px 0 8px; }
         .bb-table { width: 100%; border-collapse: collapse; font-family: var(--primary-font); font-variant-numeric: tabular-nums; }
         .bb-table th, .bb-table td { text-align: right; padding: 9px 10px; border-bottom: 1px solid var(--border-color); white-space: nowrap; }
@@ -124,7 +149,9 @@
         }
         /* 色の列が並ぶ表は狭い画面で読めないので、容量ごとの塊に積み替える */
         @media (max-width: 760px) {
-            .bb-shop { padding: 14px 14px 16px; }
+            .bb-day-photos.is-two { grid-template-columns: 1fr; }
+            .bb-shop { padding: 0 14px 16px; }
+            .bb-shop-head { margin: 0 -14px; padding: 10px 14px 9px; }
             .bb-table, .bb-table tbody, .bb-table tr, .bb-table td { display: block; width: 100%; }
             .bb-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
             .bb-table tr { border: 1px solid var(--border-color); border-radius: 12px; padding: 10px 13px; margin-bottom: 9px; background: var(--hover-color); }
@@ -198,7 +225,17 @@
             <p class="bb-note">旺角の先達廣場で、店頭に出ている買取価格の板をそのまま控えたものです。香港版の新品未開封が対象。先達廣場には同じような板を出す店が並んでいて、同じ日・同じ時刻でも店によって百ドル単位で違います。発売直後は日どころか数時間で動くので、見た時刻とあわせて残していきます。</p>
             <section class="bb-day" aria-labelledby="d2026-09-18">
               <h3 class="bb-day-title" id="d2026-09-18"><span><time datetime="2026-09-18">2026年9月18日</time>の板</span><span class="bb-tag">発売日</span></h3>
-              <section class="bb-shop">
+              <div class="bb-day-photos">
+                <figure class="bb-figure">
+                  <picture>
+                    <source srcset="/assets/images/iphone18/sintat-corner-queue.webp" type="image/webp">
+                    <img src="/assets/images/iphone18/sintat-corner-queue.jpg" alt="亞皆老街の角を回り込むように続く、買取を待つ人の列" width="1600" height="1200" loading="lazy" decoding="async">
+                  </picture>
+                  <figcaption>昼過ぎの亞皆老街。順番を待つ列がビルの角を回り込み、歩道が埋まっていました。</figcaption>
+                </figure>
+              </div>
+              <p class="bb-photo-note">写っている方の顔はぼかしています。</p>
+              <section class="bb-shop" data-seq="1">
                 <header class="bb-shop-head">
                   <h4 class="bb-shop-name">朝10時半</h4>
                   <span class="bb-cond">新品未開封</span>
@@ -308,7 +345,7 @@
                   </tbody>
                 </table>
               </section>
-              <section class="bb-shop">
+              <section class="bb-shop" data-seq="2">
                 <header class="bb-shop-head">
                   <h4 class="bb-shop-name">午後1時</h4>
                   <span class="bb-cond">新品未開封</span>
@@ -419,7 +456,7 @@
                   </tbody>
                 </table>
               </section>
-              <section class="bb-shop">
+              <section class="bb-shop" data-seq="3">
                 <header class="bb-shop-head">
                   <h4 class="bb-shop-name">午後3時半</h4>
                   <span class="bb-cond">新品未開封</span>
