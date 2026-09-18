@@ -382,12 +382,7 @@ function boardsBlock(cat) {
       }
       lines.push('  </section>');
     }
-    // その日、板に出ていなかった機種は黙って消えると載せ忘れに見えるので断っておく
-    const seen = new Set(day.boards.flatMap((b) => (b.models || []).map((m) => m.id)));
-    const missing = cat.models.filter((m) => !seen.has(m.id));
-    if (missing.length) {
-      lines.push(`  <p class="bb-missing">${missing.map((m) => escapeHtml(m.name)).join('・')}は、この日の板には出ていませんでした。</p>`);
-    }
+    // 板に出ていない機種はわざわざ断らない（まだ発売前の機種が無いのは当たり前なので）
     lines.push('</section>');
   }
 
