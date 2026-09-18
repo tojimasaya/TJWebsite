@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-16T00:00:00+09:00",
+  "generatedAt": "2026-09-18T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "handbook",
+      "kindLabel": "ハンドブック",
+      "title": "香港版 iPhone 18 の価格",
+      "url": "/iphone18-price.html",
+      "external": false,
+      "date": "2026-09-18",
+      "thumb": "/assets/images/photo-notes/sincere-podium-903-shop.jpg"
+    },
     {
       "kind": "fragment",
       "kindLabel": "断章",
@@ -24,15 +33,6 @@
       "external": true,
       "date": "2026-09-11",
       "thumb": "https://assets.st-note.com/production/uploads/images/312483234/rectangle_large_type_2_da89da1aff2c29f909e31d3c0c933bf8.jpeg?fit=bounds&quality=85&width=1280"
-    },
-    {
-      "kind": "handbook",
-      "kindLabel": "ハンドブック",
-      "title": "香港版 iPhone 18 の価格",
-      "url": "/iphone18-price.html",
-      "external": false,
-      "date": "2026-09-10",
-      "thumb": "/assets/images/photo-notes/sincere-podium-903-shop.jpg"
     },
     {
       "kind": "fragment",

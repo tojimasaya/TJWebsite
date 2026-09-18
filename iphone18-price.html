@@ -94,31 +94,14 @@
            色は --text-lighter だと白地で 2.8 しか出ないので --text-light を使う。 */
         .ip-usd { font-family: var(--secondary-font); font-size: 0.72rem; font-weight: 500; color: var(--text-light); letter-spacing: 0.01em; white-space: nowrap; font-variant-numeric: tabular-nums; }
 
-        /* 先達廣場の買取価格 */
+        /* 先達廣場の買取価格 — 板そのものは /iphone18-buyback.html にあり、ここは案内だけ */
         .ip-buyback { max-width: 900px; margin: 0 auto; padding: 0; }
-        .ip-buyback-note { font-family: var(--primary-font); font-size: 0.82rem; line-height: 1.95; color: var(--text-light); margin: 0 0 16px; }
-        .ip-empty { font-family: var(--primary-font); font-size: 0.85rem; line-height: 1.9; color: var(--text-light); border: 1px dashed var(--border-color); border-radius: 12px; padding: 18px 20px; margin: 0; background: var(--hover-color); }
-        .ip-buyback-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 12px; align-items: start; }
-        .ip-bb-card { border: 1px solid var(--border-color); border-radius: 12px; background: var(--white); padding: 14px 16px; }
-        .ip-bb-head { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px; margin-bottom: 8px; }
-        .ip-bb-head h3 { font-family: 'Noto Serif JP', serif; font-size: 0.98rem; font-weight: 600; margin: 0; color: var(--text-color); }
-        .ip-bb-cap { font-family: var(--secondary-font); font-size: 0.8rem; color: var(--text-light); }
-        .ip-bb-cond { font-family: var(--secondary-font); font-size: 0.68rem; font-weight: 600; letter-spacing: 0.06em; color: var(--text-light); border: 1px solid var(--border-color); border-radius: 999px; padding: 2px 9px; }
-        .ip-bb-latest { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 12px; margin: 0; }
-        .ip-bb-price { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 600; color: var(--text-color); font-variant-numeric: tabular-nums; }
-        /* 日付・色ごとの内訳は「添え物」ではなく中身なので、--text-lighter（白地で2.8）は使わない */
-        .ip-bb-when { font-family: var(--primary-font); font-size: 0.76rem; color: var(--text-light); }
-        .ip-bb-delta { font-family: var(--primary-font); font-size: 0.78rem; font-weight: 600; color: var(--ip-up); font-variant-numeric: tabular-nums; }
-        /* 定価との上下。買取が上なら「買ってすぐ売れば乗る額」なので、最安と同じ緑で置く */
-        .ip-bb-vs { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.7; color: var(--text-light); margin: 7px 0 0; font-variant-numeric: tabular-nums; }
-        .ip-bb-vs strong { font-weight: 700; }
-        .ip-bb-vs.is-up strong { color: var(--ip-best); }
-        .ip-bb-vs.is-down strong { color: var(--ip-up); }
-        .ip-bb-missing { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.8; color: var(--text-light); margin: 12px 0 0; }
-        .ip-bb-history { list-style: none; margin: 10px 0 0; padding: 10px 0 0; border-top: 1px solid var(--border-color); font-family: var(--primary-font); font-size: 0.79rem; color: var(--text-light); }
-        .ip-bb-history li { display: grid; grid-template-columns: 7.5em auto; gap: 8px; padding: 3px 0; font-variant-numeric: tabular-nums; }
-        .ip-bb-history em { grid-column: 1 / -1; font-style: normal; font-size: 0.75rem; color: var(--text-light); }
-        .ip-bb-memo { font-family: var(--primary-font); font-size: 0.78rem; line-height: 1.8; color: var(--text-light); margin: 9px 0 0; }
+        .ip-buyback-note { font-family: var(--primary-font); font-size: 0.82rem; line-height: 1.95; color: var(--text-light); margin: 0; }
+        .ip-bb-line { font-family: var(--primary-font); font-size: 0.88rem; line-height: 1.95; color: var(--text-color); font-variant-numeric: tabular-nums; margin: 10px 0 0; }
+        .ip-bb-cta-wrap { margin: 16px 0 0; }
+        .ip-bb-cta { display: inline-block; font-family: var(--primary-font); font-size: 0.88rem; font-weight: 600; text-decoration: none; color: #fff; background: var(--accent-color); border: 1px solid var(--accent-color); border-radius: 24px; padding: 11px 22px; transition: transform .18s ease, box-shadow .18s ease; }
+        .ip-bb-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 20px rgba(0,0,0,0.12); }
+        .ip-bb-cta:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 3px; }
 
         .ip-related { max-width: 900px; margin: 40px auto 0; padding: 0 24px; }
         .ip-related-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 12px; }
@@ -138,7 +121,6 @@
             .ip-related-grid { grid-template-columns: 1fr; }
         }
         @media (max-width: 700px) {
-            .ip-buyback-grid { grid-template-columns: 1fr; }
             /* 4列の表は狭い画面で読めないので、容量ごとの塊に積み替える */
             .ip-table, .ip-table tbody, .ip-table tr, .ip-table td { display: block; width: 100%; }
             .ip-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
@@ -183,7 +165,7 @@
 
         <div class="ip-lead">
             <p>香港に住んでいると、新しい iPhone が出るたびに「どこで買うのが得か」を聞かれます。毎年こればかり訊かれるので、アップルの公式価格を香港・日本・中国本土の三か所ぶん並べて、全部を香港ドルに換算した表にしました。</p>
-            <p>それと、旺角の先達廣場で聞いてきた買取価格も、日付とあわせて残していきます。発売直後の値の下がり方は、あの場所に行かないと分からないので。</p>
+            <p>それと、旺角の先達廣場で店頭に出ていた買取価格は、<a href="/iphone18-buyback.html">別のページ</a>に店ごと・日付ごとに残していきます。発売直後の値の下がり方は、あの場所に行かないと分からないので。</p>
         </div>
 
         <!-- iphone:summary:start -->
@@ -479,106 +461,9 @@
             <h2 class="ip-section-title" id="ip-buyback-title">先達廣場の買取価格</h2>
             <!-- iphone:buyback:start -->
             <div class="ip-buyback">
-              <p class="ip-buyback-note">旺角の先達廣場で、店頭に出ている買取価格の板を控えてきたものです。香港版の新品未開封が対象で、店・時間帯・在庫の具合で動きますし、私が見た地下の一店の値にすぎません。発売直後は日単位で下がるので、見た日付と一緒に残していきます。色で値が違うときは、その幅で書いています。</p>
-              <div class="ip-buyback-grid">
-                <section class="ip-bb-card">
-                  <header class="ip-bb-head">
-                    <h3>iPhone 18 Pro <span class="ip-bb-cap">256GB</span></h3>
-                    <span class="ip-bb-cond">新品未開封</span>
-                  </header>
-                  <p class="ip-bb-latest">
-                    <span class="ip-bb-price">HK$10,520 <span class="ip-usd">≈ US$1,342</span></span>
-                    <span class="ip-bb-when"><time datetime="2026-09-18">2026年9月18日</time>の板</span>
-                  </p>
-                  <p class="ip-bb-vs is-up">アップル公式 HK$10,499 より <strong>+HK$21</strong></p>
-                  <p class="ip-bb-memo">紅・藍・銀・黑とも同じ値</p>
-                </section>
-                <section class="ip-bb-card">
-                  <header class="ip-bb-head">
-                    <h3>iPhone 18 Pro <span class="ip-bb-cap">512GB</span></h3>
-                    <span class="ip-bb-cond">新品未開封</span>
-                  </header>
-                  <p class="ip-bb-latest">
-                    <span class="ip-bb-price">HK$12,320 <span class="ip-usd">≈ US$1,571</span></span>
-                    <span class="ip-bb-when"><time datetime="2026-09-18">2026年9月18日</time>の板</span>
-                  </p>
-                  <p class="ip-bb-vs is-up">アップル公式 HK$12,299 より <strong>+HK$21</strong></p>
-                  <p class="ip-bb-memo">紅・藍・銀・黑とも同じ値</p>
-                </section>
-                <section class="ip-bb-card">
-                  <header class="ip-bb-head">
-                    <h3>iPhone 18 Pro <span class="ip-bb-cap">1TB</span></h3>
-                    <span class="ip-bb-cond">新品未開封</span>
-                  </header>
-                  <p class="ip-bb-latest">
-                    <span class="ip-bb-price">HK$15,800 <span class="ip-usd">≈ US$2,015</span></span>
-                    <span class="ip-bb-when"><time datetime="2026-09-18">2026年9月18日</time>の板</span>
-                  </p>
-                  <p class="ip-bb-vs is-up">アップル公式 HK$15,799 より <strong>+HK$1</strong></p>
-                  <p class="ip-bb-memo">紅・藍・銀・黑とも同じ値</p>
-                </section>
-                <section class="ip-bb-card">
-                  <header class="ip-bb-head">
-                    <h3>iPhone 18 Pro <span class="ip-bb-cap">2TB</span></h3>
-                    <span class="ip-bb-cond">新品未開封</span>
-                  </header>
-                  <p class="ip-bb-latest">
-                    <span class="ip-bb-price">HK$21,000 <span class="ip-usd">≈ US$2,678</span></span>
-                    <span class="ip-bb-when"><time datetime="2026-09-18">2026年9月18日</time>の板</span>
-                  </p>
-                  <p class="ip-bb-vs is-up">アップル公式 HK$20,999 より <strong>+HK$1</strong></p>
-                  <p class="ip-bb-memo">紅・藍・銀・黑とも同じ値</p>
-                </section>
-                <section class="ip-bb-card">
-                  <header class="ip-bb-head">
-                    <h3>iPhone 18 Pro Max <span class="ip-bb-cap">256GB</span></h3>
-                    <span class="ip-bb-cond">新品未開封</span>
-                  </header>
-                  <p class="ip-bb-latest">
-                    <span class="ip-bb-price">HK$14,000 〜 14,050 <span class="ip-usd">≈ US$1,785 〜 1,792</span></span>
-                    <span class="ip-bb-when"><time datetime="2026-09-18">2026年9月18日</time>の板</span>
-                  </p>
-                  <p class="ip-bb-vs is-up">アップル公式 HK$11,499 より、いちばん安い色でも <strong>+HK$2,501</strong></p>
-                  <p class="ip-bb-memo">紅 14,050／藍・銀・黑 14,000</p>
-                </section>
-                <section class="ip-bb-card">
-                  <header class="ip-bb-head">
-                    <h3>iPhone 18 Pro Max <span class="ip-bb-cap">512GB</span></h3>
-                    <span class="ip-bb-cond">新品未開封</span>
-                  </header>
-                  <p class="ip-bb-latest">
-                    <span class="ip-bb-price">HK$15,600 〜 15,800 <span class="ip-usd">≈ US$1,989 〜 2,015</span></span>
-                    <span class="ip-bb-when"><time datetime="2026-09-18">2026年9月18日</time>の板</span>
-                  </p>
-                  <p class="ip-bb-vs is-up">アップル公式 HK$13,299 より、いちばん安い色でも <strong>+HK$2,301</strong></p>
-                  <p class="ip-bb-memo">紅 15,800／藍 15,700／黑 15,650／銀 15,600</p>
-                </section>
-                <section class="ip-bb-card">
-                  <header class="ip-bb-head">
-                    <h3>iPhone 18 Pro Max <span class="ip-bb-cap">1TB</span></h3>
-                    <span class="ip-bb-cond">新品未開封</span>
-                  </header>
-                  <p class="ip-bb-latest">
-                    <span class="ip-bb-price">HK$19,500 〜 19,600 <span class="ip-usd">≈ US$2,487 〜 2,500</span></span>
-                    <span class="ip-bb-when"><time datetime="2026-09-18">2026年9月18日</time>の板</span>
-                  </p>
-                  <p class="ip-bb-vs is-up">アップル公式 HK$16,799 より、いちばん安い色でも <strong>+HK$2,701</strong></p>
-                  <p class="ip-bb-memo">紅 19,600／藍・銀・黑 19,500</p>
-                </section>
-                <section class="ip-bb-card">
-                  <header class="ip-bb-head">
-                    <h3>iPhone 18 Pro Max <span class="ip-bb-cap">2TB</span></h3>
-                    <span class="ip-bb-cond">新品未開封</span>
-                  </header>
-                  <p class="ip-bb-latest">
-                    <span class="ip-bb-price">HK$24,050 〜 24,150 <span class="ip-usd">≈ US$3,067 〜 3,080</span></span>
-                    <span class="ip-bb-when"><time datetime="2026-09-18">2026年9月18日</time>の板</span>
-                  </p>
-                  <p class="ip-bb-vs is-up">アップル公式 HK$21,999 より、いちばん安い色でも <strong>+HK$2,051</strong></p>
-                  <p class="ip-bb-memo">紅・藍 24,150／銀・黑 24,050</p>
-                </section>
-              </div>
-              <p class="ip-bb-missing">iPhone Duoは、まだ板に出ているのを見ていません。見かけたら足します。</p>
+              <p class="ip-buyback-note">旺角の先達廣場で店頭に出ている買取価格の板は、別のページに店ごと・日付ごとにまとめています。</p>
+              <p class="ip-bb-line">いちばん新しいのは <time datetime="2026-09-18">2026年9月18日</time>（発売日）、2店ぶんの板です。アップル公式価格と比べると、iPhone 18 Pro は +HK$1 〜 +21、iPhone 18 Pro Max は +HK$1,951 〜 +2,801。</p>
+              <p class="ip-bb-cta-wrap"><a class="ip-bb-cta" href="/iphone18-buyback.html" data-growth-label="iphone_price_to_buyback">店ごとの買取価格を見る →</a></p>
             </div>
             <!-- iphone:buyback:end -->
         </section>

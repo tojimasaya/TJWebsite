@@ -1,14 +1,22 @@
-// tools/build-iphone-prices.mjs — 香港版 iPhone の価格ページを data/iphone-prices.json から組み直す
+// tools/build-iphone-prices.mjs — 香港版 iPhone の2ページを data/iphone-prices.json から組み直す
 //
 //   node tools/build-iphone-prices.mjs           … 生成して書き込む
 //   node tools/build-iphone-prices.mjs --check   … 差分の有無だけ見る（差分があれば exit 2）
 //
-// 出力先は iphone18-price.html の次のマーカー区間。中身は手で編集しない。
-//   <!-- iphone:hero:start -->…<!-- iphone:hero:end -->       ヒーローの写真
-//   <!-- iphone:summary:start -->…<!-- iphone:summary:end -->   早見表と為替の前提
-//   <!-- iphone:prices:start -->…<!-- iphone:prices:end -->     モデル別の価格表
-//   <!-- iphone:buyback:start -->…<!-- iphone:buyback:end -->   先達廣場の買取価格（日付ごとの記録）
-// <title> / meta description / JSON-LD も seo と priceCheckedAt から差し替える。
+// 出力先は次の2ファイルのマーカー区間。中身は手で編集しない。
+//
+// iphone18-price.html（アップル公式価格の比較）
+//   <!-- iphone:hero:start -->…       ヒーローの写真
+//   <!-- iphone:summary:start -->…    早見表と為替の前提
+//   <!-- iphone:prices:start -->…     モデル別の価格表
+//   <!-- iphone:buyback:start -->…    買取ページへの案内（板そのものは向こうにある）
+//
+// iphone18-buyback.html（先達廣場の買取価格・buyback.page で指定）
+//   <!-- iphone:hero:start -->…       ヒーローの写真
+//   <!-- iphone:bbsummary:start -->…  いちばん新しい日の要約
+//   <!-- iphone:boards:start -->…     日付 → 店 → モデルの順に、板の一覧をそのまま
+//
+// <title> / meta description / JSON-LD も seo から差し替える。
 import fs from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -39,14 +47,10 @@ const hkd = (n) => 'HK$' + Math.round(n).toLocaleString('en-US');
 const usdOf = (h, rates) => 'US$' + Math.round(h / rates.USD).toLocaleString('en-US');
 const withUsd = (h, rates) => (rates && rates.USD ? ` <span class="ip-usd">≈ ${usdOf(h, rates)}</span>` : '');
 
-/** 買取記録1件の金額。priceHigh があれば「HK$14,000 〜 14,050」と幅で出す。 */
-function buybackPrice(r, rates) {
-  const hi = typeof r.priceHigh === 'number' && r.priceHigh > r.price ? r.priceHigh : null;
-  if (!hi) return hkd(r.price) + withUsd(r.price, rates);
-  const usd = rates && rates.USD
-    ? ` <span class="ip-usd">≈ ${usdOf(r.price, rates)} 〜 ${Math.round(hi / rates.USD).toLocaleString('en-US')}</span>`
-    : '';
-  return `${hkd(r.price)} 〜 ${yen(hi)}${usd}`;
+/** 「+HK$2,501」「+HK$2,501 〜 +2,551」。幅が出るのは色で値が違うとき。 */
+function gapText(lo, hi) {
+  const one = (n) => (n >= 0 ? '+' : '−') + hkd(Math.abs(n));
+  return lo === hi ? one(lo) : `${one(lo)} 〜 ${one(hi).replace('HK$', '')}`;
 }
 
 /** その構成のアップル公式価格（基準地＝香港）。買取価格と並べて定価との上下を出す。 */
@@ -65,8 +69,7 @@ function toHkd(region, amount, rates) {
 }
 
 /** ヒーローの写真。og:image / twitter:image も同じ1枚から取る。 */
-function heroBlock(cat) {
-  const h = cat.hero;
+function heroBlock(h) {
   return [
     '<picture>',
     `  <source srcset="${h.webp}" type="image/webp">`,
@@ -170,99 +173,241 @@ function pricesBlock(cat) {
   return lines.join('\n');
 }
 
+/** 日付の新しい順。同じ日の板は JSON に書いた順のまま（先に見た店が先）。 */
+function sortedBoards(cat) {
+  const boards = (cat.buyback && cat.buyback.boards) || [];
+  return boards
+    .map((b, i) => ({ b, i }))
+    .sort((x, y) => (x.b.date < y.b.date ? 1 : x.b.date > y.b.date ? -1 : x.i - y.i))
+    .map((x) => x.b);
+}
+
+/** その板に実際に値が入っている色だけを列にする（銀だけ聞いた日は銀の列だけ出る）。 */
+function boardColors(cat, board) {
+  const all = (cat.buyback && cat.buyback.colors) || [];
+  const used = new Set();
+  for (const m of board.models || []) {
+    for (const r of m.rows || []) {
+      for (const [k, v] of Object.entries(r.prices || {})) if (typeof v === 'number') used.add(k);
+    }
+  }
+  return all.filter((c) => used.has(c.key));
+}
+
+/** 渡した板ぜんぶから、モデルごとの「アップル公式価格との差」の幅を出す。 */
+function gapSpread(cat, boards) {
+  const out = new Map();
+  for (const board of boards) {
+    for (const m of board.models || []) {
+      for (const r of m.rows || []) {
+        const retail = retailPrice(cat, m.id, r.size);
+        if (retail == null) continue;
+        for (const v of Object.values(r.prices || {})) {
+          if (typeof v !== 'number') continue;
+          const gap = v - retail;
+          const cur = out.get(m.id);
+          out.set(m.id, cur ? { min: Math.min(cur.min, gap), max: Math.max(cur.max, gap) } : { min: gap, max: gap });
+        }
+      }
+    }
+  }
+  return out;
+}
+
+/** 価格ページ側。板そのものは買取ページにあるので、ここは要約とリンクだけ。 */
 function buybackBlock(cat) {
   const bb = cat.buyback || {};
-  const records = bb.records || [];
-  const byModel = new Map(cat.models.map((m) => [m.id, m]));
-  const condLabel = new Map((bb.conditions || []).map((c) => [c.key, c.label]));
+  const boards = sortedBoards(cat);
   const lines = [];
   lines.push('<div class="ip-buyback">');
-  if (bb.note) lines.push(`  <p class="ip-buyback-note">${escapeHtml(bb.note)}</p>`);
-
-  if (!records.length) {
-    lines.push('  <p class="ip-empty">まだ聞きに行けていません。先達廣場で確かめ次第、聞いた日付とあわせてここに足していきます。</p>');
-    lines.push('</div>');
-    return lines.join('\n');
+  lines.push('  <p class="ip-buyback-note">旺角の先達廣場で店頭に出ている買取価格の板は、別のページに店ごと・日付ごとにまとめています。</p>');
+  if (boards.length) {
+    const latest = boards[0].date;
+    const sameDay = boards.filter((b) => b.date === latest);
+    const spread = gapSpread(cat, sameDay);
+    const bits = cat.models
+      .filter((m) => spread.has(m.id))
+      .map((m) => `${escapeHtml(m.name)} は ${gapText(spread.get(m.id).min, spread.get(m.id).max)}`);
+    lines.push(
+      `  <p class="ip-bb-line">いちばん新しいのは <time datetime="${latest}">${formatDate(latest, 'hk')}</time>` +
+        `${latest === cat.released ? '（発売日）' : ''}、${sameDay.length}店ぶんの板です。` +
+        `${bits.length ? `アップル公式価格と比べると、${bits.join('、')}。` : ''}</p>`,
+    );
+  } else {
+    lines.push('  <p class="ip-bb-line">まだ板を控えていません。先達廣場で見かけ次第、店と日付ごとに足していきます。</p>');
   }
-
-  // 構成ごとにまとめ、日付の新しい順に並べる（値動きが縦に読めるように）
-  const groups = new Map();
-  for (const r of records) {
-    const key = `${r.model}__${r.capacity}__${r.condition || ''}`;
-    if (!groups.has(key)) groups.set(key, []);
-    groups.get(key).push(r);
-  }
-  const order = [...cat.models.map((m) => m.id)];
-  // 容量は models の並び順に従う（文字列順だと 1TB → 256GB → 2TB → 512GB になってしまう）
-  const capOrder = new Map(cat.models.map((m) => [m.id, m.capacities.map((c) => c.size)]));
-  const sorted = [...groups.entries()].sort((a, b) => {
-    const [ma, ca] = a[0].split('__');
-    const [mb, cb] = b[0].split('__');
-    const ia = (capOrder.get(ma) || []).indexOf(ca);
-    const ib = (capOrder.get(mb) || []).indexOf(cb);
-    return order.indexOf(ma) - order.indexOf(mb) || ia - ib || ca.localeCompare(cb);
-  });
-
-  lines.push('  <div class="ip-buyback-grid">');
-  for (const [key, list] of sorted) {
-    const [modelId, capacity, condition] = key.split('__');
-    const rows = list.slice().sort((a, b) => (a.date < b.date ? 1 : -1));
-    const latest = rows[0];
-    const first = rows[rows.length - 1];
-    const model = byModel.get(modelId);
-    lines.push('    <section class="ip-bb-card">');
-    lines.push('      <header class="ip-bb-head">');
-    lines.push(`        <h3>${escapeHtml(model ? model.name : modelId)} <span class="ip-bb-cap">${escapeHtml(capacity)}</span></h3>`);
-    if (condition) lines.push(`        <span class="ip-bb-cond">${escapeHtml(condLabel.get(condition) || condition)}</span>`);
-    lines.push('      </header>');
-    lines.push('      <p class="ip-bb-latest">');
-    lines.push(`        <span class="ip-bb-price">${buybackPrice(latest, cat.rates)}</span>`);
-    lines.push(`        <span class="ip-bb-when"><time datetime="${latest.date}">${formatDate(latest.date, 'hk')}</time>の板</span>`);
-    if (rows.length > 1) {
-      const delta = latest.price - first.price;
-      lines.push(`        <span class="ip-bb-delta">初回から ${delta >= 0 ? '+' : '−'}${hkd(Math.abs(delta))}</span>`);
-    }
-    lines.push('      </p>');
-    // 定価との上下。買取のほうが高ければ「買ってすぐ売れば乗る額」になる
-    const retail = retailPrice(cat, modelId, capacity);
-    if (retail != null) {
-      const gap = latest.price - retail;
-      const ranged = typeof latest.priceHigh === 'number' && latest.priceHigh > latest.price;
-      const lead = ranged ? `アップル公式 ${hkd(retail)} より、いちばん安い色でも` : `アップル公式 ${hkd(retail)} より`;
-      lines.push(`      <p class="ip-bb-vs ${gap >= 0 ? 'is-up' : 'is-down'}">${lead} <strong>${gap >= 0 ? '+' : '−'}${hkd(Math.abs(gap))}</strong></p>`);
-    }
-    if (rows.length > 1) {
-      lines.push('      <ol class="ip-bb-history">');
-      for (const r of rows) {
-        lines.push(`        <li><time datetime="${r.date}">${formatDate(r.date, 'hk')}</time><span>${buybackPrice(r, cat.rates)}</span>${r.memo ? `<em>${escapeHtml(r.memo)}</em>` : ''}</li>`);
-      }
-      lines.push('      </ol>');
-    } else if (latest.memo) {
-      lines.push(`      <p class="ip-bb-memo">${escapeHtml(latest.memo)}</p>`);
-    }
-    lines.push('    </section>');
-  }
-  lines.push('  </div>');
-  // 板に出ていなかった機種は、黙って消えると「載せ忘れ」に見えるので一行断っておく
-  const missing = cat.models.filter((m) => !records.some((r) => r.model === m.id));
-  if (missing.length) {
-    lines.push(`  <p class="ip-bb-missing">${missing.map((m) => escapeHtml(m.name)).join('・')}は、まだ板に出ているのを見ていません。見かけたら足します。</p>`);
-  }
+  lines.push(
+    `  <p class="ip-bb-cta-wrap"><a class="ip-bb-cta" href="${bb.page || '/iphone18-buyback.html'}"` +
+      ' data-growth-label="iphone_price_to_buyback">店ごとの買取価格を見る →</a></p>',
+  );
   lines.push('</div>');
   return lines.join('\n');
 }
 
+/** 買取ページの頭。いちばん新しい日の板を一行で掴めるように。 */
+function bbSummaryBlock(cat) {
+  const bb = cat.buyback || {};
+  const boards = sortedBoards(cat);
+  const lines = [];
+  lines.push('<div class="bb-summary">');
+  if (!boards.length) {
+    lines.push('  <p class="bb-empty">まだ板を控えていません。先達廣場で見かけ次第、店と日付ごとにここへ足していきます。</p>');
+    lines.push('</div>');
+    return lines.join('\n');
+  }
+  const latest = boards[0].date;
+  const sameDay = boards.filter((b) => b.date === latest);
+  const spread = gapSpread(cat, sameDay);
+  const condLabel = new Map((bb.conditions || []).map((c) => [c.key, c.label]));
+  const conds = [...new Set(sameDay.map((b) => condLabel.get(b.condition) || b.condition).filter(Boolean))];
+  const usdGap = (n) => (n >= 0 ? '+' : '−') + usdOf(Math.abs(n), cat.rates);
+
+  lines.push('  <div class="bb-cards">');
+  lines.push('    <div class="bb-card">');
+  lines.push('      <span class="bb-card-label">いちばん新しい板</span>');
+  lines.push(
+    `      <strong class="bb-card-value"><time datetime="${latest}">${formatDate(latest, 'hk')}</time>` +
+      `${latest === cat.released ? '（発売日）' : ''}</strong>`,
+  );
+  lines.push(`      <span class="bb-card-note">${sameDay.length}店ぶん${conds.length ? '・' + conds.map(escapeHtml).join('／') : ''}</span>`);
+  lines.push('    </div>');
+  for (const m of cat.models) {
+    const s = spread.get(m.id);
+    if (!s) continue;
+    lines.push('    <div class="bb-card">');
+    lines.push(`      <span class="bb-card-label">${escapeHtml(m.name)}</span>`);
+    lines.push(`      <strong class="bb-card-value ${s.min >= 0 ? 'is-up' : 'is-down'}">${gapText(s.min, s.max)}</strong>`);
+    // 差が小さいと「≈ +US$0」になって役に立たないので、両端とも1ドル以上のときだけ添える
+    const usdWorth = cat.rates.USD && Math.abs(s.min) >= cat.rates.USD / 2 && Math.abs(s.max) >= cat.rates.USD / 2;
+    if (usdWorth) {
+      lines.push(`      <span class="bb-card-usd">≈ ${usdGap(s.min)}${s.min === s.max ? '' : ` 〜 ${usdGap(s.max)}`}</span>`);
+    }
+    lines.push('      <span class="bb-card-note">アップル公式価格との差</span>');
+    lines.push('    </div>');
+  }
+  lines.push('  </div>');
+  lines.push('</div>');
+  return lines.join('\n');
+}
+
+/** 買取ページの本体。日付 → 店 → モデルの順に、板の一覧をそのまま並べる。 */
+function boardsBlock(cat) {
+  const bb = cat.buyback || {};
+  const boards = sortedBoards(cat);
+  const byModel = new Map(cat.models.map((m) => [m.id, m]));
+  const condLabel = new Map((bb.conditions || []).map((c) => [c.key, c.label]));
+  const lines = [];
+  if (bb.note) lines.push(`<p class="bb-note">${escapeHtml(bb.note)}</p>`);
+  if (!boards.length) {
+    lines.push('<p class="bb-empty">まだ板を控えていません。先達廣場で見かけ次第、店と日付ごとにここへ足していきます。</p>');
+    return lines.join('\n');
+  }
+
+  // 同じ日の板は一つの見出しの下にまとめる（店ごとの違いが並んで見えるように）
+  const days = [];
+  for (const b of boards) {
+    const last = days[days.length - 1];
+    if (last && last.date === b.date) last.boards.push(b);
+    else days.push({ date: b.date, boards: [b] });
+  }
+
+  for (const day of days) {
+    lines.push(`<section class="bb-day" aria-labelledby="d${day.date}">`);
+    lines.push(
+      `  <h3 class="bb-day-title" id="d${day.date}">` +
+        `<span><time datetime="${day.date}">${formatDate(day.date, 'hk')}</time>の板</span>` +
+        `${day.date === cat.released ? '<span class="bb-tag">発売日</span>' : ''}</h3>`,
+    );
+    for (const board of day.boards) {
+      const colors = boardColors(cat, board);
+      lines.push('  <section class="bb-shop">');
+      lines.push('    <header class="bb-shop-head">');
+      lines.push(`      <h4 class="bb-shop-name">${escapeHtml(board.shop || bb.place || '先達廣場')}</h4>`);
+      const cond = condLabel.get(board.condition) || board.condition;
+      if (cond) lines.push(`      <span class="bb-cond">${escapeHtml(cond)}</span>`);
+      lines.push('    </header>');
+      for (const note of [board.shopNote, board.note].filter(Boolean)) {
+        lines.push(`    <p class="bb-shop-note">${escapeHtml(note)}</p>`);
+      }
+      for (const m of board.models || []) {
+        const model = byModel.get(m.id);
+        lines.push(`    <h5 class="bb-model">${escapeHtml(model ? model.name : m.id)}</h5>`);
+        lines.push('    <table class="bb-table">');
+        lines.push('      <thead>');
+        lines.push('        <tr>');
+        lines.push('          <th scope="col" class="bb-cap-col">容量</th>');
+        for (const c of colors) {
+          lines.push(
+            `          <th scope="col" class="bb-col bb-col--${escapeHtml(c.key)}">${escapeHtml(c.label)}` +
+              `${c.ja ? `<span class="bb-col-ja">${escapeHtml(c.ja)}</span>` : ''}</th>`,
+          );
+        }
+        lines.push('          <th scope="col">アップル公式</th>');
+        lines.push('          <th scope="col">公式との差</th>');
+        lines.push('        </tr>');
+        lines.push('      </thead>');
+        lines.push('      <tbody>');
+        for (const r of m.rows || []) {
+          const retail = retailPrice(cat, m.id, r.size);
+          const vals = colors.map((c) => r.prices[c.key]).filter((v) => typeof v === 'number');
+          const top = vals.length ? Math.max(...vals) : null;
+          const marks = vals.length > 1 && new Set(vals).size > 1;
+          lines.push('        <tr>');
+          lines.push(`          <th scope="row">${escapeHtml(r.size)}</th>`);
+          for (const c of colors) {
+            const v = r.prices[c.key];
+            if (typeof v !== 'number') {
+              lines.push(`          <td data-label="${escapeHtml(c.label)}" class="bb-na">—</td>`);
+              continue;
+            }
+            const cls = marks && v === top ? ' class="is-top"' : '';
+            lines.push(`          <td data-label="${escapeHtml(c.label)}"${cls}>${yen(v)}</td>`);
+          }
+          lines.push(`          <td data-label="アップル公式" class="bb-official">${retail != null ? yen(retail) : '—'}</td>`);
+          if (retail != null && vals.length) {
+            const lo = Math.min(...vals) - retail;
+            const hi = Math.max(...vals) - retail;
+            lines.push(`          <td data-label="公式との差" class="bb-gap ${lo >= 0 ? 'is-up' : 'is-down'}">${gapText(lo, hi)}</td>`);
+          } else {
+            lines.push('          <td data-label="公式との差" class="bb-na">—</td>');
+          }
+          lines.push('        </tr>');
+        }
+        lines.push('      </tbody>');
+        lines.push('    </table>');
+      }
+      lines.push('  </section>');
+    }
+    // その日、板に出ていなかった機種は黙って消えると載せ忘れに見えるので断っておく
+    const seen = new Set(day.boards.flatMap((b) => (b.models || []).map((m) => m.id)));
+    const missing = cat.models.filter((m) => !seen.has(m.id));
+    if (missing.length) {
+      lines.push(`  <p class="bb-missing">${missing.map((m) => escapeHtml(m.name)).join('・')}は、この日の板には出ていませんでした。</p>`);
+    }
+    lines.push('</section>');
+  }
+
+  lines.push(
+    '<p class="bb-unit">金額はすべて香港ドル。「アップル公式」は香港のアップルストアの表示価格で、' +
+      '「公式との差」は買取のほうが高ければプラスです。' +
+      (cat.rates.USD ? `1米ドル = ${cat.rates.USD} HKD（${formatDate(cat.rates.usdAsOf || cat.rates.asOf, 'hk')}時点）。` : '') +
+      '薄く塗ってあるのは、その容量でいちばん高い色です。</p>',
+  );
+  return lines.join('\n');
+}
+
 /** <title> / meta description / JSON-LD を目録に合わせる（H1 は触らない） */
-function applySeo(html, cat) {
+function applySeo(html, cat, page) {
   let out = html;
-  const title = `${cat.seo.title}${TITLE_SUFFIX}`;
+  const seo = page.seo;
+  const title = `${seo.title}${TITLE_SUFFIX}`;
   out = out.replace(/<title([^>]*)>[\s\S]*?<\/title>/i, (m, a) => `<title${a}>${escapeHtml(title)}</title>`);
-  out = out.replace(/(<meta\s+name="description"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(cat.seo.description) + c);
-  out = out.replace(/(<meta\s+property="og:title"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(cat.seo.title) + c);
-  out = out.replace(/(<meta\s+property="og:description"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(cat.seo.description) + c);
-  out = out.replace(/(<meta\s+name="twitter:title"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(cat.seo.title) + c);
-  if (cat.hero) {
-    const abs = SITE_ORIGIN + cat.hero.image;
+  out = out.replace(/(<meta\s+name="description"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(seo.description) + c);
+  out = out.replace(/(<meta\s+property="og:title"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(seo.title) + c);
+  out = out.replace(/(<meta\s+property="og:description"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(seo.description) + c);
+  out = out.replace(/(<meta\s+name="twitter:title"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + escapeHtml(seo.title) + c);
+  if (page.hero) {
+    const abs = SITE_ORIGIN + page.hero.image;
     out = out.replace(/(<meta\s+property="og:image"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + abs + c);
     out = out.replace(/(<meta\s+name="twitter:image"\s+content=")([^"]*)(")/i, (m, a, _b, c) => a + abs + c);
   }
@@ -270,21 +415,20 @@ function applySeo(html, cat) {
   const ld = {
     '@context': 'https://schema.org',
     '@type': 'WebPage',
-    name: cat.seo.title,
-    headline: cat.seo.title,
-    description: cat.seo.description,
-    url: SITE_ORIGIN + cat.page,
+    name: seo.title,
+    headline: seo.title,
+    description: seo.description,
+    url: SITE_ORIGIN + page.path,
     inLanguage: 'ja',
-    datePublished: cat.announced,
-    // 買取記録を足した日も「更新」なので、公式価格の確認日と新しいほうを採る
-    dateModified: [cat.priceCheckedAt, ...(cat.buyback?.records || []).map((r) => r.date)].filter(Boolean).sort().pop(),
+    datePublished: page.published,
+    dateModified: page.modified,
     author: { '@type': 'Person', name: '田路昌也 (Toji Masaya)', url: SITE_ORIGIN + '/about.html' },
     publisher: { '@type': 'Person', name: '田路昌也 (Toji Masaya)' },
     mainEntity: {
       '@type': 'ItemList',
-      numberOfItems: cat.models.length,
-      itemListElement: cat.models.map((m, i) => ({
-        '@type': 'ListItem', position: i + 1, name: m.name, url: `${SITE_ORIGIN}${cat.page}#${m.id}`,
+      numberOfItems: page.items.length,
+      itemListElement: page.items.map((it, i) => ({
+        '@type': 'ListItem', position: i + 1, name: it.name, url: `${SITE_ORIGIN}${page.path}#${it.anchor}`,
       })),
     },
   };
@@ -307,16 +451,26 @@ async function main() {
       }
     }
   }
-  for (const r of cat.buyback?.records || []) {
-    const model = cat.models.find((m) => m.id === r.model);
-    if (!model) problems.push(`買取記録: model "${r.model}" は models にありません`);
-    else if (!model.capacities.some((c) => c.size === r.capacity)) {
-      problems.push(`買取記録 ${r.model}: capacity "${r.capacity}" は models にありません`);
-    }
-    if (!/^\d{4}-\d{2}-\d{2}$/.test(r.date || '')) problems.push(`買取記録: date は YYYY-MM-DD で（${r.date}）`);
-    if (typeof r.price !== 'number') problems.push(`買取記録 ${r.date}: price は数値で`);
-    if (r.priceHigh !== undefined && !(typeof r.priceHigh === 'number' && r.priceHigh >= r.price)) {
-      problems.push(`買取記録 ${r.date} ${r.model} ${r.capacity}: priceHigh は price 以上の数値で`);
+  const colorKeys = new Set(((cat.buyback || {}).colors || []).map((c) => c.key));
+  for (const board of (cat.buyback || {}).boards || []) {
+    const where = `買取の板 ${board.date || '(日付なし)'} ${board.shop || ''}`.trim();
+    if (!/^\d{4}-\d{2}-\d{2}$/.test(board.date || '')) problems.push(`${where}: date は YYYY-MM-DD で`);
+    if (!(board.models || []).length) problems.push(`${where}: models が空です`);
+    for (const m of board.models || []) {
+      const model = cat.models.find((x) => x.id === m.id);
+      if (!model) { problems.push(`${where}: model "${m.id}" は models にありません`); continue; }
+      if (!(m.rows || []).length) problems.push(`${where} ${m.id}: rows が空です`);
+      for (const r of m.rows || []) {
+        if (!model.capacities.some((c) => c.size === r.size)) {
+          problems.push(`${where} ${m.id}: capacity "${r.size}" は models にありません`);
+        }
+        const entries = Object.entries(r.prices || {});
+        if (!entries.length) problems.push(`${where} ${m.id} ${r.size}: prices が空です`);
+        for (const [k, v] of entries) {
+          if (!colorKeys.has(k)) problems.push(`${where} ${m.id} ${r.size}: 色 "${k}" は buyback.colors にありません`);
+          if (typeof v !== 'number') problems.push(`${where} ${m.id} ${r.size} ${k}: 価格は数値で`);
+        }
+      }
     }
   }
   if (problems.length) {
@@ -325,24 +479,68 @@ async function main() {
     process.exit(1);
   }
 
-  const rel = cat.page.replace(/^\//, '');
-  const file = path.join(ROOT, rel);
-  const before = await fs.readFile(file, 'utf8');
-  let html = before;
-  html = putBlock(html, 'hero', heroBlock(cat));
-  html = putBlock(html, 'summary', summaryBlock(cat));
-  html = putBlock(html, 'prices', pricesBlock(cat));
-  html = putBlock(html, 'buyback', buybackBlock(cat));
-  html = applySeo(html, cat);
+  const boards = sortedBoards(cat);
+  const lastBoardDate = boards.length ? boards[0].date : null;
+  const written = [];
 
-  const changed = html !== before;
-  if (changed && !CHECK_ONLY) await writeIfChanged(file, html);
+  // 1) アップル公式価格の比較ページ
+  const pricePage = {
+    path: cat.page,
+    seo: cat.seo,
+    hero: cat.hero,
+    published: cat.announced,
+    // 買取の要約もこのページに出るので、板を足した日も「更新」に数える
+    modified: [cat.priceCheckedAt, lastBoardDate].filter(Boolean).sort().pop(),
+    items: cat.models.map((m) => ({ name: m.name, anchor: m.id })),
+  };
+  const priceBlocks = (html) => {
+    let out = putBlock(html, 'hero', heroBlock(cat.hero));
+    out = putBlock(out, 'summary', summaryBlock(cat));
+    out = putBlock(out, 'prices', pricesBlock(cat));
+    out = putBlock(out, 'buyback', buybackBlock(cat));
+    return out;
+  };
+  if (await renderPage(pricePage, priceBlocks, cat)) written.push(pricePage.path);
+
+  // 2) 先達廣場の買取価格ページ
+  const bp = cat.buybackPage;
+  if (bp) {
+    const buybackPage = {
+      path: (cat.buyback || {}).page,
+      seo: bp.seo,
+      hero: bp.hero,
+      published: boards.length ? boards[boards.length - 1].date : cat.announced,
+      modified: lastBoardDate || cat.priceCheckedAt,
+      items: [...new Set(boards.map((b) => b.date))].map((d) => ({ name: `${formatDate(d, 'hk')}の板`, anchor: `d${d}` })),
+    };
+    const bbBlocks = (html) => {
+      let out = putBlock(html, 'hero', heroBlock(bp.hero));
+      out = putBlock(out, 'bbsummary', bbSummaryBlock(cat));
+      out = putBlock(out, 'boards', boardsBlock(cat));
+      return out;
+    };
+    if (await renderPage(buybackPage, bbBlocks, cat)) written.push(buybackPage.path);
+  }
 
   const configs = cat.models.reduce((n, m) => n + m.capacities.length, 0);
-  console.log(`${CHECK_ONLY ? '[check] ' : ''}${cat.generation}: ${cat.models.length} モデル / ${configs} 構成 / 買取記録 ${(cat.buyback?.records || []).length} 件`);
-  console.log(`${CHECK_ONLY ? '差分のあるファイル' : '書き込んだファイル'}: ${changed ? 1 : 0}`);
-  if (changed) console.log('  - ' + rel);
-  if (CHECK_ONLY && changed) process.exitCode = 2;
+  const cells = boards.reduce(
+    (n, b) => n + (b.models || []).reduce((k, m) => k + (m.rows || []).reduce((j, r) => j + Object.keys(r.prices || {}).length, 0), 0),
+    0,
+  );
+  console.log(`${CHECK_ONLY ? '[check] ' : ''}${cat.generation}: ${cat.models.length} モデル / ${configs} 構成 / 買取の板 ${boards.length} 枚（${cells} 値）`);
+  console.log(`${CHECK_ONLY ? '差分のあるファイル' : '書き込んだファイル'}: ${written.length}`);
+  for (const w of written) console.log('  - ' + w.replace(/^\//, ''));
+  if (CHECK_ONLY && written.length) process.exitCode = 2;
+}
+
+/** 1ページぶんを組み直す。差分があれば true。 */
+async function renderPage(page, fill, cat) {
+  const file = path.join(ROOT, page.path.replace(/^\//, ''));
+  const before = await fs.readFile(file, 'utf8');
+  const html = applySeo(fill(before), cat, page);
+  const changed = html !== before;
+  if (changed && !CHECK_ONLY) await writeIfChanged(file, html);
+  return changed;
 }
 
 main().catch((err) => {
