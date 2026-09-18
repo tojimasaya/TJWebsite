@@ -78,6 +78,10 @@
         .bb-card-value { display: block; font-family: 'Noto Serif JP', serif; font-size: 1.06rem; font-weight: 600; line-height: 1.5; color: var(--text-color); font-variant-numeric: tabular-nums; }
         .bb-card-value.is-up { color: var(--bb-up); }
         .bb-card-value.is-down { color: var(--bb-down); }
+        /* 円は読み手にいちばん近い単位なので、米ドルより大きく・前に置く */
+        .bb-card-jpy { display: block; font-family: var(--secondary-font); font-size: 0.86rem; font-weight: 600; color: var(--text-color); margin-top: 4px; font-variant-numeric: tabular-nums; }
+        .bb-rate { font-family: var(--primary-font); font-size: 0.82rem; line-height: 1.9; color: var(--text-light); margin: 14px 0 0; }
+        .bb-rate strong { font-weight: 700; color: var(--text-color); }
         .bb-card-usd { display: block; font-family: var(--secondary-font); font-size: 0.78rem; color: var(--text-light); margin-top: 3px; font-variant-numeric: tabular-nums; }
         .bb-card-note { display: block; font-family: var(--primary-font); font-size: 0.76rem; line-height: 1.7; color: var(--text-light); margin-top: 6px; }
         .bb-empty { font-family: var(--primary-font); font-size: 0.85rem; line-height: 1.9; color: var(--text-light); border: 1px dashed var(--border-color); border-radius: 12px; padding: 18px 20px; margin: 0; background: var(--hover-color); }
@@ -220,15 +224,18 @@
             <div class="bb-card">
               <span class="bb-card-label">iPhone 18 Pro</span>
               <strong class="bb-card-value is-down">−HK$499 〜 −149</strong>
+              <span class="bb-card-jpy">≈ −9,800円 〜 −2,900円</span>
               <span class="bb-card-usd">≈ −US$64 〜 −US$19</span>
               <span class="bb-card-note">午後3時半の板・アップル公式価格との差</span>
             </div>
             <div class="bb-card">
               <span class="bb-card-label">iPhone 18 Pro Max</span>
               <strong class="bb-card-value is-up">+HK$1 〜 +1,401</strong>
+              <span class="bb-card-jpy">≈ +20円 〜 +2万7,400円</span>
               <span class="bb-card-note">午後3時半の板・アップル公式価格との差</span>
             </div>
           </div>
+          <p class="bb-rate">円は <strong>1香港ドル = 19.58円</strong>（2026年9月10日時点）で換算した目安です。たとえば朝10時半の板でいちばん上乗せが大きかった iPhone 18 Pro Max の 1TB なら、アップルで買った値段より <strong>約5万4,800円</strong> 多く戻る計算でした。</p>
         </div>
         <!-- iphone:bbsummary:end -->
 
@@ -588,7 +595,7 @@
                     <span class="bb-deal-what">iPhone 18 Pro Max 256GB・黑（ブラック）</span>
                     <span class="bb-deal-price">HK$13,300 <span class="ip-usd">≈ US$1,696</span></span>
                     <span class="bb-deal-when">夕方6時ごろ</span>
-                    <span class="bb-deal-gap is-up">アップル公式 HK$11,499 より +HK$1,801</span>
+                    <span class="bb-deal-gap is-up">アップル公式 HK$11,499 より +HK$1,801（約3万5,300円）</span>
                     <p class="bb-deal-note">仕事を終えてから持ち込んだ知人の実売価格です。午後3時半の板では同じ黑が 12,600〜12,900 でしたから、400 ほど戻ったことになります。発売日でも、一本調子で下がり続けるわけではありません。</p>
                   </li>
                 </ul>

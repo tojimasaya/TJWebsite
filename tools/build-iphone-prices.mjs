@@ -47,6 +47,30 @@ const hkd = (n) => 'HK$' + Math.round(n).toLocaleString('en-US');
 const usdOf = (h, rates) => 'US$' + Math.round(h / rates.USD).toLocaleString('en-US');
 const withUsd = (h, rates) => (rates && rates.USD ? ` <span class="ip-usd">≈ ${usdOf(h, rates)}</span>` : '');
 
+/**
+ * 香港ドルを日本円の目安にする（rates.JPY = 1円あたりの HKD）。
+ * 読み手のほとんどは日本の方なので、金額の実感はここでいちばん立つ。
+ * 千円未満は10円単位、それ以上は100円単位に丸め、1万円を超えたら「2万7,400円」と万で読ませる。
+ */
+function jpyOf(h, rates) {
+  if (!rates || !rates.JPY) return '';
+  const raw = Math.abs(h) / rates.JPY;
+  // 100円単位で丸めると HK$1 が「0円」になってしまうので、千円未満は10円単位で
+  const y = raw < 1000 ? Math.round(raw / 10) * 10 : Math.round(raw / 100) * 100;
+  if (y >= 10000) {
+    const man = Math.floor(y / 10000);
+    const rest = y % 10000;
+    return `${man}万${rest ? rest.toLocaleString('en-US') : ''}円`;
+  }
+  return `${y.toLocaleString('en-US')}円`;
+}
+
+/** 「+2万7,400円」「+20円 〜 +2万7,400円」。符号は元の値から取る。 */
+function jpyGap(lo, hi, rates) {
+  const one = (n) => (n >= 0 ? '+' : '−') + jpyOf(n, rates);
+  return lo === hi ? one(lo) : `${one(lo)} 〜 ${one(hi)}`;
+}
+
 /** 米ドルのレートを確認した日（時刻まで分かっていれば添える） */
 function usdWhen(rates) {
   const d = formatDate(rates.usdAsOf || rates.asOf, 'hk');
@@ -299,6 +323,9 @@ function bbSummaryBlock(cat) {
     lines.push('    <div class="bb-card">');
     lines.push(`      <span class="bb-card-label">${escapeHtml(m.name)}</span>`);
     lines.push(`      <strong class="bb-card-value ${s.min >= 0 ? 'is-up' : 'is-down'}">${gapText(s.min, s.max)}</strong>`);
+    if (cat.rates.JPY) {
+      lines.push(`      <span class="bb-card-jpy">≈ ${jpyGap(s.min, s.max, cat.rates)}</span>`);
+    }
     // 差が小さいと「≈ +US$0」になって役に立たないので、両端とも1ドル以上のときだけ添える
     const usdWorth = cat.rates.USD && Math.abs(s.min) >= cat.rates.USD / 2 && Math.abs(s.max) >= cat.rates.USD / 2;
     if (usdWorth) {
@@ -308,6 +335,30 @@ function bbSummaryBlock(cat) {
     lines.push('    </div>');
   }
   lines.push('  </div>');
+  if (cat.rates.JPY) {
+    const one = Math.round((1 / cat.rates.JPY) * 100) / 100;
+    // 例は、その日のいちばん早い板でいちばん上乗せが大きかった構成から作る（日が変わっても言い直さずに済む）
+    const first = sameDay[0];
+    let best = null;
+    for (const m of first.models || []) {
+      for (const r of m.rows || []) {
+        const retail = retailPrice(cat, m.id, r.size);
+        if (retail == null) continue;
+        for (const v of Object.values(r.prices || {})) {
+          if (typeof v !== 'number') continue;
+          if (!best || v - retail > best.gap) {
+            best = { gap: v - retail, name: (cat.models.find((x) => x.id === m.id) || {}).name || m.id, size: r.size };
+          }
+        }
+      }
+    }
+    const eg = best && best.gap > 0
+      ? `たとえば${escapeHtml(first.label || 'いちばん早い時間')}の板でいちばん上乗せが大きかった ${escapeHtml(best.name)} の ${escapeHtml(best.size)} なら、アップルで買った値段より <strong>約${jpyOf(best.gap, cat.rates)}</strong> 多く戻る計算でした。`
+      : '';
+    lines.push(
+      `  <p class="bb-rate">円は <strong>1香港ドル = ${one}円</strong>（${formatDate(cat.rates.asOf, 'hk')}時点）で換算した目安です。${eg}</p>`,
+    );
+  }
   lines.push('</div>');
   return lines.join('\n');
 }
@@ -442,7 +493,8 @@ function boardsBlock(cat) {
         if (d.time) lines.push(`        <span class="bb-deal-when">${escapeHtml(d.time)}</span>`);
         if (retail != null) {
           const gap = d.price - retail;
-          lines.push(`        <span class="bb-deal-gap ${gap >= 0 ? 'is-up' : 'is-down'}">アップル公式 ${hkd(retail)} より ${gapText(gap, gap)}</span>`);
+          const jpy = cat.rates.JPY ? `（${gap >= 0 ? '約' : '約−'}${jpyOf(gap, cat.rates)}）` : '';
+          lines.push(`        <span class="bb-deal-gap ${gap >= 0 ? 'is-up' : 'is-down'}">アップル公式 ${hkd(retail)} より ${gapText(gap, gap)}${jpy}</span>`);
         }
         if (d.note) lines.push(`        <p class="bb-deal-note">${escapeHtml(d.note)}</p>`);
         lines.push('      </li>');
