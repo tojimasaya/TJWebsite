@@ -129,10 +129,12 @@
             .bb-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
             .bb-table tr { border: 1px solid var(--border-color); border-radius: 12px; padding: 10px 13px; margin-bottom: 9px; background: var(--hover-color); }
             .bb-table tbody th { display: block; width: auto; font-size: 0.92rem; padding: 0 0 7px; border-bottom: 1px solid var(--border-color); margin-bottom: 5px; }
-            .bb-table td { display: grid; grid-template-columns: 6.5em minmax(0, 1fr); gap: 10px; align-items: baseline; text-align: left; padding: 4px 0; border-bottom: 0; }
+            /* ラベルは「紅（バーガンディ）」がいちばん長い。列が狭いと数字に食い込んで縦が揃わない */
+            .bb-table td { display: grid; grid-template-columns: 8em minmax(0, 1fr); gap: 8px; align-items: baseline; text-align: left; padding: 4px 0; border-bottom: 0; }
             .bb-table td::before { content: attr(data-label); font-family: var(--secondary-font); font-size: 0.75rem; font-weight: 600; color: var(--text-light); }
             .bb-table td.is-top { background: transparent; color: var(--bb-up); }
-            .bb-table td.bb-gap { padding-top: 6px; }
+            /* 「+HK$2,501 〜 +2,551」は 320px だと収まらない。ここだけ折り返しを許す */
+            .bb-table td.bb-gap { padding-top: 6px; white-space: normal; }
         }
     </style>
 
@@ -206,8 +208,8 @@
                   <thead>
                     <tr>
                       <th scope="col" class="bb-cap-col">容量</th>
-                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">レッド</span></th>
-                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">ブルー</span></th>
+                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">バーガンディ</span></th>
+                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">グレイシャー</span></th>
                       <th scope="col" class="bb-col bb-col--silver">銀<span class="bb-col-ja">シルバー</span></th>
                       <th scope="col" class="bb-col bb-col--black">黑<span class="bb-col-ja">ブラック</span></th>
                       <th scope="col">アップル公式</th>
@@ -217,8 +219,8 @@
                   <tbody>
                     <tr>
                       <th scope="row">256GB</th>
-                      <td data-label="紅（レッド）" class="is-top">14,050</td>
-                      <td data-label="藍（ブルー）">14,000</td>
+                      <td data-label="紅（バーガンディ）" class="is-top">14,050</td>
+                      <td data-label="藍（グレイシャー）">14,000</td>
                       <td data-label="銀（シルバー）">14,000</td>
                       <td data-label="黑（ブラック）">14,000</td>
                       <td data-label="アップル公式" class="bb-official">11,499</td>
@@ -226,8 +228,8 @@
                     </tr>
                     <tr>
                       <th scope="row">512GB</th>
-                      <td data-label="紅（レッド）" class="is-top">15,800</td>
-                      <td data-label="藍（ブルー）">15,700</td>
+                      <td data-label="紅（バーガンディ）" class="is-top">15,800</td>
+                      <td data-label="藍（グレイシャー）">15,700</td>
                       <td data-label="銀（シルバー）">15,600</td>
                       <td data-label="黑（ブラック）">15,650</td>
                       <td data-label="アップル公式" class="bb-official">13,299</td>
@@ -235,8 +237,8 @@
                     </tr>
                     <tr>
                       <th scope="row">1TB</th>
-                      <td data-label="紅（レッド）" class="is-top">19,600</td>
-                      <td data-label="藍（ブルー）">19,500</td>
+                      <td data-label="紅（バーガンディ）" class="is-top">19,600</td>
+                      <td data-label="藍（グレイシャー）">19,500</td>
                       <td data-label="銀（シルバー）" class="is-top">19,600</td>
                       <td data-label="黑（ブラック）">19,500</td>
                       <td data-label="アップル公式" class="bb-official">16,799</td>
@@ -244,8 +246,8 @@
                     </tr>
                     <tr>
                       <th scope="row">2TB</th>
-                      <td data-label="紅（レッド）" class="is-top">24,150</td>
-                      <td data-label="藍（ブルー）" class="is-top">24,150</td>
+                      <td data-label="紅（バーガンディ）" class="is-top">24,150</td>
+                      <td data-label="藍（グレイシャー）" class="is-top">24,150</td>
                       <td data-label="銀（シルバー）">23,950</td>
                       <td data-label="黑（ブラック）">24,050</td>
                       <td data-label="アップル公式" class="bb-official">21,999</td>
@@ -258,8 +260,8 @@
                   <thead>
                     <tr>
                       <th scope="col" class="bb-cap-col">容量</th>
-                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">レッド</span></th>
-                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">ブルー</span></th>
+                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">バーガンディ</span></th>
+                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">グレイシャー</span></th>
                       <th scope="col" class="bb-col bb-col--silver">銀<span class="bb-col-ja">シルバー</span></th>
                       <th scope="col" class="bb-col bb-col--black">黑<span class="bb-col-ja">ブラック</span></th>
                       <th scope="col">アップル公式</th>
@@ -269,8 +271,8 @@
                   <tbody>
                     <tr>
                       <th scope="row">256GB</th>
-                      <td data-label="紅（レッド）">10,520</td>
-                      <td data-label="藍（ブルー）">10,520</td>
+                      <td data-label="紅（バーガンディ）">10,520</td>
+                      <td data-label="藍（グレイシャー）">10,520</td>
                       <td data-label="銀（シルバー）">10,520</td>
                       <td data-label="黑（ブラック）">10,520</td>
                       <td data-label="アップル公式" class="bb-official">10,499</td>
@@ -278,8 +280,8 @@
                     </tr>
                     <tr>
                       <th scope="row">512GB</th>
-                      <td data-label="紅（レッド）">12,320</td>
-                      <td data-label="藍（ブルー）">12,320</td>
+                      <td data-label="紅（バーガンディ）">12,320</td>
+                      <td data-label="藍（グレイシャー）">12,320</td>
                       <td data-label="銀（シルバー）">12,320</td>
                       <td data-label="黑（ブラック）">12,320</td>
                       <td data-label="アップル公式" class="bb-official">12,299</td>
@@ -287,8 +289,8 @@
                     </tr>
                     <tr>
                       <th scope="row">1TB</th>
-                      <td data-label="紅（レッド）">15,800</td>
-                      <td data-label="藍（ブルー）">15,800</td>
+                      <td data-label="紅（バーガンディ）">15,800</td>
+                      <td data-label="藍（グレイシャー）">15,800</td>
                       <td data-label="銀（シルバー）">15,800</td>
                       <td data-label="黑（ブラック）">15,800</td>
                       <td data-label="アップル公式" class="bb-official">15,799</td>
@@ -296,8 +298,8 @@
                     </tr>
                     <tr>
                       <th scope="row">2TB</th>
-                      <td data-label="紅（レッド）">21,000</td>
-                      <td data-label="藍（ブルー）">21,000</td>
+                      <td data-label="紅（バーガンディ）">21,000</td>
+                      <td data-label="藍（グレイシャー）">21,000</td>
                       <td data-label="銀（シルバー）">21,000</td>
                       <td data-label="黑（ブラック）">21,000</td>
                       <td data-label="アップル公式" class="bb-official">20,999</td>
@@ -317,8 +319,8 @@
                   <thead>
                     <tr>
                       <th scope="col" class="bb-cap-col">容量</th>
-                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">レッド</span></th>
-                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">ブルー</span></th>
+                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">バーガンディ</span></th>
+                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">グレイシャー</span></th>
                       <th scope="col" class="bb-col bb-col--silver">銀<span class="bb-col-ja">シルバー</span></th>
                       <th scope="col" class="bb-col bb-col--black">黑<span class="bb-col-ja">ブラック</span></th>
                       <th scope="col">アップル公式</th>
@@ -328,8 +330,8 @@
                   <tbody>
                     <tr>
                       <th scope="row">256GB</th>
-                      <td data-label="紅（レッド）" class="is-top">13,500</td>
-                      <td data-label="藍（ブルー）">12,800</td>
+                      <td data-label="紅（バーガンディ）" class="is-top">13,500</td>
+                      <td data-label="藍（グレイシャー）">12,800</td>
                       <td data-label="銀（シルバー）">13,200</td>
                       <td data-label="黑（ブラック）" class="is-top">13,500</td>
                       <td data-label="アップル公式" class="bb-official">11,499</td>
@@ -337,8 +339,8 @@
                     </tr>
                     <tr>
                       <th scope="row">512GB</th>
-                      <td data-label="紅（レッド）">14,000</td>
-                      <td data-label="藍（ブルー）">14,000</td>
+                      <td data-label="紅（バーガンディ）">14,000</td>
+                      <td data-label="藍（グレイシャー）">14,000</td>
                       <td data-label="銀（シルバー）">14,000</td>
                       <td data-label="黑（ブラック）" class="is-top">14,300</td>
                       <td data-label="アップル公式" class="bb-official">13,299</td>
@@ -346,8 +348,8 @@
                     </tr>
                     <tr>
                       <th scope="row">1TB</th>
-                      <td data-label="紅（レッド）">18,000</td>
-                      <td data-label="藍（ブルー）">18,000</td>
+                      <td data-label="紅（バーガンディ）">18,000</td>
+                      <td data-label="藍（グレイシャー）">18,000</td>
                       <td data-label="銀（シルバー）">18,000</td>
                       <td data-label="黑（ブラック）">18,000</td>
                       <td data-label="アップル公式" class="bb-official">16,799</td>
@@ -355,8 +357,8 @@
                     </tr>
                     <tr>
                       <th scope="row">2TB</th>
-                      <td data-label="紅（レッド）">22,500</td>
-                      <td data-label="藍（ブルー）">22,500</td>
+                      <td data-label="紅（バーガンディ）">22,500</td>
+                      <td data-label="藍（グレイシャー）">22,500</td>
                       <td data-label="銀（シルバー）">22,500</td>
                       <td data-label="黑（ブラック）">22,500</td>
                       <td data-label="アップル公式" class="bb-official">21,999</td>
@@ -369,8 +371,8 @@
                   <thead>
                     <tr>
                       <th scope="col" class="bb-cap-col">容量</th>
-                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">レッド</span></th>
-                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">ブルー</span></th>
+                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">バーガンディ</span></th>
+                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">グレイシャー</span></th>
                       <th scope="col" class="bb-col bb-col--silver">銀<span class="bb-col-ja">シルバー</span></th>
                       <th scope="col" class="bb-col bb-col--black">黑<span class="bb-col-ja">ブラック</span></th>
                       <th scope="col">アップル公式</th>
@@ -380,8 +382,8 @@
                   <tbody>
                     <tr>
                       <th scope="row">256GB</th>
-                      <td data-label="紅（レッド）">10,400</td>
-                      <td data-label="藍（ブルー）">10,400</td>
+                      <td data-label="紅（バーガンディ）">10,400</td>
+                      <td data-label="藍（グレイシャー）">10,400</td>
                       <td data-label="銀（シルバー）">10,400</td>
                       <td data-label="黑（ブラック）">10,400</td>
                       <td data-label="アップル公式" class="bb-official">10,499</td>
@@ -389,8 +391,8 @@
                     </tr>
                     <tr>
                       <th scope="row">512GB</th>
-                      <td data-label="紅（レッド）">12,350</td>
-                      <td data-label="藍（ブルー）">12,350</td>
+                      <td data-label="紅（バーガンディ）">12,350</td>
+                      <td data-label="藍（グレイシャー）">12,350</td>
                       <td data-label="銀（シルバー）">12,350</td>
                       <td data-label="黑（ブラック）">12,350</td>
                       <td data-label="アップル公式" class="bb-official">12,299</td>
@@ -398,8 +400,8 @@
                     </tr>
                     <tr>
                       <th scope="row">1TB</th>
-                      <td data-label="紅（レッド）">15,700</td>
-                      <td data-label="藍（ブルー）">15,700</td>
+                      <td data-label="紅（バーガンディ）">15,700</td>
+                      <td data-label="藍（グレイシャー）">15,700</td>
                       <td data-label="銀（シルバー）">15,700</td>
                       <td data-label="黑（ブラック）">15,700</td>
                       <td data-label="アップル公式" class="bb-official">15,799</td>
@@ -407,8 +409,8 @@
                     </tr>
                     <tr>
                       <th scope="row">2TB</th>
-                      <td data-label="紅（レッド）">20,700</td>
-                      <td data-label="藍（ブルー）">20,700</td>
+                      <td data-label="紅（バーガンディ）">20,700</td>
+                      <td data-label="藍（グレイシャー）">20,700</td>
                       <td data-label="銀（シルバー）">20,700</td>
                       <td data-label="黑（ブラック）">20,700</td>
                       <td data-label="アップル公式" class="bb-official">20,999</td>
@@ -428,8 +430,8 @@
                   <thead>
                     <tr>
                       <th scope="col" class="bb-cap-col">容量</th>
-                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">レッド</span></th>
-                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">ブルー</span></th>
+                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">バーガンディ</span></th>
+                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">グレイシャー</span></th>
                       <th scope="col" class="bb-col bb-col--silver">銀<span class="bb-col-ja">シルバー</span></th>
                       <th scope="col" class="bb-col bb-col--black">黑<span class="bb-col-ja">ブラック</span></th>
                       <th scope="col">アップル公式</th>
@@ -439,8 +441,8 @@
                   <tbody>
                     <tr>
                       <th scope="row">256GB</th>
-                      <td data-label="紅（レッド）" class="is-top">12,900</td>
-                      <td data-label="藍（ブルー）">12,650</td>
+                      <td data-label="紅（バーガンディ）" class="is-top">12,900</td>
+                      <td data-label="藍（グレイシャー）">12,650</td>
                       <td data-label="銀（シルバー）">12,600</td>
                       <td data-label="黑（ブラック）" class="is-top">12,900</td>
                       <td data-label="アップル公式" class="bb-official">11,499</td>
@@ -448,8 +450,8 @@
                     </tr>
                     <tr>
                       <th scope="row">512GB</th>
-                      <td data-label="紅（レッド）">13,500</td>
-                      <td data-label="藍（ブルー）">13,550</td>
+                      <td data-label="紅（バーガンディ）">13,500</td>
+                      <td data-label="藍（グレイシャー）">13,550</td>
                       <td data-label="銀（シルバー）">13,500</td>
                       <td data-label="黑（ブラック）" class="is-top">13,600</td>
                       <td data-label="アップル公式" class="bb-official">13,299</td>
@@ -457,8 +459,8 @@
                     </tr>
                     <tr>
                       <th scope="row">1TB</th>
-                      <td data-label="紅（レッド）">16,900</td>
-                      <td data-label="藍（ブルー）">16,900</td>
+                      <td data-label="紅（バーガンディ）">16,900</td>
+                      <td data-label="藍（グレイシャー）">16,900</td>
                       <td data-label="銀（シルバー）">16,800</td>
                       <td data-label="黑（ブラック）" class="is-top">17,200</td>
                       <td data-label="アップル公式" class="bb-official">16,799</td>
@@ -466,8 +468,8 @@
                     </tr>
                     <tr>
                       <th scope="row">2TB</th>
-                      <td data-label="紅（レッド）">22,100</td>
-                      <td data-label="藍（ブルー）" class="is-top">22,200</td>
+                      <td data-label="紅（バーガンディ）">22,100</td>
+                      <td data-label="藍（グレイシャー）" class="is-top">22,200</td>
                       <td data-label="銀（シルバー）" class="is-top">22,200</td>
                       <td data-label="黑（ブラック）" class="is-top">22,200</td>
                       <td data-label="アップル公式" class="bb-official">21,999</td>
@@ -480,8 +482,8 @@
                   <thead>
                     <tr>
                       <th scope="col" class="bb-cap-col">容量</th>
-                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">レッド</span></th>
-                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">ブルー</span></th>
+                      <th scope="col" class="bb-col bb-col--red">紅<span class="bb-col-ja">バーガンディ</span></th>
+                      <th scope="col" class="bb-col bb-col--blue">藍<span class="bb-col-ja">グレイシャー</span></th>
                       <th scope="col" class="bb-col bb-col--silver">銀<span class="bb-col-ja">シルバー</span></th>
                       <th scope="col" class="bb-col bb-col--black">黑<span class="bb-col-ja">ブラック</span></th>
                       <th scope="col">アップル公式</th>
@@ -491,8 +493,8 @@
                   <tbody>
                     <tr>
                       <th scope="row">256GB</th>
-                      <td data-label="紅（レッド）">10,350</td>
-                      <td data-label="藍（ブルー）">10,350</td>
+                      <td data-label="紅（バーガンディ）">10,350</td>
+                      <td data-label="藍（グレイシャー）">10,350</td>
                       <td data-label="銀（シルバー）">10,350</td>
                       <td data-label="黑（ブラック）">10,350</td>
                       <td data-label="アップル公式" class="bb-official">10,499</td>
@@ -500,8 +502,8 @@
                     </tr>
                     <tr>
                       <th scope="row">512GB</th>
-                      <td data-label="紅（レッド）">12,050</td>
-                      <td data-label="藍（ブルー）">12,050</td>
+                      <td data-label="紅（バーガンディ）">12,050</td>
+                      <td data-label="藍（グレイシャー）">12,050</td>
                       <td data-label="銀（シルバー）">12,050</td>
                       <td data-label="黑（ブラック）" class="is-top">12,100</td>
                       <td data-label="アップル公式" class="bb-official">12,299</td>
@@ -509,8 +511,8 @@
                     </tr>
                     <tr>
                       <th scope="row">1TB</th>
-                      <td data-label="紅（レッド）">15,400</td>
-                      <td data-label="藍（ブルー）">15,400</td>
+                      <td data-label="紅（バーガンディ）">15,400</td>
+                      <td data-label="藍（グレイシャー）">15,400</td>
                       <td data-label="銀（シルバー）">15,400</td>
                       <td data-label="黑（ブラック）">15,400</td>
                       <td data-label="アップル公式" class="bb-official">15,799</td>
@@ -518,8 +520,8 @@
                     </tr>
                     <tr>
                       <th scope="row">2TB</th>
-                      <td data-label="紅（レッド）">20,500</td>
-                      <td data-label="藍（ブルー）">20,500</td>
+                      <td data-label="紅（バーガンディ）">20,500</td>
+                      <td data-label="藍（グレイシャー）">20,500</td>
                       <td data-label="銀（シルバー）">20,500</td>
                       <td data-label="黑（ブラック）">20,500</td>
                       <td data-label="アップル公式" class="bb-official">20,999</td>
