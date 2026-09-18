@@ -230,7 +230,7 @@ function buybackBlock(cat) {
       .map((m) => `${escapeHtml(m.name)} は ${gapText(spread.get(m.id).min, spread.get(m.id).max)}`);
     lines.push(
       `  <p class="ip-bb-line">いちばん新しいのは <time datetime="${latest}">${formatDate(latest, 'hk')}</time>` +
-        `${latest === cat.released ? '（発売日）' : ''}、${sameDay.length}店ぶんの板です。` +
+        `${latest === cat.released ? '（発売日）' : ''}の板です。` +
         `${bits.length ? `アップル公式価格と比べると、${bits.join('、')}。` : ''}</p>`,
     );
   } else {
@@ -238,7 +238,7 @@ function buybackBlock(cat) {
   }
   lines.push(
     `  <p class="ip-bb-cta-wrap"><a class="ip-bb-cta" href="${bb.page || '/iphone18-buyback.html'}"` +
-      ' data-growth-label="iphone_price_to_buyback">店ごとの買取価格を見る →</a></p>',
+      ' data-growth-label="iphone_price_to_buyback">先達廣場の買取価格を見る →</a></p>',
   );
   lines.push('</div>');
   return lines.join('\n');
@@ -269,7 +269,7 @@ function bbSummaryBlock(cat) {
     `      <strong class="bb-card-value"><time datetime="${latest}">${formatDate(latest, 'hk')}</time>` +
       `${latest === cat.released ? '（発売日）' : ''}</strong>`,
   );
-  lines.push(`      <span class="bb-card-note">${sameDay.length}店ぶん${conds.length ? '・' + conds.map(escapeHtml).join('／') : ''}</span>`);
+  lines.push(`      <span class="bb-card-note">${conds.length ? conds.map(escapeHtml).join('／') : '先達廣場の店頭'}</span>`);
   lines.push('    </div>');
   for (const m of cat.models) {
     const s = spread.get(m.id);
@@ -320,9 +320,13 @@ function boardsBlock(cat) {
     );
     for (const board of day.boards) {
       const colors = boardColors(cat, board);
+      // 店名は分かっているときだけ出す（1枚しか出ていない日は、名指しする意味がない）。
+      // 見出しを1段省くので、モデル名の見出しレベルもそのぶん上げる。
+      const shop = board.shop || '';
+      const mh = shop ? 5 : 4;
       lines.push('  <section class="bb-shop">');
       lines.push('    <header class="bb-shop-head">');
-      lines.push(`      <h4 class="bb-shop-name">${escapeHtml(board.shop || bb.place || '先達廣場')}</h4>`);
+      if (shop) lines.push(`      <h4 class="bb-shop-name">${escapeHtml(shop)}</h4>`);
       const cond = condLabel.get(board.condition) || board.condition;
       if (cond) lines.push(`      <span class="bb-cond">${escapeHtml(cond)}</span>`);
       lines.push('    </header>');
@@ -331,7 +335,7 @@ function boardsBlock(cat) {
       }
       for (const m of board.models || []) {
         const model = byModel.get(m.id);
-        lines.push(`    <h5 class="bb-model">${escapeHtml(model ? model.name : m.id)}</h5>`);
+        lines.push(`    <h${mh} class="bb-model">${escapeHtml(model ? model.name : m.id)}</h${mh}>`);
         lines.push('    <table class="bb-table">');
         lines.push('      <thead>');
         lines.push('        <tr>');
