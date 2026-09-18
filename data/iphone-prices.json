@@ -1,5 +1,5 @@
 {
-  "note": "香港版 iPhone の価格表。official = アップル公式価格（各地の税込表示価格をそのまま）。rates = HKD へ換算するときの為替で、TJ が確認した日を asOf に書く。buyback.records = 先達廣場で聞いてきた買取価格を、日付ごとに足していく（消さずに積む＝値動きが残る）。price は現地通貨の整数、date は YYYY-MM-DD。ページは tools/build-iphone-prices.mjs が組み直す。 hero を差し替えるときは画像を assets/images/hero/ に置いて、このブロックのパスを直せばヒーローも OG 画像も入れ替わる。 rates.USD は「1米ドル = 何HKD」。HKD の金額の横に ≈ US$ を添える目安に使う（JPY / CNY と同じく、1単位あたりの HKD）。",
+  "note": "香港版 iPhone の価格表。official = アップル公式価格（各地の税込表示価格をそのまま）。rates = HKD へ換算するときの為替で、TJ が確認した日を asOf に書く。buyback.records = 先達廣場で聞いてきた買取価格を、日付ごとに足していく（消さずに積む＝値動きが残る）。price は現地通貨の整数、date は YYYY-MM-DD。色で値が違う日は、いちばん安い色を price、いちばん高い色を priceHigh に入れると幅で出る（色ごとの内訳は memo へ）。ページは tools/build-iphone-prices.mjs が組み直す。 hero を差し替えるときは画像を assets/images/hero/ に置いて、このブロックのパスを直せばヒーローも OG 画像も入れ替わる。 rates.USD は「1米ドル = 何HKD」。HKD の金額の横に ≈ US$ を添える目安に使う（JPY / CNY と同じく、1単位あたりの HKD）。",
   "generation": "iPhone 18",
   "page": "/iphone18-price.html",
   "announced": "2026-09-09",
@@ -163,7 +163,7 @@
   ],
   "buyback": {
     "place": "先達廣場（旺角）",
-    "note": "旺角の先達廣場で、実際に店頭で聞いてきた買取価格です。店・時間帯・在庫の具合で動きますし、私が聞いた一例にすぎません。発売直後は日単位で下がるので、聞いた日付と一緒に残していきます。",
+    "note": "旺角の先達廣場で、店頭に出ている買取価格の板を控えてきたものです。香港版の新品未開封が対象で、店・時間帯・在庫の具合で動きますし、私が見た地下の一店の値にすぎません。発売直後は日単位で下がるので、見た日付と一緒に残していきます。色で値が違うときは、その幅で書いています。",
     "conditions": [
       {
         "key": "sealed",
@@ -174,10 +174,79 @@
         "label": "開封済み・美品"
       }
     ],
-    "records": []
+    "records": [
+      {
+        "date": "2026-09-18",
+        "model": "iphone-18-pro",
+        "capacity": "256GB",
+        "condition": "sealed",
+        "price": 10520,
+        "memo": "紅・藍・銀・黑とも同じ値"
+      },
+      {
+        "date": "2026-09-18",
+        "model": "iphone-18-pro",
+        "capacity": "512GB",
+        "condition": "sealed",
+        "price": 12320,
+        "memo": "紅・藍・銀・黑とも同じ値"
+      },
+      {
+        "date": "2026-09-18",
+        "model": "iphone-18-pro",
+        "capacity": "1TB",
+        "condition": "sealed",
+        "price": 15800,
+        "memo": "紅・藍・銀・黑とも同じ値"
+      },
+      {
+        "date": "2026-09-18",
+        "model": "iphone-18-pro",
+        "capacity": "2TB",
+        "condition": "sealed",
+        "price": 21000,
+        "memo": "紅・藍・銀・黑とも同じ値"
+      },
+      {
+        "date": "2026-09-18",
+        "model": "iphone-18-pro-max",
+        "capacity": "256GB",
+        "condition": "sealed",
+        "price": 14000,
+        "priceHigh": 14050,
+        "memo": "紅 14,050／藍・銀・黑 14,000"
+      },
+      {
+        "date": "2026-09-18",
+        "model": "iphone-18-pro-max",
+        "capacity": "512GB",
+        "condition": "sealed",
+        "price": 15600,
+        "priceHigh": 15800,
+        "memo": "紅 15,800／藍 15,700／黑 15,650／銀 15,600"
+      },
+      {
+        "date": "2026-09-18",
+        "model": "iphone-18-pro-max",
+        "capacity": "1TB",
+        "condition": "sealed",
+        "price": 19500,
+        "priceHigh": 19600,
+        "memo": "紅 19,600／藍・銀・黑 19,500"
+      },
+      {
+        "date": "2026-09-18",
+        "model": "iphone-18-pro-max",
+        "capacity": "2TB",
+        "condition": "sealed",
+        "price": 24050,
+        "priceHigh": 24150,
+        "memo": "紅・藍 24,150／銀・黑 24,050"
+      }
+    ]
   },
   "seo": {
     "title": "香港版 iPhone 18 の価格 — 香港・日本・中国本土を HKD で比べる",
-    "description": "iPhone 18 Pro / 18 Pro Max / iPhone Duo のアップル公式価格を、香港・日本・中国本土で比較しました。全容量を香港ドル換算して差額を並べています。旺角・先達廣場の買取価格も、聞いてきた日付とともに残していきます。"
+    "description": "iPhone 18 Pro / 18 Pro Max / iPhone Duo のアップル公式価格を、香港・日本・中国本土で比較しました。全容量を香港ドル換算して差額を並べています。旺角・先達廣場の買取価格（新品未開封）も、見た日付とあわせて載せています。"
   }
 }

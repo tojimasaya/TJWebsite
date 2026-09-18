@@ -39,6 +39,24 @@ const hkd = (n) => 'HK$' + Math.round(n).toLocaleString('en-US');
 const usdOf = (h, rates) => 'US$' + Math.round(h / rates.USD).toLocaleString('en-US');
 const withUsd = (h, rates) => (rates && rates.USD ? ` <span class="ip-usd">≈ ${usdOf(h, rates)}</span>` : '');
 
+/** 買取記録1件の金額。priceHigh があれば「HK$14,000 〜 14,050」と幅で出す。 */
+function buybackPrice(r, rates) {
+  const hi = typeof r.priceHigh === 'number' && r.priceHigh > r.price ? r.priceHigh : null;
+  if (!hi) return hkd(r.price) + withUsd(r.price, rates);
+  const usd = rates && rates.USD
+    ? ` <span class="ip-usd">≈ ${usdOf(r.price, rates)} 〜 ${Math.round(hi / rates.USD).toLocaleString('en-US')}</span>`
+    : '';
+  return `${hkd(r.price)} 〜 ${yen(hi)}${usd}`;
+}
+
+/** その構成のアップル公式価格（基準地＝香港）。買取価格と並べて定価との上下を出す。 */
+function retailPrice(cat, modelId, capacity) {
+  const base = (cat.regions.find((r) => r.base) || cat.regions[0]).code;
+  const model = cat.models.find((m) => m.id === modelId);
+  const cap = model && model.capacities.find((c) => c.size === capacity);
+  return cap && typeof cap.prices[base] === 'number' ? cap.prices[base] : null;
+}
+
 /** 各地の表示価格を香港ドルに換算する。香港はそのまま。 */
 function toHkd(region, amount, rates) {
   if (region === 'HK') return amount;
@@ -175,10 +193,14 @@ function buybackBlock(cat) {
     groups.get(key).push(r);
   }
   const order = [...cat.models.map((m) => m.id)];
+  // 容量は models の並び順に従う（文字列順だと 1TB → 256GB → 2TB → 512GB になってしまう）
+  const capOrder = new Map(cat.models.map((m) => [m.id, m.capacities.map((c) => c.size)]));
   const sorted = [...groups.entries()].sort((a, b) => {
     const [ma, ca] = a[0].split('__');
     const [mb, cb] = b[0].split('__');
-    return order.indexOf(ma) - order.indexOf(mb) || ca.localeCompare(cb);
+    const ia = (capOrder.get(ma) || []).indexOf(ca);
+    const ib = (capOrder.get(mb) || []).indexOf(cb);
+    return order.indexOf(ma) - order.indexOf(mb) || ia - ib || ca.localeCompare(cb);
   });
 
   lines.push('  <div class="ip-buyback-grid">');
@@ -194,17 +216,25 @@ function buybackBlock(cat) {
     if (condition) lines.push(`        <span class="ip-bb-cond">${escapeHtml(condLabel.get(condition) || condition)}</span>`);
     lines.push('      </header>');
     lines.push('      <p class="ip-bb-latest">');
-    lines.push(`        <span class="ip-bb-price">${hkd(latest.price)}${withUsd(latest.price, cat.rates)}</span>`);
-    lines.push(`        <span class="ip-bb-when"><time datetime="${latest.date}">${formatDate(latest.date, 'hk')}</time>に聞いた値</span>`);
+    lines.push(`        <span class="ip-bb-price">${buybackPrice(latest, cat.rates)}</span>`);
+    lines.push(`        <span class="ip-bb-when"><time datetime="${latest.date}">${formatDate(latest.date, 'hk')}</time>の板</span>`);
     if (rows.length > 1) {
       const delta = latest.price - first.price;
       lines.push(`        <span class="ip-bb-delta">初回から ${delta >= 0 ? '+' : '−'}${hkd(Math.abs(delta))}</span>`);
     }
     lines.push('      </p>');
+    // 定価との上下。買取のほうが高ければ「買ってすぐ売れば乗る額」になる
+    const retail = retailPrice(cat, modelId, capacity);
+    if (retail != null) {
+      const gap = latest.price - retail;
+      const ranged = typeof latest.priceHigh === 'number' && latest.priceHigh > latest.price;
+      const lead = ranged ? `アップル公式 ${hkd(retail)} より、いちばん安い色でも` : `アップル公式 ${hkd(retail)} より`;
+      lines.push(`      <p class="ip-bb-vs ${gap >= 0 ? 'is-up' : 'is-down'}">${lead} <strong>${gap >= 0 ? '+' : '−'}${hkd(Math.abs(gap))}</strong></p>`);
+    }
     if (rows.length > 1) {
       lines.push('      <ol class="ip-bb-history">');
       for (const r of rows) {
-        lines.push(`        <li><time datetime="${r.date}">${formatDate(r.date, 'hk')}</time><span>${hkd(r.price)}${withUsd(r.price, cat.rates)}</span>${r.memo ? `<em>${escapeHtml(r.memo)}</em>` : ''}</li>`);
+        lines.push(`        <li><time datetime="${r.date}">${formatDate(r.date, 'hk')}</time><span>${buybackPrice(r, cat.rates)}</span>${r.memo ? `<em>${escapeHtml(r.memo)}</em>` : ''}</li>`);
       }
       lines.push('      </ol>');
     } else if (latest.memo) {
@@ -213,6 +243,11 @@ function buybackBlock(cat) {
     lines.push('    </section>');
   }
   lines.push('  </div>');
+  // 板に出ていなかった機種は、黙って消えると「載せ忘れ」に見えるので一行断っておく
+  const missing = cat.models.filter((m) => !records.some((r) => r.model === m.id));
+  if (missing.length) {
+    lines.push(`  <p class="ip-bb-missing">${missing.map((m) => escapeHtml(m.name)).join('・')}は、まだ板に出ているのを見ていません。見かけたら足します。</p>`);
+  }
   lines.push('</div>');
   return lines.join('\n');
 }
@@ -241,7 +276,8 @@ function applySeo(html, cat) {
     url: SITE_ORIGIN + cat.page,
     inLanguage: 'ja',
     datePublished: cat.announced,
-    dateModified: cat.priceCheckedAt,
+    // 買取記録を足した日も「更新」なので、公式価格の確認日と新しいほうを採る
+    dateModified: [cat.priceCheckedAt, ...(cat.buyback?.records || []).map((r) => r.date)].filter(Boolean).sort().pop(),
     author: { '@type': 'Person', name: '田路昌也 (Toji Masaya)', url: SITE_ORIGIN + '/about.html' },
     publisher: { '@type': 'Person', name: '田路昌也 (Toji Masaya)' },
     mainEntity: {
@@ -272,9 +308,16 @@ async function main() {
     }
   }
   for (const r of cat.buyback?.records || []) {
-    if (!cat.models.some((m) => m.id === r.model)) problems.push(`買取記録: model "${r.model}" は models にありません`);
+    const model = cat.models.find((m) => m.id === r.model);
+    if (!model) problems.push(`買取記録: model "${r.model}" は models にありません`);
+    else if (!model.capacities.some((c) => c.size === r.capacity)) {
+      problems.push(`買取記録 ${r.model}: capacity "${r.capacity}" は models にありません`);
+    }
     if (!/^\d{4}-\d{2}-\d{2}$/.test(r.date || '')) problems.push(`買取記録: date は YYYY-MM-DD で（${r.date}）`);
     if (typeof r.price !== 'number') problems.push(`買取記録 ${r.date}: price は数値で`);
+    if (r.priceHigh !== undefined && !(typeof r.priceHigh === 'number' && r.priceHigh >= r.price)) {
+      problems.push(`買取記録 ${r.date} ${r.model} ${r.capacity}: priceHigh は price 以上の数値で`);
+    }
   }
   if (problems.length) {
     console.error(`${SOURCE} に問題があります:`);
