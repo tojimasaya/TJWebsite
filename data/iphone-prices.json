@@ -201,8 +201,7 @@
     "boards": [
       {
         "date": "2026-09-18",
-        "shop": "地下の一店",
-        "shopNote": "店名は板の写真で伏せられていたので書いていません。",
+        "shop": "B 萬通",
         "condition": "sealed",
         "models": [
           {
@@ -231,7 +230,7 @@
                 "prices": {
                   "red": 19600,
                   "blue": 19500,
-                  "silver": 19500,
+                  "silver": 19600,
                   "black": 19500
                 }
               },
@@ -240,7 +239,7 @@
                 "prices": {
                   "red": 24150,
                   "blue": 24150,
-                  "silver": 24050,
+                  "silver": 23950,
                   "black": 24050
                 }
               }
@@ -283,31 +282,6 @@
                   "blue": 21000,
                   "silver": 21000,
                   "black": 21000
-                }
-              }
-            ]
-          }
-        ]
-      },
-      {
-        "date": "2026-09-18",
-        "shop": "B 萬通",
-        "condition": "sealed",
-        "note": "銀のぶんだけ控えました。",
-        "models": [
-          {
-            "id": "iphone-18-pro-max",
-            "rows": [
-              {
-                "size": "1TB",
-                "prices": {
-                  "silver": 19600
-                }
-              },
-              {
-                "size": "2TB",
-                "prices": {
-                  "silver": 23950
                 }
               }
             ]
