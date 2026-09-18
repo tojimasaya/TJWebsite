@@ -480,12 +480,12 @@
   },
   "buybackPage": {
     "hero": {
-      "image": "/assets/images/hero/sincere-podium-iphone18.jpg",
-      "webp": "/assets/images/hero/sincere-podium-iphone18.webp",
+      "image": "/assets/images/hero/sincere-podium-queue.jpg",
+      "webp": "/assets/images/hero/sincere-podium-queue.webp",
       "width": 1800,
-      "height": 1013,
-      "alt": "旺角・先達廣場の赤い看板の下で、買ったばかりの iPhone 18 の箱を持つ手",
-      "focus": "58%"
+      "height": 1350,
+      "alt": "発売日の旺角・先達廣場。歩道にできた行列が、亞皆老街の先まで続いている",
+      "focus": "62%"
     },
     "seo": {
       "title": "先達廣場の iPhone 18 Pro シリーズ買取価格 — 旺角、板そのままの一覧",
