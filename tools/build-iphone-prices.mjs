@@ -275,7 +275,8 @@ function bbSummaryBlock(cat) {
     `      <strong class="bb-card-value"><time datetime="${latest}">${formatDate(latest, 'hk')}</time>` +
       `${latest === cat.released ? '（発売日）' : ''}</strong>`,
   );
-  lines.push(`      <span class="bb-card-note">${conds.length ? conds.map(escapeHtml).join('／') : '先達廣場の店頭'}</span>`);
+  const sheets = sameDay.length > 1 ? `・板${sameDay.length}枚` : '';
+  lines.push(`      <span class="bb-card-note">${conds.length ? conds.map(escapeHtml).join('／') : '先達廣場の店頭'}${sheets}</span>`);
   lines.push('    </div>');
   for (const m of cat.models) {
     const s = spread.get(m.id);
@@ -326,13 +327,14 @@ function boardsBlock(cat) {
     );
     for (const board of day.boards) {
       const colors = boardColors(cat, board);
-      // 店名は分かっているときだけ出す（1枚しか出ていない日は、名指しする意味がない）。
-      // 見出しを1段省くので、モデル名の見出しレベルもそのぶん上げる。
-      const shop = board.shop || '';
-      const mh = shop ? 5 : 4;
+      // 板の見出し。同じ日に何枚も並ぶときの見分けで、時刻（label）を優先し、
+      // 店名（shop）は書いてあるときだけ。どちらも無ければ見出しを省き、
+      // 一段減るぶんモデル名の見出しレベルを上げる。
+      const head = board.label || board.shop || '';
+      const mh = head ? 5 : 4;
       lines.push('  <section class="bb-shop">');
       lines.push('    <header class="bb-shop-head">');
-      if (shop) lines.push(`      <h4 class="bb-shop-name">${escapeHtml(shop)}</h4>`);
+      if (head) lines.push(`      <h4 class="bb-shop-name">${escapeHtml(head)}</h4>`);
       const cond = condLabel.get(board.condition) || board.condition;
       if (cond) lines.push(`      <span class="bb-cond">${escapeHtml(cond)}</span>`);
       lines.push('    </header>');
