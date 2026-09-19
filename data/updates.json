@@ -17,6 +17,15 @@
       "thumb": "https://assets.st-note.com/production/uploads/images/315077173/rectangle_large_type_2_54f3d778c8d700f4c1b4ba9836ccb585.jpeg?width=800"
     },
     {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "買う気のない発売日と、三つ折りのサムスン",
+      "url": "/fragments/sintat-plaza-launch-day.html",
+      "external": false,
+      "date": "2026-09-18",
+      "thumb": "/assets/images/photo-notes/sintat-plaza-launch-day-counter.webp"
+    },
+    {
       "kind": "handbook",
       "kindLabel": "ハンドブック",
       "title": "香港版 iPhone 18 の価格",
@@ -105,15 +114,6 @@
       "external": true,
       "date": "2026-08-25",
       "thumb": "https://drone.jp/wp-content/uploads/tohzi_67_topYXw4UX0x.jpg"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "パスポートなしの国境と、深圳・華強北のガジェット行",
-      "url": "/fragments/shenzhen-huaqiang-border.html",
-      "external": false,
-      "date": "2026-08-24",
-      "thumb": "/assets/images/photo-notes/shenzhen-huaqiang-border-immigration.webp"
     }
   ]
 }

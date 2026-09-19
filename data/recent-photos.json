@@ -1,5 +1,50 @@
 [
   {
+    "slug": "sintat-plaza-launch-day",
+    "label": "今日の断章",
+    "title": "買う気のない発売日と、三つ折りのサムスン",
+    "place": "香港・旺角　先達廣場",
+    "date": "2026年9月18日",
+    "body": "今年の自分用は初めての折りたたみになる Duo を待つと決めたので 18 Pro は見送り、つまり何も買う気がないのに発売日の朝から出かけたわけだが、先達廣場というのはビルの中はもちろん、まわりの路上にまで場が立っていて、いろんな国の人が箱を抱えて行き交っていて、香港という街がまるごと詰まったような場所だから、年に一度はどうしても覗きたくなるのであって、そもそもこちらの人は儲かるとなればその機会を逃さないので、アップルの予約が始まる日はみなパソコンの前で待ち構えて必死に注文を入れるのだけれど、聞いてみると自分で使うために買っている人はほとんどおらず、一日でも早く受け取ってここへ持ち込みたい、一人二台まで買えるから、うまくいけば一台で数千香港ドル、二台で十万円ほどになる、という算段で並んでいるのだから朝のあの熱も当たり前で、買い取られた何百何千という箱がそのあとどこへ流れていくのかという、もっと面白い話のほうは別の場所に書いたのでそちらに譲るとして、この日いちばん愉快だったのは、山根さんと上の階の行きつけへ寄ったときに紹介された二〇〇〇年以降生まれの若者たちで、みな自分で商売をしていて、三つ折りのサムスンだの、ジンバルのついたロボットのような電話だのを平然と卓に出してくるものだから、折りたたみを「検討中」などと言っている私はすっかり大人しくなってしまい、さすが山根さんのお友達だと感心しているうちに日が傾いて、この祭りにはやはり来年も来ようと思った。",
+    "image": "assets/images/photo-notes/sintat-plaza-launch-day-counter.jpg",
+    "imageWebp": "assets/images/photo-notes/sintat-plaza-launch-day-counter.webp",
+    "alt": "先達廣場の買取カウンター。封の切られていない iPhone の箱が積まれ、手書きの価格表と大きな電卓が並ぶガラスケースの上で、何本もの手が動いている",
+    "caption": "Counting the Boxes / Sin Tat Plaza",
+    "link": "https://note.com/tojimasaya/n/nf7760c623a9e",
+    "linkLabel": "買い取られた箱がどこへ流れるのかは、note に →",
+    "sideFrames": [
+      {
+        "title": "歩道まで続く列",
+        "caption": "The Line Outside / Argyle Street",
+        "image": "assets/images/photo-notes/sintat-plaza-launch-day-queue.jpg",
+        "imageWebp": "assets/images/photo-notes/sintat-plaza-launch-day-queue.webp",
+        "alt": "亞皆老街の歩道にできた行列。箱を抱えた人が、タクシー乗り場の標識を越えて奥まで並んでいる",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "title": "角を回り込む人波",
+        "caption": "Noon Crowd / Tung Choi Street",
+        "image": "assets/images/photo-notes/sintat-plaza-launch-day-corner.jpg",
+        "imageWebp": "assets/images/photo-notes/sintat-plaza-launch-day-corner.webp",
+        "alt": "快晴の昼、先施大廈の角を回り込むように続く人だかり。日傘が差され、歩道が埋まっている",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "title": "入口が塞がる昼過ぎ",
+        "caption": "No Way In / Sin Tat Plaza",
+        "image": "assets/images/photo-notes/sintat-plaza-launch-day-entrance.jpg",
+        "imageWebp": "assets/images/photo-notes/sintat-plaza-launch-day-entrance.webp",
+        "alt": "「先達廣場」の看板の下、入口の前に人がぎっしりと集まり、中へ入れなくなっている",
+        "width": 1800,
+        "height": 1350
+      }
+    ],
+    "width": 1774,
+    "height": 1392
+  },
+  {
     "slug": "eva-kobe-via-taipei",
     "label": "今日の断章",
     "title": "台北乗り換えの二時間と、ハーゲンダッツ二スクープ",

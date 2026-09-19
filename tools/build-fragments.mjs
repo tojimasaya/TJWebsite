@@ -105,7 +105,8 @@ function sidesHtml(sides) {
 
 function linkHtml(item) {
   const href = resolveLink(item.link);
-  const label = item.linkLabel || '関連ページ';
+  // データ側のラベルが「… →」で終わっていることが多い。テンプレート側でも足すので、重ねない
+  const label = String(item.linkLabel || '関連ページ').replace(/\s*[→➝➔>＞]+\s*$/u, '').trim();
   if (!href) return '';
   const external = /^https?:/i.test(href);
   const attrs = external ? ' target="_blank" rel="noopener"' : '';

@@ -2126,6 +2126,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/sintat-plaza-launch-day.html</loc>
+    <lastmod>2026-09-18</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/sintat-plaza-launch-day-counter.jpg</image:loc>
+      <image:title>買う気のない発売日と、三つ折りのサムスン</image:title>
+      <image:caption>先達廣場の買取カウンター。封の切られていない iPhone の箱が積まれ、手書きの価格表と大きな電卓が並ぶガラスケースの上で、何本もの手が動いている</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/eva-kobe-via-taipei.html</loc>
     <lastmod>2026-09-16</lastmod>
     <changefreq>monthly</changefreq>
