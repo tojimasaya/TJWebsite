@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-18T00:00:00+09:00",
+  "generatedAt": "2026-09-19T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "朝イチは高く夕方には利益激減！iPhone 18 香港発売日ルポ、先達廣場の半日",
+      "url": "https://note.com/tojimasaya/n/nf7760c623a9e",
+      "external": true,
+      "date": "2026-09-19",
+      "thumb": "https://assets.st-note.com/production/uploads/images/315077173/rectangle_large_type_2_54f3d778c8d700f4c1b4ba9836ccb585.jpeg?width=800"
+    },
     {
       "kind": "handbook",
       "kindLabel": "ハンドブック",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-08-24",
       "thumb": "/assets/images/photo-notes/shenzhen-huaqiang-border-immigration.webp"
-    },
-    {
-      "kind": "note",
-      "kindLabel": "note",
-      "title": "Rokidと暮らす④ メガネに、「母艦」を直結しました",
-      "url": "https://note.com/tojimasaya/n/n66116e302cfe",
-      "external": true,
-      "date": "2026-08-20",
-      "thumb": "https://assets.st-note.com/production/uploads/images/305240831/rectangle_large_type_2_8eb011ba6a9d61a6e3345ccb6899d48e.jpeg?width=800"
     }
   ]
 }
