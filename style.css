@@ -605,12 +605,69 @@ body {
     color: var(--accent-color);
 }
 
-/* ナビ項目が10個になったので、パソコン幅で折り返さないよう少しだけ詰める。
-   768px以下はハンバーガーなので、この指定は当たらない。 */
-@media (min-width: 769px) {
-    .nav-container { max-width: 1100px; }
-    .nav-menu { gap: 20px; }
-    .nav-link { white-space: nowrap; }
+.nav-more {
+    position: relative;
+}
+
+.nav-more summary {
+    cursor: pointer;
+    list-style: none;
+    white-space: nowrap;
+}
+
+.nav-more summary::-webkit-details-marker {
+    display: none;
+}
+
+.nav-more summary::after {
+    content: '';
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin: 0 0 3px 8px;
+    border-right: 1px solid currentColor;
+    border-bottom: 1px solid currentColor;
+    transform: rotate(45deg);
+}
+
+.nav-more details[open] summary::after {
+    transform: rotate(225deg);
+    margin-bottom: 0;
+}
+
+.nav-more summary:focus-visible,
+.nav-submenu a:focus-visible {
+    outline: 2px solid var(--focus-color);
+    outline-offset: 3px;
+}
+
+.nav-submenu {
+    position: absolute;
+    top: calc(100% + 18px);
+    right: -14px;
+    min-width: 190px;
+    padding: 8px;
+    list-style: none;
+    background: var(--white);
+    border: 1px solid var(--border-color);
+    border-radius: 6px;
+    box-shadow: var(--shadow-lg);
+}
+
+.nav-submenu a {
+    display: block;
+    padding: 9px 12px;
+    color: var(--text-color);
+    text-decoration: none;
+    font-size: var(--text-sm);
+    white-space: nowrap;
+    border-radius: 4px;
+}
+
+.nav-submenu a:hover,
+.nav-submenu a[aria-current="page"] {
+    color: var(--accent-color);
+    background: var(--hover-color);
 }
 
 .nav-toggle {
@@ -1479,19 +1536,31 @@ body {
         left: -100%;
         width: 100%;
         height: calc(100vh - 70px);
+        height: calc(100dvh - 70px);
+        overflow-y: auto;
+        visibility: hidden;
         background: var(--white);
         flex-direction: column;
-        padding-top: 50px;
+        padding: 36px 20px 50px;
         transition: left 0.3s ease;
         align-items: center;
     }
     
     .nav-menu.active {
         left: 0;
+        visibility: visible;
     }
     
     .nav-toggle {
         display: block;
+    }
+
+    .nav-submenu {
+        position: static;
+        width: min(260px, calc(100vw - 40px));
+        margin-top: 12px;
+        box-shadow: none;
+        text-align: center;
     }
 
     /* Hero */

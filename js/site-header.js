@@ -12,6 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const pageName = path.split("/").pop();
     const page = (pageName === "" || pageName === "index.html") ? "index.html" : pageName;
     const inShirasagiDir = path.indexOf('/shirasagi36/') !== -1;
+    const isHongKongPage = page.startsWith('hongkong') || page.startsWith('hk-') || page.startsWith('cn-') || page.startsWith('iphone') || page === 'holidays.html';
+    const isOtherPage = ['gallery.html', 'writings.html', 'trips.html', 'about.html'].includes(page);
 
     // 現在のテーマを判定
     function getCurrentTheme() {
@@ -37,20 +39,26 @@ document.addEventListener('DOMContentLoaded', () => {
             <a href="/" class="nav-logo" aria-label="ホームページへ戻る">TOJIMASAYA</a>
             <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
             <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link ${page === 'index.html' ? 'active' : ''}">Home</a></li>
                 <li>
                     <a href="/shirasagi36.html" class="nav-link featured-link ${page.includes('shirasagi') || inShirasagiDir ? 'active' : ''}">
                         <span class="icon">🏯</span> 白鷺三十六景
                     </a>
                 </li>
-                <li><a href="/hongkong.html" class="nav-link ${page.includes('hongkong') && !page.includes('handbook') ? 'active' : ''}">香港</a></li>
-                <li><a href="/hongkong-handbook.html" class="nav-link ${page === 'hongkong-handbook.html' || page.startsWith('hk-') || page.startsWith('cn-') || page === 'holidays.html' ? 'active' : ''}">ハンドブック</a></li>
-                <li><a href="/iphone18-price.html" class="nav-link ${page.startsWith('iphone') ? 'active' : ''}">iPhone</a></li>
-                <li><a href="/trips.html" class="nav-link ${page === 'trips.html' ? 'active' : ''}">旅</a></li>
-                <li><a href="/gallery.html" class="nav-link ${page === 'gallery.html' ? 'active' : ''}">Gallery</a></li>
-                <li><a href="/writings.html" class="nav-link ${page === 'writings.html' ? 'active' : ''}">Writings</a></li>
+                <li><a href="/hongkong.html" class="nav-link ${isHongKongPage ? 'active' : ''}">香港</a></li>
                 <li><a href="/gear.html" class="nav-link ${page.includes('gear') ? 'active' : ''}">Gear</a></li>
-                <li><a href="/about.html" class="nav-link ${page === 'about.html' ? 'active' : ''}">About</a></li>
+                <li><a href="/fragments.html" class="nav-link ${page === 'fragments.html' || path.includes('/fragments/') ? 'active' : ''}">断章</a></li>
+                <li class="nav-more">
+                    <details id="nav-more">
+                        <summary class="nav-link ${isOtherPage ? 'active' : ''}">その他</summary>
+                        <ul class="nav-submenu">
+                            <li><a href="/gallery.html" ${page === 'gallery.html' ? 'aria-current="page"' : ''}>Gallery</a></li>
+                            <li><a href="/writings.html" ${page === 'writings.html' ? 'aria-current="page"' : ''}>Writings</a></li>
+                            <li><a href="/trips.html" ${page === 'trips.html' ? 'aria-current="page"' : ''}>旅</a></li>
+                            <li><a href="/hongkong-handbook.html" ${page === 'hongkong-handbook.html' ? 'aria-current="page"' : ''}>香港ハンドブック</a></li>
+                            <li><a href="/about.html" ${page === 'about.html' ? 'aria-current="page"' : ''}>About</a></li>
+                        </ul>
+                    </details>
+                </li>
                 <li><button class="theme-toggle" id="theme-toggle" aria-label="${getThemeLabel(currentTheme)}">${getThemeIcon(currentTheme)}</button></li>
             </ul>
         </div>
@@ -92,6 +100,12 @@ document.addEventListener('DOMContentLoaded', () => {
     // モバイルメニュートグル機能
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const navMore = document.getElementById('nav-more');
+    if (navMore) {
+        document.addEventListener('click', (e) => {
+            if (!navMore.contains(e.target)) navMore.open = false;
+        });
+    }
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             const isExpanded = navMenu.classList.contains('active');
@@ -104,12 +118,18 @@ document.addEventListener('DOMContentLoaded', () => {
 
         // Escキーでメニューを閉じる
         document.addEventListener('keydown', (e) => {
-            if (e.key === 'Escape' && navMenu.classList.contains('active')) {
-                navMenu.classList.remove('active');
-                navToggle.classList.remove('active');
-                navToggle.setAttribute('aria-expanded', 'false');
-                navToggle.setAttribute('aria-label', 'メニューを開く');
-                document.body.style.overflow = '';
+            if (e.key === 'Escape') {
+                if (navMore && navMore.open) {
+                    navMore.open = false;
+                    navMore.querySelector('summary').focus();
+                } else if (navMenu.classList.contains('active')) {
+                    navMenu.classList.remove('active');
+                    navToggle.classList.remove('active');
+                    navToggle.setAttribute('aria-expanded', 'false');
+                    navToggle.setAttribute('aria-label', 'メニューを開く');
+                    document.body.style.overflow = '';
+                    navToggle.focus();
+                }
             }
         });
     }
