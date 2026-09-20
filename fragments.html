@@ -41,8 +41,11 @@
         .frag-head h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.7rem, 4vw, 2.3rem); font-weight: 600; margin: 14px 0 16px; color: var(--text-color); letter-spacing: 0.08em; }
         .frag-lead { font-family: var(--primary-font); font-size: 0.9rem; color: var(--text-light); line-height: 2; }
         .frag-feed { max-width: 680px; margin: 26px auto 40px; padding: 0 24px; }
-        .frag { padding: 46px 0; border-bottom: 1px solid var(--border-color); scroll-margin-top: 90px; }
+        .frag { padding: 0 0 52px; border-bottom: 1px solid var(--border-color); scroll-margin-top: 90px; }
+        .frag + .frag { padding-top: 52px; }
         .frag:last-child { border-bottom: 0; }
+        .frag-entry-head { margin-bottom: 22px; }
+        .frag-media { margin: 0; }
         .frag figure { margin: 0; }
         .frag figure img { width: 100%; height: auto; border-radius: 12px; border: 1px solid var(--border-color); display: block; }
         .frag figcaption { font-family: var(--primary-font); font-size: 0.78rem; color: var(--text-light); text-align: center; margin-top: 8px; }
@@ -51,10 +54,11 @@
         .frag-sides button:hover { transform: translateY(-2px); box-shadow: 0 6px 16px rgba(0,0,0,0.15); }
         .frag-sides img { width: 100%; height: 100%; aspect-ratio: 4/3; object-fit: cover; border-radius: 8px; border: 1px solid var(--border-color); display: block; }
         .frag-hint { font-family: var(--primary-font); font-size: 0.72rem; color: var(--text-lighter, #999); text-align: center; margin: 6px 0 0; }
-        .frag-meta { font-family: var(--primary-font); font-size: 0.78rem; color: var(--text-lighter, #999); margin: 18px 0 6px; letter-spacing: 0.04em; }
+        .frag-meta { font-family: var(--primary-font); font-size: 0.78rem; color: var(--text-lighter, #999); margin: 0 0 6px; letter-spacing: 0; }
         .frag-meta a { color: inherit; text-decoration: none; }
         .frag-meta a:hover { color: var(--accent-color); }
-        .frag h2 { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 600; margin: 0 0 0.7em; color: var(--text-color); line-height: 1.7; }
+        .frag h2 { font-family: 'Noto Serif JP', serif; font-size: 1.25rem; font-weight: 600; margin: 0; color: var(--text-color); line-height: 1.7; }
+        .frag-text { margin-top: 26px; padding-left: 18px; border-left: 2px solid var(--accent-color); }
         .frag-body { font-family: 'Noto Serif JP', serif; font-size: 0.98rem; line-height: 2.15; color: var(--text-color); margin: 0; }
         .frag-link { display: inline-block; margin-top: 12px; font-family: var(--primary-font); font-size: 0.85rem; color: var(--accent-color); text-decoration: none; }
         .frag-link:hover { text-decoration: underline; }
@@ -68,6 +72,11 @@
         .frag-perma a:hover { color: var(--accent-color); border-color: var(--accent-color); }
         .tjm-subscribe { margin-left: auto; margin-right: auto; }
         .frag-loading { text-align: center; color: var(--text-lighter, #999); font-family: var(--primary-font); font-size: 0.9rem; padding: 40px 0; }
+        @media (max-width: 600px) {
+            .frag { padding-bottom: 42px; }
+            .frag + .frag { padding-top: 42px; }
+            .frag-text { padding-left: 14px; }
+        }
     </style>
 
     <script type="application/ld+json">
@@ -119,8 +128,41 @@
           art.className = 'frag';
           if (p.slug) art.id = p.slug;
 
+          const heading = document.createElement('header');
+          heading.className = 'frag-entry-head';
+          const meta = document.createElement('p');
+          meta.className = 'frag-meta';
+          const metaText = [p.place, p.date].filter(Boolean).join(' / ');
+          if (p.slug && metaText) {
+            const a = document.createElement('a');
+            a.href = 'fragments/' + p.slug + '.html';
+            a.title = 'この断章のページへ';
+            a.setAttribute('data-growth-label', 'fragments_meta');
+            a.textContent = metaText;
+            meta.appendChild(a);
+          } else {
+            meta.textContent = metaText;
+          }
+          heading.appendChild(meta);
+
+          const h2 = document.createElement('h2');
+          if (p.slug) {
+            const h2link = document.createElement('a');
+            h2link.className = 'frag-title-link';
+            h2link.href = 'fragments/' + p.slug + '.html';
+            h2link.textContent = p.title || '';
+            h2link.setAttribute('data-growth-label', 'fragments_title');
+            h2.appendChild(h2link);
+          } else {
+            h2.textContent = p.title || '';
+          }
+          heading.appendChild(h2);
+          art.appendChild(heading);
+
           const sides = (p.sideFrames || []).filter(function (sf) { return sf && sf.image; });
           if (p.image) {
+            const mediaGroup = document.createElement('div');
+            mediaGroup.className = 'frag-media';
             const media = [{ image: p.image, imageWebp: p.imageWebp, alt: p.alt || p.title || '', caption: p.caption || '' }]
               .concat(sides.map(function (sf) {
                 return { image: sf.image, imageWebp: sf.imageWebp, alt: sf.alt || sf.title || '', caption: sf.caption || sf.title || '' };
@@ -139,18 +181,18 @@
             fig.appendChild(pic);
             const fc = document.createElement('figcaption');
             fig.appendChild(fc);
-            art.appendChild(fig);
+            mediaGroup.appendChild(fig);
 
             let grid = null;
             let hint = null;
             if (media.length > 1) {
               grid = document.createElement('div');
               grid.className = 'frag-sides';
-              art.appendChild(grid);
+              mediaGroup.appendChild(grid);
               hint = document.createElement('p');
               hint.className = 'frag-hint';
               hint.textContent = '小さな写真をタップすると大きく表示されます';
-              art.appendChild(hint);
+              mediaGroup.appendChild(hint);
             }
 
             function renderMedia() {
@@ -186,41 +228,17 @@
                 }));
             }
             renderMedia();
+            art.appendChild(mediaGroup);
           }
 
-          const meta = document.createElement('p');
-          meta.className = 'frag-meta';
-          const metaText = [p.place, p.date].filter(Boolean).join(' / ');
-          if (p.slug && metaText) {
-            const a = document.createElement('a');
-            a.href = 'fragments/' + p.slug + '.html';
-            a.title = 'この断章のページへ';
-            a.setAttribute('data-growth-label', 'fragments_meta');
-            a.textContent = metaText;
-            meta.appendChild(a);
-          } else {
-            meta.textContent = metaText;
-          }
-          art.appendChild(meta);
-
-          const h2 = document.createElement('h2');
-          if (p.slug) {
-            const h2link = document.createElement('a');
-            h2link.className = 'frag-title-link';
-            h2link.href = 'fragments/' + p.slug + '.html';
-            h2link.textContent = p.title || '';
-            h2link.setAttribute('data-growth-label', 'fragments_title');
-            h2.appendChild(h2link);
-          } else {
-            h2.textContent = p.title || '';
-          }
-          art.appendChild(h2);
+          const text = document.createElement('div');
+          text.className = 'frag-text';
 
           if (p.body) {
             const body = document.createElement('p');
             body.className = 'frag-body';
             body.textContent = p.body;
-            art.appendChild(body);
+            text.appendChild(body);
           }
 
           if (p.link && p.linkLabel) {
@@ -228,7 +246,7 @@
             l.className = 'frag-link';
             l.href = p.link;
             l.textContent = p.linkLabel;
-            art.appendChild(l);
+            text.appendChild(l);
           }
 
           if (p.slug) {
@@ -239,8 +257,9 @@
             pl.textContent = 'この断章のページ →';
             pl.setAttribute('data-growth-label', 'fragments_permalink');
             perma.appendChild(pl);
-            art.appendChild(perma);
+            text.appendChild(perma);
           }
+          if (text.childNodes.length) art.appendChild(text);
 
           fragment.appendChild(art);
         });
