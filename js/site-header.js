@@ -13,7 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const page = (pageName === "" || pageName === "index.html") ? "index.html" : pageName;
     const inShirasagiDir = path.indexOf('/shirasagi36/') !== -1;
     const isHongKongPage = page.startsWith('hongkong') || page.startsWith('hk-') || page.startsWith('cn-') || page.startsWith('iphone') || page === 'holidays.html';
-    const isOtherPage = ['gallery.html', 'writings.html', 'trips.html', 'about.html'].includes(page);
+    const isTripsPage = page === 'trips.html' || page.endsWith('-travel-journal.html');
+    const isOtherPage = ['gallery.html', 'writings.html', 'fragments.html', 'about.html'].includes(page) || path.includes('/fragments/');
 
     // 現在のテーマを判定
     function getCurrentTheme() {
@@ -45,15 +46,15 @@ document.addEventListener('DOMContentLoaded', () => {
                     </a>
                 </li>
                 <li><a href="/hongkong.html" class="nav-link ${isHongKongPage ? 'active' : ''}">香港</a></li>
+                <li><a href="/trips.html" class="nav-link ${isTripsPage ? 'active' : ''}">旅</a></li>
                 <li><a href="/gear.html" class="nav-link ${page.includes('gear') ? 'active' : ''}">Gear</a></li>
-                <li><a href="/fragments.html" class="nav-link ${page === 'fragments.html' || path.includes('/fragments/') ? 'active' : ''}">断章</a></li>
                 <li class="nav-more">
                     <details id="nav-more">
                         <summary class="nav-link ${isOtherPage ? 'active' : ''}">その他</summary>
                         <ul class="nav-submenu">
                             <li><a href="/gallery.html" ${page === 'gallery.html' ? 'aria-current="page"' : ''}>Gallery</a></li>
                             <li><a href="/writings.html" ${page === 'writings.html' ? 'aria-current="page"' : ''}>Writings</a></li>
-                            <li><a href="/trips.html" ${page === 'trips.html' ? 'aria-current="page"' : ''}>旅</a></li>
+                            <li><a href="/fragments.html" ${page === 'fragments.html' || path.includes('/fragments/') ? 'aria-current="page"' : ''}>断章</a></li>
                             <li><a href="/hongkong-handbook.html" ${page === 'hongkong-handbook.html' ? 'aria-current="page"' : ''}>香港ハンドブック</a></li>
                             <li><a href="/about.html" ${page === 'about.html' ? 'aria-current="page"' : ''}>About</a></li>
                         </ul>

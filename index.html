@@ -237,7 +237,7 @@
 
     .identity-hero-routes {
       display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
+      grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
       margin-top: 2.4rem;
     }
@@ -1037,6 +1037,12 @@
     }
 
     /* ── Responsive ── */
+    @media (max-width: 1000px) and (min-width: 769px) {
+      .identity-hero-routes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 768px) {
       .identity-hero {
         min-height: calc(100svh - 110px);
@@ -1075,10 +1081,6 @@
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
         margin-top: 1.25rem;
-      }
-
-      .identity-hero-route:last-child {
-        grid-column: 1 / -1;
       }
 
       .identity-hero-route {
@@ -1317,9 +1319,14 @@
           <strong>変わりゆく香港</strong>
           <em>地上を歩き、ときに空から。街の変化を撮り続ける。</em>
         </a>
+        <a class="identity-hero-route" href="trips.html" data-growth-label="home_route_trips">
+          <span>Travel</span>
+          <strong>旅の記録</strong>
+          <em>香港と姫路のあいだ、その先へ。訪れた土地と人の記録。</em>
+        </a>
         <a class="identity-hero-route" href="gear.html" data-growth-label="home_route_gear">
           <span>Gear</span>
-          <strong>旅と撮影の道具</strong>
+          <strong>私が使う機材</strong>
           <em>iPhone、Leica、ドローン。自分で使った機材の記録。</em>
         </a>
       </nav>
@@ -1599,11 +1606,11 @@
       <nav class="footer-nav">
         <a href="shirasagi36.html">白鷺三十六景</a>
         <a href="hongkong.html">香港</a>
+        <a href="trips.html">旅</a>
         <a href="gear.html">Gear</a>
         <a href="fragments.html">断章</a>
         <a href="gallery.html">Gallery</a>
         <a href="writings.html">Writings</a>
-        <a href="trips.html">旅</a>
         <a href="hongkong-handbook.html">香港ハンドブック</a>
         <a href="about.html">About</a>
         <a href="/feed.xml">Feed</a>
