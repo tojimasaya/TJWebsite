@@ -32,7 +32,7 @@ const LANGS = {
     hub: '/shirasagi36.html', about: '/about.html',
     fonts: 'https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+JP:wght@300;500;700&family=Shippori+Mincho:wght@400;500;700&display=swap',
     siteName: '白鷺三十六景', hubShort: '白鷺三十六景',
-    nav: { hub: '白鷺三十六景', hongkong: '香港', handbook: 'ハンドブック', trips: '旅', label: 'メインナビゲーション', breadcrumb: 'パンくず' },
+    nav: { hub: '白鷺三十六景', hongkong: '香港', fragments: '断章', more: 'その他', handbook: '香港ハンドブック', trips: '旅', label: 'メインナビゲーション', breadcrumb: 'パンくず' },
     seasons: { spring: '春', summer: '夏', autumn: '秋', winter: '冬' },
     times: { morning: '朝', day: '昼', afternoon: '午後', evening: '夕方', night: '夜' },
     seasonTime: (s, t) => (t ? `${s}の${t}` : s),
@@ -62,7 +62,7 @@ const LANGS = {
     hub: '/shirasagi36-en.html', about: '/about-en.html',
     fonts: 'https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+JP:wght@300;500;700&display=swap',
     siteName: '36 Views of White Heron Castle', hubShort: '36 Views',
-    nav: { hub: '36 Views', hongkong: 'Hong Kong', handbook: 'Handbook', trips: 'Trips', label: 'Main navigation', breadcrumb: 'Breadcrumb' },
+    nav: { hub: '36 Views', hongkong: 'Hong Kong', fragments: 'Notes', more: 'More', handbook: 'Hong Kong Handbook', trips: 'Trips', label: 'Main navigation', breadcrumb: 'Breadcrumb' },
     seasons: { spring: 'Spring', summer: 'Summer', autumn: 'Autumn', winter: 'Winter' },
     times: { morning: 'Morning', day: 'Daytime', afternoon: 'Afternoon', evening: 'Evening', night: 'Night' },
     seasonTime: (s, t) => (t ? `${s.toLowerCase()} ${t.toLowerCase()}` : s.toLowerCase()),
@@ -92,7 +92,7 @@ const LANGS = {
     hub: '/shirasagi36-hk.html', about: '/about-hk.html',
     fonts: 'https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500&family=Noto+Serif+JP:wght@300;500;700&family=Noto+Serif+TC:wght@300;500;700&display=swap',
     siteName: '白鷺三十六景', hubShort: '白鷺三十六景',
-    nav: { hub: '白鷺三十六景', hongkong: '香港', handbook: '手冊', trips: '旅', label: '主導覽', breadcrumb: '導覽路徑' },
+    nav: { hub: '白鷺三十六景', hongkong: '香港', fragments: '斷章', more: '其他', handbook: '香港手冊', trips: '旅', label: '主導覽', breadcrumb: '導覽路徑' },
     seasons: { spring: '春', summer: '夏', autumn: '秋', winter: '冬' },
     times: { morning: '早晨', day: '白天', afternoon: '下午', evening: '傍晚', night: '夜晚' },
     seasonTime: (s, t) => (t ? `${s}季${t}` : `${s}季`),
@@ -297,7 +297,8 @@ function buildPage(view, views, lang, template, buildIso) {
     jsonLd: jsonLd(view, lang, v),
     hubUrl: L.hub, aboutUrl: L.about,
     t_siteName: L.siteName, t_hubShort: L.hubShort, t_navLabel: L.nav.label, t_breadcrumb: L.nav.breadcrumb,
-    t_navHub: L.nav.hub, t_navHongkong: L.nav.hongkong, t_navHandbook: L.nav.handbook, t_navTrips: L.nav.trips,
+    t_navHub: L.nav.hub, t_navHongkong: L.nav.hongkong, t_navFragments: L.nav.fragments,
+    t_navMore: L.nav.more, t_navHandbook: L.nav.handbook, t_navTrips: L.nav.trips,
     crumbLabel: L.crumb(v), eyebrow: L.eyebrow(v), kanjiNo: v.kanjiNo, no: view.n, nn: view.nn,
     title: d.title, subtitle: d.subtitle || '',
     isPortrait: d.orientation === 'portrait' || view.sizes.jpg.height > view.sizes.jpg.width,
@@ -438,8 +439,8 @@ function hubLinksBlock(views, lang) {
 /* ---------------- main ---------------- */
 
 async function main() {
-  const buildIso = nowIso();
-  const today = todayIso();
+  const buildIso = process.env.SHIRASAGI_BUILD_ISO || nowIso();
+  const today = process.env.SHIRASAGI_BUILD_ISO ? buildIso.slice(0, 10) : todayIso();
   const ja = await readJson(path.join(ROOT, ASSET_DIR, 'photos.json'));
   const en = await readJson(path.join(ROOT, ASSET_DIR, 'photos-en.json'));
   const hk = await readJson(path.join(ROOT, ASSET_DIR, 'photos-hk.json'));

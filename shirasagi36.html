@@ -71,6 +71,8 @@
         ::-webkit-scrollbar-track { background: #f1f1f1; }
         ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
     </style>
+<link rel="stylesheet" href="shirasagi-nav.css">
+<script src="js/shirasagi-nav.js" defer></script>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/shirasagi36.html">
@@ -128,38 +130,39 @@
 <body class="bg-washi-bg bg-washi-texture text-shirasagi-ink font-serif-jp antialiased selection:bg-shirasagi-blue selection:text-white">
 
     <!-- Navigation -->
-    <!-- ナビゲーションバーは通常通り上部に配置 -->
     <nav class="fixed w-full z-50 top-0 bg-washi-bg/95 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300" style="padding-top: env(safe-area-inset-top);">
-        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div class="flex justify-between items-center h-20">
-                <!-- Logo -->
-                <a href="/" class="font-serif-en text-xl tracking-widest text-shirasagi-ink hover:opacity-70 transition-opacity z-50 relative">
-                    TOJI MASAYA
+        <div class="max-w-[1000px] mx-auto px-5 md:px-10">
+            <div class="flex justify-between items-center h-[70px]">
+                <a href="/" class="font-serif-en text-2xl font-semibold text-shirasagi-ink hover:opacity-70 transition-opacity z-50 relative" aria-label="ホームページへ戻る">
+                    TOJIMASAYA
                 </a>
 
-                <!-- Desktop Menu -->
-                <div class="hidden md:flex items-center space-x-6 font-serif-en text-sm tracking-widest text-gray-500">
-                    <a href="/" class="hover:text-shirasagi-blue transition-colors">Home</a>
-                    <!-- Active Page -->
-                    <a href="shirasagi36.html" class="text-shirasagi-ink border-b border-shirasagi-ink pb-1 font-semibold flex items-center gap-1">
+                <div class="hidden md:flex items-center gap-4 font-sans text-sm font-medium text-gray-600">
+                    <a href="shirasagi36.html" class="text-shirasagi-blue flex items-center gap-1" aria-current="page">
                         <span class="text-base">🏯</span> 白鷺三十六景
                     </a>
                     <a href="hongkong.html" class="hover:text-shirasagi-blue transition-colors">香港</a>
-                    <a href="hongkong-handbook.html" class="hover:text-shirasagi-blue transition-colors">ハンドブック</a>
-                    <a href="trips.html" class="hover:text-shirasagi-blue transition-colors">旅</a>
-                    <a href="gallery.html" class="hover:text-shirasagi-blue transition-colors">Gallery</a>
-                    <a href="writings.html" class="hover:text-shirasagi-blue transition-colors">Writings</a>
                     <a href="gear.html" class="hover:text-shirasagi-blue transition-colors">Gear</a>
-                    <a href="about.html" class="hover:text-shirasagi-blue transition-colors">About</a>
-
-                    <!-- Language Switcher -->
-                    <a href="shirasagi36-en.html" class="ml-4 text-xs font-sans font-medium border border-gray-400 rounded-full px-4 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">English</a>
-                    <a href="shirasagi36-hk.html" class="text-xs font-sans font-medium border border-gray-400 rounded-full px-4 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">中文</a>
+                    <a href="fragments.html" class="hover:text-shirasagi-blue transition-colors">断章</a>
+                    <details class="shirasagi-more">
+                        <summary>その他</summary>
+                        <ul class="shirasagi-more-menu">
+                            <li><a href="gallery.html">Gallery</a></li>
+                            <li><a href="writings.html">Writings</a></li>
+                            <li><a href="trips.html">旅</a></li>
+                            <li><a href="hongkong-handbook.html">香港ハンドブック</a></li>
+                            <li><a href="about.html">About</a></li>
+                        </ul>
+                    </details>
+                    <div class="flex items-center gap-2 border-l border-gray-300 pl-5">
+                        <a href="shirasagi36-en.html" class="text-xs border border-gray-400 rounded-full px-3 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">English</a>
+                        <a href="shirasagi36-hk.html" class="text-xs border border-gray-400 rounded-full px-3 py-1.5 hover:bg-shirasagi-ink hover:text-white transition-all">中文</a>
+                    </div>
                 </div>
 
                 <!-- Mobile Menu Button -->
                 <div class="md:hidden flex items-center z-50 relative">
-                    <button onclick="toggleMobileMenu()" class="text-shirasagi-ink p-2 focus:outline-none" aria-label="Menu">
+                    <button id="shirasagi-menu-toggle" class="text-shirasagi-ink p-2 focus:outline-none" aria-label="メニューを開く" aria-controls="mobile-menu" aria-expanded="false">
                         <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
                     </button>
                 </div>
@@ -167,29 +170,31 @@
         </div>
     </nav>
 
-    <!-- Mobile Menu Overlay (完全に独立させ、画面中央に配置) -->
-    <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-[60] hidden flex-col items-center justify-center space-y-8 transition-opacity duration-300 opacity-0 pointer-events-none">
-        
-        <!-- 閉じるボタン (右上に配置、セーフエリア考慮) -->
-        <button onclick="toggleMobileMenu()" class="absolute right-6 p-4 text-gray-500 hover:text-shirasagi-ink" style="top: max(2rem, env(safe-area-inset-top));">
+    <!-- Mobile Menu Overlay -->
+    <div id="mobile-menu" class="fixed inset-0 bg-washi-bg/98 backdrop-blur-md z-[60] hidden flex-col items-center overflow-y-auto transition-opacity duration-300 opacity-0 pointer-events-none">
+        <button class="shirasagi-menu-close fixed right-6 z-10 p-4 text-gray-500 hover:text-shirasagi-ink" style="top: max(2rem, env(safe-area-inset-top));" aria-label="メニューを閉じる">
             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
         </button>
 
-        <!-- メニュー項目 (画面中央) -->
-        <div class="flex flex-col items-center space-y-6">
-            <a href="/" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Home</a>
-            <a href="shirasagi36.html" class="text-2xl font-serif-en tracking-widest text-shirasagi-blue font-bold border-b-2 border-shirasagi-blue pb-2">白鷺三十六景</a>
-            <a href="hongkong.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">香港</a>
-            <a href="hongkong-handbook.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">ハンドブック</a>
-            <a href="trips.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">旅</a>
-            <a href="gallery.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gallery</a>
-            <a href="writings.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Writings</a>
-            <a href="gear.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">Gear</a>
-            <a href="about.html" class="text-xl font-serif-en tracking-widest text-shirasagi-ink hover:text-shirasagi-blue">About</a>
-            
-            <div class="pt-8 flex gap-3">
-                <a href="shirasagi36-en.html" class="text-sm font-sans border border-gray-400 rounded-full px-6 py-3 hover:bg-gray-800 hover:text-white transition-colors">English</a>
-                <a href="shirasagi36-hk.html" class="text-sm font-sans border border-gray-400 rounded-full px-6 py-3 hover:bg-gray-800 hover:text-white transition-colors">中文</a>
+        <div class="shirasagi-mobile-content flex flex-col items-center gap-6 font-sans">
+            <a href="/" class="text-lg text-shirasagi-ink hover:text-shirasagi-blue">Home</a>
+            <a href="shirasagi36.html" class="text-lg text-shirasagi-blue font-semibold" aria-current="page">白鷺三十六景</a>
+            <a href="hongkong.html" class="text-lg text-shirasagi-ink hover:text-shirasagi-blue">香港</a>
+            <a href="gear.html" class="text-lg text-shirasagi-ink hover:text-shirasagi-blue">Gear</a>
+            <a href="fragments.html" class="text-lg text-shirasagi-ink hover:text-shirasagi-blue">断章</a>
+            <details class="shirasagi-more text-lg text-shirasagi-ink">
+                <summary>その他</summary>
+                <ul class="shirasagi-more-menu text-sm">
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="writings.html">Writings</a></li>
+                    <li><a href="trips.html">旅</a></li>
+                    <li><a href="hongkong-handbook.html">香港ハンドブック</a></li>
+                    <li><a href="about.html">About</a></li>
+                </ul>
+            </details>
+            <div class="pt-6 flex gap-3">
+                <a href="shirasagi36-en.html" class="text-sm border border-gray-400 rounded-full px-5 py-2 hover:bg-shirasagi-ink hover:text-white transition-colors">English</a>
+                <a href="shirasagi36-hk.html" class="text-sm border border-gray-400 rounded-full px-5 py-2 hover:bg-shirasagi-ink hover:text-white transition-colors">中文</a>
             </div>
         </div>
     </div>
@@ -925,20 +930,6 @@
 
     <!-- Logic -->
     <script>
-        // Toggle Mobile Menu
-        function toggleMobileMenu() {
-            const menu = document.getElementById('mobile-menu');
-            if (menu.classList.contains('hidden')) {
-                menu.classList.remove('hidden', 'pointer-events-none', 'opacity-0');
-                menu.classList.add('flex', 'opacity-100', 'pointer-events-auto');
-                document.body.style.overflow = 'hidden'; // 背景スクロール禁止
-            } else {
-                menu.classList.remove('flex', 'opacity-100', 'pointer-events-auto');
-                menu.classList.add('hidden', 'pointer-events-none', 'opacity-0');
-                document.body.style.overflow = ''; // 背景スクロール解除
-            }
-        }
-
         // photos.json から動的に読み込み（単一ソース・オブ・トゥルース）
         let photosData = {};
 

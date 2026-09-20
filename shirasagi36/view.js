@@ -5,21 +5,36 @@
 
   /* 1) モバイルメニュー */
   var menu = document.getElementById('v-mobile');
-  function setMenu(open) {
+  var moreMenus = document.querySelectorAll('.v-nav__more');
+  function setMenu(open, restoreFocus) {
     if (!menu) return;
     menu.classList.toggle('is-open', open);
+    if (!open) menu.querySelectorAll('.v-nav__more').forEach(function (details) { details.open = false; });
     document.body.classList.toggle('is-menu-open', open);
     var btn = document.querySelector('.v-nav__toggle');
     if (btn) btn.setAttribute('aria-expanded', open ? 'true' : 'false');
+    if (open) menu.querySelector('.v-mobile__close').focus();
+    else if (restoreFocus && btn) btn.focus();
   }
   document.addEventListener('click', function (e) {
     var t = e.target.closest ? e.target.closest('[data-menu]') : null;
     if (!t) return;
     e.preventDefault();
-    setMenu(t.getAttribute('data-menu') === 'open');
+    setMenu(t.getAttribute('data-menu') === 'open', true);
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape' && menu && menu.classList.contains('is-open')) setMenu(false);
+    if (e.key !== 'Escape') return;
+    var openMore = Array.from(moreMenus).find(function (details) { return details.open; });
+    if (openMore) {
+      openMore.open = false;
+      openMore.querySelector('summary').focus();
+    } else if (menu && menu.classList.contains('is-open')) setMenu(false, true);
+  });
+  document.addEventListener('click', function (e) {
+    moreMenus.forEach(function (details) { if (!details.contains(e.target)) details.open = false; });
+  });
+  window.addEventListener('resize', function () {
+    if (window.innerWidth >= 768 && menu && menu.classList.contains('is-open')) setMenu(false);
   });
 
   /* 2) ライトボックス */

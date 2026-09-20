@@ -141,7 +141,7 @@
     .identity-hero {
       position: relative;
       width: 100%;
-      min-height: min(720px, calc(100svh - 90px));
+      min-height: min(680px, calc(100svh - 90px));
       overflow: hidden;
       background: #1a1a1a;
       margin-top: 70px;
@@ -172,7 +172,7 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
-      filter: brightness(0.62) saturate(0.92);
+      filter: brightness(0.78) saturate(0.98);
     }
 
     .identity-hero::after {
@@ -180,8 +180,8 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(0,0,0,0.72) 0%, rgba(0,0,0,0.48) 46%, rgba(0,0,0,0.36) 100%),
-        linear-gradient(0deg, rgba(0,0,0,0.74) 0%, rgba(0,0,0,0.08) 42%, rgba(0,0,0,0.4) 100%);
+        linear-gradient(90deg, rgba(0,0,0,0.56) 0%, rgba(0,0,0,0.32) 46%, rgba(0,0,0,0.14) 100%),
+        linear-gradient(0deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.02) 46%, rgba(0,0,0,0.18) 100%);
       pointer-events: none;
     }
 
@@ -194,7 +194,7 @@
       display: flex;
       flex-direction: column;
       justify-content: flex-end;
-      padding: 4.2rem 0 3.2rem;
+      padding: 3.5rem 0 2.5rem;
     }
 
     .identity-hero-kicker {
@@ -203,8 +203,7 @@
       gap: 0.7rem;
       font-family: 'Inter', sans-serif;
       font-size: 0.7rem;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
+      letter-spacing: 0;
       color: rgba(255,255,255,0.74);
       margin-bottom: 1.2rem;
     }
@@ -219,32 +218,33 @@
     .identity-hero-title {
       max-width: 1000px;
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: clamp(2rem, 4.6vw, 4.4rem);
+      font-size: clamp(2rem, 4.3vw, 4rem);
       font-weight: 400;
-      letter-spacing: 0.05em;
-      line-height: 1.34;
+      letter-spacing: 0;
+      line-height: 1.3;
       margin-bottom: 1.2rem;
+      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
     }
 
     .identity-hero-lead {
-      max-width: 680px;
+      max-width: 720px;
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
       font-size: 1rem;
-      line-height: 2.05;
-      letter-spacing: 0.045em;
-      color: rgba(255,255,255,0.84);
+      line-height: 1.85;
+      letter-spacing: 0;
+      color: rgba(255,255,255,0.92);
     }
 
     .identity-hero-routes {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
-      margin-top: 3.2rem;
+      margin-top: 2.4rem;
     }
 
     .identity-hero-route {
       position: relative;
-      min-height: 150px;
+      min-height: 140px;
       padding: 1.2rem 1.1rem 2.3rem;
       color: #fff;
       text-decoration: none;
@@ -308,19 +308,6 @@
       line-height: 1.75;
       letter-spacing: 0.04em;
       color: rgba(255,255,255,0.72);
-    }
-
-    .identity-hero-site {
-      position: absolute;
-      top: 2rem;
-      left: 2rem;
-      z-index: 3;
-      font-family: 'Inter', sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.28em;
-      color: rgba(255,255,255,0.64);
-      text-transform: uppercase;
-      pointer-events: none;
     }
 
     /* ── Timely Notice ── */
@@ -1072,7 +1059,7 @@
 
       .identity-hero-inner {
         width: calc(100% - 3rem);
-        padding: 4.2rem 0 1.1rem;
+        padding: 3rem 0 1.1rem;
       }
 
       .identity-hero-title {
@@ -1111,12 +1098,6 @@
 
       .identity-hero-route em {
         display: none;
-      }
-
-      .identity-hero-site {
-        top: 1.4rem;
-        left: 1.5rem;
-        font-size: 0.64rem;
       }
 
       .timely-notice {
@@ -1305,7 +1286,6 @@
        SECTION 1: ヒーロー（B+D中間案）
        ====================================== -->
   <section class="identity-hero" aria-labelledby="identity-hero-title">
-    <div class="identity-hero-site">TOJIMASAYA.COM</div>
     <div class="identity-hero-media" aria-hidden="true">
       <picture>
         <source srcset="assets/images/gallery/castle31.webp" type="image/webp">
@@ -1316,15 +1296,15 @@
         <img src="assets/images/hero/hongkong-1280.jpg" alt="" loading="eager" fetchpriority="low" decoding="async">
       </picture>
       <picture>
-        <source srcset="assets/images/turkey/istanbul/hero.webp" type="image/webp">
-        <img src="assets/images/turkey/istanbul/hero.jpg" alt="" loading="eager" fetchpriority="low" decoding="async">
+        <source srcset="assets/images/gear/editing.webp" type="image/webp">
+        <img src="assets/images/gear/editing.jpg" alt="" loading="eager" fetchpriority="low" decoding="async">
       </picture>
     </div>
     <div class="identity-hero-inner">
-      <p class="identity-hero-kicker">Himeji / Hong Kong / Gear</p>
-      <h1 class="identity-hero-title" id="identity-hero-title">田路昌也</h1>
+      <p class="identity-hero-kicker">田路昌也の写真と記録</p>
+      <h1 class="identity-hero-title" id="identity-hero-title">姫路城と香港、<br>そのあいだを撮る。</h1>
       <p class="identity-hero-lead">
-        姫路城を見つめ、変わりゆく香港を歩き、ときに空から撮る。香港に暮らして30余年、いまは姫路と香港を行き来しながら、旅に持ち出す道具や人との出会いも写真と言葉で残しています。
+        香港に暮らして30余年。姫路城の四季と、変わりゆく香港を地上と空から。行き来する日々に持ち出す道具や、そこで出会った人も、写真と言葉で残しています。
       </p>
       <nav class="identity-hero-routes" aria-label="サイトの主な入口">
         <a class="identity-hero-route" href="shirasagi36.html" data-growth-label="home_route_himeji">
