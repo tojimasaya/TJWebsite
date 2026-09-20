@@ -19,12 +19,12 @@
   <link rel="icon" type="image/png" href="/favicon.png">
   <link rel="apple-touch-icon" href="/apple-touch-icon.png">
 
-  <meta name="description" content="田路昌也(TJ)の個人アーカイブ。姫路城を36の視点で撮る白鷺三十六景、消えゆく香港ネオン、旅と機材の記録を写真と文章で残しています。">
+  <meta name="description" content="田路昌也(TJ)の個人アーカイブ。姫路城を36の視点で撮る白鷺三十六景、地上と空から撮り続ける変わりゆく香港、旅と機材の記録を写真と文章で残しています。">
   <meta name="keywords" content="田路昌也, TJ, 旅行, 写真, ライター, 香港, 姫路城, 白鷺三十六景, 香港ネオン残照, note">
   <meta name="author" content="Toji Masaya">
 
   <meta property="og:title" content="田路昌也 (Toji Masaya) — 消えゆく風景を写真と言葉で残す">
-  <meta property="og:description" content="姫路城を36の視点で撮る白鷺三十六景、消えゆく香港ネオン、旅と機材の記録。香港と日本を行き来しながら続ける個人アーカイブ。">
+  <meta property="og:description" content="白鷺三十六景、地上と空から撮り続ける変わりゆく香港、旅と機材の記録。香港と日本を行き来しながら続ける個人アーカイブ。">
   <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/castle31.jpg">
   <meta property="og:url" content="https://tojimasaya.com">
   <meta property="og:type" content="website">
@@ -32,7 +32,7 @@
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@mongkok93">
   <meta name="twitter:title" content="田路昌也 (Toji Masaya) — 消えゆく風景を写真と言葉で残す">
-  <meta name="twitter:description" content="白鷺三十六景、香港ネオン残照、旅と機材の記録。香港と日本を行き来しながら続ける個人アーカイブ。">
+  <meta name="twitter:description" content="白鷺三十六景、地上と空から撮り続ける変わりゆく香港、旅と機材の記録。香港と日本を行き来しながら続ける個人アーカイブ。">
   <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/castle31.jpg">
 
   <!-- フォント読み込みの最適化 -->
@@ -241,7 +241,7 @@
 
     .identity-hero-routes {
       display: grid;
-      grid-template-columns: repeat(4, minmax(0, 1fr));
+      grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 14px;
       margin-top: 3.2rem;
     }
@@ -579,9 +579,9 @@
 
     /* ── 続けている作品 ── */
     .home-works > .home-shirasagi { border-bottom: none; padding-bottom: 2.5rem; }
-    .home-neon { padding: 0 2rem 4.5rem; background: var(--bg-color, #fafafa); border-bottom: 1px solid var(--border-color, #e5e5e5); }
+    .home-hongkong { padding: 0 2rem 4.5rem; background: var(--bg-color, #fafafa); border-bottom: 1px solid var(--border-color, #e5e5e5); }
 
-    .home-neon-inner {
+    .home-hongkong-inner {
       max-width: 1100px;
       margin: 0 auto;
       display: grid;
@@ -590,7 +590,7 @@
       align-items: center;
     }
 
-    .home-neon-media {
+    .home-hongkong-media {
       margin: 0;
       overflow: hidden;
       border-radius: 6px;
@@ -598,9 +598,9 @@
       aspect-ratio: 3 / 2;
     }
 
-    .home-neon-media a { display: block; width: 100%; height: 100%; }
+    .home-hongkong-media a { display: block; width: 100%; height: 100%; }
 
-    .home-neon-media img {
+    .home-hongkong-media img {
       display: block;
       width: 100%;
       height: 100%;
@@ -608,9 +608,9 @@
       transition: transform 0.6s ease;
     }
 
-    .home-neon-media:hover img { transform: scale(1.02); }
+    .home-hongkong-media:hover img { transform: scale(1.02); }
 
-    .home-neon-kicker {
+    .home-hongkong-kicker {
       display: inline-flex;
       align-items: center;
       gap: 0.65rem;
@@ -622,9 +622,9 @@
       margin: 0 0 1rem;
     }
 
-    .home-neon-kicker::before { content: ''; width: 34px; height: 1px; background: #2f5d7c; }
+    .home-hongkong-kicker::before { content: ''; width: 34px; height: 1px; background: #2f5d7c; }
 
-    .home-neon-title {
+    .home-hongkong-title {
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
       font-size: clamp(1.35rem, 2vw, 1.8rem);
       font-weight: 400;
@@ -633,7 +633,7 @@
       margin: 0 0 1rem;
     }
 
-    .home-neon-lead {
+    .home-hongkong-lead {
       font-family: 'Noto Serif JP', serif;
       font-size: 0.92rem;
       line-height: 2;
@@ -641,7 +641,7 @@
       margin: 0 0 1.4rem;
     }
 
-    .home-neon-btn {
+    .home-hongkong-btn {
       display: inline-flex;
       align-items: center;
       min-height: 44px;
@@ -656,7 +656,7 @@
       transition: background 0.2s ease, color 0.2s ease;
     }
 
-    .home-neon-btn:hover { background: #2f5d7c; color: #fff; }
+    .home-hongkong-btn:hover { background: #2f5d7c; color: #fff; }
 
     /* ヒーロー直下、香港ハンドブックへの近道 */
     .identity-hero-handbook {
@@ -1092,6 +1092,10 @@
         margin-top: 1.25rem;
       }
 
+      .identity-hero-route:last-child {
+        grid-column: 1 / -1;
+      }
+
       .identity-hero-route {
         min-height: 84px;
         padding: 0.75rem 0.7rem 1.7rem;
@@ -1145,11 +1149,11 @@
         padding-bottom: 1.8rem;
       }
 
-      .home-neon {
+      .home-hongkong {
         padding: 0 1.5rem 3.5rem;
       }
 
-      .home-neon-inner {
+      .home-hongkong-inner {
         grid-template-columns: 1fr;
         gap: 1.8rem;
       }
@@ -1312,8 +1316,8 @@
         <img src="assets/images/gallery/castle31.jpg" alt="" loading="eager" fetchpriority="high" decoding="async">
       </picture>
       <picture>
-        <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
-        <img src="assets/images/hongkong-neon/01.jpg" alt="" loading="eager" fetchpriority="low" decoding="async">
+        <source srcset="assets/images/hero/hongkong-1280.webp" type="image/webp">
+        <img src="assets/images/hero/hongkong-1280.jpg" alt="" loading="eager" fetchpriority="low" decoding="async">
       </picture>
       <picture>
         <source srcset="assets/images/turkey/istanbul/hero.webp" type="image/webp">
@@ -1321,31 +1325,26 @@
       </picture>
     </div>
     <div class="identity-hero-inner">
-      <p class="identity-hero-kicker">Himeji, Hong Kong, Travel and Cameras</p>
+      <p class="identity-hero-kicker">Himeji, Hong Kong and Gear</p>
       <h2 class="identity-hero-title" id="identity-hero-title"><span>好きなことを</span><span>続けていたら、</span><br><span>こうなりました。</span></h2>
       <p class="identity-hero-lead">
-        香港暮らし30余年。いまは香港と姫路を行ったり来たり。ガジェット、カメラ、ドローン、旅。作ったもの、撮ったもの、noteやDRONE.jpに書いたものまで、田路昌也のあれこれをまとめています。
+        香港に暮らして30余年。いまは香港と姫路を行き来しながら、風景、旅先で出会った人、日々使う道具を写真と言葉で残しています。
       </p>
       <nav class="identity-hero-routes" aria-label="サイトの主な入口">
-        <a class="identity-hero-route" href="shirasagi36.html">
+        <a class="identity-hero-route" href="shirasagi36.html" data-growth-label="home_route_himeji">
           <span>Himeji Castle</span>
           <strong>白鷺三十六景</strong>
           <em>60年以上見てきた姫路城を、四季と時間の中で残す。</em>
         </a>
-        <a class="identity-hero-route" href="hongkong.html">
+        <a class="identity-hero-route" href="hongkong.html" data-growth-label="home_route_hongkong">
           <span>Hong Kong</span>
-          <strong>香港撮影ノート</strong>
-          <em>ネオン、撮影スポット、カメラ屋。歩いて撮るための入口。</em>
+          <strong>変わりゆく香港</strong>
+          <em>地上を歩き、ときに空から。街の変化を撮り続ける。</em>
         </a>
-        <a class="identity-hero-route" href="trips.html">
-          <span>Travel</span>
-          <strong>旅の記録</strong>
-          <em>世界で出会った場所を、写真と文章で紹介する。</em>
-        </a>
-        <a class="identity-hero-route" href="gear.html">
-          <span>Cameras / Drone</span>
+        <a class="identity-hero-route" href="gear.html" data-growth-label="home_route_gear">
+          <span>Gear</span>
           <strong>旅と撮影の道具</strong>
-          <em>Leica、ドローン、旅先で使う道具の実感。</em>
+          <em>iPhone、Leica、ドローン。自分で使った機材の記録。</em>
         </a>
       </nav>
       <p class="identity-hero-handbook">
@@ -1446,7 +1445,7 @@
   </section>
 
   <!-- ======================================
-       SECTION 3: 続けている作品（白鷺三十六景 / 香港ネオン残照）
+       SECTION 3: 続けている作品（白鷺三十六景 / 変わりゆく香港）
        ====================================== -->
   <section class="home-works" aria-labelledby="home-works-title">
     <h2 class="trip-vh" id="home-works-title">続けている作品</h2>
@@ -1484,21 +1483,18 @@
       </div>
     </section>
 
-    <section class="home-neon" aria-labelledby="home-neon-title">
-      <div class="home-neon-inner">
-        <figure class="home-neon-media">
-          <a href="hongkong-neon.html" data-growth-label="home_neon_photo" tabindex="-1" aria-hidden="true">
-            <picture>
-              <source srcset="assets/images/hongkong-neon/01.webp" type="image/webp">
-              <img src="assets/images/hongkong-neon/01.jpg" alt="香港の夜、通りに張り出したネオン看板の連なり" loading="lazy" decoding="async">
-            </picture>
+    <section class="home-hongkong" aria-labelledby="home-hongkong-title">
+      <div class="home-hongkong-inner">
+        <figure class="home-hongkong-media">
+          <a href="hongkong.html" data-growth-label="home_hongkong_photo" tabindex="-1" aria-hidden="true">
+            <img src="assets/og/dbfeae72c387.jpg" alt="" loading="lazy" decoding="async">
           </a>
         </figure>
-        <div class="home-neon-text">
-          <p class="home-neon-kicker">Hong Kong</p>
-          <h3 class="home-neon-title" id="home-neon-title">香港ネオン残照</h3>
-          <p class="home-neon-lead">28歳からの日々を育ててくれた街の光。撤去が進むいま、消える前のネオンを一枚ずつ残しています。</p>
-          <a class="home-neon-btn" href="hongkong-neon.html" data-growth-label="home_neon_cta">ネオンの記録を見る →</a>
+        <div class="home-hongkong-text">
+          <p class="home-hongkong-kicker">Hong Kong</p>
+          <h3 class="home-hongkong-title" id="home-hongkong-title">変わりゆく香港を、地上と空から。</h3>
+          <p class="home-hongkong-lead">30年以上暮らした街を、歩き、ときにドローンで見渡す。境界線の風景も、消えていく看板も、いま目の前にある香港として記録していきます。</p>
+          <a class="home-hongkong-btn" href="hongkong.html" data-growth-label="home_hongkong_cta">香港の記録を見る →</a>
         </div>
       </div>
     </section>
