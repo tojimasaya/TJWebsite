@@ -414,6 +414,25 @@
           }
         },
         {
+          "id": "mac-mini-m6",
+          "name": "Mac mini (M6)",
+          "brand": "Apple",
+          "image": "/assets/images/gear/macmini-m6.jpg",
+          "status": "available",
+          "is_new": true,
+          "new_label": "NEW 2026",
+          "specs": [
+            "M6・12コアCPU/GPU",
+            "16GB / 256GB",
+            "常時起動サーバー"
+          ],
+          "description": "発売日に香港で入手したM6世代のMac mini。持ち歩くMacBookに同居させていた常時稼働ジョブ——ライブ配信の録画・文字起こし・要約、市場データの自動取得——を託す「動かし続ける方の計算機」。Tailscaleで香港と日本のLANをまたぎ、次回の帰省で姫路の実家に設置予定。AIへの出口を日本に置く計画の要になる。",
+          "comment": "",
+          "links": {
+            "official": "https://www.apple.com/jp/mac-mini/"
+          }
+        },
+        {
           "id": "rokid-ai-glasses",
           "name": "Rokid AI Glasses",
           "brand": "Rokid",
