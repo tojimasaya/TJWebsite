@@ -371,7 +371,8 @@
           "links": {
             "レビュー前編": "https://note.com/tojimasaya/n/nd229cd856751",
             "レビュー後編": "https://note.com/tojimasaya/n/n53df41f14082"
-          }
+          },
+          "summary": "銀行アプリや本人確認など、止まると困る用途を任せるメイン端末。"
         },
         {
           "id": "xiaomi-17-ultra",
@@ -394,7 +395,8 @@
             "vivo比較": "https://note.com/tojimasaya/n/n4772412efc23",
             "炎モードの解像感": "https://note.com/tojimasaya/n/nc3f0d5e2ed2f",
             "ドキュメントモード": "https://note.com/tojimasaya/n/nf18b321d2f3a"
-          }
+          },
+          "summary": "ライカ監修のカメラで、篝火や夜景の難しい光を撮る現行メイン機。"
         },
         {
           "id": "oppo-find-n5",
@@ -411,7 +413,8 @@
           "links": {
             "Mac連携レビュー": "https://note.com/tojimasaya/n/n802d7acd7aeb",
             "O+ Connect": "https://note.com/tojimasaya/n/n82331875d2b8"
-          }
+          },
+          "summary": "大画面とMacとの連携を活かす、タブレット代わりの折りたたみスマホ。"
         },
         {
           "id": "mac-mini-m6",
@@ -430,7 +433,8 @@
           "comment": "",
           "links": {
             "official": "https://www.apple.com/jp/mac-mini/"
-          }
+          },
+          "summary": "録画・文字起こし・要約・データ取得を託す、常時稼働の一台。"
         },
         {
           "id": "rokid-ai-glasses",
@@ -453,7 +457,8 @@
             "見えるメガネの見え方問題": "https://note.com/tojimasaya/n/n477f909ca135",
             "メガネに母艦を直結": "https://note.com/tojimasaya/n/n66116e302cfe",
             "ドローンフライトで使うAIグラス": "https://drone.jp/column/20260825170044129205.html"
-          }
+          },
+          "summary": "見たものをその場でAIへ。カメラを使って翻訳や記録を試すメガネ。"
         },
         {
           "id": "macbook-pro-14-m3",
@@ -468,7 +473,8 @@
           ],
           "description": "Macbook 14インチにした理由は、何インチにしたところで見えないのは一緒、27インチ以上の外部モニターなしではなにも見えないローガンズの宿命",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n57968ed8d4ae?magazine_key=mcae365b520ed\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">iPadシフトは、いまか？ 第1回 ～移行への第一歩～</a>",
-          "links": {}
+          "links": {},
+          "summary": "27インチ以上の外部モニターと組み合わせて使う、14インチのMac。"
         },
         {
           "id": "iphone-se-3rd-64gb-black",
@@ -486,7 +492,8 @@
           "comment": "",
           "links": {
             "official": "https://support.apple.com/en-us/111866"
-          }
+          },
+          "summary": "手に馴染む小さなiPhone。バックアップと、ときどきの検証用。"
         },
         {
           "id": "tcl-note-a1-nxtpaper",
@@ -506,7 +513,8 @@
           "comment": "",
           "links": {
             "official": "https://www.tcl.com/global/en/tablets/tcl-note-a1-nxtpaper"
-          }
+          },
+          "summary": "気づけばいつも机の上に。スタイラスの質感が気に入っているメモ用端末。"
         }
       ]
     },
