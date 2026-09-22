@@ -35,6 +35,12 @@
 .catalog-filters button:hover { color: var(--catalog-accent); background: var(--hover-color); }
 .catalog-filters button:disabled { cursor: wait; opacity: .5; }
 .catalog-filters span { margin-left: 6px; font-variant-numeric: tabular-nums; }
+.catalog-controls { display: flex; align-items: center; flex-wrap: wrap; gap: 12px; }
+.catalog-scope { display: flex; align-items: center; gap: 8px; color: var(--text-light); font-size: .75rem; }
+.catalog-scope select { max-width: 100%; min-height: 44px; padding: 7px 28px 7px 10px; font: inherit; color: var(--text-color); background: var(--white); border: 1px solid var(--border-color); border-radius: 6px; }
+.catalog-scope select:focus-visible { outline: 2px solid var(--catalog-accent); outline-offset: 3px; }
+.catalog-intro { max-width: 800px; color: var(--text-light); font-size: .78rem; line-height: 1.85; margin-top: 12px; }
+.catalog-intro a, .catalog-related-links a { color: var(--catalog-accent); text-underline-offset: 4px; }
 .catalog-hint { color: var(--text-light); font-size: .78rem; margin-bottom: 14px; line-height: 1.7; }
 .catalog-grid { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px; }
 .catalog-message { grid-column: 1 / -1; padding: 30px 0; color: var(--text-light); }
@@ -46,9 +52,12 @@
 .gear-card__image picture { display: block; width: 100%; height: 100%; }
 .gear-card__image img { display: block; width: 100%; height: 100%; object-fit: contain; }
 .gear-card__new { position: absolute; left: 12px; top: 12px; padding: 4px 7px; border-radius: 3px; background: #fff; color: #444; font-size: .6rem; line-height: 1.4; font-weight: 600; letter-spacing: .09em; }
+.gear-card__notice { position: absolute; right: 8px; bottom: 8px; padding: 4px 7px; background: #fff4d8; color: #784400; border-radius: 4px; font-size: .6rem; }
+.gear-card__wordmark { display: flex; align-items: center; justify-content: center; width: 100%; height: 100%; color: #34435d; background: #edf0f5; font-size: clamp(1.3rem, 3vw, 2rem); font-weight: 600; letter-spacing: -.04em; }
 .gear-card__body { min-width: 0; padding: 16px 16px 14px; }
 .gear-card__brand { color: var(--text-light); font-size: .65rem; text-transform: uppercase; letter-spacing: .1em; margin-bottom: 5px; }
-.gear-card__name { font-size: 1rem; line-height: 1.4; font-weight: 600; min-height: 2.8em; margin: 0 0 10px; }
+.gear-card__body > .gear-card__brand { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.gear-card__name { font-size: 1rem; line-height: 1.4; font-weight: 600; height: 2.8em; margin: 0 0 10px; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; overflow-wrap: anywhere; }
 .gear-card__summary { height: 3.4em; display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; font-size: .78rem; line-height: 1.7; color: var(--text-light); }
 .gear-card__actions { display: flex; align-items: center; justify-content: space-between; gap: 6px; margin: auto 16px 0; padding: 9px 0; border-top: 1px solid var(--border-color); }
 .gear-card__actions button { min-height: 38px; padding: 7px 0; border: 0; background: none; color: var(--text-color); font: inherit; font-size: .75rem; cursor: pointer; white-space: nowrap; }
@@ -72,12 +81,18 @@
 .gear-detail__scroll { overflow-y: auto; overscroll-behavior: contain; min-height: 0; padding: 28px; }
 .gear-detail__header { display: grid; grid-template-columns: 160px minmax(0, 1fr); align-items: center; gap: 24px; margin-bottom: 28px; }
 .gear-detail__header > picture { display: block; }
+.gear-detail__header > .gear-card__wordmark { height: auto; }
 .gear-detail__image { width: 100%; aspect-ratio: 1; object-fit: contain; background: #f5f5f5; border-radius: 8px; }
 .gear-detail h2 { font-size: 1.4rem; line-height: 1.45; font-weight: 600; margin: 5px 0 12px; overflow-wrap: anywhere; }
 .gear-detail__specs { display: flex; gap: 6px; flex-wrap: wrap; list-style: none; }
 .gear-detail__specs li { padding: 4px 8px; border: 1px solid var(--border-color); border-radius: 4px; color: var(--text-light); font-size: .7rem; }
 .gear-detail h3 { font-size: .95rem; font-weight: 600; margin-bottom: 12px; }
 .gear-detail__description { font-size: .9rem; line-height: 1.95; overflow-wrap: anywhere; white-space: pre-line; }
+.gear-detail__points { padding-left: 1.3em; margin-top: 16px; font-size: .85rem; line-height: 1.9; }
+.gear-detail__points li + li { margin-top: 8px; }
+.gear-detail__notice { padding: 16px; margin-top: 20px; border: 1px solid #b5783580; border-left: 3px solid #b57835; border-radius: 6px; font-size: .84rem; line-height: 1.85; }
+.gear-detail__notice h3 { margin-bottom: 6px; }
+.gear-detail__notice a { display: inline-block; margin-top: 8px; color: var(--catalog-accent); text-underline-offset: 4px; }
 .gear-detail__section { padding-top: 26px; margin-top: 26px; border-top: 1px solid var(--border-color); }
 .gear-detail__section-note { color: var(--text-light); font-size: .75rem; margin: -4px 0 14px; }
 .gear-detail__reviews { list-style: none; }
@@ -90,11 +105,20 @@
 .gear-detail__products { display: flex; flex-wrap: wrap; gap: 10px 20px; }
 .gear-detail__products a { display: inline-flex; align-items: center; min-height: 44px; font-size: .82rem; color: var(--catalog-accent); text-underline-offset: 4px; }
 .gear-modal-open { overflow: hidden; }
+.gear-card, .catalog-reading h2, .catalog-reading strong[id] { scroll-margin-top: 100px; }
+.catalog-reading { width: min(1200px, calc(100% - 64px)); margin: 0 auto 64px; }
+.catalog-reading .sim-section { padding: 28px 0; border-top: 1px solid var(--border-color); }
+.catalog-reading .sim-kicker { color: var(--text-light); font-size: .65rem; letter-spacing: .08em; }
+.catalog-reading .sim-title { font-size: 1.2rem; line-height: 1.6; margin: 6px 0 12px; }
+.catalog-reading .sim-lead { max-width: 850px; color: var(--text-light); font-size: .86rem; line-height: 1.9; }
+.catalog-reading .sim-warning-note { padding: 16px; margin-top: 18px; border: 1px solid var(--border-color); border-radius: 6px; font-size: .82rem; line-height: 1.9; }
+.catalog-reading .sim-warning-note strong { display: block; }
+.catalog-related-links { display: flex; flex-wrap: wrap; gap: 12px 22px; font-size: .8rem; margin-top: 16px; }
 
 @media (max-width: 1100px) { .catalog-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 @media (max-width: 800px) {
     .catalog-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
-    .catalog-hero, .gear-catalog { width: calc(100% - 40px); }
+    .catalog-hero, .gear-catalog, .catalog-reading { width: calc(100% - 40px); }
 }
 @media (max-width: 520px) {
     .catalog-hero { padding-top: 94px; padding-bottom: 24px; }
@@ -107,6 +131,8 @@
     .gear-card { display: grid; grid-template-columns: 100px minmax(0, 1fr); }
     .gear-card__image { aspect-ratio: auto; height: 100%; min-height: 150px; }
     .gear-card__new { left: 6px; top: 6px; font-size: .5rem; padding: 3px 5px; }
+    .gear-card__notice { left: 5px; right: auto; bottom: 6px; font-size: .5rem; padding: 3px 5px; }
+    .gear-card__wordmark { font-size: 1.1rem; }
     .gear-card__body { padding: 14px 14px 12px; }
     .gear-card__name { font-size: .9rem; margin-bottom: 8px; }
     .gear-card__summary { font-size: .73rem; }

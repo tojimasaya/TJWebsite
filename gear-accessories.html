@@ -10,91 +10,8 @@
     <meta name="description" content="田路昌也が旅と撮影に持ち歩くアクセサリー、充電器、収納小物などの道具メモ。">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <style>
-        .detail-hero { padding: 100px 20px 60px; text-align: center; background-color: var(--bg-color); }
-        .detail-back-link { display: inline-block; margin-bottom: 20px; color: var(--accent-color); text-decoration: none; }
-        .detail-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(320px, 1fr)); gap: 40px; max-width: 1200px; margin: 0 auto 100px; padding: 0 30px; }
-        .gear-item { background: var(--page-card-bg, #fff); border: 1px solid var(--border-color); border-radius: 8px; overflow: hidden; display: flex; flex-direction: column; }
-        .gear-img-box { aspect-ratio: 16/10; overflow: hidden; background: #f9f9f9; border-bottom: 1px solid var(--border-color); }
-        .gear-img { width: 100%; height: 100%; object-fit: contain; mix-blend-mode: multiply; }
-        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .gear-img { mix-blend-mode: normal; } :root:not([data-theme="light"]) .gear-img-box { background: #2a2a2a; } :root:not([data-theme="light"]) .gear-item { background: #1a1a1a; } }
-        [data-theme="dark"] .gear-img { mix-blend-mode: normal; } [data-theme="dark"] .gear-img-box { background: #2a2a2a; } [data-theme="dark"] .gear-item { background: #1a1a1a; }
-        .gear-content { padding: 20px; flex: 1; display: flex; flex-direction: column; }
-        .gear-name { font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; color: var(--text-color); }
-        .gear-desc { font-size: 0.9rem; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 15px; }
-        .gear-specs { display: flex; gap: 8px; flex-wrap: wrap; margin-bottom: 15px; }
-        .spec-tag { background: rgba(0,0,0,0.05); padding: 2px 8px; border-radius: 4px; font-size: 0.75rem; color: var(--text-light); }
-        .spec-tag.is-warning { background: rgba(220, 38, 38, 0.1); color: #b91c1c; border: 1px solid rgba(220, 38, 38, 0.2); font-weight: 600; }
-        .gear-notice {
-            margin: 0 0 16px;
-            padding: 13px 14px;
-            border: 1px solid rgba(220, 38, 38, 0.24);
-            border-left: 4px solid #dc2626;
-            border-radius: 6px;
-            background: rgba(220, 38, 38, 0.055);
-            color: var(--text-color);
-        }
-        .gear-notice-title {
-            display: block;
-            margin-bottom: 5px;
-            color: #b91c1c;
-            font-size: 0.8rem;
-            font-weight: 700;
-            letter-spacing: 0.03em;
-        }
-        .gear-notice-body { display: block; color: var(--text-light); font-size: 0.82rem; line-height: 1.7; }
-        .gear-notice-link {
-            display: inline-block;
-            margin-top: 8px;
-            color: #b91c1c;
-            font-size: 0.8rem;
-            font-weight: 600;
-            text-decoration: none;
-            border-bottom: 1px solid rgba(185, 28, 28, 0.35);
-        }
-        .gear-notice-link:hover { border-color: #b91c1c; }
-        .gear-links { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
-        .gear-review-link {
-            display: block;
-            padding: 12px 14px;
-            border: 1px solid rgba(26, 63, 185, 0.22);
-            border-left: 4px solid var(--accent-color);
-            border-radius: 6px;
-            background: rgba(26, 63, 185, 0.045);
-            color: var(--accent-color);
-            text-decoration: none;
-            line-height: 1.55;
-        }
-        .gear-review-label {
-            display: block;
-            margin-bottom: 3px;
-            color: var(--text-light);
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-        }
-        .gear-review-title { font-size: 0.88rem; font-weight: 600; }
-        .gear-product-links { display: flex; flex-wrap: wrap; gap: 8px 12px; }
-        .gear-product-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.8rem;
-            border-bottom: 1px solid rgba(0,0,0,0.16);
-        }
-        .gear-product-links a:hover { color: var(--accent-color); border-color: var(--accent-color); }
-        [data-theme="dark"] .spec-tag.is-warning { background: rgba(248, 113, 113, 0.12); color: #fca5a5; border-color: rgba(248, 113, 113, 0.28); }
-        [data-theme="dark"] .gear-notice { background: rgba(248, 113, 113, 0.08); border-color: rgba(248, 113, 113, 0.25); border-left-color: #f87171; }
-        [data-theme="dark"] .gear-notice-title,
-        [data-theme="dark"] .gear-notice-link { color: #fca5a5; }
-        [data-theme="dark"] .gear-review-link { background: rgba(96, 165, 250, 0.08); border-color: rgba(96, 165, 250, 0.28); border-left-color: #60a5fa; }
-        [data-theme="dark"] .gear-product-links a { border-color: rgba(255,255,255,0.22); }
-        /* Shared link styles */
-        .featured-link { color: #1A3FB9 !important; font-weight: 600; display: flex; align-items: center; gap: 0.4rem; }
-        .featured-link:hover { background-color: rgba(26, 63, 185, 0.05); border-radius: 4px; }
-        .featured-link .icon { font-size: 1.1em; }
-        @media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .featured-link { color: #60a5fa !important; } :root:not([data-theme="light"]) .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); } }
-        [data-theme="dark"] .featured-link { color: #60a5fa !important; } [data-theme="dark"] .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); }
-    </style>
+    <link rel="stylesheet" href="gear-catalog.css?v=2">
+
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/gear-accessories.html">
@@ -110,100 +27,40 @@
 <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gear/accessories.jpg">
 <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
 </head>
-<body>
-    <!-- Navigation will be injected by site-header.js -->
-
-    <header class="detail-hero">
-        <a href="gear.html" class="detail-back-link">← Back to Categories</a>
-        <h1>Accessories</h1>
-        <p>Bags, Power, Tripods. Essential tools.</p>
-            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">※ 本ページの商品リンクには広告（Amazonアソシエイト）を含みます。</p>
-    </header>
-
-    <div class="detail-grid" id="accessories-grid">Loading...</div>
-
-    <footer class="footer"></footer>
-
+<body class="gear-catalog-page">
     <script src="js/site-header.js"></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const grid = document.getElementById('accessories-grid');
-            try {
-                const response = await fetch('data/gear.json', { cache: 'no-cache' });
-                if (!response.ok) throw new Error('Data could not be loaded.');
-                const data = await response.json();
-                if (data.categories.accessories) {
-                    renderGrid('accessories-grid', data.categories.accessories.items);
-                } else {
-                    grid.innerText = 'Data could not be loaded.';
-                }
-            } catch (error) {
-                console.error('Error loading gear data:', error);
-                grid.innerText = 'Data could not be loaded.';
-            }
-        });
+    <main id="main-content">
+        <header class="catalog-hero">
+            <a href="gear.html" class="catalog-back">← Gearのカテゴリ一覧</a>
+            <h1>Accessories</h1>
+            <p class="catalog-lead">充電、接続、撮影を支える、旅のかばんの中の小さな道具。</p>
 
-        function linkRel(url) {
-            const host = new URL(url, window.location.href).hostname;
-            const isSponsored = host === 'amzn.to' || host.includes('amazon.');
-            return isSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
-        }
+        </header>
+        <section class="gear-catalog" aria-labelledby="catalog-title">
+            <div class="catalog-toolbar">
+                <h2 id="catalog-title">所有している道具 <span class="catalog-count" id="catalog-count" role="status"></span></h2>
+                <div class="catalog-controls"><div class="catalog-filters" role="group" aria-label="一覧の絞り込み">
+                    <button type="button" data-gear-filter="all" aria-pressed="true" aria-controls="catalog-grid" disabled>すべて <span id="filter-all-count"></span></button>
+                    <button type="button" data-gear-filter="reviews" aria-pressed="false" aria-controls="catalog-grid" disabled>レビューあり <span id="filter-review-count"></span></button>
+                </div></div>
+            </div>
+            <p class="catalog-hint">使い方や選んだ理由は「解説を読む」から。自分で書いた記事には本数を添えています。</p>
+            <div class="catalog-grid" id="catalog-grid" data-gear-category="accessories" aria-busy="true"><p class="catalog-message">一覧を読み込んでいます…</p></div>
+            <noscript><p class="catalog-message">一覧を表示するには、JavaScriptを有効にしてください。</p></noscript>
+            <p class="catalog-disclosure">※ 本ページの商品リンクには広告（Amazonアソシエイト）を含みます。</p>
+        </section>
 
-        function newBadge(item) {
-            return item.is_new ? `<span class="gear-new-badge">${item.new_label || 'NEW'}</span>` : '';
-        }
-
-        function linkLabel(key) {
-            if (key === 'amazon') return 'Amazon で見る';
-            if (key === 'official') return 'Official';
-            if (key === 'note' || key === 'Note' || key === 'review' || key === 'TJによるレビュー') return 'レビューを読む';
-            return key;
-        }
-
-        function isReviewLink(key, url) {
-            const host = new URL(url, window.location.href).hostname;
-            const normalizedKey = key.toLowerCase();
-            return host.includes('note.com') || host.includes('drone.jp') || normalizedKey === 'note' || normalizedKey === 'review' || key === 'TJによるレビュー' || key.includes('レビュー') || key.includes('記事');
-        }
-
-        function renderLinks(links = {}) {
-            const entries = Object.entries(links);
-            const reviewLinks = entries.filter(([key, url]) => isReviewLink(key, url));
-            const productLinks = entries.filter(([key, url]) => !isReviewLink(key, url));
-            const reviewHtml = reviewLinks.map(([key, url]) => `<a class="gear-review-link" href="${url}" target="_blank" rel="${linkRel(url)}"><span class="gear-review-label">TJによるレビュー</span><span class="gear-review-title">${linkLabel(key)} →</span></a>`).join('');
-            const productHtml = productLinks.length ? `<div class="gear-product-links">${productLinks.map(([key, url]) => `<a href="${url}" target="_blank" rel="${linkRel(url)}">${linkLabel(key)} →</a>`).join('')}</div>` : '';
-            return reviewHtml || productHtml ? `<div class="gear-links">${reviewHtml}${productHtml}</div>` : '';
-        }
-
-        function renderNotice(notice) {
-            if (!notice) return '';
-            const linkHtml = notice.link ? `<a class="gear-notice-link" href="${notice.link}" target="_blank" rel="${linkRel(notice.link)}">${notice.linkLabel || '詳しく読む'} →</a>` : '';
-            return `<div class="gear-notice"><strong class="gear-notice-title">${notice.title}</strong><span class="gear-notice-body">${notice.body}</span>${linkHtml}</div>`;
-        }
-
-        function specTagClass(spec) {
-            return spec.includes('CCC') ? 'spec-tag is-warning' : 'spec-tag';
-        }
-
-        function renderGrid(id, items) {
-            const container = document.getElementById(id);
-            container.innerHTML = items.map(item => {
-                const webpSrc = item.image.replace(/\.(jpg|jpeg|png)$/, '.webp');
-                return `
-                <article class="gear-item">
-                    <div class="gear-img-box">${newBadge(item)}<picture><source srcset="${webpSrc}" type="image/webp"><img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.onerror=null;this.src='assets/images/gear/accessories.jpg'"></picture></div>
-                    <div class="gear-content">
-                        <h3 class="gear-name">${item.name}</h3>
-                        <div class="gear-specs">
-                            ${item.specs ? item.specs.map(s => `<span class="${specTagClass(s)}">${s}</span>`).join('') : ''}
-                        </div>
-                        <p class="gear-desc">${item.description}</p>
-                        ${renderNotice(item.notice)}
-                        ${renderLinks(item.links)}
-                    </div>
-                </article>`}).join('');
-        }
-    </script>
+    </main>
+    <dialog class="gear-detail" id="gear-detail" aria-labelledby="gear-detail-context">
+        <div class="gear-detail__bar">
+            <span id="gear-detail-context">道具の記録</span>
+            <button class="gear-detail__close" type="button" data-gear-close>閉じる <span aria-hidden="true">×</span></button>
+        </div>
+        <div class="gear-detail__tabs" id="gear-detail-tabs" role="group" aria-label="解説とレビューの切り替え" hidden></div>
+        <div class="gear-detail__scroll" id="gear-detail-content"></div>
+    </dialog>
+    <footer class="footer"></footer>
+    <script src="js/gear-catalog.js?v=2" defer></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
     <script src="/growth.js" defer></script>
 </body>

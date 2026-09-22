@@ -25,7 +25,8 @@
             "note": "https://note.com/tojimasaya/m/m7f56444c7b97",
             "official": "https://leica-camera.com/ja-JP/photography/cameras/m/m10-black/details"
           },
-          "type": "body"
+          "type": "body",
+          "summary": "35mmを付けて旅を歩く、フィルム機に近いサイズ感のデジタルM。"
         },
         {
           "id": "leica-sl2s",
@@ -44,7 +45,8 @@
           "links": {
             "official": "https://leica-camera.com/ja-JP/photography/cameras/sl/sl2-s-reporter/technical-specification"
           },
-          "type": "body"
+          "type": "body",
+          "summary": "暗所や動画撮影で頼りにする、階調と高感度に強いLマウント機。"
         },
         {
           "id": "leica-M2",
@@ -63,7 +65,8 @@
           "links": {
             "manual": "https://www.cameramanuals.org/leica_pdf/leica_m2.pdf"
           },
-          "type": "body"
+          "type": "body",
+          "summary": "絞り・シャッター・距離を自分で決める、完全機械式のフィルムM。"
         },
         {
           "id": "leica-c-typ112",
@@ -120,7 +123,8 @@
           "comment": "2024年3月購入。",
           "links": {
             "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=35mm_f/1.4_ASPH.fle_Summilux-M"
-          }
+          },
+          "summary": "旅に一本だけ選ぶなら。開放の柔らかさと絞ったキレを両立する35mm。"
         },
         {
           "id": "summilux-50-v2",
@@ -143,7 +147,8 @@
           "comment": "2024年3月購入。",
           "links": {
             "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=50mm_f/1.4_Summilux-M_II"
-          }
+          },
+          "summary": "柔らかな輪郭と滲むハイライト。空気感を残す1973年製の50mm。"
         },
         {
           "id": "elmarit-28",
@@ -166,7 +171,8 @@
           "comment": "2025年2月購入。",
           "links": {
             "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=28mm_f/2.8_ASPH_Elmarit-M"
-          }
+          },
+          "summary": "軽く、小さく、街を広く。旅の荷物を減らしたいときの常用広角。"
         },
         {
           "id": "tri-elmar",
@@ -189,7 +195,8 @@
           "comment": "2024年9月購入。",
           "links": {
             "reference": "https://wiki.l-camera-forum.com/leica-wiki.en/index.php?title=16mm-18mm-21mm_f/4_ASPH_Tri-Elmar-M"
-          }
+          },
+          "summary": "16・18・21mmを切り替えて、旅先の建築や風景を撮る超広角。"
         },
         {
           "id": "summarit-75",
@@ -210,7 +217,8 @@
           ],
           "description": "2007-2014年製造モデル。11枚羽根の美しいボケ。中望遠の距離感は、街中での切り取りやポートレートに独特の空気感を生む。f/2.5という絞り値は、開放から安定したシャープネスと適度なボケ量のバランスが絶妙。M型レンジファインダーで扱える焦点距離の上限に近く、視野角の狭さが逆に被写体との対話を深めてくれる。外部ビューファインダーが必要だが、それもまた撮影の儀式のひとつ。 S/N 405XXXX。",
           "comment": "",
-          "links": {}
+          "links": {},
+          "summary": "街の一部やポートレートを、ほどよいボケで切り取る中望遠。"
         },
         {
           "id": "carlzeiss-planar-50",
@@ -230,7 +238,8 @@
           ],
           "description": "4群6枚の対称型プラナー設計。ツァイスの伝統的な光学思想が詰まった一本。極めて高い解像度と、画面全体にわたる均等な光量分布が特徴。フレアやゴーストを徹底的に抑えたT*コーティングにより、逆光でも安定した描写。開放F2.0から中央はシャープで、絞ればさらにキレが増す。ライカの50mmとは異なる、理知的で端正な画作りが魅力。コンパクトで軽量なため、スナップでも気軽に使える。",
           "comment": "",
-          "links": {}
+          "links": {},
+          "summary": "逆光でも端正な描写。スナップに気軽に持ち出せる小さな50mm。"
         },
         {
           "id": "sigma-24-70-f28-dgdn",
@@ -249,7 +258,8 @@
           ],
           "description": "Lマウント唯一の大口径標準ズーム。Artラインの高い光学性能を持ち、24mmから70mmまでズーム全域で安定した解像力を発揮する。動画でも静止画でも頼れる万能性があり、旅先ではこれ一本で完結することも多い。防塵防滴構造と高速・静音AFで実用性も申し分ない。瞳AFにも対応し、人物撮影でも安心。ただ、同等性能とされるライカ版へ乗り換えたい気持ちも捨てきれない。",
           "comment": "",
-          "links": {}
+          "links": {},
+          "summary": "静止画も動画も、旅先ではこれ一本で任せられる標準ズーム。"
         }
       ]
     },
@@ -276,7 +286,8 @@
             "深圳でMini 5 Proを購入": "https://drone.jp/column/20251020120029120764.html",
             "馬草壟のデジタルアーカイブ": "https://drone.jp/column/20260114103546124675.html",
             "AIグラスとドローンフライト": "https://drone.jp/column/20260825170044129205.html"
-          }
+          },
+          "summary": "日本の紅葉を初フライトで撮影した、旅の小型ドローン。"
         },
         {
           "id": "dji-neo",
@@ -291,7 +302,8 @@
           "comment": "",
           "links": {
             "review": "https://drone.jp/news/2024090522010796961.html"
-          }
+          },
+          "summary": "手のひらからも、ゴーグルでも。小さくて気軽に飛ばせる一台。"
         },
         {
           "id": "dji-neo2",
@@ -310,7 +322,8 @@
           "links": {
             "Neo2、手のひらから始まる新しい撮り方": "https://drone.jp/column/20251113211015121785.html",
             "Neo 2が連れてきた旅と映像の流れ": "https://drone.jp/column/20251211100437123019.html"
-          }
+          },
+          "summary": "深圳で購入。ジェスチャーで写真と短い動画を撮るのが楽しい一台。"
         },
         {
           "id": "dji-avata2",
@@ -326,7 +339,8 @@
           "comment": "",
           "links": {
             "review": "https://drone.jp/column/2024041122201885883.html"
-          }
+          },
+          "summary": "二代目になって日本でも飛ばせるようになったAvata。"
         },
         {
           "id": "dji-mini-4-pro",
@@ -347,7 +361,8 @@
             "Mini 4 Proと巡るSFC修行旅": "https://drone.jp/column/20250422180507115300.html",
             "ガチじゃない旅、ガチじゃないドローン": "https://drone.jp/column/20250718091041117398.html",
             "Mavic 4 Proを手にして思ったこと": "https://drone.jp/column/20250619135305116533.html"
-          }
+          },
+          "summary": "旅先の登録条件に合わせ、Mini 5 Proと使い分けるもう一台。"
         }
       ]
     },
@@ -550,7 +565,8 @@
           "comment": "",
           "links": {
             "official": "https://hk.momax.net/products/1-power-x-pro-mini-5000mah-integrated-foldable-usb-c-plug-and-built-in-usb-c-cable-battery-pack-with-apple-watch-fast-charger"
-          }
+          },
+          "summary": "スマホへ直接挿せて、Apple Watchも充電できる小型バッテリー。"
         },
         {
           "id": "momax-1world-pocket-mini",
@@ -576,7 +592,8 @@
           "comment": "",
           "links": {
             "一軍二軍入れ替え": "https://note.com/tojimasaya/n/n51eac46a5b37"
-          }
+          },
+          "summary": "空港の緩いソケットでも接続を安定させる、69gの変換アダプター。"
         },
         {
           "id": "ulanzi-ma88",
@@ -596,7 +613,8 @@
           "links": {
             "レビュー": "https://note.com/tojimasaya/n/n427025a434a3",
             "amazon": "https://amzn.to/3RKH3VT"
-          }
+          },
+          "summary": "三脚にもクランプにも。機内で画面を見やすく保つMagSafeホルダー。"
         },
         {
           "id": "kablecard",
@@ -618,7 +636,8 @@
           "links": {
             "動画レビュー": "https://www.youtube.com/watch?v=I0WBbyF4_ds",
             "amazon": "https://amzn.to/4wkDTav"
-          }
+          },
+          "summary": "ケーブル、変換アダプター、SIM収納まで。7年使い続けるカード型の一枚。"
         },
         {
           "id": "mcdodo-67w-charger",
@@ -635,7 +654,8 @@
           "links": {
             "レビュー": "https://note.com/tojimasaya/n/n7e6bcdb29165",
             "amazon": "https://amzn.to/45ac5cU"
-          }
+          },
+          "summary": "巻き取り式USB-Cケーブルを内蔵した、旅に便利な67W充電器。"
         },
         {
           "id": "yazawa-hpm6ac3wh-travel-power-tap",
@@ -655,7 +675,8 @@
             "レビュー": "https://note.com/tojimasaya/n/n55dfd508febb",
             "amazon": "https://www.amazon.co.jp/dp/B0G4R16XFN?tag=ojunktion-22",
             "一軍二軍入れ替え": "https://note.com/tojimasaya/n/n51eac46a5b37"
-          }
+          },
+          "summary": "複数口が欲しい長期旅行に。日本の充電器を使える海外用変換タップ。"
         },
         {
           "id": "baseus-retractable-watch-cable",
@@ -677,7 +698,8 @@
           "links": {
             "一軍二軍入れ替え": "https://note.com/tojimasaya/n/n51eac46a5b37",
             "amazon": "https://amzn.to/4auHsCj"
-          }
+          },
+          "summary": "スマホとApple Watchを一本で充電。扱いやすさで一軍になったケーブル。"
         },
         {
           "id": "peak-design-wrist-strap",
@@ -696,7 +718,8 @@
           "comment": "",
           "links": {
             "amazon": "https://amzn.to/4gv45Kk"
-          }
+          },
+          "summary": "Leitz Phoneにワンタッチで着脱して使う、落下防止のリストストラップ。"
         },
         {
           "id": "cio-novawave",
@@ -717,7 +740,8 @@
             "レビュー": "https://note.com/tojimasaya/n/n7e6bcdb29165",
             "一軍二軍入れ替え": "https://note.com/tojimasaya/n/n51eac46a5b37",
             "amazon": "https://amzn.to/4gEpIIq"
-          }
+          },
+          "summary": "3台をまとめて充電する一台。現在はBaseusのケーブルに主役を譲っている。"
         },
         {
           "id": "acasis-ssd",
@@ -734,7 +758,8 @@
           "links": {
             "レビュー": "https://note.com/tojimasaya/n/ne60ce62cf179",
             "amazon": "https://amzn.to/3TbTpa0"
-          }
+          },
+          "summary": "スマホとMacBookで使う、MagSafe対応のSSD内蔵多機能ハブ。"
         }
       ]
     },
@@ -764,7 +789,9 @@
             "official": "https://www.peakdesign.com/products/travel-backpack-2-in-1",
             "ベストなバッグは、存在しない ── こんどこそ、近づけるか": "https://note.com/tojimasaya/n/nee20e4432dc5",
             "スーツケースカバーを笑っていた私が、96Lの袋を買うまで": "https://note.com/tojimasaya/n/na8bf31aaa03c"
-          }
+          },
+          "summary": "大きく運んで、小さく分ける。デイパックを切り離せる現在の旅バッグ。",
+          "webp": false
         },
         {
           "id": "pd-roller-pro",
@@ -786,7 +813,9 @@
             "amazon": "https://www.amazon.co.jp/dp/B0FDHWRSM3?tag=ojunktion-22",
             "ベストなバッグは、存在しない ── こんどこそ、近づけるか": "https://note.com/tojimasaya/n/nee20e4432dc5",
             "スーツケースカバーを笑っていた私が、96Lの袋を買うまで": "https://note.com/tojimasaya/n/na8bf31aaa03c"
-          }
+          },
+          "summary": "カメラや収納キューブを収めて運ぶ、2-in-1バックパックの相棒。",
+          "webp": false
         },
         {
           "id": "okamy-foldable-boston-96l",
@@ -807,7 +836,9 @@
           "links": {
             "amazon": "https://amzn.to/4wSRZiL",
             "スーツケースカバーを笑っていた私が、96Lの袋を買うまで": "https://note.com/tojimasaya/n/na8bf31aaa03c"
-          }
+          },
+          "summary": "バックパックを預けるときの擦れや汚れを防ぐ、畳める96Lの補助バッグ。",
+          "webp": false
         },
         {
           "id": "pd-travel-45l",
@@ -825,7 +856,9 @@
           "description": "2018年のKickstarterから約8年使い続けた、旅のメイン機。35〜45Lの可変容量と複数のインナーで“大概のものが入る”母艦。新しい2-in-1に主役を譲りつつ、いまも現役。",
           "links": {
             "amazon": "https://www.amazon.co.jp/dp/B0DDL6K3XL?tag=ojunktion-22"
-          }
+          },
+          "summary": "2018年から使う旅のメインバッグ。2-in-1に主役を譲りつつ、今も現役。",
+          "webp": false
         },
         {
           "id": "pd-everyday-backpack-zip-15l-midnight",
@@ -843,7 +876,8 @@
           "description": "Everyday Backpackの機能を、よりシンプルで目立たないジップ仕様にした15Lモデル。街歩きや身軽な撮影にちょうどいいサイズ感で、日常持ちにもカメラバッグにも振れる。",
           "links": {
             "official": "https://www.peakdesign.com/en-jp/products/everyday-backpack-zip?Size=15L&Color=Midnight"
-          }
+          },
+          "summary": "街歩きと身軽な撮影に。日常にもカメラバッグにも使える15L。"
         },
         {
           "id": "pd-everyday-totepack-20l-black",
@@ -861,7 +895,8 @@
           "description": "トートの気軽さとバックパックの機動力を一つにした20Lモデル。カメラも日用品も入れやすく、持ち方を切り替えられるので移動の多い日に使いやすい。",
           "links": {
             "official": "https://www.peakdesign.com/en-jp/products/everyday-totepack?Size=20L&Color=Black"
-          }
+          },
+          "summary": "トートとバックパックを切り替えて、カメラと日用品を運ぶ20L。"
         },
         {
           "id": "pd-camera-cube-v2-xsmall-black",
@@ -880,7 +915,8 @@
           "links": {
             "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=X-Small&Color=Black",
             "TJによるレビュー": "https://note.com/tojimasaya/n/n149d3295b30d"
-          }
+          },
+          "summary": "小型カメラやレンズを、必要最小限の荷物で守る収納キューブ。"
         },
         {
           "id": "pd-camera-cube-v2-small-black",
@@ -898,7 +934,8 @@
           "description": "カメラ一式をほどよくまとめるSmallサイズのCamera Cube V2。仕切りを組み替えながら、旅バッグの中を撮影機材用に整えられる。",
           "links": {
             "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=Small&Color=Black"
-          }
+          },
+          "summary": "旅バッグの中に、カメラ一式をほどよくまとめる収納キューブ。"
         },
         {
           "id": "pd-camera-cube-v2-medium-black",
@@ -916,7 +953,8 @@
           "description": "複数のボディやレンズをまとめて運ぶMediumサイズのCamera Cube V2。Travel Backpack系の母艦に入れて、機材量が多い移動に使う。",
           "links": {
             "official": "https://www.peakdesign.com/en-jp/products/camera-cube?Size=Medium&Color=Black"
-          }
+          },
+          "summary": "複数のボディやレンズを、まとめて運ぶための収納キューブ。"
         },
         {
           "id": "pd-tech-pouch-regular-black",
@@ -934,7 +972,8 @@
           "description": "ケーブル、充電器、SSDなど細かいガジェット類をまとめて運ぶTech Pouch。バッグの中で散らばりがちな小物を一つの区画に集約できる。",
           "links": {
             "official": "https://www.peakdesign.com/en-jp/products/tech-pouch?Size=Regular&Color=Black"
-          }
+          },
+          "summary": "ケーブル、充電器、SSD。散らばるガジェットを一か所に。"
         },
         {
           "id": "pd-packable-tote-sage",
@@ -952,7 +991,8 @@
           "description": "小さく畳んで持ち歩けるPeak DesignのPackable Tote。旅先で荷物が増えたときや、近所への買い物、ホテル周りの軽い外出に使いやすい。",
           "links": {
             "official": "https://www.peakdesign.com/en-jp/products/packable-tote?Color=Sage"
-          }
+          },
+          "summary": "旅先の買い物や軽い外出に、小さく畳んで携帯するサブバッグ。"
         },
         {
           "id": "alpaka-elements-tote-m",
@@ -971,7 +1011,8 @@
           "links": {
             "official": "https://www.alpakagear.jp/view/item/000000000031",
             "TJによるレビュー": "https://note.com/tojimasaya/n/n149d3295b30d"
-          }
+          },
+          "summary": "キャリーに忍ばせておく、軽くて畳みやすい旅先用トート。"
         },
         {
           "id": "alpaka-metro-tote",
@@ -989,7 +1030,8 @@
           "description": "上部にジッパーがあるので旅行時はこちらが安心。キャリーバッグのハンドルに差し込めるラゲッジパススルー付きなのも良く、移動中の使い勝手が高い。",
           "links": {
             "official": "https://www.alpakagear.jp/view/item/000000000045"
-          }
+          },
+          "summary": "ジッパーとラゲッジパススルー付き。移動中も安心して使えるトート。"
         }
       ]
     },
@@ -998,7 +1040,183 @@
       "subtitle": "旅と二拠点生活の通信環境",
       "hero_image": "/assets/images/gear/sim/sim-connectivity-card.jpg",
       "description": "香港・中国・日本を行き来するためのSIM、eSIM、プリペイド回線、バックアップ回線の使い分け。",
-      "items": []
+      "items": [
+        {
+          "id": "povo",
+          "name": "povo",
+          "brand": "povo",
+          "image": null,
+          "usage": "TJ利用中",
+          "summary": "日本の番号維持と海外でのSMS認証に。帰国時だけデータを追加する回線。",
+          "wordmark": "povo",
+          "specs": [
+            "TJ利用中",
+            "番号維持",
+            "SMS認証"
+          ],
+          "description": "使わない月は基本料0円で維持でき、海外でも日本のSMSを受けられるので二重認証用として扱いやすい日本SIM。",
+          "points": [
+            "日本に一時帰国したときだけ必要なデータ量を課金できる。",
+            "課金中でなくても海外でSMS受信できるのが大きい。",
+            "長期間トッピング購入がないと利用停止・契約解除になる点は注意。",
+            "放置すれば自動的に解約されるので、解約手続きの手間が少ない。"
+          ],
+          "links": {
+            "povo公式を見る": "https://povo.jp/"
+          }
+        },
+        {
+          "id": "rakuten-mobile",
+          "name": "楽天モバイル",
+          "brand": "Rakuten",
+          "image": null,
+          "usage": "TJ利用中",
+          "summary": "日本の番号と海外通話を支える、Rakuten Linkとローミング用の回線。",
+          "wordmark": "Rakuten",
+          "specs": [
+            "TJ利用中",
+            "海外2GB",
+            "Rakuten Link"
+          ],
+          "description": "3GBまでの低額スタートに海外データ2GBが含まれ、Rakuten Linkを使った通話の強さが海外在住者には大きい。",
+          "points": [
+            "3GBまで月1,078円（税込）から使える段階制プラン。",
+            "海外指定地域では毎月2GBまで追加料金なしで使える。",
+            "日本帰国時に使いすぎても段階的に上がるだけなので安心感がある。",
+            "Rakuten Linkなら海外から日本への通話、日本から海外滞在中の受話でも無料になる場面が多い。",
+            "Rakuten Linkには発信先・着信方法などの制限があるので事前確認が必要。"
+          ],
+          "links": {
+            "海外在住者・出張族に楽天モバイルをすすめる理由": "https://note.com/tojimasaya/n/ne46974dcf8f3",
+            "Rakuten Linkで海外通話を節約する": "https://note.com/tojimasaya/n/na177dcb599b6",
+            "海外ローミングを過信した反省とバックアップ選び": "https://note.com/tojimasaya/n/n1de39965798e",
+            "楽天モバイル公式を見る": "https://network.mobile.rakuten.co.jp/"
+          }
+        },
+        {
+          "id": "jal-mobile-ahamo",
+          "name": "JAL Mobile powered by ahamo",
+          "brand": "JAL Mobile",
+          "image": null,
+          "usage": "TJ検討中",
+          "summary": "海外ローミングとJALマイル特典に関心があり、帰省時の契約を検討中。",
+          "wordmark": "ahamo",
+          "specs": [
+            "TJ検討中",
+            "JALマイル"
+          ],
+          "description": "月額2,970円で30GB、海外ローミングでも30GB枠を使えるahamo系プラン。JALマイル特典が付くので、次回帰省時に契約を検討中。",
+          "points": [
+            "30GBを国内外で使えるのは旅行者にはかなり強い。",
+            "海外ローミングは利用開始から15日を超えると速度制限（送受信最大128kbps）になる点が海外在住者には重い。",
+            "日本に戻って国内通信をするまで海外利用期間がリセットされない。",
+            "毎月JALマイルが貯まり、条件次第で「どこかにマイル」に使えるのが魅力。",
+            "長期で日本を離れる人は、16日目以降の回避策を別に用意したい。"
+          ],
+          "links": {
+            "香港のSIMを1枚畳んで、JALのマイルを取りに行く": "https://note.com/tojimasaya/n/n1c959bb91226",
+            "JAL Mobile powered by ahamo公式を見る": "https://www.jal.co.jp/jp/ja/jmb/jal-mobile/ahamo/",
+            "ahamo公式を見る": "https://ahamo.com/"
+          }
+        },
+        {
+          "id": "banana-travel-sim",
+          "name": "Banana Travel SIM 5G 365 Multi Offer",
+          "brand": "Banana Travel SIM",
+          "image": "assets/images/gear/sim/banana-travel-sim.jpg",
+          "usage": "TJ利用中",
+          "summary": "香港以外の対象国へ出かけるときに持つ、旅のバックアップ回線。",
+          "specs": [
+            "TJ利用中",
+            "物理SIM",
+            "eSIM対応",
+            "52カ国",
+            "1年有効"
+          ],
+          "description": "日本、韓国、中国を含む海外52カ国で使えるデータSIM。公式サイトから物理SIMまたはeSIMとして購入でき、1年間有効なので、頻繁に旅行する人や長期滞在者のバックアップ回線として相性が良い。もちろん、日本、韓国、マレーシアといった1カ国のみ、8日間といった短期プランでも購入できます。\n\nただし「52カ国対応」は万能という意味ではありません。訪問国が対象リストに含まれているか、利用前に公式サイトで必ず確認しておきたいSIMです。",
+          "notes": [
+            {
+              "title": "Tips:",
+              "body": "楽天モバイルは3GBを超えると料金段階が一気に上がるため、海外や一時帰国時にBanana SIM側へデータ通信を逃がして、楽天モバイルを3GB以内に抑えるという使い方もできます。"
+            },
+            {
+              "title": "注意:",
+              "body": "Banana Travel SIMは香港には対応していません。香港で使う回線として選ぶのではなく、香港以外の対象国へ移動するときのバックアップSIMとして考えます。"
+            }
+          ],
+          "links": {
+            "楽天モバイルの海外ローミングを過信していた私の反省と、真に頼れるバックアップの選び方": "https://note.com/tojimasaya/n/n1de39965798e",
+            "Banana Travel SIM公式を見る": "https://www.bananatravelsim.com/products/5g-365-multi-offer",
+            "Amazonで探す": "https://www.amazon.co.jp/s?k=Banana+Travel+SIM&linkCode=ll2&tag=ojunktion-22&linkId=dddc5e922db894129c0b0ca12280f2b9&ref_=as_li_ss_tl"
+          }
+        },
+        {
+          "id": "more-mobile-sim",
+          "name": "More Mobile SIM",
+          "brand": "More Mobile",
+          "image": "assets/images/gear/sim/more-mobile-sim.jpg",
+          "usage": "TJ利用中",
+          "summary": "香港を離れたあとも、日本で香港番号のSMSを受けるための回線。",
+          "specs": [
+            "TJ利用中",
+            "物理SIM",
+            "eSIMあり",
+            "香港番号維持",
+            "SMS認証"
+          ],
+          "description": "香港から日本に戻る人が、香港の電話番号を安く持ち続けるためのプリペイドSIM。銀行を含む最近のアプリで増えている二重認証用に、日本でも香港番号宛てのSMSを無料で受けられるのが最大のメリットです。\n\n継続したければ追加支払いをすればよく、不要になれば放置して自動解約に任せられる。月額契約で縛られず、必要な間だけ香港番号を残しておけるのが、この用途に向いています。",
+          "contact": [
+            "More Mobile 問い合わせ先",
+            "WhatsApp: 6496 6103",
+            "WeChat: 5473 1398",
+            "Customer Hotline: 2150 1512"
+          ],
+          "links": {
+            "香港の思い出の電話番号、格安で維持しませんか？月額不要・完全放置OKなプリペイドSIMへMNPした話": "https://note.com/tojimasaya/n/n21cdaeb9a826",
+            "香港の思い出の番号、日本でSMSを受ける方法発見！": "https://note.com/tojimasaya/n/nc5283408bc6f",
+            "香港の思い出の番号、日本でちゃんとSMS届きました": "https://note.com/tojimasaya/n/n00ab45a461f2",
+            "Amazonで探す": "https://www.amazon.co.jp/s?k=More+Mobile+SIM&linkCode=ll2&tag=ojunktion-22&linkId=dddc5e922db894129c0b0ca12280f2b9&ref_=as_li_ss_tl"
+          }
+        },
+        {
+          "id": "valuegb-whole-year-sim",
+          "name": "ValueGB Whole Year SIM（激SIM）",
+          "brand": "ValueGB",
+          "image": "assets/images/gear/sim/valuegb-year-sim.jpg",
+          "usage": "TJ利用中",
+          "summary": "香港に長めに滞在するときの、データ・通話用プリペイドSIM。",
+          "specs": [
+            "TJ利用中",
+            "物理SIM",
+            "長期滞在",
+            "1年利用"
+          ],
+          "description": "香港で長めに使うデータ・通話回線の候補。データ追加は可能だが、基本は1年間の利用期限があるため、短期旅行用というより香港滞在を前提にしたSIMとして扱いたい。",
+          "links": {
+            "ValueGB公式を見る": "https://www.valuegb.com/service-site/ValueGB/en/local_prepaid_98A.jsp",
+            "Amazonで探す": "https://www.amazon.co.jp/s?k=ValueGB+SIM&linkCode=ll2&tag=ojunktion-22&linkId=dddc5e922db894129c0b0ca12280f2b9&ref_=as_li_ss_tl"
+          }
+        },
+        {
+          "id": "china-telecom-sim",
+          "name": "China Telecom 三地共用データSIM",
+          "brand": "China Telecom",
+          "image": "assets/images/gear/sim/china-telecom-prepaid-sim.jpg",
+          "usage": "TJ利用中",
+          "summary": "香港・中国本土・マカオをまたいで使う、追加チャージ式のデータSIM。",
+          "specs": [
+            "TJ利用中",
+            "物理SIM",
+            "三地共用",
+            "追加チャージ"
+          ],
+          "description": "香港・中国本土・マカオをまたいで使うためのプリペイドSIM。クレジットカードやAlipayで追加チャージすれば長期利用も可能で、中国本土でもFacebook、YouTube、LINEなどをそのまま使えるのが大きい。",
+          "links": {
+            "中国電信CTExcel公式を見る": "https://www.ctexcel.com.hk/SIMCard?cardtype=0&ordertype=0",
+            "Amazonで探す": "https://www.amazon.co.jp/s?k=China+Telecom+Hong+Kong+SIM&linkCode=ll2&tag=ojunktion-22&linkId=dddc5e922db894129c0b0ca12280f2b9&ref_=as_li_ss_tl"
+          }
+        }
+      ]
     }
   }
 }

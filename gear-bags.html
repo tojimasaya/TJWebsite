@@ -12,128 +12,9 @@
     <!-- Fonts & CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="gear-catalog.css?v=2">
 
-    <style>
-        /* Detail Page Specific Styles */
-        .detail-hero {
-            padding: 100px 20px 60px;
-            text-align: center;
-            background-color: var(--bg-color);
-        }
-        .detail-back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        .detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 30px;
-        }
-        .section-label {
-            max-width: 1200px;
-            margin: 0 auto 30px;
-            padding: 0 30px 10px;
-            font-family: var(--primary-font);
-            font-size: 1.8rem;
-            border-bottom: 1px solid var(--border-color);
-            color: var(--text-color);
-        }
 
-        /* Item Card */
-        .gear-item {
-            background: var(--white, #fff);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .gear-img-box {
-            aspect-ratio: 16/10;
-            overflow: hidden;
-            background: #f9f9f9;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .gear-img {
-            width: 100%; height: 100%; object-fit: contain;
-            mix-blend-mode: multiply;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) .gear-img { mix-blend-mode: normal; }
-            :root:not([data-theme="light"]) .gear-img-box { background: #2a2a2a; }
-            :root:not([data-theme="light"]) .gear-item { background: #1a1a1a; }
-        }
-        [data-theme="dark"] .gear-img { mix-blend-mode: normal; }
-        [data-theme="dark"] .gear-img-box { background: #2a2a2a; }
-        [data-theme="dark"] .gear-item { background: #1a1a1a; }
-        .gear-content {
-            padding: 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .gear-name {
-            font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; color: var(--text-color);
-        }
-        .gear-desc {
-            font-size: 0.9rem; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 15px;
-        }
-        .gear-specs {
-            font-size: 0.8rem; color: var(--text-lighter); margin-bottom: 15px;
-            display: flex; gap: 8px; flex-wrap: wrap;
-        }
-        .spec-tag {
-            background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px;
-        }
-        [data-theme="dark"] .spec-tag { background: rgba(255,255,255,0.08); }
-        .gear-links { display: flex; flex-direction: column; gap: 10px; margin-top: auto; }
-        .gear-review-link {
-            display: block;
-            padding: 12px 14px;
-            border: 1px solid rgba(26, 63, 185, 0.22);
-            border-left: 4px solid var(--accent-color);
-            border-radius: 6px;
-            background: rgba(26, 63, 185, 0.045);
-            color: var(--accent-color);
-            text-decoration: none;
-            line-height: 1.55;
-        }
-        .gear-review-label {
-            display: block;
-            margin-bottom: 3px;
-            color: var(--text-light);
-            font-size: 0.72rem;
-            font-weight: 600;
-            letter-spacing: 0.04em;
-        }
-        .gear-review-title { font-size: 0.88rem; font-weight: 600; }
-        .gear-product-links { display: flex; flex-wrap: wrap; gap: 8px 12px; }
-        .gear-product-links a {
-            color: var(--text-light);
-            text-decoration: none;
-            font-size: 0.8rem;
-            border-bottom: 1px solid rgba(0,0,0,0.16);
-        }
-        .gear-product-links a:hover { color: var(--accent-color); border-color: var(--accent-color); }
-        [data-theme="dark"] .gear-review-link { background: rgba(96, 165, 250, 0.08); border-color: rgba(96, 165, 250, 0.28); border-left-color: #60a5fa; }
-        [data-theme="dark"] .gear-product-links a { border-color: rgba(255,255,255,0.22); }
-
-        .bags-intro {
-            max-width: 1200px;
-            margin: 0 auto 40px;
-            padding: 0 30px;
-            font-family: 'Noto Serif JP', serif;
-            font-size: 0.95rem;
-            line-height: 2;
-            color: var(--text-light);
-        }
-    </style>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/gear-bags.html">
@@ -150,103 +31,40 @@
 <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gear/bags/roller-pro.jpg">
 <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
 </head>
-<body>
-    <!-- Navigation (Injected by site-header.js) -->
+<body class="gear-catalog-page">
     <script src="js/site-header.js"></script>
+    <main id="main-content">
+        <header class="catalog-hero">
+            <a href="gear.html" class="catalog-back">← Gearのカテゴリ一覧</a>
+            <h1>Bags</h1>
+            <p class="catalog-lead">大きく運び、現地では小さく分ける。旅と撮影を運ぶバッグ。</p>
+            <p class="catalog-intro">撮影旅行は、荷物を「運ぶ日」と「身軽に歩く日」が一回の旅に同居します。大きな母艦で運び、現地では小さく分けて歩く——その使い分けを、2018年から続く Peak Design のバッグで組み立てています。</p>
+        </header>
+        <section class="gear-catalog" aria-labelledby="catalog-title">
+            <div class="catalog-toolbar">
+                <h2 id="catalog-title">所有している道具 <span class="catalog-count" id="catalog-count" role="status"></span></h2>
+                <div class="catalog-controls"><div class="catalog-filters" role="group" aria-label="一覧の絞り込み">
+                    <button type="button" data-gear-filter="all" aria-pressed="true" aria-controls="catalog-grid" disabled>すべて <span id="filter-all-count"></span></button>
+                    <button type="button" data-gear-filter="reviews" aria-pressed="false" aria-controls="catalog-grid" disabled>レビューあり <span id="filter-review-count"></span></button>
+                </div></div>
+            </div>
+            <p class="catalog-hint">使い方や選んだ理由は「解説を読む」から。自分で書いた記事には本数を添えています。</p>
+            <div class="catalog-grid" id="catalog-grid" data-gear-category="bags" aria-busy="true"><p class="catalog-message">一覧を読み込んでいます…</p></div>
+            <noscript><p class="catalog-message">一覧を表示するには、JavaScriptを有効にしてください。</p></noscript>
+            <p class="catalog-disclosure">※ 本ページの商品リンクには広告（Amazonアソシエイト）を含みます。</p>
+        </section>
 
-    <header class="detail-hero">
-        <a href="gear.html" class="detail-back-link">← Back to Categories</a>
-        <h1>Bags</h1>
-        <p>母艦・分割・ローラー。旅を運ぶ Peak Design。</p>
-            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">※ 本ページの商品リンクには広告（Amazonアソシエイト）を含みます。</p>
-    </header>
-
-    <p class="bags-intro">
-        撮影旅行は、荷物を「運ぶ日」と「身軽に歩く日」が一回の旅に同居します。大きな母艦で運び、現地では小さく分けて歩く——その使い分けを、2018年から続く Peak Design のバッグで組み立てています。
-    </p>
-
-    <h2 class="section-label">Travel Bags</h2>
-    <div class="detail-grid" id="bags-grid">
-        <p style="padding: 20px;">Loading...</p>
-    </div>
-
+    </main>
+    <dialog class="gear-detail" id="gear-detail" aria-labelledby="gear-detail-context">
+        <div class="gear-detail__bar">
+            <span id="gear-detail-context">道具の記録</span>
+            <button class="gear-detail__close" type="button" data-gear-close>閉じる <span aria-hidden="true">×</span></button>
+        </div>
+        <div class="gear-detail__tabs" id="gear-detail-tabs" role="group" aria-label="解説とレビューの切り替え" hidden></div>
+        <div class="gear-detail__scroll" id="gear-detail-content"></div>
+    </dialog>
     <footer class="footer"></footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            const grid = document.getElementById('bags-grid');
-            try {
-                const response = await fetch('data/gear.json', { cache: 'no-cache' });
-                if (!response.ok) throw new Error('Data could not be loaded.');
-                const data = await response.json();
-                if (data.categories.bags) {
-                    renderGrid('bags-grid', data.categories.bags.items);
-                } else {
-                    grid.innerHTML = '<p>Data could not be loaded.</p>';
-                }
-            } catch (error) {
-                console.error('Error loading gear data:', error);
-                grid.innerHTML = '<p>Data could not be loaded.</p>';
-            }
-        });
-
-        function linkRel(url) {
-            const host = new URL(url, window.location.href).hostname;
-            const isSponsored = host === 'amzn.to' || host.includes('amazon.');
-            return isSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
-        }
-
-        function newBadge(item) {
-            return item.is_new ? `<span class="gear-new-badge">${item.new_label || 'NEW'}</span>` : '';
-        }
-
-        function linkLabel(key) {
-            if (key === 'amazon') return 'Amazon で見る';
-            if (key === 'official') return 'Official';
-            if (key === 'note' || key === 'Note' || key === 'review' || key === 'TJによるレビュー') return 'レビューを読む';
-            return key;
-        }
-
-        function isReviewLink(key, url) {
-            const host = new URL(url, window.location.href).hostname;
-            const normalizedKey = key.toLowerCase();
-            return host.includes('note.com') || host.includes('drone.jp') || normalizedKey === 'note' || normalizedKey === 'review' || key === 'TJによるレビュー' || key.includes('レビュー') || key.includes('記事');
-        }
-
-        function renderLinks(links = {}) {
-            const entries = Object.entries(links);
-            const reviewLinks = entries.filter(([key, url]) => isReviewLink(key, url));
-            const productLinks = entries.filter(([key, url]) => !isReviewLink(key, url));
-            const reviewHtml = reviewLinks.map(([key, url]) => `<a class="gear-review-link" href="${url}" target="_blank" rel="${linkRel(url)}"><span class="gear-review-label">TJによるレビュー</span><span class="gear-review-title">${linkLabel(key)} →</span></a>`).join('');
-            const productHtml = productLinks.length ? `<div class="gear-product-links">${productLinks.map(([key, url]) => `<a href="${url}" target="_blank" rel="${linkRel(url)}">${linkLabel(key)} →</a>`).join('')}</div>` : '';
-            return reviewHtml || productHtml ? `<div class="gear-links">${reviewHtml}${productHtml}</div>` : '';
-        }
-
-        function renderGrid(id, items) {
-            const container = document.getElementById(id);
-            if (!items || items.length === 0) {
-                container.innerHTML = '<p style="padding:20px; color:#999;">No items found.</p>';
-                return;
-            }
-            container.innerHTML = items.map(item => {
-                return `
-                <article class="gear-item">
-                    <div class="gear-img-box">
-                        ${newBadge(item)}
-                        <img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.onerror=null;this.src='assets/images/gear/bags/_placeholder.jpg'">
-                    </div>
-                    <div class="gear-content">
-                        <h3 class="gear-name">${item.name}</h3>
-                        <div class="gear-specs">
-                            ${item.specs ? item.specs.map(s => `<span class="spec-tag">${s}</span>`).join('') : ''}
-                        </div>
-                        <p class="gear-desc">${item.description}</p>
-                        ${renderLinks(item.links)}
-                    </div>
-                </article>
-            `}).join('');
-        }
-    </script>
+    <script src="js/gear-catalog.js?v=2" defer></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
     <script src="/growth.js" defer></script>
 </body>

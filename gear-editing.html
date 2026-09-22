@@ -10,7 +10,7 @@
     <meta name="description" content="写真、動画、文章制作に使っているMac、iPad、iPhoneなど日常の編集環境と道具。">
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    <link rel="stylesheet" href="gear-catalog.css">
+    <link rel="stylesheet" href="gear-catalog.css?v=2">
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
 <link rel="canonical" href="https://tojimasaya.com/gear-editing.html">
@@ -45,7 +45,7 @@
                 </div>
             </div>
             <p class="catalog-hint">使い方や選んだ理由は「解説を読む」から。自分で書いたレビューには記事数を添えています。</p>
-            <div class="catalog-grid" id="editing-grid" aria-busy="true">
+            <div class="catalog-grid" id="editing-grid" data-gear-category="editing" aria-busy="true">
                 <p class="catalog-message">道具を読み込んでいます…</p>
             </div>
             <noscript><p class="catalog-message">道具の一覧を表示するには、JavaScriptを有効にしてください。</p></noscript>
@@ -65,7 +65,7 @@
     <footer class="footer"></footer>
 
     <script src="js/site-header.js"></script>
-    <script src="js/gear-catalog.js" defer></script>
+    <script src="js/gear-catalog.js?v=2" defer></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
     <script src="/growth.js" defer></script>
 </body>

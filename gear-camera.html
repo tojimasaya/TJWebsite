@@ -8,127 +8,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Camera & Lenses — Leica機材と作例 | Toji Masaya</title>
     <meta name="description" content="田路昌也が実際に使っているLeica M / SL、Mレンズ、Lマウント機材と、それらで撮影した白鷺三十六景・香港ネオン残照への入口。">
-    
+
     <!-- Fonts & CSS -->
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
-    
+    <link rel="stylesheet" href="gear-catalog.css?v=2">
+
     <style>
-        /* Detail Page Specific Styles */
-        .detail-hero {
-            padding: 100px 20px 60px;
-            text-align: center;
-            background-color: var(--bg-color);
-        }
-        .detail-back-link {
-            display: inline-block;
-            margin-bottom: 20px;
-            color: var(--accent-color);
-            text-decoration: none;
-            font-size: 0.9rem;
-        }
-        .detail-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
-            gap: 40px;
-            max-width: 1200px;
-            margin: 0 auto 100px;
-            padding: 0 30px;
-        }
-        .section-label {
-            max-width: 1200px;
-            margin: 0 auto 30px;
-            padding: 0 30px;
-            font-family: var(--primary-font);
-            font-size: 1.8rem;
-            border-bottom: 1px solid var(--border-color);
-            padding-bottom: 10px;
-            color: var(--text-color);
-        }
-        
-        /* Item Card */
-        .gear-item {
-            background: var(--white, #fff);
-            border: 1px solid var(--border-color);
-            border-radius: 8px;
-            overflow: hidden;
-            display: flex;
-            flex-direction: column;
-        }
-        .gear-img-box {
-            aspect-ratio: 16/10;
-            overflow: hidden;
-            background: #f9f9f9;
-            border-bottom: 1px solid var(--border-color);
-        }
-        .gear-img {
-            width: 100%; height: 100%; object-fit: contain;
-            mix-blend-mode: multiply;
-        }
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) .gear-img { mix-blend-mode: normal; }
-            :root:not([data-theme="light"]) .gear-img-box { background: #2a2a2a; }
-            :root:not([data-theme="light"]) .gear-item { background: #1a1a1a; }
-        }
-        [data-theme="dark"] .gear-img { mix-blend-mode: normal; }
-        [data-theme="dark"] .gear-img-box { background: #2a2a2a; }
-        [data-theme="dark"] .gear-item { background: #1a1a1a; }
-        .gear-content {
-            padding: 20px;
-            flex: 1;
-            display: flex;
-            flex-direction: column;
-        }
-        .gear-name { 
-            font-size: 1.2rem; margin-bottom: 10px; font-weight: 600; color: var(--text-color);
-        }
-        .gear-desc { 
-            font-size: 0.9rem; color: var(--text-light); line-height: 1.7; flex: 1; margin-bottom: 15px; 
-        }
-        .gear-specs { 
-            font-size: 0.8rem; color: var(--text-lighter); margin-bottom: 15px; 
-            display: flex; gap: 8px; flex-wrap: wrap;
-        }
-        .spec-tag {
-            background: rgba(0,0,0,0.05); padding: 2px 6px; border-radius: 4px;
-        }
-        .gear-links a { color: var(--accent-color); text-decoration: none; font-size: 0.85rem; margin-right: 15px; }
 
-        .gear-work-links {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-top: 14px;
-            padding-top: 14px;
-            border-top: 1px solid var(--border-color);
-        }
-
-        /* 特調リンク（白鷺三十六景用） */
-        .featured-link {
-            color: #1A3FB9 !important; /* 白鷺ブルー */
-            font-weight: 600;
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            padding: 4px 6px;
-        }
-        
-        .featured-link:hover {
-            background-color: rgba(26, 63, 185, 0.05);
-            border-radius: 4px;
-        }
-
-        .featured-link .icon {
-            font-size: 1.1em;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) .featured-link { color: #60a5fa !important; }
-            :root:not([data-theme="light"]) .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); }
-        }
-        [data-theme="dark"] .featured-link { color: #60a5fa !important; }
-        [data-theme="dark"] .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); }
-        /* Leica DB Link */
         .leica-db-link {
             display: flex;
             align-items: center;
@@ -265,32 +152,28 @@
 <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gear/sl2s.jpg">
 <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
 </head>
-<body>
-    <!-- Navigation (Injected by site-header.js) -->
+<body class="gear-catalog-page">
     <script src="js/site-header.js"></script>
+    <main id="main-content">
+        <header class="catalog-hero">
+            <a href="gear.html" class="catalog-back">← Gearのカテゴリ一覧</a>
+            <h1>Camera &amp; Lenses</h1>
+            <p class="catalog-lead">旅で使うカメラとレンズ。Leica M・SLを中心に、撮りたい景色に合わせて。</p>
 
-    <header class="detail-hero">
-        <a href="gear.html" class="detail-back-link">← Back to Categories</a>
-        <h1>Camera & Lenses</h1>
-        <p>Leica M System, SL System, Compacts, and Lenses.</p>
-            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.8;">※ 本ページの商品リンクには広告（Amazonアソシエイト）を含みます。</p>
-    </header>
-
-    <h2 class="section-label">Bodies</h2>
-    <div class="detail-grid" id="body-grid">
-        <p style="padding: 20px;">Loading...</p>
-    </div>
-
-    <h2 class="section-label">Lenses</h2>
-    <div class="detail-grid" id="lens-grid">
-        <p style="padding: 20px;">Loading...</p>
-    </div>
-
-    <h2 class="section-label">Mount Adapters</h2>
-    <div class="detail-grid" id="adapter-grid">
-        <p style="padding: 20px;">Loading...</p>
-    </div>
-
+        </header>
+        <section class="gear-catalog" aria-labelledby="catalog-title">
+            <div class="catalog-toolbar">
+                <h2 id="catalog-title">所有している道具 <span class="catalog-count" id="catalog-count" role="status"></span></h2>
+                <div class="catalog-controls"><label class="catalog-scope">種類 <select id="catalog-scope" aria-controls="catalog-grid" disabled><option>読み込み中…</option></select></label><div class="catalog-filters" role="group" aria-label="一覧の絞り込み">
+                    <button type="button" data-gear-filter="all" aria-pressed="true" aria-controls="catalog-grid" disabled>すべて <span id="filter-all-count"></span></button>
+                    <button type="button" data-gear-filter="reviews" aria-pressed="false" aria-controls="catalog-grid" disabled>レビューあり <span id="filter-review-count"></span></button>
+                </div></div>
+            </div>
+            <p class="catalog-hint">使い方や選んだ理由は「解説を読む」から。自分で書いた記事には本数を添えています。</p>
+            <div class="catalog-grid" id="catalog-grid" data-gear-category="camera" aria-busy="true"><p class="catalog-message">一覧を読み込んでいます…</p></div>
+            <noscript><p class="catalog-message">一覧を表示するには、JavaScriptを有効にしてください。</p></noscript>
+            <p class="catalog-disclosure">※ 本ページの商品リンクには広告（Amazonアソシエイト）を含みます。</p>
+        </section>
     <section class="camera-work-bridge" aria-labelledby="camera-work-title">
         <div class="camera-work-inner">
             <div>
@@ -349,123 +232,18 @@
         </a>
     </div>
 
+
+    </main>
+    <dialog class="gear-detail" id="gear-detail" aria-labelledby="gear-detail-context">
+        <div class="gear-detail__bar">
+            <span id="gear-detail-context">道具の記録</span>
+            <button class="gear-detail__close" type="button" data-gear-close>閉じる <span aria-hidden="true">×</span></button>
+        </div>
+        <div class="gear-detail__tabs" id="gear-detail-tabs" role="group" aria-label="解説とレビューの切り替え" hidden></div>
+        <div class="gear-detail__scroll" id="gear-detail-content"></div>
+    </dialog>
     <footer class="footer"></footer>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', async () => {
-            try {
-                const response = await fetch('data/gear.json', { cache: 'no-cache' });
-                if (!response.ok) throw new Error('Data could not be loaded.');
-                const data = await response.json();
-                if (data.categories.camera) {
-                    const items = data.categories.camera.items;
-                const bodyItems = [];
-                const lensItems = [];
-                const adapterItems = [];
-
-                items.forEach(item => {
-                    if (item.type === 'lens') {
-                        lensItems.push(item);
-                    } else if (item.type === 'adapter') {
-                        adapterItems.push(item);
-                    } else {
-                        bodyItems.push(item);
-                    }
-                });
-
-                renderGrid('body-grid', bodyItems);
-                renderGrid('lens-grid', lensItems);
-                renderGrid('adapter-grid', adapterItems);
-                } else {
-                    throw new Error('Camera data not found.');
-                }
-            } catch (error) {
-                console.error('Error loading gear data:', error);
-                document.getElementById('body-grid').innerHTML = '<p>Data could not be loaded.</p>';
-                document.getElementById('lens-grid').innerHTML = '';
-                document.getElementById('adapter-grid').innerHTML = '';
-            }
-        });
-
-        const WORK_LINKS_BY_GEAR = {
-            'leica-m10': [
-                { href: 'shirasagi36.html', label: '作例: 白鷺三十六景' }
-            ],
-            'leica-sl2s': [
-                { href: 'shirasagi36.html', label: '作例: 白鷺三十六景' },
-                { href: 'hongkong-neon.html', label: '作例: 香港ネオン残照' }
-            ],
-            'summilux-50-v2': [
-                { href: 'shirasagi36.html', label: '作例: 白鷺三十六景' }
-            ],
-            'tri-elmar': [
-                { href: 'shirasagi36.html', label: '作例: 白鷺三十六景' }
-            ],
-            'sigma-24-70-f28-dgdn': [
-                { href: 'shirasagi36.html', label: '作例: 白鷺三十六景' }
-            ]
-        };
-
-        function renderWorkLinks(item) {
-            const links = WORK_LINKS_BY_GEAR[item.id] || [];
-            if (links.length === 0) return '';
-            return `
-                <div class="gear-work-links">
-                    ${links.map(link => `<a href="${link.href}" class="featured-link">${link.label} →</a>`).join('')}
-                </div>
-            `;
-        }
-
-        function linkLabel(key) {
-            if (key === 'note') return 'Read Review';
-            if (key === 'manual') return 'Manual';
-            if (key === 'reference') return 'Reference';
-            if (key === 'amazon') return 'Amazon';
-            return 'Official';
-        }
-
-        function linkRel(url) {
-            const host = new URL(url, window.location.href).hostname;
-            const isSponsored = host === 'amzn.to' || host.includes('amazon.');
-            return isSponsored ? 'noopener noreferrer sponsored' : 'noopener noreferrer';
-        }
-
-        function newBadge(item) {
-            return item.is_new ? `<span class="gear-new-badge">${item.new_label || 'NEW'}</span>` : '';
-        }
-
-        function renderGrid(id, items) {
-            const container = document.getElementById(id);
-            if (items.length === 0) {
-                container.innerHTML = '<p style="padding:20px; color:#999;">No items found.</p>';
-                return;
-            }
-            container.innerHTML = items.map(item => {
-                const webpSrc = item.image.replace(/\.(jpg|jpeg|png)$/, '.webp');
-                return `
-                <article class="gear-item">
-                    <div class="gear-img-box">
-                        ${newBadge(item)}
-                        <picture>
-                            <source srcset="${webpSrc}" type="image/webp">
-                            <img src="${item.image}" alt="${item.name}" class="gear-img" loading="lazy" onerror="this.onerror=null;this.src='assets/images/gear/m2.jpg'">
-                        </picture>
-                    </div>
-                    <div class="gear-content">
-                        <h3 class="gear-name">${item.name}</h3>
-                        <div class="gear-specs">
-                            ${item.specs ? item.specs.map(s => `<span class="spec-tag">${s}</span>`).join('') : ''}
-                        </div>
-                        <p class="gear-desc">${item.description}</p>
-                        <div class="gear-links">
-                            ${Object.entries(item.links || {}).map(([key, url]) => `<a href="${url}" target="_blank" rel="${linkRel(url)}">${linkLabel(key)} →</a>`).join('')}
-                        </div>
-                        ${renderWorkLinks(item)}
-                    </div>
-                </article>
-            `}).join('');
-        }
-    </script>
+    <script src="js/gear-catalog.js?v=2" defer></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
     <script src="/growth.js" defer></script>
 </body>
