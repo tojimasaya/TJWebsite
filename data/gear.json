@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-07-31T00:00:00Z",
+  "updated_at": "2026-09-22T00:00:00Z",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -417,7 +417,7 @@
           "id": "rokid-ai-glasses",
           "name": "Rokid AI Glasses",
           "brand": "Rokid",
-          "image": "/assets/images/photo-notes/rokid-mongkok-langham-night.jpg",
+          "image": "/assets/images/gear/rokid-ai-glasses.jpg",
           "status": "available",
           "is_new": true,
           "new_label": "NEW 2026",
