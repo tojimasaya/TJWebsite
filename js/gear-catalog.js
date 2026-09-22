@@ -71,7 +71,8 @@
     function imageMarkup(item, className, lazy = true) {
         if (!item.image) return '<div class="gear-card__wordmark ' + className + '" aria-hidden="true">' + escapeHtml(item.wordmark || item.brand || item.name) + '</div>';
         const webp = item.image.replace(/\.(png|jpe?g)$/i, '.webp');
-        return '<picture>' + (item.webp === false ? '' : '<source srcset="' + escapeHtml(webp) + '" type="image/webp">') + '<img class="' + className + '" src="' + escapeHtml(item.image)
+        const pictureClass = item.imageType === 'logo' ? ' class="gear-brand gear-brand--' + escapeHtml(item.id) + '"' : '';
+        return '<picture' + pictureClass + '>' + (item.webp === false ? '' : '<source srcset="' + escapeHtml(webp) + '" type="image/webp">') + '<img class="' + className + '" src="' + escapeHtml(item.image)
             + '" alt="' + escapeHtml(item.name) + '"' + (lazy ? ' loading="lazy"' : '')
             + ' data-fallback-src="' + escapeHtml(item.fallbackImage || 'assets/images/gear/editing.jpg') + '" decoding="async"></picture>';
     }
