@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-19T00:00:00+09:00",
+  "generatedAt": "2026-09-24T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "drone",
+      "kindLabel": "DRONE.jp",
+      "title": "「ここで飛ばしていいのか」をメガネに出す─作ってみたら、自分が緑信号を出していた [田路昌也の中国・香港ドローン便り]Vol.68",
+      "url": "https://drone.jp/column/20260924123028129556.html",
+      "external": true,
+      "date": "2026-09-24",
+      "thumb": "https://drone.jp/wp-content/uploads/tohzi_68_topNkeY7p03.jpg"
+    },
     {
       "kind": "note",
       "kindLabel": "note",
@@ -105,15 +114,6 @@
       "external": true,
       "date": "2026-08-25",
       "thumb": "https://assets.st-note.com/production/uploads/images/306722082/rectangle_large_type_2_42808052e93df61f9c432f8df10b0330.jpeg?width=800"
-    },
-    {
-      "kind": "drone",
-      "kindLabel": "DRONE.jp",
-      "title": "機体から目を離さずに、風速を訊く──AIグラスをドローンフライトに持ち込んでみた [田路昌也の中国・香港ドローン便り]Vol.67",
-      "url": "https://drone.jp/column/20260825170044129205.html",
-      "external": true,
-      "date": "2026-08-25",
-      "thumb": "https://drone.jp/wp-content/uploads/tohzi_67_topYXw4UX0x.jpg"
     }
   ]
 }
