@@ -1,0 +1,97 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="740" viewBox="0 0 600 740" role="img" aria-labelledby="title desc">
+  <title id="title">大天守の二本の大柱と各階の関係</title>
+  <desc id="desc">大天守を南側から見た構造模式図。西大柱と東大柱が地階から六階床下まで延び、各階の横架材と結ばれる。西大柱は三階部分に継ぎ目がある。柱長は24.6メートル。屋根、梁、柱の数や寸法は省略、簡略化している。</desc>
+  <defs>
+    <pattern id="stone" width="42" height="26" patternUnits="userSpaceOnUse">
+      <rect width="42" height="26" fill="#f0f2ef"/>
+      <path d="M0 0H42M0 13H42M0 26H42M12 0V13M32 13V26" fill="none" stroke="#afb7b6" stroke-width="1"/>
+    </pattern>
+    <pattern id="roof" width="7" height="7" patternUnits="userSpaceOnUse">
+      <rect width="7" height="7" fill="#d0d6d7"/>
+      <path d="M1 0V7" stroke="#8d9b9e" stroke-width=".8"/>
+    </pattern>
+    <g id="bay" stroke="#8c9694" stroke-width="1.6" fill="none">
+      <path d="M0 0V63M6 0V63M47 0V63M53 0V63M0 8H53M0 14H53M0 50H53M0 56H53"/>
+    </g>
+  </defs>
+  <rect width="600" height="740" fill="#fff"/>
+  <g font-family="Hiragino Sans, Noto Sans CJK JP, sans-serif" fill="#293b40">
+    <text x="300" y="32" text-anchor="middle" font-size="22">南側から見た、柱と床の関係</text>
+    <!-- Section outline. Roof ornament and framing are simplified, not traced survey data. -->
+    <path d="M154 501H450L475 635H126Z" fill="url(#stone)" stroke="#647774" stroke-width="1.7"/>
+    <g stroke="#788987" stroke-width="1.6">
+      <path d="M163 552V422H177V345H193V257H225V158H380V257H414V345H430V422H445V552Z" fill="#fbfcfa"/>
+      <path d="M157 502H450V552H157Z" fill="#edf3ef"/>
+      <path d="M157 433H450V501H157Z" fill="#edf3ef"/>
+      <path d="M174 365H433V432H174Z" fill="#edf3ef"/>
+      <path d="M189 295H417V364H189Z" fill="#edf2f7"/>
+      <path d="M220 232H385V294H220Z" fill="#edf2f7"/>
+      <path d="M234 160H371V231H234Z" fill="#f6f1f3"/>
+    </g>
+    <g stroke="#586b6f" stroke-width="1.8" fill="url(#roof)" stroke-linejoin="round">
+      <path d="M151 411Q181 408 207 388H400Q426 408 456 411L444 422H163Z"/>
+      <path d="M165 335Q195 332 220 310H387Q414 332 442 335L430 345H177Z"/>
+      <path d="M181 247Q212 243 245 214H362Q394 243 426 247L414 257H193Z"/>
+      <path d="M214 148Q239 147 257 134H350Q370 147 391 148L380 158H225Z"/>
+      <path d="M224 97Q253 96 272 81H334Q355 96 383 97L371 108H234Z"/>
+    </g>
+    <g stroke="#6e7d7a" fill="#fafbf8" stroke-width="1.6">
+      <path d="M238 109H368V149H238Z"/>
+      <path d="M253 149V111M274 149V111M295 149V111M316 149V111M337 149V111M358 149V111" fill="none"/>
+      <path d="M231 259 271 220 309 259Z"/>
+      <path d="M241 259 271 231 298 259" fill="none"/>
+      <path d="M304 347 348 308 391 347Z"/>
+      <path d="M315 347 348 320 380 347" fill="none"/>
+    </g>
+    <!-- Secondary posts and horizontal framing give the pillars their structural context. -->
+    <g>
+      <use href="#bay" x="240" y="164"/><use href="#bay" x="312" y="164"/>
+      <use href="#bay" x="225" y="233"/><use href="#bay" x="328" y="233"/>
+      <use href="#bay" x="195" y="297"/><use href="#bay" x="270" y="297"/><use href="#bay" x="358" y="297"/>
+      <use href="#bay" x="180" y="367"/><use href="#bay" x="277" y="367"/><use href="#bay" x="373" y="367"/>
+      <use href="#bay" x="164" y="435"/><use href="#bay" x="278" y="435"/><use href="#bay" x="389" y="435"/>
+      <use href="#bay" transform="translate(164 504) scale(1 .7)"/>
+      <use href="#bay" transform="translate(278 504) scale(1 .7)"/>
+      <use href="#bay" transform="translate(389 504) scale(1 .7)"/>
+    </g>
+    <g stroke="#697d78" stroke-width="2.5" fill="none">
+      <path d="M155 551H453M155 500H453M172 432H434M187 363H420M217 294H389M229 231H376"/>
+    </g>
+    <!-- Both long posts terminate below the sixth floor, not at the roof. -->
+    <g fill="#b94339" stroke="#902c27" stroke-width="1.4">
+      <path d="M257 151H269L275 550H249Z"/>
+      <path d="M333 151H345L353 550H327Z"/>
+    </g>
+    <g stroke="#efc4b8" stroke-width="1" fill="none">
+      <path d="M261 158 257 540M337 158 335 540"/>
+    </g>
+    <g stroke="#536d66" stroke-width="2" fill="#e2ebe5">
+      <path d="M248 485H353V493H248ZM249 419H352V427H249ZM250 350H351V358H250ZM253 282H349V290H253ZM253 233H349V241H253ZM253 151H349V159H253Z"/>
+    </g>
+    <path d="M250 339H260V330H271" fill="none" stroke="#69221f" stroke-width="2.5"/>
+    <!-- Leaders and floor labels are kept outside the architectural linework. -->
+    <g font-size="27" text-anchor="end">
+      <text x="121" y="135">6階</text><text x="121" y="199">5階</text>
+      <text x="121" y="271">4階</text><text x="121" y="335">3階</text>
+      <text x="121" y="404">2階</text><text x="121" y="473">1階</text>
+      <text x="121" y="540">地階</text>
+    </g>
+    <!-- Floor labels follow rooms; the base of the pillars is at the basement floor. -->
+    <g stroke="#b5bfbb" stroke-width="1" stroke-dasharray="3 4" fill="none">
+      <path d="M130 127H230M130 191H230M130 264H216M130 328H181M130 397H166M130 466H150M130 532H150"/>
+    </g>
+    <g stroke="#a82f2b" stroke-width="1.6" fill="none">
+      <path d="M473 151H392M473 550H450M488 151V550M480 151H496M480 550H496"/>
+    </g>
+    <text x="521" y="405" font-size="28" fill="#a82f2b" text-anchor="middle" transform="rotate(-90 521 405)">24.6 m</text>
+    <path d="M348 151 406 118H459" fill="none" stroke="#a82f2b" stroke-width="1.5"/>
+    <text x="430" y="95" font-size="23" fill="#a82f2b">6階の床下</text>
+    <g font-size="23" font-weight="600" text-anchor="middle" fill="#a82f2b">
+      <text x="246" y="685">西大柱</text><text x="362" y="685">東大柱</text>
+    </g>
+    <g fill="none" stroke="#a82f2b" stroke-width="1.3">
+      <path d="M261 552V652H246V659M339 552V652H362V659"/>
+    </g>
+    <text x="300" y="724" text-anchor="middle" font-size="19" fill="#55636b">構造を説明する模式図・縮尺なし</text>
+  </g>
+</svg>

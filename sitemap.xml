@@ -141,7 +141,13 @@
     <priority>0.5</priority>
   </url>
 
-  <!-- 白鷺三十六景 撮影地マップ -->
+  <!-- 白鷺三十六景 図解ガイド・撮影地マップ -->
+  <url>
+    <loc>https://tojimasaya.com/shirasagi36-guide.html</loc>
+    <lastmod>2026-09-26</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.6</priority>
+  </url>
   <url>
     <loc>https://tojimasaya.com/shirasagi36-map.html</loc>
     <lastmod>2026-05-23</lastmod>
