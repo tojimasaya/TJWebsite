@@ -60,9 +60,21 @@
 .guide-reading { max-width: 680px; margin: 0 auto; }
 .guide-reading h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
 .guide-reading p { font-size: 16px; }
-.guide-detail { margin-top: 26px; border-block: 1px solid var(--guide-line); }
-.guide-detail summary { padding: 16px 0; cursor: pointer; font-size: 16px; font-weight: 600; }
+.guide-detail { margin-top: 26px; border: 1px solid #9eafa3; border-radius: 6px; }
+.guide-detail summary { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 12px 18px; min-height: 64px; padding: 16px 18px; border-radius: 5px; background: #edf2e9; color: #304b40; cursor: pointer; list-style: none; font-size: 16px; font-weight: 600; }
+.guide-detail summary::-webkit-details-marker { display: none; }
+.guide-detail summary::marker { content: ''; }
+.guide-detail summary:hover { background: #dfe9d9; }
+.guide-detail summary:active { background: #d3e0cc; }
+.guide-detail summary:focus-visible { outline-offset: -3px; }
+.guide-detail-action { padding: 5px 10px; border: 1px solid #8a9e8f; border-radius: 4px; background: #fff; white-space: nowrap; font-size: 13px; }
+.guide-detail-hide { display: none; }
+.guide-detail[open] .guide-detail-show { display: none; }
+.guide-detail[open] .guide-detail-hide { display: inline; }
 .guide-detail[open] { padding-bottom: 20px; }
+.guide-detail[open] > summary { border-bottom: 1px solid #9eafa3; border-radius: 5px 5px 0 0; }
+.guide-detail > :not(summary) { margin-inline: 18px; }
+.guide-detail > summary + * { margin-top: 20px; }
 .guide-detail p + p { margin-top: 12px; }
 .guide-facts { margin: 0 0 16px; }
 .guide-facts > div { padding: 12px 0; border-bottom: 1px solid #e1e5e0; }
@@ -147,6 +159,10 @@ body.is-diagram-open { overflow: hidden; }
 }
 @media (max-width: 374px) {
     .guide-progress a span { display: none; }
+}
+@media (max-width: 520px) {
+    .guide-detail summary { grid-template-columns: minmax(0, 1fr); }
+    .guide-detail-action { justify-self: start; }
 }
 @media (min-width: 760px) {
     .guide-wrap { padding: 0 32px; }
