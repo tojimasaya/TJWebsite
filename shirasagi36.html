@@ -290,8 +290,9 @@
                         </p>
                         <div class="flex flex-wrap gap-3 mt-7 font-serif-jp text-sm">
                             <a href="#gallery-anchor" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-ink bg-shirasagi-ink text-white hover:bg-transparent hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">全景一覧へ</a>
-                            <a href="shirasagi36-map.html" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-blue text-shirasagi-blue hover:bg-shirasagi-blue hover:text-white transition-colors no-underline" style="text-decoration:none;">撮影地マップ</a>
                             <a href="shirasagi36-guide.html" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-blue text-shirasagi-blue hover:bg-shirasagi-blue hover:text-white transition-colors no-underline" style="text-decoration:none;">図解で知る姫路城</a>
+                            <a href="shirasagi36-map.html" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-blue text-shirasagi-blue hover:bg-shirasagi-blue hover:text-white transition-colors no-underline" style="text-decoration:none;">撮影地マップ</a>
+                            <a href="shirasagi36-access.html" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-blue text-shirasagi-blue hover:bg-shirasagi-blue hover:text-white transition-colors no-underline" style="text-decoration:none;">行き方・街歩き</a>
                             <a href="#latest-view" class="inline-flex items-center px-5 py-2.5 border border-gray-300 text-gray-600 hover:border-shirasagi-ink hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">最新の一景</a>
                         </div>
                     </div>
@@ -758,17 +759,40 @@
           </h2>
         </div>
         <!-- 白鷺三十六景 関連コンテンツ -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6 mb-6">
+        <div id="shirasagi-explore" class="scroll-mt-24 grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6 mb-6">
+          <!-- 図解で知る姫路城 -->
+          <a href="shirasagi36-guide.html"
+             class="group block bg-white border border-gray-200 rounded-sm p-6 md:p-8 hover:border-gray-400 hover:shadow-sm transition-all text-center">
+            <p class="text-2xl mb-3 opacity-60 group-hover:opacity-100 transition-opacity">🏯</p>
+            <p class="font-bold font-serif-jp text-shirasagi-ink mb-2">図解で知る姫路城</p>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              天守のしくみと見どころを、<br>写真と図解で読み解く。
+            </p>
+            <span class="inline-block mt-4 text-xs text-gray-300 group-hover:text-shirasagi-ink transition-colors font-serif-en tracking-widest">→</span>
+          </a>
           <!-- 撮影地マップ -->
           <a href="shirasagi36-map.html"
              class="group block bg-white border border-gray-200 rounded-sm p-6 md:p-8 hover:border-gray-400 hover:shadow-sm transition-all text-center">
             <p class="text-2xl mb-3 opacity-60 group-hover:opacity-100 transition-opacity">🗺️</p>
             <p class="font-bold font-serif-jp text-shirasagi-ink mb-2">撮影地マップ</p>
-            <p class="text-xs text-gray-400 leading-relaxed">
+            <p class="text-xs text-gray-600 leading-relaxed">
               三十六景の撮影ポイントを<br>地図で巡る。
             </p>
             <span class="inline-block mt-4 text-xs text-gray-300 group-hover:text-shirasagi-ink transition-colors font-serif-en tracking-widest">→</span>
           </a>
+          <!-- 行き方・街歩き -->
+          <a href="shirasagi36-access.html"
+             class="group block bg-white border border-gray-200 rounded-sm p-6 md:p-8 hover:border-gray-400 hover:shadow-sm transition-all text-center">
+            <p class="text-2xl mb-3 opacity-60 group-hover:opacity-100 transition-opacity">🚶</p>
+            <p class="font-bold font-serif-jp text-shirasagi-ink mb-2">行き方・街歩き</p>
+            <p class="text-xs text-gray-600 leading-relaxed">
+              姫路駅からお城へ。<br>カメラを持って城下町を歩く。
+            </p>
+            <span class="inline-block mt-4 text-xs text-gray-300 group-hover:text-shirasagi-ink transition-colors font-serif-en tracking-widest">→</span>
+          </a>
+        </div>
+        <!-- サイト内ナビゲーション -->
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-5 md:gap-6">
           <!-- 変わりゆく香港 -->
           <a href="hongkong.html"
              class="group block bg-white border border-gray-200 rounded-sm p-6 md:p-8 hover:border-gray-400 hover:shadow-sm transition-all text-center">
@@ -779,9 +803,6 @@
             </p>
             <span class="inline-block mt-4 text-xs text-gray-300 group-hover:text-shirasagi-ink transition-colors font-serif-en tracking-widest">→</span>
           </a>
-        </div>
-        <!-- サイト内ナビゲーション -->
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-5 md:gap-6">
           <!-- About Me -->
           <a href="about.html"
              class="group block bg-white border border-gray-200 rounded-sm p-6 md:p-8 hover:border-gray-400 hover:shadow-sm transition-all text-center">

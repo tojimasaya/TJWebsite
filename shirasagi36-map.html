@@ -51,10 +51,25 @@
             margin: 0;
         }
 
+        .map-visit-nav { margin-top: 16px; }
+        .map-visit-nav a {
+            display: inline-flex;
+            align-items: center;
+            min-height: 44px;
+            padding: 8px 18px;
+            border: 1px solid #cbd3ca;
+            color: #304b40;
+            font-family: 'Noto Serif JP', serif;
+            font-size: 0.85rem;
+            text-decoration: none;
+        }
+        .map-visit-nav a:hover { background: #e7ece3; }
+        .map-visit-nav a:focus-visible { outline: 2px solid #1A3FB9; outline-offset: 3px; }
+
         /* Map container */
         #map {
             width: 100%;
-            height: calc(100vh - 180px);
+            height: calc(100vh - 240px);
             min-height: 400px;
             border-top: 1px solid #e5e5e5;
         }
@@ -169,6 +184,9 @@
         <a href="shirasagi36.html#gallery-anchor" class="map-back-link">← 白鷺三十六景に戻る</a>
         <h1 class="map-title">撮影地マップ</h1>
         <p class="map-subtitle">全三十六景の撮影ポイントを地図上に表示</p>
+        <nav class="map-visit-nav" aria-label="姫路城を訪ねる">
+            <a href="shirasagi36-access.html">姫路城への行き方・街歩き →</a>
+        </nav>
     </header>
 
     <div id="map"></div>
