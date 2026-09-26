@@ -58,6 +58,14 @@
 .guide-photo figcaption { display: grid; gap: 4px; padding-top: 12px; font-size: 14px; }
 .guide-photo figcaption span { font-size: 12px; color: var(--guide-muted); }
 .guide-photo a:hover, .guide-reading a:hover { color: var(--blue); }
+.guide-field-note { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--guide-line); scroll-margin-top: 90px; }
+.guide-field-note .guide-kicker { font-size: 13px; }
+.guide-field-note .guide-photo, .guide-pillar-sign .guide-photo { margin-top: 20px; }
+.guide-photo--portrait { max-width: 480px; margin-inline: auto; }
+.guide-photo > a { display: block; }
+.guide-photo > [data-diagram] { cursor: zoom-in; }
+.guide-field-note .guide-photo + p { margin-top: 16px; }
+.guide-pillar-sign { scroll-margin-top: 90px; }
 .guide-reading .guide-sources { font-size: 13px; margin-top: 26px; color: var(--guide-muted); }
 .guide-sources a { text-underline-offset: 3px; }
 .guide-access-facts { border-top: 1px solid var(--guide-line); }

@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="600" height="740" viewBox="0 0 600 740" role="img" aria-labelledby="title desc">
   <title id="title">大天守の二本の大柱と各階の関係</title>
-  <desc id="desc">大天守を南側から見た構造模式図。西大柱と東大柱が地階から六階床下まで延び、各階の横架材と結ばれる。西大柱は三階部分に継ぎ目がある。柱長は24.6メートル。屋根、梁、柱の数や寸法は省略、簡略化している。</desc>
+  <desc id="desc">大天守を南側から見た構造模式図。西大柱と東大柱が地階から六階床下まで延び、各階の横架材と結ばれる。西大柱は三階部分に継ぎ目がある。柱長は24.6メートル。東大柱の根継ぎや細かな加工、屋根、梁、柱の数や寸法は省略、簡略化している。</desc>
   <defs>
     <pattern id="stone" width="42" height="26" patternUnits="userSpaceOnUse">
       <rect width="42" height="26" fill="#f0f2ef"/>
