@@ -85,6 +85,7 @@
 .guide-photo > [data-diagram] { cursor: zoom-in; }
 .guide-field-note .guide-photo + p { margin-top: 16px; }
 .guide-pillar-sign { scroll-margin-top: var(--guide-anchor-offset); }
+.guide-pillar-sign > p + p { margin-top: 12px; }
 .guide-reading .guide-sources { font-size: 13px; margin-top: 26px; color: var(--guide-muted); }
 .guide-sources a { text-underline-offset: 3px; }
 .guide-access-facts { border-top: 1px solid var(--guide-line); }
