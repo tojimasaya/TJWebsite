@@ -114,6 +114,12 @@
 .guide-visit-nav a { display: inline-flex; align-items: center; min-height: 44px; padding: 8px 16px; border: 1px solid var(--guide-line); background: #fff; text-decoration: none; font-size: 14px; }
 .guide-visit-nav a:last-child { color: #304b40; border-color: #748a7e; }
 .guide-visit-nav a:hover { background: #e7ece3; }
+.guide-station-view { margin-bottom: 48px; scroll-margin-top: var(--guide-anchor-offset); }
+.guide-station-view .guide-kicker { font-size: 13px; }
+.guide-station-view h2 { margin-bottom: 16px; font-size: 24px; font-weight: 500; }
+.guide-station-view .guide-photo { margin: 24px 0; }
+.guide-station-view .guide-small { margin-top: 12px; }
+.guide-station-view .guide-access-links { margin-top: 24px; }
 .guide-location-maps { display: grid; gap: 28px; margin-top: 24px; }
 .guide-location-map { margin: 0; min-width: 0; }
 .guide-location-map h3 { margin: 0 0 12px; font-size: 16px; font-weight: 600; }
