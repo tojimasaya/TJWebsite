@@ -54,6 +54,7 @@
 .castle-guide ruby { ruby-position: over; }
 .castle-guide rt { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11px; font-weight: 400; }
 .guide-diagram { margin: 0 auto 30px; max-width: 620px; }
+.guide-diagram--wide { max-width: none; }
 .guide-diagram > a { display: block; background: white; cursor: zoom-in; border: 1px solid #e2e7e1; }
 .guide-diagram img { width: 100%; height: auto; }
 .guide-diagram figcaption { margin-top: 12px; color: var(--guide-muted); font-size: 13px; line-height: 1.8; }
@@ -84,6 +85,7 @@
 .guide-reading .guide-small, .guide-small { font-size: 13px; color: var(--guide-muted); }
 .guide-observation { margin: 32px 0 24px; border-left: 3px solid #477761; padding-left: 18px; }
 .guide-observation h3 { color: #2c5c48; }
+.guide-observation p + p { margin-top: 16px; }
 .guide-photo { margin: 0; }
 .guide-photo img { width: 100%; height: auto; }
 .guide-photo figcaption { display: grid; gap: 4px; padding-top: 12px; font-size: 14px; }
