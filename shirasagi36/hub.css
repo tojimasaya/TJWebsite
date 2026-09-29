@@ -1,0 +1,143 @@
+.castle-resources {
+  min-width: 0;
+  letter-spacing: 0;
+  scroll-margin-top: 96px;
+}
+
+.castle-resources > h3 {
+  margin: 0 0 20px;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 1.6;
+}
+
+.castle-resource-grid {
+  display: grid;
+  gap: 20px;
+}
+
+.castle-resource {
+  display: grid;
+  grid-template-columns: 96px minmax(0, 1fr);
+  align-items: start;
+  gap: 14px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid #cbd0d4;
+  color: #2b2b2b;
+  text-decoration: none;
+}
+
+.castle-resource:focus-visible {
+  outline: 2px solid #1a3fb9;
+  outline-offset: 6px;
+}
+
+.castle-resource-media {
+  aspect-ratio: 1;
+  overflow: hidden;
+  background: #fff;
+  border: 1px solid #d9dedf;
+}
+
+.castle-resource-media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.castle-resource-media--diagram img {
+  object-fit: contain;
+  padding: 4px;
+}
+
+.castle-resource-media--walk img {
+  object-position: 50% 43%;
+}
+
+.castle-resource-copy {
+  min-width: 0;
+}
+
+.castle-resource-kicker {
+  margin: 0 0 5px;
+  color: #1a3fb9;
+  font-size: 12px;
+  font-weight: 500;
+  line-height: 1.7;
+}
+
+.castle-resource h4 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  line-height: 1.65;
+  overflow-wrap: anywhere;
+}
+
+.castle-resource-arrow {
+  display: inline-block;
+  margin-left: 8px;
+  color: #1a3fb9;
+}
+
+.castle-resource-description {
+  margin: 8px 0 0;
+  color: #515a64;
+  font-size: 13px;
+  line-height: 1.9;
+  overflow-wrap: anywhere;
+}
+
+.castle-resource:hover h4 {
+  color: #1a3fb9;
+  text-decoration: underline;
+  text-underline-offset: 5px;
+}
+
+@media (min-width: 640px) {
+  .castle-resource-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+
+  .castle-resource {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .castle-resource-media {
+    width: 100%;
+    aspect-ratio: 3 / 2;
+  }
+
+  .castle-resource-media--diagram img {
+    padding: 10px;
+  }
+
+  .castle-resource-description {
+    font-size: 14px;
+  }
+}
+
+@media (min-width: 1024px) {
+  /* Keep the reading order on phones: introduction, visual links, project data. */
+  .castle-resources {
+    grid-column: 1 / -1;
+    grid-row: 2;
+  }
+
+  .project-statistics {
+    grid-column: 2;
+    grid-row: 1;
+  }
+
+  .castle-resources > h3 {
+    font-size: 24px;
+  }
+
+  .castle-resource h4 {
+    font-size: 22px;
+  }
+}

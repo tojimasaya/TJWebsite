@@ -72,6 +72,7 @@
         ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
     </style>
 <link rel="stylesheet" href="shirasagi-nav.css">
+<link rel="stylesheet" href="shirasagi36/hub.css">
 <script src="js/shirasagi-nav.js" defer></script>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -290,14 +291,47 @@
                         </p>
                         <div class="flex flex-wrap gap-3 mt-7 font-serif-jp text-sm">
                             <a href="#gallery-anchor" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-ink bg-shirasagi-ink text-white hover:bg-transparent hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">全景一覧へ</a>
-                            <a href="shirasagi36-guide.html" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-blue text-shirasagi-blue hover:bg-shirasagi-blue hover:text-white transition-colors no-underline" style="text-decoration:none;">図解で知る姫路城</a>
-                            <a href="shirasagi36-map.html" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-blue text-shirasagi-blue hover:bg-shirasagi-blue hover:text-white transition-colors no-underline" style="text-decoration:none;">撮影地マップ</a>
-                            <a href="shirasagi36-access.html" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-blue text-shirasagi-blue hover:bg-shirasagi-blue hover:text-white transition-colors no-underline" style="text-decoration:none;">行き方・街歩き</a>
                             <a href="#latest-view" class="inline-flex items-center px-5 py-2.5 border border-gray-300 text-gray-600 hover:border-shirasagi-ink hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">最新の一景</a>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-px bg-gray-300 border border-gray-300">
+                    <nav class="castle-resources" id="castle-resources" aria-labelledby="castle-resources-title">
+                        <h3 id="castle-resources-title">姫路城を知る・訪ねる</h3>
+                        <div class="castle-resource-grid">
+                            <a class="castle-resource" href="shirasagi36-guide.html" data-growth-label="shirasagi_hub_guide">
+                                <div class="castle-resource-media castle-resource-media--diagram">
+                                    <img src="assets/images/shirasagi/guide/renritsu-plan.svg" width="600" height="640" loading="lazy" decoding="async" alt="大天守と三つの小天守が中庭を囲む、連立式天守の配置図">
+                                </div>
+                                <div class="castle-resource-copy">
+                                    <p class="castle-resource-kicker">城のしくみを知る</p>
+                                    <h4>図解で知る姫路城<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">連立式天守、二本の大柱、破風と懸魚。写真で気になる形を、図解で読み解く。</p>
+                                </div>
+                            </a>
+                            <a class="castle-resource" href="shirasagi36-access.html" data-growth-label="shirasagi_hub_access">
+                                <div class="castle-resource-media castle-resource-media--walk">
+                                    <img src="assets/images/shirasagi/guide/himeji-station-walk.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="姫路駅から大手前通りを進み、姫路城へ向かう街歩きマップの一部">
+                                </div>
+                                <div class="castle-resource-copy">
+                                    <p class="castle-resource-kicker">駅から城下町へ</p>
+                                    <h4>行き方・街歩き<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">姫路駅からお城までの道順と、途中の寄り道。カメラを持って歩くための案内。</p>
+                                </div>
+                            </a>
+                            <a class="castle-resource" href="shirasagi36-map.html" data-growth-label="shirasagi_hub_photo_map">
+                                <div class="castle-resource-media">
+                                    <img src="assets/images/shirasagi/webp/thumb/07.webp" width="600" height="400" loading="lazy" decoding="async" alt="男山から望む姫路城。手前に三つの小天守、奥に大天守が重なる撮影スポット">
+                                </div>
+                                <div class="castle-resource-copy">
+                                    <p class="castle-resource-kicker">あの一景の場所へ</p>
+                                    <h4>撮影地マップ<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">三十六景を撮った場所を地図でたどる。男山、城の周囲、駅前からの眺めまで。</p>
+                                </div>
+                            </a>
+                        </div>
+                    </nav>
+
+                    <div class="project-statistics grid grid-cols-2 gap-px bg-gray-300 border border-gray-300">
                         <div class="bg-washi-bg p-5 md:p-6">
                             <p class="text-[10px] font-serif-en tracking-[0.22em] text-gray-400 uppercase mb-2">Published</p>
                             <p class="font-serif-en text-3xl md:text-4xl text-shirasagi-ink leading-none"><span id="project-count">34</span><span class="text-base md:text-lg text-gray-400"> / 36</span></p>
