@@ -69,6 +69,7 @@
         ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
     </style>
 <link rel="stylesheet" href="shirasagi-nav.css">
+<link rel="stylesheet" href="shirasagi36/hub.css">
 <script src="js/shirasagi-nav.js" defer></script>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -259,12 +260,47 @@
                         </p>
                         <div class="flex flex-wrap gap-3 mt-7 font-serif-body text-sm">
                             <a href="#gallery-anchor" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-ink bg-shirasagi-ink text-white hover:bg-transparent hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">View Collection</a>
-                            <a href="shirasagi36-map.html" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-blue text-shirasagi-blue hover:bg-shirasagi-blue hover:text-white transition-colors no-underline" style="text-decoration:none;">Shooting Map</a>
                             <a href="#latest-view" class="inline-flex items-center px-5 py-2.5 border border-gray-300 text-gray-600 hover:border-shirasagi-ink hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">Latest View</a>
                         </div>
                     </div>
 
-                    <div class="grid grid-cols-2 gap-px bg-gray-300 border border-gray-300">
+                    <nav class="castle-resources" id="castle-resources" aria-labelledby="castle-resources-title">
+                        <h3 id="castle-resources-title">Discover &amp; Visit Himeji Castle</h3>
+                        <div class="castle-resource-grid">
+                            <a class="castle-resource" href="shirasagi36-guide-en.html" data-growth-label="shirasagi_hub_guide">
+                                <div class="castle-resource-media castle-resource-media--diagram">
+                                    <img src="assets/images/shirasagi/guide/renritsu-plan-en.svg" width="600" height="640" loading="lazy" decoding="async" alt="Plan of the main keep and three smaller keeps surrounding a courtyard">
+                                </div>
+                                <div class="castle-resource-copy">
+                                    <p class="castle-resource-kicker">Understand the Architecture</p>
+                                    <h4>Himeji Castle Illustrated<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">Connected keeps, great pillars and roof ornaments. Understand the shapes that catch your eye in a photograph.</p>
+                                </div>
+                            </a>
+                            <a class="castle-resource" href="shirasagi36-access-en.html" data-growth-label="shirasagi_hub_access">
+                                <div class="castle-resource-media castle-resource-media--walk">
+                                    <img src="assets/images/shirasagi/guide/himeji-station-walk.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="Detail of the walking map from Himeji Station along Otemae-dori to the castle">
+                                </div>
+                                <div class="castle-resource-copy">
+                                    <p class="castle-resource-kicker">From Station to Castle Town</p>
+                                    <h4>Directions &amp; Town Walk<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">The route from Himeji Station to the castle, with detours along the way. Explore the town with your camera.</p>
+                                </div>
+                            </a>
+                            <a class="castle-resource" href="shirasagi36-map.html" data-growth-label="shirasagi_hub_photo_map">
+                                <div class="castle-resource-media">
+                                    <img src="assets/images/shirasagi/webp/thumb/07.webp" width="600" height="400" loading="lazy" decoding="async" alt="The layered keeps of Himeji Castle, photographed from Otokoyama">
+                                </div>
+                                <div class="castle-resource-copy">
+                                    <p class="castle-resource-kicker">Find the Viewpoint</p>
+                                    <h4>Photo Location Map (Japanese)<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">Locate the places behind the 36 Views: Otokoyama, the castle surroundings and the view from the station.</p>
+                                </div>
+                            </a>
+                        </div>
+                    </nav>
+
+                    <div class="project-statistics grid grid-cols-2 gap-px bg-gray-300 border border-gray-300">
                         <div class="bg-washi-bg p-5 md:p-6">
                             <p class="text-[10px] font-serif-display tracking-[0.22em] text-gray-400 uppercase mb-2">Published</p>
                             <p class="font-serif-display text-3xl md:text-4xl text-shirasagi-ink leading-none"><span id="project-count">34</span><span class="text-base md:text-lg text-gray-400"> / 36</span></p>

@@ -1,3 +1,22 @@
+(function () {
+    'use strict';
+    var language = document.documentElement.lang;
+    var suffix = language === 'en' ? '-en' : language === 'zh-Hant' ? '-hk' : '';
+    var labels = {
+        ja: { navigation: '章の移動', castle: '城を知る', after: 'を読み終えたら', back: '目次に戻る ↑', next: '次の章を読む' },
+        en: { navigation: 'Chapter navigation', castle: 'The Castle', after: ': continue reading', back: 'Back to contents ↑', next: 'Next chapter' },
+        'zh-Hant': { navigation: '章節導覽', castle: '認識城堡', after: '：繼續閱讀', back: '返回目錄 ↑', next: '下一章' }
+    }[language] || { navigation: '章の移動', castle: '城を知る', after: 'を読み終えたら', back: '目次に戻る ↑', next: '次の章を読む' };
+
+    // Switching languages should retain the place the reader has reached.
+    function updateLanguageLinks() {
+        document.querySelectorAll('[data-guide-language]').forEach(function (link) {
+            link.hash = window.location.hash;
+        });
+    }
+    updateLanguageLinks();
+    window.addEventListener('hashchange', updateLanguageLinks);
+
 // Keep links saved before access information moved to its own page working.
 (function () {
     'use strict';
@@ -7,7 +26,7 @@
         try { hash = decodeURIComponent(window.location.hash.slice(1)); }
         catch (error) { return; }
         if (['access', 'access-heading', 'location-heading', 'walk-heading'].indexOf(hash) < 0) return;
-        window.location.replace('shirasagi36-access.html#' + hash);
+        window.location.replace('shirasagi36-access' + suffix + '.html#' + hash);
     }
     forwardAccessLink();
     window.addEventListener('hashchange', forwardAccessLink);
@@ -31,10 +50,10 @@
 
     var nav = document.createElement('nav');
     nav.className = 'guide-progress';
-    nav.setAttribute('aria-label', '章の移動');
+    nav.setAttribute('aria-label', labels.navigation);
     var label = document.createElement('span');
     label.className = 'guide-progress-label';
-    label.textContent = '城を知る';
+    label.textContent = labels.castle;
     nav.appendChild(label);
     var links = document.createElement('div');
     links.className = 'guide-progress-links';
@@ -53,10 +72,10 @@
 
         var footer = document.createElement('nav');
         footer.className = 'guide-chapter-nav';
-        footer.setAttribute('aria-label', topic.title + 'を読み終えたら');
+        footer.setAttribute('aria-label', topic.title + labels.after);
         var back = document.createElement('a');
         back.href = '#guide-topics';
-        back.textContent = '目次に戻る ↑';
+        back.textContent = labels.back;
         footer.appendChild(back);
         var next = topics[position + 1];
         if (next) {
@@ -64,7 +83,7 @@
             onward.className = 'guide-next';
             onward.href = next.link.getAttribute('href');
             var caption = document.createElement('small');
-            caption.textContent = '次の章を読む';
+            caption.textContent = labels.next;
             var title = document.createElement('strong');
             title.textContent = next.number + '　' + next.title + ' →';
             onward.appendChild(caption);
@@ -161,4 +180,5 @@
         image.removeAttribute('src');
         if (opener) opener.focus();
     });
+})();
 })();

@@ -9,7 +9,13 @@
     line-height: 1.9;
 }
 .castle-guide * { letter-spacing: 0; }
-.castle-guide h1, .castle-guide h2, .castle-guide h3 { font-family: var(--font-jp); }
+.castle-guide h1, .castle-guide h2, .castle-guide h3 { font-family: var(--font-body); }
+.castle-guide:lang(zh-Hant) { font-family: -apple-system, BlinkMacSystemFont, "PingFang TC", "Microsoft JhengHei", sans-serif; }
+.castle-guide:lang(en) .guide-wrap { overflow-wrap: break-word; }
+.castle-guide:lang(en) .guide-facts dt { overflow-wrap: anywhere; }
+.guide-languages { display: flex; flex-wrap: wrap; justify-content: flex-end; gap: 4px 20px; padding: 8px 0; border-bottom: 1px solid var(--guide-line); }
+.guide-languages a { display: inline-flex; align-items: center; min-height: 44px; font-size: 14px; text-underline-offset: 5px; }
+.guide-languages a[aria-current="page"] { color: var(--guide-muted); font-weight: 600; text-decoration: none; }
 .castle-guide .v-nav { background: rgba(250, 251, 248, .97); }
 .castle-guide .v-nav__toggle { min-width: 44px; min-height: 44px; align-items: center; justify-content: center; }
 .castle-guide :focus-visible { outline: 2px solid var(--blue); outline-offset: 4px; }
@@ -20,7 +26,7 @@
 .guide-kicker { font-size: 13px; color: var(--guide-accent); font-weight: 600; margin-bottom: 12px; }
 .guide-head h1 { font-size: 28px; font-weight: 500; margin-bottom: 20px; }
 .guide-head p:not(.guide-kicker) { font-size: 16px; }
-.guide-head .guide-intro { font-family: var(--font-jp); font-size: 18px; margin-bottom: 12px; }
+.guide-head .guide-intro { font-family: var(--font-body); font-size: 18px; margin-bottom: 12px; }
 .guide-index { display: grid; grid-template-columns: minmax(0, 1fr); gap: 12px; margin: 8px 0 32px; scroll-margin-top: var(--guide-anchor-offset); }
 .guide-index-label { grid-column: 1 / -1; color: var(--guide-muted); font-size: 13px; }
 .guide-index a { display: grid; grid-template-columns: 30px minmax(0, 1fr); column-gap: 8px; text-decoration: none; padding: 18px; min-width: 0; border: 1px solid var(--guide-line); background: #fff; }
@@ -49,7 +55,7 @@
 .guide-chapter-nav a { display: inline-flex; min-height: 44px; align-items: center; font-size: 13px; text-underline-offset: 5px; }
 .guide-chapter-nav .guide-next { display: grid; gap: 3px; text-decoration: none; margin-left: auto; text-align: right; }
 .guide-next small { color: var(--guide-muted); font-size: 11px; }
-.guide-next strong { color: #304b40; font-family: var(--font-jp); font-size: 17px; font-weight: 600; }
+.guide-next strong { color: #304b40; font-family: var(--font-body); font-size: 17px; font-weight: 600; }
 .guide-next:hover strong { text-decoration: underline; text-underline-offset: 5px; }
 .castle-guide ruby { ruby-position: over; }
 .castle-guide rt { font-family: -apple-system, BlinkMacSystemFont, sans-serif; font-size: 11px; font-weight: 400; }
