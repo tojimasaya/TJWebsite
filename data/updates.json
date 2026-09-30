@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-24T00:00:00+09:00",
+  "generatedAt": "2026-09-30T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "六十ドルの昼飯と、洗われる亀",
+      "url": "/fragments/mongkok-saizeriya-turtle.html",
+      "external": false,
+      "date": "2026-09-30",
+      "thumb": "/assets/images/photo-notes/mongkok-saizeriya-turtle.webp"
+    },
     {
       "kind": "drone",
       "kindLabel": "DRONE.jp",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-08-27",
       "thumb": "/assets/images/photo-notes/yogurt-oidire-maker.webp"
-    },
-    {
-      "kind": "note",
-      "kindLabel": "note",
-      "title": "SFCで戻る、神戸⇒台北⇒香港 ── 新しいラウンジは、明石焼の香り",
-      "url": "https://note.com/tojimasaya/n/nb65e94f99ac0",
-      "external": true,
-      "date": "2026-08-25",
-      "thumb": "https://assets.st-note.com/production/uploads/images/306722082/rectangle_large_type_2_42808052e93df61f9c432f8df10b0330.jpeg?width=800"
     }
   ]
 }

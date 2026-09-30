@@ -15,6 +15,10 @@ This is a static personal site written in plain HTML, CSS, and small JavaScript 
 - Avoid adding external tracking scripts directly. Use `growth.js` only to bridge to GA4/GTM/Plausible when those libraries already exist on the page.
 - Do not remove existing note, DRONE.jp, X, Facebook, YouTube, or mailto links unless replacing them with a better equivalent.
 
+## 断章の写真
+- 断章に使う写真は常に `~/Desktop/断章` に保存されている。更新時はまずこのフォルダを確認し、写真の保存場所を毎回ユーザーに尋ねない。
+- 元写真はそのまま残し、掲載用の画像を `assets/images/photo-notes/` に作成する。
+
 ## Review guidelines
 - Treat broken internal links, missing metadata on new public pages, malformed HTML, and JavaScript errors as high-priority issues.
 - Check that new landing pages are linked from at least one existing page and included in `sitemap.xml`.

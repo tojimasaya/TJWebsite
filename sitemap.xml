@@ -2139,6 +2139,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/mongkok-saizeriya-turtle.html</loc>
+    <lastmod>2026-09-30</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/mongkok-saizeriya-turtle.jpg</image:loc>
+      <image:title>六十ドルの昼飯と、洗われる亀</image:title>
+      <image:caption>旺角の店先で、水を張った容器に一匹ずつ入れられた亀が歩道に並び、人が覗き込んでいる。手前には蜜雪氷城のカップが写る</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/sintat-plaza-launch-day.html</loc>
     <lastmod>2026-09-18</lastmod>
     <changefreq>monthly</changefreq>

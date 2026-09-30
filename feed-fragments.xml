@@ -5,13 +5,25 @@
   <id>https://tojimasaya.com/fragments.html</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed-fragments.xml"/>
-  <updated>2026-09-18T00:00:00+09:00</updated>
+  <updated>2026-09-30T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>六十ドルの昼飯と、洗われる亀</title>
+    <id>https://tojimasaya.com/fragments/mongkok-saizeriya-turtle.html</id>
+    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/mongkok-saizeriya-turtle.html"/>
+    <published>2026-09-30T00:00:00+09:00</published>
+    <updated>2026-09-30T00:00:00+09:00</updated>
+    <category term="断章"/>
+    <summary type="text">水槽から出された亀が体を洗われていて、可愛いなと思ってスマートグラスでパチッと撮ったら、これがなかなかいい写真になったのだが、妻が友人と中国へカラオケに出かけたその日、私はひとりで旺角へ昼飯を食べに行き、…</summary>
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/mongkok-saizeriya-turtle.jpg&quot; alt=&quot;旺角の店先で、水を張った容器に一匹ずつ入れられた亀が歩道に並び、人が覗き込んでいる。手前には蜜雪氷城のカップが写る&quot;&gt;&lt;/p&gt;
+&lt;p&gt;水槽から出された亀が体を洗われていて、可愛いなと思ってスマートグラスでパチッと撮ったら、これがなかなかいい写真になったのだが、妻が友人と中国へカラオケに出かけたその日、私はひとりで旺角へ昼飯を食べに行き、目当ての茶餐廳に着く手前でサイゼリヤに入り、六十ドルのセットを頼んだらハンバーグもスープも悪くなく、今まであまり好きではなかった店にもまた来ていいなと思い、帰りに蜜雪氷城で買ったレモン水を飲みながらぶらぶら歩いていて、この亀に出会ったのであって、昼飯を食べる店がひとつ増え、帰り道には亀が洗われていて、写真までうまく撮れたのだから、それで十分いい一日と言ってよさそうなものを、せっかくだからこの場面だけで短い動画を作れないかなどと欲が出て、家に戻ってからも亀の短編をあれこれ考えていたはずが、『続・最後から二番目の恋』を見始めると、ひとまず他人のドラマの途中で寝てしまうのだった。&lt;/p&gt;
+&lt;p&gt;香港・旺角&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>買う気のない発売日と、三つ折りのサムスン</title>
     <id>https://tojimasaya.com/fragments/sintat-plaza-launch-day.html</id>
