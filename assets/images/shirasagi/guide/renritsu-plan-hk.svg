@@ -1,6 +1,6 @@
 <svg lang="zh-Hant" xmlns="http://www.w3.org/2000/svg" width="600" height="640" viewBox="0 0 600 640" role="img" aria-labelledby="title desc">
   <title id="title">連立式天守的配置與屋頂連接</title>
-  <desc id="desc">北向上的屋頂配置示意圖，並非按比例繪製。大天守在東南、乾小天守在西北、東小天守在東北、西小天守在西南；北方ロ、西方ハ、東方イ、南方ニ渡櫓圍繞中庭。</desc>
+  <desc id="desc">北向上的屋頂配置示意圖，並非按比例繪製。大天守在東南、乾小天守在西北、東小天守在東北、西小天守在西南；北方 Ro 渡櫓、西方 Ha 渡櫓、東方 I 渡櫓、南方 Ni 渡櫓圍繞中庭，連接各座天守。</desc>
   <defs>
     <pattern id="tiles" width="7" height="7" patternUnits="userSpaceOnUse">
       <path d="M.5 0V7" stroke="#76818a" stroke-width=".65"/>
@@ -87,11 +87,11 @@
       <path d="M124 74V93M468 74V108M124 469V493M431 495V512"/>
     </g>
     <g font-size="27" text-anchor="middle">
-      <text x="297" y="122">ロ渡櫓</text>
+      <text x="297" y="122">Ro 渡櫓</text>
       <text x="268" y="289" fill="#456b58">中庭</text>
-      <text x="241" y="475">ニ渡櫓</text>
-      <text x="53" y="289" transform="rotate(-90 53 289)">ハ渡櫓</text>
-      <text x="550" y="260" transform="rotate(90 550 260)">イ渡櫓</text>
+      <text x="241" y="475">Ni 渡櫓</text>
+      <text x="53" y="289" transform="rotate(-90 53 289)">Ha 渡櫓</text>
+      <text x="550" y="260" transform="rotate(90 550 260)">I 渡櫓</text>
     </g>
     <path d="M180 577H420" stroke="#cbd2d2"/>
     <text x="300" y="609" text-anchor="middle" font-size="20" fill="#55636b">北向上 / 屋頂配置示意圖・非按比例</text>
