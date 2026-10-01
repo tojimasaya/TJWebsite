@@ -5,13 +5,25 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-09-30T00:00:00+09:00</updated>
+  <updated>2026-10-01T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>国慶節の人波と、五十万円の亀</title>
+    <id>https://tojimasaya.com/fragments/mongkok-national-day-tortoise.html</id>
+    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/mongkok-national-day-tortoise.html"/>
+    <published>2026-10-01T00:00:00+09:00</published>
+    <updated>2026-10-01T00:00:00+09:00</updated>
+    <category term="断章"/>
+    <summary type="text">十月一日は中国の国慶節で、建国七十七周年を迎えた今年も香港には中国から大勢の観光客が来ていて、師匠と旺角で食事をしたあと、少しお疲れの様子だった師匠は早々に帰られたので、私はひとり花園街から金魚街あたりをぶらぶら歩き、…</summary>
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/mongkok-national-day-footbridge.jpg&quot; alt=&quot;旺角行きの赤いミニバス越しに見上げた歩道橋。中国と香港の旗が並び、欄干沿いには写真を撮る大勢の人が集まっている&quot;&gt;&lt;/p&gt;
+&lt;p&gt;十月一日は中国の国慶節で、建国七十七周年を迎えた今年も香港には中国から大勢の観光客が来ていて、師匠と旺角で食事をしたあと、少しお疲れの様子だった師匠は早々に帰られたので、私はひとり花園街から金魚街あたりをぶらぶら歩き、いつもなら歩道橋の上から撮る香港おなじみの風景を、今日は逆に下から見上げてみたのだが、橋の上には中国から来た女の子たちが並び、それぞれ思い思いのポーズで写真を撮っていて、その写真を撮っている人たちをこちらが下から撮るというのもなかなか面白く、いやあ、すごい人だと見上げながら、それでも去年よりは少ないような気がするのは、中国の景気も関係しているのか、ただ私の歩いた時間や場所のせいなのか、そこまでは分からないけれど、人出以上に驚いたのは亀の値段で、昨日の断章に載せたあのリクガメ、値札を見ると日本円で五十万円近くもするのであって、昨日はただ可愛いなと眺めていた相手が、今日はずいぶん立派なお値段の生き物に見えてきたところで思い出したのが、生田斗真さん主演の『俺の話は長い』という大好きなドラマで、主人公の飼っている亀はボルトという名前なのだが、歩みの遅い亀に世界一速い男の名前をつけるあたりからして、もうあのドラマのセンスが好きなのであり、そういえば主人公が喫茶店ポラリスを継ぐのを諦め、自分のコーヒー道具を中古店に売るくだりがあったけれど、ひょっとするとボルトにも数十万円の値がついたのでは、などと余計なことまで考えてしまい、もちろん亀なら何でも同じ値段というわけではないし、そもそもそこでボルトを売るような男ではないからこそ、あの主人公も、彼を演じる生田斗真さんもいいのであって、小池栄子さん演じる姉との軽妙なやりとりに、母親役の原田美枝子さんが加わるとまた何ともおかしく、もう三回は見直しているのに何度見ても面白い、という話を始めるとそれこそ俺の話が長くなるのでこのへんにしておくが、それにしても、亀って高い。&lt;/p&gt;
+&lt;p&gt;香港・旺角　花園街・金魚街&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>六十ドルの昼飯と、洗われる亀</title>
     <id>https://tojimasaya.com/fragments/mongkok-saizeriya-turtle.html</id>
@@ -343,17 +355,5 @@
     <summary type="text">RokidのAIグラスを、単なるカメラ付きメガネではなく「人生の入力デバイス」として使う視点で掘り下げる第2回。見たものをその場でAIに渡し、翻訳や記録へつなげる日常の使い方を考えます。</summary>
     <content type="html">&lt;p&gt;RokidのAIグラスを、単なるカメラ付きメガネではなく「人生の入力デバイス」として使う視点で掘り下げる第2回。見たものをその場でAIに渡し、翻訳や記録へつなげる日常の使い方を考えます。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n458a51095135&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>家族3人の誕生日、中環のステーキ屋Pasteako</title>
-    <id>https://tojimasaya.com/fragments/pasteako-birthday.html</id>
-    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/pasteako-birthday.html"/>
-    <published>2026-07-13T00:00:00+09:00</published>
-    <updated>2026-07-13T00:00:00+09:00</updated>
-    <category term="断章"/>
-    <summary type="text">七月十二日が私の誕生日なのだが、妻の体調がすぐれず一日ずらして、妻と息子との三人でセントラルのステーキ屋Pasteakoへ行ったところ、この店の面白いのは席に着く前にまず自分の使うナイフを選ばせる趣向で、…</summary>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/pasteako-birthday-family.jpg&quot; alt=&quot;赤いチェックのテーブルに料理を並べ、革張りソファ席で微笑む家族3人（妻・私・息子）&quot;&gt;&lt;/p&gt;
-&lt;p&gt;七月十二日が私の誕生日なのだが、妻の体調がすぐれず一日ずらして、妻と息子との三人でセントラルのステーキ屋Pasteakoへ行ったところ、この店の面白いのは席に着く前にまず自分の使うナイフを選ばせる趣向で、私は八本の中から、日本の名を持つ七番のサントクを選んだのに、いざリブアイの筋を前にするとまるで歯が立たず、名前だけの日本刀だったかと苦笑しつつ、しかし肉そのものは文句なしに旨く、還暦を過ぎて自分の誕生日を喜ぶ歳ではとうになくなった私には、新しい仕事に就いたばかりで毎日が緊張の連続らしく食事中も携帯のメッセージを気にし、話題も仕事のことばかりで、正直もう助言できることなどほとんどない息子と、それでも妻を挟んで同じ皿を囲み、あれこれ話せたこの一日こそが、どんな贈り物よりもありがたかった。&lt;/p&gt;
-&lt;p&gt;香港・中環 PMQ&lt;/p&gt;</content>
   </entry>
 </feed>

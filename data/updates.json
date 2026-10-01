@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T00:00:00+09:00",
+  "generatedAt": "2026-10-01T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "国慶節の人波と、五十万円の亀",
+      "url": "/fragments/mongkok-national-day-tortoise.html",
+      "external": false,
+      "date": "2026-10-01",
+      "thumb": "/assets/images/photo-notes/mongkok-national-day-footbridge.webp"
+    },
     {
       "kind": "fragment",
       "kindLabel": "断章",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-08-28",
       "thumb": "/assets/images/photo-notes/huanggang-old-and-future.webp"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "血圧の警告と、ヨーグルトを育てる夏",
-      "url": "/fragments/homemade-yogurt-blood-pressure.html",
-      "external": false,
-      "date": "2026-08-27",
-      "thumb": "/assets/images/photo-notes/yogurt-oidire-maker.webp"
     }
   ]
 }

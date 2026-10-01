@@ -2139,6 +2139,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/mongkok-national-day-tortoise.html</loc>
+    <lastmod>2026-10-01</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/mongkok-national-day-footbridge.jpg</image:loc>
+      <image:title>国慶節の人波と、五十万円の亀</image:title>
+      <image:caption>旺角行きの赤いミニバス越しに見上げた歩道橋。中国と香港の旗が並び、欄干沿いには写真を撮る大勢の人が集まっている</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/mongkok-saizeriya-turtle.html</loc>
     <lastmod>2026-09-30</lastmod>
     <changefreq>monthly</changefreq>

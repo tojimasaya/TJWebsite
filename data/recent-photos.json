@@ -1,5 +1,51 @@
 [
   {
+    "slug": "mongkok-national-day-tortoise",
+    "label": "今日の断章",
+    "title": "国慶節の人波と、五十万円の亀",
+    "place": "香港・旺角　花園街・金魚街",
+    "date": "2026年10月1日",
+    "body": "十月一日は中国の国慶節で、建国七十七周年を迎えた今年も香港には中国から大勢の観光客が来ていて、師匠と旺角で食事をしたあと、少しお疲れの様子だった師匠は早々に帰られたので、私はひとり花園街から金魚街あたりをぶらぶら歩き、いつもなら歩道橋の上から撮る香港おなじみの風景を、今日は逆に下から見上げてみたのだが、橋の上には中国から来た女の子たちが並び、それぞれ思い思いのポーズで写真を撮っていて、その写真を撮っている人たちをこちらが下から撮るというのもなかなか面白く、いやあ、すごい人だと見上げながら、それでも去年よりは少ないような気がするのは、中国の景気も関係しているのか、ただ私の歩いた時間や場所のせいなのか、そこまでは分からないけれど、人出以上に驚いたのは亀の値段で、昨日の断章に載せたあのリクガメ、値札を見ると日本円で五十万円近くもするのであって、昨日はただ可愛いなと眺めていた相手が、今日はずいぶん立派なお値段の生き物に見えてきたところで思い出したのが、生田斗真さん主演の『俺の話は長い』という大好きなドラマで、主人公の飼っている亀はボルトという名前なのだが、歩みの遅い亀に世界一速い男の名前をつけるあたりからして、もうあのドラマのセンスが好きなのであり、そういえば主人公が喫茶店ポラリスを継ぐのを諦め、自分のコーヒー道具を中古店に売るくだりがあったけれど、ひょっとするとボルトにも数十万円の値がついたのでは、などと余計なことまで考えてしまい、もちろん亀なら何でも同じ値段というわけではないし、そもそもそこでボルトを売るような男ではないからこそ、あの主人公も、彼を演じる生田斗真さんもいいのであって、小池栄子さん演じる姉との軽妙なやりとりに、母親役の原田美枝子さんが加わるとまた何ともおかしく、もう三回は見直しているのに何度見ても面白い、という話を始めるとそれこそ俺の話が長くなるのでこのへんにしておくが、それにしても、亀って高い。",
+    "homeLead": "国慶節の旺角で、写真を撮る人たちを歩道橋の下から撮ってみた。花園街から金魚街へ歩くと、昨日の亀には五十万円近い値札。そこから思い出したのは、大好きなドラマに出てくる亀、ボルトのことだった。",
+    "image": "assets/images/photo-notes/mongkok-national-day-footbridge.jpg",
+    "imageWebp": "assets/images/photo-notes/mongkok-national-day-footbridge.webp",
+    "alt": "旺角行きの赤いミニバス越しに見上げた歩道橋。中国と香港の旗が並び、欄干沿いには写真を撮る大勢の人が集まっている",
+    "caption": "Looking Up on National Day / Mong Kok",
+    "link": "fragments/mongkok-saizeriya-turtle.html",
+    "linkLabel": "昨日の断章「六十ドルの昼飯と、洗われる亀」 →",
+    "sideFrames": [
+      {
+        "title": "五十万円近い亀の値札",
+        "caption": "A Tortoise and Its Price / Goldfish Street",
+        "image": "assets/images/photo-notes/mongkok-national-day-tortoise-price.jpg",
+        "imageWebp": "assets/images/photo-notes/mongkok-national-day-tortoise-price.webp",
+        "alt": "リクガメが並ぶガラスケース。右側には「亞達伯拉象龜」と一匹23,880香港ドルの手書きの値札がついている",
+        "width": 1600,
+        "height": 1200
+      },
+      {
+        "title": "一匹二十ドル、三匹五十ドル",
+        "caption": "Twenty Dollars Each / Goldfish Street",
+        "image": "assets/images/photo-notes/mongkok-national-day-goldfish.jpg",
+        "imageWebp": "assets/images/photo-notes/mongkok-national-day-goldfish.webp",
+        "alt": "ピンク色の照明に照らされた金魚の水槽。上には一匹20香港ドル、三匹50香港ドルと書かれた黄色い値札がある",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "title": "金魚街の青い水槽",
+        "caption": "Blue Aquarium / Goldfish Street",
+        "image": "assets/images/photo-notes/mongkok-national-day-aquarium.jpg",
+        "imageWebp": "assets/images/photo-notes/mongkok-national-day-aquarium.webp",
+        "alt": "青い照明の水槽で、色鮮やかな魚がサンゴやイソギンチャクの間を泳いでいる。水槽の縁には「Not for sale」の文字",
+        "width": 1800,
+        "height": 1350
+      }
+    ],
+    "width": 1800,
+    "height": 1355
+  },
+  {
     "slug": "mongkok-saizeriya-turtle",
     "label": "今日の断章",
     "title": "六十ドルの昼飯と、洗われる亀",
