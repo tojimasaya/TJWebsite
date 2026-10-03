@@ -46,7 +46,7 @@
 .guide-progress a:focus-visible { outline-offset: -3px; }
 .guide-chapter { padding: 0 18px 28px; margin-bottom: 56px; border: 1px solid var(--guide-line); background: #fff; scroll-margin-top: var(--guide-anchor-offset); }
 .guide-chapter-head { display: grid; grid-template-columns: 44px minmax(0, 1fr); gap: 14px; margin: -1px -19px 32px; padding: 30px 18px 28px; border-top: 4px solid #304b40; background: #e7ece3; }
-.guide-chapter-number { font-family: var(--font-en); font-size: 48px; line-height: 1; color: #647b67; }
+.guide-chapter-number { font-family: var(--font-en); font-size: 48px; line-height: 1; color: #647b67; white-space: nowrap; }
 .guide-chapter-intro { max-width: 620px; }
 .guide-chapter-head .guide-kicker { color: #3c5b49; margin-bottom: 18px; font-size: 12px; }
 .guide-chapter h2 { font-size: 27px; font-weight: 500; margin: 4px 0 18px; }
@@ -182,7 +182,7 @@ body.is-diagram-open { overflow: hidden; }
     .guide-wrap { padding: 0 32px; }
     .guide-head { padding-top: 48px; padding-bottom: 32px; }
     .guide-head h1 { font-size: 36px; }
-    .guide-index { grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); }
+    .guide-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
     .guide-index a { display: block; padding: 24px; }
     .guide-index span { margin-bottom: 6px; }
     .guide-progress-label { display: block; }
