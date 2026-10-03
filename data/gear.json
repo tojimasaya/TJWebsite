@@ -381,7 +381,7 @@
           "specs": [
             "512GB"
           ],
-          "description": "銀行アプリや本人確認など、止まると困る基幹用途を任せるメイン端末。多くのアプリはiPhoneで確実に検証され、ハード障害時も保証期間なら交換対応が早い。この安心感は金融まわりでは特に大きい。ただ、メインだから全部をiPhoneで済ませるわけではなく、カメラは専用機やXiaomi、折りたたみはタブレット的に使い分け、全体のスマートフォン体験を上げている。",
+          "description": "銀行アプリや本人確認など、止まると困る基幹用途を任せるメイン端末。多くのアプリはiPhoneで確実に検証され、ハード障害時も保証期間なら交換対応が早い。この安心感は金融まわりでは特に大きい。ただ、メインだから全部をiPhoneで済ませるわけではなく、カメラは専用機やXiaomiと使い分けている。OPPO Find N5を息子に譲ったため、現在のスマートフォンはiPhoneとXiaomiの2台体制。次の折りたたみスマホは、どれにしようか思案中。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/nd229cd856751\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【前編】iPhone 17 Pro検証：x2・x8は単なるクロップか？</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n53df41f14082\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【後編】iPhone 17 Pro vs Xiaomi 15 Ultra：生活と創造のあいだで揺れる2台体制</a>",
           "links": {
             "レビュー前編": "https://note.com/tojimasaya/n/nd229cd856751",
@@ -418,18 +418,19 @@
           "name": "OPPO Find N5",
           "brand": "oppo",
           "image": "/assets/images/gear/oppofindn5.jpg",
-          "status": "available",
+          "status": "transferred",
+          "usage": "息子に譲渡済み",
           "specs": [
             "16GB",
             "512GB"
           ],
-          "description": "折りたたみスマホとしての大画面に加え、ColorOS 16以降はMac上で画面ミラーリングできるのが強み。AndroidだからApple連携から外れる、という不安をかなり薄めてくれたタブレット代わりの一台。",
+          "description": "折りたたみスマホとしての大画面に加え、ColorOS 16以降はMac上で画面ミラーリングできるのが強み。AndroidだからApple連携から外れる、という不安をかなり薄めてくれた、タブレット代わりに使っていた一台。\n\n現在は息子に譲り、手元のスマートフォンはiPhone 17 ProとXiaomi 17 Ultra by Leicaの2台体制になりました。次はどの折りたたみスマホにしようか、いまは思案中です。使ってきた記録として、紹介とレビューはここに残しておきます。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n82331875d2b8\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">O+ Connectで広がる可能性──OPPO Find N5とAppleデバイスの相互連携</a>",
           "links": {
             "Mac連携レビュー": "https://note.com/tojimasaya/n/n802d7acd7aeb",
             "O+ Connect": "https://note.com/tojimasaya/n/n82331875d2b8"
           },
-          "summary": "大画面とMacとの連携を活かす、タブレット代わりの折りたたみスマホ。"
+          "summary": "息子に譲り、スマホは現在2台体制。次の折りたたみを思案中。"
         },
         {
           "id": "mac-mini-m6",
