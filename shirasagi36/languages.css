@@ -1,0 +1,104 @@
+/* Language controls shared by the hub, photographs and visitor guides. */
+.castle-languages--mobile {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .castle-languages {
+    box-sizing: border-box;
+    display: flex;
+    align-items: stretch;
+    justify-content: center;
+    flex-wrap: nowrap;
+    gap: 4px;
+    height: 45px;
+    margin: 0;
+    padding: 0 12px;
+    border-top: 1px solid #d5dbd6;
+    border-bottom: 0;
+    background: #fcfaf2;
+    font-family: -apple-system, BlinkMacSystemFont, "Hiragino Sans", "PingFang TC", sans-serif;
+    letter-spacing: 0;
+  }
+
+  .castle-languages a {
+    box-sizing: border-box;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 44px;
+    padding: 0 12px;
+    border-bottom: 2px solid transparent;
+    color: #515a64;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.4;
+    letter-spacing: 0;
+    text-decoration: none;
+    white-space: nowrap;
+  }
+
+  .castle-languages a[aria-current="page"] {
+    border-bottom-color: #1a3fb9;
+    color: #1a3fb9;
+    font-weight: 600;
+    text-decoration: none;
+  }
+
+  .castle-languages a:hover {
+    color: #1a3fb9;
+    background: rgba(26, 63, 185, .05);
+  }
+
+  .castle-languages a:focus-visible {
+    outline: 2px solid #1a3fb9;
+    outline-offset: -4px;
+  }
+
+  .shirasagi-hub > header {
+    padding-top: calc(160px + env(safe-area-inset-top));
+  }
+
+  .shirasagi-hub #castle-resources,
+  .shirasagi-hub #latest-view,
+  .shirasagi-hub #gallery-anchor,
+  .shirasagi-hub #sakura-guide {
+    scroll-margin-top: calc(131px + env(safe-area-inset-top));
+  }
+
+  .shirasagi-view,
+  .castle-guide {
+    --nav-h: calc(115px + env(safe-area-inset-top));
+  }
+
+  .shirasagi-view .v-nav,
+  .castle-guide .v-nav {
+    height: calc(70px + env(safe-area-inset-top));
+    border-bottom: 0;
+  }
+
+  .shirasagi-view .v-nav__inner,
+  .castle-guide .v-nav__inner {
+    height: 70px;
+  }
+
+  .shirasagi-view .v-section,
+  .shirasagi-view .v-section > h2 {
+    scroll-margin-top: calc(var(--nav-h) + 16px);
+  }
+
+  .guide-languages.castle-languages {
+    position: fixed;
+    top: calc(70px + env(safe-area-inset-top));
+    right: 0;
+    left: 0;
+    z-index: 50;
+    background: #fafbf8;
+  }
+}
+
+@media print {
+  .castle-languages {
+    display: none;
+  }
+}

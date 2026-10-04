@@ -8,15 +8,6 @@
         'zh-Hant': { navigation: '章節導覽', castle: '認識城堡', after: '：繼續閱讀', back: '返回目錄 ↑', next: '下一章' }
     }[language] || { navigation: '章の移動', castle: '城を知る', after: 'を読み終えたら', back: '目次に戻る ↑', next: '次の章を読む' };
 
-    // Switching languages should retain the place the reader has reached.
-    function updateLanguageLinks() {
-        document.querySelectorAll('[data-guide-language]').forEach(function (link) {
-            link.hash = window.location.hash;
-        });
-    }
-    updateLanguageLinks();
-    window.addEventListener('hashchange', updateLanguageLinks);
-
 // Keep links saved before access information moved to its own page working.
 (function () {
     'use strict';

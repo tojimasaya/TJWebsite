@@ -19,6 +19,8 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="{{fontsHref}}" rel="stylesheet">
 <link rel="stylesheet" href="/shirasagi36/view.css">
+<link rel="stylesheet" href="/shirasagi36/languages.css">
+<script src="/shirasagi36/languages.js" defer></script>
 <link rel="preload" as="image" href="{{webpFull}}" type="image/webp" fetchpriority="high">
 <link rel="icon" type="image/png" href="/favicon.png">
 <link rel="apple-touch-icon" href="/apple-touch-icon.png">
@@ -47,7 +49,7 @@
 {{{jsonLd}}}
 </script>
 </head>
-<body data-page-id="{{pageId}}">
+<body class="shirasagi-view" data-page-id="{{pageId}}">
 
 <nav class="v-nav" aria-label="{{t_navLabel}}">
   <div class="v-nav__inner">
@@ -75,6 +77,11 @@
       <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path></svg>
     </button>
   </div>
+  <div class="castle-languages castle-languages--mobile" role="navigation" aria-label="{{#isJa}}言語{{/isJa}}{{#isEn}}Language{{/isEn}}{{#isHk}}語言{{/isHk}}">
+    <a href="{{urlJaPath}}" lang="ja" hreflang="ja" data-castle-language{{#isJa}} aria-current="page"{{/isJa}}>日本語</a>
+    <a href="{{urlEnPath}}" lang="en" hreflang="en" data-castle-language{{#isEn}} aria-current="page"{{/isEn}}>English</a>
+    <a href="{{urlHkPath}}" lang="zh-Hant" hreflang="zh-Hant" data-castle-language{{#isHk}} aria-current="page"{{/isHk}}>繁體中文</a>
+  </div>
 </nav>
 <div class="v-mobile" id="v-mobile">
   <button class="v-mobile__close" type="button" data-menu="close" aria-label="Close">
@@ -95,9 +102,6 @@
       <li><a href="{{aboutUrl}}">About</a></li>
     </ul>
   </details>
-  <div class="v-mobile__lang">
-    {{#isJa}}<a href="{{urlEnPath}}" hreflang="en" lang="en">English</a><a href="{{urlHkPath}}" hreflang="zh-Hant" lang="zh-Hant">中文</a>{{/isJa}}{{#isEn}}<a href="{{urlJaPath}}" hreflang="ja" lang="ja">日本語</a><a href="{{urlHkPath}}" hreflang="zh-Hant" lang="zh-Hant">中文</a>{{/isEn}}{{#isHk}}<a href="{{urlJaPath}}" hreflang="ja" lang="ja">日本語</a><a href="{{urlEnPath}}" hreflang="en" lang="en">English</a>{{/isHk}}
-  </div>
 </div>
 
 <main class="v-wrap">

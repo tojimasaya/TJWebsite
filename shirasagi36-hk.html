@@ -71,6 +71,8 @@
     </style>
 <link rel="stylesheet" href="shirasagi-nav.css">
 <link rel="stylesheet" href="shirasagi36/hub.css?v=2">
+<link rel="stylesheet" href="shirasagi36/languages.css">
+<script src="shirasagi36/languages.js" defer></script>
 <script src="js/shirasagi-nav.js" defer></script>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -118,7 +120,7 @@
 </script>
 <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
 </head>
-<body class="bg-washi-bg bg-washi-texture text-shirasagi-ink font-serif-zh antialiased selection:bg-shirasagi-blue selection:text-white">
+<body class="shirasagi-hub bg-washi-bg bg-washi-texture text-shirasagi-ink font-serif-zh antialiased selection:bg-shirasagi-blue selection:text-white">
 
     <!-- Navigation -->
     <nav class="fixed w-full z-50 top-0 bg-washi-bg/95 backdrop-blur-sm border-b border-gray-200/50 transition-all duration-300" style="padding-top: env(safe-area-inset-top);">
@@ -158,6 +160,11 @@
                 </div>
             </div>
         </div>
+        <div class="castle-languages castle-languages--mobile" role="navigation" aria-label="語言">
+            <a href="shirasagi36.html" lang="ja" hreflang="ja" data-castle-language>日本語</a>
+            <a href="shirasagi36-en.html" lang="en" hreflang="en" data-castle-language>English</a>
+            <a href="shirasagi36-hk.html" lang="zh-Hant" hreflang="zh-Hant" data-castle-language aria-current="page">繁體中文</a>
+        </div>
     </nav>
 
     <!-- Mobile Menu Overlay -->
@@ -182,10 +189,6 @@
                     <li><a href="about-hk.html">About</a></li>
                 </ul>
             </details>
-            <div class="pt-6 flex gap-3">
-                <a href="shirasagi36.html" class="text-sm border border-gray-400 rounded-full px-5 py-2 hover:bg-shirasagi-ink hover:text-white transition-colors">日本語</a>
-                <a href="shirasagi36-en.html" class="text-sm border border-gray-400 rounded-full px-5 py-2 hover:bg-shirasagi-ink hover:text-white transition-colors">English</a>
-            </div>
         </div>
     </div>
 
