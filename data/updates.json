@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-01T00:00:00+09:00",
+  "generatedAt": "2026-10-03T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "HSBCのRedCoin。ひとまず香港ドルのままで",
+      "url": "https://note.com/tojimasaya/n/n51687a200e46",
+      "external": true,
+      "date": "2026-10-03",
+      "thumb": "https://assets.st-note.com/production/uploads/images/320385074/rectangle_large_type_2_85c64ea9c9eb5127bd68a9385f7fab41.png?width=800"
+    },
     {
       "kind": "fragment",
       "kindLabel": "断章",
@@ -105,15 +114,6 @@
       "external": true,
       "date": "2026-09-02",
       "thumb": "https://assets.st-note.com/production/uploads/images/309469100/rectangle_large_type_2_ac4d17afb393f1fb5451c18e6bd00ca2.jpeg?width=800"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "見納めのプレハブ国境と、うねる未来ビル",
-      "url": "/fragments/huanggang-immigration-farewell.html",
-      "external": false,
-      "date": "2026-08-28",
-      "thumb": "/assets/images/photo-notes/huanggang-old-and-future.webp"
     }
   ]
 }

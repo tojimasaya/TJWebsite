@@ -5,13 +5,24 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-10-01T00:00:00+09:00</updated>
+  <updated>2026-10-03T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>HSBCのRedCoin。ひとまず香港ドルのままで</title>
+    <id>https://note.com/tojimasaya/n/n51687a200e46</id>
+    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n51687a200e46"/>
+    <published>2026-10-03T00:00:00+09:00</published>
+    <updated>2026-10-03T00:00:00+09:00</updated>
+    <category term="note"/>
+    <summary type="text">PayMeから届いたHSBCの「RedCoin」の案内をきっかけに、香港ドルを交換する理由を生活者の目線で考えた記事。普段の送金や支払いとの違い、銀行が見据えるデジタル投資商品の決済に触れながら、…</summary>
+    <content type="html">&lt;p&gt;PayMeから届いたHSBCの「RedCoin」の案内をきっかけに、香港ドルを交換する理由を生活者の目線で考えた記事。普段の送金や支払いとの違い、銀行が見据えるデジタル投資商品の決済に触れながら、使うメリットが見えるまでは香港ドルのままでよい、という実感を綴っています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n51687a200e46&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>国慶節の人波と、五十万円の亀</title>
     <id>https://tojimasaya.com/fragments/mongkok-national-day-tortoise.html</id>
@@ -344,16 +355,5 @@
     <summary type="text">台北の窓口で丁寧に断られた理由と、台湾ドルという通貨の性格。</summary>
     <content type="html">&lt;p&gt;台湾で銀行口座を作れるか知りたい非居住者向け。台北の窓口で丁寧に断られた理由と、台湾ドルという通貨の性格。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://tojimasaya.com/hk-hsbc-taiwan.html&quot;&gt;ガイドを読む →&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Rokidと暮らす② メガネを、人生の入力デバイスにする</title>
-    <id>https://note.com/tojimasaya/n/n458a51095135</id>
-    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n458a51095135"/>
-    <published>2026-07-15T00:00:00+09:00</published>
-    <updated>2026-07-15T00:00:00+09:00</updated>
-    <category term="note"/>
-    <summary type="text">RokidのAIグラスを、単なるカメラ付きメガネではなく「人生の入力デバイス」として使う視点で掘り下げる第2回。見たものをその場でAIに渡し、翻訳や記録へつなげる日常の使い方を考えます。</summary>
-    <content type="html">&lt;p&gt;RokidのAIグラスを、単なるカメラ付きメガネではなく「人生の入力デバイス」として使う視点で掘り下げる第2回。見たものをその場でAIに渡し、翻訳や記録へつなげる日常の使い方を考えます。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n458a51095135&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>
