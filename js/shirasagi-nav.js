@@ -43,6 +43,6 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
     window.addEventListener('resize', () => {
-        if (window.innerWidth >= 768 && !menu.classList.contains('hidden')) closeMenu();
+        if (window.innerWidth >= 1024 && !menu.classList.contains('hidden')) closeMenu();
     });
 });

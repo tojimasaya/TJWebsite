@@ -3,7 +3,7 @@
   display: none;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
   .castle-languages {
     box-sizing: border-box;
     display: flex;

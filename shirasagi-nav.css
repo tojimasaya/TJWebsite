@@ -1,3 +1,5 @@
+@import url("site-nav.css");
+
 .shirasagi-more {
     position: relative;
 }
@@ -66,7 +68,7 @@
     padding: 96px 20px 40px;
 }
 
-@media (max-width: 767px) {
+@media (max-width: 1023px) {
     .shirasagi-mobile-content .shirasagi-more summary {
         justify-content: center;
     }

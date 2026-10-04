@@ -34,7 +34,7 @@
     moreMenus.forEach(function (details) { if (!details.contains(e.target)) details.open = false; });
   });
   window.addEventListener('resize', function () {
-    if (window.innerWidth >= 768 && menu && menu.classList.contains('is-open')) setMenu(false);
+    if (window.innerWidth >= 1024 && menu && menu.classList.contains('is-open')) setMenu(false);
   });
 
   /* 2) ライトボックス */

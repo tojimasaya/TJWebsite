@@ -23,8 +23,12 @@ document.addEventListener('DOMContentLoaded', () => {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
+    // Lucide Moon / Sun (ISC); license: /assets/icons/lucide-LICENSE.txt.
     function getThemeIcon(theme) {
-        return theme === 'dark' ? '☀️' : '🌙';
+        const shape = theme === 'dark'
+            ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>'
+            : '<path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>';
+        return `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${shape}</svg>`;
     }
 
     function getThemeLabel(theme) {
@@ -38,11 +42,11 @@ document.addEventListener('DOMContentLoaded', () => {
     <nav class="main-nav" aria-label="メインナビゲーション">
         <div class="nav-container">
             <a href="/" class="nav-logo" aria-label="ホームページへ戻る">TOJIMASAYA</a>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu"><span></span><span></span><span></span></button>
+            <button class="nav-toggle" id="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="nav-toggle-open" d="M4 5h16M4 12h16M4 19h16"/><path class="nav-toggle-close" d="M18 6 6 18m0-12 12 12"/></svg></button>
             <ul class="nav-menu" id="nav-menu">
                 <li>
-                    <a href="/shirasagi36.html" class="nav-link featured-link ${page.includes('shirasagi') || inShirasagiDir ? 'active' : ''}">
-                        <span class="icon">🏯</span> 白鷺三十六景
+                    <a href="/shirasagi36.html" class="nav-link ${page.includes('shirasagi') || inShirasagiDir ? 'active' : ''}">
+                        白鷺三十六景
                     </a>
                 </li>
                 <li><a href="/hongkong.html" class="nav-link ${isHongKongPage ? 'active' : ''}">香港</a></li>
@@ -60,7 +64,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         </ul>
                     </details>
                 </li>
-                <li><button class="theme-toggle" id="theme-toggle" aria-label="${getThemeLabel(currentTheme)}">${getThemeIcon(currentTheme)}</button></li>
+                <li><button class="theme-toggle" id="theme-toggle" type="button" aria-label="${getThemeLabel(currentTheme)}" title="${getThemeLabel(currentTheme)}">${getThemeIcon(currentTheme)}</button></li>
             </ul>
         </div>
     </nav>
@@ -74,6 +78,10 @@ document.addEventListener('DOMContentLoaded', () => {
         document.body.insertAdjacentHTML('afterbegin', navHtml);
     }
 
+    document.querySelectorAll('.main-nav a.nav-link.active').forEach(link => {
+        link.setAttribute('aria-current', link.pathname === path ? 'page' : 'location');
+    });
+
     // Theme toggle
     const themeToggle = document.getElementById('theme-toggle');
     if (themeToggle) {
@@ -82,8 +90,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const next = current === 'dark' ? 'light' : 'dark';
             document.documentElement.setAttribute('data-theme', next);
             localStorage.setItem('theme', next);
-            themeToggle.textContent = getThemeIcon(next);
+            themeToggle.innerHTML = getThemeIcon(next);
             themeToggle.setAttribute('aria-label', getThemeLabel(next));
+            themeToggle.setAttribute('title', getThemeLabel(next));
         });
     }
 
@@ -115,6 +124,16 @@ document.addEventListener('DOMContentLoaded', () => {
             navToggle.setAttribute('aria-expanded', !isExpanded);
             navToggle.setAttribute('aria-label', !isExpanded ? 'メニューを閉じる' : 'メニューを開く');
             document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : '';
+        });
+
+        window.addEventListener('resize', () => {
+            if (window.innerWidth < 1024 || !navMenu.classList.contains('active')) return;
+            navMenu.classList.remove('active');
+            navToggle.classList.remove('active');
+            navToggle.setAttribute('aria-expanded', 'false');
+            navToggle.setAttribute('aria-label', 'メニューを開く');
+            if (navMore) navMore.open = false;
+            document.body.style.overflow = '';
         });
 
         // Escキーでメニューを閉じる

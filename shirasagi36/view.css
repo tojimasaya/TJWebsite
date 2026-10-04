@@ -1,3 +1,5 @@
+@import url("../site-nav.css");
+
 /* shirasagi36/view.css — 白鷺三十六景 一景ページ共通スタイル
    hub (shirasagi36.html) の和紙トーンを、Tailwind に頼らず素の CSS で再現したもの。
    JA / EN / HK 共通。生成元: tools/build-shirasagi.mjs（このファイルは手で編集してよい） */
@@ -77,7 +79,7 @@ p { margin: 0; }
 .v-nav__lang a:hover { background: var(--ink); color: #fff; border-color: var(--ink); }
 .v-nav__toggle { display: inline-flex; background: none; border: 0; padding: 8px; color: var(--ink); cursor: pointer; }
 .v-nav__toggle svg { width: 24px; height: 24px; }
-@media (min-width: 768px) {
+@media (min-width: 1024px) {
   .v-nav__inner { padding: 0 40px; }
   .v-nav__menu { display: flex; }
   .v-nav__toggle { display: none; }

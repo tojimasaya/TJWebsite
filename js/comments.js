@@ -79,7 +79,7 @@
 
   // サイトのダーク/ライト切替に追従
   document.addEventListener('click', function (e) {
-    if (e.target && e.target.id === 'theme-toggle' && window.CUSDIS && window.CUSDIS.setTheme) {
+    if (e.target instanceof Element && e.target.closest('#theme-toggle') && window.CUSDIS && window.CUSDIS.setTheme) {
       setTimeout(function () {
         window.CUSDIS.setTheme(currentTheme());
       }, 50);

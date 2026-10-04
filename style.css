@@ -1,3 +1,5 @@
+@import url("site-nav.css");
+
 /* =========================================================================
    style.css - tojimasaya.com
    Complete Version (Parallax Hero, Grid Layouts & Image Fixes)
@@ -1528,7 +1530,7 @@ body {
     }
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1023px) {
     /* Navigation */
     .nav-menu {
         position: fixed;
@@ -1562,7 +1564,9 @@ body {
         box-shadow: none;
         text-align: center;
     }
+}
 
+@media (max-width: 768px) {
     /* Hero */
     .hero-title, .writings-hero-title, .gallery-hero-title {
         font-size: 2rem;
