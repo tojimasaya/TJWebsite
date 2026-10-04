@@ -1,0 +1,33 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="820" viewBox="0 0 600 820" role="img" aria-labelledby="title desc">
+<title id="title">狭間の形と、壁の奥行き</title><desc id="desc">外から見える形の例 / 外側：小さな開口 / 内側：広がる開口</desc>
+<rect width="600" height="820" fill="#fff"/>
+<g font-family="Hiragino Sans, Noto Sans CJK JP, Noto Sans CJK TC, sans-serif">
+<text x="28" y="44" font-size="28" text-anchor="start" fill="#283e34" font-weight="600">狭間の形と、壁の奥行き</text>
+<text x="28" y="79" font-size="20" text-anchor="start" fill="#55615e" font-weight="400">外から見える形の例</text>
+<rect x="24" y="102" width="124" height="191" rx="4" fill="#f3f5ef" stroke="#cbd3ca"/>
+<rect x="70" y="128" width="32" height="99" fill="#304b40"/>
+<text x="86" y="267" font-size="20" text-anchor="middle" fill="#283e34" font-weight="400">縦長</text>
+<rect x="167" y="102" width="124" height="191" rx="4" fill="#f3f5ef" stroke="#cbd3ca"/>
+<circle cx="229" cy="177" r="37" fill="#304b40"/>
+<text x="229" y="267" font-size="20" text-anchor="middle" fill="#283e34" font-weight="400">丸</text>
+<rect x="309" y="102" width="124" height="191" rx="4" fill="#f3f5ef" stroke="#cbd3ca"/>
+<path d="M371 130l43 85h-86z" fill="#304b40"/>
+<text x="371" y="267" font-size="20" text-anchor="middle" fill="#283e34" font-weight="400">三角</text>
+<rect x="452" y="102" width="124" height="191" rx="4" fill="#f3f5ef" stroke="#cbd3ca"/>
+<rect x="478" y="141" width="72" height="72" fill="#304b40"/>
+<text x="514" y="267" font-size="20" text-anchor="middle" fill="#283e34" font-weight="400">正方形</text>
+<text x="86" y="328" font-size="22" text-anchor="middle" fill="#283e34" font-weight="600">矢狭間</text>
+<text x="371" y="328" font-size="22" text-anchor="middle" fill="#283e34" font-weight="600">鉄砲狭間</text>
+<path d="M168 299v5h407v-5" fill="none" stroke="#748a7e" stroke-width="2"/>
+<path d="M28 353H572" stroke="#d5dbd6"/>
+<text x="28" y="389" font-size="23" text-anchor="start" fill="#283e34" font-weight="600">上から見た壁の断面</text>
+<text x="300" y="435" font-size="21" text-anchor="middle" fill="#283e34" font-weight="400">外側：小さな開口</text>
+<path d="M60 470H275L210 664H60Z M325 470H540V664H390Z" fill="#d5d2c5" stroke="#7b8073" stroke-width="2"/>
+<path d="M275 470H325L390 664H210Z" fill="#eaf1f2"/>
+<path d="M275 470L210 664 M325 470L390 664" stroke="#477761" stroke-width="4"/>
+<text x="139" y="573" font-size="22" text-anchor="middle" fill="#283e34" font-weight="400">壁</text>
+<text x="461" y="573" font-size="22" text-anchor="middle" fill="#283e34" font-weight="400">壁</text>
+<text x="300" y="709" font-size="21" text-anchor="middle" fill="#283e34" font-weight="400">内側：広がる開口</text>
+<text x="28" y="763" font-size="20" text-anchor="start" fill="#283e34" font-weight="400">外からは小さく、内側には広がる形。</text>
+<text x="28" y="794" font-size="17" text-anchor="start" fill="#55615e" font-weight="400">実物の寸法・配置を再現した図ではありません。</text>
+</g></svg>

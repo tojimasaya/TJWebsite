@@ -1,0 +1,78 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="900" viewBox="0 0 600 900" role="img" aria-labelledby="title desc">
+<title id="title">從石材加工分辨石垣</title><desc id="desc">野面積 / 打込接 / 切込接 — 保留天然石塊的形狀 / 加工接觸部位，減少石塊間隙 / 仔細修整接合面，緊密砌合</desc>
+<rect width="600" height="900" fill="#fff"/>
+<g font-family="Hiragino Sans, Noto Sans CJK JP, Noto Sans CJK TC, sans-serif">
+<text x="28" y="44" font-size="28" text-anchor="start" fill="#283e34" font-weight="600">從石材加工分辨石垣</text>
+<text x="28" y="76" font-size="19" text-anchor="start" fill="#55615e" font-weight="400">從正面觀察石垣的示意圖</text>
+<rect x="20" y="100" width="560" height="220" rx="5" fill="#f6f7f2" stroke="#cbd3ca"/>
+<text x="38" y="135" font-size="25" text-anchor="start" fill="#283e34" font-weight="600">01  野面積</text>
+<text x="38" y="164" font-size="19" text-anchor="start" fill="#283e34" font-weight="400">保留天然石塊的形狀</text>
+<g transform="translate(38 182)">
+<rect width="524" height="118" fill="#e0dfd6"/>
+<polygon points="12.5,6.5 43.8,2.5 80.5,7.5 87.5,22.7 79.5,34.5 32.9,36.5 4.5,30.5 2.5,15.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="103.5,6.5 155.9,2.5 215.5,7.5 222.5,22.7 214.5,34.5 139.3,36.5 95.5,30.5 93.5,15.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="238.5,6.5 281.8,2.5 331.5,7.5 338.5,22.7 330.5,34.5 267.6,36.5 230.5,30.5 228.5,15.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="354.5,6.5 387.3,2.5 425.5,7.5 432.5,22.7 424.5,34.5 375.9,36.5 346.5,30.5 344.5,15.5" fill="#c8c9ba" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="448.5,6.5 478.4,2.5 513.5,7.5 520.5,22.7 512.5,34.5 467.9,36.5 440.5,30.5 438.5,15.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M87 24l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<path d="M222 24l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<path d="M338 24l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<path d="M432 24l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<polygon points="12.5,45.5 72.6,41.5 140.5,46.5 147.5,61.7 139.5,73.5 53.9,75.5 4.5,69.5 2.5,54.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="163.5,45.5 213.1,41.5 269.5,46.5 276.5,61.7 268.5,73.5 197.2,75.5 155.5,69.5 153.5,54.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="292.5,45.5 336.8,41.5 387.5,46.5 394.5,61.7 386.5,73.5 322.4,75.5 284.5,69.5 282.5,54.5" fill="#c8c9ba" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="410.5,45.5 458.6,41.5 513.5,46.5 520.5,61.7 512.5,73.5 443.1,75.5 402.5,69.5 400.5,54.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M147 63l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<path d="M276 63l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<path d="M394 63l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<polygon points="12.5,84.5 43.8,80.5 80.5,85.5 87.5,100.7 79.5,112.5 32.9,114.5 4.5,108.5 2.5,93.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="103.5,84.5 155.9,80.5 215.5,85.5 222.5,100.7 214.5,112.5 139.3,114.5 95.5,108.5 93.5,93.5" fill="#c8c9ba" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="238.5,84.5 281.8,80.5 331.5,85.5 338.5,100.7 330.5,112.5 267.6,114.5 230.5,108.5 228.5,93.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="354.5,84.5 387.3,80.5 425.5,85.5 432.5,100.7 424.5,112.5 375.9,114.5 346.5,108.5 344.5,93.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="448.5,84.5 478.4,80.5 513.5,85.5 520.5,100.7 512.5,112.5 467.9,114.5 440.5,108.5 438.5,93.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<path d="M87 102l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<path d="M222 102l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<path d="M338 102l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+<path d="M432 102l5-7 4 8-6 4z" fill="#cbcbbc" stroke="#7b8271" stroke-width="1"/>
+</g>
+<rect x="20" y="340" width="560" height="220" rx="5" fill="#f6f7f2" stroke="#cbd3ca"/>
+<text x="38" y="375" font-size="25" text-anchor="start" fill="#283e34" font-weight="600">02  打込接</text>
+<text x="38" y="404" font-size="19" text-anchor="start" fill="#283e34" font-weight="400">加工接觸部位，減少石塊間隙</text>
+<g transform="translate(38 422)">
+<rect width="524" height="118" fill="#e0dfd6"/>
+<polygon points="4.5,1.5 120.5,2.5 123.5,7.5 122.5,35.5 5.5,37.5 1.5,32.5 1.5,6.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="129.5,1.5 258.5,2.5 261.5,7.5 260.5,35.5 130.5,37.5 126.5,32.5 126.5,6.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="267.5,1.5 397.5,2.5 400.5,7.5 399.5,35.5 268.5,37.5 264.5,32.5 264.5,6.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="406.5,1.5 519.5,2.5 522.5,7.5 521.5,35.5 407.5,37.5 403.5,32.5 403.5,6.5" fill="#c8c9ba" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="4.5,40.5 69.5,41.5 72.5,46.5 71.5,74.5 5.5,76.5 1.5,71.5 1.5,45.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="78.5,40.5 203.5,41.5 206.5,46.5 205.5,74.5 79.5,76.5 75.5,71.5 75.5,45.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="212.5,40.5 347.5,41.5 350.5,46.5 349.5,74.5 213.5,76.5 209.5,71.5 209.5,45.5" fill="#c8c9ba" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="356.5,40.5 448.5,41.5 451.5,46.5 450.5,74.5 357.5,76.5 353.5,71.5 353.5,45.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="457.5,40.5 519.5,41.5 522.5,46.5 521.5,74.5 458.5,76.5 454.5,71.5 454.5,45.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="4.5,79.5 120.5,80.5 123.5,85.5 122.5,113.5 5.5,115.5 1.5,110.5 1.5,84.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="129.5,79.5 258.5,80.5 261.5,85.5 260.5,113.5 130.5,115.5 126.5,110.5 126.5,84.5" fill="#c8c9ba" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="267.5,79.5 397.5,80.5 400.5,85.5 399.5,113.5 268.5,115.5 264.5,110.5 264.5,84.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="406.5,79.5 519.5,80.5 522.5,85.5 521.5,113.5 407.5,115.5 403.5,110.5 403.5,84.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+</g>
+<rect x="20" y="580" width="560" height="220" rx="5" fill="#f6f7f2" stroke="#cbd3ca"/>
+<text x="38" y="615" font-size="25" text-anchor="start" fill="#283e34" font-weight="600">03  切込接</text>
+<text x="38" y="644" font-size="19" text-anchor="start" fill="#283e34" font-weight="400">仔細修整接合面，緊密砌合</text>
+<g transform="translate(38 662)">
+<rect width="524" height="118" fill="#e0dfd6"/>
+<polygon points="0.5,0.5 125.5,0.5 125.5,38.5 0.5,38.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="126.5,0.5 263.5,0.5 263.5,38.5 126.5,38.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="264.5,0.5 394.5,0.5 394.5,38.5 264.5,38.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="395.5,0.5 523.5,0.5 523.5,38.5 395.5,38.5" fill="#c8c9ba" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="0.5,39.5 64.5,39.5 64.5,77.5 0.5,77.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="65.5,39.5 203.5,39.5 203.5,77.5 65.5,77.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="204.5,39.5 336.5,39.5 336.5,77.5 204.5,77.5" fill="#c8c9ba" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="337.5,39.5 462.5,39.5 462.5,77.5 337.5,77.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="463.5,39.5 523.5,39.5 523.5,77.5 463.5,77.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="0.5,78.5 125.5,78.5 125.5,116.5 0.5,116.5" fill="#a3aa99" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="126.5,78.5 263.5,78.5 263.5,116.5 126.5,116.5" fill="#c8c9ba" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="264.5,78.5 394.5,78.5 394.5,116.5 264.5,116.5" fill="#adb09e" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+<polygon points="395.5,78.5 523.5,78.5 523.5,116.5 395.5,116.5" fill="#bdc0ae" stroke="#6c7566" stroke-width="1.4" stroke-linejoin="round"/>
+</g>
+<text x="28" y="851" font-size="20" text-anchor="start" fill="#283e34" font-weight="400">除了石塊大小，也要看接合面。</text>
+<text x="28" y="880" font-size="17" text-anchor="start" fill="#55615e" font-weight="400">石塊形狀與排列均經過簡化。</text>
+</g></svg>
