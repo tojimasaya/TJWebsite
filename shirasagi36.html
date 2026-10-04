@@ -72,7 +72,7 @@
         ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
     </style>
 <link rel="stylesheet" href="shirasagi-nav.css">
-<link rel="stylesheet" href="shirasagi36/hub.css">
+<link rel="stylesheet" href="shirasagi36/hub.css?v=2">
 <script src="js/shirasagi-nav.js" defer></script>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -280,32 +280,38 @@
         <!-- Project Overview -->
         <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 md:mb-20" aria-label="白鷺三十六景の企画概要">
             <div class="border-y border-gray-300 py-10 md:py-12">
-                <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-14 items-start">
-                    <div>
-                        <p class="text-[10px] md:text-xs font-serif-en tracking-[0.28em] text-shirasagi-blue uppercase mb-4">Project in Progress</p>
-                        <h2 class="text-2xl md:text-3xl font-bold font-serif-jp text-shirasagi-ink tracking-wide leading-relaxed mb-5">
-                            姫路城を、暮らしの距離から三十六景へ。
-                        </h2>
-                        <p class="text-sm md:text-base text-gray-600 leading-loose font-serif-jp max-w-2xl">
-                            観光名所としての姫路城だけではなく、城下町で育ち、いまも通い続ける一人の視点から、季節、時間、生活の気配を重ねて記録する写真プロジェクトです。完成で終わる作品ではなく、より心に残る一枚に出会うたびに差し替えながら育てていきます。
-                        </p>
-                        <div class="flex flex-wrap gap-3 mt-7 font-serif-jp text-sm">
-                            <a href="#gallery-anchor" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-ink bg-shirasagi-ink text-white hover:bg-transparent hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">全景一覧へ</a>
-                            <a href="#latest-view" class="inline-flex items-center px-5 py-2.5 border border-gray-300 text-gray-600 hover:border-shirasagi-ink hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">最新の一景</a>
+                <div class="project-overview-grid">
+                    <div class="project-introduction">
+                        <p class="project-eyebrow">Project in Progress</p>
+                        <h2>姫路城を、暮らしの距離から三十六景へ。</h2>
+                        <p class="project-description">観光名所としての姫路城だけではなく、城下町で育ち、いまも通い続ける一人の視点から、季節、時間、生活の気配を重ねて記録する写真プロジェクトです。完成で終わる作品ではなく、より心に残る一枚に出会うたびに差し替えながら育てていきます。</p>
+                        <div class="project-statistics">
+                            <p><strong><span id="project-count">35</span> / 36</strong> 景を公開 <span id="project-remaining">あと1景で完成</span></p>
+                            <p id="project-season-breakdown">春16 / 夏6 / 秋6 / 冬6</p>
                         </div>
                     </div>
 
                     <nav class="castle-resources" id="castle-resources" aria-labelledby="castle-resources-title">
-                        <h3 id="castle-resources-title">姫路城を知る・訪ねる</h3>
+                        <h3 id="castle-resources-title">白鷺三十六景を楽しむ</h3>
                         <div class="castle-resource-grid">
+                            <a class="castle-resource" href="#gallery-anchor" data-growth-label="shirasagi_hub_gallery">
+                                <div class="castle-resource-media">
+                                    <img src="assets/images/shirasagi/webp/thumb/21.webp" width="600" height="400" loading="lazy" decoding="async" alt="姫路駅前から望む、夜の大手前通りと姫路城">
+                                </div>
+                                <div class="castle-resource-copy">
+                                    <p class="castle-resource-kicker">白鷺三十六景</p>
+                                    <h4><span>写真作品を見る</span><span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">四季と時間で移り変わる姫路城を、写真と撮影の記録から。</p>
+                                </div>
+                            </a>
                             <a class="castle-resource" href="shirasagi36-guide.html" data-growth-label="shirasagi_hub_guide">
                                 <div class="castle-resource-media castle-resource-media--diagram">
                                     <img src="assets/images/shirasagi/guide/renritsu-plan.svg" width="600" height="640" loading="lazy" decoding="async" alt="大天守と三つの小天守が中庭を囲む、連立式天守の配置図">
                                 </div>
                                 <div class="castle-resource-copy">
-                                    <p class="castle-resource-kicker">城のしくみを知る</p>
-                                    <h4>図解で知る姫路城<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
-                                    <p class="castle-resource-description">連立式天守、大柱、破風と懸魚、白漆喰。写真で気になる形や白さを、図解で読み解く。</p>
+                                    <p class="castle-resource-kicker">図解で知る姫路城</p>
+                                    <h4><span>図解で城を知る</span><span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">天守・大柱・破風・漆喰。形と白さのしくみを読み解く。</p>
                                 </div>
                             </a>
                             <a class="castle-resource" href="shirasagi36-access.html" data-growth-label="shirasagi_hub_access">
@@ -313,9 +319,9 @@
                                     <img src="assets/images/shirasagi/guide/himeji-station-walk.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="姫路駅から大手前通りを進み、姫路城へ向かう街歩きマップの一部">
                                 </div>
                                 <div class="castle-resource-copy">
-                                    <p class="castle-resource-kicker">駅から城下町へ</p>
-                                    <h4>行き方・街歩き<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
-                                    <p class="castle-resource-description">姫路駅からお城までの道順と、途中の寄り道。カメラを持って歩くための案内。</p>
+                                    <p class="castle-resource-kicker">行き方・街歩き</p>
+                                    <h4><span>城まで歩く</span><span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">姫路駅からお城へ。道順と、城下町の寄り道をたどる。</p>
                                 </div>
                             </a>
                             <a class="castle-resource" href="shirasagi36-map.html" data-growth-label="shirasagi_hub_photo_map">
@@ -323,60 +329,29 @@
                                     <img src="assets/images/shirasagi/webp/thumb/07.webp" width="600" height="400" loading="lazy" decoding="async" alt="男山から望む姫路城。手前に三つの小天守、奥に大天守が重なる撮影スポット">
                                 </div>
                                 <div class="castle-resource-copy">
-                                    <p class="castle-resource-kicker">あの一景の場所へ</p>
-                                    <h4>撮影地マップ<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
-                                    <p class="castle-resource-description">三十六景を撮った場所を地図でたどる。男山、城の周囲、駅前からの眺めまで。</p>
+                                    <p class="castle-resource-kicker">撮影地マップ</p>
+                                    <h4><span>撮影地を探す</span><span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">男山から駅前まで。作品が生まれた場所を地図で探す。</p>
                                 </div>
                             </a>
                         </div>
                     </nav>
 
-                    <div class="project-statistics grid grid-cols-2 gap-px bg-gray-300 border border-gray-300">
-                        <div class="bg-washi-bg p-5 md:p-6">
-                            <p class="text-[10px] font-serif-en tracking-[0.22em] text-gray-400 uppercase mb-2">Published</p>
-                            <p class="font-serif-en text-3xl md:text-4xl text-shirasagi-ink leading-none"><span id="project-count">34</span><span class="text-base md:text-lg text-gray-400"> / 36</span></p>
-                            <p class="text-xs text-gray-500 mt-3 font-serif-jp" id="project-remaining">あと2景で完成</p>
-                        </div>
-                        <div class="bg-washi-bg p-5 md:p-6">
-                            <p class="text-[10px] font-serif-en tracking-[0.22em] text-gray-400 uppercase mb-2">Seasons</p>
-                            <p class="font-serif-jp text-xl md:text-2xl text-shirasagi-ink leading-tight">四季で追う</p>
-                            <p class="text-xs text-gray-500 mt-3 font-serif-jp" id="project-season-breakdown">春・夏・秋・冬</p>
-                        </div>
-                        <div class="bg-washi-bg p-5 md:p-6 col-span-2">
-                            <p class="text-[10px] font-serif-en tracking-[0.22em] text-gray-400 uppercase mb-2">Latest View</p>
-                            <p class="font-serif-jp text-lg md:text-xl text-shirasagi-ink leading-relaxed">
-                                <span id="project-latest-number">No.34</span>
-                                <span class="mx-2 text-gray-300">—</span>
-                                <span id="project-latest-title">三の丸薪能 闇夜の白鷺</span>
-                            </p>
-                            <p class="text-xs text-gray-500 mt-3 font-serif-jp" id="project-latest-date">2026.05.22 更新</p>
-                            <div class="mt-4 h-1 bg-gray-200 overflow-hidden">
-                                <div id="project-progress-bar" class="h-full bg-shirasagi-blue" style="width: 94.4%;"></div>
+                    <aside class="project-update" id="latest-view" aria-labelledby="project-update-title">
+                        <h3 id="project-update-title">最新の一景</h3>
+                        <a class="project-latest" id="latest-page-link" href="/shirasagi36/no35.html" data-growth-label="shirasagi_latest_page">
+                            <picture class="project-latest-media">
+                                <source id="latest-source" srcset="assets/images/shirasagi/webp/thumb/35.webp" type="image/webp">
+                                <img id="latest-image" src="assets/images/shirasagi/35.jpg" width="600" height="400" loading="lazy" decoding="async" alt="花の北屋上 惜別遠望">
+                            </picture>
+                            <div class="project-latest-copy">
+                                <p class="project-latest-number">No.<span id="latest-number">35</span></p>
+                                <h4 id="latest-title">花の北屋上 惜別遠望</h4>
+                                <p class="project-latest-date" id="project-latest-date">2026.08.09 更新</p>
+                                <span class="project-latest-link">この作品を見る<span aria-hidden="true"> &#8594;</span></span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Latest/Featured Section -->
-        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 md:mb-24" id="latest-view">
-            <div class="bg-white p-2 md:p-4 rounded-sm shadow-sm border border-gray-100">
-                <div class="bg-washi-bg relative overflow-hidden group cursor-pointer aspect-[4/3] md:aspect-[21/9]" onclick="openModalWithLatest()">
-                    <picture>
-                        <source id="latest-source" srcset="" type="image/webp">
-                        <img id="latest-image" src="" alt="Latest Shot" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 ease-in-out">
-                    </picture>
-                    
-                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-end">
-                        <div class="text-white mb-2 md:mb-0">
-                            <span class="text-[10px] md:text-xs font-serif-en tracking-widest opacity-80 mb-1 md:mb-2 block uppercase">LATEST VIEW — No.<span id="latest-number">--</span></span>
-                            <h2 class="text-xl md:text-3xl font-bold font-serif-jp tracking-wide" id="latest-title">読み込み中...</h2>
-                        </div>
-                        <div class="hidden md:block">
-                            <a id="latest-page-link" href="/shirasagi36.html" onclick="event.stopPropagation()" class="inline-block px-4 py-2 border border-white/30 text-white text-xs tracking-widest hover:bg-white hover:text-black transition-colors" style="text-decoration:none;" data-growth-label="shirasagi_latest_page">VIEW DETAIL</a>
-                        </div>
-                    </div>
+                        </a>
+                    </aside>
                 </div>
             </div>
         </section>
@@ -1233,20 +1208,14 @@
 
             const countEl = document.getElementById('project-count');
             const remainingEl = document.getElementById('project-remaining');
-            const latestNumberEl = document.getElementById('project-latest-number');
-            const latestTitleEl = document.getElementById('project-latest-title');
             const latestDateEl = document.getElementById('project-latest-date');
-            const progressBarEl = document.getElementById('project-progress-bar');
             const seasonBreakdownEl = document.getElementById('project-season-breakdown');
 
             if (countEl) countEl.textContent = count;
             if (remainingEl) remainingEl.textContent = remaining > 0 ? `あと${remaining}景で完成` : '全三十六景 完成';
-            if (latest && latestNumberEl && latestTitleEl && latestDateEl) {
-                latestNumberEl.textContent = `No.${String(latestId).padStart(2, '0')}`;
-                latestTitleEl.textContent = latest.title;
+            if (latest && latestDateEl) {
                 latestDateEl.textContent = `${latest.date || '日付未設定'} 更新`;
             }
-            if (progressBarEl) progressBarEl.style.width = `${Math.min((count / total) * 100, 100)}%`;
             if (seasonBreakdownEl) {
                 const breakdown = ['spring', 'summer', 'autumn', 'winter']
                     .filter(key => seasonCounts[key])
@@ -1256,12 +1225,6 @@
             }
         }
 
-        function openModalWithLatest() {
-            const ids = Object.keys(photosData).map(Number);
-            if (ids.length === 0) return;
-            openModal(Math.max(...ids));
-        }
-
         function loadLatest() {
             const ids = Object.keys(photosData).map(Number);
             if (ids.length === 0) return;
@@ -1269,16 +1232,15 @@
             const p = photosData[latestId];
             const paths = getImagePaths(latestId);
 
-            document.getElementById('latest-source').srcset = paths.full;
+            document.getElementById('latest-source').srcset = paths.thumb;
             const imgEl = document.getElementById('latest-image');
             imgEl.src = paths.fallback;
-            imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1600&q=80'; };
+            imgEl.alt = p.title;
 
             document.getElementById('latest-title').innerText = p.title;
             document.getElementById('latest-number').innerText = String(latestId).padStart(2, '0');
             const latestPageLink = document.getElementById('latest-page-link');
             if (latestPageLink) latestPageLink.href = viewPagePath(latestId);
-            document.querySelector('.group.cursor-pointer').onclick = () => openModal(latestId);
         }
 
         const filterDescriptions = {

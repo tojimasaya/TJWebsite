@@ -70,7 +70,7 @@
         ::-webkit-scrollbar-thumb { background: #d1d5db; border-radius: 4px; }
     </style>
 <link rel="stylesheet" href="shirasagi-nav.css">
-<link rel="stylesheet" href="shirasagi36/hub.css">
+<link rel="stylesheet" href="shirasagi36/hub.css?v=2">
 <script src="js/shirasagi-nav.js" defer></script>
 <link rel="icon" type="image/png" href="favicon.png">
 <link rel="apple-touch-icon" href="apple-touch-icon.png">
@@ -249,103 +249,78 @@
         <!-- Project Overview -->
         <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-16 md:mb-20" aria-label="白鷺三十六景項目概要">
             <div class="border-y border-gray-300 py-10 md:py-12">
-                <div class="grid grid-cols-1 lg:grid-cols-[1.15fr_0.85fr] gap-10 md:gap-14 items-start">
-                    <div>
-                        <p class="text-[10px] md:text-xs font-serif-display tracking-[0.28em] text-shirasagi-blue uppercase mb-4">Project in Progress</p>
-                        <h2 class="text-2xl md:text-3xl font-serif-zh text-shirasagi-ink tracking-wide leading-relaxed mb-5">
-                            以生活的距離，記錄姬路城三十六景。
-                        </h2>
-                        <p class="text-sm md:text-base text-gray-600 leading-loose font-serif-zh max-w-2xl">
-                            這不只是把姬路城作為觀光名勝來拍攝，而是從一個在城下町長大、如今仍持續前往的人之視角，記錄季節、時間與日常生活氣息交疊而成的風景。這個系列不會因完成而結束；每當遇見更觸動內心的一景，作品也會隨時間繼續更新。
-                        </p>
-                        <div class="flex flex-wrap gap-3 mt-7 font-serif-zh text-sm">
-                            <a href="#gallery-anchor" class="inline-flex items-center px-5 py-2.5 border border-shirasagi-ink bg-shirasagi-ink text-white hover:bg-transparent hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">前往全景一覽</a>
-                            <a href="#latest-view" class="inline-flex items-center px-5 py-2.5 border border-gray-300 text-gray-600 hover:border-shirasagi-ink hover:text-shirasagi-ink transition-colors no-underline" style="text-decoration:none;">最新一景</a>
+                <div class="project-overview-grid">
+                    <div class="project-introduction">
+                        <p class="project-eyebrow">Project in Progress</p>
+                        <h2>以生活的距離，記錄姬路城三十六景。</h2>
+                        <p class="project-description">這不只是把姬路城作為觀光名勝來拍攝，而是從一個在城下町長大、如今仍持續前往的人之視角，記錄季節、時間與日常生活氣息交疊而成的風景。這個系列不會因完成而結束；每當遇見更觸動內心的一景，作品也會隨時間繼續更新。</p>
+                        <div class="project-statistics">
+                            <p><strong><span id="project-count">35</span> / 36</strong> 景已公開 <span id="project-remaining">尚餘1景完成</span></p>
+                            <p id="project-season-breakdown">春16 / 夏6 / 秋6 / 冬6</p>
                         </div>
                     </div>
 
                     <nav class="castle-resources" id="castle-resources" aria-labelledby="castle-resources-title">
-                        <h3 id="castle-resources-title">認識・探訪姬路城</h3>
+                        <h3 id="castle-resources-title">探索白鷺三十六景</h3>
                         <div class="castle-resource-grid">
-                            <a class="castle-resource" href="shirasagi36-guide-hk.html" data-growth-label="shirasagi_hub_guide">
-                                <div class="castle-resource-media castle-resource-media--diagram">
-                                    <img src="assets/images/shirasagi/guide/renritsu-plan-hk.svg" width="600" height="640" loading="lazy" decoding="async" alt="大天守與三座小天守圍繞中庭的配置圖">
+                            <a class="castle-resource" href="#gallery-anchor" data-growth-label="shirasagi_hub_gallery">
+                                <div class="castle-resource-media">
+                                    <img src="assets/images/shirasagi/webp/thumb/21.webp" width="600" height="400" loading="lazy" decoding="async" alt="從姬路站前眺望夜色中的大手前通與姬路城">
                                 </div>
                                 <div class="castle-resource-copy">
-                                    <p class="castle-resource-kicker">認識城堡結構</p>
-                                    <h4>圖解姬路城<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
-                                    <p class="castle-resource-description">連立式天守、大柱、破風與懸魚、白漆喰。以圖解認識照片中的形狀與白色外觀。</p>
+                                    <p class="castle-resource-kicker">白鷺三十六景</p>
+                                    <h4><span>欣賞攝影作品</span><span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">隨四季與時光變化，欣賞姬路城的照片與拍攝記錄。</p>
+                                </div>
+                            </a>
+                            <a class="castle-resource" href="shirasagi36-guide-hk.html" data-growth-label="shirasagi_hub_guide">
+                                <div class="castle-resource-media castle-resource-media--diagram">
+                                    <img src="assets/images/shirasagi/guide/renritsu-plan-hk.svg" width="600" height="640" loading="lazy" decoding="async" alt="大天守與三座小天守圍繞中庭的連立式天守配置圖">
+                                </div>
+                                <div class="castle-resource-copy">
+                                    <p class="castle-resource-kicker">圖解姬路城</p>
+                                    <h4><span>圖解認識城堡</span><span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">從天守、大柱、破風到白漆喰，認識形態與白色外觀背後的結構。</p>
                                 </div>
                             </a>
                             <a class="castle-resource" href="shirasagi36-access-hk.html" data-growth-label="shirasagi_hub_access">
                                 <div class="castle-resource-media castle-resource-media--walk">
-                                    <img src="assets/images/shirasagi/guide/himeji-station-walk.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="從姬路站沿大手前通前往城堡的散步地圖局部">
+                                    <img src="assets/images/shirasagi/guide/himeji-station-walk.webp" width="1024" height="1536" loading="lazy" decoding="async" alt="從姬路站沿大手前通前往姬路城的散步地圖局部">
                                 </div>
                                 <div class="castle-resource-copy">
-                                    <p class="castle-resource-kicker">從車站走進城下町</p>
-                                    <h4>交通與城下町散步<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
-                                    <p class="castle-resource-description">從姬路站前往城堡的路線與沿途繞道景點，帶着相機散步的指南。</p>
+                                    <p class="castle-resource-kicker">交通與城下町散步</p>
+                                    <h4><span>步行前往城堡</span><span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">從姬路站走到城堡，沿途繞道探索城下町。</p>
                                 </div>
                             </a>
                             <a class="castle-resource" href="shirasagi36-map.html" data-growth-label="shirasagi_hub_photo_map">
                                 <div class="castle-resource-media">
-                                    <img src="assets/images/shirasagi/webp/thumb/07.webp" width="600" height="400" loading="lazy" decoding="async" alt="從男山拍攝的姬路城，大小天守層層交疊">
+                                    <img src="assets/images/shirasagi/webp/thumb/07.webp" width="600" height="400" loading="lazy" decoding="async" alt="從男山眺望姬路城，前方小天守與後方大天守層層重疊">
                                 </div>
                                 <div class="castle-resource-copy">
-                                    <p class="castle-resource-kicker">走到照片中的位置</p>
-                                    <h4>拍攝地圖（日文）<span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
-                                    <p class="castle-resource-description">在地圖上尋找三十六景的拍攝位置，從男山、城堡周邊，到站前的眺望。</p>
+                                    <p class="castle-resource-kicker">拍攝地圖（日文）</p>
+                                    <h4><span>尋找拍攝地點</span><span class="castle-resource-arrow" aria-hidden="true">&#8594;</span></h4>
+                                    <p class="castle-resource-description">從男山到站前，在地圖上尋找作品中的視角。</p>
                                 </div>
                             </a>
                         </div>
                     </nav>
 
-                    <div class="project-statistics grid grid-cols-2 gap-px bg-gray-300 border border-gray-300">
-                        <div class="bg-washi-bg p-5 md:p-6">
-                            <p class="text-[10px] font-serif-display tracking-[0.22em] text-gray-400 uppercase mb-2">Published</p>
-                            <p class="font-serif-display text-3xl md:text-4xl text-shirasagi-ink leading-none"><span id="project-count">34</span><span class="text-base md:text-lg text-gray-400"> / 36</span></p>
-                            <p class="text-xs text-gray-500 mt-3 font-serif-zh" id="project-remaining">尚餘2景完成</p>
-                        </div>
-                        <div class="bg-washi-bg p-5 md:p-6">
-                            <p class="text-[10px] font-serif-display tracking-[0.22em] text-gray-400 uppercase mb-2">Seasons</p>
-                            <p class="font-serif-zh text-xl md:text-2xl text-shirasagi-ink leading-tight">追隨四季</p>
-                            <p class="text-xs text-gray-500 mt-3 font-serif-zh" id="project-season-breakdown">春 / 夏 / 秋 / 冬</p>
-                        </div>
-                        <div class="bg-washi-bg p-5 md:p-6 col-span-2">
-                            <p class="text-[10px] font-serif-display tracking-[0.22em] text-gray-400 uppercase mb-2">Latest View</p>
-                            <p class="font-serif-zh text-lg md:text-xl text-shirasagi-ink leading-relaxed">
-                                <span id="project-latest-number">No.34</span>
-                                <span class="mx-2 text-gray-300">—</span>
-                                <span id="project-latest-title">三之丸薪能 — 暗夜的白鷺</span>
-                            </p>
-                            <p class="text-xs text-gray-500 mt-3 font-serif-zh" id="project-latest-date">2026.05.22 更新</p>
-                            <div class="mt-4 h-1 bg-gray-200 overflow-hidden">
-                                <div id="project-progress-bar" class="h-full bg-shirasagi-blue" style="width: 94.4%;"></div>
+                    <aside class="project-update" id="latest-view" aria-labelledby="project-update-title">
+                        <h3 id="project-update-title">最新一景</h3>
+                        <a class="project-latest" id="latest-page-link" href="/shirasagi36/no35-hk.html" data-growth-label="shirasagi_latest_page">
+                            <picture class="project-latest-media">
+                                <source id="latest-source" srcset="assets/images/shirasagi/webp/thumb/35.webp" type="image/webp">
+                                <img id="latest-image" src="assets/images/shirasagi/35.jpg" width="600" height="400" loading="lazy" decoding="async" alt="天台惜別 — 兩公里外的白鷺">
+                            </picture>
+                            <div class="project-latest-copy">
+                                <p class="project-latest-number">No.<span id="latest-number">35</span></p>
+                                <h4 id="latest-title">天台惜別 — 兩公里外的白鷺</h4>
+                                <p class="project-latest-date" id="project-latest-date">2026.08.09 更新</p>
+                                <span class="project-latest-link">欣賞這幅作品<span aria-hidden="true"> &#8594;</span></span>
                             </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Latest/Featured Section -->
-        <section class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 mb-20 md:mb-24" id="latest-view">
-            <div class="bg-white p-2 md:p-4 rounded-sm shadow-sm border border-gray-100">
-                <div class="bg-washi-bg relative overflow-hidden group cursor-pointer aspect-[4/3] md:aspect-[21/9]" onclick="openModalWithLatest()">
-                    <picture>
-                        <source id="latest-source" srcset="" type="image/webp">
-                        <img id="latest-image" src="" alt="Latest Shot" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition duration-1000 ease-in-out">
-                    </picture>
-                    
-                    <div class="absolute bottom-0 left-0 w-full bg-gradient-to-t from-black/70 to-transparent p-6 md:p-10 flex flex-col md:flex-row justify-between items-start md:items-end">
-                        <div class="text-white mb-2 md:mb-0">
-                            <span class="text-[10px] md:text-xs font-serif-display tracking-widest opacity-80 mb-1 md:mb-2 block uppercase">最新景色 — No.<span id="latest-number">--</span></span>
-                            <h2 class="text-xl md:text-3xl font-serif-zh tracking-wide" id="latest-title">載入中…</h2>
-                        </div>
-                        <div class="hidden md:block">
-                            <a id="latest-page-link" href="/shirasagi36-hk.html" onclick="event.stopPropagation()" class="inline-block px-4 py-2 border border-white/30 text-white text-xs tracking-widest hover:bg-white hover:text-black transition-colors font-serif-zh" style="text-decoration:none;" data-growth-label="shirasagi_latest_page">查看詳情</a>
-                        </div>
-                    </div>
+                        </a>
+                    </aside>
                 </div>
             </div>
         </section>
@@ -882,20 +857,14 @@
 
             const countEl = document.getElementById('project-count');
             const remainingEl = document.getElementById('project-remaining');
-            const latestNumberEl = document.getElementById('project-latest-number');
-            const latestTitleEl = document.getElementById('project-latest-title');
             const latestDateEl = document.getElementById('project-latest-date');
-            const progressBarEl = document.getElementById('project-progress-bar');
             const seasonBreakdownEl = document.getElementById('project-season-breakdown');
 
             if (countEl) countEl.textContent = count;
             if (remainingEl) remainingEl.textContent = remaining > 0 ? `尚餘${remaining}景完成` : '全三十六景完成';
-            if (latest && latestNumberEl && latestTitleEl && latestDateEl) {
-                latestNumberEl.textContent = `No.${String(latestId).padStart(2, '0')}`;
-                latestTitleEl.textContent = latest.title;
+            if (latest && latestDateEl) {
                 latestDateEl.textContent = `${latest.date || '日期未定'} 更新`;
             }
-            if (progressBarEl) progressBarEl.style.width = `${Math.min((count / total) * 100, 100)}%`;
             if (seasonBreakdownEl) {
                 const breakdown = ['spring', 'summer', 'autumn', 'winter']
                     .filter(key => seasonCounts[key])
@@ -905,12 +874,6 @@
             }
         }
 
-        function openModalWithLatest() {
-            const ids = Object.keys(photosData).map(Number);
-            if (ids.length === 0) return;
-            openModal(Math.max(...ids));
-        }
-
         function loadLatest() {
             const ids = Object.keys(photosData).map(Number);
             if (ids.length === 0) return;
@@ -918,16 +881,15 @@
             const p = photosData[latestId];
             const paths = getImagePaths(latestId);
 
-            document.getElementById('latest-source').srcset = paths.full;
+            document.getElementById('latest-source').srcset = paths.thumb;
             const imgEl = document.getElementById('latest-image');
             imgEl.src = paths.fallback;
-            imgEl.onerror = function() { this.src = 'https://images.unsplash.com/photo-1524413840807-0c3cb6fa808d?auto=format&fit=crop&w=1600&q=80'; };
+            imgEl.alt = p.title;
 
             document.getElementById('latest-title').innerText = p.title;
             document.getElementById('latest-number').innerText = String(latestId).padStart(2, '0');
             const latestPageLink = document.getElementById('latest-page-link');
             if (latestPageLink) latestPageLink.href = viewPagePath(latestId);
-            document.querySelector('.group.cursor-pointer').onclick = () => openModal(latestId);
         }
 
         function setupFilters() {
