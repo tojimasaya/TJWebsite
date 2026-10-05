@@ -5,13 +5,24 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-10-03T00:00:00+09:00</updated>
+  <updated>2026-10-04T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>同じ新品なのに値段が違う。香港のiPhone「未開封」と「開封済み」</title>
+    <id>https://note.com/tojimasaya/n/n152a667764a7</id>
+    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n152a667764a7"/>
+    <published>2026-10-04T00:00:00+09:00</published>
+    <updated>2026-10-04T00:00:00+09:00</updated>
+    <category term="note"/>
+    <summary type="text">香港・旺角の先達廣場では、同じ新品のiPhoneでも未開封か開封済みかで買取価格が変わります。iPhone 18 Proシリーズの店頭価格表を見比べながら、キャリア購入時の開封・アクティベーションや保証期間が、…</summary>
+    <content type="html">&lt;p&gt;香港・旺角の先達廣場では、同じ新品のiPhoneでも未開封か開封済みかで買取価格が変わります。iPhone 18 Proシリーズの店頭価格表を見比べながら、キャリア購入時の開封・アクティベーションや保証期間が、未使用端末の価値にどう関わるのかを綴っています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n152a667764a7&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>HSBCのRedCoin。ひとまず香港ドルのままで</title>
     <id>https://note.com/tojimasaya/n/n51687a200e46</id>
@@ -344,16 +355,5 @@
     <summary type="text">香港で増えすぎたSIM契約を整理し、2年縛り途中の解約交渉を粘り強く進めた体験記。香港番号を減らしながら、JAL Mobile powered by ahamoでマイルを取りに行く次の通信構成を考えます。</summary>
     <content type="html">&lt;p&gt;香港で増えすぎたSIM契約を整理し、2年縛り途中の解約交渉を粘り強く進めた体験記。香港番号を減らしながら、JAL Mobile powered by ahamoでマイルを取りに行く次の通信構成を考えます。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n1c959bb91226&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>非居住者は台湾で銀行口座を作れるのか — 台北HSBCで断られた理由と台湾ドルの事情</title>
-    <id>https://tojimasaya.com/hk-hsbc-taiwan.html</id>
-    <link rel="alternate" type="text/html" href="https://tojimasaya.com/hk-hsbc-taiwan.html"/>
-    <published>2026-07-16T00:00:00+09:00</published>
-    <updated>2026-07-16T00:00:00+09:00</updated>
-    <category term="ハンドブック"/>
-    <summary type="text">台北の窓口で丁寧に断られた理由と、台湾ドルという通貨の性格。</summary>
-    <content type="html">&lt;p&gt;台湾で銀行口座を作れるか知りたい非居住者向け。台北の窓口で丁寧に断られた理由と、台湾ドルという通貨の性格。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://tojimasaya.com/hk-hsbc-taiwan.html&quot;&gt;ガイドを読む →&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>

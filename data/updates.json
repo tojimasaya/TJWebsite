@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-03T00:00:00+09:00",
+  "generatedAt": "2026-10-04T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "同じ新品なのに値段が違う。香港のiPhone「未開封」と「開封済み」",
+      "url": "https://note.com/tojimasaya/n/n152a667764a7",
+      "external": true,
+      "date": "2026-10-04",
+      "thumb": "https://assets.st-note.com/production/uploads/images/320687810/rectangle_large_type_2_9de53ae98d0c8f338539425539f86aee.png?width=800"
+    },
     {
       "kind": "note",
       "kindLabel": "note",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-09-03",
       "thumb": "/assets/images/photo-notes/kison-half-half-plate.webp"
-    },
-    {
-      "kind": "note",
-      "kindLabel": "note",
-      "title": "スーツケースカバーを笑っていた私が、96Lの袋を買うまで",
-      "url": "https://note.com/tojimasaya/n/na8bf31aaa03c",
-      "external": true,
-      "date": "2026-09-02",
-      "thumb": "https://assets.st-note.com/production/uploads/images/309469100/rectangle_large_type_2_ac4d17afb393f1fb5451c18e6bd00ca2.jpeg?width=800"
     }
   ]
 }
