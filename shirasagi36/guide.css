@@ -182,9 +182,19 @@ body.is-diagram-open { overflow: hidden; }
     .guide-wrap { padding: 0 32px; }
     .guide-head { padding-top: 48px; padding-bottom: 32px; }
     .guide-head h1 { font-size: 36px; }
-    .guide-index { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-    .guide-index a { display: block; padding: 24px; }
-    .guide-index span { margin-bottom: 6px; }
+    .guide-index { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; margin-bottom: 24px; }
+    .guide-index a { grid-template-columns: 64px minmax(0, 1fr); grid-template-rows: 14px auto 1fr; gap: 4px 12px; min-height: 112px; padding: 14px; }
+    .guide-index span { grid-column: 2; grid-row: 1; align-self: start; font-size: 11px; line-height: 1.25; }
+    .guide-index strong { grid-column: 2; grid-row: 2; font-size: 16px; line-height: 1.45; }
+    .guide-index small { grid-column: 2; grid-row: 3; align-self: start; font-size: 12px; line-height: 1.55; }
+    /* Text-free windows into existing diagrams; mobile keeps its text-only index. */
+    .guide-index a::before { content: ''; grid-column: 1; grid-row: 1 / 4; align-self: center; width: 64px; height: var(--topic-height); background-image: var(--topic-image); background-size: var(--topic-size) auto; background-position: var(--topic-position); background-repeat: no-repeat; }
+    .guide-index a[href="#renritsu"] { --topic-image: url('../assets/images/shirasagi/guide/renritsu-architecture.webp'); --topic-height: 64px; --topic-size: 243.874px; --topic-position: -19.088px -55.018px; }
+    .guide-index a[href="#daibashira"] { --topic-image: url('../assets/images/shirasagi/guide/daibashira-architecture.webp'); --topic-height: 78.904px; --topic-size: 190.422px; --topic-position: -61.370px -62.247px; }
+    .guide-index a[href="#hafu-gegyo"] { --topic-image: url('../assets/images/shirasagi/guide/hafu-gegyo.webp'); --topic-height: 39.293px; --topic-size: 497.712px; --topic-position: -21.433px -191.107px; }
+    .guide-index a[href="#shikkui"] { --topic-image: url('../assets/images/shirasagi/guide/shikkui-lime-plaster.webp'); --topic-height: 42.667px; --topic-size: 184.320px; --topic-position: -81.067px -177.067px; }
+    .guide-index a[href="#ishigaki"] { --topic-image: url('../assets/images/shirasagi/guide/ishigaki-structure-history.webp'); --topic-height: 54.857px; --topic-size: 162.560px; --topic-position: -45.714px -90.880px; }
+    .guide-index a[href="#sama"] { --topic-image: url('../assets/images/shirasagi/guide/sama-openings.svg'); --topic-height: 66.667px; --topic-size: 320px; --topic-position: -165.867px -59.200px; }
     .guide-progress-label { display: block; }
     .guide-progress a { flex: 0 0 auto; padding-inline: 18px; font-size: 14px; }
     .guide-chapter { padding: 0 40px 36px; margin-bottom: 80px; }
@@ -195,6 +205,9 @@ body.is-diagram-open { overflow: hidden; }
     .guide-visit-content { padding-top: 36px; }
     .guide-visit-content h2 { font-size: 26px; }
     .guide-facts > div { display: grid; grid-template-columns: 180px 1fr; gap: 16px; }
+}
+@media (min-width: 960px) {
+    .guide-index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
 }
 @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } }
 @media print {
