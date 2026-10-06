@@ -653,6 +653,17 @@
             loadLatest();
             setupFilters();
 
+            // Match the Japanese hub's seasonal links from the Instagram entry.
+            const seasonParam = new URLSearchParams(location.search).get('season');
+            if (seasonParam) {
+                const seasonBtn = document.querySelector(`.filter-btn[data-filter="${CSS.escape(seasonParam)}"]`);
+                if (seasonBtn) {
+                    seasonBtn.click();
+                    const galleryEl = document.getElementById('gallery-anchor');
+                    if (galleryEl) galleryEl.scrollIntoView({ behavior: 'smooth' });
+                }
+            }
+
             // Open the modal directly from a #noXX / #view-XX hash
             const viewMatch = location.hash.match(/^#(?:no|view-)(\d+)$/);
             if (viewMatch) {

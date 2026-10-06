@@ -1,396 +1,113 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-      gtag('config', 'G-806426BQX2');
-    </script>
-    
-    <title>Welcome from Instagram | tojimasaya.com</title>
-    
-    <!-- Favicon -->
-    <link rel="icon" href="/favicon.ico" sizes="any">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="apple-touch-icon" href="/apple-touch-icon.png">
-    
-    <!-- Meta -->
-    <meta name="description" content="旅の写真と物語。香港・日本を拠点に、ライカとドローンで世界を記録する。">
-    <meta property="og:title" content="Welcome from Instagram | tojimasaya.com">
-    <meta property="og:description" content="香港と日本を拠点に旅の写真を撮っています。Leica、ドローン、そして好奇心。">
-    <meta property="og:image" content="https://tojimasaya.com/assets/images/shirasagi/01.jpg">
-    <meta property="og:url" content="https://tojimasaya.com/instagram.html">
-    <meta property="og:type" content="website">
-    
-    <!-- Fonts -->
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    
-    <!-- External CSS -->
-    <link rel="stylesheet" href="style.css">
-    
-    <style>
-        /* ページ固有のスタイル */
-        .instagram-hero {
-            padding: 150px 2rem 80px;
-            text-align: center;
-            background: linear-gradient(to bottom, #fafafa 0%, #ffffff 100%);
-        }
-
-        .instagram-hero h1 {
-            font-family: 'Crimson Text', serif;
-            font-size: 2.5rem;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            color: #2c2c2c;
-            margin-bottom: 1.5rem;
-        }
-
-        .instagram-hero p {
-            font-size: 1.1rem;
-            color: #666;
-            line-height: 1.8;
-            max-width: 600px;
-            margin: 0 auto;
-        }
-
-        /* プロジェクトカード */
-        .projects-section {
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 4rem 2rem;
-        }
-
-        .project-card {
-            background: white;
-            margin-bottom: 4rem;
-            overflow: hidden;
-            transition: transform 0.3s ease, box-shadow 0.3s ease;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-        }
-
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 16px rgba(0,0,0,0.15);
-        }
-
-        .project-image {
-            width: 100%;
-            height: 350px;
-            object-fit: cover;
-        }
-
-        .project-content {
-            padding: 2.5rem;
-        }
-
-        .project-label {
-            font-family: 'Inter', sans-serif;
-            font-size: 0.75rem;
-            color: #999;
-            letter-spacing: 0.15em;
-            margin-bottom: 1rem;
-            text-transform: uppercase;
-            font-weight: 500;
-        }
-
-        .project-title {
-            font-family: 'Crimson Text', serif;
-            font-size: 2rem;
-            font-weight: 600;
-            margin-bottom: 1.2rem;
-            letter-spacing: 0.05em;
-            color: #2c2c2c;
-        }
-
-        .project-subtitle {
-            font-size: 1.1rem;
-            color: #999;
-            margin-top: -0.5rem;
-            margin-bottom: 1.5rem;
-            font-style: italic;
-        }
-
-        .project-description {
-            font-size: 1rem;
-            line-height: 2;
-            color: #666;
-            margin-bottom: 2rem;
-        }
-
-        .project-link {
-            display: inline-block;
-            padding: 1rem 2.5rem;
-            background: #2c2c2c;
-            color: white;
-            text-decoration: none;
-            font-size: 0.85rem;
-            letter-spacing: 0.2em;
-            transition: all 0.3s ease;
-            border: 1px solid #2c2c2c;
-            font-family: 'Inter', sans-serif;
-            font-weight: 500;
-        }
-
-        .project-link:hover {
-            background: white;
-            color: #2c2c2c;
-        }
-
-        /* Featured（最新プロジェクト）*/
-        .featured {
-            border-left: 4px solid #c49a6c;
-        }
-
-        /* その他のコンテンツ */
-        .more-section {
-            background: #fafafa;
-            padding: 4rem 2rem;
-            margin-top: 4rem;
-        }
-
-        .more-container {
-            max-width: 900px;
-            margin: 0 auto;
-        }
-
-        .more-title {
-            font-family: 'Crimson Text', serif;
-            font-size: 1.8rem;
-            font-weight: 400;
-            letter-spacing: 0.1em;
-            margin-bottom: 3rem;
-            text-align: center;
-            color: #2c2c2c;
-        }
-
-        .link-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 2rem;
-        }
-
-        .link-item {
-            padding: 2rem;
-            background: white;
-            border: 1px solid #e0e0e0;
-            text-decoration: none;
-            color: #666;
-            transition: all 0.3s ease;
-            text-align: center;
-        }
-
-        .link-item:hover {
-            border-color: #c49a6c;
-            transform: translateY(-3px);
-            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-        }
-
-        .link-title {
-            font-family: 'Crimson Text', serif;
-            font-size: 1.1rem;
-            font-weight: 600;
-            letter-spacing: 0.1em;
-            color: #2c2c2c;
-            margin-bottom: 0.8rem;
-        }
-
-        .link-description {
-            font-size: 0.85rem;
-            line-height: 1.6;
-            color: #999;
-        }
-
-        /* ダークモード対応 */
-        @media (prefers-color-scheme: dark) {
-            :root:not([data-theme="light"]) .instagram-hero { background: linear-gradient(to bottom, #1a1a1a 0%, #0f0f0f 100%); }
-            :root:not([data-theme="light"]) .instagram-hero h1,
-            :root:not([data-theme="light"]) .project-title,
-            :root:not([data-theme="light"]) .more-title,
-            :root:not([data-theme="light"]) .link-title { color: #f5f5f5; }
-            :root:not([data-theme="light"]) .instagram-hero p,
-            :root:not([data-theme="light"]) .project-description { color: #d0d0d0; }
-            :root:not([data-theme="light"]) .project-subtitle,
-            :root:not([data-theme="light"]) .project-description span,
-            :root:not([data-theme="light"]) .link-description span { color: #999 !important; }
-            :root:not([data-theme="light"]) .project-card,
-            :root:not([data-theme="light"]) .link-item { background: #1a1a1a; border-color: #333; }
-            :root:not([data-theme="light"]) .more-section { background: #0f0f0f; }
-            :root:not([data-theme="light"]) .project-link { background: #f5f5f5; color: #1a1a1a; border-color: #f5f5f5; }
-            :root:not([data-theme="light"]) .project-link:hover { background: transparent; color: #f5f5f5; border-color: #f5f5f5; }
-        }
-        [data-theme="dark"] .instagram-hero { background: linear-gradient(to bottom, #1a1a1a 0%, #0f0f0f 100%); }
-        [data-theme="dark"] .instagram-hero h1,
-        [data-theme="dark"] .project-title,
-        [data-theme="dark"] .more-title,
-        [data-theme="dark"] .link-title { color: #f5f5f5; }
-        [data-theme="dark"] .instagram-hero p,
-        [data-theme="dark"] .project-description { color: #d0d0d0; }
-        [data-theme="dark"] .project-subtitle,
-        [data-theme="dark"] .project-description span,
-        [data-theme="dark"] .link-description span { color: #999 !important; }
-        [data-theme="dark"] .project-card,
-        [data-theme="dark"] .link-item { background: #1a1a1a; border-color: #333; }
-        [data-theme="dark"] .more-section { background: #0f0f0f; }
-        [data-theme="dark"] .project-link { background: #f5f5f5; color: #1a1a1a; border-color: #f5f5f5; }
-        [data-theme="dark"] .project-link:hover { background: transparent; color: #f5f5f5; border-color: #f5f5f5; }
-
-        /* レスポンシブ */
-        @media (max-width: 768px) {
-            .instagram-hero {
-                padding: 120px 1.5rem 60px;
-            }
-
-            .instagram-hero h1 {
-                font-size: 2rem;
-            }
-
-            .projects-section {
-                padding: 3rem 1.5rem;
-            }
-
-            .project-image {
-                height: 250px;
-            }
-
-            .project-content {
-                padding: 2rem;
-            }
-
-            .project-title {
-                font-size: 1.6rem;
-            }
-
-            .project-card {
-                margin-bottom: 3rem;
-            }
-
-            .more-section {
-                padding: 3rem 1.5rem;
-            }
-
-            .link-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-    </style>
-<link rel="canonical" href="https://tojimasaya.com/instagram.html">
-<meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Welcome from Instagram | tojimasaya.com">
-<meta name="twitter:description" content="旅の写真と物語。香港・日本を拠点に、ライカとドローンで世界を記録する。">
-<meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/weekly.jpg">
-<link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>白鷺三十六景｜Instagramから姫路城へ</title>
+  <meta name="description" content="田路昌也の写真と図解でたどる姫路城。白漆喰、天守、石垣の見どころと、白鷺三十六景の秋の写真。">
+  <link rel="canonical" href="https://tojimasaya.com/instagram.html">
+  <link rel="alternate" hreflang="ja" href="https://tojimasaya.com/instagram.html">
+  <link rel="alternate" hreflang="en" href="https://tojimasaya.com/instagram-en.html">
+  <link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/instagram-hk.html">
+  <link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/instagram.html">
+  <meta property="og:type" content="website">
+  <meta property="og:site_name" content="TOJIMASAYA">
+  <meta property="og:locale" content="ja_JP">
+  <meta property="og:title" content="白鷺三十六景｜Instagramから姫路城へ">
+  <meta property="og:description" content="田路昌也の写真と図解でたどる姫路城。白漆喰、天守、石垣の見どころと、白鷺三十六景の秋の写真。">
+  <meta property="og:url" content="https://tojimasaya.com/instagram.html">
+  <meta property="og:image" content="https://tojimasaya.com/assets/og/cards/shirasagi-13.jpg">
+  <meta property="og:image:alt" content="秋の木々に囲まれた姫路城。大手前の高楼から撮影。">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:site" content="@mongkok93">
+  <meta name="twitter:title" content="白鷺三十六景｜Instagramから姫路城へ">
+  <meta name="twitter:description" content="田路昌也の写真と図解でたどる姫路城。白漆喰、天守、石垣の見どころと、白鷺三十六景の秋の写真。">
+  <meta name="twitter:image" content="https://tojimasaya.com/assets/og/cards/shirasagi-13.jpg">
+  <link rel="icon" href="favicon.ico" sizes="any">
+  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+  <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="feed.xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:wght@400;600&amp;family=Inter:wght@400;500;600&amp;family=Shippori+Mincho:wght@400;600&amp;display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="instagram.css?v=20261006">
+  <script src="assets/js/instagram.js?v=20261006" defer></script>
+  <!-- Existing site analytics; growth.js handles campaign-aware internal clicks. -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-806426BQX2');</script>
+  <script src="growth.js" defer></script>
 </head>
-<body>
-
-    <!-- ナビゲーション -->
-    <nav class="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <div class="nav-toggle"><span></span><span></span><span></span></div>
-            <ul class="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="gear.html" class="nav-link">Gear</a></li>
-                <li><a href="writings.html" class="nav-link">Writings</a></li>
-            </ul>
-        </div>
-    </nav>
-
-    <!-- ヒーロー -->
-    <section class="instagram-hero">
-        <h1>Welcome</h1>
-        <p>
-            旅の写真と物語を綴っています。<br>
-            香港・日本を拠点に、ライカとドローンで世界を記録する。
-        </p>
-        <p style="margin-top: 1rem; font-size: 0.95rem; color: #999;">
-            Photography and stories from travels.<br>
-            Based between Hong Kong and Japan, documenting the world with Leica and drones.
-        </p>
-    </section>
-
-    <!-- プロジェクト -->
-    <section class="projects-section">
-        
-        <!-- 白鷺三十六景 -->
-        <a href="shirasagi36.html" style="text-decoration: none; color: inherit; display: block;">
-            <article class="project-card featured" style="cursor: pointer;">
-                <img src="./assets/images/shirasagi/01.jpg" alt="白鷺三十六景 | 36 Views of White Heron Castle" class="project-image">
-                <div class="project-content">
-                    <p class="project-label">Work in Progress</p>
-                    <h2 class="project-title">白鷺三十六景</h2>
-                    <p class="project-subtitle" style="font-size: 1.1rem; color: #999; margin-top: -0.5rem; margin-bottom: 1.5rem; font-style: italic;">36 Views of White Heron Castle</p>
-                    <p class="project-description">
-                        姫路城を36の視点から捉える写真プロジェクト。北斎の「富嶽三十六景」に着想を得て、白鷺城の多様な表情を記録していく。<br>
-                        <span style="color: #999; font-size: 0.95rem;">A photography project capturing 36 perspectives of Himeji Castle, inspired by Hokusai's "Thirty-Six Views of Mount Fuji."</span>
-                    </p>
-                    <span class="project-link">制作過程を見る / View Progress</span>
-                </div>
-            </article>
+<body data-entry-language="ja" data-page-id="instagram-castle">
+  <a class="skip" href="#main">本文へ</a>
+  <header class="entry-header">
+    <div class="entry-header__inner">
+      <a class="brand" href="index.html" aria-label="TOJIMASAYA Home">TOJIMASAYA</a>
+      <nav class="languages" aria-label="言語">
+        <a href="instagram.html?lang=ja" lang="ja" hreflang="ja" data-entry-language="ja" aria-current="page">日本語</a>
+        <a href="instagram-en.html?lang=en" lang="en" hreflang="en" data-entry-language="en">English</a>
+        <a href="instagram-hk.html?lang=hk" lang="zh-Hant" hreflang="zh-Hant" data-entry-language="hk">繁體中文</a>
+      </nav>
+    </div>
+  </header>
+  <main id="main">
+    <header class="hero">
+      <img src="assets/images/shirasagi/webp/full/13.webp" width="1600" height="865" alt="秋の木々に囲まれた姫路城。大手前の高楼から撮影。" fetchpriority="high" decoding="async">
+      <div class="hero__text"><p class="hero__eyebrow">HIMEJI CASTLE · TOJI MASAYA</p><h1>白鷺三十六景</h1><p class="hero__subtitle">姫路城の形と白さを、写真と図解から。</p></div>
+      <p class="hero__credit">撮影：2025年11月13日</p>
+    </header>
+    <div class="entry-main">
+      <section class="feature" aria-labelledby="featured-heading">
+        <p class="eyebrow">今回の見どころ</p>
+        <a class="feature__link" href="shirasagi36-guide.html#shikkui" data-feature-link data-growth-label="instagram_feature_shikkui">
+          <img class="feature__image" src="assets/images/shirasagi/guide/shikkui-roof-photo-600.webp" width="600" height="452" alt="姫路城の黒い瓦の継ぎ目に白い目地漆喰が連なる。" data-feature-image decoding="async">
+          <div><h2 id="featured-heading" data-feature-title>白さは、<br>壁だけではない。</h2><p class="feature__summary" data-feature-summary>軒の裏から、黒い瓦の間まで。白漆喰と目地漆喰をたどる。</p><span class="feature__action">この図解を読む<span aria-hidden="true">→</span></span></div>
         </a>
-
-    </section>
-
-    <!-- その他のコンテンツ -->
-    <section class="more-section">
-        <div class="more-container">
-            <h2 class="more-title">More Contents</h2>
-            <div class="link-grid">
-                
-                <a href="gallery.html" class="link-item">
-                    <div class="link-title">Gallery</div>
-                    <p class="link-description">写真ギャラリー<br><span style="font-size: 0.75rem; color: #bbb;">Photo Gallery</span></p>
-                </a>
-
-                <a href="gear.html" class="link-item">
-                    <div class="link-title">Gear</div>
-                    <p class="link-description">使用機材<br><span style="font-size: 0.75rem; color: #bbb;">Equipment</span></p>
-                </a>
-
-                <a href="https://note.com/tojimasaya" class="link-item" target="_blank" rel="noopener">
-                    <div class="link-title">note</div>
-                    <p class="link-description">連載・コラム<br><span style="font-size: 0.75rem; color: #bbb;">Articles & Columns</span></p>
-                </a>
-
-                <a href="writings.html" class="link-item">
-                    <div class="link-title">Writings</div>
-                    <p class="link-description">執筆記事<br><span style="font-size: 0.75rem; color: #bbb;">Published Articles</span></p>
-                </a>
-
-            </div>
+      </section>
+      <section class="autumn" aria-labelledby="autumn-heading">
+        <div class="section-heading"><h2 id="autumn-heading">秋の姫路城を、写真で。</h2><a href="shirasagi36.html?season=autumn#gallery-anchor" data-growth-label="instagram_autumn_gallery">秋の作品へ<span aria-hidden="true">→</span></a></div>
+        <div class="work-grid">
+          <a class="work" href="shirasagi36/no13.html" data-growth-label="instagram_autumn_no13">
+            <img src="assets/images/shirasagi/webp/thumb/13.webp" srcset="assets/images/shirasagi/webp/thumb/13.webp 600w, assets/images/shirasagi/webp/full/13.webp 1600w" sizes="(max-width: 700px) 30vw, 300px" alt="大手前高楼 錦秋の城下" width="600" height="400" loading="lazy"><strong>大手前高楼 錦秋の城下</strong><small>No.13 · 2025.11.13</small>
+          </a>
+          <a class="work" href="shirasagi36/no14.html" data-growth-label="instagram_autumn_no14">
+            <img src="assets/images/shirasagi/webp/thumb/14.webp" srcset="assets/images/shirasagi/webp/thumb/14.webp 600w, assets/images/shirasagi/webp/full/14.webp 1600w" sizes="(max-width: 700px) 30vw, 300px" alt="北勢隠門 秘境の水鏡" width="600" height="400" loading="lazy"><strong>北勢隠門 秘境の水鏡</strong><small>No.14 · 2025.11.13</small>
+          </a>
+          <a class="work" href="shirasagi36/no16.html" data-growth-label="instagram_autumn_no16">
+            <img src="assets/images/shirasagi/webp/thumb/16.webp" srcset="assets/images/shirasagi/webp/thumb/16.webp 600w, assets/images/shirasagi/webp/full/16.webp 1600w" sizes="(max-width: 700px) 30vw, 300px" alt="千姫小径 堀端の錦秋" width="600" height="400" loading="lazy"><strong>千姫小径 堀端の錦秋</strong><small>No.16 · 2025.11.13</small>
+          </a>
         </div>
-    </section>
-
-    <!-- フッター -->
-    <footer class="footer"></footer>
-
-    <!-- JavaScript -->
-    <script>
-        // ナビゲーショントグル
-        const navToggle = document.querySelector('.nav-toggle');
-        const navMenu = document.querySelector('.nav-menu');
-
-        if (navToggle) {
-            navToggle.addEventListener('click', function() {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-            });
-        }
-
-        // 外部リンク
-        document.querySelectorAll('a[target="_blank"]').forEach(link => {
-            link.rel = 'noopener noreferrer';
-        });
-    </script>
-
-    <script src="/assets/js/ga4-tracking.js" defer></script>
-    <script src="/growth.js" defer></script>
+      </section>
+      <section class="topics" aria-labelledby="topics-heading">
+        <h2 id="topics-heading">図解で知る姫路城</h2>
+        <div class="topic-grid">
+          <a class="topic" href="shirasagi36-guide.html#renritsu" data-topic="renritsu" data-title="連立式天守" data-summary="大天守と三つの小天守をつなぐ、四棟の渡櫓。" data-image="assets/images/shirasagi/guide/renritsu-architecture.webp" data-image-alt="連立式天守" data-growth-label="instagram_topic_renritsu">
+            <img src="assets/images/shirasagi/guide/renritsu-architecture.webp" alt="" width="54" height="54" loading="lazy"><span><small>01</small><strong>連立式天守</strong></span><span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="topic" href="shirasagi36-guide.html#daibashira" data-topic="daibashira" data-title="二本の大柱" data-summary="城の内側に延びる大柱と、横につなぐ材。" data-image="assets/images/shirasagi/guide/daibashira-architecture.webp" data-image-alt="二本の大柱" data-growth-label="instagram_topic_daibashira">
+            <img src="assets/images/shirasagi/guide/daibashira-architecture.webp" alt="" width="54" height="54" loading="lazy"><span><small>02</small><strong>二本の大柱</strong></span><span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="topic" href="shirasagi36-guide.html#hafu-gegyo" data-topic="hafu-gegyo" data-title="破風と懸魚" data-summary="三角と曲線の屋根、その下の白い飾り。" data-image="assets/images/shirasagi/guide/hafu-gegyo-photo-600.webp" data-image-alt="破風と懸魚" data-growth-label="instagram_topic_hafu-gegyo">
+            <img src="assets/images/shirasagi/guide/hafu-gegyo-photo-600.webp" alt="" width="54" height="54" loading="lazy"><span><small>03</small><strong>破風と懸魚</strong></span><span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="topic" href="shirasagi36-guide.html#shikkui" data-topic="shikkui" data-title="白漆喰と目地漆喰" data-summary="軒の裏から、黒い瓦の間まで。白い線をたどる。" data-image="assets/images/shirasagi/guide/shikkui-roof-photo-600.webp" data-image-alt="白漆喰と目地漆喰" data-growth-label="instagram_topic_shikkui">
+            <img src="assets/images/shirasagi/guide/shikkui-roof-photo-600.webp" alt="" width="54" height="54" loading="lazy"><span><small>04</small><strong>白漆喰と目地漆喰</strong></span><span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="topic" href="shirasagi36-guide.html#ishigaki" data-topic="ishigaki" data-title="石垣" data-summary="大きな石の間と奥に、城を支える工夫。" data-image="assets/images/shirasagi/guide/ishigaki-overview-600.webp" data-image-alt="石垣" data-growth-label="instagram_topic_ishigaki">
+            <img src="assets/images/shirasagi/guide/ishigaki-overview-600.webp" alt="" width="54" height="54" loading="lazy"><span><small>05</small><strong>石垣</strong></span><span class="arrow" aria-hidden="true">→</span>
+          </a>
+          <a class="topic" href="shirasagi36-guide.html#sama" data-topic="sama" data-title="狭間" data-summary="白壁に並ぶ穴と、壁の奥行きの工夫。" data-image="assets/images/shirasagi/guide/sama-openings.svg" data-image-alt="狭間" data-growth-label="instagram_topic_sama">
+            <img src="assets/images/shirasagi/guide/sama-openings.svg" alt="" width="54" height="54" loading="lazy"><span><small>06</small><strong>狭間</strong></span><span class="arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+      </section>
+      <section class="visit" aria-labelledby="visit-heading">
+        <div><h2 id="visit-heading">城まで歩く、撮影地を探す。</h2><p>姫路駅からの道順と、城下町の寄り道。</p></div>
+        <div class="visit__links"><a href="shirasagi36-access.html" data-growth-label="instagram_castle_walk">行き方・街歩き<span aria-hidden="true">→</span></a><a href="shirasagi36-map.html" data-growth-label="instagram_castle_map">撮影地マップ<span aria-hidden="true">→</span></a></div>
+      </section>
+      <div class="author"><a href="about.html">写真・田路昌也 / Toji Masaya</a><p>暮らしの距離から、四季の姫路城を記録する写真プロジェクト。</p></div>
+    </div>
+  </main>
+  <footer class="entry-footer">
+    <div class="entry-footer__inner"><nav class="footer-links" aria-label="関連リンク"><a href="shirasagi36.html">白鷺三十六景</a><a href="hongkong.html">香港</a><a href="gallery.html">Gallery</a><a href="gear.html">Gear</a><a href="https://note.com/tojimasaya" target="_blank" rel="noopener noreferrer">note</a><a href="writings.html">Writings</a><a href="about.html">作者について</a></nav><small>© Toji Masaya · TOJIMASAYA.COM</small></div>
+  </footer>
 </body>
 </html>

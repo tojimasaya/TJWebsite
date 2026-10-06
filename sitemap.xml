@@ -637,9 +637,33 @@
   </url>
   <url>
     <loc>https://tojimasaya.com/instagram.html</loc>
-    <lastmod>2026-03-19</lastmod>
+    <lastmod>2026-10-06</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/instagram.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/instagram-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/instagram-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/instagram.html"/>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/instagram-en.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/instagram.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/instagram-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/instagram-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/instagram.html"/>
+  </url>
+  <url>
+    <loc>https://tojimasaya.com/instagram-hk.html</loc>
+    <lastmod>2026-10-06</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+    <xhtml:link rel="alternate" hreflang="ja" href="https://tojimasaya.com/instagram.html"/>
+    <xhtml:link rel="alternate" hreflang="en" href="https://tojimasaya.com/instagram-en.html"/>
+    <xhtml:link rel="alternate" hreflang="zh-Hant" href="https://tojimasaya.com/instagram-hk.html"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://tojimasaya.com/instagram.html"/>
   </url>
 
   <!-- Site Guides -->
