@@ -64,6 +64,36 @@
 .guide-diagram > a { display: block; background: white; cursor: zoom-in; border: 1px solid #e2e7e1; }
 .guide-diagram img { width: 100%; height: auto; }
 .guide-diagram figcaption { margin-top: 12px; color: var(--guide-muted); font-size: 13px; line-height: 1.8; }
+.guide-roof-section-heading { margin: 0 0 18px; font-size: 21px; line-height: 1.6; scroll-margin-top: var(--guide-anchor-offset); }
+.guide-roof-section-heading--south { margin-top: 36px; padding-top: 28px; border-top: 1px solid var(--guide-line); }
+.guide-roof-context { max-width: 680px; margin: 0 auto; font-size: 15px; }
+.guide-roof-context a { text-underline-offset: 3px; }
+.guide-roof-overview { position: relative; }
+.guide-roof-overview > [data-diagram] { display: block; cursor: zoom-in; }
+.guide-roof-overview img { display: block; }
+.guide-roof-pin { position: absolute; width: 44px; height: 44px; display: grid; place-items: center; transform: translate(-50%, -50%); text-decoration: none; }
+.guide-roof-pin span, .guide-roof-number { display: inline-grid; place-items: center; width: 26px; height: 26px; flex: 0 0 26px; border: 1px solid #a82f2b; border-radius: 50%; background: #fff; color: #a82f2b; font: 600 14px/1 -apple-system, BlinkMacSystemFont, sans-serif; }
+.guide-roof-pin:hover span { background: #a82f2b; color: #fff; }
+.guide-roof-pin--central { left: 51%; top: 23%; }
+.guide-roof-pin--left { left: 26%; top: 35%; }
+.guide-roof-pin--right { left: 68%; top: 30%; }
+.guide-roof-pin--curved { left: 53.5%; top: 52%; }
+.guide-roof-details { display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; margin: 0 auto 30px; }
+.guide-roof-details > section { min-width: 0; scroll-margin-top: var(--guide-anchor-offset); }
+.guide-roof-details h3 { display: flex; align-items: center; gap: 8px; margin: 0 0 12px; font-size: 18px; line-height: 1.6; }
+.guide-roof-details p { margin-top: 14px; font-size: 15px; line-height: 1.9; }
+.guide-roof-photo { margin: 0; }
+.guide-roof-photo figcaption { margin-top: 8px; font-size: 12px; line-height: 1.7; color: var(--guide-muted); }
+/* Windows into the same unaltered photograph, using its original pixel coordinates. */
+.guide-roof-window { position: relative; overflow: hidden; aspect-ratio: 4 / 3; background: #e9edef; }
+.guide-roof-window img { position: absolute; max-width: none; height: auto; }
+.guide-roof-window--central img { width: 606.428571%; left: -228.571429%; top: -123.809524%; }
+.guide-roof-window--side img { width: 566%; left: -130%; top: -166.666667%; }
+.guide-roof-window--curved img { width: 530.625%; left: -190.625%; top: -200%; }
+.guide-roof-part { position: absolute; left: 27%; width: 20px; height: 20px; display: grid; place-items: center; transform: translate(-50%, -50%); border: 1px solid #fff; border-radius: 50%; background: #304b40; color: #fff; font: 600 12px/1 -apple-system, BlinkMacSystemFont, sans-serif; }
+.guide-roof-part::after { content: ''; position: absolute; left: 19px; top: 9px; width: 22px; border-top: 1px solid #fff; }
+.guide-roof-part--upper { top: 44%; }
+.guide-roof-part--lower { top: 60%; }
 .guide-reading { max-width: 680px; margin: 0 auto; }
 .guide-reading h3 { font-size: 20px; font-weight: 700; margin-bottom: 12px; }
 .guide-reading p { font-size: 16px; }
@@ -191,7 +221,7 @@ body.is-diagram-open { overflow: hidden; }
     .guide-index a::before { content: ''; grid-column: 1; grid-row: 1 / 4; align-self: center; width: 64px; height: var(--topic-height); background-image: var(--topic-image); background-size: var(--topic-size) auto; background-position: var(--topic-position); background-repeat: no-repeat; }
     .guide-index a[href="#renritsu"] { --topic-image: url('../assets/images/shirasagi/guide/renritsu-architecture.webp'); --topic-height: 64px; --topic-size: 243.874px; --topic-position: -19.088px -55.018px; }
     .guide-index a[href="#daibashira"] { --topic-image: url('../assets/images/shirasagi/guide/daibashira-architecture.webp'); --topic-height: 78.904px; --topic-size: 190.422px; --topic-position: -61.370px -62.247px; }
-    .guide-index a[href="#hafu-gegyo"] { --topic-image: url('../assets/images/shirasagi/guide/hafu-gegyo.webp'); --topic-height: 39.293px; --topic-size: 497.712px; --topic-position: -21.433px -191.107px; }
+    .guide-index a[href="#hafu-gegyo"] { --topic-image: url('../assets/images/shirasagi/guide/hafu-gegyo-south-architecture.webp'); --topic-height: 64px; --topic-size: 190px; --topic-position: -44px -40px; }
     .guide-index a[href="#shikkui"] { --topic-image: url('../assets/images/shirasagi/guide/shikkui-lime-plaster.webp'); --topic-height: 42.667px; --topic-size: 184.320px; --topic-position: -81.067px -177.067px; }
     .guide-index a[href="#ishigaki"] { --topic-image: url('../assets/images/shirasagi/guide/ishigaki-structure-history.webp'); --topic-height: 54.857px; --topic-size: 162.560px; --topic-position: -45.714px -90.880px; }
     .guide-index a[href="#sama"] { --topic-image: url('../assets/images/shirasagi/guide/sama-openings.svg'); --topic-height: 66.667px; --topic-size: 320px; --topic-position: -165.867px -59.200px; }
@@ -205,6 +235,8 @@ body.is-diagram-open { overflow: hidden; }
     .guide-visit-content { padding-top: 36px; }
     .guide-visit-content h2 { font-size: 26px; }
     .guide-facts > div { display: grid; grid-template-columns: 180px 1fr; gap: 16px; }
+    .guide-roof-details { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; }
+    .guide-roof-details h3 { min-height: 58px; font-size: 17px; }
 }
 @media (min-width: 960px) {
     .guide-index { grid-template-columns: repeat(3, minmax(0, 1fr)); }
