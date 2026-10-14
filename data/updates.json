@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T00:00:00+09:00",
+  "generatedAt": "2026-10-13T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "drone",
+      "kindLabel": "DRONE.jp",
+      "title": "飛ばせないだけじゃない─北京のドローン、「置き場所」さえなくなる [田路昌也の中国・香港ドローン便り]Vol.69",
+      "url": "https://drone.jp/column/20261013092256129817.html",
+      "external": true,
+      "date": "2026-10-13",
+      "thumb": "https://drone.jp/wp-content/uploads/tohzi_69_topdYyBkju1.jpg"
+    },
     {
       "kind": "note",
       "kindLabel": "note",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-09-06",
       "thumb": "/assets/images/photo-notes/hongkong-farewell-yumcha-cat.webp"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "見送りの焼鵝と、七十ドルの妙な見栄",
-      "url": "/fragments/kison-goose-vanity-hkd70.html",
-      "external": false,
-      "date": "2026-09-03",
-      "thumb": "/assets/images/photo-notes/kison-half-half-plate.webp"
     }
   ]
 }

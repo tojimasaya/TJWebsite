@@ -5,13 +5,24 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-10-04T00:00:00+09:00</updated>
+  <updated>2026-10-13T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>飛ばせないだけじゃない─北京のドローン、「置き場所」さえなくなる [田路昌也の中国・香港ドローン便り]Vol.69</title>
+    <id>https://drone.jp/column/20261013092256129817.html</id>
+    <link rel="alternate" type="text/html" href="https://drone.jp/column/20261013092256129817.html"/>
+    <published>2026-10-13T00:00:00+09:00</published>
+    <updated>2026-10-13T00:00:00+09:00</updated>
+    <category term="DRONE.jp"/>
+    <summary type="text">北京でドローンの所持・保管まで規制される動きを追い、愛機の売却や市外への移送、DJIが予告した預かりサービスを紹介。深圳の販売員への聞き取りも交え、同じ中国でも異なる利用環境と、…</summary>
+    <content type="html">&lt;p&gt;北京でドローンの所持・保管まで規制される動きを追い、愛機の売却や市外への移送、DJIが予告した預かりサービスを紹介。深圳の販売員への聞き取りも交え、同じ中国でも異なる利用環境と、機体を手元に置けなくなる愛好家の戸惑いを綴っています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://drone.jp/column/20261013092256129817.html&quot;&gt;DRONE.jp で読む →&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>同じ新品なのに値段が違う。香港のiPhone「未開封」と「開封済み」</title>
     <id>https://note.com/tojimasaya/n/n152a667764a7</id>
@@ -344,16 +355,5 @@
     <summary type="text">「脱・メガネ宣言」で行き着いたモノビジョン（右目は遠く、左目は手元）が、RokidのAIグラスで思わぬ形で的中。裸眼とコンタクトで左右の役割を分けた設定が、見えるメガネの「見え方問題」にどう効いたのかを綴る第3回。</summary>
     <content type="html">&lt;p&gt;「脱・メガネ宣言」で行き着いたモノビジョン（右目は遠く、左目は手元）が、RokidのAIグラスで思わぬ形で的中。裸眼とコンタクトで左右の役割を分けた設定が、見えるメガネの「見え方問題」にどう効いたのかを綴る第3回。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n477f909ca135&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>2年縛りを「粘り勝ち」で途中解約──香港のSIMを1枚畳んで、JALのマイルを取りに行く</title>
-    <id>https://note.com/tojimasaya/n/n1c959bb91226</id>
-    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n1c959bb91226"/>
-    <published>2026-07-16T00:00:00+09:00</published>
-    <updated>2026-07-16T00:00:00+09:00</updated>
-    <category term="note"/>
-    <summary type="text">香港で増えすぎたSIM契約を整理し、2年縛り途中の解約交渉を粘り強く進めた体験記。香港番号を減らしながら、JAL Mobile powered by ahamoでマイルを取りに行く次の通信構成を考えます。</summary>
-    <content type="html">&lt;p&gt;香港で増えすぎたSIM契約を整理し、2年縛り途中の解約交渉を粘り強く進めた体験記。香港番号を減らしながら、JAL Mobile powered by ahamoでマイルを取りに行く次の通信構成を考えます。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n1c959bb91226&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>
