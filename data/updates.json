@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-13T00:00:00+09:00",
+  "generatedAt": "2026-10-15T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "FCCのランチと、直せないズミルックス",
+      "url": "/fragments/fcc-lunch-summilux.html",
+      "external": false,
+      "date": "2026-10-15",
+      "thumb": "/assets/images/photo-notes/fcc-lunch-entrance.webp"
+    },
     {
       "kind": "drone",
       "kindLabel": "DRONE.jp",
@@ -105,15 +114,6 @@
       "external": true,
       "date": "2026-09-11",
       "thumb": "https://assets.st-note.com/production/uploads/images/312483234/rectangle_large_type_2_da89da1aff2c29f909e31d3c0c933bf8.jpeg?fit=bounds&quality=85&width=1280"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "しばしの別れの飲茶、ドリアン屋と不動産屋の猫",
-      "url": "/fragments/hongkong-farewell-yumcha.html",
-      "external": false,
-      "date": "2026-09-06",
-      "thumb": "/assets/images/photo-notes/hongkong-farewell-yumcha-cat.webp"
     }
   ]
 }

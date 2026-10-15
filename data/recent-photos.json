@@ -1,5 +1,58 @@
 [
   {
+    "slug": "fcc-lunch-summilux",
+    "label": "今日の断章",
+    "title": "FCCのランチと、直せないズミルックス",
+    "place": "香港・中環　FCC／Panda Camera-Repair Service",
+    "date": "2026年10月15日",
+    "body": "今日は久しぶりにZeeさんのアレンジで、セントラルにあるFCC（外国人特派員クラブ）のメインダイニングでランチをいただき、まずはポーランド風のディルピクルスとサーモンのスープ、こちらはサーモンなしのベジタリアン版もあるのだが、続いて出てきたのは和牛リブの赤ワイン煮込みで、ベーコンやジロール茸、カリカリのオニオンリングが添えられた皿から、柔らかな和牛リブを口に運ぶと旨味が広がり、最後はみんなでフルーツの盛り合わせをいただいて、ここは美味しいし、ゆったりしているし、久しぶりに来てもやっぱりいいところなのだけれど、ポーションが大きくてどうにも食べきれないのが悩ましいところで、食後は近くのPanda Camera-Repair Serviceへ、愛用のSummilux 50mmの気になっていたずれを見てもらおうと足を運んだのだが、「これは直せない」と言われてしまい、そう言われてしまえば仕方がない、まあ古いレンズなのだからそこも含めて愛していこう、写りは気に入っているのだから。",
+    "homeLead": "FCCで、ゆったりとボリュームたっぷりのランチ。食後に向かったカメラ修理店では、愛用のSummilux 50mmに「これは直せない」の返事。それでも、写りは気に入っている。",
+    "image": "assets/images/photo-notes/fcc-lunch-entrance.jpg",
+    "imageWebp": "assets/images/photo-notes/fcc-lunch-entrance.webp",
+    "alt": "赤れんがと白い壁に囲まれたFCCの木製の入口。扉の上にTHE FOREIGN CORRESPONDENTS' CLUBの文字がある",
+    "caption": "The FCC Entrance / Central, Hong Kong",
+    "sideFrames": [
+      {
+        "title": "ディルピクルスとサーモンのスープ",
+        "caption": "Dill Pickle and Salmon Soup / FCC",
+        "image": "assets/images/photo-notes/fcc-lunch-salmon-soup.jpg",
+        "imageWebp": "assets/images/photo-notes/fcc-lunch-salmon-soup.webp",
+        "alt": "白いテーブルクロスの上の大きな白い器に盛られた、サーモン入りのスープ",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "title": "和牛リブの赤ワイン煮込み",
+        "caption": "Wagyu Ribs Braised in Red Wine / FCC",
+        "image": "assets/images/photo-notes/fcc-lunch-wagyu-ribs.jpg",
+        "imageWebp": "assets/images/photo-notes/fcc-lunch-wagyu-ribs.webp",
+        "alt": "赤ワインのソースに包まれた和牛リブ。上にはオニオンリング、脇にはきのこと緑の野菜が添えられている",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "title": "最後はみんなでフルーツを",
+        "caption": "A Fruit Platter to Share / FCC",
+        "image": "assets/images/photo-notes/fcc-lunch-fruit-platter.jpg",
+        "imageWebp": "assets/images/photo-notes/fcc-lunch-fruit-platter.webp",
+        "alt": "メロン、パイナップル、いちごやベリーを彩りよく盛り合わせたフルーツの皿",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "title": "食後に訪ねたカメラ修理店",
+        "caption": "Inside Panda Camera-Repair Service / Central",
+        "image": "assets/images/photo-notes/fcc-lunch-panda-camera-repair.jpg",
+        "imageWebp": "assets/images/photo-notes/fcc-lunch-panda-camera-repair.webp",
+        "alt": "Panda Camera-Repair Serviceの店内。壁にいくつものバイオリンが掛かり、時計やカメラなどの品々が並んでいる",
+        "width": 1800,
+        "height": 1350
+      }
+    ],
+    "width": 1800,
+    "height": 1350
+  },
+  {
     "slug": "mongkok-national-day-tortoise",
     "label": "今日の断章",
     "title": "国慶節の人波と、五十万円の亀",

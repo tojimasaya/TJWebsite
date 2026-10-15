@@ -5,13 +5,25 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-10-13T00:00:00+09:00</updated>
+  <updated>2026-10-15T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>FCCのランチと、直せないズミルックス</title>
+    <id>https://tojimasaya.com/fragments/fcc-lunch-summilux.html</id>
+    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/fcc-lunch-summilux.html"/>
+    <published>2026-10-15T00:00:00+09:00</published>
+    <updated>2026-10-15T00:00:00+09:00</updated>
+    <category term="断章"/>
+    <summary type="text">今日は久しぶりにZeeさんのアレンジで、セントラルにあるFCC（外国人特派員クラブ）のメインダイニングでランチをいただき、まずはポーランド風のディルピクルスとサーモンのスープ、…</summary>
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/fcc-lunch-entrance.jpg&quot; alt=&quot;赤れんがと白い壁に囲まれたFCCの木製の入口。扉の上にTHE FOREIGN CORRESPONDENTS&amp;#39; CLUBの文字がある&quot;&gt;&lt;/p&gt;
+&lt;p&gt;今日は久しぶりにZeeさんのアレンジで、セントラルにあるFCC（外国人特派員クラブ）のメインダイニングでランチをいただき、まずはポーランド風のディルピクルスとサーモンのスープ、こちらはサーモンなしのベジタリアン版もあるのだが、続いて出てきたのは和牛リブの赤ワイン煮込みで、ベーコンやジロール茸、カリカリのオニオンリングが添えられた皿から、柔らかな和牛リブを口に運ぶと旨味が広がり、最後はみんなでフルーツの盛り合わせをいただいて、ここは美味しいし、ゆったりしているし、久しぶりに来てもやっぱりいいところなのだけれど、ポーションが大きくてどうにも食べきれないのが悩ましいところで、食後は近くのPanda Camera-Repair Serviceへ、愛用のSummilux 50mmの気になっていたずれを見てもらおうと足を運んだのだが、「これは直せない」と言われてしまい、そう言われてしまえば仕方がない、まあ古いレンズなのだからそこも含めて愛していこう、写りは気に入っているのだから。&lt;/p&gt;
+&lt;p&gt;香港・中環　FCC／Panda Camera-Repair Service&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>飛ばせないだけじゃない─北京のドローン、「置き場所」さえなくなる [田路昌也の中国・香港ドローン便り]Vol.69</title>
     <id>https://drone.jp/column/20261013092256129817.html</id>
@@ -344,16 +356,5 @@
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/mongkok-sincere-podium-entrance.jpg&quot; alt=&quot;旺角の歩道から見た先達廣場の入口。金色の「先達廣場」の文字とSINCERE PODIUMのガラス扉、行き交う人々&quot;&gt;&lt;/p&gt;
 &lt;p&gt;いよいよ一月近く香港を離れるので、発つ前に香港成分を注入しておこうと旺角へ出て、まずは腹ごしらえに頼んだ叉燒と燒鵝の双拼飯が、白飯の上に照りの出た鵝の皮と縁の紅い叉燒が並んで菜心が一束添えられただけの、この街ではどうということのない一皿なのに、しばらく食べられないと思うと妙に旨く、それから足を向けた先達廣場では、金色の看板の下をくぐっていつもの棚を覗けば、二手の札に小米17 Ultraの16+512GBが全套國行でHK$6,680、15 Ultraが港版でHK$4,980、Redmi Turbo 5 Maxが16+512GBでHK$2,880と並んでいて、自分がいま使っている機種の中古相場を眺めるのは我が身を値踏みされているようで少しおかしく、その足で回った星際城市では、「潮流發燒友集中地」を名乗る看板の下、エスカレーターへ吸い込まれていく人の流れをしばらく眺めながら、ここにまた一月来られないとなるとやはり寂しく、いや正直に言えば、深圳の電脳街に行けないことのほうが、もっとこたえるかもしれない。&lt;/p&gt;
 &lt;p&gt;香港・旺角 先達廣場／星際城市&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Rokidと暮らす③ 見えるメガネの、見え方問題</title>
-    <id>https://note.com/tojimasaya/n/n477f909ca135</id>
-    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n477f909ca135"/>
-    <published>2026-07-17T00:00:00+09:00</published>
-    <updated>2026-07-17T00:00:00+09:00</updated>
-    <category term="note"/>
-    <summary type="text">「脱・メガネ宣言」で行き着いたモノビジョン（右目は遠く、左目は手元）が、RokidのAIグラスで思わぬ形で的中。裸眼とコンタクトで左右の役割を分けた設定が、見えるメガネの「見え方問題」にどう効いたのかを綴る第3回。</summary>
-    <content type="html">&lt;p&gt;「脱・メガネ宣言」で行き着いたモノビジョン（右目は遠く、左目は手元）が、RokidのAIグラスで思わぬ形で的中。裸眼とコンタクトで左右の役割を分けた設定が、見えるメガネの「見え方問題」にどう効いたのかを綴る第3回。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n477f909ca135&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>

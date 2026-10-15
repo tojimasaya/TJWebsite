@@ -2163,6 +2163,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/fcc-lunch-summilux.html</loc>
+    <lastmod>2026-10-15</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/fcc-lunch-entrance.jpg</image:loc>
+      <image:title>FCCのランチと、直せないズミルックス</image:title>
+      <image:caption>赤れんがと白い壁に囲まれたFCCの木製の入口。扉の上にTHE FOREIGN CORRESPONDENTS&#39; CLUBの文字がある</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/mongkok-national-day-tortoise.html</loc>
     <lastmod>2026-10-01</lastmod>
     <changefreq>monthly</changefreq>
