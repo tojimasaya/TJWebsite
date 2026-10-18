@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-22T00:00:00Z",
+  "updated_at": "2026-10-18T05:01:34Z",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -381,7 +381,7 @@
           "specs": [
             "512GB"
           ],
-          "description": "銀行アプリや本人確認など、止まると困る基幹用途を任せるメイン端末。多くのアプリはiPhoneで確実に検証され、ハード障害時も保証期間なら交換対応が早い。この安心感は金融まわりでは特に大きい。ただ、メインだから全部をiPhoneで済ませるわけではなく、カメラは専用機やXiaomiと使い分けている。OPPO Find N5を息子に譲ったため、現在のスマートフォンはiPhoneとXiaomiの2台体制。次の折りたたみスマホは、どれにしようか思案中。",
+          "description": "銀行アプリや本人確認など、止まると困る基幹用途を任せるメイン端末。多くのアプリはiPhoneで確実に検証され、ハード障害時も保証期間なら交換対応が早い。この安心感は金融まわりでは特に大きい。ただ、メインだから全部をiPhoneで済ませるわけではなく、カメラは専用機やXiaomiと使い分けている。OPPO Find N5を息子に譲ったため、現在の主力スマートフォンはiPhoneとXiaomiの2台体制。予備としてiPhone SE（第3世代）も保管している。次の折りたたみスマホは、どれにしようか思案中。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/nd229cd856751\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【前編】iPhone 17 Pro検証：x2・x8は単なるクロップか？</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n53df41f14082\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">【後編】iPhone 17 Pro vs Xiaomi 15 Ultra：生活と創造のあいだで揺れる2台体制</a>",
           "links": {
             "レビュー前編": "https://note.com/tojimasaya/n/nd229cd856751",
@@ -424,13 +424,13 @@
             "16GB",
             "512GB"
           ],
-          "description": "折りたたみスマホとしての大画面に加え、ColorOS 16以降はMac上で画面ミラーリングできるのが強み。AndroidだからApple連携から外れる、という不安をかなり薄めてくれた、タブレット代わりに使っていた一台。\n\n現在は息子に譲り、手元のスマートフォンはiPhone 17 ProとXiaomi 17 Ultra by Leicaの2台体制になりました。次はどの折りたたみスマホにしようか、いまは思案中です。使ってきた記録として、紹介とレビューはここに残しておきます。",
+          "description": "折りたたみスマホとしての大画面に加え、ColorOS 16以降はMac上で画面ミラーリングできるのが強み。AndroidだからApple連携から外れる、という不安をかなり薄めてくれた、タブレット代わりに使っていた一台。\n\n現在は息子に譲り、主力スマートフォンはiPhone 17 ProとXiaomi 17 Ultra by Leicaの2台体制になりました。予備としてiPhone SE（第3世代）も保管しています。次はどの折りたたみスマホにしようか、いまは思案中です。使ってきた記録として、紹介とレビューはここに残しておきます。",
           "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n82331875d2b8\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">O+ Connectで広がる可能性──OPPO Find N5とAppleデバイスの相互連携</a>",
           "links": {
             "Mac連携レビュー": "https://note.com/tojimasaya/n/n802d7acd7aeb",
             "O+ Connect": "https://note.com/tojimasaya/n/n82331875d2b8"
           },
-          "summary": "息子に譲り、スマホは現在2台体制。次の折りたたみを思案中。"
+          "summary": "息子に譲り、主力スマホは現在2台体制。次の折りたたみを思案中。"
         },
         {
           "id": "mac-mini-m6",
@@ -496,20 +496,22 @@
           "id": "iphone-se-3rd-64gb-black",
           "name": "iPhone SE 3rd 64GB Black",
           "brand": "Apple",
-          "image": "/assets/images/gear/iphone-se-3rd-black.png",
+          "image": "/assets/images/gear/iphone-se3-black.jpg",
           "status": "available",
           "specs": [
             "64GB",
             "Black",
             "バックアップ",
-            "検証用"
+            "Banana SIM待機用"
           ],
-          "description": "バックアップ用に買ったモデル。小さくて手に馴染むので、検証などでたまに使っている。",
+          "description": "手元にありながら、これまでほぼ使っていなかった黒いiPhone SE（第3世代）。Banana SIMを装着し、必要なときにチャージして使うための予備端末としてキープします。",
           "comment": "",
           "links": {
-            "official": "https://support.apple.com/en-us/111866"
+            "official": "https://support.apple.com/ja-jp/111866"
           },
-          "summary": "手に馴染む小さなiPhone。バックアップと、ときどきの検証用。"
+          "summary": "Banana SIMを装着して待機。必要時にチャージして使うための予備端末。",
+          "webp": false,
+          "usage": "予備端末"
         },
         {
           "id": "tcl-note-a1-nxtpaper",
@@ -1131,10 +1133,10 @@
           "name": "Banana Travel SIM 5G 365 Multi Offer",
           "brand": "Banana Travel SIM",
           "image": "assets/images/gear/sim/banana-travel-sim.jpg",
-          "usage": "待機中（期限切れ）",
+          "usage": "待機中（要チャージ）",
           "summary": "香港以外の対象国へ出かけるときに持つ、旅のバックアップ回線。",
           "specs": [
-            "待機中（期限切れ）",
+            "待機中（要チャージ）",
             "物理SIM",
             "eSIM対応",
             "52カ国",
@@ -1144,7 +1146,7 @@
           "notes": [
             {
               "title": "現在の運用（2026年10月18日）:",
-              "body": "利用していたプランが期限切れになったため、iPhone 17 Proから取り外して待機SIMとして保管しています。端末には代わりに楽天モバイルの物理SIMを装着しました。"
+              "body": "利用していたプランが期限切れになったため、iPhone 17 Proから取り外しました。チャージして再利用するためキープし、黒いiPhone SE（第3世代）に装着して待機します。iPhone 17 Proには代わりに楽天モバイルの物理SIMを装着しています。"
             },
             {
               "title": "Tips:",
