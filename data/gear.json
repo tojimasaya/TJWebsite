@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-18T05:01:34Z",
+  "updated_at": "2026-10-19T00:58:02Z",
   "categories": {
     "camera": {
       "title": "Camera",
@@ -466,13 +466,14 @@
             "翻訳・記録"
           ],
           "description": "Even G2を買う寸前から、カメラ搭載のRokidを選んだAIグラス。見たものをその場でAIに渡して、翻訳や記録の入力デバイスとして使う発想が中心。裸眼・コンタクト・モノビジョンとの相性や、自分専用AIへつなぐ自作アプリまで含めて試している。",
-          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n949b2448e060\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす① カメラで選んだ、AIグラス</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n458a51095135\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす② メガネを、人生の入力デバイスにする</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n477f909ca135\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす③ 見えるメガネの、見え方問題</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n66116e302cfe\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす④ メガネに、「母艦」を直結しました</a>",
+          "comment": "📖 <a href=\"https://note.com/tojimasaya/n/n949b2448e060\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす① カメラで選んだ、AIグラス</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n458a51095135\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす② メガネを、人生の入力デバイスにする</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n477f909ca135\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす③ 見えるメガネの、見え方問題</a><br>📖 <a href=\"https://note.com/tojimasaya/n/n66116e302cfe\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidと暮らす④ メガネに、「母艦」を直結しました</a><br>📖 <a href=\"https://note.com/tojimasaya/n/nf8ecd411cc63\" target=\"_blank\" rel=\"noopener\" class=\"note-link\">Rokidの「手元が見えない」を、貼る老眼レンズで解決してみた</a>",
           "links": {
             "カメラで選んだAIグラス": "https://note.com/tojimasaya/n/n949b2448e060",
             "人生の入力デバイス": "https://note.com/tojimasaya/n/n458a51095135",
             "見えるメガネの見え方問題": "https://note.com/tojimasaya/n/n477f909ca135",
             "メガネに母艦を直結": "https://note.com/tojimasaya/n/n66116e302cfe",
-            "ドローンフライトで使うAIグラス": "https://drone.jp/column/20260825170044129205.html"
+            "ドローンフライトで使うAIグラス": "https://drone.jp/column/20260825170044129205.html",
+            "貼る老眼レンズで手元の見え方を改善": "https://note.com/tojimasaya/n/nf8ecd411cc63"
           },
           "summary": "見たものをその場でAIへ。カメラを使って翻訳や記録を試すメガネ。"
         },

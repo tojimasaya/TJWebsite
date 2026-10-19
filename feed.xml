@@ -5,13 +5,24 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-10-15T00:00:00+09:00</updated>
+  <updated>2026-10-18T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>Rokidの「手元が見えない」を、貼る老眼レンズで解決してみた</title>
+    <id>https://note.com/tojimasaya/n/nf8ecd411cc63</id>
+    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/nf8ecd411cc63"/>
+    <published>2026-10-18T00:00:00+09:00</published>
+    <updated>2026-10-18T00:00:00+09:00</updated>
+    <category term="note"/>
+    <summary type="text">近視用レンズを入れたRokidで手元のスマホが見えにくい問題に、貼るタイプの老眼レンズを試した記録。約300円の補正シールを小さく切り、表示位置と貼る位置を調整した工夫や、ホコリがつくと取りにくい弱点まで紹介しています。</summary>
+    <content type="html">&lt;p&gt;近視用レンズを入れたRokidで手元のスマホが見えにくい問題に、貼るタイプの老眼レンズを試した記録。約300円の補正シールを小さく切り、表示位置と貼る位置を調整した工夫や、ホコリがつくと取りにくい弱点まで紹介しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/nf8ecd411cc63&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>FCCのランチと、直せないズミルックス</title>
     <id>https://tojimasaya.com/fragments/fcc-lunch-summilux.html</id>
@@ -344,17 +355,5 @@
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/kobe-airport-terminal2-dusk.jpg&quot; alt=&quot;夕暮れの神戸空港ターミナル2。ガラスのファサードにKOBE AIRPORTの文字と、黒いTerminal 2の入口&quot;&gt;&lt;/p&gt;
 &lt;p&gt;香港から桃園を経由しエバーで神戸へと、初めての経路で実家に帰ったのだが、桃園の乗り継ぎでは、いつものエバーのスターラウンジではなく今回初めてシンガポール航空のシルバークリスに入ってみると、入口のサイネージが「新加坡特色料理・肉骨茶」を掲げるだけあって名物のバクテーから台式魯肉飯まで並んでいて、これはこれで良いものの、ラウンジとしてはいささか手狭かなと思いながら着いた初めての神戸空港では、夕暮れのターミナル2に降り立ってポートライナーで三宮へ出て、三宮から新快速で四十分も走ればもう姫路に着いてしまうのだから、関空や伊丹からの道のりを思えばはるかに早く、しかもポートライナーも新快速も本数が密で待ち時間がほとんどなく、海外から実家への帰り道にこれほど頼もしい選択肢が増えたのは、素直に心強い。&lt;/p&gt;
 &lt;p&gt;台北・桃園空港 → 神戸空港&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>一月ぶんの香港成分を、旺角で</title>
-    <id>https://tojimasaya.com/fragments/mongkok-before-a-month-away.html</id>
-    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/mongkok-before-a-month-away.html"/>
-    <published>2026-07-19T00:00:00+09:00</published>
-    <updated>2026-07-19T00:00:00+09:00</updated>
-    <category term="断章"/>
-    <summary type="text">いよいよ一月近く香港を離れるので、発つ前に香港成分を注入しておこうと旺角へ出て、まずは腹ごしらえに頼んだ叉燒と燒鵝の双拼飯が、白飯の上に照りの出た鵝の皮と縁の紅い叉燒が並んで菜心が一束添えられただけの、…</summary>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/mongkok-sincere-podium-entrance.jpg&quot; alt=&quot;旺角の歩道から見た先達廣場の入口。金色の「先達廣場」の文字とSINCERE PODIUMのガラス扉、行き交う人々&quot;&gt;&lt;/p&gt;
-&lt;p&gt;いよいよ一月近く香港を離れるので、発つ前に香港成分を注入しておこうと旺角へ出て、まずは腹ごしらえに頼んだ叉燒と燒鵝の双拼飯が、白飯の上に照りの出た鵝の皮と縁の紅い叉燒が並んで菜心が一束添えられただけの、この街ではどうということのない一皿なのに、しばらく食べられないと思うと妙に旨く、それから足を向けた先達廣場では、金色の看板の下をくぐっていつもの棚を覗けば、二手の札に小米17 Ultraの16+512GBが全套國行でHK$6,680、15 Ultraが港版でHK$4,980、Redmi Turbo 5 Maxが16+512GBでHK$2,880と並んでいて、自分がいま使っている機種の中古相場を眺めるのは我が身を値踏みされているようで少しおかしく、その足で回った星際城市では、「潮流發燒友集中地」を名乗る看板の下、エスカレーターへ吸い込まれていく人の流れをしばらく眺めながら、ここにまた一月来られないとなるとやはり寂しく、いや正直に言えば、深圳の電脳街に行けないことのほうが、もっとこたえるかもしれない。&lt;/p&gt;
-&lt;p&gt;香港・旺角 先達廣場／星際城市&lt;/p&gt;</content>
   </entry>
 </feed>

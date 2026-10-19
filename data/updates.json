@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-15T00:00:00+09:00",
+  "generatedAt": "2026-10-18T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "Rokidの「手元が見えない」を、貼る老眼レンズで解決してみた",
+      "url": "https://note.com/tojimasaya/n/nf8ecd411cc63",
+      "external": true,
+      "date": "2026-10-18",
+      "thumb": "https://assets.st-note.com/production/uploads/images/325728371/rectangle_large_type_2_42b2383c734dbfb3676b2441d5b99ba9.png?width=800"
+    },
     {
       "kind": "fragment",
       "kindLabel": "断章",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-09-16",
       "thumb": "/assets/images/photo-notes/eva-kobe-via-taipei-starlux.webp"
-    },
-    {
-      "kind": "note",
-      "kindLabel": "note",
-      "title": "iPhone 18発表 ― 去年のiPhoneが「値上がり」した日。物理SIM機の世界最安は、やはり香港だった",
-      "url": "https://note.com/tojimasaya/n/nfc321fc224db",
-      "external": true,
-      "date": "2026-09-11",
-      "thumb": "https://assets.st-note.com/production/uploads/images/312483234/rectangle_large_type_2_da89da1aff2c29f909e31d3c0c933bf8.jpeg?fit=bounds&quality=85&width=1280"
     }
   ]
 }
