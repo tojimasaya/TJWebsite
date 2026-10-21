@@ -115,7 +115,9 @@
     }
     (function() {
       var s = document.createElement('script');
-      s.src = 'https://unpkg.com/web-vitals@3/dist/web-vitals.umd.js';
+      s.src = 'https://unpkg.com/web-vitals@3.5.2/dist/web-vitals.iife.js';
+      s.integrity = 'sha384-r5PlXVuO7waMhUw/+aB9MAKn3NqdeJvARlgEc5EU0flYozU3RBtquI+n1NzKMX8u';
+      s.crossOrigin = 'anonymous';
       s.defer = true;
       s.onload = function() {
         try {

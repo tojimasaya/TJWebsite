@@ -72,7 +72,8 @@
   (staticAnchor || slot).replaceWith(section);
 
   var script = document.createElement('script');
-  script.src = 'https://cusdis.com/js/cusdis.es.js';
+  script.src = '/assets/vendor/cusdis/2026-10-21/cusdis.es.js';
+  script.integrity = 'sha384-K8JQBqTnKbFxb1EJ2OmQbJzrCtUjB4unTDO9yt8PQpm2Vyk+IFYeCQzl5founzmx';
   script.async = true;
   script.defer = true;
   document.body.appendChild(script);

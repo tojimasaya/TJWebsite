@@ -1,0 +1,37 @@
+{
+  "captured_at": "2026-10-21T15:46:40Z",
+  "assets": [
+    {
+      "path": "assets/vendor/tailwindcss/3.4.17/tailwind.js",
+      "upstream": "https://cdn.tailwindcss.com/3.4.17",
+      "version": "3.4.17",
+      "sha256": "176e894661aa9cdc9a5cba6c720044cbbf7b8bd80d1c9a142a7c24b1b6c50d15",
+      "integrity": "sha384-igm5BeiBt36UU4gqwWS7imYmelpTsZlQ45FZf+XBn9MuJbn4nQr7yx1yFydocC/K",
+      "modified": false
+    },
+    {
+      "path": "assets/vendor/cusdis/2026-10-21/cusdis.es.js",
+      "upstream": "https://cusdis.com/js/cusdis.es.js",
+      "version": "snapshot-2026-10-21",
+      "sha256": "6975e7d3b279c5e267eb19eebc8bd3e743661b9c0fbba6fea789e84d9c057ab3",
+      "integrity": "sha384-K8JQBqTnKbFxb1EJ2OmQbJzrCtUjB4unTDO9yt8PQpm2Vyk+IFYeCQzl5founzmx",
+      "modified": false
+    }
+  ],
+  "cdn_assets": [
+    {
+      "name": "web-vitals",
+      "version": "3.5.2",
+      "url": "https://unpkg.com/web-vitals@3.5.2/dist/web-vitals.iife.js",
+      "sha256": "8c0e1f95aa09754b10449fd8cd7f2e76d8f232d1038b6cf7454db558ac79962e",
+      "integrity": "sha384-r5PlXVuO7waMhUw/+aB9MAKn3NqdeJvARlgEc5EU0flYozU3RBtquI+n1NzKMX8u"
+    },
+    {
+      "name": "@turf/turf",
+      "version": "6.5.0",
+      "url": "https://cdn.jsdelivr.net/npm/@turf/turf@6.5.0/turf.min.js",
+      "sha256": "d00f3e8ff8a8f9c103dad61c2fd4bb58143e1404aadfdf09e29b6db1a2de0a3f",
+      "integrity": "sha384-82q0nm29xZzIo5BMtDYnh2/NxeO6FoaK1S/0nF84w3cEsqbBfun3JdMyDVYWfVY5"
+    }
+  ]
+}
