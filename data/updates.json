@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T00:00:00+09:00",
+  "generatedAt": "2026-10-21T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "新しい皇崗口岸へ。国境越えが楽になりました",
+      "url": "https://note.com/tojimasaya/n/n08457065ef18",
+      "external": true,
+      "date": "2026-10-21",
+      "thumb": "https://assets.st-note.com/production/uploads/images/326860875/rectangle_large_type_2_3ef445e7d878c6121815ecbc2244728c.png?width=800"
+    },
     {
       "kind": "note",
       "kindLabel": "note",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-09-18",
       "thumb": "/assets/images/photo-notes/sincere-podium-903-shop.jpg"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "台北乗り換えの二時間と、ハーゲンダッツ二スクープ",
-      "url": "/fragments/eva-kobe-via-taipei.html",
-      "external": false,
-      "date": "2026-09-16",
-      "thumb": "/assets/images/photo-notes/eva-kobe-via-taipei-starlux.webp"
     }
   ]
 }
