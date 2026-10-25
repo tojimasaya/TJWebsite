@@ -1,5 +1,62 @@
 [
   {
+    "slug": "chater-road-classic-cars-190sl",
+    "label": "今日の断章",
+    "title": "一つ年上の190 SLと、二台のF40",
+    "place": "香港・中環　チャーターロード／Jimmy's Kitchin",
+    "date": "2026年10月25日",
+    "body": "朝九時半ごろから師匠とセントラルのチャーターロードで開かれたクラシックカーショーへ出かけ、Zeeさんが愛車のスカイラインGT-Rを出展しているので、それを見ることを口実に行ってきたわけだが、何といっても目玉はフェラーリF40が二台も並んでいることで、ただ私がやはりいちばん美しいと思ったのはメルセデス・ベンツ190 SLで、展示札によると1963年、1964年生まれの私より一つ年上の車が、もうピカピカに磨き込まれて本当に美しく、しかもその一台の持ち主が、師匠とキューバへ一緒に行ったビル・ライさんだというのだから二度驚き、その190 SLにHSBCのビルを背景として入れて写してみると、かなり広角のレンズなので歪みは出るけれど、いい感じに香港らしさが出たかなと思える一枚になり、Zeeさんのスカイラインもなかなかいい感じで、いろいろな人が写真を撮っていて、タイミングベルトのところが透明なカバーになっているのも洒落ているなと眺めているうちにちょうど昼になったので、師匠とセントラルのJimmy's Kitchinでビーフストロガノフを食べたのだが、これがうまかったし、この日はランドマークのルイ・ヴィトンも新装開店で、建物全体が大きなバッグのような姿になっていて、こちらも面白かった。",
+    "homeLead": "チャーターロードに並ぶ二台のF40。それでもいちばん美しいと思ったのは、私より一つ年上の190 SLだった。HSBCを背景に一枚撮って、昼は師匠とビーフストロガノフを。",
+    "image": "assets/images/photo-notes/chater-road-190sl-hsbc.jpg",
+    "imageWebp": "assets/images/photo-notes/chater-road-190sl-hsbc.webp",
+    "alt": "HSBC本店ビルを背景に、チャーターロードに展示された銀色のメルセデス・ベンツ190 SL。手前の展示札には1963年と書かれている",
+    "caption": "1963 Mercedes-Benz 190 SL / HSBC, Central",
+    "sideFrames": [
+      {
+        "title": "二台並んだフェラーリF40",
+        "image": "assets/images/photo-notes/chater-road-ferrari-f40.jpg",
+        "imageWebp": "assets/images/photo-notes/chater-road-ferrari-f40.webp",
+        "alt": "手前の赤いフェラーリF40を斜め前から写した一枚。右隣にも、もう一台の赤いF40の後部が見える",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "title": "ZeeさんのスカイラインGT-R",
+        "image": "assets/images/photo-notes/chater-road-skyline-gtr.jpg",
+        "imageWebp": "assets/images/photo-notes/chater-road-skyline-gtr.webp",
+        "alt": "ボンネットを開けて展示されたグレーのスカイラインGT-R。エンジンルームと透明なタイミングベルトカバーが見える",
+        "width": 1350,
+        "height": 1800
+      },
+      {
+        "title": "昼はビーフストロガノフを",
+        "image": "assets/images/photo-notes/chater-road-jimmys-stroganoff.jpg",
+        "imageWebp": "assets/images/photo-notes/chater-road-jimmys-stroganoff.webp",
+        "alt": "Jimmy's Kitchinの白い器に盛られたビーフストロガノフ。牛肉ときのこの上に白いクリームがかかっている",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "title": "Jimmy's Kitchinの店内",
+        "image": "assets/images/photo-notes/chater-road-jimmys-interior.jpg",
+        "imageWebp": "assets/images/photo-notes/chater-road-jimmys-interior.webp",
+        "alt": "木の天井と黒い大理石のカウンターが続くJimmy's Kitchinの店内。カウンター越しに調理するスタッフの姿が見える",
+        "width": 1800,
+        "height": 1350
+      },
+      {
+        "title": "建物ごと、大きなバッグに",
+        "image": "assets/images/photo-notes/chater-road-louis-vuitton.jpg",
+        "imageWebp": "assets/images/photo-notes/chater-road-louis-vuitton.webp",
+        "alt": "ランドマークのルイ・ヴィトン。建物の外壁全体がモノグラム柄の大きなトランクのように装飾され、手前を黄色い二階建てバスが通る",
+        "width": 1800,
+        "height": 1350
+      }
+    ],
+    "width": 1350,
+    "height": 1800
+  },
+  {
     "slug": "fcc-lunch-summilux",
     "label": "今日の断章",
     "title": "FCCのランチと、直せないズミルックス",

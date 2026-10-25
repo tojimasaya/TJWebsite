@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T00:00:00+09:00",
+  "generatedAt": "2026-10-25T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "一つ年上の190 SLと、二台のF40",
+      "url": "/fragments/chater-road-classic-cars-190sl.html",
+      "external": false,
+      "date": "2026-10-25",
+      "thumb": "/assets/images/photo-notes/chater-road-190sl-hsbc.webp"
+    },
     {
       "kind": "note",
       "kindLabel": "note",
@@ -105,15 +114,6 @@
       "external": false,
       "date": "2026-09-18",
       "thumb": "/assets/images/photo-notes/sintat-plaza-launch-day-counter.webp"
-    },
-    {
-      "kind": "handbook",
-      "kindLabel": "ハンドブック",
-      "title": "香港版 iPhone 18 の価格",
-      "url": "/iphone18-price.html",
-      "external": false,
-      "date": "2026-09-18",
-      "thumb": "/assets/images/photo-notes/sincere-podium-903-shop.jpg"
     }
   ]
 }

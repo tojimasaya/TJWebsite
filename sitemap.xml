@@ -2163,6 +2163,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/chater-road-classic-cars-190sl.html</loc>
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/chater-road-190sl-hsbc.jpg</image:loc>
+      <image:title>一つ年上の190 SLと、二台のF40</image:title>
+      <image:caption>HSBC本店ビルを背景に、チャーターロードに展示された銀色のメルセデス・ベンツ190 SL。手前の展示札には1963年と書かれている</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/fcc-lunch-summilux.html</loc>
     <lastmod>2026-10-15</lastmod>
     <changefreq>monthly</changefreq>

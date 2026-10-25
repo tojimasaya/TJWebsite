@@ -5,13 +5,25 @@
   <id>https://tojimasaya.com/fragments.html</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed-fragments.xml"/>
-  <updated>2026-10-15T00:00:00+09:00</updated>
+  <updated>2026-10-25T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>一つ年上の190 SLと、二台のF40</title>
+    <id>https://tojimasaya.com/fragments/chater-road-classic-cars-190sl.html</id>
+    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/chater-road-classic-cars-190sl.html"/>
+    <published>2026-10-25T00:00:00+09:00</published>
+    <updated>2026-10-25T00:00:00+09:00</updated>
+    <category term="断章"/>
+    <summary type="text">朝九時半ごろから師匠とセントラルのチャーターロードで開かれたクラシックカーショーへ出かけ、Zeeさんが愛車のスカイラインGT-Rを出展しているので、それを見ることを口実に行ってきたわけだが、…</summary>
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/chater-road-190sl-hsbc.jpg&quot; alt=&quot;HSBC本店ビルを背景に、チャーターロードに展示された銀色のメルセデス・ベンツ190 SL。手前の展示札には1963年と書かれている&quot;&gt;&lt;/p&gt;
+&lt;p&gt;朝九時半ごろから師匠とセントラルのチャーターロードで開かれたクラシックカーショーへ出かけ、Zeeさんが愛車のスカイラインGT-Rを出展しているので、それを見ることを口実に行ってきたわけだが、何といっても目玉はフェラーリF40が二台も並んでいることで、ただ私がやはりいちばん美しいと思ったのはメルセデス・ベンツ190 SLで、展示札によると1963年、1964年生まれの私より一つ年上の車が、もうピカピカに磨き込まれて本当に美しく、しかもその一台の持ち主が、師匠とキューバへ一緒に行ったビル・ライさんだというのだから二度驚き、その190 SLにHSBCのビルを背景として入れて写してみると、かなり広角のレンズなので歪みは出るけれど、いい感じに香港らしさが出たかなと思える一枚になり、Zeeさんのスカイラインもなかなかいい感じで、いろいろな人が写真を撮っていて、タイミングベルトのところが透明なカバーになっているのも洒落ているなと眺めているうちにちょうど昼になったので、師匠とセントラルのJimmy&amp;#39;s Kitchinでビーフストロガノフを食べたのだが、これがうまかったし、この日はランドマークのルイ・ヴィトンも新装開店で、建物全体が大きなバッグのような姿になっていて、こちらも面白かった。&lt;/p&gt;
+&lt;p&gt;香港・中環　チャーターロード／Jimmy&amp;#39;s Kitchin&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>FCCのランチと、直せないズミルックス</title>
     <id>https://tojimasaya.com/fragments/fcc-lunch-summilux.html</id>
@@ -359,17 +371,5 @@
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/gozasoro-red-blend.jpg&quot; alt=&quot;御座候の赤あんと赤ブレンドのコーヒーが喫茶室のテーブルに並んでいる様子&quot;&gt;&lt;/p&gt;
 &lt;p&gt;姫路で大判焼きだの今川焼きだのと呼ぶ前に御座候は御座候で、書写の喫茶室で赤あんに赤ブレンドを合わせると、子どもの頃から知っているはずの百十円が、なぜかいまさら高級な記憶の顔をして座っていた。&lt;/p&gt;
 &lt;p&gt;姫路・書写&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>いちご畑と、練乳の記憶</title>
-    <id>https://tojimasaya.com/fragments/strawberry-field-memory.html</id>
-    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/strawberry-field-memory.html"/>
-    <published>2026-05-05T00:00:00+09:00</published>
-    <updated>2026-05-05T00:00:00+09:00</updated>
-    <category term="断章"/>
-    <summary type="text">友人の実家のいちご畑で久しぶりに実を摘みながら、かごの中より畑に残る青い実と赤い実ばかり見ていたら、小学生のころ出荷できないいちごを潰して練乳をかけたあの贅沢まで戻ってきて、…</summary>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/strawberry-field.jpg&quot; alt=&quot;いちご畑で青い実と赤く熟したいちごが並んでいる様子&quot;&gt;&lt;/p&gt;
-&lt;p&gt;友人の実家のいちご畑で久しぶりに実を摘みながら、かごの中より畑に残る青い実と赤い実ばかり見ていたら、小学生のころ出荷できないいちごを潰して練乳をかけたあの贅沢まで戻ってきて、結局いちばん甘かったのは採ったいちごではなく、採れなかったころの記憶だった。&lt;/p&gt;
-&lt;p&gt;友人の実家のいちご畑&lt;/p&gt;</content>
   </entry>
 </feed>
