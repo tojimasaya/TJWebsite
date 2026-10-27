@@ -21,7 +21,7 @@
     <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
     <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="style.css?v=20261027-lightbox">
 
     <link rel="canonical" href="https://tojimasaya.com/myanmar-travel-journal.html">
     <meta property="og:title" content="ミャンマー、仏塔の国へ — ヤンゴンとバガン">
@@ -92,7 +92,7 @@
         </div>
 
         <section class="trip-context" aria-labelledby="trip-companions-title">
-            <div class="trip-context-media">
+            <div class="trip-context-media" data-photo-lightbox>
                 <picture><source srcset="/assets/images/trips/myanmar/bagan-11.webp" type="image/webp"><img src="/assets/images/trips/myanmar/bagan-11.jpg" alt="バガンをガイドしてくれた現地カメラマン Bagan MaoMaoさんと奥様" loading="eager" decoding="async"></picture>
             </div>
             <div class="trip-context-copy">
@@ -113,7 +113,7 @@
             </div>
         </section>
 
-        <article class="essay" id="story" style="scroll-margin-top: 90px;">
+        <article class="essay" id="story" style="scroll-margin-top: 90px;" data-photo-lightbox>
             <h2 class="h2-first">ミャンマー・ヤンゴンの仏塔（2012.11.09）</h2>
             <p>２０１２年に行ったミャンマーは印象的でした。<br>ミャンマー政府は前年２０１１年に民主化を進めたこともあり訪問しやすくなったことが今回 訪問のきっかけになりました。<br>１１月１９日にはオバマ大統領がアメリカの現職大統領として初めてミャンマーを訪問したのですが、そのせいでホテルはどこも満室、予約が大変だったことを覚えています。<br>---<br>ミャンマー 一日目は 夕食後に2500年前にその基礎が建立されたというシュエダゴンパゴダを訪れた。中心の大きなバゴダと呼ばれる仏塔はもちろんだが、周囲にある多くの建物も含めあらゆる建物に金箔が貼られているのに驚く。<br>いったいどのくらいの金が？というのは無粋な質問か。<br>多くのミャンマー人達が生活の中心に仏教をおき、当然のごとく喜捨することでこのシュエダゴンパゴダが光り輝き続けることができるのだろう。<br>いよいよ今回の旅のメインであるバガンに移動する前にカンドージー公園を訪れた。<br>カンドージー湖の上に長い橋を渡して人が歩いて渡れるようになっている。<br>昨夜 行ったシュエダゴンパゴダが遠くにみえる。<br>シュエダゴンパゴダは背が高い上に、小高い丘の上にあるのでヤンゴンのどこからでもみえる。<br>真下から撮ったのでサイズがわかりにくいが、上の写真の三本のなかで 一番右の仏塔こそが、下写真の一番高い仏塔シュエダゴンパゴダである。</p>
             <figure><picture><source srcset="/assets/images/trips/myanmar/yangon-01.webp" type="image/webp"><img src="/assets/images/trips/myanmar/yangon-01.png" alt="街のどこからでも見ることができるシュエダゴンパゴダ" loading="lazy" decoding="async"></picture><figcaption>街のどこからでも見ることができるシュエダゴンパゴダ</figcaption></figure>
@@ -200,6 +200,7 @@
     </main>
 
     <script src="js/image-fallback.js"></script>
+    <script src="js/photo-lightbox.js?v=20261027" defer></script>
     <script src="js/trip-share.js"></script>
     <script src="/assets/js/ga4-tracking.js" defer></script>
     <script src="/growth.js" defer></script>

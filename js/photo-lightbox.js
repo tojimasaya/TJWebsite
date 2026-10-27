@@ -1,11 +1,11 @@
-// 組写真(ph-pair/ph-trio/ph-side)の小さな写真をクリックで拡大表示する。
+// 組写真と、data-photo-lightboxで指定した写真をクリックで拡大表示する。
 // 断章の個別ページ(fragments/*.html)でも使う。あちらの .fp-sides は
 // aspect-ratio 4/3 で切り抜いた小さなサムネイルなので、拡大できないと写真が読めない。
 (function () {
   'use strict';
 
   const imgs = document.querySelectorAll(
-    '.ph-pair img, .ph-trio img, .ph-side img, .ph-tallart img, .fp-figure img, .fp-sides img'
+    '.ph-pair img, .ph-trio img, .ph-side img, .ph-tallart img, .fp-figure img, .fp-sides img, [data-photo-lightbox] img'
   );
   if (!imgs.length) return;
 

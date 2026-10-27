@@ -1957,8 +1957,8 @@ body {
 .trip-context--contain .trip-context-media picture { height: auto; }
 .trip-context--contain .trip-context-media img { height: auto; object-fit: contain; }
 
-/* 組写真のクリック拡大(photo-lightbox.js) */
-.ph-pair img, .ph-trio img, .ph-side img, .ph-tallart img { cursor: zoom-in; }
+/* 組写真と指定した写真のクリック拡大(photo-lightbox.js) */
+.ph-pair img, .ph-trio img, .ph-side img, .ph-tallart img, [data-photo-lightbox] img { cursor: zoom-in; }
 /* margin: auto は必須。ブラウザ既定の dialog:modal は margin:auto で画面中央に置かれるが、
    このCSS冒頭の `* { margin: 0 }` がそれを打ち消してしまい、inset:0 と相まって
    拡大写真が画面の左上に貼り付いていた。スマホでは写真が画面いっぱいになるので
