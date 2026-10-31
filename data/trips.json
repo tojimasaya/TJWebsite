@@ -561,5 +561,20 @@
     "articles": [
       "kuma"
     ]
+  },
+  {
+    "id": "macau-2026",
+    "title": "マカオ、三人の撮影旅行",
+    "cities": [
+      {
+        "name": "マカオ (Macau)",
+        "lat": 22.1933,
+        "lng": 113.539,
+        "detail": "macau-travel-journal.html"
+      }
+    ],
+    "articles": [
+      "macau"
+    ]
   }
 ]

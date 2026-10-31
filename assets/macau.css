@@ -1,0 +1,212 @@
+/* Macau journal: shared layout for the index and four chapters. */
+.macau-page { background: var(--white); }
+.macau-page main { padding-top: 70px; }
+.macau-top { max-width: 1180px; margin: 0 auto; padding: 25px 28px; display: flex; align-items: center; gap: 12px; font-size: .8rem; color: var(--text-light); }
+.macau-top a, .macau-bottom a { color: inherit; text-decoration: none; }
+.macau-top a:hover, .macau-bottom a:hover { text-decoration: underline; }
+.macau-draft { margin-left: auto; border: 1px solid var(--border-color); border-radius: 30px; padding: 5px 12px; font-size: .7rem; white-space: nowrap; }
+.macau-eyebrow { display: block; font-family: var(--secondary-font); font-size: .72rem; font-weight: 500; letter-spacing: .16em; color: #916048; }
+.macau-cover { max-width: 1180px; margin: 0 auto 85px; padding: 0 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 60px; align-items: center; }
+.macau-cover-copy { padding: 35px 0; }
+.macau-cover h1 { font-family: 'Noto Serif JP', serif; font-weight: 500; font-size: clamp(2.1rem, 4vw, 3.7rem); line-height: 1.65; letter-spacing: .06em; margin: 22px 0; }
+.macau-deck { font-family: 'Noto Serif JP', serif; font-size: 1.1rem; line-height: 1.9; }
+.macau-cover-copy > p:not(.macau-eyebrow) { line-height: 2.15; }
+.macau-cover-copy > p:last-of-type { font-size: .92rem; color: var(--text-light); margin: 20px 0 30px; }
+.macau-button { display: inline-block; border-bottom: 1px solid var(--text-color); color: var(--text-color); padding: 12px 0; text-decoration: none; font-size: .88rem; }
+.macau-cover-photo { background: #edeae2; position: relative; text-align: center; }
+.macau-cover-photo picture { display: block; }
+.macau-cover-photo img { display: block; width: 100%; height: min(69vh, 680px); min-height: 400px; object-fit: contain; }
+.macau-cover-photo > span { display: block; padding: 13px; font-size: .65rem; letter-spacing: .09em; color: #615d53; }
+.macau-intro { max-width: 760px; padding: 0 28px; margin: 0 auto 90px; }
+.macau-intro h2, .macau-section-heading h2, .macau-companions h2 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.25rem, 2.3vw, 1.75rem); font-weight: 500; line-height: 1.8; margin: 18px 0; }
+.macau-intro p, .macau-companions p { font-size: .96rem; line-height: 2.2; }
+.macau-index { max-width: 1180px; margin: 0 auto 90px; padding: 0 28px; scroll-margin-top: 100px; }
+.macau-section-heading { margin-bottom: 32px; }
+.macau-section-heading p { color: var(--text-light); font-size: .9rem; line-height: 1.9; }
+.macau-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 40px 32px; }
+.macau-card { display: block; text-decoration: none; color: var(--text-color); border-bottom: 1px solid var(--border-color); padding-bottom: 26px; }
+.macau-card picture { display: block; overflow: hidden; background: #edeae2; }
+.macau-card img { width: 100%; aspect-ratio: 3/2; height: auto; object-fit: cover; display: block; transition: transform .25s; }
+.macau-card:hover img { transform: scale(1.025); }
+.macau-card > div { padding-top: 22px; }
+.macau-card h3 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.1rem, 1.7vw, 1.45rem); font-weight: 500; line-height: 1.65; margin: 12px 0; }
+.macau-card p { color: var(--text-light); font-size: .85rem; line-height: 1.8; margin-bottom: 20px; }
+.macau-read { font-size: .8rem; }
+.macau-companions { max-width: 1180px; margin: 0 auto 60px; padding: 0 28px; display: grid; grid-template-columns: 1fr 1fr; gap: 50px; align-items: center; }
+.macau-page figure { margin: 0; }
+.macau-page figure img { display: block; width: 100%; height: auto; }
+.macau-page figcaption { color: var(--text-light); font-size: .75rem; line-height: 1.8; margin-top: 10px; text-align: left; }
+.macau-streets { max-width: 1180px; margin: 0 auto 70px; padding: 0 28px; }
+.macau-streets .macau-pair { grid-template-columns: repeat(3, 1fr); }
+.macau-article-head { max-width: 1040px; margin: 26px auto 40px; padding: 0 28px; }
+.macau-article-head h1 { font-family: 'Noto Serif JP', serif; font-size: clamp(1.7rem, 3.8vw, 2.8rem); font-weight: 500; line-height: 1.7; letter-spacing: .035em; margin: 22px 0 18px; }
+.macau-date { font-size: .78rem; color: var(--text-light); margin-top: 24px; line-height: 1.9; }
+.macau-chapters { max-width: 984px; margin: 0 auto 55px; padding: 15px 0; display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+.macau-chapters a { display: flex; gap: 8px; align-items: flex-start; padding: 10px 15px; color: var(--text-light); text-decoration: none; font-size: .72rem; line-height: 1.8; }
+.macau-chapters a + a { border-left: 1px solid var(--border-color); }
+.macau-chapters a[aria-current] { color: var(--text-color); font-weight: 600; }
+.macau-chapters span { color: #916048; white-space: nowrap; }
+.macau-essay { max-width: 820px; margin: 0 auto; padding: 0 28px; font-family: 'Noto Serif JP', serif; font-size: 1rem; line-height: 2.25; }
+.macau-essay > p { margin: 0 0 2em; }
+.macau-essay h2 { font-size: 1.4rem; font-weight: 500; line-height: 1.8; margin: 3.5em 0 1.4em; padding-bottom: 15px; border-bottom: 1px solid var(--border-color); }
+.macau-essay > figure, .macau-essay > .macau-portrait { margin: 35px 0 55px; }
+.macau-essay figcaption { font-family: var(--secondary-font); }
+.macau-pair { display: grid; grid-template-columns: 1fr 1fr; gap: 22px; align-items: start; margin: 35px 0 55px; }
+.macau-portrait { max-width: 550px; margin-left: auto !important; margin-right: auto !important; }
+.macau-note { margin: 40px 0; padding: 22px 25px; background: var(--hover-color); border-left: 2px solid #916048; font-family: var(--secondary-font); font-size: .85rem; line-height: 2; color: var(--text-light); }
+.macau-pager { max-width: 984px; margin: 70px auto 35px; padding: 28px; border-top: 1px solid var(--border-color); display: flex; justify-content: space-between; gap: 25px; }
+.macau-pager a { color: var(--text-color); text-decoration: none; font-size: .85rem; line-height: 1.9; }
+.macau-bottom { max-width: 1180px; margin: 0 auto; padding: 35px 28px 70px; display: flex; flex-wrap: wrap; justify-content: space-between; gap: 20px; border-top: 1px solid var(--border-color); font-size: .8rem; color: var(--text-light); }
+.macau-page a:focus-visible { outline: 2px solid var(--focus-color); outline-offset: 5px; }
+/* Photographs lead the story; the two practical chapters follow them. */
+.macau-route { max-width: 1064px; margin: 45px auto 80px; padding: 0; font-family: var(--secondary-font); }
+.macau-route-heading { display: flex; align-items: flex-start; justify-content: space-between; gap: 25px; margin-bottom: 24px; }
+.macau-route-heading > div { min-width: 0; }
+.macau-page .macau-route h2 { font: 500 clamp(1.5rem, 2.8vw, 2rem)/1.7 'Noto Serif JP', serif; margin: 12px 0; padding: 0; border: 0; }
+.macau-route-heading p { color: var(--text-light); font-size: .9rem; line-height: 2; margin: 0; }
+.macau-route-reset { flex: none; padding: 9px 14px; margin-top: 25px; min-height: 44px; color: var(--text-color); border: 1px solid var(--border-color); border-radius: 4px; background: var(--white); font: .8rem var(--secondary-font); cursor: pointer; }
+.macau-route-reset:hover { background: var(--hover-color); }
+.macau-route-map { height: 440px; background: #e7edf0; border: 1px solid var(--border-color); border-radius: 4px; position: relative; z-index: 0; }
+.macau-route-map .leaflet-tile-pane { filter: saturate(.35); }
+.macau-route-map img { cursor: auto; }
+.macau-route-map .leaflet-control-attribution { font: 10px/1.5 Arial, sans-serif; }
+.macau-route-map .leaflet-control-attribution a { color: #245e8a; }
+.macau-route-map .leaflet-control-scale-line { color: #222; }
+.macau-route-loading { padding: 150px 20px; text-align: center; color: #444; font-size: .9rem; line-height: 2; }
+.macau-route-loading a { color: #245e8a; }
+.macau-route-label { font: 600 12px/1.6 var(--secondary-font); color: #183d58; background: #fff; border: 1px solid #d4dce2; box-shadow: 0 1px 5px #0002; padding: 5px 9px; }
+.macau-route-airport { font-size: 11px; font-weight: 400; color: #555; }
+.macau-route-hint { font-size: .74rem; line-height: 1.8; color: var(--text-light); margin: 10px 0 22px; }
+.macau-route-stats { display: grid; grid-template-columns: 1fr 1fr; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); padding: 24px 0; margin: 22px 0; }
+.macau-route-stats > div { padding: 0 24px; }
+.macau-route-stats > div + div { border-left: 1px solid var(--border-color); }
+.macau-route-stats span { display: block; color: var(--text-light); font-size: .8rem; }
+.macau-route-stats strong { display: block; font: 400 2.6rem/1.6 var(--primary-font); color: var(--text-color); }
+.macau-route-stats small { font-size: 1.1rem; }
+.macau-route-stats p { color: var(--text-light); font-size: .8rem; line-height: 1.8; margin: 0; }
+.macau-route-breakdown { display: flex; gap: 3px; }
+.macau-route-breakdown > span { min-width: 0; background: #245e8a; color: #fff; text-align: center; font-size: .72rem; line-height: 1.8; padding: 13px 5px; }
+.macau-route-breakdown > .macau-route-zhuhai { background: #e1e4e6; color: #333; }
+.macau-route-note { color: var(--text-light); font-size: .74rem; line-height: 1.9; margin-top: 16px; }
+.macau-route-note a { color: inherit; text-underline-offset: 3px; }
+@media (max-width: 1120px) { :is(.macau-support, main) > .macau-route { margin-left: 28px; margin-right: 28px; } }
+@media (max-width: 580px) {
+  :is(.macau-support, main) > .macau-route { margin: 30px 20px 60px; }
+  .macau-route-heading { flex-direction: column; gap: 8px; }
+  .macau-route-reset { margin-top: 0; }
+  .macau-route-map { height: 370px; }
+  .macau-route-stats > div { padding: 0 12px; }
+  .macau-route-stats strong { font-size: 2rem; }
+  .macau-route-stats span, .macau-route-stats p { font-size: .7rem; }
+  .macau-route-breakdown > span { font-size: .65rem; overflow-wrap: anywhere; }
+  .macau-route-map .leaflet-control-attribution { font-size: 9px; }
+}
+.macau-opening { max-width: 900px; margin: 26px auto 70px; padding: 0 28px; }
+.macau-opening h1 { font: 500 clamp(1.8rem, 3.8vw, 3rem)/1.7 'Noto Serif JP', serif; letter-spacing: .04em; margin: 20px 0; }
+.macau-purpose { max-width: 720px; margin-top: 38px; font-size: .96rem; line-height: 2.2; }
+.macau-purpose h2 { font: 500 1.25rem/1.8 'Noto Serif JP', serif; margin-bottom: 16px; }
+.macau-purpose h3 { font: 500 1rem/1.8 'Noto Serif JP', serif; margin: 24px 0 8px; }
+.macau-purpose ol { margin: 18px 0 20px; padding-left: 1.5em; }
+.macau-purpose li + li { margin-top: 10px; }
+.macau-scenes { max-width: 1120px; margin: 0 auto; padding: 0 28px; }
+.macau-scene { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: 64px; align-items: center; margin-bottom: 110px; scroll-margin-top: 100px; }
+.macau-scene-photo { grid-column: 1; grid-row: 1; min-width: 0; }
+.macau-scene-photo img { width: 100%; height: auto; display: block; }
+.macau-scene-copy { grid-column: 2; grid-row: 1; min-width: 0; padding: 25px 12px; }
+.macau-scene:nth-child(even) .macau-scene-photo { grid-column: 2; }
+.macau-scene:nth-child(even) .macau-scene-copy { grid-column: 1; text-align: left; }
+.macau-scene-number { display: block; font: 400 2.6rem/1 var(--primary-font); letter-spacing: .03em; color: var(--text-lighter); margin-bottom: 22px; }
+.macau-scene-copy h2 { font: 500 clamp(1.45rem, 2.4vw, 2rem)/1.8 'Noto Serif JP', serif; margin: 0 0 22px; letter-spacing: .035em; }
+.macau-scene-copy p { font: .95rem/2.15 'Noto Serif JP', serif; color: var(--text-light); margin-bottom: 20px; }
+.macau-support { margin: 10px auto 90px; padding-top: 50px; border-top: 1px solid var(--border-color); scroll-margin-top: 100px; }
+.macau-support > .macau-section-heading { max-width: 1120px; margin: 0 auto 55px; padding: 0 28px; }
+.macau-support .macau-scene-number { font: 500 .75rem/1.8 var(--secondary-font); letter-spacing: .12em; color: #916048; }
+.macau-bonus { max-width: 1064px; padding: 38px 0; margin: 75px auto; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+.macau-bonus h2 { font: 500 1.5rem/1.9 'Noto Serif JP', serif; margin: 16px 0; }
+.macau-bonus p { font-size: .95rem; line-height: 2; color: var(--text-light); }
+.macau-photo-story { margin: 0 auto; }
+.macau-photo-lead { max-width: 820px; margin: 0 auto 65px; padding: 0 28px; font: 1rem/2.25 'Noto Serif JP', serif; }
+.macau-photo-lead p + p { margin-top: 1.8em; }
+.macau-photo-section { max-width: 1060px; margin: 0 auto 100px; padding: 0 28px; scroll-margin-top: 100px; }
+.macau-photo-section h2 { font: 500 1.5rem/1.9 'Noto Serif JP', serif; padding-bottom: 20px; margin-bottom: 35px; border-bottom: 1px solid var(--border-color); }
+.macau-photo-section > p { font: .95rem/2 'Noto Serif JP', serif; margin-bottom: 30px; }
+.macau-photo-section > figure { margin: 65px 0; }
+.macau-pair--staggered { gap: 50px; margin: 40px 0 70px; }
+.macau-pair--staggered > figure:nth-child(2) { margin-top: 100px; }
+.macau-photo-night { max-width: 540px; margin: 70px 0 0 auto; }
+.macau-photo-support { max-width: 1004px; margin: 0 auto 70px; padding: 35px; border-top: 1px solid var(--border-color); background: var(--hover-color); }
+.macau-photo-support h2 { font: 500 1.4rem/1.9 'Noto Serif JP', serif; margin: 18px 0; }
+.macau-photo-support p { font-size: .95rem; line-height: 2; color: var(--text-light); }
+.macau-photo-support > div { display: flex; flex-wrap: wrap; gap: 22px; margin-top: 25px; }
+.macau-photo-support a { color: var(--text-color); text-underline-offset: 5px; font-size: .9rem; line-height: 2; }
+[data-theme="dark"] .macau-support .macau-scene-number { color: #cfa184; }
+@media (max-width: 1100px) {
+  .macau-bonus { margin-left: 28px; margin-right: 28px; }
+  .macau-photo-support { margin-left: 28px; margin-right: 28px; }
+}
+@media (max-width: 768px) {
+  .macau-scene { gap: 32px; }
+  .macau-scene-copy { padding: 10px 0; }
+  .macau-pair--staggered { gap: 25px; }
+  .macau-pair--staggered > figure:nth-child(2) { margin-top: 65px; }
+}
+@media (max-width: 580px) {
+  .macau-opening { padding: 0 20px; margin: 15px auto 45px; }
+  .macau-opening h1 { font-size: 1.85rem; }
+  .macau-purpose { margin-top: 28px; }
+  .macau-scenes { padding: 0 20px; }
+  .macau-scene { grid-template-columns: minmax(0, 1fr); gap: 25px; margin-bottom: 60px; }
+  .macau-scene-photo, .macau-scene-copy, .macau-scene:nth-child(even) .macau-scene-photo, .macau-scene:nth-child(even) .macau-scene-copy { grid-column: auto; grid-row: auto; text-align: left; }
+  .macau-scene-number { font-size: 2rem; margin-bottom: 16px; }
+  .macau-scene-copy h2 { margin-bottom: 16px; }
+  .macau-support { padding-top: 30px; margin-bottom: 55px; }
+  .macau-support > .macau-section-heading { padding: 0 20px; margin-bottom: 35px; }
+  .macau-bonus { margin: 45px 20px; }
+  .macau-photo-lead { padding: 0 20px; margin-bottom: 40px; font-size: .96rem; }
+  .macau-photo-section { padding: 0 20px; margin-bottom: 60px; }
+  .macau-photo-section h2 { font-size: 1.25rem; }
+  .macau-pair--staggered { grid-template-columns: 1fr; gap: 30px; margin-bottom: 35px; }
+  .macau-pair--staggered > figure:nth-child(2) { margin-top: 0; }
+  .macau-photo-section > figure, .macau-photo-night { margin: 35px 0; }
+  .macau-photo-support { margin: 0 20px 45px; padding: 25px 20px; }
+}
+[data-theme="dark"] .macau-eyebrow, [data-theme="dark"] .macau-chapters span { color: #cfa184; }
+@media (prefers-color-scheme: dark) {
+  .macau-eyebrow, .macau-chapters span { color: #cfa184; }
+}
+@media (max-width: 760px) {
+  .macau-cover { gap: 25px; grid-template-columns: 1fr 1fr; }
+  .macau-cover h1 { font-size: 2rem; }
+  .macau-cover-photo img { min-height: 300px; height: 480px; }
+  .macau-chapters { margin-left: 24px; margin-right: 24px; grid-template-columns: 1fr 1fr; }
+  .macau-chapters a:nth-child(3) { border-left: 0; }
+  .macau-chapters a:nth-child(n+3) { border-top: 1px solid var(--border-color); }
+  .macau-companions { gap: 25px; }
+}
+@media (max-width: 580px) {
+  .macau-top { padding: 18px 20px; }
+  .macau-cover { grid-template-columns: 1fr; padding: 0 20px; gap: 15px; margin-bottom: 55px; }
+  .macau-cover-copy { padding: 20px 0 5px; }
+  .macau-cover h1 { font-size: 2.5rem; margin: 15px 0; }
+  .macau-cover-photo img { height: 490px; min-height: 0; }
+  .macau-cover-photo > span { padding: 9px; }
+  .macau-intro, .macau-index { padding: 0 20px; margin-bottom: 55px; }
+  .macau-cards { grid-template-columns: 1fr; gap: 28px; }
+  .macau-card > div { padding-top: 16px; }
+  .macau-companions { grid-template-columns: 1fr; padding: 0 20px; }
+  .macau-streets { padding: 0 20px; }
+  .macau-streets .macau-pair { grid-template-columns: 1fr; }
+  .macau-article-head { padding: 0 20px; margin-top: 15px; }
+  .macau-essay { padding: 0 20px; font-size: .96rem; }
+  .macau-essay h2 { font-size: 1.2rem; margin-top: 2.8em; }
+  .macau-pair { grid-template-columns: 1fr; gap: 30px; }
+  .macau-chapters { margin-left: 20px; margin-right: 20px; }
+  .macau-chapters a { padding: 10px 6px; }
+  .macau-pager { margin: 45px 20px 20px; padding: 24px 0; flex-direction: column; }
+  .macau-note { padding: 18px; }
+  .macau-bottom { margin: 0 20px; padding: 25px 0 50px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .macau-card img { transition: none; }
+  .macau-card:hover img { transform: none; }
+}

@@ -1,0 +1,45 @@
+.macau-bonus--preview {
+  display: grid;
+  grid-template-columns: minmax(0, 260px) minmax(0, 1fr);
+  gap: 45px;
+  align-items: center;
+}
+.macau-bonus--preview .macau-portrait { margin: 0 !important; }
+.macau-companions--closing {
+  display: block;
+  max-width: 1064px;
+  margin: 85px auto 75px;
+  scroll-margin-top: 100px;
+}
+.macau-companions-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 320px) minmax(0, 1fr);
+  gap: 45px;
+  align-items: center;
+}
+.macau-companions-copy {
+  max-width: 740px;
+  margin: 45px auto 0;
+  font-family: 'Noto Serif JP', serif;
+}
+.macau-companions-copy > p { margin-bottom: 1.6em; }
+.macau-companions-copy a { color: inherit; text-underline-offset: 5px; }
+.macau-companion-books {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 160px));
+  gap: 28px;
+  justify-content: center;
+  margin: 32px auto 22px;
+}
+.macau-companion-books figcaption { font-family: var(--secondary-font); font-size: .7rem; }
+.macau-companions-copy .macau-companion-link { margin: 22px 0 45px; font-family: var(--secondary-font); font-size: .85rem; }
+.macau-companions-farewell { margin-top: 55px; padding-top: 30px; border-top: 1px solid var(--border-color); }
+.macau-companions-farewell p + p { margin-top: 1.5em; }
+@media (max-width: 760px) {
+  .macau-bonus--preview { grid-template-columns: 1fr; gap: 28px; }
+  .macau-bonus--preview > [data-photo-lightbox] { max-width: 260px; margin-inline: auto; }
+  .macau-companions-intro { grid-template-columns: 1fr; gap: 30px; }
+  .macau-companions-intro > [data-photo-lightbox] { max-width: 400px; }
+  .macau-companions-copy { margin-top: 32px; }
+  .macau-companion-books { gap: 20px; }
+}

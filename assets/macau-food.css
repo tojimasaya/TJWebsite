@@ -1,0 +1,38 @@
+/* Crop the sign's empty red space, keeping both the logo and Ice Cream lettering. */
+.macau-lai-kei-details > figure:first-child img {
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+  object-position: 50% 30%;
+}
+.macau-essay #lai-kei, .macau-essay #wonderwall { scroll-margin-top: 100px; }
+.macau-wonderwall-details {
+  max-width: 660px;
+  margin: 35px auto 55px;
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: center;
+  gap: 24px;
+}
+.macau-wonderwall-details figure { min-width: 0; }
+.macau-wonderwall-details figcaption { font-size: .7rem; }
+.macau-shop-info {
+  margin: 40px 0 55px;
+  padding: 25px 28px;
+  border-block: 1px solid var(--border-color);
+  font-family: var(--secondary-font);
+  font-size: .85rem;
+  line-height: 1.9;
+}
+.macau-shop-info h3 { margin: 0; font-size: 1rem; font-weight: 500; line-height: 1.8; }
+.macau-shop-name { margin: 4px 0 20px; color: var(--text-light); }
+.macau-shop-info dl { display: grid; grid-template-columns: 4em minmax(0, 1fr); gap: 8px 18px; margin: 0; }
+.macau-shop-info dt { color: var(--text-light); }
+.macau-shop-info dd { margin: 0; overflow-wrap: anywhere; }
+.macau-shop-info a { color: inherit; text-underline-offset: 4px; }
+.macau-shop-links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 22px 0 0; }
+@media (max-width: 580px) {
+  .macau-wonderwall-details { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 24px 16px; }
+  .macau-wonderwall-details > figure:first-child { grid-column: 1 / -1; width: 50%; justify-self: center; }
+  .macau-shop-info { padding: 22px 16px; }
+  .macau-shop-info dl { gap: 8px 12px; }
+}

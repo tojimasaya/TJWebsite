@@ -1,0 +1,57 @@
+/* Keep each photograph readable. Pairs share a scale; wider views get a spread.
+   This stylesheet is loaded only by macau-photographs.html. */
+.macau-photo-story .macau-scenes--photo { max-width: 1160px; }
+.macau-scenes--photo .macau-scene { gap: clamp(32px, 5vw, 64px); }
+.macau-lisboa-story { scroll-margin-top: 100px; }
+.macau-lisboa-night .macau-scene-copy p { text-align: left; }
+.macau-gallery-section {
+  max-width: 1180px;
+  padding-inline: clamp(20px, 3vw, 36px);
+  margin-bottom: clamp(85px, 9vw, 125px);
+}
+.macau-gallery-section h2 {
+  margin-bottom: clamp(32px, 4vw, 48px);
+}
+.macau-photo-composition {
+  display: grid;
+  grid-template-columns: repeat(12, minmax(0, 1fr));
+  column-gap: clamp(24px, 3.5vw, 48px);
+  row-gap: clamp(55px, 7vw, 90px);
+  align-items: start;
+}
+.macau-photo-composition > .macau-photo-piece { min-width: 0; margin: 0; }
+.macau-photo-piece picture { display: block; }
+.macau-photo-piece img { width: 100%; height: auto; }
+.macau-photo-piece figcaption { margin-top: 13px; }
+
+/* Same place, same format, same visual weight: day and night face each other. */
+.macau-photo-composition--st-pauls > :nth-child(1) { grid-column: 1 / 7; grid-row: 1; }
+.macau-photo-composition--st-pauls > :nth-child(2) { grid-column: 7 / 13; grid-row: 1; }
+
+/* Begin with two street portraits, then alternate paired and single views. */
+.macau-photo-composition--old-town > :nth-child(1) { grid-column: 1 / 7; grid-row: 1; }
+.macau-photo-composition--old-town > :nth-child(2) { grid-column: 7 / 13; grid-row: 1; margin-top: 56px; }
+.macau-photo-composition--old-town > :nth-child(3) { grid-column: 1 / 13; grid-row: 2; width: 92%; justify-self: center; }
+/* Different aspect ratios, comparable image areas. */
+.macau-photo-composition--old-town > :nth-child(4) { grid-column: 1 / 6; grid-row: 3; }
+.macau-photo-composition--old-town > :nth-child(5) { grid-column: 6 / 13; grid-row: 3; align-self: center; }
+
+/* Establish the setting broadly, then show details in generous pairs. */
+.macau-photo-composition--temples > :nth-child(1) { grid-column: 1 / 13; grid-row: 1; width: 88%; }
+.macau-photo-composition--temples > :nth-child(2) { grid-column: 1 / 7; grid-row: 2; }
+.macau-photo-composition--temples > :nth-child(3) { grid-column: 7 / 13; grid-row: 2; }
+.macau-photo-composition--temples > :nth-child(4) { grid-column: 1 / 7; grid-row: 3; }
+.macau-photo-composition--temples > :nth-child(5) { grid-column: 7 / 13; grid-row: 3; margin-top: 56px; }
+
+.macau-photo-composition--xiaomi { max-width: 1000px; margin-inline: auto; }
+.macau-photo-composition--xiaomi > :nth-child(1) { grid-column: 1 / 7; grid-row: 1; }
+.macau-photo-composition--xiaomi > :nth-child(2) { grid-column: 7 / 13; grid-row: 1; margin-top: 56px; }
+.macau-photo-composition--xiaomi > :nth-child(3) { grid-column: 4 / 10; grid-row: 2; }
+
+@media (max-width: 760px) {
+  .macau-photo-composition { display: flex; flex-direction: column; gap: 38px; }
+  .macau-photo-composition > .macau-photo-piece {
+    width: 100%; max-width: none; margin: 0; align-self: stretch;
+  }
+  .macau-gallery-section { margin-bottom: 75px; }
+}

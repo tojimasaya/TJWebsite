@@ -1,0 +1,36 @@
+/* Room and view photographs keep their full width; amenities form a compact set. */
+.macau-room-details {
+  max-width: 640px;
+  margin: 35px auto 55px;
+  display: grid;
+  grid-template-columns: repeat(6, minmax(0, 1fr));
+  gap: 26px 22px;
+}
+.macau-room-details > figure { grid-column: span 2; min-width: 0; }
+.macau-room-details > figure:nth-child(4) { grid-column: 2 / 4; }
+.macau-room-details > figure:nth-child(5) { grid-column: 4 / 6; }
+.macau-room-details picture { display: block; height: 160px; }
+.macau-room-details figure img { height: 100%; object-fit: contain; }
+.macau-hotel-info {
+  margin: 40px 0 55px;
+  padding: 25px 28px;
+  border-block: 1px solid var(--border-color);
+  font-family: var(--secondary-font);
+  font-size: .85rem;
+  line-height: 1.9;
+}
+.macau-hotel-info h3 { margin: 0; font-size: 1rem; font-weight: 500; line-height: 1.8; }
+.macau-hotel-name { margin: 4px 0 20px; color: var(--text-light); }
+.macau-hotel-info dl { display: grid; grid-template-columns: 4em minmax(0, 1fr); gap: 8px 18px; margin: 0; }
+.macau-hotel-info dt { color: var(--text-light); }
+.macau-hotel-info dd { margin: 0; overflow-wrap: anywhere; }
+.macau-hotel-info a { color: inherit; text-underline-offset: 4px; }
+.macau-hotel-links { display: flex; flex-wrap: wrap; gap: 10px 24px; margin: 22px 0 0; }
+@media (max-width: 580px) {
+  .macau-room-details { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 22px 16px; }
+  .macau-room-details > figure:nth-child(4) { grid-column: span 2; }
+  .macau-room-details > figure:nth-child(5) { grid-column: 2 / 4; }
+  .macau-room-details picture { height: 140px; }
+  .macau-hotel-info { padding: 22px 16px; }
+  .macau-hotel-info dl { gap: 8px 12px; }
+}
