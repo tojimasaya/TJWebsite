@@ -19,6 +19,11 @@ This is a static personal site written in plain HTML, CSS, and small JavaScript 
 - 断章に使う写真は常に `~/Desktop/断章` に保存されている。更新時はまずこのフォルダを確認し、写真の保存場所を毎回ユーザーに尋ねない。
 - 元写真はそのまま残し、掲載用の画像を `assets/images/photo-notes/` に作成する。
 
+## 掲載写真の軽量化
+- 新規・差し替えの掲載写真はWebPを基本とし、実際にページがWebPを読み込むことまで確認する。元写真は変更せず残す。
+- 一覧カードには記事本文の大きな画像を流用せず、表示サイズに合う縮小WebPを用意する。`srcset`・`sizes`で端末に合う画像を配信し、`width`・`height`も指定する。
+- 公開前に画像の容量と、PC・スマートフォンでの画質・縦横比・読み込みを確認する。旅の一覧カードは既存の横3:2の枠にそろえる。
+
 ## Review guidelines
 - Treat broken internal links, missing metadata on new public pages, malformed HTML, and JavaScript errors as high-priority issues.
 - Check that new landing pages are linked from at least one existing page and included in `sitemap.xml`.
