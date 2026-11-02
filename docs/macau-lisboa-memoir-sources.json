@@ -1,0 +1,87 @@
+{
+  "source_note": "https://note.com/tojimasaya/n/ncc9aacfc1264",
+  "source_title": "7連敗のあと、ボールペンで17連勝した。30年前のマカオの話",
+  "published_at": "2026-11-02T16:30:28.000+09:00",
+  "body_sha256": "cbe5c3eadb7e1727657b2b9f1f689194fd15991271c2bd2f28820fdad73457b9",
+  "images": [
+    {
+      "source": "03-lisboa-photo.jpg",
+      "source_sha256": "71f3f9fefbb59393d8d19715b2b0ee62985669decf9fb4a85d26858d310be42a",
+      "role": "lisboa-memoir",
+      "variants": [
+        {
+          "file": "assets/images/trips/macau/lisboa-memoir-480.webp",
+          "width": 480,
+          "height": 627,
+          "bytes": 99854
+        },
+        {
+          "file": "assets/images/trips/macau/lisboa-memoir-960.webp",
+          "width": 960,
+          "height": 1254,
+          "bytes": 314850
+        },
+        {
+          "file": "assets/images/trips/macau/lisboa-memoir-1225.webp",
+          "width": 1225,
+          "height": 1600,
+          "bytes": 462394
+        }
+      ]
+    },
+    {
+      "source": "01-pen-on-chip.png",
+      "source_sha256": "21367bb7c87ead5658731602588670058427a2571e718c0844ecb2f40e68f8db",
+      "role": "baccarat-pen",
+      "variants": [
+        {
+          "file": "assets/images/trips/macau/baccarat-pen-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 64938
+        },
+        {
+          "file": "assets/images/trips/macau/baccarat-pen-1024.webp",
+          "width": 1024,
+          "height": 683,
+          "bytes": 141348
+        },
+        {
+          "file": "assets/images/trips/macau/baccarat-pen-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 252334
+        }
+      ]
+    },
+    {
+      "source": "02-crowded-table.png",
+      "source_sha256": "b12f0c83ed4ec897d04aa8760e0c554fecd655ffeb5f6d45e019fff41f20cce2",
+      "role": "baccarat-crowd",
+      "variants": [
+        {
+          "file": "assets/images/trips/macau/baccarat-crowd-640.webp",
+          "width": 640,
+          "height": 427,
+          "bytes": 82646
+        },
+        {
+          "file": "assets/images/trips/macau/baccarat-crowd-1024.webp",
+          "width": 1024,
+          "height": 683,
+          "bytes": 172108
+        },
+        {
+          "file": "assets/images/trips/macau/baccarat-crowd-1536.webp",
+          "width": 1536,
+          "height": 1024,
+          "bytes": 286430
+        }
+      ]
+    }
+  ],
+  "editorial_changes": [
+    "Closed the unmatched parenthesis following 電視機."
+  ],
+  "transferred_on": "2026-11-03"
+}

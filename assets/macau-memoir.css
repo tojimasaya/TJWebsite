@@ -1,0 +1,14 @@
+/* The published note memoir, within the Macau travel series. */
+.macau-source-link { font-size: .8rem; line-height: 1.9; margin-top: 12px; }
+.macau-source-link a, .macau-memoir a { color: inherit; text-underline-offset: 4px; }
+.macau-memoir #memoir-body > p { margin: 0 0 2em; }
+.macau-memoir #memoir-body > figure { margin: 38px 0 55px; }
+.macau-memoir-related { border-top: 1px solid var(--border-color); margin-top: 45px; padding-top: 28px; font-family: var(--secondary-font); font-size: .88rem; line-height: 2; }
+.macau-memoir-related > p { margin-bottom: 18px; }
+.macau-memoir-related ul { padding-left: 1.4em; margin: 0; }
+.macau-memoir-related li + li { margin-top: 12px; }
+.macau-memoir-related li p { margin: 0; }
+.macau-memoir { overflow-wrap: anywhere; }
+@media (max-width: 580px) {
+  .macau-memoir #memoir-body > figure { margin: 28px 0 38px; }
+}
