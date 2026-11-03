@@ -1,0 +1,646 @@
+{
+  "leicai(a)": {
+    "id": "leica-i-a",
+    "name": "Leica I (A)"
+  },
+  "leicai(b)/compur": {
+    "id": "p01-04",
+    "name": "Leica I (B) / Compur"
+  },
+  "leicai(c)": {
+    "id": "p01-05",
+    "name": "Leica I (C)"
+  },
+  "leicaii(d)": {
+    "id": "leica-ii-d",
+    "name": "Leica II (D)"
+  },
+  "leicastandard": {
+    "id": "p01-07",
+    "name": "Leica Standard"
+  },
+  "leicaiii(f)": {
+    "id": "leica-iii-f",
+    "name": "Leica III (F)"
+  },
+  "leicaiiia": {
+    "id": "p02-01",
+    "name": "Leica IIIa"
+  },
+  "leicaiiib": {
+    "id": "p02-02",
+    "name": "Leica IIIb"
+  },
+  "leicaiiic": {
+    "id": "p02-03",
+    "name": "Leica IIIc"
+  },
+  "leicaiiid": {
+    "id": "p02-04",
+    "name": "Leica IIId"
+  },
+  "leicaiic": {
+    "id": "p02-05",
+    "name": "Leica IIc"
+  },
+  "leica250ff": {
+    "id": "p02-07",
+    "name": "Leica 250 FF"
+  },
+  "leica250gg": {
+    "id": "p02-08",
+    "name": "Leica 250 GG"
+  },
+  "leicaic": {
+    "id": "p03-01",
+    "name": "Leica Ic"
+  },
+  "leicaif": {
+    "id": "p03-02",
+    "name": "Leica If"
+  },
+  "leicaiif": {
+    "id": "p03-03",
+    "name": "Leica IIf"
+  },
+  "leicaiiif": {
+    "id": "p03-04",
+    "name": "Leica IIIf"
+  },
+  "leicaiiig": {
+    "id": "p03-06",
+    "name": "Leica IIIg"
+  },
+  "leicaig": {
+    "id": "p03-07",
+    "name": "Leica Ig"
+  },
+  "leica72": {
+    "id": "p04-08",
+    "name": "Leica 72"
+  },
+  "leicamp(1956)": {
+    "id": "p05-03",
+    "name": "Leica MP (1956)"
+  },
+  "leicam2": {
+    "id": "p05-04",
+    "name": "Leica M2"
+  },
+  "leicam1": {
+    "id": "p05-05",
+    "name": "Leica M1"
+  },
+  "leicam4": {
+    "id": "m4",
+    "name": "Leica M4"
+  },
+  "leicamd": {
+    "id": "p05-07",
+    "name": "Leica MD"
+  },
+  "leicamda": {
+    "id": "p05-08",
+    "name": "Leica MDa"
+  },
+  "leicam5": {
+    "id": "m5",
+    "name": "Leica M5"
+  },
+  "leicacl(film)": {
+    "id": "p06-02",
+    "name": "Leica CL (Film)"
+  },
+  "leicam4-2": {
+    "id": "p06-03",
+    "name": "Leica M4-2"
+  },
+  "leicam4-p": {
+    "id": "p06-04",
+    "name": "Leica M4-P"
+  },
+  "leicam6": {
+    "id": "p06-05",
+    "name": "Leica M6"
+  },
+  "leicam6ttl": {
+    "id": "p06-06",
+    "name": "Leica M6 TTL"
+  },
+  "leicam7": {
+    "id": "m7",
+    "name": "Leica M7"
+  },
+  "leicamp(2003)": {
+    "id": "p06-08",
+    "name": "Leica MP (2003)"
+  },
+  "leicam2-r": {
+    "id": "p07-01",
+    "name": "Leica M2-R"
+  },
+  "leicamd-2": {
+    "id": "p07-03",
+    "name": "Leica MD-2"
+  },
+  "leicam-a(typ127)": {
+    "id": "p07-06",
+    "name": "Leica M-A (Typ 127)"
+  },
+  "leicam6(2022)": {
+    "id": "m6-2022",
+    "name": "Leica M6 (2022)"
+  },
+  "leicam8": {
+    "id": "m8",
+    "name": "Leica M8"
+  },
+  "leicam8.2": {
+    "id": "p08-02",
+    "name": "Leica M8.2"
+  },
+  "leicam9": {
+    "id": "m9",
+    "name": "Leica M9"
+  },
+  "leicam9-p": {
+    "id": "p08-04",
+    "name": "Leica M9-P"
+  },
+  "leicam-e(typ220)": {
+    "id": "p08-05",
+    "name": "Leica M-E (Typ 220)"
+  },
+  "leicammonochrom": {
+    "id": "m-monochrom",
+    "name": "Leica M Monochrom"
+  },
+  "leicam(typ240)": {
+    "id": "p09-01",
+    "name": "Leica M (Typ 240)"
+  },
+  "leicam-p(typ240)": {
+    "id": "p09-02",
+    "name": "Leica M-P (Typ 240)"
+  },
+  "leicam(typ262)": {
+    "id": "p09-03",
+    "name": "Leica M (Typ 262)"
+  },
+  "leicam-d(typ262)": {
+    "id": "p09-04",
+    "name": "Leica M-D (Typ 262)"
+  },
+  "leicammonochrom(typ246)": {
+    "id": "p09-05",
+    "name": "Leica M Monochrom (Typ 246)"
+  },
+  "leicam-e(typ240)": {
+    "id": "p09-07",
+    "name": "Leica M-E (Typ 240)"
+  },
+  "leicam10": {
+    "id": "m10",
+    "name": "Leica M10"
+  },
+  "leicam10-p": {
+    "id": "p10-02",
+    "name": "Leica M10-P"
+  },
+  "leicam10-d": {
+    "id": "p10-03",
+    "name": "Leica M10-D"
+  },
+  "leicam10monochrom": {
+    "id": "p10-04",
+    "name": "Leica M10 Monochrom"
+  },
+  "leicam10-r": {
+    "id": "p10-05",
+    "name": "Leica M10-R"
+  },
+  "leicam11": {
+    "id": "m11",
+    "name": "Leica M11"
+  },
+  "leicam11monochrom": {
+    "id": "p10-07",
+    "name": "Leica M11 Monochrom"
+  },
+  "leicam11-p": {
+    "id": "p10-08",
+    "name": "Leica M11-P"
+  },
+  "leicam11-d": {
+    "id": "m11-d",
+    "name": "Leica M11-D"
+  },
+  "leicamev1": {
+    "id": "m-ev1",
+    "name": "Leica M EV1"
+  },
+  "leicake-7a": {
+    "id": "p11-08",
+    "name": "Leica KE-7A"
+  },
+  "leicaflex": {
+    "id": "leicaflex",
+    "name": "Leicaflex"
+  },
+  "leicaflexsl": {
+    "id": "leicaflex-sl",
+    "name": "Leicaflex SL"
+  },
+  "leicaflexsl2": {
+    "id": "p12-04",
+    "name": "Leicaflex SL2"
+  },
+  "leicar3": {
+    "id": "r3",
+    "name": "Leica R3"
+  },
+  "leicar4": {
+    "id": "r4",
+    "name": "Leica R4"
+  },
+  "leicar4s": {
+    "id": "p13-01",
+    "name": "Leica R4s"
+  },
+  "leicar4smod.2": {
+    "id": "p13-02",
+    "name": "Leica R4s MOD.2"
+  },
+  "leicar5": {
+    "id": "p13-03",
+    "name": "Leica R5"
+  },
+  "leicar-e": {
+    "id": "p13-04",
+    "name": "Leica R-E"
+  },
+  "leicar6": {
+    "id": "p13-05",
+    "name": "Leica R6"
+  },
+  "leicar6.2": {
+    "id": "p13-06",
+    "name": "Leica R6.2"
+  },
+  "leicar7": {
+    "id": "p13-07",
+    "name": "Leica R7"
+  },
+  "leicar8": {
+    "id": "r8",
+    "name": "Leica R8"
+  },
+  "leicar9": {
+    "id": "p14-01",
+    "name": "Leica R9"
+  },
+  "leicas1": {
+    "id": "p14-03",
+    "name": "Leica S1"
+  },
+  "leicas2": {
+    "id": "s2",
+    "name": "Leica S2"
+  },
+  "leicas2-p": {
+    "id": "p14-05",
+    "name": "Leica S2-P"
+  },
+  "leicas(typ006)": {
+    "id": "p14-06",
+    "name": "Leica S (Typ 006)"
+  },
+  "leicas-e(typ006)": {
+    "id": "p14-07",
+    "name": "Leica S-E (Typ 006)"
+  },
+  "leicas(typ007)": {
+    "id": "p14-08",
+    "name": "Leica S (Typ 007)"
+  },
+  "leicas3": {
+    "id": "p15-01",
+    "name": "Leica S3"
+  },
+  "leicasl(typ601)": {
+    "id": "sl-601",
+    "name": "Leica SL (Typ 601)"
+  },
+  "leicasl2": {
+    "id": "p15-03",
+    "name": "Leica SL2"
+  },
+  "leicasl2-s": {
+    "id": "sl2-s",
+    "name": "Leica SL2-S"
+  },
+  "leicasl3": {
+    "id": "p15-05",
+    "name": "Leica SL3"
+  },
+  "leicasl3-s": {
+    "id": "p15-06",
+    "name": "Leica SL3-S"
+  },
+  "leicasl3-p": {
+    "id": "p15-07",
+    "name": "Leica SL3-P"
+  },
+  "leicat(typ701)": {
+    "id": "t-701",
+    "name": "Leica T (Typ 701)"
+  },
+  "leicatl": {
+    "id": "p16-02",
+    "name": "Leica TL"
+  },
+  "leicatl2": {
+    "id": "p16-03",
+    "name": "Leica TL2"
+  },
+  "leicacl(digital)": {
+    "id": "p16-04",
+    "name": "Leica CL (Digital)"
+  },
+  "leicax1": {
+    "id": "x1",
+    "name": "Leica X1"
+  },
+  "leicax2": {
+    "id": "p16-06",
+    "name": "Leica X2"
+  },
+  "leicax-e(typ102)": {
+    "id": "p16-07",
+    "name": "Leica X-E (Typ 102)"
+  },
+  "leicaxvario(typ107)": {
+    "id": "p16-08",
+    "name": "Leica X Vario (Typ 107)"
+  },
+  "leicax(typ113)": {
+    "id": "p17-01",
+    "name": "Leica X (Typ 113)"
+  },
+  "leicax-u(typ113)": {
+    "id": "p17-02",
+    "name": "Leica X-U (Typ 113)"
+  },
+  "leicaq(typ116)": {
+    "id": "q-116",
+    "name": "Leica Q (Typ 116)"
+  },
+  "leicaq-p": {
+    "id": "p17-04",
+    "name": "Leica Q-P"
+  },
+  "leicaq2": {
+    "id": "p17-05",
+    "name": "Leica Q2"
+  },
+  "leicaq2monochrom": {
+    "id": "p17-06",
+    "name": "Leica Q2 Monochrom"
+  },
+  "leicaq3": {
+    "id": "p17-07",
+    "name": "Leica Q3"
+  },
+  "leicaq343": {
+    "id": "p17-08",
+    "name": "Leica Q3 43"
+  },
+  "leicaq3monochrom": {
+    "id": "p18-01",
+    "name": "Leica Q3 Monochrom"
+  },
+  "leicasofort": {
+    "id": "p18-02",
+    "name": "Leica SOFORT"
+  },
+  "leicasofort2": {
+    "id": "p18-03",
+    "name": "Leica SOFORT 2"
+  },
+  "leicav-lux20": {
+    "id": "p18-04",
+    "name": "Leica V-Lux 20"
+  },
+  "leicav-lux30": {
+    "id": "p18-05",
+    "name": "Leica V-Lux 30"
+  },
+  "leicav-lux40": {
+    "id": "p18-06",
+    "name": "Leica V-Lux 40"
+  },
+  "leicac11": {
+    "id": "p18-07",
+    "name": "Leica C11"
+  },
+  "leicaaf-c1": {
+    "id": "p19-01",
+    "name": "Leica AF-C1"
+  },
+  "leicamini": {
+    "id": "p19-02",
+    "name": "Leica Mini"
+  },
+  "leicaminiii": {
+    "id": "p19-03",
+    "name": "Leica Mini II"
+  },
+  "leicaminizoom": {
+    "id": "p19-04",
+    "name": "Leica Mini Zoom"
+  },
+  "leicaminiiii": {
+    "id": "p19-05",
+    "name": "Leica Mini III"
+  },
+  "leicac2-zoom": {
+    "id": "p19-06",
+    "name": "Leica C2-Zoom"
+  },
+  "leicaminilux": {
+    "id": "p19-07",
+    "name": "Leica Minilux"
+  },
+  "leicaz2x": {
+    "id": "p19-08",
+    "name": "Leica Z2X"
+  },
+  "leicaminiluxzoom": {
+    "id": "p20-01",
+    "name": "Leica Minilux Zoom"
+  },
+  "leicac1": {
+    "id": "p20-02",
+    "name": "Leica C1"
+  },
+  "leicac2": {
+    "id": "p20-03",
+    "name": "Leica C2"
+  },
+  "leicac3": {
+    "id": "p20-04",
+    "name": "Leica C3"
+  },
+  "leicacm": {
+    "id": "p20-05",
+    "name": "Leica CM"
+  },
+  "leicacmzoom": {
+    "id": "p20-06",
+    "name": "Leica CM Zoom"
+  },
+  "leicadigilux": {
+    "id": "digilux",
+    "name": "Leica Digilux"
+  },
+  "leicadigiluxzoom": {
+    "id": "p20-08",
+    "name": "Leica Digilux Zoom"
+  },
+  "leicadigilux4.3": {
+    "id": "p21-01",
+    "name": "Leica Digilux 4.3"
+  },
+  "leicadigilux1": {
+    "id": "p21-02",
+    "name": "Leica Digilux 1"
+  },
+  "leicadigilux2": {
+    "id": "p21-03",
+    "name": "Leica Digilux 2"
+  },
+  "leicadigilux3": {
+    "id": "p21-04",
+    "name": "Leica Digilux 3"
+  },
+  "leicac-lux1": {
+    "id": "p21-05",
+    "name": "Leica C-Lux 1"
+  },
+  "leicac-lux2": {
+    "id": "p21-06",
+    "name": "Leica C-Lux 2"
+  },
+  "leicac-lux3": {
+    "id": "p21-07",
+    "name": "Leica C-Lux 3"
+  },
+  "leicac-lux(2018)": {
+    "id": "p21-08",
+    "name": "Leica C-Lux (2018)"
+  },
+  "leicad-lux": {
+    "id": "d-lux",
+    "name": "Leica D-Lux"
+  },
+  "leicad-lux2": {
+    "id": "p22-02",
+    "name": "Leica D-Lux 2"
+  },
+  "leicad-lux3": {
+    "id": "p22-03",
+    "name": "Leica D-Lux 3"
+  },
+  "leicad-lux4": {
+    "id": "p22-04",
+    "name": "Leica D-Lux 4"
+  },
+  "leicad-lux5": {
+    "id": "p22-05",
+    "name": "Leica D-Lux 5"
+  },
+  "leicad-lux6": {
+    "id": "p22-06",
+    "name": "Leica D-Lux 6"
+  },
+  "leicad-lux(typ109)": {
+    "id": "p22-07",
+    "name": "Leica D-Lux (Typ 109)"
+  },
+  "leicad-lux7": {
+    "id": "p22-08",
+    "name": "Leica D-Lux 7"
+  },
+  "leicad-lux8": {
+    "id": "p23-01",
+    "name": "Leica D-Lux 8"
+  },
+  "leicav-lux1": {
+    "id": "p23-02",
+    "name": "Leica V-Lux 1"
+  },
+  "leicav-lux2": {
+    "id": "p23-03",
+    "name": "Leica V-Lux 2"
+  },
+  "leicav-lux3": {
+    "id": "p23-04",
+    "name": "Leica V-Lux 3"
+  },
+  "leicav-lux4": {
+    "id": "p23-05",
+    "name": "Leica V-Lux 4"
+  },
+  "leicav-lux(typ114)": {
+    "id": "p23-06",
+    "name": "Leica V-Lux (Typ 114)"
+  },
+  "leicav-lux5": {
+    "id": "p23-07",
+    "name": "Leica V-Lux 5"
+  },
+  "leicac(typ112)": {
+    "id": "p23-08",
+    "name": "Leica C (Typ 112)"
+  },
+  "leicam3": {
+    "id": "m3",
+    "name": "Leica M3"
+  },
+  "leicaleicaflex": {
+    "id": "leicaflex",
+    "name": "Leicaflex"
+  },
+  "leicaleicaflexsl": {
+    "id": "leicaflex-sl",
+    "name": "Leicaflex SL"
+  },
+  "leicaleicaflexsl2": {
+    "id": "p12-04",
+    "name": "Leicaflex SL2"
+  },
+  "leicacl": {
+    "id": "p06-02",
+    "name": "Leica CL (Film)"
+  },
+  "leicam2r": {
+    "id": "p07-01",
+    "name": "Leica M2-R"
+  },
+  "leicar4s-2": {
+    "id": "p13-02",
+    "name": "Leica R4s MOD.2"
+  },
+  "leicamini3": {
+    "id": "p19-05",
+    "name": "Leica Mini III"
+  },
+  "leicaleicamini": {
+    "id": "p19-02",
+    "name": "Leica Mini"
+  },
+  "leicaleicaminiii": {
+    "id": "p19-03",
+    "name": "Leica Mini II"
+  }
+}

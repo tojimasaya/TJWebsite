@@ -51,7 +51,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 </li>
                 <li><a href="/hongkong.html" class="nav-link ${isHongKongPage ? 'active' : ''}">香港</a></li>
                 <li><a href="/trips.html" class="nav-link ${isTripsPage ? 'active' : ''}">旅</a></li>
-                <li><a href="/gear.html" class="nav-link ${page.includes('gear') ? 'active' : ''}">Gear</a></li>
+                <li><a href="/gear.html" class="nav-link ${(page.includes('gear') || page.startsWith('leica')) ? 'active' : ''}">Gear</a></li>
                 <li class="nav-more">
                     <details id="nav-more">
                         <summary class="nav-link ${isOtherPage ? 'active' : ''}">その他</summary>

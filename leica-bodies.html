@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ja">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Leica ボディ図鑑 | Toji Masaya</title><meta name="description" content="ライカ152機種と仕様違い・試作・解説等33項目を、年代・シリーズ・写真の参照先からたどるボディ図鑑。"><link rel="canonical" href="https://tojimasaya.com/leica-bodies.html"><meta property="og:title" content="Leica ボディ図鑑 | Toji Masaya"><meta property="og:description" content="ライカ152機種と仕様違い・試作・解説等33項目を、年代・シリーズ・写真の参照先からたどるボディ図鑑。"><meta property="og:type" content="website"><meta property="og:url" content="https://tojimasaya.com/leica-bodies.html"><meta property="og:image" content="https://tojimasaya.com/assets/images/gear/m2.webp"><meta name="twitter:card" content="summary_large_image"><link rel="icon" href="favicon.png"><link rel="alternate" type="application/atom+xml" title="Toji Masaya" href="/feed.xml"><link rel="stylesheet" href="style.css"><link rel="stylesheet" href="leica-archive.css?v=20261103"><link rel="stylesheet" href="leica-bodies.css?v=20261103"><script src="js/leica-bodies-data.js" defer></script><script src="js/leica-photo-links.js" defer></script><script src="js/leica-bodies.js?v=20261103-public" defer></script><script src="js/site-header.js?v=20261103-leica" defer></script><script src="/growth.js" defer></script></head>
+<body class="la-page body-archive">
+  <a class="skip" href="#catalog">図鑑へ移動</a>
+
+  <main id="main-content"><p class="la-breadcrumb"><a href="gear.html">Gear</a><span>／</span><a href="leica.html">Leica Archive</a><span>／ ボディ図鑑</span></p><nav class="la-section-nav" aria-label="Leica Archive"><a href="leica.html">Archive</a><a href="leica-bodies.html" aria-current="page">ボディ図鑑</a><a href="leica-serial.html">シリアル番号検索</a><a href="gear-camera.html">私のLeicaと写真</a></nav>
+    <section class="intro" aria-labelledby="page-title">
+      <p class="eyebrow">CAMERA ARCHIVE <span>／ CAMERA BODIES</span></p>
+      <div class="intro-heading"><div><h1 id="page-title">Leica <span>ボディ図鑑</span></h1><p class="lead">変わるかたち、続いていく思想。</p></div><p class="edition">CAMERA MODELS<strong id="total-models">152</strong><span id="year-range">1925 — 2026</span></p></div>
+      <p class="intro-copy">フィルムからデジタルへ。<span id="intro-total">152</span>機種と、仕様違い・試作・解説など33項目をたどります。<br class="desktop-break">画像の掲載元と確認状況を区別し、仕様の根拠まで読める図鑑です。</p>
+      <p id="coverage-summary" class="coverage-summary"></p>
+      <p class="photo-link-legend">掲載画像のない機種も、<a href="?image-state=linked#catalog">外部の写真リンク</a>から実物を確認できます。写真参照先が未確認の機種は、その状態を表示しています。</p>
+    </section>
+    <section id="catalog" aria-label="機種一覧">
+      <form id="filters" class="filters" role="search">
+        <label class="search-label"><span>機種を探す</span><input id="search" type="search" placeholder="機種名・特徴で検索" autocomplete="off"></label>
+        <label><span>シリーズ</span><select id="series"><option value="">すべてのシリーズ</option><option value="m-film">M（フィルム）</option><option value="m-digital">M（デジタル）</option><option value="q">Q</option><option value="sl">SL</option></select></label>
+        <label><span>年代</span><select id="decade"><option value="">すべての年代</option><option value="1960">1960年代</option><option value="1970">1970年代</option><option value="2000">2000年代</option><option value="2010">2010年代</option><option value="2020">2020年代</option></select></label>
+        <label><span>写真の方向</span><select id="direction"><option value="">すべての方向</option><option value="front">正面寄り</option><option value="oblique">斜め正面</option><option value="top">上面</option><option value="side">側面</option><option value="unknown">画像未確認</option></select></label>
+        <button class="reset" type="reset">条件をクリア</button>
+        <details class="advanced-filters" id="advanced-filters"><summary>画像の確認状況・掲載元・項目の種類で絞る</summary><div class="advanced-fields">
+          <label><span>掲載項目</span><select id="entry"><option value="model">独立機種（152機種）</option><option value="all">すべて（185項目）</option><option value="variant">仕様違い・特別仕様</option><option value="prototype">試作機</option><option value="guide">比較・解説</option><option value="accessory">拡張ユニット</option></select></label>
+          <label><span>画像の確認状況</span><select id="image-state"><option value="">すべての状態</option><option value="confirmed">掲載画像あり</option><option value="pending">掲載画像未収録（すべて）</option><option value="linked">外部の写真リンクあり</option><option value="unlinked">写真参照先未確認</option></select></label>
+          <label><span>画像の掲載元</span><select id="origin"><option value="">すべての掲載元</option><option value="manufacturer">メーカー公式</option><option value="leica_classic">Leica Classic</option><option value="manufacturer_document">メーカー冊子</option></select></label>
+        </div></details>
+      </form>
+      <div class="results-bar"><p id="count" role="status" aria-live="polite"></p><div class="view-control" role="group" aria-label="一覧の表示方法"><button type="button" data-view="cards" aria-pressed="true"><span aria-hidden="true">▦</span> 写真</button><button type="button" data-view="table" aria-pressed="false"><span aria-hidden="true">☷</span> 仕様表</button></div><label class="sort-label"><span class="sr-only">並び順</span><select id="sort"><option value="oldest">古い順</option><option value="newest">新しい順</option><option value="name">機種名順</option></select></label></div>
+      <div id="related-results"></div>
+      <div id="results"></div>
+      <nav id="pagination" class="pagination" aria-label="機種一覧のページ"></nav>
+      <noscript><p>検索と機種詳細にはJavaScriptを使用します。<a href="leica-sources.html">出典・利用条件一覧</a>と<a href="data/leica-bodies/catalog.json">機種データ</a>は直接ご覧いただけます。</p></noscript>
+    </section>
+    <aside class="sample-note"><span>この図鑑について</span><p>メーカー公式の掲載画像、Leica Classicの掲載個体写真、メーカー冊子の写真を区別しています。掲載用画像がない機種では、写真を確認できた外部ページへリンクしています。「外部の写真リンクあり」と「写真参照先未確認」を区別し、他機種やAI画像で代用していません。撮影方向・装着レンズ・掲載個体の状態は異なり、表示サイズは実寸比ではありません。原資料184項目の説明・仕様・確認状態を引き継ぎ、M3本体を公式資料で確認して追加しています。全事実の再調査ではありません。画像の利用条件とクレジットは項目ごとの出典欄に記載しています。<a href="leica-sources.html">出典・利用条件を読む →</a></p></aside>
+  </main>
+<footer class="la-footer"><a href="leica.html">Leica Archive</a><span>Toji Masaya ／ 写真と記録</span><a href="gear.html">Gearへ戻る ↑</a></footer>
+  <dialog id="detail" aria-labelledby="detail-title"><div id="detail-content"></div><button id="close-detail" class="close-detail" type="button" aria-label="詳細を閉じる">閉じる <span aria-hidden="true">×</span></button></dialog>
+</body>
+</html>

@@ -49,3 +49,15 @@ JavaScriptが無効でも本文と冒頭の目次は使える。
 旧図解ページの `#access`・`#access-heading`・`#location-heading`・`#walk-heading` は
 `guide.js` でアクセスページの同じアンカーへ移動する。JavaScriptが無効でも移転先へのリンクが表示される。
 アクセスページは共通の画像拡大機能を使うが、城の解説用の章メニューには含めない。
+
+
+## Leica Archive（2026-11-03）
+
+GearとCamera & Lensesの入口から `leica.html` へ進む構成です。`leica-bodies.html` は実機の掲載画像・外部写真リンクを使うボディ図鑑、`leica-serial.html` は従来の番号検索を引き継ぎます。既存のシリアル検索URLと `data/leica-serial.json` は維持しています。
+
+- 独立152機種・全185項目、確認済みの外部写真リンク18件を取り込み。
+- 機種を対応づけられる番号検索結果からボディ解説へ、ボディ解説から番号検索・機材・作品へリンク。特別仕様や複数機種を指すデータは推測で結合しません。
+- レンズ番号は年代別の登録範囲です。上限未記録の範囲を正確な製造年と断定しません。
+- 原資料データは `data/leica-bodies/catalog.json`、画像の表示用WebPは `assets/leica-bodies/display/`。原写真・研究資料は元のローカルアーカイブに保存されています。
+- 本人の公開指示により本番へ反映する構成です。Archive・ボディ・出典ページのnoindexは解除しています。画像ごとの公開・再配布条件の未確認状態は原資料から引き継ぎ、出典欄に表示しています。公開指示を権利者からの転載許諾とみなしていません。
+- 取り込み記録：`docs/leica-archive-import.json`。検査：`node tools/validate-leica-archive.mjs` と通常のHTML検査。
