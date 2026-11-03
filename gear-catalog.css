@@ -75,6 +75,13 @@
 .gear-detail__close { display: flex; flex: none; align-items: center; gap: 8px; min-height: 44px; padding: 4px 8px; border: 0; border-radius: 4px; background: none; color: var(--text-color); font: inherit; font-size: .8rem; cursor: pointer; }
 .gear-detail__close:hover { background: var(--hover-color); }
 .gear-detail__close span { font-size: 1.5rem; font-weight: 300; }
+.gear-detail__actions { display: flex; flex: none; align-items: center; gap: 10px; }
+.gear-detail__copy { min-height: 44px; padding: 6px 10px; border: 1px solid var(--border-color); border-radius: 6px; background: var(--white); color: var(--text-color); font: inherit; font-size: .75rem; cursor: pointer; }
+.gear-detail__copy:hover { background: var(--hover-color); }
+.gear-detail__copy:focus-visible { outline: 2px solid var(--catalog-accent); outline-offset: 3px; }
+.gear-detail__copy-status { flex: none; margin: 0; padding: 8px 20px; font-size: .75rem; line-height: 1.7; color: var(--text-light); }
+.gear-detail__copy-url { flex: none; width: calc(100% - 40px); margin: 0 20px 12px; padding: 9px; border: 1px solid var(--border-color); border-radius: 4px; background: var(--white); color: var(--text-color); font: inherit; font-size: .8rem; }
+.gear-detail__copy-url[hidden], .gear-detail__copy-status[hidden] { display: none; }
 .gear-detail__tabs:not([hidden]) { flex: none; display: flex; padding: 0 20px; gap: 20px; border-bottom: 1px solid var(--border-color); }
 .gear-detail__tabs button { min-height: 48px; padding: 10px 4px; border: 0; border-bottom: 2px solid transparent; font: inherit; font-size: .8rem; background: none; color: var(--text-light); cursor: pointer; }
 .gear-detail__tabs button[aria-pressed="true"] { color: var(--catalog-accent); border-bottom-color: var(--catalog-accent); }
@@ -147,7 +154,9 @@
     .gear-card__actions { grid-column: 1 / -1; margin: 0 14px; padding: 5px 0; }
     .gear-card__actions button { min-height: 44px; }
     .gear-detail { width: calc(100% - 20px); max-height: 92dvh; border-radius: 12px; }
-    .gear-detail__bar { padding: 8px 12px; }
+    .gear-detail__bar { padding: 8px 12px; flex-wrap: wrap; gap: 6px; }
+    .gear-detail__bar > span { flex-basis: 100%; margin-right: 0; }
+    .gear-detail__actions { width: 100%; justify-content: space-between; gap: 6px; }
     .gear-detail__scroll { padding: 20px; }
     .gear-detail__header { grid-template-columns: 84px minmax(0, 1fr); gap: 14px; }
     .gear-detail h2 { font-size: 1.1rem; }

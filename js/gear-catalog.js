@@ -20,6 +20,57 @@
     let items = [];
     let activeFilter = 'all';
     let lastTrigger = null;
+    let activeItem = null;
+    const categoryPages = { camera: 'gear-camera.html', drone: 'gear-drone.html', editing: 'gear-editing.html', accessories: 'gear-accessories.html', bags: 'gear-bags.html', sim: 'gear-sim.html' };
+    const shareActions = document.createElement('div');
+    shareActions.className = 'gear-detail__actions';
+    const copyButton = document.createElement('button');
+    copyButton.type = 'button';
+    copyButton.className = 'gear-detail__copy';
+    copyButton.textContent = 'この機材のリンクをコピー';
+    const closeButton = dialog.querySelector('[data-gear-close]');
+    closeButton.before(shareActions);
+    shareActions.append(copyButton, closeButton);
+    const copyStatus = document.createElement('p');
+    copyStatus.className = 'gear-detail__copy-status';
+    copyStatus.setAttribute('role', 'status');
+    copyStatus.hidden = true;
+    const copyUrl = document.createElement('input');
+    copyUrl.className = 'gear-detail__copy-url';
+    copyUrl.type = 'text';
+    copyUrl.readOnly = true;
+    copyUrl.hidden = true;
+    copyUrl.setAttribute('aria-label', 'この機材のリンク');
+    detailTabs.before(copyStatus, copyUrl);
+
+    function itemUrl(item) {
+        const url = new URL(categoryPages[item.category] || window.location.pathname, window.location.href);
+        url.search = '';
+        url.hash = item.id;
+        return url.href;
+    }
+
+    copyButton.addEventListener('click', async () => {
+        if (!activeItem) return;
+        const url = itemUrl(activeItem);
+        copyStatus.hidden = false;
+        copyStatus.textContent = '';
+        copyUrl.hidden = true;
+        try {
+            if (!navigator.clipboard?.writeText) throw new Error('Clipboard unavailable');
+            await navigator.clipboard.writeText(url);
+            copyStatus.textContent = 'リンクをコピーしました。';
+        } catch {
+            copyUrl.value = url;
+            copyUrl.hidden = false;
+            copyUrl.focus();
+            copyUrl.select();
+            let copied = false;
+            try { copied = document.execCommand('copy'); } catch { /* Keep the selectable URL. */ }
+            copyStatus.textContent = copied ? 'リンクをコピーしました。' : '表示されたリンクを選択してコピーしてください。';
+            copyUrl.hidden = copied;
+        }
+    });
 
     function escapeHtml(value) {
         return String(value ?? '').replace(/[&<>"']/g, char => ({
@@ -138,7 +189,17 @@
             + (workLinks[item.id]?.length ? '<section class="gear-detail__section"><h3>この機材で撮った作品</h3><div class="gear-detail__products">' + workLinks[item.id].map(href => '<a href="' + href + '">' + (href === 'shirasagi36.html' ? '白鷺三十六景' : '香港ネオン残照') + ' →</a>').join('') + '</div></section>' : '');
     }
 
-    function openDetails(item, section, trigger) {
+    function openDetails(item, section, trigger, updateUrl = true) {
+        activeItem = item;
+        copyStatus.hidden = true;
+        copyStatus.textContent = '';
+        copyUrl.hidden = true;
+        if (updateUrl && window.location.hash.slice(1) !== item.id) {
+            const state = typeof window.history.state === 'object' && window.history.state !== null ? window.history.state : {};
+            const url = new URL(window.location.href);
+            url.hash = item.id;
+            window.history.pushState({ ...state, tjmGearDetail: true }, '', url);
+        }
         document.getElementById('gear-detail-context').textContent = item.name;
         const links = getLinks(item);
         const reviews = links.filter(link => link.review);
@@ -169,7 +230,7 @@
                     + '</span><span class="gear-detail__review-title">' + escapeHtml(titles.get(articleKey(link.url)) || linkLabel(link.key))
                     + '</span></span><span class="gear-detail__review-arrow" aria-hidden="true">↗</span></a></li>').join('') + '</ul></section>' : '');
         lastTrigger = trigger;
-        dialog.showModal();
+        if (!dialog.open) dialog.showModal();
         document.body.classList.add('gear-modal-open');
         selectDetailView(section, true);
     }
@@ -237,16 +298,27 @@
 
     function revealHashItem() {
         const id = window.location.hash.slice(1);
-        if (!items.some(item => item.id === id)) return;
+        const item = items.find(item => item.id === id);
+        if (!item) {
+            if (dialog.open) {
+                activeItem = null;
+                dialog.close();
+            }
+            return;
+        }
         if (!document.getElementById(id)) {
             activeFilter = 'all';
             if (scope) scope.value = 'all';
             filters.forEach(button => button.setAttribute('aria-pressed', String(button.dataset.gearFilter === 'all')));
             renderCards();
         }
+        if (dialog.open && activeItem?.id === item.id) return;
         document.getElementById(id).scrollIntoView({ block: 'start' });
+        const trigger = document.querySelector('[data-gear-open="' + item.id + '"]');
+        openDetails(item, 'overview', trigger, false);
     }
     window.addEventListener('hashchange', revealHashItem);
+    window.addEventListener('popstate', revealHashItem);
 
     dialog.querySelector('[data-gear-close]').addEventListener('click', () => dialog.close());
     detailTabs.addEventListener('click', event => {
@@ -260,6 +332,17 @@
     });
     dialog.addEventListener('close', () => {
         document.body.classList.remove('gear-modal-open');
+        const closedItem = activeItem;
+        activeItem = null;
+        if (closedItem && window.location.hash.slice(1) === closedItem.id) {
+            if (window.history.state?.tjmGearDetail) {
+                window.history.back();
+            } else {
+                const url = new URL(window.location.href);
+                url.hash = '';
+                window.history.replaceState(window.history.state, '', url);
+            }
+        }
         if (lastTrigger?.isConnected) lastTrigger.focus({ preventScroll: true });
     });
 

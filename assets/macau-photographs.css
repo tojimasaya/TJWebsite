@@ -55,3 +55,15 @@
   }
   .macau-gallery-section { margin-bottom: 75px; }
 }
+
+/* The three tools used for this photo walk. */
+.macau-used-gear { margin-top: 32px; padding: 24px 0; border-top: 1px solid var(--border-color); border-bottom: 1px solid var(--border-color); }
+.macau-used-gear h2 { font: 500 1.05rem/1.8 'Noto Serif JP', serif; margin: 0 0 16px; scroll-margin-top: 100px; }
+.macau-used-gear dl { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 20px; margin: 0; }
+.macau-used-gear dt { font: .72rem/1.8 var(--secondary-font); color: var(--text-light); margin-bottom: 5px; }
+.macau-used-gear dd { margin: 0; font-size: .85rem; line-height: 1.9; overflow-wrap: anywhere; }
+.macau-used-gear a { display: inline-block; padding: 5px 0; color: inherit; text-underline-offset: 4px; }
+@media (max-width: 580px) {
+  .macau-used-gear dl { grid-template-columns: minmax(0, 1fr); gap: 15px; }
+  .macau-used-gear { margin-top: 24px; padding: 20px 0; }
+}
