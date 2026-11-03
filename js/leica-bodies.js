@@ -38,7 +38,7 @@
   function imageTag(m) {return esc(photoLabel(m))+(hasImage(m)&&m.image.origin==='manufacturer'?' · © Leica Camera AG':'');}
   function updateURL() {
     const p=new URLSearchParams();
-    fields.forEach(id=>{const value=$('#'+id).value;if(value && !(id==='sort'&&value==='oldest') && !(id==='entry'&&value==='model'))p.set(id,value);});
+    fields.forEach(id=>{const value=$('#'+id).value;if(value && !(id==='sort'&&value==='newest') && !(id==='entry'&&value==='model'))p.set(id,value);});
     if(view==='table')p.set('view',view);
     if(page>1)p.set('page',page);
     history.replaceState(null,'',location.pathname+(p.size?'?'+p.toString():'')+location.hash);

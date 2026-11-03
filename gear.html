@@ -295,123 +295,60 @@
         [data-theme="dark"] .featured-link { color: #60a5fa !important; }
         [data-theme="dark"] .featured-link:hover { background-color: rgba(96, 165, 250, 0.1); }
 
-        /* Leica DB Link (inside dark hero) */
+        /* Photograph-led entrance to the Leica archive */
         .leica-db-link {
             grid-column: 1 / -1;
-            position: relative;
             display: grid;
-            grid-template-columns: auto minmax(0, 1fr) auto;
-            align-items: center;
-            gap: 18px;
+            grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.25fr);
+            align-items: stretch;
             overflow: hidden;
-            margin-top: 0;
-            padding: 18px 22px;
-            background: linear-gradient(135deg, rgba(255,255,255,0.13), rgba(255,255,255,0.045));
-            border: 1px solid rgba(203,213,225,0.26);
-            border-radius: 14px;
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.08), 0 18px 48px rgba(0,0,0,0.2);
+            border: 1px solid rgba(255,255,255,0.4);
+            border-radius: 16px;
+            background: #f4f2ed;
+            color: #202329;
             text-decoration: none;
-            color: #f9fafb;
-            transition: transform 0.3s ease, background 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
-        }
-        .leica-db-link::before {
-            content: "";
-            position: absolute;
-            inset: 0 auto 0 0;
-            width: 4px;
-            background: #d71920;
-            opacity: 0.95;
-        }
-        .leica-db-link::after {
-            content: "";
-            position: absolute;
-            right: 72px;
-            top: -45px;
-            width: 150px;
-            height: 150px;
-            border: 1px solid rgba(255,255,255,0.08);
-            border-radius: 50%;
-            pointer-events: none;
+            box-shadow: 0 20px 56px rgba(0,0,0,0.24);
+            scroll-margin-top: 105px;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
         }
         .leica-db-link:hover {
-            transform: translateY(-2px);
-            background: linear-gradient(135deg, rgba(255,255,255,0.18), rgba(255,255,255,0.07));
-            border-color: rgba(226,232,240,0.5);
-            box-shadow: inset 0 1px 0 rgba(255,255,255,0.12), 0 24px 54px rgba(0,0,0,0.26);
+            transform: translateY(-3px);
+            box-shadow: 0 26px 64px rgba(0,0,0,0.36);
         }
-        .leica-db-mark {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            place-items: center;
-            width: 52px;
-            height: 52px;
-            flex-shrink: 0;
-            border-radius: 50%;
-            background: radial-gradient(circle at 32% 28%, #ff6b6b 0, #d71920 42%, #8b1116 100%);
-            box-shadow: 0 0 0 1px rgba(255,255,255,0.14), 0 12px 24px rgba(0,0,0,0.25);
-            font-family: var(--secondary-font);
-            font-size: 0.76rem;
-            font-weight: 700;
-            letter-spacing: 0.08em;
-        }
-        .leica-db-copy {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            gap: 4px;
-        }
+        .leica-db-link:focus-visible { outline: 3px solid #7eb6ff; outline-offset: 6px; }
+        .leica-db-copy { display: flex; flex-direction: column; align-items: flex-start; padding: 32px 20px 32px 34px; }
         .leica-db-eyebrow {
-            font-family: var(--secondary-font);
-            font-size: 0.62rem;
-            letter-spacing: 0.2em;
-            text-transform: uppercase;
-            color: rgba(203,213,225,0.72);
+            display: flex; align-items: center; gap: 9px;
+            font-family: var(--secondary-font); font-size: 10px; letter-spacing: 0.2em;
+            text-transform: uppercase; color: #53565c;
         }
-        .leica-db-title {
-            font-family: var(--primary-font);
-            font-size: 1.12rem;
-            line-height: 1.2;
+        .leica-db-eyebrow::before { content: ""; width: 8px; height: 8px; border-radius: 50%; background: #bc1724; }
+        .leica-db-title { font-family: var(--primary-font); font-size: clamp(24px,2.6vw,33px); line-height: 1.55; margin: 14px 0 12px; letter-spacing: 0.025em; }
+        .leica-db-desc { font-size: 12px; line-height: 1.9; color: #616269; }
+        .leica-db-cta {
+            display: inline-flex; align-items: center; gap: 28px; margin-top: 22px;
+            padding: 12px 18px; border-radius: 3px; background: #bc1724; color: #fff;
+            font-size: 12px; line-height: 1.5; letter-spacing: 0.04em;
+            transition: background 0.25s ease;
         }
-        .leica-db-desc {
-            font-size: 0.76rem;
-            color: rgba(203,213,225,0.82);
-        }
-        .leica-db-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 6px;
-            margin-top: 6px;
-        }
-        .leica-db-meta span {
-            padding: 4px 8px;
-            border-radius: 999px;
-            background: rgba(15,23,42,0.45);
-            border: 1px solid rgba(148,163,184,0.22);
-            font-family: var(--secondary-font);
-            font-size: 0.58rem;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-            color: rgba(226,232,240,0.72);
-        }
-        .leica-db-arrow {
-            position: relative;
-            z-index: 1;
-            display: grid;
-            place-items: center;
-            width: 38px;
-            height: 38px;
-            border-radius: 50%;
-            background: rgba(15,23,42,0.62);
-            border: 1px solid rgba(203,213,225,0.22);
-            font-size: 1rem;
-            color: rgba(226,232,240,0.86);
-            flex-shrink: 0;
-            transition: transform 0.3s ease, background 0.3s ease;
-        }
-        .leica-db-link:hover .leica-db-arrow {
-            transform: translateX(3px);
-            background: rgba(215,25,32,0.86);
+        .leica-db-arrow { display: inline-block; font-size: 19px; line-height: 1; transition: transform 0.25s ease; }
+        .leica-db-link:hover .leica-db-cta { background: #95121d; }
+        .leica-db-link:hover .leica-db-arrow { transform: translateX(4px); }
+        .leica-db-visual { display: flex; flex-direction: column; justify-content: center; padding: 24px 28px 26px; background: #fff; border-left: 1px solid #e6e3dc; }
+        .leica-db-visual-head { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+        .leica-db-count { display: flex; align-items: baseline; gap: 8px; font: 48px/1 'Crimson Text',Georgia,serif; color: #202329; }
+        .leica-db-count small { font: 9px/1.4 var(--secondary-font); letter-spacing: 0.16em; color: #62656b; }
+        .leica-db-era { font: 9px/1.5 var(--secondary-font); letter-spacing: 0.13em; color: #797b80; text-align: right; }
+        .leica-db-cameras { display: grid; grid-template-columns: repeat(3,minmax(0,1fr)); align-items: end; gap: 10px; }
+        .leica-db-camera { display: grid; justify-items: center; gap: 5px; padding: 13px 4px 11px; border: 1px solid #e7e5e1; border-radius: 6px; background: #fff; box-shadow: 0 8px 18px rgba(35,37,42,0.055); }
+        .leica-db-camera:nth-child(2) { transform: translateY(-10px); }
+        .leica-db-camera img { display: block; width: 100%; height: auto; aspect-ratio: 3/2; object-fit: contain; }
+        .leica-db-camera-name { font: 14px/1.3 'Crimson Text',Georgia,serif; color: #262a30; }
+        .leica-db-camera-year { font: 9px/1.4 var(--secondary-font); color: #85868b; letter-spacing: 0.1em; }
+        .leica-db-visual-foot { margin-top: 17px; font: 9px/1.6 var(--secondary-font); color: #85868b; letter-spacing: 0.12em; text-align: center; }
+        @media (prefers-reduced-motion: reduce) {
+            .leica-db-link, .leica-db-arrow, .leica-db-cta { transition: none; }
+            .leica-db-link:hover, .leica-db-link:hover .leica-db-arrow { transform: none; }
         }
 
         /* Works shot with these tools */
@@ -635,29 +572,19 @@
         }
 
         @media (max-width: 768px) {
-            .leica-db-link {
-                grid-template-columns: auto minmax(0, 1fr);
-                gap: 14px;
-                padding: 16px 18px;
-            }
-            .leica-db-link::after {
-                right: -46px;
-                top: -54px;
-            }
-            .leica-db-mark {
-                width: 44px;
-                height: 44px;
-                font-size: 0.68rem;
-            }
-            .leica-db-arrow {
-                grid-column: 2;
-                justify-self: start;
-                width: auto;
-                height: auto;
-                padding: 0;
-                border: 0;
-                background: transparent;
-            }
+            .leica-db-link { grid-template-columns: 1fr; }
+            .leica-db-copy { padding: 23px 24px 26px; }
+            .leica-db-title { font-size: 27px; margin: 10px 0; }
+            .leica-db-desc { font-size: 12px; }
+            .leica-db-cta { margin-top: 18px; width: 100%; justify-content: space-between; padding: 13px 16px; }
+            .leica-db-visual { order: -1; padding: 18px 16px 16px; border-left: 0; border-bottom: 1px solid #e6e3dc; }
+            .leica-db-visual-head { margin-bottom: 15px; }
+            .leica-db-count { font-size: 36px; }
+            .leica-db-cameras { gap: 7px; }
+            .leica-db-camera { padding: 8px 3px; }
+            .leica-db-camera:nth-child(2) { transform: translateY(-5px); }
+            .leica-db-camera-name { font-size: 13px; }
+            .leica-db-visual-foot { margin-top: 12px; font-size: 8px; }
             .category-grid {
                 grid-template-columns: 1fr;
                 gap: 14px;
@@ -741,19 +668,22 @@
                     <span>Everyday Carry &amp; Travel Setup</span>
                 </div>
             </div>
-            <a href="leica.html" class="leica-db-link">
-                <span class="leica-db-mark" aria-hidden="true">DB</span>
+            <a href="leica.html" class="leica-db-link" id="leica-archive-entry" data-growth-label="gear_leica_archive" aria-label="ライカ図鑑・データベースをひらく。152機種のボディ図鑑とシリアル番号検索">
                 <span class="leica-db-copy">
                     <span class="leica-db-eyebrow">Leica Archive</span>
-                    <span class="leica-db-title">ライカ図鑑・データベース</span>
-                    <span class="leica-db-desc">ボディ図鑑とカメラ・レンズのシリアル番号検索</span>
-                    <span class="leica-db-meta" aria-hidden="true">
-                        <span>Camera</span>
-                        <span>Lens</span>
-                        <span>Year</span>
-                    </span>
+                    <span class="leica-db-title">そのライカを、<br>もっと知りたくなる。</span>
+                    <span class="leica-db-desc">写真と仕様でたどる、歴代152機種。<br>ボディ・レンズのシリアル番号検索も。</span>
+                    <span class="leica-db-cta">ライカ図鑑をひらく <span class="leica-db-arrow" aria-hidden="true">→</span></span>
                 </span>
-                <span class="leica-db-arrow">→</span>
+                <span class="leica-db-visual" aria-hidden="true">
+                    <span class="leica-db-visual-head"><span class="leica-db-count">152 <small>CAMERA MODELS</small></span><span class="leica-db-era">FILM<br>TO DIGITAL</span></span>
+                    <span class="leica-db-cameras">
+                        <span class="leica-db-camera"><img src="assets/leica-bodies/display/body-m3-480.webp" srcset="assets/leica-bodies/display/body-m3-480.webp 480w, assets/leica-bodies/display/body-m3-960.webp 960w" sizes="(max-width:768px) calc((100vw - 100px) / 3), (max-width:1100px) 15vw, 175px" width="480" height="320" alt="" loading="lazy" decoding="async"><span class="leica-db-camera-name">M3</span><span class="leica-db-camera-year">1954</span></span>
+                        <span class="leica-db-camera"><img src="assets/leica-bodies/display/body-m11-480.webp" srcset="assets/leica-bodies/display/body-m11-480.webp 480w, assets/leica-bodies/display/body-m11-960.webp 960w" sizes="(max-width:768px) calc((100vw - 100px) / 3), (max-width:1100px) 15vw, 175px" width="480" height="320" alt="" loading="lazy" decoding="async"><span class="leica-db-camera-name">M11</span><span class="leica-db-camera-year">2022</span></span>
+                        <span class="leica-db-camera"><img src="assets/leica-bodies/display/body-p15-05-480.webp" srcset="assets/leica-bodies/display/body-p15-05-480.webp 480w, assets/leica-bodies/display/body-p15-05-960.webp 960w" sizes="(max-width:768px) calc((100vw - 100px) / 3), (max-width:1100px) 15vw, 175px" width="480" height="320" alt="" loading="lazy" decoding="async"><span class="leica-db-camera-name">SL3</span><span class="leica-db-camera-year">2024</span></span>
+                    </span>
+                    <span class="leica-db-visual-foot">ライカ図鑑・データベース</span>
+                </span>
             </a>
         </div>
     </header>
