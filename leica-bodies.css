@@ -52,7 +52,7 @@
 
 /* The archive shares the site's navigation and theme. */
 :root{--bg:var(--bg-color);--paper:var(--white);--ink:var(--text-color);--muted:var(--text-light);--line:var(--border-color);--blue:var(--accent-color)}
-.body-archive main{padding-top:98px}.body-archive .intro{padding-top:0}.body-archive .la-section-nav{margin-bottom:34px}
+.body-archive main{padding-top:98px}.body-archive .intro{padding-top:0}
 .body-archive .camera-card .photo{background:#fff}.body-archive .photo-placeholder{background:var(--white);color:var(--text-light)}
 .body-archive .camera-card:has(.photo-ref-link) .photo-placeholder{background:var(--hover-color);color:var(--accent-color)}
 .body-archive .photo-references,.body-archive .photo-reference-button,.body-archive button,.body-archive input,.body-archive select,.body-archive .table-wrap{background:var(--white)}
@@ -61,6 +61,6 @@
 .body-archive .camera-card h2{color:var(--text-color)}.body-archive .main-nav{z-index:80}.body-archive dialog{color:var(--text-color)}
 .body-archive .detail-actions{display:flex;gap:10px;flex-wrap:wrap;margin:18px 0}.body-archive .detail-actions a{font-size:11px;color:var(--accent-color)}
 .body-archive footer.la-footer{max-width:1400px}.body-archive th{background:var(--hover-color)}
-@media(max-width:540px){.body-archive main{padding-top:92px}.body-archive .la-section-nav{margin-bottom:28px}}
+@media(max-width:540px){.body-archive main{padding-top:92px}}
 
 .body-archive dialog{margin:auto}

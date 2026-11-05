@@ -114,6 +114,7 @@
   $('#filters').addEventListener('reset',()=>{queueMicrotask(()=>{fields.filter(id=>id!=='sort').forEach(id=>$('#'+id).value=id==='entry'?'model':'');page=1;render();});});
   $('#sort').addEventListener('change',filterChanged);
   document.addEventListener('click',e=>{
+    if(e.target.closest('[data-detail-list]')){e.preventDefault();closeDetail();return;}
     const model=e.target.closest('[data-model]');if(model){e.preventDefault();openDetail(model.dataset.model);}
     const toggle=e.target.closest('[data-view]');if(toggle){view=toggle.dataset.view;render();}
     const target=e.target.closest('[data-page]');if(target&&!target.disabled){page=Number(target.dataset.page);render();$('#catalog').scrollIntoView();$('#count').setAttribute('tabindex','-1');$('#count').focus({preventScroll:true});}
