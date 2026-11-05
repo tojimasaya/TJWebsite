@@ -206,6 +206,9 @@
         const products = links.filter(link => !link.review);
         const titles = reviewTitles(item);
         const reviewLabel = item.category === 'sim' ? 'TJの記事' : 'TJレビュー';
+        const descriptionTitle = item.category === 'camera'
+            ? ({ body: 'このカメラについて', lens: 'このレンズについて' }[item.type] || 'この道具について')
+            : item.category === 'sim' ? 'この回線について' : 'この道具について';
         detailTabs.hidden = !reviews.length;
         detailTabs.innerHTML = reviews.length
             ? '<button type="button" data-detail-view="overview" aria-controls="gear-overview-panel" aria-pressed="true">解説・仕様</button>'
@@ -215,7 +218,7 @@
             + '<div><p class="gear-card__brand">' + escapeHtml([item.brand, item.usage].filter(Boolean).join(' / ')) + '</p>'
             + '<h2 id="gear-detail-title" tabindex="-1">' + escapeHtml(item.name) + '</h2>'
             + '<ul class="gear-detail__specs" aria-label="主な仕様">' + (item.specs || []).map(spec => '<li>' + escapeHtml(spec) + '</li>').join('') + '</ul></div></header>'
-            + '<section aria-labelledby="gear-description-title"><h3 id="gear-description-title">' + (item.category === 'sim' ? 'この回線について' : 'この道具について') + '</h3>'
+            + '<section aria-labelledby="gear-description-title"><h3 id="gear-description-title">' + escapeHtml(descriptionTitle) + '</h3>'
             + '<p class="gear-detail__description">' + escapeHtml(item.description) + '</p></section>'
             + extraDetails(item)
             + (products.length ? '<section class="gear-detail__section" aria-labelledby="gear-products-title"><h3 id="gear-products-title">製品情報・購入先</h3>'
