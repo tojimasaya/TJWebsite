@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T00:00:00+09:00",
+  "generatedAt": "2026-11-11T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,15 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "fragment",
+      "kindLabel": "断章",
+      "title": "歩き慣れた道と、妻の質問",
+      "url": "/fragments/central-walk-wife-questions.html",
+      "external": false,
+      "date": "2026-11-11",
+      "thumb": "/assets/images/photo-notes/central-walk-incense.webp"
+    },
     {
       "kind": "fragment",
       "kindLabel": "断章",
@@ -105,15 +114,6 @@
       "external": true,
       "date": "2026-09-19",
       "thumb": "https://assets.st-note.com/production/uploads/images/315077173/rectangle_large_type_2_54f3d778c8d700f4c1b4ba9836ccb585.jpeg?width=800"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "買う気のない発売日と、三つ折りのサムスン",
-      "url": "/fragments/sintat-plaza-launch-day.html",
-      "external": false,
-      "date": "2026-09-18",
-      "thumb": "/assets/images/photo-notes/sintat-plaza-launch-day-counter.webp"
     }
   ]
 }
