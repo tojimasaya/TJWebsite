@@ -22,7 +22,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="/style.css">
 <link rel="stylesheet" href="/fragments/fragment.css">
-<link rel="preload" as="image" href="{{preloadImage}}" type="{{preloadType}}" fetchpriority="high">
+<link rel="preload" as="image" href="{{preloadImage}}"{{#preloadSrcset}} imagesrcset="{{preloadSrcset}}" imagesizes="{{preloadSizes}}"{{/preloadSrcset}} type="{{preloadType}}" fetchpriority="high">
 
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Toji Masaya">

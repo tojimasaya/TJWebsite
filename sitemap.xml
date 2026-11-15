@@ -2163,6 +2163,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/central-walk-wife-questions.html</loc>
+    <lastmod>2026-11-11</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/central-walk-incense.jpg</image:loc>
+      <image:title>歩き慣れた道と、妻の質問</image:title>
+      <image:caption>薄暗い廟内の天井から下がる、大きな渦巻線香と赤い短冊</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/chater-road-classic-cars-190sl.html</loc>
     <lastmod>2026-10-25</lastmod>
     <changefreq>monthly</changefreq>

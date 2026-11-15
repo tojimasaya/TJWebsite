@@ -1,5 +1,57 @@
 [
   {
+    "slug": "central-walk-wife-questions",
+    "label": "今日の断章",
+    "title": "歩き慣れた道と、妻の質問",
+    "place": "香港・文武廟〜大館〜セントラル街市",
+    "date": "2026年11月11日",
+    "body": "今週、妻と一緒に文武廟から大館を経て、最後はセントラル街市まで歩き、廟の入口の赤い飾りや、薄暗い天井から幾つも下がる大きな渦巻線香と赤い短冊、坂道に沿って建物の絵が何枚も並ぶ青い壁、上りと下りの文字がある街市の階段などを写真に収めたのだが、このあたりは私のほうが頻繁に来ているから、詳しいのもこちらだろうと思っていたところが、香港という街の歴史的な流れや道教、仏教、儒教については、やはり妻のほうがよく知っていて、しかもその場にいるスタッフにも声をかけ、私が知りたいと思っていることを聞いてくれるので、こちらはたいへん助かるのであって、そんな話を聞きながら、実は知らなかったことや、勘違いしたまま覚えていたことを訂正でき、なかなかよい散歩になり、どうやら私のほうが案内されていたのだった。",
+    "homeLead": "何度も歩いている道だから詳しいつもりでいたら、歴史や宗教のことは妻のほうが詳しく、スタッフへの質問まで聞いてもらう散歩になった。",
+    "image": "assets/images/photo-notes/central-walk-incense.jpg",
+    "imageWebp": "assets/images/photo-notes/central-walk-incense.webp",
+    "alt": "薄暗い廟内の天井から下がる、大きな渦巻線香と赤い短冊",
+    "caption": "Spiral Incense / Hong Kong",
+    "sideFrames": [
+      {
+        "title": "高層ビルに囲まれた廟の入口",
+        "image": "assets/images/photo-notes/central-walk-temple-entrance.jpg",
+        "imageWebp": "assets/images/photo-notes/central-walk-temple-entrance.webp",
+        "alt": "高層ビルに囲まれた廟の入口を見上げる。青空に日差しが入り、入口前には赤い飾りが立つ",
+        "width": 1800,
+        "height": 1350,
+        "imageWebpSmall": "assets/images/photo-notes/central-walk-temple-entrance-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/central-walk-temple-entrance-thumb.webp",
+        "caption": "高層ビルに囲まれた廟の入口 / Hong Kong"
+      },
+      {
+        "title": "坂道の青い壁",
+        "image": "assets/images/photo-notes/central-walk-blue-wall.jpg",
+        "imageWebp": "assets/images/photo-notes/central-walk-blue-wall.webp",
+        "alt": "坂道に沿った鮮やかな青い壁。下側には建物を描いた小さな絵が何枚も並ぶ",
+        "width": 1800,
+        "height": 1350,
+        "imageWebpSmall": "assets/images/photo-notes/central-walk-blue-wall-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/central-walk-blue-wall-thumb.webp",
+        "caption": "坂道の青い壁 / Hong Kong"
+      },
+      {
+        "title": "セントラル街市の階段",
+        "image": "assets/images/photo-notes/central-walk-market-stair.jpg",
+        "imageWebp": "assets/images/photo-notes/central-walk-market-stair.webp",
+        "alt": "セントラル街市の屋内階段を上から見下ろす。手すりの先に上りと下りを示す表示があり、上部から光が差し込む",
+        "width": 1800,
+        "height": 1350,
+        "imageWebpSmall": "assets/images/photo-notes/central-walk-market-stair-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/central-walk-market-stair-thumb.webp",
+        "caption": "セントラル街市の階段 / Hong Kong"
+      }
+    ],
+    "width": 1800,
+    "height": 1355,
+    "imageWebpSmall": "assets/images/photo-notes/central-walk-incense-720.webp",
+    "thumbnailWebp": "assets/images/photo-notes/central-walk-incense-thumb.webp"
+  },
+  {
     "slug": "chater-road-classic-cars-190sl",
     "label": "今日の断章",
     "title": "一つ年上の190 SLと、二台のF40",

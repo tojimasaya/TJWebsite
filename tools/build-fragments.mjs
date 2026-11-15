@@ -69,13 +69,15 @@ function resolveLink(href) {
 function figureHtml(item, sizes) {
   const src = absPath(item.image);
   const webp = absPath(item.imageWebp);
+  const small = absPath(item.imageWebpSmall);
+  const responsive = small ? `${small} 720w, ${webp} ${item.width || 1800}w` : webp;
   const alt = item.alt || item.title || '';
   const caption = item.caption || '';
   const dim = sizes ? ` width="${sizes.width}" height="${sizes.height}"` : '';
   const lines = [];
   lines.push('    <figure class="fp-figure">');
   lines.push('      <picture>');
-  if (webp) lines.push(`        <source srcset="${escapeHtml(webp)}" type="image/webp">`);
+  if (webp) lines.push(`        <source srcset="${escapeHtml(responsive)}"${small ? ' sizes="(max-width: 760px) calc(100vw - 32px), 1100px"' : ''} type="image/webp">`);
   lines.push(`        <img src="${escapeHtml(src)}"${dim} alt="${escapeHtml(alt)}" decoding="async" fetchpriority="high">`);
   lines.push('      </picture>');
   if (caption) lines.push(`      <figcaption>${escapeHtml(caption)}</figcaption>`);
@@ -89,12 +91,15 @@ function sidesHtml(sides) {
   for (const sf of sides) {
     const src = absPath(sf.image);
     const webp = absPath(sf.imageWebp);
+    const small = absPath(sf.imageWebpSmall);
+    const responsive = small ? `${small} 720w, ${webp} ${sf.width || 1800}w` : webp;
+    const dim = small && sf.width && sf.height ? ` width="${sf.width}" height="${sf.height}"` : '';
     const alt = sf.alt || sf.title || '';
     const caption = sf.title || sf.caption || '';
     lines.push('      <figure>');
     lines.push('        <picture>');
-    if (webp) lines.push(`          <source srcset="${escapeHtml(webp)}" type="image/webp">`);
-    lines.push(`          <img src="${escapeHtml(src)}" alt="${escapeHtml(alt)}" loading="lazy" decoding="async">`);
+    if (webp) lines.push(`          <source srcset="${escapeHtml(responsive)}"${small ? ' sizes="(max-width: 760px) calc(100vw - 32px), 520px"' : ''} type="image/webp">`);
+    lines.push(`          <img src="${escapeHtml(src)}"${dim} alt="${escapeHtml(alt)}" loading="lazy" decoding="async">`);
     lines.push('        </picture>');
     if (caption) lines.push(`        <figcaption>${escapeHtml(caption)}</figcaption>`);
     lines.push('      </figure>');
@@ -119,7 +124,7 @@ function neighbourHtml(item, dir) {
   if (!item) {
     return `      <div class="fp-pn__empty">${isNext ? 'これが最新の断章です' : 'これが最初の断章です'}</div>`;
   }
-  const thumb = absPath(item.imageWebp || item.image);
+  const thumb = absPath(item.thumbnailWebp || item.imageWebp || item.image);
   const cls = isNext ? 'is-next' : 'is-prev';
   const img = thumb
     ? `<img class="fp-pn__thumb" src="${escapeHtml(thumb)}" alt="" loading="lazy" decoding="async">`
@@ -192,6 +197,8 @@ function buildPage(entry, prev, next, template, buildIso) {
     ogImageWidth: ogCard ? 1200 : (entry.sizes ? entry.sizes.width : ''),
     ogImageHeight: ogCard ? 630 : (entry.sizes ? entry.sizes.height : ''),
     preloadImage: preload,
+    preloadSrcset: item.imageWebpSmall ? `${absPath(item.imageWebpSmall)} 720w, ${preload} ${item.width || 1800}w` : '',
+    preloadSizes: '(max-width: 760px) calc(100vw - 32px), 1100px',
     preloadType: preload.endsWith('.webp') ? 'image/webp' : 'image/jpeg',
     mediaHtml: media,
     bodyHtml: paragraphs(item.body, 'fp-body__p').replace(/^/gm, '      '),

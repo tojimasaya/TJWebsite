@@ -1697,11 +1697,15 @@
       if (media && frame.width && frame.height) media.style.aspectRatio = `${frame.width} / ${frame.height}`;
       // WebP が無い写真もあるので、あると分かっているときだけ source を残す
       if (source) {
-        if (frame.imageWebp) source.srcset = frame.imageWebp;
+        if (frame.imageWebp) {
+          source.srcset = frame.imageWebpSmall ? `${frame.imageWebpSmall} 720w, ${frame.imageWebp} ${frame.width || 1800}w` : frame.imageWebp;
+          if (frame.imageWebpSmall) source.sizes = '(max-width: 760px) calc(100vw - 32px), 600px';
+        }
         else source.remove();
       }
       if (image && frame.image) {
         image.src = frame.image;
+        if (frame.width && frame.height) { image.width = frame.width; image.height = frame.height; }
         if (frame.alt) image.alt = frame.alt;
       }
       return frame;

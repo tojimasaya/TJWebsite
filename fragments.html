@@ -29,11 +29,11 @@
     <meta property="og:url" content="https://tojimasaya.com/fragments.html">
     <meta property="og:type" content="website">
     <meta property="og:site_name" content="Toji Masaya">
-    <meta property="og:image" content="https://tojimasaya.com/assets/images/photo-notes/hongkong-farewell-yumcha-cat.jpg">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/photo-notes/central-walk-incense.jpg">
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@mongkok93">
     <meta name="twitter:title" content="断章 — 写真を入口に、その日の出来事を一文で残す">
-    <meta name="twitter:image" content="https://tojimasaya.com/assets/images/photo-notes/hongkong-farewell-yumcha-cat.jpg">
+    <meta name="twitter:image" content="https://tojimasaya.com/assets/images/photo-notes/central-walk-incense.jpg">
 
     <style>
         .frag-head { max-width: 720px; margin: 120px auto 0; padding: 0 24px; text-align: center; }
@@ -163,9 +163,9 @@
           if (p.image) {
             const mediaGroup = document.createElement('div');
             mediaGroup.className = 'frag-media';
-            const media = [{ image: p.image, imageWebp: p.imageWebp, alt: p.alt || p.title || '', caption: p.caption || '' }]
+            const media = [{ image: p.image, imageWebp: p.imageWebp, imageWebpSmall: p.imageWebpSmall, thumbnailWebp: p.thumbnailWebp, width: p.width, height: p.height, alt: p.alt || p.title || '', caption: p.caption || '' }]
               .concat(sides.map(function (sf) {
-                return { image: sf.image, imageWebp: sf.imageWebp, alt: sf.alt || sf.title || '', caption: sf.caption || sf.title || '' };
+                return { image: sf.image, imageWebp: sf.imageWebp, imageWebpSmall: sf.imageWebpSmall, thumbnailWebp: sf.thumbnailWebp, width: sf.width, height: sf.height, alt: sf.alt || sf.title || '', caption: sf.caption || sf.title || '' };
               }));
             let active = 0;
 
@@ -197,7 +197,8 @@
 
             function renderMedia() {
               const m = media[active];
-              if (m.imageWebp) { src.srcset = m.imageWebp; } else { src.removeAttribute('srcset'); }
+              if (m.imageWebp) { src.srcset = m.imageWebpSmall ? `${m.imageWebpSmall} 720w, ${m.imageWebp} ${m.width || 1800}w` : m.imageWebp; if (m.imageWebpSmall) src.sizes = '(max-width: 760px) calc(100vw - 32px), 1100px'; } else { src.removeAttribute('srcset'); }
+              if (m.width && m.height) { img.width = m.width; img.height = m.height; }
               img.src = m.image;
               img.alt = m.alt;
               fc.textContent = m.caption;
@@ -213,7 +214,7 @@
                   const p2 = document.createElement('picture');
                   if (x.mm.imageWebp) {
                     const s2 = document.createElement('source');
-                    s2.srcset = x.mm.imageWebp;
+                    s2.srcset = x.mm.thumbnailWebp || x.mm.imageWebpSmall || x.mm.imageWebp;
                     s2.type = 'image/webp';
                     p2.appendChild(s2);
                   }
