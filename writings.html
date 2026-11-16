@@ -142,6 +142,9 @@
             transform: scale(1.05);
         }
 
+        .article-image--contain { object-fit: contain; }
+        .article-card:hover .article-image--contain { transform: none; }
+
         .article-meta {
             display: flex;
             align-items: center;
@@ -552,10 +555,14 @@
                 let imgSrc = article.image;
                 if (!imgSrc) imgSrc = 'assets/images/gallery/weekly.jpg';
                 if (imgSrc.startsWith('/')) imgSrc = imgSrc.substring(1);
+                const imageAttrs = article.imageSrcset
+                    ? ` srcset="${article.imageSrcset}" sizes="${article.imageSizes}" width="${article.imageWidth}" height="${article.imageHeight}"`
+                    : '';
+                const imageClass = 'article-image' + (article.imageFit === 'contain' ? ' article-image--contain' : '');
 
                 card.innerHTML = `
                     <div class="article-image-wrapper">
-                        <img src="${imgSrc}" alt="${article.title}" class="article-image" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
+                        <img src="${imgSrc}"${imageAttrs} alt="${article.title}" class="${imageClass}" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
                     </div>
                     <div class="article-meta">
                         <span class="article-source" style="color: ${article.source === 'note' ? '#41C9B4' : '#2563eb'}">${article.sourceLabel}</span>

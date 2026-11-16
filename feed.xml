@@ -5,13 +5,24 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-11-11T00:00:00+09:00</updated>
+  <updated>2026-11-16T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>「撮影時のLEDを消したい」——Rokid AIグラスと、小さなシール</title>
+    <id>https://note.com/tojimasaya/n/n110bd76b29d3</id>
+    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n110bd76b29d3"/>
+    <published>2026-11-16T00:00:00+09:00</published>
+    <updated>2026-11-16T00:00:00+09:00</updated>
+    <category term="note"/>
+    <summary type="text">Rokid AIグラスの撮影時に光るLEDが気になり、10枚300円弱の小さなシールを試した記録。比較GIFとともに、撮影への配慮や香港直営店での体験を紹介しています。</summary>
+    <content type="html">&lt;p&gt;Rokid AIグラスの撮影時に光るLEDが気になり、10枚300円弱の小さなシールを試した記録。比較GIFとともに、撮影への配慮や香港直営店での体験を紹介しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n110bd76b29d3&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>歩き慣れた道と、妻の質問</title>
     <id>https://tojimasaya.com/fragments/central-walk-wife-questions.html</id>
@@ -345,16 +356,5 @@
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/himeji-onepiece-shinkansen.jpg&quot; alt=&quot;夕方の姫路駅ホーム。手前に銀色のN700系新幹線、右奥にワンピースのキャラクターが描かれたラッピング新幹線が停まっている&quot;&gt;&lt;/p&gt;
 &lt;p&gt;息子の仕事の手伝いで埼玉まで出かけたのだが、まさか自分が息子の仕事を手伝う日が来ようとは夢にも思わず、それでも何か役に立てるならこんなに嬉しいことはなくて、しかもおかしいことに、普段は私のメッセージへの返事に数日かかるか返事すら来ないのが常なのに、この件ばかりは何時だろうと高速で返ってくるのが面白く、行きも帰りも乗った新幹線から姫路に降り立った瞬間、目の前にワンピース新幹線が止まっているのを初めて見てこれもまた面白く、飛行機にもポケモンやスターウォーズをまとった機体があるのと同じで、キャラクターにさほど興味のない私でも、大谷翔平のファンではあるから、大谷選手を描いたJALの機体がまだ飛んでいて機会があれば一度は乗ってみたいと思いつつ、ともあれ姫路に戻ったら、やっぱりタコぴあで玉子焼きだよね。&lt;/p&gt;
 &lt;p&gt;埼玉 → 兵庫・姫路&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>飛行機の座席が、少し快適になる ── 海外旅行で効くMagSafe装備 2つ</title>
-    <id>https://note.com/tojimasaya/n/n427025a434a3</id>
-    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n427025a434a3"/>
-    <published>2026-07-31T00:00:00+09:00</published>
-    <updated>2026-07-31T00:00:00+09:00</updated>
-    <category term="note"/>
-    <summary type="text">香港⇔日本の定期便で効いたMagSafe周りの更新を2つ紹介。共用電源で頭が垂れないMomaxの万国コネクター（ソケットは固定・USB充電器は別体で進化させる考え方）と、…</summary>
-    <content type="html">&lt;p&gt;香港⇔日本の定期便で効いたMagSafe周りの更新を2つ紹介。共用電源で頭が垂れないMomaxの万国コネクター（ソケットは固定・USB充電器は別体で進化させる考え方）と、三脚にもクランプにもなり狭いエコノミーの机で活躍するUlanzi MA88。旅の道具を軽く賢く更新していく話です。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n427025a434a3&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>
