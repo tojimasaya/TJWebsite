@@ -12,7 +12,8 @@
     "imageSizes": "(max-width: 768px) calc(100vw - 60px), (max-width: 1099px) calc((100vw - 100px) / 2), 354px",
     "imageWidth": 640,
     "imageHeight": 335,
-    "imageFit": "contain"
+    "imageFit": "contain",
+    "imageLocal": "/assets/og/b555cdabbc81.png"
   },
   {
     "title": "新しい皇崗口岸へ。国境越えが楽になりました",
