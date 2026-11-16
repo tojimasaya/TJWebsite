@@ -24,6 +24,28 @@
         "caption": "高層ビルに囲まれた廟の入口 / Hong Kong"
       },
       {
+        "title": "廟内の鹿と灯籠",
+        "image": "assets/images/photo-notes/central-walk-deer-lanterns.jpg",
+        "imageWebp": "assets/images/photo-notes/central-walk-deer-lanterns.webp",
+        "alt": "廟内に置かれた金色の鹿の像と香炉。奥には赤い房の付いた灯籠が並ぶ",
+        "width": 1800,
+        "height": 1350,
+        "imageWebpSmall": "assets/images/photo-notes/central-walk-deer-lanterns-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/central-walk-deer-lanterns-thumb.webp",
+        "caption": "廟内の鹿と灯籠 / Hong Kong"
+      },
+      {
+        "title": "壁画を奥に見る細い路地",
+        "image": "assets/images/photo-notes/central-walk-narrow-alley.jpg",
+        "imageWebp": "assets/images/photo-notes/central-walk-narrow-alley.webp",
+        "alt": "石畳の細い路地。両側の壁の先に階段と青い色を使った壁画が見える",
+        "width": 1355,
+        "height": 1800,
+        "imageWebpSmall": "assets/images/photo-notes/central-walk-narrow-alley-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/central-walk-narrow-alley-thumb.webp",
+        "caption": "壁画を奥に見る細い路地 / Hong Kong"
+      },
+      {
         "title": "坂道の青い壁",
         "image": "assets/images/photo-notes/central-walk-blue-wall.jpg",
         "imageWebp": "assets/images/photo-notes/central-walk-blue-wall.webp",
@@ -33,6 +55,17 @@
         "imageWebpSmall": "assets/images/photo-notes/central-walk-blue-wall-720.webp",
         "thumbnailWebp": "assets/images/photo-notes/central-walk-blue-wall-thumb.webp",
         "caption": "坂道の青い壁 / Hong Kong"
+      },
+      {
+        "title": "露店を上から見下ろす",
+        "image": "assets/images/photo-notes/central-walk-market-stalls.jpg",
+        "imageWebp": "assets/images/photo-notes/central-walk-market-stalls.webp",
+        "alt": "緑の屋根と青いパラソルのある露店を上から見下ろす。通りには歩く人々の姿が見える",
+        "width": 1350,
+        "height": 1800,
+        "imageWebpSmall": "assets/images/photo-notes/central-walk-market-stalls-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/central-walk-market-stalls-thumb.webp",
+        "caption": "露店を上から見下ろす / Hong Kong"
       },
       {
         "title": "セントラル街市の階段",
