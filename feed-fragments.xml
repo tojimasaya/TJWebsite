@@ -5,13 +5,25 @@
   <id>https://tojimasaya.com/fragments.html</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed-fragments.xml"/>
-  <updated>2026-11-11T00:00:00+09:00</updated>
+  <updated>2026-11-16T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>獅子の横顔と、知らなかった啟德</title>
+    <id>https://tojimasaya.com/fragments/kai-tak-lion-rock.html</id>
+    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/kai-tak-lion-rock.html"/>
+    <published>2026-11-16T00:00:00+09:00</published>
+    <updated>2026-11-16T00:00:00+09:00</updated>
+    <category term="断章"/>
+    <summary type="text">妻と訪ねた啟德のそごうの上階でスマホの望遠を伸ばし、周りのビルを画面から外すと、獅子山が本当にライオンの横顔になり、少し引けば新しいマンションや公共住宅、緑のある広場と大きな会場が並ぶ啟德の街が見えて、…</summary>
+    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/kai-tak-lion-rock.jpg&quot; alt=&quot;そごうの上階から望遠で切り取った獅子山の岩峰。空を背景に左を向いたライオンの横顔のように見える&quot;&gt;&lt;/p&gt;
+&lt;p&gt;妻と訪ねた啟德のそごうの上階でスマホの望遠を伸ばし、周りのビルを画面から外すと、獅子山が本当にライオンの横顔になり、少し引けば新しいマンションや公共住宅、緑のある広場と大きな会場が並ぶ啟德の街が見えて、私にとっては豪華客船の着くターミナルと、何度かドローンを飛ばした場所だった啟德にも、初めて歩く駅前にはこんなに気持ちのいい街ができていたのかと驚き、Xiaomiの店には電気自動車が置かれ、その前では草間彌生の巨大なかぼちゃが踊り、七十五ドルのタイ料理を食べるうちに店の席も次々と埋まっていったのだが、駅にあった昔の空港の地図を見ると、いま歩いている場所は、船の着く旧滑走路の先端からずいぶん離れていて、何度も来たつもりの街なのに、私が知っていたのはずいぶん細長い一部分だけだった。&lt;/p&gt;
+&lt;p&gt;香港・啟德　SOGO／雙子匯&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>歩き慣れた道と、妻の質問</title>
     <id>https://tojimasaya.com/fragments/central-walk-wife-questions.html</id>
@@ -359,17 +371,5 @@
     <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/himeji-castle-takigi-noh.jpg&quot; alt=&quot;姫路城の天守の下、三の丸広場で薪能の舞台が行われている夜景&quot;&gt;&lt;/p&gt;
 &lt;p&gt;夜八時の三の丸広場で、薪の火と提灯と青く浮かぶ姫路城を同じ画面に入れてしまうと、能の物語を見に来たはずのこちらが、いつの間にか城に見下ろされる側の登場人物になっていた。&lt;/p&gt;
 &lt;p&gt;兵庫・姫路城 三の丸広場&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>小田原駅、炙り金目鯛と小鯵押し寿司</title>
-    <id>https://tojimasaya.com/fragments/odawara-kinmedai-oshizushi.html</id>
-    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/odawara-kinmedai-oshizushi.html"/>
-    <published>2026-05-20T00:00:00+09:00</published>
-    <updated>2026-05-20T00:00:00+09:00</updated>
-    <category term="断章"/>
-    <summary type="text">小田原駅で弁当を選んでいるだけのつもりが、店の方と話すうちに鯛飯は炙り金目鯛と小鯵押し寿司へ、神奈川は兵庫へ、横浜と神戸、小田原城と姫路城へと話が伸びていき、結局その弁当には魚より先に、…</summary>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/odawara-kinmedai-oshizushi.jpg&quot; alt=&quot;新幹線の車内で開いた炙り金目鯛と小鯵押し寿司の弁当&quot;&gt;&lt;/p&gt;
-&lt;p&gt;小田原駅で弁当を選んでいるだけのつもりが、店の方と話すうちに鯛飯は炙り金目鯛と小鯵押し寿司へ、神奈川は兵庫へ、横浜と神戸、小田原城と姫路城へと話が伸びていき、結局その弁当には魚より先に、二つの県の似た者同士ぶりがぎっしり詰まっていた。&lt;/p&gt;
-&lt;p&gt;神奈川・小田原駅&lt;/p&gt;</content>
   </entry>
 </feed>
