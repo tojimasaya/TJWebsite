@@ -2163,6 +2163,17 @@
 <!-- fragments:auto:start -->
   <!-- 断章の個別ページ（tools/build-fragments.mjs が生成。手で編集しない） -->
   <url>
+    <loc>https://tojimasaya.com/fragments/kai-tak-lion-rock.html</loc>
+    <lastmod>2026-11-16</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+    <image:image>
+      <image:loc>https://tojimasaya.com/assets/images/photo-notes/kai-tak-lion-rock.jpg</image:loc>
+      <image:title>獅子の横顔と、知らなかった啟德</image:title>
+      <image:caption>そごうの上階から望遠で切り取った獅子山の岩峰。空を背景に左を向いたライオンの横顔のように見える</image:caption>
+    </image:image>
+  </url>
+  <url>
     <loc>https://tojimasaya.com/fragments/central-walk-wife-questions.html</loc>
     <lastmod>2026-11-11</lastmod>
     <changefreq>monthly</changefreq>

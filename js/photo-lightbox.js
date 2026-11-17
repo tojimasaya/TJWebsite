@@ -18,9 +18,28 @@
   const dImg = dlg.querySelector('img');
   const dCap = dlg.querySelector('figcaption');
 
+  function fullPhotoSource(img) {
+    const picture = img.closest('picture');
+    const source = picture ? picture.querySelector('source[type="image/webp"][srcset]') : null;
+    let url = img.currentSrc || img.src;
+    let largestWidth = 0;
+    if (source) {
+      // The inline image may use a small responsive candidate; enlarge from the declared full size.
+      source.srcset.split(',').forEach(function (candidate) {
+        const match = candidate.trim().match(/^(\S+)\s+(\d+)w$/);
+        const width = match ? Number(match[2]) : 0;
+        if (Number.isFinite(width) && width > largestWidth) {
+          url = match[1];
+          largestWidth = width;
+        }
+      });
+    }
+    return url;
+  }
+
   imgs.forEach(function (img) {
     img.addEventListener('click', function () {
-      dImg.src = img.currentSrc || img.src;
+      dImg.src = fullPhotoSource(img);
       dImg.alt = img.alt || '';
       const fig = img.closest('figure');
       const cap = fig ? fig.querySelector('figcaption') : null;

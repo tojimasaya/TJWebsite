@@ -1,5 +1,90 @@
 [
   {
+    "slug": "kai-tak-lion-rock",
+    "label": "今日の断章",
+    "title": "獅子の横顔と、知らなかった啟德",
+    "place": "香港・啟德　SOGO／雙子匯",
+    "date": "2026年11月16日",
+    "body": "妻と訪ねた啟德のそごうの上階でスマホの望遠を伸ばし、周りのビルを画面から外すと、獅子山が本当にライオンの横顔になり、少し引けば新しいマンションや公共住宅、緑のある広場と大きな会場が並ぶ啟德の街が見えて、私にとっては豪華客船の着くターミナルと、何度かドローンを飛ばした場所だった啟德にも、初めて歩く駅前にはこんなに気持ちのいい街ができていたのかと驚き、Xiaomiの店には電気自動車が置かれ、その前では草間彌生の巨大なかぼちゃが踊り、七十五ドルのタイ料理を食べるうちに店の席も次々と埋まっていったのだが、駅にあった昔の空港の地図を見ると、いま歩いている場所は、船の着く旧滑走路の先端からずいぶん離れていて、何度も来たつもりの街なのに、私が知っていたのはずいぶん細長い一部分だけだった。",
+    "homeLead": "そごうの上階から望遠で切り取った獅子山の横顔、その下に広がっていたのは、豪華客船のターミナルだけではない啟德だった。",
+    "image": "assets/images/photo-notes/kai-tak-lion-rock.jpg",
+    "imageWebp": "assets/images/photo-notes/kai-tak-lion-rock.webp",
+    "alt": "そごうの上階から望遠で切り取った獅子山の岩峰。空を背景に左を向いたライオンの横顔のように見える",
+    "caption": "そごう上階から見つけた獅子山の横顔 / Xiaomi 17 Ultra LeitzPhone・400mm相当",
+    "width": 1800,
+    "height": 1355,
+    "imageWebpSmall": "assets/images/photo-notes/kai-tak-lion-rock-720.webp",
+    "thumbnailWebp": "assets/images/photo-notes/kai-tak-lion-rock-thumb.webp",
+    "sideFrames": [
+      {
+        "title": "上階から見る、新しい街",
+        "image": "assets/images/photo-notes/kai-tak-townscape.jpg",
+        "imageWebp": "assets/images/photo-notes/kai-tak-townscape.webp",
+        "alt": "高層住宅の間に広がる緑のある広場と道路、手前の大きな建物をそごうの上階から見下ろす",
+        "caption": "新しい住宅と広場、ビルの間に見える大きな会場 / Kai Tak",
+        "width": 1800,
+        "height": 1355,
+        "imageWebpSmall": "assets/images/photo-notes/kai-tak-townscape-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/kai-tak-townscape-thumb.webp"
+      },
+      {
+        "title": "駅前で踊るかぼちゃ",
+        "image": "assets/images/photo-notes/kai-tak-dancing-pumpkin.jpg",
+        "imageWebp": "assets/images/photo-notes/kai-tak-dancing-pumpkin.webp",
+        "alt": "雙子匯の屋外広場に置かれた、黄色と黒の水玉模様の草間彌生作品Dancing Pumpkin",
+        "caption": "草間彌生《Dancing Pumpkin》 / 雙子匯",
+        "width": 1800,
+        "height": 1350,
+        "imageWebpSmall": "assets/images/photo-notes/kai-tak-dancing-pumpkin-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/kai-tak-dancing-pumpkin-thumb.webp"
+      },
+      {
+        "title": "Xiaomiの店へ",
+        "image": "assets/images/photo-notes/kai-tak-xiaomi-store.jpg",
+        "imageWebp": "assets/images/photo-notes/kai-tak-xiaomi-store.webp",
+        "alt": "オレンジ色のmiロゴを掲げたXiaomiの広い売場。白い陳列台と来店客の姿が見える",
+        "caption": "スマホも家電も並ぶXiaomiの店 / Kai Tak",
+        "width": 1800,
+        "height": 1350,
+        "imageWebpSmall": "assets/images/photo-notes/kai-tak-xiaomi-store-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/kai-tak-xiaomi-store-thumb.webp"
+      },
+      {
+        "title": "店に並んでいた電気自動車",
+        "image": "assets/images/photo-notes/kai-tak-xiaomi-car.jpg",
+        "imageWebp": "assets/images/photo-notes/kai-tak-xiaomi-car.webp",
+        "alt": "Xiaomiの店内に展示された水色の電気自動車を斜め前から見る",
+        "caption": "Xiaomiの店で見つけた電気自動車 / Kai Tak",
+        "width": 1800,
+        "height": 1350,
+        "imageWebpSmall": "assets/images/photo-notes/kai-tak-xiaomi-car-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/kai-tak-xiaomi-car-thumb.webp"
+      },
+      {
+        "title": "初めて歩く駅前",
+        "image": "assets/images/photo-notes/kai-tak-station-sign.jpg",
+        "imageWebp": "assets/images/photo-notes/kai-tak-station-sign.webp",
+        "alt": "オレンジ色のタイル壁に掲げられた啟德Kai Takの駅名",
+        "caption": "啟德駅 / Kai Tak Station",
+        "width": 1800,
+        "height": 1346,
+        "imageWebpSmall": "assets/images/photo-notes/kai-tak-station-sign-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/kai-tak-station-sign-thumb.webp"
+      },
+      {
+        "title": "昔の滑走路と、いまの駅",
+        "image": "assets/images/photo-notes/kai-tak-old-airport-map.jpg",
+        "imageWebp": "assets/images/photo-notes/kai-tak-old-airport-map.webp",
+        "alt": "1998年の旧啟德空港の航空写真に、黄色い線で滑走路と敷地の輪郭を重ねた駅の展示",
+        "caption": "駅にあった旧空港の地図をドキュメントモードで記録 / Kai Tak",
+        "width": 1800,
+        "height": 1362,
+        "imageWebpSmall": "assets/images/photo-notes/kai-tak-old-airport-map-720.webp",
+        "thumbnailWebp": "assets/images/photo-notes/kai-tak-old-airport-map-thumb.webp"
+      }
+    ]
+  },
+  {
     "slug": "central-walk-wife-questions",
     "label": "今日の断章",
     "title": "歩き慣れた道と、妻の質問",
