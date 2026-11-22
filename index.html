@@ -13,7 +13,7 @@
     gtag('config', 'G-806426BQX2');
   </script>
 
-  <title>田路昌也 (Toji Masaya) — 姫路城、香港、私が使う機材</title>
+  <title>田路昌也 (Toji Masaya) — 香港と姫路、ときどき旅。</title>
 
   <link rel="icon" href="/favicon.ico" sizes="any">
   <link rel="icon" type="image/png" href="/favicon.png">
@@ -23,17 +23,17 @@
   <meta name="keywords" content="田路昌也, TJ, 写真, 香港, 姫路城, 白鷺三十六景, ドローン, 旅, 機材, 断章">
   <meta name="author" content="Toji Masaya">
 
-  <meta property="og:title" content="田路昌也 (Toji Masaya) — 姫路城、香港、私が使う機材">
+  <meta property="og:title" content="田路昌也 (Toji Masaya) — 香港と姫路、ときどき旅。">
   <meta property="og:description" content="白鷺三十六景、変わりゆく香港、自分で使う旅と撮影の道具。香港と姫路を行き来しながら続ける写真と文章の記録。">
-  <meta property="og:image" content="https://tojimasaya.com/assets/images/gallery/castle31.jpg">
+  <meta property="og:image" content="https://tojimasaya.com/assets/images/shirasagi/13.jpg">
   <meta property="og:url" content="https://tojimasaya.com">
   <meta property="og:type" content="website">
 
   <meta name="twitter:card" content="summary_large_image">
   <meta name="twitter:site" content="@mongkok93">
-  <meta name="twitter:title" content="田路昌也 (Toji Masaya) — 姫路城、香港、私が使う機材">
+  <meta name="twitter:title" content="田路昌也 (Toji Masaya) — 香港と姫路、ときどき旅。">
   <meta name="twitter:description" content="白鷺三十六景、変わりゆく香港、自分で使う旅と撮影の道具。香港と姫路を行き来しながら続ける写真と文章の記録。">
-  <meta name="twitter:image" content="https://tojimasaya.com/assets/images/gallery/castle31.jpg">
+  <meta name="twitter:image" content="https://tojimasaya.com/assets/images/shirasagi/13.jpg">
 
   <!-- フォント読み込みの最適化 -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -41,7 +41,7 @@
   <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'">
   <noscript><link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400;1,600&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet"></noscript>
 
-  <link rel="preload" as="image" href="assets/images/gallery/castle31.webp" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="assets/images/shirasagi/webp/full/13.webp" type="image/webp" fetchpriority="high">
   <link rel="stylesheet" href="style.css">
 
   <!-- 構造化データ (JSON-LD) -->
@@ -139,69 +139,31 @@
        INDEX REDESIGN — Project-First Layout
        ============================================== */
 
-    /* ── Hero: Identity Gateway ── */
+    /* ── Hero: Split Editorial Gateway ── */
     .identity-hero {
       position: relative;
       width: 100%;
-      min-height: min(680px, calc(100svh - 90px));
-      overflow: hidden;
-      background: #1a1a1a;
+      background: var(--bg-color, #fafafa);
+      border-bottom: 1px solid var(--border-color, #e5e5e5);
       margin-top: 70px;
-      color: #fff;
-    }
-
-    .identity-hero-media {
-      position: absolute;
-      inset: 0;
-      display: grid;
-      grid-template-columns: minmax(0, 1.22fr) minmax(320px, 0.78fr);
-      grid-template-rows: 1fr 1fr;
-      height: 100%;
-    }
-
-    .identity-hero-media picture {
-      position: relative;
-      display: block;
-      overflow: hidden;
-    }
-
-    .identity-hero-media picture:first-child {
-      grid-row: 1 / 3;
-    }
-
-    .identity-hero-media picture:first-child img {
-      object-position: 66% 52%;
-      filter: brightness(0.95) saturate(1.15);
-    }
-
-    .identity-hero-media img {
-      display: block;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      filter: brightness(0.78) saturate(0.98);
-    }
-
-    .identity-hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background:
-        linear-gradient(90deg, rgba(0,0,0,0.68) 0%, rgba(0,0,0,0.44) 36%, rgba(0,0,0,0.14) 68%, rgba(0,0,0,0.18) 100%),
-        linear-gradient(0deg, rgba(0,0,0,0.66) 0%, rgba(0,0,0,0.08) 48%, rgba(0,0,0,0.18) 100%);
-      pointer-events: none;
+      padding: 2.8rem 0 2.6rem;
+      color: var(--text-color, #222);
     }
 
     .identity-hero-inner {
-      position: relative;
-      z-index: 2;
-      width: min(1100px, calc(100% - 4rem));
-      min-height: inherit;
+      width: min(1120px, calc(100% - 4rem));
       margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      justify-content: flex-end;
-      padding: 3.5rem 0 2.5rem;
+    }
+
+    .identity-hero-stage {
+      display: grid;
+      grid-template-columns: minmax(0, 0.86fr) minmax(0, 1.14fr);
+      gap: 2.6rem;
+      align-items: center;
+    }
+
+    .identity-hero-copy {
+      min-width: 0;
     }
 
     .identity-hero-kicker {
@@ -209,81 +171,114 @@
       align-items: center;
       gap: 0.7rem;
       font-family: 'Inter', sans-serif;
-      font-size: 0.7rem;
-      letter-spacing: 0;
-      color: rgba(255,255,255,0.74);
-      margin-bottom: 1.2rem;
+      font-size: 0.72rem;
+      letter-spacing: 0.08em;
+      color: #9b5b2e;
+      margin: 0 0 1rem;
     }
 
     .identity-hero-kicker::before {
       content: '';
-      width: 34px;
+      width: 30px;
       height: 1px;
-      background: rgba(255,255,255,0.74);
+      background: #9b5b2e;
     }
 
     .identity-hero-title {
-      max-width: 1000px;
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: clamp(2rem, 4.3vw, 4rem);
-      font-weight: 400;
-      letter-spacing: 0;
-      line-height: 1.3;
-      margin-bottom: 1.2rem;
-      text-shadow: 0 2px 20px rgba(0,0,0,0.3);
+      font-size: clamp(1.9rem, 3.1vw, 2.95rem);
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      line-height: 1.38;
+      color: var(--text-color, #1a1a1a);
+      margin: 0 0 1.15rem;
     }
 
     .identity-hero-lead {
-      max-width: 600px;
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
-      font-size: 1rem;
-      line-height: 1.85;
-      letter-spacing: 0;
-      color: rgba(255,255,255,0.95);
-      text-shadow: 0 1px 12px rgba(0,0,0,0.55);
+      font-size: 0.96rem;
+      line-height: 1.95;
+      letter-spacing: 0.01em;
+      color: var(--text-light, #555);
+      margin: 0;
+    }
+
+    .identity-hero-media {
+      display: grid;
+      grid-template-columns: minmax(0, 1.38fr) minmax(0, 0.82fr);
+      grid-template-rows: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      height: 390px;
+    }
+
+    .identity-hero-media picture {
+      position: relative;
+      display: block;
+      overflow: hidden;
+      border-radius: 10px;
+      background: var(--hover-color, #ecebe7);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+    }
+
+    .identity-hero-media picture:first-child {
+      grid-row: 1 / 3;
+    }
+
+    .identity-hero-media img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.6s ease;
+    }
+
+    .identity-hero-media picture:first-child img {
+      object-position: 64% 48%;
+    }
+
+    .identity-hero-media picture:hover img {
+      transform: scale(1.03);
     }
 
     .identity-hero-routes {
       display: grid;
       grid-template-columns: repeat(4, minmax(0, 1fr));
       gap: 14px;
-      margin-top: 2.4rem;
+      margin-top: 2.1rem;
     }
 
     .identity-hero-route {
       position: relative;
-      min-height: 140px;
-      padding: 1.2rem 1.1rem 2.3rem;
-      color: #fff;
+      min-height: 132px;
+      padding: 1.15rem 1.1rem 2.2rem;
+      color: var(--text-color, #222);
       text-decoration: none;
-      background: rgba(12, 12, 14, 0.36);
-      border: 1px solid rgba(255,255,255,0.38);
+      background: var(--white, #fff);
+      border: 1px solid var(--border-color, #e5e5e5);
       border-radius: 12px;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      box-shadow: 0 10px 30px rgba(0,0,0,0.35);
-      transition: background 0.3s ease, border-color 0.3s ease, transform 0.3s ease;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.03);
+      transition: border-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
     }
 
     .identity-hero-route::after {
       content: "→";
       position: absolute;
       right: 1rem;
-      bottom: 0.85rem;
+      bottom: 0.8rem;
       font-family: 'Inter', sans-serif;
-      font-size: 0.95rem;
-      color: rgba(255,255,255,0.8);
-      transition: color 0.3s ease, transform 0.3s ease;
+      font-size: 0.92rem;
+      color: var(--text-light, #777);
+      transition: color 0.25s ease, transform 0.25s ease;
     }
 
     .identity-hero-route:hover {
-      background: rgba(12, 12, 14, 0.52);
-      border-color: rgba(255,255,255,0.65);
-      transform: translateY(-3px);
+      border-color: #9b5b2e;
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+      transform: translateY(-2px);
     }
 
     .identity-hero-route:hover::after {
-      color: #fff;
+      color: #9b5b2e;
       transform: translateX(4px);
     }
 
@@ -292,20 +287,22 @@
       overflow-wrap: anywhere;
       font-family: 'Inter', sans-serif;
       font-size: 0.64rem;
-      letter-spacing: 0.18em;
-      color: rgba(255,255,255,0.88);
+      letter-spacing: 0.16em;
+      color: #9b5b2e;
       text-transform: uppercase;
-      margin-bottom: 0.75rem;
+      margin-bottom: 0.55rem;
+      font-weight: 500;
     }
 
     .identity-hero-route strong {
       display: block;
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
       font-size: 0.98rem;
-      font-weight: 500;
-      letter-spacing: 0.08em;
-      line-height: 1.55;
-      margin-bottom: 0.45rem;
+      font-weight: 600;
+      letter-spacing: 0.05em;
+      line-height: 1.5;
+      color: var(--text-color, #222);
+      margin-bottom: 0.4rem;
     }
 
     .identity-hero-route em {
@@ -313,9 +310,23 @@
       font-style: normal;
       font-family: 'Noto Serif JP', 'Hiragino Mincho ProN', serif;
       font-size: 0.76rem;
-      line-height: 1.75;
-      letter-spacing: 0.04em;
-      color: rgba(255,255,255,0.84);
+      line-height: 1.7;
+      letter-spacing: 0.02em;
+      color: var(--text-light, #666);
+    }
+
+    [data-theme="dark"] .identity-hero-route {
+      background: #1a1a19;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.25);
+    }
+
+    [data-theme="dark"] .identity-hero-kicker,
+    [data-theme="dark"] .identity-hero-route span {
+      color: #d49464;
+    }
+
+    [data-theme="dark"] .identity-hero-kicker::before {
+      background: #d49464;
     }
 
     /* ── Timely Notice ── */
@@ -649,24 +660,36 @@
 
     .home-hongkong-btn:hover { background: #2f5d7c; color: #fff; }
 
-    /* ヒーロー直下、香港ハンドブックへの近道 */
+    /* ヒーロー内、香港ハンドブック＆多言語への近道 */
     .identity-hero-handbook {
-      margin: 1.6rem 0 0;
+      margin: 1.3rem 0 0;
       font-family: 'Noto Serif JP', serif;
-      font-size: 0.85rem;
-      line-height: 1.9;
-      color: rgba(255, 255, 255, 0.82);
+      font-size: 0.82rem;
+      line-height: 1.95;
+      color: var(--text-light, #666);
+      display: flex;
+      flex-direction: column;
+      gap: 4px;
     }
 
     .identity-hero-handbook a {
-      color: #fff;
+      color: var(--text-color, #222);
       text-decoration: none;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-      padding-bottom: 2px;
-      margin-left: 0.4rem;
+      border-bottom: 1px solid var(--border-color, #ccc);
+      padding-bottom: 1px;
+      transition: color 0.2s ease, border-color 0.2s ease;
     }
 
-    .identity-hero-handbook a:hover { border-color: #fff; }
+    .identity-hero-handbook a:hover {
+      color: #9b5b2e;
+      border-color: #9b5b2e;
+    }
+
+    .identity-hero-langs {
+      font-family: 'Inter', sans-serif;
+      font-size: 0.76rem;
+      color: var(--text-light, #777);
+    }
 
     /* 見出しの階層だけ残して視覚的には隠す */
     .trip-vh {
@@ -1051,53 +1074,75 @@
       }
     }
 
+    @media (max-width: 960px) {
+      .identity-hero-stage {
+        grid-template-columns: 1fr;
+        gap: 1.8rem;
+      }
+
+      .identity-hero-media {
+        order: -1;
+        height: 320px;
+      }
+
+      .identity-hero-routes {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
     @media (max-width: 768px) {
       .identity-hero {
-        min-height: calc(100svh - 110px);
+        padding: 1.4rem 0 2.2rem;
+      }
+
+      .identity-hero-inner {
+        width: calc(100% - 2.4rem);
+      }
+
+      .identity-hero-stage {
+        gap: 1.4rem;
       }
 
       .identity-hero-media {
         grid-template-columns: 1fr 1fr;
-        grid-template-rows: 1.25fr 0.75fr;
+        grid-template-rows: auto auto;
+        height: auto;
+        gap: 8px;
       }
 
       .identity-hero-media picture:first-child {
         grid-column: 1 / 3;
         grid-row: 1;
+        aspect-ratio: 16 / 10;
       }
 
-      .identity-hero::after {
-        background:
-          linear-gradient(0deg, rgba(0,0,0,0.84) 0%, rgba(0,0,0,0.42) 48%, rgba(0,0,0,0.34) 100%);
-      }
-
-      .identity-hero-inner {
-        width: calc(100% - 3rem);
-        padding: 3rem 0 1.1rem;
+      .identity-hero-media picture:not(:first-child) {
+        aspect-ratio: 16 / 10;
       }
 
       .identity-hero-title {
-        font-size: clamp(1.85rem, 9vw, 2.55rem);
+        font-size: clamp(1.75rem, 7.6vw, 2.25rem);
+        margin-bottom: 0.85rem;
       }
 
       .identity-hero-lead {
-        font-size: 0.9rem;
-        line-height: 2;
+        font-size: 0.88rem;
+        line-height: 1.9;
       }
 
       .identity-hero-routes {
         grid-template-columns: repeat(2, minmax(0, 1fr));
         gap: 10px;
-        margin-top: 1.25rem;
+        margin-top: 1.5rem;
       }
 
       .identity-hero-route {
-        min-height: 84px;
-        padding: 0.75rem 0.7rem 1.7rem;
+        min-height: 86px;
+        padding: 0.85rem 0.8rem 1.75rem;
       }
 
       .identity-hero-route::after {
-        right: 0.7rem;
+        right: 0.75rem;
         bottom: 0.55rem;
         font-size: 0.85rem;
       }
@@ -1293,29 +1338,42 @@
   <main id="main-content">
 
   <!-- ======================================
-       SECTION 1: ヒーロー（B+D中間案）
+       SECTION 1: ヒーロー（左右スプリット・エディトリアル型）
        ====================================== -->
   <section class="identity-hero" aria-labelledby="identity-hero-title">
-    <div class="identity-hero-media" aria-hidden="true">
-      <picture>
-        <source srcset="assets/images/shirasagi/webp/full/13.webp" type="image/webp">
-        <img src="assets/images/shirasagi/13.jpg" alt="" loading="eager" fetchpriority="high" decoding="async">
-      </picture>
-      <picture>
-        <source srcset="assets/images/hero/hongkong-1280.webp" type="image/webp">
-        <img src="assets/images/hero/hongkong-1280.jpg" alt="" loading="eager" fetchpriority="low" decoding="async">
-      </picture>
-      <picture>
-        <source srcset="assets/images/gear/m2.webp" type="image/webp">
-        <img src="assets/images/gear/m2.jpg" alt="" loading="eager" fetchpriority="low" decoding="async">
-      </picture>
-    </div>
     <div class="identity-hero-inner">
-      <p class="identity-hero-kicker">田路昌也の写真と記録</p>
-      <h1 class="identity-hero-title" id="identity-hero-title">姫路城と香港、<br>そのあいだを撮る。</h1>
-      <p class="identity-hero-lead">
-        香港に暮らして30余年。姫路城の四季と、変わりゆく香港を地上と空から。行き来する日々に持ち出す道具や、そこで出会った人も、写真と言葉で残しています。
-      </p>
+      <div class="identity-hero-stage">
+        <div class="identity-hero-copy">
+          <p class="identity-hero-kicker">田路昌也の写真と記録</p>
+          <h1 class="identity-hero-title" id="identity-hero-title">香港と姫路、<br>ときどき旅。</h1>
+          <p class="identity-hero-lead">
+            香港に暮らして30余年。姫路城の四季と、変わりゆく香港を地上と空から。行き来する日々に持ち出す道具や、そこで出会った人も、写真と言葉で残しています。
+          </p>
+          <div class="identity-hero-handbook">
+            <span>香港の暮らし・手続きはこちら <a href="hongkong-handbook.html" data-growth-label="home_hero_handbook">香港ハンドブック →</a></span>
+            <span class="identity-hero-langs">
+              <span style="white-space: nowrap;">English: <a href="shirasagi36-en.html" hreflang="en" lang="en">Himeji Castle</a> / <a href="about-en.html" hreflang="en" lang="en">About</a></span>
+              <span style="margin: 0 0.4rem; opacity: 0.45;" aria-hidden="true">·</span>
+              <span style="white-space: nowrap;">繁體中文: <a href="shirasagi36-hk.html" hreflang="zh-Hant" lang="zh-Hant">白鷺三十六景</a> / <a href="about-hk.html" hreflang="zh-Hant" lang="zh-Hant">關於</a></span>
+            </span>
+          </div>
+        </div>
+        <div class="identity-hero-media">
+          <picture>
+            <source srcset="assets/images/shirasagi/webp/full/13.webp" type="image/webp">
+            <img src="assets/images/shirasagi/13.jpg" alt="秋の紅葉に彩られた姫路城の全景" loading="eager" fetchpriority="high" decoding="async">
+          </picture>
+          <picture>
+            <source srcset="assets/images/hero/hongkong-1280.webp" type="image/webp">
+            <img src="assets/images/hero/hongkong-1280.jpg" alt="香港・ビクトリアハーバーの夜景" loading="eager" fetchpriority="low" decoding="async">
+          </picture>
+          <picture>
+            <source srcset="assets/images/gear/m2.webp" type="image/webp">
+            <img src="assets/images/gear/m2.jpg" alt="Leica M2 と撮影機材" loading="eager" fetchpriority="low" decoding="async">
+          </picture>
+        </div>
+      </div>
+
       <nav class="identity-hero-routes" aria-label="サイトの主な入口">
         <a class="identity-hero-route" href="shirasagi36.html" data-growth-label="home_route_himeji">
           <span>Himeji Castle</span>
@@ -1338,13 +1396,6 @@
           <em>iPhone、Leica、ドローン。自分で使った機材の記録。</em>
         </a>
       </nav>
-      <p class="identity-hero-handbook">
-        <span style="white-space: nowrap;">香港の暮らし・手続きはこちら <a href="hongkong-handbook.html" data-growth-label="home_hero_handbook">香港ハンドブック →</a></span>
-        <span style="margin: 0 0.7rem; opacity: 0.4;" aria-hidden="true">|</span>
-        <span style="white-space: nowrap;"><span style="opacity: 0.82;">English:</span> <a href="shirasagi36-en.html" hreflang="en" lang="en">Himeji Castle</a> / <a href="about-en.html" hreflang="en" lang="en">About</a></span>
-        <span style="margin: 0 0.45rem; opacity: 0.4;" aria-hidden="true">·</span>
-        <span style="white-space: nowrap;"><span style="opacity: 0.82;">繁體中文:</span> <a href="shirasagi36-hk.html" hreflang="zh-Hant" lang="zh-Hant">白鷺三十六景</a> / <a href="about-hk.html" hreflang="zh-Hant" lang="zh-Hant">關於</a></span>
-      </p>
     </div>
   </section>
 
