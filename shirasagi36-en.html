@@ -259,7 +259,7 @@
                         <p class="project-description">This project is not only about photographing Himeji Castle as a landmark. It records the castle through the eyes of someone who grew up in the castle town and still keeps returning to it, layering season, time, and the presence of daily life. Rather than treating completion as the end, I will keep refining the collection whenever I encounter a view that stays with me more deeply.</p>
                         <div class="project-statistics">
                             <p><strong><span id="project-count">35</span> / 36</strong> views published <span id="project-remaining">1 view to go</span></p>
-                            <p id="project-season-breakdown">Spring 16 / Summer 6 / Autumn 6 / Winter 6</p>
+                            <p id="project-season-breakdown">Spring 16 / Summer 6 / Autumn 7 / Winter 6</p>
                         </div>
                     </div>
 
@@ -338,7 +338,7 @@
                         The Collection
                     </h3>
                     <!-- Modified progress display to show count/total instead of percentage -->
-                    <p class="text-sm text-gray-500 mt-2 font-serif-body italic">Progress: <span id="progress-text" class="text-lg font-bold text-shirasagi-blue not-italic font-sans">0</span> / 36 Views</p>
+                    <p class="text-sm text-gray-500 mt-2 font-serif-body italic">Progress: <span id="progress-text" class="text-lg font-bold text-shirasagi-blue not-italic font-sans">35</span> / 36 Views</p>
                 </div>
                 
                 <div class="flex flex-wrap gap-2 md:gap-3 font-serif-display text-[10px] md:text-sm tracking-widest w-full md:w-auto">
@@ -737,11 +737,16 @@
             return value.slice(0, maxLength - 1) + '…';
         }
 
+        function getPhotoSeason(photo) {
+            return (photo && photo.category ? photo.category.split(' ')[0] : '');
+        }
+
         function renderGrid() {
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
             const isAllView = currentFilter === 'all';
-            // 「すべて」表示は、いまの季節から順に(例: 夏→秋→冬→春)。特別は常に最後
+            const allIds = Object.keys(photosData).map(Number).sort((a, b) => a - b);
+            // 「すべて」表示は、いまの季節から順に(例: 夏→秋→冬→春)。その他は最後
             let ids = [];
             if (isAllView) {
                 const m = new Date().getMonth() + 1;
@@ -749,14 +754,15 @@
                 const cycle = ['spring', 'summer', 'autumn', 'winter'];
                 const startIdx = cycle.indexOf(cur);
                 for (let k = 0; k < 4; k++) {
-                    const [s, e] = seasonRanges[cycle[(startIdx + k) % 4]];
-                    for (let i = s; i <= e; i++) ids.push(i);
+                    const seasonKey = cycle[(startIdx + k) % 4];
+                    ids.push(...allIds.filter(id => getPhotoSeason(photosData[id]) === seasonKey));
                 }
-                const [ss, se] = seasonRanges['special'];
-                for (let i = ss; i <= se; i++) ids.push(i);
+                ids.push(...allIds.filter(id => !cycle.includes(getPhotoSeason(photosData[id]))));
+            } else if (currentFilter === 'sakura') {
+                const [s, e] = seasonRanges.sakura;
+                ids = allIds.filter(id => id >= s && id <= e);
             } else {
-                const [s, e] = seasonRanges[currentFilter] || [1, 36];
-                for (let i = s; i <= e; i++) ids.push(i);
+                ids = allIds.filter(id => getPhotoSeason(photosData[id]) === currentFilter);
             }
 
             for (const i of ids) {
@@ -838,18 +844,9 @@
 
         // Updated updateProgress function to show count instead of percentage
         function updateProgress() {
-            const total = 36;
             const count = Object.keys(photosData).length;
-            // No percentage calculation needed for text display
             const el = document.getElementById('progress-text');
-            let start = 0;
-            if(count > 0) {
-                const timer = setInterval(() => {
-                    start++;
-                    el.innerText = start;
-                    if (start >= count) clearInterval(timer);
-                }, 50);
-            } else { el.innerText = 0; }
+            if (el) el.textContent = count;
         }
 
         function updateProjectOverview() {
@@ -875,7 +872,7 @@
             const seasonBreakdownEl = document.getElementById('project-season-breakdown');
 
             if (countEl) countEl.textContent = count;
-            if (remainingEl) remainingEl.textContent = remaining > 0 ? `${remaining} views to go` : 'All 36 views complete';
+            if (remainingEl) remainingEl.textContent = remaining > 0 ? `${remaining} ${remaining === 1 ? 'view' : 'views'} to go` : 'All 36 views complete';
             if (latest && latestDateEl) {
                 latestDateEl.textContent = `Updated ${latest.date || 'date TBD'}`;
             }
@@ -910,13 +907,14 @@
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
+                    const target = e.currentTarget;
                     buttons.forEach(b => {
-                        b.classList.remove('bg-shirasagi-ink', 'text-white');
-                        b.classList.add('bg-transparent', 'text-gray-600');
+                        b.classList.remove('active', 'bg-shirasagi-ink', 'text-white', 'hover:text-white');
+                        b.classList.add('bg-transparent', 'text-gray-600', 'hover:text-shirasagi-blue');
                     });
-                    e.target.classList.remove('bg-transparent', 'text-gray-600');
-                    e.target.classList.add('bg-shirasagi-ink', 'text-white');
-                    currentFilter = e.target.dataset.filter;
+                    target.classList.remove('bg-transparent', 'text-gray-600', 'hover:text-shirasagi-blue');
+                    target.classList.add('active', 'bg-shirasagi-ink', 'text-white', 'hover:text-white');
+                    currentFilter = target.dataset.filter;
 
                     // Fade out, swap, fade in
                     const grid = document.getElementById('shirasagi-grid');

@@ -171,6 +171,17 @@
             height: auto;
         }
 
+        .gallery-item.video .item-img-wrapper {
+            aspect-ratio: 16 / 9;
+            overflow: hidden;
+            background-color: #111;
+        }
+
+        .gallery-item.video img {
+            height: 100%;
+            object-fit: cover;
+        }
+
         .gallery-item img {
             width: 100%;
             height: auto;
@@ -457,7 +468,7 @@
 
                 el.innerHTML = `
                     <div class="item-img-wrapper">
-                        <img src="${thumbSrc}" alt="${item.title}" loading="lazy" decoding="async"
+                        <img src="${thumbSrc}" alt="${item.title}" loading="eager" decoding="async"
                             ${item.width && item.height ? `width="${item.width}" height="${item.height}"` : ''}
                             data-fallback-src="${fullSrc || ''}"
                             onerror="if(this.dataset.fallbackSrc && this.src !== new URL(this.dataset.fallbackSrc, document.baseURI).href){this.src=this.dataset.fallbackSrc}else{this.onerror=null;this.src='https://placehold.co/600x400?text=Image+Not+Found'}">

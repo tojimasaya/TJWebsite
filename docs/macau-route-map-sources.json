@@ -1,0 +1,21 @@
+{
+  "checked_on": "2026-10-30",
+  "official_lengths": {
+    "source": "https://www.hzmb.gov.hk/en/project.html",
+    "hong_kong_port_to_macao_port_km_approx": 42,
+    "hong_kong_link_road_km": 12,
+    "main_bridge_and_tunnel_km": 29.6,
+    "zhuhai_link_road_km": 13.4,
+    "total_system_km": 55
+  },
+  "geometry": {
+    "provider": "OpenStreetMap contributors / OSRM public routing service",
+    "source": "https://router.project-osrm.org/route/v1/driving/113.9514,22.3187;113.5741,22.2015?overview=full&geometries=geojson",
+    "processing": "Retain the bridge road alignment; omit car-only terminal detours and use dashed schematic approaches to the port locations. This is an orientation map, not a bus-specific route or a recorded GPS track. Computed driving distance is not used as the published bridge length.",
+    "license": "https://www.openstreetmap.org/copyright"
+  },
+  "port_location_references": [
+    "https://commons.wikimedia.org/wiki/File:Boarding_area_entrance_of_HZMB_Hong_Kong_Port_(20181024095129).jpg",
+    "https://commons.wikimedia.org/wiki/File:20260415_Edifício_do_Posto_Fronteiriço_de_Macau_da_Ponte_Hong_Kong–Zhuhai–Macau.jpg"
+  ]
+}

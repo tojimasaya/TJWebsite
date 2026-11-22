@@ -26,6 +26,15 @@
       "thumb": "assets/og/rokid-recording-led-20261116-640.webp"
     },
     {
+      "kind": "drone",
+      "kindLabel": "DRONE.jp",
+      "title": "この景色が変わる前に─新しい皇崗口岸を香港側から空撮 [田路昌也の中国・香港ドローン便り]Vol.70",
+      "url": "https://drone.jp/column/20261112134935130340.html",
+      "external": true,
+      "date": "2026-11-12",
+      "thumb": "https://drone.jp/wp-content/uploads/tohzi_70_00Lok7chy1.jpg"
+    },
+    {
       "kind": "fragment",
       "kindLabel": "断章",
       "title": "歩き慣れた道と、妻の質問",
@@ -33,6 +42,24 @@
       "external": false,
       "date": "2026-11-11",
       "thumb": "/assets/images/photo-notes/central-walk-incense.webp"
+    },
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "香港カメラショップシリーズ 第5回 〜Panda Camera-Repair Service〜",
+      "url": "https://note.com/tojimasaya/n/n8d71a5531f5c",
+      "external": true,
+      "date": "2026-11-05",
+      "thumb": "https://assets.st-note.com/production/uploads/images/332493999/rectangle_large_type_2_b4d28b4d9f2bf8773484987845a0f5ab.png?width=800"
+    },
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "7連敗のあと、ボールペンで17連勝した。30年前のマカオの話",
+      "url": "https://note.com/tojimasaya/n/ncc9aacfc1264",
+      "external": true,
+      "date": "2026-11-02",
+      "thumb": "https://assets.st-note.com/production/uploads/images/331308093/rectangle_large_type_2_92b1424f8eadc52b29cc2e94de418cfd.jpeg?width=800"
     },
     {
       "kind": "fragment",
@@ -87,33 +114,6 @@
       "external": true,
       "date": "2026-10-04",
       "thumb": "https://assets.st-note.com/production/uploads/images/320687810/rectangle_large_type_2_9de53ae98d0c8f338539425539f86aee.png?width=800"
-    },
-    {
-      "kind": "note",
-      "kindLabel": "note",
-      "title": "HSBCのRedCoin。ひとまず香港ドルのままで",
-      "url": "https://note.com/tojimasaya/n/n51687a200e46",
-      "external": true,
-      "date": "2026-10-03",
-      "thumb": "https://assets.st-note.com/production/uploads/images/320385074/rectangle_large_type_2_85c64ea9c9eb5127bd68a9385f7fab41.png?width=800"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "国慶節の人波と、五十万円の亀",
-      "url": "/fragments/mongkok-national-day-tortoise.html",
-      "external": false,
-      "date": "2026-10-01",
-      "thumb": "/assets/images/photo-notes/mongkok-national-day-footbridge.webp"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "六十ドルの昼飯と、洗われる亀",
-      "url": "/fragments/mongkok-saizeriya-turtle.html",
-      "external": false,
-      "date": "2026-09-30",
-      "thumb": "/assets/images/photo-notes/mongkok-saizeriya-turtle.webp"
     }
   ]
 }

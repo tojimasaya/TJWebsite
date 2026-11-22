@@ -13,7 +13,36 @@
     "imageWidth": 640,
     "imageHeight": 335,
     "imageFit": "contain",
-    "imageLocal": "/assets/og/b555cdabbc81.png"
+    "imageLocal": "/assets/og/b555cdabbc81.png",
+    "featured": true
+  },
+  {
+    "title": "この景色が変わる前に─新しい皇崗口岸を香港側から空撮 [田路昌也の中国・香港ドローン便り]Vol.70",
+    "link": "https://drone.jp/column/20261112134935130340.html",
+    "date": "2026-11-12",
+    "image": "https://drone.jp/wp-content/uploads/tohzi_70_00Lok7chy1.jpg",
+    "excerpt": "新しくなった皇崗口岸を香港側からDJI Mini 5 Proで空撮した記録。AIに相談した撮影場所探しや現地での撮影を振り返り、地上からは見えにくい屋上の緑、開発が進む香港側の風景を映像と360°写真で紹介しています。",
+    "source": "drone",
+    "sourceLabel": "DRONE.jp"
+  },
+  {
+    "title": "香港カメラショップシリーズ 第5回 〜Panda Camera-Repair Service〜",
+    "link": "https://note.com/tojimasaya/n/n8d71a5531f5c",
+    "date": "2026-11-05",
+    "image": "https://assets.st-note.com/production/uploads/images/332493999/rectangle_large_type_2_b4d28b4d9f2bf8773484987845a0f5ab.png?width=800",
+    "excerpt": "香港・セントラルのカメラ修理店「Panda Camera-Repair Service」を訪ねた記録。ズミルックス50mm Version 2の絞りを相談した際のやりとりや、商売っ気のない優しい店主の人柄、カメラや楽器が並ぶ店内と入口への道順を紹介しています。",
+    "magazine": "俺流トラベルガジェット",
+    "source": "note",
+    "sourceLabel": "note"
+  },
+  {
+    "title": "7連敗のあと、ボールペンで17連勝した。30年前のマカオの話",
+    "link": "https://note.com/tojimasaya/n/ncc9aacfc1264",
+    "date": "2026-11-02",
+    "image": "https://assets.st-note.com/production/uploads/images/331308093/rectangle_large_type_2_92b1424f8eadc52b29cc2e94de418cfd.jpeg?width=800",
+    "excerpt": "マカオの旧市街で旧リスボアとグランドリスボアを撮りながら、30年ほど前のカジノ通いを振り返る回想記。正面入口を避けて裏口から入った縁起担ぎや、7連敗のあとにボールペンで17連勝した思い出を綴っています。",
+    "source": "note",
+    "sourceLabel": "note"
   },
   {
     "title": "新しい皇崗口岸へ。国境越えが楽になりました",

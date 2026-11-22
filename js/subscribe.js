@@ -18,7 +18,7 @@
     { key: 'feed', label: 'Feed（RSS / Atom）', href: '/feed.xml', cls: 'is-feed' },
     { key: 'note', label: 'note', href: 'https://note.com/tojimasaya', external: true },
     { key: 'x', label: 'X', href: 'https://x.com/mongkok93', external: true },
-    { key: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/TJVlog', external: true },
+    { key: 'youtube', label: 'YouTube', href: 'https://www.youtube.com/@TJ2', external: true },
     { key: 'instagram', label: 'Instagram', href: 'https://instagram.com/tojimasaya', external: true }
   ];
 

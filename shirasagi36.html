@@ -290,7 +290,7 @@
                         <p class="project-description">観光名所としての姫路城だけではなく、城下町で育ち、いまも通い続ける一人の視点から、季節、時間、生活の気配を重ねて記録する写真プロジェクトです。完成で終わる作品ではなく、より心に残る一枚に出会うたびに差し替えながら育てていきます。</p>
                         <div class="project-statistics">
                             <p><strong><span id="project-count">35</span> / 36</strong> 景を公開 <span id="project-remaining">あと1景で完成</span></p>
-                            <p id="project-season-breakdown">春16 / 夏6 / 秋6 / 冬6</p>
+                            <p id="project-season-breakdown">春16 / 夏6 / 秋7 / 冬6</p>
                         </div>
                     </div>
 
@@ -368,7 +368,7 @@
                     <h3 class="text-xl font-bold font-serif-jp text-shirasagi-ink flex items-center gap-4">
                         全三十六景一覧
                     </h3>
-                    <p class="text-sm text-gray-500 mt-2 font-serif-jp">現在 <span id="progress-text" class="text-lg font-bold text-shirasagi-blue">0</span> / 36 景</p>
+                    <p class="text-sm text-gray-500 mt-2 font-serif-jp">現在 <span id="progress-text" class="text-lg font-bold text-shirasagi-blue">35</span> / 36 景</p>
                 </div>
 
                 <div class="flex flex-wrap gap-2 md:gap-3 font-serif-jp text-[12px] md:text-sm w-full md:w-auto items-center">
@@ -858,6 +858,12 @@
                 &copy; <script>document.write(new Date().getFullYear())</script> Toji Masaya. All rights reserved.<br>
                 Himeji, Japan.
             </p>
+            <p class="text-[11px] font-sans tracking-wide opacity-70 mt-4">
+                <a href="/" class="hover:underline">Home</a> ・ <a href="about.html#license" class="hover:underline">写真の利用・お問い合わせ</a> ・ <a href="/feed.xml" class="hover:underline">Feed</a>
+            </p>
+            <p class="text-[10px] font-sans opacity-50 mt-3">
+                当サイトには広告（アフィリエイトリンク）を含むページがあります。Amazonのアソシエイトとして、当サイト運営者・田路昌也は適格販売により収入を得ています。
+            </p>
         </div>
     </footer>
 
@@ -1077,11 +1083,16 @@
             return value.slice(0, maxLength - 1) + '…';
         }
 
+        function getPhotoSeason(photo) {
+            return (photo && photo.category ? photo.category.split(' ')[0] : '');
+        }
+
         function renderGrid() {
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
             const isAllView = currentFilter === 'all';
-            // 「すべて」表示は、いまの季節から順に(例: 夏→秋→冬→春)。特別は常に最後
+            const allIds = Object.keys(photosData).map(Number).sort((a, b) => a - b);
+            // 「すべて」表示は、いまの季節から順に(例: 夏→秋→冬→春)。その他は最後
             let ids = [];
             if (isAllView) {
                 const m = new Date().getMonth() + 1;
@@ -1089,14 +1100,15 @@
                 const cycle = ['spring', 'summer', 'autumn', 'winter'];
                 const startIdx = cycle.indexOf(cur);
                 for (let k = 0; k < 4; k++) {
-                    const [s, e] = seasonRanges[cycle[(startIdx + k) % 4]];
-                    for (let i = s; i <= e; i++) ids.push(i);
+                    const seasonKey = cycle[(startIdx + k) % 4];
+                    ids.push(...allIds.filter(id => getPhotoSeason(photosData[id]) === seasonKey));
                 }
-                const [ss, se] = seasonRanges['special'];
-                for (let i = ss; i <= se; i++) ids.push(i);
+                ids.push(...allIds.filter(id => !cycle.includes(getPhotoSeason(photosData[id]))));
+            } else if (currentFilter === 'sakura') {
+                const [s, e] = seasonRanges.sakura;
+                ids = allIds.filter(id => id >= s && id <= e);
             } else {
-                const [s, e] = seasonRanges[currentFilter] || [1, 36];
-                for (let i = s; i <= e; i++) ids.push(i);
+                ids = allIds.filter(id => getPhotoSeason(photosData[id]) === currentFilter);
             }
 
             for (const i of ids) {
@@ -1178,18 +1190,9 @@
 
         // Updated updateProgress function to show count instead of percentage
         function updateProgress() {
-            const total = 36;
             const count = Object.keys(photosData).length;
-            // No percentage calculation needed for text display
             const el = document.getElementById('progress-text');
-            let start = 0;
-            if(count > 0) {
-                const timer = setInterval(() => {
-                    start++;
-                    el.innerText = start;
-                    if (start >= count) clearInterval(timer);
-                }, 50);
-            } else { el.innerText = 0; }
+            if (el) el.textContent = count;
         }
 
         function updateProjectOverview() {
@@ -1269,13 +1272,19 @@
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
+                    const target = e.currentTarget;
                     buttons.forEach(b => {
-                        b.classList.remove('bg-shirasagi-ink', 'text-white');
-                        b.classList.add('bg-transparent', 'text-gray-600');
+                        b.classList.remove('active', 'bg-shirasagi-ink', 'text-white', 'hover:text-white');
+                        b.classList.add('bg-transparent');
+                        if (b.dataset.filter === 'sakura') {
+                            b.classList.add('text-pink-400');
+                        } else {
+                            b.classList.add('text-gray-600', 'hover:text-shirasagi-blue');
+                        }
                     });
-                    e.target.classList.remove('bg-transparent', 'text-gray-600');
-                    e.target.classList.add('bg-shirasagi-ink', 'text-white');
-                    currentFilter = e.target.dataset.filter;
+                    target.classList.remove('bg-transparent', 'text-gray-600', 'text-pink-400', 'hover:text-shirasagi-blue');
+                    target.classList.add('active', 'bg-shirasagi-ink', 'text-white', 'hover:text-white');
+                    currentFilter = target.dataset.filter;
                     updateFilterDescription(currentFilter);
 
                     // Fade out, swap, fade in

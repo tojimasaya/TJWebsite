@@ -388,7 +388,7 @@
         <div class="hb-guide-grid">
             <a class="hb-guide-card" href="/hongkong-handbook.html" data-growth-label="writings_guide_handbook">
                 <span class="hb-guide-thumb">
-                    <picture><source srcset="assets/images/handbook/hk-return-permit-04-01.webp" type="image/webp"><img src="assets/images/handbook/hk-return-permit-04-01.png" alt="回郷証（非中国籍）の実物カード" loading="lazy" decoding="async"></picture>
+                    <picture><source srcset="assets/images/handbook/hk-return-permit-04-01.webp" type="image/webp"><img src="assets/images/handbook/hk-return-permit-04-01.png" alt="回郷証（非中国籍）の実物カード" loading="eager" decoding="async"></picture>
                 </span>
                 <span class="hb-guide-body">
                     <span class="hb-guide-kicker">Hong Kong / How-to</span>
@@ -400,7 +400,7 @@
             </a>
             <a class="hb-guide-card" href="fragments.html" data-growth-label="writings_guide_fragments">
                 <span class="hb-guide-thumb">
-                    <picture><source id="frag-card-src" srcset="assets/images/photo-notes/taipei-bento-fair-hipparidako.webp" type="image/webp"><img id="frag-card-img" src="assets/images/photo-notes/taipei-bento-fair-hipparidako.jpg" alt="最新の断章の写真" loading="lazy" decoding="async"></picture>
+                    <picture><source id="frag-card-src" srcset="assets/images/photo-notes/taipei-bento-fair-hipparidako.webp" type="image/webp"><img id="frag-card-img" src="assets/images/photo-notes/taipei-bento-fair-hipparidako.jpg" alt="最新の断章の写真" loading="eager" decoding="async"></picture>
                 </span>
                 <span class="hb-guide-body">
                     <span class="hb-guide-kicker">Fragments / Daily</span>
@@ -517,7 +517,7 @@
                 card.rel = 'noopener noreferrer';
                 card.className = 'pickup-card';
                 card.innerHTML = `
-                    <img src="${imgSrc}" alt="${article.title}" class="pickup-card-image" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
+                    <img src="${imgSrc}" alt="${article.title}" class="pickup-card-image" loading="eager" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
                     <div class="pickup-card-body">
                         <div class="pickup-card-source" style="color:${sourceColor}">${article.sourceLabel}</div>
                         <div class="pickup-card-title">${article.title}</div>
@@ -549,7 +549,7 @@
                 card.rel = 'noopener noreferrer';
                 card.className = 'article-card';
                 // 段階的に表示させるアニメーション設定
-                card.style.animation = `fadeInUp 0.5s ease ${index * 0.05}s forwards`;
+                card.style.animation = `fadeInUp 0.5s ease ${Math.min(index * 0.04, 0.36)}s forwards`;
                 
                 // 画像処理（外部URL優先、ローカルキャッシュがあれば差し替え）
                 let imgSrc = article.image;
@@ -562,7 +562,7 @@
 
                 card.innerHTML = `
                     <div class="article-image-wrapper">
-                        <img src="${imgSrc}"${imageAttrs} alt="${article.title}" class="${imageClass}" loading="lazy" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
+                        <img src="${imgSrc}"${imageAttrs} alt="${article.title}" class="${imageClass}" loading="${index < 6 ? 'eager' : 'lazy'}" decoding="async" onerror="this.src='assets/images/gallery/weekly.jpg'">
                     </div>
                     <div class="article-meta">
                         <span class="article-source" style="color: ${article.source === 'note' ? '#41C9B4' : '#2563eb'}">${article.sourceLabel}</span>

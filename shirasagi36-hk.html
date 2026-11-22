@@ -259,7 +259,7 @@
                         <p class="project-description">這不只是把姬路城作為觀光名勝來拍攝，而是從一個在城下町長大、如今仍持續前往的人之視角，記錄季節、時間與日常生活氣息交疊而成的風景。這個系列不會因完成而結束；每當遇見更觸動內心的一景，作品也會隨時間繼續更新。</p>
                         <div class="project-statistics">
                             <p><strong><span id="project-count">35</span> / 36</strong> 景已公開 <span id="project-remaining">尚餘1景完成</span></p>
-                            <p id="project-season-breakdown">春16 / 夏6 / 秋6 / 冬6</p>
+                            <p id="project-season-breakdown">春16 / 夏6 / 秋7 / 冬6</p>
                         </div>
                     </div>
 
@@ -338,7 +338,7 @@
                         全三十六景一覽
                     </h3>
                     <!-- Modified progress display to show count/total instead of percentage -->
-                    <p class="text-sm text-gray-500 mt-2 font-serif-zh">進度：<span id="progress-text" class="text-lg font-bold text-shirasagi-blue font-sans">0</span> / 36 景</p>
+                    <p class="text-sm text-gray-500 mt-2 font-serif-zh">進度：<span id="progress-text" class="text-lg font-bold text-shirasagi-blue font-sans">35</span> / 36 景</p>
                 </div>
                 
                 <div class="flex flex-wrap gap-2 md:gap-3 font-serif-display text-[10px] md:text-sm tracking-widest w-full md:w-auto">
@@ -737,11 +737,16 @@
             return value.slice(0, maxLength - 1) + '…';
         }
 
+        function getPhotoSeason(photo) {
+            return (photo && photo.category ? photo.category.split(' ')[0] : '');
+        }
+
         function renderGrid() {
             const grid = document.getElementById('shirasagi-grid');
             grid.innerHTML = '';
             const isAllView = currentFilter === 'all';
-            // 「すべて」表示は、いまの季節から順に(例: 夏→秋→冬→春)。特別は常に最後
+            const allIds = Object.keys(photosData).map(Number).sort((a, b) => a - b);
+            // 「すべて」表示は、いまの季節から順に(例: 夏→秋→冬→春)。その他は最後
             let ids = [];
             if (isAllView) {
                 const m = new Date().getMonth() + 1;
@@ -749,14 +754,15 @@
                 const cycle = ['spring', 'summer', 'autumn', 'winter'];
                 const startIdx = cycle.indexOf(cur);
                 for (let k = 0; k < 4; k++) {
-                    const [s, e] = seasonRanges[cycle[(startIdx + k) % 4]];
-                    for (let i = s; i <= e; i++) ids.push(i);
+                    const seasonKey = cycle[(startIdx + k) % 4];
+                    ids.push(...allIds.filter(id => getPhotoSeason(photosData[id]) === seasonKey));
                 }
-                const [ss, se] = seasonRanges['special'];
-                for (let i = ss; i <= se; i++) ids.push(i);
+                ids.push(...allIds.filter(id => !cycle.includes(getPhotoSeason(photosData[id]))));
+            } else if (currentFilter === 'sakura') {
+                const [s, e] = seasonRanges.sakura;
+                ids = allIds.filter(id => id >= s && id <= e);
             } else {
-                const [s, e] = seasonRanges[currentFilter] || [1, 36];
-                for (let i = s; i <= e; i++) ids.push(i);
+                ids = allIds.filter(id => getPhotoSeason(photosData[id]) === currentFilter);
             }
 
             for (const i of ids) {
@@ -838,18 +844,9 @@
 
         // Updated updateProgress function to show count instead of percentage
         function updateProgress() {
-            const total = 36;
             const count = Object.keys(photosData).length;
-            // No percentage calculation needed for text display
             const el = document.getElementById('progress-text');
-            let start = 0;
-            if(count > 0) {
-                const timer = setInterval(() => {
-                    start++;
-                    el.innerText = start;
-                    if (start >= count) clearInterval(timer);
-                }, 50);
-            } else { el.innerText = 0; }
+            if (el) el.textContent = count;
         }
 
         function updateProjectOverview() {
@@ -910,13 +907,14 @@
             const buttons = document.querySelectorAll('.filter-btn');
             buttons.forEach(btn => {
                 btn.addEventListener('click', (e) => {
+                    const target = e.currentTarget;
                     buttons.forEach(b => {
-                        b.classList.remove('bg-shirasagi-ink', 'text-white');
-                        b.classList.add('bg-transparent', 'text-gray-600');
+                        b.classList.remove('active', 'bg-shirasagi-ink', 'text-white', 'hover:text-white');
+                        b.classList.add('bg-transparent', 'text-gray-600', 'hover:text-shirasagi-blue');
                     });
-                    e.target.classList.remove('bg-transparent', 'text-gray-600');
-                    e.target.classList.add('bg-shirasagi-ink', 'text-white');
-                    currentFilter = e.target.dataset.filter;
+                    target.classList.remove('bg-transparent', 'text-gray-600', 'hover:text-shirasagi-blue');
+                    target.classList.add('active', 'bg-shirasagi-ink', 'text-white', 'hover:text-white');
+                    currentFilter = target.dataset.filter;
 
                     // Fade out, swap, fade in
                     const grid = document.getElementById('shirasagi-grid');

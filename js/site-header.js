@@ -102,6 +102,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const year = new Date().getFullYear();
         stdFooter.innerHTML = `
         <div class="footer-content">
+            <p style="font-size: 0.78rem; margin-bottom: 8px; opacity: 0.85;"><a href="/" style="color: inherit; text-decoration: none;">Home</a> · <a href="/about.html" style="color: inherit; text-decoration: none;">About</a> · <a href="/about.html#license" style="color: inherit; text-decoration: none;">お問い合わせ</a> · <a href="/feed.xml" style="color: inherit; text-decoration: none;">Feed</a></p>
             <p>&copy; ${year} Toji Masaya. All rights reserved.</p>
             <p style="font-size: 0.7rem; opacity: 0.72; margin-top: 6px;">当サイトには広告（アフィリエイトリンク）を含むページがあります。Amazonのアソシエイトとして、当サイト運営者・田路昌也は適格販売により収入を得ています。</p>
         </div>`;

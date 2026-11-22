@@ -1,0 +1,20 @@
+{
+  "photos": [
+    {
+      "file": "zirosou-vanishing-neon",
+      "source": "/Users/tjm/Downloads/IMG_20261031_093303.jpg",
+      "source_sha256": "7a6e94c2fb781248c1c32978d92de0ec0117411d1cff4add4d7cfb9a632a24ab",
+      "width": 750,
+      "height": 1000,
+      "description": "ユーザーが購入した写真集を撮影した写真"
+    },
+    {
+      "file": "zirosou-macau-light-shadow",
+      "source": "/Users/tjm/Downloads/IMG_20261031_093357.jpg",
+      "source_sha256": "9f814d63caa505fb5fb183861cc51622f88d25b1830291bddaf939353a013203",
+      "width": 750,
+      "height": 1000,
+      "description": "ユーザーが購入した写真集を撮影した写真"
+    }
+  ]
+}

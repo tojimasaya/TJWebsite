@@ -88,7 +88,8 @@ function figureHtml(item, sizes) {
 function sidesHtml(sides) {
   if (!sides.length) return '';
   const lines = ['    <div class="fp-sides">'];
-  for (const sf of sides) {
+  for (let i = 0; i < sides.length; i++) {
+    const sf = sides[i];
     const src = absPath(sf.image);
     const webp = absPath(sf.imageWebp);
     const small = absPath(sf.imageWebpSmall);
@@ -96,10 +97,11 @@ function sidesHtml(sides) {
     const dim = small && sf.width && sf.height ? ` width="${sf.width}" height="${sf.height}"` : '';
     const alt = sf.alt || sf.title || '';
     const caption = sf.title || sf.caption || '';
+    const loading = i < 2 ? 'eager' : 'lazy';
     lines.push('      <figure>');
     lines.push('        <picture>');
     if (webp) lines.push(`          <source srcset="${escapeHtml(responsive)}"${small ? ' sizes="(max-width: 760px) calc(100vw - 32px), 520px"' : ''} type="image/webp">`);
-    lines.push(`          <img src="${escapeHtml(src)}"${dim} alt="${escapeHtml(alt)}" loading="lazy" decoding="async">`);
+    lines.push(`          <img src="${escapeHtml(src)}"${dim} alt="${escapeHtml(alt)}" loading="${loading}" decoding="async">`);
     lines.push('        </picture>');
     if (caption) lines.push(`        <figcaption>${escapeHtml(caption)}</figcaption>`);
     lines.push('      </figure>');
