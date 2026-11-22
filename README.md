@@ -1,10 +1,10 @@
 # tojimasaya.com
 
-田路昌也の個人サイト（静的 HTML / CSS / JS）。方針は `AGENTS.md`、2026-09 の改造計画は `PLAN_2026-09_growth-redesign.md`。
+田路昌也の個人サイト（静的 HTML / CSS / JS）。方針は `AGENTS.md`、過去の改造計画メモは `docs/archive/` に保管。
 
 ## ホスティング
 
-GitHub Pages（`CNAME` = tojimasaya.com）。`.htaccess` は Apache 用の名残で **GitHub Pages では無効**（サーバー側リダイレクトやヘッダーは効かない）。URL はファイル名・ディレクトリ + `index.html` で解決する。
+GitHub Pages（`CNAME` = tojimasaya.com）。URL はファイル名・ディレクトリ + `index.html` で解決する。
 
 ## 生成物（手で編集しない）
 

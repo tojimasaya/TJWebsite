@@ -95,6 +95,14 @@
       openMore.querySelector('summary').focus();
     } else if (menu && menu.classList.contains('is-open')) setMenu(false, true);
   });
+  moreMenus.forEach(function (details) {
+    details.addEventListener('toggle', function () {
+      if (!details.open) return;
+      moreMenus.forEach(function (other) {
+        if (other !== details) other.open = false;
+      });
+    });
+  });
   document.addEventListener('click', function (e) {
     moreMenus.forEach(function (details) { if (!details.contains(e.target)) details.open = false; });
   });

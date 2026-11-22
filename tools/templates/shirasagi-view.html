@@ -59,19 +59,24 @@
     <a href="/" class="v-nav__logo">TOJIMASAYA</a>
     <div class="v-nav__menu">
       <a href="{{hubUrl}}" class="is-active" aria-current="location">{{t_navHub}}</a>
-      <a href="/hongkong.html">{{t_navHongkong}}</a>
+      <details class="v-nav__more">
+        <summary>{{t_navHongkong}}</summary>
+        <ul class="v-nav__submenu">
+          <li><a href="/hongkong.html"><span class="nav-sub-title">{{#isJa}}変わりゆく香港{{/isJa}}{{#isEn}}Changing Hong Kong{{/isEn}}{{#isHk}}變化中的香港{{/isHk}}</span><span class="nav-sub-desc">{{#isJa}}写真とドローンで撮る街の記録{{/isJa}}{{#isEn}}Street &amp; drone photography{{/isEn}}{{#isHk}}地面與空拍的香港街景記錄{{/isHk}}</span></a></li>
+          <li><a href="/hongkong-handbook.html"><span class="nav-sub-title">{{t_navHandbook}}</span><span class="nav-sub-desc">{{#isJa}}回郷証・銀行・SIM・祝日ガイド{{/isJa}}{{#isEn}}Banking, SIM, border &amp; holidays{{/isEn}}{{#isHk}}回鄉證、銀行、SIM 與假期指南{{/isHk}}</span></a></li>
+        </ul>
+      </details>
       <a href="/trips.html">{{t_navTrips}}</a>
       <a href="/gear.html">Gear</a>
       <details class="v-nav__more">
-        <summary>{{t_navMore}}</summary>
+        <summary>{{#isJa}}読む・見る{{/isJa}}{{#isEn}}Read &amp; View{{/isEn}}{{#isHk}}閱讀・作品{{/isHk}}</summary>
         <ul class="v-nav__submenu">
-          <li><a href="/gallery.html">Gallery</a></li>
-          <li><a href="/writings.html">Writings</a></li>
-          <li><a href="/fragments.html">{{t_navFragments}}</a></li>
-          <li><a href="/hongkong-handbook.html">{{t_navHandbook}}</a></li>
-          <li><a href="{{aboutUrl}}">About</a></li>
+          <li><a href="/fragments.html"><span class="nav-sub-title">{{t_navFragments}}</span><span class="nav-sub-desc">{{#isJa}}写真を入口に、その日の一文{{/isJa}}{{#isEn}}Daily photo-led short essays{{/isEn}}{{#isHk}}以照片為入口的日常短文{{/isHk}}</span></a></li>
+          <li><a href="/writings.html"><span class="nav-sub-title">Writings</span><span class="nav-sub-desc">{{#isJa}}note・DRONE.jp の執筆記事{{/isJa}}{{#isEn}}note &amp; DRONE.jp articles{{/isEn}}{{#isHk}}note 與 DRONE.jp 專欄文章{{/isHk}}</span></a></li>
+          <li><a href="/gallery.html"><span class="nav-sub-title">Gallery</span><span class="nav-sub-desc">{{#isJa}}写真・動画の抜粋ギャラリー{{/isJa}}{{#isEn}}Selected photos &amp; videos{{/isEn}}{{#isHk}}精選攝影與空拍影片{{/isHk}}</span></a></li>
         </ul>
       </details>
+      <a href="{{aboutUrl}}">About</a>
       <span class="v-nav__lang">
         {{#isJa}}<a href="{{urlEnPath}}" hreflang="en" lang="en">English</a><a href="{{urlHkPath}}" hreflang="zh-Hant" lang="zh-Hant">中文</a>{{/isJa}}{{#isEn}}<a href="{{urlJaPath}}" hreflang="ja" lang="ja">日本語</a><a href="{{urlHkPath}}" hreflang="zh-Hant" lang="zh-Hant">中文</a>{{/isEn}}{{#isHk}}<a href="{{urlJaPath}}" hreflang="ja" lang="ja">日本語</a><a href="{{urlEnPath}}" hreflang="en" lang="en">English</a>{{/isHk}}
       </span>
@@ -93,19 +98,24 @@
   </button>
   <a href="/">Home</a>
   <a href="{{hubUrl}}" class="is-active">{{t_navHub}}</a>
-  <a href="/hongkong.html">{{t_navHongkong}}</a>
+  <details class="v-nav__more">
+    <summary>{{t_navHongkong}}</summary>
+    <ul class="v-nav__submenu">
+      <li><a href="/hongkong.html"><span class="nav-sub-title">{{#isJa}}変わりゆく香港{{/isJa}}{{#isEn}}Changing Hong Kong{{/isEn}}{{#isHk}}變化中的香港{{/isHk}}</span><span class="nav-sub-desc">{{#isJa}}写真とドローンで撮る街の記録{{/isJa}}{{#isEn}}Street &amp; drone photography{{/isEn}}{{#isHk}}地面與空拍的香港街景記錄{{/isHk}}</span></a></li>
+      <li><a href="/hongkong-handbook.html"><span class="nav-sub-title">{{t_navHandbook}}</span><span class="nav-sub-desc">{{#isJa}}回郷証・銀行・SIM・祝日ガイド{{/isJa}}{{#isEn}}Banking, SIM, border &amp; holidays{{/isEn}}{{#isHk}}回鄉證、銀行、SIM 與假期指南{{/isHk}}</span></a></li>
+    </ul>
+  </details>
   <a href="/trips.html">{{t_navTrips}}</a>
   <a href="/gear.html">Gear</a>
   <details class="v-nav__more">
-    <summary>{{t_navMore}}</summary>
+    <summary>{{#isJa}}読む・見る{{/isJa}}{{#isEn}}Read &amp; View{{/isEn}}{{#isHk}}閱讀・作品{{/isHk}}</summary>
     <ul class="v-nav__submenu">
-      <li><a href="/gallery.html">Gallery</a></li>
-      <li><a href="/writings.html">Writings</a></li>
-      <li><a href="/fragments.html">{{t_navFragments}}</a></li>
-      <li><a href="/hongkong-handbook.html">{{t_navHandbook}}</a></li>
-      <li><a href="{{aboutUrl}}">About</a></li>
+      <li><a href="/fragments.html"><span class="nav-sub-title">{{t_navFragments}}</span><span class="nav-sub-desc">{{#isJa}}写真を入口に、その日の一文{{/isJa}}{{#isEn}}Daily photo-led short essays{{/isEn}}{{#isHk}}以照片為入口的日常短文{{/isHk}}</span></a></li>
+      <li><a href="/writings.html"><span class="nav-sub-title">Writings</span><span class="nav-sub-desc">{{#isJa}}note・DRONE.jp の執筆記事{{/isJa}}{{#isEn}}note &amp; DRONE.jp articles{{/isEn}}{{#isHk}}note 與 DRONE.jp 專欄文章{{/isHk}}</span></a></li>
+      <li><a href="/gallery.html"><span class="nav-sub-title">Gallery</span><span class="nav-sub-desc">{{#isJa}}写真・動画の抜粋ギャラリー{{/isJa}}{{#isEn}}Selected photos &amp; videos{{/isEn}}{{#isHk}}精選攝影與空拍影片{{/isHk}}</span></a></li>
     </ul>
   </details>
+  <a href="{{aboutUrl}}">About</a>
 </div>
 
 <main id="main-content" class="v-wrap">

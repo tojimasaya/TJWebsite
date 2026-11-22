@@ -115,6 +115,15 @@ document.addEventListener('DOMContentLoaded', () => {
 
     close.addEventListener('click', () => closeMenu(true));
 
+    moreMenus.forEach((details) => {
+        details.addEventListener('toggle', () => {
+            if (!details.open) return;
+            moreMenus.forEach((other) => {
+                if (other !== details) other.open = false;
+            });
+        });
+    });
+
     document.addEventListener('click', (event) => {
         moreMenus.forEach((details) => {
             if (!details.contains(event.target)) details.open = false;

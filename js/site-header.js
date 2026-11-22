@@ -13,8 +13,9 @@ document.addEventListener('DOMContentLoaded', () => {
     const page = (pageName === "" || pageName === "index.html") ? "index.html" : pageName;
     const inShirasagiDir = path.indexOf('/shirasagi36/') !== -1;
     const isHongKongPage = page.startsWith('hongkong') || page.startsWith('hk-') || page.startsWith('cn-') || page.startsWith('iphone') || page === 'holidays.html';
-    const isTripsPage = page === 'trips.html' || page.endsWith('-travel-journal.html');
-    const isOtherPage = ['gallery.html', 'writings.html', 'fragments.html', 'about.html', 'search.html', 'privacy.html'].includes(page) || path.includes('/fragments/');
+    const isTripsPage = page === 'trips.html' || page.endsWith('-travel-journal.html') || page.endsWith('-detail.html') || /^(tibet-day|italy-|germany-|macau-|hoian-2018)/.test(page);
+    const isReadViewPage = ['gallery.html', 'writings.html', 'fragments.html'].includes(page) || path.includes('/fragments/') || path.includes('/articles/');
+    const isAboutPage = page === 'about.html' || page === 'about-en.html' || page === 'about-hk.html';
 
     // 現在のテーマを判定
     function getCurrentTheme() {
@@ -45,7 +46,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (mainTarget && !mainTarget.id) mainTarget.id = 'main-content';
     }
 
-    // ナビゲーションのHTML構造
+    // ナビゲーションのHTML構造（案A：意味ごとの2ドロップダウン＋About）
     const navHtml = `
     <header class="site-header" role="banner">
     <nav class="main-nav" aria-label="メインナビゲーション">
@@ -54,26 +55,55 @@ document.addEventListener('DOMContentLoaded', () => {
             <button class="nav-toggle" id="nav-toggle" type="button" aria-label="メニューを開く" aria-expanded="false" aria-controls="nav-menu"><svg viewBox="0 0 24 24" width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><path class="nav-toggle-open" d="M4 5h16M4 12h16M4 19h16"/><path class="nav-toggle-close" d="M18 6 6 18m0-12 12 12"/></svg></button>
             <ul class="nav-menu" id="nav-menu">
                 <li>
-                    <a href="/shirasagi36.html" class="nav-link ${page.includes('shirasagi') || inShirasagiDir ? 'active' : ''}">
-                        白鷺三十六景
-                    </a>
+                    <a href="/shirasagi36.html" class="nav-link ${page.includes('shirasagi') || inShirasagiDir ? 'active' : ''}">白鷺三十六景</a>
                 </li>
-                <li><a href="/hongkong.html" class="nav-link ${isHongKongPage ? 'active' : ''}">香港</a></li>
-                <li><a href="/trips.html" class="nav-link ${isTripsPage ? 'active' : ''}">旅</a></li>
-                <li><a href="/gear.html" class="nav-link ${(page.includes('gear') || page.startsWith('leica')) ? 'active' : ''}">Gear</a></li>
                 <li class="nav-more">
-                    <details id="nav-more">
-                        <summary class="nav-link ${isOtherPage ? 'active' : ''}">その他</summary>
+                    <details class="nav-dropdown" data-nav-dropdown>
+                        <summary class="nav-link ${isHongKongPage ? 'active' : ''}">香港</summary>
                         <ul class="nav-submenu">
-                            <li><a href="/gallery.html" ${page === 'gallery.html' ? 'aria-current="page"' : ''}>Gallery</a></li>
-                            <li><a href="/writings.html" ${page === 'writings.html' ? 'aria-current="page"' : ''}>Writings</a></li>
-                            <li><a href="/fragments.html" ${page === 'fragments.html' || path.includes('/fragments/') ? 'aria-current="page"' : ''}>断章</a></li>
-                            <li><a href="/hongkong-handbook.html" ${page === 'hongkong-handbook.html' ? 'aria-current="page"' : ''}>香港ハンドブック</a></li>
-                            <li><a href="/about.html" ${page === 'about.html' ? 'aria-current="page"' : ''}>About</a></li>
-                            <li><a href="/search.html" ${page === 'search.html' ? 'aria-current="page"' : ''}>サイト内検索</a></li>
+                            <li>
+                                <a href="/hongkong.html" ${page === 'hongkong.html' ? 'aria-current="page"' : ''}>
+                                    <span class="nav-sub-title">変わりゆく香港</span>
+                                    <span class="nav-sub-desc">写真とドローンで撮る街の記録</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/hongkong-handbook.html" ${page === 'hongkong-handbook.html' ? 'aria-current="page"' : ''}>
+                                    <span class="nav-sub-title">香港ハンドブック</span>
+                                    <span class="nav-sub-desc">回郷証・銀行・SIM・祝日ガイド</span>
+                                </a>
+                            </li>
                         </ul>
                     </details>
                 </li>
+                <li><a href="/trips.html" class="nav-link ${isTripsPage ? 'active' : ''}">旅</a></li>
+                <li><a href="/gear.html" class="nav-link ${(page.includes('gear') || page.startsWith('leica')) ? 'active' : ''}">Gear</a></li>
+                <li class="nav-more">
+                    <details class="nav-dropdown" data-nav-dropdown>
+                        <summary class="nav-link ${isReadViewPage ? 'active' : ''}">読む・見る</summary>
+                        <ul class="nav-submenu">
+                            <li>
+                                <a href="/fragments.html" ${page === 'fragments.html' || path.includes('/fragments/') ? 'aria-current="page"' : ''}>
+                                    <span class="nav-sub-title">断章</span>
+                                    <span class="nav-sub-desc">写真を入口に、その日の一文</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/writings.html" ${page === 'writings.html' ? 'aria-current="page"' : ''}>
+                                    <span class="nav-sub-title">Writings</span>
+                                    <span class="nav-sub-desc">note・DRONE.jp の執筆記事</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/gallery.html" ${page === 'gallery.html' ? 'aria-current="page"' : ''}>
+                                    <span class="nav-sub-title">Gallery</span>
+                                    <span class="nav-sub-desc">写真・動画の抜粋ギャラリー</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="/about.html" class="nav-link ${isAboutPage ? 'active' : ''}">About</a></li>
                 <li><a href="/search.html" class="nav-search-link" aria-label="サイト内検索" title="サイト内検索" ${page === 'search.html' ? 'aria-current="page"' : ''}>${searchIcon}</a></li>
                 <li><button class="theme-toggle" id="theme-toggle" type="button" aria-label="${getThemeLabel(currentTheme)}" title="${getThemeLabel(currentTheme)}">${getThemeIcon(currentTheme)}</button></li>
             </ul>
@@ -109,27 +139,62 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 標準フッターの注入（<footer class="footer"> を持つページのみ）
+    // 統一標準フッターの注入（<footer class="footer"> を持つページ）
     const stdFooter = document.querySelector('footer.footer:not([data-custom])');
     if (stdFooter) {
         const year = new Date().getFullYear();
         stdFooter.innerHTML = `
-        <div class="footer-content">
-            <p style="font-size: 0.78rem; margin-bottom: 8px; opacity: 0.85;"><a href="/" style="color: inherit; text-decoration: none;">Home</a> · <a href="/search.html" style="color: inherit; text-decoration: none;">検索</a> · <a href="/about.html" style="color: inherit; text-decoration: none;">About</a> · <a href="/about.html#license" style="color: inherit; text-decoration: none;">お問い合わせ</a> · <a href="/privacy.html" style="color: inherit; text-decoration: none;">免責・プライバシー</a> · <a href="/feed.xml" style="color: inherit; text-decoration: none;">Feed</a></p>
-            <p>&copy; ${year} Toji Masaya. All rights reserved.</p>
-            <p style="font-size: 0.7rem; opacity: 0.72; margin-top: 6px;">当サイトには広告（アフィリエイトリンク）を含むページがあります。Amazonのアソシエイトとして、当サイト運営者・田路昌也は適格販売により収入を得ています。</p>
+        <div class="tjm-footer">
+            <nav class="tjm-footer__row" aria-label="フッターナビゲーション">
+                <a href="/">Home</a>
+                <a href="/shirasagi36.html">白鷺三十六景</a>
+                <a href="/hongkong.html">変わりゆく香港</a>
+                <a href="/hongkong-handbook.html">香港ハンドブック</a>
+                <a href="/trips.html">旅</a>
+                <a href="/gear.html">Gear</a>
+                <a href="/fragments.html">断章</a>
+                <a href="/writings.html">Writings</a>
+                <a href="/gallery.html">Gallery</a>
+                <a href="/about.html">About</a>
+            </nav>
+            <div class="tjm-footer__meta">
+                <a href="/search.html">サイト内検索</a>
+                <span class="tjm-footer__sep" aria-hidden="true">·</span>
+                <a href="/about.html#license">お問い合わせ</a>
+                <span class="tjm-footer__sep" aria-hidden="true">·</span>
+                <a href="/privacy.html">免責・プライバシー</a>
+                <span class="tjm-footer__sep" aria-hidden="true">·</span>
+                <a href="/feed.xml">Feed</a>
+                <span class="tjm-footer__sep" aria-hidden="true">|</span>
+                <span>English: <a href="/about-en.html" hreflang="en" lang="en">About</a> / <a href="/shirasagi36-en.html" hreflang="en" lang="en">Himeji Castle</a></span>
+                <span class="tjm-footer__sep" aria-hidden="true">·</span>
+                <span>繁體中文: <a href="/about-hk.html" hreflang="zh-Hant" lang="zh-Hant">關於</a> / <a href="/shirasagi36-hk.html" hreflang="zh-Hant" lang="zh-Hant">白鷺三十六景</a></span>
+            </div>
+            <p class="tjm-footer__copy">&copy; ${year} Toji Masaya. All rights reserved.</p>
+            <p class="tjm-footer__disclosure">当サイトには広告（アフィリエイトリンク）を含むページがあります。Amazonのアソシエイトとして、当サイト運営者・田路昌也は適格販売により収入を得ています。</p>
         </div>`;
     }
 
-    // モバイルメニュートグル機能
+    // ドロップダウン＆モバイルメニュートグル機能
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
-    const navMore = document.getElementById('nav-more');
-    if (navMore) {
-        document.addEventListener('click', (e) => {
-            if (!navMore.contains(e.target)) navMore.open = false;
+    const dropdowns = Array.from(document.querySelectorAll('[data-nav-dropdown]'));
+
+    dropdowns.forEach(dd => {
+        dd.addEventListener('toggle', () => {
+            if (!dd.open) return;
+            dropdowns.forEach(other => {
+                if (other !== dd) other.open = false;
+            });
         });
-    }
+    });
+
+    document.addEventListener('click', (e) => {
+        dropdowns.forEach(dd => {
+            if (dd.open && !dd.contains(e.target)) dd.open = false;
+        });
+    });
+
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', () => {
             const isExpanded = navMenu.classList.contains('active');
@@ -146,16 +211,17 @@ document.addEventListener('DOMContentLoaded', () => {
             navToggle.classList.remove('active');
             navToggle.setAttribute('aria-expanded', 'false');
             navToggle.setAttribute('aria-label', 'メニューを開く');
-            if (navMore) navMore.open = false;
+            dropdowns.forEach(dd => { dd.open = false; });
             document.body.style.overflow = '';
         });
 
         // Escキーでメニューを閉じる
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape') {
-                if (navMore && navMore.open) {
-                    navMore.open = false;
-                    navMore.querySelector('summary').focus();
+                const openDd = dropdowns.find(dd => dd.open);
+                if (openDd) {
+                    openDd.open = false;
+                    openDd.querySelector('summary').focus();
                 } else if (navMenu.classList.contains('active')) {
                     navMenu.classList.remove('active');
                     navToggle.classList.remove('active');
