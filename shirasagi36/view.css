@@ -31,6 +31,19 @@
   --text-light: var(--gray-500);
   --primary-font: var(--font-body);
 }
+[data-theme="dark"] {
+  --washi: #141413;
+  --ink: #ece9e1;
+  --blue: #7aa2f7;
+  --red: #f87171;
+  --gray-100: #1f1f1d;
+  --gray-200: #2b2b28;
+  --gray-300: #3a3a36;
+  --gray-400: #8f8c83;
+  --gray-500: #a8a59c;
+  --gray-600: #c7c4ba;
+  --gray-800: #e2dfd6;
+}
 html[lang="en"] { --font-body: var(--font-en); }
 html[lang="zh-Hant"] { --font-body: var(--font-tc); }
 
@@ -226,3 +239,18 @@ html[lang="en"] .v-story p { font-size: 18px; line-height: 1.8; text-align: left
 .v-lightbox button { position: absolute; top: 16px; right: 16px; width: 44px; height: 44px; border-radius: 50%; border: 0; background: rgba(255,255,255,.8); color: var(--gray-600); font-size: 26px; cursor: pointer; }
 
 @media print { .v-nav, .v-mobile, .v-share, .v-comments, .v-footer, .v-place__map { display: none !important; } body { padding-top: 0; } }
+
+/* Dark mode overrides for Shirasagi 36 view pages */
+[data-theme="dark"] .v-nav { background: rgba(20,20,19,.95); border-bottom-color: rgba(255,255,255,.1); }
+[data-theme="dark"] .v-mobile { background: rgba(20,20,19,.98); }
+[data-theme="dark"] .hanko { background: rgba(255,255,255,.06); }
+[data-theme="dark"] .v-photo { background: #1c1c1a; border-color: rgba(255,255,255,.08); box-shadow: 0 10px 30px -12px rgba(0,0,0,.6); }
+[data-theme="dark"] .v-tips li,
+[data-theme="dark"] .v-place,
+[data-theme="dark"] .v-pn a { background: #1c1c1a; }
+[data-theme="dark"] .tjm-share a,
+[data-theme="dark"] .tjm-share button { background: #1c1c1a; }
+[data-theme="dark"] .v-btn:hover { color: #141413; }
+[data-theme="dark"] .v-footer { background: #0c0c0b; color: rgba(236,233,225,.82); border-top-color: #262624; }
+[data-theme="dark"] .v-lightbox::backdrop { background: rgba(12,12,11,.96); }
+[data-theme="dark"] .v-lightbox button { background: rgba(30,30,28,.85); color: #ece9e1; }

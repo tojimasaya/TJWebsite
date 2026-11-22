@@ -102,3 +102,19 @@
     display: none;
   }
 }
+
+[data-theme="dark"] .castle-languages,
+[data-theme="dark"] .guide-languages.castle-languages {
+  background: #141413;
+  border-top-color: rgba(255, 255, 255, 0.12);
+}
+
+[data-theme="dark"] .castle-languages a {
+  color: #b5b2a8;
+}
+
+[data-theme="dark"] .castle-languages a[aria-current="page"],
+[data-theme="dark"] .castle-languages a:hover {
+  color: #7aa2f7;
+  border-bottom-color: #7aa2f7;
+}

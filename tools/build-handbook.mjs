@@ -188,7 +188,7 @@ function hubBlock(catalog) {
       lines.push('          <span class="hb-hub-go">読む →</span>');
       lines.push('        </span>');
       lines.push('      </span>');
-      lines.push(`      <img class="hb-hub-thumb" src="${p.image}" alt="" loading="lazy" decoding="async">`);
+      lines.push(`      <img class="hb-hub-thumb" src="${p.image}" alt="${escapeHtml(p.title)}" loading="lazy" decoding="async">`);
       lines.push('    </a>');
       // まとめページの中の該当箇所へ。カードの外に置いて入れ子リンクを避ける。
       if ((p.subLinks || []).length) {

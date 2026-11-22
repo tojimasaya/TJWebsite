@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<!-- Google tag (gtag.js) -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-806426BQX2"></script>
+<script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments);}gtag('js',new Date());gtag('config','G-806426BQX2');</script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>サイト内検索 | Toji Masaya</title>
+    <meta name="description" content="tojimasaya.com の全コンテンツを横断検索。白鷺三十六景、香港ハンドブック、旅の記録、断章、note・DRONE.jp執筆記事、Leica・カメラ機材までキーワードで探せます。">
+    <link rel="canonical" href="https://tojimasaya.com/search.html">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <link rel="alternate" type="application/atom+xml" title="tojimasaya.com" href="/feed.xml">
+    <meta property="og:title" content="サイト内検索 | Toji Masaya">
+    <meta property="og:description" content="白鷺三十六景、香港ハンドブック、旅の記録、断章、執筆記事、Leica・機材まで横断検索。">
+    <meta property="og:url" content="https://tojimasaya.com/search.html">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Toji Masaya">
+    <meta property="og:image" content="https://tojimasaya.com/assets/images/about/TJ.jpg">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@mongkok93">
+    <meta name="twitter:title" content="サイト内検索 | Toji Masaya">
+    <meta name="twitter:description" content="白鷺三十六景、香港ハンドブック、旅の記録、断章、執筆記事、Leica・機材まで横断検索。">
+    <meta name="twitter:image" content="https://tojimasaya.com/assets/images/about/TJ.jpg">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Text:ital,wght@0,400;0,600;1,400&family=Inter:wght@300;400;500;600&family=Noto+Serif+JP:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <style>
+        .search-wrap {
+            max-width: 860px;
+            margin: 0 auto;
+            padding: 116px 24px 80px;
+        }
+        .search-kicker {
+            font-family: var(--secondary-font);
+            font-size: 0.72rem;
+            letter-spacing: 0.18em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 8px;
+        }
+        .search-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: clamp(1.7rem, 3.2vw, 2.3rem);
+            font-weight: 500;
+            color: var(--text-color);
+            margin-bottom: 10px;
+        }
+        .search-lead {
+            font-size: 0.92rem;
+            color: var(--text-light);
+            line-height: 1.8;
+            margin-bottom: 28px;
+        }
+        .search-form {
+            position: relative;
+            margin-bottom: 18px;
+        }
+        .search-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 15px 90px 15px 46px;
+            font-size: 1rem;
+            font-family: var(--primary-font);
+            color: var(--text-color);
+            background: var(--bg-color);
+            border: 1.5px solid var(--border-color);
+            border-radius: 10px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+        }
+        .search-input:focus {
+            outline: none;
+            border-color: var(--accent-color);
+            box-shadow: 0 0 0 3px rgba(26, 63, 185, 0.12);
+        }
+        .search-input::-webkit-search-cancel-button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        .search-icon {
+            position: absolute;
+            left: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            color: var(--text-light);
+            pointer-events: none;
+        }
+        .search-clear {
+            position: absolute;
+            right: 12px;
+            top: 50%;
+            transform: translateY(-50%);
+            border: 0;
+            background: transparent;
+            color: var(--text-light);
+            font-size: 0.82rem;
+            padding: 6px 10px;
+            border-radius: 6px;
+            cursor: pointer;
+            display: none;
+        }
+        .search-clear.is-visible { display: inline-block; }
+        .search-clear:hover { background: var(--hover-color); color: var(--text-color); }
+
+        .search-hints {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 8px;
+            margin-bottom: 24px;
+            font-size: 0.78rem;
+            color: var(--text-light);
+        }
+        .search-chip {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-color);
+            border-radius: 999px;
+            padding: 4px 12px;
+            font-size: 0.78rem;
+            cursor: pointer;
+            transition: border-color 0.2s, background 0.2s, color 0.2s;
+        }
+        .search-chip:hover {
+            border-color: var(--accent-color);
+            color: var(--accent-color);
+        }
+
+        .search-tabs {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 20px;
+            padding-bottom: 16px;
+            border-bottom: 1px solid var(--border-color);
+        }
+        .search-tab {
+            border: 1px solid var(--border-color);
+            background: transparent;
+            color: var(--text-light);
+            border-radius: 999px;
+            padding: 6px 14px;
+            font-size: 0.8rem;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .search-tab:hover {
+            border-color: var(--text-color);
+            color: var(--text-color);
+        }
+        .search-tab.is-active {
+            background: var(--text-color);
+            border-color: var(--text-color);
+            color: var(--bg-color);
+        }
+        .search-tab .tab-count {
+            opacity: 0.72;
+            margin-left: 4px;
+            font-size: 0.74rem;
+        }
+
+        .search-status {
+            font-size: 0.84rem;
+            color: var(--text-light);
+            margin-bottom: 16px;
+        }
+        .search-results {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: grid;
+            gap: 12px;
+        }
+        .search-item a {
+            display: block;
+            padding: 16px 18px;
+            border: 1px solid var(--border-color);
+            border-radius: 10px;
+            text-decoration: none;
+            color: inherit;
+            transition: border-color 0.2s, transform 0.15s, background 0.2s;
+        }
+        .search-item a:hover {
+            border-color: var(--accent-color);
+            background: var(--hover-color);
+            transform: translateY(-1px);
+        }
+        .search-item-meta {
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin-bottom: 6px;
+            font-family: var(--secondary-font);
+            font-size: 0.72rem;
+            color: var(--text-light);
+        }
+        .search-badge {
+            display: inline-block;
+            padding: 2px 8px;
+            border-radius: 999px;
+            border: 1px solid var(--border-color);
+            color: var(--accent-color);
+            font-weight: 500;
+        }
+        .search-ext {
+            opacity: 0.75;
+        }
+        .search-item-title {
+            font-family: 'Noto Serif JP', serif;
+            font-size: 1.02rem;
+            font-weight: 600;
+            line-height: 1.5;
+            color: var(--text-color);
+            margin-bottom: 6px;
+        }
+        .search-item-desc {
+            font-size: 0.86rem;
+            line-height: 1.75;
+            color: var(--text-light);
+        }
+        .search-item mark {
+            background: rgba(26, 63, 185, 0.15);
+            color: inherit;
+            padding: 0 2px;
+            border-radius: 2px;
+        }
+        [data-theme="dark"] .search-item mark {
+            background: rgba(122, 162, 247, 0.28);
+        }
+        .search-empty {
+            padding: 40px 20px;
+            text-align: center;
+            color: var(--text-light);
+            border: 1px dashed var(--border-color);
+            border-radius: 10px;
+            font-size: 0.92rem;
+            line-height: 1.8;
+        }
+    </style>
+</head>
+<body>
+    <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
+    <script src="js/site-header.js"></script>
+
+    <main id="main-content" class="search-wrap">
+        <p class="search-kicker">Site Search</p>
+        <h1 class="search-title">サイト内検索</h1>
+        <p class="search-lead">白鷺三十六景、香港ハンドブック、旅の記録、断章、執筆記事（note / DRONE.jp）、機材・Leica 情報をキーワードで横断検索できます。</p>
+
+        <form class="search-form" id="search-form" role="search" aria-label="サイト内検索">
+            <svg class="search-icon" viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>
+            <input type="search" id="search-input" class="search-input" placeholder="キーワードを入力（例：回郷証、HSBC、姫路城 桜、Leica、台湾…）" autocomplete="off" autofocus>
+            <button type="button" id="search-clear" class="search-clear" aria-label="検索語をクリア">クリア</button>
+        </form>
+
+        <div class="search-hints" aria-label="おすすめキーワード">
+            <span>よく探される語：</span>
+            <button type="button" class="search-chip" data-q="回郷証">回郷証</button>
+            <button type="button" class="search-chip" data-q="HSBC">HSBC</button>
+            <button type="button" class="search-chip" data-q="SIM">SIM</button>
+            <button type="button" class="search-chip" data-q="桜">桜</button>
+            <button type="button" class="search-chip" data-q="Leica">Leica</button>
+            <button type="button" class="search-chip" data-q="Rokid">Rokid</button>
+            <button type="button" class="search-chip" data-q="ドローン">ドローン</button>
+            <button type="button" class="search-chip" data-q="台湾">台湾</button>
+            <button type="button" class="search-chip" data-q="マカオ">マカオ</button>
+        </div>
+
+        <div class="search-tabs" id="search-tabs" role="tablist" aria-label="カテゴリ絞り込み"></div>
+        <p class="search-status" id="search-status" aria-live="polite">インデックスを読み込んでいます…</p>
+        <ul class="search-results" id="search-results"></ul>
+    </main>
+
+    <footer class="footer"></footer>
+
+    <script>
+    (function () {
+        'use strict';
+
+        const CATEGORIES = [
+            { key: 'all', label: 'すべて' },
+            { key: 'shirasagi', label: '白鷺三十六景' },
+            { key: 'hongkong', label: '香港・ハンドブック' },
+            { key: 'trips', label: '旅の記録' },
+            { key: 'fragments', label: '断章' },
+            { key: 'writings', label: '執筆記事' },
+            { key: 'gear', label: 'Gear・Leica' },
+        ];
+
+        let allItems = [];
+        let activeCat = 'all';
+
+        const inputEl = document.getElementById('search-input');
+        const clearEl = document.getElementById('search-clear');
+        const tabsEl = document.getElementById('search-tabs');
+        const statusEl = document.getElementById('search-status');
+        const resultsEl = document.getElementById('search-results');
+
+        function norm(str) {
+            return String(str || '').normalize('NFKC').toLowerCase();
+        }
+
+        function escapeHtml(str) {
+            return String(str || '').replace(/[&<>"']/g, (ch) => ({
+                '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;', "'": '&#39;'
+            }[ch]));
+        }
+
+        // 「桜」単独検索では固有名詞の「桜門橋」「桜門」を桜シーズン扱いしない
+        function filterTextForTerm(text, term) {
+            if (term === '桜') return text.replace(/桜門橋|桜門/g, '');
+            return text;
+        }
+
+        function highlight(text, terms) {
+            let safe = escapeHtml(text);
+            if (!terms.length) return safe;
+            for (const term of terms) {
+                if (!term) continue;
+                const esc = term.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+                if (term === '桜') {
+                    safe = safe.replace(/(桜門橋|桜門)|(桜)/g, (m, keep, hit) => keep || `<mark>${hit}</mark>`);
+                } else {
+                    safe = safe.replace(new RegExp(`(${esc})`, 'gi'), '<mark>$1</mark>');
+                }
+            }
+            return safe;
+        }
+
+        function scoreItem(item, terms) {
+            if (!terms.length) return 1;
+            let score = 0;
+            for (const term of terms) {
+                const inTitle = filterTextForTerm(item._t, term).includes(term);
+                const inDesc = filterTextForTerm(item._s, term).includes(term);
+                const inKw = filterTextForTerm(item._k, term).includes(term);
+                if (!inTitle && !inDesc && !inKw) return 0;
+                if (inTitle) score += 10;
+                if (inDesc) score += 4;
+                if (inKw) score += 2;
+            }
+            return score;
+        }
+
+        function syncUrl(query, cat) {
+            const params = new URLSearchParams();
+            if (query) params.set('q', query);
+            if (cat && cat !== 'all') params.set('cat', cat);
+            const next = params.toString() ? `${location.pathname}?${params.toString()}` : location.pathname;
+            history.replaceState(null, '', next);
+        }
+
+        function render() {
+            const rawQuery = inputEl.value.trim();
+            clearEl.classList.toggle('is-visible', rawQuery.length > 0);
+            syncUrl(rawQuery, activeCat);
+
+            const terms = norm(rawQuery).split(/\s+/).filter(Boolean);
+            const matchedAll = [];
+            for (const item of allItems) {
+                const sc = scoreItem(item, terms);
+                if (sc > 0) matchedAll.push({ item, score: sc });
+            }
+
+            matchedAll.sort((a, b) => {
+                if (b.score !== a.score) return b.score - a.score;
+                return (b.item.d || '').localeCompare(a.item.d || '');
+            });
+
+            // Count per category
+            const counts = { all: matchedAll.length };
+            for (const { item } of matchedAll) {
+                counts[item.c] = (counts[item.c] || 0) + 1;
+            }
+
+            tabsEl.innerHTML = CATEGORIES.map((cat) => {
+                const cnt = counts[cat.key] || 0;
+                const cls = cat.key === activeCat ? 'search-tab is-active' : 'search-tab';
+                return `<button type="button" class="${cls}" role="tab" aria-selected="${cat.key === activeCat}" data-cat="${cat.key}">${cat.label}<span class="tab-count">(${cnt})</span></button>`;
+            }).join('');
+
+            const visible = activeCat === 'all'
+                ? matchedAll
+                : matchedAll.filter(({ item }) => item.c === activeCat);
+
+            if (!rawQuery && activeCat === 'all') {
+                statusEl.textContent = `全 ${allItems.length} 件のコンテンツから検索できます（最新順に表示中）。`;
+            } else {
+                statusEl.textContent = rawQuery
+                    ? `「${rawQuery}」の検索結果：${visible.length} 件`
+                    : `${CATEGORIES.find((c) => c.key === activeCat)?.label || ''}：${visible.length} 件`;
+            }
+
+            if (visible.length === 0) {
+                resultsEl.innerHTML = '<li class="search-empty">一致するページが見つかりませんでした。<br>別のキーワードや短い語句、スペース区切りでお試しください。</li>';
+                return;
+            }
+
+            const limit = rawQuery ? 60 : 24;
+            resultsEl.innerHTML = visible.slice(0, limit).map(({ item }) => {
+                const extAttrs = item.x ? ' target="_blank" rel="noopener noreferrer"' : '';
+                const extMark = item.x ? '<span class="search-ext">↗ 外部記事</span>' : '';
+                const dateHtml = item.d ? `<time>${escapeHtml(item.d)}</time>` : '';
+                return `
+                <li class="search-item">
+                    <a href="${escapeHtml(item.u)}"${extAttrs}>
+                        <div class="search-item-meta">
+                            <span class="search-badge">${escapeHtml(item.l)}</span>
+                            ${dateHtml}
+                            ${extMark}
+                        </div>
+                        <div class="search-item-title">${highlight(item.t, terms)}</div>
+                        ${item.s ? `<p class="search-item-desc">${highlight(item.s, terms)}</p>` : ''}
+                    </a>
+                </li>`;
+            }).join('');
+        }
+
+        async function init() {
+            const params = new URLSearchParams(location.search);
+            const initQ = params.get('q') || '';
+            const initCat = params.get('cat') || 'all';
+            if (initQ) inputEl.value = initQ;
+            if (CATEGORIES.some((c) => c.key === initCat)) activeCat = initCat;
+
+            try {
+                const res = await fetch('/data/search-index.json');
+                if (!res.ok) throw new Error('Failed to load index');
+                const data = await res.json();
+                allItems = (data.items || []).map((item) => ({
+                    ...item,
+                    _t: norm(item.t),
+                    _s: norm(item.s),
+                    _k: norm(item.k),
+                }));
+                render();
+            } catch (err) {
+                console.error(err);
+                statusEl.textContent = '検索インデックスの読み込みに失敗しました。';
+            }
+        }
+
+        inputEl.addEventListener('input', render);
+        document.getElementById('search-form').addEventListener('submit', (e) => {
+            e.preventDefault();
+            render();
+        });
+        clearEl.addEventListener('click', () => {
+            inputEl.value = '';
+            inputEl.focus();
+            render();
+        });
+        tabsEl.addEventListener('click', (e) => {
+            const btn = e.target.closest('.search-tab');
+            if (!btn) return;
+            activeCat = btn.dataset.cat;
+            render();
+        });
+        document.querySelectorAll('.search-chip').forEach((chip) => {
+            chip.addEventListener('click', () => {
+                inputEl.value = chip.dataset.q;
+                activeCat = 'all';
+                inputEl.focus();
+                render();
+            });
+        });
+
+        document.addEventListener('DOMContentLoaded', init);
+    })();
+    </script>
+    <script src="/assets/js/ga4-tracking.js" defer></script>
+    <script src="/growth.js" defer></script>
+</body>
+</html>

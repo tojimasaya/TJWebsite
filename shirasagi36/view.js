@@ -3,6 +3,71 @@
 (function () {
   'use strict';
 
+  /* 0) テーマ初期化＆ダークモード切替・検索リンク */
+  var savedTheme = localStorage.getItem('theme');
+  if (savedTheme) document.documentElement.setAttribute('data-theme', savedTheme);
+
+  var htmlLang = (document.documentElement.lang || 'ja').toLowerCase();
+  var isEn = htmlLang.indexOf('en') === 0;
+  var isHk = htmlLang.indexOf('zh') === 0;
+
+  function getCurrentTheme() {
+    var saved = localStorage.getItem('theme');
+    if (saved) return saved;
+    return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
+  }
+  function getThemeIcon(theme) {
+    var shape = theme === 'dark'
+      ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>'
+      : '<path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/>';
+    return '<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">' + shape + '</svg>';
+  }
+  function getThemeLabel(theme) {
+    if (isEn) return theme === 'dark' ? 'Switch to light mode' : 'Switch to dark mode';
+    if (isHk) return theme === 'dark' ? '切換至淺色模式' : '切換至深色模式';
+    return theme === 'dark' ? 'ライトモードに切り替え' : 'ダークモードに切り替え';
+  }
+  var searchLabel = isEn ? 'Search site' : isHk ? '站內搜尋' : 'サイト内検索';
+  var searchIcon = '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>';
+
+  var initialTheme = getCurrentTheme();
+  var desktopNav = document.querySelector('.v-nav__menu');
+  if (desktopNav && !document.getElementById('theme-toggle')) {
+    desktopNav.insertAdjacentHTML('beforeend',
+      '<a href="/search.html" class="nav-search-link" aria-label="' + searchLabel + '" title="' + searchLabel + '">' + searchIcon + '</a>' +
+      '<button class="theme-toggle" id="theme-toggle" type="button" aria-label="' + getThemeLabel(initialTheme) + '" title="' + getThemeLabel(initialTheme) + '">' + getThemeIcon(initialTheme) + '</button>'
+    );
+  }
+  var mobileNav = document.getElementById('v-mobile');
+  if (mobileNav && !mobileNav.querySelector('.site-nav-mobile-tools')) {
+    mobileNav.insertAdjacentHTML('beforeend',
+      '<div class="site-nav-mobile-tools">' +
+        '<a href="/search.html">' + searchIcon + '<span>' + searchLabel + '</span></a>' +
+        '<button type="button" class="js-theme-toggle-mobile" aria-label="' + getThemeLabel(initialTheme) + '">' + getThemeIcon(initialTheme) + '<span>' + (initialTheme === 'dark' ? 'Light' : 'Dark') + '</span></button>' +
+      '</div>'
+    );
+  }
+  function toggleViewTheme() {
+    var next = getCurrentTheme() === 'dark' ? 'light' : 'dark';
+    document.documentElement.setAttribute('data-theme', next);
+    localStorage.setItem('theme', next);
+    var btn = document.getElementById('theme-toggle');
+    if (btn) {
+      btn.innerHTML = getThemeIcon(next);
+      btn.setAttribute('aria-label', getThemeLabel(next));
+      btn.setAttribute('title', getThemeLabel(next));
+    }
+    document.querySelectorAll('.js-theme-toggle-mobile').forEach(function (mBtn) {
+      mBtn.innerHTML = getThemeIcon(next) + '<span>' + (next === 'dark' ? 'Light' : 'Dark') + '</span>';
+      mBtn.setAttribute('aria-label', getThemeLabel(next));
+    });
+  }
+  var tBtn = document.getElementById('theme-toggle');
+  if (tBtn) tBtn.addEventListener('click', toggleViewTheme);
+  document.querySelectorAll('.js-theme-toggle-mobile').forEach(function (mBtn) {
+    mBtn.addEventListener('click', toggleViewTheme);
+  });
+
   /* 1) モバイルメニュー */
   var menu = document.getElementById('v-mobile');
   var moreMenus = document.querySelectorAll('.v-nav__more');

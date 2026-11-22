@@ -81,3 +81,89 @@
         text-align: center;
     }
 }
+
+/* Dark mode support for Shirasagi 36 hub pages */
+[data-theme="dark"] body.shirasagi-hub {
+    background-color: #141413;
+    color: #ece9e1;
+}
+
+[data-theme="dark"] .shirasagi-site-nav {
+    background-color: rgba(20, 20, 19, 0.95) !important;
+    border-bottom-color: rgba(255, 255, 255, 0.1) !important;
+}
+
+[data-theme="dark"] .shirasagi-site-logo,
+[data-theme="dark"] #shirasagi-menu-toggle,
+[data-theme="dark"] .shirasagi-hub .text-shirasagi-ink {
+    color: #ece9e1 !important;
+}
+
+[data-theme="dark"] .shirasagi-hub .text-shirasagi-blue {
+    color: #7aa2f7 !important;
+}
+
+[data-theme="dark"] .shirasagi-hub .text-gray-600,
+[data-theme="dark"] .shirasagi-hub .text-gray-500,
+[data-theme="dark"] .shirasagi-hub .text-gray-400 {
+    color: #b5b2a8 !important;
+}
+
+[data-theme="dark"] .shirasagi-hub .border-gray-300,
+[data-theme="dark"] .shirasagi-hub .border-gray-200,
+[data-theme="dark"] .shirasagi-hub .border-gray-100 {
+    border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+[data-theme="dark"] .shirasagi-hub .bg-white,
+[data-theme="dark"] .shirasagi-hub .bg-washi-bg,
+[data-theme="dark"] .shirasagi-hub .bg-gray-50,
+[data-theme="dark"] .shirasagi-hub .bg-gray-100 {
+    background-color: #1c1c1a !important;
+}
+
+[data-theme="dark"] .shirasagi-more-menu,
+[data-theme="dark"] #mobile-menu {
+    background-color: rgba(24, 24, 22, 0.98) !important;
+    border-color: rgba(255, 255, 255, 0.14) !important;
+}
+
+[data-theme="dark"] .shirasagi-more-menu a,
+[data-theme="dark"] .shirasagi-mobile-content a,
+[data-theme="dark"] .shirasagi-mobile-content summary {
+    color: #e5e2da !important;
+}
+
+[data-theme="dark"] .shirasagi-hub .filter-btn.active {
+    background-color: #ece9e1 !important;
+    color: #141413 !important;
+    border-color: #ece9e1 !important;
+}
+
+[data-theme="dark"] .shirasagi-hub .project-introduction,
+[data-theme="dark"] .shirasagi-hub .castle-resources,
+[data-theme="dark"] .shirasagi-hub .castle-resource-card,
+[data-theme="dark"] .shirasagi-hub .hub-section,
+[data-theme="dark"] .shirasagi-hub .shirasagi-index-link {
+    background-color: #1c1c1a;
+    border-color: rgba(255, 255, 255, 0.14);
+    color: #ece9e1;
+}
+
+[data-theme="dark"] .shirasagi-hub .project-description,
+[data-theme="dark"] .shirasagi-hub .project-statistics,
+[data-theme="dark"] .shirasagi-hub .castle-resource-card p {
+    color: #c2bfb5;
+}
+
+[data-theme="dark"] .shirasagi-hub .project-eyebrow,
+[data-theme="dark"] .shirasagi-hub .castle-resource-card span,
+[data-theme="dark"] .shirasagi-hub a.text-shirasagi-blue {
+    color: #8fb4ff !important;
+}
+
+[data-theme="dark"] .shirasagi-hub .text-gray-300,
+[data-theme="dark"] .shirasagi-hub .text-shirasagi-ink\/70,
+[data-theme="dark"] .shirasagi-hub .text-shirasagi-ink\/60 {
+    color: #c7c4ba !important;
+}

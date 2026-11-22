@@ -51,6 +51,9 @@
 </head>
 <body class="shirasagi-view" data-page-id="{{pageId}}">
 
+<a href="#main-content" class="skip-link">{{#isJa}}メインコンテンツにスキップ{{/isJa}}{{#isEn}}Skip to main content{{/isEn}}{{#isHk}}跳至主要內容{{/isHk}}</a>
+
+<header role="banner">
 <nav class="v-nav" aria-label="{{t_navLabel}}">
   <div class="v-nav__inner">
     <a href="/" class="v-nav__logo">TOJIMASAYA</a>
@@ -83,6 +86,7 @@
     <a href="{{urlHkPath}}" lang="zh-Hant" hreflang="zh-Hant" data-castle-language{{#isHk}} aria-current="page"{{/isHk}}>繁體中文</a>
   </div>
 </nav>
+</header>
 <div class="v-mobile" id="v-mobile">
   <button class="v-mobile__close" type="button" data-menu="close" aria-label="Close">
     <svg fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"></path></svg>
@@ -104,7 +108,7 @@
   </details>
 </div>
 
-<main class="v-wrap">
+<main id="main-content" class="v-wrap">
   <nav class="v-crumbs" aria-label="{{t_breadcrumb}}">
     <ol>
       <li><a href="/">Home</a></li>
@@ -229,7 +233,7 @@
 <footer class="v-footer">
   <div class="v-footer__logo">TOJI MASAYA</div>
   <div class="v-footer__rule"></div>
-  <p>&copy; <span id="v-year">{{buildYear}}</span> Toji Masaya. All rights reserved.<br>Himeji, Japan. — <a href="{{aboutUrl}}#license">{{t_license}}</a></p>
+  <p>&copy; <span id="v-year">{{buildYear}}</span> Toji Masaya. All rights reserved.<br>Himeji, Japan. — <a href="{{aboutUrl}}#license">{{t_license}}</a> · <a href="/privacy.html">{{#isJa}}免責・プライバシー{{/isJa}}{{#isEn}}Disclaimer &amp; Privacy{{/isEn}}{{#isHk}}免責與私隱{{/isHk}}</a> · <a href="/search.html">{{#isJa}}サイト内検索{{/isJa}}{{#isEn}}Search{{/isEn}}{{#isHk}}搜尋{{/isHk}}</a></p>
 </footer>
 
 <script>document.getElementById('v-year').textContent = new Date().getFullYear();</script>

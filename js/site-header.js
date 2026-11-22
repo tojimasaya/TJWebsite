@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
     const inShirasagiDir = path.indexOf('/shirasagi36/') !== -1;
     const isHongKongPage = page.startsWith('hongkong') || page.startsWith('hk-') || page.startsWith('cn-') || page.startsWith('iphone') || page === 'holidays.html';
     const isTripsPage = page === 'trips.html' || page.endsWith('-travel-journal.html');
-    const isOtherPage = ['gallery.html', 'writings.html', 'fragments.html', 'about.html'].includes(page) || path.includes('/fragments/');
+    const isOtherPage = ['gallery.html', 'writings.html', 'fragments.html', 'about.html', 'search.html', 'privacy.html'].includes(page) || path.includes('/fragments/');
 
     // 現在のテーマを判定
     function getCurrentTheme() {
@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', () => {
         return window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light';
     }
 
-    // Lucide Moon / Sun (ISC); license: /assets/icons/lucide-LICENSE.txt.
+    // Lucide Moon / Sun / Search (ISC); license: /assets/icons/lucide-LICENSE.txt.
     function getThemeIcon(theme) {
         const shape = theme === 'dark'
             ? '<circle cx="12" cy="12" r="4"/><path d="M12 2v2"/><path d="M12 20v2"/><path d="m4.93 4.93 1.41 1.41"/><path d="m17.66 17.66 1.41 1.41"/><path d="M2 12h2"/><path d="M20 12h2"/><path d="m6.34 17.66-1.41 1.41"/><path d="m19.07 4.93-1.41 1.41"/>'
@@ -31,14 +31,23 @@ document.addEventListener('DOMContentLoaded', () => {
         return `<svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">${shape}</svg>`;
     }
 
+    const searchIcon = '<svg viewBox="0 0 24 24" width="19" height="19" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false"><circle cx="11" cy="11" r="7"/><path d="m21 21-4.3-4.3"/></svg>';
+
     function getThemeLabel(theme) {
         return theme === 'dark' ? 'ライトモードに切り替え' : 'ダークモードに切り替え';
     }
 
     const currentTheme = getCurrentTheme();
 
+    // スキップリンクの移動先（#main-content）を確保
+    if (!document.getElementById('main-content')) {
+        const mainTarget = document.querySelector('main, article, header, section');
+        if (mainTarget && !mainTarget.id) mainTarget.id = 'main-content';
+    }
+
     // ナビゲーションのHTML構造
     const navHtml = `
+    <header class="site-header" role="banner">
     <nav class="main-nav" aria-label="メインナビゲーション">
         <div class="nav-container">
             <a href="/" class="nav-logo" aria-label="ホームページへ戻る">TOJIMASAYA</a>
@@ -61,22 +70,26 @@ document.addEventListener('DOMContentLoaded', () => {
                             <li><a href="/fragments.html" ${page === 'fragments.html' || path.includes('/fragments/') ? 'aria-current="page"' : ''}>断章</a></li>
                             <li><a href="/hongkong-handbook.html" ${page === 'hongkong-handbook.html' ? 'aria-current="page"' : ''}>香港ハンドブック</a></li>
                             <li><a href="/about.html" ${page === 'about.html' ? 'aria-current="page"' : ''}>About</a></li>
+                            <li><a href="/search.html" ${page === 'search.html' ? 'aria-current="page"' : ''}>サイト内検索</a></li>
                         </ul>
                     </details>
                 </li>
+                <li><a href="/search.html" class="nav-search-link" aria-label="サイト内検索" title="サイト内検索" ${page === 'search.html' ? 'aria-current="page"' : ''}>${searchIcon}</a></li>
                 <li><button class="theme-toggle" id="theme-toggle" type="button" aria-label="${getThemeLabel(currentTheme)}" title="${getThemeLabel(currentTheme)}">${getThemeIcon(currentTheme)}</button></li>
             </ul>
         </div>
     </nav>
+    </header>
     `;
 
-    // スキップリンクがあるページでは、その直後に挿入して最初のTab順を保つ
-    const skipLink = document.querySelector('.skip-link');
-    if (skipLink) {
-        skipLink.insertAdjacentHTML('afterend', navHtml);
-    } else {
-        document.body.insertAdjacentHTML('afterbegin', navHtml);
+    // スキップリンクが無いページには自動で追加し、その直後にヘッダーを挿入
+    let skipLink = document.querySelector('.skip-link');
+    if (!skipLink) {
+        const targetId = document.getElementById('main-content') ? '#main-content' : '#top';
+        document.body.insertAdjacentHTML('afterbegin', `<a href="${targetId}" class="skip-link">メインコンテンツにスキップ</a>`);
+        skipLink = document.querySelector('.skip-link');
     }
+    skipLink.insertAdjacentHTML('afterend', navHtml);
 
     document.querySelectorAll('.main-nav a.nav-link.active').forEach(link => {
         link.setAttribute('aria-current', link.pathname === path ? 'page' : 'location');
@@ -102,7 +115,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const year = new Date().getFullYear();
         stdFooter.innerHTML = `
         <div class="footer-content">
-            <p style="font-size: 0.78rem; margin-bottom: 8px; opacity: 0.85;"><a href="/" style="color: inherit; text-decoration: none;">Home</a> · <a href="/about.html" style="color: inherit; text-decoration: none;">About</a> · <a href="/about.html#license" style="color: inherit; text-decoration: none;">お問い合わせ</a> · <a href="/feed.xml" style="color: inherit; text-decoration: none;">Feed</a></p>
+            <p style="font-size: 0.78rem; margin-bottom: 8px; opacity: 0.85;"><a href="/" style="color: inherit; text-decoration: none;">Home</a> · <a href="/search.html" style="color: inherit; text-decoration: none;">検索</a> · <a href="/about.html" style="color: inherit; text-decoration: none;">About</a> · <a href="/about.html#license" style="color: inherit; text-decoration: none;">お問い合わせ</a> · <a href="/privacy.html" style="color: inherit; text-decoration: none;">免責・プライバシー</a> · <a href="/feed.xml" style="color: inherit; text-decoration: none;">Feed</a></p>
             <p>&copy; ${year} Toji Masaya. All rights reserved.</p>
             <p style="font-size: 0.7rem; opacity: 0.72; margin-top: 6px;">当サイトには広告（アフィリエイトリンク）を含むページがあります。Amazonのアソシエイトとして、当サイト運営者・田路昌也は適格販売により収入を得ています。</p>
         </div>`;
