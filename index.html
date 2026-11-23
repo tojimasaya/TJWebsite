@@ -853,6 +853,232 @@
       }
     }
 
+    /* ── Archive（カメラ・レンズ図鑑 一枚看板） ── */
+    .archive-feature {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 72px 24px;
+      border-bottom: 1px solid var(--border-color);
+    }
+
+    .archive-feature-inner {
+      display: grid;
+      grid-template-columns: minmax(0, 5fr) minmax(0, 6fr);
+      gap: 52px;
+      align-items: center;
+    }
+
+    .archive-feature-visual {
+      background: #fff;
+      border: 1px solid var(--border-color);
+      border-radius: 10px;
+      padding: 20px;
+      color: #222;
+    }
+
+    .archive-feature-visual-head {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      gap: 12px;
+      margin-bottom: 14px;
+      padding-bottom: 10px;
+      border-bottom: 1px solid #eceae5;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: #666;
+    }
+
+    .archive-feature-visual-head strong {
+      font-family: 'Crimson Text', Georgia, serif;
+      font-size: 1.5rem;
+      font-weight: 600;
+      letter-spacing: 0;
+      color: #1a1a1a;
+      margin-right: 6px;
+    }
+
+    .archive-feature-cameras {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px;
+    }
+
+    .archive-feature-cam {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px 6px 8px;
+      border: 1px solid #eceae5;
+      border-radius: 8px;
+      background: #fff;
+      text-decoration: none;
+      color: #222;
+      transition: border-color 0.2s ease, transform 0.2s ease;
+    }
+
+    .archive-feature-cam:hover {
+      border-color: var(--accent-color, #1a3fb9);
+      transform: translateY(-2px);
+    }
+
+    .archive-feature-cam img {
+      display: block;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 3 / 2;
+      object-fit: contain;
+    }
+
+    .archive-feature-cam span {
+      display: block;
+      margin-top: 6px;
+      font-family: 'Crimson Text', Georgia, serif;
+      font-size: 0.92rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .archive-feature-cam small {
+      display: block;
+      font-family: 'Inter', sans-serif;
+      font-size: 0.65rem;
+      color: #777;
+      letter-spacing: 0.08em;
+    }
+
+    .archive-feature-stats {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 8px;
+      margin-top: 14px;
+      padding-top: 12px;
+      border-top: 1px solid #eceae5;
+      text-align: center;
+      font-family: 'Inter', sans-serif;
+    }
+
+    .archive-feature-stats div strong {
+      display: block;
+      font-family: 'Crimson Text', Georgia, serif;
+      font-size: 1.12rem;
+      font-weight: 600;
+      color: #1a1a1a;
+    }
+
+    .archive-feature-stats div span {
+      display: block;
+      font-size: 0.66rem;
+      color: #666;
+      margin-top: 2px;
+    }
+
+    .archive-feature-forms {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 10px;
+      margin: 0 0 1.5em;
+    }
+
+    .archive-feature-form {
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      padding: 12px;
+      border: 1px solid var(--border-color);
+      border-radius: 8px;
+      background: var(--white, #fff);
+    }
+
+    .archive-feature-form label {
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.72rem;
+      font-weight: 500;
+      color: var(--text-light);
+      letter-spacing: 0.04em;
+    }
+
+    .archive-feature-input-row {
+      display: flex;
+      gap: 6px;
+    }
+
+    .archive-feature-input-row input {
+      flex: 1;
+      min-width: 0;
+      padding: 8px 10px;
+      border: 1px solid var(--border-color);
+      border-radius: 5px;
+      background: var(--bg-color);
+      color: var(--text-color);
+      font-size: 0.84rem;
+      font-family: inherit;
+    }
+
+    .archive-feature-input-row input:focus {
+      outline: none;
+      border-color: var(--accent-color, #1a3fb9);
+    }
+
+    .archive-feature-input-row button {
+      flex-shrink: 0;
+      white-space: nowrap;
+      padding: 8px 11px;
+      border: 1px solid var(--text-color);
+      border-radius: 5px;
+      background: var(--text-color);
+      color: var(--bg-color);
+      font-family: 'Inter', sans-serif;
+      font-size: 0.75rem;
+      cursor: pointer;
+      transition: opacity 0.2s ease;
+    }
+
+    .archive-feature-input-row button:hover {
+      opacity: 0.84;
+    }
+
+    .archive-feature-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .archive-feature-sublink {
+      font-family: 'Inter', 'Noto Serif JP', sans-serif;
+      font-size: 0.84rem;
+      color: var(--text-light);
+      text-decoration: none;
+      border-bottom: 1px solid var(--border-color);
+      padding-bottom: 2px;
+      transition: color 0.2s ease, border-color 0.2s ease;
+    }
+
+    .archive-feature-sublink:hover {
+      color: var(--accent-color, #1a3fb9);
+      border-color: var(--accent-color, #1a3fb9);
+    }
+
+    @media (max-width: 900px) {
+      .archive-feature-inner {
+        grid-template-columns: 1fr;
+        gap: 28px;
+      }
+    }
+
+    @media (max-width: 760px) {
+      .archive-feature {
+        padding: 48px 20px;
+      }
+
+      .archive-feature-forms {
+        grid-template-columns: 1fr;
+      }
+    }
+
 
     /* ── Travels Section ── */
     .travels {
@@ -1620,6 +1846,85 @@
     </div>
   </section>
 
+  <!-- ======================================
+       SECTION 4B: Archive（カメラ・レンズ図鑑 一枚看板）
+       ====================================== -->
+  <section class="archive-feature" aria-labelledby="archive-feature-title">
+    <div class="archive-feature-inner">
+      <div class="archive-feature-visual">
+        <div class="archive-feature-visual-head">
+          <span><strong>152</strong>CAMERA MODELS</span>
+          <span>FILM TO DIGITAL</span>
+        </div>
+        <div class="archive-feature-cameras" role="group" aria-label="収録ボディの例">
+          <a class="archive-feature-cam" href="leica-bodies.html#m3" data-growth-label="home_archive_cam_m3">
+            <img src="assets/leica-bodies/display/body-m3-480.webp" srcset="assets/leica-bodies/display/body-m3-480.webp 480w, assets/leica-bodies/display/body-m3-960.webp 960w" sizes="(max-width: 760px) 28vw, 150px" width="480" height="320" alt="Leica M3" loading="lazy" decoding="async">
+            <span>M3</span>
+            <small>1954</small>
+          </a>
+          <a class="archive-feature-cam" href="leica-bodies.html#p05-04" data-growth-label="home_archive_cam_m2">
+            <img src="assets/leica-bodies/display/body-p05-04-480.webp" srcset="assets/leica-bodies/display/body-p05-04-480.webp 480w, assets/leica-bodies/display/body-p05-04-960.webp 960w" sizes="(max-width: 760px) 28vw, 150px" width="480" height="320" alt="Leica M2" loading="lazy" decoding="async">
+            <span>M2</span>
+            <small>1957</small>
+          </a>
+          <a class="archive-feature-cam" href="leica-bodies.html#m11" data-growth-label="home_archive_cam_m11">
+            <img src="assets/leica-bodies/display/body-m11-480.webp" srcset="assets/leica-bodies/display/body-m11-480.webp 480w, assets/leica-bodies/display/body-m11-960.webp 960w" sizes="(max-width: 760px) 28vw, 150px" width="480" height="320" alt="Leica M11" loading="lazy" decoding="async">
+            <span>M11</span>
+            <small>2022</small>
+          </a>
+        </div>
+        <div class="archive-feature-stats" aria-label="収録規模">
+          <div>
+            <strong>152機種</strong>
+            <span>Leica ボディ図鑑</span>
+          </div>
+          <div>
+            <strong>1,698件</strong>
+            <span>シリアル番号検索</span>
+          </div>
+          <div>
+            <strong>構想中</strong>
+            <span>レンズ図鑑 DB</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="archive-feature-text">
+        <p class="handbook-feature-kicker">Camera &amp; Lens Archive</p>
+        <h2 class="handbook-feature-title" id="archive-feature-title">Archive — カメラ・レンズ図鑑</h2>
+        <p class="handbook-feature-lead">機種名・年代・シリアル番号から辿るカメラとレンズの独立データベース。まずは歴代Leica 152機種（全185項目）と番号検索を公開し、今後はマウント横断のレンズ図鑑へと広げていきます。</p>
+        <ul class="handbook-feature-chips" aria-label="収録データベース">
+          <li>Leica ボディ152機種</li>
+          <li>シリアル検索 1,698件</li>
+          <li>レンズ85年代範囲</li>
+          <li>レンズ図鑑（構想中）</li>
+        </ul>
+
+        <div class="archive-feature-forms">
+          <form class="archive-feature-form" action="leica-bodies.html" method="get" role="search" aria-label="機種名で図鑑を検索">
+            <label for="home-archive-body">機種名から探す</label>
+            <div class="archive-feature-input-row">
+              <input id="home-archive-body" name="search" type="search" placeholder="例：M3、M10、SL2-S" autocomplete="off">
+              <button type="submit">検索 →</button>
+            </div>
+          </form>
+          <form class="archive-feature-form" action="leica-serial.html" method="get" role="search" aria-label="シリアル番号を検索">
+            <label for="home-archive-serial">シリアル番号で調べる</label>
+            <div class="archive-feature-input-row">
+              <input id="home-archive-serial" name="serial" type="text" inputmode="numeric" placeholder="例：1,200,000" required autocomplete="off">
+              <button type="submit">調べる →</button>
+            </div>
+          </form>
+        </div>
+
+        <div class="archive-feature-actions">
+          <a class="handbook-feature-cta" href="archive.html" data-growth-label="home_archive_feature">Archive をひらく →</a>
+          <a class="archive-feature-sublink" href="leica.html" data-growth-label="home_archive_leica">Leica Archive へ →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
 
   <!-- ======================================
        SECTION 5: 旅の記録（旅行ページと同じ「写真→旅先→タイトル→訪問年」の順）
@@ -1717,6 +2022,7 @@
         <a href="shirasagi36.html">白鷺三十六景</a>
         <a href="hongkong.html">香港</a>
         <a href="trips.html">旅</a>
+        <a href="archive.html">Archive</a>
         <a href="gear.html">Gear</a>
         <a href="fragments.html">断章</a>
         <a href="gallery.html">Gallery</a>

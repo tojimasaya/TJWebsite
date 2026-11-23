@@ -22,9 +22,13 @@
     { pattern: /shirasagi36(?:-(en|hk))?\.html$/i, feature: 'shirasagi36' },
     { pattern: /hongkong-neon\.html$/i, feature: 'hongkong_neon' },
     { pattern: /hongkong\.html$/i, feature: 'hongkong' },
+    { pattern: /archive\.html$/i, feature: 'archive' },
+    { pattern: /leica\.html$/i, feature: 'leica_archive' },
+    { pattern: /leica-bodies\.html$/i, feature: 'leica_bodies' },
+    { pattern: /leica-serial\.html$/i, feature: 'leica_serial' },
+    { pattern: /leica-sources\.html$/i, feature: 'leica_sources' },
     { pattern: /gear(?:-[a-z]+)?\.html$/i, feature: 'gear' },
     { pattern: /writings\.html$/i, feature: 'writings' },
-    { pattern: /leica-serial\.html$/i, feature: 'leica_serial' },
     { pattern: /instagram\.html$/i, feature: 'instagram_entry' },
   ];
 

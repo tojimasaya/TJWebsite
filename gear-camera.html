@@ -16,27 +16,67 @@
 
     <style>
 
-        .leica-db-link {
-            display: flex;
-            align-items: center;
-            gap: 14px;
+        .archive-bridge-box {
             max-width: 1200px;
             margin: 0 auto 40px;
-            padding: 14px 18px;
+            padding: 20px 24px;
             background: var(--hover-color, #f9fafb);
             border: 1px solid var(--border-color);
             border-radius: 10px;
-            text-decoration: none;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 16px 24px;
+        }
+        .archive-bridge-kicker {
+            display: block;
+            font-family: var(--secondary-font);
+            font-size: 0.68rem;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+            color: var(--accent-color);
+            margin-bottom: 4px;
+        }
+        .archive-bridge-title {
+            font-family: var(--primary-font);
+            font-size: 1.08rem;
             color: var(--text-color);
-            transition: background 0.3s ease, border-color 0.3s ease;
+            margin-bottom: 4px;
         }
-        .leica-db-link:hover {
-            background: var(--border-color, #e5e7eb);
+        .archive-bridge-desc {
+            font-size: 0.8rem;
+            color: var(--text-light);
+            line-height: 1.7;
         }
-        .leica-db-icon { font-size: 1.2rem; flex-shrink: 0; }
-        .leica-db-title { font-family: var(--primary-font); font-size: 1rem; margin-bottom: 2px; }
-        .leica-db-desc { font-size: 0.75rem; color: var(--text-lighter); }
-        .leica-db-arrow { margin-left: auto; font-size: 1rem; color: var(--text-lighter); flex-shrink: 0; }
+        .archive-bridge-links {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            gap: 10px 16px;
+            font-size: 0.82rem;
+        }
+        .archive-bridge-primary {
+            display: inline-flex;
+            align-items: center;
+            padding: 8px 16px;
+            border-radius: 6px;
+            background: var(--text-color);
+            color: var(--bg-color);
+            text-decoration: none;
+            font-family: var(--secondary-font);
+            font-size: 0.8rem;
+            transition: opacity 0.2s ease;
+        }
+        .archive-bridge-primary:hover { opacity: 0.85; }
+        .archive-bridge-links a:not(.archive-bridge-primary) {
+            color: var(--accent-color);
+            text-decoration: none;
+        }
+        .archive-bridge-links a:not(.archive-bridge-primary):hover {
+            text-decoration: underline;
+            text-underline-offset: 3px;
+        }
 
         /* Works shot with these cameras */
         .camera-work-bridge {
@@ -221,16 +261,21 @@
         </div>
     </section>
 
-    <div style="padding: 0 30px 30px;">
-        <a href="leica.html" class="leica-db-link">
-            <div class="leica-db-icon">🔍</div>
+    <aside style="padding: 0 30px 30px;" aria-label="カメラ・レンズ図鑑 Archive への案内">
+        <div class="archive-bridge-box">
             <div>
-                <div class="leica-db-title">Leica Archive — ライカ図鑑・データベース</div>
-                <div class="leica-db-desc">ボディの歴史・仕様と、カメラ・レンズのシリアル番号検索</div>
+                <span class="archive-bridge-kicker">Related Archive</span>
+                <div class="archive-bridge-title">Archive — カメラ・レンズ図鑑・データベース</div>
+                <div class="archive-bridge-desc">歴代Leica 152機種のボディ仕様・歴史とシリアル番号検索は、独立した Archive にまとめています。</div>
             </div>
-            <span class="leica-db-arrow">→</span>
-        </a>
-    </div>
+            <div class="archive-bridge-links">
+                <a href="archive.html" class="archive-bridge-primary" data-growth-label="gear_camera_to_archive">Archive トップ →</a>
+                <a href="leica.html" data-growth-label="gear_camera_to_leica">Leica Archive →</a>
+                <a href="leica-bodies.html" data-growth-label="gear_camera_to_bodies">ボディ図鑑 →</a>
+                <a href="leica-serial.html" data-growth-label="gear_camera_to_serial">シリアル番号検索 →</a>
+            </div>
+        </div>
+    </aside>
 
 
     </main>

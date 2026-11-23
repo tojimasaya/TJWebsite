@@ -57,6 +57,12 @@
         .journal-origin { max-width: 720px; margin: 0 auto 50px; padding: 14px 24px; font-family: var(--primary-font); font-size: 0.85rem; color: var(--text-light); text-align: center; line-height: 2; }
         .journal-origin a { color: var(--accent-color); text-decoration: none; }
         .journal-origin a:hover { text-decoration: underline; }
+        .wetzlar-archive-box { max-width: 720px; margin: 0 auto 32px; padding: 20px 24px; border: 1px solid var(--border-color); border-radius: 10px; background: var(--white); font-family: 'Noto Serif JP', serif; }
+        .wetzlar-archive-kicker { display: block; font-family: var(--secondary-font); font-size: 0.7rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent-color); margin-bottom: 6px; }
+        .wetzlar-archive-box p { margin: 0 0 12px; font-size: 0.88rem; line-height: 1.85; color: var(--text-light); }
+        .wetzlar-archive-links { display: flex; flex-wrap: wrap; gap: 10px 18px; font-family: var(--secondary-font); font-size: 0.82rem; }
+        .wetzlar-archive-links a { color: var(--accent-color); text-decoration: none; }
+        .wetzlar-archive-links a:hover { text-decoration: underline; text-underline-offset: 3px; }
         .day-nav { display: flex; justify-content: space-between; gap: 10px; max-width: 720px; margin: 0 auto 40px; padding: 0 24px; flex-wrap: wrap; }
         .day-nav a { padding: 11px 18px; border-radius: 24px; border: 1px solid var(--border-color); text-decoration: none; font-size: var(--text-sm); color: var(--text-color); font-family: var(--primary-font); transition: transform .2s ease, box-shadow .2s ease; }
         .day-nav a:hover { transform: translateY(-1px); box-shadow: var(--shadow-sm); }
@@ -133,6 +139,16 @@
             <p>HerrenとDamen どちらが男子でどちらが女子でしょうか？<br>なんといっても「Her」と「men」がそれぞれに含まれるんだから当然Damenが男子だろうと入ったら見事逆、中に誰もいなくてホント助かりました。</p>
             <p>てか、男子と女子のアイコン入れとけよ！って感じですよね。</p>
         </article>
+
+        <aside class="wetzlar-archive-box" aria-label="Archive への関連リンク">
+            <span class="wetzlar-archive-kicker">Related Archive</span>
+            <p>ヴェッツラーで生まれたオスカー・バルナックの初期モデルから現代のM・SL型まで、歴代ライカの仕様やシリアル番号は独立した Archive で調べられます。</p>
+            <div class="wetzlar-archive-links">
+                <a href="archive.html" data-growth-label="wetzlar_to_archive">Archive（カメラ・レンズ図鑑）→</a>
+                <a href="leica-bodies.html" data-growth-label="wetzlar_to_bodies">Leica ボディ図鑑（152機種）→</a>
+                <a href="leica-serial.html" data-growth-label="wetzlar_to_serial">シリアル番号検索 →</a>
+            </div>
+        </aside>
 
         <div class="journal-origin">
             初出（note・2024年公開）：<a href="https://note.com/tojimasaya/n/n217102b6d16c" target="_blank" rel="noopener noreferrer">Leica総本山ライツパーク訪問</a>

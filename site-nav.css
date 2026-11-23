@@ -47,7 +47,7 @@
 .shirasagi-site-nav .shirasagi-site-inner {
     box-sizing: border-box;
     width: 100%;
-    max-width: 1080px;
+    max-width: 1160px;
     height: 70px;
     margin: 0 auto;
     padding: 0 32px;
@@ -284,6 +284,19 @@
     .main-nav .nav-toggle,
     .v-nav .v-nav__toggle,
     .shirasagi-site-nav .shirasagi-site-toggle { display: none; }
+}
+
+@media (min-width: 1024px) and (max-width: 1180px) {
+    .main-nav .nav-container,
+    .v-nav .v-nav__inner,
+    .shirasagi-site-nav .shirasagi-site-inner { padding: 0 20px; gap: 12px; }
+    .main-nav .nav-menu,
+    .v-nav .v-nav__menu,
+    .shirasagi-site-nav .shirasagi-site-links { gap: 12px; }
+    .v-nav .v-nav__lang,
+    .shirasagi-site-nav .shirasagi-site-languages { padding-left: 12px; gap: 4px; }
+    .v-nav .v-nav__lang a,
+    .shirasagi-site-nav .shirasagi-site-languages a { padding: 0 6px; }
 }
 
 @media (max-width: 1023px) {

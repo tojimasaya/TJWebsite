@@ -14,6 +14,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const inShirasagiDir = path.indexOf('/shirasagi36/') !== -1;
     const isHongKongPage = page.startsWith('hongkong') || page.startsWith('hk-') || page.startsWith('cn-') || page.startsWith('iphone') || page === 'holidays.html';
     const isTripsPage = page === 'trips.html' || page.endsWith('-travel-journal.html') || page.endsWith('-detail.html') || /^(tibet-day|italy-|germany-|macau-|hoian-2018)/.test(page);
+    const isArchivePage = page === 'archive.html' || page.startsWith('leica') || path.includes('/leica/') || path.includes('/lenses/');
+    const isGearPage = page.includes('gear');
     const isReadViewPage = ['gallery.html', 'writings.html', 'fragments.html'].includes(page) || path.includes('/fragments/') || path.includes('/articles/');
     const isAboutPage = page === 'about.html' || page === 'about-en.html' || page === 'about-hk.html';
 
@@ -77,7 +79,38 @@ document.addEventListener('DOMContentLoaded', () => {
                     </details>
                 </li>
                 <li><a href="/trips.html" class="nav-link ${isTripsPage ? 'active' : ''}">旅</a></li>
-                <li><a href="/gear.html" class="nav-link ${(page.includes('gear') || page.startsWith('leica')) ? 'active' : ''}">Gear</a></li>
+                <li class="nav-more">
+                    <details class="nav-dropdown" data-nav-dropdown>
+                        <summary class="nav-link ${isArchivePage ? 'active' : ''}">Archive</summary>
+                        <ul class="nav-submenu">
+                            <li>
+                                <a href="/archive.html" ${page === 'archive.html' ? 'aria-current="page"' : ''}>
+                                    <span class="nav-sub-title">Archive トップ</span>
+                                    <span class="nav-sub-desc">カメラ・レンズ図鑑の総合入口</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/leica.html" ${page === 'leica.html' ? 'aria-current="page"' : ''}>
+                                    <span class="nav-sub-title">Leica Archive</span>
+                                    <span class="nav-sub-desc">写真から辿るライカ専門ハブ</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/leica-bodies.html" ${page === 'leica-bodies.html' ? 'aria-current="page"' : ''}>
+                                    <span class="nav-sub-title">Leica ボディ図鑑</span>
+                                    <span class="nav-sub-desc">歴代152機種の仕様と画像来歴</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="/leica-serial.html" ${page === 'leica-serial.html' ? 'aria-current="page"' : ''}>
+                                    <span class="nav-sub-title">シリアル番号検索</span>
+                                    <span class="nav-sub-desc">カメラ・レンズの番号から年代を調べる</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </details>
+                </li>
+                <li><a href="/gear.html" class="nav-link ${isGearPage ? 'active' : ''}">Gear</a></li>
                 <li class="nav-more">
                     <details class="nav-dropdown" data-nav-dropdown>
                         <summary class="nav-link ${isReadViewPage ? 'active' : ''}">読む・見る</summary>
@@ -151,6 +184,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 <a href="/hongkong.html">変わりゆく香港</a>
                 <a href="/hongkong-handbook.html">香港ハンドブック</a>
                 <a href="/trips.html">旅</a>
+                <a href="/archive.html">Archive</a>
                 <a href="/gear.html">Gear</a>
                 <a href="/fragments.html">断章</a>
                 <a href="/writings.html">Writings</a>

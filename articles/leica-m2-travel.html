@@ -35,22 +35,9 @@
 <body>
     <a href="#main-content" class="skip-link">メインコンテンツにスキップ</a>
 
-    <nav class="main-nav" id="main-nav">
-        <div class="nav-container">
-            <a href="/" class="nav-logo">TJM</a>
-            <ul class="nav-menu" id="nav-menu">
-                <li><a href="/" class="nav-link">Home</a></li>
-                <li><a href="/gallery.html" class="nav-link">Gallery</a></li>
-                <li><a href="/gear.html" class="nav-link">Gear</a></li>
-                <li><a href="/writings.html" class="nav-link active">Writings</a></li>
-            </ul>
-            <button class="nav-toggle" id="nav-toggle" aria-label="メニューを開く">
-                <span></span><span></span><span></span>
-            </button>
-        </div>
-    </nav>
+    <script src="/js/site-header.js?v=20261123-archive"></script>
 
-    <section class="article-hero" role="banner">
+    <section class="article-hero">
         <div class="article-hero-image">
             <img src="/assets/images/gear/m2.jpg" alt="Leica M2と旅写真のためのカメラ" loading="eager" width="1920" height="1080">
             <div class="article-hero-overlay">
@@ -94,9 +81,13 @@
                 </section>
 
                 <div class="article-inline-cta">
-                    <strong>使っているカメラを見る</strong>
-                    <p>Leica M2を含むカメラ機材はCamera Gearにまとめています。</p>
+                    <strong>使っているカメラを見る・仕様を調べる</strong>
+                    <p>Leica M2を含む愛用カメラはCamera Gearに、歴代モデルの仕様や製造年（シリアル番号）は独立した<a href="/archive.html" data-growth-label="article_leica_inline_archive">Archive</a>にまとめています。</p>
                     <a href="/gear-camera.html" data-growth-label="article_leica_inline_camera">Camera Gearを見る →</a>
+                    <span style="margin: 0 10px; opacity: 0.45;" aria-hidden="true">|</span>
+                    <a href="/leica-bodies.html#p05-04" data-growth-label="article_leica_inline_m2_spec">Leica M2のボディ図鑑 →</a>
+                    <span style="margin: 0 10px; opacity: 0.45;" aria-hidden="true">|</span>
+                    <a href="/leica-serial.html" data-growth-label="article_leica_inline_serial">シリアル番号検索 →</a>
                 </div>
 
             </article>
@@ -118,6 +109,12 @@
                             <em>写真と動画で旅の記憶へ</em>
                         </a>
 
+                        <a href="/leica-bodies.html#p05-04" class="route-card" data-growth-label="article_leica_related_archive">
+                            <span>Archive / Leica M2</span>
+                            <strong>Leica M2の仕様・製造年を調べる</strong>
+                            <em>ボディ図鑑（152機種）とシリアル番号検索へ</em>
+                        </a>
+
                         <a href="/articles/drone-travel-guide.html" class="route-card" data-growth-label="article_leica_related_drone">
                             <span>Drone Travel</span>
                             <strong>旅でドローンを使う考え方を読む</strong>
@@ -129,42 +126,11 @@
             <section class="back-to-home">
                 <a href="/writings.html#site-guides" class="back-link"><span class="back-arrow">←</span><span>Back to Writings</span></a>
             </section>
-
-            <footer class="footer" role="contentinfo">
-                <div class="footer-content">
-                    <p>&copy; 2026 Toji Masaya. All rights reserved.</p>
-                    <p>Built with care in Japan</p>
-                </div>
-            </footer>
         </div>
     </main>
 
+    <footer class="footer" role="contentinfo"></footer>
 
-    <script>
-        const navToggle = document.getElementById('nav-toggle');
-        const navMenu = document.getElementById('nav-menu');
-        if (navToggle && navMenu) {
-            navToggle.addEventListener('click', () => {
-                navMenu.classList.toggle('active');
-                navToggle.classList.toggle('active');
-                document.body.classList.toggle('nav-open');
-            });
-            document.querySelectorAll('.nav-link').forEach(link => {
-                link.addEventListener('click', () => {
-                    if (window.innerWidth <= 768) {
-                        navMenu.classList.remove('active');
-                        navToggle.classList.remove('active');
-                        document.body.classList.remove('nav-open');
-                    }
-                });
-            });
-        }
-        window.addEventListener('scroll', () => {
-            const nav = document.getElementById('main-nav');
-            if (!nav) return;
-            window.scrollY > 50 ? nav.classList.add('scrolled') : nav.classList.remove('scrolled');
-        });
-    </script>
     <script src="/growth.js" defer></script>
     <script type="application/ld+json">
 {

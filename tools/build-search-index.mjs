@@ -13,7 +13,8 @@ const CATEGORY_LABELS = {
   trips: '旅の記録',
   fragments: '断章',
   writings: '執筆記事',
-  gear: 'Gear・Leica',
+  archive: 'Archive',
+  gear: 'Gear',
   other: 'その他',
 };
 
@@ -69,7 +70,8 @@ function classifyHtmlFile(rel) {
     rel.endsWith('-detail.html') ||
     /^(tibet-day|italy-|germany-|macau-|hoian-2018)/.test(rel)
   ) return 'trips';
-  if (rel.startsWith('gear') || rel.startsWith('leica')) return 'gear';
+  if (rel === 'archive.html' || rel.startsWith('leica')) return 'archive';
+  if (rel.startsWith('gear')) return 'gear';
   if (rel.startsWith('articles/') || rel === 'writings.html') return 'writings';
   if (rel === 'fragments.html') return 'fragments';
   return 'other';

@@ -126,3 +126,9 @@
 @media(prefers-reduced-motion:reduce){.la-archive-links a,.la-detail-nav a{scroll-behavior:auto}}
 
 @media(max-width:359px){.la-detail-nav a{font-size:10px}}
+a.la-nav-brand{text-decoration:none}
+a.la-nav-brand:hover{color:var(--la-menu-active)}
+.la-footer-links{margin-left:auto;display:flex;flex-wrap:wrap;gap:14px 22px;align-items:center}
+.la-footer-links a{color:var(--text-light);font-size:11px;text-decoration:none}
+.la-footer-links a:hover{color:var(--accent-color)}
+@media(max-width:760px){.la-footer-links{margin-left:0;width:100%}}
