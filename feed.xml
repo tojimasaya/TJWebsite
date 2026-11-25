@@ -5,13 +5,46 @@
   <id>https://tojimasaya.com/</id>
   <link rel="alternate" type="text/html" href="https://tojimasaya.com/"/>
   <link rel="self" type="application/atom+xml" href="https://tojimasaya.com/feed.xml"/>
-  <updated>2026-11-16T00:00:00+09:00</updated>
+  <updated>2026-11-25T00:00:00+09:00</updated>
   <author>
     <name>田路昌也 (Toji Masaya)</name>
     <uri>https://tojimasaya.com/about.html</uri>
   </author>
   <rights>© Toji Masaya</rights>
   <generator uri="https://tojimasaya.com/">tools/build-feeds.mjs</generator>
+  <entry>
+    <title>【12月6日締切】HSBC Visa Signatureをお持ちの方へ。2027年のRewards of Your Choice（最紅自主獎賞）は自動継続されません</title>
+    <id>https://note.com/tojimasaya/n/n6efc370aba99</id>
+    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n6efc370aba99"/>
+    <published>2026-11-25T00:00:00+09:00</published>
+    <updated>2026-11-25T00:00:00+09:00</updated>
+    <category term="note"/>
+    <summary type="text">HSBC Visa Signatureの利用者に向けて、2027年の「Rewards of Your Choice（最紅自主獎賞）」の登録に関する注意点を紹介。自動継続されないことと12月6日の締切を取り上げ、…</summary>
+    <content type="html">&lt;p&gt;HSBC Visa Signatureの利用者に向けて、2027年の「Rewards of Your Choice（最紅自主獎賞）」の登録に関する注意点を紹介。自動継続されないことと12月6日の締切を取り上げ、見落としやすい手続きを案内しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n6efc370aba99&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>同じ買い物でも7,892マイルと460マイル。香港のクレジットカード、なんとなく使っていませんか？</title>
+    <id>https://note.com/tojimasaya/n/n6bfc44298fcd</id>
+    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n6bfc44298fcd"/>
+    <published>2026-11-24T00:00:00+09:00</published>
+    <updated>2026-11-24T00:00:00+09:00</updated>
+    <category term="note"/>
+    <summary type="text">iPhoneの購入を例に、香港のクレジットカード選びでマイルや還元がどう変わるかを紹介。HSBC Red Card、HSBC EveryMile、恒生銀行MMPowerの違いと使い分けを、…</summary>
+    <content type="html">&lt;p&gt;iPhoneの購入を例に、香港のクレジットカード選びでマイルや還元がどう変わるかを紹介。HSBC Red Card、HSBC EveryMile、恒生銀行MMPowerの違いと使い分けを、2026年11月時点の条件で整理しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n6bfc44298fcd&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
+  <entry>
+    <title>このnoteの歩き方 ── 香港の空気と、旅のガジェットを書き留めています</title>
+    <id>https://note.com/tojimasaya/n/nb0bcccd7c683</id>
+    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/nb0bcccd7c683"/>
+    <published>2026-11-23T00:00:00+09:00</published>
+    <updated>2026-11-23T00:00:00+09:00</updated>
+    <category term="note"/>
+    <summary type="text">初めて訪れる読者に向けて、自己紹介を兼ねた「このnoteの歩き方」をまとめた案内記事。香港の空気や旅のガジェットを書き留めてきたnoteを、どこから読み始めるかの入口として紹介しています。</summary>
+    <content type="html">&lt;p&gt;初めて訪れる読者に向けて、自己紹介を兼ねた「このnoteの歩き方」をまとめた案内記事。香港の空気や旅のガジェットを書き留めてきたnoteを、どこから読み始めるかの入口として紹介しています。&lt;/p&gt;
+&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/nb0bcccd7c683&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
+  </entry>
   <entry>
     <title>獅子の横顔と、知らなかった啟德</title>
     <id>https://tojimasaya.com/fragments/kai-tak-lion-rock.html</id>
@@ -320,39 +353,5 @@
     <summary type="text">香港から台北経由で神戸へ降りた前回の続編として、神戸空港から台北経由で香港へ戻る帰路を検証。新しいラウンジ、明石焼、乗り継ぎや荷物の流れまで含めて、神戸発ルートが帰り道でも実用的かを確かめています。</summary>
     <content type="html">&lt;p&gt;香港から台北経由で神戸へ降りた前回の続編として、神戸空港から台北経由で香港へ戻る帰路を検証。新しいラウンジ、明石焼、乗り継ぎや荷物の流れまで含めて、神戸発ルートが帰り道でも実用的かを確かめています。&lt;/p&gt;
 &lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/nb65e94f99ac0&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>機体から目を離さずに、風速を訊く──AIグラスをドローンフライトに持ち込んでみた [田路昌也の中国・香港ドローン便り]Vol.67</title>
-    <id>https://drone.jp/column/20260825170044129205.html</id>
-    <link rel="alternate" type="text/html" href="https://drone.jp/column/20260825170044129205.html"/>
-    <published>2026-08-25T00:00:00+09:00</published>
-    <updated>2026-08-25T00:00:00+09:00</updated>
-    <category term="DRONE.jp"/>
-    <summary type="text">姫路・夢前川でDJI Mini 5 Proを飛ばしながら、RokidのAIグラスに風速や日没時刻を声で尋ねる実験。プロポと上空の機体から目を離さずに判断材料を得られる便利さと、…</summary>
-    <content type="html">&lt;p&gt;姫路・夢前川でDJI Mini 5 Proを飛ばしながら、RokidのAIグラスに風速や日没時刻を声で尋ねる実験。プロポと上空の機体から目を離さずに判断材料を得られる便利さと、AIの答えを鵜呑みにしない注意点を現地フライトで確かめています。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://drone.jp/column/20260825170044129205.html&quot;&gt;DRONE.jp で読む →&lt;/a&gt;&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>パスポートなしの国境と、深圳・華強北のガジェット行</title>
-    <id>https://tojimasaya.com/fragments/shenzhen-huaqiang-border.html</id>
-    <link rel="alternate" type="text/html" href="https://tojimasaya.com/fragments/shenzhen-huaqiang-border.html"/>
-    <published>2026-08-24T00:00:00+09:00</published>
-    <updated>2026-08-24T00:00:00+09:00</updated>
-    <category term="断章"/>
-    <summary type="text">日本に長くいると、決まって深圳・華強北の猥雑な活気と新しいガジェットの刺激が恋しくなるもので、八月二十四日、師匠と二人で国境を越え、着くなり定番の重慶の汁なし麺に少し辣味を足してもらえば、…</summary>
-    <content type="html">&lt;p&gt;&lt;img src=&quot;https://tojimasaya.com/assets/images/photo-notes/shenzhen-huaqiang-border-immigration.jpg&quot; alt=&quot;波打つ曲線が連なる、深圳・皇崗口岸の新しい越境ビルの外観&quot;&gt;&lt;/p&gt;
-&lt;p&gt;日本に長くいると、決まって深圳・華強北の猥雑な活気と新しいガジェットの刺激が恋しくなるもので、八月二十四日、師匠と二人で国境を越え、着くなり定番の重慶の汁なし麺に少し辣味を足してもらえば、血圧のことなど今日は忘れようという旨さ、そのあとは日本で薄く傷のついたOPPO Find N5とLeitzphoneのフィルムを一枚三十元・約六百円で張り替えてもらったが、安さより何より、埃も気泡も噛ませず一瞬で仕上げる店員の神業を眺めるのが毎度たまらなく楽しく、極めつけは、太子からの国境越えバスがやがて乗り入れるという皇崗の新しい越境ビルで、香港を出るときはスマホのQR、中国に入るときは顔認証と指紋、永久居民はパスポートもIDも要らないこの手軽さに、便利さと裏腹の薄気味悪さも少し覚えつつ——まあ深く考えても仕方がない、いっそ日本もこうなってくれと思っている。&lt;/p&gt;
-&lt;p&gt;中国・深圳（皇崗／華強北）&lt;/p&gt;</content>
-  </entry>
-  <entry>
-    <title>Rokidと暮らす④ メガネに、「母艦」を直結しました</title>
-    <id>https://note.com/tojimasaya/n/n66116e302cfe</id>
-    <link rel="alternate" type="text/html" href="https://note.com/tojimasaya/n/n66116e302cfe"/>
-    <published>2026-08-20T00:00:00+09:00</published>
-    <updated>2026-08-20T00:00:00+09:00</updated>
-    <category term="note"/>
-    <summary type="text">『Rokidと暮らす』第4回。スマホを経由せず、RokidのAIグラスから自分専用のAI（母艦）へ直接つなぐ自作アプリ「クロメガネ」を仕立てた話。声をかけるだけで、医療記録や資産情報といった「自分だけの情報」にまで、…</summary>
-    <content type="html">&lt;p&gt;『Rokidと暮らす』第4回。スマホを経由せず、RokidのAIグラスから自分専用のAI（母艦）へ直接つなぐ自作アプリ「クロメガネ」を仕立てた話。声をかけるだけで、医療記録や資産情報といった「自分だけの情報」にまで、メガネから手が届くようになりました。&lt;/p&gt;
-&lt;p&gt;&lt;a href=&quot;https://note.com/tojimasaya/n/n66116e302cfe&quot;&gt;note で読む →&lt;/a&gt;&lt;/p&gt;</content>
   </entry>
 </feed>

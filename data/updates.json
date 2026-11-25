@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-16T00:00:00+09:00",
+  "generatedAt": "2026-11-25T00:00:00+09:00",
   "count": 12,
   "feeds": {
     "atom": "/feed.xml",
@@ -7,6 +7,33 @@
     "fragments": "/feed-fragments.xml"
   },
   "items": [
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "【12月6日締切】HSBC Visa Signatureをお持ちの方へ。2027年のRewards of Your Choice（最紅自主獎賞）は自動継続されません",
+      "url": "https://note.com/tojimasaya/n/n6efc370aba99",
+      "external": true,
+      "date": "2026-11-25",
+      "thumb": "https://assets.st-note.com/production/uploads/images/340321987/rectangle_large_type_2_91a2d1a06ca54cb3981e122c4ddd632a.png?width=800"
+    },
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "同じ買い物でも7,892マイルと460マイル。香港のクレジットカード、なんとなく使っていませんか？",
+      "url": "https://note.com/tojimasaya/n/n6bfc44298fcd",
+      "external": true,
+      "date": "2026-11-24",
+      "thumb": "https://assets.st-note.com/production/uploads/images/340157590/rectangle_large_type_2_86a49346cf03dfcc73c24171afa5b240.png?width=800"
+    },
+    {
+      "kind": "note",
+      "kindLabel": "note",
+      "title": "このnoteの歩き方 ── 香港の空気と、旅のガジェットを書き留めています",
+      "url": "https://note.com/tojimasaya/n/nb0bcccd7c683",
+      "external": true,
+      "date": "2026-11-23",
+      "thumb": "https://assets.st-note.com/production/uploads/images/339795673/rectangle_large_type_2_90cb9f5e59dc0b3098d00d7fb985375a.jpeg?width=800"
+    },
     {
       "kind": "fragment",
       "kindLabel": "断章",
@@ -87,33 +114,6 @@
       "external": true,
       "date": "2026-10-18",
       "thumb": "https://assets.st-note.com/production/uploads/images/325728371/rectangle_large_type_2_42b2383c734dbfb3676b2441d5b99ba9.png?width=800"
-    },
-    {
-      "kind": "fragment",
-      "kindLabel": "断章",
-      "title": "FCCのランチと、直せないズミルックス",
-      "url": "/fragments/fcc-lunch-summilux.html",
-      "external": false,
-      "date": "2026-10-15",
-      "thumb": "/assets/images/photo-notes/fcc-lunch-entrance.webp"
-    },
-    {
-      "kind": "drone",
-      "kindLabel": "DRONE.jp",
-      "title": "飛ばせないだけじゃない─北京のドローン、「置き場所」さえなくなる [田路昌也の中国・香港ドローン便り]Vol.69",
-      "url": "https://drone.jp/column/20261013092256129817.html",
-      "external": true,
-      "date": "2026-10-13",
-      "thumb": "https://drone.jp/wp-content/uploads/tohzi_69_topdYyBkju1.jpg"
-    },
-    {
-      "kind": "note",
-      "kindLabel": "note",
-      "title": "同じ新品なのに値段が違う。香港のiPhone「未開封」と「開封済み」",
-      "url": "https://note.com/tojimasaya/n/n152a667764a7",
-      "external": true,
-      "date": "2026-10-04",
-      "thumb": "https://assets.st-note.com/production/uploads/images/320687810/rectangle_large_type_2_9de53ae98d0c8f338539425539f86aee.png?width=800"
     }
   ]
 }
