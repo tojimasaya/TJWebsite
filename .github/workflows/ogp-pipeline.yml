@@ -3,10 +3,14 @@ name: OGP scrape & cache
 on:
   workflow_dispatch:
   schedule:
-    - cron: '27 3 * * *'   # 毎日、記事画像をサイト内へキャッシュ
+    - cron: '27 3,15 * * *'   # 毎日 11:27 / 23:27 HKT（12:27 / 00:27 JST）に note・DRONE.jp 新着取り込み＆OGPキャッシュ
 
 permissions:
   contents: write
+
+concurrency:
+  group: ogp-pipeline
+  cancel-in-progress: false
 
 jobs:
   build:
@@ -18,14 +22,14 @@ jobs:
         with:
           node-version: '24'
 
-      - name: Install deps
-        run: npm --yes install cheerio node-fetch@3
-
-      - name: Run OGP pipeline
+      - name: Sync RSS articles and cache OGP thumbnails
         run: node tools/ogp-pipeline.mjs
 
-      - name: Rebuild feeds (articles.json の更新は他の workflow を起こさないためここで実行)
+      - name: Rebuild feeds, updates.json, and links.html
         run: node tools/build-feeds.mjs
+
+      - name: Validate HTML and local assets
+        run: node tools/validate-growth-html.mjs
 
       - name: Debug — list cached images
         run: ls -la assets/og/ || echo "No og directory"
@@ -33,8 +37,8 @@ jobs:
       - name: Stage cached images explicitly
         run: git add -f assets/og/ || true
 
-      - name: Commit JSON and cached images
+      - name: Commit synced articles, feeds, and cached images
         uses: stefanzweifel/git-auto-commit-action@v5
         with:
-          commit_message: 'chore(ogp): scrape & cache thumbnails'
-          file_pattern: 'data/writings-og.json data/articles.json data/updates.json feed.xml feed-fragments.xml feed.json'
+          commit_message: 'chore(articles): sync RSS articles, feeds, and OGP cache'
+          file_pattern: 'data/writings-og.json data/articles.json data/updates.json feed.xml feed-fragments.xml feed.json links.html'

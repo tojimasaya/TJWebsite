@@ -13,7 +13,7 @@ GitHub Pages（`CNAME` = tojimasaya.com）。URL はファイル名・ディレ�
 | `shirasagi36/noNN.html`, `noNN-en.html`, `noNN-hk.html`（白鷺三十六景 一景一頁） | `assets/images/shirasagi/photos*.json` + `tools/templates/shirasagi-view.html` | `node tools/build-shirasagi.mjs` / `.github/workflows/build-shirasagi.yml` |
 | `data/shirasagi-latest.json`、`sitemap.xml` の `shirasagi36:auto` 区間、hub の `shirasagi36:links` 区間 | 同上 | 同上 |
 | `assets/images/shirasagi/webp/**` | `assets/images/shirasagi/*.jpg` | `.github/workflows/webp-convert.yml` |
-| `data/articles.json`, `data/writings-og.json`, `assets/og/` | note / DRONE.jp の RSS・OGP | `.github/workflows/ogp-pipeline.yml`（月曜 03:27） |
+| `data/articles.json`, `data/writings-og.json`, `data/updates.json`, `feed.xml`, `feed.json`, `links.html`, `assets/og/` | note / DRONE.jp の RSS・OGP | `node tools/ogp-pipeline.mjs && node tools/build-feeds.mjs` / `.github/workflows/ogp-pipeline.yml`（毎日 03:27 / 15:27 UTC ＝ 11:27 / 23:27 HKT） |
 
 Action が main に auto-commit したあとは、ローカルで作業を始める前に `git pull`（GitHub Desktop の Fetch origin → Pull）。
 

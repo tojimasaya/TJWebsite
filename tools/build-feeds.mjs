@@ -18,7 +18,10 @@ import {
   readJson, writeIfChanged,
 } from './lib/html.mjs';
 
-const ROOT = path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
+const rootFlagIdx = process.argv.indexOf('--root');
+const ROOT = rootFlagIdx !== -1 && process.argv[rootFlagIdx + 1]
+  ? path.resolve(process.argv[rootFlagIdx + 1])
+  : path.resolve(path.dirname(fileURLToPath(import.meta.url)), '..');
 const CHECK_ONLY = process.argv.includes('--check');
 
 const FEED_MAX = 30;
@@ -281,9 +284,76 @@ function rssRedirect() {
 `;
 }
 
+function normalizeLinkUrl(url) {
+  const s = String(url || '').trim();
+  if (!s) return '';
+  try {
+    const u = new URL(s);
+    return `${u.hostname.toLowerCase().replace(/^www\./, '')}${u.pathname.replace(/\/+$/, '')}`;
+  } catch {
+    return s.replace(/^https?:\/\/(www\.)?/i, '').replace(/[?#].*$/, '').replace(/\/+$/, '').toLowerCase();
+  }
+}
+
+function latestBySource(articles, source) {
+  let best = null;
+  for (const a of articles) {
+    if (a.source !== source || !a.link || !a.title) continue;
+    const d = parseDate(a.date);
+    if (!d) continue;
+    if (!best || d.iso > best.iso) best = { ...a, iso: d.iso };
+  }
+  return best;
+}
+
+function formatDroneLinksTitle(title) {
+  return String(title || '').replace(/\s*\[田路昌也の中国・香港ドローン便り\].*$/, '').trim() || String(title || '').trim();
+}
+
+/**
+ * links.html の「最新note」「最新DRONE.jp」リンクを最新記事に同期する（防御的実装）。
+ * HTML 構造が変わっていた場合は壊さずスキップし、最新 URL が既に一致していれば手編集を温存する。
+ */
+function updateLinksHtmlContent(html, articles) {
+  let next = html;
+  const targets = [
+    {
+      label: '最新note',
+      article: latestBySource(articles, 'note'),
+      formatTitle: (t) => String(t || '').trim(),
+      pattern: /(<a\b[^>]*\bclass="link-button"[^>]*\bhref=")([^"]+)("[^>]*>\s*<span\s+class="link-emoji">📝<\/span><span>最新note:\s*)([^<]*)(<\/span>\s*<\/a>)/,
+    },
+    {
+      label: '最新DRONE.jp',
+      article: latestBySource(articles, 'drone'),
+      formatTitle: formatDroneLinksTitle,
+      pattern: /(<a\b[^>]*\bclass="link-button"[^>]*\bhref=")([^"]+)("[^>]*>\s*<span\s+class="link-emoji">🚁<\/span><span>最新DRONE\.jp:\s*)([^<]*)(<\/span>\s*<\/a>)/,
+    },
+  ];
+
+  for (const target of targets) {
+    if (!target.article) continue;
+    const match = next.match(target.pattern);
+    if (!match) {
+      console.log(`WARN: links.html の「${target.label}」ブロックが見つからないためスキップします`);
+      continue;
+    }
+    const currentHref = match[2];
+    if (normalizeLinkUrl(currentHref) === normalizeLinkUrl(target.article.link)) {
+      continue;
+    }
+    const nextHref = escapeHtml(target.article.link.trim());
+    const nextTitle = escapeHtml(target.formatTitle(target.article.title));
+    next = next.replace(target.pattern, (_, p1, _p2, p3, _p4, p5) => `${p1}${nextHref}${p3}${nextTitle}${p5}`);
+  }
+
+  return next;
+}
+
 /* ---------- main ---------- */
 
 async function main() {
+  const externalArticlesRaw = await readJson(path.join(ROOT, 'data/articles.json'));
   const all = [
     ...await collectFragments(),
     ...await collectShirasagi(),
@@ -320,6 +390,13 @@ async function main() {
   await out('feed.json', jsonFeed(all.slice(0, FEED_MAX), updated));
   await out('data/updates.json', updatesJson(all.slice(0, UPDATES_MAX), updated));
   await out('rss/index.html', rssRedirect());
+
+  const linksPath = path.join(ROOT, 'links.html');
+  const currentLinksHtml = await fs.readFile(linksPath, 'utf8').catch(() => null);
+  if (currentLinksHtml !== null) {
+    const updatedLinksHtml = updateLinksHtmlContent(currentLinksHtml, externalArticlesRaw);
+    await out('links.html', updatedLinksHtml);
+  }
 
   const byKind = {};
   for (const it of all) byKind[it.kind] = (byKind[it.kind] || 0) + 1;
